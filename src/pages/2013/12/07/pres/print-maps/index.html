@@ -1,0 +1,3308 @@
+<!DOCTYPE HTML>
+<html lang='en'>
+<head>
+    <title>Яндекс.Карты: как мы сделали лучшую в мире страницу печати</title>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=792, user-scalable=no'>
+    <meta http-equiv='x-ua-compatible' content='ie=edge'>
+    <link rel='stylesheet' href='shower/themes/yamaps/styles/screen.css'>
+    <link rel='stylesheet' href='index.css'>
+</head>
+<body class='list'>
+<header class='caption'>
+    <h1>
+        Распечатай Яндекс.Карты
+    </h1>
+    <p>Вадим Макишвили, WSD декабрь 2013</p>
+</header>
+
+<section class='slide cover ' id='Cover'>
+    <div class='slidein'>
+        <img  class='bg msk' src='pictures/msk.png' alt=''>
+
+        <span class='title'>
+            <div class='name'>Распечатай <span class='red'>Я</span>ндекс.<span class='green'>Карты</span></div>
+            <div class='author'>Вадим Макишвили, WSD декабрь 2013</div>
+        </span>
+    </div>
+</section>
+
+
+<section class='slide cover'>
+    <div class='slidein'>
+        <img src='pictures/map-msk.jpg' alt=''>
+    </div>
+</section>
+<section class='slide cover'>
+    <div class='slidein'>
+        <img src='pictures/map-msk-btn.jpg' alt=''>
+    </div>
+</section>
+<section class='slide cover'>
+    <div class='slidein'>
+        <img src='pictures/print-logo.jpg' alt=''>
+    </div>
+</section>
+<section class='slide cover'>
+    <div class='slidein'>
+        <img src='pictures/print-map-msk.jpg' alt=''>
+    </div>
+</section>
+<section class='slide cover'>
+    <div class='slidein'>
+        <img src='pictures/print-map-msk-comment.jpg' alt=''>
+    </div>
+</section>
+<section class='slide cover'>
+    <div class='slidein'>
+        <img src='pictures/print-map-msk-address.jpg' alt=''>
+    </div>
+</section>
+<section class='slide cover'>
+    <div class='slidein'>
+        <img src='pictures/print-map-msk-btn.jpg' alt=''>
+    </div>
+</section>
+<section class='slide cover'>
+    <div class='slidein'>
+        <img src='pictures/dialog.png' alt=''>
+    </div>
+</section>
+<section class='slide competitors'>
+    <div class='slidein'>
+        <h2>Конкуренты</h2>
+        <ol class='left'>
+            <li>Google Maps</li>
+            <li>Yahoo! Maps</li>
+            <li>Bing Maps</li>
+            <li>MapQuest</li>
+            <li>Wikimapia</li>
+            <li>2GIS</li>
+        </ol>
+        <ol class='right' start='7'>
+            <li>OpenStreetMap</li>
+            <li>Géoportail</li>
+            <li>Apple Maps</li>
+            <li>Nokia Maps</li>
+            <li>ViaMichelin</li>
+            <li>Seat Pagine Gialle</li>
+        </ol>
+        <p class='note'>...и это ещё не все</p>
+    </div>
+</section>
+
+<section class='slide shout'>
+    <div class='slidein'>
+        <h2>Какая нужна карта?</h2>
+    </div>
+</section>
+
+<section class='slide cover map'>
+    <div class='slidein'>
+        <img  class='bg msk' src='pictures/msk.png' alt=''>
+        <p class='note'>чистая</p>
+    </div>
+</section>
+
+<section class='slide cover map'>
+    <div class='slidein'>
+        <img  class='bg msk' src='pictures/msk-route.png' alt=''>
+        <p class='note'>удобная</p>
+    </div>
+</section>
+
+<section class='slide cover map'>
+    <div class='slidein'>
+        <img  class='bg msk' src='pictures/clear-msk.png' alt=''>
+        <p class='note'>подробная</p>
+    </div>
+</section>
+
+<section class='slide cover map'>
+    <div class='slidein'>
+        <img  class='bg msk' src='pictures/clear-msk-route-points.png' alt=''>
+        <p class='note'>полная</p>
+    </div>
+</section>
+
+<section class='slide cover map-pano'>
+    <div class='slidein'>
+        <img  class='bg msk' src='pictures/clear-msk-route-points.png' alt=''>
+        <img  class='pano' src='pictures/clear-msk-pano.png' alt=''>
+        <p class='note'>наглядная</p>
+    </div>
+</section>
+
+<section class='slide shout'>
+    <div class='slidein'>
+        <h2>Print & Go!</h2>
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <h2>Критерии качества:</h2>
+        <ul>
+            <li>Размер карты</li>
+            <li>Подача информации</li>
+            <li>Альбомная ориентация</li>
+        </ul>
+    </div>
+</section>
+
+
+<section class='slide wide screen'>
+    <div class='slidein'>
+        <h2 class='title'>А4 формат</h2>
+
+        <img  class='shot' src='pictures/competitor/a4.gif' alt=''>
+        <p class='note note-a4 green'>21х29cm</p>
+    </div>
+</section>
+
+<!-- Google -->
+    <section class='slide wide screen'>
+        <div class='slidein'>
+            <h2 class='title'>Google Maps</h2>
+
+            <img  class='shot' src='pictures/competitor/google-map.jpg' alt=''>
+            <p class='note red' style='top: 180px; left: 470px'>15х15cm</p>
+        </div>
+    </section>
+    <section class='slide wide screen'>
+        <div class='slidein'>
+            <h2 class='title'>Google Maps</h2>
+
+            <img  class='shot' src='pictures/competitor/google-map-address.jpg' alt=''>
+            <span class='arr arr-left' style='top: 65px; left: 260px;'></span>
+        </div>
+    </section>
+    <section class='slide wide screen'>
+        <div class='slidein'>
+            <h2 class='title'>Google Maps</h2>
+
+            <img  class='shot' src='pictures/competitor/google-map-comment.jpg' alt=''>
+            <span class='arr arr-left' style='top: 65px; left: 380px;'></span>
+        </div>
+    </section>
+    <section class='slide wide screen'>
+        <div class='slidein'>
+            <h2 class='title'>Google Maps</h2>
+
+            <img  class='shot' src='pictures/competitor/google-map-comment-middle.jpg' alt=''>
+            <span class='arr arr-left' style='top: 140px; left: 360px;'></span>
+        </div>
+    </section>
+
+    <section class='slide wide screen'>
+        <div class='slidein'>
+            <h2 class='title'>Google Maps</h2>
+
+            <img  class='shot' src='pictures/competitor/google-map-comment-big1.jpg' alt=''>
+            <img  class='shot shot-p2' src='pictures/competitor/google-map-comment-big2.jpg' alt=''>
+            <span class='arr arr-right' style='top: 410px; left: 360px;'></span>
+        </div>
+    </section>
+
+    <section class='slide wide screen'>
+        <div class='slidein'>
+            <h2 class='title'>Google Maps</h2>
+
+            <img  class='shot shot-a1' src='pictures/competitor/google-album1.jpg' alt=''>
+            <img  class='shot shot-a2' src='pictures/competitor/google-album2.jpg' alt=''>
+            <span class='arr arr-right' style='top: 70px; left: 420px;'></span>
+        </div>
+    </section>
+
+    <section class='slide wide screen'>
+        <div class='slidein'>
+            <h2 class='title'>Google Maps</h2>
+
+            <img  class='shot shot-p1' src='pictures/competitor/google-route.jpg' alt=''>
+        </div>
+    </section>
+
+    <section class='slide wide screen'>
+        <div class='slidein'>
+            <h2 class='title'>Google Maps</h2>
+
+            <img  class='shot shot-p1' src='pictures/competitor/google-route1.jpg' alt=''>
+            <img  class='shot shot-p2' src='pictures/competitor/google-route2.jpg' alt=''>
+        </div>
+    </section>
+
+    <section class='slide wide screen'>
+        <div class='slidein'>
+            <h2 class='title'>Google Maps</h2>
+
+            <img  class='shot shot-p11' src='pictures/competitor/google-route11.jpg' alt=''>
+            <img  class='shot shot-p22' src='pictures/competitor/google-route22.jpg' alt=''>
+            <img  class='shot shot-p33' src='pictures/competitor/google-route33.jpg' alt=''>
+        </div>
+    </section>
+<!-- /Google -->
+
+<!-- Yahoo -->
+    <section class='slide wide screen'>
+        <div class='slidein'>
+            <h2 class='title'>Yahoo! Maps</h2>
+
+            <img  class='shot' src='pictures/competitor/yahoo-map.jpg' alt=''>
+            <p class='note red' style='top: 210px; left: 470px'>15х10cm</p>
+        </div>
+    </section>
+
+    <section class='slide wide screen'>
+        <div class='slidein'>
+            <h2 class='title'>Yahoo! Maps</h2>
+
+            <img  class='shot shot-a1' src='pictures/competitor/yahoo-album1.jpg' alt=''>
+            <img  class='shot shot-a2' src='pictures/competitor/yahoo-album2.jpg' alt=''>
+            <span class='arr arr-right' style='top: 60px; left: 470px;'></span>
+        </div>
+    </section>
+
+<!-- /Yahoo -->
+
+<!-- Bing -->
+    <section class='slide wide screen'>
+        <div class='slidein'>
+            <h2 class='title'>Microsoft Bing</h2>
+
+            <img  class='shot' src='pictures/competitor/bing-map.jpg' alt=''>
+            <p class='note red' style='top: 310px; left: 470px'>12х12cm</p>
+            <p class='note red' style='top: 110px; left: 470px; font-size: 60px;'>3х3cm</p>
+        </div>
+    </section>
+    <section class='slide wide screen'>
+        <div class='slidein'>
+            <h2 class='title'>Microsoft Bing</h2>
+
+            <img  class='shot' src='pictures/competitor/bing-search.jpg' alt=''>
+            <span class='arr arr-left' style='top: 80px; left: 230px;'></span>
+        </div>
+    </section>
+    <section class='slide wide screen'>
+        <div class='slidein'>
+            <h2 class='title'>Microsoft Bing</h2>
+
+            <img  class='shot' src='pictures/competitor/bing-search.jpg' alt=''>
+            <span class='arr arr-left' style='top: 120px; left: 190px;'></span>
+        </div>
+    </section>
+    <section class='slide wide screen'>
+        <div class='slidein'>
+            <h2 class='title'>Microsoft Bing</h2>
+
+            <img  class='shot shot-p1' src='pictures/competitor/bing-route1.jpg' alt=''>
+            <img  class='shot shot-p2' src='pictures/competitor/bing-route2.jpg' alt=''>
+        </div>
+    </section>
+<!-- /Bing -->
+
+<!-- Rambler -->
+    <section class='slide wide screen'>
+        <div class='slidein'>
+            <h2 class='title'>Рамблер Карты</h2>
+
+            <img  class='shot' src='pictures/competitor/rambler-map.jpg' alt=''>
+            <p class='note red' style='top: 210px; left: 470px'>15х15cm</p>
+        </div>
+    </section>
+    <section class='slide wide screen'>
+        <div class='slidein'>
+            <h2 class='title'>Рамблер Карты</h2>
+
+            <img  class='shot' src='pictures/competitor/rambler-route.jpg' alt=''>
+        </div>
+    </section>
+    <section class='slide wide screen'>
+        <div class='slidein'>
+            <h2 class='title'>Рамблер Карты</h2>
+
+            <img  class='shot' src='pictures/competitor/rambler-route.jpg' alt=''>
+            <img  class='shot shot-a2' src='pictures/competitor/rambler-album.jpg' alt='' style='left:  420px;'>
+        </div>
+    </section>
+<!-- /Rambler -->
+
+<!-- Mail.ru -->
+<section class='slide wide screen'>
+    <div class='slidein'>
+        <h2 class='title'>Карты Mail.ru</h2>
+
+        <img  class='shot' src='pictures/competitor/mail-map.jpg' alt=''>
+        <p class='note red' style='top: 180px; left: 470px'>15х12cm</p>
+    </div>
+</section>
+<section class='slide wide screen'>
+    <div class='slidein'>
+        <h2 class='title'>Карты Mail.ru</h2>
+
+        <img  class='shot' src='pictures/competitor/mail-route.jpg' alt=''>
+    </div>
+</section>
+<section class='slide wide screen'>
+    <div class='slidein'>
+        <h2 class='title'>Карты Mail.ru</h2>
+
+        <img  class='shot shot-a1' src='pictures/competitor/mail-album1.jpg' alt=''>
+        <img  class='shot shot-a2' src='pictures/competitor/mail-album2.jpg' alt=''>
+        <span class='arr arr-right' style='top: 50px; left: 420px;'></span>
+    </div>
+</section>
+<!-- /Mail.ru -->
+
+<!-- Я.Карты старая печать -->
+<section class='slide wide screen'>
+    <div class='slidein'>
+        <h2 class='title'>Яндекс.Карты до 2013 года</h2>
+
+        <img  class='shot' src='pictures/competitor/yandex-old-map.jpg' alt=''>
+        <p class='note red' style='top: 180px; left: 470px'>15х15cm</p>
+    </div>
+</section>
+<section class='slide wide screen'>
+    <div class='slidein'>
+        <h2 class='title'>Яндекс.Карты до 2013 года</h2>
+
+        <img  class='shot shot-a1' src='pictures/competitor/yandex-old-album1.jpg' alt=''>
+        <img  class='shot shot-a2' src='pictures/competitor/yandex-old-album2.jpg' alt=''>
+        <span class='arr arr-right' style='top: 70px; left: 400px;'></span>
+    </div>
+</section>
+<section class='slide wide screen'>
+    <div class='slidein'>
+        <h2 class='title'>Яндекс.Карты до 2013 года</h2>
+
+        <img  class='shot shot-p1' src='pictures/competitor/yandex-old-route1.jpg' alt=''>
+        <img  class='shot shot-p2' src='pictures/competitor/yandex-old-route2.jpg' alt=''>
+    </div>
+</section>
+<section class='slide wide screen'>
+    <div class='slidein'>
+        <h2 class='title'>Яндекс.Карты до 2013 года</h2>
+
+        <img  class='shot shot-p11' src='pictures/competitor/yandex-old-pano1.jpg' alt=''>
+        <img  class='shot shot-p22' src='pictures/competitor/yandex-old-pano2.jpg' alt=''>
+        <img  class='shot shot-p33' src='pictures/competitor/yandex-old-route2.jpg' alt=''>
+    </div>
+</section>
+<section class='slide wide screen'>
+    <div class='slidein'>
+        <h2 class='title'>Яндекс.Карты до 2013 года</h2>
+
+        <img  class='shot shot-a1' src='pictures/competitor/yandex-old-route-album1.jpg' alt='' style="top: 80px; ">
+        <img  class='shot shot-a2' src='pictures/competitor/yandex-old-route-album2.jpg' alt='' style="top: 80px; ">
+        <img  class='next shot shot-a2' src='pictures/competitor/yandex-old-route-album3.jpg' alt=''
+              style="left: 300px; top: 250px; opacity: 0.8" >
+    </div>
+</section>
+<!-- /Я.Карты старая печать -->
+
+<section class='slide'>
+    <div class='slidein'>
+        <h2>Недостатки существующих решений:</h2>
+        <ul>
+            <li>Карта маленькая</li>
+            <li>Подача информации неоптимальная</li>
+            <li>Нет альбомной версии</li>
+        </ul>
+    </div>
+</section>
+
+<section class='slide shout'>
+    <div class='slidein'>
+        <h2>Но!</h2>
+    </div>
+</section>
+
+<section class='slide shout'>
+    <div class='slidein'>
+        <h2>Печать на <br><span class='red'>Я</span><span class='black'>ндекс.</span><span class='green'>Картах</span></h2>
+    </div>
+</section>
+
+<!-- Яндекс -->
+    <section class='slide'>
+        <div class='slidein'>
+            <h2 class='title'>Размеры карты:</h2>
+            <p class='yanote' style='left: 30px; bottom: 120px'>20 х 27cm</p>
+        </div>
+    </section>
+    <section class='slide wide screen screen-ya'>
+        <div class='slidein'>
+            <img  class='yashot yashot-p' src='pictures/competitor/ya-map.jpg' alt=''>
+        </div>
+    </section>
+
+    <section class='slide wide screen screen-ya'>
+        <div class='slidein'>
+            <img  class='yashot yashot-a' src='pictures/competitor/ya-album.jpg' alt=''>
+        </div>
+    </section>
+    <section class='slide wide screen screen-ya'>
+        <div class='slidein'>
+            <img  class='yashot yashot-p' src='pictures/competitor/ya-comment-big1.jpg' alt=''>
+        </div>
+    </section>
+    <section class='slide wide screen screen-ya'>
+        <div class='slidein'>
+            <img  class='yashot yashot-p' src='pictures/competitor/ya-search.jpg' alt=''>
+            <span class='arr arr-right-ok' style='bottom: -10px; left: 200px;'></span>
+        </div>
+    </section>
+    <section class='slide wide screen screen-ya'>
+        <div class='slidein'>
+            <img  class='yashot yashot-p' src='pictures/competitor/ya-comment.jpg' alt=''>
+            <span class='arr arr-left-ok' style='bottom: -10px; left: 735px;'></span>
+        </div>
+    </section>
+    <section class='slide wide screen screen-ya'>
+        <div class='slidein'>
+            <img  class='yashot yashot-p yashot-1' src='pictures/competitor/ya-comment-big1.jpg' alt=''>
+            <img  class='yashot yashot-p yashot-2' src='pictures/competitor/ya-comment-big2.jpg' alt=''>
+            <!--<span class='arr arr-right-ok' style='bottom: 10px; left: 360px;'></span>-->
+        </div>
+    </section>
+
+    <section class='slide wide screen screen-ya'>
+        <div class='slidein'>
+            <img  class='yashot yashot-a yashot-1' src='pictures/competitor/ya-comment-big-album1.jpg' alt=''>
+            <img  class='yashot yashot-a yashot-2' src='pictures/competitor/ya-comment-big-album2.png' alt=''>
+        </div>
+    </section>
+    <section class='slide wide screen screen-ya'>
+        <div class='slidein'>
+            <img  class='yashot yashot-p yashot-1' src='pictures/competitor/ya-route1.jpg' alt=''>
+            <img  class='yashot yashot-p yashot-2' src='pictures/competitor/ya-route2.png' alt=''>
+        </div>
+    </section>
+
+    <section class='slide wide screen screen-ya'>
+        <div class='slidein'>
+            <img  class='yashot yashot-p yashot-1' src='pictures/competitor/ya-pano.jpg' alt=''>
+            <img  class='yashot yashot-p yashot-2' src='pictures/competitor/ya-route2.png' alt=''>
+        </div>
+    </section>
+
+    <section class='slide wide screen screen-ya'>
+        <div class='slidein'>
+            <img  class='yashot yashot-a yashot-1' src='pictures/competitor/ya-pano-album1.jpg' alt=''>
+            <img  class='yashot yashot-a yashot-2' src='pictures/competitor/ya-pano-album2.jpg' alt=''>
+        </div>
+    </section>
+
+    <section class='slide shout'>
+        <div class='slidein'>
+            <h2>Печать на <br><span class='red'>Я</span><span class='black'>ндекс.</span><span class='green'>Картах</span></h2>
+        </div>
+    </section>
+
+<!-- /Яндекс -->
+
+<section class='slide shout'>
+    <div class='slidein'>
+        <h2>Как мы это сделали?</h2>
+    </div>
+</section>
+
+<section class='slide cover'>
+    <div class='slidein'>
+        <img src='pictures/noquirksno.jpg' alt=''>
+        <p class='noquirks'>... Quirks again?</p>
+    </div>
+</section>
+
+<section class='slide wide screen screen-ya'>
+    <div class='slidein'>
+        <img  class='yashot yashot-p' src='pictures/css2.png' alt=''>
+        <img  class='next yashot yashot-p' src='pictures/css2-zoom.png' alt=''>
+    </div>
+</section>
+
+<section class='slide cover'>
+    <div class='slidein'>
+        <img src='pictures/moto.jpg' alt=''>
+        <p class='moto'>1998</p>
+    </div>
+</section>
+
+<section class='slide cover'>
+    <div class='slidein'>
+        <img src='pictures/iphone6.jpg' alt=''>
+        <p class='iphone'>2012</p>
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <h2>Дальше будет:</h2>
+        <ul>
+            <li>как искали раскладку</li>
+            <li>как подключали стили</li>
+            <li>как фильтровали браузеры</li>
+            <li>как обошлись с IE</li>
+            <li>...</li>
+            <li>как напечатать фон?</li>
+        </ul>
+    </div>
+</section>
+
+<section class='slide layout'>
+    <div class='slidein'>
+        <h2>В поисках раскладки</h2>
+
+        <div class='l'>
+            <div class='l-h'> Шапка </div>
+            <div class='l-c l-c-y'> Карта </div>
+            <div class='l-f'> Подвал </div>
+        </div>
+
+    </div>
+</section>
+
+<section class='slide layout'>
+    <div class='slidein'>
+        <h2>В поисках раскладки</h2>
+
+        <pre>
+            <mark>Quirks Mode</mark>
+            <code>&lt;table height='<mark>100%</mark>'&gt;</code>
+            <code>    ...</code>
+            <code>&lt;/table&gt;
+            </code>
+            <code>td.map {</code>
+            <code>    height: <mark>100%</mark></code>
+            <code>}</code>
+        </pre>
+
+        <div class='l'>
+            <div class='l-h'>&lt;td&gt; Шапка &lt;/td&gt;</div>
+            <div class='l-c l-c-y'>&lt;td class='map'&gt; Карта &lt;/td&gt;</div>
+            <div class='l-f'>&lt;td&gt; Подвал &lt;/td&gt;</div>
+        </div>
+
+    </div>
+</section>
+
+<section class='slide layout'>
+    <div class='slidein'>
+        <h2>В поисках раскладки</h2>
+
+        <pre>
+            <mark>Javascript?</mark>
+        </pre>
+
+        <div class='l'>
+            <div class='l-h'>&lt;td&gt; Шапка &lt;/td&gt;</div>
+            <div class='l-c l-c-y'>&lt;td class='map'&gt; Карта &lt;/td&gt;</div>
+            <div class='l-f'>&lt;td&gt; Подвал &lt;/td&gt;</div>
+        </div>
+
+    </div>
+</section>
+
+<section class='slide shout'>
+    <div class='slidein'>
+        <h2>Javascript<span class='smile red'>:(</span></h2>
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <h2>Хочется красоты</h2>
+
+        <pre>
+            <code>if (<mark>page.orientation === 'landscape'</mark>) {</code>
+            <code>    <mark class='comment'>// do something</mark></code>
+            <code>}</code>
+        </pre>
+
+        <pre>
+            <code>if (<mark>page.size.width === '210mm'</mark>) {</code>
+            <code>    <mark class='comment'>// do something</mark></code>
+            <code>}</code>
+        </pre>
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <h2>CSS for printer</h2>
+
+        <pre>
+            <code>@media print and <mark>(orientation:landscape)</mark> {</code>
+            <code>    <mark class='comment'>// do something</mark></code>
+            <code>}
+            </code>
+        </pre>
+    </div>
+</section>
+
+<section class='slide shout'>
+    <div class='slidein'>
+        <h2>@rules</h2>
+    </div>
+</section>
+
+<section class='slide wide screen screen-ya'>
+    <div class='slidein'>
+        <img class='yashot yashot-p yashot-1' src='pictures/css2.png' alt=''>
+        <img class='yashot yashot-p yashot-1' src='pictures/css2-zoom.png' alt=''>
+
+        <div class='next'>
+            <div class='bro chromium' style='left: 670px; top: 100px;'></div>
+        </div>
+    </div>
+</section>
+
+<section class='slide wide screen screen-ya'>
+    <div class='slidein'>
+        <div class='bro safari' style='left: 60px; top: 50px; width: 512px; height: 512px'></div>
+        <h2 style="font-size: 330%;position: absolute;left:7.5em;top: 1em">
+            Nitro<br><br>
+            WebCore<br><br>
+            Webkit2
+        </h2>
+    </div>
+</section>
+
+<section class='slide wide screen screen-ya'>
+    <div class='slidein'>
+        <div class='bro chromium' style='left: 60px; top: 50px; width: 512px; height: 512px'></div>
+        <h2 style="font-size: 330%;position: absolute;left:7.5em;top: 1em">
+            V8<br><br>
+            WebCore<br><br>
+            Chromium
+        </h2>
+    </div>
+</section>
+
+<section class='slide wide screen screen-ya'>
+    <div class='slidein'>
+        <div class='bro blink' style='left: 60px; top: 50px; width: 512px; height: 512px'></div>
+        <h2 style="font-size: 330%;position: absolute;left:7.5em;top: 1em">
+            V8<br><br>
+            Blink<br><br>
+            Chromium
+        </h2>
+    </div>
+</section>
+
+<section class='slide wide screen screen-ya'>
+    <div class='slidein'>
+        <img class='yashot yashot-p yashot-1' src='pictures/css2.png' alt=''>
+        <img class='yashot yashot-p yashot-1' src='pictures/css2-zoom.png' alt=''>
+
+        <div class='bro blink' style='left: 670px; top: 100px;'></div>
+
+        <div class='next'>
+            <div class='bro opera'    style='left: 610px; top: 300px'></div>
+            <div class='fade'         style='left: 610px; top: 300px; opacity: 1;'>
+                <div class='bro opera'></div>
+            </div>
+            <div class='version'    style='left: 700px; top: 360px'>12</div>
+
+            <div class='bro ff'       style='left: 740px; top: 300px'></div>
+            <div class='fade'         style='left: 740px; top: 300px; opacity: 1;'>
+                <div class='bro ff'></div>
+            </div>
+        </div>
+        <div class='next'>
+            <div class='bro ie disabled'       style='left: 600px; top: 490px'></div>
+            <div class='bro safari disabled'   style='left: 740px; top: 490px'></div>
+        </div>
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <h2>@page</h2>
+        <pre>
+            <code><mark class='comment'>/* Обнулить поля */</mark></code>
+            <code>@page {</code>
+            <code>    margin: <mark>0</mark></code>
+            <code>}</code>
+        </pre>
+
+        <img class='yashot yashot-p yashot-2' src='pictures/code/filled-sheet.jpg' alt=''>
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <h2>@page</h2>
+        <pre>
+            <code><mark class='comment'>/* Обнулить поля */</mark></code>
+            <code>@page {</code>
+            <code>    margin: 0</code>
+            <code>}</code>
+        </pre>
+
+        <img class='yashot yashot-p yashot-2' src='pictures/code/filled-sheet.jpg' alt=''>
+        <div class='bro ff'  style='left: 410px; bottom: 10px;'></div>
+
+        <div class='colon-tr'>file://localhost/Users/makishvili/projects/print-and-go/page-zero.html</div>
+        <div class='colon-br'>05.07.13</div>
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <h2>@page</h2>
+        <pre>
+            <code><mark class='comment'>/* Обнулить поля */</mark></code>
+            <code>@page {</code>
+            <code>    margin: <mark class="important">0</mark></code>
+            <code>}</code>
+        </pre>
+
+        <p class='note'><em>Не работает?</em></p>
+
+        <img class='yashot yashot-p yashot-2' src='pictures/code/filled-sheet-opera1.jpg' alt=''>
+        <div class='bro opera'  style='left: 410px; bottom: 10px;'></div>
+        <div class='version'  style='left: 500px; bottom: -10px;'>12</div>
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <h2>@page</h2>
+        <pre>
+            <code><mark class='comment'>/* Изменить поля */</mark></code>
+            <code>@page {</code>
+            <code>    margin: <mark>1cm</mark></code>
+            <code>}</code>
+        </pre>
+
+        <p class='note'><em>Заработало!</em></p>
+
+        <img class='yashot yashot-p yashot-2' src='pictures/code/filled-sheet-opera2.jpg' alt=''>
+        <div class='bro opera'  style='left: 410px; bottom: 10px;'></div>
+        <div class='version'  style='left: 500px; bottom: -10px;'>12</div>
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <h2>@page</h2>
+        <pre>
+            <code><mark class='comment'>/* Изменить поля */</mark></code>
+            <code>@page {</code>
+            <code>    margin: 1cm</code>
+            <code>}</code>
+        </pre>
+
+        <p class='note'><em>Точка отсчёта - <br>дефолтные отступы, <br>а не край листа</em></p>
+        <img class='yashot yashot-p yashot-2' src='pictures/code/filled-sheet-opera3.jpg' alt=''>
+        <div class='bro opera'  style='left: 410px; bottom: 10px;'></div>
+        <div class='version'  style='left: 500px; bottom: -10px;'>12</div>
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <h2>@page size</h2>
+        <pre>
+            <code><mark class='comment'>/* Принудительно задать ориентацию */</mark></code>
+            <code>@page {</code>
+            <code>    <mark>size: landscape</mark></code>
+            <code>}</code>
+        </pre>
+
+        <div class='bro blink' style='left: 740px; top: 430px;'></div>
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <h2>@page name</h2>
+        <pre>
+            <code><mark class='comment'>/* Группировка свойств */</mark></code>
+            <code>@page <mark>myName</mark> {</code>
+            <code>    font-size: 18px</code>
+            <code>    padding: 10px</code>
+            <code>} </code>
+            <code>div {</code>
+            <code>    page: <mark>myName</mark></code>
+            <code>}</code>
+        </pre>
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <h2>@page name. Фильтрация браузеров?</h2>
+
+        <pre>
+            <code>@page <mark>chromePage</mark> { margin: 0 }</code>
+            <code>body.chrome { page: <mark>chromePage</mark> }
+            </code>
+            <code>@page <mark class="one">operaPage</mark> { margin: 5mm } </code>
+            <code>body.opera { page: <mark class="one">operaPage</mark> }</code>
+        </pre>
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <h2>@page name. Увы :(</h2>
+        <pre>
+            <code>@page { margin: 0 } </code>
+            <code><span style="visibility: hidden;">null</span>
+            </code>
+            <code>@page <mark class="one">operaPage</mark> { margin: 5mm }</code>
+            <code>body.opera { page: <mark class="one">operaPage</mark> }</code>
+        </pre>
+        <div class='bro opera' style='left: 740px; top: 430px'></div>
+        <div class='version'  style='left: 830px; top: 490px'>12</div>
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <h2>@document: фильтруем Firefox</h2>
+        <pre>
+            <code>@page { margin: 0 } </code>
+            <code><span style="visibility: hidden;">null</span></code>
+            <code><mark>@-moz-document regexp('*')</mark> {</code>
+            <code>    @page {</code>
+            <code>        margin-top: 1cm;</code>
+            <code>        margin-bottom: 1cm;</code>
+            <code>    }</code>
+            <code>}</code>
+        </pre>
+        <div class='bro ff' style='left: 740px; top: 430px'></div>
+    </div>
+</section>
+
+<section class='slide shout'>
+    <div class='slidein'>
+        <h2>Media-queries</h2>
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <h2>Ориентация листа</h2>
+        <pre>
+            <code>@media print and <mark>(orientation:portrait)</mark> {</code>
+            <code>    <mark class='comment'>/* стили только для портрета */</mark></code>
+            <code>} </code>
+            <code>@media print and <mark>(orientation:landscape)</mark> {</code>
+            <code>    <mark class='comment'>/* стили только для альбома */</mark></code>
+            <code>}</code>
+        </pre>
+
+        <div class='next1'>
+            <div class='bro blink' style='left: 830px; top: 100px;'></div>
+
+            <div class='bro ff'     style='left: 770px; top: 220px'></div>
+
+            <div class='bro ie' style='left: 890px; top: 220px'></div>
+            <div class='version' style='left: 980px; top: 280px'>9+</div>
+        </div>
+        <div class='next1'>
+            <div class='bro opera'  style='left: 770px; top: 350px'></div>
+            <div class='fade'       style='left: 770px; top: 350px; opacity: 1;'>
+                <div class='bro opera'></div>
+            </div>
+            <div class='version' style='left: 850px; top: 420px'>12-</div>
+
+            <div class='bro safari' style='left: 900px; top: 350px'></div>
+            <div class='fade'       style='left: 900px; top: 350px; opacity: 1;'>
+                <div class='bro safari'></div>
+            </div>
+        </div>
+        <div class='next'>
+            <div class='bro ie disabled' style='left: 830px; top: 500px'></div>
+            <div class='version disabled' style='left: 920px; top: 560px'>8-</div>
+        </div>
+    </div>
+</section>
+
+<section class='slide layout'>
+    <div class='slidein'>
+        <h2>Раскладка</h2>
+
+        <div class='l'>
+            <div class='l-h'> Шапка </div>
+            <div class='l-c l-c-y'> Карта </div>
+            <div class='l-f'> Подвал </div>
+        </div>
+
+    </div>
+</section>
+
+<section class='slide layout'>
+    <div class='slidein'>
+        <h2>1. Таблица</h2>
+
+        <div class='l'>
+            <div class='l-h'>&lt;td&gt; Шапка &lt;/td&gt;</div>
+            <div class='l-c l-c-y'>&lt;td class='map'&gt; Карта &lt;/td&gt;</div>
+            <div class='l-f'>&lt;td&gt; Подвал &lt;/td&gt;</div>
+        </div>
+
+        <pre>
+            <code>table, td.map {</code>
+            <code>    height: <mark>100%</mark></code>
+            <code>}</code>
+        </pre>
+
+    </div>
+</section>
+
+<section class='slide layout'>
+    <div class='slidein'>
+        <h2>1. Таблица</h2>
+
+        <div class='l'>
+            <div class='l-h'>&lt;div&gt; Шапка &lt;/div&gt;</div>
+            <div class='l-c l-c-y'>&lt;div class='map'&gt; Карта &lt;/div&gt;</div>
+            <div class='l-f'>&lt;div&gt; Подвал &lt;/div&gt;</div>
+        </div>
+
+        <pre>
+            <code>div {</code>
+            <code>    display: <mark>table-cell</mark></code>
+            <code>}
+            </code>
+            <code>.map {</code>
+            <code>    height: <mark>100%</mark></code>
+            <code>}</code>
+        </pre>
+
+
+    </div>
+</section>
+
+<section class='slide layout'>
+    <div class='slidein'>
+        <h2>1. Таблица</h2>
+
+        <div class='benefits'>
+            <ul>
+                <li>нет <code>min-height</code> и <code>max-height</code></li>
+            </ul>
+
+            <figure>
+                <blockquote>
+                    <p>CSS 2.1 не определяет поведение min-height и max-height в таблицах, поэтому любая реалиция этих свойств (применительно к таблицам) - CSS2.1-совместимая</p>
+                </blockquote>
+                <figcaption><a href='https://developer.mozilla.org/en-US/docs/CSS/min-height'>MDN</a></figcaption>
+            </figure>
+
+            <ul>
+                <li>нет <code>overflow:hidden</code> внутри ячейки</li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+<section class='slide layout'>
+    <div class='slidein'>
+        <h2>2. Позиционирование</h2>
+
+        <div class='l'>
+            <div class='l-h'>&lt;div class='head'&gt; Шапка &lt;/div&gt;</div>
+            <div class='l-c l-c-y'>&lt;div class='map'&gt; Карта &lt;/div&gt;</div>
+            <div class='l-f'>&lt;div class='foot'&gt; Подвал &lt;/div&gt;</div>
+        </div>
+
+        <pre class='small'>
+            <code>div {</code>
+            <code>    <mark>position: absolute</mark></code>
+            <code>    left: 0</code>
+            <code>    right: 0</code>
+            <code>}</code>
+            <code>.head {</code>
+            <code>    top: 0</code>
+            <code>    height: 100px</code>
+            <code>}</code>
+            <code>.map {</code>
+            <code>    <mark>top: 100px</mark></code>
+            <code>    <mark>bottom: 100px</mark></code>
+            <code>}</code>
+            <code>.foot {</code>
+            <code>    bottom: 0</code>
+            <code>    height: 100px</code>
+            <code>}</code>
+        </pre>
+
+    </div>
+</section>
+
+<section class='slide layout'>
+    <div class='slidein'>
+        <h2>2. Позиционирование</h2>
+
+        <div class='benefits'>
+            <ul>
+                <li>не работает <code>page-break-before</code></li>
+            </ul>
+
+            <figure>
+                <blockquote>
+                    <p>User Agents must apply these properties to block-level elements in the normal flow of the root element.</p>
+                </blockquote>
+                <figcaption><a href='http://www.w3.org/TR/CSS2/page.html#propdef-page-break-before'>CSS2 specification</a></figcaption>
+            </figure>
+
+            <ul>
+                <li>нужна фиксированная высота подвала или javascript</li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+<section class='slide layout'>
+    <div class='slidein'>
+        <h2>3. Поток</h2>
+
+        <div class='l l-abs'>
+            <div class='l-c l-c-y'>&lt;div class='map'&gt; Карта &lt;/div&gt;</div>
+        </div>
+
+        <pre class='small'>
+            <code>.map {</code>
+            <code>    <mark>height: 100%</mark></code>
+            <code>}</code>
+        </pre>
+
+    </div>
+</section>
+
+<section class='slide layout'>
+    <div class='slidein'>
+        <h2>3. Поток + &laquo;наляпки&raquo;</h2>
+
+        <div class='l l-abs'>
+            <div class='l-h'>&lt;div class='head'&gt; Шапка &lt;/div&gt;</div>
+            <div class='l-c l-c-y'>&lt;div class='map'&gt; Карта &lt;/div&gt;</div>
+            <div class='l-f'>&lt;div class='foot'&gt; Подвал &lt;/div&gt;</div>
+        </div>
+
+        <pre class='small'>
+            <code>.map {</code>
+            <code>    <mark>height: 100%</mark></code>
+            <code>}</code>
+            <code>.head, .foot {</code>
+            <code>    <mark>position: absolute</mark></code>
+            <code>    left: 0</code>
+            <code>    right: 0</code>
+            <code>}</code>
+            <code>.head {</code>
+            <code>    top: 0</code>
+            <code>}</code>
+            <code>.foot {</code>
+            <code>    bottom: 0</code>
+            <code>}</code>
+        </pre>
+    </div>
+</section>
+<section class='slide layout'>
+    <div class='slidein'>
+        <h2>3. Поток + &laquo;наляпки&raquo;</h2>
+
+        <div class='l l-abs'>
+            <div class='l-h'>&lt;div class='head'&gt; Шапка &lt;/div&gt;</div>
+            <div class='l-c l-c-y'>&lt;div class='map'&gt; Карта &lt;/div&gt;</div>
+            <div class='l-f'>&lt;div class='foot'&gt; Подвал &lt;/div&gt;</div>
+        </div>
+
+        <pre class='small'>
+            <code>.map {</code>
+            <code>    <mark>height: 100%</mark></code>
+            <code>}</code>
+            <code>.head, .foot {</code>
+            <code>    <mark>position: absolute</mark></code>
+            <code>    left: 0</code>
+            <code>    right: 0</code>
+            <code>}</code>
+            <code>.head {</code>
+            <code>    top: 0</code>
+            <code>}</code>
+            <code>.foot {</code>
+            <code>    bottom: 0</code>
+            <code>}</code>
+        </pre>
+
+        <div class='mask'>
+            <div class='mask-stamp mask-ok'>Утверждено</div>
+        </div>
+    </div>
+</section>
+
+<section class='slide shout'>
+    <div class='slidein'>
+        <h2>Как организовать стили?</h2>
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <h2>Как организовать стили так, чтобы:</h2>
+        <ul>
+            <li>разделить на экранные и принтерные</li>
+            <li>разделить на портретные и альбомные</li>
+            <li>...</li>
+            <li>и уметь это дебажить</li>
+        </ul>
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <h2>Сначала бездумно</h2>
+
+        <pre class='medium'>
+            <code>body {</code>
+            <code>    width: <mark>900px</mark></code>
+            <code>}</code>
+            <code>@media print {</code>
+            <code>    body {</code>
+            <code>        width: <mark>auto</mark> <mark class='comment'>/* переопределяю */</mark></code>
+            <code>        padding: 5mm</code>
+            <code>    }</code>
+            <code>}</code>
+        </pre>
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <h2>Потом с медиа-типами</h2>
+
+        <pre class='medium'>
+            <code>@media <mark>all</mark> {</code>
+            <code>    body { font-size: 16px }</code>
+            <code>}</code>
+            <code>@media <mark>screen</mark> {</code>
+            <code>    body { width: 900px }</code>
+            <code>}</code>
+            <code>@media <mark>print</mark> {</code>
+            <code>    body { padding: 5mm }</code>
+            <code>}</code>
+        </pre>
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <h2>Потом с медиа-выражениями</h2>
+
+        <pre class='medium'>
+            <code>@media screen {</code>
+            <code>    body { width: 900px }</code>
+            <code>}</code>
+            <code>@media print {</code>
+            <code>    body { padding: 5mm }</code>
+            <code>}</code>
+            <code>@media print and <mark>(orientation:landscape)</mark>{</code>
+            <code>    body { height: 210mm }</code>
+            <code>}</code>
+        </pre>
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <h2>Наконец, с умом</h2>
+
+        <pre class='small'>
+            <code>&lt;meta http-equiv='X-UA-Compatible' content='IE=EmulateIE7'&gt;
+            </code>
+            <code><mark class='comment'>&lt;!--[if gt IE 7]&gt;&lt;!--&gt;</mark></code>
+            <code>    &lt;link href='page.css'&gt;</code>
+            <code><mark class='comment'>&lt;!--&lt;![endif]--&gt;</mark></code>
+            <code><mark class='comment'>&lt;!--[if lt IE 8]&gt;</mark></code>
+            <code>    <mark class='comment'>&lt;link href='page.ie.css'&gt;</mark></code>
+            <code><mark class='comment'>&lt;![endif]--&gt;</mark>
+            </code>
+            <code>&lt;link rel='stylesheet' href='<mark>page.screen.css</mark>' media='<mark>screen</mark>'&gt;</code>
+            <code>&lt;link rel='stylesheet' href='<mark>page.print.css</mark>'  media='<mark>print</mark>'&gt;</code>
+            <code>&lt;link rel='stylesheet' href='<mark>page.print.portrait.css</mark>'  media='print and (<mark>orientation:portrait</mark>)'&gt;</code>
+            <code>&lt;link rel='stylesheet' href='<mark>page.print.landscape.css</mark>' media='print and (<mark>orientation:landscape</mark>)'&gt;</code>
+        </pre>
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <h2>Подождите, а что с IE?</h2>
+        <pre>
+            <code>&lt;meta ...  content='<mark>IE=EmulateIE7</mark>'&gt;</code>
+        </pre>
+
+        <div class='next'>
+            <h2>А почему не так?</h2>
+            <pre>
+                <code>&lt;meta ...  content='<mark>IE=EmulateIE7</mark>, <mark class='important'>IE=edge</mark>'&gt;</code>
+            </pre>
+        </div>
+    </div>
+</section>
+
+<section class='slide shout'>
+    <div class='slidein'>
+        <h2>IE9 печатает<br>хуже, чем IE7 <span class='smile red'>o_O</span></h2>
+    </div>
+</section>
+
+
+<section class='slide layout'>
+    <div class='slidein'>
+        <h2>Большая картинка<br> в маленьком окне</h2>
+
+        <img class='yashot yashot-p yashot-2' src='pictures/code/pic-in-view.jpg' alt=''>
+
+        <pre class='small'>
+            <code>&lt;div class='view'&gt;</code>
+            <code>    &lt;img  class='map' src='map.png'&gt;</code>
+            <code>&lt;/div&gt;
+            </code>
+            <code>.view {</code>
+            <code>    position: relative</code>
+            <code>    <mark>overflow: hidden</mark>
+            </code>
+            <code>    width: 200px; height: 200px</code>
+            <code>}</code>
+            <code>.map {</code>
+            <code>    position: absolute</code>
+            <code>    <mark>top: 50%; left: 50%</mark></code>
+            <code>    width: 1000px; height: 1000px</code>
+            <code>    <mark>margin: -500px 0 0 -500px</mark></code>
+            <code>}</code>
+        </pre>
+    </div>
+</section>
+
+<section class='slide layout'>
+    <div class='slidein'>
+        <h2>Большая картинка<br> в маленьком окне</h2>
+
+        <img class='yashot yashot-p yashot-2' src='pictures/code/filled-sheet.jpg' alt=''>
+
+        <pre class='small disabled'>
+            <code>&lt;div class='view'&gt;</code>
+            <code>    &lt;img  class='map' src='map.png'&gt;</code>
+            <code>&lt;/div&gt;
+            </code>
+            <code>.view {</code>
+            <code>    position: relative</code>
+            <code>    <mark>overflow: hidden</mark>
+            </code>
+            <code>    width: 200px; height: 200px</code>
+            <code>}</code>
+            <code>.map {</code>
+            <code>    position: absolute</code>
+            <code>    top: 50%; left: 50%</code>
+            <code>    width: 1000px; height: 1000px</code>
+            <code>    margin: -500px 0 0 -500px</code>
+            <code>}</code>
+        </pre>
+
+        <div style='position: absolute; left: 120px; top: 332px;'>
+            <pre class='small'>
+                <code>    <mark class="important">overflow: hidden</mark></code>
+            </pre>
+        </div>
+
+
+        <div class='bro ie' style='left: 180px; top: 500px'></div>
+        <div class='version' style='left: 270px; top: 560px'>9</div>
+        <div class='support' style='left: 305px; top: 520px'>на печати</div>
+    </div>
+</section>
+
+<section class='slide layout'>
+    <div class='slidein'>
+        <h2>Большая картинка<br> в маленьком окне</h2>
+
+        <img class='yashot yashot-p yashot-2' src='pictures/code/pic-in-view.jpg' alt=''>
+
+        <pre class='small disabled'>
+            <code>&lt;div class='view'&gt;</code>
+            <code>    &lt;img  class='map' src='map.png'&gt;</code>
+            <code>&lt;/div&gt;
+            </code>
+            <code>.view {</code>
+            <code>    position: relative</code>
+            <code>    overflow: hidden
+            </code>
+            <code>    width: 200px; height: 200px</code>
+            <code>}</code>
+            <code>.map {</code>
+            <code>    position: absolute</code>
+            <code>    top: 50%; left: 50%</code>
+            <code>    width: 1000px; height: 1000px</code>
+            <code>    margin: -500px 0 0 -500px</code>
+            <code>}</code>
+        </pre>
+
+        <div style='position: absolute; left: 120px; top: 332px;'>
+            <pre class='small'>
+                <code>
+  + <mark>display: inline-block</mark></code>
+            </pre>
+        </div>
+
+        <div class='bro ie' style='left: 180px; top: 500px'></div>
+        <div class='version' style='left: 270px; top: 560px'>9</div>
+        <div class='support' style='left: 305px; top: 520px'>на печати</div>
+
+        <span class='arr arr-right-ok' style='top: 315px; left: 390px; z-index:  100;'></span>
+    </div>
+</section>
+
+<section class='slide layout'>
+    <div class='slidein'>
+        <h2>3. Поток + &laquo;наляпки&raquo;</h2>
+
+        <div class='l l-abs'>
+            <div class='l-h'>&lt;div class='head'&gt; Шапка &lt;/div&gt;</div>
+            <div class='l-c l-c-y'>&lt;div class='map'&gt; Карта &lt;/div&gt;</div>
+            <div class='l-f'>&lt;div class='foot'&gt; Подвал &lt;/div&gt;</div>
+        </div>
+
+        <pre class='small'>
+            <code>.map {</code>
+            <code>    <mark>height: 100%</mark></code>
+            <code>}</code>
+            <code>.head, .foot {</code>
+            <code>    <mark>position: absolute</mark></code>
+            <code>    left: 0</code>
+            <code>    right: 0</code>
+            <code>}</code>
+            <code>.head {</code>
+            <code>    top: 0</code>
+            <code>}</code>
+            <code>.foot {</code>
+            <code>    bottom: 0</code>
+            <code>}</code>
+        </pre>
+    </div>
+</section>
+
+<section class='slide layout'>
+    <div class='slidein'>
+        <h2>3. Поток + &laquo;наляпки&raquo;</h2>
+
+        <div class='l l-abs l-abs-bug'>
+            <div class='l-h'>&lt;div class='head'&gt; Шапка &lt;/div&gt;</div>
+            <div class='l-c l-c-y'>&lt;div class='map'&gt; Карта &lt;/div&gt;</div>
+            <div class='l-f'>&lt;div class='foot'&gt; Подвал &lt;/div&gt;</div>
+        </div>
+
+        <pre class='small'>
+            <code>.map {</code>
+            <code>    height: 100%</code>
+            <code>}</code>
+            <code>.head, .foot {</code>
+            <code>    position: absolute</code>
+            <code>    left: 0</code>
+            <code>    right: 0</code>
+            <code>}</code>
+            <code>.head {</code>
+            <code>    top: 0</code>
+            <code>}</code>
+            <code>.foot {</code>
+            <code>    bottom: 0</code>
+            <code>}</code>
+        </pre>
+
+        <div class='bro ie' style='left: 180px; top: 500px'></div>
+        <div class='version' style='left: 270px; top: 560px'>9</div>
+        <div class='support' style='left: 305px; top: 520px'>на печати</div>
+
+    </div>
+</section>
+
+<section class='slide layout'>
+    <div class='slidein'>
+        <h2>3. Поток + &laquo;наляпки&raquo;</h2>
+
+        <div class='l l-abs l-abs-bug'>
+            <div class='l-h'>&lt;div class='head'&gt; Шапка &lt;/div&gt;</div>
+            <div class='l-c l-c-y' style='left: 40px; right: -40px; top: 20px; border: 1px solid #666;'>&lt;div
+                                                                                                   class='map'&gt; Карта &lt;/div&gt;</div>
+            <div class='l-f'>&lt;div class='foot'&gt; Подвал &lt;/div&gt;</div>
+        </div>
+
+        <pre class='small'>
+            <code>.map {</code>
+            <code>    height: 100%</code>
+            <code>}</code>
+            <code>.head, .foot {</code>
+            <code>    position: absolute</code>
+            <code>    left: 0</code>
+            <code>    right: 0</code>
+            <code>}</code>
+            <code>.head {</code>
+            <code>    top: 0</code>
+            <code>}</code>
+            <code>.foot {</code>
+            <code>    bottom: 0</code>
+            <code>}</code>
+        </pre>
+
+        <div class='bro ie' style='left: 180px; top: 500px'></div>
+        <div class='version' style='left: 270px; top: 560px'>9</div>
+        <div class='support' style='left: 305px; top: 520px'>на печати</div>
+
+        <span class='arr arr-right' style='top: 70px; left: 370px; z-index:  100;'></span>
+        <span class='arr arr-right' style='top: 440px; left: 370px; z-index:  100;'></span>
+
+        <div class='next mask'>
+            <div class='mask-deny'></div>
+        </div>
+    </div>
+</section>
+
+<section class='slide layout'>
+    <div class='slidein'>
+        <h2>3. Поток + &laquo;наляпки&raquo;</h2>
+
+        <div class='l l-abs'>
+            <div class='l-h'>&lt;div class='head'&gt; Шапка &lt;/div&gt;</div>
+            <div class='l-c l-c-y' style=''>&lt;div class='map'&gt; Карта &lt;/div&gt;</div>
+            <div class='l-f'>&lt;div class='foot'&gt; Подвал &lt;/div&gt;</div>
+        </div>
+
+        <pre class='small'>
+            <code>.map {</code>
+            <code>    <mark>height: 100%</mark></code>
+            <code>}</code>
+            <code>.head, .foot {</code>
+            <code>    <mark>position: absolute</mark></code>
+            <code>    left: 0</code>
+            <code>    right: 0</code>
+            <code>}</code>
+            <code>.head {</code>
+            <code>    top: 0</code>
+            <code>}</code>
+            <code>.foot {</code>
+            <code>    bottom: 0</code>
+            <code>}</code>
+        </pre>
+
+        <div class='bro opera' style='left: 210px; top: 500px'></div>
+        <div class='version' style='left: 300px; top: 560px'>12 on Mac</div>
+    </div>
+</section>
+
+<section class='slide layout'>
+    <div class='slidein'>
+        <h2>3. Поток + &laquo;наляпки&raquo;</h2>
+
+        <div class='l l-abs l-abs-opera'>
+            <div class='l-h'>&lt;div class='head'&gt; Шапка &lt;/div&gt;</div>
+            <div class='l-c l-c-y' style=''>&lt;div class='map'&gt; Карта &lt;/div&gt;</div>
+            <div class='l-f'>&lt;div class='foot'&gt; Подвал &lt;/div&gt;</div>
+        </div>
+
+        <pre class='small'>
+            <code>.map {</code>
+            <code>    <mark>height: 100%</mark></code>
+            <code>}</code>
+            <code>.head, .foot {</code>
+            <code>    <mark>position: absolute</mark></code>
+            <code>    left: 0</code>
+            <code>    right: 0</code>
+            <code>}</code>
+            <code>.head {</code>
+            <code>    top: 0</code>
+            <code>}</code>
+            <code>.foot {</code>
+            <code>    bottom: 0</code>
+            <code>}</code>
+        </pre>
+
+        <div class='bro opera' style='left: 210px; top: 500px'></div>
+        <div class='version' style='left: 300px; top: 560px'>12 on Mac</div>
+    </div>
+</section>
+
+<section class='slide layout'>
+    <div class='slidein'>
+        <h2>3. Поток + &laquo;наляпки&raquo;</h2>
+
+        <div class='l l-abs'>
+            <div class='l-h'>&lt;div class='head'&gt; Шапка &lt;/div&gt;</div>
+            <div class='l-c l-c-y'>&lt;div class='map'&gt; Карта &lt;/div&gt;</div>
+            <div class='l-c' style='position: absolute; opacity: 0.6; background: red; left: 90px; right: -90px; top:
+              30px; bottom: -30px; z-index:  1000;'></div>
+            <div class='l-c' style='position: absolute; background: #fff; width: 90px;'></div>
+            <div class='l-f'>&lt;div class='foot'&gt; Подвал &lt;/div&gt;</div>
+        </div>
+
+        <pre class='small disabled'>
+            <code>.map {</code>
+            <code>    height: 100%</code>
+            <code>}</code>
+            <code>.head, .foot {</code>
+            <code>    position: absolute</code>
+            <code>    left: 0</code>
+            <code>    right: 0</code>
+            <code>}</code>
+            <code>.head {</code>
+            <code>    top: 0</code>
+            <code>}</code>
+            <code>.foot {</code>
+            <code>    bottom: 0</code>
+            <code>}</code>
+        </pre>
+
+        <div style='position: absolute; left: 80px; top: 192px; background: rgba(255, 255, 255, 0.9);'>
+            <pre class='small'>
+            <code><strong>&nbsp;+&nbsp;</strong>&nbsp;<mark>&lt;div class='opacity-hack'&gt;&lt;/div&gt;</mark></code>
+            </pre>
+        </div>
+
+        <div style='position: absolute; left: 120px; top: 282px; background: rgba(255, 255, 255, 0.9);'>
+            <pre class='small'>
+                <code>.opacity-hack {</code>
+                <code>    position: absolute</code>
+                <code>    background: red
+                </code>
+                <code>    <mark>opacity: 0.3</mark> </code>
+                <code>}
+
+                </code>
+            </pre>
+        </div>
+
+        <div class='bro opera' style='left: 210px; top: 500px'></div>
+        <div class='version' style='left: 300px; top: 560px'>12 on Mac</div>
+
+    </div>
+</section>
+
+<section class='slide layout'>
+    <div class='slidein'>
+        <h2>3. Поток + &laquo;наляпки&raquo;</h2>
+
+        <div class='l l-abs'>
+            <div class='l-h'>&lt;div class='head'&gt; Шапка &lt;/div&gt;</div>
+            <div class='l-c l-c-y'>&lt;div class='map'&gt; Карта &lt;/div&gt;</div>
+            <div class='l-f'>&lt;div class='foot'&gt; Подвал &lt;/div&gt;</div>
+        </div>
+
+        <pre class='small disabled'>
+            <code>.map {</code>
+            <code>    height: 100%</code>
+            <code>}</code>
+            <code>.head, .foot {</code>
+            <code>    position: absolute</code>
+            <code>    left: 0</code>
+            <code>    right: 0</code>
+            <code>}</code>
+            <code>.head {</code>
+            <code>    top: 0</code>
+            <code>}</code>
+            <code>.foot {</code>
+            <code>    bottom: 0</code>
+            <code>}</code>
+        </pre>
+
+        <div style='position: absolute; left: 120px; top: 192px; background: rgba(255, 255, 255, 0.9);'>
+            <pre class='small'>
+            <code>&lt;div class='opacity-hack'&gt;&lt;/div&gt;</code>
+            </pre>
+        </div>
+
+        <div style='position: absolute; left: 120px; top: 282px; background: rgba(255, 255, 255, 0.9);'>
+            <pre class='small'>
+                <code>.opacity-hack {</code>
+                <code>    position: absolute</code>
+                <code>    opacity: <mark>0</mark> </code>
+                <code>}
+
+
+                </code>
+            </pre>
+        </div>
+
+        <div class='bro opera' style='left: 210px; top: 500px'></div>
+        <div class='version' style='left: 300px; top: 560px'>12 on Mac</div>
+
+    </div>
+</section>
+
+<section class='slide shout'>
+    <div class='slidein'>
+        <h2>Фильтруем браузеры</h2>
+    </div>
+</section>
+
+<section class='slide layout'>
+    <div class='slidein'>
+        <h2>Фильтруем браузеры</h2>
+
+        <pre class='small'>
+            <code>(function () {</code>
+            <code>    var ua = navigator.userAgent;</code>
+            <code>    var browser = jQuery.browser;</code>
+            <code>    var browserName;
+            </code>
+            <code>    switch (true) {</code>
+            <code>        case Boolean(browser.opera):</code>
+            <code>            browserName = '<mark>opera</mark>'; break;
+            </code>
+            <code>        case Boolean(ua.indexOf('Safari') !== -1):</code>
+            <code>            browserName = '<mark>safari</mark>'; break;</code>
+            <code>        ...</code>
+            <code>    }</code>
+            <code>    if (browserName) {</code>
+            <code>        document.<mark>documentElement.className</mark> += (' ' + browserName);</code>
+            <code>    }</code>
+            <code>}());</code>
+        </pre>
+
+        <div class='next mask'>
+            <pre style='position: absolute; right: 50px; top: 150px'>
+                <code>&lt;html class='<mark>opera</mark>'&gt;</code>
+                <code>...</code>
+                <code>&lt;/html&gt;</code>
+            </pre>
+        </div>
+    </div>
+</section>
+
+<section class='slide layout'>
+    <div class='slidein'>
+        <h2>100% листа</h2>
+
+        <div class='l l-abs'>
+            <div class='l-c l-c-y'>&lt;div class='map'&gt; Карта &lt;/div&gt;</div>
+        </div>
+
+        <pre>
+            <code>html, body {</code>
+            <code>    height: 100%</code>
+            <code>}</code>
+            <code>.map {</code>
+            <code>    width: 100%</code>
+            <code>    height: 100%</code>
+            <code>}</code>
+        </pre>
+
+    </div>
+</section>
+
+<section class='slide layout'>
+    <div class='slidein'>
+        <h2>100% листа</h2>
+
+        <div class='l l-abs l-abs-webkit'>
+            <div class='l-c l-c-y'>&lt;div class='map'&gt; Карта &lt;/div&gt;</div>
+        </div>
+
+        <pre>
+            <code>html, body {</code>
+            <code>    height: 100%</code>
+            <code>}</code>
+            <code>.map {</code>
+            <code>    width: 100%</code>
+            <code>    <mark class='important'>height: 100%</mark></code>
+            <code>}</code>
+        </pre>
+
+        <div class='bro blink'   style='left: 580px; top: 480px'></div>
+        <div class='version'  style='left: 660px; top: 540px'>25</div>
+        <div class='bro safari'   style='left: 720px; top: 480px'></div>
+        <div class='version'  style='left: 810px; top: 540px'>6</div>
+
+    </div>
+</section>
+
+<section class='slide layout'>
+    <div class='slidein'>
+        <h2>100% листа</h2>
+
+        <div class='l l-abs'>
+            <div class='l-c l-c-y'>&lt;div class='map'&gt; Карта &lt;/div&gt;</div>
+        </div>
+
+        <pre class='small'>
+            <code>html, body {</code>
+            <code>    height: 100%</code>
+            <code>}</code>
+            <code>.map {</code>
+            <code>    width: 100%</code>
+            <code>    <mark class='important'>height: 100%</mark></code>
+            <code>}</code>
+            <code>@media print {</code>
+            <code>    @page { margin: 5mm }
+            </code>
+            <code>    html.chrome { <mark>height: 267mm</mark> }</code>
+            <code>    html.safari { <mark>height: 247mm</mark> }</code>
+            <code>}</code>
+            <code>@media print and (orientation:landscape) {</code>
+            <code>    html.chrome { <mark>height: 187mm</mark> }</code>
+            <code>    html.safari { <mark>height: 167mm</mark> }</code>
+            <code>}</code>
+        </pre>
+
+        <div class='bro blink'   style='left: 580px; top: 480px; z-index: 6;'></div>
+        <div class='version'  style='left: 660px; top: 540px; z-index: 6;'>25</div>
+        <div class='bro safari'   style='left: 720px; top: 480px; z-index: 6;'></div>
+        <div class='version'  style='left: 810px; top: 540px; z-index: 6;'>6</div>
+    </div>
+</section>
+
+<section class='slide shout'>
+    <div class='slidein'>
+        <h2>Предпросмотр<br> печати<br> врёт</h2>
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <h2>@page</h2>
+        <pre>
+            <code><mark class='comment'>/* Обнулить поля */</mark></code>
+            <code>@page {</code>
+            <code>    margin: <mark>0</mark></code>
+            <code>}</code>
+        </pre>
+
+        <img class='yashot yashot-p yashot-2' src='pictures/code/filled-sheet.jpg' alt=''>
+        <div class='bro blink'  style='left: 410px; bottom: 10px;'></div>
+
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <h2>@page</h2>
+        <pre>
+            <code><mark class='comment'>/* Обнулить поля */</mark></code>
+            <code>@page {</code>
+            <code>    margin: <mark class='important'>0</mark></code>
+            <code>}</code>
+        </pre>
+
+        <img class='yashot yashot-p yashot-2' src='pictures/code/filled-sheet-opera1.jpg' alt=''>
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <h2>@page</h2>
+        <pre>
+            <code><mark class='comment'>/* Обнулить поля */</mark></code>
+            <code>@page {</code>
+            <code>    margin: <mark class='important'>0</mark></code>
+            <code>}</code>
+        </pre>
+
+        <p class="note" style="font-size:  200%;"><em>Молодец!</em></p>
+
+        <img class='yashot yashot-p yashot-2' src='pictures/code/filled-sheet-opera1.jpg' alt=''>
+        <div class='bro opera'  style='left: 410px; bottom: 10px;'></div>
+        <div class='version'  style='left: 500px; bottom: -10px'>12</div>
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <h2>@page</h2>
+        <pre>
+            <code><mark class='comment'>/* Обнулить поля */</mark></code>
+            <code>@page {</code>
+            <code>    margin: 0</code>
+            <code>}</code>
+        </pre>
+
+        <s><p class="note" style="font-size:  200%;"><em>Молодец!</em></p></s>
+
+        <img class='yashot yashot-p yashot-2' src='pictures/code/filled-sheet.jpg' alt=''>
+        <div class='bro opera'  style='left: 410px; bottom: 10px;'></div>
+        <div class='version'  style='left: 500px; bottom: -10px'>18+</div>
+    </div>
+</section>
+
+
+<section class='slide'>
+    <div class='slidein'>
+        <h2 class='title' style="position: relative; top: -.5em; left: -0.3em;">Что-то здесь<br>неправильно</h2>
+
+        <img class='yashot yashot-p yashot-2' src='pictures/competitor/ya-map.jpg' alt=''>
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <h2 class='title'>Линии?!</h2>
+
+        <img class='yashot yashot-p yashot-2' src='pictures/code/borders.png' alt=''>
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <h2 class='title'>Линии?!</h2>
+
+        <ul style='position: absolute; left:  100px;'>
+            <li>это точно не <code>border</code></li>
+            <li>точно не <code>outline</code></li>
+            <li>не зазор между блоками</li>
+            <li>...</li>
+            <li>что это? o_O</li>
+        </ul>
+
+        <img class='yashot yashot-p yashot-2' src='pictures/code/borders.png' alt=''>
+    </div>
+</section>
+
+<!--  !!!!!!!!!!!!!!!!!!!!!!!  -->
+<section class='slide shout'>
+    <div class='slidein'>
+        <h2>Javascript<span class='smile green'>;)</span></h2>
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <h2>События</h2>
+
+        <ul>
+            <li>onbeforeprint</li>
+            <li>onafterprint</li>
+        </ul>
+
+        <div class='bro ie'   style='left: 380px; top: 320px'></div>
+        <div class='version'  style='left: 470px; top: 380px;'>5+</div>
+
+        <div class='bro ff'   style='left: 520px; top: 320px'></div>
+        <div class='version'  style='left: 620px; top: 380px;'>6+</div>
+
+        <div class="next">
+            <div class='bro safari disabled'   style='left: 660px; top: 320px'></div>
+            <div class='version'      style='left: 780px; top: 380px;'>не захотели</div>
+        </div>
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <h2>Match @media</h2>
+
+        <pre class="small-medium">
+            <code>if (window.matchMedia(' (min-width: 400px) ').matches) {</code>
+            <code>    <mark class='comment'>// do something</mark></code>
+            <code>}</code>
+        </pre>
+
+        <div class='bro safari'   style='left: 660px; top: 320px'></div>
+        <div class='version'      style='left: 750px; top: 380px;'>5.1</div>
+
+        <div class="next">
+            <div class='bro opera'   style='left: 250px; top: 320px'></div>
+            <div class='version'  style='left: 330px; top: 380px;'>12</div>
+
+            <div class='bro ie'   style='left: 380px; top: 320px'></div>
+            <div class='version'  style='left: 470px; top: 380px;'>10</div>
+
+            <div class='bro ff'       style='left: 520px; top: 320px'></div>
+            <div class='version'  style='left: 620px; top: 380px;'>6+</div>
+
+
+            <div class='bro chrome'   style='left: 800px; top: 320px'></div>
+            <div class='version'      style='left: 900px; top: 380px;'>9+</div>
+        </div>
+
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <h2>Помните, мечтали о красоте...</h2>
+        <h2 style="position: absolute; top: 380px">Неужели, сбылось? :)</h2>
+
+        <pre class="small-medium">
+            <code>if (<mark>page.orientation === 'landscape'</mark>) {</code>
+            <code>    <mark class='comment'>// do something</mark></code>
+            <code>}</code>
+        </pre>
+
+        <br>
+        <br>
+        <pre class="small-medium">
+            <code>if (window.matchMedia('<mark>print and (orientation: landscape)</mark>').matches) {</code>
+            <code>    <mark class='comment'>// do something</mark></code>
+            <code>}</code>
+        </pre>
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <h2>Match "@media print"</h2>
+        <h2 style="position: absolute; top: 380px">Match "@media orientation"</h2>
+
+        <pre class="small-medium">
+            <code>if (window.matchMedia('<mark>print</mark>').matches) {</code>
+            <code>    <mark class='comment'>// do something</mark></code>
+            <code>}</code>
+        </pre>
+
+        <div class='bro safari'   style='left: 660px; top: 220px'></div>
+        <div class='version'      style='left: 750px; top: 280px;'>5.1</div>
+
+        <div class='bro blink'   style='left: 800px; top: 220px'></div>
+
+        <br>
+        <br>
+        <pre class="small-medium">
+            <code>if (window.matchMedia('<mark>print and (orientation: landscape)</mark>').matches) {</code>
+            <code>    <mark class='comment'>// do something</mark></code>
+            <code>}</code>
+        </pre>
+        <div class='bro blink'   style='left: 800px; top: 500px'></div>
+
+    </div>
+</section>
+
+<section class='slide qr'>
+    <div class='slidein'>
+        <h2 style="margin-bottom: 1em;">TJ VanToll<br>"Detecting Print Requests with JavaScript"</h2>
+
+        <div>
+            <img src='pictures/browsers/tjvantoll.png' alt='' style="margin-bottom: 0;"><br>
+            <a href='http://clck.ru/8vbdS'>http://clck.ru/8vbdS</a>
+        </div>
+    </div>
+</section>
+<!--  !!!!!!!!!!!!!!!!!!!!!!!  -->
+
+<section class='slide shout'>
+    <div class='slidein'>
+        <h2>Адаптивный комментарий</h2>
+    </div>
+</section>
+
+<section class='slide wide screen screen-ya'>
+    <div class='slidein'>
+        <img  class='yashot yashot-p yashot-1' src='pictures/competitor/ya-comment-big1.jpg' alt=''>
+        <img  class='yashot yashot-p yashot-2' src='pictures/competitor/ya-comment-big2.jpg' alt=''>
+        <!--<span class='arr arr-right-ok' style='top: 10px; left: 360px;'></span>-->
+    </div>
+</section>
+
+<section class='slide wide screen screen-ya'>
+    <div class='slidein'>
+        <img  class='yashot yashot-p' src='pictures/competitor/ya-comment.jpg' alt=''>
+        <span class='arr arr-left-ok' style='bottom: -10px; left: 735px;'></span>
+    </div>
+</section>
+
+<section class='slide wide screen'>
+    <div class='slidein'>
+        <h2 style="position: absolute; top: 500px; left: 120px">5 строк</h2>
+        <img  class='yashot yashot-p' src='pictures/competitor/ya-comment-5.jpg' alt=''>
+    </div>
+</section>
+
+<section class='slide layout'>
+    <div class='slidein'>
+        <h2>Хочется Element Queries:</h2>
+
+        <pre class="small-medium">
+            <code>.footer {</code>
+            <code>    position: absolute</code>
+            <code>    bottom: 0</code>
+            <code>}
+            </code>
+            <code>.footer and <mark>(min-height: 86px)</mark> {</code>
+            <code>    position: static</code>
+            <code>}</code>
+        </pre>
+    </div>
+</section>
+
+<section class='slide cover'>
+    <div class='slidein'>
+        <img src='pictures/print-map-msk-btn2.jpg' alt=''>
+    </div>
+</section>
+
+<section class='slide layout'>
+    <div class='slidein'>
+        <h2>Комментарий на второй лист:</h2>
+
+        <pre class="small-medium">
+            <code>if (footerHeight > 86) {</code>
+            <code>    footer.addClass('on-next-page');</code>
+            <code>}</code>
+        </pre>
+        <pre class="small-medium">
+            <code><mark class="comment">/* Больше 86px — отправляется на второй лист */</mark></code>
+            <code>.footer.on-next-page {</code>
+            <code>    <mark>position: static</mark></code>
+            <code>}</code>
+        </pre>
+    </div>
+</section>
+
+<section class='slide wide screen'>
+    <div class='slidein'>
+        <h2 style="position: absolute; top: 400px; left: 120px">15 строк</h2>
+        <img  class='yashot yashot-p' src='pictures/competitor/ya-comment-15.jpg' alt=''>
+    </div>
+</section>
+
+<section class='slide wide screen'>
+    <div class='slidein'>
+        <h2 style="position: absolute; top: 300px; left: 120px">15 ?</h2>
+        <img  class='yashot yashot-a' src='pictures/competitor/ya-comment-album-15.jpg' alt=''>
+    </div>
+</section>
+
+<section class='slide wide screen'>
+    <div class='slidein'>
+        <h2 style="position: absolute; top: 360px; left: 50px">10 строк</h2>
+        <img  class='yashot yashot-a' src='pictures/competitor/ya-comment-album-10.jpg' alt=''>
+    </div>
+</section>
+
+<section class='slide layout'>
+    <div class='slidein'>
+        <h2>Хочется Media + Element Queries</h2>
+
+        <pre class="small-medium">
+            <code>@media print and (orientation: landscape) {</code>
+            <code>    .footer and <mark>(min-height: 160px)</mark> { position: static }</code>
+            <code>}
+            </code>
+            <code>@media print and (orientation: portrait) {</code>
+            <code>    .footer and <mark class="one">(min-height: 240px)</mark> { position: static }</code>
+            <code>}</code>
+        </pre>
+    </div>
+</section>
+
+<section class='slide layout'>
+    <div class='slidein'>
+        <h2>Наша красота:</h2>
+
+        <pre class="small-medium">
+            <code>if (footerHeight > 160) { </code>
+            <code>    footer.addClass('on-next-page_<mark>for-landscape</mark>'); </code>
+            <code>}
+            </code>
+            <code>if (footerHeight > 240) { </code>
+            <code>    footer.addClass('on-next-page_<mark class="one">for-portrait</mark>'); </code>
+            <code>}</code>
+        </pre>
+    </div>
+</section>
+
+<section class='slide layout'>
+    <div class='slidein'>
+        <h2>Наша красота:</h2>
+
+        <pre class="small-medium">
+            <code><mark class="comment">&lt;!-- Подвал меньше 160px --&gt;</mark></code>
+            <code>&lt;div class="footer"&gt;&lt;/div&gt;
+            </code>
+            <code><mark class="comment">&lt;!-- Больше 160px --&gt;</mark></code>
+            <code>&lt;div class="footer on-next-page_<mark>for-landscape</mark>"&gt;&lt;/div&gt;
+            </code>
+            <code><mark class="comment">&lt;!-- Больше 240px --&gt;</mark></code>
+            <code>&lt;div class="footer on-next-page_<mark>for-landscape</mark>
+                   on-next-page_<mark class="one">for-portrait</mark>"&gt;&lt;/div&gt;</code>
+        </pre>
+    </div>
+</section>
+
+<section class='slide layout'>
+    <div class='slidein'>
+        <h2>Наша красота:</h2>
+
+        <pre class="small-medium">
+            <code>@media print {</code>
+            <code>    <mark class="comment">/* Подвал меньше 160px */</mark></code>
+            <code>    .footer { position: absolute; bottom: 0 }</code>
+            <code>} </code>
+            <code>@media print and (orientation:<mark>landscape</mark>) {</code>
+            <code>    <mark class="comment">/* Больше 160px */</mark></code>
+            <code>    .footer.on-next-page_<mark>for-landscape</mark> { position: static }</code>
+            <code>}</code>
+            <code>@media print and (orientation:<mark class="one">portrait</mark>) {</code>
+            <code>    <mark class="comment">/* Больше 240px */</mark></code>
+            <code>    .footer.on-next-page_<mark class="one">for-portrait</mark> { position: static }</code>
+            <code>}</code>
+        </pre>
+    </div>
+</section>
+
+<section class='slide wide screen'>
+    <div class='slidein'>
+        <img  class='yashot yashot-p yashot-1' src='pictures/competitor/ya-comment-15.jpg' alt=''>
+        <img  class='yashot yashot-a yashot-2' src='pictures/competitor/ya-comment-album-10.jpg' alt=''>
+        <h2 style="position: absolute; bottom: 20px; left: 140px; z-index: 1000">15 строк</h2>
+        <h2 style="position: absolute; bottom: 20px; right: 220px; z-index: 1000">10 строк</h2>
+    </div>
+</section>
+
+<!--  !!!!!!!!!!!!!!!!!!!!!!!  -->
+<section class='slide shout'>
+    <div class='slidein'>
+        <h2 style="font-size: 130px">Масштабирование карты</h2>
+    </div>
+</section>
+
+<section class='slide wide screen'>
+    <div class='slidein'>
+
+        <img class='yashot yashot-p yashot-1' height="600" src='pictures/zoom/bro.png' alt=''>
+        <div class="l-point" style="left: 55px; top: 300px; margin: 0;"></div>
+        <div class="l-point" style="left: 425px; top: 300px; margin: 0;"></div>
+
+
+        <div class="next">
+            <div class="l-point" style="left: 537px; top: 300px; margin: 0; z-index: 3"></div>
+            <div class="l-point" style="left: 937px; top: 300px; margin: 0; z-index: 3"></div>
+
+            <img class='yashot yashot-p yashot-2' style="left: 560px; height: 550px; top: 65px; z-index: 3"
+                 src='pictures/zoom/page.png' alt=''>
+
+            <div class="next">
+                <img src="pictures/zoom/arr-l.png" style="position: absolute; top: 340px; right: 50px; width
+                : 100px; z-index: 2;">
+                <img src="pictures/zoom/arr-l.png" style="position: absolute; top: 340px; right: 390px;  z-index: 2;
+                width: 100px; -webkit-transform: rotate(-180deg); -moz-transform: rotate(-180deg); -ms-transform: rotate(-180deg); -o-transform: rotate(-180deg); transform: rotate(-180deg);">
+            </div>
+
+            <img src='pictures/zoom/msk.jpg' alt='' style="position: absolute; left: 507px; top: -15px; z-index: 1;
+            opacity: 1; width: 500px; clip: rect(140px, 468px, 551px, 28px)">
+
+
+            <div style="position: absolute; left: 534px; top: 125px; width: 30px; height: 412px; background-color:
+            #fff; opacity: 0.3; z-index: 12;"></div>
+            <div style="position: absolute; left: 952px; top: 125px; width: 25px; height: 412px; background-color:
+            #fff; opacity: 0.3; z-index: 12;"></div>
+        </div>
+
+
+    </div>
+</section>
+
+<!--  !!!!!!!!!!!!!!!!!!!!!!!  -->
+
+<section class='slide shout'>
+    <div class='slidein'>
+        <h2>Неточный<br> центр карты</h2>
+    </div>
+</section>
+
+<section class='slide layout'>
+    <div class='slidein'>
+        <h2>Неточный центр<br>карты</h2>
+
+        <div class='l l-abs l-map l-map-r'>
+            <div class='next l-h'>Шапка</div>
+            <div class='l-c' style="height: 100%"><img src="pictures/msk2.png"></div>
+            <div class='next l-f'>Подвал</div>
+            <div class='next l-point'></div>
+        </div>
+
+    </div>
+</section>
+
+<section class='slide layout'>
+    <div class='slidein'>
+        <h2>Неточный центр<br>карты</h2>
+
+        <div class='l l-abs l-map l-map-r'>
+            <div class='l-h'>Шапка</div>
+            <div class='l-c' style="height: 100%"><img src="pictures/msk2.png"></div>
+            <div class='l-point' style="margin-top: -110px;"></div>
+            <div class='l-f l-f-big'>Подвал</div>
+        </div>
+    </div>
+</section>
+
+<section class='slide layout'>
+    <div class='slidein'>
+        <h2>Неточный центр<br>карты</h2>
+
+        <div class='l l-abs l-map l-map-r'>
+            <div class='l-h'>Шапка</div>
+            <div class='l-p'>Панорама</div>
+            <div class='l-c' style="height: 100%"><img src="pictures/msk2.png"></div>
+            <div class='l-point' style="margin-top: 60px;"></div>
+            <div class='l-f'>Подвал</div>
+        </div>
+    </div>
+</section>
+
+<section class='slide layout'>
+    <div class='slidein'>
+        <div class='l l-abs l-map'>
+            <div class='l-h'>Шапка</div>
+            <div class='l-p'>Панорама</div>
+            <div class='l-c' style="height: 100%"><img src="pictures/msk2.png"></div>
+            <div class='l-point' style="margin-top: 60px;"></div>
+            <div class='l-f'>Подвал</div>
+        </div>
+        <div class='l l-abs l-map l-map-r'>
+            <div class='l-h'>Шапка</div>
+            <div class='l-c' style="height: 100%"><img src="pictures/msk2.png"></div>
+            <div class='l-point' style="margin-top: -110px;"></div>
+            <div class='l-f l-f-big'>Подвал</div>
+        </div>
+    </div>
+</section>
+
+<section class='slide cover'>
+    <div class='slidein'>
+        <img src='pictures/print-map-msk-btn2.jpg' alt=''>
+    </div>
+</section>
+
+<section class='slide layout'>
+    <div class='slidein'>
+        <h2>Переместить центр<br> карты</h2>
+
+        <pre class="small" style="position: absolute; left: 3em">
+            <code>&lt;style media="print and (orientation:portrait)"&gt;</code>
+            <code>    .map {<mark>top: -35px</mark>}</code>
+            <code>&lt;/style&gt;</code>
+        </pre>
+
+        <div class='l l-abs l-map l-map-r' style="right: 100px;">
+            <div class='l-h'>Шапка</div>
+            <div class='l-c' style="height: 100%"><img src="pictures/msk2.png" style="margin-top: -440px;"></div>
+            <div class='l-point' style="margin-top:  -95px;"></div>
+            <div class='l-f l-f-big'>Подвал</div>
+        </div>
+    </div>
+</section>
+
+<section class='slide layout'>
+    <div class='slidein'>
+        <h2>Переместить центр<br> карты</h2>
+
+        <pre class="small" style="position: absolute; left: 3em">
+            <code>&lt;style media="print and (orientation:portrait)"&gt;</code>
+            <code>    .map {<mark>top: 75px</mark>}</code>
+            <code>&lt;/style&gt;</code>
+        </pre>
+
+        <div class='l l-abs l-map l-map-r' style="right: 100px;">
+            <div class='l-h'>Шапка</div>
+            <div class='l-p'>Панорама</div>
+            <div class='l-c' style="height: 100%"><img src="pictures/msk2.png" style="margin-top: -295px;"></div>
+            <div class='l-point' style="margin-top: 50px;"></div>
+            <div class='l-f'>Подвал</div>
+        </div>
+    </div>
+</section>
+
+
+<section class='slide qr'>
+    <div class='slidein'>
+        <h2>jQuery.injectCSS</h2>
+
+        <div>
+            <img src='pictures/injectcss.png' alt=''><br>
+            <a href='http://clck.ru/8hvkH'>http://clck.ru/8hvkH</a>
+        </div>
+    </div>
+</section>
+
+<section class='slide shout'>
+    <div class='slidein'>
+        <h2>Фон</h2>
+    </div>
+</section>
+
+<section class='slide shout'>
+    <div class='slidein'>
+        <div class='mask'>
+            <pre class='biggest' style='position: absolute; left: 10px; top: 300px; opacity: 0.5'>
+                <code>bgcolor, background</code>
+            </pre>
+            <div class='mask-deny'></div>
+        </div>
+    </div>
+</section>
+
+<section class='slide wide slide-iframe'>
+    <div class='slidein'>
+        <iframe height='640px' width='1024' src='sites/cat2/index.html'></iframe>
+    </div>
+</section>
+
+<section class='slide wide slide-iframe'>
+    <div class='slidein'>
+        <iframe height='640px' width='1024' src='sites/dog2/index.html'></iframe>
+    </div>
+</section>
+
+<section class='slide wide slide-iframe'>
+    <div class='slidein'>
+        <iframe height='640px' width='1024' src='sites/cat1/index.html'></iframe>
+    </div>
+</section>
+
+<section class='slide qr'>
+    <div class='slidein'>
+        <h2>CSSWG: &laquo;Как включить печать фона?&raquo;</h2>
+
+        <div>
+            <img src='pictures/browsers/adjust.gif' alt=''><br>
+            <a href='http://clck.ru/8hLnN'>http://clck.ru/8hLnN</a>
+        </div>
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <h2>CSSWG: &laquo;Как включить печать фона?&raquo;</h2>
+
+        <pre>
+            <code>.selector {</code>
+            <code>    -webkit-print-color-adjust: exact</code>
+            <code>}</code>
+        </pre>
+
+        <div class='next'>
+            <code>Одно из предложений</code>
+            <pre>
+                <code>@page {</code>
+                <code>    print-color-adjust: exact</code>
+                <code>}</code>
+            </pre>
+        </div>
+    </div>
+</section>
+
+<section class='slide shout'>
+    <div class='slidein'>
+        <h2>Все браузеры печатают...</h2>
+    </div>
+</section>
+
+<section class='slide wide'>
+    <div class='slidein'>
+        <div class='l l-abs l-map'>
+            <div class='l-h next' style='background:  #fff;'>&lt;div class='head'&gt; Шапка &lt;/div&gt;</div>
+            <div class='l-c l-c-y' style="height: 598px">&lt;div class='map'&gt; Карта &lt;/div&gt;</div>
+            <div class='l-f next' style='background:  #fff;'>&lt;div class='foot'&gt; Подвал &lt;/div&gt;</div>
+        </div>
+
+        <span class='next'>
+            <img class='yashot yashot-p yashot-2' src='pictures/competitor/ya-comment.jpg' alt=''>
+            <span class='arr arr-right-ok' style='top: 240px; left: 390px; z-index:  100;'></span>
+        </span>
+
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <h2>Больше белого!</h2>
+
+        <ul>
+            <li>Это красиво</li>
+            <li>Это воздушно</li>
+            <li>Берите пример с хорошего ;)</li>
+        </ul>
+    </div>
+</section>
+
+<section class='slide shout'>
+    <div class='slidein'>
+        <h2>IE не печатает белый</h2>
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <h2>А так печатает</h2>
+
+        <pre>
+            <code>.selector {</code>
+            <code>  filter: progid:DXImageTransform.Microsoft.<mark>gradient</mark>(
+                    startColorstr=<mark>'#ffffff'</mark>,
+                    endColorstr=<mark>'#ffffff'</mark>,
+                    GradientType=0 );</code>
+            <code>}</code>
+        </pre>
+
+        <div class='bro ie' style='left: 680px; top: 470px'></div>
+        <div class='version' style='left: 780px; top: 530px'>8-</div>
+    </div>
+</section>
+
+<section class='slide shout'>
+    <div class='slidein'>
+        <h2>Фоновый цвет</h2>
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <div class='bgtitle'>Фоновый цвет</div>
+
+        <h2>1. Экстраразметка с картинкой <span class='green-box'></span></h2>
+
+        <pre class='small'>
+            <code>&lt;div class='view'&gt;</code>
+            <code>    &lt;img  class='map' src='<mark>green.png</mark>'&gt;</code>
+            <code>&lt;/div&gt;
+            </code>
+            <code>.view {</code>
+            <code>    position: relative</code>
+            <code>}</code>
+            <code>.map {</code>
+            <code>    position: absolute</code>
+            <code>    top: 0; bottom: 0</code>
+            <code>    left: 0; right: 0</code>
+            <code>}</code>
+        </pre>
+
+        <div class='green-page'></div>
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <div class='bgtitle'>Фоновый цвет</div>
+
+        <h2>1. Экстраразметка с картинкой <span class='green-box'></span></h2>
+
+        <pre class='small'>
+            <code>&lt;div class='view'&gt;</code>
+            <code>    &lt;img  class='map' src='green.png'&gt;</code>
+            <code>&lt;/div&gt;
+            </code>
+            <code>.view {</code>
+            <code>    position: relative</code>
+            <code>}</code>
+            <code>.map {</code>
+            <code>    position: absolute</code>
+            <code>    top: 0; bottom: 0</code>
+            <code>    left: 0; right: 0</code>
+            <code>}</code>
+        </pre>
+
+        <div class='green-page'></div>
+
+        <div class='mask'>
+            <div class='mask-stamp mask-notok'>Старьё!</div>
+        </div>
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <div class='bgtitle'>Фоновый цвет</div>
+
+        <h2>2. Псевдоэлемент + PNG</h2>
+
+        <pre class='small'>
+            <code><mark>&lt;div class='view'&gt;&lt;/div&gt;</mark>
+            </code>
+            <code>.view {</code>
+            <code>    position: relative</code>
+            <code>}</code>
+            <code><mark>.view::before</mark> {</code>
+            <code>    position: absolute</code>
+            <code>    top: 0; bottom: 0</code>
+            <code>    left: 0; right: 0
+            </code>
+            <code>    <mark>content</mark>: url(<mark class='important'>green.png</mark>)</code>
+            <code>}</code>
+        </pre>
+
+        <div class='green-page unfilled'>
+            <!--<span class='green'></span>-->
+        </div>
+    </div>
+</section>
+<section class='slide'>
+    <div class='slidein'>
+        <div class='bgtitle'>Фоновый цвет</div>
+
+        <h2>2. Псевдоэлемент + PNG</h2>
+
+        <pre class='small'>
+            <code><mark>&lt;div class='view'&gt;&lt;/div&gt;</mark>
+            </code>
+            <code>.view {</code>
+            <code>    position: relative</code>
+            <code>}</code>
+            <code><mark>.view::before</mark> {</code>
+            <code>    position: absolute</code>
+            <code>    top: 0; bottom: 0</code>
+            <code>    left: 0; right: 0
+            </code>
+            <code>    <mark>content</mark>: url(<mark class='important'>green.png</mark>)</code>
+            <code>}</code>
+        </pre>
+
+        <div class='green-page unfilled'>
+            <span class='green-box'></span>
+        </div>
+
+        <div class='next mask'>
+            <div class='mask-stamp mask-fail'>Неуспех!</div>
+        </div>
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <div class='bgtitle'>Фоновый цвет</div>
+
+        <h2>2. Псевдоэлемент + SVG</h2>
+
+        <pre class='small'>
+            <code>&lt;div class='view'&gt;&lt;/div&gt;
+            </code>
+            <code>.view::before {</code>
+            <code>    ...</code>
+            <code>    content: url(green.<mark class='important'>svg</mark>)</code>
+            <code>}
+
+            </code>
+            <code>&lt;svg width='<mark>100%</mark>' height='<mark>100%</mark>'&gt;</code>
+            <code>    &lt;rect fill='<mark>#00ff00</mark>' width='100%' height='100%'/&gt;</code>
+            <code>&lt;/svg&gt;</code>
+        </pre>
+        <div class='green-page'></div>
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <div class='bgtitle'>Фоновый цвет</div>
+
+        <h2>2. Псевдоэлемент + SVG</h2>
+
+        <pre class='small'>
+            <code>&lt;div class='view'&gt;&lt;/div&gt;
+            </code>
+            <code>.view::before {</code>
+            <code>    ...</code>
+            <code>    content: url(<mark class='important'>'data:image/svg+xml;&lt;svg&gt;...&lt;/svg&gt;'</mark>)</code>
+            <code>}
+
+            </code>
+            <code>&lt;svg width='100%' height='100%'&gt;</code>
+            <code>    &lt;rect fill='#00ff00' width='100%' height='100%'/&gt;</code>
+            <code>&lt;/svg&gt;</code>
+        </pre>
+        <div class='green-page'></div>
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <div class='bgtitle'>Фоновый цвет</div>
+
+        <h2>2. Псевдоэлемент + SVG</h2>
+
+        <pre class='small'>
+            <code>&lt;div class='view'&gt;&lt;/div&gt;
+            </code>
+            <code>.view::before {</code>
+            <code>    ...</code>
+            <code>    content: url('data:image/svg+xml;<mark class='important'>base64,[data]</mark>')</code>
+            <code>}
+
+            </code>
+            <code>&lt;svg width='100%' height='100%'&gt;</code>
+            <code>    &lt;rect fill='#00ff00' width='100%' height='100%'/&gt;</code>
+            <code>&lt;/svg&gt;</code>
+        </pre>
+        <div class='green-page'></div>
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <div class='bgtitle'>Фоновый цвет</div>
+
+        <h2>2. Псевдоэлемент + SVG</h2>
+
+        <pre class='small'>
+            <code>&lt;div class='view'&gt;&lt;/div&gt;
+            </code>
+            <code>.view::before {</code>
+            <code>    ...</code>
+            <code>    content: url('data:image/svg+xml;<mark>base64,[data]</mark>')</code>
+            <code>}
+
+            </code>
+            <code>&lt;svg width='100%' height='100%'&gt;</code>
+            <code>    &lt;rect fill='#00ff00' width='100%' height='100%'/&gt;</code>
+            <code>&lt;/svg&gt;</code>
+        </pre>
+        <div class='green-page unfilled'></div>
+
+        <div class='mask'>
+            <div class='bro opera' style='left: 442px; top: 500px'></div>
+            <div class='version' style='left: 530px; top: 560px'>12</div>
+            <div class='support' style='left: 575px; top: 560px'>на печати</div>
+            <pre class='biggest' style='position: absolute; left: 35px; top: 350px'>
+                <code><mark>content:url(SVG)</mark></code>
+            </pre>
+            <div class='mask-deny'></div>
+        </div>
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <div class='bgtitle'>Фоновый цвет</div>
+
+        <h2>3. Border</h2>
+
+        <pre class='small'>
+            <code>&lt;div class='view'&gt;&lt;/div&gt;
+            </code>
+            <code>.view {</code>
+            <code>    position: relative</code>
+            <code>    overflow: hidden</code>
+            <code>}</code>
+            <code>.view<mark>::before</mark> {</code>
+            <code>    position: absolute; z-index:-1</code>
+            <code>    top: 0; bottom: 0</code>
+            <code>    left: 0; right: 0</code>
+            <code>    content: ''</code>
+            <code>    <mark>border: solid green</mark></code>
+            <code>    <mark>border-width: 1000px 0 0</mark></code>
+            <code>}</code>
+        </pre>
+
+        <div class='green-page'></div>
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <div class='bgtitle'>Фоновый цвет</div>
+
+        <h2>3. Border - i-блок</h2>
+
+        <pre class='small'>
+            <code>&lt;div class='head <mark>i-bgcolor</mark>'&gt;&lt;/div&gt;</code>
+            <code>&lt;div class='foot <mark>i-bgcolor</mark>'&gt;&lt;/div&gt;</code>
+            <code>.i-bgcolor {</code>
+            <code>    position: relative</code>
+            <code>    overflow: hidden</code>
+            <code>}</code>
+            <code><mark>.i-bgcolor::before</mark> {</code>
+            <code>    position: absolute; z-index:-1</code>
+            <code>    top: 0; bottom: 0</code>
+            <code>    left: 0; right: 0</code>
+            <code>    content: ''</code>
+            <code>    <mark>border-style: solid</mark></code>
+            <code>    <mark>border-width: 1000px 0 0</mark></code>
+            <code>}</code>
+        </pre>
+
+        <pre class='small' style='position: absolute; top: 192px; left: 550px'>
+            <code style='counter-reset: code 14'><mark class='important'>.head::before</mark> {</code>
+            <code>    border-color: green</code>
+            <code>}</code>
+            <code><mark class='important'>.foot::before</mark> {</code>
+            <code>    border-color: red</code>
+            <code>}</code>
+        </pre>
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <div class='bgtitle'>Фоновый цвет</div>
+
+        <h2>3. Border - i-блок</h2>
+
+        <pre class='small'>
+            <code>&lt;div class='head <mark>i-bgcolor</mark>'&gt;&lt;/div&gt;</code>
+            <code>&lt;div class='foot <mark>i-bgcolor</mark>'&gt;&lt;/div&gt;</code>
+            <code>.i-bgcolor {</code>
+            <code>    position: relative</code>
+            <code>    overflow: hidden</code>
+            <code>}</code>
+            <code><mark>.i-bgcolor::before</mark> {</code>
+            <code>    position: absolute; z-index:-1</code>
+            <code>    top: 0; bottom: 0</code>
+            <code>    left: 0; right: 0</code>
+            <code>    content: ''</code>
+            <code>    <mark>border-style: solid</mark></code>
+            <code>    <mark>border-width: 1000px 0 0</mark></code>
+            <code>}</code>
+        </pre>
+
+        <pre class='small' style='position: absolute; top: 192px; left: 550px'>
+            <code style='counter-reset: code 14'><mark>.head:before</mark> {</code>
+            <code>    border-color: green</code>
+            <code>    filter: ...Microsoft.gradient(
+            startColorstr='#ff008000'
+            endColorstr='#ff008000'
+            GradientType=0)</code>
+            <code>}</code>
+            <code><mark>.foot:before</mark> {</code>
+            <code>    border-color: red</code>
+            <code>    filter: ...Microsoft.gradient(
+            startColorstr='#ffff0000'
+            endColorstr='#ffff0000'
+            GradientType=0)</code>
+            <code>}</code>
+        </pre>
+
+        <div class='mask'>
+            <div class='mask-stamp mask-ok'>Утверждено</div>
+        </div>
+    </div>
+</section>
+
+<section class='slide shout'>
+    <div class='slidein'>
+        <h2>Фоновое изображение</h2>
+    </div>
+</section>
+
+<section class="slide wide screen screen-ya">
+    <div class="slidein">
+        <img class="yashot yashot-a" src="pictures/fen-p.jpg" alt="">
+    </div>
+</section>
+
+<section class="slide wide screen screen-ya">
+    <div class="slidein">
+        <img class="yashot yashot-a" src="pictures/fen-p-xy.jpg" alt="">
+    </div>
+</section>
+
+<section class="slide wide screen screen-ya">
+    <div class="slidein">
+        <img class="yashot yashot-a" src="pictures/fen-p-x.jpg" alt="">
+    </div>
+</section>
+
+<section class="slide wide screen screen-ya">
+    <div class="slidein">
+        <img class="yashot yashot-a" src="pictures/fen-p-y.jpg" alt="">
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <div class='bgtitle' style=''>Одиночная фоновая картинка</div>
+
+        <h2>1. Маркер списка</h2>
+
+        <pre class='small'>
+            <code>.view {</code>
+            <code>    width: 300px</code>
+            <code>    height: 200px
+            </code>
+            <code>    background: url(fox.png) 0 0 no-repeat</code>
+            <code>    <mark>list-style: url(fox.png) inside</mark></code>
+            <code>}
+            </code>
+            <code>@media <mark>print</mark> {</code>
+            <code>    .view {</code>
+            <code>        <mark>display: list-item</mark></code>
+            <code>    }</code>
+            <code>}</code>
+        </pre>
+
+        <div class='green-page' style='background: url(pictures/fen.small.jpg)'></div>
+
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <div class='bgtitle' style=''>Одиночная фоновая картинка</div>
+
+        <h2>2. Псевдоэлемент + PNG</h2>
+
+        <pre class='small'>
+            <code>&lt;div class='view'&gt;&lt;/div&gt;
+            </code>
+            <code>.view {</code>
+            <code>    position: relative
+            </code>
+            <code>    width: 300px</code>
+            <code>    height: 200px</code>
+            <code>}</code>
+            <code><mark>.view::before</mark> {</code>
+            <code>    position: absolute</code>
+            <code>    z-index:-1
+            </code>
+            <code>    <mark>content: url(fox.png)</mark></code>
+            <code>}</code>
+        </pre>
+
+        <div class='green-page' style='background: url(pictures/fen.small.jpg)'></div>
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <div class='bgtitle' style=''>Одиночная фоновая картинка</div>
+
+        <h2>2. Псевдоэлемент + PNG</h2>
+
+        <pre class='small'>
+            <code>&lt;div class='view'&gt;&lt;/div&gt;
+            </code>
+            <code>.view {</code>
+            <code>    position: relative
+            </code>
+            <code>    width: 300px</code>
+            <code>    height: 200px</code>
+            <code>}</code>
+            <code><mark>.view::before</mark> {</code>
+            <code>    position: absolute</code>
+            <code>    z-index:-1
+            </code>
+            <code>    <mark>content: url(fox.png)</mark></code>
+            <code>}</code>
+        </pre>
+
+        <div class='green-page' style='background: url(pictures/fen.small.jpg)'></div>
+
+        <div class='mask'>
+            <div class='mask-stamp mask-ok'>Утверждено</div>
+        </div>
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <div class='bgtitle' style=''>Одиночная фоновая картинка</div>
+
+        <h2>3. Псевдоэлемент + опять SVG</h2>
+
+        <pre class='small'>
+            <code>&lt;div class='view'&gt;&lt;/div&gt;
+            </code>
+            <code>.view {</code>
+            <code>    position: relative
+            </code>
+            <code>    <mark>width: 300px</mark></code>
+            <code>    <mark>height: 200px</mark></code>
+            <code>}</code>
+            <code>.view::before {</code>
+            <code>    position: absolute</code>
+            <code>    z-index:-1
+            </code>
+            <code>    content: url(fox.<mark class='important'>svg</mark>)</code>
+            <code>}</code>
+        </pre>
+
+        <pre class='small' style='position: absolute; top: 192px; left: 450px'>
+            <code style='counter-reset: code 11'>&lt;svg <mark>width='300'</mark> <mark>height='200'</mark>&gt;</code>
+            <code>    &lt;image xlink:href='fox.<mark class='important'>png</mark>' width='300' height='200' /&gt;</code>
+            <code>&lt;/svg&gt;</code>
+        </pre>
+
+        <div class='green-page' style='background: url(pictures/fen.small.jpg);top: 260px'></div>
+
+    </div>
+</section>
+
+
+<section class='slide'>
+    <div class='slidein'>
+        <div class='bgtitle' style=''>Одиночная фоновая картинка</div>
+
+        <h2>3. Псевдоэлемент + опять SVG</h2>
+
+        <pre class='small'>
+            <code>&lt;div class='view'&gt;&lt;/div&gt;
+            </code>
+            <code>.view {</code>
+            <code>    position: relative
+            </code>
+            <code>    <mark>width: 300px</mark></code>
+            <code>    <mark>height: 200px</mark></code>
+            <code>}</code>
+            <code>.view::before {</code>
+            <code>    position: absolute</code>
+            <code>    z-index:-1
+            </code>
+            <code>    content: url(fox.<mark class='important'>svg</mark>)</code>
+            <code>}</code>
+        </pre>
+
+        <pre class='small' style='position: absolute; top: 192px; left: 450px'>
+            <code style='counter-reset: code 11'>&lt;svg <mark>width='300'</mark> <mark>height='200'</mark>&gt;</code>
+            <code>    &lt;image xlink:href='fox.<mark class='important'>png</mark>' width='300' height='200' /&gt;</code>
+            <code>&lt;/svg&gt;</code>
+        </pre>
+
+        <div class='green-page unfilled' style='top: 260px'></div>
+
+        <div class='mask'>
+            <div class='bro opera'    style='left: 542px; top: 480px'></div>
+            <div class='version'      style='left: 630px; top: 540px'>12</div>
+            <div class='bro blink'   style='left: 680px; top: 480px'></div>
+            <div class='bro safari'   style='left: 820px; top: 480px'></div>
+
+            <div class='mask-deny'></div>
+        </div>
+
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <div class='bgtitle' style=''>Размноженная фоновая картинка</div>
+
+        <h2>1. Псевдоэлемент + SVG</h2>
+
+        <pre class='small'>
+            <code>&lt;div class='view'&gt;&lt;/div&gt;
+            </code>
+            <code>.view {</code>
+            <code>    position: relative</code>
+            <code>    overflow: hidden</code>
+            <code>    width: 400px</code>
+            <code>    height: 200px</code>
+            <code>}</code>
+            <code>.view::before {</code>
+            <code>    position: absolute</code>
+            <code>    z-index:-1
+            </code>
+            <code>    content: url(small.fox.svg)</code>
+            <code>}</code>
+        </pre>
+        <pre class='small' style='position: absolute; top: 192px; left: 435px'>
+            <code style='counter-reset: code 12'>&lt;svg width='<mark class='important'>9999</mark>' height='<mark>80</mark>'&gt;</code>
+            <code>    &lt;defs&gt;</code>
+            <code>        &lt;pattern id='myFox' width='<mark class='important'>9999</mark>' height='<mark>80</mark>'&gt;</code>
+            <code>            &lt;image xlink:href='small.fox.png'
+                   width='100' height='<mark>80</mark>'/&gt;</code>
+            <code>        &lt;/pattern&gt;</code>
+            <code>    &lt;/defs&gt;</code>
+            <code>    &lt;rect fill='url(#myFox)' width='<mark class='important'>9999</mark>' height='<mark>80</mark>'/&gt;</code>
+            <code>&lt;/svg&gt;</code>
+        </pre>
+
+        <div class='green-page' style='background: #fff url(pictures/fen.mini.jpg) 0 0 repeat-x; height: 180px; top: 440px; left:  600px;'></div>
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <div class='bgtitle' style=''>Размноженная фоновая картинка</div>
+
+        <h2>1. Псевдоэлемент + SVG</h2>
+
+        <pre class='small'>
+            <code>&lt;div class='view'&gt;&lt;/div&gt;
+            </code>
+            <code>.view {</code>
+            <code>    position: relative</code>
+            <code>    overflow: hidden</code>
+            <code>    width: 400px</code>
+            <code>    height: 200px</code>
+            <code>}</code>
+            <code>.view::before {</code>
+            <code>    position: absolute</code>
+            <code>    z-index:-1
+            </code>
+            <code>    content: url(small.fox.svg)</code>
+            <code>}</code>
+        </pre>
+        <pre class='small' style='position: absolute; top: 192px; left: 435px'>
+            <code style='counter-reset: code 12'>&lt;svg width='<mark>100</mark>' height='<mark class='important'>9999</mark>'&gt;</code>
+            <code>    &lt;defs&gt;</code>
+            <code>        &lt;pattern id='myFox' width='<mark>100</mark>' height='<mark class='important'>9999</mark>'&gt;</code>
+            <code>            &lt;image xlink:href='small.fox.png'
+                width='<mark>100</mark>' height='80'/&gt;</code>
+            <code>        &lt;/pattern&gt;</code>
+            <code>    &lt;/defs&gt;</code>
+            <code>    &lt;rect fill='url(#myFox)' width='<mark>100</mark>' height='<mark class='important'>9999</mark>'/&gt;</code>
+            <code>&lt;/svg&gt;</code>
+        </pre>
+
+        <div class='green-page' style='background: #fff url(pictures/fen.mini.jpg) 0 0 repeat-y; height: 180px; top: 440px; left:  600px;'></div>
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <div class='bgtitle' style=''>Размноженная фоновая картинка</div>
+
+        <h2>1. Псевдоэлемент + SVG</h2>
+
+        <pre class='small'>
+            <code>&lt;div class='view'&gt;&lt;/div&gt;
+            </code>
+            <code>.view {</code>
+            <code>    position: relative</code>
+            <code>    overflow: hidden</code>
+            <code>    width: 400px</code>
+            <code>    height: 200px</code>
+            <code>}</code>
+            <code>.view::before {</code>
+            <code>    position: absolute</code>
+            <code>    z-index:-1
+            </code>
+            <code>    content: url(small.fox.svg)</code>
+            <code>}</code>
+        </pre>
+        <pre class='small' style='position: absolute; top: 192px; left: 435px'>
+            <code style='counter-reset: code 12'>&lt;svg width='<mark class='important'>9999</mark>' height='<mark class='important'>9999</mark>'&gt;</code>
+            <code>    &lt;defs&gt;</code>
+            <code>        &lt;pattern id='myFox' width='<mark class='important'>9999</mark>' height='<mark class='important'>9999</mark>'&gt;</code>
+            <code>            &lt;image xlink:href='small.fox.png'
+                   width='100' height='80'/&gt;</code>
+            <code>        &lt;/pattern&gt;</code>
+            <code>    &lt;/defs&gt;</code>
+            <code>    &lt;rect fill='url(#myFox)' width='<mark class='important'>9999</mark>' height='<mark class='important'>9999</mark>'/&gt;</code>
+            <code>&lt;/svg&gt;</code>
+        </pre>
+
+        <div class='green-page' style='background: #fff url(pictures/fen.mini.jpg) 0 0 repeat; height: 180px; top: 440px; left:  600px;'></div>
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <div class='bgtitle' style=''>Размноженная фоновая картинка</div>
+
+        <h2>1. Псевдоэлемент + SVG</h2>
+
+        <pre class='small'>
+            <code>&lt;div class='view'&gt;&lt;/div&gt;
+            </code>
+            <code>.view {</code>
+            <code>    position: relative</code>
+            <code>    overflow: hidden</code>
+            <code>    width: 400px</code>
+            <code>    height: 200px</code>
+            <code>}</code>
+            <code>.view::before {</code>
+            <code>    position: absolute</code>
+            <code>    z-index:-1
+            </code>
+            <code>    content: url(small.fox.svg)</code>
+            <code>}</code>
+        </pre>
+        <pre class='small' style='position: absolute; top: 192px; left: 435px'>
+            <code style='counter-reset: code 12'>&lt;svg width='9999' height='9999'&gt;</code>
+            <code>    &lt;defs&gt;</code>
+            <code>        &lt;pattern id='myFox' width='9999' height='9999'&gt;</code>
+            <code>            &lt;image xlink:href='small.fox.png'
+                   width='100' height='80'/&gt;</code>
+            <code>        &lt;/pattern&gt;</code>
+            <code>    &lt;/defs&gt;</code>
+            <code>    &lt;rect fill='url(#myFox)' width='9999' height='9999'/&gt;</code>
+            <code>&lt;/svg&gt;</code>
+        </pre>
+
+        <div class='green-page unfilled' style='height: 180px; top: 440px; left:  600px;'></div>
+
+        <div class='mask'>
+            <div class='bro opera'    style='left: 542px; top: 480px'></div>
+            <div class='version'      style='left: 630px; top: 540px'>12</div>
+            <div class='bro blink'   style='left: 680px; top: 480px'></div>
+            <div class='bro safari'   style='left: 820px; top: 480px'></div>
+
+            <div class='mask-deny'></div>
+        </div>
+
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <div class='bgtitle' style=''>Размноженная фоновая картинка</div>
+
+        <h2>2. Border-image</h2>
+
+        <pre>
+            <code>...</code>
+            <code>border-image: url(box.png) 100 0 0 0 / auto repeat;</code>
+            <code>...</code>
+        </pre>
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <div class='bgtitle' style=''>Размноженная фоновая картинка</div>
+
+        <h2>2. Border-image</h2>
+
+        <pre class='small'>
+            <code>&lt;div class='view'&gt;&lt;/div&gt;
+            </code>
+            <code>.view {</code>
+            <code>    position: relative</code>
+            <code>    overflow: hidden</code>
+            <code>    width: 400px</code>
+            <code>    height: 200px</code>
+            <code>}</code>
+        </pre>
+        <pre class='small' style='position: absolute; top: 192px; left: 435px'>
+            <code style='counter-reset: code 7'>.view::before {</code>
+            <code>    position: absolute; z-index:-1</code>
+            <code>    top: 0</code>
+            <code>    left: 0</code>
+            <code>    right: 0</code>
+            <code>    content: ''</code>
+            <code>    border-style: solid</code>
+            <code>    border-width: <mark class="important">100px</mark> 0 0</code>
+            <code>    <mark>border-image: url(fox.png) <mark class="important">100</mark> 0 0 0 / auto repeat</mark></code>
+            <code>}</code>
+        </pre>
+
+        <div class='green-page' style='background: #fff url(pictures/fen.mini.jpg) 0 0 repeat-x; height: 180px; top: 440px; left:  85px;'></div>
+
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <div class='bgtitle' style=''>Размноженная фоновая картинка</div>
+
+        <h2>2. Border-image</h2>
+
+        <pre class='small'>
+            <code>&lt;div class='view'&gt;&lt;/div&gt;
+            </code>
+            <code>.view {</code>
+            <code>    position: relative</code>
+            <code>    overflow: hidden</code>
+            <code>    width: 400px</code>
+            <code>    height: 200px</code>
+            <code>}</code>
+        </pre>
+        <pre class='small' style='position: absolute; top: 192px; left: 435px'>
+            <code style='counter-reset: code 7'>.view::before {</code>
+            <code>    position: absolute; z-index:-1</code>
+            <code>    top: 0</code>
+            <code>    left: 0</code>
+            <code>    right: 0</code>
+            <code>    content: ''</code>
+            <code>    border-style: solid</code>
+            <code>    border-width: 0 0 0 <mark class="important">100px</mark></code>
+            <code>    border-image: url(fox.png) 0 0 0 <mark class="important">100</mark> / auto repeat</code>
+            <code>}</code>
+        </pre>
+
+        <div class='green-page' style='background: #fff url(pictures/fen.mini.jpg) 0 0 repeat-y; height: 180px; top: 440px; left:  85px;'></div>
+
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+        <div class='bgtitle' style=''>Растянутая фоновая картинка</div>
+
+        <h2>3. Бонус</h2>
+
+        <pre class='small'>
+            <code>&lt;div class='view'&gt;&lt;/div&gt;
+            </code>
+            <code>.view {</code>
+            <code>    position: relative</code>
+            <code>    overflow: hidden</code>
+            <code>    width: 400px</code>
+            <code>    height: 200px</code>
+            <code>}</code>
+        </pre>
+        <pre class='small' style='position: absolute; top: 192px; left: 435px'>
+            <code style='counter-reset: code 7'>.view::before {</code>
+            <code>    position: absolute; z-index:-1</code>
+            <code>    top: 0</code>
+            <code>    left: 0</code>
+            <code>    right: 0</code>
+            <code>    content: ''</code>
+            <code>    border-style: solid</code>
+            <code>    border-width: 0 0 0 100px</code>
+            <code>    border-image: url(fox.png) 0 0 0 100 / auto <mark class="important">stretch</mark></code>
+            <code>}</code>
+        </pre>
+
+        <div class='green-page' style='background: #fff url(pictures/fen.mini.jpg); background-size: cover; height: 180px; top: 440px; left:  85px;'></div>
+
+    </div>
+</section>
+
+<section class='slide'>
+    <div class='slidein'>
+
+        <ul class="recomendation" style="margin-top: -70px">
+            <li><strong>Нужен фоновый цвет?</strong>
+                <div><code>::before</code> + <code>border-color</code></div>
+            </li>
+            <li>Нужна одинокая картинка в фоне?
+                <div><code>::before</code> + <code>content: url(png)</code></div>
+            </li>
+            <li>Хотите замостить картинку?
+                <div><code>::before</code> + <code>border-image: url(png)</code> + <code>repeat</code></div>
+            </li>
+            <li>Или растянуть?
+                <div><code>::before</code> + <code>border-image: url(png)</code> + <code>stretch</code></div>
+            </li>
+        </ul>
+
+    </div>
+</section>
+
+<section class='slide shout'>
+    <div class='slidein'>
+        <!-- Пустой слайд -->
+    </div>
+</section>
+
+<section class="slide wide screen screen-ya">
+    <div class="slidein">
+        <img class="yashot yashot-p" src="pictures/competitor/ya-map.jpg" alt="">
+    </div>
+</section>
+
+<section class="slide final">
+    <div class='slidein'>
+        <h2>Распечатай <span class='red'>Я</span><span class='black'>ндекс.</span><span class='green'>Карты</span></h2>
+
+        <p>
+            Вадим&nbsp;Макишвили
+            <br>
+            <a href="mailto:makishvili@yandex-team.ru">makishvili@yandex-team.ru</a>
+        </p>
+
+        <!--
+                <ul>
+                    <li><a href="http://makishvili.com">makishvili.com</a></li>
+                    <li><a href="mailto:makishvili@yandex-team.ru">makishvili@yandex-team.ru</a></li>
+                </ul>
+        -->
+        <br>
+        <br>
+        <p>Презентация: <a href="makishvili.github.io/print-and-go/index.html">makishvili.github.io/print-and-go/index.html</a></p>
+    </div>
+</section>
+
+<!--
+    To hide progress bar from entire presentation
+    just remove “progress” element.
+    -->
+<div class='progress'>
+    <div></div>
+</div>
+<script src='shower/shower.min.js'></script>
+<!--<script src='shower/shower.js'></script>-->
+</body>
+</html>

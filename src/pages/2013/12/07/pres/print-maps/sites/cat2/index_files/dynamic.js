@@ -1,0 +1,10 @@
+_clustrmaps.layer('recent',{'points':[[49.0000,32.0000,"UA","Ukraine"]],timestamp:'201306171429'});
+_clustrmaps.layer('recent',{'points':[[49.0000,32.0000,"UA","Ukraine"],[55.7522,37.6156,"RU","Moscow"]],timestamp:'201306171324'});
+_clustrmaps.layer('recent',{'points':[[55.9142,37.8256,"RU","Korolëv"]],timestamp:'201306171248'});
+_clustrmaps.layer('recent',{'points':[[56.8519,60.6122,"RU","Yekaterinburg"]],timestamp:'201306171159'});
+_clustrmaps.layer('recent',{'points':[[60.0000,100.0000,"RU","Russian Federation"]],timestamp:'201306171157'});
+_clustrmaps.layer('recent',{'points':[[54.3282,48.3866,"RU","Ulyanovsk"]],timestamp:'201306171155'});
+_clustrmaps.layer('recent',{'points':[[54.3282,48.3866,"RU","Ulyanovsk"],[55.7522,37.6156,"RU","Moscow"]],timestamp:'201306171150'});
+_clustrmaps.layer('recent',{'points':[[52.9651,36.0785,"RU","Orël"]],timestamp:'201306171136'});
+_clustrmaps.layer('recent',{'points':[[55.7522,37.6156,"RU","Moscow"]],timestamp:'201306171128'});
+_clustrmaps.layer('recent',{'points':[[68.9792,33.0925,"RU","Murmansk"]],timestamp:'201306171041'});

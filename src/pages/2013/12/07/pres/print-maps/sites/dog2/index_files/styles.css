@@ -1,0 +1,30 @@
+a              { color: #3567CC; text-decoration: none }
+a:hover        { color: #3567CC; text-decoration:underline }
+.b              { color: #FFFFFF; text-decoration: none }
+.b:hover        { color: #FFFFFF; text-decoration:underline }
+
+a.mnu:hover    { color: #FFFFFF; text-decoration:underline }
+.color         { background-color: #FFFFFF}
+
+a.mnu          { color: #FFFFFF; text-decoration: none }
+
+h1 { font-size: 16px; font-family: verdana; }
+h2 { font-size: 14px; font-family: verdana; }
+h3 { font-size: 12px; font-family: verdana; }
+h4 { font-size: 11px; font-family: verdana; }
+h5 { font-size: 11px; font-family: verdana; }
+.tema          { color: #FFFFFF; font-family: Arial Narrow; font-size: 11px; text-transform:uppercase; font-weight: bold; } 
+h1.tema          { color: #FFFFFF; font-family: Arial Narrow; font-size: 11px; text-transform:uppercase; font-weight: bold;  } 
+.body          { font-family: Verdana; font-size: 8pt; color: #333333; text-align: justify; margin-top: 0; margin-bottom: 0 }
+.left          { font-family: Arial; font-size: 10px; color: #666666; text-align: Justify; text-indent: 10; margin-top: 0; margin-bottom: 5 }
+.menu          { font-family: Verdana; font-size: 11px; color: #666666; }
+.menu_small    { font-size: 10px; font-family: Verdana; color: #E1E1E1; }
+.copyright     { font-family: Arial; font-size: 10px; color: #FFFFFF;}
+.small         { font-family: Verdana; font-size: 7pt; color: #808080; }
+.name          { font-family: Arial; text-transform: uppercase; font-size: 10pt; color: #FFFFFF; font-weight: bold }
+
+
+table.table1 { font-size:8pt; border-collapse: collapse; font-family: verdana; }
+table.table1 td { padding: 4px; border: 1px solid #333333 }
+table.table0 { font-size:8pt; border-collapse: collapse; font-family: verdana; }
+table.table0 td { padding: 4px; border-width: 0px; }
