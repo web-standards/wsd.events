@@ -117,7 +117,11 @@ async function resizeImages() {
 gulp.task('images:resize', resizeImages);
 
 gulp.task('images:replace', () => {
-	return gulp.src(['dist/index.html', 'dist/**/index.html'])
+	return gulp.src([
+			'dist/index.html',
+			'dist/**/index.html',
+			'!dist/**/pres/**'
+		])
 		.pipe(replace(
 			/<img class="speakers__picture" (src|data-src)="\/speakers\/([^"]+)" alt="([^"]+)">/g,
 			'<img class="speakers__picture" $1="/speakers/128/$2" $1set="/speakers/256/$2 2x" alt="$3">'
@@ -151,7 +155,10 @@ gulp.task('cache:hash', () => {
 });
 
 gulp.task('cache:replace', () => {
-	return gulp.src('dist/**/index.html')
+	return gulp.src([
+			'dist/**/index.html',
+			'!dist/**/pres/**'
+		])
 		.pipe(revision({
 			manifest: gulp.src('dist/rev-manifest.json').pipe(vinylPaths(deleteAsync))
 		}))
