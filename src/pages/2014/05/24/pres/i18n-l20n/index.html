@@ -1,0 +1,379 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><title>Фреймворки локализации</title><link href="css/styles.css" rel="stylesheet"><script data-main="js/presentation" src="js/require.js"> </script></head><body><form action="/select/slide" method="post" class="go-to-page"><firldset><input type="text" maxlength="3" value="" placeholder="1"></firldset></form><section class="progress"><div class="value"></div></section><section id="slides" class="dark"><article class="cover center cloud current"><h1 class="alien"></h1></article><article class="cover center cloud"><h1> <div class="wrapper">i18n<br>l10n</div></h1></article><article class="different-1 cloud center"><h1> Все мы разные!</h1></article><article class="different-2 cloud center"><h1> Язык и валюта</h1></article><article class="different-3 cloud center"><h1> <div class="wrapper">Культурные особенности</div></h1></article><article class="different-4 cloud center"><h1> <div class="wrapper">Символы <br>иконки<br>цвета</div></h1></article><article class="title center"><h1> Но есть и кое что общее</h1></article><article class="wallet"></article><article class="seller"><p class="cloud-1"><span class="wrapper">सस्ती!</span></p><p class="cloud-2"><span class="wrapper">Это он нам?<br>Пойдемте-ка отсюда,<br>милочка.</span></p></article><article class="title center vs"><div class="wrapper"><div class="half">localization</div><div class="half">internationalization</div></div></article><article class="title center vs short"><div class="wrapper"><div class="half">l10n</div><div class="half">i18n</div></div></article><article class="center l10n-title"><h1>l10n</h1></article><article class="center l10n-abstract"><div class="wrapper"><p>l10n это адаптация продукта для его соответствия языковым, культурным и прочим требованиям конкретного рынка.</p></div></article><article class="center l10n-abstract"><div class="wrapper"><ul><li>Cистема счисления, форматы даты и времени</li><li>Валюта</li><li>Использование систем ввода</li><li>Символы, иконки, цвета</li><li>Текст и графика, содержащие отсылки к идеям и действиям</li><li>Различие легислативный требований</li><li>…</li></ul></div></article><article class="center i18n-title"><h1> i18n</h1></article><article class="center i18n-abstract"><div class="wrapper"><p>i18n это процесс, в результате которого получается продукт, предусматривающий его простую локализацию для целевой аудитории в рамках многообразия её культур, регионов и языков.</p></div></article><article class="center i18n-abstract"><div class="wrapper"><ul><li>Разработка продукта таким образом, что бы устранить барьеры для для его локализации.</li><li>Реализовать функционал, который не потребуются, пока не начнется локализация.</li><li>Писать код, который позволяет реализовать поддержку локальных, языковых и культурных особенностей.</li><li>Отделение элементов, которые требуют локализации от остальных.</li></ul></div></article><article class="center encoding cloud"><h1><div class="wrapper">Как задать<br>кодировку?</div></h1></article><article class="center code-2"><div class="wrapper"><pre><code>Content-Type: text/html; charset=UTF-8</code></pre></div></article><article class="center code-2"><div class="wrapper"><pre><code>&lt;meta 
+   http-equiv=&quot;Content-type&quot; 
+   content=&quot;text/html;charset=UTF-8&quot;&gt;</code></pre></div></article><article class="center code-1"><div class="wrapper"><pre><code>&lt;meta charset=&quot;UTF-8&quot;&gt;</code></pre></div></article><article class="center code-1"><div class="wrapper"><pre><code>1024</code></pre></div></article><article class="center code-4"><div class="wrapper"><pre><code>&lt;link charset=&quot;Windows-1251&quot;
+ rel=&quot;stylesheet&quot; type=&quot;text/css&quot;
+ href=&quot;styles.css&quot;/&gt;
+
+&lt;script charset=&quot;UTF-8&quot;
+ src=&quot;script.js&quot;&gt;&lt;/script&gt;
+
+&lt;a charset=&quot;ISO-8859-1&quot;
+ href=&quot;page.html&quot;&gt;&lt;/a&gt;
+</code></pre></div></article><article class="center code-4 obsolete"><div class="wrapper"><pre><code>&lt;link charset=&quot;Windows-1251&quot;
+ rel=&quot;stylesheet&quot; type=&quot;text/css&quot;
+ href=&quot;styles.css&quot;/&gt;
+
+&lt;script charset=&quot;UTF-8&quot;
+ src=&quot;script.js&quot;&gt;&lt;/script&gt;
+
+&lt;a charset=&quot;ISO-8859-1&quot;
+ href=&quot;page.html&quot;&gt;&lt;/a&gt;
+</code></pre></div></article><article class="center code-2"><div class="wrapper"><pre><code>Content-Type: text/css; charset=UTF-8</code></pre></div></article><article class="center code-1"><div class="wrapper"><pre><code>@charset &quot;UTF-8&quot;;</code></pre></div></article><article class="center tongue cloud"><h1><div class="wrapper">Как обозначить<br> язык материалов?</div></h1></article><article class="center code-1"><div class="wrapper"><pre><code>Content-Language: de, fr, it</code></pre></div></article><article class="center code-3"><div class="wrapper"><pre><code>&lt;meta 
+   http-equiv=&quot;Content-Language&quot; 
+   content=&quot;de, fr, it&quot; /&gt;
+</code></pre></div></article><article class="center code-3 obsolete"><div class="wrapper"><pre><code>&lt;meta 
+   http-equiv=&quot;Content-Language&quot; 
+   content=&quot;de, fr, it&quot; /&gt;
+</code></pre></div></article><article class="center code-1"><div class="wrapper"><pre><code>&lt;meta 
+   name=&quot;dc.language&quot; 
+   content=&quot;en&quot; /&gt;
+</code></pre></div></article><article class="center code-1 wtf"><div class="wrapper"><pre><code>&lt;meta 
+   name=&quot;dc.language&quot; 
+   content=&quot;en&quot; /&gt;
+</code></pre></div></article><article class="center code-1"><div class="wrapper"><pre><code>&lt;html lang=&quot;en-UK&quot;&gt;
+&lt;/html&gt;</code></pre></div></article><article class="center code-1"><div class="wrapper"><pre><code>&lt;article lang=&quot;und&quot;&gt;
+&lt;/article&gt;</code></pre></div></article><article class="center code-1"><div class="wrapper"><pre><code>&lt;article lang=&quot;zxx&quot;&gt;
+&lt;/article&gt;</code></pre></div></article><article class="center code-2"><div class="wrapper"><pre><code>:lang(en-UK){
+  font-family: "PT Sans", sans-serif;
+  }
+:lang(zh-Hans){
+  font-family: "SimSum-18030", 
+               SimHei, serif;
+  }</code></pre></div></article><article class="center code-3"><div class="wrapper"><pre><code>&lt;a 
+   href=&quot;http://goo.gl/GJ2MeM&quot; 
+   hreflang=&quot;en&quot;&gt;
+   The Battle for the Body Field
+&lt;/a&gt;</code></pre></div></article><article class="center code-1"><div class="wrapper"><pre><code>a[hreflang = 'sv']:after { 
+    content: " [Swedish] "; 
+    }</code></pre></div></article><article class="center definition"><div class="wrapper"><ol><li>language<b> язык, en</b></li><li>extlang <b> уточнение, zh-yue</b></li><li>script <b> начертание, zh-Hans</b></li><li>region <b> регион, en-US, en-UK</b></li><li>variant <b> диалект, sl-nedis, sl-rozaj</b></li><li>extension <b> расширенное определение</b></li><li>privateuse <b> для частного использования</b></li></ol></div></article><article class="center flags obsolete"></article><article class="center robot cloud"><h1><div class="wrapper">Как управлять роботами?</div></h1></article><article class="center code-3"><div class="wrapper"><pre><code>&lt;meta 
+     name=&quot;google&quot; 
+     value=&quot;notranslate&quot;/&gt;</code></pre></div></article><article class="center code-3"><div class="wrapper"><pre><code>&lt;article class=&quot;notranslate&quot;&gt;
+&lt;/article&gt;</code></pre></div></article><article class="center code-1"><div class="wrapper"><pre><code>&lt;article translate=&quot;no&quot;&gt;
+&lt;/article&gt;</code></pre></div></article><article class="center book cloud"><h1><div class="wrapper">Направление<br>письма</div></h1></article><article class="center dir-type"><div class="wrapper"><ul><li>Сильно направленные</li><li>Нейтрально направленные</li><li>Слабо направленные</li></ul></div></article><article class="center code-1"><div class="wrapper"><pre><code>&lt;p dir=&quot;rtl&quot;&gt;&lt;/p&gt;
+&lt;p dir=&quot;ltr&quot;&gt;&lt;/p&gt;
+&lt;p dir=&quot;auto&quot;&gt;&lt;/p&gt;</code></pre></div></article><article class="center book cloud"><h1><div class="wrapper">Сильно направленные</div></h1></article><article class="center code-1"><div class="wrapper"><pre><code>&lt;p&gt;раз اثنان три&lt;/p&gt;
+&lt;p dir=&quot;RTL&quot;&gt;раз اثنان три&lt;/p&gt;</code></pre></div></article><article class="center rtl-demo"><div class="wrapper"><p>раз اثنان три</p><p dir="RTL">раз اثنان три</p></div></article><article class="center rtl-demo"><div class="wrapper"><p><span>раз</span> <span class="rtl">اثنان</span> <span>три</span></p><p dir="RTL"><span>раз</span> <span class="rtl">اثنان</span> <span>три</span></p></div></article><article class="center book cloud"><h1><div class="wrapper">Нейтрально направленные</div></h1></article><article class="center code-1"><div class="wrapper"><pre><code>&lt;p&gt;
+  раз, اثنان, три, أربعة.
+&lt;/p&gt;
+&lt;p dir=&quot;RTL&quot;&gt;
+  раз, اثنان, три, أربعة.
+&lt;/p&gt;</code></pre></div></article><article class="center rtl-demo-2"><div class="wrapper"><p>раз, اثنان, три, أربعة.</p><p dir="RTL">раз, اثنان, три, أربعة.</p></div></article><article class="center rtl-demo-2"><div class="wrapper"><p><span>раз</span><span class="wb">, </span><span class="rtl">اثنان</span><span class="wb">, </span><span>три</span><span class="wb">, </span><span class="rtl">أربعة</span><span class="wb">.</span></p><p dir="RTL"><span>раз</span><span class="wb">, </span><span class="rtl">اثنان</span><span class="wb">, </span><span>три</span><span class="wb">, </span><span class="rtl">أربعة</span><span class="wb">.</span></p></div></article><article class="center code-1"><div class="wrapper"><pre><code>&lt;p&gt;
+  раз, اثنان, три, четыре.
+&lt;/p&gt;
+&lt;p dir=&quot;RTL&quot;&gt;
+  раз, اثنان, три, четыре.
+&lt;/p&gt;</code></pre></div></article><article class="center rtl-demo-2"><div class="wrapper"><p>раз, اثنان, три, четыре.</p><p dir="RTL">раз, اثنان, три, четыре.</p></div></article><article class="center rtl-demo-2"><div class="wrapper"><p><span>раз</span><span class="wb">, </span><span class="rtl">اثنان</span><span class="wb">, </span><span>три</span><span class="ib">, </span><span>четыре</span><span class="wb">.</span></p><p dir="RTL"><span>раз</span><span class="wb">, </span><span class="rtl">اثنان</span><span class="wb">, </span><span>три</span><span class="ib">, </span><span>четыре</span><span class="wb">.</span></p></div></article><article class="center book cloud"><h1><div class="wrapper">Слабо направленные</div></h1></article><article class="center code-2"><div class="wrapper"><pre><code>&lt;p&gt;Оруэл عربي ١٩٨٤, رسائل&lt;/p&gt;
+&lt;p dir=&quot;rtl&quot;&gt;Оруэл عربي 1984, رسائل&lt;/p&gt;</code></pre></div></article><article class="center rtl-demo-3"><div class="wrapper"><p>Оруэл عربي ١٩٨٤, رسائل</p><p dir="rtl">Оруэл عربي 1984, رسائل</p></div></article><article class="center rtl-demo-3"><div class="wrapper"><p><span>Оруэл</span><span class="wb"> </span><span class="rtl">عربي  <span class="wn">١٩٨٤</span><span class="ib">, </span>رسائل</span></p><p dir="rtl"><span>Оруэл</span><span class="wb"> </span><span class="rtl">عربي  <span class="wn">1984</span><span class="ib">, </span>رسائل</span></p></div></article><article class="center memonic"><div class="wrapper"><h1>&amp;lrm; и &amp;rlm;</h1></div></article><article class="center code-1"><div class="wrapper"><pre><code>&lt;p dir=&quot;RTL&quot;&gt;
+  раз, اثنان, три, четыре.
+&lt;/p&gt;
+&lt;p dir=&quot;RTL&quot;&gt;
+  раз, اثنان, три, четыре.&amp;lrm;
+&lt;/p&gt;</code></pre></div></article><article class="center rtl-demo-2"><div class="wrapper"><p dir="RTL">раз, اثنان, три, четыре.</p><p dir="RTL">раз, اثنان, три, четыре.&lrm;</p></div></article><article class="center rtl-demo-2"><div class="wrapper"><p dir="RTL"><span>раз</span><span class="wb">, </span><span class="rtl">اثنان</span><span class="wb">, </span><span>три</span><span class="ib">, </span><span>четыре</span><span class="wb">.</span></p><p dir="RTL"><span>раз</span><span class="wb">, </span><span class="rtl">اثنان</span><span class="wb">, </span><span>три</span><span class="ib">, </span><span>четыре</span><span class="ib">.</span><span>&lrm;</span></p></div></article><article class="center code-0"><div class="wrapper"><pre><code>&lt;bdi&gt;&lt;/bdi&gt;</code></pre></div></article><article class="center code-1"><div class="wrapper"><pre><code>&lt;bdo dir=&quot;rtl&quot;&gt;
+ Интересно, что получится?
+&lt;/bdo&gt;</code></pre></div></article><article class="center bdo-example"><div class="wrapper"><p><bdo dir="rtl">Интересно, что получится?</bdo></p></div></article><article class="center code-1"><div class="wrapper"><pre><code>.some{
+  direction: ltr
+             rtl
+             inherit;}</code></pre></div></article><article class="center code-3"><div class="wrapper"><pre><code>.some{
+  unicode-bidi: normal 
+                embed
+                isolate
+                bidi-override
+                isolate-override
+                plaintext
+                inherit;}<!--normal — собственно, нихуя
+embed — если элемент строчный, то появляется новый контекст направления
+bidi-override — игнорируя алгоритм двунаправленного письма unicode в рамках элемента ориентирует все строчные элементы согласно direction
+isolate — блок рассматривается как Object Replacement Character (картинка) и позиционируется вне зависимости от содержимого
+isolate-override — то же, + внутренности блока перезаписываем bidi-override
+plaintext — направленность без учета родителей или direction
+--></code></pre></div></article><article class="center chinese cloud"><h1><div class="wrapper">и тут врываются <span>китайцы</span></div></h1></article><article class="center code-3"><div class="wrapper"><pre><code>.some{
+    writing-mode: horizontal-tb
+                  vertical-rl
+                  vertical-lr;
+    }</code></pre></div></article><article class="center vertical-demo"><div class="half"><h1>时事专栏</h1><p>台湾来鸿：升温中的台北市长选举</p><p>随着国民党荣誉主席连战之子连胜文正式宣布参选，台北市长选举选战逐渐升温。</p></div><div class="half"><h1>时事专栏</h1><p>台湾来鸿：升温中的台北市长选举</p><p>随着国民党荣誉主席连战之子连胜文正式宣布参选，台北市长选举选战逐渐升温。</p></div></article><article class="center vertical-demo-ru"><div class="half"><h1>МИД РФ возмущен "неуважением" НАТО к Украине</h1><p>Российский МИД выпустил пространное заявление, в котором посоветовал Брюсселю уважать внеблоковый статус Киева и отказаться от заявлений в адрес Украины, которые Москва считает провокационными.</p></div><div class="half"><h1>МИД РФ возмущен "неуважением" НАТО к Украине</h1><p>Российский МИД выпустил пространное заявление, в котором посоветовал Брюсселю уважать внеблоковый статус Киева и отказаться от заявлений в адрес Украины, которые Москва считает провокационными.</p></div></article><article class="center vertical-demo-ru-2"><div class="half"><h1>МИД РФ возмущен "неуважением" НАТО к Украине</h1><p>Российский МИД выпустил пространное заявление, в котором посоветовал Брюсселю уважать внеблоковый статус Киева и отказаться от заявлений в адрес Украины, которые Москва считает провокационными.</p></div><div class="half"><h1>МИД РФ возмущен "неуважением" НАТО к Украине</h1><p>Российский МИД выпустил пространное заявление, в котором посоветовал Брюсселю уважать внеблоковый статус Киева и отказаться от заявлений в адрес Украины, которые Москва считает провокационными.</p></div></article><article class="center code-4"><div class="wrapper"><pre><code>.some{
+    text-orientation: mixed
+                      upright
+                      sideways-right
+                      sideways-left
+                      sideways
+                      use-glyph-orientation;
+    }</code></pre></div></article><article class="center orientation-demo"><div class="half"><h1>МИД РФ возмущен</h1><p>台湾来鸿：升温中的<span> 20 </span>台北市长选举</p><p>随着国民党荣誉主席连战之子连胜文正式宣布参选，台北市长选举选战逐渐升温。</p></div><div class="half"><h1>МИД РФ возмущен</h1><p>台湾来鸿：升温中的<span> 20 </span>台北市长选举</p><p>随着国民党荣誉主席连战之子连胜文正式宣布参选，台北市长选举选战逐渐升温。</p></div></article><article class="center orientation-demo-2"><div class="half"><h1>МИД РФ возмущен</h1><p>台湾来鸿：升温中的<span> 20 </span>台北市长选举</p><p>随着国民党荣誉主席连战之子连胜文正式宣布参选，台北市长选举选战逐渐升温。</p></div><div class="half"><h1>МИД РФ возмущен</h1><p>台湾来鸿：升温中的<span> 20 </span>台北市长选举</p><p>随着国民党荣誉主席连战之子连胜文正式宣布参选，台北市长选举选战逐渐升温。</p></div></article><article class="center code-4"><div class="wrapper"><pre><code>.some{
+    text-combine-horizontal:  none
+                              all
+                              digits [int];
+    }</code></pre></div></article><article class="center japan cloud ruby"><h1><div class="wrapper"></div></h1></article><article class="center code-1"><div class="wrapper"><pre><code>&lt;ruby&gt;
+ &lt;rb&gt;Наш текст&lt;rb&gt;
+ &lt;rt&gt;Как читать&lt;/rt&gt;
+&lt;/ruby&gt;</code></pre></div></article><article class="center ruby-demo"><div class="half"><ruby><rb>紙芝居</rb><rt>かみしばい</rt></ruby></div><div class="half"><ruby><rb>Наш текст</rb><rt>Как читать</rt></ruby></div></article><article class="center ruby-demo-2"><div class="half"><ruby><rb>紙芝居</rb><rt>かみしばい</rt></ruby></div><div class="half"><ruby><rb>Наш текст</rb><rt>Как читать</rt></ruby></div></article><article class="center code-3"><div class="wrapper"><pre><code>&lt;ruby&gt;
+ &lt;rb&gt;紙芝居&lt;rb&gt;
+ &lt;rp&gt;(&lt;rp&gt;
+ &lt;rt&gt;かみしばい&lt;/rt&gt;
+ &lt;rp&gt;)&lt;rp&gt;
+&lt;/ruby&gt;</code></pre></div></article><article class="center ruby-demo-rp"><div class="wrapper">紙芝居 (かみしばい)</div></article><article class="center ruby-demo-rp"><div class="wrapper"><ruby><rb>紙芝居</rb><rp>(</rp><rt>かみしばい</rt><rp>)</rp></ruby></div></article><article class="center code-2"><div class="wrapper"><pre><code>&lt;ruby&gt;
+ &lt;rbc&gt;
+   &lt;rb&gt;林&lt;rb&gt;&lt;rb&gt;和&lt;/rb&gt;&lt;rb&gt;代&lt;/rb&gt;
+ &lt;/rbc&gt;
+ &lt;rtc&gt;
+   &lt;rt&gt;はやし&lt;/rt&gt;&lt;rt rbspan=&quot;2&quot;&gt;かず&lt;/rt&gt;
+ &lt;/rtc&gt;
+&lt;/ruby&gt;</code></pre></div></article><article class="center code-2"><div class="wrapper"><pre><code>&lt;ruby&gt;
+ &lt;rbc&gt;&lt;rb&gt;民政局&lt;/rb&gt;&lt;/rbc&gt;
+ &lt;rtc&gt;&lt;rt&gt;みんせいきょく&lt;/rt&gt;&lt;/rtc&gt;
+ &lt;rtc&gt;&lt;rt&gt;ガバメント・セクシヨン&lt;/rt&gt;&lt;/rtc&gt;
+&lt;/ruby&gt;</code></pre></div></article><article class="center ruby-demo-montage"><div class="wrapper"><ruby><rbc><rb>民 政 局</rb></rbc><rtc><rt>みんせいきょく</rt></rtc><rtc><rt>ガバメント・セクシヨン</rt></rtc></ruby></div></article><article class="center code-2"><div class="wrapper"><pre><code>.some{
+    ruby-position:  over
+                    under
+                    
+                    inter-character
+                     
+                    right
+                    left;
+    }</code></pre></div></article><article class="center code-1"><div class="wrapper"><pre><code>.some{
+    ruby-merge:  separate
+                 collapse
+                 auto;
+    }</code></pre></div></article><article class="center code-3"><div class="wrapper"><pre><code>.some{
+    ruby-align:  start
+                 center
+                 space-between
+                 space-around;
+    }</code></pre></div></article><article class="center cloud bored"><h1><div class="wrapper">Ну давай же,<br>расскажи что-то<br>еще про стандарты!<br>Это так … мммм …<br>захватывающе!</div></h1></article><article class="center title links"><h1>Источники</h1></article><article class="center i18n-links"><div class="wrapper"><img src="svg/w3c-logotype.svg" alt="Логотип w3c" class="logotype"><img src="svg/w3c-link-all.svg" alt="QRCODE cо ссылкой на w3c стандарты" class="link"><p>http://w3.org/TR/#tr_Internationalization__All_</p></div></article><article class="center i18n-links"><div class="wrapper"><img src="svg/w3c-logotype.svg" alt="Логотип w3c" class="logotype"><img src="svg/w3c-link-modes.svg" alt="QRCODE cо ссылкой на w3c спецификацию по режимам письма" class="link"><p>http://www.w3.org/TR/css3-writing-modes/</p></div></article><article class="center i18n-links"><div class="wrapper"><img src="svg/w3c-logotype.svg" alt="Логотип w3c" class="logotype"><img src="svg/w3c-link-ruby.svg" alt="QRCODE cо ссылкой на w3c спецификацию по руби начертанию" class="link"><p>http://www.w3.org/TR/css3-ruby/</p></div></article><article class="center i18n-links"><div class="wrapper"><img src="svg/w3c-logotype.svg" alt="Логотип w3c" class="logotype"><img src="svg/w3c-link.svg" alt="QRCODE cо ссылкой на w3c блог" class="link"><p>http://w3.org/blog/International/</p></div></article><article class="center i18n-links"><div class="wrapper"><img src="svg/mlw-logotype.svg" alt="Логотип MultilingualWeb" class="logotype"><img src="svg/mlw-link.svg" alt="QRCODE cо ссылкой на MultilingualWeb" class="link"><p>http://multilingualweb.eu/</p></div></article><article class="center cloud pile"><h1><div class="wrapper">Как<br>происходит локализация?</div></h1></article><article class="center engine cloud"><h1><div class="wrapper">Отдельные версии <span>проекта</span></div></h1></article><article class="center template cloud"><h1>Шаблонизация</h1></article><article class="center code-2"><div class="wrapper"><pre><code>&lt;section id=&quot;templates&quot;&gt;
+ &lt;section id=&quot;comment-template&quot;&gt;
+   &lt;article&gt;
+     &lt;img&gt;
+     &lt;p class=&quot;name&quot;&gt;&lt;/p&gt;
+     &lt;p class=&quot;message&quot;&gt;&lt;/p&gt;
+   &lt;/article&gt;
+ &lt;/section&gt;
+&lt;/section&gt;</code></pre></div></article><article class="center code-0"><div class="wrapper"><pre><code>#templates{
+  display:none;
+  }</code></pre></div></article><article class="center code-6"><div class="wrapper"><pre><code class="javascript">var template = document.getElementById('comment-template'),
+    template = template.cloneNode(true),
+    img = template.querySelector('img'),
+    nameit = template.querySelector('.name'),
+    message = template.querySelector('.message');
+ 
+img.setAttribute('src','http://goo.gl/nZ9uCF');
+nameit.textContent = 'Анна Франк';
+message.textContent = 'Комментарий';
+ 
+document.body.appendChild(template);</code></pre></div></article><article class="center uno"><div class="wrapper"><img src="svg/chair.svg"></div></article><article class="center code-1"><div class="wrapper"><pre><code>&lt;template&gt;&lt;/template&gt;</code></pre></div></article><article class="center template-profit"><div class="wrapper"><ol><li>До момента его активации шаблон инертен.</li><li>Скрипты не запускаются, аудио и видео не играет, картинки не подгружаются</li><li>Его невозможно напрямую получить</li><li>Можно разместить где захочется</li></ol></div></article><article class="center code-2"><div class="wrapper"><pre><code>&lt;template id=&quot;comment-template&quot;&gt;
+  &lt;article&gt;
+    &lt;img&gt;
+    &lt;p class=&quot;name&quot;&gt;&lt;/p&gt;
+    &lt;p class=&quot;message&quot;&gt;&lt;/p&gt;
+  &lt;/article&gt;
+&lt;/template&gt;</code></pre></div></article><article class="center code-6"><div class="wrapper"><pre><code class="javascript">var template = document.getElementById('comment-template'),
+    template = template.content.cloneNode(true),
+    img = template.querySelector('img'),
+    nameit = template.querySelector('.name'),
+    message = template.querySelector('.message');
+ 
+img.setAttribute('src','http://goo.gl/nZ9uCF');
+nameit.textContent = 'Анна Франк';
+message.textContent = 'Комментарий';
+ 
+document.body.appendChild(template);</code></pre></div></article><article class="center code-6 template-hilight"><div class="wrapper"><pre><code class="javascript">var template = document.getElementById('comment-template'),
+    template = template.content.cloneNode(true),
+    img = template.querySelector('img'),
+    nameit = template.querySelector('.name'),
+    message = template.querySelector('.message');
+ 
+img.setAttribute('src','http://goo.gl/nZ9uCF');
+nameit.textContent = 'Анна Франк';
+message.textContent = 'Комментарий';
+ 
+document.body.appendChild(template);</code></pre></div></article><article class="center uno"><div class="wrapper"><img src="svg/uni.svg"></div></article><article class="center i18n-links"><div class="wrapper"><img src="svg/w3c-logotype.svg" alt="Логотип w3c" class="logotype"><img src="svg/w3c-template.svg" alt="QRCODE cо ссылкой на template" class="link"><p>http://goo.gl/EBy9pN</p></div></article><article class="center mustache cloud"><h1> Handlebars</h1></article><article class="center code-4"><div class="wrapper"><pre><code>&lt;script src=&quot;handlebars.min.js&quot;&gt;&lt;/script&gt;
+&lt;template id=&quot;comment-template&quot;&gt;
+  &lt;article&gt;
+    &lt;img src=&quot;{{img.src}}&quot; alt=&quot;{{img.alt}}&quot;/&gt;
+    &lt;p class=&quot;name&quot;&gt;{{name}}&lt;/p&gt;
+    &lt;p class=&quot;message&quot;&gt;{{comment}}&lt;/p&gt;
+  &lt;/article&gt;
+&lt;/template&gt;</code></pre></div></article><article class="center code-6"><div class="wrapper"><pre><code class="javascript">var template = document.getElementById('comment-template'),
+    template = Handlebars.compile(template.innerHTML),
+    data = {
+            img:{
+              src:"http://goo.gl/nZ9uCF",
+              alt:"Аватар"
+              },
+            name:"Анна Франк",
+            comment:"Комментарий"
+            };
+document.body.innerHTML+=template(data);</code></pre></div></article><article class="center uno"><div class="wrapper"><img src="svg/bi.svg"></div></article><article class="center i18n-links"><div class="wrapper"><img src="svg/mustache.svg" alt="Логотип handlebarsjs" class="logotype"><img src="svg/handlebarsjs.svg" alt="QRCODE cо ссылкой на handlebarsjs" class="link"><p>http://handlebarsjs.com/</p></div></article><article class="center better-1 cloud"><h1><div class="wrapper">Но ведь <br>можно <br>лучше?</div></h1></article><article class="center i18next-title"><h1> i18next</h1></article><article class="center part-scrn"><div class="wrapper">Основы</div></article><article class="center code-2"><div class="wrapper"><pre><code>&lt;script src=&quot;js/jquery.js&quot;&gt;
+&lt;/script&gt;
+&lt;script src=&quot;js/i18next-1.7.2.min.js&quot;&gt;
+&lt;/script&gt;
+</code></pre></div></article><article class="center code-3"><div class="wrapper"><pre><code>./locales/en/translation.json
+         /ru/translation.json
+         /ru-RU/translation.json</code></pre></div></article><article class="center code-3"><div class="wrapper"><pre><code>{"app": {
+    "name": "i18next эксперимент"
+  },
+  "nav": {
+    "about": "О проекте",
+    "contacts": "Контакты"
+ }}</code></pre></div></article><article class="center code-1"><div class="wrapper"><pre><code>&lt;title data-i18n=&quot;app.name&quot;&gt;
+	Значение по умолчанию
+&lt;/title&gt;
+</code></pre></div></article><article class="center code-2"><div class="wrapper"><pre><code class="javascript">$.i18n.init().done(function(){
+  var node = document.querySelector(
+        '[data-i18n="app.name"]');
+  node.textContent = document.i18n.t(
+        'app.name');
+});</code></pre></div></article><article class="center code-1"><div class="wrapper"><pre><code>$.i18n.init({
+  lng: 'ru', 
+  fallbackLng: false
+}).done(function(){
+  $('html').i18n();
+});</code></pre></div></article><article class="center result-scrn"><div class="wrapper">i18next эксперимент</div></article><article class="center part-scrn"><div class="wrapper">Получение<br>информации<br>о языке</div></article><article class="center lng-list"><div class="wrapper"><ol><li>Параметр в url (?setLng=en-US)</li><li>Cookie (i18next)</li><li>Язык установленный в браузере по умолчанию</li><li>fallbackLng, по умолчанию — dev</li></ol></div></article><article class="center code-1"><div class="wrapper"><pre><code class="javascript">i18n.detectLanguage();</code></pre></div></article><article class="center result-scrn"><div class="wrapper">ru</div></article><article class="center code-1"><div class="wrapper"><pre><code class="javascript">i18next.setLng(
+	&quot;en-UK&quot;, 
+	function(){}
+);</code></pre></div></article><article class="center part-scrn"><div class="wrapper">Переменные</div></article><article class="center code-3"><div class="wrapper"><pre><code>&lt;p data-i18n=&quot;apple-count&quot;&gt;&lt;/p&gt;</code></pre></div></article><article class="center code-3"><div class="wrapper"><pre><code>{
+"apple-count":
+"Количество яблок: __apple-count__"
+}</code></pre></div></article><article class="center code-1"><div class="wrapper"><pre><code>$.i18n.init({
+  lng: 'ru-RU'
+}).done(function(){
+  $('[apple-count]').i18n({
+    "apple-count":3
+});});</code></pre></div></article><article class="center result-scrn"><div class="wrapper">Количество яблок: 3</div></article><article class="center part-scrn"><div class="wrapper">Падежи</div></article><article class="center code-1"><div class="wrapper"><pre><code>&lt;p data-i18n=&quot;ihave&quot;&gt;&lt;/p&gt;</code></pre></div></article><article class="center code-4"><div class="wrapper"><pre><code>{
+  "ihave":"У меня __count__ яблок",
+  "ihave_plural_1": "У меня __count__ яблоко",
+  "ihave_plural_2": "У меня __count__ яблока",
+  "ihave_plural_5": "У меня __count__ яблок",
+}</code></pre></div></article><article class="center code-1"><div class="wrapper"><pre><code>$.i18n.init({
+  lng: 'ru-RU'
+}).done(function(){
+  $('[ihave]').i18n({
+    "count":302
+});});</code></pre></div></article><article class="center result-scrn"><div class="wrapper">У меня 302 яблока</div></article><article class="center code-1"><div class="wrapper"><pre><code>$.i18n.init({
+  lng: 'ru-RU'
+}).done(function(){
+  $('[ihave]').i18n({
+    "count": 0
+});});</code></pre></div></article><article class="center result-scrn"><div class="wrapper">У меня 0 яблок</div></article><article class="center code-2"><div class="wrapper"><pre><code>i18n.pluralExtensions.addRule("ru", {
+  "name": "Rusian", 
+  "numbers": [1,2,5],
+  "plurals": function (a){
+    return Number(1 … ?1:2);
+  }
+});</code></pre></div></article><article class="center code-2"><div class="wrapper"><pre><code>i18n.pluralExtensions.addRule("ru", {
+  "name": "Rusian", 
+  "numbers": [1,2,5,0],
+  "plurals": function (a){
+    return Number(0==a?3:1 … ?1:2);
+  }
+});</code></pre></div></article><article class="center code-4"><div class="wrapper"><pre><code>{
+  "ihave":"У меня __count__ яблок",
+  "ihave_plural_0": "У меня нет яблок",
+  "ihave_plural_1": "У меня __count__ яблоко",
+  "ihave_plural_2": "У меня __count__ яблока",
+  "ihave_plural_5": "У меня __count__ яблок"
+}</code></pre></div></article><article class="center result-scrn"><div class="wrapper">У меня нет яблок</div></article><article class="center part-scrn"><div class="wrapper">Пол</div></article><article class="center code-3"><div class="wrapper"><pre><code>&lt;p data-i18n=&quot;ipublish&quot;&gt;&lt;/p&gt;</code></pre></div></article><article class="center code-5"><div class="wrapper"><pre><code>{
+  "ipublish":"__name__ опубликовало статью",
+  "ipublish_male":"__name__ опубликовал статью",
+  "ipublish_female":"__name__ опубликовала статью"
+}</code></pre></div></article><article class="center code-1"><div class="wrapper"><pre><code class="javascript">$('.static, title').i18n({
+  "context": "male", 
+  "name":"Костя"
+});</code></pre></div></article><article class="center result-scrn"><div class="wrapper">Костя опубликовал статью</div></article><article class="center jq-needed"><div class="wrapper"><img src="svg/jq.svg" alt="Логотип jQ"></div></article><article class="center scrn"><div class="wrapper"><img src="img/storify_scrn.png"><p>http://storify.com/</p></div></article><article class="cern"></article><article class="center i18n-links"><div class="wrapper"><img src="svg/i18next.svg" alt="QRCODE cо ссылкой на i18next" class="link"><p>http://i18next.com/</p></div></article><article class="center i18n-links oh"><div class="wrapper"><div class="half"><h2>Grunt-плагин для конвертации .po в .json</h2></div><div class="half"><img src="svg/grunt-i18next-conv.svg" alt="QRCODE cо ссылкой на grunt-i18next-conv" class="link"></div><p>http://goo.gl/4aj4pG</p></div></article><article class="center i18n-links oh"><div class="wrapper"><div class="half"><h2>Grunt-плагин, что бы сшить .json разных локалей</h2></div><img src="svg/grunt-contrib-i18next.svg" alt="QRCODE cо ссылкой на grunt-contrib-i18next" class="link"><p>http://goo.gl/gmf0Qu</p></div></article><article class="center i18n-links oh"><div class="wrapper"><div class="half"><h2>Bower-пакет, с i18next</h2></div><img src="svg/bower-i18next.svg" alt="QRCODE cо ссылкой на bower-i18next" class="link"><p>https://github.com/jamuhl/i18next</p></div></article><article class="center code-1"><div class="wrapper"><pre><code>$ bower install i18next</code></pre></div></article><article class="center better-2 cloud"><h1><div class="wrapper">Но ведь можно ещё лучше?</div></h1></article><article class="center l20n-title"><h1> l20n</h1></article><article class="center mozilla-supported"><div class="wrapper"><img src="svg/mozilla.svg" alt="Логотип Mozilla"></div></article><article class="center part-scrn"><div class="wrapper">Основы</div></article><article class="center code-3"><div class="wrapper"><pre><code>&lt;h1 data-l10n-id=&quot;title&quot;&gt;&lt;/h1&gt;</code></pre></div></article><article class="center code-3"><div class="wrapper"><pre><code>&lt;script 
+   src=&quot;l20n.min.js&quot;&gt;
+&lt;/script&gt;
+&lt;link 
+   rel=&quot;localization&quot; 
+   href=&quot;browser.json&quot;&gt;</code></pre></div></article><article class="center code-2"><div class="wrapper"><pre><code>{
+  "locales": ["ru","en"],
+  "default_locale": "ru",
+  "resources": [
+    "locales/{{locale}}/website.l20n"
+  ]
+}</code></pre></div></article><article class="center code-1"><div class="wrapper"><pre><code>&lt;title &quot;Simplest example&quot;&gt;</code></pre></div></article><article class="center code-1"><div class="wrapper"><pre><code>&lt;title &quot;Простой пример&quot;&gt;</code></pre></div></article><article class="center result-scrn"><div class="wrapper">Простой пример</div></article><article class="center code-4"><div class="wrapper"><pre><code>&lt;input 
+	data-l10n-id=&quot;nameinput&quot; 
+	placeholder=&quot;default placeholder&quot;&gt;</code></pre></div></article><article class="center code-2"><div class="wrapper"><pre><code>&lt;nameinput 
+	placeholder: &quot;Как тебя зовут?&quot;&gt;</code></pre></div></article><article class="center input-example"><div class="wrapper"><input data-l10n-id="nameinput" placeholder="Как тебя зовут?"></div></article><article class="center part-scrn"><div class="wrapper">Многострочные вставки</div></article><article class="center code-4"><div class="wrapper"><pre><code>&lt;p data-l10n-id=&quot;save&quot;&gt;
+	&lt;input type=&quot;submit&quot;&gt;
+	&lt;a href=&quot;#&quot; class=&quot;btn-cancel&quot;&gt;&lt;/a&gt;
+&lt;/p&gt;</code></pre></div></article><article class="center code-2"><div class="wrapper"><pre><code>&lt;save &quot;&quot;&quot;
+	&lt;input 
+		value=&quot;Сохранить&quot; 
+		type=&quot;text&quot;&gt; или
+	&lt;a title=&quot;Вернуться назад&quot;&gt;
+		отменить?&lt;/a&gt;.
+&quot;&quot;&quot;&gt;</code></pre></div></article><article class="center button-example"><div class="wrapper"><p data-l10n-id="save"><input type="submit" value="Сохранить"> или <a href="#" title="Вернуться назад" class="btn-cancel">отменить?</a></p></div></article><article class="center part-scrn"><div class="wrapper">Переменные</div></article><article class="center code-1"><div class="wrapper"><pre><code>&lt;p data-l10n-id=&quot;message&quot;&gt;&lt;/p&gt;</code></pre></div></article><article class="center code-1"><div class="wrapper"><pre><code>&lt;name &quot;Настя&quot;&gt;
+&lt;message &quot;&quot;&quot;
+	Привет, {{ name }}!
+	&quot;&quot;&quot;&gt;</code></pre></div></article><article class="center result-scrn"><div class="wrapper">Привет, Настя!</div></article><article class="center code-2"><div class="wrapper"><pre><code>&lt;name {
+	short: &quot;Настя&quot;
+	long: &quot;Настасья Николаевна&quot;}&gt;
+&lt;message &quot;&quot;&quot;
+	Привет, {{ name.long }}!
+	&quot;&quot;&quot;&gt;</code></pre></div></article><article class="center result-scrn"><div class="wrapper">Привет, Настасья Николаевна!</div></article><article class="center code-2"><div class="wrapper"><pre><code>&lt;name {
+	*short: &quot;Настя&quot;
+	 long: &quot;Настасья Николаевна&quot;}&gt;
+&lt;message &quot;&quot;&quot;
+	Привет, {{ name }}!
+	&quot;&quot;&quot;&gt;</code></pre></div></article><article class="center result-scrn"><div class="wrapper">Привет, Настя!</div></article><article class="center code-3"><div class="wrapper"><pre><code>&lt;title[&quot;long&quot;] {
+	short: &quot;Настя&quot;,
+	long: &quot;Настасья Николаевна&quot;
+}&gt;</code></pre></div></article><article class="center result-scrn"><div class="wrapper">Привет, Настасья Николаевна!</div></article><article class="center part-scrn"><div class="wrapper">Глобальные<br>переменные</div></article><article class="center code-1"><div class="wrapper"><pre><code>&lt;p data-l10n-id=&quot;os&quot;&gt;&lt;/p&gt;</code></pre></div></article><article class="center code-1"><div class="wrapper"><pre><code>&lt;os &quot;ОС: {{ @os }}&quot;&gt;</code></pre></div></article><article class="center result-scrn"><div class="wrapper">ОС: mac</div></article><article class="center code-1"><div class="wrapper"><pre><code>&lt;p data-l10n-id=&quot;hour&quot;&gt;&lt;/p&gt;</code></pre></div></article><article class="center code-1"><div class="wrapper"><pre><code>&lt;hour &quot;Часов: {{ @hour }}&quot;&gt;</code></pre></div></article><article class="center result-scrn"><div class="wrapper">Часов: 15</div></article><article class="center code-1"><div class="wrapper"><pre><code>&lt;p data-l10n-id=&quot;screen&quot;&gt;&lt;/p&gt;</code></pre></div></article><article class="center code-4"><div class="wrapper"><pre><code>&lt;screen &quot;Ширина экрана: 
+	{{ @screen.width.px }} px&quot;&gt;</code></pre></div></article><article class="center result-scrn"><div class="wrapper">Ширина экрана: 1263 px</div></article><article class="center part-scrn"><div class="wrapper">Как передать<br>данные из вне?</div></article><article class="center code-4"><div class="wrapper"><pre><code>&lt;script type=&quot;application/l10n-data+json&quot;&gt;
+	{
+		&quot;name&quot;: &quot;Настя&quot;
+	}
+&lt;/script&gt;</code></pre></div></article><article class="center code-5"><div class="wrapper"><pre><code class="javascript">document.l10n.ready(function() {
+  var message = document.querySelector(
+        '[data-l10n-id="message"]');
+  message.textContent = document.l10n.getSync(
+    "message",
+    {
+      "name": "Настя"
+    });
+});</code></pre></div></article><article class="center result-scrn"><div class="wrapper">Привет, Настя</div></article><article class="center part-scrn"><div class="wrapper">Выбор перевода<br>взависимости<br>от переменной</div></article><article class="center code-3"><div class="wrapper"><pre><code>&lt;p data-l10n-id=&quot;publishing&quot;&gt;&lt;/p&gt;</code></pre></div></article><article class="center code-5"><div class="wrapper"><pre><code>&lt;publishing[$gender] {
+	masculine: &quot;{{$name}} написал вам сообщение&quot;,
+	feminine: &quot;{{$name}} написала вам сообщение&quot;,
+	*unknown: &quot;{{$name}} написало вам сообщение&quot;
+}&gt;</code></pre></div></article><article class="center code-4"><div class="wrapper"><pre><code class="javascript">document.l10n.ready(function() {
+  var node = document.querySelector(
+        '[data-l10n-id="publishing"]');
+  node.textContent = document.l10n.getSync(
+    "publishing",
+    {
+      "name": "Настя",
+      "gender": "feminine"
+    });
+});</code></pre></div></article><article class="center result-scrn"><div class="wrapper">Настя написала вам сообщение</div></article><article class="center part-scrn"><div class="wrapper">Падежи и макросы</div></article><article class="center code-4"><div class="wrapper"><pre><code>&lt;plural($n) { 
+	$n == 0 ? &quot;zero&quot; : 
+	($n%100)&gt;10&amp;&amp;($n%100)&lt;20 ? &quot;five&quot; : 
+	($n%10) == 1 ? &quot;one&quot; :
+	($n%10)&gt;1&amp;&amp;($n%10)&lt;5 ? &quot;two&quot; : &quot;five&quot;
+}&gt;</code></pre></div></article><article class="center code-5"><div class="wrapper"><pre><code>&lt;messages[plural($newmessages)] {
+	zero: &quot;У вас нет новых сообщений&quot;,
+	one: &quot;У вас {{$newmessages}} новое сообщение&quot;,
+	two: &quot;У вас {{$newmessages}} новых сообщения&quot;,
+	five: &quot;У вас {{$newmessages}} новых сообщений&quot;
+}&gt;</code></pre></div></article><article class="center code-3"><div class="wrapper"><pre><code>&lt;plural($n) { 
+	$n == 0 ? &quot;zero&quot; : 
+	$n == 1 ? &quot;one&quot;: &quot;many&quot;
+}&gt;</code></pre></div></article><article class="center code-5"><div class="wrapper"><pre><code>&lt;messages[plural($newmessages)] {
+	zero: &quot;There are no new messages&quot;,
+	one: &quot;You have {{$newmessages}} new message&quot;,
+	many: &quot;You have {{$newmessages}} new messages&quot;
+}&gt;</code></pre></div></article><article class="center code-4"><div class="wrapper"><pre><code class="javascript">document.l10n.ready(function() {
+  var node = document.querySelector(
+        '[data-l10n-id="messages"]');
+  node.textContent = document.l10n.getSync(
+    "messages",
+    {
+      newmessages: 1
+    });
+});</code></pre></div></article><article class="center result-scrn"><div class="wrapper">У вас 1 новое сообщение</div></article><article class="center part-scrn"><div class="wrapper">Адаптивность</div></article><article class="center code-2"><div class="wrapper"><pre><code>&lt;h1 data-l10n-id=&quot;settingsTitle&quot;&gt;&lt;/h1&gt;</code></pre></div></article><article class="center code-2"><div class="wrapper"><pre><code class="javascript">&lt;formFactor($n) { 
+   $n.px &gt; 1200 ? &quot;large&quot; : 
+   $n.px &gt;  980 ? &quot;desktop&quot; : 
+   $n.px &gt;  768 ? &quot;landscapeTablet&quot; :  
+   $n.px &gt;  480 ? &quot;landscapePhone&quot; :  
+                  &quot;portraitPhone&quot;  
+}&gt;
+</code></pre></div></article><article class="center code-4"><div class="wrapper"><pre><code class="javascript">&lt;dataSettings[formFactor(@screen.width)] {
+ *large: &quot;Настройки оповещений&quot;,
+  portraitPhone: &quot;Настройки&quot;
+}&gt;</code></pre></div></article><article class="phone"></article><article class="center i18n-links"><div class="wrapper"><img src="svg/l20n.svg" alt="QRCODE cо ссылкой на l20n" class="link"><p>http://l20n.org/</p></div></article><article class="center i18n-links oh"><div class="wrapper"><div class="half"><h2>Bower-пакет с l20n</h2></div><div class="half"><img src="svg/bower-l20n.svg" alt="QRCODE cо ссылкой на l20n" class="link"></div><p>https://github.com/l20n/builds</p></div></article><article class="center code-1"><div class="wrapper"><pre><code>$ bower install l20n</code></pre></div></article><article class="center i18n-links"><div class="wrapper"><h2>SLIME</h2><img src="svg/slime.svg" alt="QRCODE cо ссылкой на SLIME" class="link"><p>http://hg.mozilla.org/l10n/silme/summary</p></div></article><article class="center i18n-links"><div class="wrapper"><h2>Jed</h2><img src="svg/i18next.svg" alt="QRCODE cо ссылкой на JED" class="link"><p>http://slexaxton.github.io/Jed/</p></div></article><article class="center i18n-links"><div class="wrapper"><h2>Message<br>Format</h2><img src="svg/i18next.svg" alt="QRCODE cо ссылкой на messageformat" class="link"><p>http://github.com/SlexAxton/messageformat.js</p></div></article><article class="center quote"><div class="wrapper"><p>— Jan Mühlemann @jamuhl <time>(25.02.2014)</time></p><cite>«@SilentImp looks interesting…if the demand for this raises i'm sure it will be added.»</cite></div></article><article class="center cloud questions"><h1>О, да, вопросы!</h1></article><article class="contacts center i18n-links"><div class="wrapper"><div class="about-speaker"><p class="name">Антон Немцев</p><p class="twitter">@silentimp</p><p class="email">thesilentimp@gmail.com</p><p class="skype">skype: ravencry</p></div><img src="svg/git.svg" alt="QRCODE cо ссылкой на доклад" class="link"><p>http://github.com/SilentImp/localizaion</p></div></article></section></body></html>

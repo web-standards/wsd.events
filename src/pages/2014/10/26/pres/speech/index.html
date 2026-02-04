@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Учим браузер понимать и говорить</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link rel="stylesheet" href="styles/screen-d90984e344.css">
+	<style type="text/css">
+		.slide.cover canvas {
+			top: 50%;
+			left: 50%;
+		}
+
+		#face h2 {
+			margin: -39px -44px 0 0;
+			color: #333;
+			font-size: 70px;
+		}
+
+		#face p {
+			font-size: 30px;
+			margin-top: 20px;
+		} 
+
+		#face a {
+			text-decoration: none;
+			background: none;
+		} 
+
+		#table td {
+			vertical-align: middle;
+		}
+
+		#keyboard h2 {
+			margin: 405px 0 0;
+			color: #FFF;
+			font-size: 96px;
+		}
+
+		#gesture h2 {
+			margin: -62px -100px 0 294px;
+			color: #222;
+			font-size: 75px;
+		}
+
+		#voice h2 {
+			margin: 320px 0 0 0;
+			color: #FFF;
+			font-size: 90px;
+		}
+
+		#noise h2 {
+			text-align: right;
+			color: #FFF;
+			font-size: 90px;
+		}
+
+		.pic img {
+			margin-left: 200px;
+		}
+
+		.pros {
+			background-color: #E5FFD8;
+		}
+
+		.cons {
+			background-color: #FFD6D6;
+		}
+
+		#recgnition h2 {
+			color: #000;
+			font-size: 66px;
+		}
+
+		#voices {
+			border-radius: 7px;
+			border: 1px solid #777;
+			font-size: 23px;
+		}
+
+		#RecognizedText {
+			width: 100%;
+			height: 100px;
+			border-radius: 7px;
+			border: 1px solid #777;
+			font-size: 15px;
+		}
+
+		#emscripten h2 {
+			color: #fff;
+		}
+
+		.demoButton {
+			color: #fff;
+			background-color: #449d44;
+			border-color: #398439;
+			display: inline-block;
+			padding: 10px 16px;
+            font-size: 50px;
+			line-height: 1.33;
+			border-radius: 6px;
+			text-align: center;
+			white-space: nowrap;
+			vertical-align: middle;
+			cursor: pointer;
+			border: 1px solid transparent;
+		}
+
+		.demoButton:hover {
+			background-color: #297429;
+		}
+
+		.demoButton:active {
+			background-color: #195419;
+		}
+
+		#generation h2 {
+			margin-top: -78px;
+			color: #fff;
+		}
+
+		.sing {
+			font-size: 70px;
+		}
+	</style>	
+</head>
+<body class="list">
+	<header class="caption">
+		<h1>Учим браузер понимать и разговаривать</h1>
+		<p>Владимир Дашукевич <a href="https://twitter.com/life__777">@life__777</a></p>
+	</header>
+	<section class="slide cover active" id="face"><div>
+		<h2>Учим браузер понимать и разговаривать</h2>
+		<p>Владимир Дашукевич <a href="https://twitter.com/life__777">@life__777</a></p>
+		<img src="pictures/speech1.jpg" alt="">
+	</section>
+	<section class="slide shout"><div>
+		<h2>Как мы общаемся с браузером?</h2>
+	</section>
+	<section class="slide cover" id="keyboard"><div>
+		<h2>Клавиатура</h2>
+		<img src="pictures/speech2.jpg" alt="">
+	</section>
+	<section class="slide cons">
+		<div>
+			<h2>Недостатки</h2>
+			<ol>
+				<li class="next">Нужны руки</li>
+				<li class="next">Много не нужных движений</li>
+				<li class="next">Грязь</li>
+				<li class="next">Размеры</li>
+				<li class="next">A так же ...</li>
+			</ol>
+		</div>
+	</section>
+	<section class="slide cover h">
+		<img src="pictures/speech3.jpg" />	
+	</section>
+	<section class="slide cover" id="gesture"><div>
+		<h2>Управление жестами</h2>
+		<img src="pictures/speech4.jpg" alt="">
+	</section>
+	<section class="slide cons">
+		<div>
+			<h2>Недостатки</h2>
+			<ol>
+				<li class="next">Нужны руки или другие части тела</li>
+				<li class="next">Нету API в браузере</li>
+				<li class="next">Нужны специальные устройства (Leap Motion)</li>
+				<li class="next">Ещё больше ненужных движений</li>
+			</ol>
+		</div>
+	</section>
+	<section class="slide cover"><div>
+		<h2>Голос</h2>
+		<img src="pictures/speech5.jpg" alt="">
+	</section>
+	<section class="slide cover" id="voice"><div>
+		<h2>Голос!</h2>
+		<img src="pictures/speech6.jpg" alt="">
+	</section>
+	<section class="slide pros">
+		<div>
+			<h2>Достоинства</h2>
+			<ol>
+				<li class="next">Имеется API в браузере</li>
+				<li class="next">Не нужны руки</li>
+				<li class="next">Управление на расстоянии</li>
+			</ol>
+		</div>
+	</section>
+	<section class="slide cons">
+		<div>
+			<h2>Недостатки</h2>
+			<ol>
+				<li class="next">Сложность в распознавании команд</li>
+				<li class="next">Ошибочность</li>
+			</ol>
+		</div>
+	</section>
+	<section class="slide shout"><div>
+		<h2>Как это работает?</h2>
+	</section>
+	<section class="slide">
+		<div>
+			<h2>Звук</h2>
+			<p>Звук — физическое явление, представляющее собой распространение в виде упругих волн механических колебаний в твёрдой, жидкой или газообразной среде.</p>
+		</div>
+	</section> 
+	<section class="slide cover">
+		<div>
+			<canvas class='place' id="voiceDemo" width="900px" height="650px"></canvas>
+		</div>
+	</section>
+	<section class="slide cover">
+		<div>
+			<canvas class='place' id="voiceFrequencyDemo" width="900px" height="650px"></canvas>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<h2>Форманты</h2>
+			<img class="place b" src="pictures/speech7.jpg" />
+		</div>
+	</section>
+	<section class="slide cover w">
+		<div>
+			<img src="pictures/speech11.gif"/>
+		</div>
+	</section>
+	<section class="slide cover" id="noise">
+		<div>
+			<h2>Шум</h2>
+			<img src="pictures/speech9.jpg" alt="">
+		</div>
+	</section>
+	<section class="slide cover">
+		<div>
+			<canvas class='place' id="noiseDemo" width="900px" height="650px"></canvas>
+		</div>
+	</section>
+	<section class="slide cover w">
+		<div>
+			<img src="pictures/speech10.jpg" />
+		</div>
+	</section>
+	<section class="slide cover w">
+		<div>
+			<img src="pictures/speech12.png" />
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<h2>Спустя огромное количество больших формул</h2>
+			<img src="pictures/speech13.png" />
+		</div>
+	</section>
+	<section class="slide cover">
+		<img src="pictures/speech8.jpg" alt="">
+	</section>
+	<section class="slide">
+		<div>
+			<h2>Уровни распознавания речи</h2>
+			<ol>
+				<li class="next">Ввод и предварительная обработка сигналов</li>
+				<li class="next">Распознование слов и морфем</li>
+				<li class="next">Смысловой контроль</li>
+			</ol>
+		</div>
+	</section>
+	<section class="slide cover h">
+		<img src="pictures/speech30.jpg" alt="">
+	</section>
+	<section class="slide shout">
+		<h2>Что мы имеем в браузере?</h2>
+	</section>
+	<section class="slide cover w">
+		<div>
+			<img src="pictures/speech14.png" />
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<h2>Части</h2>
+			<ol>
+				<li class="next">Расспознавание речи</li>
+				<li class="next">Грамматика</li>
+				<li class="next">Синтез речи</li>
+			</ol>
+		</div>
+	</section>
+	<section class="slide cover" id="recgnition">
+		<div>
+			<h2>Расспознавание речи</h2>
+			<img src="pictures/speech15.jpg" alt="">
+		</div>
+	</section>
+
+	<section class="slide">
+		<div>
+		<h2>Расспознавание речи</h2>
+			<pre>
+				<code>var recognition = new webkitSpeechRecognition();</code>
+
+    			<code>recognition.onresult = function(event) {</code>
+			    <code>  if (event.results.length > 0) { </code>                                   
+			    <code>    q.value = event.results[0][0].transcript;</code>
+			    <code>  }</code>
+			    <code> }</code>
+			    
+			    <code>recognition.start();</code>
+			</pre>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+		<h2>Расспознавание речи</h2>
+			<pre>
+				<code><mark>var recognition = new webkitSpeechRecognition();</mark></code>
+				
+    			<code>recognition.onresult = function(event) {</code>
+			    <code>  if (event.results.length > 0) { </code>                                   
+			    <code>    q.value = event.results[0][0].transcript;</code>
+			    <code>  }</code>
+			    <code> }</code>
+			    
+
+			    <code>recognition.start();</code>
+			</pre>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+		<h2>Расспознавание речи</h2>
+			<pre>
+				<code>var recognition = new webkitSpeechRecognition();</code>
+				
+    			<code><mark>recognition.onresult = function(event) {</mark></code>
+			    <code>  if (event.results.length > 0) { </code>                                   
+			    <code>    q.value = event.results[0][0].transcript;</code>
+			    <code>  }</code>
+			    <code> }</code>
+			    
+
+			    <code>recognition.start();</code>
+			</pre>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+		<h2>Расспознавание речи</h2>
+			<pre>
+				<code>var recognition = new webkitSpeechRecognition();</code>
+				
+    			<code>recognition.onresult = function(event) {</code>
+			    <code>  if (event.results.length > 0) { </code>                                   
+			    <code>    q.value = event.results[0][0].transcript;</code>
+			    <code>  }</code>
+			    <code> }</code>
+			    
+
+			    <code><mark>recognition.start();</mark></code>
+			</pre>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+		<h2>Результаты</h2>
+			<pre>
+				<code>{ 0: {</code>
+				<code>		confidence: 0.9320464730262756,</code>
+				<code>		transcript: "зубная паста"</code>
+				<code>}, 1: {</code>
+				<code>		confidence: 0.3405290540655,</code>
+				<code>		transcript: "зубная паста спб"</code>
+				<code>	},</code>
+				<code>	isFinal:true,</code>
+				<code>	length: 2 }</code>
+			</pre>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+		<h2>Результаты</h2>
+			<pre>
+				<code>{ 0: {</code>
+				<code>		confidence: 0.9320464730262756,</code>
+				<code><mark>		transcript: "зубная паста"</mark></code>
+				<code>}, 1: {</code>
+				<code>		confidence: 0.3405290540655,</code>
+				<code>		transcript: "зубная паста спб"</code>
+				<code>	},</code>
+				<code>	isFinal:true,</code>
+				<code>	length: 2 }</code>
+			</pre>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+		<h2>Результаты</h2>
+			<pre>
+				<code>{ 0: {</code>
+				<code><mark>		confidence: 0.9320464730262756,</mark></code>
+				<code>		transcript: "зубная паста"</mark></code>
+				<code>}, 1: {</code>
+				<code>		confidence: 0.3405290540655,</code>
+				<code>		transcript: "зубная паста спб"</code>
+				<code>	},</code>
+				<code>	isFinal:true,</code>
+				<code>	length: 2 }</code>
+			</pre>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<h2>Возможности</h2>
+			<ol>
+				<li class="next">Непрерывное распознование речи <code>continuous</code></li>
+				<li class="next">Промежуточные результаты <code>interimResults</code></li>
+				<li class="next">Язык <code>lang</code></li>
+				<li class="next">Количество альтернатив <code>maxAlternatives</code></li>
+				<li class="next">Грамматика <code>grammars</code></li>
+			</ol>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<h2>Демо</h2>
+			<textarea id="RecognizedText"></textarea>
+			<button class="demoButton start">Старт</button>
+			<button class="demoButton stop">Стоп</button>
+		</div>
+	</section>
+	<section class="slide cover">
+		<div>
+			<video id="v" controls preload="metadata" width="900px" height="650px">
+				<source src="pictures/video1.mp4" type="video/mp4">
+			</video>
+		</div>
+	</section>
+	<section class="slide cover h">
+		<div>
+			<img src="pictures/speech16.png" alt="">
+		</div>
+	</section>
+	<section class="slide cover w">
+		<div>
+			<img src="pictures/speech17.png" />
+		</div>
+	</section>
+	<section class="slide cover w">
+		<div>
+			<img src="pictures/speech37.png" alt="">
+		</div>
+	</section>
+	<section class="slide cover" id="generation">
+		<div>
+			<h2>Генерация речи</h2>
+			<img src="pictures/speech18.jpg" alt="">
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+		<h2>Генерация речи</h2>
+			<pre>
+				<code>var u = new SpeechSynthesisUtterance();</code>
+				
+				<code>u.text = 'Привет';</code>
+     			<code>u.lang = 'ru-RU';</code>
+
+			    <code>speechSynthesis.speak(u);</code>
+			</pre>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+		<h2>Генерация речи</h2>
+			<pre>
+				<code><mark>var u = new SpeechSynthesisUtterance();</mark></code>
+				
+				<code>u.text = 'Привет';</code>
+     			<code>u.lang = 'ru-RU';</code>
+
+			    <code>speechSynthesis.speak(u);</code>
+			</pre>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+		<h2>Генерация речи</h2>
+			<pre>
+				<code>var u = new SpeechSynthesisUtterance();</mark></code>
+				
+				<code><mark>u.text = 'Привет';</mark></code>
+     			<code>u.lang = 'ru-RU';</code>
+
+			    <code>speechSynthesis.speak(u);</code>
+			</pre>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+		<h2>Генерация речи</h2>
+			<pre>
+				<code>var u = new SpeechSynthesisUtterance();</mark></code>
+				
+				<code>u.text = 'Привет';</code>
+     			<code>u.lang = 'ru-RU';</code>
+
+			    <code><mark>speechSynthesis.speak(u);</mark></code>
+			</pre>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<button class="place woman demoButton">Спой мне</button>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<h2>Возможности</h2>
+			<ol>
+				<li class="next">Громкость <code>volume</code></li>
+				<li class="next">Частота <code>pitch</code></li>
+				<li class="next">Скорость <code>rate</code></li>
+				<li class="next">Язык <code>lang</code></li>
+				<li class="next">Голос <code>voice</code></li>
+			</ol>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<button id="burn" class="woman demoButton">Жги, Дэвид Гилмор!</button>
+			<br />
+			<select id="voices">
+				<option value="ru-RU">Русский</option>
+			</select>	
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<h2>Альтернативы</h2>
+			<ol>
+				<li><a href="http://www.masswerk.at/mespeak/">masswerk.at/mespeak/</a></li>
+				<li><a href="https://uglyhack.appspot.com/webaudiotoy/">uglyhack.appspot.com/webaudiotoy/</a></li>
+			</ol>
+		</div>
+	</section>
+	<section class="slide shout">
+		<h2>Где можно использовать?</h2>
+	</section>
+	<section class="slide" id="table">
+		<div>
+			<table>
+				<tr>
+					<td>Генерация и распознование речи</td>
+					<td><img src="pictures/speech31.png" /></td>
+				</tr>
+				<tr>
+					<td>Генерация речи</td>
+					<td><img src="pictures/speech32.png" /> <img src="pictures/speech33.png" /><img src="pictures/speech34.png" /></td>
+				</tr>
+				<tr>
+					<td>Не поддерживается</td>
+					<td><img src="pictures/speech35.png" /> <img src="pictures/speech36.png" /></td>
+				</tr>
+			</table>
+		</div>
+	</section>
+	<section class="slide shout">
+		<h2>Что нас ждет в будущем?</h2>
+	</section>
+	<section class="slide cover w">
+		<div>
+			<img src="pictures/speech20.png" />
+		</div>
+	</section>
+	<section class="slide cover w">
+		<div>
+			<img src="pictures/speech21.png" />
+		</div>
+	</section>
+	<section class="slide cover w">
+		<div>
+			<img src="pictures/speech22.png" />
+		</div>
+	</section>
+	<section class="slide cover">
+		<img src="pictures/speech24.png" />
+	</section>
+	<section class="slide shout">
+		<h2>Кто виноват и что делать?</h2>
+	</section>
+	<section class="slide shout">
+		<div>
+			<h2><a href="https://api.yandex.ru/speechkit/cloud-api/">Yandex SpeechKit</a></h2>
+		</div>
+	</section>
+	<section class="slide cover w">
+		<div>
+			<img src="pictures/speech39.png" />
+		</div>
+	</section>
+	<section class="slide shout">
+		<h2>$5 за 1000 запросов</h2>
+	</section>
+	<section class="slide shout">
+		<div>
+			<h2>
+				<a href="http://www.speechapi.com/">speechapi.com</a>
+			</h2>
+		</div>
+	</section>
+	<section class="slide cover" id="emscripten">
+		<div>
+			<h2>Emscripten</h2>
+			<img src="pictures/speech26.jpg" />
+		</div>
+	</section>
+	<section class="slide cover w">
+		<div>
+			<img src="pictures/speech27.png" />
+		</div>
+	</section>
+	<section class="slide shout">
+		<div>
+			<h2><a href="http://syl22-00.github.io/pocketsphinx.js/">Pocketsphinx.js</a></h2>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<h2>Pocketsphinx.js</h2>
+			<ol>
+				<li class="next">pocketsphinx.js</li>
+				<li class="next">recognizer.js</li>
+				<li class="next">audioRecorder.js</li>
+				<li class="next">callbackManager.js</li>
+			</ol>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+		<h2>Pocketsphinx.js</h2>
+			<pre>
+				<code><mark>var audioContext = new AudioContext();</mark></code>
+				
+    			<code>navigator.getUserMedia({audio: true}, function(stream) {</code>
+				<code>	var input = audioContext.createMediaStreamSource(stream);</code>
+				<code>	recorder = new AudioRecorder(input);</code>
+				<code>	recognizer = new Module.Recognizer();</code>
+				<code>	recorder.consumers.push(recognizer);</code>
+				<code>	recorder.start();</code>
+				<code>}, function(e) {});</code>
+
+			</pre>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+		<h2>Pocketsphinx.js</h2>
+			<pre>
+				<code>var audioContext = new AudioContext();</code>
+				
+    			<code><mark>navigator.getUserMedia({audio: true}, function(stream) {</mark></code>
+				<code>	var input = audioContext.createMediaStreamSource(stream);</code>
+				<code>	recorder = new AudioRecorder(input);</code>
+				<code>	recognizer = new Module.Recognizer();</code>
+				<code>	recorder.consumers.push(recognizer);</code>
+				<code>	recorder.start();</code>
+				<code>}, function(e) {});</code>
+
+			</pre>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+		<h2>Pocketsphinx.js</h2>
+			<pre>
+				<code>var audioContext = new AudioContext();</code>
+				
+    			<code>navigator.getUserMedia({audio: true}, function(stream) {</code>
+				<code>	var input = audioContext.createMediaStreamSource(stream);</code>
+				<code><mark>	recorder = new AudioRecorder(input);</mark></code>
+				<code>	recognizer = new Module.Recognizer();</code>
+				<code>	recorder.consumers.push(recognizer);</code>
+				<code>	recorder.start();</code>
+				<code>}, function(e) {});</code>
+
+			</pre>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+		<h2>Pocketsphinx.js</h2>
+			<pre>
+				<code>var audioContext = new AudioContext();</code>
+				
+    			<code>navigator.getUserMedia({audio: true}, function(stream) {</code>
+				<code>	var input = audioContext.createMediaStreamSource(stream);</code>
+				<code>	recorder = new AudioRecorder(input);</code>
+				<code><mark>	recognizer = new Module.Recognizer();</mark></code>
+				<code>	recorder.consumers.push(recognizer);</code>
+				<code>	recorder.start();</code>
+				<code>}, function(e) {});</code>
+
+			</pre>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+		<h2>Pocketsphinx.js</h2>
+			<pre>
+				<code>var audioContext = new AudioContext();</code>
+				
+    			<code>navigator.getUserMedia({audio: true}, function(stream) {</code>
+				<code>	var input = audioContext.createMediaStreamSource(stream);</code>
+				<code>	recorder = new AudioRecorder(input);</code>
+				<code>	recognizer = new Module.Recognizer();</code>
+				<code>	recorder.consumers.push(recognizer);</code>
+				<code><mark>	recorder.start();</mark></code>
+				<code>}, function(e) {});</code>
+
+			</pre>
+		</div>
+	</section>
+	<section class="slide cons">
+		<div>
+			<h2>Недостатки</h2>
+			<ol>
+				<li>Сложность в распознавании команд</li>
+				<li>Ошибочность</li>
+			</ol>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+		<h2>Фонемы</h2>
+			<pre>
+				<code>var recognizer = new Module.Recognizer(),</code>
+				<code><mark>words = new Module.VectorWords()</mark></code>
+				<code>words.push_back(["Привет", "PR EE V ET"]);</code>
+				<code>words.push_back(["мир", "M IY R"]);</code>
+				<code>recognizer.addWords(words)</code>
+			</pre>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+		<h2>Фонемы</h2>
+			<pre>
+				<code>var recognizer = new Module.Recognizer(),</code>
+				<code>words = new Module.VectorWords()</code>
+				<code><mark>words.push_back(["Привет", <mark class="iportant">"PR EE V ET"</mark>]);<mark></code>
+				<code><mark>words.push_back(["мир", <mark class="iportant">"M IY R"</mark>]);<mark></code>
+				<code>recognizer.addWords(words)</code>
+			</pre>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+		<h2>Грамматика</h2>
+			<pre>
+				 <code><mark>{numStates: 3, start: 0, end: 3, transitions: [</mark></code>
+				 <code>	{from: 0, to: 1, word: "WINDOWS"},</code> 
+				 <code>	{from: 0, to: 1, word: "LINUX"},</code>  
+				 <code>	{from: 1, to: 2, word: "IS"},</code> 
+				 <code>	{from: 2, to: 2, word: "NOT"},</code> 
+				 <code>	{from: 2, to: 3, word: "GOOD"},</code>
+				 <code>	{from: 2, to: 3, word: "BAD"}]}</code>
+			</pre>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+		<h2>Грамматика</h2>
+			<pre>
+				 <code>{numStates: 3, start: 0, end: 3, transitions: [</code>
+				 <code>	<mark>{from: 0, to: 1, word: "WINDOWS"},</mark></code> 
+				 <code>	<mark>{from: 0, to: 1, word: "LINUX"},</mark></code>  
+				 <code>	{from: 1, to: 2, word: "IS"},</code> 
+				 <code>	{from: 2, to: 2, word: "NOT"},</code> 
+				 <code>	{from: 2, to: 3, word: "GOOD"},</code>
+				 <code>	{from: 2, to: 3, word: "BAD"}]}</code>
+			</pre>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+		<h2>Грамматика</h2>
+			<pre>
+				 <code>{numStates: 3, start: 0, end: 3, transitions: [</code>
+				 <code>	{from: 0, to: 1, word: "WINDOWS"},</code> 
+				 <code>	{from: 0, to: 1, word: "LINUX"},</code>  
+				 <code>	<mark>{from: 1, to: 2, word: "IS"},</mark></code> 
+				 <code>	<mark>{from: 2, to: 2, word: "NOT"},</mark></code> 
+				 <code>	{from: 2, to: 3, word: "GOOD"},</code>
+				 <code>	{from: 2, to: 3, word: "BAD"}]}</code>
+			</pre>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+		<h2>Грамматика</h2>
+			<pre>
+				 <code>{numStates: 3, start: 0, end: 3, transitions: [</code>
+				 <code>	{from: 0, to: 1, word: "WINDOWS"},</code> 
+				 <code>	{from: 0, to: 1, word: "LINUX"},</code>  
+				 <code>	{from: 1, to: 2, word: "IS"},</code> 
+				 <code>	{from: 2, to: 2, word: "NOT"},</code> 
+				 <code>	<mark>{from: 2, to: 3, word: "GOOD"},</mark></code>
+				 <code>	<mark>{from: 2, to: 3, word: "BAD"}]}</mark></code>
+			</pre>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<h2>Pocketsphinx.js</h2>
+			<div>
+				<button id="startBtn" class="woman demoButton">Старт</button>
+    			<button id="stopBtn" class="woman demoButton">Стоп</button>
+    			<div id="output" style="height:150px;overflow:auto;" >
+    			</div>
+			</div>
+		</div>
+	</section>
+	<section class="slide shout">
+		<div>
+			<h2><a href="https://github.com/zzmp/juliusjs">JuliusJS</a></h2>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<h2>JuliusJS</h2>
+			<pre>
+				<code>var julius = new Julius();</code>
+				<code>julius.onrecognition = function(sentence) {</code>
+				<code>	console.log(sentence);</code>
+				<code>};</code>
+			</pre>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+		<h2>Грамматика</h2>
+			<ol>
+				<li class="next">файл .voca - определение слов</li>
+				<li class="next">файл .grammar - сочетание слов</li>
+			</ol>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<h2>.voca</h2>
+			<img class="place" src="pictures/speech29.png" />
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<h2>.grammar</h2>
+			<img class="place" src="pictures/speech28.png" />
+		</div>
+	</section>
+	<!-- <section class="slide">
+		<div>
+			<h2>JuliusJS</h2>
+			<div>
+				<a href="http://zzmp.github.io/juliusjs/">Демо</a>
+			</div>
+		</div>
+	</section> -->
+	<section class="slide shout">
+		<div>
+			<h2>Применение</h2>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<h2>Применение</h2>
+			<h3>Пользователи как Javascript</h3>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<h2>Применение</h2>
+			<h3>Пользователи как <span style="text-decoration: line-through;">Javascript</span> - однопоточные</h3>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<h2>Где нужны руки?</h2>
+			<ol>
+				<li class="next">За рулем</li>
+				<li class="next">При готовке</li>
+				<li class="next">За станком</li>
+				<li class="next">В обучении</li>
+				<li class="next">Для людей с ограниченными возможностями</li>
+			</ol>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<h2>19% пользователей имеют разную степень инвалидности</h2>
+			<h3>Сумма IE8+IE9 на 14 сентября 14 года равняется 1.4%</h3>
+			<br>
+			<h3><a href="http://www.liveinternet.ru/stat/ru/browsers.html?id=50;id=49;id=total;date=2013-02-15;page=2">Статистика</h3>
+		</div>
+	</section>
+	<section class="slide cover h">
+		<div>
+			<img src="pictures/speech29.jpg" />
+		</div>
+	</section>
+	<section class="slide shout">
+		<div>
+			<h2>Вопросы</h2>
+		</div>
+	</section>
+</body>
+<script src="js/shower.min.js"></script>
+<script src="js/audioRecorder.js"></script>
+<script src="js/callbackManager.js"></script>
+<script type="text/javascript">
+	var recognition = new webkitSpeechRecognition();
+
+	recognition.continuous = true;
+	recognition.interimResults = false;
+	recognition.lang = "ru-RU";
+	recognition.maxAlternatives = 1;
+
+(function(){
+	//recognitions
+	var elem = document.getElementById("RecognizedText"),
+		start = document.querySelector(".start"),
+		stop = document.querySelector(".stop");
+
+	start.addEventListener("click", function(){
+		recognition.start();
+	}, false);	
+	stop.addEventListener("click", function(){
+		recognition.stop();
+	}, false);
+	
+    recognition.addEventListener("result", function(event) {
+      if (event.results.length > 0) {
+		elem.value = Array.prototype.reduce.call(event.results, function(str, result){
+			return str + result[0].transcript;
+		}, "");
+      }
+    }, false);
+})();
+
+(function(){
+	//video control
+	var elem = document.getElementById("v"),
+		cur = 0,
+		actions = {
+			/*"видео старт": function(){
+				elem.play();
+			},
+			"видео стоп": function(){
+				elem.pause();
+			},*/
+			/*"следующий слайд": function(){
+				shower.next();
+			}*/
+		};
+
+    recognition.addEventListener("result", function(event) {
+    	var cur = event.results.length - 1;
+      if (event.results.length > 0 && actions[event.results[cur][0].transcript.trim().toLowerCase()]) {
+		actions[event.results[cur][0].transcript.trim().toLowerCase()]();
+      }
+    }, false);
+})();
+
+(function(){
+	var button = document.getElementById('burn'),
+		voiceSelect = document.getElementById('voices'),
+		voicesStore,
+	 	loadVoices = function() {
+			var voices = speechSynthesis.getVoices();
+			voicesStore = voices;
+			voices.forEach(function(voice, i) {
+				var option = document.createElement('option');
+				option.value = voice.name;
+				option.innerHTML = voice.name;
+
+				voiceSelect.appendChild(option);
+			});
+		},
+		requestVoices = function(){
+			if (!voicesStore.length){
+				speechSynthesis.getVoices();
+				setTimeout(requestVoices, 1000);
+			}
+		};
+
+	window.speechSynthesis.addEventListener("voiceschanged", function(e) {
+	  loadVoices();
+	});
+	loadVoices();
+
+	setTimeout(requestVoices, 1000);
+
+	button.addEventListener('click', function(e) {
+		var msg = new SpeechSynthesisUtterance(), voi;
+
+		msg.text = "1 2 3, We don't need no education";
+		
+
+		if (voiceSelect.value) {
+			voi = voicesStore.filter(function(voice) { 
+				return voice.name == voiceSelect.value; 
+			});
+			voi = voi && voi[0];
+			if (voi){
+				msg.voice = voi.voiceURI;
+				msg.lang = voi.lang;	
+			} else {
+				msg.lang = voiceSelect.value;
+			}
+			
+		}
+		window.speechSynthesis.speak(msg);
+	});
+})();
+
+(function(){
+	var canvas = document.getElementById("voiceDemo"),
+		context = canvas.getContext("2d"),
+		width = parseInt(canvas.getAttribute("width")),
+		height = parseInt(canvas.getAttribute("height")),
+
+		fftCanvas = document.getElementById("voiceFrequencyDemo"),
+		fftContext = fftCanvas.getContext("2d"),
+		fftWidth = parseInt(canvas.getAttribute("width")),
+		fftHeight = parseInt(canvas.getAttribute("height")),
+
+		noiseCanvas = document.getElementById("noiseDemo"),
+		noiseContext = noiseCanvas.getContext("2d"),
+
+		audioContext = new (window.AudioContext || window.webkitAudioContext)(), 
+		analyser = audioContext.createAnalyser(),
+		dataArr = new Uint8Array(2048),
+
+		fftAudioContext = new (window.AudioContext || window.webkitAudioContext)(), 
+		fftAnalyser = fftAudioContext.createAnalyser(),
+		drawTimeGraph = function(data){
+			context.fillStyle = 'rgb(220, 220, 220)';
+	      	context.fillRect(0, 0, width, height);
+
+	      	context.lineWidth = 2;
+	      	context.strokeStyle = 'rgb(0, 0, 0)';
+
+	      	context.beginPath();
+
+	      	var sliceWidth = width * 1.0 / 2048;
+	      	var x = 0;
+
+	      	for(var i = 0; i < 2048; i++) {
+	   
+	        	var v = data[i] / 128.0;
+	        	var y = v * height/2;
+
+	        	if(i === 0) {
+	          		context.moveTo(x, y);
+        		} else {
+	          		context.lineTo(x, y);
+	        	}
+
+        		x += sliceWidth;
+	      	}
+
+	      context.lineTo(width, height/2);
+	      context.stroke();
+		},
+		drawFreqGraph = function(data, freqContext){
+			freqContext.fillStyle = 'rgb(0, 0, 0)';
+	      	freqContext.fillRect(0, 0, fftWidth, fftHeight);
+	      	var length = data.length/2;
+
+	      var barWidth = (fftWidth / length);
+	      var barHeight, x = 0;
+
+	      for(var i = 0; i < length; i++) {
+	        barHeight = data[i];
+
+	        freqContext.fillStyle = 'rgb(' + (barHeight+100) + ',50,50)';
+	        freqContext.fillRect(x, fftHeight - fftHeight * barHeight/256.0, barWidth, fftHeight);
+
+	        x += barWidth + 1;
+	      }
+		},
+		dragTime = function(){
+			requestAnimationFrame(dragTime);
+
+			analyser.getByteTimeDomainData(dataArr);
+	    	drawTimeGraph(dataArr);
+
+			var fftDataArr = new Uint8Array(fftAnalyser.frequencyBinCount);
+	    	fftAnalyser.getByteFrequencyData(fftDataArr);
+	    	drawFreqGraph(fftDataArr, fftContext);
+	    	drawFreqGraph(fftDataArr, noiseContext);
+		};
+	
+	navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
+
+	if (navigator.getUserMedia) {
+		navigator.getUserMedia({
+			audio: true
+		}, function(stream){
+			var source = audioContext.createMediaStreamSource(stream),
+				gainNode = audioContext.createGain(),
+				fftSource = fftAudioContext.createMediaStreamSource(stream);
+
+			gainNode.gain.value = 2;
+			source.connect(gainNode);
+			gainNode.connect(analyser);
+			//analyser.connect(audioContext.destination);
+			analyser.fftSize = 2048;
+
+			fftSource = fftAudioContext.createMediaStreamSource(stream);
+			fftSource.connect(fftAnalyser);
+			//fftAnalyser.connect(fftAudioContext.destination);
+			fftAnalyser.fftSize = 2048;
+
+			requestAnimationFrame(dragTime);
+		}, function(){
+			alert("Error!!!");
+		})
+	} else {
+		alert("Not supported");
+	}
+	
+
+})();
+
+window.speechSynthesis.onvoiceschanged = function(){
+	var start = document.querySelector(".woman"),
+		man = document.querySelector(".man"),
+		voices = window.speechSynthesis.getVoices();
+
+     start.addEventListener("click", function(){
+     	var u = new SpeechSynthesisUtterance();
+ 		u.text = 'Самая любимая музыка здесь играет Мне нужен алкоголь, А тебя ждет на танцполе';
+	     u.lang = 'ru-RU';
+	     u.rate = 1.2;
+	     speechSynthesis.speak(u);	
+     }, false);
+};
+
+recognition.start();
+</script>
+
+<script>
+      // These will be initialized later
+      var recognizer, recorder, callbackManager, audioContext, outputContainer;
+      // Only when both recorder and recognizer do we have a ready application
+      var recorderReady = recognizerReady = false;
+
+      // A convenience function to post a message to the recognizer and associate
+      // a callback to its response
+      var elem = document.getElementById("v");
+      function postRecognizerJob(message, callback) {
+        var msg = message || {};
+        if (callbackManager) msg.callbackId = callbackManager.add(callback);
+        if (recognizer) recognizer.postMessage(msg);
+      };
+
+      // This function initializes an instance of the recorder
+      // it posts a message right away and calls onReady when it
+      // is ready so that onmessage can be properly set
+      function spawnWorker(workerURL, onReady) {
+          recognizer = new Worker(workerURL);
+          recognizer.onmessage = function(event) {
+            onReady(recognizer);
+          };
+          recognizer.postMessage('');
+      };
+
+      var prev = true;
+
+      // To display the hypothesis sent by the recognizer
+      function updateHyp(hyp) {
+        if (outputContainer) outputContainer.innerHTML = hyp;
+        if (hyp){
+
+        	if (prev){
+        		if (hyp.indexOf("Slide") > -1){
+					prev = false;
+					shower.next();
+					stopRecording();
+					startRecording();
+					outputContainer.innerHTML = "";
+					setTimeout(function(){
+						prev = true;
+					}, 2000);
+				}
+				if (hyp.indexOf("videoOn") > -1){
+					prev = false;
+					elem.play();
+					stopRecording();
+					startRecording();
+					outputContainer.innerHTML = "";
+					setTimeout(function(){
+						prev = true;
+					}, 2000);
+				}
+				if (hyp.indexOf("videoOff") > -1){
+					prev = false;
+					elem.pause();
+					stopRecording();
+					startRecording();
+					outputContainer.innerHTML = "";
+					setTimeout(function(){
+						prev = true;
+					}, 2000);
+				}
+        	}
+			
+        }
+        
+      };
+
+      // This updates the UI when the app might get ready
+      // Only when both recorder and recognizer are ready do we enable the buttons
+      function updateUI() {
+        if (recorderReady && recognizerReady) startBtn.disabled = stopBtn.disabled = false;
+      };
+
+      // This is just a logging window where we display the status
+      function updateStatus(newStatus) {
+        
+      };
+
+      function startUserMedia(stream) {
+        var input = audioContext.createMediaStreamSource(stream);
+
+        var audioRecorderConfig = {errorCallback: function(x) {updateStatus("Error from recorder: " + x);}};
+        recorder = new AudioRecorder(input, audioRecorderConfig);
+
+        if (recognizer) recorder.consumers = [recognizer];
+        recorderReady = true;
+        updateUI();
+        updateStatus("Audio recorder ready");
+      };
+
+      // This starts recording. We first need to get the id of the grammar to use
+      var startRecording = function() {
+        recorder && recorder.start(1)
+      };
+
+      // Stops recording
+      var stopRecording = function() {
+        recorder && recorder.stop();
+      };
+
+      // Called once the recognizer is ready
+      // We then add the grammars to the input select tag and update the UI
+      var recognizerReady = function() {
+           updateGrammars();
+           recognizerReady = true;
+           updateUI();
+           updateStatus("Recognizer ready");
+      };
+
+      // We get the grammars defined below and fill in the input select tag
+      var updateGrammars = function() {
+                        
+      };
+
+      // This adds a grammar from the grammars array
+      // We add them one by one and call it again as
+      // a callback.
+      // Once we are done adding all grammars, we can call
+      // recognizerReady()
+      var feedGrammar = function(g, index, id) {
+        if (id && (grammarIds.length > 0)) grammarIds[0].id = id.id;
+        if (index < g.length) {
+          grammarIds.unshift({title: g[index].title})
+	  postRecognizerJob({command: 'addGrammar', data: g[index].g},
+                             function(id) {feedGrammar(grammars, index + 1, {id:id});});
+        } else {
+          recognizerReady();
+        }
+      };
+
+      // This adds words to the recognizer. When it calls back, we add grammars
+      var feedWords = function(words) {
+           postRecognizerJob({command: 'addWords', data: words},
+                        function() {feedGrammar(grammars, 0);});
+      };
+
+      // This initializes the recognizer. When it calls back, we add words
+      var initRecognizer = function() {
+          // You can pass parameters to the recognizer, such as : {command: 'initialize', data: [["-hmm", "my_model"], ["-fwdflat", "no"]]}
+          postRecognizerJob({command: 'initialize'},
+                            function() {
+                                        if (recorder) recorder.consumers = [recognizer];
+                                        feedWords(wordList);});
+      };
+
+       // This is the list of words that need to be added to the recognizer
+       // This follows the CMU dictionary format
+      var wordList = [["ONE", "W AH N"], ["TWO", "T UW"], ["THREE", "TH R IY"], ["Slide", "S L EY D AH SH IY S L AE IY D"], ["videoOn", "W IY D EY AO S T AA R T"], ["videoOff", "W IY D EY AO S T AO P"], ["FOUR", "F AO R"], ["FIVE", "F AY V"], ["SIX", "S IH K S"], ["SEVEN", "S EH V AH N"], ["EIGHT", "EY T"], ["NINE", "N AY N"], ["ZERO", "Z IH R OW"], ["NEW-YORK", "N UW Y AO R K"], ["NEW-YORK-CITY", "N UW Y AO R K S IH T IY"], ["PARIS", "P AE R IH S"] , ["PARIS(2)", "P EH R IH S"], ["SHANGHAI", "SH AE NG HH AY"], ["SAN-FRANCISCO", "S AE N F R AE N S IH S K OW"], ["LONDON", "L AH N D AH N"], ["BERLIN", "B ER L IH N"], ["SUCKS", "S AH K S"], ["ROCKS", "R AA K S"], ["IS", "IH Z"], ["NOT", "N AA T"], ["GOOD", "G IH D"], ["GOOD(2)", "G UH D"], ["GREAT", "G R EY T"], ["WINDOWS", "W IH N D OW Z"], ["LINUX", "L IH N AH K S"], ["UNIX", "Y UW N IH K S"], ["MAC", "M AE K"], ["AND", "AE N D"], ["AND(2)", "AH N D"], ["O", "OW"], ["S", "EH S"], ["X", "EH K S"]];
+      // This grammar recognizes digits
+      var grammarDigits = {numStates: 1, start: 0, end: 0, transitions: [{from: 0, to: 0, word: "ONE"},{from: 0, to: 0, word: "TWO"},{from: 0, to: 0, word: "THREE"},{from: 0, to: 0, word: "FOUR"},{from: 0, to: 0, word: "FIVE"},{from: 0, to: 0, word: "SIX"},{from: 0, to: 0, word: "SEVEN"},{from: 0, to: 0, word: "EIGHT"},{from: 0, to: 0, word: "NINE"},{from: 0, to: 0, word: "ZERO"},{from: 0, to: 0, word: "Slide"},{from: 0, to: 0, word: "videoOn"},{from: 0, to: 0, word: "videoOff"}]};
+      // This grammar recognizes a few cities names
+      var grammarCities = {numStates: 1, start: 0, end: 0, transitions: [{from: 0, to: 0, word: "NEW-YORK"}, {from: 0, to: 0, word: "NEW-YORK-CITY"}, {from: 0, to: 0, word: "PARIS"}, {from: 0, to: 0, word: "SHANGHAI"}, {from: 0, to: 0, word: "SAN-FRANCISCO"}, {from: 0, to: 0, word: "LONDON"}, {from: 0, to: 0, word: "BERLIN"}]};
+      // This is to play with beloved or belated OSes
+      var grammarOses = {numStates: 7, start: 0, end: 6, transitions: [{from: 0, to: 1, word: "WINDOWS"}, {from: 0, to: 1, word: "LINUX"}, {from: 0, to: 1, word: "UNIX"}, {from: 1, to: 2, word: "IS"}, {from: 2, to: 2, word: "NOT"}, {from: 2, to: 6, word: "GOOD"}, {from: 2, to: 6, word: "GREAT"}, {from: 1, to: 6, word: "ROCKS"}, {from: 1, to: 6, word: "SUCKS"}, {from: 0, to: 4, word: "MAC"}, {from: 4, to: 5, word: "O"}, {from: 5, to: 3, word: "S"}, {from: 3, to: 1, word: "X"}, {from: 6, to: 0, word: "AND"}]};
+      var grammars = [{title: "OSes", g: grammarOses}, {title: "Digits", g: grammarDigits}, {title: "Cities", g: grammarCities}];
+      var grammarIds = [];
+
+
+      outputContainer = document.getElementById("output");
+        updateStatus("Initializing web audio and speech recognizer, waiting for approval to access the microphone");
+        callbackManager = new CallbackManager();
+        spawnWorker("js/recognizer.js", function(worker) {
+            // This is the onmessage function, once the worker is fully loaded
+            worker.onmessage = function(e) {
+                // This is the case when we have a callback id to be called
+                if (e.data.hasOwnProperty('id')) {
+                  var clb = callbackManager.get(e.data['id']);
+                  var data = {};
+                  if ( e.data.hasOwnProperty('data')) data = e.data.data;
+                  if(clb) clb(data);
+                }
+                // This is a case when the recognizer has a new hypothesis
+                if (e.data.hasOwnProperty('hyp')) {
+                  var newHyp = e.data.hyp;
+                  if (e.data.hasOwnProperty('final') &&  e.data.final) newHyp = "Final: " + newHyp;
+                  updateHyp(newHyp);
+                }
+                // This is the case when we have an error
+                if (e.data.hasOwnProperty('status') && (e.data.status == "error")) {
+                  updateStatus("Error in " + e.data.command + " with code " + e.data.code);
+                }
+            };
+            // Once the worker is fully loaded, we can call the initialize function
+            initRecognizer();
+        });
+
+        // The following is to initialize Web Audio
+        try {
+          window.AudioContext = window.AudioContext || window.webkitAudioContext;
+          navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+          window.URL = window.URL || window.webkitURL;
+          audioContext = new AudioContext();
+        } catch (e) {
+          updateStatus("Error initializing Web Audio browser");
+        }
+        if (navigator.getUserMedia) navigator.getUserMedia({audio: true}, startUserMedia, function(e) {
+                                        updateStatus("No live audio input in this browser");
+                                    });
+        else updateStatus("No web audio support in this browser");
+
+      // Wiring JavaScript to the UI
+
+	      var startBtn = document.getElementById('startBtn');
+	      var stopBtn = document.getElementById('stopBtn');
+	      startBtn.disabled = true;
+	      stopBtn.disabled = true;
+	      startBtn.onclick = startRecording;
+	      stopBtn.onclick = stopRecording;
+
+	      setTimeout(function(){
+	      	startRecording();
+	      }, 10000);
+	      
+</script>
+</html>

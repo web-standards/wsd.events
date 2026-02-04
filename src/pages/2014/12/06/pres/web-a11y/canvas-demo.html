@@ -1,0 +1,72 @@
+
+<html>
+<head>
+  <title>Canvas Clock Example</title>
+  <link href='http://fonts.googleapis.com/css?family=Nova%20Mono' rel='stylesheet' type='text/css'>
+  <style>
+    h1 {
+      text-align: center;
+    }
+    #main {
+      width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+      font-family: arial, helvetica, sans-serif;
+      font-size: 13;
+    }
+    #clock {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #time {
+      font-family: Nova Mono, Courier;
+      font-size: 30px;
+      margin: 10px;
+      text-align: center;
+    }
+  </style>
+  <script src='accessible_canvas_clock.js'></script>
+</head>
+<body onload="load()">
+
+<div id="main">
+
+  <h1>
+    Accessible canvas clock
+  </h1>
+
+  <div id="unsupported" hidden style="margin: 10px">
+    drawSystemFocusRing not enabled. In Chrome 31 and higher,
+    open <tt>chrome://flags</tt> and enable <b>experimental canvas features</b>,
+    then restart the browser.
+  </div>
+
+  <canvas id="clock" width="150" height="150">
+    <input id="hour" type="range" min="1" max="12" aria-label="Hour hand">
+    <input id="minute" type="range" min="0" max="59" aria-label="Minute hand">
+  </canvas>
+
+  <div id="time">00:00</div>
+
+  <div>
+    <p>
+    This is a demo of the <tt>drawSystemFocusRing</tt>
+    (<a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-drawsystemfocusring">whatwg</a>,
+    <a href="http://www.w3.org/html/wg/drafts/2dcontext/html5_canvas/#dom-context-2d-drawsystemfocusring">w3c</a>) API for HTML Canvas elements.
+    </p>
+    <p>
+    Try moving the minute or hour hand with the mouse, or
+    tab to them with the keyboard and adjust them like sliders.
+    It's fully accessible using screen readers and
+    magnifiers.
+    </p>
+    <p>
+    Copyright 2013 by Dominic Mazzoni, Google Inc.
+    </p>
+  </div>
+
+</div>
+
+</body>
+</html>

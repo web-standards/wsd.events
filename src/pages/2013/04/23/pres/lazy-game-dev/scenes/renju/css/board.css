@@ -1,0 +1,86 @@
+.game .field .place .marked_win .wall-floor{
+  box-shadow: inset 0 0 0 50px rgba(0,154,172,.5);
+  /*box-shadow:0 0 25px 5px rgba(0,154,172,.75);*/
+  }
+
+.game .field .place .marked_loose .wall-floor{
+  box-shadow: inset 0 0 0 50px rgba(255,0,0,.5);
+  }
+
+.board{
+  width: 750px;
+  height: 750px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  }
+  .board .board-front{
+    width: 750px;
+    height: 50px;
+    display: block;
+    position: absolute;
+    top: 750px;
+    left: 0;
+    right: 0;
+
+    background: url('../img/front.jpg') repeat;
+
+    -webkit-transform-origin: 0 0 0;
+    -moz-transform-origin: 0 0 0;
+    transform-origin: 0 0 0;
+
+    -webkit-transform: rotateX(-90deg);
+    -moz-transform: rotateX(-90deg);
+    transform: rotateX(-90deg);
+
+    -webkit-background-size: auto 100%;
+         -o-background-size: auto 100%;
+            background-size: auto 100%;
+
+    }
+  .board .board-top{
+    width: 750px;
+    height: 750px;
+    background: url('../img/grass.jpg') 0 0 repeat;
+    -webkit-background-size: 256px;
+         -o-background-size: 256px;
+            background-size: 256px;
+
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    }
+    .board .board-top .place[data-x='7'][data-y='7'],
+    .board .board-top .place[data-x='9'][data-y='9'],
+    .board .board-top .place[data-x='5'][data-y='9'],
+    .board .board-top .place[data-x='9'][data-y='5'],
+    .board .board-top .place[data-x='5'][data-y='5']{
+      background: rgba(0,255,0,.25);
+      }
+    .board .board-top .place{
+      z-index: 1;
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      display: block;
+      background: rgba(0,255,0,.0);
+
+      -webkit-transform: translateZ(.5px);
+      -moz-transform: translateZ(.5px);
+      transform: translateZ(.5px);
+
+      -webkit-transform-style: preserve-3d;
+      -moz-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+      }
+      .board .board-top .place:hover{
+        box-shadow:inset 0 0 0 50px rgba(0,255,0,.25);
+        }
+      .board .board-stop .place.passive:hover{
+        box-shadow:none;
+        }

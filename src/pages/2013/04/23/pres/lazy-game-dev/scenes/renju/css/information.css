@@ -1,0 +1,117 @@
+.information{
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  right: 0;
+  }
+  .information .quit:hover{
+    background: rgba(0,165,0,.55);
+    }
+  .information .quit{
+    display: block;
+    font-size: 0;
+    color:#fff;
+    white-space: nowrap;
+    height: 44px;
+    position: absolute;
+    top: 20px;
+    background: rgba(0,154,172,.55);
+    text-align: center;
+    right: 20px;
+    white-space: nowrap;
+    font:14px/44px serif;
+    padding:0 20px;
+    text-decoration: none;
+    }
+  .information .name{
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 200px;
+    -ms-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+    overflow: hidden;
+    font:24px/44px serif;
+    }
+  .information .avatar{
+    vertical-align: middle;
+    display: inline-block;
+    overflow: hidden;
+    margin: 0 5px 0 0;
+    width: 22px;
+    height: 22px;
+    background: url('../img/avatars.png') 0 0 no-repeat;
+    -webkit-background-size: 230px auto;
+         -o-background-size: 230px auto;
+            background-size: 230px auto;
+    }
+  .information .player.selected{
+    display: block;
+    }
+  .information .player.player-1{
+    background: rgba(255,0,0,.75);
+    }
+  .information .player.player-1:after{
+    border-color: rgba(255,0,0,.75) transparent transparent;
+    }
+  .information .player:after{
+    content:".";
+    font-size: 0;
+    line-height: 0;
+    height: 0;
+    width: 0;
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    top: 100%;
+    left: 10px;
+    border-style:solid;
+    border-width: 10px 10px 0 0;
+    border-color: rgba(0,154,172,.55) transparent transparent;
+    }
+  .information .player.selected nav{
+    display: inline-block;
+    }
+  .information .player nav{
+    font-size: 0;
+    height: 44px;
+    vertical-align: top;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    display: none;
+    }
+    .information .player nav a:hover{
+      background-color: rgba(0,165,0,.55);
+      color:#fff;
+      }
+    .information .player nav a.pass{
+      display: none;
+      }
+    .information .player nav a.remove{
+      display: none;
+      }
+    .information .player nav a{
+      height: 44px;
+      vertical-align: middle;
+      display: inline-block;
+      background-color: rgba(0,154,172,.55);
+      color:#fff;
+      margin-left: 1px;
+      text-decoration: none;
+      font:14px/44px serif;
+      padding:0 20px;
+      }
+  .information .player{
+    display: none;
+    font-size: 0;
+    color:#fff;
+    white-space: nowrap;
+    height: 44px;
+    padding: 0 10px;
+    position: absolute;
+    top: 20px;
+    background: rgba(0,154,172,.55);
+    text-align: center;
+    left: 20px;
+    }

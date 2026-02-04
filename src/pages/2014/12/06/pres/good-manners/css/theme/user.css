@@ -1,0 +1,71 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Condensed&subset=latin,cyrillic-ext,latin-ext,cyrillic);
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+	font-family: "Ubuntu Condensed", sans-serif !important;
+	}
+
+.reveal pre {
+	font-size: .9em;
+	line-height: 1.5;
+	}
+
+.reveal pre code {
+	max-height: 9999px;
+	}
+
+.reveal ol,
+.reveal ul {
+	display: block;
+	list-style: none;
+	}
+
+.cols {
+	width: 1600px;
+	text-align: center;
+	}
+
+.cols li {
+	display: inline-block;
+	width: 48%;
+	margin-left: 0;
+	text-align: left;
+	vertical-align: top;
+	}
+
+.cols li + li {
+	margin-left: 2%;
+	}
+
+.cols h3 {
+	text-align: center;
+	}
+
+/* author */
+
+.reveal div.author {
+	width: 50%;
+	margin: 150px auto 0;
+	text-align: left;
+	}
+
+.reveal div img.author-avatar {
+	float: left;
+	width: 250px;
+	margin: 0 60px 0 0;
+	border: 0;
+	border-radius: 50%;
+	}
+
+.reveal div.author-main {
+	padding-top: 20px;
+	}
+
+.reveal div.author-contacts {
+	margin-top: 40px;
+	font-style: italic;
+	}

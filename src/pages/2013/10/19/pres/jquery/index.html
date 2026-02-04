@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>Как знать jQuery и не облажаться</title>
+
+	<meta name="description"
+			content="Доклад для тех, у кого в резюме есть строчка «знаю JavaScript (jQuery)». Всё больше фронтенд-разработчиков сильно зависят от jQuery. Чем же отличается фреймворк от библиотеки? Что такое такое JavaScript на самом деле? Доклад расскажет о том, как побороть эту вредную привычку и начать жить.">
+	<meta name="author" content="Vadim Patsev">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.5, maximum-scale=2.0, user-scalable=yes">
+
+	<link rel="stylesheet" href="css/reveal.min.css">
+	<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+	<!-- For syntax highlighting -->
+	<link rel="stylesheet" href="lib/css/xcode.css">
+
+	<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+	<script>
+		document.write('<link rel="stylesheet" href="css/print/' + ( window.location.search.match(/print-pdf/gi) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">');
+	</script>
+
+	<!--[if lt IE 9]>
+	<script src="lib/js/html5shiv.js"></script>        <![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+<!-- Any section element inside of this container is displayed as a slide -->
+<div class="slides">
+<section>
+	<h1>как знать jQuery</h1>
+
+	<h3>и не облажаться</h3>
+
+	<p>
+		<small>Вадим Пацев / <a href="https://twitter.com/basvasilich">@basvasilich</a></small>
+	</p>
+</section>
+
+<section>
+	<h2>У вас есть строчка <br/>про jQuery в резюме?</h2>
+</section>
+
+<section>
+	<h2>Зачем она?</h2>
+</section>
+
+<section>
+	<section>
+		<h2>58.1%</h2>
+		<h4>Quantcast Top Million</h4>
+		<p><a href="https://trends.builtwith.com/javascript/jQuery">trends.builtwith.com/javascript/jQuery</a></p>
+	</section>
+
+	<section>
+		<h2>30.9%</h2>
+		<h4>Most of Internet</h4>
+		<p><a href="https://trends.builtwith.com/javascript/jQuery">trends.builtwith.com/javascript/jQuery</a></p>
+	</section>
+
+	<section>
+		<h2>Это похоже на...</h2>
+	</section>
+
+	<section>
+		<h2>Зависимость</h2>
+	</section>
+	<section>
+		<blockquote>
+			Зависимость (аддикция) — навязчивая потребность, подвигающая человека к определенной деятельности.
+		</blockquote>
+	</section>
+</section>
+
+<section>
+	<h2>Как это было...</h2>
+</section>
+
+<section>
+	<h2>2004</h2>
+
+	<p>Я пришел в индустрию</p>
+</section>
+<section data-background="assets/pic1.png"></section>
+
+<section>
+	<h2>2006</h2>
+
+	<p>Prototype, Script.aculo.us</p>
+</section>
+<section data-background="assets/pic2.png"></section>
+<section data-background="assets/pic3.gif"></section>
+
+<section>
+	<section>
+		<h2>2007</h2>
+
+		<p>jQuery</p>
+	</section>
+
+	<section>
+		<h2>Для чего нужен был jQuery?</h2>
+	</section>
+
+	<section>
+		<ul>
+			<li>DOM</li>
+			<li>Ajax</li>
+			<li>Events</li>
+			<li>Animations</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>Когда в руках молоток, все кажется гвоздями</h2>
+	</section>
+
+	<section>
+		<h2>jQuery == JavaScript</h2>
+
+		<p>только лучше</p>
+	</section>
+
+	<section>
+		<h2>Теперь я знал <br /><s>как делать веб</s></h2>
+	</section>
+</section>
+<section>
+	<section>
+		<h2>Но веб пошел дальше</h2>
+	</section>
+	<section>
+		<ul>
+			<li>2007 — Книга «Pro JavaScript Design Patterns»</li>
+			<li>2008 — Книга «JavaScript: Good parts»</li>
+			<li>2009 — Node.js, PhoneGap</li>
+		</ul>
+	</section>
+	<section data-background="assets/pic5.jpg"></section>
+	<section>
+		<ul>
+			<li>2010 — backbone.js, angular.js</li>
+			<li>2013 — Extensible Web Manifesto</li>
+			<li>2013 — asm.js</li>
+		</ul>
+	</section>
+	<section>
+		<ul>
+			<li>Rich Internet Applications</li>
+			<li>Single Page Applications</li>
+		</ul>
+	</section>
+</section>
+
+<section>
+
+	<section>
+		<h2>JavaScript развивается</h2>
+	</section>
+	<section>
+		<h2>.querySelectorAll()</h2>
+<pre><code class="JavaScript" data-trim contenteditable
+style="font-size: 30px; padding: 40px; margin-top: 20px;"> var $ = document.querySelectorAll.bind(document);
+
+
+Element.prototype.on = Element.prototype.addEventListener;
+
+
+$('#somelink')[0].on('touchstart', handleTouch)</code></pre>
+	</section>
+
+	<section>
+		<h2>.classList</h2>
+<pre><code class="JavaScript" data-trim contenteditable
+style="font-size: 30px; padding: 40px; margin-top: 20px;"> $('body').addClass('hasJS');
+
+document.body.classList.add('hasJS');
+
+$('body').removeClass('hasJS');
+
+document.body.classList.remove('hasJS');</code></pre>
+	</section>
+	<section>
+		<h2>.dataset</h2>
+		<pre><code class="JavaScript" data-trim contenteditable
+				style="font-size: 30px; padding: 40px; margin-top: 20px;">element.dataset.user = JSON.stringify(user);
+
+element.dataset.score = score;
+		</code></pre>
+	</section>
+	<section>
+		<h4>Ajax</h4>
+		<pre><code class="JavaScript" data-trim contenteditable
+				style="font-size: 18px; max-height: 700px; padding: 10px 20px; margin-top: 10px;">
+function request(type, url, opts, callback) {
+	var xhr = new XMLHttpRequest(), var fd;
+	if (typeof opts === 'function') {
+		callback = opts;
+		opts = null;
+	}
+	xhr.open(type, url);
+	if (type === 'POST' && opts) {
+		fd = new FormData();
+		for (var key in opts) {
+			fd.append(key, JSON.stringify(opts[key]));
+		}
+	}
+	xhr.onload = function () {
+		callback(JSON.parse(xhr.response));
+	};
+	xhr.send(opts ? fd : null);
+}
+var get = request.bind(this, 'GET');
+var post = request.bind(this, 'POST');</code></pre>
+	</section>
+</section>
+
+<section>
+	<section>
+		<h2>Стоп. WTF?</h2>
+	</section>
+	<section>
+		<h3>Он рассказывает<br/>как использовать полифилы <br/>и придумывать свои велосипеды?!</h3>
+	</section>
+	<section>
+		<h3>Нам надо отказаться от jQuery?! Зачем?!</h3>
+	</section>
+	<section>
+		<h3>Иди домой, ты пьян!</h3>
+		<ul>
+			<li>jQuery и сейчас мощный инструмент</li>
+			<li>Решены проблемы совместимости</li>
+			<li>Удобный API</li>
+			<li>Документация</li>
+		</ul>
+	</section>
+</section>
+<section data-background="assets/pic6.png"></section>
+<section data-background="assets/pic4.jpg"></section>
+<section>
+	<h2>Использовать jQuery осмысленно</h2>
+</section>
+<section>
+	<section>
+		<h2>Яндекс</h2>
+		<ul>
+			<li>До 2009 — разрабатывали свою библиотеку y5</li>
+			<li>Отказались из-за дороговизны поддержки и переехали на jQuery</li>
+		</ul>
+	</section>
+	<section>
+		<h2>Яндекс</h2>
+		<ul>
+			<li>Используем jQuery как библиотеку</li>
+			<li>Есть проекты без jQuery</li>
+			<li>На собеседованиях спрашиваем про нативный JavaScript</li>
+		</ul>
+	</section>
+</section>
+<section>
+	<section>
+		<h2>Веб сильно изменился<br/>за последние 5 лет</h2>
+	</section>
+	<section>
+		<h2>Знать jQuery уже недостаточно</h2>
+	</section>
+	<section>
+		<h2>JavaScript — основной инструмент</h2>
+	</section>
+	<section>
+		<h2>... и не только веба</h2>
+		<ul>
+			<li>Node.js</li>
+			<li>PhoneGap</li>
+			<li>ChromeOS</li>
+			<li>FirefoxOS</li>
+		</ul>
+	</section>
+</section>
+<section>
+	<section>
+		<h2>Ок, вы все умеете jQuery</h2>
+	</section>
+	<section>
+		<h2>Но, знаете ли вы JavaScript?</h2>
+	</section>
+
+	<section>
+		<ul>
+			<li>Анонимные функции</li>
+			<li>Функция — first class object</li>
+			<li>Паттерны ООП</li>
+			<li>Функциональный подход</li>
+		</ul>
+	</section>
+	<section>
+		<ul>
+			<li>Контекст выполнения функции</li>
+			<li>Прототипное наследование</li>
+			<li>События</li>
+		</ul>
+	</section>
+	<section>
+			<pre><code class="JavaScript" data-trim contenteditable
+			style="font-size: 28px; padding: 40px; margin-top: 20px;">
+typeof (function(){})() // ???
+</code></pre>
+		</section>
+	<section>
+		<pre><code class="JavaScript" data-trim contenteditable
+		style="font-size: 28px; padding: 40px; margin-top: 20px;">
+var obj = {};
+var foo = function() {
+	(function() {
+		console.log(this);
+	})();
+}
+
+obj.foo = foo;
+obj.foo(); // ???</code></pre>
+	</section>
+
+</section>
+<section>
+	<section>
+		<h2>Как не облажаться?</h2>
+	</section>
+	<section>
+		<h2>Осознать что JavaScript<br/>это сильно больше<br/>чем jQuery</h2>
+	</section>
+	<section>
+		<h2>Прочитать и осознать<br /> 4 книги*</h2>
+		<ul>
+			<li><a href="http://www.ozon.ru/context/detail/id/20217226/">JavaScript. Сильные стороны</a></li>
+			<li><a href="http://www.ozon.ru/context/detail/id/6287517/">JavaScript. Шаблоны</a></li>
+			<li><a href="http://www.amazon.com/Pro-JavaScript-Design-Patterns-Object-Oriented/dp/159059908X/">Pro JavaScript Design Patterns</a>
+			</li>
+			<li><a href="http://www.ozon.ru/context/detail/id/2457392/">Приемы объектно-ориентированного проектирования. Паттерны проектирования</a>
+			</li>
+		</ul>
+		<p>
+			<small>* — это лично мой список</small>
+		</p>
+	</section>
+
+	<section>
+		<h2>Проанализировать для чего используется jQuery на ваших проектах</h2>
+	</section>
+	<section>
+		<h2>Использовать jQuery как библиотеку</h2>
+		<ul>
+			<li>Побороть вредную привычку<br/> использовать jQuery везде</li>
+			<li>Сделать библиотеку легко заменяемой</li>
+		</ul>
+	</section>
+	<section>
+		<h2>... или<br /> не использовать jQuery</h2>
+
+		<p>Там где нет в этом необходимости</p>
+		<ul>
+			<li><a href="http://zeptojs.com//">zepto.js</a></li>
+			<li><a href="http://microjs.com/">microjs.com</a></li>
+		</ul>
+	</section>
+	<section>
+		<h2>Помочь освободиться другу</h2>
+	</section>
+</section>
+<section>
+	<h2>Так зачем вам строчка <br/>про jQuery в резюме?</h2>
+</section>
+<section>
+	<h1>Спасибо</h1>
+
+	<h3>Вадим Пацев / <a href="https://twitter.com/basvasilich">@basvasilich</a></h3>
+	<p>слайды — <a href="http://basvasilich.github.io/WSD-Minsk-jQuery/">basvasilich.github.io/WSD-Minsk-jQuery</a></p>
+
+	<div  class="sources">
+		<p>Картинки</p>
+		<ul>
+			<li><a href="http://adventuretime.wikia.com/wiki/Finn/Gallery">adventuretime.wikia.com/wiki/Finn/Gallery</a></li>
+			<li><a href="http://www.flickr.com/photos/hookdesignalter/4273565489/">www.flickr.com/photos/hookdesignalter/4273565489/</a></li>
+			<li><a href="http://www.youtube.com/watch?v=ZJrXvuVi9ww">www.youtube.com/watch?v=ZJrXvuVi9ww</a></li>
+		</ul>
+	</div>
+
+</section>
+</div>
+
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.min.js"></script>
+
+<script>
+
+	// Full list of configuration options available here:
+	// https://github.com/hakimel/reveal.js#configuration
+	Reveal.initialize({
+		controls: true,
+		progress: true,
+		history: true,
+		center: true,
+		minScale: 0.2,
+		maxScale: 1.0,
+
+		transition: 'zoom', // default/cube/page/concave/zoom/linear/fade/none
+
+		// Optional libraries used to extend on reveal.js
+		dependencies: [
+			{ src: 'lib/js/classList.js', condition: function () {
+				return !document.body.classList;
+			} },
+			{ src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+				hljs.initHighlightingOnLoad();
+			} },
+			{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function () {
+				return !!document.body.classList;
+			} }
+
+		]
+	});
+
+</script>
+</html>

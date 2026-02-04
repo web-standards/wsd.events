@@ -1,0 +1,83 @@
+.circle {
+    position: relative;
+    font-family: 'Suisse';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    .circle__content {
+        position: relative;
+        }
+    .circle__item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: -200px;
+        width: 400px;
+        height: 400px;
+        border-radius: 200px;
+        background: #a6ce39;
+        transition: all .5s linear;
+        }
+        .circle__item-text {
+            font-size: 30px;
+            }
+        .circle_big .circle__item:nth-of-type(1) .circle__item-text {
+            font-size: 70px;
+            }
+    .circle__item:last-of-type {
+        z-index: 1;
+        box-shadow: 0 0 0 2px #a6ce39;
+        font-size: 50px;
+        }
+    .circle__item:nth-of-type(2) {
+        align-items: flex-start;
+        background: #00b2dd;
+        }
+    .active ~ .circle__item:nth-of-type(2) {
+        -webkit-transform: translate3d(0, -60px, 0);
+        }
+    .circle__item:nth-of-type(3) {
+        align-items: flex-start;
+        background: #f9ec00;
+        }
+    .active ~ .circle__item:nth-of-type(3) {
+        -webkit-transform: translate3d(42px, 30px, 0) rotate(120deg);
+        }
+    .circle__item:nth-of-type(4) {
+        align-items: flex-start;
+        background: #000;
+        color: #fff;
+        }
+    .active ~ .circle__item:nth-of-type(4) {
+        -webkit-transform: translate3d(-42px, 30px, 0) rotate(-120deg);
+        }
+    .circle__item:nth-of-type(5) {
+        align-items: flex-start;
+        background: #00b2dd;
+        }
+    .circle__item:nth-of-type(6) {
+        align-items: flex-start;
+        background: #f00;
+        }
+
+    .circle_petals_5 .circle__item:nth-of-type(2) {
+        background: #0f0;
+        }
+    .circle_petals_5 .active ~ .circle__item:nth-of-type(2) {
+        -webkit-transform: translate3d(0, -60px, 0);
+        }
+    .active ~ .circle__item:nth-of-type(3) {
+        -webkit-transform: translate3d(57px, -18px, 0) rotate(72deg);
+        }
+    .active ~ .circle__item:nth-of-type(4) {
+        -webkit-transform: translate3d(35px, 48px, 0) rotate(144deg);
+        }
+    .active ~ .circle__item:nth-of-type(5) {
+        -webkit-transform: translate3d(-35px, 48px, 0) rotate(216deg);
+        }
+    .active ~ .circle__item:nth-of-type(6) {
+        -webkit-transform: translate3d(-57px, -18px, 0) rotate(288deg);
+        }

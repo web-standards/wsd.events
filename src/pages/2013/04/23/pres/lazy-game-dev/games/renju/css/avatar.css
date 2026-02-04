@@ -1,0 +1,24 @@
+.avatars-popup{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2000;
+    background: rgba(255,255,255,.75);
+    }
+  .avatars-popup .icons{
+    box-shadow: 0 0 0 20px #fff;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 2001;
+    width: 460px;
+    height: 368px;
+    background: #fff url('../img/avatars.png') 0 0 no-repeat;
+    }

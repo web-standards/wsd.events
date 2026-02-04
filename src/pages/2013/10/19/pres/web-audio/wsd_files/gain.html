@@ -1,0 +1,98 @@
+
+<!-- saved from url=(0046)http://html5.by/blogdemo/webaudioapi/gain.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">var NREUMQ=NREUMQ||[];NREUMQ.push(["mark","firstbyte",new Date().getTime()]);</script><script src="jquery.min.js" type="text/javascript"></script>
+    <script src="bootstrap.min.js" type="text/javascript"></script>
+
+    <script src="main.js" type="text/javascript"></script>
+    <script src="AudioContextMonkeyPatch.js" type="text/javascript"></script>
+
+
+
+    <link href="github.css" rel="stylesheet" type="text/css">
+    <link href="bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <link href="main(1).css" rel="stylesheet" type="text/css">
+
+</head>
+<body style="" class="readytoplay">
+    <style>
+
+    </style>
+  <script type="text/javascript">
+
+    $(function(){
+      var context = new window.AudioContext();
+      var buffer,source,destination;
+
+      window.stopButtonClick = function(index){
+        source.stop(0);
+      }
+
+      window.playButtonClick = function(index){
+
+        source = context.createBufferSource();
+        source.buffer = buffer;
+        destination = context.destination;
+
+        gainNode       = context.createGain();
+        gainNode.gain.value  = $('.range1').val();
+
+        source.connect(gainNode);
+        gainNode.connect(destination);
+
+        source.start(0);
+      }
+
+      var initSound = function(arrayBuffer) {
+        context.decodeAudioData(arrayBuffer, function(decodedArrayBuffer) {
+          buffer = decodedArrayBuffer;
+          $('body').addClass('readytoplay');
+        }, function(e) {
+          console.log('Error decoding file', e);
+        });
+      }
+
+      var loadSoundFile = function(url) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', url, true);
+        xhr.responseType = 'arraybuffer';
+        xhr.onload = function(e) {
+          initSound(this.response); // this.response is an ArrayBuffer.
+        };
+        xhr.send();
+      }
+
+      loadSoundFile('sound/papa_roach_last_resort.mp3');
+
+      $('.range1').on('change', function(e){
+        if(!gainNode) return;
+        gainNode.gain.value = $('.range1').val();
+      });
+    });
+
+  </script>
+  <h2>Gain node</h2>
+<pre data-language="javascript" class="rainbow"><span class="keyword">var</span> gainNode <span class="keyword operator">=</span> context.<span class="function call">createGain</span>();
+gainNode.gain.value <span class="keyword operator">=</span> <span class="constant numeric">0.4</span>; <span class="comment">// 0..1</span>
+
+source.<span class="function call">connect</span>(gainNode);
+gainNode.<span class="function call">connect</span>(destination);
+</pre>
+
+  <div class="scheme" style="background-image:url(http://html5.by/blogdemo/webaudioapi/svg/source-gain-destination.svg)"></div>
+  <div class="legend">
+    <!-- <h3>Gain</h3> -->
+    <ul>
+      <li><label>Gain level</label><input class="range1" type="range" name="points" step="0.05" min="0.1" max="1" value="0.2"></li>
+    </ul>
+  </div>
+
+  <button type="button" class="play  btn btn-primary">Play</button>
+  <button type="button" class="pause btn btn-success">Stop</button>
+
+  <script src="rainbow.min.js" type="text/javascript"></script>
+  <script src="generic.js" type="text/javascript"></script>
+  <script src="javascript.js" type="text/javascript"></script>
+<script type="text/javascript">if(!NREUMQ.f){NREUMQ.f=function(){NREUMQ.push(["load",new Date().getTime()]);var e=document.createElement("script");e.type="text/javascript";e.src=(("http:"===document.location.protocol)?"http:":"https:")+"//"+"js-agent.newrelic.com/nr-100.js";document.body.appendChild(e);if(NREUMQ.a)NREUMQ.a();};NREUMQ.a=window.onload;window.onload=NREUMQ.f;};NREUMQ.push(["nrfj","beacon-2.newrelic.com","a45903a5f2","1896831","ZFFabUUFDBJWARJfXF0bbUteSwANWAUCU15cG09cVQUXBV4NB0ZaHFNZUFlKChVaDg==",0,0,new Date().getTime(),"","","","",""]);</script>
+<script type="text/javascript" src="nr-100.js"></script></body></html>

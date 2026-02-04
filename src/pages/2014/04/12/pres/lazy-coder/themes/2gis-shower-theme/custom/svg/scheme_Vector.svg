@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="960px" height="600px" viewBox="0 0 960 600" enable-background="new 0 0 960 600" xml:space="preserve">
+<rect x="768.583" y="243.269" fill="none" width="158" height="28"/>
+<text transform="matrix(1 0 0 1 831.9686 256.3184)" font-family="'SuisseIntl-CondensedBold'" font-size="18" letter-spacing="1">CSS</text>
+<rect x="44" y="285.269" fill="none" width="158" height="28"/>
+<text transform="matrix(1 0 0 1 45.7137 303.3933)" font-family="'SuisseIntl-Condensed'" font-size="25">Исходный файл</text>
+<rect x="44" y="241.269" fill="none" width="158" height="28"/>
+<text transform="matrix(1 0 0 1 114.3103 257.2184)" font-family="'SuisseIntl-CondensedBold'" font-size="22">Ai</text>
+<rect x="44" y="316.269" fill="none" width="158" height="55"/>
+<text transform="matrix(1 0 0 1 72.2009 327.8684)"><tspan x="0" y="0" fill="#808080" font-family="'SuisseIntl-Condensed'" font-size="16">Один артборд —  </tspan><tspan x="12.136" y="19" fill="#808080" font-family="'SuisseIntl-Condensed'" font-size="16">одна иконка</tspan></text>
+<rect x="103.275" y="228.269" fill="none" width="219" height="182"/>
+<text transform="matrix(1 0 0 1 202.0604 253.2686)" font-family="'FontAwesome'" font-size="25"></text>
+<rect x="281.275" y="228.269" fill="none" width="219" height="182"/>
+<text transform="matrix(1 0 0 1 380.0604 253.2686)" font-family="'FontAwesome'" font-size="25"></text>
+<rect x="461.275" y="228.269" fill="none" width="219" height="182"/>
+<text transform="matrix(1 0 0 1 560.0604 253.2686)" font-family="'FontAwesome'" font-size="25"></text>
+<rect x="14" y="199.269" fill="none" width="219" height="182"/>
+<text transform="matrix(1 0 0 1 100.6436 263.2686)" font-family="'FontAwesome'" font-size="64"></text>
+<rect x="222" y="285.269" fill="none" width="158" height="28"/>
+<text transform="matrix(1 0 0 1 243.0379 303.3933)"><tspan x="0" y="0" font-family="'SuisseIntl-Condensed'" font-size="24" letter-spacing="1">SVG</tspan><tspan x="40.775" y="0" font-family="'SuisseIntl-Condensed'" font-size="25">-файлы</tspan></text>
+<rect x="234" y="251.935" fill="none" width="158" height="28"/>
+<text transform="matrix(1 0 0 1 301.0373 262.0851)" font-family="'SuisseIntl-CondensedBold'" font-size="14">SVG</text>
+<rect x="222" y="316.269" fill="none" width="158" height="55"/>
+<text transform="matrix(1 0 0 1 257.8166 327.8684)"><tspan x="0" y="0" fill="#808080" font-family="'SuisseIntl-Condensed'" font-size="16">Каждый файл </tspan><tspan x="-25.983" y="19" fill="#808080" font-family="'SuisseIntl-Condensed'" font-size="16">соответствует одному </tspan><tspan x="14.264" y="38" fill="#808080" font-family="'SuisseIntl-Condensed'" font-size="16">артборду</tspan></text>
+<g>
+	<path d="M333.512,225.547v43.437c0,1.893-1.536,3.429-3.429,3.429h-34.292c-1.893,0-3.429-1.536-3.429-3.429v-10.288H272.93
+		c-1.893,0-3.429-1.536-3.429-3.429v-24.004c0-1.893,1.107-4.537,2.429-5.858l14.574-14.574c1.322-1.322,3.965-2.429,5.858-2.429
+		h14.86c1.893,0,3.429,1.536,3.429,3.429v11.716c1.393-0.822,3.179-1.429,4.572-1.429h14.86
+		C331.976,222.118,333.512,223.654,333.512,225.547z M306.079,227.834v-14.86h-13.717v14.86c0,1.893-1.536,3.429-3.429,3.429h-14.86
+		v22.861h18.289v-9.145c0-1.893,1.107-4.537,2.429-5.858L306.079,227.834z M277.109,226.69h10.681V216.01L277.109,226.69z
+		 M328.94,226.69h-13.717v14.86c0,1.893-1.536,3.429-3.429,3.429h-14.86v22.861h32.006V226.69z M299.97,240.407h10.681v-10.681
+		L299.97,240.407z"/>
+</g>
+<rect x="400" y="285.269" fill="none" width="158" height="28"/>
+<text transform="matrix(1 0 0 1 416.601 303.3933)" font-family="'SuisseIntl-Condensed'" font-size="25">grunt-svgmin</text>
+<rect x="400" y="316.269" fill="none" width="158" height="55"/>
+<text transform="matrix(1 0 0 1 436.1446 327.8684)"><tspan x="0" y="0" fill="#808080" font-family="'SuisseIntl-Condensed'" font-size="16">Оптимизация </tspan><tspan x="-14.934" y="19" fill="#808080" font-family="'SuisseIntl-Condensed'" font-size="15">SVG</tspan><tspan x="10.55" y="19" fill="#808080" font-family="'SuisseIntl-Condensed'" font-size="16">-изображений</tspan></text>
+<rect x="370" y="199.269" fill="none" width="219" height="182"/>
+<text transform="matrix(1 0 0 1 445.2149 263.2686)" font-family="'FontAwesome'" font-size="64"></text>
+<rect x="578" y="285.269" fill="none" width="158" height="28"/>
+<text transform="matrix(1 0 0 1 591.5386 303.3933)" font-family="'SuisseIntl-Condensed'" font-size="25">grunt-data-uri</text>
+<rect x="578" y="316.269" fill="none" width="158" height="55"/>
+<text transform="matrix(1 0 0 1 605.041 327.8684)" fill="#808080" font-family="'SuisseIntl-Condensed'" font-size="16">base64 encoding</text>
+<rect x="548" y="199.269" fill="none" width="219" height="182"/>
+<text transform="matrix(1 0 0 1 623.2148 263.2686)" font-family="'FontAwesome'" font-size="64"></text>
+<rect x="640.275" y="228.269" fill="none" width="219" height="182"/>
+<text transform="matrix(1 0 0 1 739.0604 253.2686)" font-family="'FontAwesome'" font-size="25"></text>
+<rect x="768" y="285.269" fill="none" width="158" height="75"/>
+<text transform="matrix(1 0 0 1 786.3381 303.3933)"><tspan x="0" y="0" font-family="'SuisseIntl-Condensed'" font-size="25">Стили и </tspan><tspan x="81.749" y="0" font-family="'SuisseIntl-Condensed'" font-size="24" letter-spacing="1">SVG  </tspan><tspan x="17.05" y="28" font-family="'SuisseIntl-Condensed'" font-size="25">в base64</tspan></text>
+<rect x="738" y="199.269" fill="none" width="219" height="182"/>
+<text transform="matrix(1 0 0 1 824.6435 263.2686)" font-family="'FontAwesome'" font-size="64"></text>
+</svg>

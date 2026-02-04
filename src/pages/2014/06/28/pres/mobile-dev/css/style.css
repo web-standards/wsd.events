@@ -1,0 +1,235 @@
+body {
+    font-size: 30px;
+    }
+
+#cover {
+
+    }
+    #cover h2 {
+        margin-top: 80px;
+        padding: .25em 0;
+        font-size: 75px;
+        text-align: center;
+        background-color: rgba(20, 20, 20, 0.75);
+        -webkit-filter: blur(5px);
+        -webkit-animation: unBlured .35s linear 4s forwards;
+        /*-webkit-transform: translate3d(0);*/
+        }
+
+    @-webkit-keyframes unBlured { to { -webkit-filter: blur(0); } }
+
+    #cover h2 span {
+        display: block;
+        margin-top: 15px;
+        font-size: 65px;
+
+        }
+
+    #cover .author {
+        width: 100%;
+        margin-top: 220px;
+        position: relative;
+
+        font-size: 1.4em;
+        text-align: center;
+        color: #fff;
+        }
+
+        #cover .author_tx {
+            position: absolute;
+            font-size: 23px;
+            left: 318px;
+            top: 11px;
+            background: #E97321;
+            padding: 0 10px;
+            }
+
+    #cover .bl {
+        color: inherit !important;
+        border-bottom: none !important;
+        }
+
+    #cover .bl:hover {
+        border-bottom: solid 2px !important;
+        }
+
+    #cover .ok {
+        margin-top: 10px;
+        border-bottom: none;
+        }
+        #cover .ok img {
+            height: 65px;
+            border-radius: 10px;
+            }
+
+.overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: .6;
+    }
+
+#hail-node {
+
+    }
+
+    #hail-node h2 {
+        margin-top: -150px;
+        font-size: 130px;
+        }
+
+    #hail-node img {
+        margin-top: 80px;
+        width: 720px;
+        }
+
+
+#build {
+
+    }
+
+    #build h2 {
+        font-size: 100px;
+        padding: .5em 0;
+        margin-top: -20px;
+        background: rgba(255, 255, 255, .95);
+        }
+
+#grunt {
+    text-align: center;
+    font-size: 40px;
+    }
+
+#perf h2 {
+    font-size: 110px;
+    }
+
+.mobile .hide-for-mobile {
+	display: none !important;
+	}
+
+
+.headings {
+    font-size: 1.2em;
+    }
+
+.stroke-out {
+    text-decoration: line-through;
+    }
+
+.slide ul  ul {
+    font-size: .9em;
+    }
+
+
+.slide.cover img {
+    bottom: 0;
+    margin: auto;
+    }
+
+.cover {
+    text-align: center;
+    }
+
+
+/* Special links
+---------------------------------------------------------------------------------- */
+
+a[href*="github"] {
+    position: relative;
+    margin-right: 1.5em;
+    }
+a[href*="github"]:after {
+    content: '';
+    position: absolute;
+    height: 1em;
+    width: 1em;
+    margin: auto;
+    top: 0;
+    right: -1.25em;
+    bottom: 0;
+    background-image: url(../i/github.png);
+    background-size: 1em;
+    }
+
+/* /Special links
+---------------------------------------------------------------------------------- */
+
+
+
+/* Tick
+---------------------------------------------------------------------------------- */
+.next {
+    position: absolute;
+    z-index: -1;
+    }
+
+    .next.active {
+        position: static;
+        }
+
+
+/* /Tick
+---------------------------------------------------------------------------------- */
+
+
+
+/* Overwrites
+---------------------------------------------------------------------------------- */
+.slide:after {
+    bottom: 50px;
+    }
+
+    .slide blockquote:before {
+        content: '';
+        margin-top: 55px;
+        }
+
+        .slide p {
+            padding-left: 20px;
+            margin-left: -20px;
+            border-left: 4px solid #ddd;
+            }
+
+        .slide blockquote + figcaption {
+            font-style: oblique;
+            font-weight: 400;
+            }
+
+    .full .progress {
+        bottom: 25px;
+        }
+
+.slide.cover img:not(.uncover), .slide.cover svg:not(.uncover), .slide.cover object:not(.uncover), .slide.cover video:not(.uncover), .slide.cover canvas:not(.uncover)
+
+/* /Overwrites
+---------------------------------------------------------------------------------- */
+
+
+
+/* Cosmetic
+---------------------------------------------------------------------------------- */
+
+.orange {
+    color: #E97518;
+    }
+
+.lgray {
+    color: #ddd;
+
+    }
+
+iframe {
+    border: 2px solid #DFDFDF;
+    border-radius: 10px;
+    }
+
+    blockquote p {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        }
+/* /Cosmetic
+---------------------------------------------------------------------------------- */

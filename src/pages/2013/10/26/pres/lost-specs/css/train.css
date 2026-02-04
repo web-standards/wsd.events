@@ -1,0 +1,114 @@
+
+
+.train-model {
+  position: absolute;
+  width: 0;
+  height: 0;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: rotateX(-90deg) rotateY(0) rotateZ(0);
+/*  -moz-transform: rotateX(0deg) rotateY(0deg) rotateZ(0);
+  transform: rotateX(0deg) rotateY(0deg) rotateZ(0);*/
+}
+
+.train-model .roof {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 374px;
+  height: 77px;
+  margin-left: -187px;
+  margin-top: -38.5px;
+  background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, transparent), color-stop(25%, transparent), color-stop(25%, #351c09), color-stop(50%, #351c09), color-stop(50%, transparent), color-stop(75%, transparent), color-stop(75%, #351c09), color-stop(100%, #351c09));
+  background: -webkit-linear-gradient(left, transparent 0%, transparent 25%, #351c09 25%, #351c09 50%, transparent 50%, transparent 75%, #351c09 75%, #351c09 100%);
+  background: -moz-linear-gradient(left, transparent 0%, transparent 25%, #351c09 25%, #351c09 50%, transparent 50%, transparent 75%, #351c09 75%, #351c09 100%);
+  background: -o-linear-gradient(left, transparent 0%, transparent 25%, #351c09 25%, #351c09 50%, transparent 50%, transparent 75%, #351c09 75%, #351c09 100%);
+  background: linear-gradient(left, transparent 0%, transparent 25%, #351c09 25%, #351c09 50%, transparent 50%, transparent 75%, #351c09 75%, #351c09 100%);
+  -webkit-background-size: 25%;
+  -moz-background-size: 25%;
+  -o-background-size: 25%;
+  background-size: 25%;
+  background-repeat: repeat;
+  background-color: #463020;
+  -webkit-transform: translateZ(-50px);
+  -moz-transform: translateZ(-50px);
+  -ms-transform: translateZ(-50px);
+  -o-transform: translateZ(-50px);
+  transform: translateZ(-50px);
+}
+
+
+.train-model .front {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-image: url('../img/train-s96f70aa6ec.png');
+  background-position: -151px -132px;
+  background-repeat: no-repeat;
+  width: 71px;
+  height: 77px;
+  margin-left: -35.5px;
+  margin-top: -50px;
+  height: 100px;
+  -webkit-transform: rotateX(90deg) rotateY(90deg) translateZ(-187.5px);
+  -moz-transform: rotateX(90deg) rotateY(90deg) translateZ(-187.5px);
+  -ms-transform: rotateX(90deg) rotateY(90deg) translateZ(-187.5px);
+  -o-transform: rotateX(90deg) rotateY(90deg) translateZ(-187.5px);
+  transform: rotateX(90deg) rotateY(90deg) translateZ(-187.5px);
+}
+
+.train-model .back {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-image: url('../img/train-s96f70aa6ec.png');
+  background-position: -151px -132px;
+  background-repeat: no-repeat;
+  width: 71px;
+  height: 77px;
+  margin-left: -35.5px;
+  margin-top: -50px;
+  height: 100px;
+  -webkit-transform: rotateX(90deg) rotateY(-90deg) translateZ(-187.5px);
+  -moz-transform: rotateX(90deg) rotateY(-90deg) translateZ(-187.5px);
+  -ms-transform: rotateX(90deg) rotateY(-90deg) translateZ(-187.5px);
+  -o-transform: rotateX(90deg) rotateY(-90deg) translateZ(-187.5px);
+  transform: rotateX(90deg) rotateY(-90deg) translateZ(-187.5px);
+}
+
+.train-model .left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-image: url('../img/train-s96f70aa6ec.png');
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  width: 374px;
+  height: 100px;
+  margin-left: -187px;
+  margin-top: -50px;
+  -webkit-transform: rotateX(90deg) translateZ(-35.5px);
+  -moz-transform: rotateX(90deg) translateZ(-35.5px);
+  -ms-transform: rotateX(90deg) translateZ(-35.5px);
+  -o-transform: rotateX(90deg) translateZ(-35.5px);
+  transform: rotateX(90deg) translateZ(-35.5px);
+}
+
+.train-model .right {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-image: url('../img/train-s96f70aa6ec.png');
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  width: 374px;
+  height: 100px;
+  margin-left: -187px;
+  margin-top: -50px;
+  -webkit-transform: rotateX(90deg) translateZ(35.5px);
+  -moz-transform: rotateX(90deg) translateZ(35.5px);
+  -ms-transform: rotateX(90deg) translateZ(35.5px);
+  -o-transform: rotateX(90deg) translateZ(35.5px);
+  transform: rotateX(90deg) translateZ(35.5px);
+}

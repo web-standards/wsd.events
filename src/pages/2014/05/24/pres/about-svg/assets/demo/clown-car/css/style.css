@@ -1,0 +1,211 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, img, ins, kbd, q, s, samp,
+small, strike, sub, sup, tt, var,
+u, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+BODY {
+  margin: 0;
+  padding: 2em;
+  background: #FFF;
+  font: 16px/1.4 Georgia, serif;
+  }
+  :target {
+    overflow: hidden;
+    padding: 1em;
+    }
+
+A {
+  color: #52A2DF;
+  }
+HEADER,
+H1, H2, H3 {
+  transition: .5s;
+  }
+
+H1 {
+  font-size: 4em;
+  line-height: 1.2;
+  margin-bottom: .1em;
+  }
+
+H2 {
+  margin-bottom: .5em;
+  font-size: 1.8em;
+  color: #AAA;
+  }
+
+H3,
+FIGCAPTION {
+  font-size: 2em;
+  }
+
+P, FIGURE {
+  margin-bottom: 1.5rem;
+  }
+  :target .partial-hide {
+    display: none;
+    }
+
+PRE {
+  margin-top: 1em;
+  }
+
+CODE {
+  padding: 1px 5px;
+  border: 1px solid #DDD;
+  background-color: #F8F8F8;
+  border-radius: 3px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+  font-size: 14px;
+  color: #333;
+  }
+  .language-markup,
+  .language-css {
+    display: block;
+    padding: 10px;
+    line-height: 1.2;
+    white-space: pre-wrap;
+    }
+
+HEADER {
+  margin-bottom: 3rem;
+  text-align: center;
+  }
+
+OBJECT {
+  float: left;
+  width: 332px;
+  height: 500px;
+  margin: 0 2em 2em 0;
+  transition: 1s;
+  border-radius: 10%/15%;
+  }
+
+.clear {
+  clear: both;
+  }
+
+.wrapper {
+  min-width: 300px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2em;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid #CCC;
+  overflow: hidden;
+  }
+  .wrapper:after {
+    content: "";
+    display: table;
+    width: 100%;
+    }
+  :target .wrapper {
+    padding: .7em 2em;
+    border: 0;
+    }
+
+@media screen and (max-width: 900px) {
+  HEADER {
+    margin-bottom: 2rem;
+    }
+  }
+
+@media screen and (max-width: 820px) {
+  H1 {
+    margin: 0;
+    font-size: 3.5em;
+    }
+  }
+
+@media screen and (max-width: 730px) {
+  HEADER {
+    margin-bottom: 1.7rem;
+    }
+    H1 {
+      font-size: 3em;
+      }
+  }
+
+@media screen and (max-width: 680px) {
+  HEADER {
+    margin-bottom: 1.5rem;
+    }
+    H1 {
+      font-size: 2.8em;
+      }
+  }
+
+@media screen and (max-width: 640px) {
+    H1 {
+      font-size: 2.5em;
+      }
+  }
+
+@media screen and (max-width: 570px) {
+    H1 {
+      font-size: 2.2em;
+      }
+  }
+@media screen and (max-width: 540px) {
+  HEADER {
+    margin-bottom: 1.2rem;
+    }
+    H1 {
+      font-size: 2em;
+      }
+  }
+
+@media screen and (max-width: 500px) {
+    H1 {
+      font-size: 1.7em;
+      }
+  }
+
+@media screen and (max-width: 600px) {
+  H2 {
+    font-size: 1.1em;
+    }
+  OBJECT {
+    width: 150px;
+    height: 100px;
+    margin: 0 1.2em 1.2em 0;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 800px) {
+  H2 {
+    font-size: 1.2em;
+    }
+
+  OBJECT {
+    width: 300px;
+    height: 199px;
+    margin: 0 1.5em 1.5em 0;
+    }
+}
+
+@media screen and (min-width: 801px) {
+  OBJECT {
+    width: 500px;
+    height: 332px;
+    }
+}
+

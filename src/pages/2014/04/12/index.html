@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html class="page" lang="ru">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#416E87">
+	<title>WSD в Новосибирске 12 апреля 2014</title>
+	<link rel="preload" href="/fonts/ubuntu-regular.woff2" crossorigin as="font" type="font/woff2">
+	<link rel="stylesheet" href="/styles/screen.css">
+	<link rel="manifest" href="/wsd.webmanifest">
+	<link rel="mask-icon" href="/favicon.svg" color="#416E87">
+	<link rel="icon" href="/favicon.ico">
+	<link rel="icon" type="image/png" href="/images/icon-228x228.png" sizes="228x228">
+	<link rel="apple-touch-icon" type="image/png" href="/images/icon-228x228.png">
+</head>
+<body class="page__body">
+	<header class="header" id="header">
+		<a class="title" href="/">
+			<span class="title__text">
+				Web<br>
+				Standards<br>
+				Days
+			</span>
+		</a>
+		<nav class="section section--open" id="navigation">
+			<div class="section__box">
+				<ul class="navigation">
+					<li><a class="navigation__link" href="#schedule">Программа</a></li>
+					<li><a class="navigation__link" href="#speakers">Докладчики</a></li>
+					<li><a class="navigation__link" href="#organisers">Организаторы</a></li>
+					<li><a class="navigation__link" href="#venue">Площадка</a></li>
+				</ul>
+			</div>
+		</nav>
+		<div class="social">
+			<a class="social__link social__link--twitter" href="https://twitter.com/webstandards_ru"><span class="social__text">Твиттер</span></a>
+			<a class="social__link social__link--vkontakte" href="https://vk.com/webstandards_ru"><span class="social__text">ВКонтакте</span></a>
+			<a class="social__link social__link--github" href="https://github.com/web-standards-ru"><span class="social__text">Гитхаб</span></a>
+			<a class="social__link social__link--facebook" href="https://fb.com/webstandardsru"><span class="social__text">Фейсбук</span></a>
+			<a class="social__link social__link--youtube" href="https://www.youtube.com/webstandards_ru"><span class="social__text">Ютуб</span></a>
+			<a class="social__link social__link--slack" href="http://slack.web-standards.ru"><span class="social__text">Слак</span></a>
+			<a class="social__link social__link--telegram" href="https://telegram.me/webstandards_ru"><span class="social__text">Телеграм</span></a>
+		</div>
+	</header>
+	<main class="main" id="main">
+		<div class="section" id="intro">
+			<div class="section__box content">
+				<h1 class="section__title">Новосибирск, 12 апреля 2014</h1>
+				<p>Конференция прошла в «Центре информационных технологий» на Николаева, 11. Остались вопросы? Пишите: <a href="mailto:wst@web-standards.ru">wst@web-standards.ru</a>.</p>
+				<p>Понравилась конференция? Поддержите нас!</p>
+				<p>
+					<a class="support" href="https://www.patreon.com/bePatron?u=15894589">
+						Станьте Патроном
+					</a>
+				</p>
+			</div>
+		</div>
+		<section class="section section--open" id="schedule">
+			<div class="section__box">
+				<h2 class="section__title">
+					Программа
+					<a class="up" href="#navigation">
+						<span class="up__text">Наверх</span>
+					</a>
+				</h2>
+			</div>
+			<ol class="calendar">
+				<li class="calendar__event calendar__event--break">
+					<time class="calendar__time">11:00</time> Открытие
+				</li>
+				<li class="calendar__event">
+					<time class="calendar__time">11:10</time>
+					<div class="content content--inline" id="lazy-coder">
+						<h3>Верстальщик должен быть ленивый</h3>
+						<p>Большую часть рабочего времени мы занимаемся не написанием новой функциональности, а тестированием, исправлением ошибок, рефакторингом. При этом писать классные фичи всем нравится гораздо больше, чем искать причину очередного хитроумного бага. Как сделать так, чтобы ошибок стало меньше, и мы могли тратить время на то, что доставляет удовольствие? <a href="/2014/04/12/pres/lazy-coder/">Презентация в HTML</a></p>
+						<p><a class="anchor" href="#tim-chaptykov">Тим Чаптыков</a></p>
+					</div>
+				</li>
+				<li class="calendar__event">
+					<time class="calendar__time">11:50</time>
+					<div class="content content--inline" id="protect-code">
+						<h3>Как защитить свой код</h3>
+						<p>Регрессивное тестирование особенно важно во фронтенд-приложениях, где велика связность сразу трёх технологий: HTML, CSS и JavaScript. Мы расскажем о юнит-тестах, которые проверяют часть приложения (блок, модуль и т.п.) по всем этим параметрам: размеры и другие CSS-свойства; наличие или отсутствие определённых элементов и их атрибутов; отработка кликов и других событий; и многое другое. Покажем примеры тестов, типичные ошибки и реальные баги. <a href="/2014/04/12/pres/protect-code/">Презентация в HTML</a></p>
+						<p><a class="anchor" href="#dmitry-kuznecov">Дмитрий Кузнецов</a></p>
+					</div>
+				</li>
+				<li class="calendar__event calendar__event--break">
+					<time class="calendar__time">12:30</time> Перерыв
+				</li>
+				<li class="calendar__event">
+					<time class="calendar__time">12:40</time>
+					<div class="content content--inline" id="speed">
+						<h3>Быстро о быстром</h3>
+						<p>Коротко о том, на чём нужно фокусироваться при разработке одностраничных веб-приложений, чтобы они работали быстрее. <a href="/2014/04/12/pres/speed.pdf">Презентация в PDF</a></p>
+						<p><a class="anchor" href="#roman-dvornov">Роман Дворнов</a></p>
+					</div>
+				</li>
+				<li class="calendar__event">
+					<time class="calendar__time">13:20</time>
+					<div class="content content--inline" id="smart-tv">
+						<h3>Разработка приложений для Smart TV</h3>
+						<p>Обзорный доклад о Smart TV, ТВ-приставках (set-top box) и разработке приложений для них. Мы рассмотрим процесс производства кроссплатформенного приложения от начала до конца, обозначим основные проблемы и предложим варианты их решения. <a href="/2014/04/12/pres/smart-tv/">Презентация в HTML</a></p>
+						<p><a class="anchor" href="#andrew-motoshin">Андрей Мотошин</a></p>
+					</div>
+				</li>
+				<li class="calendar__event calendar__event--break">
+					<time class="calendar__time">14:00</time> Обед
+				</li>
+				<li class="calendar__event">
+					<time class="calendar__time">15:00</time>
+					<div class="content content--inline" id="data">
+						<h3>Не бойся, это всего лишь данные... просто их много</h3>
+						<p>За последние 15 лет веб сильно изменился и ускорился. Но большинство по-прежнему боится большого количества данных и сложной логики на клиенте. Потому что «тормозит». Я хочу сломать стереотипы и показать, как начать делать крутые штуки на клиенте. Тысячи и сотни тысяч объектов, разные типы, зависимые вычисляемые свойства, агрегация, множество вариантов отображения. Всё это в вашем браузере. Без тормозов, регистрации, смс. <a href="/2014/04/12/pres/data.pdf">Презентация в PDF</a></p>
+						<p><a class="anchor" href="#roman-dvornov">Роман Дворнов</a></p>
+					</div>
+				</li>
+				<li class="calendar__event">
+					<time class="calendar__time">15:40</time>
+					<div class="content content--inline" id="semantics-basis">
+						<h3>Семантичный код как основа HTML-документа</h3>
+						<p>В процессе создания HTML-документа или отдельных его частей (шаблонов), как правило выделяются два этапа: «передали в работу PSD-макет» и «получили готовый HTML/CSS/JS». В этом докладе мы попробуем выделить другие малозаметные этапы, затронем семантику и ее роль в построении HTML-документа. <a href="/2014/04/12/pres/semantics-basis/">Презентация в HTML</a></p>
+						<p><a class="anchor" href="#anatoly-matov">Анатолий Матов</a></p>
+					</div>
+				</li>
+				<li class="calendar__event">
+					<time class="calendar__time">16:20</time>
+					<div class="content content--inline" id="bem-ok">
+						<h3>БЭМ — норм</h3>
+						<p>Модульный подход к созданию интерфейсов с помощью БЭМ и независимых блоков. История появления, практическая и архитектурная ценность, альтернативные точки зрения и совместимость с веб-стандартами и здравым смыслом. <a href="/2014/04/12/pres/bem-ok/">Презентация в HTML</a></p>
+						<p><a class="anchor" href="#vadim-makeev">Вадим Макеев</a></p>
+					</div>
+				</li>
+				<li class="calendar__event calendar__event--break">
+					<time class="calendar__time">17:00</time> Закрытие
+				</li>
+			</ol>
+		</section>
+		<section class="section" id="speakers">
+			<div class="section__box">
+				<h2 class="section__title">
+					Докладчики
+					<a class="up" href="#navigation">
+						<span class="up__text">Наверх</span>
+					</a>
+				</h2>
+			</div>
+			<div class="card" id="roman-dvornov">
+				<div class="card__description content">
+					<h3>Роман Дворнов <a href="https://twitter.com/rdvornov">@rdvornov</a></h3>
+					<p>Фронтенд-разработчик <a href="http://ostrovok.ru/">Ostrovok.ru</a>. До этого руководил разработкой веб-клиентов в платежной системе «Единый кошелёк». Автор и мейнтейнер опенсорсного JavaScript-фреймворка <a href="http://basisjs.com/">basis.js</a>.</p>
+				</div>
+				<div class="card__column">
+					<img class="card__picture" src="/speakers/roman-dvornov.jpeg" alt="Роман Дворнов">
+				</div>
+			</div>
+			<div class="card" id="dmitry-kuznecov">
+				<div class="card__description content">
+					<h3>Дмитрий Кузнецов <a href="https://twitter.com/diokuz">@diokuz</a></h3>
+					<p>Начал работать в <a href="http://2gis.ru/">2ГИС</a> в 2012 году на должности разработчика интерфейсов, через несколько месяцев стал ведущим специалистом на проекте 2ГИС-Онлайн. Автор библиотеки для кроссбраузерной кастомизации системного скроллбара <a href="https://github.com/Diokuz/baron">Baron</a>.</p>
+				</div>
+				<div class="card__column">
+					<img class="card__picture" src="/speakers/dmitry-kuznecov.jpeg" alt="Дмитрий Кузнецов">
+				</div>
+			</div>
+			<div class="card" id="vadim-makeev">
+				<div class="card__description content">
+					<h3>Вадим Макеев <a href="https://twitter.com/pepelsbey">@pepelsbey</a></h3>
+					<p>Веб-евангелист в компании <a href="http://opera.com/">Opera Software</a>. Веб-разработчик, организатор и участник IT-конференций, автор блога <a href="http://pepelsbey.net/">Пепелсбей.net</a>, пропагандист веб-стандартов.</p>
+				</div>
+				<div class="card__column">
+					<img class="card__picture" src="/speakers/vadim-makeev.jpeg" alt="Вадим Макеев">
+				</div>
+			</div>
+			<div class="card" id="anatoly-matov">
+				<div class="card__description content">
+					<h3>Анатолий Матов</h3>
+					<p>Руководитель отдела фронтенд-разработки <a href="http://ngs.ru/">НГС.Новосибирск</a>.</p>
+				</div>
+				<div class="card__column">
+					<img class="card__picture" src="/speakers/anatoly-matov.jpeg" alt="Анатолий Матов">
+				</div>
+			</div>
+			<div class="card" id="andrew-motoshin">
+				<div class="card__description content">
+					<h3>Андрей Мотошин <a href="https://twitter.com/htmlhero_ru">@htmlhero_ru</a></h3>
+					<p>Фронтенд-разработчик в компании Interfaced. Начал увлекаться вебом в 2005 году: сначала только версткой, а затем и JavaScript. Сейчас занимается Smart TV. Любит красиво сверстанный код, ведёт блог <a href="http://htmlhero.ru/">HTML Hero</a>.</p>
+				</div>
+				<div class="card__column">
+					<img class="card__picture" src="/speakers/andrew-motoshin.jpeg" alt="Андрей Мотошин">
+				</div>
+			</div>
+			<div class="card" id="tim-chaptykov">
+				<div class="card__description content">
+					<h3>Тим Чаптыков <a href="https://twitter.com/chaptykov">@chaptykov</a></h3>
+					<p>Разработчик интерфейсов в <a href="http://2gis.ru/">2ГИС</a>, занимается созданием новой онлайн-версии.</p>
+				</div>
+				<div class="card__column">
+					<img class="card__picture" src="/speakers/tim-chaptykov.jpeg" alt="Тим Чаптыков">
+				</div>
+			</div>
+		</section>
+		<section class="section" id="organisers">
+			<div class="section__box">
+				<h2 class="section__title">
+					Организаторы
+					<a class="up" href="#navigation">
+						<span class="up__text">Наверх</span>
+					</a>
+				</h2>
+			</div>
+			<div class="card" id="2gis">
+				<div class="card__description content">
+					<h3>2ГИС</h3>
+					<p>Разработчик электронных справочников, которые помогают пользователям программы с легкостью ориентироваться более чем в 250 городах России, Украины, Казахстана, Италии, Кипра и Чехии и быстро находить нужную информацию.</p>
+				</div>
+				<div class="card__column card__column--logo">
+					<a href="http://2gis.ru/">
+						<img class="card__picture" src="/partners/2gis.svg" alt="2ГИС">
+					</a>
+				</div>
+			</div>
+			<div class="card" id="opera">
+				<div class="card__description content">
+					<h3>Opera</h3>
+					<p>Норвежская компания, известная своими браузерами: <a href="http://www.opera.com/computer">Opera для компьютеров</a>, <a href="http://www.opera.com/mobile/android">Opera для Android</a>, <a href="http://www.opera.com/mobile/mini">Opera Mini</a>. Участвует в разработке движков Chromium и Blink, подробнее о технологиях на <a href="https://dev.opera.com/">Dev.Opera</a>.</p>
+				</div>
+				<div class="card__column card__column--logo">
+					<a href="http://opera.com/">
+						<img class="card__picture" src="/partners/opera.svg" alt="Opera">
+					</a>
+				</div>
+			</div>
+		</section>
+		<section class="section section--open" id="venue">
+			<div class="section__box">
+				<h2 class="section__title">
+					Площадка
+					<a class="up" href="#navigation">
+						<span class="up__text">Наверх</span>
+					</a>
+				</h2>
+			</div>
+			<div class="map" id="map">
+				<img class="map__image"
+					src="https://static-maps.yandex.ru/1.x/?ll=83.1105584,54.8581349&amp;z=16&amp;l=map&amp;size=640,450&amp;pt=83.1105584,54.8581349,org"
+					alt="Новосибирск, «Центр информационных технологий» на Николаева, 11.">
+			</div>
+			<div class="section__box content">
+				<p>Новосибирск, «Центр информационных технологий» на Николаева, 11.</p>
+			</div>
+		</section>
+	</main>
+	<script defer src="/scripts/script.js"></script>
+	<script defer src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;onload=yandexMap"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+/* Rules for the 'screen' and 'projection' media types 
+======================================== */
+
+@media screen, projection {
+
+	/* Common settings
+	---------------------------------------- */
+	html {
+		overflow: scroll;
+		}

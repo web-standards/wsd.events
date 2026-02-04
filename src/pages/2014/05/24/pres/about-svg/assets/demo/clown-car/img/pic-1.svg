@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 532 800"
+     preserveAspectRatio="xMidYMid meet">
+    <style>
+       svg {
+            background-size: content;
+            background-repeat: no-repeat;
+            }
+        
+        @media screen and (max-width: 100px) {
+            svg {
+                background-image: url(http://img-fotki.yandex.ru/get/5908/yoksel.61/0_4fb96_a9168777_S.jpg);
+            }
+        }
+        @media screen and (min-width: 101px) and (max-width: 300px) {
+            svg {
+                background-image: url(http://img-fotki.yandex.ru/get/5304/yoksel.61/0_50091_b4156b3a_M.jpg);
+            }
+        }
+
+        @media screen and (min-width: 301px) and (max-width: 700px) {
+            svg {
+                background-image: url(http://img-fotki.yandex.ru/get/5305/yoksel.61/0_50239_863d6ef1_L.jpg);
+            }
+        }
+    </style>
+</svg>

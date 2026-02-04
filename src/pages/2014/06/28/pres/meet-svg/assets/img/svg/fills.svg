@@ -1,0 +1,273 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1024px" height="640px">
+
+ <linearGradient id="gr-rainbow-stripes"
+    x1="0" y1="0" x2="200" y2="0%"
+    gradientUnits="userSpaceOnUse">
+    <stop offset="0%" stop-color="crimson" /><stop offset="10%" stop-color="purple" />
+    <stop offset="10%" stop-color="red" /><stop offset="20%" stop-color="crimson" />
+    <stop offset="20%" stop-color="orangered" /><stop offset="30%" stop-color="red" />
+    <stop offset="30%" stop-color="orange" /><stop offset="40%" stop-color="orangered" />
+    <stop offset="40%" stop-color="gold" /><stop offset="50%" stop-color="orange" />
+    <stop offset="50%" stop-color="yellowgreen" /><stop offset="60%" stop-color="gold" />
+    <stop offset="60%" stop-color="green" /><stop offset="70%" stop-color="yellowgreen" />
+    <stop offset="70%" stop-color="steelblue" /><stop offset="80%" stop-color="skyblue" />
+    <stop offset="80%" stop-color="mediumpurple" /><stop offset="90%" stop-color="steelblue" />
+    <stop offset="90%" stop-color="purple" /><stop offset="100%" stop-color="mediumpurple" />
+  </linearGradient>
+
+  <linearGradient id="gr-hot-cold" x1="0" y1="0" x2="40" y2="40"
+                    gradientUnits="userSpaceOnUse" spreadMethod="repeat">
+      <stop stop-color="#F2385A" offset="0"/>
+      <stop stop-color="#F2385A" offset="20%"/>
+      <stop stop-color="#F5A503" offset="20%"/>
+      <stop stop-color="#F5A503" offset="40%"/>
+      <stop stop-color="#E9F1DF" offset="40%"/>
+      <stop stop-color="#E9F1DF" offset="60%"/>
+      <stop stop-color="#4AD9D9" offset="60%"/>
+      <stop stop-color="#4AD9D9" offset="80%"/>
+      <stop stop-color="#36B1BF" offset="80%"/>
+      <stop stop-color="#36B1BF" offset="100%"/>
+  </linearGradient>
+
+  <linearGradient id="gr-hot-cold-soft" x1="0" y1="0" x2="100%" y2="50%">
+      <stop stop-color="hsl(45,100%,70%)" offset="10%"/>
+      <stop stop-color="hsl(320,100%,60%)" offset="50%"/>
+      <stop stop-color="hsl(220,100%,65%)" offset="100%"/>
+  </linearGradient>
+
+  <linearGradient id="gr-simple" x1="0" y1="0" x2="100%" y2="50%">
+      <stop stop-color="hsl(350,100%,45%)" offset="0"/>
+      <stop stop-color="hsl(50,100%,70%)" offset="50%"/>
+      <stop stop-color="hsl(200,100%,40%)" offset="100%"/>
+  </linearGradient>
+
+  <linearGradient id="gr-simple-stripes" x1="0" y1="0" x2="30%" y2="30%"
+                    gradientUnits="userSpaceOnUse" spreadMethod="repeat">
+      <stop stop-color="hsl(350,100%,45%)" offset="0"/>
+      <stop stop-color="hsl(350,100%,45%)" offset="33%"/>
+      <stop stop-color="hsl(50,100%,70%)" offset="33%"/>
+      <stop stop-color="hsl(50,100%,70%)" offset="66%"/>
+      <stop stop-color="hsl(200,100%,40%)" offset="66%"/>
+      <stop stop-color="hsl(200,100%,40%)" offset="100%"/>
+  </linearGradient>
+
+  <linearGradient id="gr-gray-transp" x1="0" y1="0" x2="0" y2="100%">
+      <stop stop-color="black" stop-opacity=".7" offset="0" class="color-1"/>
+      <stop stop-color="black" stop-opacity="0" offset="90" class="color-2"/>
+  </linearGradient>
+
+  <!--  -->
+
+  <radialGradient id="gr-radial-soft"
+      cx="50%" cy="50%" r="70%">
+      <stop stop-color="hsl(200,100%,40%)" offset="0"/>
+      <stop stop-color="hsl(45,100%,75%)" offset="50%"/>
+      <stop stop-color="hsl(350,100%,45%)" offset="100%"/>
+  </radialGradient>
+
+  <radialGradient id="gr-radial-lights"
+      cx="50%" cy="50%" r="70%">
+      <stop stop-color="white" offset="5%"
+        stop-opacity="1"/>
+      <stop stop-color="white" offset="100%" stop-opacity="0"/>
+  </radialGradient>
+
+  <radialGradient id="gr-radial-lights-small"
+      cx="50%" cy="50%" r="50%">
+      <stop stop-color="white" offset="5%"
+        stop-opacity="1"/>
+      <stop stop-color="white" offset="100%" stop-opacity="0"/>
+  </radialGradient>
+
+  <radialGradient id="gr-radial-soft-fxy"
+      cx="50%" cy="50%" r="70%" fx="90%" fy="90%">
+      <stop stop-color="hsl(200,100%,40%)" offset="0"/>
+      <stop stop-color="hsl(45,100%,75%)" offset="50%"/>
+      <stop stop-color="hsl(350,100%,45%)" offset="100%"/>
+  </radialGradient>
+
+  <radialGradient id="gr-radial-soft-repeat"
+      cx="50%" cy="50%" r="20%" spreadMethod="repeat"
+      gradientUnits="userSpaceOnUse">
+      <stop stop-color="hsl(200,100%,40%)" offset="0"/>
+      <stop stop-color="hsl(45,100%,75%)" offset="50%"/>
+      <stop stop-color="hsl(350,100%,45%)" offset="100%"/>
+  </radialGradient>
+
+
+  <radialGradient id="gr-radial-stripes"
+      cx="50%" cy="50%" r="20%" spreadMethod="reflect">
+      <stop stop-color="hsl(200,100%,40%)" offset="25%"/>
+      <stop stop-color="hsl(45,100%,75%)" offset="27%"/>
+      <stop stop-color="hsl(45,100%,75%)" offset="70%"/>
+      <stop stop-color="hsl(350,100%,45%)" offset="72%"/>
+  </radialGradient>
+
+
+  <radialGradient id="gr-radial-stripes-repeat"
+      cx="50%" cy="50%" r="10%" gradientUnits="userSpaceOnUse" spreadMethod="repeat">
+      <stop stop-color="hsl(200,100%,40%)" offset="0%"/>
+      <stop stop-color="hsl(200,100%,40%)" offset="25%"/>
+      <stop stop-color="hsl(45,100%,75%)" offset="27%"/>
+      <stop stop-color="hsl(45,100%,75%)" offset="70%"/>
+      <stop stop-color="hsl(350,100%,45%)" offset="72%"/>
+      <stop stop-color="hsl(350,100%,45%)" offset="98%"/>
+  </radialGradient>
+
+  <!--  -->
+
+  <lineargradient id="gr-ymc-gradient" x1="0" y1="0" x2="100%" y2="0%">
+    <stop stop-color="hsl(40,100%,50%)" offset="0" />
+    <stop stop-color="hsl(40,100%,50%)" offset="25%" />
+    <stop stop-color="hsl(355,90%,50%)" offset="26%" />
+    <stop stop-color="hsl(355,90%,50%)" offset="49%" />
+    <stop stop-color="hsl(85,85%,40%)" offset="50%" />
+    <stop stop-color="hsl(85,85%,40%)" offset="75%" />
+    <stop stop-color="hsl(180,95%,35%)" offset="76%" />
+    <stop stop-color="hsl(180,95%,35%)" offset="100%" />
+  </lineargradient>
+
+  <lineargradient id="gr-kuler" x1="0" y1="0" x2="100%" y2="0%">
+    <stop stop-color="#004358" offset="0" />
+    <stop stop-color="#004358" offset="20%" />
+    <stop stop-color="#1F8A70" offset="21%" />
+    <stop stop-color="#1F8A70" offset="40%" />
+    <stop stop-color="#BEDB39" offset="41%" />
+    <stop stop-color="#BEDB39" offset="60%" />
+    <stop stop-color="#FFE11A" offset="61%" />
+    <stop stop-color="#FFE11A" offset="80%" />
+    <stop stop-color="#FD7400" offset="81%" />
+    <stop stop-color="#FD7400" offset="100%" />
+  </lineargradient>
+
+  <lineargradient id="gr-kuler-diag"
+    x1="0" y1="0" x2="40" y2="40"
+    gradientUnits="userSpaceOnUse" spreadMethod="repeat">
+    <stop stop-color="#004358" offset="0" />
+    <stop stop-color="#004358" offset="20%" />
+    <stop stop-color="#1F8A70" offset="21%" />
+    <stop stop-color="#1F8A70" offset="40%" />
+    <stop stop-color="#BEDB39" offset="41%" />
+    <stop stop-color="#BEDB39" offset="60%" />
+    <stop stop-color="#FFE11A" offset="61%" />
+    <stop stop-color="#FFE11A" offset="80%" />
+    <stop stop-color="#FD7400" offset="81%" />
+    <stop stop-color="#FD7400" offset="100%" />
+  </lineargradient>
+
+  <radialGradient id="gr-radial-kuler"
+      cx="50%" cy="50%" r="20%" gradientUnits="userSpaceOnUse" spreadMethod="repeat">
+    <stop stop-color="#004358" offset="0" />
+    <stop stop-color="#004358" offset="20%" />
+    <stop stop-color="#1F8A70" offset="21%" />
+    <stop stop-color="#1F8A70" offset="40%" />
+    <stop stop-color="#BEDB39" offset="41%" />
+    <stop stop-color="#BEDB39" offset="60%" />
+    <stop stop-color="#FFE11A" offset="61%" />
+    <stop stop-color="#FFE11A" offset="80%" />
+    <stop stop-color="#FD7400" offset="81%" />
+    <stop stop-color="#FD7400" offset="100%" />
+  </radialGradient>
+
+  <radialGradient id="gr-radial-kuler-bb"
+      cx="50%" cy="50%" r="35%" gradientUnits="objectBoundingBox" spreadMethod="repeat">
+    <stop stop-color="#004358" offset="0" />
+    <stop stop-color="#004358" offset="20%" />
+    <stop stop-color="#1F8A70" offset="21%" />
+    <stop stop-color="#1F8A70" offset="40%" />
+    <stop stop-color="#BEDB39" offset="41%" />
+    <stop stop-color="#BEDB39" offset="60%" />
+    <stop stop-color="#FFE11A" offset="61%" />
+    <stop stop-color="#FFE11A" offset="80%" />
+    <stop stop-color="#FD7400" offset="81%" />
+    <stop stop-color="#FD7400" offset="100%" />
+  </radialGradient>
+
+  <!--  -->
+
+  <pattern id="pt-rainbow-stripes" width="200" height="200"
+           patternUnits="userSpaceOnUse" viewbox="0 0 200 200">
+    <rect width="200" height="200" fill="url(#gr-rainbow-stripes)"/>
+  </pattern>
+
+  <pattern id="pt-wood" width="300" height="300"
+             patternUnits="userSpaceOnUse">
+    <image xlink:href="./assets/img/parts/wood.jpg" width="300" height="300"/>
+  </pattern>
+
+  <pattern id="pt-grass" width="300" height="300"
+             patternUnits="userSpaceOnUse">
+    <image xlink:href="./assets/img/parts/grass.jpg" width="300" height="300"/>
+  </pattern>
+
+  <pattern id="pt-water" viewBox="0 0 256 256"
+         width="256" height="256" patternUnits="userSpaceOnUse">
+      <image xlink:href="./assets/img/parts/water.gif" width="256" height="256"/>
+  </pattern>
+
+  <pattern id="pt-fire" viewBox="30 100 186 200"
+       width="216" height="200" patternUnits="userSpaceOnUse"
+           x="-60" y="-100">
+    <image xlink:href="./assets/img/parts/fire.gif" width="256" height="300"/>
+  </pattern>
+
+  <pattern id="pt-mosaic-colored" width="200" height="200"
+    viewbox="0 0 200 200"
+    patternUnits="userSpaceOnUse">
+    <image xlink:href="./assets/img/parts/mosaic-colored.png" width="200" height="200"/>
+  </pattern>
+  <!-- patternUnits="userSpaceOnUse" -->
+
+  <pattern id="pt-colored-circles" width="160" height="160"
+    viewbox="0 0 160 160"
+    patternUnits="userSpaceOnUse">
+      <rect width="100%" height="150%" fill="black"/>
+      <g stroke-width="8" fill="none">
+        <g>
+          <circle r="25" cx="40" cy="40" stroke="url(#gr-radial-soft-fxy)"/>
+          <circle r="25" cx="120" cy="40" stroke="url(#gr-rainbow-stripes)"/>
+          <circle r="25" cx="40" cy="120" stroke="url(#gr-rainbow-stripes)"/>
+          <circle r="25" cx="120" cy="120" stroke="url(#gr-radial-soft-fxy)"/>
+        </g>
+        <g transform="translate(40,40)">
+          <circle r="25" cx="40" cy="40" stroke="url(#gr-radial-soft-fxy)"/>
+          <circle r="25" cx="120" cy="40" stroke="url(#gr-rainbow-stripes)"/>
+
+          <circle r="25" cx="-40" cy="120" stroke="url(#gr-radial-soft-fxy)"/>
+          <circle r="25" cx="40" cy="120" stroke="url(#gr-rainbow-stripes)"/>
+          <circle r="25" cx="120" cy="120" stroke="url(#gr-radial-soft-fxy)"/>
+
+          <circle r="25" cx="40" cy="-40" stroke="url(#gr-rainbow-stripes)"/>
+          <circle r="25" cx="-40" cy="-40" stroke="url(#gr-radial-soft-fxy)"/>
+          <circle r="25" cx="120" cy="-40" stroke="url(#gr-radial-soft-fxy)"/>
+        </g>
+        <g transform="translate(0,80)">
+        <circle r="25" cx="0" cy="0" stroke="url(#gr-rainbow-stripes)"/>
+        </g>
+      </g>
+  </pattern>
+
+  <!--  -->
+
+  <pattern id="pt-text" patternunits="userSpaceOnUse" width="480" height="112" y="5">
+    <text x="0" y="0">
+      <tspan x="0" y="1em">Nam tristique vestibulum nulla nec accumsan. Nullam commodo eget dolor et ultricies.
+      </tspan>
+      <tspan x="0" y="2.1em">Nulla ligula elit, placerat a sapien vel, eleifend tincidunt nibh. Suspendisse porta fermentum dictum. Cras eget
+      </tspan>
+      <tspan x="0" y="3.2em">Maecenas tempus elit quis sapien tempus, sit amet viverra neque mattis. Quisque a tincidunt mi.
+      </tspan>
+      <tspan x="0" y="4.3em">Proin at justo eu ipsum posuere dignissim vel quis eros. Etiam at libero commodo, varius justo quis, interdum erat.
+      </tspan>
+      <tspan x="0" y="5.4em">Fusce viverra mollis est, nec euismod ante mattis ut. Aenean eu mauris viverra enim vulputate bibendum.
+      </tspan>
+      <tspan x="0" y="6.5em">Integer velit metus, cursus et commodo sit amet, gravida vitae purus. Sed scelerisque at odio non condimentum.
+      </tspan>
+      <tspan x="0" y="7.6em">Sed neque lacus, rhoncus vitae sem ut, pharetra vestibulum elit.
+      </tspan>
+      <tspan x="0" y="8.7em">Cras ultricies aliquam dolor quis ultrices. Cras eget mauris tincidunt, aliquam erat quis, faucibus augue.
+      </tspan>
+    </text>
+  </pattern>
+
+</svg>

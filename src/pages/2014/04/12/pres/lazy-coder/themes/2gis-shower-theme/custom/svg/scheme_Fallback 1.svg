@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="960px" height="600px" viewBox="0 0 960 600" enable-background="new 0 0 960 600" xml:space="preserve">
+<g>
+	<rect x="762.583" y="103.269" fill="none" width="158" height="28"/>
+	<text transform="matrix(1 0 0 1 825.9686 116.3184)" font-family="'SuisseIntl-CondensedBold'" font-size="18" letter-spacing="1">CSS</text>
+	<rect x="38" y="144.269" fill="none" width="158" height="28"/>
+	<text transform="matrix(1 0 0 1 69.9884 162.3933)" font-family="'SuisseIntl-Condensed'" font-size="25">Исходник</text>
+	<rect x="38" y="100.269" fill="none" width="158" height="28"/>
+	<text transform="matrix(1 0 0 1 108.3104 116.2184)" font-family="'SuisseIntl-CondensedBold'" font-size="22">Ai</text>
+	<rect x="79.275" y="87.269" fill="none" width="219" height="182"/>
+	<text transform="matrix(1 0 0 1 178.0604 112.2686)" font-family="'FontAwesome'" font-size="25"></text>
+	<rect x="241.275" y="87.269" fill="none" width="219" height="182"/>
+	<text transform="matrix(1 0 0 1 340.0604 112.2686)" font-family="'FontAwesome'" font-size="25"></text>
+	<rect x="396.275" y="87.269" fill="none" width="219" height="182"/>
+	<text transform="matrix(1 0 0 1 495.0604 112.2686)" font-family="'FontAwesome'" font-size="25"></text>
+	<rect x="8" y="58.269" fill="none" width="219" height="182"/>
+	<text transform="matrix(1 0 0 1 94.6437 122.2686)" font-family="'FontAwesome'" font-size="64"></text>
+	<rect x="196" y="144.269" fill="none" width="158" height="28"/>
+	<text transform="matrix(1 0 0 1 217.038 162.3933)"><tspan x="0" y="0" font-family="'SuisseIntl-Condensed'" font-size="24" letter-spacing="1">SVG</tspan><tspan x="40.775" y="0" font-family="'SuisseIntl-Condensed'" font-size="25">-файлы</tspan></text>
+	<rect x="208" y="110.935" fill="none" width="158" height="28"/>
+	<text transform="matrix(1 0 0 1 275.0374 121.0851)" font-family="'SuisseIntl-CondensedBold'" font-size="14">SVG</text>
+	<g>
+		<path d="M307.512,84.547v43.437c0,1.893-1.536,3.429-3.429,3.429h-34.292c-1.893,0-3.429-1.536-3.429-3.429v-10.288H246.93
+			c-1.893,0-3.429-1.536-3.429-3.429V90.263c0-1.893,1.107-4.537,2.429-5.858l14.574-14.574c1.322-1.322,3.965-2.429,5.858-2.429
+			h14.86c1.893,0,3.429,1.536,3.429,3.429v11.716c1.393-0.822,3.179-1.429,4.572-1.429h14.86
+			C305.976,81.118,307.512,82.654,307.512,84.547z M280.079,86.834v-14.86h-13.717v14.86c0,1.893-1.536,3.429-3.429,3.429h-14.86
+			v22.861h18.289v-9.145c0-1.893,1.107-4.537,2.429-5.858L280.079,86.834z M251.109,85.69h10.681V75.01L251.109,85.69z
+			 M302.94,85.69h-13.717v14.86c0,1.893-1.536,3.429-3.429,3.429h-14.86v22.861h32.006V85.69z M273.97,99.407h10.681V88.727
+			L273.97,99.407z"/>
+	</g>
+	<rect x="344" y="144.269" fill="none" width="158" height="28"/>
+	<text transform="matrix(1 0 0 1 389.3505 162.3933)" font-family="'SuisseIntl-Condensed'" font-size="25">svgmin</text>
+	<rect x="314" y="58.269" fill="none" width="219" height="182"/>
+	<text transform="matrix(1 0 0 1 389.215 122.2686)" font-family="'FontAwesome'" font-size="64"></text>
+	<rect x="502" y="144.269" fill="none" width="158" height="28"/>
+	<text transform="matrix(1 0 0 1 544.288 162.3933)" font-family="'SuisseIntl-Condensed'" font-size="25">data-uri</text>
+	<rect x="472" y="58.269" fill="none" width="219" height="182"/>
+	<text transform="matrix(1 0 0 1 547.2148 122.2686)" font-family="'FontAwesome'" font-size="64"></text>
+	<g>
+		<path d="M785.074,105.505l-9.079,9.079c-0.335,0.321-0.795,0.516-1.269,0.516s-0.92-0.195-1.255-0.516l-1.046-1.046
+			c-0.335-0.335-0.53-0.795-0.53-1.269s0.195-0.934,0.53-1.269l4.086-4.086H656.692c-1.004,0-1.632-0.837-1.632-1.785v-1.785
+			c0-0.948,0.628-1.785,1.632-1.785H776.51l-4.086-4.1c-0.335-0.321-0.53-0.781-0.53-1.255s0.195-0.934,0.53-1.255l1.046-1.046
+			c0.335-0.335,0.781-0.53,1.255-0.53s0.935,0.195,1.269,0.53l9.079,9.079c0.335,0.321,0.516,0.781,0.516,1.255
+			S785.408,105.17,785.074,105.505z"/>
+	</g>
+	<rect x="732" y="59.269" fill="none" width="219" height="182"/>
+	<text transform="matrix(1 0 0 1 818.6435 123.2686)" font-family="'FontAwesome'" font-size="64"></text>
+</g>
+<g>
+	<rect x="40" y="451.269" fill="none" width="158" height="28"/>
+	<text transform="matrix(1 0 0 1 59.9937 469.3933)"><tspan x="0" y="0" font-family="'SuisseIntl-Condensed'" font-size="24" letter-spacing="1">PNG</tspan><tspan x="42.863" y="0" font-family="'SuisseIntl-Condensed'" font-size="25">-файлы</tspan></text>
+	<rect x="87.275" y="394.269" fill="none" width="219" height="182"/>
+	<text transform="matrix(1 0 0 1 186.0604 419.2686)" font-family="'FontAwesome'" font-size="25"></text>
+	<rect x="387.275" y="327.269" fill="none" width="219" height="182"/>
+	<text transform="matrix(1 0 0 1 486.0604 352.2686)" font-family="'FontAwesome'" font-size="25"></text>
+	<g>
+		<path d="M786.074,347.505l-9.079,9.079c-0.335,0.321-0.795,0.516-1.269,0.516s-0.92-0.195-1.255-0.516l-1.046-1.046
+			c-0.335-0.335-0.53-0.795-0.53-1.269s0.195-0.934,0.53-1.269l4.086-4.086H657.692c-1.004,0-1.632-0.837-1.632-1.785v-1.785
+			c0-0.948,0.628-1.785,1.632-1.785H777.51l-4.086-4.1c-0.335-0.321-0.53-0.781-0.53-1.255s0.195-0.934,0.53-1.255l1.046-1.046
+			c0.335-0.335,0.781-0.53,1.255-0.53s0.935,0.195,1.269,0.53l9.079,9.079c0.335,0.321,0.516,0.781,0.516,1.255
+			S786.408,347.17,786.074,347.505z"/>
+	</g>
+	<g>
+		<path d="M786.073,486.505l-9.079,9.079c-0.334,0.321-0.795,0.516-1.269,0.516s-0.92-0.195-1.255-0.516l-1.046-1.046
+			c-0.334-0.335-0.53-0.795-0.53-1.269s0.195-0.934,0.53-1.269l4.086-4.086H407.692c-1.004,0-1.632-0.837-1.632-1.785v-1.785
+			c0-0.948,0.628-1.785,1.632-1.785H777.51l-4.086-4.1c-0.334-0.321-0.53-0.781-0.53-1.255s0.195-0.934,0.53-1.255l1.046-1.046
+			c0.335-0.335,0.781-0.53,1.255-0.53s0.935,0.195,1.269,0.53l9.079,9.079c0.335,0.321,0.516,0.781,0.516,1.255
+			S786.408,486.17,786.073,486.505z"/>
+	</g>
+	<g>
+		<path d="M360.116,384.24l0,12.84c-0.01,0.463-0.197,0.927-0.533,1.262c-0.335,0.335-0.789,0.513-1.253,0.523l-1.479,0
+			c-0.473,0-0.937-0.187-1.272-0.523s-0.523-0.799-0.523-1.272v-5.779l-6.943,6.943c-0.71,0.71-1.746,0.562-2.416-0.109
+			l-1.262-1.262c-0.671-0.671-0.819-1.706-0.108-2.416l6.943-6.943l-5.789-0.01c-0.463,0.01-0.927-0.177-1.262-0.513
+			s-0.523-0.799-0.513-1.262l0-1.479c0-0.473,0.177-0.927,0.513-1.262c0.335-0.335,0.799-0.523,1.272-0.523l12.84,0
+			c0.464-0.01,0.917,0.187,1.253,0.523S360.116,383.766,360.116,384.24z"/>
+	</g>
+	<g>
+		<path d="M411.106,486.241c0.01,0.463-0.187,0.917-0.523,1.253s-3.835-0.6-4.309-0.6 M406.556,487.425l-61.229-61.4
+			c-0.71-0.71-0.562-1.745,0.108-2.416l1.262-1.262c0.671-0.671,1.706-0.819,2.416-0.109l62.66,62.906"/>
+	</g>
+	<rect x="10" y="365.269" fill="none" width="219" height="182"/>
+	<text transform="matrix(1 0 0 1 87.5007 429.2686)" font-family="'FontAwesome'" font-size="64"></text>
+	<rect x="175" y="451.269" fill="none" width="194" height="28"/>
+	<text transform="matrix(1 0 0 1 221.7452 468.6684)" font-family="'SuisseIntl-Condensed'" font-size="24">spritesmith</text>
+	<rect x="162" y="365.269" fill="none" width="219" height="182"/>
+	<text transform="matrix(1 0 0 1 237.2148 429.2686)" font-family="'FontAwesome'" font-size="64"></text>
+	<rect x="490" y="384.269" fill="none" width="182" height="28"/>
+	<text transform="matrix(1 0 0 1 525.5884 402.3933)" font-family="'SuisseIntl-Condensed'" font-size="25">imageoptim</text>
+	<rect x="472" y="298.269" fill="none" width="219" height="182"/>
+	<text transform="matrix(1 0 0 1 547.2148 362.2686)" font-family="'FontAwesome'" font-size="64"></text>
+	<rect x="761.25" y="484.269" fill="none" width="158" height="28"/>
+	<text transform="matrix(1 0 0 1 824.6354 497.3184)" font-family="'SuisseIntl-CondensedBold'" font-size="18" letter-spacing="1">CSS</text>
+	<rect x="731" y="439.269" fill="none" width="219" height="140"/>
+	<text transform="matrix(1 0 0 1 817.6436 503.2686)" font-family="'FontAwesome'" font-size="64" letter-spacing="6"></text>
+	<rect x="52" y="417.602" fill="none" width="158" height="28"/>
+	<text transform="matrix(1 0 0 1 118.4071 427.7518)" font-family="'SuisseIntl-CondensedBold'" font-size="14">PNG</text>
+	<rect x="345.25" y="346.269" fill="none" width="158" height="28"/>
+	<text transform="matrix(1 0 0 1 407.6092 359.3184)" font-family="'SuisseIntl-CondensedBold'" font-size="18" letter-spacing="1">PNG</text>
+	<rect x="344" y="383.269" fill="none" width="158" height="28"/>
+	<text transform="matrix(1 0 0 1 387.2017 401.3933)"><tspan x="0" y="0" font-family="'SuisseIntl-Condensed'" font-size="24" letter-spacing="1">С</tspan><tspan x="13.872" y="0" font-family="'SuisseIntl-Condensed'" font-size="25">прайт</tspan></text>
+	<rect x="314" y="301.269" fill="none" width="219" height="140"/>
+	<text transform="matrix(1 0 0 1 400.6435 365.2686)" font-family="'FontAwesome'" font-size="64" letter-spacing="6"></text>
+	<rect x="763.25" y="348.269" fill="none" width="158" height="28"/>
+	<text transform="matrix(1 0 0 1 825.6093 361.3184)" font-family="'SuisseIntl-CondensedBold'" font-size="18" letter-spacing="1">PNG</text>
+	<rect x="762" y="385.269" fill="none" width="158" height="28"/>
+	<text transform="matrix(1 0 0 1 805.2018 403.3933)"><tspan x="0" y="0" font-family="'SuisseIntl-Condensed'" font-size="24" letter-spacing="1">С</tspan><tspan x="13.872" y="0" font-family="'SuisseIntl-Condensed'" font-size="25">прайт</tspan></text>
+	<rect x="732" y="303.269" fill="none" width="219" height="140"/>
+	<text transform="matrix(1 0 0 1 818.6436 367.2686)" font-family="'FontAwesome'" font-size="64" letter-spacing="6"></text>
+</g>
+<rect x="762" y="145.269" fill="none" width="158" height="28"/>
+<text transform="matrix(1 0 0 1 804.5128 163.3933)" font-family="'SuisseIntl-Condensed'" font-size="25">app.css</text>
+<rect x="762" y="176.269" fill="none" width="158" height="55"/>
+<text transform="matrix(1 0 0 1 808.8006 187.8684)" fill="#808080" font-family="'SuisseIntl-Condensed'" font-size="16">CSS + SVG</text>
+<rect x="762" y="519.269" fill="none" width="158" height="28"/>
+<text transform="matrix(1 0 0 1 786.7258 537.3933)" font-family="'SuisseIntl-Condensed'" font-size="25">app.ie8.css</text>
+<rect x="762" y="550.269" fill="none" width="158" height="55"/>
+<text transform="matrix(1 0 0 1 800.9207 561.8684)" fill="#808080" font-family="'SuisseIntl-Condensed'" font-size="16">CSS + sprites</text>
+</svg>

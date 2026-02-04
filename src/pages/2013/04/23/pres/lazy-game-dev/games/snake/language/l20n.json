@@ -1,0 +1,10 @@
+{
+  "locales": [
+    "en",
+    "ru"
+  ],
+  "default_locale": "ru",
+  "resources": [
+    "./{{locale}}/data.l20n"
+  ]
+}

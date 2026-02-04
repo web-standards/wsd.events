@@ -1,0 +1,268 @@
+/* Текстура */
+.base.sea-2 .side-1,
+.base.sea-2 .side-2,
+.base.sea-2 .side-3,
+.base.sea-2 .side-4,
+.base.sea-2 .side-5,
+.base.sea-2 .side-6,
+.base.sea-2 .top-side .inner{
+  background: url('../img/water3.gif') repeat;
+  -webkit-background-size: 100% auto;
+          background-size: 100% auto;
+  }
+
+.base.sea-2 .side-1,
+.base.sea-2 .side-2,
+.base.sea-2 .side-3,
+.base.sea-2 .side-4,
+.base.sea-2 .side-5,
+.base.sea-2 .side-6{
+  box-shadow: inset 0 0 40px 0 rgba(0,0,50,.25);
+  }
+
+.model:hover ~ .base .top-side .inner,
+.base:hover .top-side .inner{
+  box-shadow: inset 0 0 0 140px rgba(255, 121, 0, .35);
+  cursor: pointer;
+  }
+
+.base.sea-2:hover .top-side .inner{
+  box-shadow: none;
+  cursor: default;
+  }
+
+.passive,
+.passive div{
+  cursor: default;
+  pointer-events: none;
+  }
+
+.base{
+  width: 0px;
+  height: 0px;
+  position: relative;
+  line-height: 0px;
+  font-size: 0px;
+  overflow: visible;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+
+  }
+/* Основа */
+.base .top-side{
+  width: 140px;
+  height: 122px;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: translateY(-61px) translateX(-70px);
+  -moz-transform: translateY(-61px) translateX(-70px);
+  transform: translateY(-61px) translateX(-70px);
+
+  -webkit-backface-visibility: hidden;
+  backface-visibility:     hidden;
+
+  }
+  .base .top-side .outer{
+    width: 140px;
+    height: 121px;
+    overflow: hidden;
+    -webkit-transform: rotateZ(-60deg);
+    -moz-transform: rotateZ(-60deg);
+    transform: rotateZ(-60deg);
+    }
+    .base .top-side .inner{
+      width: 140px;
+      height: 121px;
+      -webkit-transform: rotateZ(-60deg);
+      -moz-transform: rotateZ(-60deg);
+      transform: rotateZ(-60deg);
+      overflow: hidden;
+      background: url('../img/dirt.png') 50% 50% repeat;
+      -webkit-background-size: 100% auto;
+              background-size: 100% auto;
+      }
+.base .bottom-side{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 140px;
+  height: 122px;
+  overflow: hidden;
+
+  -webkit-transform-origin: 50% 50% 0;
+  -moz-transform-origin: 50% 50% 0;
+  transform-origin: 50% 50% 0;
+
+  -webkit-transform: translateY(-61px) translateX(-70px)  rotateY(180deg) translateZ(20px);
+  -moz-transform: translateY(-61px) translateX(-70px)  rotateY(180deg) translateZ(20px);
+  transform: translateY(-61px) translateX(-70px)  rotateY(180deg) translateZ(20px);
+
+  -webkit-backface-visibility: hidden;
+  backface-visibility:     hidden;
+  }
+  .base .bottom-side .outer{
+    width: 140px;
+    height: 121px;
+    overflow: hidden;
+    -webkit-transform: rotateZ(-60deg);
+    -moz-transform: rotateZ(-60deg);
+    transform: rotateZ(-60deg);
+    }
+    .base .bottom-side .inner{
+      width: 140px;
+      height: 121px;
+      overflow: hidden;
+      background: url('../img/dirt.png') 50% 50% no-repeat;
+      -webkit-transform: rotateZ(-60deg);
+      -moz-transform: rotateZ(-60deg);
+      transform: rotateZ(-60deg);
+      }
+.base .side-1{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70px;
+  height: 20px;
+  display: block;
+
+  -webkit-transform-origin: 50% 0 0;
+  -moz-transform-origin: 50% 0 0;
+  transform-origin: 50% 0 0;
+
+  -webkit-transform: translateX(-35px) rotateX(90deg) translateY(-20px) translateZ(60px);
+  -moz-transform: translateX(-35px) rotateX(90deg) translateY(-20px) translateZ(60px);
+  transform: translateX(-35px) rotateX(90deg) translateY(-20px) translateZ(60px);
+
+  background: url('../img/dirt.png') 0 0 repeat;
+      -webkit-background-size: 100% auto;
+              background-size: 100% auto;
+
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  }
+.base .side-2{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70px;
+  height: 20px;
+  display: block;
+
+  -webkit-transform-origin: 50% 0 0;
+  -moz-transform-origin: 50% 0 0;
+  transform-origin: 50% 0 0;
+
+  -webkit-transform: translateX(-35px) rotateX(-90deg)  translateZ(60px);
+  -moz-transform: translateX(-35px) rotateX(-90deg)  translateZ(60px);
+  transform: translateX(-35px) rotateX(-90deg)  translateZ(60px);
+
+  background: url('../img/dirt.png') 0 0 repeat;
+      -webkit-background-size: 100% auto;
+              background-size: 100% auto;
+
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  }
+.base .side-3{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70px;
+  height: 20px;
+  display: block;
+
+  -webkit-transform-origin: 50% 0 0;
+  -moz-transform-origin: 50% 0 0;
+  transform-origin: 50% 0 0;
+
+  -webkit-transform: translateX(-35px) rotateX(-90deg) rotateY(120deg) translateZ(60px);
+  -moz-transform: translateX(-35px) rotateX(-90deg) rotateY(120deg) translateZ(60px);
+  transform: translateX(-35px) rotateX(-90deg) rotateY(120deg) translateZ(60px);
+
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+  background: url('../img/dirt.png') 0 0 repeat;
+      -webkit-background-size: 100% auto;
+              background-size: 100% auto;
+  }
+
+.base .side-4{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70px;
+  height: 20px;
+  display: block;
+
+  -webkit-transform-origin: 50% 0 0;
+  -moz-transform-origin: 50% 0 0;
+  transform-origin: 50% 0 0;
+
+  -webkit-transform: translateX(-35px) rotateX(-90deg) rotateY(-60deg) translateZ(60px);
+  -moz-transform: translateX(-35px) rotateX(-90deg) rotateY(-60deg) translateZ(60px);
+  transform: translateX(-35px) rotateX(-90deg) rotateY(-60deg) translateZ(60px);
+
+  background: url('../img/dirt.png') 0 0 repeat;
+      -webkit-background-size: 100% auto;
+              background-size: 100% auto;
+
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  }
+.base .side-5{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70px;
+  height: 20px;
+  display: block;
+
+  -webkit-transform-origin: 50% 0 0;
+  -moz-transform-origin: 50% 0 0;
+  transform-origin: 50% 0 0;
+
+  -webkit-transform: translateX(-35px) rotateX(-90deg) rotateY(-120deg) translateZ(60px);
+  -moz-transform: translateX(-35px) rotateX(-90deg) rotateY(-120deg) translateZ(60px);
+  transform: translateX(-35px) rotateX(-90deg) rotateY(-120deg) translateZ(60px);
+
+  background: url('../img/dirt.png') 0 0 repeat;
+      -webkit-background-size: 100% auto;
+              background-size: 100% auto;
+
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  }
+.base .side-6{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70px;
+  height: 20px;
+  display: block;
+
+  -webkit-transform-origin: 50% 0 0;
+  -moz-transform-origin: 50% 0 0;
+  transform-origin: 50% 0 0;
+
+  -webkit-transform: translateX(-35px) rotateX(-90deg) rotateY(60deg) translateZ(60px);
+  -moz-transform: translateX(-35px) rotateX(-90deg) rotateY(60deg) translateZ(60px);
+  transform: translateX(-35px) rotateX(-90deg) rotateY(60deg) translateZ(60px);
+
+  -webkit-backface-visibility: hidden;
+  backface-visibility:     hidden;
+
+  background: url('../img/dirt.png') 0 0 repeat;
+      -webkit-background-size: 100% auto;
+              background-size: 100% auto;
+  }
+
+/* Смещение на уровень ниже */
+.base.sea-2{
+  -webkit-transform: translateZ(-18px);
+  -moz-transform: translateZ(-18px);
+  transform: translateZ(-18px);
+  }

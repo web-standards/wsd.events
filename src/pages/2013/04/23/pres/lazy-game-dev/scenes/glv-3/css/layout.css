@@ -1,0 +1,895 @@
+html,body{
+  height:100%;
+  width:100%;
+  min-height:600px;
+  min-width:1000px;
+  overflow:hidden;
+  }
+  a{
+    color:#000;
+    }
+    a:hover{
+      text-decoration:none;
+      }
+
+#map-wrapper{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+}
+
+body{
+  //background: url('../img/bg.jpeg') 50% 50% no-repeat;
+  background-size:100% 100%;
+  -webkit-perspective:1700px;
+  -webkit-transform-style:preserve-3d;
+  }
+
+.fail-screen,
+.win-screen{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background-color: #fff;
+  }
+  .fail-screen h1,
+  .win-screen h1{
+    position: absolute;
+    top:50%;
+    left:0;
+    right:0;
+    margin:-50px 0 0;
+    text-align:center;
+    font:60px/100px Arial,Helvetica,sans-serif;
+    color:#000;
+    text-transform:uppercase;
+    }
+  .fail-screen h2,
+  .win-screen h2{
+    position: absolute;
+    top:50%;
+    left:0;
+    right:0;
+    margin:30px 0 0;
+    text-align:center;
+    font:32px/48px Arial,Helvetica,sans-serif;
+    color:#000;
+    }
+
+.field.playing{
+  cursor: none;
+  }
+
+.hell{
+  background: #0f0;
+  position: absolute;
+  left:-150px;
+  top:-150px;
+  bottom:-150px;
+  right:-150px;
+  -webkit-transform:translateZ(-5px);
+  -webkit-transform-style:preserve-3d;
+  opacity:.5;
+  z-index:1;
+  }
+  .hell:hover{
+    background-color: #f00;
+    }
+
+.low-level{
+  -webkit-transform-style:preserve-3d;
+  -webkit-transform: translateZ(-10px);
+  z-index:19;
+  }
+  body .low-level .path{
+    background: #32231b;
+    }
+
+.lowest-level{
+  -webkit-transform-style:preserve-3d;
+  -webkit-transform: translateZ(-20px);
+  z-index:19;
+  }
+  body .lowest-level .path{
+    background: #402c21;
+    }
+
+.horizontal-bridge-2piece{
+  -webkit-transform: translateZ(1px);
+  -webkit-animation: horizontal-bridge-2piece 2.5s ease-in-out infinite both;
+  }
+
+.field.go{
+  -webkit-transform-origin: 0 0 0;
+  -webkit-transform: translate(76px,0) scale(1.5);
+  }
+
+.field{
+
+
+  z-index:20;
+
+  width:1000px;
+  height:600px;
+  margin:-300px 0 0 -500px;
+  position: absolute;
+  left:50%;
+  top:50%;
+
+  -webkit-transform-style:preserve-3d;
+
+  }
+  .field .field-wrapper{
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+
+    -webkit-transform-style:preserve-3d;
+
+    }
+  .field .force{
+    background: url("../img/force.png") repeat;
+    -webkit-animation: forcePulse 2s ease infinite;
+    }
+  .field .road{
+    background: url("../img/brick.png") repeat;
+    }
+  .field .path{
+    -webkit-transform-style:preserve-3d;
+    z-index:2;
+    position: absolute;
+    }
+
+    .field .path.piece-20{
+      width:230px;
+      height:75px;
+      top:225px;
+      left:75px;
+      background-position: -151px -150px;
+      }
+    .field .path.piece-21{
+      width:75px;
+      height:75px;
+      top:225px;
+      left:300px;
+      background-position: -225px -375px;
+      }
+    .field .path.piece-22{
+      width:445px;
+      height:75px;
+      top:225px;
+      left:445px;
+      background-position: -375px -225px;
+      }
+
+
+    .field .path.piece-1{
+      width:376px;
+      height:76px;
+      top:76px;
+      left:76px;
+      background-position: 0px 0px;
+      }
+/*    .field .path.piece-2{
+      width:76px;
+      height:76px;
+      top:76px;
+      left:376px;
+      background-position: 0px 0px;
+      }*/
+    .field .path.piece-3{
+      width:376px;
+      height:76px;
+      top:228px;
+      left:76px;
+      background-position: 0px 0px;
+      }
+    .teleport-1{
+      width:76px;
+      height:76px;
+      top:0;
+      left:300px;
+      background-position: 0px 0px;
+      }
+
+    .field .path.piece-2{
+      width:76px;
+      height:154px;
+      top:0;
+      left:0;
+      background-position: 0px 0px;
+      }
+
+    .field .teleport:hover>.teleport,
+    .field .teleport:hover>.path{
+      display:block;
+      }
+    .field .teleport>.teleport,
+    .field .teleport>.path{
+      display:none;
+      }
+
+    .field .teleport{
+      width:75px;
+      height:75px;
+      position: absolute;
+
+      -webkit-transform-style:preserve-3d;
+      -webkit-transform: translateZ(4px);
+
+      background: url("../img/teleport.png") 50% 50% no-repeat;
+      }
+
+    .field .path.piece-5{
+      width:300px;
+      height:76px;
+      top:152px;
+      left:76px;
+      background-position: 0px 0px;
+      }
+    .field .path.piece-6{
+      width:76px;
+      height:76px;
+      top:76px;
+      left:376px;
+      background-position: 0px 0px;
+      }
+    .field .path.piece-7{
+      width:76px;
+      height:76px;
+      top:152px;
+      left:376px;
+      background-position: 0px 0px;
+      }
+    .field .path.piece-8{
+      width:76px;
+      height:76px;
+      top:76px;
+      left:452px;
+      background-position: 0px 0px;
+      }
+    .field .path.piece-9{
+      width:76px;
+      height:76px;
+      top:76px;
+      left:528px;
+      background-position: 0px 0px;
+      }
+    .field .path.piece-10{
+      height:76px;
+      width:300px;
+      top:76px;
+      left:604px;
+      background-position: 0px 0px;
+      }
+    .cracked{
+      -webkit-transition:
+      -webkit-transform 999999s linear,
+      opacity 999999s ease-out;
+      -webkit-transform: translateZ(0) rotateX(0) rotateY(0) scale(1);
+      opacity: 1;
+      }
+    .teleport-2:hover~.path.cracked{
+      -webkit-transition:
+        -webkit-transform .6s ease-out,
+        opacity .6s ease-out;
+      -webkit-transform: translateZ(-1000px) rotateX(40deg) rotateY(10deg) scale(.75);
+      opacity: 0;
+      }
+    .teleport-2{
+      top:152px;
+      left:452px;
+      }
+    .field .path.piece-11{
+      width:76px;
+      height:76px;
+      top:152px;
+      left:452px;
+      background-position: 0px 0px;
+      }
+    .field .path.piece-12{
+      width:76px;
+      height:152px;
+      top:76px;
+      left:0;
+      background-position: 0px 0px;
+      }
+
+@-webkit-keyframes falls {
+  0%{
+    opacity: 1;
+    -webkit-transform: none;
+    }
+  40%{
+    opacity: 1;
+    }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateZ(-1000px) rotateX(40deg) rotateY(10deg) scale(.75);
+  }
+}
+
+    /*.field .path.piece-2{
+      width:75px;
+      height:150px;
+      top:75px;
+      left:225px;
+      background-position: -225px -75px;
+      }
+    .field .path.piece-3{
+      width:75px;
+      height:300px;
+      top:150px;
+      left:151px;
+      background-position: -151px -150px;
+      }
+    .field .path.piece-4{
+      width:75px;
+      height:75px;
+      top:375px;
+      left:225px;
+      background-position: -225px -375px;
+      }
+    .field .path.piece-5{
+      width:150px;
+      height:375px;
+      top:225px;
+      left:375px;
+      background-position: -375px -225px;
+      }
+    .field .path.piece-6{
+      width:75px;
+      height:75px;
+      top:225px;
+      left:600px;
+      background-position: -600px -225px;
+      }
+    .field .path.piece-7{
+      width:75px;
+      height:75px;
+      top:375px;
+      left:600px;
+      background-position: -600px -375px;
+      }
+    .field .path.piece-8{
+      width:75px;
+      height:75px;
+      top:525px;
+      left:600px;
+      background-position: -600px -525px;
+      }
+    .field .path.piece-9{
+      width:75px;
+      height:75px;
+      top:225px;
+      left:750px;
+      background-position: -750px -225px;
+      }
+    .field .path.piece-10{
+      width:75px;
+      height:75px;
+      top:375px;
+      left:750px;
+      background-position: -750px -375px;
+      }
+    .field .path.piece-11{
+      width:75px;
+      height:75px;
+      top:525px;
+      left:750px;
+      background-position: -750px -525px;
+      }
+    .field .path.piece-12{
+      width:75px;
+      height:75px;
+      top:375px;
+      left:900px;
+      background-position: -900px -375px;
+      }
+
+    .field .path.piece-13{
+      width:150px;
+      height:75px;
+      top:0;
+      left:0px;
+      background-position: -0px -0px;
+      }
+
+    .field .path.piece-14{
+      width:75px;
+      height:375px;
+      top:-150px;
+      left:150px;
+      background-position: -150px 150px;
+      }
+
+    .field .path.piece-15{
+      width:75px;
+      height:75px;
+      top:0;
+      left:75px;
+      }
+    .field .path.piece-16{
+      width:75px;
+      height:225px;
+      top:-150px;
+      left:150px;
+      }
+    .field .path.piece-17{
+      width:75px;
+      height:75px;
+      top:-75px;
+      left:0px;
+      }
+    .field .path.piece-18{
+      width:150px;
+      height:75px;
+      top:-150px;
+      left:-300px;
+      }
+    .field .path.piece-22{
+      width:150px;
+      height:75px;
+      top:-150px;
+      left:-75px;
+      }
+    .field .path.piece-19{
+      width:75px;
+      height:75px;
+      top:0px;
+      left:75px;
+      }
+    .field .path.piece-20{
+      width:75px;
+      height:225px;
+      top:0px;
+      left:150px;
+      }
+    .field .path.piece-21{
+      width:75px;
+      height:75px;
+      top:0px;
+      left:-75px;
+      }
+    .field .path.piece-22{
+      width:150px;
+      height:75px;
+      top:-150px;
+      left:-75px;
+      }
+    .field .path.piece-23{
+      width:375px;
+      height:75px;
+      top:0;
+      left:0;
+      }
+    .field .path.piece-24{
+      width:75px;
+      height:300px;
+      top:75px;
+      left:300px;
+      }
+    .field .path.piece-25{
+      width:225px;
+      height:75px;
+      top:0;
+      left:-225px;
+      }
+    .field .path.piece-26{
+      width:375px;
+      height:75px;
+      top:0;
+      left:0;
+      }
+    .field .path.piece-27{
+      width:75px;
+      height:300px;
+      top:-300px;
+      left:300px;
+      }
+    .field .path.piece-28{
+      width:75px;
+      height:75px;
+      top:0;
+      left:75px;
+      }
+    .field .path.piece-29{
+      width:75px;
+      height:150px;
+      top:0;
+      left:150px;
+      }*/
+
+/*
+    .field .teleport *{
+      display:none;
+      }
+
+*/
+    /*
+    .field .teleport:hover>.teleport,
+    .field .teleport:hover>.path{
+      display:block;
+      }
+    .field .teleport>.teleport,
+    .field .teleport>.path{
+      display:none;
+      }
+
+    .field .teleport{
+      width:75px;
+      height:75px;
+      position: absolute;
+
+      -webkit-transform-style:preserve-3d;
+      -webkit-transform: translateZ(4px);
+
+      background: url("../img/teleport.png") 50% 50% no-repeat;
+      }
+
+    .teleport-1{
+      top:225px;
+      left:450px;
+      }
+
+
+    .teleport-2{
+      top:375px;
+      left:450px;
+      }
+
+
+    .teleport-3{
+      top:525px;
+      left:450px;
+      }
+
+    .teleport-4{
+      top:150px;
+      left:150px;
+      }
+
+    .teleport-5{
+      top:-150px;
+      left:150px;
+      }
+
+    .teleport-6{
+      top:-150px;
+      left:150px;
+      }
+
+    .teleport-7{
+      top:150px;
+      left:150px;
+      }
+
+    .teleport-8{
+      top:300px;
+      left:300px;
+      }
+    .teleport-9{
+      top:-300px;
+      left:300px;
+      }
+*/
+
+    .field .exit{
+      width:75px;
+      height:75px;
+      top:375px;
+      left:900px;
+      background-position: -900px -375px;
+
+      position: absolute;
+
+      -webkit-transform-style:preserve-3d;
+      -webkit-transform: translateZ(4px);
+      }
+      .field .exit:after{
+        content:".";
+        display:block;
+        text-indent:-9000px;
+        overflow:hidden;
+        width:75px;
+        height:75px;
+        background: url("../img/sign.png") 50% 50% no-repeat;
+        }
+      .field .exit .w1{
+        content:".";
+        display:block;
+        text-indent:-9000px;
+        overflow:hidden;
+        width:75px;
+        height:150px;
+        position: absolute;
+        top:0;
+
+        background: -moz-linear-gradient(top,  rgba(16,255,0,0.4) 0%, rgba(42,255,0,0) 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(16,255,0,0.4)), color-stop(100%,rgba(42,255,0,0)));
+        background: -webkit-linear-gradient(top,  rgba(16,255,0,0.4) 0%,rgba(42,255,0,0) 100%);
+        background: -o-linear-gradient(top,  rgba(16,255,0,0.4) 0%,rgba(42,255,0,0) 100%);
+        background: -ms-linear-gradient(top,  rgba(16,255,0,0.4) 0%,rgba(42,255,0,0) 100%);
+        background: linear-gradient(to bottom,  rgba(16,255,0,0.4) 0%,rgba(42,255,0,0) 100%);
+
+        -webkit-animation: pulseLight 4s ease-in infinite;
+        -webkit-transform-origin:50% 0;
+        -webkit-transform: rotateX(90deg);
+        }
+      .field .exit .w2{
+        content:".";
+        display:block;
+        text-indent:-9000px;
+        overflow:hidden;
+        width:75px;
+        height:150px;
+        position: absolute;
+        top:75px;
+
+        background: -moz-linear-gradient(top,  rgba(16,255,0,0.4) 0%, rgba(42,255,0,0) 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(16,255,0,0.4)), color-stop(100%,rgba(42,255,0,0)));
+        background: -webkit-linear-gradient(top,  rgba(16,255,0,0.4) 0%,rgba(42,255,0,0) 100%);
+        background: -o-linear-gradient(top,  rgba(16,255,0,0.4) 0%,rgba(42,255,0,0) 100%);
+        background: -ms-linear-gradient(top,  rgba(16,255,0,0.4) 0%,rgba(42,255,0,0) 100%);
+        background: linear-gradient(to bottom,  rgba(16,255,0,0.4) 0%,rgba(42,255,0,0) 100%);
+
+        -webkit-animation: pulseLight 4s ease-in infinite;
+        -webkit-transform-origin:50% 0;
+        -webkit-transform: rotateX(90deg);
+        }
+      .field .exit .w3{
+        content:".";
+        display:block;
+        text-indent:-9000px;
+        overflow:hidden;
+        width:75px;
+        height:150px;
+        position: absolute;
+        top:0;
+
+        background: -moz-linear-gradient(top,  rgba(16,255,0,0.4) 0%, rgba(42,255,0,0) 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(16,255,0,0.4)), color-stop(100%,rgba(42,255,0,0)));
+        background: -webkit-linear-gradient(top,  rgba(16,255,0,0.4) 0%,rgba(42,255,0,0) 100%);
+        background: -o-linear-gradient(top,  rgba(16,255,0,0.4) 0%,rgba(42,255,0,0) 100%);
+        background: -ms-linear-gradient(top,  rgba(16,255,0,0.4) 0%,rgba(42,255,0,0) 100%);
+        background: linear-gradient(to bottom,  rgba(16,255,0,0.4) 0%,rgba(42,255,0,0) 100%);
+
+        -webkit-animation: pulseLight 4s ease-in infinite;
+        -webkit-transform-origin:0 0;
+        -webkit-transform: rotateZ(90deg) rotateX(90deg);
+        }
+      .field .exit .w4{
+        content:".";
+        display:block;
+        text-indent:-9000px;
+        overflow:hidden;
+        width:75px;
+        height:150px;
+        position: absolute;
+        top:0;
+        left:75px;
+
+        background: -moz-linear-gradient(top,  rgba(16,255,0,0.4) 0%, rgba(42,255,0,0) 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(16,255,0,0.4)), color-stop(100%,rgba(42,255,0,0)));
+        background: -webkit-linear-gradient(top,  rgba(16,255,0,0.4) 0%,rgba(42,255,0,0) 100%);
+        background: -o-linear-gradient(top,  rgba(16,255,0,0.4) 0%,rgba(42,255,0,0) 100%);
+        background: -ms-linear-gradient(top,  rgba(16,255,0,0.4) 0%,rgba(42,255,0,0) 100%);
+        background: linear-gradient(to bottom,  rgba(16,255,0,0.4) 0%,rgba(42,255,0,0) 100%);
+
+        -webkit-animation: pulseLight 4s ease-in infinite;
+
+        -webkit-transform-origin:0 0;
+        -webkit-transform: rotateZ(90deg) rotateX(90deg);
+        }
+
+  .colon-1{
+    top:-50px;
+    left:25px;
+    }
+
+  .colon-2{
+    top:-50px;
+    left:100px;
+    }
+
+  .colon-3{
+    top:-50px;
+    left:175px;
+    }
+
+  .colon-4{
+    top:-50px;
+    left:250px;
+    }
+
+  .colon-5{
+    top:250px;
+    left:250px;
+    }
+
+  .colon-5{
+    top:100px;
+    left:175px;
+    }
+
+  .field .colon{
+      pointer-events: none;
+      width:25px;
+      height:25px;
+      position: absolute;
+
+      -webkit-transform-style:preserve-3d;
+      -webkit-transform-origin:50% 0;
+      -webkit-transform: translateZ(-100px);
+
+      //background: url("../img/explosion.png") 50% 50% repeat;
+      background: rgba(255,255,255,.5);
+      }
+
+      .field .colon .w1{
+        display:block;
+        text-indent:-9000px;
+        overflow:hidden;
+        width:25px;
+        height:450px;
+        position: absolute;
+        top:0;
+
+        background: url("../img/brick.png") 50% 50% repeat;
+        background-size:600px 600px;
+
+        -webkit-transform-origin:50% 0;
+        -webkit-transform: rotateX(90deg);
+        }
+      .field .colon .w2{
+        display:block;
+        text-indent:-9000px;
+        overflow:hidden;
+        width:25px;
+        height:450px;
+        position: absolute;
+        top:25px;
+
+        background: url("../img/brick.png") 50% 50% repeat;
+        background-size:600px 600px;
+
+        -webkit-transform-origin:50% 0;
+        -webkit-transform: rotateX(90deg);
+        }
+      .field .colon .w3{
+        display:block;
+        text-indent:-9000px;
+        overflow:hidden;
+        width:25px;
+        height:450px;
+        position: absolute;
+        top:0;
+
+        background: url("../img/brick.png") 50% 50% repeat;
+        background-size:600px 600px;
+
+        -webkit-transform-origin:0 0;
+        -webkit-transform: rotateZ(90deg) rotateX(90deg);
+        }
+      .field .colon .w4{
+        display:block;
+        text-indent:-9000px;
+        overflow:hidden;
+        width:25px;
+        height:450px;
+        position: absolute;
+        top:0;
+        left:25px;
+
+        background: url("../img/brick.png") 50% 50% repeat;
+        background-size:600px 600px;
+
+        -webkit-transform-origin:0 0;
+        -webkit-transform: rotateZ(90deg) rotateX(90deg);
+        }
+
+
+@-webkit-keyframes greenGlow {
+  from{
+    box-shadow:
+                0 0 10px 0px rgba(0,255,0,.2),
+                inset 0 0 10px 0px rgba(0,255,0,.2);
+  }
+  50%{
+    box-shadow:
+                0 0 30px 5px rgba(0,255,0,.75),
+                inset 0 0 30px 5px rgba(0,255,0,.75);
+  }
+  to{
+    box-shadow:
+                0 0 10px 0px rgba(0,255,0,.2),
+                inset 0 0 10px 0px rgba(0,255,0,.2);
+  }
+}
+
+@-webkit-keyframes pulseLight {
+  from {
+    height:150px;
+  }
+  50% {
+    height:100px;
+  }
+  to {
+    height:150px;
+  }
+}
+
+@-webkit-keyframes wind {
+  from {
+    -webkit-transform: rotateX(1deg);
+  }
+  25% {
+    -webkit-transform: rotateX(0deg);
+  }
+  50% {
+    -webkit-transform: rotateX(-1deg);
+  }
+  75% {
+    -webkit-transform: rotateX(0deg);
+  }
+  to {
+    -webkit-transform: rotateX(1deg);
+  }
+}
+@-webkit-keyframes forcePulse {
+  from{
+    opacity:.85;
+    }
+  50%{
+    opacity:.5;
+    }
+  to{
+    opacity:.85;
+    }
+  }
+
+@-webkit-keyframes windh {
+  from {
+    -webkit-transform: rotateY(1deg);
+  }
+  25% {
+    -webkit-transform: rotateY(0deg);
+  }
+  50% {
+    -webkit-transform: rotateY(-1deg);
+  }
+  75% {
+    -webkit-transform: rotateY(0deg);
+  }
+  to {
+    -webkit-transform: rotateY(1deg);
+  }
+}
+
+@-webkit-keyframes horizontal-bridge-2piece {
+  0%{
+    margin:0 0 0 -1px;
+  }
+  7%{
+    margin:0 0 0 -1px;
+    }
+  43%{
+    margin:0 0 0 76px;
+  }
+  57%{
+    margin:0 0 0 76px;
+  }
+  93%{
+    margin:0 0 0 -1px;
+  }
+  100%{
+    margin:0 0 0 -1px;
+  }
+}

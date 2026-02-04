@@ -1,0 +1,52 @@
+/* Rules for the 'screen' and 'projection' media types 
+======================================== */
+
+@media screen, projection {
+
+	/* Common settings
+	---------------------------------------- */
+	html,
+	body {
+		width: auto;
+		height: auto;
+		overflow: visible;
+		}
+
+	/* Layout wrapper
+	---------------------------------------- */
+	.wrapper {
+		position: static;
+		width: auto;
+		max-height: none;
+		overflow: visible;
+		padding-top: 247px;
+		background: #fff url('../_images/ie-lt-9.gif') 50% 60px scroll no-repeat;
+		}
+
+	/* Slide container
+	---------------------------------------- */
+	.slide {
+		padding: 60px 10% 120px;
+		border-top: solid 5px #666;
+		height: auto;
+		}
+		.slide:first-child {
+			border-top: none;
+			}
+
+	/* Slide number
+	---------------------------------------- */
+	#slide-number {
+		display: none;
+		}
+
+	/* Content styling for special slide types
+	---------------------------------------- */
+	.intro__title,
+	.thanks__title {
+		margin-top: 0;
+		}
+	.topic__title {
+		margin-top: 0;
+		}
+	}

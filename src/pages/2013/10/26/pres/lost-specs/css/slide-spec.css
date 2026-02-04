@@ -1,0 +1,119 @@
+.support-list{
+  font: 36px/48px 'PT Sans',sans-serif;
+  text-align: left;
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+  margin: 32px 0;
+  }
+
+.qr-link{
+  text-align: center;
+  }
+  .qr-link img{
+    height: 80%;
+    }
+  .qr-link a{
+    color: #000;
+    height: 20%;
+    display: block;
+    font-size: 46px;
+    }
+
+pre{
+  display: inline-block;
+  }
+
+.sup{
+  vertical-align: super;
+  font-size: 24px;
+  }
+
+.support{
+  line-height: 48px;
+  font-size: 0;
+  margin: 0 0 48px;
+  }
+.support b{
+  margin: 0 15px;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 80px;
+  }
+.support b:before{
+  vertical-align: middle;
+  font-size: 120px;
+  }
+
+.middle code[class*="language-"], .middle pre[class*="language-"] {
+  font: 32px/48px Consolas, Monaco, 'Andale Mono', monospace;
+  }
+
+.ex1 code[class*="language-"], .ex1 pre[class*="language-"] {
+  font: 48px/64px Consolas, Monaco, 'Andale Mono', monospace;
+  }
+
+.ex2 code[class*="language-"], .ex2 pre[class*="language-"] {
+  font: 36px/52px Consolas, Monaco, 'Andale Mono', monospace;
+  }
+
+.ex3 code[class*="language-"], .ex3 pre[class*="language-"] {
+  font: 34px/52px Consolas, Monaco, 'Andale Mono', monospace;
+  }
+
+.ex4 code[class*="language-"], .ex4 pre[class*="language-"] {
+  font: 48px/64px Consolas, Monaco, 'Andale Mono', monospace;
+  }
+
+.ex5 code[class*="language-"], .ex5 pre[class*="language-"] {
+  font: 56px/68px Consolas, Monaco, 'Andale Mono', monospace;
+  }
+
+.ex6 code[class*="language-"], .ex6 pre[class*="language-"] {
+  font: 52px/72px Consolas, Monaco, 'Andale Mono', monospace;
+  }
+
+.ex7 code[class*="language-"], .ex7 pre[class*="language-"] {
+  font: 42px/56px Consolas, Monaco, 'Andale Mono', monospace;
+  }
+
+.ex8 code[class*="language-"], .ex8 pre[class*="language-"] {
+  font: 56px/71px Consolas, Monaco, 'Andale Mono', monospace;
+  }
+
+.ex9 code[class*="language-"], .ex9 pre[class*="language-"] {
+  font: 42px/64px Consolas, Monaco, 'Andale Mono', monospace;
+  }
+
+.ex10 code[class*="language-"], .ex10 pre[class*="language-"] {
+  font: 64px/72px Consolas, Monaco, 'Andale Mono', monospace;
+  }
+
+.ex11 code[class*="language-"], .ex11 pre[class*="language-"] {
+  font: 36px/72px Consolas, Monaco, 'Andale Mono', monospace;
+  }
+
+.ex12 code[class*="language-"], .ex12 pre[class*="language-"] {
+  font: 50px/72px Consolas, Monaco, 'Andale Mono', monospace;
+  }
+
+.ex13 code[class*="language-"], .ex13 pre[class*="language-"] {
+  font: 32px/48px Consolas, Monaco, 'Andale Mono', monospace;
+  }
+
+body.fullScreenMode article.title{
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  }
+article.title{
+  background: url("../img/title.jpg") 50% 50% no-repeat;
+  -webkit-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
+  color: #fff;
+  text-shadow:0 0 10px rgba(255,255,255,1);
+  }
+  article.title h1{
+    margin-top: -200px;
+    }

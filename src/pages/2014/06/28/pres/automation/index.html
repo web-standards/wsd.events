@@ -1,0 +1,358 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+	<title>Автоматизация фронтенда — сегодня и завтра</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=1024, user-scalable=no">
+	<link rel="stylesheet" href="node_modules/shower-ok/styles/screen-d90984e344.css">
+	<link rel="stylesheet" href="css/style.css">
+
+	<!--Video plugin-->
+	<link rel="stylesheet" href="node_modules/shower-video/shower-video.css">
+	<script src="node_modules/shower-video/shower-video.min.js"></script>
+	<!--/Video plugin-->
+
+</head>
+<body class="list">
+
+<header class="caption">
+	<h1>Автоматизация фронтенда — сегодня и завтра</h1>
+	<p><a href="http://rhr.me/">Роберт Харитонов</a>, <a href="http://corp.mail.ru/communications/odnoklassniki">Одноклассники</a></p>
+
+	<p style="font-size:.8em;"><a href="http://fdconf.by">Front-end Dev Conf</a>, Минск, 2014 (<a href="http://www.youtube.com/watch?v=Fe5fW-WtQSI">видео</a>).</p>
+	<p style="font-size:.8em;">Web Standards Days, <a href="http://webstandardsdays.ru/2014/05/24/">Рига</a>, <a href="http://webstandardsdays.ru/2014/06/28/">Питер</a> 2014 + 8 часовой мастер-класс по автоматизации в <a href="http://bit.ly/riga-automation">Риге</a> и в <a href="http://bit.ly/kiev-automation">Киеве</a>.</p>
+
+	<a href="https://github.com/operatino/pres-automation"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
+
+</header>
+
+<section class="slide shout cover h" id="Cover"><div>
+	<div class="intro-video hide-for-mobile">
+		<video class="background" preload loop>
+			<source src="videos/build.mp4" type="video/mp4;">
+			<source src="videos/build.webm" type="video/webm;">
+		</video>
+
+		<div class="overlay"></div>
+	</div>
+
+	<h2 class="bold light">Автоматизация фронтенда<br> <span>сегодня и завтра</span></h2>
+
+	<div class="place b author">
+		<div><a href="http://rhr.me/" class="bl">Роберт Харитонов</a></div>
+		<a href="http://v.ok.ru" class="ok"><img class="uncover" src="node_modules/shower-ok/images/ok-logo-or.svg" alt="одноклассники"></a>
+	</div>
+</div></section>
+
+<section class="slide shout" id="hail-node"><div>
+	<h2>Спасибо,</h2>
+	<img class="place m" style="margin-left: 1em" src="i/nodejs.svg" alt="NodeJS">
+</div></section>
+
+<section class="slide"><div>
+	<h2>Родной инструмент</h2>
+
+	<ul>
+		<li>Низкий порог вхождения</li>
+		<li>Бешеная популярность JavaScript</li>
+		<li class="next"><strong style="font-size: 1.5em">Огромное сообщество</strong></li>
+	</ul>
+</div></section>
+
+<section class="slide shout"><div>
+	<img class="place m" style="margin-top: -50px" width="700" src="i/js-game.png" alt="Шутка о .js"/>
+
+	<p class="note place b"><a class="lp" href="https://twitter.com/ThirdManLabs/status/431853704862367744">источник</a></p>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Автоматизируй все!</h2>
+
+	<ol>
+		<li>Быстродействие</li>
+		<li class="next">Проверка кода</li>
+		<li class="next">Тестирование</li>
+		<li class="next"><strong>Разработка</strong></li>
+	</ol>
+</div></section>
+
+<section class="slide shout" id="suffer"><div>
+	<h2>Машины должны <div class="bold">страдать!</div></h2>
+</div></section>
+
+<section class="slide shout cover h" id="build"><div>
+	<h2 class="bold">Пока мы строим веб</h2>
+
+	<img src="i/awesome.jpg" alt="захватывающий веб"/>
+
+</div></section>
+
+<section class="slide clean grunt"><div>
+	<h2>Grunt JS</h2>
+
+	<img width="300" src="i/grunt.svg" alt="grunt"/>
+
+	<p class="next">И его 2500+ плагинов</p>
+</div></section>
+
+<section class="slide clean grunt"><div>
+	<h2>Grunt JS</h2>
+
+	<img width="300" src="i/grunt.svg" alt="grunt"/>
+
+	<p>И его <del>2500+</del> <strong>3000+</strong> плагинов</p>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Не Грантом единым</h2>
+
+	<strong>Task Runners</strong>
+
+	<ul>
+		<li><a href="http://gruntjs.com/">Grunt</a> - это конфиг</li>
+		<li><a href="http://gulpjs.com/">Gulp</a> - API</li>
+	</ul>
+</div></section>
+
+<section class="slide"><div>
+	<div class="place m" style="font-size: 2em; width: 784px;">
+		<div style="margin-bottom: 2em; line-height: 1.5">
+			<strong>Все уже сделано за вас,</strong>
+			<div style="font-size: 0.7em;">берите и используйте.</div>
+		</div>
+	</div>
+</div></section>
+
+
+
+<!-- Быстродействие -->
+
+
+
+<section class="slide shout" id="perf"><div>
+	<!--TODO: картинку-->
+
+	<h2>Быстродействие</h2>
+</div></section>
+
+<section class="slide clean"><div>
+
+	<img class="place m" width="700" src="i/website.png" alt="пустая страница">
+
+</div></section>
+
+<section class="slide"><div>
+	<h2>Первым делом</h2>
+
+	<ol>
+		<li>Сжатие CSS, HTML, JS</li>
+		<li class="next">Спрайты - <a href="http://csssprites.org/">Smart Sprites</a><span class="next">, <a href="https://github.com/Ensighten/grunt-spritesmith">Spritesmith</a></span><span class="next">, SVG <span class="lp">(<a href="https://github.com/FWeinb/grunt-svgstore">grunt-svgstore</a>)</span></span></li>
+	</ol>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Графика</h2>
+
+	<ul>
+		<li><a href="https://github.com/gruntjs/grunt-contrib-imagemin">Imagemin</a><span class="next">, только по измененным файлам с <a href="https://github.com/tschaub/grunt-newer">grunt-newer</a></span></li>
+		<li><a href="https://github.com/svg/svgo">SVGO</a></li>
+		<li class="next">WebP + <a href="http://github.com/lexich/grunt-webpcss">grunt-webpcss</a> + <a href="https://github.com/somerandomdude/grunt-webp">grunt-webp</a></li>
+	</ul>
+</div></section>
+
+<section class="slide"><div>
+	<h2>CSS</h2>
+
+	<ul>
+		<li>Умные компрессоры, как <a href="https://github.com/css/csso">CSSO</a></li>
+		<li class="next">Объединение Media Query <span class="lp">(<a href="https://github.com/buildingblocks/grunt-combine-media-queries">grunt-combine-media-queries</a>)</span></li>
+		<li class="next">Чистка лишнего CSS <span class="next">и JS <span class="lp">(<a href="https://github.com/addyosmani/grunt-uncss">grunt-uncss</a>, <a href="https://developers.google.com/closure/compiler/">Google Closure</a>)</span></span></li>
+		<li class="next">Генерация Critical CSS c запущенного сайта <span class="lp">(<a href="https://github.com/pocketjoso/penthouse">penthouse</a>)</span></li>
+	</ul>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Как мерить</h2>
+
+	Помимо статистики пользователей:
+
+	<ul>
+		<li><a href="https://github.com/jrcryer/grunt-pagespeed">Google PageSpeed + Grunt</a></li>
+		<li class="next"><a href="https://www.npmjs.org/package/grunt-devperf">Тесты c PhatnomJS</a> или <a href="https://github.com/axemclion/browser-perf">Selenium</a> + <a href="https://saucelabs.com/">Sauce Labs</a></li>
+		<li class="next">Скриншоты загрузки на медленных соединениях <span class="lp">(<a href="https://github.com/roman01la/grunt-load-perf">grunt-load-perf</a>)</span></li>
+		<li class="next">Сравнение веса ресурсов <span class="lp">(<a href="https://github.com/rwaldron/grunt-compare-size">grunt-compare-size</a>)</span></li>
+	</ul>
+</div></section>
+
+<section class="slide clean"><div>
+
+	<img class="place m" width="700" src="i/pagespeed.png" alt="Grunt Google PageSpeed">
+
+</div></section>
+
+<section class="slide clean"><div>
+
+	<img class="place m" width="700" src="i/devperf.png" alt="Grunt dev-perf">
+
+</div></section>
+
+<section class="slide shout" id="lint"><div>
+	<!--TODO: картинку-->
+
+	<h2>Проверка кода</h2>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Анализируем все</h2>
+
+	<ul>
+		<li>JS <a href="https://github.com/stephenmathieson/grunt-jslint">Lint</a>, <a href="https://github.com/gruntjs/grunt-contrib-jshint">Hint</a> <span class="next">и сразу таблетка <span class="lp">(<a href="https://github.com/jonschlinkert/grunt-fixmyjs">grunt-fixmyjs</a>)</span></span></li>
+		<li><a href="https://github.com/gruntjs/grunt-contrib-csslint">CSS Lint</a></li>
+		<li><a href="https://github.com/philipwalton/html-inspector">HTML inspector</a></li>
+		<li class="next">Coffee, Less, SCSS, JSON, jQuery</li>
+	</ul>
+
+</div></section>
+
+<section class="slide"><div>
+	<h2>Немного помечтаем</h2>
+
+	Приемочные <a href="http://habrahabr.ru/post/114256/">чеклисты</a>
+
+	<ul>
+		<li>Автопроверка по списку требований</li>
+		<li>Набор скриншотов из браузеров</li>
+		<li>Проверка стиля кодирования<span class="next"> (частично в <a href="https://github.com/philipwalton/html-inspector/tree/master/test/html-inspector/rules">html-inspector tests</a>)</span></li>
+	</ul>
+
+
+</div></section>
+
+<!-- Тестирование -->
+
+<section class="slide shout" id="testing"><div>
+	<!--TODO: картинку-->
+
+	<h2>Тестирование</h2>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Тестирование</h2>
+
+	<ul>
+		<li>Юнит-тестирование</li>
+		<li class="next">Тестирование быстродействия</li>
+		<li class="next">CSS/image-regression тесты</li>
+		<li class="next"><strong>Функциональное тестирование с <a href="http://dalekjs.com/">Dalek.js</a></strong></li>
+	</ul>
+
+</div></section>
+
+<section class="slide clean"><div>
+	<h2>Демонстрация работы Dalek.js</h2>
+
+	<div class="video_wrapper">
+		Что бы посмотреть видео, откройте, пожалуйста, презентацию в браузере с поддержкой .mp4 или .webm.
+
+		<video class="place l t" preload style="height: 145%; left: -96px;">
+			<source src="videos/dalek.mp4" type="video/mp4;">
+			<source src="videos/dalek.webm" type="video/webm;">
+		</video>
+	</div>
+</div></section>
+
+<section class="slide clean" style="text-align: center"><div>
+	<h2>Monkey testing</h2>
+
+	<img width="500" src="i/gremlins.gif" alt="Monkey testing">
+
+	<p class="note place b"><a href="https://github.com/marmelab/gremlins.js">gremlins.js</a></p>
+
+</div></section>
+
+
+<!-- Разработка -->
+
+
+<section class="slide shout" id="dev"><div>
+	<!--TODO: картинку-->
+
+	<h2>Разработка</h2>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Быстрый старт</h2>
+
+	<strong><a href="http://harpjs.com">Harp</a></strong>
+
+	<ul>
+		<li>Сервер</li>
+		<li>Препроцессинг всего и EJS partials</li>
+		<li>Билд</li>
+	</ul>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Пример проекта с Harp</h2>
+
+	<img width="100%" src="i/harp.png" alt="Пример проекта с Harp"/>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Harp</h2>
+
+	<ul>
+		<li><a href="http://harpjs.com/docs/environment/lib">Harp express middleware</a></li>
+		<li class="next"><a href="http://harp.io">harp.io</a> - хостинг с деплоем из Dropbox</li>
+		<li class="next">Быстрый вывод в сеть с <a href="https://meetfinch.com/">Finch</a> <span class="lp">(или <a href="https://ngrok.com/">ngrok</a>)</span></li>
+	</ul>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Автоматизация автоматизации</h2>
+
+	Настройка рабочего окружения за вас:
+
+	<ul>
+		<li><a href="https://incident57.com/codekit/">Codekit</a>, <a href="http://alphapixels.com/prepros/">Prepros App</a> — препроцессинг, сервер, live reload</li>
+		<li class="next"><a href="http://mixture.io/">Mixture</a> + деплой, шаблонизация</li>
+		<li class="next"><a href="https://codio.com/">Codio</a> + IDE</li>
+	</ul>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Стартовые заготовки</h2>
+
+	<ul>
+		<li><a href="https://developers.google.com/web/starter-kit/">Google Web Starter Kit</a></li>
+		<li><a href="http://yeoman.io/generators/official.html">Yeoman-генераторы</a></li>
+		<li class="next">Легкие обертки над технологиями — <a href="http://www.linemanjs.com/">Lineman</a></li>
+	</ul>
+</div></section>
+
+<section class="slide shout"><div>
+	<h2 style="font-size:90px; color: #414141; line-height: 1.3;">Все вместе <a href="http://bit.ly/automation-bundle">bit.ly/automation-bundle</a></h2>
+</div></section>
+
+<section class="slide shout" id="suffer2"><div>
+	<h2>Машины должны <div class="bold">страдать!</div></h2>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Автоматизация фронтенда</h2>
+	<div class="fz-l">Роберт Харитонов, Одноклассники</div>
+	<ul class="fz-l">
+		<li><a href="https://twitter.com/operatino">@operatino</a></li>
+		<li><a href="http://toHTML.it">toHTML.it</a></li>
+		<li>Мастер-класс в Киеве — <a href="http://bit.ly/kiev-automation">bit.ly/kiev-automation</a></li>
+	</ul>
+	<p style="margin-top: 1em;">Слайды презентации — <a href="index.html">rhr.me/pres/automation</a></p>
+</div></section>
+
+<div class="progress"><div></div></div>
+<script src="node_modules/shower-core/shower.min.js"></script>
+
+<!-- Powered by Shower presentation engine - Copyright © 2010–2013 Vadim Makeev — pepelsbey.net -->
+<script>(function(b,c,a){(c[a]=c[a]||[]).push(function(){try{c.yaCounter545187=new Ya.Metrika({id:545187})}catch(a){}});var e=b.getElementsByTagName('script')[0],d=b.createElement('script'),a=function(){e.parentNode.insertBefore(d,e)};d.async=!0;d.src='//mc.yandex.ru/metrika/watch.js';'[object Opera]'==c.opera?b.addEventListener('DOMContentLoaded',a):a()})(document,window,'yandex_metrika_callbacks');</script><noscript><img src="//mc.yandex.ru/watch/545187" alt=""></noscript>
+</body>
+</html>

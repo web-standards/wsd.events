@@ -1,0 +1,46 @@
+.loading-screen{
+  background: #FFF;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 15000;
+  }
+  .loading-screen h1{
+    text-align: center;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 50%;
+    margin:0 0 0 20px;
+
+    z-index: 1;
+    color: rgba(0,154,172,.75);
+    font: 100px serif;
+    text-shadow:
+      6px 5px 0 rgba(255,0,0,.5),
+      3px 2px 0 rgba(164,0,171,.3),
+      1px -4px 0 rgba(255,144,0,.2);
+
+    -webkit-animation: logo 1s ease-in-out 0s infinite;
+    -moz-animation: logo 1s ease-in-out 0s infinite;
+    -ms-animation: logo 1s ease-in-out 0s infinite;
+    animation: logo 1s ease-in-out 0s infinite;
+    }
+  .loading-screen .progress{
+    height: 5px;
+    left: 20px;
+    right: 20px;
+    top: 50%;
+    position: fixed;
+    margin-top: 20px;
+    background: rgba(255,0,0,.75);
+    }
+    .loading-screen .progress #loaded{
+      background: rgba(0,154,172,1);
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      top: 0;
+      }

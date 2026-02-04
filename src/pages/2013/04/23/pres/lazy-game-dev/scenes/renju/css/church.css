@@ -1,0 +1,316 @@
+.church-floor{
+    width: 600px;
+    height: 600px;
+    display: block;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    -webkit-transform-origin: 100% 100% 0;
+
+    -webkit-transform: translate(-300px, -300px) rotateX(60deg) translateZ(-250px);
+    background: url('../img/brick.jpg') 50% 50% repeat;
+    -webkit-background-size: auto 244px;
+
+    }
+
+.church-roof{
+    width: 500px;
+    height: 434px;
+    display: block;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    -webkit-transform-origin: 100% 100% 0;
+    -webkit-transform: translate(-250px, -217px) rotateX(60deg) translateZ(500px);
+
+    background: url('../img/roof.png') 50% 50% no-repeat;
+    -webkit-background-size: 500px;
+     -o-background-size: 500px;
+        background-size: 500px;
+    }
+
+.church-wall-1{
+    width: 250px;
+    height: 863px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    -webkit-transform-origin: 100% 100%;
+    -webkit-transform: translate(-125px, -863px) rotateX(60deg) rotateX(-90deg) translateZ(400px);
+
+    background: #f00 url('../img/wall-1.png') 50% 0 no-repeat;
+    -webkit-background-size: 250px auto;
+     -o-background-size: 250px auto;
+        background-size: 250px auto;
+    }
+
+
+
+.church{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+
+  -webkit-animation: spin 4s linear 0s infinite;
+  -moz-animation: spin 4s linear 0s infinite;
+  -ms-animation: spin 4s linear 0s infinite;
+  animation: spin 4s linear 0s infinite;
+
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  }
+  .church .wall-floor{
+    width: 600px;
+    height: 600px;
+    display: block;
+
+    position: absolute;
+    top: -300px;
+    left: -300px;
+
+    -webkit-transform-origin: 100% 100% 0;
+    -moz-transform-origin: 100% 100% 0;
+    transform-origin: 100% 100% 0;
+
+    -webkit-transform: translateZ(.1px);
+    -moz-transform: translateZ(.1px);
+    transform: translateZ(.1px);
+
+
+
+    background: url('../img/brick.jpg') 50% 50% repeat;
+    -webkit-background-size: auto 244px;
+     -o-background-size: auto 244px;
+        background-size: auto 244px;
+    }
+
+  .church .wall-1{
+    width: 250px;
+    height: 863px;
+    display: block;
+
+    position: absolute;
+    top: -863px;
+    left: -125px;
+
+    -webkit-transform-origin: 50% 100% 0;
+    -moz-transform-origin: 50% 100% 0;
+    transform-origin: 50% 100% 0;
+
+    -webkit-transform: rotateX(-90deg) translateZ(217px);
+    -moz-transform: rotateX(-90deg) translateZ(217px);
+    transform: rotateX(-90deg) translateZ(217px);
+
+
+    background: url('../img/wall-1.png') 50% 0 no-repeat;
+    -webkit-background-size: 250px auto;
+     -o-background-size: 250px auto;
+        background-size: 250px auto;
+    }
+
+  .church .wall-6{
+    width: 250px;
+    height: 863px;
+    display: block;
+
+    position: absolute;
+    top: -863px;
+    left: -125px;
+
+    -webkit-transform-origin: 50% 100% 0;
+    -moz-transform-origin: 50% 100% 0;
+    transform-origin: 50% 100% 0;
+
+    -webkit-transform: rotateX(-90deg) rotateY(180deg) translateZ(217px);
+    -moz-transform: rotateX(-90deg) rotateY(180deg) translateZ(217px);
+    transform: rotateX(-90deg) rotateY(180deg) translateZ(217px);
+
+    background: url('../img/wall-2.png') 50% 0 no-repeat;
+    -webkit-background-size: 250px auto;
+     -o-background-size: 250px auto;
+        background-size: 250px auto;
+    }
+
+  .church .wall-2{
+    width: 250px;
+    height: 863px;
+    display: block;
+
+    position: absolute;
+    top: -863px;
+    left: -125px;
+
+    -webkit-transform-origin: 50% 100% 0;
+    -moz-transform-origin: 50% 100% 0;
+    transform-origin: 50% 100% 0;
+
+    -webkit-transform: rotateX(-90deg) rotateY(-120deg) translateZ(217px);
+    -moz-transform: rotateX(-90deg) rotateY(-120deg) translateZ(217px);
+    transform: rotateX(-90deg) rotateY(-120deg) translateZ(217px);
+
+
+    background: url('../img/wall-1.png') 50% 0 no-repeat;
+    -webkit-background-size: 250px auto;
+     -o-background-size: 250px auto;
+        background-size: 250px auto;
+    }
+
+  .church .wall-3{
+    width: 250px;
+    height: 863px;
+    display: block;
+
+    position: absolute;
+    top: -863px;
+    left: -125px;
+
+    -webkit-transform-origin: 50% 100% 0;
+    -moz-transform-origin: 50% 100% 0;
+    transform-origin: 50% 100% 0;
+
+    -webkit-transform: rotateX(-90deg) rotateY(60deg) translateZ(217px);
+    -moz-transform: rotateX(-90deg) rotateY(60deg) translateZ(217px);
+    transform: rotateX(-90deg) rotateY(60deg) translateZ(217px);
+
+
+    background: url('../img/wall-2.png') 50% 0 no-repeat;
+    -webkit-background-size: 250px auto;
+     -o-background-size: 250px auto;
+        background-size: 250px auto;
+
+    }
+
+  .church .wall-4{
+    width: 250px;
+    height: 863px;
+    display: block;
+
+    position: absolute;
+    top: -863px;
+    left: -125px;
+
+    -webkit-transform-origin: 50% 100% 0;
+    -moz-transform-origin: 50% 100% 0;
+    transform-origin: 50% 100% 0;
+
+    -webkit-transform: rotateX(-90deg) rotateY(-60deg) translateZ(217px);
+    -moz-transform: rotateX(-90deg) rotateY(-60deg) translateZ(217px);
+    transform: rotateX(-90deg) rotateY(-60deg) translateZ(217px);
+
+
+    background: url('../img/wall-2.png') 50% 0 no-repeat;
+    -webkit-background-size: 250px auto;
+     -o-background-size: 250px auto;
+        background-size: 250px auto;
+    }
+
+  .church .wall-5{
+    width: 250px;
+    height: 863px;
+    display: block;
+
+    position: absolute;
+    top: -863px;
+    left: -125px;
+
+    -webkit-transform-origin: 50% 100% 0;
+    -moz-transform-origin: 50% 100% 0;
+    transform-origin: 50% 100% 0;
+
+    -webkit-transform: rotateX(-90deg) rotateY(120deg) translateZ(217px);
+    -moz-transform: rotateX(-90deg) rotateY(120deg) translateZ(217px);
+    transform: rotateX(-90deg) rotateY(120deg) translateZ(217px);
+
+
+    background: url('../img/wall-1.png') 50% 0 no-repeat;
+    -webkit-background-size: 250px auto;
+     -o-background-size: 250px auto;
+        background-size: 250px auto;
+
+    }
+  .church .wall-roof{
+    width: 500px;
+    height: 434px;
+    display: block;
+
+    position: absolute;
+    top: -217px;
+    left: -250px;
+
+    -webkit-transform-origin: 100% 100% 0;
+    -moz-transform-origin: 100% 100% 0;
+    transform-origin: 100% 100% 0;
+
+    -webkit-transform: translateZ(750px);
+    -moz-transform: translateZ(750px);
+    transform: translateZ(750px);
+
+
+    background: url('../img/roof.png') 50% 50% no-repeat;
+    -webkit-background-size: 500px;
+     -o-background-size: 500px;
+        background-size: 500px;
+
+    z-index: 1;
+    }
+
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotateZ(0deg);
+    -moz-transform: rotateZ(0deg);
+    transform: rotateZ(0deg);
+    }
+  50% {
+    -webkit-transform: rotateZ(180deg);
+    -moz-transform: rotateZ(180deg);
+    transform: rotateZ(180deg);
+    }
+  100% {
+    -webkit-transform: rotateZ(360deg);
+    -moz-transform: rotateZ(360deg);
+    transform: rotateZ(360deg);
+    }
+  }
+@-moz-keyframes spin {
+  0% {
+    -webkit-transform: rotateZ(0deg);
+    -moz-transform: rotateZ(0deg);
+    transform: rotateZ(0deg);
+    }
+  50% {
+    -webkit-transform: rotateZ(180deg);
+    -moz-transform: rotateZ(180deg);
+    transform: rotateZ(180deg);
+    }
+  100% {
+    -webkit-transform: rotateZ(360deg);
+    -moz-transform: rotateZ(360deg);
+    transform: rotateZ(360deg);
+    }
+  }
+@keyframes spin {
+  0% {
+    -webkit-transform: rotateZ(0deg);
+    -moz-transform: rotateZ(0deg);
+    transform: rotateZ(0deg);
+    }
+  50% {
+    -webkit-transform: rotateZ(180deg);
+    -moz-transform: rotateZ(180deg);
+    transform: rotateZ(180deg);
+    }
+  100% {
+    -webkit-transform: rotateZ(360deg);
+    -moz-transform: rotateZ(360deg);
+    transform: rotateZ(360deg);
+    }
+  }

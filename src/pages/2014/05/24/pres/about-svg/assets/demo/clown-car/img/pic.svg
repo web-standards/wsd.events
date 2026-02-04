@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 532 800">
+    <style>
+       svg {
+            background-size: content;
+            background-repeat: no-repeat;
+            transition: .3s;
+            }
+
+        @media screen and (max-width: 150px) {
+            svg {
+                background-image: url(pic-s.jpg);
+            }
+        }
+        @media screen and (min-width: 151px) and (max-width: 300px) {
+            svg {
+                background-image: url(pic-m.jpg);
+            }
+        }
+
+        @media screen and (min-width: 301px) and (max-width: 700px) {
+            svg {
+                background-image: url(pic-l.jpg);
+            }
+        }
+    </style>
+</svg>

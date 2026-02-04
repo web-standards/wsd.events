@@ -1,0 +1,336 @@
+.full_page_image {
+	background-size: cover;
+	background-position: center; 
+}
+.fit_image {
+	background-size: contain; 
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.structure_wrapper {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -190px 0 0 -395px;
+}
+.structure .period {
+	display: inline-block;
+	width: 300px;
+	height: 378px;
+}
+.structure .question {
+	display: inline-block;
+	width: 488px;
+	height: 378px;
+}
+.slide pre {
+	margin: 0 !important;
+	padding: 0 !important;
+	border: none;
+	background: white !important;
+	font-size: 18px;
+}
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .slide .slide.appear {
+	-webkit-transition: none;
+	transition: none;
+}
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .slide .slide.appear.deck-current,
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .slide .slide.highlight.deck-current {
+	position: absolute;
+	-webkit-animation-name: zoomIn;
+    animation-name: zoomIn;
+}
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .slide .slide.highlight {
+	left: 0;
+	right: 0;
+	background: rgba(215, 44, 44, 0.4);
+}
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .slide .slide.deck-previous.not_hide,
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .slide .slide.deck-before.not_hide {
+	position: absolute;
+	opacity: 1;
+}
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .slide .slide.deck-previous.hide_after,
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .slide .slide.deck-before.hide_after {
+	display: none;
+}
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .slide .slide.move_up {
+	overflow: hidden;
+}
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .slide .slide.move_up pre {
+	margin-top: -61px !important;
+}
+.slide .appear pre {
+	font-size: 36px;
+}
+.marker {
+	display: none;
+	position: absolute;
+	left: 20px;
+}
+.marker.period {
+	top: 20px;
+	width: 100px;
+	height: 50px;
+	background-image: url('../images/steps_h.jpg');
+	background-size: 100px 50px;
+}
+
+
+/* -------------- STRUCTURE ------------- */
+.born .period {
+	background: url('../images/steps_h.jpg') -151px -291px;
+}
+.who .question {
+	background: url('../images/questions.jpg') -358px -26px;
+}
+.evolution .period {
+	background: url('../images/steps_h.jpg') -615px -263px;
+}
+.how .question {
+	background: url('../images/questions.jpg') -310px -368px;
+}
+.support .period {
+	background: url('../images/steps_h.jpg') -1334px -117px;
+}
+.what .question {
+	background: url('../images/questions.jpg') -329px -711px;
+}
+
+
+
+/* ------------------- SLIDES ----------------- */
+.the_first {
+	background-image: url('../images/the_first.jpg');
+}
+.fiction {
+	background-image: url('../images/fiction_pic.jpg');
+}
+.triforce {
+	background-image: url('../images/triforce.jpg');
+}
+.site {
+	background-image: url('../images/site_h.jpg');
+	background-repeat: no-repeat;
+	background-size: 847px 690px;
+	background-position: 50% 0;
+}
+.site iframe {
+	margin-top: 72px;
+}
+.questions {
+	background-image: url('../images/questions.jpg');
+}
+.steps {
+	background-image: url('../images/steps_h.jpg');
+}
+.born_who,
+.born_who_small {
+	background-image: url('../images/born_who_h.jpg');
+}
+.born_who_ex > pre {
+	width: 200%;
+}
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .born_who_ex .deck-current.first.highlight {
+	top: 156px;
+	height: 278px;
+}
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .born_who_ex .deck-current.first.appear {
+	top: 156px;
+	left: 87px;
+	width: 200%;
+}
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .born_who_ex .deck-current.second.highlight {
+	top: 51px;
+	height: 30px;
+}
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .born_who_ex .deck-current.second.appear {
+	top: 54px;
+	left: 87px;
+}
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .born_who_ex .deck-current.third.highlight {
+	top: 103px;
+	height: 30px;
+}
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .born_who_ex .deck-current.third.appear,
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .born_who_ex .deck-previous.third.appear,
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .born_who_ex .deck-before.third.appear {
+	top: 103px;
+	left: 87px;
+}
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .born_who_ex .deck-current.fourth.highlight {
+	top: 481px;
+	height: 30px;
+}
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .born_who_ex .deck-current.fourth.appear,
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .born_who_ex .deck-previous.fourth.appear,
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .born_who_ex .deck-before.fourth.appear {
+	top: 459px;
+	left: 87px;
+}
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .born_who_ex .deck-current.fifth.highlight {
+	top: 562px;
+	height: 60px;
+}
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .born_who_ex .deck-current.fifth.appear,
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .born_who_ex .deck-previous.fifth.appear,
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .born_who_ex .deck-before.fifth.appear {
+	top: 539px;
+	left: 87px;
+}
+.born_how,
+.born_how_small {
+	background-image: url('../images/born_how_h.jpg');
+}
+.born_what,
+.born_what_small {
+	background-image: url('../images/born_what_h.jpg');
+}
+.born_what_ex > pre {
+	width: 200%;
+}
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .born_what_ex .deck-current.first.highlight {
+	top: 21px;
+	height: 30px;
+}
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .born_what_ex .deck-current.first.appear {
+	top: 21px;
+	left: 47px;
+}
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .born_what_ex .deck-current.second.highlight {
+	top: 294px;
+	height: 138px;
+}
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .born_what_ex .deck-current.second.appear {
+	top: 294px;
+	left: 87px;
+}
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .born_what_ex .deck-current.third.highlight {
+	top: 507px;
+	height: 30px;
+}
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .born_what_ex .deck-current.third.appear {
+	top: 479px;
+	left: 87px;
+	width: 400%;
+}
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .born_what_ex .deck-current.fourth.appear {
+	top: 479px;
+	left: 13px;
+	width: 100%;
+}
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .born_what_ex .deck-current.fifth.highlight {
+	top: 51px;
+	height: 30px;
+}
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .born_what_ex .deck-current.fifth.appear,
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .born_what_ex .deck-previous.fifth.appear,
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .born_what_ex .deck-before.fifth.appear {
+	top: 51px;
+	left: 87px;
+}
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .born_what_ex .deck-current.sixth.highlight {
+	top: 132px;
+	height: 30px;
+}
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .born_what_ex .deck-current.sixth.appear,
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .born_what_ex .deck-previous.sixth.appear,
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .born_what_ex .deck-before.sixth.appear {
+	top: 132px;
+	left: 87px;
+}
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .born_what_ex .deck-current.seventh.highlight {
+	top: 293px;
+	height: 30px;
+}
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .born_what_ex .deck-current.seventh.appear,
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .born_what_ex .deck-previous.seventh.appear,
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .born_what_ex .deck-before.seventh.appear {
+	top: 293px;
+	left: 87px;
+}
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .born_what_ex .deck-current.eighth.highlight {
+	top: 348px;
+	height: 30px;
+}
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .born_what_ex .deck-current.eighth.appear,
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .born_what_ex .deck-previous.eighth.appear,
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .born_what_ex .deck-before.eighth.appear {
+	top: 348px;
+	left: 87px;
+}
+.evolution_who,
+.evolution_who_small {
+	background-image: url('../images/evolution_who_h.jpg');
+}
+.evolution_how,
+.evolution_how_small {
+	background-image: url('../images/evolution_how_h.jpg');
+}
+.evolution_what_1 {
+	background-image: url('../images/evolution_what_1_h.jpg');
+}
+.evolution_what_2,
+.evolution_what_small {
+	background-image: url('../images/evolution_what_2_h.jpg');
+}
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .evolution_what_ex .deck-current.first.highlight {
+	top: 23px;
+	height: 111px;
+}
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .evolution_what_ex .deck-current.first.appear,
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .evolution_what_ex .deck-previous.first.appear,
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .evolution_what_ex .deck-before.first.appear {
+	top: 23px;
+	left: 47px;
+}
+.support_who,
+.support_who_small {
+	background-image: url('../images/support_who_h.jpg');
+}
+.support_how,
+.support_how_small {
+	background-image: url('../images/support_how.jpg');
+}
+.support_what,
+.support_what_small {
+	background-image: url('../images/support_what_h.jpg');
+}
+.conclusion > .deck-current,
+.conclusion > .deck-previous,
+.conclusion > .deck-before {
+	display: inline-block;
+	width: 32%;
+	height: 224px;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	opacity: 1;
+}
+.monster {
+	background-image: url('../images/monster.jpg');
+}
+/*----------------- KEYFRAMES -------------------- */
+@-webkit-keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+            transform: scale3d(.3, .3, .3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+            transform: scale3d(.3, .3, .3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}

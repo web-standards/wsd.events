@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Battery Status API</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <style>
+      *{
+        padding: 0;
+        margin: 0;
+        }
+      html,
+      body{
+        height:100%;
+        width:100%;
+        }
+      #value{
+        line-height: 64px;
+        text-align: center;
+        color:#fff;
+        font-size: 24px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 3;
+        }
+      #battery-charge{
+        height: 64px;
+        border-radius:5px;
+        position: absolute;
+        margin: auto;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        background-color: #0042ff;
+        z-index: 2;
+        }
+        #battery-charge:after{
+          content:".";
+          display:block;
+          position:absolute;
+          left: 100%;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+          width: 15px;
+          height: 32px;
+          border-radius: 0 5px 5px 0;
+          background-color: #0042ff;
+          overflow: hidden;
+          text-indent: -9999px;
+          z-index: 2;
+          }
+      #battery{
+        height: 64px;
+        width: 200px;
+        border-radius:5px;
+        position: absolute;
+        margin: auto;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #0014d5;
+        z-index: 1;
+        }
+        #battery:after{
+          content:".";
+          display:block;
+          position:absolute;
+          left: 100%;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+          width: 15px;
+          height: 32px;
+          border-radius: 0 5px 5px 0;
+          background-color: #0014d5;
+          overflow: hidden;
+          text-indent: -9999px;
+          z-index: 1;
+          }
+        #battery.charging,
+        #battery.charging:after{
+          background-color: #009d04;
+          }
+          #battery.charging #battery-charge,
+          #battery.charging #battery-charge:after{
+            background-color: #00e505;
+            }
+    </style>
+  </head>
+  <body>
+    <div id="battery">
+      <div id="battery-charge"></div>
+      <div id="value"></div>
+    </div>
+    <script>
+      // Обработки событий
+
+      (function batteryExample(){
+
+        if(typeof navigator == "undefined"){
+          console.log('Не найден навигатор');
+          return;
+        }
+
+        var battery = navigator.battery || navigator.mozBattery || navigator.webkitBattery;
+
+        if(typeof battery == "undefined"){
+          console.log('Не найдена батарея');
+          return;
+        }
+
+        battery.addEventListener("chargingchange", updateBattery, true);
+        battery.addEventListener("levelchange", updateBattery, true);
+        updateBattery();
+
+        function updateBattery(event) {
+          var value = document.getElementById('value'),
+              charge = document.getElementById('battery-charge'),
+              percents = battery.level * 100 + "%";
+
+          value.innerHTML = percents;
+          charge.style.width = percents;
+          if(battery.charging){
+            document.getElementById('battery').className = "charging";
+          }else{
+            document.getElementById('battery').className = "";
+          }
+        }
+      })();
+    </script>
+  </body>
+</html>

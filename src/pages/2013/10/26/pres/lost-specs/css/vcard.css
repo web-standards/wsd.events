@@ -1,0 +1,18 @@
+.vcard{
+  text-transform:none;
+  }
+  .vcard .wrapper{
+    padding:40px;
+    }
+  .vard-container{
+
+    }
+  .vcard img{
+    float:left;
+    width:350px;
+    margin:-20px 0 0 60px;
+    }
+.vcard .links{
+  margin-top:30px;
+  overflow:hidden;
+  }

@@ -1,0 +1,285 @@
+.avatars-popup{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2000;
+    background: rgba(255,255,255,.75);
+  }
+  .avatars-popup .icons{
+    box-shadow: 0 0 0 20px #fff;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 2001;
+    width: 230px;
+    height: 184px;
+    background: #fff url('../img/avatars.png') 0 0 no-repeat;
+    -webkit-background-size: 230px 184px;
+         -o-background-size: 230px 184px;
+            background-size: 230px 184px;
+    }
+
+.two-user-screen{
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  background:url('../img/boke.jpg') 50% 50% repeat;
+  }
+.two-user-screen .wrapper{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  height: 220px;
+  padding: 20px;
+  background: rgba(255,255,255,.95);
+  text-align: center;
+  font-size: 0;
+  }
+.two-user-screen .wrapper>nav{
+  width: 530px;
+  margin: 0 auto;
+  float: none;
+  display: block;
+  overflow: hidden;
+  z-index: 3;
+  }
+  .two-user-screen .wrapper>nav a{
+  float: left;
+  clear: both;
+  height: 44px;
+  margin: 0 1px 20px 0;
+  border-style:none;
+  font:14px/44px serif;
+  vertical-align: middle;
+  display: block;
+  background-color: rgba(255,0,0,.75);
+  color:#fff;
+  text-decoration: none;
+  padding:0 20px;
+  position: relative;
+  cursor: pointer;
+  }
+  .two-user-screen .wrapper>nav a:hover{
+    background:rgba(0,160,0,.75);
+    }
+  .two-user-screen .wrapper>nav a.confirm{
+    display: none;
+    clear: none;
+    }
+.two-user-screen input{
+    outline:none;
+    padding: 0;
+    border-style:none;
+    margin: 0;
+    background: none;
+    height: 44px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 200px;
+    -ms-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+    overflow: hidden;
+    font:24px/44px serif;
+    }
+.two-user-screen label{
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 200px;
+    -ms-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+    overflow: hidden;
+    font:24px/44px serif;
+    }
+  .two-user-screen .avatar{
+    cursor: pointer;
+    vertical-align: middle;
+    display: inline-block;
+    overflow: hidden;
+    margin: 0 5px 0 0;
+    width: 22px;
+    height: 22px;
+    background: url('../img/avatars.png') -115px -46px no-repeat;
+    -webkit-background-size: 230px auto;
+         -o-background-size: 230px auto;
+            background-size: 230px auto;
+    }
+  .two-user-screen .second-user .avatar{
+    background-position: -69px -23px;
+    }
+  .two-user-screen button:hover{
+    background-color: rgba(0,160,0,.75);
+    }
+    .two-user-screen button:hover:after{
+      border-color:  rgba(0,160,0,.75) transparent transparent;
+      }
+  .two-user-screen button{
+    height: 44px;
+    margin: 0;
+    border-style:none;
+    font:14px/44px serif;
+    vertical-align: middle;
+    display: block;
+    background-color: rgba(0,154,172,.75);
+    color:#fff;
+    margin-left: 1px;
+    text-decoration: none;
+    padding:0 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    }
+    .two-user-screen button:after{
+      content:".";
+      font-size: 0;
+      line-height: 0;
+      height: 0;
+      width: 0;
+      display: block;
+      overflow: hidden;
+      position: absolute;
+      top: 100%;
+      left: 10px;
+      border-style:solid;
+      border-width: 10px 10px 0 0;
+      border-color:  rgba(0,154,172,.75) transparent transparent;
+      }
+  .two-user-screen .about{
+    font:14px/20px serif;
+    }
+  .two-user-screen .first-user{
+    display: inline-block;
+    vertical-align: top;
+    padding: 44px 0 0;
+    width: 255px;
+    margin:0 10px 0 0;
+    z-index: 3;
+    position: relative;
+    font-size: 12px;
+    text-align: left;
+    }
+  .two-user-screen .second-user{
+    font-size: 12px;
+    vertical-align: top;
+    text-align: left;
+    display: inline-block;
+    position: relative;
+    padding: 44px 0 0;
+    margin:0 0 0 10px;
+    width: 255px;
+    z-index: 3;
+    }
+  .two-user-screen .name{
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 200px;
+    -ms-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+    overflow: hidden;
+    font:24px/44px serif;
+    }
+  .two-user-screen .avatar{
+    vertical-align: middle;
+    display: inline-block;
+    overflow: hidden;
+    margin: 0 5px 0 0;
+    width: 22px;
+    height: 22px;
+    background: url('../img/avatars.png') 0 0 no-repeat;
+    -webkit-background-size: 230px auto;
+         -o-background-size: 230px auto;
+            background-size: 230px auto;
+    }
+  .two-user-screen .player.selected{
+    color:#fff;
+    }
+  .two-user-screen .player.selected .details:after{
+    border-color: rgba(255,0,0,.75) transparent transparent;
+    }
+  .two-user-screen .player .details:after{
+    content:".";
+    font-size: 0;
+    line-height: 0;
+    height: 0;
+    width: 0;
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    top: 100%;
+    left: 10px;
+    border-style:solid;
+    border-width: 10px 10px 0 0;
+    border-color: rgba(0,154,172,.75) transparent transparent;
+    }
+  .two-user-screen .player.selected nav{
+    display: inline-block;
+    }
+  .two-user-screen .player.selected .details{
+    background: rgba(255,0,0,.75);
+    }
+  .two-user-screen .player .details{
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 10px;
+    background: rgba(0,154,172,.75);
+    }
+  .two-user-screen .player nav{
+    font-size: 0;
+    height: 44px;
+    vertical-align: top;
+    display: inline-block;
+    overflow: hidden;
+    }
+    .two-user-screen .player nav a:hover{
+      background-color: rgba(0,160,0,.75);
+      color:#fff;
+      }
+    .two-user-screen .player nav a.pass{
+      display: none;
+      }
+    .two-user-screen .player nav a.remove{
+      display: none;
+      }
+    .two-user-screen .player nav a{
+      height: 44px;
+      font:14px/44px serif;
+      vertical-align: middle;
+      display: inline-block;
+      background-color: rgba(0,154,172,.75);
+      color:#fff;
+      margin-left: 1px;
+      text-decoration: none;
+      padding:0 20px;
+      }
+  .two-user-screen .player.selected{
+    margin:0 10px 0 0;
+    }
+  .two-user-screen .player{
+    font-size: 0;
+    color:#fff;
+    white-space: nowrap;
+    height: 44px;
+    position: relative;
+    display: inline-block;
+    width: 255px;
+    margin:0 0 0 10px;
+    text-align: left;
+    position: relative;
+    }
+  .two-user-screen .player nav>a.remove{
+    display: block;
+    }

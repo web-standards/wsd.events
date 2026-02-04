@@ -1,0 +1,728 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Правила хорошего тона в HTML и CSS - Исаков Евгений</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/beige.css" id="theme">
+
+        <link rel="stylesheet" href="css/theme/user.css" />
+
+        <!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/user.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Правила хорошего тона</h1>
+				</section>
+
+				<section>
+					<h1>Плохой код</h1>
+					<h3>Почему?</h3>
+				</section>
+
+				<section>
+					<img src="assets/i/noway.jpg" alt=""/>
+				</section>
+
+				<section>
+					<h1>Правила хорошего HTML</h1>
+				</section>
+
+                <section>
+                    <h2>&lt;!doctype html&gt;</h2>
+                </section>
+
+				<section>
+					<h2>HTML 5 &mdash; это не только доктайп</h2>
+					<ul>
+						<li class="fragment">
+							<pre><code data-trim  class="bad">
+&lt;!doctype html&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
+&lt;link rel="stylesheet" href="..." type="text/css" /&gt;
+&lt;script src="..." type="text/javascript"&gt;&lt;/script&gt;
+							</code></pre>
+						</li>
+						<li class="fragment">
+							<pre><code data-trim class="good">
+&lt;!doctype html&gt;
+&lt;meta charset="utf-8" /&gt;
+&lt;link rel="stylesheet" href="..." /&gt;
+&lt;script src="..."&gt;&lt;/script&gt;
+							</code></pre>
+						</li>
+					</ul>
+				</section>
+
+                <section>
+                    <h2>HTML 5 теги</h2>
+                </section>
+
+                <section>
+                    <pre><code data-trim class="bad xml nothtml5">
+&lt;div class="item-container"&gt;
+    &lt;div class="item"&gt;
+        &lt;div class="item-image-container"&gt;
+            &lt;img class="item-image" src="..." /&gt;
+        &lt;/div&gt;
+        &lt;div class="item-content"&gt;
+            &lt;div class="item-content-inner"&gt;
+                &lt;div class="item-title"&gt;Lorem Ipsum&lt;/div&gt;
+                &lt;div class="item-pubdate"&gt;Dec 2, 2014&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="item-description"&gt;Lorem ipsum dolor sit amet&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                            </code></pre>
+                    </section>
+                    <section>
+                        <pre><code data-trim class="good xml html5">
+&lt;section class="item-container"&gt;
+    &lt;figure class="item"&gt;
+        &lt;img class="item-image" src="..." /&gt;
+        &lt;div class="item-content"&gt;
+            &lt;figcaption class="item-title"&gt;Lorem Ipsum&lt;/figcaption&gt;
+            &lt;time class="item-pubdate"&gt;Dec 2, 2014&lt;/time&gt;
+            &lt;p class="item-description"&gt;Lorem ipsum dolor sit amet&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/figure&gt;
+&lt;/section&gt;
+                    </code></pre>
+                </section>
+
+				<section>
+					<h2>Свобода! Свобода?</h2>
+                    <ul>
+                        <li class="fragment">
+                            <pre><code data-trim>
+&lt;form method="get"&gt;
+    &lt;input type="text" name="tel" /&gt;
+    &lt;input type="password" name="pass" /&gt;
+    &lt;input type="checkbox" name="save_pass" checked /&gt;
+    &lt;input type="submit" value="OK" /&gt;
+&lt;/form&gt;
+                            </code></pre>
+
+                            <pre><code data-trim>
+&lt;FORM method=GET&gt;
+    &lt;input type="TEXT" name=tel&gt;
+    &lt;INPUT type=password NAME="pass" /&gt;
+    &lt;input TYPE=checkbox name=save_pass checked=checked&gt;
+    &lt;input type='submit' VALUE=OK&gt;
+&lt;/FORM&gt;
+                            </code></pre>
+                        </li>
+                    </ul>
+				</section>
+
+                <section>
+                    <ul>
+                        <li>
+                            <pre><code data-trim class="good">
+&lt;form method="get"&gt;
+    &lt;input type="tel" name="tel" /&gt;
+    &lt;input type="password" name="pass" /&gt;
+    &lt;input type="checkbox" name="save_pass" checked /&gt;
+    &lt;input type="submit" value="OK" /&gt;
+&lt;/form&gt;
+                            </code></pre>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Микроданные</h2>
+                </section>
+
+                <section>
+                    <ul>
+                        <li>
+                            <pre><code data-trim class="bad">
+&lt;article&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Title&lt;/h1&gt;
+    &lt;/header&gt;
+    &lt;section&gt;
+        &lt;p&gt;Description&lt;/p&gt;
+    &lt;/section&gt;
+&lt;/article&gt;
+                            </code></pre>
+                        </li>
+                        <li class="fragment">
+                            <pre><code data-trim class="good">
+&lt;article itemscope itemtype="http://schema.org/VideoObject"&gt;
+    &lt;header&gt;
+        &lt;h1 itemprop="name"&gt;Title&lt;/h1&gt;
+    &lt;/header&gt;
+    &lt;section itemprop="description"&gt;
+        &lt;p&gt;Description&lt;/p&gt;
+    &lt;/section&gt;
+&lt;/article&gt;
+                            </code></pre>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h1>Правила хорошего CSS</h1>
+                </section>
+
+                <section>
+                    <h2>Слишком общие CSS-селекторы</h2>
+                    <ul>
+	                    <li class="fragment">
+                            <pre><code data-trim class="bad">
+ul li { }
+
+#element { }
+                            </code></pre>
+	                    </li>
+                        <li class="fragment">
+                            <pre><code data-trim class="good">
+.list-item { }
+
+.element { }
+                            </code></pre>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Сложные CSS-селекторы</h2>
+                    <ul>
+                        <li class="fragment">
+                            <pre><code data-trim class="bad">
+.header ul li a { }
+
+div.block div.item a.item-link { }
+                            </code></pre>
+                        </li>
+                        <li class="fragment">
+                            <pre><code data-trim class="good">
+.navigation-link { }
+
+.item-link { }
+                            </code></pre>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Разбор полетов</h2>
+                </section>
+
+                <section>
+                    <pre><code>
+.dropdown{
+    position:absolute;
+    left: 0%;
+    top:24px;
+    height: 400px\9;
+    margin: 3px 0px;
+    border: 1px solid #B9B9B9;
+    width: 200px; min-height: 300px;
+    box-shadow: inset 0 -3px #aaa, 0 2px #eee;
+    padding: 10px !important;
+    opacity: 0.9 !important;
+    color: #333333;
+    overflow:hidden; /* chtobi ne vilazil tekst */
+    background-color: #fff
+    }
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Одна строка &mdash; одно CSS-правило</h2>
+                    <ul>
+                        <li>
+                            <pre><code data-trim class="bad">
+.dropdown {
+    width: 200px; min-height: 300px;
+}
+                            </code></pre>
+                        </li>
+                        <li class="fragment">
+                            <pre><code data-trim class="good">
+.dropdown {
+    width: 200px;
+    min-height: 300px;
+}
+                            </code></pre>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Точка с запятой в конце</h2>
+                    <ul>
+                        <li>
+                            <pre><code data-trim class="bad">
+.dropdown {
+    background-color: #fff
+}
+                            </code></pre>
+                        </li>
+                        <li class="fragment">
+                            <pre><code data-trim class="good">
+.dropdown {
+    background-color: #fff;
+}
+                            </code></pre>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Правило &mdash; Пробел &mdash; Значение</h2>
+                    <ul>
+                        <li>
+                            <pre><code data-trim class="bad">
+.dropdown{
+    position:absolute;
+}
+                            </code></pre>
+                        </li>
+                        <li class="fragment">
+                            <pre><code data-trim class="good">
+.dropdown {
+    position: absolute;
+}
+                            </code></pre>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Магические числа</h2>
+                    <ul>
+                        <li>
+                            <pre><code data-trim class="bad">
+.dropdown {
+    top: 24px;
+}
+                            </code></pre>
+                        </li>
+                        <li class="fragment">
+                            <pre><code data-trim class="good">
+.dropdown {
+    top: 100%;
+}
+                            </code></pre>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Ноль всегда ноль</h2>
+                    <ul>
+                        <li>
+                            <pre><code data-trim class="bad">
+.dropdown {
+    left: 0%;
+    margin: 3px 0px;
+    }
+                            </code></pre>
+                        </li>
+                        <li class="fragment">
+                            <pre><code data-trim class="good">
+.dropdown {
+    left: 0;
+    margin: 3px 0;
+}
+                            </code></pre>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Очень важный код</h2>
+                    <ul>
+                        <li>
+                            <pre><code data-trim class="bad">
+.dropdown {
+    padding: 10px !important;
+    opacity: 0.9 !important;
+}
+                            </code></pre>
+                        </li>
+                        <li class="fragment">
+                            <pre><code data-trim class="good">
+.dropdown_cute {
+    padding: 10px;
+    opacity: 0.9;
+}
+                            </code></pre>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>CSS-хаки</h2>
+                    <ul>
+                        <li>
+                            <pre><code data-trim class="bad">
+.dropdown {
+    height: 400px\9;
+}
+                            </code></pre>
+                        </li>
+                        <li class="fragment">
+                            <pre><code>
+&lt;!--[if lt IE 9]&gt;&lt;html class="lt-ie9"&gt;&lt;![endif]--&gt;
+                            </code></pre>
+                        </li>
+                        <li class="fragment">
+                            <pre><code data-trim class="good">
+.lt-ie9 .dropdown {
+    height: 400px;
+}
+
+/* или */
+
+.ie8 .dropdown {
+    height: 400px;
+}
+                            </code></pre>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Цветовая палитра</h2>
+                    <ul>
+                        <li>
+                            <pre><code data-trim class="bad">
+.dropdown {
+    border: 1px solid #B9B9B9;
+    color: #333333;
+}
+                            </code></pre>
+                        </li>
+                        <li class="fragment">
+                            <pre><code data-trim class="good">
+.dropdown {
+    border: 1px solid #b9b9b9;
+    color: #333;
+}
+                            </code></pre>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Свойства с несколькими значениями</h2>
+                    <ul>
+                        <li>
+                            <pre><code data-trim class="bad">
+.dropdown {
+    box-shadow: inset 0 -3px #aaa, 0 2px #eee;
+}
+                            </code></pre>
+                        </li>
+                        <li class="fragment">
+                            <pre><code data-trim class="good">
+.dropdown {
+    box-shadow: inset 0 -3px #aaa,
+                      0  2px #eee;
+}
+                            </code></pre>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Вендорные префиксы</h2>
+                </section>
+
+                <section style="margin-top:-50px;">
+                    <ul>
+                        <li>
+                            <pre><code data-trim class="bad vendor">
+.dropdown {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -o-user-select: none;
+}
+                            </code></pre>
+                        </li>
+                        <li class="fragment">
+                            <pre><code data-trim class="vendor">
+.dropdown {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+         -o-user-select: none;
+            user-select: none;
+}
+                            </code></pre>
+                        </li>
+                        <li class="fragment">
+                            <pre><code data-trim class="good vendor">
+.dropdown {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+                            </code></pre>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Комментарии и транслит</h2>
+                    <ul>
+                        <li>
+                            <pre><code data-trim class="bad">
+.dropdown {
+    overflow: hidden; /* chtobi ne vilazil tekst */
+}
+                            </code></pre>
+                        </li>
+                        <li class="fragment">
+                            <pre><code data-trim class="good">
+.dropdown {
+    overflow: hidden; /* for text overflow prevention */
+}
+
+/* или */
+
+.dropdown {
+    overflow: hidden; /* для предотвращения выхода текста за пределы */
+}
+                            </code></pre>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>И это не все...</h2>
+                </section>
+
+                <section>
+                    <ul class="cols" style="margin-top:-50px;">
+                        <li>
+                            <!--<h3>До</h3>-->
+                            <pre><code style="height:900px;">.dropdown{
+    position:absolute;
+    left: 0%;
+    top:24px;
+    height: 400px\9;
+    margin: 3px 0px;
+    border: 1px solid #B9B9B9;
+    width: 200px; min-height: 300px;
+    box-shadow: inset
+            0 -3px #aaa, 0 2px #eee;
+    padding: 10px !important;
+    opacity: 0.9 !important;
+    color: #333333;
+    overflow:hidden; /* ... */
+    background-color: #fff
+}</code></pre>
+                        </li>
+
+                        <li class="fragment">
+                            <!--<h3>После</h3>-->
+                            <pre><code style="height:900px;">.dropdown {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    margin: 3px 0;
+    border: 1px solid #b9b9b9;
+    width: 200px;
+    min-height: 300px;
+    box-shadow: inset 0 -3px #aaa,
+                      0  2px #eee;
+    color: #333;
+    overflow: hidden; /* ... */
+    background-color: #fff;
+}
+.dropdown_cute {
+    padding: 10px;
+    opacity: .9;
+}
+.lt-ie9 .dropdown {
+    height: 400px;
+}</code></pre>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Сортировка CSS-свойств</h2>
+                </section>
+
+                <section>
+                    <pre><code style="margin-top:-50px;">.dropdown {
+        // Правила общего поведения
+    position: absolute;
+    left: 0;
+    top: 100%;
+        // Боксовая модель и размеры
+    width: 200px;
+    min-height: 300px;
+    margin: 3px 0;
+    border: 1px solid #b9b9b9;
+        // Визуальные блочные правила
+    overflow: hidden; /* for text overflow prevention */
+    box-shadow: inset 0 -3px #aaa,
+                      0  2px #eee;
+    background-color: #fff;
+        // Оформление текста
+    color: #333;
+}</code></pre>
+                </section>
+
+                <section>
+                    <h2>Табы vs пробелы</h2>
+                </section>
+
+                <section>
+                    <p><img src="assets/i/TabsSpacesBoth.png" alt="" style="width:120%"/></p>
+                </section>
+
+                <section>
+                    <h2>Пространство имен классов</h2>
+                    <p><img src="assets/i/params.gif" alt="" /></p>
+                    <ul>
+                        <li class="fragment">
+                            <pre><code data-trim class="good">
+.js-action-method { }
+                            </code></pre>
+                        </li>
+                        <!--<li class="fragment">
+                            <pre><code data-trim class="good">
+.is-state-modifier { }
+                            </code></pre>
+                        </li>-->
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Документация</h2>
+                </section>
+
+                <section>
+                    <h2>CSS-препроцессоры</h2>
+                </section>
+
+                <section>
+                    <ul>
+                        <li>
+                            <pre><code data-trim>
+nav { }
+
+nav ul { }
+
+nav ul li { }
+
+nav ul li a { }
+                            </code></pre>
+                        </li>
+                        <li>
+                            <pre><code data-trim>
+nav {
+
+    ul {
+
+        li {
+
+            a { }
+        }
+    }
+}
+                            </code></pre>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Вопросы?</h2>
+
+                    <div class="author">
+                        <img class="author-avatar" src="assets/i/avatar.jpg" alt="" />
+                        <div class="author-main">
+                            <div class="author-name">Исаков Евгений</div>
+                            <div class="author-job">Frontend dev @ EPAM Systems</div>
+                            <div class="author-contacts">
+                                <div class="author-contacts_email"><a href="mailto:is4kov@gmail.com">is4kov@gmail.com</a></div>
+                                <div class="author-contacts_twitter"><a href="https://twitter.com/is4kov">@is4kov</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,116 @@
+<svg viewbox="0 0 200 300">
+  <defs>
+    <!-- Paths -->
+    <clippath id="clip-star">
+      <polygon points="98.4999978 153.75 38.2520165 185.424245 49.7583542 118.337123 1.01670635 70.8257603 68.3760155 61.037872 98.5000012 1.1379786e-14 128.624005 61.0378871 195.98331 70.8258091 147.241642 118.337136 158.747982 185.424247" />
+    </clippath>
+    <!--  -->
+    <clippath id="clip-text">
+      <text x="0" y=".88em" class="clip-text">Text</text>
+    </clippath>
+    <!--  -->
+
+    <clippath id="clip-heart-smil">
+      <path  d="m99.19002,43.23778c40.05069,-100.72627 196.97231,0 0,129.5052c-196.97233,-129.5052 -40.05096,-230.23147 0,-129.5052z" fill="#FF0000">
+         </path>
+    </clippath>
+    <!--  -->
+
+    <clippath id="clip-heart-big">
+      <path  d="m99.19002,43.23778c40.05069,-100.72627 196.97231,0 0,129.5052c-196.97233,-129.5052 -40.05096,-230.23147 0,-129.5052z" class="path-heart"></path>
+    </clippath>
+
+    <!--  -->
+
+    <clippath id="clip-rect-top" clipPathUnits="userSpaceOnUse">
+      <rect width="400" height="150" x="0" y="0"/>
+    </clippath>
+
+    <!-- Gradients -->
+    <lineargradient id="mask-gradient" x1="0" y1="0" x2="112%" y2="0%">
+      <stop stop-color="#fff" offset="0" /><stop stop-color="#fff" offset="10%" />
+      <stop stop-color="#AAA" offset="10%" /><stop stop-color="#AAA" offset="20%" />
+      <stop stop-color="#777" offset="20%" /><stop stop-color="#777" offset="30%" />
+      <stop stop-color="#333" offset="30%" /><stop stop-color="#333" offset="40%" />
+      <stop stop-color="#000" offset="40%" /><stop stop-color="#000" offset="50%" />
+      <stop stop-color="#fff" offset="50%" /><stop stop-color="#fff" offset="60%" />
+      <stop stop-color="#AAA" offset="60%" /><stop stop-color="#AAA" offset="70%" />
+      <stop stop-color="#777" offset="70%" /><stop stop-color="#777" offset="80%" />
+      <stop stop-color="#333" offset="80%" /><stop stop-color="#333" offset="90%" />
+      <stop stop-color="#000" offset="90%" /><stop stop-color="#000" offset="100%" />
+    </lineargradient>
+    <!--  -->
+    <radialgradient id="mask-radial-gradient" cy="52%" fy="5.5%">
+      <stop stop-color="#FFF" offset="50%" />
+      <stop stop-color="#000" offset="100%" />
+    </radialgradient>
+
+    <!-- Masks -->
+
+    <mask id="mask-obb" maskunits="objectBoundingBox" maskcontentunits="objectBoundingBox">
+      <rect y="0" width="1" height="1" fill="url(#mask-gradient)" />
+      <circle cx=".5" cy=".5" r=".42" fill="black" />
+      <circle cx="0" cy=".5" r=".32" fill="black" />
+      <circle cx="1" cy=".5" r=".32" fill="black" />
+      <circle cx="0" cy=".5" r=".3" fill="gray" />
+      <circle cx=".5" cy=".5" r=".4" fill="gray" />
+      <circle cx="1" cy=".5" r=".3" fill="gray" />
+      <circle cx="0" cy=".5" r=".25" fill="white" />
+      <circle cx=".5" cy=".5" r=".35" fill="white" />
+      <circle cx="1" cy=".5" r=".25" fill="white" />
+    </mask>
+
+    <!--  -->
+
+    <mask id="mask" maskunits="userSpaceOnUse" maskcontentunits="userSpaceOnUse">
+      <rect y="0" width="100%" height="100%" fill="url(#mask-gradient)" />
+      <circle cx="50%" cy="50%" r="42%" fill="black" />
+      <circle cx="0" cy="50%" r="32%" fill="black" />
+      <circle cx="100%" cy="50%" r="32%" fill="black" />
+      <circle cx="0" cy="50%" r="30%" fill="gray" />
+      <circle cx="50%" cy="50%" r="40%" fill="gray" />
+      <circle cx="100%" cy="50%" r="30%" fill="gray" />
+      <circle cx="0" cy="50%" r="25%" fill="white" />
+      <circle cx="50%" cy="50%" r="35%" fill="white" />
+      <circle cx="100%" cy="50%" r="25%" fill="white" />
+    </mask>
+
+    <!--  -->
+    <mask id="mask-soft" maskunits="objectBoundingBox" maskcontentunits="objectBoundingBox">
+      <rect y="0" width="1" height="1" fill="url(#mask-radial-gradient)" />
+    </mask>
+    <!--  -->
+    <mask id="mask-lum" maskunits="objectBoundingBox" x="0" y="0">
+      <image xlink:href="./assets/img/parts/flower-m.jpg" width="200" height="300" />
+    </mask>
+    <!--  -->
+    <mask id="mask-lum-pattern" >
+      <image xlink:href="./assets/img/parts/grayscale-scales-invert.png" width="200" height="300" />
+    </mask>
+    <!-- Patterns -->
+    <pattern id="pattern" patternunits="userSpaceOnUse" width="199" height="300" viewbox="0 0 199 300">
+      <image xlink:href="./assets/img/parts/flower-m.jpg" width="199" height="300" />
+    </pattern>
+    <!--  -->
+    <pattern id="pattern-text" patternunits="userSpaceOnUse" width="450" height="95">
+      <text x="0" y="0">
+        <tspan x="0" y="1em">Nam tristique vestibulum nulla nec accumsan. Nullam commodo eget dolor et ultricies.
+        </tspan>
+        <tspan x="0" y="2em">Nulla ligula elit, placerat a sapien vel, eleifend tincidunt nibh. Suspendisse porta fermentum dictum. Cras eget
+        </tspan>
+        <tspan x="0" y="3em">Maecenas tempus elit quis sapien tempus, sit amet viverra neque mattis. Quisque a tincidunt mi.
+        </tspan>
+        <tspan x="0" y="4em">Proin at justo eu ipsum posuere dignissim vel quis eros. Etiam at libero commodo, varius justo quis, interdum erat.
+        </tspan>
+        <tspan x="0" y="5em">Fusce viverra mollis est, nec euismod ante mattis ut. Aenean eu mauris viverra enim vulputate bibendum.
+        </tspan>
+        <tspan x="0" y="6em">Integer velit metus, cursus et commodo sit amet, gravida vitae purus. Sed scelerisque at odio non condimentum.
+        </tspan>
+        <tspan x="0" y="7em">Sed neque lacus, rhoncus vitae sem ut, pharetra vestibulum elit.
+        </tspan>
+        <tspan x="0" y="8em">Cras ultricies aliquam dolor quis ultrices. Cras eget mauris tincidunt, aliquam erat quis, faucibus augue.
+        </tspan>
+      </text>
+    </pattern>
+   </defs>
+</svg>

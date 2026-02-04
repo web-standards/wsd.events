@@ -1,0 +1,306 @@
+.pepyaka {
+    font-size: 64px;
+    letter-spacing: 0.2em;
+    font-family: 'Book Antiqua', 'Georgia', serif;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+}
+
+.pepyaka > * {
+    display: inline-block;
+    -webkit-animation-duration: 0.4s;
+    animation-duration: 0.4s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: steps(1);
+    animation-timing-function: steps(1);
+    -webkit-animation-name: pep;
+    animation-name: pep;
+    color: #1be5a0;
+    text-shadow:    -0.05em 0 0 #000000,
+                    -0.03em -0.03em 0 #000000,
+                    0 -0.05em 0 #000000,
+                    0.03em -0.03em 0 #000000,
+                    0.05em 0 0 #000000,
+                    0.03em 0.03em 0 #000000,
+                    0 0.05em 0 #000000,
+                    -0.03em 0.03em 0 #000000;
+}
+
+.pepyaka.smooth > * {
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+}
+
+@-webkit-keyframes pep {
+    from {
+        color: #1be5a0;
+        text-shadow:    -0.05em 0 0 #000000,
+                        -0.03em -0.03em 0 #000000,
+                        0 -0.05em 0 #000000,
+                        0.03em -0.03em 0 #000000,
+                        0.05em 0 0 #000000,
+                        0.03em 0.03em 0 #000000,
+                        0 0.05em 0 #000000,
+                        -0.03em 0.03em 0 #000000;
+        -webkit-transform: translate(0.037em,-0.037em);
+    }
+
+    12.5% {
+        color: #b33aff;
+        text-shadow:    -0.05em 0 0 #1be5a0,
+                        -0.03em -0.03em 0 #1be5a0,
+                        0 -0.05em 0 #1be5a0,
+                        0.03em -0.03em 0 #1be5a0,
+                        0.05em 0 0 #1be5a0,
+                        0.03em 0.03em 0 #1be5a0,
+                        0 0.05em 0 #1be5a0,
+                        -0.03em 0.03em 0 #1be5a0;
+        -webkit-transform: translate(-0.05em,0.06em);
+    }
+
+    25% {
+        color: #fffe00;
+        text-shadow:    -0.05em 0 0 #b33aff,
+                        -0.03em -0.03em 0 #b33aff,
+                        0 -0.05em 0 #b33aff,
+                        0.03em -0.03em 0 #b33aff,
+                        0.05em 0 0 #b33aff,
+                        0.03em 0.03em 0 #b33aff,
+                        0 0.05em 0 #b33aff,
+                        -0.03em 0.03em 0 #b33aff;
+        -webkit-transform: translate(-0.037em,-0.075em);
+    }
+
+    37.5% {
+        color: #f12938;
+        text-shadow:    -0.05em 0 0 #fffe00,
+                        -0.03em -0.03em 0 #fffe00,
+                        0 -0.05em 0 #fffe00,
+                        0.03em -0.03em 0 #fffe00,
+                        0.05em 0 0 #fffe00,
+                        0.03em 0.03em 0 #fffe00,
+                        0 0.05em 0 #fffe00,
+                        -0.03em 0.03em 0 #fffe00;
+        -webkit-transform: translate(0.037em,-0.037em);
+    }
+
+    50% {
+        color: #62e51b;
+        text-shadow:    -0.05em 0 0 #f12938,
+                        -0.03em -0.03em 0 #f12938,
+                        0 -0.05em 0 #f12938,
+                        0.03em -0.03em 0 #f12938,
+                        0.05em 0 0 #f12938,
+                        0.03em 0.03em 0 #f12938,
+                        0 0.05em 0 #f12938,
+                        -0.03em 0.03em 0 #f12938;
+        -webkit-transform: translate(0,0);
+    }
+
+    62.5% {
+        color: #2751ef;
+        text-shadow:    -0.05em 0 0 #62e51b,
+                        -0.03em -0.03em 0 #62e51b,
+                        0 -0.05em 0 #62e51b,
+                        0.03em -0.03em 0 #62e51b,
+                        0.05em 0 0 #62e51b,
+                        0.03em 0.03em 0 #62e51b,
+                        0 0.05em 0 #62e51b,
+                        -0.03em 0.03em 0 #62e51b;
+        -webkit-transform: translate(-0.075em,-0.018em);
+    }
+
+    75% {
+        color: #ffc600;
+        text-shadow:    -0.05em 0 0 #2751ef,
+                        -0.03em -0.03em 0 #2751ef,
+                        0 -0.05em 0 #2751ef,
+                        0.03em -0.03em 0 #2751ef,
+                        0.05em 0 0 #2751ef,
+                        0.03em 0.03em 0 #2751ef,
+                        0 0.05em 0 #2751ef,
+                        -0.03em 0.03em 0 #2751ef;
+        -webkit-transform: translate(0.057em,-0.057em);
+    }
+
+    87.5% {
+        color: #000000;
+        text-shadow:    -0.05em 0 0 #ffc600,
+                        -0.03em -0.03em 0 #ffc600,
+                        0 -0.05em 0 #ffc600,
+                        0.03em -0.03em 0 #ffc600,
+                        0.05em 0 0 #ffc600,
+                        0.03em 0.03em 0 #ffc600,
+                        0 0.05em 0 #ffc600,
+                        -0.03em 0.03em 0 #ffc600;
+        -webkit-transform: translate(-0.060em,0.060em);
+    }
+
+    to {
+        color: #1be5a0;
+        text-shadow:    -0.05em 0 0 #000000,
+                        -0.03em -0.03em 0 #000000,
+                        0 -0.05em 0 #000000,
+                        0.03em -0.03em 0 #000000,
+                        0.05em 0 0 #000000,
+                        0.03em 0.03em 0 #000000,
+                        0 0.05em 0 #000000,
+                        -0.03em 0.03em 0 #000000;
+        -webkit-transform: translate(0.018em,-0.018em);
+    }
+}
+
+@keyframes pep {
+    from {
+        color: #1be5a0;
+        text-shadow:    -0.05em 0 0 #000000,
+                        -0.03em -0.03em 0 #000000,
+                        0 -0.05em 0 #000000,
+                        0.03em -0.03em 0 #000000,
+                        0.05em 0 0 #000000,
+                        0.03em 0.03em 0 #000000,
+                        0 0.05em 0 #000000,
+                        -0.03em 0.03em 0 #000000;
+        transform: translate(0.037em,-0.037em);
+    }
+
+    12.5% {
+        color: #b33aff;
+        text-shadow:    -0.05em 0 0 #1be5a0,
+                        -0.03em -0.03em 0 #1be5a0,
+                        0 -0.05em 0 #1be5a0,
+                        0.03em -0.03em 0 #1be5a0,
+                        0.05em 0 0 #1be5a0,
+                        0.03em 0.03em 0 #1be5a0,
+                        0 0.05em 0 #1be5a0,
+                        -0.03em 0.03em 0 #1be5a0;
+        transform: translate(-0.05em,0.06em);
+    }
+
+    25% {
+        color: #fffe00;
+        text-shadow:    -0.05em 0 0 #b33aff,
+                        -0.03em -0.03em 0 #b33aff,
+                        0 -0.05em 0 #b33aff,
+                        0.03em -0.03em 0 #b33aff,
+                        0.05em 0 0 #b33aff,
+                        0.03em 0.03em 0 #b33aff,
+                        0 0.05em 0 #b33aff,
+                        -0.03em 0.03em 0 #b33aff;
+        transform: translate(-0.037em,-0.075em);
+    }
+
+    37.5% {
+        color: #f12938;
+        text-shadow:    -0.05em 0 0 #fffe00,
+                        -0.03em -0.03em 0 #fffe00,
+                        0 -0.05em 0 #fffe00,
+                        0.03em -0.03em 0 #fffe00,
+                        0.05em 0 0 #fffe00,
+                        0.03em 0.03em 0 #fffe00,
+                        0 0.05em 0 #fffe00,
+                        -0.03em 0.03em 0 #fffe00;
+        transform: translate(0.037em,-0.037em);
+    }
+
+    50% {
+        color: #62e51b;
+        text-shadow:    -0.05em 0 0 #f12938,
+                        -0.03em -0.03em 0 #f12938,
+                        0 -0.05em 0 #f12938,
+                        0.03em -0.03em 0 #f12938,
+                        0.05em 0 0 #f12938,
+                        0.03em 0.03em 0 #f12938,
+                        0 0.05em 0 #f12938,
+                        -0.03em 0.03em 0 #f12938;
+        transform: translate(0,0);
+    }
+
+    62.5% {
+        color: #2751ef;
+        text-shadow:    -0.05em 0 0 #62e51b,
+                        -0.03em -0.03em 0 #62e51b,
+                        0 -0.05em 0 #62e51b,
+                        0.03em -0.03em 0 #62e51b,
+                        0.05em 0 0 #62e51b,
+                        0.03em 0.03em 0 #62e51b,
+                        0 0.05em 0 #62e51b,
+                        -0.03em 0.03em 0 #62e51b;
+        transform: translate(-0.075em,-0.018em);
+    }
+
+    75% {
+        color: #ffc600;
+        text-shadow:    -0.05em 0 0 #2751ef,
+                        -0.03em -0.03em 0 #2751ef,
+                        0 -0.05em 0 #2751ef,
+                        0.03em -0.03em 0 #2751ef,
+                        0.05em 0 0 #2751ef,
+                        0.03em 0.03em 0 #2751ef,
+                        0 0.05em 0 #2751ef,
+                        -0.03em 0.03em 0 #2751ef;
+        transform: translate(0.057em,-0.057em);
+    }
+
+    87.5% {
+        color: #000000;
+        text-shadow:    -0.05em 0 0 #ffc600,
+                        -0.03em -0.03em 0 #ffc600,
+                        0 -0.05em 0 #ffc600,
+                        0.03em -0.03em 0 #ffc600,
+                        0.05em 0 0 #ffc600,
+                        0.03em 0.03em 0 #ffc600,
+                        0 0.05em 0 #ffc600,
+                        -0.03em 0.03em 0 #ffc600;
+        transform: translate(-0.060em,0.060em);
+    }
+
+    to {
+        color: #1be5a0;
+        text-shadow:    -0.05em 0 0 #000000,
+                        -0.03em -0.03em 0 #000000,
+                        0 -0.05em 0 #000000,
+                        0.03em -0.03em 0 #000000,
+                        0.05em 0 0 #000000,
+                        0.03em 0.03em 0 #000000,
+                        0 0.05em 0 #000000,
+                        -0.03em 0.03em 0 #000000;
+        transform: translate(0.018em,-0.018em);
+    }
+}
+
+.pep1 {
+    -webkit-animation-delay: 0.05s;
+    animation-delay: 0.05s;
+}
+
+.pep2 {
+    -webkit-animation-delay: 0.1s;
+    animation-delay: 0.1s;
+}
+
+.pep3 {
+    -webkit-animation-delay: 0.15s;
+    animation-delay: 0.15s;
+}
+
+.pep4 {
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+}
+
+.pep5 {
+    -webkit-animation-delay: 0.25s;
+    animation-delay: 0.25s;
+}
+
+.pep6 {
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s;
+}
+
+.pep7 {
+    -webkit-animation-delay: 0.35s;
+    animation-delay: 0.35s;
+}

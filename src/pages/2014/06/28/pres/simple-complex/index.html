@@ -1,0 +1,339 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+	<title>“From simple to complex”, Web Standards Days, St. Petersburg, June 2014</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=792, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen-d90984e344.css">
+	<style>
+		.slide:after {
+			/* hide ribbon */
+			visibility: hidden;
+		}
+		.slide.cover {
+			background: white;
+		}
+		.slide h3 {
+			font-weight: bold;
+		}
+		.slide img {
+			width: 100%;
+		}
+		.slide.shout h2 .quiet {
+			font-size: 80px;
+		}
+		#Intro {
+			text-align: center;
+		}
+		#Intro h2 {
+			font-size: 150px;
+		}
+		#Intro .conference {
+			margin-bottom: 20px;
+		}
+		#Intro:after {
+			visibility: hidden;
+		}
+	</style>
+</head>
+<body class="full">
+	<header class="caption">
+		<h1>От простого к сложному</h1>
+		<p>Владимир Кузнецов</p>
+	</header>
+	<section class="slide introduction" id="Intro">
+		<div>
+			<p class="conference">Web Standards Days, Санкт-Петербург, 2014</p>
+			<h2>От&nbsp;простого к&nbsp;сложному</h2>
+			<p><a href="http://noteskeeper.ru/about/">Владимир Кузнецов</a>,
+				<span class="light">Engine6</span></p>
+		</div>
+	</section>
+	<section class="slide cover w">
+		<div>
+			<img src="assets/apple-products-mockup-display.png">
+		</div>
+	</section>
+	<section class="slide cover w">
+		<div>
+			<img src="assets/ll-mobile-desktop.png">
+		</div>
+	</section>
+	<section class="slide cover w">
+		<div>
+			<img src="assets/luke-wroblewski-mobile-first-book.png">
+		</div>
+	</section>
+	<section class="slide cover w">
+		<div>
+			<h2>Progressive enhancement</h2>
+			<img src="assets/from-mobile-to-desktop.png">
+			<ul style="width: 55%;">
+				<li class="next">начинаем вёрстку с&nbsp;мобильного вида;</li>
+				<li class="next">min-width в&nbsp;медиа-запросах;</li>
+				<li class="next">загружаем стили и&nbsp;скрипты в&nbsp;зависимости от&nbsp;окружения;</li>
+				<li class="next">используем маленькие иллюстрации, которые позже заменяем на&nbsp;большие.</li>
+			</ul>
+		</div>
+	</section>
+	<section class="slide cover w">
+		<div>
+			<img src="assets/wireless-last-mile.png">
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<h2>Ilya Grigorik</h2>
+			<p>web performance engineer, Google</p>
+			<p>Блог и презентации — <a href="https://www.igvita.com" target="_blank">www.igvita.com</a></p>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<p>Предзагрузка и предварительный рендеринг</p>
+			<ul>
+				<li>&lt;link rel=&quot;dns-prefetch&quot;&gt;</li>
+				<li>&lt;link rel=&quot;prefetch&quot;&gt;</li>
+				<li>&lt;link rel=&quot;prerender&quot;&gt;</li>
+				<li>&lt;script async&gt;</li>
+			</ul>
+		</div>
+	</section>
+	<section class="slide shout">
+		<div>
+			<h2>matchMedia</h2>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<h2>matchMedia</h2>
+			<pre>
+				<code>if (window.matchMedia("(min-width: 720px)").matches) {</code>
+				<code>  // the view port is <mark>at least 720 pixels</mark> wide</code>
+				<code>} else {</code>
+				<code>  // the view port is <mark>less than 720 pixels</mark> wide</code>
+				<code>}</code>
+			</pre>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<h2>matchMedia</h2>
+			<pre>
+				<code>var mql = window.matchMedia("(min-width: 720px)");</code>
+				<code>mql.addListener(function (mediaQueryList) {</code>
+				<code>  // mediaQueryList.matches</code>
+				<code>  // <mark>true</mark> if the document currently matches</code>
+				<code>  // the media query list; otherwise <mark>false</mark></code>
+				<code>}</code>
+			</pre>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<h2>matchMedia</h2>
+			<pre>
+				<code>Environment.waitForDesktop(function () {</code>
+				<code>  Modernizr.load([</code>
+				<code>    &quot;/styles/desktop.css&quot;,</code>
+				<code>    &quot;/scripts/desktop.js&quot;</code>
+				<code>  ]);</code>
+				<code>});</code>
+			</pre>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<div style="float: left; width: 55%;">
+				<h2>Очередной «убийца» Apple iPad</h2>
+				<h3>Samsung Galaxy Tab P1000</h3>
+				<p>
+					Паспортное разрешение экрана:<br>
+					<strong>1024 &times; 600 точек</strong>
+				</p>
+			</div>
+			<div style="float: right; width: 40%;">
+				<img src="assets/samsung-galaxy-tab-p1000.png">
+			</div>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<h2>matchMedia</h2>
+			<p>Статья, исходный код и примеры &mdash;<br>
+				<a href="http://noteskeeper.ru/1133/" target="_blank">noteskeeper.ru/1133</a></p>
+		</div>
+	</section>
+	<section class="slide shout">
+		<div>
+			<h2>Иллюстрации</h2>
+		</div>
+	</section>
+	<section class="slide cover w">
+		<div>
+			<img src="assets/art-direction.png">
+		</div>
+	</section>
+	<section class="slide shout shout_quiet">
+		<div>
+			<h2>
+				&lt;picture&gt;<br>
+				<a class="quiet" href="http://picture.responsiveimages.org/" target="_blank">picture.responsiveimages.org</a>
+			</h2>
+		</div>
+	</section>
+	<section class="slide shout">
+		<div>
+			<h2><a href="https://github.com/scottjehl/picturefill" target="_blank">Picturefill</a></h2>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<h2>&lt;picture&gt;</h2>
+			<pre>
+				<code>&lt;picture&gt;</code>
+				<code>  &lt;source <mark>srcset</mark>=&quot;examples/images/large.jpg,</code>
+				<code>      examples/images/extralarge.jpg 2x&quot;</code>
+				<code>    <mark>media</mark>=&quot;(min-width: 720px)&quot;&gt;</code>
+				<code>  &lt;source srcset=&quot;&hellip;&quot; media=&quot;&hellip;&quot;&gt;</code>
+				<code>  &lt;img src=&quot;examples/images/small.jpg&quot; alt=&quot;&quot;&gt;</code>
+				<code>&lt;/picture&gt;</code>
+			</pre>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<h2>&lt;picture&gt;</h2>
+			<pre>
+				<code>&lt;picture&gt;</code>
+				<code>  &lt;source srcset=&quot;examples/images/large.jpg <mark>640w</mark>,</code>
+				<code>      examples/images/extralarge.jpg <mark>1280w</mark>&quot;</code>
+				<code>    media=&quot;(min-width: 720px)&quot;&gt;</code>
+				<code>  &lt;source srcset=&quot;&hellip;&quot; media=&quot;&hellip;&quot;&gt;</code>
+				<code>  &lt;img src=&quot;examples/images/small.jpg&quot; alt=&quot;&quot;&gt;</code>
+				<code>&lt;/picture&gt;</code>
+			</pre>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<h2>srcset и sizes</h2>
+			<pre>
+				<code>&lt;img src=&quot;small.jpg&quot;</code>
+				<code>  srcset=&quot;medium.jpg 640w, small.jpg 320w&quot;</code>
+				<code>  <mark>sizes</mark>=&quot;(min-width: 36em) 33.3vw, 100vw&quot;</code>
+				<code>  alt=&quot;Responsive image&quot;/&gt;</code>
+			</pre>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<h2>Srcset and sizes</h2>
+			<p>Вся специфика применения популярно объясняется в статье
+				<a href="http://ericportis.com/posts/2014/srcset-sizes/"
+				   target="_blank">http://ericportis.com/posts/2014/srcset-sizes/</a></p>
+		</div>
+	</section>
+	<section class="slide shout">
+		<div>
+			<h2>Picturefill<br>2.0 vs 1.2</h2>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<pre>
+				<code>&lt;span data-alt=&quot;Responsive image&quot; <mark>data-picture</mark>&gt;</code>
+				<code>  &lt;span data-src=&quot;<mark class="important">mobile.jpg</mark>&quot;&gt;&lt;/span&gt;</code>
+				<code>  &lt;span data-src=&quot;<mark class="important">retina.jpg</mark>&quot; data-media=&quot;</code>
+				<code>    only screen and (-webkit-min-device-pixel-ratio: 1.5),</code>
+				<code>    only screen and (min-resolution: 1.5dppx),</code>
+				<code>    only screen and (min-resolution: 144dpi)&quot;&gt;&lt;/span&gt;</code>
+				<code>  &lt;span data-src=&quot;<mark class="important">desktop.jpg</mark>&quot; data-media=&quot;</code>
+				<code>    (min-width: 720px)&quot;&gt;&lt;/span&gt;</code>
+				<code>&lt;/span&gt;</code>
+			</pre>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<h2>Хостинг картинок + CDN</h2>
+			<p>Обрезка, изменение размеров, конвертирование форматов, сохраниение с нужным качеством</p>
+			<ul>
+				<li class="next"><a href="https://uploadcare.com" target="_blank">Uploadcare</a> (scale, crop)<br>
+					<strong>/crop/200x300/center/</strong>image.jpg</li>
+				<li class="next"><a href="http://cloudinary.com" target="_blank">Cloudinary</a> (scale, crop, <strong>face crop</strong>)<br>
+					<strong>/w_200,h_300,c_fill,g_face/</strong>image.jpg</li>
+			</ul>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<h2>Face crop</h2>
+			<img src="assets/ctrl-freaks-face-crop.jpg">
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<h2>Обрезка по центру</h2>
+			<img src="assets/ctrl-freaks-center-crop.jpg">
+		</div>
+	</section>
+	<section class="slide shout">
+		<div>
+			<h2>Сборка стилей</h2>
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<h2>Простой способ</h2>
+			<pre>
+				<code>@import "layout";</code>
+				<code>@import "component-a";</code>
+				<code>@import "page-1";</code>
+				<code>@import "page-2";</code>
+				<code>@import "layout_desktop";</code>
+				<code>@import "page-1_desktop";</code>
+			</pre>
+		</div>
+	</section>
+	<section class="slide cover w">
+		<div>
+			<img src="assets/build-styles.png">
+		</div>
+	</section>
+	<section class="slide">
+		<div>
+			<h2>Сложный способ</h2>
+			<pre>
+				<code>{</code>
+				<code>  "mobile": [</code>
+				<code>    "layout", "component-a", "page-1", "page-2"</code>
+				<code>  ],</code>
+				<code>  "desktop": [</code>
+				<code>    "layout_desktop", "page-1_desktop"</code>
+				<code>  ]</code>
+				<code>}</code>
+			</pre>
+		</div>
+	</section>
+	<section class="slide shout">
+		<div>
+			<h2>Заключение</h2>
+		</div>
+	</section>
+	<section class="slide"><div>
+		<h2>Спасибо за внимание</h2>
+		<p><strong>Владимир Кузнецов</strong><br>
+			Twitter: <a href="https://twitter.com/mista_k">@mista_k</a><br>
+			Блог: <a href="http://noteskeeper.ru">noteskeeper.ru</a></p>
+		<p>Слайды презентации: <a href="http://bit.ly/wsd-spb-mf">bit.ly/wsd-spb-mf</a>
+	</div></section>
+
+	<div class="progress"><div></div></div>
+
+	<script src="shower/shower.min.js"></script>
+	<!-- Copyright © 2014 Vladimir Kuznetsov -->
+	<script>(function(b,c,a){(c[a]=c[a]||[]).push(function(){try{c.yaCounter545187=new Ya.Metrika({id:545187})}catch(a){}});var e=b.getElementsByTagName('script')[0],d=b.createElement('script'),a=function(){e.parentNode.insertBefore(d,e)};d.async=!0;d.src='//mc.yandex.ru/metrika/watch.js';'[object Opera]'==c.opera?b.addEventListener('DOMContentLoaded',a):a()})(document,window,'yandex_metrika_callbacks');</script><noscript><img src="//mc.yandex.ru/watch/545187" alt=""></noscript>
+</body>
+</html>

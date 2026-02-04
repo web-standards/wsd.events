@@ -1,0 +1,21 @@
+.disclaimer{
+	background: #111;
+	color: white;
+	font-weight: bold;
+}
+.disclaimer h2{
+	color: red;
+}
+#sideEffect{
+	-webkit-transform: translateY(-62%);
+	-ms-transform: translateY(-62%);
+	transform: translateY(-62%);
+}
+#callMeMaybe{
+	-webkit-transform: translateY(-42%);
+	-ms-transform: translateY(-42%);
+	transform: translateY(-42%);
+}
+#initial h2{
+	font-size: 115px;
+}

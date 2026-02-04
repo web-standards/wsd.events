@@ -1,0 +1,2299 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <title>ESNext: Сколько можно ждать</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=792, user-scalable=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="bower_components/shower-bright/styles/screen-d90984e344.css">
+  <!-- <link rel="stylesheet" href="bower_components/highlight.js/src/styles/github.css"> -->
+  <!-- <link rel="stylesheet" href="bower_components/highlight.js/src/styles/xcode.css"> -->
+  <!-- <link rel="stylesheet" href="bower_components/highlight.js/src/styles/tomorrow.css"> -->
+  <link rel="stylesheet" href="bower_components/highlight.js/src/styles/atelier-forest.light.css">
+
+  <script src="bower_components/highlight.js/build/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  <style>
+    @import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+    /* Code highlighting */
+    pre code {
+      font: normal 20pt Ubuntu Mono;
+    }
+
+    code.inline {
+      padding: 4px 7px;
+      background: rgba(0, 0, 0, 0.08);
+      color: #000;
+      line-height: 1;
+      font-family: 'Ubuntu Mono', monospace;
+    }
+
+    /* Style overrides */
+    .slide h2 {
+      margin-bottom: 20px;
+      font-size: 52px;
+      text-align: center;
+    }
+
+    .slide h2 + h3 {
+      font-family: Open Sans Light;
+      line-height: 1em;
+      font-size: 32px;
+      margin-bottom: 20px;
+      text-align: center;
+      opacity: 0.75;
+
+      margin-top: -10px;
+    }
+
+    .slide.loose h2 {
+      margin-bottom: 40px;
+    }
+
+    .slide.loose h2 + h3 {
+      margin-top: -30px;
+      margin-bottom: 40px;
+    }
+
+    .slide p {
+      margin-bottom: 10px;
+      line-height: 1.3em;
+    }
+
+    .slide p.loose {
+      margin-bottom: 20px;
+    }
+
+    .slide > div {
+      padding: 20px 75px 0 75px;
+      width: 100%;
+      height: 576px;
+      box-sizing: border-box;
+      font-size: 22px;
+    }
+
+    .slide:after {
+      bottom: 20px;
+    }
+
+    .slide ul.aligned {
+      margin-left: 25px;
+      margin-bottom: 40px;
+    }
+
+    .slide ul.dense {
+      margin-bottom: 30px;
+    }
+
+    .slide ul.dense li {
+      line-height: 1.7em;
+    }
+
+    /* Layouts */
+    .pane, .two-pane-equal, .two-pane-lefty {
+      display: flex;
+      height: calc(100% - 72px);
+    }
+
+    h3 + .pane,
+    h3 + .two-pane-equal,
+    h3 + .two-pane-lefty {
+      height: calc(100% - 114px);
+    }
+
+    .slide.loose .pane,
+    .slide.loose .two-pane-equal,
+    .slide.loose .two-pane-lefty {
+      height: calc(100% - 92px);
+    }
+
+    .slide.loose  h3 + .pane,
+    .slide.loose  h3 + .two-pane-equal,
+    .slide.loose  h3 + .two-pane-lefty {
+      height: calc(100% - 134px);
+    }
+
+    .slide .two-pane-equal.inline {
+      height: auto;
+      margin-bottom: 40px;
+    }
+
+    .slide .two-pane-equal.inline:last-child {
+      margin-bottom: 0;
+    }
+
+    .two-pane-lefty .left {
+      width: 25%;
+      margin-right: 60px;
+    }
+
+    .two-pane-lefty .left img {
+      width: 100%;
+      height: auto;
+    }
+
+    .two-pane-lefty .right {
+      width: 75%;
+    }
+
+    .two-pane-lefty .right ul {
+      margin-top: -14px;
+    }
+
+    .two-pane-equal .left {
+      width: 50%;
+      margin-right: 20px;
+    }
+
+    .two-pane-equal .right {
+      width: 50%;
+    }
+
+    .align-vertically {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .center-text {
+      text-align: center;
+    }
+
+    .pane.center-text {
+      justify-content: center;
+    }
+
+    .pane.align-vertically.center-text {
+      align-items: center;
+    }
+    /* Layouts */
+
+    /* First slide */
+    .face .deck-title {
+      font-size: 60px;
+      margin-bottom: 10px;
+    }
+
+    .face p.deck-note {
+      font-style: italic;
+      font-size: 30px;
+      color: #999;
+      /* margin-left: 12px; */
+    }
+
+    .face:after {
+      content: '';
+    }
+    /* First slide */
+
+    /* Shout slide */
+    .slide.shout h2 {
+      position: static;
+      top: 0;
+      left: 0;
+      right: 0;
+      -webkit-transform: none;
+      -ms-transform: none;
+      transform: none;
+    }
+
+    .slide.shout p.note {
+      font-style: italic;
+      opacity: 0.75;
+      font-size: 30px;
+      color: white;
+    }
+    /* Shout slide */
+
+    img.fullscreen {
+      width: 100%;
+      box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.5);
+    }
+
+    .li-note {
+      font-style: italic;
+      opacity: 0.8;
+      color: #555;
+      font-size: 0.9em;
+    }
+
+    .code-sample {
+      margin-bottom: 20px;
+    }
+
+    .code-sample:last-child {
+      margin-bottom: 0;
+    }
+
+    .code-sample h3, .slide p.list-header {
+      font-size: 32px;
+      font-family: Open Sans Light;
+      margin-bottom: 10px;
+      line-height: 1;
+    }
+
+    .social-logo {
+      box-shadow: none;
+      width: auto;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+
+    .slide.dev:before {
+      content: 'DEV';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 75px;
+      height: 75px;
+      line-height: 75px;
+      text-align: center;
+      background: gray;
+      color: white;
+      font-weight: bold;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body class="full">
+
+  <section class="slide face">
+    <!-- <img src="images/yandex-logo.png" alt="" style="height: 70px; position: absolute; top: 65px; left: 85px;"> -->
+    <div class="align-vertically center-text">
+      <!-- style="margin-top: 40px;"-->
+      <h2 class="deck-title">ESNext: Сколько можно ждать?</h2>
+      <p class="note deck-note">(или как начать пользоваться уже сегодня)</p>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="align-vertically" style="align-items: center;">
+      <img src="images/slides-qr.png" alt="" style="height: 500px; width: 500px;">
+      <a href="http://bit.ly/1ru9A8z" target="_blank">bit.ly/1ru9A8z</a>
+    </div>
+  </section>
+
+  <!--
+  <section class="slide shout">
+    <div class="align-vertically center-text">
+        <h2>История</h2>
+        <p class="note">(кратко)</p>
+    </div>
+  </section>
+
+  <section class="slide loose">
+    <div>
+      <h2>HTML</h2>
+      <div class="two-pane two-pane-lefty">
+        <div class="left">
+          <img src="images/html5-logo.png" width="256" height="256" alt="">
+        </div>
+        <div class="right">
+          <ul>
+            <li class="next">HTML4: 1990 &mdash; 1997</li>
+            <li class="next">HTML5: 2007 &mdash; 2014</li>
+            <li class="next">HTML5 сейчас: Предложенная Рекомендация</li>
+          </ul>
+          <ul>
+            <li class="next">Разработка и принятие нового стандарта &mdash; 7 лет</li>
+            <li class="next">Во время адаптации было много проблем</li>
+            <li class="next">Мы все его используем, и уже довольно долго</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide loose">
+    <div class="smaller">
+      <h2>ECMAScript</h2>
+      <div class="two-pane two-pane-lefty">
+        <div class="left">
+          <img src="images/js-logo.png" width="256" height="256" alt="">
+        </div>
+        <div class="right">
+          <ul>
+            <li class="next">ES3: 1997 &mdash; 1999</li>
+            <li class="next">ES4: 2008 <span class="li-note">Отклоненный</span></li>
+            <li class="next">ES5: 2008 &mdash; 2009, 2011 <span class="li-note">Текущий</span></li>
+            <li class="next">ES6: 2011 &mdash; 2015 <span class="li-note">Предложения => Черновики</span></li>
+            <li class="next">ES7: 2013 &mdash; ? <span class="li-note">Чучела => Предложения</span></li>
+          </ul>
+          <ul>
+            <li class="next">Итерации разработки быстрее</li>
+            <li class="next">Новая спецификация считается многими нестабильной</li>
+            <li class="next">Все считают, что на данный момент пользоваться нововведениями нельзя</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  -->
+
+  <section class="slide loose">
+    <div>
+      <h2>ECMAScript</h2>
+      <h3>сейчас</h3>
+      <div class="two-pane two-pane-lefty">
+        <div class="left">
+          <img src="images/js-logo.png" width="256" height="256" alt="">
+        </div>
+        <div class="right">
+          <ul>
+            <li class="next">Август 2014 &mdash; Список нововведений заморожен</li>
+            <li class="next">Октябрь 2014 &mdash; Последний черновик стандарта</li>
+            <li class="next">Cередина 2015 &mdash; Ожидаемая дата утверждения</li>
+            <li class="next">За прогрессом можно следить на: <a href="https://esdiscuss.org">esdiscuss.org</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide shout">
+    <div class="align-vertically center-text">
+      <h2>Нововведения</h2>
+      <p class="note">(некоторые)</p>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="align-vertically center-text">
+      <h2>Let и Const</h2>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Let</h2>
+      <div class="pane align-vertically">
+        <div class="two-pane-equal inline">
+          <div class="left">
+            <div class="code-sample">
+              <pre><code class="javascript">// Ошибка: `x` не определена
+console.log(x);
+
+let x;
+
+// undefined
+console.log(x);</code></pre>
+            </div>
+          </div>
+          <div class="right">
+            <div class="code-sample next">
+              <pre><code class="javascript">if (true) {
+  let z = 3;
+}
+
+// Ошибка: `z` не определена
+console.log(z);</code></pre>
+            </div>
+          </div>
+        </div>
+        <div class="code-sample next">
+          <pre><code class="javascript">let y = 1;
+
+// Ошибка: `y` уже объявлена в текущей области видимости
+let y = 2;</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Const</h2>
+      <div class="pane align-vertically">
+        <div class="code-sample">
+          <pre><code class="javascript">// Ошибка: `x` не определена
+console.log(x);
+
+const x = 0;</code></pre>
+        </div>
+        <div class="code-sample next">
+          <pre><code class="javascript">// Ошибка: объявление константы без значения
+const y;
+
+// Ошибка: попытка переопределения константы
+y = 1;</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="align-vertically center-text">
+      <h2>Числа</h2>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Числа</h2>
+      <h3>Новые литералы</h3>
+      <div class="pane align-vertically">
+        <div class="code-sample">
+          <pre><code class="javascript">// Двоичные
+0b1001 === 9            // true
+0B10010 === 18          // true
+
+// Восьмеричные
+0o755 === 493           // true
+0O451 === 297           // true
+
+// Шестнадцатеричные
+0xFF === 255            // true
+0X7C9D === 31901        // true
+</code></pre>
+        </div>
+      </div>
+    <!-- Invalid characters in literals cause Syntax Errors -->
+    <!-- I personally think that lowercase variant is more readable, especially considering octal notation. -->
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Числа</h2>
+      <h3>Улучшения конструктора</h3>
+      <div class="pane align-vertically">
+        <div class="code-sample">
+          <pre><code class="javascript">// Исправленные isNaN(), isFinite()
+Number.isNaN(value)
+Number.isFinite(value)</code></pre>
+        </div>
+        <div class="code-sample next">
+          <pre><code class="javascript">Number.MIN_SAFE_INTEGER                 // -2^53 + 1
+Number.MAX_SAFE_INTEGER                 //  2^53 - 1
+
+Number.isInteger(value)
+Number.isSafeInteger(value)</code></pre>
+        </div>
+        <div class="code-sample next">
+          <pre><code class="javascript">Number.EPSILON                          // &#8776; 2.22e-16
+
+0.1 + 0.2 === 0.3                       // false
+0.3 - (0.1 + 0.2) < Number.EPSILON      // true
+</code></pre>
+        </div>
+      </div>
+  </section>
+
+  <section class="slide">
+    <div class="cover align-vertically center-text">
+      <h2>Объекты</h2>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Объекты</h2>
+      <h3>Сокращенная нотация</h3>
+      <div class="two-pane-equal">
+        <div class="left">
+          <div class="code-sample">
+            <h3>ES5</h3>
+            <pre><code class="javascript">var value = 42;
+
+var obj = {
+  value: value,
+
+  getValue: function() {
+    return this.value;
+  }
+};
+
+obj['foo' + 'bar'] = value;</code></pre>
+          </div>
+        </div>
+        <div class="right">
+          <div class="code-sample">
+            <h3>ES6</h3>
+            <pre><code class="javascript">var value = 42;
+
+var obj = {
+  value,
+
+  getValue() {
+    return this.value;
+  },
+
+  ['foo' + 'bar']: value
+};</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Объекты</h2>
+      <h3>Улучшения конструктора</h3>
+      <div class="pane align-vertically">
+        <div class="code-sample">
+          <pre><code class="javascript">// Исправленное ===
+Object.is(NaN, NaN);                  // true
+Object.is(-0, 0);                     // false
+</code></pre>
+        </div>
+        <div class="code-sample">
+          <pre class="next"><code class="javascript">// Присваивает собственные перечисляемые свойства
+Object.assign({
+  foo: 'foo'
+}, { foo: 'bar'}, { foo: 'baz' });    // { foo: 'baz' }
+</code></pre>
+        </div>
+      </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Объекты</h2>
+      <h3>Улучшения конструктора</h3>
+      <div class="pane align-vertically">
+        <div class="code-sample">
+          <pre><code class="javascript">// Использует геттеры
+let bar = {
+  get foo() {
+    return 'bar';
+  }
+};
+
+Object.assign({}, foo);             // { foo: 'bar' }
+</code></pre>
+        </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Объекты</h2>
+      <h3>Улучшения конструктора</h3>
+      <div class="pane align-vertically">
+        <div class="code-sample">
+          <pre><code class="javascript">// И сеттеры
+let baz = {
+  _foo: 'foo',
+
+  set foo(val) {
+    this._foo = val + 'baz';
+  }
+};
+
+Object.assign(baz, { foo: 'bar' }); // { _foo: 'barbaz', ... }
+</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="align-vertically center-text">
+      <h2>Функции</h2>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Функции</h2>
+      <h3>Arrow функции</h3>
+      <h2 style="margin-bottom: 0; position: absolute; top: 200px; right: 81px; font-size: 120px; font-weight: bold; color: #68615e;">=></h2>
+      <div class="pane align-vertically">
+        <div class="code-sample">
+          <p>Аналогичны анонимным функциям с <code class="inline">bind(this)</code></p>
+          <pre><code class="javascript">let empty = () => {};
+let identify = x => x;
+
+// Объект необходимо заворачивать в ()
+let objectify = value => ({ key: value });</code></pre>
+          <pre><code class="javascript next">let squares = [1, 2, 3].map(x => x * x);
+
+let odds = [1, 2, 3].filter(x => {
+  let isOdd = x % 2 === 0;
+  return isOdd;
+});</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Функции</h2>
+      <h3>Arrow функции</h3>
+      <div class="pane align-vertically">
+        <ul>
+          <li>Упрощенный синтаксис</li>
+          <li>Полезны в местах где меняется контекст: таймеры, обработчики событий</li>
+        </ul>
+        <ul class="next">
+            <li><code class="inline">this</code> привязан лексически, невозможно использовать в качестве конструктора</li>
+            <li>Функции анонимны, нет информации для отладки</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Функции</h2>
+      <h3>Параметры по умолчанию</h3>
+      <div class="pane align-vertically">
+        <div class="code-sample">
+          <p><code class="inline">||</code></p>
+          <pre><code class="javascript">function log(message) {
+  message = message || 'Default message';
+  console.log(message);
+}</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <section class="slide">
+    <div>
+      <h2>Функции</h2>
+      <h3>Параметры по умолчанию</h3>
+      <div class="pane align-vertically">
+        <div class="code-sample">
+          <p><code class="inline">typeof</code></p>
+          <pre><code class="javascript">function substr(str, start, count) {
+  start = (typeof start !== 'undefined') ? start : 0;
+  count = (typeof count !== 'undefined') ?
+          count :
+          str.length - start;
+
+  return str.slice(start, end);
+}</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Функции</h2>
+      <h3>Параметры по умолчанию</h3>
+      <div class="pane align-vertically">
+        <div class="code-sample">
+          <p><code class="inline">arguments</code></p>
+          <pre><code class="javascript">function substr(str, start, count) {
+  var len = arguments.length;
+
+  start = (len > 1) ? start : 0;
+  count = (len > 2) ? count : str.length - start;
+
+  return str.slice(start, end);
+}</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Параметры по умолчанию</h2>
+      <div class="pane align-vertically">
+        <div class="code-sample">
+          <h3>ES6</h3>
+          <pre><code class="javascript">function log(message = 'Default message') {
+  console.log(message);
+}
+
+function substr(str, start = 0, count = str.length - start) {
+  return str.substr(start, count);
+}
+</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Функции</h2>
+      <h3>Rest параметры</h3>
+      <div class="pane align-vertically">
+        <div class="code-sample">
+          <h3>ES5</h3>
+<pre><code class="javascript">function f(head) {
+  var tail = Array.prototype.slice.call(arguments, f.length);
+  return tail;
+}</code></pre>
+        </div>
+        <div class="code-sample">
+          <h3>ES6</h3>
+<pre><code class="javascript">function f(head, ...tail) {
+  return tail;
+}
+
+f(1, 2, 3);     // [2, 3]
+f(1);           // []</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Функции</h2>
+      <h3>Rest параметры</h3>
+      <div class="pane align-vertically">
+        <div class="code-sample">
+          <pre><code class="javascript">function sum(...numbers) {
+  return numbers.reduce(function(memo, n) {
+    return memo + n;
+  });
+}
+
+console.log(sum(1, 2, 3, 4, 5)); // 15</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Функции</h2>
+      <h3>Оптимизация хвостовой рекурсии</h3>
+      <div class="pane align-vertically">
+        <div class="code-sample">
+          <p>Обычная рекурсия</p>
+          <pre><code class="javascript">function factorial(n) {
+  if (n === 0) return 1;
+
+  // Результат рекурсивного вызова модифицируется
+  return n * factorial(n - 1);
+}
+
+console.log(factorial(100000));
+</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Функции</h2>
+      <h3>Оптимизация хвостовой рекурсии</h3>
+      <div class="pane align-vertically">
+        <div class="code-sample">
+          <p>Стек вызовов</p>
+          <pre><code class="">call factorial(3)        // Фрэйм 1
+  call factorial(2)      // Фрэйм 2
+    call factorial(1)    // Фрэйм 3
+      call factorial(0)  // Фрэйм 4 и т.д.
+      return 6
+    return 6
+  return 6
+return 6</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Функции</h2>
+      <h3>Оптимизация хвостовой рекурсии</h3>
+      <div class="pane align-vertically center-text">
+        <img class="fullscreen" src="images/recursion-stack-overflow-small.png" alt="">
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Функции</h2>
+      <h3>Оптимизация хвостовой рекурсии</h3>
+      <div class="pane align-vertically">
+        <div class="code-sample">
+          <p>Хвостовая рекурсия</p>
+          <pre><code class="javascript">function tailFactorial(n, acc = 1) {
+  if (n === 0) return acc;
+
+  // Возвращается чистый вызов рекурсии
+  return tailFactorial(n - 1, n * acc);
+}
+
+// C оптимизацией хвостовой рекурсии ошибки не будет
+console.log(tailFactorial(100000));
+</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Функции</h2>
+      <h3>Оптимизация хвостовой рекурсии</h3>
+      <div class="pane align-vertically">
+        <div class="code-sample">
+          <p>Стек вызовов</p>
+          <pre><code class="">call tailFactorial(3, 1)  // Фрэйм 1
+
+replace args with (2, 3)
+jump tailFactorial        // Использовать фрэйм 1
+
+replace args with (1, 6)
+jump tailFactorial        // Использовать фрэйм 1
+
+replace args with (0, 6)
+jump tailFactorial        // Использовать фрэйм 1</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="cover align-vertically center-text">
+      <h2>Строки</h2>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Строки</h2>
+      <h3>Улучшения прототипа</h3>
+      <div class="pane align-vertically">
+        <div class="code-sample">
+          <pre><code class="javascript">String.prototype.repeat(value)
+
+String.prototype.startsWith(value)
+String.prototype.endsWith(value)
+
+String.prototype.contains(value)
+</code></pre>
+        </div>
+      </div>
+      </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Строки</h2>
+      <h3>Template literals</h3>
+      <div class="pane align-vertically">
+        <h2 style="margin-bottom: 0; position: absolute; top: 220px; right: 74px; font-size: 120px; font-weight: bold; color: #68615e;">`</h2>
+        <div class="code-sample">Простой пример</p>
+          <pre><code class="javascript">let evt = {
+  name: 'WSD',
+  desc: 'awesome'
+};
+
+console.log(`${evt.name} is ${evt.desc}`); // WSD is awesome
+</code></pre>
+        </div>
+
+        <div class="code-sample next">
+          <p>Многострочные литералы</p>
+          <pre><code class="javascript">let multiline = `This string is mutiline
+ actually`;</code></pre>
+        </div>
+<!--
+        <div class="code-sample next">
+          <p>Любое выражение внутри <code class="inline">${...}</code></p>
+          <pre><code class="javascript">var answer = `The answer is: ${ (() => 42)() }`;
+
+console.log(answer);                                                    // The answer is: 42</code></pre>
+        </div> -->
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Строки</h2>
+      <h3>Tags</h3>
+      <div class="pane align-vertically">
+        <div class="code-sample">
+          <p>Сигнатура тега</p>
+          <pre><code class="javascript">function tag(strings, ...values) {
+  // Преобразует строки
+  // Преобразует значения
+
+  // Возвращает строку
+}
+
+// Использование
+tag `Template literal`;
+tag(strings, ...values);
+</code></pre>
+        </div>
+        <div class="code-sample next">
+          <p>Стандартный тег конкатенации</p>
+          <pre><code class="javascript">String.raw(strings, values1, ..., valueN)</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Строки</h2>
+      <h3>Tagged template literals</h3>
+      <div class="pane align-vertically">
+        <div class="code-sample">
+          <p>Простой пример</p>
+          <pre><code class="javascript">function echo() {
+  return 'You shall not pass!';
+}
+
+let naive = echo `I'm the mighty string!`;
+
+console.log(naive); // You shall not pass!
+</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Строки</h2>
+      <h3>Tagged template literals</h3>
+      <div class="pane align-vertically">
+        <div class="code-sample">
+          <p>Полезный пример</p>
+          <pre><code class="javascript">function shoutify(strings, ...values) {
+  values = values.map(function(val) {
+    return val.toUpperCase();
+  });
+
+  return String.raw(strings, ...values);
+}
+
+let loudly = shoutify `You, ${'shall'} not ${'pass'}!`
+
+console.log(loudly); // You, SHALL not PASS!
+</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="align-vertically center-text">
+      <h2>Массивы</h2>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Массивы</h2>
+      <h3>Улучшения конструктора</h3>
+      <div class="pane align-vertically">
+        <div class="code-sample">
+          <p><code class="inline">Array.of</code></p>
+          <pre><code class="javascript">// Произвольное число аргументов -> Массив
+Array.of(element0, ..., elementN)
+
+// Реализация с помощью rest параметров
+Array.of = function(...args) {
+  return args;
+};
+</code></pre>
+        </div>
+      </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Массивы</h2>
+      <h3>Улучшения конструктора</h3>
+      <div class="pane align-vertically">
+        <div class="code-sample">
+          <p><code class="inline">Array.from</code></p>
+          <pre><code class="javascript">// arguments, NodeList -> Массив
+Array.from(arrayLike, mapFn, thisArg)
+
+function f() {
+  return Array.from(arguments);
+}
+f(1, 2, 3); // [1, 2, 3]
+
+Array.from('1234'); // ['1', '2', '3', '4']
+
+Array.from(document.querySelectorAll('div')); // [&lt;div&gt;, ...]
+</code></pre>
+        </div>
+      </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Массивы</h2>
+      <h3>Улучшения прототипа</h3>
+      <div class="pane align-vertically">
+        <div class="code-sample">
+            <p><code class="inline">fill</code></p>
+            <pre><code class="javascript">Array.prototype.fill(value, start = 0, end = this.length)
+
+let arr = [0, 0, 0].fill(1, 0, 3); // [1, 1, 1]</code></pre>
+        </div>
+        <div class="code-sample">
+            <p><code class="inline">copyWithin</code></p>
+            <pre><code class="javascript">Array.prototype.copyWithin(targetStart, sourceStart, sourceEnd)</code></pre>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Массивы</h2>
+      <h3>Улучшения прототипа</h3>
+      <div class="pane align-vertically">
+        <div class="code-sample">
+            <p><code class="inline">find</code> и <code class="inline">findIndex</code></p>
+            <pre><code class="javascript">// Возвращает элемент либо undefined
+Array.prototype.find(callback, thisArg])
+
+// Возвращает индекс либо -1
+Array.prototype.findIndex(callback, thisArg])</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Массивы</h2>
+      <h3>Spread оператор</h3>
+      <div class="pane align-vertically">
+        <div class="code-sample">
+          <p>Вызовы функций</p>
+          <pre><code class="javascript">let arr = [1];
+let missing = [2, 3, 4];
+
+arr.push(...missing);
+
+console.log(arr); // [1, 2, 3, 4];
+</code></pre>
+        </div>
+        <div class="code-sample next">
+          <p>Массивы</p>
+          <pre><code class="javascript">let missing = [2, 3];
+let arr = [1, ...missing, 4];
+
+console.log(arr); // [1, 2, 3, 4]
+</code></pre>
+        </div>
+      </div>
+    </div>
+    <!-- Оператор распространения позволяет выражению быть раскрытым либо в список аргуменотов (для вызовов функций), либо в список элементов (для массивов) -->
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Массивы</h2>
+      <h3>Spread оператор</h3>
+      <div class="pane align-vertically">
+        <div class="code-sample">
+          <p><code class="inline">apply</code> для конструктора</p>
+          <pre><code class="javascript">let parts = [2014, 9, 26];
+
+console.log(new Date(...parts));
+</code></pre>
+        </div>
+        <div class="code-sample next">
+          <p>Любое выражение после <code class="inline">...</code></p>
+          <pre><code class="javascript">console.log([1, ...'23'.split('').map(Number), 4]);
+</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="align-vertically center-text">
+      <h2>Destructive assignment</h2>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Destructive assignment</h2>
+      <h3>Массивы</h3>
+      <div class="pane align-vertically">
+        <div class="code-sample">
+          <h3>ES5</h3>
+          <pre><code class="javascript">var arr = [1, 2, 3];
+
+var first = arr[0];
+var second = arr[1];
+var third = arr[2];</code></pre>
+        </div>
+        <div class="code-sample">
+          <h3>ES6</h3>
+          <pre><code class="javascript">let arr = [1, 2, 3];
+let [first, second, third] = arr;
+
+// Перестановка без дополнительной переменной
+[second, first] = [first, second];</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Destructive assignment</h2>
+      <h3>Массивы</h3>
+      <div class="pane align-vertically">
+        <div class="code-sample">
+          <h3>ES5</h3>
+          <pre><code class="javascript">var nums = [1, 2, 3, 4, 5];
+
+var head = nums[0];
+var tail = nums.slice(1);
+var fourth = nums[3];</code></pre>
+        </div>
+        <div class="code-sample">
+          <h3>ES6</h3>
+          <pre><code class="javascript">let nums = [1, 2, 3, 4, 5];
+
+let [head, ...tail] = nums;
+// Можно игнорировать элементы
+let [,,, fourth] = nums;</code></pre>
+        </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Destructive assignment</h2>
+      <h3>Массивы</h3>
+      <div class="pane align-vertically">
+        <div class="code-sample">
+          <h3>ES5</h3>
+          <pre><code class="javascript">var M = [[1, 2], [3, 4]];
+
+var m12 = M[0][1];
+var m21 = M[1][0];</code></pre>
+        </div>
+        <div class="code-sample">
+          <h3>ES6</h3>
+          <pre><code class="javascript">let M = [[1, 3], [2, 4]];
+
+// Любая вложенность
+let [, m12, [, m22]] = M;</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Destructive assignment</h2>
+      <h3>Объекты</h3>
+      <div class="pane align-vertically">
+        <div class="two-pane-equal inline">
+          <div class="left">
+            <div class="code-sample">
+              <h3>ES5</h3>
+              <pre><code class="javascript">var event = {
+  name: 'WSD',
+  desc: 'awesome'
+};
+
+var evtName = event.name;
+var evtDesc = event.desc;
+
+var name = event.name;
+var desc = event.desc;</code></pre>
+            </div>
+          </div>
+          <div class="right">
+            <div class="code-sample">
+              <h3>ES6</h3>
+              <pre><code class="javascript">let event = {
+  name: 'WSD',
+  desc: 'awesome'
+};
+
+let {
+  name: evtName,
+  desc: evtDesc
+} = event;
+
+let { name, desc } = event;</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Destructive assignment</h2>
+      <h3>Объекты</h3>
+      <div class="pane align-vertically">
+        <div class="two-pane-equal inline">
+          <div class="left">
+            <div class="code-sample">
+              <h3>ES5</h3>
+              <pre><code class="javascript">var deep = {
+  arr: [
+    'first',
+    { second: 'second' },
+    'third'
+  ]
+};
+
+var second = deep.arr[1].second;
+var third = deep.arr[2];</code></pre>
+            </div>
+          </div>
+          <div class="right">
+            <div class="code-sample">
+              <h3>ES6</h3>
+              <pre><code class="javascript">let deep = {
+  arr: [
+    'first',
+    { second: 'second' },
+    'third'
+  ]
+};
+
+let {
+  arr: [, { second }, third]
+} = deep;</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Destructive assignment</h2>
+      <h3>Значения по умолчанию</h3>
+      <div class="pane align-vertically">
+        <div class="code-sample">
+          <h3>ES5</h3>
+          <pre><code class="javascript">var missing = [][0];             // undefined
+
+var found = missing || 1;        // 1</code></pre>
+        </div>
+        <div class="code-sample">
+          <h3>ES6</h3>
+          <pre><code class="javascript">let [missing] = [];              // undefined
+
+let [found = 1] = [];            // 1</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Destructive assignment</h2>
+      <h3>Значения по умолчанию</h3>
+      <div class="pane align-vertically">
+        <div class="code-sample">
+          <h3>ES5</h3>
+          <pre><code class="javascript">var missing = {}['missing'];     // undefined
+
+var found = missing || 1;        // 1</code></pre>
+        </div>
+        <div class="code-sample">
+          <h3>ES6</h3>
+          <pre><code class="javascript">let { missing } = {};            // undefined
+
+let { found = 1 } = {};          // 1</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Destructive assignment</h2>
+      <h3>Применение</h3>
+      <div class="pane align-vertically">
+        <div class="code-sample">
+          <p>Определение параметров функций</p>
+          <pre><code class="javascript">function ajax({ url, method = 'GET', callback = () => {} }) {
+  // Make a request
+}</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Destructive assignment</h2>
+      <h3>Применение</h3>
+      <div class="pane align-vertically">
+        <div class="code-sample">
+          <p>Множественные возвращаемые значения</p>
+          <pre><code class="javascript">function getDimensions() {
+  return { width: 10, height: 5 };
+};
+
+let { width: w, height: h } = getDimensions();
+console.log(w, h);                    // 10 5</code></pre>
+          <pre class="next"><code class="javascript">function getCoordinates() {
+  return [-10, 10];
+};
+
+let [x, y] = getCoordinates();
+console.log(x, y)                     // -10 10</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--
+  <section class="slide">
+    <div class="align-vertically center-text">
+      <h2>Promises</h2>
+    </div>
+  </section>
+
+  <section class="slide loose">
+    <div>
+      <h2>Promises</h2>
+      <h3>Основы</h3>
+      <p class="loose center-text">Созданы для упрощения работы с асинхронными операциями</p>
+      <p class="loose next center-text" style="margin-bottom: 40px;">Прокси между асинхронной операцией и использующим кодом</p>
+      <div class="next">
+        <p class="loose">Могут находится в двух состояниях:</p>
+        <ul class="aligned">
+          <li>Ожидающее <span class="li-note" style="color: darkgoldenrod;">(Pending)</i></li>
+          <li>Завершенное <span class="li-note">(Settled)</span>
+            <ul class="next">
+              <li>Выполненое <span class="li-note" style="color: green;">(Fullfiled)</span></li>
+              <li>Отклоненное <span class="li-note" style="color: red;">(Rejected)</span></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Promises</h2>
+      <h3>Основы</h3>
+      <div class="pane align-vertically">
+        <div class="code-sample">
+          <p>Создание</p>
+          <pre><code class="javascript">let promise = new Promise((resolve, reject) => {
+  let seed = Math.round(Math.random());
+
+  seed ? resolve(seed) : reject(seed);
+});</code></pre>
+          <pre class="next"><code class="javascript">let resolved = Promise.resolve('foo!');
+let rejected = Promise.reject('bar?');</code></pre>
+        </div>
+      </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Promises</h2>
+      <h3>Основы</h3>
+      <div class="pane align-vertically">
+        <div class="code-sample">
+          <p>Использование</p>
+          <pre><code class="javascript">// Можно не указывать один из обработчиков
+promise.then(function fullfilled(result) {
+  // Успех
+}, funciton rejected(reason) {
+  // Ошибка
+})</code></pre>
+<pre class="next"><code class="javascript">// Можно `чейнить` методы
+.catch((reason) => {
+  // Обработка ошибок всех предыдущих обработчиков
+});
+</code></pre>
+        </div>
+      </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Promises</h2>
+      <h3>API</h3>
+      <div class="pane align-vertically">
+        <div class="code-sample next">
+          <pre><code class="javascript">Promise.race(promises).then((result) => {
+  // Результат самой быстрой асинхронной операции
+});
+
+Promise.all(promises).then((results) => {
+  // Результаты всех асинхронных операций, если все они успешны
+});</code></pre>
+        </div>
+      </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Promises</h2>
+      <p>Плюсы</p>
+      <ul class="aligned">
+        <li>Делают асинронный код похожим на синхронный</li>
+        <li>Легче работать с множественными асинхронными операциями</li>
+        <li>Будущая унификация браузерных API</li>
+      </ul>
+      <div class="next">
+        <p>Минусы</p>
+        <ul class="aligned">
+          <li>Нет метода отменить их</li>
+          <li>Нельзя следить за прогрессом асинхронной операции</li>
+          <li>Поддержка отладки еще в разработке</li>
+        </ul>
+      </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Promises</h2>
+      <h3>Поддержка</h3>
+      <div class="pane center-text">
+        <img style="height: 100%; width: auto" src="images/caniuse-promise.png" alt="">
+      </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Promises</h2>
+      <h3>Использование</h3>
+      <div>
+        <p>Окружения</p>
+        <ul class="aligned">
+          <li>Браузеры &mdash; <a target="_blank" href="https://github.com/jakearchibald/es6-promise">es6-promise</a></li>
+          <li>Node.js &mdash; <a target="_blank" href="https://github.com/then/promise">promise</a> (с поддержкой специфичных методов)</li>
+        </ul>
+        <div class="next">
+          <p>Библиотеки</p>
+          <ul class="aligned">
+            <li><a target="_blank" href="https://github.com/tildeio/rsvp.js">RSVP.js</a></li>
+            <li><a target="_blank" href="https://github.com/kriskowal/q">Q.js</a></li>
+            <li><a target="_blank" href="https://github.com/petkaantonov/bluebird">Bluebird</a></li>
+          </ul>
+        </div>
+        <ul class="aligned next">
+          <li><a href="https://www.promisejs.org" target="_blank">promisejs.org</a></li>
+        </ul>
+      </div>
+  </section>
+  -->
+
+  <section class="slide">
+    <div class="align-vertically center-text">
+      <h2>Модули</h2>
+    </div>
+  </section>
+
+  <section class="slide loose">
+    <div>
+      <h2>Модули</h2>
+      <h3>Сейчас</h3>
+      <p class="list-header">AMD &mdash; <a href="http://requirejs.org/docs/whyamd.html" target="_blank">Require.js</a></p>
+      <ul class="aligned" style="margin-bottom: 90px;">
+        <li>Асинхронная загрузка</li>
+        <li>Громоздкий синтаксис</li>
+      </ul>
+      <img src="images/requirejs-logo.png" alt="" style="position: absolute; top: 120px; right: 35px;">
+      <div class="next">
+        <p class="list-header">CommonJS &mdash; Node.js, <a href="http://browserify.org/" target="_blank">Browserify</a></p>
+        <ul class="aligned">
+          <li>Компактный синтаксис</li>
+          <li>Синхронная загрузка</li>
+        </ul>
+        <img src="images/commonjs-logo.png" alt="" style="position: absolute; top: 390px; right: 0;">
+      </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Модули</h2>
+      <h3>ES6</h3>
+      <div class="pane align-vertically" style="align-items: center;">
+        <ul class="aligned">
+          <li>Компактный декларативный синтаксис</li>
+          <li>Поддержка синхронной и асинхронной загрузки</li>
+          <li>Июль 2014 &mdash; синтаксис был окончательно утвержден</li>
+        </ul>
+      </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Модули</h2>
+      <h3>Импорт и экспорт по умолчанию</h3>
+      <div class="pane align-vertically">
+        <div class="code-sample">
+          <p><code class="inline">utils.js</code></p>
+          <pre style="width: 100%;"><code class="javascript">export default function (msg) {
+  console.log(msg);
+};
+</code></pre>
+        </div>
+        <div class="code-sample">
+          <p><code class="inline">main.js</code></p>
+          <pre style="width: 100%;"><code class="javascript">import log from 'utils';
+
+log('Hello, World!')</code></pre>
+        </div>
+      </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Модули</h2>
+      <h3>Именованный импорт и экспорт</h3>
+      <div class="pane align-vertically">
+        <div class="code-sample">
+          <p><code class="inline">utils.js</code></p>
+          <pre><code class="javascript">export function logMessage(msg) {
+  console.log(msg);
+}
+
+function makeAssertion(expr, message) {
+  console.assert(expr, message);
+}
+
+export { logMessage as log, makeAssertion as assert };
+</code></pre>
+        </div>
+      </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Модули</h2>
+      <h3>Именованный импорт и экспорт</h3>
+      <div class="pane align-vertically">
+        <div class="code-sample">
+          <p><code class="inline">math.js</code></p>
+          <pre><code class="javascript">export function isOdd(n) {
+  return n % 2 > 0;
+}
+
+function randomInt(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+// Экспорт по умолчанию также именованный
+export { randomInt as default };</code></pre>
+        </div>
+      </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Модули</h2>
+      <h3>Именованный импорт и экспорт</h3>
+      <div class="pane align-vertically">
+        <div class="code-sample">
+          <p><code class="inline">math.js</code></p>
+          <pre style="width: 100%;"><code class="javascript">import { log, error } from 'utils';
+
+// Импорт по умолчанию вместе с именованным
+import random_int, { isOdd as is_odd } from 'math';
+
+log(random_int(1, 5));
+
+assert(is_odd(2), '2 это четное число!');</code></pre>
+        </div>
+        <div class="code-sample">
+          <p><code class="inline">app.js</code></p>
+          <pre style="width: 100%;"><code class="javascript">import { default as random_int } from 'math';</code></pre>
+        </div>
+      </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Модули</h2>
+      <h3>Импорт в качестве объекта</h3>
+      <div class="pane align-vertically">
+        <div class="code-sample">
+          <p><code class="inline">utils.js</code></p>
+          <pre style="width: 100%;"><code class="javascript">export function log(msg) {
+  console.log(msg);
+}
+
+export function assert(msg) {
+  console.assert(expr, message);
+}
+</code></pre>
+        </div>
+        <div class="code-sample">
+          <p><code class="inline">main.js</code></p>
+          <pre style="width: 100%;"><code class="javascript">import * as logger from 'logger';
+
+logger.log('Hello, World!');
+logger.assert(true === false, 'True это не false!')</code></pre>
+        </div>
+      </div>
+  </section>
+
+  <section class="slide loose">
+    <div>
+      <h2>Модули</h2>
+      <h3>Недосказанное</h3>
+      <ul class="aligned">
+        <li>Циклические зависимости</li>
+        <li>Реэкспортирование</li>
+        <li>API: <code class="inline">System.import</code>, <code class="inline">System.module</code>, <code class="inline">System.set</code>, <code class="inline">System.define</code></li>
+        <li>Загрузчик модулей: <a href="https://github.com/ModuleLoader/es6-module-loader" target="_blank">es6-module-loader</a></li>
+        <li>Элемент <code class="inline">&lt;module&gt;</code></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="slide loose">
+    <div>
+      <h2>Модули</h2>
+      <h3>Использование</h3>
+      <p class="list-header">Изолированно:</p>
+      <ul class="aligned">
+        <li><a href="https://github.com/esnext/es6-module-transpiler" target="_blank">es6-module-transpiler</a></li>
+        <li>Есть плагины для <a href="https://github.com/joefiorini/grunt-es6-module-transpiler" target="_blank">Grunt</a>, <a href="https://github.com/ryanseddon/gulp-es6-module-transpiler" target="_blank">Gulp</a>, <a href="https://github.com/joliss/broccoli-es6-concatenator" target="_blank">Brocolli</a></li>
+      </ul>
+      <div class="next">
+        <p class="list-header">С зависимостями:</p>
+        <ul class="aligned">
+          <li><a href="https://github.com/ModuleLoader/es6-module-loader" target="_blank">es6-module-loader</a></li>
+          <li><a href="https://github.com/systemjs/systemjs" target="_blank">systemjs</a></li>
+          <li><a href="http://jspm.io" target="_blank">jspm.io</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="align-vertically center-text">
+      <h2>И это все?!</h2>
+    </div>
+  </section>
+
+  <section class="slide loose">
+    <div>
+      <h2>Нет конечно!</h2>
+      <div class="two-pane-equal inline">
+        <div class="left">
+          <ul class="aligned">
+            <li>Классы</li>
+            <li>Итераторы</li>
+            <li>Map + WeakMap</li>
+            <li>Set + WeakSet</li>
+            <li>Цикл <code class="inline">for...of</code></li>
+          </ul>
+        </div>
+        <div class="right next">
+          <ul class="aligned">
+            <li>Promises</li>
+            <li>Генераторы</li>
+            <li>Прокси</li>
+            <li>Символы</li>
+            <li>Math, RegExp</li>
+            <li>Улучшенный Юникод</li>
+          </ul>
+        </div>
+      </div>
+      <p class="center-text next"><a href="http://wiki.ecmascript.org/doku.php?id=harmony:proposals" target="_blank">И многое другое</a></p>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="align-vertically center-text">
+      <h2>ES7</h2>
+    </div>
+  </section>
+
+  <section class="slide loose">
+    <div>
+      <h2>Object.observe</h2>
+      <p class="list-header">Что используется сейчас:</p>
+      <ul class="aligned" style="margin-bottom: 10px;">
+        <li>Dirty checking &mdash; <a href="https://docs.angularjs.org/guide/scope" target="_blank">Angular.js</a></li>
+        <li>Объекты-контейнеры &mdash; <a href="http://emberjs.com/api/classes/Ember.Object.html" target="_blank">Ember.js</a>, <a href="http://knockoutjs.com/documentation/observables.html" target="_blank">Knockout.js</a></li>
+      </ul>
+      <div class="code-sample next">
+        <pre><code class="javascript">let event = Ember.Object.create({
+  name: 'WSD',
+  desc: 'awesome'
+});
+event.get('name');
+event.set('desc', 'super awesome');</code></pre>
+      </div>
+      <div class="next">
+        <p><code class="inline">Object.observe</code></p>
+        <ul class="aligned">
+          <li>Позволяет асинхронно наблюдать за изменениями объектов</li>
+          <li><s style="text-decoration-color: rgba(0, 0, 0, 0.75);">Без дополнительных танцев с бубном</s></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Object.observe</h2>
+      <h3>Применение</h3>
+      <div class="pane align-vertically">
+        <div class="code-sample">
+          <p><code class="inline">Object.observe</code></p>
+<pre><code class="javascript">let obj = {};
+
+// Начать наблюдение
+Object.observe(obj, function(changes) {
+    changes.forEach(function({ type, name, oldValue }) {
+        console.log(type, name, oldValue);
+    });
+});
+
+// Оставить в покое
+Object.unobserve(obj);</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Object.observe</h2>
+      <h3>Применение</h3>
+      <div class="pane align-vertically">
+        <div class="code-sample">
+          <p>
+            Можно наблюдать только интересующие изменения
+            <pre><code class="javascript">let obj = {};
+let interest = ['add', 'update', 'delete'];
+
+// Начать наблюдение
+Object.observe(obj, (changes) => {
+  // Использовать изменения
+}, interest);
+</code></pre>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Object.observe</h2>
+      <h3>Применение</h3>
+      <div class="pane align-vertically">
+        <div class="code-sample">
+          <p>Пользовательские события</p>
+<pre><code class="javascript">let obj = {
+  _foo: 'foo',
+
+  set foo(value) {
+    let event = {
+      type: 'special-event',
+      name: 'set-value',
+      oldValue: this._foo,
+      value: value
+    };
+
+    Object.getNotifier(this).notify(event);
+  }
+};</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Object.observe</h2>
+      <h3>Применение</h3>
+      <div class="pane align-vertically">
+        <div class="code-sample">
+          <p>Пользовательские события</p>
+<pre><code class="javascript">let interest = ['special-event'];
+
+Object.observe(obj, (changes) => {
+  console.log(changes[0]);
+}, interest);
+
+obj.foo = 'bar';</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide loose">
+    <div>
+      <h2>Object.observe</h2>
+      <h3>Поддержка</h3>
+      <ul class="aligned">
+        <li>Включен по умолчанию в Chrome 36</li>
+        <li>Доступен в Node.js (с флагом <code class="inline">--harmony</code>)</li>
+        <li>Есть <a href="https://github.com/polymer/observe-js">полифил</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="slide loose">
+    <div>
+      <h2>Что ещё?</h2>
+      <ul class="aligned">
+        <li>SIMD</li>
+        <li>Литералы построения массивов и генераторов</li>
+        <li>Параллельный JavaScript</li>
+        <li>Типизированные объекты (Typed objects)</li>
+        <li>Улучшения событийного цикла</li>
+        <li>и многое другое ...</li>
+      </ul>
+      <p>Можно искать по запросу <code class="inline">es7 strawman</code></p>
+      <p>И следить на <a href="https://esdiscuss.org">esdiscuss.org</a></p>
+    </div>
+  </section>
+
+  <section class="slide shout">
+    <div class="align-vertically center-text">
+      <h2>Поддержка</h2>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="align-vertically center-text">
+      <h2>Где смотреть?</h2>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2><a href="http://kangax.github.io/compat-table/es6" target="_blank">Таблица совместимости</a></h2>
+      <div class="pane align-vertically center-text">
+        <img style="height: 90%; width: auto;" class="fullscreen" src="images/kangax-es6-table-sorted.png" alt="">
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2><a href="http://caniuse.com/#search=promise" target="_blank">Caniuse</a></h2>
+      <div class="pane align-vertically center-text">
+        <img style="height: 90%; width: auto;" class="fullscreen" src="images/caniuse-promise.png" alt="">
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="align-vertically center-text">
+      <h2>Окружения</h2>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Современные браузеры</h2>
+      <div class="pane align-vertically" style="align-items: center;">
+        <ul class="aligned">
+          <li class="next">12 / 106 &mdash; <a href="https://status.modern.ie/?sort=technology" target="_blank">IE 11</a></li>
+          <li class="next">39 / 106 &mdash; Safari 7.1, 8</li>
+          <li class="next">63 / 106 &mdash; Opera 24 <b>*</b></li>
+          <li class="next">69 / 106 &mdash; Chrome 39 <b>*</b>
+          <li class="next">80 / 106 &mdash; Firefox 34</li>
+        </ul>
+        <p class="next"><b>*</b> с флагом <code class="inline">--enable-javascript-harmony</code></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Node.js</h2>
+      <div class="pane align-vertically center-text">
+        <p>50 / 101 c флагом <code class="inline">--harmony</code></p>
+        <img src="images/node-es6-options.png" alt="" style="height: 85%; widht: auto;">
+      </div>
+    </div>
+  </section>
+
+  <section class="slide shout">
+    <div class="align-vertically center-text">
+      <h2>Всё плохо?</h2>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Не совсем ...</h2>
+      <div class="pane center-text next">
+        <img style="height: 100%; width: auto;" src="images/compilers-to-the-resque.jpg" alt="">
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2><a href="https://github.com/google/traceur-compiler" target="_blank">Traceur</a></h2>
+      <p class="list-header">Плюсы:</p>
+      <ul class="aligned">
+        <li>Весь в себе, не нуждается в полифилах</li>
+        <li>Очень быстро можно начать использовать, подключив на страницу</li>
+        <li>Есть плагины для <a href="https://github.com/aaronfrost/grunt-traceur" target="_blank">Grunt</a>, <a href="https://github.com/sindresorhus/gulp-traceur" target="_blank">Gulp</a>, <a href="https://github.com/sindresorhus/broccoli-traceur" target="_blank">Brocolli</a>, <a href="https://github.com/thlorenz/es6ify" target="_blank">Browserify</a></li>
+      </ul>
+      <div class="next">
+        <p class="list-header">Минусы:</p>
+        <ul class="aligned">
+          <li>Производит нечитаемый код, но есть поддежка source maps</li>
+          <li>Нуждается в рантайме для использования сгенерированного кода</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2><a href="https://github.com/sebmck/6to5" target="_blank">6to5</a></h2>
+      <p class="list-header">Плюсы:</p>
+      <ul class="aligned">
+        <li>Генерирует простой и понятный для чтения код</li>
+        <li>Не нуждается в рантайме</li>
+        <li>Есть плагины для <a href="https://github.com/sindresorhus/grunt-6to5" target="_blank">Grunt</a>, <a href="https://github.com/sindresorhus/gulp-6to5" target="_blank">Gulp</a>, <a href="https://github.com/very-geek/broccoli-6to5-transpiler" target="_blank">Brocolli</a>, <a href="https://github.com/sebmck/6to5-browserify" target="_blank">Browserify</a></li>
+      </ul>
+      <div class="next">
+        <p class="list-header">Минусы:</p>
+        <ul class="aligned">
+          <li>Нельзя использовать на лету, подразумевает шаг препроцессинга</code></li>
+          <li>Нет встроенных полифилов, их нужно подключать самостоятельно</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Не хочу использовать всё!</h2>
+      <div class="pane center-text align-vertically">
+        <p>
+          <a href="https://github.com/olov/defs" target="_blank">Let и Const</a>
+        </p>
+        <div class="next">
+          <p>
+            <a href="https://github.com/esnext/es6-spread" target="_blank">Spread оператор</a>
+          </p>
+        </div>
+        <div class="next">
+          <p>
+            <a href="https://github.com/esnext/es6-default-params" target="_blank">Параметры по умолчанию</a>
+          </p>
+        </div>
+        <div class="next">
+          <p>
+            <a href="https://github.com/esnext/es6-templates" target="_blank">Template literals</a>
+          </p>
+        </div>
+        <div class="next">
+          <p>
+            <a href="https://github.com/esnext/es6-arrow-function" target="_blank">Arrow функции</a>
+          </p>
+        </div>
+        <div class="next">
+          <p class="loose">
+            <a href="https://github.com/paulmillr/es6-shim" target="_blank">Улучшения встроенных объектов</a>
+          </p>
+        </div>
+        <div class="next">
+          <p class="center-text">
+            <a href="https://github.com/addyosmani/es6-tools" target="_blank">Многое другое</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide shout">
+    <div class="align-vertically center-text">
+      <h2>Разработка</h2>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="align-vertically center-text">
+      <h2>Текстовые редакторы</h2>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2><a href="https://github.com/Benvie/JavaScriptNext.tmLanguage" target="_blank">Sublime Text</a></h2>
+      <div class="pane align-vertically center-text">
+        <img src="images/sublime-syntax-highlighting.png" height="90%" alt="">
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2><a href="https://www.youtube.com/watch?v=jbfkcmxLLKY" target="_blank">Webstorm</a></h2>
+      <div class="pane align-vertically center-text">
+        <img src="images/webstorm-syntax-highlighting.png" height="90%" alt="">
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2><a href="https://github.com/othree/yajs.vim" target="_blank">Vim</a></h2>
+      <div class="pane align-vertically center-text">
+        <img src="images/vim-syntax-highlighting.png" height="90%" alt="">
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="align-vertically center-text">
+      <h2>Инструменты</h2>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>JSHint</h2>
+      <h3>Да!</h3>
+      <div class="pane align-vertically center-text">
+        <p class="loose"><a href="http://www.jshint.com/docs/options/#esnext" target="_blank">jshint.com/docs/options/#esnext</a></p>
+        <img src="images/jshint-es6.png" width="80%" alt="">
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>JSCS</h2>
+      <h3>Да!</h3>
+      <div class="pane align-vertically center-text">
+          <p><a href="https://github.com/jscs-dev/node-jscs#--esnext" target="_blank">github.com/jscs-dev/node-jscs#--esnext</a></p>
+          <p class="loose"><a href="https://github.com/jscs-dev/node-jscs#esnext" target="_blank">github.com/jscs-dev/node-jscs#esnext</a></p>
+          <img class="fullscreen" style="width: 80%; height: auto;" src="images/jscs-es6.png" width="80%" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>UglifyJS</h2>
+      <h3>Пока нет</h3>
+      <div class="pane align-vertically center-text">
+          <p class="loose"><a href="https://github.com/mishoo/UglifyJS2/issues/448" target="_blank">Тикет</a></p>
+          <img class="fullscreen" style="width: 80%; height: auto;" src="images/uglify-es6.png" width="80%" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Tern</h2>
+      <h3>Пока нет, но</h3>
+      <div class="pane align-vertically center-text">
+          <p class="loose"><a href="https://github.com/marijnh/tern/issues/116" target="_blank">Тикет</a></p>
+          <img class="fullscreen" style="width: 70%; height: auto;" src="images/tern-es6-issue.png" width="80%" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Esprima</h2>
+      <h3>В разрабоке</h3>
+      <div class="pane align-vertically center-text">
+          <p class="loose"><a href="https://github.com/ariya/esprima/tree/harmony" target="_blank">Экспериментальная ветка</a></p>
+          <img class="fullscreen" style="width: 70%; height: auto;" src="images/esprima-es6.png" width="80%" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="align-vertically center-text">
+      <h2>Песочницы</h2>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Только ES6</h2>
+      <p class="list-header"><a href="http://google.github.io/traceur-compiler/demo/repl.html" target="_blank">Traceur REPL</a></p>
+      <ul class="aligned">
+        <li>Показывает сгенерированный код</li>
+        <li>Можно посмотреть на все опции компилятора онлайн</li>
+        <li>Нельзя сохранять</li>
+      </ul>
+
+      <p class="list-header"><a href="http://www.es6fiddle.com" target="_blank">ES6 Fiddle</a></p>
+      <ul class="aligned">
+        <li>Простой</li>
+        <li>Есть небольшие примеры кода</li>
+        <li>Можно сохранять, а также встраивать</li>
+      </ul>
+    </div>
+  </section>
+
+  <!--
+  <section class="slide">
+    <div>
+      <h2>Только ES6</h2>
+      <h3>Пример</h3>
+      <div class="pane align-vertically">
+        <iframe width="100%" height="300" frameborder="0" allowfullscreen src="http://www.es6fiddle.com/embed/i1j9js2p/"></iframe>
+      </div>
+    </div>
+  </section>
+  -->
+
+  <section class="slide loose">
+    <div>
+      <h2>Общего назначения</h2>
+      <p class="list-header">Traceur из коробки</p>
+      <ul class="aligned">
+        <li><a href="http://jsbin.com" target="_blank">JS Bin</a></li>
+        <li><a href="http://codepen.io" target="_blank">Codepen</a></li>
+      </ul>
+
+      <p class="list-header">Без встроенной поддержки Traceur</p>
+      <ul class="aligned">
+        <li><a href="http://jsfiddle.net" target="_blank">JSFiddle</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="slide shout">
+    <div class="align-vertically center-text">
+      <h2>Кто использует?</h2>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2><a href="https://github.com/google/traceur-compiler/blob/master/src/Compiler.js" target="_blank">Traceur</a></h2>
+      <div class="pane align-vertically center-text">
+        <img class="fullscreen" style="height: 95%; width: auto;" src="images/traceur-es6.png" alt="">
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2><a href="https://github.com/angular/router/blob/master/src/index.js" target="_blank">AngularJS 2.0</a></h2>
+      <div class="pane align-vertically center-text">
+        <img class="fullscreen" style="width: 100%; heigt: auto;" src="images/angular-2-es6.png" alt="">
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2><a href="https://github.com/emberjs/ember.js/blob/master/packages/ember-application/lib/main.js" target="_blank">Ember.js</a></h2>
+      <div class="pane align-vertically center-text">
+        <img class="fullscreen" style="height: 95%; width: auto;" src="images/ember-es6.png" alt="">
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2><a href="https://github.com/tildeio/rsvp.js/blob/master/lib/rsvp.js" target="_blank">RSVP.js</a></h2>
+      <div class="pane align-vertically center-text">
+        <img class="fullscreen" style="height: 95%; width: auto;" src="images/rsvp-es6.png" alt="">
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Кто ещё?</h2>
+      <div class="pane align-vertically" style="align-items: center;">
+        <ul class="aligned">
+          <li class="next"><a href="https://github.com/lodash/lodash-es6" target="_blank">Lodash</a></li>
+          <li class="next"><a href="https://github.com/tildeio/htmlbars" target="_blank">HTMLBars</a></li>
+          <li class="next"><a href="https://github.com/tildeio/ember-extension" target="_blank">Ember extension</a></li>
+          <li class="next"><a href="https://github.com/olov/defs" target="_blank">Defs</a></li>
+        </ul>
+
+        <p class="next"><a href="https://github.com/sindresorhus/esnext-showcase" target="blank">Больше примеров!</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide shout">
+    <div class="align-vertically center-text">
+      <h2>В заключение</h2>
+    </div>
+  </section>
+
+  <section class="slide loose">
+    <div>
+      <h2>Так стоит ли использовать?</h2>
+      <div class="next">
+        <p class="list-header">Где не стоит:</p>
+        <ul class="aligned">
+          <li>Большие объемы кода на ES5/ES3 (сразу)</li>
+          <li>Код, для которого критична производительность</li>
+          <li>Код, для которого критичен размер</li>
+        </ul>
+      </div>
+      <div class="next">
+        <p class="list-header">Где можно и нужно:</p>
+        <ul class="aligned">
+          <li>Изолированные модули</li>
+          <li>Прототипы!</li>
+          <li>Собственные библиотеки</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Будущее сейчас</h2>
+      <h3>
+        и оно прекрасно
+      </h3>
+      <div class="pane align-vertically center-text">
+        <img class="fullscreen" style="width: 90%; height: auto;" src="images/the-future-is-now.jpg" alt="">
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Вопросы?</h2>
+      <div class="pane align-vertically center-text">
+        <p class="loose">
+          <img class="social-logo" src="images/twitter-icon-32.png" alt="" width="32" height="32">
+          <a href="https://twitter.com/dentuzhik" target="_blank" style="display: inline-block; height: 30px;">@dentuzhik</a>
+        </p>
+        <p class="loose">
+          <img class="social-logo" src="images/github-icon-32.png" alt="" width="32" height="32">
+          <a href="https://github.com/dentuzhik" target="_blank">dentuzhik</a>
+        </p>
+        <p class="loose">
+          <a href="https://gist.github.com/dentuzhik/bdf930b69147139896e4" target="_blank">Ссылки</a>
+        </p>
+        <p>
+          <a href="http://bit.ly/1ru9A8z">bit.ly/1ru9A8z</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script src="bower_components/shower-core/shower.min.js"></script>
+</body>
+</html>

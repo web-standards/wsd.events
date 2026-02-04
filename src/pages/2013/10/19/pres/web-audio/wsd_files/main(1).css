@@ -1,0 +1,151 @@
+  .impress-enabled .step{
+    opacity: 0;
+  }
+
+  body{
+    padding: 10px;
+    background-color: transparent;
+  }
+
+  pre{
+font-size: 24px;
+line-height: 36px;
+white-space: pre;
+display: inline-block;
+width: auto;
+min-width: 95% !important;
+  }
+
+  h2{
+    color:rgb(0, 139, 224);
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+
+  h3{
+    color:rgb(103, 143, 0);;
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+
+  .play,
+  .pause{
+    margin: 10px auto 0 auto;
+    width: 100%;
+    height: 50px;
+    line-height: 40px;
+    font-size: 30px;
+  }
+
+  .play{display: none;}
+  .readytoplay .play{display: block;}
+  .pause{display: none;}
+  .playing .play{display: none;}
+  .playing .pause{display: block;}
+
+  .scheme{
+    width: 100%;
+    min-height: 80px;
+    min-width: 415px;
+    background-size: contain;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    margin: 10px 0;
+  }
+
+  .block,
+  .block-arrow{
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+  }
+
+  .block{
+    border: 2px solid gray;
+    min-width:  100px;
+    min-height: 100px;
+    line-height: 100px;
+  }
+
+  .block-arrow{
+    border-bottom: 2px solid gray;
+    min-width:  50px;
+    min-height: 50px;
+  }
+
+.legend{
+  vertical-align: top;
+}
+
+  .legend ul{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    margin-top: 10px;
+    vertical-align: top;
+  }
+
+
+
+  .legend li{
+    padding: 0;
+    margin: 0;
+    min-height: 50px;
+    line-height: 50px;
+    border-top:    1px solid rgba(0,0,0,0.2);
+    text-align: left;
+  }
+
+  .legend li:last-child{
+    border-bottom:    1px solid rgba(0,0,0,0.2);
+  }
+
+  .legend label,
+  .legend input{
+    display: inline-block;
+    height: 20px;
+    font-size: 24px;
+    margin: 0 10px 0 0;
+    vertical-align: middle;
+    line-height: 20px;
+  }
+
+  input[type=range]{
+    width: 200px;
+  }
+
+
+input[type='range'] {
+  -webkit-appearance: none;
+  background-color: gray;
+  height: 2px;
+  border-radius: 15px;
+  padding: 0 3px;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  vertical-align: middle;
+  -webkit-appearance: none;
+  background-color: #444;
+  width: 16px;
+  height: 16px;
+  border-radius: 16px;
+}
+
+
+.btn-primary{
+  background: rgba(0, 112, 175, 1);
+  border-radius: 0;
+}
+
+.btn-primary:hover{
+  background: rgba(0, 100, 160, 1);
+}
+
+.btn-success{
+  background: #51a351;
+}
+
+.btn-success:hover{
+  background: #519051;
+}

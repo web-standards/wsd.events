@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Ribbon theme for Shower</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=792, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link rel="stylesheet" href="themes/2gis-shower-theme/styles/screen-d90984e344.css">
+
+	<style>
+		.slide.subsection {
+			background: #141414;
+			}
+
+		.breadcrumbs {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			text-align: center;
+			font-size: 0;
+			}
+		.breadcrumbs:before {
+			display: inline-block;
+			vertical-align: middle;
+			width: 0;
+			height: 100%;
+			content: '';
+			}
+			.breadcrumbs__item {
+				display: inline-block;
+				vertical-align: middle;
+				font: 32px/1 'Suisse Cond', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+				color: #dcc587;
+				}
+			.breadcrumbs__item:before {
+				content: '→';
+				font: 32px/1 Arial, Helvetica, sans-serif;
+				margin: 0 6px;
+				color: #575659;
+				}
+			.breadcrumbs__item:first-child {
+				color: #a78858;
+				}
+			.breadcrumbs__item:first-child:before {
+				content: '';
+				}
+
+		.sum {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			text-align: center;
+			font-size: 0;
+			white-space: nowrap;
+			}
+		.sum:before {
+			display: inline-block;
+			vertical-align: middle;
+			width: 0;
+			height: 100%;
+			content: '';
+			}
+			.sum__item {
+				position: relative;
+				display: inline-block;
+				vertical-align: middle;
+				font: 64px/1 'Suisse Cond', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+				color: #d4831a;
+				height: 64px;
+				margin: 0 30px;
+				text-align: center;
+				}
+			.sum__item:before {
+				position: absolute;
+				left: -44px;
+				top: 20px;
+				content: '+';
+				font: 32px/1 Arial, Helvetica, sans-serif;
+				margin: 0 6px;
+				color: #999;
+				}
+			.sum__item_result:before {
+				content: '=';
+				}
+			.sum__item:first-child:before {
+				display: none;
+				}
+				.sum__item-num {
+					display: inline-block;
+					}
+				.sum__item-label {
+					position: absolute;
+					top: 120%;
+					left: 50%;
+					text-align: center;
+					width: 200px;
+					margin: 0 0 0 -100px;
+					color: #444;
+					font: 32px/1 'Suisse Cond', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+					}
+
+		.clean {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			text-align: center;
+			font-size: 0;
+			}
+		.clean:before {
+			display: inline-block;
+			vertical-align: middle;
+			width: 0;
+			height: 100%;
+			content: '';
+			}
+			.clean h2 {
+				display: inline-block;
+				vertical-align: middle;
+				font: 32px/48px 'Suisse Cond', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+				color: #000;
+				}
+
+		.slide.listing {
+			background: #141414;
+			}
+		.slide.listing:after {
+			content: '';
+			}
+			.slide.listing pre code {
+				font: 16px/20px 'Monaco', monospace;
+				color: #fff;
+				}
+				.listing__block,
+				.listing__selector {
+					color: #a28959;
+					}
+				.listing__element,
+				.listing__property {
+					color: #d5c587;
+					}
+				.listing__comment {
+					font: italic 16px/20px 'Monaco', monospace;
+					color: #585659;
+					}
+				.listing__attr {
+					color: #8f9c6c;
+					}
+				.listing__selection {
+					background: #3c4043;
+					border-radius: 3px;
+					}
+
+		.slide.cover_label h2 {
+			font-size: 32px;
+			color: #666;
+			text-align: center;
+			}
+	</style>
+</head>
+<body class="list">
+	<!--
+		Debug class on <body> enables
+		cyan grid on slides
+		-->
+	<header class="caption">
+		<h1>Верстальщик должен быть ленивый</h1>
+		<p><a href="">Тимофей Чаптыков</a>, 2GIS</p>
+	</header>
+
+	<section class="slide cover title"><div>
+		<h2>Верстальщик должен быть ленивый</h2>
+		<p>Тимофей Чаптыков</p>
+		<a href="mailto:t.chaptykov@2gis.ru">t.chaptykov@2gis.ru</a>
+		<a href="https://twitter.com/chaptykov">@chaptykov</a>
+	</div></section>
+
+	<section class="slide cover h"><div>
+		<img src="themes/2gis-shower-theme/custom/pic/online4.jpg" alt="">
+	</div></section>
+
+	<section class="slide cover h"><div>
+		<h2 class="_pane">Holy war</h2>
+		<img src="wsd/warhammer-holywar.jpg" alt="">
+	</div></section>
+
+	<section class="slide"><div>
+		<blockquote>
+			— What are you doing when you don’t code?<br>
+			— Testing and debugging.
+		</blockquote>
+	</div></section>
+
+	<section class="slide subsection"><div>
+		<div class="breadcrumbs">
+			<div class="breadcrumbs__item">Поддержка браузеров</div>
+		</div>
+	</div></section>
+
+	<section class="slide cover h"><div>
+		<h2>Yes, cap!</h2>
+		<img src="wsd/warhammer-captain.jpg" alt="">
+	</div></section>
+
+	<section class="slide subsection"><div>
+		<div class="breadcrumbs">
+			<div class="breadcrumbs__item">Поддержка браузеров</div>
+			<div class="breadcrumbs__item">«На всякий случай»</div>
+		</div>
+	</div></section>
+
+	<section class="slide listing"><div>
+		<pre><code>
+<span class="listing__comment">/* Префиксы */</span>
+
+<span class="listing__selector">.class</span> {
+	<span class="listing__property"><span class="listing__selection">-khtml-border-radius: 10px;</span>
+	border-radius: 10px;</span>
+	}
+		</code></pre>
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="clean">
+			<h2>6 посещений за прошедший месяц на <a href="http://2gis.ru">2gis.ru</a></h2>
+		</div>
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="clean">
+			<h2>~ 0.00% согласно Google Analytics</h2>
+		</div>
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="clean">
+			<h2>~ 128 МБ трафика</h2>
+		</div>
+	</div></section>
+
+	<section class="slide listing"><div>
+		<pre><code>
+<span class="listing__comment">&lt;!-- Метатеги --&gt;</span>
+
+<span class="listing__block">&lt;meta http-equiv=<span class="listing__attr">"Cache-Control"</span> content=<span class="listing__attr">"no-cache"</span>&gt;</span>
+<span class="listing__block">&lt;meta http-equiv=<span class="listing__attr">"cleartype"</span> content=<span class="listing__attr">"on"</span>&gt;</span>
+<span class="listing__block">&lt;meta name=<span class="listing__attr">"HandheldFriendly"</span> content=<span class="listing__attr">"True"</span>&gt;</span>
+<span class="listing__block">&lt;meta name=<span class="listing__attr">"viewport"</span> content=<span class="listing__attr">"width=device-width, height=device-height, <br>initial-scale=1.0, user-scalable=no, maximum-scale=1.0"</span>&gt;</span>
+<span class="listing__block">&lt;meta name=<span class="listing__attr">"apple-mobile-web-app-capable"</span> content=<span class="listing__attr">"yes"</span>t;</span>
+<span class="listing__block">&lt;meta name=<span class="listing__attr">"apple-mobile-web-app-status-bar-style"</span> content=<span class="listing__attr">"black-translucent"</span>&gt;</span>
+<span class="listing__block">&lt;meta http-equiv=<span class="listing__attr">"X-UA-Compatible"</span> content=<span class="listing__attr">"IE=edge"</span>&gt;</span>
+<span class="listing__block">&lt;meta http-equiv=<span class="listing__attr">"imagetoolbar"</span> content=<span class="listing__attr">"black-translucent"</span>&gt;</span>
+<span class="listing__block">&lt;meta http-equiv=<span class="listing__attr">"msthemecompatible"</span> content=<span class="listing__attr">"no"</span>&gt;</span>
+<span class="listing__block">&lt;meta name=<span class="listing__attr">"format-detection"</span> content=<span class="listing__attr">"telephone=no"</span>&gt;</span>
+<span class="listing__block">&lt;meta name=<span class="listing__attr">"format-detection"</span> content=<span class="listing__attr">"address=no"</span>&gt;</span>
+<span class="listing__comment">&lt;!-- ... --&gt;</span>
+		</code></pre>
+	</div></section>
+
+	<section class="slide subsection"><div>
+		<div class="breadcrumbs">
+			<div class="breadcrumbs__item">Поддержка браузеров</div>
+			<div class="breadcrumbs__item">Рискованные решения</div>
+		</div>
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="clean">
+			<h2>Flexbox на мобилках</h2>
+		</div>
+	</div></section>
+
+	<section class="slide subsection"><div>
+		<div class="breadcrumbs">
+			<div class="breadcrumbs__item">Нужно ли это</div>
+		</div>
+	</div></section>
+
+	<section class="slide subsection"><div>
+		<div class="breadcrumbs">
+			<div class="breadcrumbs__item">Нужно ли это</div>
+			<div class="breadcrumbs__item">JS-анимация</div>
+		</div>
+	</div></section>
+
+	<section class="slide subsection"><div>
+		<div class="breadcrumbs">
+			<div class="breadcrumbs__item">Нужно ли это</div>
+			<div class="breadcrumbs__item">Кастомизация форм</div>
+		</div>
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="clean">
+			<h2>Элементы интерфейса должны быть родными для браузера и системы</h2>
+		</div>
+	</div></section>
+
+	<section class="slide cover h"><div>
+		<img src="wsd/select_1.png" alt="">
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Готовые решения</h2>
+		<ul>
+			<li class="next"><a href="http://harvesthq.github.io/chosen/">Chosen</a></li>
+			<li class="next"><a href="http://ivaynberg.github.io/select2/">Select2</a></li>
+			<li class="next"><a href="http://www.givainc.com/labs/linkselect_jquery_plugin.cfm">LinkSelect</a></li>
+			<li class="next"><a href="http://www.marghoobsuleman.com/mywork/jcomponents/image-dropdown/samples/index.html">Image Combo Box</a></li>
+			<li class="next"><a href="https://github.com/dcparker/jquery_plugins/tree/master/quickselect">QuickSelect</a></li>
+			<li class="next">тысячи их</li>
+		</ul>
+	</div></section>
+
+	<section class="slide cover_label"><div>
+		<h2>Килобайты</h2>
+		<div class="sum">
+			<div class="sum__item next">
+				<div class="sum__item-num">84 КБ</div>
+				<div class="sum__item-label">jquery.js</div>
+			</div>
+			<div class="sum__item next">
+				<div class="sum__item-num">27 КБ</div>
+				<div class="sum__item-label">chosen.js</div>
+			</div>
+			<div class="sum__item next">
+				<div class="sum__item-num">11 КБ</div>
+				<div class="sum__item-label">chosen.css</div>
+			</div>
+			<div class="sum__item next sum__item_result">
+				<div class="sum__item-num">122 КБ</div>
+			</div>
+		</div>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Оверкил</h2>
+		<ul>
+			<li class="next">Поиск по элементам;</li>
+			<li class="next">поддержка письма справа-налево.</li>
+		</ul>
+	</div></section>
+
+	<section class="slide cover cover_label h"><div>
+		<h2>Пишем сами</h2>
+		<img src="wsd/select_2.png" alt="">
+	</div></section>
+
+	<section class="slide cover cover_label h"><div>
+		<h2>Optgroup</h2>
+		<img src="wsd/select_3.png" alt="">
+	</div></section>
+
+	<section class="slide cover cover_label h"><div>
+		<h2>Много текста</h2>
+		<img src="wsd/select_4.png" alt="">
+	</div></section>
+
+	<section class="slide cover cover_label h"><div>
+		<h2>Скролл</h2>
+		<img src="wsd/select_5.png" alt="">
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="clean">
+			<h2>Управление с клавиатуры</h2>
+		</div>
+	</div></section>
+
+	<section class="slide cover h"><div>
+		<h2 class="_pane">Баги, баги</h2>
+		<img src="wsd/warhammer-bugs.jpg" alt="">
+	</div></section>
+
+	<section class="slide cover h"><div>
+		<img src="wsd/iphone.png" alt="">
+	</div></section>
+
+	<section class="slide cover h"><div>
+		<img src="wsd/native-select.png" alt="">
+	</div></section>
+
+	<section class="slide cover cover_label h"><div>
+		<h2>В реальной жизни</h2>
+		<img src="wsd/select_6.png" alt="">
+	</div></section>
+
+	<section class="slide cover cover_label h"><div>
+		<h2>Можно было так</h2>
+		<img src="wsd/select_7.png" alt="">
+	</div></section>
+
+	<section class="slide cover cover_label h"><div>
+		<h2>Или даже так</h2>
+		<img src="wsd/select_8.png" alt="">
+	</div></section>
+
+	<!--section class="slide subsection"><div>
+		<div class="breadcrumbs">
+			<div class="breadcrumbs__item">Нужно ли это</div>
+			<div class="breadcrumbs__item">Прелоадер</div>
+		</div>
+	</div></section-->
+
+	<section class="slide subsection"><div>
+		<div class="breadcrumbs">
+			<div class="breadcrumbs__item">Меньше контроля</div>
+		</div>
+	</div></section>
+
+	<section class="slide cover h"><div>
+		<h2 class="_pane">Больше, больше контроля</h2>
+		<img src="wsd/warhammer-control.jpg" alt="">
+	</div></section>
+
+	<section class="slide subsection"><div>
+		<div class="breadcrumbs">
+			<div class="breadcrumbs__item">Меньше контроля</div>
+			<div class="breadcrumbs__item">Baron</div>
+		</div>
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="clean">
+			<h2>Много контроля</h2>
+		</div>
+	</div></section>
+
+	<section class="slide cover h"><div>
+		<img src="wsd/baron_1.png" alt="">
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Проблемы подхода</h2>
+		<ul>
+			<li>разные устройства ввода;</li>
+			<li>разная частота событий;</li>
+			<li>инерция и другие особенности платформ.</li>
+		</ul>
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="clean">
+			<h2>Мало контроля</h2>
+		</div>
+	</div></section>
+
+	<section class="slide cover h"><div>
+		<img src="wsd/baron_2.png" alt="">
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Baron</h2>
+		<ul>
+			<li>Статья на хабре: <a href="http://habrahabr.ru/company/2gis/blog/169359/">habrahabr.ru/company/2gis/blog/169359/</a></li>
+			<li>Видео с Fronttalks: <a href="http://vimeo.com/74930126">vimeo.com/74930126</a></li>
+			<li>Исходный код: <a href="https://github.com/Diokuz/baron">github.com/Diokuz/baron</a></li>
+		</ul>
+	</div></section>
+
+	<section class="slide subsection"><div>
+		<div class="breadcrumbs">
+			<div class="breadcrumbs__item">Меньше контроля</div>
+			<div class="breadcrumbs__item">Mindmap</div>
+		</div>
+	</div></section>
+
+	<section class="slide cover h" style="background: #fff;"><div>
+		<img src="wsd/mindmap-sample.jpg" alt="">
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="clean">
+			<h2>Много контроля</h2>
+		</div>
+	</div></section>
+
+	<section class="slide cover h"><div>
+		<img src="wsd/mindmap_2.png" alt="">
+	</div></section>
+
+	<section class="slide cover h"><div>
+		<img src="wsd/mindmap_3.png" alt="">
+	</div></section>
+
+	<section class="slide cover h"><div>
+		<img src="wsd/mindmap_4.png" alt="">
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="clean">
+			<h2>Мало контроля</h2>
+		</div>
+	</div></section>
+
+	<section class="slide listing"><div>
+		<pre><code>
+<span class="listing__comment">&lt;!-- Структура --&gt;</span>
+
+<span class="listing__block">&lt;h1&gt;</span>Mindmap root<span class="listing__block">&lt;/h1&gt;</span>
+<span class="listing__block">&lt;ol&gt;</span>
+    <span class="listing__element">&lt;li&gt;</span>
+        Element
+        <span class="listing__block">&lt;ol&gt;</span>
+            <span class="listing__element">&lt;li&gt;</span>Element<span class="listing__element">&lt;/li&gt;</span>
+            <span class="listing__element">&lt;li&gt;</span>Element<span class="listing__element">&lt;/li&gt;</span>
+            <span class="listing__comment">&lt;!-- ... --&gt;</span>
+        <span class="listing__block">&lt;/ol&gt;</span>
+    <span class="listing__element">&lt;/li&gt;</span>
+    <span class="listing__comment">&lt;!-- ... --&gt;</span>
+<span class="listing__block">&lt;/ol&gt;</span>
+		</code></pre>
+	</div></section>
+
+	<section class="slide listing"><div>
+		<pre><code>
+<span class="listing__comment">&lt;!-- Узлы --&gt;</span>
+
+<span class="listing__selection"><span class="listing__block">&lt;h1&gt;</span>Mindmap root<span class="listing__block">&lt;/h1&gt;</span></span>
+<span class="listing__block">&lt;ol&gt;</span>
+    <span class="listing__element">&lt;li&gt;</span>
+        <span class="listing__selection">Element</span>
+        <span class="listing__block">&lt;ol&gt;</span>
+            <span class="listing__element">&lt;li&gt;</span><span class="listing__selection">Element</span><span class="listing__element">&lt;/li&gt;</span>
+            <span class="listing__element">&lt;li&gt;</span><span class="listing__selection">Element</span><span class="listing__element">&lt;/li&gt;</span>
+            <span class="listing__comment">&lt;!-- ... --&gt;</span>
+        <span class="listing__block">&lt;/ol&gt;</span>
+    <span class="listing__element">&lt;/li&gt;</span>
+    <span class="listing__comment">&lt;!-- ... --&gt;</span>
+<span class="listing__block">&lt;/ol&gt;</span>
+		</code></pre>
+	</div></section>
+
+		<section class="slide listing"><div>
+		<pre><code>
+<span class="listing__comment">&lt;!-- Список дочерних узлов --&gt;</span>
+
+<span class="listing__block">&lt;h1&gt;</span>Mindmap root<span class="listing__block">&lt;/h1&gt;</span>
+<span class="listing__block listing__selection">&lt;ol&gt;</span>
+    <span class="listing__selection"><span class="listing__element">&lt;li&gt;</span></span>
+        Element
+        <span class="listing__block">&lt;ol&gt;</span>
+            <span class="listing__element">&lt;li&gt;</span>Element<span class="listing__element">&lt;/li&gt;</span>
+            <span class="listing__element">&lt;li&gt;</span>Element<span class="listing__element">&lt;/li&gt;</span>
+            <span class="listing__comment">&lt;!-- ... --&gt;</span>
+        <span class="listing__block">&lt;/ol&gt;</span>
+    <span class="listing__element listing__selection">&lt;/li&gt;</span>
+    <span class="listing__comment">&lt;!-- ... --&gt;</span>
+<span class="listing__block listing__selection">&lt;/ol&gt;</span>
+		</code></pre>
+	</div></section>
+
+	<section class="slide listing"><div>
+		<pre><code>
+<span class="listing__comment">&lt;!-- Список дочерних узлов --&gt;</span>
+
+<span class="listing__block">&lt;h1&gt;</span>Mindmap root<span class="listing__block">&lt;/h1&gt;</span>
+<span class="listing__block">&lt;ol&gt;</span>
+    <span class="listing__element">&lt;li&gt;</span>
+        Element
+        <span class="listing__selection"><span class="listing__block">&lt;ol&gt;</span></span>
+            <span class="listing__element listing__selection">&lt;li&gt;</span>Element<span class="listing__element listing__selection">&lt;/li&gt;</span>
+            <span class="listing__element listing__selection">&lt;li&gt;</span>Element<span class="listing__element listing__selection">&lt;/li&gt;</span>
+            <span class="listing__comment">&lt;!-- ... --&gt;</span>
+        <span class="listing__selection"><span class="listing__block">&lt;/ol&gt;</span></span>
+    <span class="listing__element">&lt;/li&gt;</span>
+    <span class="listing__comment">&lt;!-- ... --&gt;</span>
+<span class="listing__block">&lt;/ol&gt;</span>
+		</code></pre>
+	</div></section>
+
+	<section class="slide listing"><div>
+		<pre><code>
+<span class="listing__comment">&lt;!-- Немного БЭМ --&gt;</span>
+
+<span class="listing__block">&lt;h1 class=<span class="listing__attr">"node node_root"</span>&gt;</span>Mindmap root<span class="listing__block">&lt;/h1&gt;</span>
+
+<span class="listing__block">&lt;ol class=<span class="listing__attr">"children"</span>&gt;</span>
+    <span class="listing__element">&lt;li class=<span class="listing__attr">"children__item"</span>&gt;</span>
+
+        <span class="listing__block">&lt;div class=<span class="listing__attr">"node"</span>&gt;</span>Element<span class="listing__block">&lt;/div&gt;</span>
+
+        <span class="listing__block">&lt;ol class=<span class="listing__attr">"children"</span>&gt;</span>
+            <span class="listing__element">&lt;li class=<span class="listing__attr">"children__item"</span>&gt;</span>
+                <span class="listing__block">&lt;div class=<span class="listing__attr">"node"</span>&gt;</span>Element<span class="listing__block">&lt;/div&gt;</span>
+            <span class="listing__element">&lt;/li&gt;</span>
+            <span class="listing__element">&lt;li class=<span class="listing__attr">"children__item"</span>&gt;</span>
+                <span class="listing__block">&lt;div class=<span class="listing__attr">"node"</span>&gt;</span>Element<span class="listing__block">&lt;/div&gt;</span>
+            <span class="listing__element">&lt;/li&gt;</span>
+            <span class="listing__comment">&lt;!-- ... --&gt;</span>
+        <span class="listing__block">&lt;/ol&gt;</span>
+
+    <span class="listing__element">&lt;/li&gt;</span>
+    <span class="listing__comment">&lt;!-- ... --&gt;</span>
+<span class="listing__block">&lt;/ol&gt;</span>
+		</code></pre>
+	</div></section>
+
+	<section class="slide listing"><div>
+		<pre><code>
+<span class="listing__comment">/* Все позиционирование двумя CSS-правилами */</span>
+
+<span class="listing__selector">.node</span> {
+    <span class="listing__property">display: inline-block;
+    vertical-align: middle;</span>
+    }
+
+<span class="listing__selector">.children</span> {
+    <span class="listing__property">display: inline-block;
+    vertical-align: middle;
+    list-style: none;</span>
+    }
+		</code></pre>
+	</div></section>
+
+	<section class="slide cover h"><div>
+		<img src="wsd/mindmap_5.png" alt="">
+	</div></section>
+
+	<section class="slide cover h"><div>
+		<img src="wsd/mindmap_6.png" alt="">
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="clean">
+			<h2>Добавляем стили для псевдоэлементов</h2>
+		</div>
+	</div></section>
+
+	<section class="slide cover h" style="background: #fff;"><div>
+		<img src="wsd/mindmap_1.png" alt="">
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Бонусы</h2>
+		<ul>
+			<li>Мало весит;</li>
+			<li>везде работает;</li>
+			<li>вектор;</li>
+			<li>можно напечатать.</li>
+		</ul>
+	</div></section>
+
+	<section class="slide cover h" style="background: #fff;"><div>
+		<video autoplay preload loop>
+			<source src="wsd/mindmap.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+			<source src="wsd/mindmap.webm" type='video/webm; codecs="vp8, vorbis"'>
+			<source src="wsd/mindmap.ogv" type='video/ogg; codecs="theora, vorbis"'>
+		</video>
+	</div></section>
+
+	<section class="slide subsection"><div>
+		<div class="breadcrumbs">
+			<div class="breadcrumbs__item">Меньше контроля</div>
+			<div class="breadcrumbs__item">Photor</div>
+		</div>
+	</div></section>
+
+	<section class="slide cover h"><div>
+		<img src="wsd/photor.jpg" alt="">
+	</div></section>
+
+	<section class="slide listing"><div>
+		<pre><code>
+<span class="listing__comment">// Вписываем фотографию в произвольный блок</span>
+
+<span class="listing__element">function</span> <span class="listing__block">fitImage</span>() {
+	<span class="listing__comment">// ...</span>
+}
+
+<span class="listing__comment next">// Resize</span>
+<span class="listing__comment next">// Debounce|Throttle</span>
+<span class="listing__comment next">// On load</span>
+<span class="listing__comment next">// Все равно не заработает для скрытых блоков</span>
+		</code></pre>
+	</div></section>
+
+	<section class="slide listing"><div>
+		<pre><code>
+<span class="listing__comment">/* Вписываем фотографию в произвольный блок */</span>
+
+<span class="listing__selector">.image</span> {
+	<span class="listing__property">background-size: contain;</span>
+	}
+
+<span class="next"><span class="listing__selector">@media</span> (<span class="listing__property">max-width: 400px</span>) {
+	<span class="listing__selector">.image</span> {
+    	<span class="listing__property">background-size: cover;</span>
+    	}
+    }</span>
+		</code></pre>
+	</div></section>
+
+	<section class="slide cover h" style="background: #fff;"><div>
+		<video autoplay preload loop>
+			<source src="wsd/before.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+			<source src="wsd/before.webm" type='video/webm; codecs="vp8, vorbis"'>
+			<source src="wsd/before.ogv" type='video/ogg; codecs="theora, vorbis"'>
+		</video>
+	</div></section>
+
+	<section class="slide listing"><div>
+		<pre><code>
+<span class="listing__comment">/* Неожиданный бонус */</span>
+
+<span class="listing__selector">.image</span> {
+	<span class="listing__property">background-size: contain;
+	background-attachment: fixed;</span>
+	}
+		</code></pre>
+	</div></section>
+
+	<section class="slide cover h" style="background: #fff;"><div>
+		<video autoplay preload loop>
+			<source src="wsd/after.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+			<source src="wsd/after.webm" type='video/webm; codecs="vp8, vorbis"'>
+			<source src="wsd/after.ogv" type='video/ogg; codecs="theora, vorbis"'>
+		</video>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Photor</h2>
+		<a href="https://github.com/2gis/photor">github.com/2gis/photor</a>
+	</div></section>
+
+	<section class="slide subsection"><div>
+		<div class="breadcrumbs">
+			<div class="breadcrumbs__item">Пат</div>
+		</div>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Ахтунг</h2>
+		<ul>
+			<li class="next">Прогрессбар на загрузку файлов;</li>
+			<li class="next">визуальные редакторы;</li>
+			<li class="next">и т. д.</li>
+		</ul>
+	</div></section>
+
+	<section class="slide subsection"><div>
+		<div class="breadcrumbs">
+			<div class="breadcrumbs__item">Заключение</div>
+		</div>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Как писать меньше кода</h2>
+		<ul>
+			<li class="next">Смотреть на статистику;</li>
+			<li class="next">не поддерживать в отдельных модулях браузеры и устройства, которые не поддерживает продукт в целом;</li>
+			<li class="next">сохранять нативные механизмы;</li>
+			<li class="next">меньше контроля на своей стороне. Тяжелая работа — браузеру.</li>
+		</ul>
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="clean">
+			<h2>Думайте про фичу, а не про код</h2>
+		</div>
+	</div></section>
+
+	<section class="slide cover h"><div>
+		<img src="wsd/warhammer-final.jpg" alt="">
+	</div></section>
+
+	<section class="slide end"><div>
+		<h2>2ГИС</h2>
+		<p>Тимофей Чаптыков</p>
+		<a href="mailto:t.chaptykov@2gis.ru">t.chaptykov@2gis.ru</a><br>
+		<a href="https://twitter.com/chaptykov">@chaptykov</a>
+	</div></section>
+
+	<!--
+		To hide progress bar from entire presentation
+		just remove “progress” element.
+		-->
+	<div class="progress"><div></div></div>
+	<script src="shower.js"></script>
+</body>
+</html>

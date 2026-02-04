@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>SVG and Font bugs</title>
+	<link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="page--svg-bugs">
+	<div class="l-wrapper">
+		<!-- <dl class="browser-list">
+			<dt class="browser-name"><span class="browser chrome"></span>Chrome</dt>
+			<dd>
+			</dd>
+		</dl> -->
+		<!-- ****************************** -->
+		<!-- <dl class="browser-list">
+			<dt class="browser-name"><span class="browser safari"></span>Safari</dt>
+			<dd>
+			</dd>
+		</dl> -->
+		<!-- ****************************** -->
+		<!-- <dl class="browser-list">
+			<dt class="browser-name"><span class="browser opera-13"></span>Opera 13</dt>
+			<dd>
+			</dd>
+		</dl> -->
+		<!-- ****************************** -->
+		<dl class="browser-list">
+			<dt class="browser-name"><span class="browser firefox"></span></dt>
+			<dd>
+				<dl class="bugs-list">
+					<dt class="bugs-list__title">Gradients</dt>
+					<dd><p>Не работает <code>spreadMethod="reflect"</code>. Слева Firefox, справа Chrome:</p>
+						<img src="./img/firefox/gradient/pic.jpg" alt=""></dd>
+					<dd><p>При <code>gradientUnits="userSpaceOnUse" spreadMethod="repeat</code> некорректно повторяются полосы. Слева Firefox, справа Chrome:</p>
+						<img src="./img/firefox/gradient/pic-2.png" alt=""></dd>
+					<dd><p>Некорректно работает <code>spreadMethod="repeat</code>. Слева Firefox, справа Chrome:</p>
+						<img src="./img/firefox/gradient/pic-3.jpg" alt=""></dd>
+				</dl>
+			</dd>
+		</dl>
+		<!-- ****************************** -->
+		<dl class="browser-list">
+			<dt class="browser-name"><span class="browser opera-old opera-12"></span></dt>
+			<dd>
+				<dl class="bugs-list">
+					<dt class="bugs-list__title">background</dt>
+					<dd><!-- http://jsbin.com/winag/2/edit -->
+						<p>Если элементу с фоном добавить рамку, фон может пропасть</p>
+						<img src="./img/opera-12/bg/pic-2.png" alt="">
+					</dd>
+					<dd>
+						<p>При растягивании фона картинки "мыльные"</p>
+						<img src="./img/opera-12/bg/pic-3-s.png" alt="">
+					</dd>
+				</dl>
+			</dd>
+		</dl>
+		<!-- ****************************** -->
+		<dl class="browser-list">
+			<dt class="browser-name"><span class="browser opera-old opera-min"></span></dt>
+			<dd>
+				<dl class="bugs-list">
+					<dt class="bugs-list__title">Font</dt>
+					<dd><span class="text--no-support">No support.</span>
+						<img src="" alt="">
+					</dd>
+				</dl>
+				<dl>
+					<dt class="bugs-list__title">background</dt>
+					<dd>
+						<p>Если у SVG задан viewBox - фон будет растянут</p>
+						<img src="./img/opera-mini/bg/pic-2-s.png" alt="">
+					</dd>
+				</dl>
+				<dl>
+					<dt class="bugs-list__title">Inline SVG</dt>
+					<dd><span class="text--no-support">No support.</span></dd>
+				</dl>
+
+			</dd>
+		</dl>
+		<!-- ****************************** -->
+		<!-- <dl class="browser-list">
+			<dt class="browser-name"><span class="browser ie-9"></span></dt>
+			<dd>
+				<dl>
+					<dt>Font</dt>
+					<dd></dd>
+				</dl>
+			</dd>
+
+		</dl> -->
+	</div>
+<script src=""></script>
+</body>
+</html>

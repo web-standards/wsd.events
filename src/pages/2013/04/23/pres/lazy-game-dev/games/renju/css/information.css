@@ -1,0 +1,106 @@
+.information{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  }
+  html.no-preserve-3d .information .rotation{
+    display: none;
+    }
+  html.no-preserve-3d .information .zoom{
+    top: 84px;
+    }
+    html.no-preserve-3d .information .handle{
+      left: 35px;
+      }
+  .information .zoom{
+
+    position: fixed;
+    top: 204px;
+    right: 20px;
+    width: 100px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, .05);
+    }
+    .information .zoom .handle{
+      width: 30px;
+      height: 30px;
+      display: block;
+      color: #fff;
+      background: #000 url('../img/zoom.png') 50% 50% no-repeat;
+      -webkit-background-size: 15px;
+           -o-background-size: 15px;
+              background-size: 15px;
+      cursor: pointer;
+      left: 25px;
+      }
+  .information .rotation{
+    position: fixed;
+    top: 84px;
+    right: 20px;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(0, 0, 0, .05);
+    }
+    .information .rotation .handle{
+      width: 30px;
+      height: 30px;
+      display: block;
+      color: #fff;
+      background: #000 url('../img/rotate.png') 50% 50% no-repeat;
+      -webkit-background-size: 15px;
+           -o-background-size: 15px;
+              background-size: 15px;
+      cursor: pointer;
+      top: 30px;
+      left: 35px;
+      }
+  .information .quit:hover{
+    background: rgba(0,165,0,.75);
+    }
+  .information .quit:hover:after{
+    border-color:  rgba(0,165,0,.75) transparent transparent;
+    }
+  .information .quit{
+    display: block;
+    font-size: 0;
+    color:#fff;
+    white-space: nowrap;
+    height: 44px;
+    position: fixed;
+    top: 20px;
+    background: rgba(0,154,172,.75);
+    text-align: center;
+    right: 20px;
+    white-space: nowrap;
+    font:14px/44px serif;
+    width:100px;
+    text-align: center;
+    text-decoration: none;
+    }
+    .information .quit:after{
+      content:".";
+      font-size: 0;
+      line-height: 0;
+      height: 0;
+      width: 0;
+      display: block;
+      overflow: hidden;
+      position: absolute;
+      top: 100%;
+      left: 10px;
+      border-style:solid;
+      border-width: 10px 10px 0 0;
+      border-color:  rgba(0,154,172,.75) transparent transparent;
+      }
+  .information .player{
+    display: none;
+    }
+  .information .player.selected{
+    display: block;
+    }
+  .information .player{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    }

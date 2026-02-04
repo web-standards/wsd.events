@@ -1,0 +1,135 @@
+html{
+height: 100%;
+width: 100%;
+}
+body{
+  -webkit-perspective: 600px;
+  -moz-perspective: 600px;
+  perspective: 600px;
+
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  }
+
+.plane{
+  line-height: 0;
+  font-size: 0;
+  text-align: center;
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -250px 0 0 -250px;
+
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+
+  -webkit-transform: rotateX(30deg) translateZ(100px) scale(.9) scaleZ(.9);
+
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+
+  -webkit-animation: spin 8s linear 0s infinite;
+  -moz-animation: spin 8s linear 0s infinite;
+  -ms-animation: spin 8s linear 0s infinite;
+  animation: spin 8s linear 0s infinite;
+  }
+
+.mountain{
+  width: 500px;
+  height: 500px;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+
+  -webkit-transform-style-origin: 50% 50% 0;
+  -moz-transform-style-origin: 50% 50% 0;
+  transform-style-origin: 50% 50% 0;
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  -webkit-transform: translate(-250px, -250px);
+  -moz-transform: translate(-250px, -250px);
+  transform: translate(-250px, -250px);
+
+  -webkit-background-size: contain;
+       -o-background-size: contain;
+          background-size: contain;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.mountain div{
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+
+  -webkit-transform: translateZ(3.75px);
+  -moz-transform: translateZ(3.75px);
+  transform: translateZ(3.75px);
+
+  width: 500px;
+  height: 500px;
+  display: block;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+       -o-background-size: contain;
+          background-size: contain;
+  }
+
+.m50{
+  background-image: url('../img/mountine0050.png');
+  }
+.m49{background-image: url('../img/mountine0049.png');}.m48{background-image: url('../img/mountine0048.png');}.m47{background-image: url('../img/mountine0047.png');}.m46{background-image: url('../img/mountine0046.png');}.m45{background-image: url('../img/mountine0045.png');}.m44{background-image: url('../img/mountine0044.png');}.m43{background-image: url('../img/mountine0043.png');}.m42{background-image: url('../img/mountine0042.png');}.m41{background-image: url('../img/mountine0041.png');}.m40{background-image: url('../img/mountine0040.png');}.m39{background-image: url('../img/mountine0039.png');}.m38{background-image: url('../img/mountine0038.png');}.m37{background-image: url('../img/mountine0037.png');}.m36{background-image: url('../img/mountine0036.png');}.m35{background-image: url('../img/mountine0035.png');}.m34{background-image: url('../img/mountine0034.png');}.m33{background-image: url('../img/mountine0033.png');}.m32{background-image: url('../img/mountine0032.png');}.m31{background-image: url('../img/mountine0031.png');}.m30{background-image: url('../img/mountine0030.png');}.m29{background-image: url('../img/mountine0029.png');}.m28{background-image: url('../img/mountine0028.png');}.m27{background-image: url('../img/mountine0027.png');}.m26{background-image: url('../img/mountine0026.png');}.m25{background-image: url('../img/mountine0025.png');}.m24{background-image: url('../img/mountine0024.png');}.m23{background-image: url('../img/mountine0023.png');}.m22{background-image: url('../img/mountine0022.png');}.m21{background-image: url('../img/mountine0021.png');}.m20{background-image: url('../img/mountine0020.png');}.m19{background-image: url('../img/mountine0019.png');}.m18{background-image: url('../img/mountine0018.png');}.m17{background-image: url('../img/mountine0017.png');}.m16{background-image: url('../img/mountine0016.png');}.m15{background-image: url('../img/mountine0015.png');}.m14{background-image: url('../img/mountine0014.png');}.m13{background-image: url('../img/mountine0013.png');}.m12{background-image: url('../img/mountine0012.png');}.m11{background-image: url('../img/mountine0011.png');}.m10{background-image: url('../img/mountine0010.png');}.m9{background-image: url('../img/mountine0009.png');}.m8{background-image: url('../img/mountine0008.png');}.m7{background-image: url('../img/mountine0007.png');}.m6{background-image: url('../img/mountine0006.png');}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotateX(30deg) translateZ(100px) scale(.9) scaleZ(.9) rotateZ(0deg);
+    }
+  50% {
+    -webkit-transform: rotateX(30deg) translateZ(100px) scale(.9) scaleZ(.9) rotateZ(180deg);
+    }
+  100% {
+    -webkit-transform: rotateX(30deg) translateZ(100px) scale(.9) scaleZ(.9) rotateZ(360deg);
+    }
+  }
+
+@-moz-keyframes spin {
+  0% {
+    -moz-transform: rotateX(30deg) translateZ(100px) scale(.9) scaleZ(.9) rotateZ(0deg);
+    }
+  50% {
+    -moz-transform: rotateX(30deg) translateZ(100px) scale(.9) scaleZ(.9) rotateZ(180deg);
+    }
+  100% {
+    -moz-transform: rotateX(30deg) translateZ(100px) scale(.9) scaleZ(.9) rotateZ(360deg);
+    }
+  }
+
+@keyframes spin {
+  0% {
+    transform: rotateX(30deg) translateZ(100px) scale(.9) scaleZ(.9) rotateZ(0deg);
+    }
+  50% {
+    transform: rotateX(30deg) translateZ(100px) scale(.9) scaleZ(.9) rotateZ(180deg);
+    }
+  100% {
+    transform: rotateX(30deg) translateZ(100px) scale(.9) scaleZ(.9) rotateZ(360deg);
+    }
+  }
+
+
+
+

@@ -1,0 +1,41 @@
+
+<!-- saved from url=(0055)http://html5.by/blogdemo/webaudioapi/from-buffer11.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">var NREUMQ=NREUMQ||[];NREUMQ.push(["mark","firstbyte",new Date().getTime()]);</script><script src="jquery.min.js" type="text/javascript"></script>
+    <script src="bootstrap.min.js" type="text/javascript"></script>
+
+    <script src="main.js" type="text/javascript"></script>
+    <script src="AudioContextMonkeyPatch.js" type="text/javascript"></script>
+
+
+
+    <link href="github.css" rel="stylesheet" type="text/css">
+    <link href="bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <link href="main(1).css" rel="stylesheet" type="text/css">
+
+</head>
+<body style="">
+    <style>
+
+    </style>
+
+<pre data-language="javascript" class="rainbow">  <span class="storage">var</span> <span class="entity function">loadSoundFile</span> <span class="keyword operator">=</span> <span class="keyword">function</span>(url) {
+    <span class="keyword">var</span> xhr <span class="keyword operator">=</span> <span class="keyword">new</span> <span class="entity function">XMLHttpRequest</span>();
+    xhr.<span class="function call">open</span>(<span class="string">'GET'</span>, url, <span class="constant language">true</span>);
+    xhr.responseType <span class="keyword operator">=</span> <span class="string">'arraybuffer'</span>;
+    <span class="entity function">xhr.onload</span> <span class="keyword operator">=</span> <span class="keyword">function</span>(e) {
+      context.<span class="function call">decodeAudioData</span>(<span class="keyword">this</span>.response,
+      <span class="keyword">function</span>(decodedArrayBuffer) {
+        buffer <span class="keyword operator">=</span> decodedArrayBuffer;
+      }
+    };
+    xhr.<span class="function call">send</span>();
+  }
+</pre>
+
+  <script src="rainbow.min.js" type="text/javascript"></script>
+  <script src="generic.js" type="text/javascript"></script>
+  <script src="javascript.js" type="text/javascript"></script>
+<script type="text/javascript">if(!NREUMQ.f){NREUMQ.f=function(){NREUMQ.push(["load",new Date().getTime()]);var e=document.createElement("script");e.type="text/javascript";e.src=(("http:"===document.location.protocol)?"http:":"https:")+"//"+"js-agent.newrelic.com/nr-100.js";document.body.appendChild(e);if(NREUMQ.a)NREUMQ.a();};NREUMQ.a=window.onload;window.onload=NREUMQ.f;};NREUMQ.push(["nrfj","beacon-2.newrelic.com","a45903a5f2","1896831","ZFFabUUFDBJWARJfXF0bbUteSwANWAUCU15cG09cVQUXBV4NB0ZaHFJKVlpJABRRBANEAgIaUE1aCA==",0,0,new Date().getTime(),"","","","",""]);</script>
+<script type="text/javascript" src="nr-100.js"></script></body></html>

@@ -1,0 +1,2095 @@
+<!DOCTYPE HTML>
+<html lang="ru-RU">
+<head>
+  <meta charset="UTF-8">
+  <title>Потерянные спецификации</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+  <script src="js/modernizr.js"></script>
+  <script src="js/jquery.js"></script>
+  <script src="js/jquery.keyboard.js"></script>
+  <script src="js/jquery.hotkeys.js"></script>
+  <script src="js/prism.js"></script>
+  <script src="js/underscore-min.js"></script>
+  <script src="js/slidsterController.js"></script>
+
+  <link rel="stylesheet" media="all" href="css/common.css" />
+</head>
+<body>
+  <section class="slides">
+
+    <article class="center center-text title"><div class="wrapper">
+        <h1>Потерянные<br> спецификации</h1>
+    </div></article>
+
+    <article class="center center-text LC"><div class="wrapper">
+        <h1>DeviceOrientation<br> Event</h1>
+    </div></article>
+
+    <article class="center center-text"><div class="wrapper">
+      <h1>Использует</h1>
+      <ol>
+        <li>Гироскоп</li>
+        <li>Компас</li>
+        <li>Акселерометр</li>
+      </ol>
+    </div></article>
+
+    <article class="center center-text"><div class="wrapper">
+      <h1>события</h1>
+      <ol>
+        <li>deviceorientation</li>
+        <li>devicemotion</li>
+        <li>compassneedscalibration</li>
+      </ol>
+    </div></article>
+
+    <article class="center center-text"><div class="wrapper">
+        <h1>событие<br> deviceorientation</h1>
+    </div></article>
+
+    <article class="center center-text"><div class="wrapper">
+      <ol>
+        <li>alpha (Z — &alpha;&deg;)</li>
+        <li>beta (X — &beta;&deg;)</li>
+        <li>gamma (Y — &gamma;&deg;)</li>
+        <li>absolute</li>
+      </ol>
+    </div></article>
+
+
+  <article class="example">
+    <div id="tridiv">
+      <div class="scene alpha">
+        <div class="coord"></div>
+        <div class="phone">
+          <div class="shape cuboid-1 back">
+            <div class="face ft">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.498039);"></div>
+            </div>
+            <div class="face bk">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0980392);"></div>
+            </div>
+            <div class="face rt">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0980392);"></div>
+            </div>
+            <div class="face lt">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.498039);"></div>
+            </div>
+            <div class="face bm">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.6);"></div>
+            </div>
+            <div class="face tp">
+              <div class="photon-shader"></div>
+            </div>
+            <div class="cr cr-0">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.533333);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.580392);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.6);"></div>
+              </div>
+              <div class="face side s3">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.580392);"></div>
+              </div>
+              <div class="face side s4">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.533333);"></div>
+              </div>
+            </div>
+            <div class="cr cr-1">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.462745);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.384314);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.298039);"></div>
+              </div>
+              <div class="face side s3">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.215686);"></div>
+              </div>
+              <div class="face side s4">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.133333);"></div>
+              </div>
+            </div>
+            <div class="cr cr-2">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0666667);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0156863);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(255, 255, 255, 0);"></div>
+              </div>
+              <div class="face side s3">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0156863);"></div>
+              </div>
+              <div class="face side s4">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0666667);"></div>
+              </div>
+            </div>
+            <div class="cr cr-3">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.133333);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.215686);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.298039);"></div>
+              </div>
+              <div class="face side s3">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.384314);"></div>
+              </div>
+              <div class="face side s4">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.462745);"></div>
+              </div>
+            </div>
+          </div>
+          <div class="shape cuboid-2 mid">
+            <div class="face ft">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0980392);"></div>
+            </div>
+            <div class="face bk">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.498039);"></div>
+            </div>
+            <div class="face rt">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.498039);"></div>
+            </div>
+            <div class="face lt">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0980392);"></div>
+            </div>
+            <div class="face bm">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.6);"></div>
+            </div>
+            <div class="face tp">
+              <div class="photon-shader" style="background-color: rgba(255, 255, 255, 0);"></div>
+            </div>
+            <div class="cr cr-0">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0666667);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0156863);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader"></div>
+              </div>
+              <div class="face side s3">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0156863);"></div>
+              </div>
+              <div class="face side s4">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0666667);"></div>
+              </div>
+            </div>
+            <div class="cr cr-1">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.133333);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.215686);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.298039);"></div>
+              </div>
+              <div class="face side s3">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.384314);"></div>
+              </div>
+              <div class="face side s4">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.462745);"></div>
+              </div>
+            </div>
+            <div class="cr cr-2">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.533333);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.580392);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.6);"></div>
+              </div>
+              <div class="face side s3">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.580392);"></div>
+              </div>
+              <div class="face side s4">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.533333);"></div>
+              </div>
+            </div>
+            <div class="cr cr-3">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.462745);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.384314);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.298039);"></div>
+              </div>
+              <div class="face side s3">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.215686);"></div>
+              </div>
+              <div class="face side s4">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.133333);"></div>
+              </div>
+            </div>
+          </div>
+          <div class="shape cuboid-3 top">
+            <div class="face ft">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0980392);"></div>
+            </div>
+            <div class="face bk">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.498039);"></div>
+            </div>
+            <div class="face rt">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.498039);"></div>
+            </div>
+            <div class="face lt">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0980392);"></div>
+            </div>
+            <div class="face bm">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.6);"></div>
+            </div>
+            <div class="face tp">
+              <div class="photon-shader" style="background-color: rgba(255, 255, 255, 0);"></div>
+            </div>
+            <div class="cr cr-0">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0666667);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0156863);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader"></div>
+              </div>
+              <div class="face side s3">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0156863);"></div>
+              </div>
+              <div class="face side s4">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0666667);"></div>
+              </div>
+            </div>
+            <div class="cr cr-1">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.133333);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.215686);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.298039);"></div>
+              </div>
+              <div class="face side s3">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.384314);"></div>
+              </div>
+              <div class="face side s4">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.462745);"></div>
+              </div>
+            </div>
+            <div class="cr cr-2">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.533333);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.580392);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.6);"></div>
+              </div>
+              <div class="face side s3">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.580392);"></div>
+              </div>
+              <div class="face side s4">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.533333);"></div>
+              </div>
+            </div>
+            <div class="cr cr-3">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.462745);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.384314);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.298039);"></div>
+              </div>
+              <div class="face side s3">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.215686);"></div>
+              </div>
+              <div class="face side s4">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.133333);"></div>
+              </div>
+            </div>
+          </div>
+          <div class="shape cuboid-4 lock">
+            <div class="face ft">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0980392);"></div>
+            </div>
+            <div class="face bk">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.498039);"></div>
+            </div>
+            <div class="face rt">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.6);"></div>
+            </div>
+            <div class="face lt">
+              <div class="photon-shader" style="background-color: rgba(255, 255, 255, 0);"></div>
+            </div>
+            <div class="face bm">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0980392);"></div>
+            </div>
+            <div class="face tp">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.498039);"></div>
+            </div>
+            <div class="cr cr-0">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0196078);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(255, 255, 255, 0.0901961);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(255, 255, 255, 0.0588235);"></div>
+              </div>
+            </div>
+            <div class="cr cr-1">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0745098);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.243137);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.415686);"></div>
+              </div>
+            </div>
+            <div class="cr cr-2">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.580392);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.690196);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.662745);"></div>
+              </div>
+            </div>
+            <div class="cr cr-3">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.52549);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.356863);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.184314);"></div>
+              </div>
+            </div>
+          </div>
+          <div class="shape cylinder-1 btn-plus">
+            <div class="face bm">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0980392);"></div>
+            </div>
+            <div class="face tp">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.498039);"></div>
+            </div>
+            <div class="face side s0">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0196078);"></div>
+            </div>
+            <div class="face side s1">
+              <div class="photon-shader" style="background-color: rgba(255, 255, 255, 0.0901961);"></div>
+            </div>
+            <div class="face side s2">
+              <div class="photon-shader" style="background-color: rgba(255, 255, 255, 0.0588235);"></div>
+            </div>
+            <div class="face side s3">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0745098);"></div>
+            </div>
+            <div class="face side s4">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.243137);"></div>
+            </div>
+            <div class="face side s5">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.415686);"></div>
+            </div>
+            <div class="face side s6">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.580392);"></div>
+            </div>
+            <div class="face side s7">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.690196);"></div>
+            </div>
+            <div class="face side s8">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.662745);"></div>
+            </div>
+            <div class="face side s9">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.52549);"></div>
+            </div>
+            <div class="face side s10">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.356863);"></div>
+            </div>
+            <div class="face side s11">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.184314);"></div>
+            </div>
+          </div>
+          <div class="shape cylinder-2 btn-less">
+            <div class="face bm">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0980392);"></div>
+            </div>
+            <div class="face tp">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.498039);"></div>
+            </div>
+            <div class="face side s0">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0196078);"></div>
+            </div>
+            <div class="face side s1">
+              <div class="photon-shader" style="background-color: rgba(255, 255, 255, 0.0901961);"></div>
+            </div>
+            <div class="face side s2">
+              <div class="photon-shader" style="background-color: rgba(255, 255, 255, 0.0588235);"></div>
+            </div>
+            <div class="face side s3">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0745098);"></div>
+            </div>
+            <div class="face side s4">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.243137);"></div>
+            </div>
+            <div class="face side s5">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.415686);"></div>
+            </div>
+            <div class="face side s6">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.580392);"></div>
+            </div>
+            <div class="face side s7">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.690196);"></div>
+            </div>
+            <div class="face side s8">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.662745);"></div>
+            </div>
+            <div class="face side s9">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.52549);"></div>
+            </div>
+            <div class="face side s10">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.356863);"></div>
+            </div>
+            <div class="face side s11">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.184314);"></div>
+            </div>
+          </div>
+          <div class="shape cuboid-5 power">
+            <div class="face ft">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.498039);"></div>
+            </div>
+            <div class="face bk">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0980392);"></div>
+            </div>
+            <div class="face rt">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.6);"></div>
+            </div>
+            <div class="face lt">
+              <div class="photon-shader"></div>
+            </div>
+            <div class="face bm">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0980392);"></div>
+            </div>
+            <div class="face tp">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.498039);"></div>
+            </div>
+            <div class="cr cr-0">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.415686);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.243137);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0745098);"></div>
+              </div>
+            </div>
+            <div class="cr cr-1">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(255, 255, 255, 0.0588235);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(255, 255, 255, 0.0901961);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0196078);"></div>
+              </div>
+            </div>
+            <div class="cr cr-2">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.184314);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.356863);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.52549);"></div>
+              </div>
+            </div>
+            <div class="cr cr-3">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.662745);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.690196);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.580392);"></div>
+              </div>
+            </div>
+          </div>
+          <div class="shape cuboid-6 cub-8">
+            <div class="face ft">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0980392);"></div>
+            </div>
+            <div class="face bk">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.498039);"></div>
+            </div>
+            <div class="face rt">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.498039);"></div>
+            </div>
+            <div class="face lt">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0980392);"></div>
+            </div>
+            <div class="face bm">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.6);"></div>
+            </div>
+            <div class="face tp">
+              <div class="photon-shader" style="background-color: rgba(255, 255, 255, 0);"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="example">
+    <div id="tridiv">
+      <div class="scene beta">
+        <div class="coord"></div>
+        <div class="phone">
+          <div class="shape cuboid-1 back">
+            <div class="face ft">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.498039);"></div>
+            </div>
+            <div class="face bk">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0980392);"></div>
+            </div>
+            <div class="face rt">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0980392);"></div>
+            </div>
+            <div class="face lt">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.498039);"></div>
+            </div>
+            <div class="face bm">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.6);"></div>
+            </div>
+            <div class="face tp">
+              <div class="photon-shader"></div>
+            </div>
+            <div class="cr cr-0">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.533333);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.580392);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.6);"></div>
+              </div>
+              <div class="face side s3">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.580392);"></div>
+              </div>
+              <div class="face side s4">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.533333);"></div>
+              </div>
+            </div>
+            <div class="cr cr-1">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.462745);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.384314);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.298039);"></div>
+              </div>
+              <div class="face side s3">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.215686);"></div>
+              </div>
+              <div class="face side s4">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.133333);"></div>
+              </div>
+            </div>
+            <div class="cr cr-2">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0666667);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0156863);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(255, 255, 255, 0);"></div>
+              </div>
+              <div class="face side s3">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0156863);"></div>
+              </div>
+              <div class="face side s4">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0666667);"></div>
+              </div>
+            </div>
+            <div class="cr cr-3">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.133333);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.215686);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.298039);"></div>
+              </div>
+              <div class="face side s3">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.384314);"></div>
+              </div>
+              <div class="face side s4">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.462745);"></div>
+              </div>
+            </div>
+          </div>
+          <div class="shape cuboid-2 mid">
+            <div class="face ft">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0980392);"></div>
+            </div>
+            <div class="face bk">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.498039);"></div>
+            </div>
+            <div class="face rt">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.498039);"></div>
+            </div>
+            <div class="face lt">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0980392);"></div>
+            </div>
+            <div class="face bm">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.6);"></div>
+            </div>
+            <div class="face tp">
+              <div class="photon-shader" style="background-color: rgba(255, 255, 255, 0);"></div>
+            </div>
+            <div class="cr cr-0">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0666667);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0156863);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader"></div>
+              </div>
+              <div class="face side s3">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0156863);"></div>
+              </div>
+              <div class="face side s4">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0666667);"></div>
+              </div>
+            </div>
+            <div class="cr cr-1">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.133333);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.215686);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.298039);"></div>
+              </div>
+              <div class="face side s3">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.384314);"></div>
+              </div>
+              <div class="face side s4">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.462745);"></div>
+              </div>
+            </div>
+            <div class="cr cr-2">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.533333);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.580392);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.6);"></div>
+              </div>
+              <div class="face side s3">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.580392);"></div>
+              </div>
+              <div class="face side s4">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.533333);"></div>
+              </div>
+            </div>
+            <div class="cr cr-3">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.462745);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.384314);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.298039);"></div>
+              </div>
+              <div class="face side s3">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.215686);"></div>
+              </div>
+              <div class="face side s4">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.133333);"></div>
+              </div>
+            </div>
+          </div>
+          <div class="shape cuboid-3 top">
+            <div class="face ft">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0980392);"></div>
+            </div>
+            <div class="face bk">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.498039);"></div>
+            </div>
+            <div class="face rt">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.498039);"></div>
+            </div>
+            <div class="face lt">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0980392);"></div>
+            </div>
+            <div class="face bm">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.6);"></div>
+            </div>
+            <div class="face tp">
+              <div class="photon-shader" style="background-color: rgba(255, 255, 255, 0);"></div>
+            </div>
+            <div class="cr cr-0">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0666667);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0156863);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader"></div>
+              </div>
+              <div class="face side s3">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0156863);"></div>
+              </div>
+              <div class="face side s4">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0666667);"></div>
+              </div>
+            </div>
+            <div class="cr cr-1">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.133333);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.215686);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.298039);"></div>
+              </div>
+              <div class="face side s3">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.384314);"></div>
+              </div>
+              <div class="face side s4">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.462745);"></div>
+              </div>
+            </div>
+            <div class="cr cr-2">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.533333);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.580392);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.6);"></div>
+              </div>
+              <div class="face side s3">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.580392);"></div>
+              </div>
+              <div class="face side s4">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.533333);"></div>
+              </div>
+            </div>
+            <div class="cr cr-3">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.462745);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.384314);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.298039);"></div>
+              </div>
+              <div class="face side s3">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.215686);"></div>
+              </div>
+              <div class="face side s4">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.133333);"></div>
+              </div>
+            </div>
+          </div>
+          <div class="shape cuboid-4 lock">
+            <div class="face ft">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0980392);"></div>
+            </div>
+            <div class="face bk">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.498039);"></div>
+            </div>
+            <div class="face rt">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.6);"></div>
+            </div>
+            <div class="face lt">
+              <div class="photon-shader" style="background-color: rgba(255, 255, 255, 0);"></div>
+            </div>
+            <div class="face bm">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0980392);"></div>
+            </div>
+            <div class="face tp">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.498039);"></div>
+            </div>
+            <div class="cr cr-0">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0196078);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(255, 255, 255, 0.0901961);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(255, 255, 255, 0.0588235);"></div>
+              </div>
+            </div>
+            <div class="cr cr-1">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0745098);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.243137);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.415686);"></div>
+              </div>
+            </div>
+            <div class="cr cr-2">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.580392);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.690196);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.662745);"></div>
+              </div>
+            </div>
+            <div class="cr cr-3">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.52549);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.356863);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.184314);"></div>
+              </div>
+            </div>
+          </div>
+          <div class="shape cylinder-1 btn-plus">
+            <div class="face bm">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0980392);"></div>
+            </div>
+            <div class="face tp">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.498039);"></div>
+            </div>
+            <div class="face side s0">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0196078);"></div>
+            </div>
+            <div class="face side s1">
+              <div class="photon-shader" style="background-color: rgba(255, 255, 255, 0.0901961);"></div>
+            </div>
+            <div class="face side s2">
+              <div class="photon-shader" style="background-color: rgba(255, 255, 255, 0.0588235);"></div>
+            </div>
+            <div class="face side s3">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0745098);"></div>
+            </div>
+            <div class="face side s4">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.243137);"></div>
+            </div>
+            <div class="face side s5">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.415686);"></div>
+            </div>
+            <div class="face side s6">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.580392);"></div>
+            </div>
+            <div class="face side s7">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.690196);"></div>
+            </div>
+            <div class="face side s8">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.662745);"></div>
+            </div>
+            <div class="face side s9">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.52549);"></div>
+            </div>
+            <div class="face side s10">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.356863);"></div>
+            </div>
+            <div class="face side s11">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.184314);"></div>
+            </div>
+          </div>
+          <div class="shape cylinder-2 btn-less">
+            <div class="face bm">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0980392);"></div>
+            </div>
+            <div class="face tp">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.498039);"></div>
+            </div>
+            <div class="face side s0">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0196078);"></div>
+            </div>
+            <div class="face side s1">
+              <div class="photon-shader" style="background-color: rgba(255, 255, 255, 0.0901961);"></div>
+            </div>
+            <div class="face side s2">
+              <div class="photon-shader" style="background-color: rgba(255, 255, 255, 0.0588235);"></div>
+            </div>
+            <div class="face side s3">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0745098);"></div>
+            </div>
+            <div class="face side s4">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.243137);"></div>
+            </div>
+            <div class="face side s5">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.415686);"></div>
+            </div>
+            <div class="face side s6">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.580392);"></div>
+            </div>
+            <div class="face side s7">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.690196);"></div>
+            </div>
+            <div class="face side s8">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.662745);"></div>
+            </div>
+            <div class="face side s9">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.52549);"></div>
+            </div>
+            <div class="face side s10">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.356863);"></div>
+            </div>
+            <div class="face side s11">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.184314);"></div>
+            </div>
+          </div>
+          <div class="shape cuboid-5 power">
+            <div class="face ft">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.498039);"></div>
+            </div>
+            <div class="face bk">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0980392);"></div>
+            </div>
+            <div class="face rt">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.6);"></div>
+            </div>
+            <div class="face lt">
+              <div class="photon-shader"></div>
+            </div>
+            <div class="face bm">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0980392);"></div>
+            </div>
+            <div class="face tp">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.498039);"></div>
+            </div>
+            <div class="cr cr-0">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.415686);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.243137);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0745098);"></div>
+              </div>
+            </div>
+            <div class="cr cr-1">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(255, 255, 255, 0.0588235);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(255, 255, 255, 0.0901961);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0196078);"></div>
+              </div>
+            </div>
+            <div class="cr cr-2">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.184314);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.356863);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.52549);"></div>
+              </div>
+            </div>
+            <div class="cr cr-3">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.662745);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.690196);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.580392);"></div>
+              </div>
+            </div>
+          </div>
+          <div class="shape cuboid-6 cub-8">
+            <div class="face ft">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0980392);"></div>
+            </div>
+            <div class="face bk">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.498039);"></div>
+            </div>
+            <div class="face rt">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.498039);"></div>
+            </div>
+            <div class="face lt">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0980392);"></div>
+            </div>
+            <div class="face bm">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.6);"></div>
+            </div>
+            <div class="face tp">
+              <div class="photon-shader" style="background-color: rgba(255, 255, 255, 0);"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="example">
+    <div id="tridiv">
+      <div class="coord-gamma-d">&gamma;&deg;</div>
+      <div class="coord-gamma-a">Y</div>
+      <div class="scene gamma">
+        <div class="coord"></div>
+        <div class="phone">
+          <div class="shape cuboid-1 back">
+            <div class="face ft">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.498039);"></div>
+            </div>
+            <div class="face bk">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0980392);"></div>
+            </div>
+            <div class="face rt">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0980392);"></div>
+            </div>
+            <div class="face lt">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.498039);"></div>
+            </div>
+            <div class="face bm">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.6);"></div>
+            </div>
+            <div class="face tp">
+              <div class="photon-shader"></div>
+            </div>
+            <div class="cr cr-0">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.533333);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.580392);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.6);"></div>
+              </div>
+              <div class="face side s3">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.580392);"></div>
+              </div>
+              <div class="face side s4">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.533333);"></div>
+              </div>
+            </div>
+            <div class="cr cr-1">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.462745);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.384314);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.298039);"></div>
+              </div>
+              <div class="face side s3">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.215686);"></div>
+              </div>
+              <div class="face side s4">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.133333);"></div>
+              </div>
+            </div>
+            <div class="cr cr-2">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0666667);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0156863);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(255, 255, 255, 0);"></div>
+              </div>
+              <div class="face side s3">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0156863);"></div>
+              </div>
+              <div class="face side s4">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0666667);"></div>
+              </div>
+            </div>
+            <div class="cr cr-3">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.133333);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.215686);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.298039);"></div>
+              </div>
+              <div class="face side s3">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.384314);"></div>
+              </div>
+              <div class="face side s4">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.462745);"></div>
+              </div>
+            </div>
+          </div>
+          <div class="shape cuboid-2 mid">
+            <div class="face ft">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0980392);"></div>
+            </div>
+            <div class="face bk">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.498039);"></div>
+            </div>
+            <div class="face rt">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.498039);"></div>
+            </div>
+            <div class="face lt">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0980392);"></div>
+            </div>
+            <div class="face bm">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.6);"></div>
+            </div>
+            <div class="face tp">
+              <div class="photon-shader" style="background-color: rgba(255, 255, 255, 0);"></div>
+            </div>
+            <div class="cr cr-0">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0666667);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0156863);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader"></div>
+              </div>
+              <div class="face side s3">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0156863);"></div>
+              </div>
+              <div class="face side s4">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0666667);"></div>
+              </div>
+            </div>
+            <div class="cr cr-1">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.133333);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.215686);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.298039);"></div>
+              </div>
+              <div class="face side s3">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.384314);"></div>
+              </div>
+              <div class="face side s4">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.462745);"></div>
+              </div>
+            </div>
+            <div class="cr cr-2">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.533333);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.580392);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.6);"></div>
+              </div>
+              <div class="face side s3">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.580392);"></div>
+              </div>
+              <div class="face side s4">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.533333);"></div>
+              </div>
+            </div>
+            <div class="cr cr-3">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.462745);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.384314);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.298039);"></div>
+              </div>
+              <div class="face side s3">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.215686);"></div>
+              </div>
+              <div class="face side s4">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.133333);"></div>
+              </div>
+            </div>
+          </div>
+          <div class="shape cuboid-3 top">
+            <div class="face ft">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0980392);"></div>
+            </div>
+            <div class="face bk">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.498039);"></div>
+            </div>
+            <div class="face rt">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.498039);"></div>
+            </div>
+            <div class="face lt">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0980392);"></div>
+            </div>
+            <div class="face bm">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.6);"></div>
+            </div>
+            <div class="face tp">
+              <div class="photon-shader" style="background-color: rgba(255, 255, 255, 0);"></div>
+            </div>
+            <div class="cr cr-0">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0666667);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0156863);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader"></div>
+              </div>
+              <div class="face side s3">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0156863);"></div>
+              </div>
+              <div class="face side s4">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0666667);"></div>
+              </div>
+            </div>
+            <div class="cr cr-1">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.133333);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.215686);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.298039);"></div>
+              </div>
+              <div class="face side s3">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.384314);"></div>
+              </div>
+              <div class="face side s4">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.462745);"></div>
+              </div>
+            </div>
+            <div class="cr cr-2">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.533333);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.580392);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.6);"></div>
+              </div>
+              <div class="face side s3">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.580392);"></div>
+              </div>
+              <div class="face side s4">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.533333);"></div>
+              </div>
+            </div>
+            <div class="cr cr-3">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.462745);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.384314);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.298039);"></div>
+              </div>
+              <div class="face side s3">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.215686);"></div>
+              </div>
+              <div class="face side s4">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.133333);"></div>
+              </div>
+            </div>
+          </div>
+          <div class="shape cuboid-4 lock">
+            <div class="face ft">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0980392);"></div>
+            </div>
+            <div class="face bk">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.498039);"></div>
+            </div>
+            <div class="face rt">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.6);"></div>
+            </div>
+            <div class="face lt">
+              <div class="photon-shader" style="background-color: rgba(255, 255, 255, 0);"></div>
+            </div>
+            <div class="face bm">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0980392);"></div>
+            </div>
+            <div class="face tp">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.498039);"></div>
+            </div>
+            <div class="cr cr-0">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0196078);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(255, 255, 255, 0.0901961);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(255, 255, 255, 0.0588235);"></div>
+              </div>
+            </div>
+            <div class="cr cr-1">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0745098);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.243137);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.415686);"></div>
+              </div>
+            </div>
+            <div class="cr cr-2">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.580392);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.690196);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.662745);"></div>
+              </div>
+            </div>
+            <div class="cr cr-3">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.52549);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.356863);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.184314);"></div>
+              </div>
+            </div>
+          </div>
+          <div class="shape cylinder-1 btn-plus">
+            <div class="face bm">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0980392);"></div>
+            </div>
+            <div class="face tp">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.498039);"></div>
+            </div>
+            <div class="face side s0">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0196078);"></div>
+            </div>
+            <div class="face side s1">
+              <div class="photon-shader" style="background-color: rgba(255, 255, 255, 0.0901961);"></div>
+            </div>
+            <div class="face side s2">
+              <div class="photon-shader" style="background-color: rgba(255, 255, 255, 0.0588235);"></div>
+            </div>
+            <div class="face side s3">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0745098);"></div>
+            </div>
+            <div class="face side s4">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.243137);"></div>
+            </div>
+            <div class="face side s5">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.415686);"></div>
+            </div>
+            <div class="face side s6">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.580392);"></div>
+            </div>
+            <div class="face side s7">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.690196);"></div>
+            </div>
+            <div class="face side s8">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.662745);"></div>
+            </div>
+            <div class="face side s9">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.52549);"></div>
+            </div>
+            <div class="face side s10">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.356863);"></div>
+            </div>
+            <div class="face side s11">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.184314);"></div>
+            </div>
+          </div>
+          <div class="shape cylinder-2 btn-less">
+            <div class="face bm">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0980392);"></div>
+            </div>
+            <div class="face tp">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.498039);"></div>
+            </div>
+            <div class="face side s0">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0196078);"></div>
+            </div>
+            <div class="face side s1">
+              <div class="photon-shader" style="background-color: rgba(255, 255, 255, 0.0901961);"></div>
+            </div>
+            <div class="face side s2">
+              <div class="photon-shader" style="background-color: rgba(255, 255, 255, 0.0588235);"></div>
+            </div>
+            <div class="face side s3">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0745098);"></div>
+            </div>
+            <div class="face side s4">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.243137);"></div>
+            </div>
+            <div class="face side s5">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.415686);"></div>
+            </div>
+            <div class="face side s6">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.580392);"></div>
+            </div>
+            <div class="face side s7">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.690196);"></div>
+            </div>
+            <div class="face side s8">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.662745);"></div>
+            </div>
+            <div class="face side s9">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.52549);"></div>
+            </div>
+            <div class="face side s10">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.356863);"></div>
+            </div>
+            <div class="face side s11">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.184314);"></div>
+            </div>
+          </div>
+          <div class="shape cuboid-5 power">
+            <div class="face ft">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.498039);"></div>
+            </div>
+            <div class="face bk">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0980392);"></div>
+            </div>
+            <div class="face rt">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.6);"></div>
+            </div>
+            <div class="face lt">
+              <div class="photon-shader"></div>
+            </div>
+            <div class="face bm">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0980392);"></div>
+            </div>
+            <div class="face tp">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.498039);"></div>
+            </div>
+            <div class="cr cr-0">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.415686);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.243137);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0745098);"></div>
+              </div>
+            </div>
+            <div class="cr cr-1">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(255, 255, 255, 0.0588235);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(255, 255, 255, 0.0901961);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0196078);"></div>
+              </div>
+            </div>
+            <div class="cr cr-2">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.184314);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.356863);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.52549);"></div>
+              </div>
+            </div>
+            <div class="cr cr-3">
+              <div class="face side s0">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.662745);"></div>
+              </div>
+              <div class="face side s1">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.690196);"></div>
+              </div>
+              <div class="face side s2">
+                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.580392);"></div>
+              </div>
+            </div>
+          </div>
+          <div class="shape cuboid-6 cub-8">
+            <div class="face ft">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0980392);"></div>
+            </div>
+            <div class="face bk">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.498039);"></div>
+            </div>
+            <div class="face rt">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.498039);"></div>
+            </div>
+            <div class="face lt">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0980392);"></div>
+            </div>
+            <div class="face bm">
+              <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.6);"></div>
+            </div>
+            <div class="face tp">
+              <div class="photon-shader" style="background-color: rgba(255, 255, 255, 0);"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+
+    <article class="center center-text middle ex1"><div class="wrapper">
+<pre><code class="language-javascript">window.addEventListener(
+  "deviceorientation",
+  function(event) {
+    console.log(event.alpha);
+    console.log(event.beta);
+    console.log(event.gamma);
+  },
+  true);
+</pre></code>
+    </div></article>
+
+    <article class="center center-text"><div class="wrapper">
+        <h1>событие<br> devicemotion</h1>
+    </div></article>
+
+    <article class="center center-text"><div class="wrapper">
+      <ol>
+        <li>interval (мс)</li>
+        <li>acceleration (м/с<b class="sup">2</b>)</li>
+        <li>accelerationIncludingGravity (м/с<b class="sup">2</b>)</li>
+        <li>rotationRate (&deg;)</li>
+      </ol>
+    </div></article>
+
+    <article class="center center-text middle ex2"><div class="wrapper">
+<pre><code class="language-javascript">window.addEventListener(
+  "devicemotion",
+  function(event) {
+    console.log(
+      event.interval,
+      event.accelerationIncludingGravity.x,
+      event.acceleration.x,
+      event.rotationRate.alpha);
+  },
+  true);
+</pre></code>
+    </div></article>
+
+    <article class="center center-text"><div class="wrapper">
+        <h1>событие<br> compassneedscalibration</h1>
+    </div></article>
+
+    <article class="example">
+      <section class="w3d">
+        <div class='train-model' id="model">
+          <div class='front'></div>
+          <div class='back'></div>
+          <div class='left'></div>
+          <div class='right'></div>
+          <div class='roof'></div>
+        </div>
+      </section>
+    </article>
+
+    <article class="center center-text"><div class="wrapper">
+      <h1>Поддержка</h1>
+      <ul class="support-list">
+        <li>IE 11+</li>
+        <li>Firefox 6+</li>
+        <li>Chrome 7+</li>
+        <li>Safari 6.1+</li>
+        <li>Opera 15+</li>
+        <li>iOS Safari 4.2+</li>
+        <li>Android Browser 3+</li>
+        <li>Blackberry Browser 10+</li>
+        <li>Opera Mobile 12+</li>
+        <li>Chrome для Android 29+</li>
+        <li>Firefox для Android 24+</li>
+      </ul>
+      <a href="http://caniuse.com/deviceorientation">http://caniuse.com/deviceorientation</a>
+    </div></article>
+
+    <article class="qr-link">
+      <img src="img/orientation-event.svg" alt="ссылка">
+      <a href="http://www.w3.org/TR/orientation-event/">http://www.w3.org/TR/orientation-event/</a>
+    </article>
+
+    <article class="center center-text WD"><div class="wrapper">
+        <h1>The Screen<br> Orientation API</h1>
+    </div></article>
+
+    <article class="center center-text"><div class="wrapper">
+      <h1>свойства</h1>
+      <ol>
+        <li>orientation</li>
+      </ol>
+    </div></article>
+
+    <article class="center center-text"><div class="wrapper">
+      <h1 class="icon-chrome">window.orientation</h1>
+      <img src="img/orientation.png" alt="orientation" height="450">
+    </div></article>
+
+    <article class="center center-text"><div class="wrapper">
+      <h1 class="icon-firefox">screen.mozOrientation</h1>
+      <img src="img/orientation-ff.png" alt="orientation" height="450">
+    </div></article>
+
+    <article class="center center-text middle ex3"><div class="wrapper">
+<pre><code class="language-javascript">if(typeof window.orientation == 'undefined'){
+  console.log(screen.mozOrientation);
+}else{
+  console.log(window.orientation);
+}</pre></code>
+    </div></article>
+
+    <article class="center center-text"><div class="wrapper">
+      <h1>методы</h1>
+      <ol>
+        <li>lockOrientation</li>
+        <li>unlockOrientation</li>
+      </ol>
+    </div></article>
+
+    <article class="center center-text middle ex4"><div class="wrapper">
+<pre><code class="language-javascript">if (screen.mozLockOrientation([
+  "landscape-primary",
+  "landscape-secondary"
+])) {
+  // Успешно заблокировали
+} else {
+  // Невозможно заблокировать
+}</pre></code>
+    </div></article>
+
+    <article class="center center-text"><div class="wrapper">
+      <h1>события</h1>
+      <ol>
+        <li>orientationchange</li>
+        <li>mozorientationchange</li>
+      </ol>
+    </div></article>
+
+    <article class="center center-text middle ex5"><div class="wrapper">
+<pre><code class="language-javascript">screen.addEventListener(
+  "mozorientationchange",
+  callbackFunction,
+  true);
+
+window.addEventListener(
+  'orientationchange',
+  callbackFunction,
+  true);
+</pre></code>
+    </div></article>
+
+    <article class="center center-text"><div class="wrapper">
+      <h1>Поддержка</h1>
+      <p class="support">
+      <ul class="support-list">
+        <li>iOS Safari</li>
+        <li>Firefox для FirefoxOS</li>
+      </ul>
+      </p>
+    </div></article>
+
+    <article class="qr-link">
+      <img src="img/screen-orientation.svg" alt="ссылка">
+      <a href="http://www.w3.org/TR/screen-orientation/">http://www.w3.org/TR/screen-orientation/</a>
+    </article>
+
+
+    <article class="center center-text CR"><div class="wrapper">
+        <h1>Ambient Light Events</h1>
+    </div></article>
+
+    <article class="center center-text"><div class="wrapper">
+      <h1>Использует</h1>
+      <ol>
+        <li>Датчик оствещения</li>
+      </ol>
+    </div></article>
+
+    <article class="center center-text"><div class="wrapper">
+      <h1>события</h1>
+      <ol>
+        <li>deviceligh (lux)</li>
+        <li>lightlevel (dim, normal, bright)</li>
+      </ol>
+    </div></article>
+
+    <article class="center center-text middle ex6"><div class="wrapper">
+<pre><code class="language-javascript">window.addEventListener(
+  "lightlevel",
+  function(event) {
+    console.log(event.value);
+  },
+  true);</pre></code>
+    </div></article>
+
+    <article class="center center-text middle ex6"><div class="wrapper">
+<pre><code class="language-javascript">window.addEventListener(
+  "devicelight",
+  function(event) {
+    console.log(event.value);
+  },
+  true);</pre></code>
+    </div></article>
+
+    <article class="center center-text"><div class="wrapper">
+      <h1>Поддержка</h1>
+      <p class="support">
+        <b class="icon-firefox"></b>
+      </p>
+    </div></article>
+
+    <article class="qr-link">
+      <img src="img/ambient-light.svg" alt="ссылка">
+      <a href="http://www.w3.org/TR/ambient-light/">http://www.w3.org/TR/ambient-light/</a>
+    </article>
+
+
+    <article class="center center-text CR"><div class="wrapper">
+        <h1>Proximity Events</h1>
+    </div></article>
+
+    <article class="center center-text"><div class="wrapper">
+      <h1>Использует</h1>
+      <ol>
+        <li>Датчик расстояния</li>
+      </ol>
+    </div></article>
+
+    <article class="center center-text"><div class="wrapper">
+      <h1>события</h1>
+      <ol>
+        <li>deviceproximity</li>
+        <li>userproximity</li>
+      </ol>
+    </div></article>
+
+    <article class="center center-text"><div class="wrapper">
+        <h1>событие<br> deviceproximity</h1>
+    </div></article>
+
+    <article class="center center-text"><div class="wrapper">
+      <ol>
+        <li>value (cm)</li>
+        <li>min (cm)</li>
+        <li>max (cm)</li>
+      </ol>
+    </div></article>
+
+
+    <article class="center center-text middle ex7"><div class="wrapper">
+<pre><code class="language-javascript">window.addEventListener(
+  "deviceproximity",
+  function(event) {
+    console.log(event.value+' cm');
+    console.log(event.min+' cm');
+    console.log(event.max+' cm');
+  },
+  true);</pre></code>
+    </div></article>
+
+    <article class="center center-text"><div class="wrapper">
+        <h1>событие<br> userproximity</h1>
+    </div></article>
+
+    <article class="center center-text"><div class="wrapper">
+      <ol>
+        <li>near</li>
+      </ol>
+    </div></article>
+
+    <article class="center center-text middle ex8"><div class="wrapper">
+<pre><code class="language-javascript">window.addEventListener(
+  "userproximity",
+  function(event) {
+    if (event.near) {
+      // Близко
+    }else{
+      // Далеко
+    }},
+  true);</pre></code>
+    </div></article>
+
+    <article class="center center-text"><div class="wrapper">
+      <h1>Поддержка</h1>
+      <p class="support">
+        <b class="icon-firefox"></b>
+      </p>
+    </div></article>
+
+    <article class="qr-link">
+      <img src="img/proximity.svg" alt="ссылка">
+      <a href="http://www.w3.org/TR/proximity/">http://www.w3.org/TR/proximity/</a>
+    </article>
+
+    <article class="center center-text CR"><div class="wrapper">
+        <h1>Vibration API</h1>
+    </div></article>
+
+    <article class="center center-text"><div class="wrapper">
+      <h1>Использует</h1>
+      <img src="img/vibrator.png" alt="orientation" height="450">
+    </div></article>
+
+    <article class="center center-text"><div class="wrapper">
+      <h1>метод</h1>
+      <ol>
+        <li>vibrate</li>
+      </ol>
+    </div></article>
+
+    <article class="center center-text middle ex9"><div class="wrapper">
+<pre><code class="language-javascript">navigator.vibrate([50, 100, 1000]);
+navigator.vibrate(500);
+navigator.vibrate([]);
+navigator.vibrate(0);</pre></code>
+    </div></article>
+
+    <article class="center center-text"><div class="wrapper">
+      <h1>Поддержка</h1>
+      <p class="support">
+        <b class="icon-firefox"></b>
+      </p>
+    </div></article>
+
+    <article class="qr-link">
+      <img src="img/vibration.svg" alt="ссылка">
+      <a href="http://www.w3.org/TR/vibration/">http://www.w3.org/TR/vibration/</a>
+    </article>
+
+    <article class="center center-text WD"><div class="wrapper">
+        <h1>The Network<br> Information API</h1>
+    </div></article>
+
+    <article class="center center-text"><div class="wrapper">
+      <h1>свойства</h1>
+      <ol>
+        <li>bandwidth (&#x221E;, 0, МБ/с)</li>
+        <li>metered</li>
+      </ol>
+    </div></article>
+
+    <article class="center center-text"><div class="wrapper">
+      <h1>события</h1>
+      <ol>
+        <li>change</li>
+      </ol>
+    </div></article>
+
+    <article class="center center-text middle"><div class="wrapper">
+<pre><code class="language-javascript">var connection = navigator.connection ||
+  navigator.mozConnection ||
+  navigator.webkitConnection;
+function updateConnectionStatus() {
+  console.log(connection.bandwidth);
+  console.log(connection.metered);
+}
+connection.addEventListener(
+  "change",
+  updateConnectionStatus,
+  true);
+updateConnectionStatus();</pre></code>
+    </div></article>
+
+    <article class="center center-text"><div class="wrapper">
+      <h1>Поддержка</h1>
+      <p class="support">
+        <b class="icon-firefox"></b>
+      </p>
+    </div></article>
+
+    <article class="qr-link">
+      <img src="img/netinfo-api.svg" alt="ссылка">
+      <a href="http://www.w3.org/TR/netinfo-api/">http://www.w3.org/TR/netinfo-api/</a>
+    </article>
+
+    <article class="center center-text LC"><div class="wrapper">
+        <h1>Web Notifications</h1>
+    </div></article>
+
+    <article class="center center-text ex10 deadline"><div class="wrapper">
+      <div><pre><code class="language-javascript">Notification.permission</pre></code></div>
+      <ol>
+        <li>default — еще не выбрали</li>
+        <li>denied — запретили</li>
+        <li>granted — разрешили</li>
+      </ol>
+    </div></article>
+
+    <article class="center center-text middle ex11"><div class="wrapper">
+<pre><code class="language-javascript">Notification.requestPermission(callback);
+function callback(permission){
+  if(permission == "granted"){
+    // Разрешено
+  }else{
+    // Запрещено
+  }
+}</pre></code>
+    </div></article>
+
+    <article class="center center-text middle ex12"><div class="wrapper">
+<pre><code class="language-javascript">new Notification("Заголовок",{
+  icon: "icon.png",
+  body: "Сообщение",
+  dir:  "ltr",
+  lang: "ru-RU",
+  tag:  "deadline"
+});</pre></code>
+    </div></article>
+
+    <article class="center center-text"><div class="wrapper">
+      <h1>события</h1>
+      <ol>
+        <li>click</li>
+        <li>show</li>
+        <li>error</li>
+        <li>close</li>
+      </ol>
+    </div></article>
+
+    <article class="qr-link">
+      <img src="img/WebNotification.svg" alt="ссылка">
+      <a href="https://github.com/auchenberg/WebNotification.js">http://goo.gl/w2W4M1</a>
+    </article>
+
+    <article class="center center-text"><div class="wrapper">
+      <h1>Поддержка</h1>
+      <ul class="support-list">
+        <li>FF 22+</li>
+        <li>Chrome 22+</li>
+        <li>Safari 7+</li>
+        <li>Blackberry Browser 10+</li>
+        <li>Opera Mobile 16+</li>
+        <li>Chrome for Android 29+</li>
+        <li>Firefox for Android 24+</li>
+      </ul>
+      <a href="http://caniuse.com/notifications">http://caniuse.com/notifications</a>
+    </div></article>
+
+    <article class="qr-link">
+      <img src="img/notifications.svg" alt="ссылка">
+      <a href="http://www.w3.org/TR/notifications/">http://www.w3.org/TR/notifications/</a>
+    </article>
+
+    <article class="center center-text CR"><div class="wrapper">
+        <h1>Battery Status API</h1>
+    </div></article>
+
+    <article class="center center-text middle ex13"><div class="wrapper">
+<pre><code class="language-javascript">var battery = navigator.battery ||
+              navigator.mozBattery ||
+              navigator.webkitBattery;</pre></code>
+    </div></article>
+
+    <article class="center center-text"><div class="wrapper">
+      <h1>свойства</h1>
+      <ol>
+        <li>level</li>
+        <li>charging</li>
+        <li>chargingTime</li>
+        <li>dischargingTime</li>
+      </ol>
+    </div></article>
+
+    <article class="center center-text"><div class="wrapper">
+      <h1>события</h1>
+      <ol>
+        <li>levelchange</li>
+        <li>chargingchange</li>
+        <li>chargingtimechange</li>
+        <li>dischargingtimechange</li>
+      </ol>
+    </div></article>
+
+    <article class="center center-text"><div class="wrapper">
+      <h1>Поддержка</h1>
+      <p class="support">
+        <b class="icon-firefox"></b>
+      </p>
+    </div></article>
+
+    <article class="qr-link">
+      <img src="img/battery-status.svg" alt="ссылка">
+      <a href="http://www.w3.org/TR/battery-status/">http://www.w3.org/TR/battery-status/</a>
+    </article>
+
+    <article class="vcard center contacts"><div class="wrapper">
+      <img src="img/vcard.svg" alt="vcard">
+      <p>Anton Nemtsev</p>
+      <p>http://frontender.info/</p>
+      <p>thesilentimp@gmail.com</p>
+      <p>@silentimp</p>
+      <p><b>skype:</b> ravencry</p>
+      <br><br><br>Репозиторий:
+      <a href="http://github.com/SilentImp/lost-specs">http://goo.gl/h5GtBp</a>
+      <br>Cлайды:
+      <a href="http://silentimp.github.io/lost-specs/">http://silentimp.github.io/lost-specs/</a>
+    </div></article>
+
+
+  </section>
+
+  <div class="progress"><div><div></div></div></div>
+  <div class="lightbox"></div>
+</body>
+</html>

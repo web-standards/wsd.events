@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Доступный веб для всех</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=680, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link rel="stylesheet" href="styles/screen-d90984e344.css">
+	<link rel="stylesheet" href="styles/theme.css">
+</head>
+<body class="list">
+	<!--
+		Debug class on <body> enables
+		cyan grid on slides
+		-->
+	<header class="caption">
+		<h1>Доступный веб для всех</h1>
+		<p><a href="https://romanliutikov.com/">Роман Лютиков</a></p>
+		<p>Web Standards Days, Киев, 2014</p>
+	</header>
+
+	<section class="slide"><div style="padding-top:30px;">
+		<h2 style="text-align:center;">Доступность</h2>
+		<img src="pictures/accessible-logo.svg" alt="" class="place" width="300" style="margin-top:60px;">
+	</div></section>
+
+	<section class="slide shout"><div>
+		<img src="pictures/color-blind-traffic-light.jpg" alt="" class="place b">
+	</div></section>
+
+	<section class="slide shout"><div>
+		<h2>Зачем мне это?</h2>
+	</div></section>
+
+	<section class="slide"><div>
+		<img src="pictures/big-deal.gif" alt="" class="place" style="width:70%;">
+	</div></section>
+
+	<section class="slide" lang="ru"><div>
+		<h2>Для пользователя</h2>
+		<ol>
+			<li>Понятный и удобный интерфейс</li>
+			<li>Максимально быстрое достижение цели</li>
+			<li>Доступ к продукту без барьеров</li>
+		</ol>
+	</div></section>
+
+	<section class="slide" lang="ru"><div>
+		<h2>Для SEO</h2>
+		<ol>
+			<li>Поисковики любят семантику</li>
+			<li>И понятные интерфейсы</li>
+			<li>И удобные тоже (<a href="https://www.google.com/webmasters/tools/mobile-friendly/">Google Mobile-Friendly Test</a>)</li>
+		</ol>
+	</div></section>
+
+	<section class="slide" lang="ru"><div>
+		<h2>Для разработчика</h2>
+		<ol>
+			<li>Понимание проблем доступности и умение их решать</li>
+			<li>Квалификация</li>
+			<li>Пользователи будут благодарны</li>
+		</ol>
+	</div></section>
+
+	<section class="slide" lang="ru"><div>
+		<h2>Для бизнеса</h2>
+		<ol>
+			<li>Больше пользователей</li>
+			<li>Больше денег</li>
+			<li>Меньше проблем</li>
+		</ol>
+	</div></section>
+
+	<section class="slide" style="background:url(pictures/mythbusters.png);background-size:cover;color:#fff;text-align:center;"><div>
+		<h2 style="color:#fff;margin-top:160px;font-size:60px;background:#242424;line-height:1.4em;display:inline-block;padding:0 30px;">Accessibility</h2>
+	</div></section>
+
+	<section class="slide" lang="ru"><div>
+		<h2>Только разработчики ответственны за это</h2>
+		<ul>
+			<li>Дизайнеры</li>
+			<li>Контент-менеджеры</li>
+			<li>Владельцы сайтов</li>
+			<li>User Agent</li>
+		</ul>
+	</div></section>
+
+	<section class="slide" lang="ru"><div>
+		<h2>Только эксперт может сделать сайт доступным</h2>
+		<ul>
+			<li>Большинство техник легко применимы</li>
+			<li>Нужно знать инструменты</li>
+		</ul>
+	</div></section>
+
+	<section class="slide" lang="ru"><div>
+		<h2>Это дорого и у нас нет времени</h2>
+		<ul>
+			<li>Немного времени на обучение базовым техникам</li>
+			<li>Большинство задач решаются в HTML</li>
+			<li>Дешево и красиво если делать сразу</li>
+		</ul>
+	</div></section>
+
+	<section class="slide" lang="ru"><div>
+		<h2>Доступные сайты уродливые и скучные</h2>
+		<ul>
+			<li><a href="http://www.csszengarden.com/">Нет</a></li>
+			<li>Только текст !== доступность</li>
+		</ul>
+	</div></section>
+
+	<section class="slide" lang="ru"><div>
+		<h2>Доступность нужна немногим</h2>
+		<ul>
+			<li>Нету метрик для пользователей с ограничениями</li>
+			<li>Доступность важна для всех</li>
+		</ul>
+	</div></section>
+
+	<section class="slide shout" style="background:url(pictures/users.gif);background-size:cover;color:#fff;"><div>
+		<h2 style="color:#fff;">Пользователи</h2>
+		<p class="center"><small>Кто эти люди?</small></p>
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="dis-icon vision"></div>
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="dis-icon hearing"></div>
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="dis-icon physical"></div>
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="dis-icon cognitive"></div>
+	</div></section>
+
+	<section class="slide shout"><div>
+		<img src="pictures/you.jpg" alt="" class="place b">
+	</div></section>
+
+	<section class="slide gradient"></section>
+
+	<section class="slide shout"><div>
+		<h2>Как они это делают?</h2>
+	</div></section>
+
+	<section class="slide cover w"><div>
+		<img src="pictures/accessible-keyboard.jpg" alt="" class="place b">
+	</div></section>
+
+	<section class="slide cover w"><div>
+		<img src="pictures/keyboard-stick.jpg" alt="" class="place b">
+	</div></section>
+
+	<section class="slide" lang="ru"><div>
+		<h2>Программные решения</h2>
+
+		<ul>
+			<li>Увеличение изображения на экране</li>
+			<li>Экранный диктор</li>
+			<li>Инвертирование цвета</li>
+			<li>Повышение контраста</li>
+		</ul>
+	</div></section>
+
+	<section class="slide shout"><div>
+		<h3>Минимальная доступность лучше, чем ее отсутствие</h3>
+	</div></section>
+
+	<section class="slide"><div style="padding-top:40px;">
+		<h2 style="text-align:center;">Чем мы можем помочь?</h2>
+		<img src="pictures/user-hell.gif" alt="" class="place" style="width:50%;">
+	</div></section>
+
+	<section class="slide" lang="ru"><div>
+		<h2>Чем мы можем помочь?</h2>
+
+		<ul>
+			<li>Доступ с помощью клавиатуры</li>
+			<li>Понятная навигация</li>
+			<li>Легко читаемый текст</li>
+			<li>Совместимость со вспомогательными технологиями</li>
+		</ul>
+	</div></section>
+
+	<section class="slide" lang="ru"><div>
+		<h2>Как это сделать?</h2>
+
+		<ul>
+			<li>Следовать стандартам и рекомендациям</li>
+			<li>Использовать существующие инcтрументы</li>
+			<li>Тестировать с реальными пользователями</li>
+		</ul>
+	</div></section>
+
+	<section class="slide shout"><div>
+		<h3>Чем раньше вы начнете работать над доступностью, тем проще будет это сделать</h3>
+	</div></section>
+
+	<section class="slide shout"><div>
+		<h2>и дешевле</h2>
+	</div></section>
+
+	<section class="slide shout"><div>
+		<h2>Хорошо. С чего мне начать?</h2>
+	</div></section>
+
+	<section class="slide hide-num" lang="ru"><div>
+		<h2>Чеклист базовой доступности</h2>
+
+		<ol>
+			<li>Логическая структура разметки и семантичный HTML</li>
+			<li><code>&lt;lang=""&gt;</code> для обозначения языка внутри элемента</li>
+			<li>Альтернативный текст для изображений <code>alt=""</code></li>
+			<li>Визульное представление для элемента в фокусе <code>:focus</code></li>
+			<li>Кнопки должны быть кнопками, а ссылки ссылками</li>
+			<li>Возможность пропустить навигацию/шапку</li>
+			<li>Атрибут <code>tabindex="0"</code> для кастомных контролов</li>
+			<li>Читаемый шрифт</li>
+			<li>Достаточное межстрочное расстояние и размер текста</li>
+			<li>Контрастный текст</li>
+			<!-- http://a11yproject.com/checklist.html -->
+		</ol>
+	</div></section>
+
+	<section class="slide shout"><div>
+		<h2><a href="demo/index.html" style="color:#52A2DF">Демо</a></h2>
+	</div></section>
+
+	<section class="slide shout"><div>
+		<h2>WCAG 2.0<br/>Section 508</h2>
+		<!-- level AAA -->
+	</div></section>
+
+	<section class="slide shout"><div>
+		<h2>HTML5<br/>ARIA</h2>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Доступность из коробки</h2>
+
+		<ul>
+			<li><code>&lt;nav&gt;</code></li>
+			<li><code>&lt;header&gt;</code></li>
+			<li><code>&lt;main&gt;</code></li>
+			<li><code>&lt;aside&gt;</code></li>
+			<li><code>&lt;section&gt;</code></li>
+			<li><code>&lt;footer&gt;</code></li>
+		</ul>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Accessible Rich Internet Applications</h2>
+
+		<p>Совместимость со вспомогательными технологиями</p>
+
+		<ul>
+			<li>Ориентиры</li>
+			<li>Роли</li>
+			<li>Состояния</li>
+			<li>Свойства</li>
+		</ul>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Ориентиры ARIA</h2>
+
+		<p>Размечаем структуру документа</p>
+
+		<ul>
+			<li><code>role="banner"</code></li>
+			<li><code>role="navigation"</code></li>
+			<li><code>role="main"</code></li>
+			<li>...</li>
+		</ul>
+	</div></section>
+
+	<section class="slide shout"><div>
+		<img src="pictures/markup-landmarks.jpg" alt="" class="place" style="width:70%;">
+	</div></section>
+
+	<section class="slide shout"><div>
+		<img src="pictures/landmarks.gif" alt="" class="place" style="width:70%;">
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Роли ARIA</h2>
+
+		<p>Описываем интерфейс сайта</p>
+
+		<ul>
+			<li><code>role="button"</code></li>
+			<li><code>role="checkbox"</code></li>
+			<li><code>role="menuitem"</code></li>
+			<li>...</li>
+		</ul>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Состояния ARIA</h2>
+
+		<p>Задаем состояния отдельным элементам</p>
+
+		<ul>
+			<li><code>aria-disabled</code></li>
+			<li><code>aria-hidden</code></li>
+			<li><code>aria-invalid</code></li>
+			<li>...</li>
+		</ul>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Свойства ARIA</h2>
+
+		<p>Поведение и описание элементов</p>
+
+		<ul>
+			<li><code>aria-label</code></li>
+			<li><code>aria-live</code></li>
+			<li><code>aria-controls</code></li>
+			<li>...</li>
+		</ul>
+	</div></section>
+
+	<section class="slide shout"><div>
+		<h3>Что делать <br>с<br> медиа-контентом?</h3>
+	</div></section>
+
+	<section class="slide" lang="ru"><div>
+		<h2>Видео</h2>
+
+		<ul>
+			<li>Субтитры (<a href="http://dev.w3.org/html5/webvtt/">WebVTT</a> для HTML5 Video)</li>
+			<li>Расшифровка</li>
+			<li><a href="https://github.com/nomensa/Accessible-Media-Player">Обертки для плееров</a></li>
+		</ul>
+	</div></section>
+
+	<section class="slide" lang="ru"><div>
+		<h2>Аудио</h2>
+
+		<ul>
+			<li>Расшифровка</li>
+			<li><a href="http://dev.w3.org/html5/webvtt/">WebVTT</a> для HTML5 Audio</li>
+		</ul>
+
+		<ul>
+			<li><a href="http://www.html5rocks.com/en/tutorials/track/basics/">Getting Started With the Track Element</a></li>
+		</ul>
+	</div></section>
+
+	<section class="slide" lang="ru"><div>
+		<h2>Документы (PDF)</h2>
+
+		<ul>
+			<li>Скачать и прочитать</li>
+		</ul>
+	</div></section>
+
+	<section class="slide" lang="ru"><div>
+		<h2>HTML5 Canvas</h2>
+
+		<ul>
+			<li>Использовать по назначению</li>
+			<li>DOM представление контента внутри <code>&lt;canvas&gt;</code></li>
+			<li>Нативные контролы (<code>&lt;input&gt;</code>)</li>
+			<li><code>aria-live</code> для оповещения об изменениях</li>
+		</ul>
+	</div></section>
+
+	<section class="slide" lang="ru"><div>
+		<iframe src="canvas-demo.html" frameborder="0" width=450 height=480 style="margin:0 auto;display:block;"></iframe>
+	</div></section>
+
+	<section class="slide shout"><div>
+		<h2>Доступный JavaScript</h2>
+	</div></section>
+
+	<section class="slide shout"><div>
+		<img src="pictures/user-fail.gif" alt="" class="place" style="width:50%;">
+	</div></section>
+
+	<section class="slide" lang="ru"><div>
+		<h2>Что нужно сделать?</h2>
+
+		<ul>
+			<li><code>role="application"</code> (не всегда)</li>
+			<li>Управление атрибутами ARIA</li>
+			<li>Если есть <code>onclick</code>, нужен <code>onkeydown</code></li>
+			<li><code>aria-live="polite"</code> для сигнализирования об изменениях</li>
+			<li><code>role="alert"</code> для уведомлений</li>
+			<li><code>tabindex="-1"</code> на неинтерактивных элементах</li>
+			<li><code>Element.focus()</code> для изменения фокуса</li>
+		</ul>
+	</div></section>
+
+	<section class="slide" lang="ru"><div>
+		<h2>Готовые решения</h2>
+
+		<ul>
+			<li><a href="https://docs.angularjs.org/guide/accessibility">ngAria</a></li>
+			<li><a href="http://plugins.jquery.com/tag/accessibility/">jQuery Accessibility</a></li>
+			<li><a href="http://dojotoolkit.org/reference-guide/1.10/dijit/a11y/statement.html">Dojo</a></li>
+			<li><a href="http://www.yuiblog.com/blog/2014/02/19/yuiconf-2013-ted-drake-and-sarbbottam-on-accessibility-yui/">YUI</a></li>
+			<li><a href="http://docs.sencha.com/extjs/5.0/core_concepts/accessibility.html">Ext JS</a></li>
+			<li><a href="https://github.com/paypal/bootstrap-accessibility-plugin">Bootstrap Accessibility Plugin</a></li>
+		</ul>
+	</div></section>
+
+	<section class="slide" style="background:url(pictures/toomuch-is-toomuch.gif);background-size:cover;color:#fff;text-align:center;"><div>
+		<h2 style="color:#fff;font-size:50px;top:50%;position:relative;margin-top:-100px;background:#242424;">Много доступности — плохо</h2>
+	</div></section>
+
+	<section class="slide shout"><div>
+		<h2>Как тестировать?</h2>
+	</div></section>
+
+	<section class="slide" lang="ru"><div>
+		<h2>Экранный диктор</h2>
+
+		<h3>Он может показаться странным</h3>
+
+		<ul>
+			<li>JAWS</li>
+			<li>NVDA</li>
+			<li>VoiceOver</li>
+		</ul>
+	</div></section>
+
+	<section class="slide" lang="ru"><div>
+		<h2>Браузер</h2>
+
+		<ul>
+			<li>IE8</li>
+			<li>Firefox</li>
+			<li>Safari</li>
+		</ul>
+	</div></section>
+
+	<section class="slide" lang="ru"><div>
+		<h2>Реальные пользователи</h2>
+
+		<ul>
+			<li>С опытом использования вспомогательных технологий</li>
+			<li>С различными ограничениями и степенью осложнений</li>
+		</ul>
+	</div></section>
+
+	<section class="slide shout" style="background:url(pictures/tools.jpg);background-size:cover;color:#fff;"><div>
+		<h2 style="color:#fff;">Инструменты</h2>
+	</div></section>
+
+	<section class="slide" lang="ru"><div>
+		<h2>Инструменты в браузере</h2>
+
+		<ul>
+			<li><a href="https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb">Accessibility Developer Tools</a></li>
+			<li><a href="https://chrome.google.com/webstore/detail/aria-validator/oigghlanfjgnkcndchmnlnmaojahnjoc">ARIA Validator</a></li>
+			<li><a href="https://chrome.google.com/webstore/detail/chromevox/kgejglhpjiefppelpmljglcjbhoiplfn">ChromeVox</a></li>
+			<li><a href="https://chrome.google.com/webstore/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh">WAVE Evaluation Tool</a></li>
+			<li><a href="https://chrome.google.com/webstore/detail/color-contrast-analyzer/dagdlcijhfbmgkjokkjicnnfimlebcll?hl=en">Color Contrast Analyzer</a></li>
+		</ul>
+	</div></section>
+
+	<section class="slide" lang="ru"><div>
+		<h2>Сервисы</h2>
+
+		<ul>
+			<li><a href="http://www.tenon.io/">Tenon</a></li>
+			<li><a href="http://www.tanaguru.com/en/">Tanaguru</a></li>
+			<li><a href="http://www.508checker.com/index.php">508 Checker</a></li>
+			<li><a href="http://leaverou.github.io/contrast-ratio/">Contrast Ratio</a></li>
+		</ul>
+	</div></section>
+
+	<section class="slide" lang="ru"><div>
+		<h2>Автоматизация</h2>
+
+		<h3>Автотесты покрывают лишь малую часть проблем</h3>
+
+		<ul>
+			<li><a href="https://github.com/yargalot/grunt-accessibility">grunt-accessibility</a></li>
+			<li><a href="https://github.com/babaskate/grunt-tenon">grunt-tenon</a></li>
+			<li><a href="http://pa11y.org/">pa11y</a></li>
+		</ul>
+	</div></section>
+
+	<section class="slide shout"><div>
+		<h3>Делать доступность не сложно, не страшно и недорого</h3>
+	</div></section>
+
+	<section class="slide shout"><div>
+		<h2>Если это делать правильно и вовремя</h2>
+	</div></section>
+
+	<section class="slide" lang="ru"><div style="padding-top:10px;">
+		<h2>Что почитать?</h2>
+
+		<ul>
+			<li><a href="http://www.w3.org/Translations/WCAG20-ru/">Руководство по обеспечению доступности веб-контента (WCAG) 2.0</a></li>
+			<li><a href="http://www.w3.org/WAI/intro/aria.php">WAI-ARIA Overview</a></li>
+			<li><a href="http://css-live.ru/articles/frejmvork-angularjs-ne-dlya-sajtov.html">Фреймворк AngularJS не для сайтов</a></li>
+			<li><a href="http://www.bbc.co.uk/guidelines/futuremedia/accessibility/mobile">BBC Mobile Accessibility</a></li>
+			<li><a href="http://www.nomensa.com/blog/tag/web-accessibility">Nomensa Accessibility</a></li>
+			<li><a href="http://www.webaxe.org/">Web Axe</a></li>
+			<li><a href="http://maxdesign.com.au/jobs/sample-accessibility/index.html">Accessibility tests</a></li>
+			<li><a href="http://www.colour-blindness.com/">Color Blindness</a></li>
+			<li><a href="https://specs.webplatform.org/SVG1.1-ARIA/webspecs/master/">Web developer rules for use of ARIA attributes on SVG1.1 elements</a></li>
+			<li><a href="http://whatsock.com/training/index.htm">The Accessibility Tree: A Training Guide</a></li>
+		</ul>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Доступный веб для всех</h2>
+
+		<h3><a href="https://romanliutikov.com/">Роман Лютиков</a></h3>
+
+		<ul>
+			<li><a href="https://twitter.com/roman01la">@roman01la</a></li>
+			<li><a href="http://accessibility.org.ua/">accessibility.org.ua</a></li>
+		</ul>
+	</div></section>
+
+	<!-- <p class="badge"><a href="https://github.com/shower/shower">Fork me on Github</a></p> -->
+	<!--
+		To hide progress bar from entire presentation
+		just remove “progress” element.
+		-->
+	<!-- <div class="progress"><div></div></div> -->
+	<script src="shower-core/shower.min.js"></script>
+	<!-- Copyright © 2014 Yours Truly, Famous Inc. -->
+</body>
+</html>

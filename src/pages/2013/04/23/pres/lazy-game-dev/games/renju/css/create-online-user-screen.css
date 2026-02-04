@@ -1,0 +1,10 @@
+.create-online-user-screen .wrapper{
+  height:152px;
+  }
+  .create-online-user-screen .wrapper form{
+    width: 530px;
+    }
+  .create-online-user-screen .wrapper .player{
+    width: 530px;
+    margin: 0;
+    }

@@ -1,0 +1,546 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+	<title>Сколько нужно верстальщиков, чтобы вставить &lt;picture&gt;?</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=1274, user-scalable=no">
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen-d90984e344.css">
+	<style>
+		.iphone {
+			background:#999;
+			}
+			.iphone__picture--portrait {
+				margin:-32px 0 0 0;
+				width:326px;
+				}
+			.iphone__picture--landscape {
+				margin:-73px 0 0 -145px;
+				width:290px;
+				}
+	</style>
+</head>
+<body class="list">
+
+	<header class="caption">
+		<h1>
+			Сколько нужно верстальщиков,<br>
+			чтобы вставить &lt;picture&gt;?
+		</h1>
+		<p><a href="http://pepelsbey.net/">Вадим Макеев</a>, <a href="http://opera.com">Opera Software</a></p>
+	</header>
+
+	<section class="slide shout" id="cover"><div>
+		<style>
+			#cover {
+				background:#74AB26;
+				}
+			#cover h2 {
+				left:170px;
+				padding-top:60px;
+				color:#FFF;
+				text-align:left;
+				font-size:100px;
+				}
+			#cover img {
+				margin:0 -10px 0 -5px;
+				width:120px;
+				vertical-align:-76px;
+				}
+		</style>
+		<h2>
+			Сколько нужно верстальщиков,<br>
+			чтобы вставить <img src="pictures/broken--ie-old.png" alt="Иконка сломанной картинки"> ?
+		</h2>
+	</div></section>
+
+	<section class="slide"><div>
+		<img src="pictures/opera.png" width="512" alt="Лого Оперы" class="place">
+	</div></section>
+
+	<section class="slide shout shrink"><div>
+		<h2>&lt;img&gt;</h2>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>&lt;img&gt;</h2>
+		<ol>
+			<li class="next">Предложили в 1993 году</li>
+			<li class="next">Встроен в браузеры</li>
+			<li class="next">Не блокирует загрузку</li>
+			<li class="next">Доступен через <code>alt</code></li>
+		</ol>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>&lt;img&gt;</h2>
+		<ol>
+			<li class="next">Не умеет работать <strong>с ретиной</strong></li>
+			<li class="next">Не умеет <strong>адаптироваться</strong></li>
+			<li class="next">Не умеет <strong>кадрироваться</strong></li>
+			<li class="next">Не знает про <strong>новые форматы</strong></li>
+		</ol>
+	</div></section>
+
+	<section class="slide shout"><div>
+		<img src="pictures/broken--webkit.png" width="400" alt="Иконка сломанной картинки" class="place">
+	</div></section>
+
+	<section class="slide cover"><div>
+		<img src="pictures/lamps.png" alt="Лампочки">
+	</div></section>
+
+	<section class="slide cover w"><div>
+		<img src="pictures/filter--problem.jpg" alt="Проблема: как вставить квадратное в круглое">
+	</div></section>
+
+	<section class="slide cover w"><div>
+		<img src="pictures/filter--solution.jpg" alt="Решение: замотать всё скотчем">
+	</div></section>
+
+	<section class="slide shout shrink"><div>
+		<h2>(не)знаю</h2>
+	</div></section>
+
+	<section class="slide" id="table"><div>
+		<style>
+			#table table img {
+				width:32px;
+				vertical-align:-15%;
+				}
+		</style>
+		<h2>(не)знаю</h2>
+		<table class="striped">
+		<tr>
+			<th scope="col" width="40%"></th>
+			<th scope="col" width="26%">Разработчик</th>
+			<th scope="col" width="20%">Браузер</th>
+			<th scope="col" width="14%">Нужно</th>
+		</tr>
+		<tr>
+			<th scope="row">Ширина вьюпорта</th>
+			<td><img src="pictures/no.svg" alt="Нет"></td>
+			<td><img src="pictures/yes.svg" alt="Да"></td>
+			<td><img src="pictures/yes.svg" alt="Да"></td>
+		</tr>
+		<tr>
+			<th scope="row">Картинка к вьюпорту</th>
+			<td><img src="pictures/yes.svg" alt="Да"></td>
+			<td><img src="pictures/no.svg" alt="Нет"></td>
+			<td><img src="pictures/yes.svg" alt="Да"></td>
+		</tr>
+		<tr>
+			<th scope="row">Ретиновость экрана</th>
+			<td><img src="pictures/no.svg" alt="Нет"></td>
+			<td><img src="pictures/yes.svg" alt="Да"></td>
+			<td><img src="pictures/yes.svg" alt="Да"></td>
+		</tr>
+		<tr>
+			<th scope="row">Размеры картинок</th>
+			<td><img src="pictures/yes.svg" alt="Да"></td>
+			<td><img src="pictures/no.svg" alt="Нет"></td>
+			<td><img src="pictures/yes.svg" alt="Да"></td>
+		</tr>
+		</table>
+	</div></section>
+
+	<section class="slide shout"><div>
+		<img src="pictures/broken--safari.png" width="400" alt="Иконка сломанной картинки" class="place">
+	</div></section>
+
+	<section class="slide shout shrink"><div>
+		<h2>&lt;picture&gt;</h2>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>&lt;picture&gt;</h2>
+		<ol>
+			<li class="next">Предложили в 1997 году (не о том, правда)</li>
+			<li class="next">Переосмыслили в 2011 году (по примеру <code>&lt;video&gt;</code>)</li>
+			<li class="next">Долго думали, что же делать в рамках <a href="http://responsiveimages.org/">RICG</a></li>
+			<li class="next">Определились со спецификацией в 2014 году</li>
+			<li class="next">Собрали денег и внедрили в 2014 году</li>
+		</ol>
+	</div></section>
+
+	<section class="slide shout" id="browsers"><div>
+		<style>
+			#browsers .place[src*='ie'] {
+				margin:-53px 0 0 -315px;
+				-webkit-filter:grayscale(1);
+			    -moz-filter:grayscale(1);
+			    filter:grayscale(1);
+				}
+			#browsers [src*='chrome'] {
+				margin:69px 0 0 -189px;
+				}
+			#browsers [src*='safari'] {
+				margin:-52px 0 0 3px;
+				opacity:0.5;
+				}
+			#browsers [src*='firefox'] {
+				margin:73px 0 0 110px;
+				}
+			#browsers [src*='opera'] {
+				margin:-45px 0 0 301px;
+				}
+		</style>
+		<img src="pictures/browser--ie.png" alt="IE" class="place next">
+		<img src="pictures/browser--chrome.png" alt="Chrome" class="place next">
+		<img src="pictures/browser--safari.png" alt="Safari" class="place next">
+		<img src="pictures/browser--firefox.png" alt="Firefox" class="place next">
+		<img src="pictures/browser--opera.png" alt="Opera" class="place next">
+	</div></section>
+
+
+	<section class="slide shout" id="no-picture"><div>
+		<style>
+			#no-picture {
+				background:#000;
+				}
+				#no-picture h2 {
+					color:#FFF;
+					}
+		</style>
+		<h2>
+			<span class="next">&lt;picture&gt;</span>
+			<br>
+			<span class="next">не существует</span>
+		</h2>
+	</div></section>
+
+	<section class="slide shout shrink"><div>
+		<h2>
+			<span class="next">&lt;img&gt;</span>
+			<br>
+			<span class="next">и настройки</span>
+		</h2>
+	</div></section>
+
+	<section class="slide shout shrink"><div>
+		<h2>Выбиратор</h2>
+	</div></section>
+
+	<section class="slide" id="questions"><div>
+		<style>
+			#questions ol {
+				font-size:50px;
+				}
+		</style>
+		<ol class="place">
+			<li class="next">Ретина</li>
+			<li class="next">Адаптация</li>
+			<li class="next">Формат</li>
+			<li class="next">Кадрирование</li>
+		</ol>
+	</div></section>
+
+	<section class="slide shout shrink"><div>
+		<h2>РАФК</h2>
+	</div></section>
+
+	<section class="slide shout shrink"><div>
+		<h2>1. Ретина</h2>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>1. Ретина</h2>
+		<pre>
+			<code class="next"><mark>&lt;img</mark></code>
+			<code class="next">       <mark>src</mark>="400.png"</code>
+			<code class="next">     <mark>width</mark>="400"</code>
+			<code class="next">    <mark>srcset</mark>="600.png <mark>1.5x</mark>,</code>
+			<code class="next">             800.png <mark>2x</mark>,</code>
+			<code class="next">             1200.png <mark>3x</mark>"</code>
+			<code class="next">    <mark>&gt;</mark></code>
+		</pre>
+	</div></section>
+
+	<section class="slide shout"><div>
+		<h2><a href="demos/retina.html">Демо</a></h2>
+	</div></section>
+
+	<section class="slide shout shrink"><div>
+		<h2>2. Адаптация</h2>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>2. Адаптация</h2>
+		<pre>
+			<span class="next">
+				<code>img {</code>
+				<code>    <mark>width:100%</mark>;</code>
+				<code>    <mark>max-width:100%</mark>;</code>
+				<code>    }</code>
+			</span>
+			<span class="next">
+				<code>@media (min-width:<mark>600px</mark>) {</code>
+				<code>    img { <mark>width:50%</mark> }</code>
+				<code>    }</code>
+			</span>
+		</pre>
+	</div></section>
+
+	<section class="slide shout iphone"><div>
+		<img src="pictures/iphone--portrait.png" alt="iPhone в портретной ориентации" class="place b">
+		<img src="pictures/picture.svg" alt="Картинка" class="place iphone__picture--portrait">
+	</div></section>
+
+	<section class="slide shout iphone"><div>
+		<img src="pictures/iphone--landscape.png" alt="iPhone в альбомной ориентации" class="place">
+		<img src="pictures/picture.svg" alt="Картинка" class="place iphone__picture--landscape">
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>2. Адаптация</h2>
+		<pre>
+			<code class="next"><mark>&lt;img</mark></code>
+			<code class="next">       <mark>src</mark>="400.png"</code>
+			<code class="next">    <mark>srcset</mark>="400.png <mark>400w</mark>,</code>
+			<code class="next">             800.png <mark>800w</mark>,</code>
+			<code class="next">             1200.png <mark>1200w</mark>"</code>
+			<code class="next">     <mark>sizes</mark>="(min-width:<mark>600px</mark>) <mark>50vw</mark>, <span class="next"><mark class="important">100vw</mark>"</span></code>
+			<code class="next">     <mark>&gt;</mark></code>
+		</pre>
+	</div></section>
+
+	<section class="slide shout iphone"><div>
+		<img src="pictures/iphone--portrait.png" alt="iPhone в портретной ориентации" class="place b">
+		<img src="pictures/picture.svg" alt="Картинка" class="place iphone__picture--portrait">
+	</div></section>
+
+	<section class="slide shout iphone"><div>
+		<img src="pictures/iphone--landscape.png" alt="iPhone в альбомной ориентации" class="place">
+		<img src="pictures/picture.svg" alt="Картинка" class="place iphone__picture--landscape">
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Брейкпоинт 400px</h2>
+		<p><strong>Меньше</strong> 600 пикселей.</p>
+		<ol>
+			<li class="next"><strong>Весь экран:</strong> 400px → <code>400.png</code></li>
+			<li class="next"><strong>Весь экран 2x:</strong> 800px → <code>800.png</code></li>
+			<li class="next"><strong>Весь экран 3x:</strong> 1200px → <code>1200.png</code></li>
+		</ol>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Брейкпоинт 600px</h2>
+		<p><strong>Равен</strong> 600 пикселям.</p>
+		<ol>
+			<li class="next"><strong>Полэкрана:</strong> 300px → <code>400.png</code></li>
+			<li class="next"><strong>Полэкрана 2x:</strong> 600px → <code>800.png</code></li>
+			<li class="next"><strong>Полэкрана 3x:</strong> 1200px → <code>1200.png</code></li>
+		</ol>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Брейкпоинт 800px</h2>
+		<p><strong>Больше</strong> 600 пикселей.</p>
+		<ol>
+			<li class="next"><strong>Полэкрана:</strong> 400px → <code>400.png</code></li>
+			<li class="next"><strong>Полэкрана 2x:</strong> 800px → <code>800.png</code></li>
+			<li class="next"><strong>Полэкрана 3x:</strong> 1200px → <code>1200.png</code></li>
+		</ol>
+	</div></section>
+
+	<section class="slide shout"><div>
+		<h2><a href="demos/adapt.html">Демо</a></h2>
+	</div></section>
+
+	<section class="slide shout shrink"><div>
+		<h2>3. Формат</h2>
+	</div></section>
+
+	<section class="slide cover h"><div>
+		<img src="pictures/webp.webp" onerror="src='pictures/webp--no.png';alt='Единорогу плохо';this.onerror=null" alt="Нян Кэт">
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Офтоп</h2>
+		<pre>
+			<code>&lt;img src="<mark>webp.webp</mark>"</code>
+			<code>     <mark>onerror</mark>="src='<mark>webp--no.png</mark>';</code>
+			<code>               alt='Единорогу плохо';</code>
+			<code>               this.onerror=null"</code>
+			<code>     alt="Нян Кэт"&gt;</code>
+		</pre>
+		<p>Спасибо <a href="https://mathiasbynens.be/">Матиасу Байненсу</a> за трюк.</p>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>3. Формат</h2>
+		<pre>
+			<code class="next"><mark>&lt;picture&gt;</mark></code>
+			<span class="next">
+				<code>    &lt;source <mark>type</mark>="image/webp"</code>
+				<code>          <mark>srcset</mark>="picture.webp"&gt;</code>
+			</span>
+			<span class="next">
+				<code>    &lt;source type="<mark>image/vnd.ms-photo</mark>"</code>
+				<code>          srcset="<mark>picture.jpxr</mark>"&gt;</code>
+			</span>
+			<code class="next">    <mark>&lt;img</mark> src="picture.jpg"&gt;</code>
+			<code class="next"><mark>&lt;/picture&gt;</mark></code>
+		</pre>
+	</div></section>
+
+	<section class="slide shout shrink"><div>
+		<h2>4. Кадрирование</h2>
+	</div></section>
+
+	<section class="slide cover w"><div>
+		<img src="pictures/kim--close.jpg" alt="Ким Чен Ын в лодке крупным планом">
+		<img src="pictures/kim--medium.jpg" alt="Ким Чен Ын в лодке средним планом" class="next">
+		<img src="pictures/kim--full.jpg" alt="Ким Чен Ын в лодке общим планом" class="next">
+	</div></section>
+
+	<section class="slide shout iphone"><div>
+		<img src="pictures/iphone--portrait.png" alt="iPhone" class="place b">
+		<img src="pictures/kim--full.jpg" alt="Ким Чен Ын в лодке общим планом" class="place iphone__picture--portrait next">
+		<img src="pictures/kim--medium.jpg" alt="Ким Чен Ын в лодке средним планом" class="place iphone__picture--portrait next">
+		<img src="pictures/kim--close.jpg" alt="Ким Чен Ын в лодке крупным планом" class="place iphone__picture--portrait next">
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>4. Кадрирование</h2>
+		<pre>
+			<code class="next"><mark>&lt;picture&gt;</mark></code>
+			<span class="next">
+				<code>    &lt;source <mark>media</mark>="(min-width:1024px)"</code>
+				<code>           <mark>srcset</mark>="crowd.png"&gt;</code>
+			</span>
+			<span class="next">
+				<code>    &lt;source media="(<mark>min-width:640px</mark>)"</code>
+				<code>           srcset="<mark>group.png</mark>"&gt;</code>
+			</span>
+			<code class="next">    <mark>&lt;img</mark> src="face.png"&gt;</code>
+			<code class="next"><mark>&lt;/picture&gt;</mark></code>
+		</pre>
+	</div></section>
+
+	<section class="slide shout" id="various"><div>
+		<style>
+			#various h2 {
+				color:#AAA;
+				}
+			#various mark {
+				padding:0;
+				background:none;
+				color:#090;
+				}
+		</style>
+		<h2>
+			<div class="next"><mark>Р</mark>АФК</div>
+			<div class="next">Р<mark>А</mark>ФК</div>
+			<div class="next">РА<mark>Ф</mark>К</div>
+			<div class="next">РАФ<mark>К</mark></div>
+		</h2>
+	</div></section>
+
+	<section class="slide shout shrink" id="ultimate"><div>
+		<style>
+			#ultimate h2 {
+				color:#090;
+				font-size:350px;
+				}
+		</style>
+		<h2>РАФК!</h2>
+	</div></section>
+
+	<section class="slide" id="ultimate-code"><div>
+		<style>
+			#ultimate-code pre {
+				overflow:scroll;
+				height:350px;
+				}
+		</style>
+		<h2>РАКФ</h2>
+		<pre><code><mark>&lt;picture&gt;</mark>
+    <mark>&lt;source</mark>
+        <mark>media</mark>="(min-width:1280px)"
+        <mark>sizes</mark>="50vw"
+       <mark>srcset</mark>="400.webp 400w,
+                800.webp 800w,
+                1200.webp 1200w"
+         <mark>type</mark>="image/webp"&gt;
+    <mark>&lt;source</mark>
+        <mark>sizes</mark>="(min-width:640px) 60vw, 100vw"
+       <mark>srcset</mark>="400.webp 400w,
+                800.webp 800w,
+                1200.webp 1200w"
+         <mark>type</mark>="image/webp"&gt;
+    <mark>&lt;source</mark>
+        <mark>media</mark>="(min-width:1280px)"
+        <mark>sizes</mark>="50vw"
+       <mark>srcset</mark>="400.png 400w,
+                800.png 800w,
+                1200.png 1200w"&gt;
+    <mark>&lt;img</mark>
+          <mark>src</mark>="400.png"
+        <mark>sizes</mark>="(min-width:640px) 60vw, 100vw"
+       <mark>srcset</mark>="400.png 400w,
+                800.png 800w,
+                1200.png 1200w"&gt;
+<mark>&lt;/picture&gt;</mark></code></pre>
+	</div></section>
+
+	<section class="slide shout"><div>
+		<h2><a href="http://sizersoze.org">Sizer Soze</a></h2>
+	</div></section>
+
+	<section class="slide shout"><div>
+		<h2><a href="http://scottjehl.github.io/picturefill/">Picturefill</a></h2>
+	</div></section>
+
+	<section class="slide shout shrink"><div>
+		<h2>Ещё?</h2>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Ещё!</h2>
+		<ul>
+			<li><a href="http://1997.webhistory.org/www.lists/www-talk.1993q1/0182.html">Proposed new tag: IMG</a> (1993)</li>
+			<li><a href="http://lists.w3.org/Archives/Public/public-html/2007Jul/0069.html">Handling fallback content for still images</a> (1997)</li>
+			<li><a href="http://www.brucelawson.co.uk/2011/notes-on-adaptive-images-yet-again/">Notes on Adaptive Images</a> (2011)</li>
+			<li><a href="http://ericportis.com/posts/2014/srcset-sizes/">Srcset and sizes</a></li>
+			<li><a href="http://dev.opera.com/articles/responsive-images/">Responsive Images: Use Cases and Documented Code Snippets</a></li>
+			<li><a href="https://dev.opera.com/articles/native-responsive-images/">Native Responsive Images</a></li>
+		</ul>
+	</div></section>
+
+	<section class="slide shout"><div>
+		<h2><a href="http://sokr.me/pic">sokr.me/pic</a></h2>
+	</div></section>
+
+	<section class="slide shout"><div>
+		<h2><a href="https://twitter.com/pepelsbey">@pepelsbey</a></h2>
+	</div></section>
+
+	<section class="slide shout"><div>
+		<h2><a href="http://pepelsbey.net">pepelsbey.net</a></h2>
+	</div></section>
+
+	<section class="slide shout" id="shwr"><div>
+		<img src="pictures/shower.svg" alt="Логотип Шовера" class="place">
+		<h2><a href="http://shwr.me/">Shower</a></h2>
+		<style>
+			#shwr h2 {
+				margin-left:100px;
+				}
+			#shwr img {
+				margin:22px 0 0 -210px;
+				width:150px;
+				}
+		</style>
+	</div></section>
+
+	<section class="slide shout grow"><div>
+		<h2>Вопросы?</h2>
+	</div></section>
+
+	<p class="badge"><a href="https://github.com/shower/shower">Powered by Shower</a></p>
+	<div class="progress"><div></div></div>
+	<script src="shower/shower.min.js"></script>
+	<!-- Copyright © 2010–2014 Vadim Makeev — pepelsbey.net -->
+</body>
+</html>

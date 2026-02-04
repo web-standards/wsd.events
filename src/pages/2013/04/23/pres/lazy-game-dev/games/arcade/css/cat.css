@@ -1,0 +1,175 @@
+.playing .cat{
+  pointer-events: none;
+  }
+
+.cat.win{
+  -webkit-animation: diss 1.5s ease 1 both; 
+  }
+  .cat.win .shadow{
+    display:none;
+    }
+
+.cat.dead{
+  -webkit-animation: fall 1.3s ease-in 1 both;
+  }
+  .cat.dead .shadow{
+    display:none;
+    }
+
+.cat{
+
+  display:block;
+  pointer-events: all;
+
+  -webkit-transform-style:preserve-3d;
+  -webkit-transform: scale(.3);
+  -webkit-animation: 
+                    pulse 2.5s ease infinite,
+                    start 1.3s ease-out 1;
+
+  z-index:300;
+  position: absolute;
+
+  top:37px;
+  left:37px;
+  }
+  .cat .shadow{
+    background-color: rgba(30,0,0,.7);
+    width:50px;
+    height:50px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin:-25px 0 0 -25px;
+    
+    -webkit-transform-style:preserve-3d;
+    -webkit-transform: translateZ(-10px);
+    -webkit-animation: shadowPulse 2.5s ease infinite;
+
+    border-radius:25px;
+    box-shadow:0 0 50px 25px rgba(30,0,0,.7);
+    }
+  .cat .engine-wrapper{
+    -webkit-transform-style:preserve-3d;
+    -webkit-transform: rotateZ(0deg);
+    -webkit-transition: -webkit-transform .5s linear;
+    }
+  .cat .tail{
+    position: absolute;
+    left:50%;
+    top:50%;
+    margin:-84px 0 0 -40px;
+    width:80px;
+    height:84px;
+    background: url("../img/tail.png") 50% 50% no-repeat;
+
+    -webkit-transform-origin:50% 100%;
+    -webkit-transform: translateZ(24px) rotateX(-90deg) rotateY(90deg);
+    
+    }
+  .cat .engine{
+    position: absolute;
+    left:50%;
+    top:50%;
+    margin:-50px 0 0 -50px;
+    width:100px;
+    height:100px;
+    background: url("../img/engine.png") 50% 50% no-repeat;
+
+    -webkit-transform: translateZ(3px) rotateX(0);
+    }
+    .cat .engine.l2{
+      -webkit-transform: translateZ(6px);
+      }
+    .cat .engine.l3{
+      -webkit-transform: translateZ(9px);
+      }
+    .cat .engine.l4{
+      -webkit-transform: translateZ(12px);
+       }
+    .cat .engine.l5{
+      -webkit-transform: translateZ(15px);
+      }
+    .cat .engine.l6{
+      -webkit-transform: translateZ(18px);
+      }
+    .cat .engine.6{
+      -webkit-transform: translateZ(21px);
+      }
+  .cat .screw{
+    -webkit-transform-style:preserve-3d;
+
+    z-index:302;
+    position: absolute;
+    
+    width:200px;
+    height:200px;
+    margin:-100px 0 0 -100px;
+
+    background: url("../img/vint.png") 50% 50% no-repeat;
+
+    -webkit-animation: screw .5s linear infinite;
+    -webkit-transform: rotateZ(0deg);
+    }
+
+@-webkit-keyframes fall {
+  to {
+    -webkit-transform: scale(.3) translateZ(1500px);
+  }
+}
+
+@-webkit-keyframes start {
+  from {
+    -webkit-filter:brightness(100%);
+    opacity:0;
+  }
+  50%{
+   opacity:0; 
+  }
+  to {
+    -webkit-filter:brightness(0%);
+    opacity:1;
+  }
+}
+
+@-webkit-keyframes diss {
+  70%{
+    -webkit-filter:brightness(100%);
+  }
+  to {
+    opacity:0;
+  }
+}
+
+@-webkit-keyframes pulse {
+  from {
+    -webkit-transform: scale(.3) translateZ(20px);
+  }
+  50%{
+    -webkit-transform: scale(.3) translateZ(10px);
+    }
+  to {
+    -webkit-transform: scale(.3) translateZ(20px);
+  }
+}
+
+@-webkit-keyframes shadowPulse {
+  from {
+    -webkit-transform: translateZ(-19px);
+  }
+  50%{
+    -webkit-transform: translateZ(-9px);
+    }
+  to {
+    -webkit-transform: translateZ(-19px);
+  }
+}
+
+@-webkit-keyframes screw {
+  from {
+    -webkit-transform: rotateZ(0deg);
+  }
+  to {
+    -webkit-transform: rotateZ(-360deg);
+  }
+}

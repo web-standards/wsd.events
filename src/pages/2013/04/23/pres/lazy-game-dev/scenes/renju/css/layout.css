@@ -1,0 +1,74 @@
+body,
+html{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+
+  -webkit-perspective: 900px;
+  -moz-perspective: 900px;
+  perspective: 900px;
+  }
+
+.game{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  }
+
+.start-screen{
+  display: block;
+  }
+
+
+#templates,
+.win-screen,
+.standoff{
+  display: none;
+  }
+
+
+.field.played{
+  -webkit-transition: -webkit-transform .4s ease;
+     -moz-transition: -moz-transform .4s ease;
+      -ms-transition: -ms-transform .4s ease;
+          transition: transform .4s ease;
+
+  -webkit-transform: rotateX(0) scale(.7) scaleZ(.7) translateZ(-150px);
+  -moz-transform: rotateX(0) scale(.7) scaleZ(.7) translateZ(-150px);
+  transform: rotateX(0) scale(.70) scaleZ(.7) translateZ(-150px);
+  }
+
+.field{
+  position: absolute;
+  top: 0;
+  right: 0;
+  left:0;
+  bottom:0;
+
+  margin: auto;
+
+  -webkit-transform-origin: 50% 50% 0;
+  -moz-transform-origin: 50% 50% 0;
+  transform-origin: 50% 50% 0;
+
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+
+  -webkit-transform: rotateX(60deg) scale(.45) scaleZ(.45) translateZ(-350px);
+  -moz-transform: rotateX(60deg) scale(.45) scaleZ(.45) translateZ(-350px);
+  transform: rotateX(60deg) scale(.45) scaleZ(.45) translateZ(-350px);
+
+
+  }

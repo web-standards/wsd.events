@@ -1,0 +1,749 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title></title>
+
+	<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+	<meta name="author" content="Hakim El Hattab">
+
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700&amp;subset=cyrillic-ext,latin' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="lib/revealjs/css/reveal.min.css">
+	<link rel="stylesheet" href="inc/css/main.css">
+
+	<!-- For syntax highlighting -->
+	<link rel="stylesheet" href="lib/highlightjs/styles/github.css">
+	<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+	<script>
+		document.write( '<link rel="stylesheet" href="lib/revealjs/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+	</script>
+
+	<!--[if lt IE 9]>
+	<script src="lib/revealjs/lib/js/html5shiv.js"></script>
+	<![endif]-->
+
+	<script src="lib/revealjs/lib/js/head.min.js"></script>
+	<script src="lib/revealjs/js/reveal.min.js"></script>
+</head>
+
+<body>
+
+<div class="reveal">
+<!-- Any section element inside of this container is displayed as a slide -->
+	<div class="slides">
+		<section class="slide slide-start center" data-background-color="#000">
+	<h1>
+		Автоматизация
+		<span class="skull" style="line-height: 0.8">☠</span>
+		или смерть!
+	</h1>
+
+	<div class="conf">
+		<div class="conf--logo"><img src="inc/img/wsd-logo.svg"></div>
+		<div class="conf--name">Web Standards Days</div>
+		<div><span class="conf--city">СПб</span>, <span class="conf--date">28 июня 2014</span></div>
+
+	</div>
+
+
+	<div class="speakers">
+		<div class="speakers--company"><img src="inc/img/devexperts-logo.png"></div>
+		<ul class="speakers--list">
+			<li class="speaker">
+				<span class="speaker--name">Антон Еремеев</span>
+			</li>
+			<li class="speaker">
+				<span class="speaker--name">Артём Пархоменко</span>
+			</li>
+		</ul>
+	</div>
+
+</section>
+
+<section class="slide" data-background="inc/img/zombie.jpg" data-background-size="100%" data-background-repeat="no-repeat" data-background-position="center">
+</section>
+<section class="slide center slide-plan">
+	<h3>Опасность!</h3>
+	<ul>
+		<li class="fragment" data-fragment-index="0" style="letter-spacing: .1em;">HTML</li>
+		<li class="fragment" data-fragment-index="0" style="letter-spacing: .1em;">CSS</li>
+		<li class="fragment" data-fragment-index="1">Организация кода</li>
+		<li class="fragment" data-fragment-index="1">Управление зависимостями</li>
+		<li class="fragment" data-fragment-index="1">Тестирование</li>
+	</ul>
+</section>
+
+<section class="slide slide-titled slide-justify center" data-background-color="#000">
+	<h2 style="font-size: 3em;"><span class="skull">☠</span> HTML <span class="skull">☠</span></h2>
+</section>
+<section class="slide center" data-background="#000">
+	<video src="inc/video/dxtrade5.mov" width="1024"  data-delay="2000"></video>
+</section>
+<section class="slide center">
+	<h3 style="font-size: 1.3em;">Статические прототипы</h3>
+	<ul>
+		<li>короче цикл внесения изменений</li>
+		<li>отвязка от технологии</li>
+		<li>не нужен сервер</li>
+	</ul>
+</section>
+<section class="slide center">
+	<h3>Проблемы статического HTML</h3>
+	<ul>
+		<li>сложно найти место, где править</li>
+		<li>надо поддерживать много файлов</li>
+		<li>сложно править таблицы и списки</li>
+	</ul>
+</section>
+<section class="slide" data-background="inc/img/assemble/logo.png" data-background-size="contain" data-background-repeat="no-repeat" data-background-position="center">
+
+</section>
+<section class="slide center slide-problem">
+	<h6>Проблема 1:</h6>
+	<h3>Сложно найти место,<br>куда вносить исправления</h3>
+</section>
+<section class="slide center" data-background="inc/img/assemble/a-lot.gif" data-background-size="100%" data-background-repeat="no-repeat" data-background-position="center">
+	<h2 style="letter-spacing: .2em;">4000 LOC</h2>
+</section>
+<section class="slide" data-background="inc/img/assemble/lego.jpg" data-background-size="100%" data-background-repeat="no-repeat" data-background-position="center">
+</section>
+<section class="slide center slide-problem">
+	<h6>Проблема 2:</h6>
+	<h3>Надо поддерживать много файлов<br>в актуальном состоянии</h3>
+</section>
+<section class="slide center">
+	<img style="box-shadow: 0 0 10px #808080;" src="inc/img/assemble/toslc-good.jpg">
+	<img class="fragment" style="margin-top: .5em; box-shadow: 0 0 10px #808080" src="inc/img/assemble/toslc-bad.jpg">
+</section>
+<section class="slide" data-background="inc/img/assemble/how-assemble-works.png" data-background-size="100%" data-background-repeat="no-repeat" data-background-position="center">
+</section>
+<section class="slide center slide-problem">
+	<h6>Проблема 3:</h6>
+	<h3>Таблицы и списки</h3>
+</section>
+<section class="slide center" data-background="inc/img/assemble/same-but-different.png" data-background-size="100%" data-background-repeat="no-repeat" data-background-position="center">
+
+</section>
+<section class="slide" data-background="inc/img/assemble/assemble-partials-data.png" data-background-size="100%" data-background-repeat="no-repeat" data-background-position="center">
+</section>
+<section class="slide center">
+	<h3>Бонусы Assemble</h3>
+	<ul>
+		<li>удобная конфигурация</li>
+		<li><code>postprocess</code></li>
+		<li>огромная библиотека хелперов</li>
+		<li>возможность писать свои</li>
+	</ul>
+</section>
+<section class="slide" data-background="inc/img/assemble/borat-dance.gif" data-background-size="cover" data-background-repeat="no-repeat" data-background-position="center">
+</section>
+
+<section class="slide slide-titled slide-justify center" data-background="#000">
+	<h2 style="font-size: 3em;"><span class="skull">☠</span> CSS <span class="skull">☠</span></h2>
+</section>
+<section class="slide center">
+	<h3>Проблемы CSS</h3>
+	<ul>
+		<li>повторения в селекторах</li>
+		<li>отсутствие конфигурации</li>
+		<li>префиксы</li>
+		<li class="fragment">свой вариант</li>
+	</ul>
+</section>
+<section class="slide" data-background="inc/img/stylus/dry.jpg" data-background-size="cover" data-background-repeat="no-repeat" data-background-position="center">
+</section>
+<section class="slide center">
+	<div class="logos">
+		<img src="inc/img/stylus/sass-logo.png">
+		<img src="inc/img/stylus/less-logo.png">
+		<img src="inc/img/stylus/stylus-logo.png">
+	</div>
+	<div class="logos fragment" style="margin-top: 2em; padding-top: 2em; border-top: double 9px #808080;">
+		<img src="inc/img/stylus/postcss-logo.png">
+		<img src="inc/img/stylus/rework-logo.png">
+	</div>
+</section>
+<section class="slide" data-background="inc/img/stylus/plugins.png" data-background-size="115%" data-background-repeat="no-repeat" data-background-position="center">
+</section>
+<section class="slide center">
+	<h3>Обычно упоминают</h3>
+	<ul>
+		<li>вложенность селекторов</li>
+		<li>переменные</li>
+		<li>миксины</li>
+		<li>префиксы</li>
+	</ul>
+</section>
+<section class="slide" data-background="inc/img/stylus/yummy.jpg" data-background-size="100%" data-background-repeat="no-repeat" data-background-position="center">
+</section>
+<section class="slide slide-cols center">
+	<h3>Колонки без циклов</h3>
+	<div class="col">
+		<pre><code class="scss">.columns {
+  &amp;--column {
+    float: left;
+
+    &amp;-1_2 {
+      width: 50%;
+    }
+    &amp;-1_3 {
+      width: (100% / 3);
+    }
+    &amp;-2_3 {
+      width: (100% / 3) * 2;
+    }
+    &amp;-1_4 {
+      width: 25%;
+    }
+    &amp;-2_4 {
+      @extend .columns--column-1_2;
+    }
+    &amp;-3_4 {
+      width: 75%;
+    }
+    &amp;-1_5 {
+      width: 20%;
+    }
+    &amp;-2_5 {
+      width: 40%;
+    }
+    &amp;-3_5 {
+      width: 60%;
+    }
+    &amp;-4_5 {
+      width: 80%;
+    }</code></pre>
+	</div>
+	<div class="col">
+		<pre><code class="scss">
+    &amp;-1_6 {
+      width: (100% / 6);
+    }
+    &amp;-2_6 {
+      @extend .columns--column-1_3;
+    }
+    &amp;-3_6 {
+      @extend .columns--column-1_2;
+    }
+    &amp;-4_6 {
+      @extend .columns--column-2_3;
+    }
+    &amp;-5_6 {
+      width: (100% / 6) * 5;
+    }
+    &amp;-1_8 {
+      width: (100% / 8);
+    }
+    &amp;-2_8 {
+      @extend .columns--column-1_4;
+    }
+    &amp;-3_8 {
+      width: (100% / 8) * 3;
+    }
+    &amp;-4_8 {
+      @extend .columns--column-1_2;
+    }
+    &amp;-5_8 {
+      width: (100% / 8) * 5;
+    }
+    &amp;-6_8 {
+      @extend .columns--column-3_4;
+    }</code></pre>
+	</div>
+	<div class="col">
+		<pre><code class="scss">
+    &amp;-7_8 {
+      width: (100% / 8) * 7;
+    }
+    &amp;-1_10 {
+      width: (100% / 10);
+    }
+    &amp;-2_10 {
+      @extend .columns--column-1_5;
+    }
+    &amp;-3_10 {
+      width: (100% / 10) * 3;
+    }
+    &amp;-4_10 {
+      @extend .columns--column-2_5;
+    }
+    &amp;-5_10 {
+      @extend .columns--column-1_2;
+    }
+    &amp;-6_10 {
+      @extend .columns--column-3_5;
+    }
+    &amp;-7_10 {
+      width: (100% / 10) * 7;
+    }
+    &amp;-8_10 {
+      @extend .columns--column-4_5;
+    }
+    &amp;-9_10 {
+      width: (100% / 10) * 9;
+    }
+  }
+
+}</code></pre>
+	</div>
+</section>
+<section class="slide center">
+	<h3>Циклы</h3>
+	<pre style="margin-top: 1.5em;"><code class="scss">.columns {
+  &amp;--column {
+    for $colsTotal in (2 3 4 5 6 8 10) {
+      for $col in (1...$colsTotal) {
+        &amp;-{$col}_{$colsTotal} {
+          width: $col * (100% / $colsTotal);
+        }
+      }
+    }
+  }
+}</code></pre>
+</section>
+<section class="slide center">
+	<h3>Параметризация</h3>
+	<pre style="margin-top: 1.5em;"><code class="scss">$columnsAvailable ?= (2 3 4 5 6 8 10 12 20);
+$columnsGap ?= 20px;
+
+.columns {
+  &amp;--column {
+    padding-left: $columnsGap;
+
+    for $colsTotal in $columnsAvailable {
+      for $col in (1...$colsTotal) {
+        &amp;-{$col}_{$colsTotal} {
+          width: $col * (100% / $colsTotal);
+        }
+      }
+    }
+  }
+}</code></pre>
+</section>
+<section class="slide center" data-background="#000">
+	<video src="inc/video/cool-dashboard.mov" width="1024" loop data-delay="1000"></video>
+</section>
+<section class="slide" data-background="inc/img/stylus/graph.png" data-background-repeat="no-repeat" data-background-position="center">
+</section>
+
+<section class="slide slide-titled slide-justify center" data-background-color="#000">
+	<h2 class="header-yo"><span class="skull">☠</span> Организация кода <span class="skull">☠</span></h2>
+</section>
+<section class="slide center">
+    <h3>Выбор файловой структуры</h3>
+    <br/>
+	<br/>
+    <ul style="display: inline-block;">
+        <li>идеология</li>
+        <li>специфика</li>
+    </ul>
+    <ul class="nobullet fragment" style="display: inline-block;">
+        <li>(БЭМ)</li>
+        <li>(цветовые схемы)</li>
+    </ul>
+</section>
+<section class="slide center">
+	        <div class="fullsize"><img src="inc/img/yo/filestructure-step1.jpg" alt="" class="fullsize--img"/><img src="inc/img/yo/filestructure-step2.jpg" class="fullsize--img fragment" alt="" /><img src="inc/img/yo/filestructure-full.jpg" class="fullsize--img fragment" alt="" />        </div>
+</section>
+<section class="slide center">
+    <div class="fullsize">
+        <img class="fullsize--img" src="inc/img/yo/graph-simple.jpg" alt=""/>
+        <img class="fullsize--img fragment" src="inc/img/yo/graph-zombie.jpg" alt=""/>
+    </div>
+</section>
+<section class="slide center">
+    поддержка проекта — <strong class="good">проще</strong>
+    <br/><br/>
+    создание новых блоков — <strong class="bad">медленнее</strong>
+</section>
+<section class="slide center">
+    <h2>Скаффолдер</h2>
+</section>
+<section class="slide center slide-yo-yo">
+	<h3>Yeoman</h3>
+	<img src="inc/img/yo/yeoman.png" alt=""/>
+</section>
+<section class="slide center">
+	<ul>
+		<li>механизм запуска генерации</li>
+		<li>логирование</li>
+		<li>взаимодействие с пользователем</li>
+		<li>процессинг файлов</li>
+	</ul>
+</section>
+<section class="slide" data-background="inc/img/yo/godeepper2.jpg" data-background-size="100%" data-background-repeat="no-repeat" data-background-position="center">
+    <h3 class="white">Скаффолдинг</h3>
+	<h3 class="white" style="margin-top: 100%; position: relative; top: -450px">Скаффолдеров</h3>
+</section>
+<section class="slide center" data-background-color="#dbd5bb">
+	<video src="inc/video/yo-demo.mov" width="1024" data-delay="4000"></video>
+</section>
+<section class="slide center">
+    <img src="inc/img/yo/graph-after-optimisation.jpg" alt=""/>
+</section>
+
+<section class="slide slide-titled center" data-background-color="#000">
+	<h2 class="header-bower"><span class="skull">☠</span> Управление зависимостями <span class="skull">☠</span></h2>
+</section>
+<section class="slide">
+    <h3>Подключаем jQuery</h3>
+
+    <img class="fragment" style="margin-top: 5em;" src="inc/img/bower/jquery.jpg" alt=""/>
+</section>
+<section class="slide">
+    <h3 style="font-size: 1.3em;">Подключаем Marionette</h3>
+	<br/>
+    <div class="fullsize" style="height: 499px;">
+        <img src="inc/img/bower/marionette-1.jpg" width="1024" class="fullsize--img" alt=""/>
+        <img src="inc/img/bower/marionette-2.jpg" width="1024" class="fullsize--img fragment" alt=""/>
+        <img src="inc/img/bower/marionette-3.jpg" width="1024" class="fullsize--img fragment" alt=""/>
+        <img src="inc/img/bower/marionette-4.jpg" width="1024" class="fullsize--img fragment" alt=""/>
+    </div>
+</section>
+<section class="slide center">
+	<h3>Bower</h3>
+	<img src="inc/img/bower/bower.png" alt=""/>
+</section>
+<section class="slide center">
+    <h3 style="font-size: 1.3em;">Добавление зависимостей</h3>
+    bower.json
+	<pre><code class="javascript" style="font-size: 1.2em; line-height: 1.3em;">{
+    "name": "project",
+    "dependencies": {
+        "selectbox": "1.1.0",
+        "combobox": "1.0.1",
+        "scrollable": "2.0.8"
+    }
+}</code></pre>
+    CLI
+    	<pre><code class="bash" style="font-size: 1.4em;">
+$ bower install jquery --save
+	    </code></pre>
+</section>
+<section class="slide">
+	<div class="fullsize">
+		<img src="inc/img/bower/depresolving.jpg" class="fullsize--img" alt=""/>
+	</div>
+</section>
+<section class="slide center">
+    <h3 style="font-size: 1.3em;">Что переиспользовать?</h3>
+	<br/>
+	<img src="inc/img/bower/reuse.jpg" height="500" alt=""/>
+</section>
+<section class="slide center">
+    <h3>Зависимости</h3>
+	<br/>
+            <div class="ways">            <div class="way"><h4>dev</h4>                <ul>                    <li>styl файлы</li>                    <li>верстка</li>                    <li>хелперы</li>                    <li>демо данные</li>                </ul>            </div><div class="way"><h4>prod</h4>                <ul>                    <li>библиотеки</li>                    <li>контролы</li>                    <li>виджеты</li>                </ul>            </div>        </div>
+</section>
+<section class="slide">
+	<h3 style="font-size: 1.3em;">Источники зависимостей</h3>
+
+	<ul style="font-size: 1.3em; margin-top: .3em;">
+		<li>bower-registry</li>
+		<li>git-репозиторий</li>
+		<li>ссылка на файл или архив</li>
+        <li class="fragment">svn-репозиторий</li>
+	</ul>
+</section>
+<section class="slide center">
+    <img src="inc/img/bower/copypaste.jpg" alt=""/>
+</section>
+
+<section class="slide slide-titled center" data-background-color="#000">
+	<h2 class="header-karma"><span class="skull">☠</span> Тестирование <span class="skull">☠</span></h2>
+</section>
+<section class="slide center">
+    <h3>Что тестировать?</h3>
+	<br/>
+	<img src="inc/img/bower/reuse.jpg" class="fragment" height="500" alt=""/>
+</section>
+<section class="slide center">
+	<h3>Зависимости</h3>
+	<br/>
+	<div class="ways"><div class="way"><h4>dev</h4><ul><li>styl файлы</li><li>верстка</li><li>хелперы</li></ul></div><div class="way"><h4>prod</h4><ul><li>библиотеки</li><li>контролы</li><li>виджеты</li></ul></div></div>
+</section>
+<section class="slide">
+    <img src="inc/img/karma/equals.png" alt=""/>
+</section>
+<section class="slide center">
+    <h3>Unit-тесты в браузере</h3>
+    <br/>
+    <ul>
+		<li class="fragment">создать spec файл</li>
+        <li class="fragment">подключить тесты/фреймворки</li>
+		<li class="fragment">открыть все целевые браузеры</li>
+	</ul>
+</section>
+<section class="slide" data-background="inc/img/karma/drilling-F5.gif" data-background-color="black" data-background-size="80%" data-background-repeat="no-repeat" data-background-position="top">
+
+</section>
+<section class="slide center">
+    <h2>Такой TDD нам не нужен</h2>
+</section>
+<section class="slide center">
+	<img src="inc/img/karma/karma.png" style="height: 150px;" alt=""/>
+</section>
+<section class="slide center slide-karma-config">
+	<h3>karma.conf.js</h3>
+	<br/>
+	<pre><code style="font-size: 1.2em; line-height: 1.3em;" class="javascript">module.exports = function(config) {
+  config.set({
+    basePath: '',
+    frameworks: ['jasmine'],
+
+    files: [
+      'src/dx.*.js',
+      'test/dx.*.unit.spec.js'
+    ],
+
+    browsers: ['PhantomJS', 'Chrome']
+  });
+};</code></pre>
+</section>
+<section class="slide center">
+	<h3>Karma-runner</h3>
+	<br/>
+    <ul>
+	    <li>запуск браузеров</li>
+        <li  class="fragment">любой тестовый фреймворк</li>
+		<li  class="fragment">file watchers</li>
+		<li  class="fragment">препроцессинг любой сложности</li>
+        <li  class="fragment">быстрая обратная связь</li>
+    </ul>
+</section>
+<section class="slide center">
+    <h3>Пользовательские события
+        <span class="fragment">—<br><br> <span style="text-decoration: underline;">это тоже API</span></span></h3>
+</section>
+<section class="slide" data-background="inc/img/karma/gun.jpg" data-background-repeat="no-repeat" data-background-size="cover">
+
+</section>
+<section class="slide center">
+    <h3>ng-scenario</h3>
+    <br/>
+    <ul class="fragment">
+        <li>легко настроить</li>
+        <li>совместим с Karma</li>
+        <li>строгое API</li>
+        <li>расширяемое API</li>
+    </ul>
+</section>
+<section class="slide center">
+	<h3>Пишем кастомный скроллбар</h3>
+</section>
+<section class="slide slide-karma-e2e-example">
+	<h3>Тестируем скроллбар</h3>
+	<br/>
+	<pre><code class="jabascript">it('should scroll when bar dragged', function() {
+  mouseDown('.scrollbar-vertical .scrollbar--bar', {
+    clientY: 20,
+    bubbles: true
+  });
+  mouseMove('body', {
+    clientY: 76,
+    bubbles: true
+  });
+  mouseUp('body', {
+    clientY: 1000,
+    bubbles: true
+  });
+
+  expect(element('.foo').scrollTop()).toBe(100);
+});</code></pre>
+</section>
+<section class="slide center">
+    <h2>ТЕСТИРУЙ!</h2>
+</section>
+
+<section class="slide slide-titled center" data-background-color="#000">
+	<h2 style="font-size: 2.5em;"><span class="skull">☠</span><br>Инструменты<br><span class="skull">☠</span></h2>
+</section>
+<section class="slide" data-background-size="cover" data-background="inc/img/npm-grunt/terminals.png" data-background-repeat="no-repeat" data-background-position="center">
+</section>
+<section class="slide" data-background-size="contain" data-background="inc/img/npm-grunt/scheme.png" data-background-position="center" data-background-repeat="no-repeat">
+</section>
+<section class="slide" data-background-size="contain" data-background="inc/img/npm-grunt/scheme-taskrunner.png" data-background-position="center" data-background-repeat="no-repeat">
+</section>
+<section class="slide center">
+	<h3>Таск-раннер</h3>
+	<div class="logos" style="margin-top: 1em;">
+		<img src="inc/img/npm-grunt/grunt-logo.png">
+		<img class="fragment" src="inc/img/npm-grunt/gulp-logo.png">
+	</div>
+</section>
+<section class="slide" data-background-size="cover" data-background="inc/img/npm-grunt/terminal.png" data-background-position="center" data-background-repeat="no-repeat">
+</section>
+<section class="slide center">
+  <h3>Это ещё не всё!</h3>
+  <ul>
+		<li>линтовка</li>
+		<li>конкатенация, минификация</li>
+		<li>спрайты, оптимизация картинок</li>
+		<li>запуск дев-сервера</li>
+		<li>релиз новой версии</li>
+		<li><a href="http://rhr.me/pres/automation/" style="text-decoration: underline;">rhr.me/pres/automation</a></li>
+	</ul>
+</section>
+
+<section class="slide center">
+	<h3>npm scripts</h3>
+	<pre style="font-size: 1.4em; margin-top: 1em;"><code>$ npm install
+$ npm test
+$ npm run build
+$ npm run release</code></pre>
+</section>
+
+<section class="slide" data-background="inc/img/npm-grunt/nodejs.png" data-background-repeat="no-repeat" data-background-position="center">
+
+</section>
+
+<section class="slide" data-background="inc/img/iron-man.jpg" data-background-position="center" data-background-repeat="no-repeat" data-background-size="100%">
+
+</section>
+<section class="slide center">
+	<div class="logos">
+		<img src="inc/img/goodguyboss.jpg">
+		<img class="fragment" src="inc/img/goodguygreg.jpg">
+	</div>
+</section>
+<section class="slide" data-background="inc/img/rip.jpg" data-background-position="center" data-background-repeat="no-repeat" data-background-size="100%">
+</section>
+
+<section class="slide center selfLink">
+	<h3>
+		<a href="http://tinyurl.com/AutoOrDie">tinyurl.com/AutoOrDie</a><br><br>
+		<span style="color: #444;">#AutoOrDie</span>
+	</h3>
+</section>
+<section class="slide center">
+	<h2>Вопросы?</h2>
+	<div class="contacts">
+		<div class="contacts--speaker">
+			Антон Еремеев<br>
+			<a href="https://twitter.com/czerny_angel">@czerny_angel</a><br>
+			<a href="mailto:eremeev@devexperts.com">eremeev@devexperts.com</a>
+		</div>
+		<div class="contacts--logo"><img src="inc/img/devexperts-logo.png"></div>
+		<div class="contacts--speaker">
+			Артём Пархоменко<br>
+			<a href="https://twitter.com/mank_dev">@mank_dev</a><br>
+			<a href="mailto:aparhomenko@devexperts.com">aparhomenko@devexperts.com</a>
+		</div>
+	</div>
+</section>
+<section class="slide">
+	<h3>Ссылки <small>(1)</small></h3>
+	<ul>
+		<li><a href="http://assemble.io/">assemble.io</a></li>
+		<li><a href="https://github.com/assemble/assemble/">github.com/assemble/assemble</a></li>
+		<li><a href="http://www.slideshare.net/yandex/ss-28968488">slideshare.net/yandex/ss-28968488</a></li>
+		<li><a href="http://learnboost.github.io/stylus/">learnboost.github.io/stylus</a></li>
+		<li><a href="https://github.com/LearnBoost/stylus">github.com/LearnBoost/stylus</a></li>
+		<li><a href="https://github.com/reworkcss/rework">github.com/reworkcss/rework</a></li>
+	</ul>
+</section>
+<section class="slide">
+	<h3>Ссылки <small>(2)</small></h3>
+	<ul>
+		<li><a href="https://github.com/ai/postcss">github.com/ai/postcss</a></li>
+		<li><a href="http://bower.io/">bower.io</a></li>
+		<li><a href="https://github.com/bower/bower">github.com/bower/bower</a></li>
+		<li><a href="http://yeoman.io/">yeoman.io</a></li>
+		<li><a href="https://github.com/yeoman/yo">github.com/yeoman/yo</a></li>
+		<li><a href="http://karma-runner.github.io/">karma-runner.github.io</a></li>
+	</ul>
+</section>
+<section class="slide">
+	<h3>Ссылки <small>(3)</small></h3>
+	<ul>
+		<li><a href="https://github.com/karma-runner/karma">github.com/karma-runner/karma</a></li>
+		<li><a href="http://maksimr.github.io/p-karma/">maksimr.github.io/p-karma</a></li>
+		<li><a href="http://gruntjs.com/">gruntjs.com</a></li>
+		<li><a href="http://gulpjs.com/">gulpjs.com</a></li>
+		<li><a href="https://www.npmjs.org/doc/misc/npm-scripts.html">npmjs.org/doc/misc/npm-scripts.html</a></li>
+	</ul>
+</section>
+
+
+	</div>
+</div>
+
+<div class="slideNumber" style="display: none">0</div>
+<script>
+
+	// Full list of configuration options available here:
+	// https://github.com/hakimel/reveal.js#configuration
+	Reveal.initialize({
+		controls: false,
+		progress: true,
+		history: true,
+		center: false,
+
+		transition: 'linear',
+		backgroundTransition: 'slide',
+
+		width: 1024,
+		height: 768,
+
+		// Parallax scrolling
+		// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+		// parallaxBackgroundSize: '2100px 900px',
+
+		// Optional libraries used to extend on reveal.js
+		dependencies: [
+			{ src: 'lib/revealjs/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+			{ src: 'lib/revealjs/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+			{ src: 'lib/revealjs/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+			{ src: 'lib/revealjs/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+			{ src: 'lib/revealjs/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+			{ src: 'lib/revealjs/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+		]
+	});
+
+	function updateSlideNumber() {
+		var slNumber = document.querySelector('.slideNumber');
+
+		slNumber.style.display = (event.indexh > 0) ? 'block' : 'none';
+		slNumber.textContent = event.indexh;
+	}
+
+	Reveal.addEventListener('ready', updateSlideNumber);
+
+	Reveal.addEventListener('slidechanged', updateSlideNumber);
+
+	Reveal.addEventListener('slidechanged', function(e) {
+		var player = e.currentSlide.querySelector('video'),
+				prevPlayer = e.previousSlide.querySelector('video'),
+				delay = player.getAttribute('data-delay') || 0,
+				timeout;
+
+		function stop(player) {
+			player.pause();
+			player.currentTime = 0;
+			window.clearTimeout(timeout);
+		}
+
+		if (player) {
+			stop(player);
+
+			timeout = window.setTimeout(function() {
+				player.play();
+			}, delay)
+		}
+
+		if (prevPlayer) {
+			stop(prevPlayer);
+		}
+	});
+</script>
+	<script>(function(b,c,a){(c[a]=c[a]||[]).push(function(){try{c.yaCounter545187=new Ya.Metrika({id:545187})}catch(a){}});var e=b.getElementsByTagName('script')[0],d=b.createElement('script'),a=function(){e.parentNode.insertBefore(d,e)};d.async=!0;d.src='//mc.yandex.ru/metrika/watch.js';'[object Opera]'==c.opera?b.addEventListener('DOMContentLoaded',a):a()})(document,window,'yandex_metrika_callbacks');</script><noscript><img src="//mc.yandex.ru/watch/545187" alt=""></noscript>
+</body>
+</html>

@@ -1,0 +1,39 @@
+{
+  "name": "shower-video",
+  "version": "0.0.2",
+  "description": "Video and Gif management plugin for Shower, HTML presentation engine (github.com/shower/shower)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/operatino/shower-video.git"
+  },
+  "keywords": [
+    "shower",
+    "video",
+    "gif"
+  ],
+  "author": {
+    "name": "Robert Haritonov"
+  },
+  "bugs": {
+    "url": "https://github.com/operatino/shower-video/issues"
+  },
+  "homepage": "https://github.com/operatino/shower-video",
+  "dependencies": {
+    "shower-ribbon": "^1.0.7",
+    "shower": "git://github.com/operatino/core",
+    "load-grunt-tasks": "~0.4.0",
+    "time-grunt": "~0.3.1",
+    "grunt": "~0.4.4",
+    "grunt-contrib-sass": "~0.7.3",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-contrib-uglify": "~0.4.0"
+  },
+  "readme": "Video and Gif management plugin for Shower\n============\n\nVideo and Gif management plugin for [Shower](https://github.com/shower/shower) presentation engine.\n\n[Demo](http://rhr.me/projects/shower-video/).\n\nBrowser support: all modern desktop and mobile browsers.\n\n## Usage Examples:\n\n1. \"[Taking Development Tools To The Next Level](http://rhr.me/pres/ime)\"\n2. \"[Автоматизация фронтенда](http://rhr.me/pres/automation)\" - presentation about front-end automation (ru).\n\n## Start instructions\n\n```\ngit clone https://github.com/operatino/shower-video.git\ncd shower-video\nnpm install\nopen index.html\n```",
+  "readmeFilename": "README.md",
+  "_id": "shower-video@0.0.2",
+  "dist": {
+    "shasum": "596f209675244c60393126d8b5bb7a068f60e112"
+  },
+  "_resolved": "git://github.com/operatino/shower-video#37fb855f4230811398cb889887b1260b384bf4c8",
+  "_from": "shower-video@git://github.com/operatino/shower-video#v0.0.3"
+}

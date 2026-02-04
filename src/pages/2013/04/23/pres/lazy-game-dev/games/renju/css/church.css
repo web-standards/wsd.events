@@ -1,0 +1,651 @@
+.church.marked_win:after{
+    content:".";
+    width: 50px;
+    height: 50px;
+    display: block;
+    overflow: hidden;
+    text-indent: -999px;
+    background: rgba(0,255,0,.5);
+    position: absolute;
+    top: -25px;
+    left: -25px;
+    -webkit-transform: translateZ(.5px);
+    -moz-transform: translateZ(.5px);
+    transform: translateZ(.5px);
+    }
+
+.church.marked_loose:after{
+    content:".";
+    width: 50px;
+    height: 50px;
+    display: block;
+    overflow: hidden;
+    text-indent: -999px;
+    background: rgba(255,0,0,.5);
+    position: absolute;
+    top: -25px;
+    left: -25px;
+    -webkit-transform: translateZ(.5px);
+    -moz-transform: translateZ(.5px);
+    transform: translateZ(.5px);
+    }
+
+html.no-preserve-3d .church.marked_win:after{
+    top: 0;
+    left: 0;
+    }
+
+html.no-preserve-3d .church.marked_loose:after{
+    top: 0;
+    left: 0;
+    }
+
+.church{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+
+  -webkit-transform: translateZ(.5px);
+  -moz-transform: translateZ(.5px);
+  transform: translateZ(.5px);
+
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  }
+  .church .wall-1{
+    width: 20px;
+    height: 100px;
+    display: block;
+
+    position: absolute;
+    top: -100px;
+    left: -10px;
+
+    -webkit-transform-origin: 50% 100% 0;
+    -moz-transform-origin: 50% 100% 0;
+    transform-origin: 50% 100% 0;
+
+    -webkit-transform: rotateX(-90deg) translateZ(17px);
+    -moz-transform: rotateX(-90deg) translateZ(17px);
+    transform: rotateX(-90deg) translateZ(17px);
+
+    -webkit-backface-visibility: visible;
+    -moz-backface-visibility:    visible;
+    -ms-backface-visibility:     visible;
+
+    background: url('../img/ch-front.png') 50% 0 no-repeat;
+    -webkit-background-size: 20px auto;
+     -o-background-size: 20px auto;
+        background-size: 20px auto;
+    }
+
+  .church .wall-6{
+    width: 20px;
+    height: 100px;
+    display: block;
+
+    position: absolute;
+    top: -100px;
+    left: -10px;
+
+    -webkit-transform-origin: 50% 100% 0;
+    -moz-transform-origin: 50% 100% 0;
+    transform-origin: 50% 100% 0;
+
+    -webkit-transform: rotateX(-90deg) rotateY(180deg) translateZ(17px);
+    -moz-transform: rotateX(-90deg) rotateY(180deg) translateZ(17px);
+    transform: rotateX(-90deg) rotateY(180deg) translateZ(17px);
+
+    -webkit-backface-visibility: visible;
+    -moz-backface-visibility:    visible;
+    -ms-backface-visibility:     visible;
+
+    background: url('../img/ch-front.png') 50% 0 no-repeat;
+    -webkit-background-size: 20px auto;
+     -o-background-size: 20px auto;
+        background-size: 20px auto;
+    }
+
+  .church .wall-2{
+    width: 20px;
+    height: 100px;
+    display: block;
+
+    position: absolute;
+    top: -100px;
+    left: -10px;
+
+    -webkit-transform-origin: 50% 100% 0;
+    -moz-transform-origin: 50% 100% 0;
+    transform-origin: 50% 100% 0;
+
+    -webkit-transform: rotateX(-90deg) rotateY(-120deg) translateZ(17px);
+    -moz-transform: rotateX(-90deg) rotateY(-120deg) translateZ(17px);
+    transform: rotateX(-90deg) rotateY(-120deg) translateZ(17px);
+
+    -webkit-backface-visibility: visible;
+    -moz-backface-visibility:    visible;
+    -ms-backface-visibility:     visible;
+
+    background: url('../img/ch-front.png') 50% 0 no-repeat;
+    -webkit-background-size: 20px auto;
+     -o-background-size: 20px auto;
+        background-size: 20px auto;
+    }
+
+  .church .wall-3{
+    width: 20px;
+    height: 100px;
+    display: block;
+
+    position: absolute;
+    top: -100px;
+    left: -10px;
+
+    -webkit-transform-origin: 50% 100% 0;
+    -moz-transform-origin: 50% 100% 0;
+    transform-origin: 50% 100% 0;
+
+    -webkit-transform: rotateX(-90deg) rotateY(60deg) translateZ(17px);
+    -moz-transform: rotateX(-90deg) rotateY(60deg) translateZ(17px);
+    transform: rotateX(-90deg) rotateY(60deg) translateZ(17px);
+
+    -webkit-backface-visibility: visible;
+    -moz-backface-visibility:    visible;
+    -ms-backface-visibility:     visible;
+
+    background: url('../img/ch-front.png') 50% 0 no-repeat;
+    -webkit-background-size: 20px auto;
+     -o-background-size: 20px auto;
+        background-size: 20px auto;
+
+    }
+
+  .church .wall-4{
+    width: 20px;
+    height: 100px;
+    display: block;
+
+    position: absolute;
+    top: -100px;
+    left: -10px;
+
+    -webkit-transform-origin: 50% 100% 0;
+    -moz-transform-origin: 50% 100% 0;
+    transform-origin: 50% 100% 0;
+
+    -webkit-transform: rotateX(-90deg) rotateY(-60deg) translateZ(17px);
+    -moz-transform: rotateX(-90deg) rotateY(-60deg) translateZ(17px);
+    transform: rotateX(-90deg) rotateY(-60deg) translateZ(17px);
+
+    -webkit-backface-visibility: visible;
+    -moz-backface-visibility:    visible;
+    -ms-backface-visibility:     visible;
+
+    background: url('../img/ch-front.png') 50% 0 no-repeat;
+    -webkit-background-size: 20px auto;
+     -o-background-size: 20px auto;
+        background-size: 20px auto;
+    }
+
+  .church .wall-5{
+    width: 20px;
+    height: 100px;
+    display: block;
+
+    position: absolute;
+    top: -100px;
+    left: -10px;
+
+    -webkit-transform-origin: 50% 100% 0;
+    -moz-transform-origin: 50% 100% 0;
+    transform-origin: 50% 100% 0;
+
+    -webkit-transform: rotateX(-90deg) rotateY(120deg) translateZ(17px);
+    -moz-transform: rotateX(-90deg) rotateY(120deg) translateZ(17px);
+    transform: rotateX(-90deg) rotateY(120deg) translateZ(17px);
+
+    -webkit-backface-visibility: visible;
+    -moz-backface-visibility:    visible;
+    -ms-backface-visibility:     visible;
+
+    background: url('../img/ch-front.png') 50% 0 no-repeat;
+    -webkit-background-size: 20px auto;
+     -o-background-size: 20px auto;
+        background-size: 20px auto;
+
+    }
+
+.church .wall-1,
+.church .wall-2,
+.church .wall-3,
+.church .wall-4,
+.church .wall-5,
+.church .wall-6{
+    -webkit-transition: height .2s linear, top .2s linear;
+    -moz-transition: height .2s linear, top .2s linear;
+    transition: height .2s linear, top .2s linear;
+    }
+
+
+.church.level-1 .wall-1,
+.church.level-1 .wall-2,
+.church.level-1 .wall-3,
+.church.level-1 .wall-4,
+.church.level-1 .wall-5,
+.church.level-1 .wall-6{
+    height: 39px;
+    top: -39px;
+    }
+
+.church.level-2 .wall-1,
+.church.level-2 .wall-2,
+.church.level-2 .wall-3,
+.church.level-2 .wall-4,
+.church.level-2 .wall-5,
+.church.level-2 .wall-6{
+    height: 60px;
+    top: -60px;
+    }
+
+.church.level-3 .wall-1,
+.church.level-3 .wall-2,
+.church.level-3 .wall-3,
+.church.level-3 .wall-4,
+.church.level-3 .wall-5,
+.church.level-3 .wall-6{
+    height: 79px;
+    top: -79px;
+    }
+
+.church.level-4 .wall-1,
+.church.level-4 .wall-2,
+.church.level-4 .wall-3,
+.church.level-4 .wall-4,
+.church.level-4 .wall-5,
+.church.level-4 .wall-6{
+    height: 100px;
+    top: -100px;
+    }
+
+
+
+  .church .wall-roof{
+    width: 40px;
+    height: 35px;
+    display: block;
+
+    position: absolute;
+    top: -17.5px;
+    left: -20px;
+
+    -webkit-transform-origin: 100% 100% 0;
+    -moz-transform-origin: 100% 100% 0;
+    transform-origin: 100% 100% 0;
+
+    -webkit-transform: translateZ(100px);
+    -moz-transform: translateZ(100px);
+    transform: translateZ(100px);
+
+    -webkit-transition: -webkit-transform .2s linear;
+    -moz-transition: -moz-transform .2s linear;
+    transition: transform .2s linear;
+
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility:    hidden;
+    -ms-backface-visibility:     hidden;
+
+    background: url('../img/ch-top.png') 50% 50% no-repeat;
+    -webkit-background-size: 40px;
+     -o-background-size: 40px;
+        background-size: 40px;
+
+    }
+
+.church.level-1 .wall-roof{
+    -webkit-transform: translateZ(39px);
+    -moz-transform: translateZ(39px);
+    transform: translateZ(39px);
+    }
+
+.church.level-2 .wall-roof{
+    -webkit-transform: translateZ(60px);
+    -moz-transform: translateZ(60px);
+    transform: translateZ(60px);
+    }
+
+.church.level-3 .wall-roof{
+    -webkit-transform: translateZ(79px);
+    -moz-transform: translateZ(79px);
+    transform: translateZ(79px);
+    }
+
+.church.level-4 .wall-roof{
+    -webkit-transform: translateZ(100px);
+    -moz-transform: translateZ(100px);
+    transform: translateZ(100px);
+    }
+
+html.no-preserve-3d .church{
+    width: 50px;
+    height: 50px;
+    margin: -25px 0 0 -25px;
+    background: url("../img/curch.png") 50% 50% no-repeat;
+
+    -webkit-background-size: auto 100%;
+         -o-background-size: auto 100%;
+            background-size: auto 100%;
+    }
+
+  .church .crown-1{
+    width: 20px;
+    height: 10px;
+    display: block;
+
+    position: absolute;
+    top: -10px;
+    left: -10px;
+
+    -webkit-transform-origin: 50% 100% 0;
+    -moz-transform-origin: 50% 100% 0;
+    transform-origin: 50% 100% 0;
+
+    -webkit-transform: rotateX(-90deg) translateZ(17px) translateY(-100px);
+    -moz-transform: rotateX(-90deg) translateZ(17px) translateY(-100px);
+    transform: rotateX(-90deg) translateZ(17px) translateY(-100px);
+
+    -webkit-backface-visibility: visible;
+    -moz-backface-visibility:    visible;
+    -ms-backface-visibility:     visible;
+
+    background: url('../img/crown.png') 50% 0 no-repeat;
+    -webkit-background-size: 20px auto;
+     -o-background-size: 20px auto;
+        background-size: 20px auto;
+    }
+
+  .church .crown-2{
+    width: 20px;
+    height: 10px;
+    display: block;
+
+    position: absolute;
+    top: -10px;
+    left: -10px;
+
+    -webkit-transform-origin: 50% 100% 0;
+    -moz-transform-origin: 50% 100% 0;
+    transform-origin: 50% 100% 0;
+
+    -webkit-transform: rotateX(-90deg) rotateY(-120deg) translateZ(17px) translateY(-100px);
+    -moz-transform: rotateX(-90deg) rotateY(-120deg) translateZ(17px) translateY(-100px);
+    transform: rotateX(-90deg) rotateY(-120deg) translateZ(17px) translateY(-100px);
+
+    -webkit-backface-visibility: visible;
+    -moz-backface-visibility:    visible;
+    -ms-backface-visibility:     visible;
+
+    background: url('../img/crown.png') 50% 0 no-repeat;
+    -webkit-background-size: 20px auto;
+     -o-background-size: 20px auto;
+        background-size: 20px auto;
+    }
+
+  .church .crown-3{
+    width: 20px;
+    height: 10px;
+    display: block;
+
+    position: absolute;
+    top: -10px;
+    left: -10px;
+
+    -webkit-transform-origin: 50% 100% 0;
+    -moz-transform-origin: 50% 100% 0;
+    transform-origin: 50% 100% 0;
+
+    -webkit-transform: rotateX(-90deg) rotateY(60deg) translateZ(17px) translateY(-100px);
+    -moz-transform: rotateX(-90deg) rotateY(60deg) translateZ(17px) translateY(-100px);
+    transform: rotateX(-90deg) rotateY(60deg) translateZ(17px) translateY(-100px);
+
+    -webkit-backface-visibility: visible;
+    -moz-backface-visibility:    visible;
+    -ms-backface-visibility:     visible;
+
+    background: url('../img/crown.png') 50% 0 no-repeat;
+    -webkit-background-size: 20px auto;
+     -o-background-size: 20px auto;
+        background-size: 20px auto;
+
+    }
+
+  .church .crown-4{
+    width: 20px;
+    height: 10px;
+    display: block;
+
+    position: absolute;
+    top: -10px;
+    left: -10px;
+
+    -webkit-transform-origin: 50% 100% 0;
+    -moz-transform-origin: 50% 100% 0;
+    transform-origin: 50% 100% 0;
+
+    -webkit-transform: rotateX(-90deg) rotateY(-60deg) translateZ(17px) translateY(-100px);
+    -moz-transform: rotateX(-90deg) rotateY(-60deg) translateZ(17px) translateY(-100px);
+    transform: rotateX(-90deg) rotateY(-60deg) translateZ(17px) translateY(-100px);
+
+    -webkit-backface-visibility: visible;
+    -moz-backface-visibility:    visible;
+    -ms-backface-visibility:     visible;
+
+    background: url('../img/crown.png') 50% 0 no-repeat;
+    -webkit-background-size: 20px auto;
+     -o-background-size: 20px auto;
+        background-size: 20px auto;
+    }
+
+  .church .crown-5{
+    width: 20px;
+    height: 10px;
+    display: block;
+
+    position: absolute;
+    top: -10px;
+    left: -10px;
+
+    -webkit-transform-origin: 50% 100% 0;
+    -moz-transform-origin: 50% 100% 0;
+    transform-origin: 50% 100% 0;
+
+    -webkit-transform: rotateX(-90deg) rotateY(120deg) translateZ(17px) translateY(-100px);
+    -moz-transform: rotateX(-90deg) rotateY(120deg) translateZ(17px) translateY(-100px);
+    transform: rotateX(-90deg) rotateY(120deg) translateZ(17px) translateY(-100px);
+
+    -webkit-backface-visibility: visible;
+    -moz-backface-visibility:    visible;
+    -ms-backface-visibility:     visible;
+
+    background: url('../img/crown.png') 50% 0 no-repeat;
+    -webkit-background-size: 20px auto;
+     -o-background-size: 20px auto;
+        background-size: 20px auto;
+    }
+
+  .church .crown-6{
+    width: 20px;
+    height: 10px;
+    display: block;
+
+    position: absolute;
+    top: -10px;
+    left: -10px;
+
+    -webkit-transform-origin: 50% 100% 0;
+    -moz-transform-origin: 50% 100% 0;
+    transform-origin: 50% 100% 0;
+
+    -webkit-transform: rotateX(-90deg) rotateY(180deg) translateZ(17px) translateY(-100px);
+    -moz-transform: rotateX(-90deg) rotateY(180deg) translateZ(17px) translateY(-100px);
+    transform: rotateX(-90deg) rotateY(180deg) translateZ(17px) translateY(-100px);
+
+    -webkit-backface-visibility: visible;
+    -moz-backface-visibility:    visible;
+    -ms-backface-visibility:     visible;
+
+    background: url('../img/crown.png') 50% 0 no-repeat;
+    -webkit-background-size: 20px auto;
+     -o-background-size: 20px auto;
+        background-size: 20px auto;
+    }
+
+.church .crown-1,
+.church .crown-2,
+.church .crown-3,
+.church .crown-4,
+.church .crown-5,
+.church .crown-6{
+    -webkit-transition: -webkit-transform .2s linear;
+    -moz-transition: -moz-transform .2s linear;
+    transition: transform .2s linear;
+    }
+
+
+.church.level-1 .crown-1{
+    -webkit-transform: rotateX(-90deg) translateZ(17px) translateY(-39px);
+    -moz-transform: rotateX(-90deg) translateZ(17px) translateY(-39px);
+    transform: rotateX(-90deg) translateZ(17px) translateY(-39px);
+    }
+.church.level-1 .crown-2{
+    -webkit-transform: rotateX(-90deg) rotateY(-120deg) translateZ(17px) translateY(-39px);
+    -moz-transform: rotateX(-90deg) rotateY(-120deg) translateZ(17px) translateY(-39px);
+    transform: rotateX(-90deg) rotateY(-120deg) translateZ(17px) translateY(-39px);
+    }
+.church.level-1 .crown-3{
+    -webkit-transform: rotateX(-90deg) rotateY(60deg) translateZ(17px) translateY(-39px);
+    -moz-transform: rotateX(-90deg) rotateY(60deg) translateZ(17px) translateY(-39px);
+    transform: rotateX(-90deg) rotateY(60deg) translateZ(17px) translateY(-39px);
+    }
+.church.level-1 .crown-4{
+    -webkit-transform: rotateX(-90deg) rotateY(-60deg) translateZ(17px) translateY(-39px);
+    -moz-transform: rotateX(-90deg) rotateY(-60deg) translateZ(17px) translateY(-39px);
+    transform: rotateX(-90deg) rotateY(-60deg) translateZ(17px) translateY(-39px);
+    }
+.church.level-1 .crown-5{
+    -webkit-transform: rotateX(-90deg) rotateY(120deg) translateZ(17px) translateY(-39px);
+    -moz-transform: rotateX(-90deg) rotateY(120deg) translateZ(17px) translateY(-39px);
+    transform: rotateX(-90deg) rotateY(120deg) translateZ(17px) translateY(-39px);
+    }
+.church.level-1 .crown-6{
+    -webkit-transform: rotateX(-90deg) rotateY(180deg) translateZ(17px) translateY(-39px);
+    -moz-transform: rotateX(-90deg) rotateY(180deg) translateZ(17px) translateY(-39px);
+    transform: rotateX(-90deg) rotateY(180deg) translateZ(17px) translateY(-39px);
+    }
+
+
+.church.level-2 .crown-1{
+    -webkit-transform: rotateX(-90deg) translateZ(17px) translateY(-60px);
+    -moz-transform: rotateX(-90deg) translateZ(17px) translateY(-60px);
+    transform: rotateX(-90deg) translateZ(17px) translateY(-60px);
+    }
+.church.level-2 .crown-2{
+    -webkit-transform: rotateX(-90deg) rotateY(-120deg) translateZ(17px) translateY(-60px);
+    -moz-transform: rotateX(-90deg) rotateY(-120deg) translateZ(17px) translateY(-60px);
+    transform: rotateX(-90deg) rotateY(-120deg) translateZ(17px) translateY(-60px);
+    }
+.church.level-2 .crown-3{
+    -webkit-transform: rotateX(-90deg) rotateY(60deg) translateZ(17px) translateY(-60px);
+    -moz-transform: rotateX(-90deg) rotateY(60deg) translateZ(17px) translateY(-60px);
+    transform: rotateX(-90deg) rotateY(60deg) translateZ(17px) translateY(-60px);
+    }
+.church.level-2 .crown-4{
+    -webkit-transform: rotateX(-90deg) rotateY(-60deg) translateZ(17px) translateY(-60px);
+    -moz-transform: rotateX(-90deg) rotateY(-60deg) translateZ(17px) translateY(-60px);
+    transform: rotateX(-90deg) rotateY(-60deg) translateZ(17px) translateY(-60px);
+    }
+.church.level-2 .crown-5{
+    -webkit-transform: rotateX(-90deg) rotateY(120deg) translateZ(17px) translateY(-60px);
+    -moz-transform: rotateX(-90deg) rotateY(120deg) translateZ(17px) translateY(-60px);
+    transform: rotateX(-90deg) rotateY(120deg) translateZ(17px) translateY(-60px);
+    }
+.church.level-2 .crown-6{
+    -webkit-transform: rotateX(-90deg) rotateY(180deg) translateZ(17px) translateY(-60px);
+    -moz-transform: rotateX(-90deg) rotateY(180deg) translateZ(17px) translateY(-60px);
+    transform: rotateX(-90deg) rotateY(180deg) translateZ(17px) translateY(-60px);
+    }
+
+
+.church.level-3 .crown-1{
+    -webkit-transform: rotateX(-90deg) translateZ(17px) translateY(-79px);
+    -moz-transform: rotateX(-90deg) translateZ(17px) translateY(-79px);
+    transform: rotateX(-90deg) translateZ(17px) translateY(-79px);
+    }
+.church.level-3 .crown-2{
+    -webkit-transform: rotateX(-90deg) rotateY(-120deg) translateZ(17px) translateY(-79px);
+    -moz-transform: rotateX(-90deg) rotateY(-120deg) translateZ(17px) translateY(-79px);
+    transform: rotateX(-90deg) rotateY(-120deg) translateZ(17px) translateY(-79px);
+    }
+.church.level-3 .crown-3{
+    -webkit-transform: rotateX(-90deg) rotateY(60deg) translateZ(17px) translateY(-79px);
+    -moz-transform: rotateX(-90deg) rotateY(60deg) translateZ(17px) translateY(-79px);
+    transform: rotateX(-90deg) rotateY(60deg) translateZ(17px) translateY(-79px);
+    }
+.church.level-3 .crown-4{
+    -webkit-transform: rotateX(-90deg) rotateY(-60deg) translateZ(17px) translateY(-79px);
+    -moz-transform: rotateX(-90deg) rotateY(-60deg) translateZ(17px) translateY(-79px);
+    transform: rotateX(-90deg) rotateY(-60deg) translateZ(17px) translateY(-79px);
+    }
+.church.level-3 .crown-5{
+    -webkit-transform: rotateX(-90deg) rotateY(120deg) translateZ(17px) translateY(-79px);
+    -moz-transform: rotateX(-90deg) rotateY(120deg) translateZ(17px) translateY(-79px);
+    transform: rotateX(-90deg) rotateY(120deg) translateZ(17px) translateY(-79px);
+    }
+.church.level-3 .crown-6{
+    -webkit-transform: rotateX(-90deg) rotateY(180deg) translateZ(17px) translateY(-79px);
+    -moz-transform: rotateX(-90deg) rotateY(180deg) translateZ(17px) translateY(-79px);
+    transform: rotateX(-90deg) rotateY(180deg) translateZ(17px) translateY(-79px);
+    }
+
+.church.level-4 .crown-1{
+    -webkit-transform: rotateX(-90deg) translateZ(17px) translateY(-100px);
+    -moz-transform: rotateX(-90deg) translateZ(17px) translateY(-100px);
+    transform: rotateX(-90deg) translateZ(17px) translateY(-100px);
+    }
+.church.level-4 .crown-2{
+    -webkit-transform: rotateX(-90deg) rotateY(-120deg) translateZ(17px) translateY(-100px);
+    -moz-transform: rotateX(-90deg) rotateY(-120deg) translateZ(17px) translateY(-100px);
+    transform: rotateX(-90deg) rotateY(-120deg) translateZ(17px) translateY(-100px);
+    }
+.church.level-4 .crown-3{
+    -webkit-transform: rotateX(-90deg) rotateY(60deg) translateZ(17px) translateY(-100px);
+    -moz-transform: rotateX(-90deg) rotateY(60deg) translateZ(17px) translateY(-100px);
+    transform: rotateX(-90deg) rotateY(60deg) translateZ(17px) translateY(-100px);
+    }
+.church.level-4 .crown-4{
+    -webkit-transform: rotateX(-90deg) rotateY(-60deg) translateZ(17px) translateY(-100px);
+    -moz-transform: rotateX(-90deg) rotateY(-60deg) translateZ(17px) translateY(-100px);
+    transform: rotateX(-90deg) rotateY(-60deg) translateZ(17px) translateY(-100px);
+    }
+.church.level-4 .crown-5{
+    -webkit-transform: rotateX(-90deg) rotateY(120deg) translateZ(17px) translateY(-100px);
+    -moz-transform: rotateX(-90deg) rotateY(120deg) translateZ(17px) translateY(-100px);
+    transform: rotateX(-90deg) rotateY(120deg) translateZ(17px) translateY(-100px);
+    }
+.church.level-4 .crown-6{
+    -webkit-transform: rotateX(-90deg) rotateY(180deg) translateZ(17px) translateY(-100px);
+    -moz-transform: rotateX(-90deg) rotateY(180deg) translateZ(17px) translateY(-100px);
+    transform: rotateX(-90deg) rotateY(180deg) translateZ(17px) translateY(-100px);
+    }
+
+html.no-preserve-3d .church{
+  -webkit-transform: none;
+  -moz-transform: none;
+  transform: none;
+  }
+html.no-preserve-3d .church *{
+  display: none;
+  }

@@ -1,0 +1,20 @@
+//Layout
+.brand-bg {background-color: $c-dafault !important;} //Brand color
+
+//Text
+.bold {font-family: 'PF DIN TEXT PRO Medium' !important;}
+
+.dark {color: #000 !important;}
+.light {color: #fff !important;}
+
+.lp {  //Low priority
+  color: $c-lp !important;
+
+  a  {color: $c-lp !important;}
+  }
+
+.brand {color: $c-dafault !important;} //Brand color
+
+.fz-l {font-size: 1.25em !important;} //Font size large
+
+.fz-s {font-size: .75em !important;} //Font size small

@@ -1,0 +1,1562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>WSD Riga 2014 - Jade+PHP. Брачный контракт</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=792, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link rel="stylesheet" href="assets/shower-ribbon/styles/screen-d90984e344.css" />
+	<link rel="stylesheet" href="assets/styles/styles.css" />
+</head>
+<body class="list">
+	<!--
+		Debug class on <body> enables
+		cyan grid on slides
+		-->
+	<header class="caption">
+		<h1>Jade+PHP. Брачный контракт</h1>
+		<p><a href="index.html">Никита Селецкий</a>, Webskola.lv</p>
+	</header>
+
+	<section class="slide cover" id="splash">
+		<style>
+					</style>
+		<div>
+			<p><img src="content/001-splash/jade+php.png" title="jade+php" alt="jade+php" /></p>
+		</div>
+
+	</section>
+
+
+	<section class="slide shout" id="title">
+		<style>
+			#title h2{
+	font-size: 60px;
+	margin-top: -50px;
+	}
+	#title h2:first-line {
+		font-size: 100px;
+		}
+#title h3{
+	line-height: 1.5;
+	position: absolute;
+	top: 65%;
+	left: 100px;
+	right: 100px;
+	text-align: center;
+	}		</style>
+		<div>
+			<h2>Jade + PHP<br>Брачный контракт</h2>
+
+<h3>Совместное использование PHP и шаблонизатора Jade в любом фреймворке или CMS системе посредством Grunt</h3>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="author">
+		<style>
+			#author h2{
+	margin-top: 40px;
+	}
+#author img{
+	margin-top: 5px;
+	float: right;
+	border: 10px solid #fff;
+	box-shadow: 0 0 30px rgba(0,0,0,.3);
+	}		</style>
+		<div>
+			<h2><img src="content/012-author/nikita.seleckis.jpg" width="220" alt="nikita.seleckis" /> Никита Селецкий</h2>
+
+<h3>Директор и преподаватель Webskola</h3>
+
+<ul>
+<li>Основные виды деятельности:
+
+<ul>
+<li>веб-дизайн,</li>
+<li>принт-дизайн,</li>
+<li>верстка,</li>
+<li>UI/UX</li>
+</ul></li>
+</ul>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="tech">
+		<style>
+			#author h2{
+	margin-top: 40px;
+	}
+#author img{
+	margin-top: 5px;
+	float: right;
+	border: 10px solid #fff;
+	box-shadow: 0 0 30px rgba(0,0,0,.3);
+	}		</style>
+		<div>
+			<h2>Технологии</h2>
+
+<ol>
+<li>Jade</li>
+<li>Grunt</li>
+<li>Jade + PHP</li>
+<li>Jade во MVC фреймворке</li>
+<li>Jade в WordPress</li>
+<li>Jade в шаблонизаторах PHP</li>
+</ol>
+		</div>
+
+	</section>
+
+
+	<section class="slide cover" id="met-jade">
+		<style>
+			#met-jade h2{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	text-align: center;
+	font-size: 100px;
+	color: #fff;
+	}
+	#met-jade h2 del{
+		color: #999;
+		}
+	#met-jade h2 ins{
+		color: #0f0;
+		text-decoration: none;
+		}		</style>
+		<div>
+			<h2>Have you met <del>Ted</del> <ins>Jade</ins>?</h2>
+
+<p><img src="content/020-met-jade/ted.jpeg" title="ted" alt="ted" /></p>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="jade">
+		<style>
+					</style>
+		<div>
+			<h2>Препроцессор Jade</h2>
+
+<p><a href="http://jade-lang.com">Jade</a> — это краткий и простой язык шаблонизации с акцентом на высокую производительность и великолепные возможности.</p>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="jade-eg">
+		<style>
+			#jade-eg pre code{
+	font-size: 20px;
+	line-height: 2;
+}
+.slide mark.el{
+	color: #8c00ff;
+}
+.slide mark.tag{
+	color: #009cff;
+}
+.slide mark.attr{
+	color: #fc8800;
+}
+.slide mark.attr-value{
+	color: #20c700;
+}
+.slide mark.var{
+	font-style: italic;
+	color: #88f;
+}
+.slide mark.el,
+.slide mark.tag,
+.slide mark.var,
+.slide mark.attr,
+.slide mark.attr-value{
+	background-color: transparent;
+	padding: 0;
+}		</style>
+		<div>
+			<h2>Jade →</h2>
+
+<pre><code><mark class="el">#container.col</mark>
+    <mark class="tag">h1</mark> What is Jade?
+    <mark class="tag">article</mark>
+        <mark class="tag">p</mark> Jade is a terse and <mark><mark class="tag">&lt;i&gt;</mark>simple<mark class="tag">&lt;/i&gt;</mark></mark> templating language.
+        <mark class="tag">p</mark>: <mark class="tag">a</mark>(<mark class="attr">href</mark>="<mark class="attr-value">http://jade-lang.com</mark>", <mark class="attr">class</mark>="<mark class="attr-value">more</mark>") Learn more</code></pre>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="jade-eg-result">
+		<style>
+			#jade-eg-result pre code{
+	font-size: 20px;
+	line-height: 2;
+	}		</style>
+		<div>
+			<h2>→ HTML</h2>
+
+<pre><code><mark class="el">&lt;div id="container" class="col"&gt;</mark>
+    <mark class="tag">&lt;h1&gt;</mark>What is Jade?<mark class="tag">&lt;/h1&gt;</mark>
+    <mark class="tag">&lt;article&gt;</mark>
+        <mark class="tag">&lt;p&gt;</mark>Jade is a terse and <mark class="tag">&lt;i&gt;</mark>simple<mark class="tag">&lt;/i&gt;</mark> templating language.<mark class="tag">&lt;/p&gt;</mark>
+        <mark class="tag">&lt;p&gt;</mark><mark class="tag">&lt;a <mark class="attr">href</mark>="<mark class="attr-value">http://jade-lang.com</mark>" <mark class="attr">class</mark>="<mark class="attr-value">more</mark>"&gt;</mark>Learn
+        more<mark class="tag">&lt;/a&gt;</mark><mark class="tag">&lt;/p&gt;</mark>
+    <mark class="tag">&lt;/article&gt;</mark>
+<mark class="el">&lt;/div&gt;</mark></code></pre>
+		</div>
+
+	</section>
+
+
+	<section class="slide shout" id="benefits">
+		<style>
+					</style>
+		<div>
+			<h2>Преимущества</h2>
+		</div>
+
+	</section>
+
+
+	<section class="slide cover shout" id="stairs">
+		<style>
+			#stairs img{
+	height: 100%;
+	margin-left: -31.5%;
+	left: 50%;
+}
+#stairs h2{
+	font-size: 50px;
+	color: #fff;
+	bottom: 0;
+	top: auto;
+}		</style>
+		<div>
+			<h2>Выравнивание кода: лесенкой</h2>
+
+<p><img src="content/034-stairs/stairs.gif" title="stairs" alt="stairs" /></p>
+		</div>
+
+	</section>
+
+
+	<section class="slide cover shout" id="code-html">
+		<style>
+			#code-html img{
+	width: 100%;
+	top: 50%;
+	margin-top: -29%;
+}
+#code-html h2{
+	font-size: 100px;
+	bottom: 0;
+	top: auto;
+}		</style>
+		<div>
+			<h2>Чище, проще, понятнее</h2>
+
+<p><img src="content/036-code-html/code.png" title="code" alt="code" /></p>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="goodies">
+		<style>
+					</style>
+		<div>
+			<h2>Плюшки</h2>
+
+<ul>
+<li>JavaScript код</li>
+<li>Примеси (Mixins)</li>
+<li>Включения (Includes)</li>
+<li>Расширение (Extend)</li>
+<li>Фильтры</li>
+</ul>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="js-code">
+		<style>
+			pre.html-result{
+	margin-top: -25px;
+	border-top: 1px solid #888;
+	padding-top: 30px;
+}
+#js-code pre code{
+	font-size: 20px;
+	line-height: 1.8;
+	}		</style>
+		<div>
+			<h2>JavaScript код</h2>
+
+<p><pre><code><mark class="tag">ul</mark>
+    <mark>-</mark> for (var x = 0; x &lt; 3; x++)
+        <mark class="tag">li</mark>= x</code></pre><div class="next"><pre class="html-result"><code><mark class="tag">&lt;ul&gt;</mark>
+    <mark class="tag">&lt;li&gt;</mark>0<mark class="tag">&lt;/li&gt;</mark>
+    <mark class="tag">&lt;li&gt;</mark>1<mark class="tag">&lt;/li&gt;</mark>
+    <mark class="tag">&lt;li&gt;</mark>2<mark class="tag">&lt;/li&gt;</mark>
+<mark class="tag">&lt;/ul&gt;</mark></code></pre></p>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="mixins">
+		<style>
+			#mixins pre code{
+	font-size: 20px;
+	line-height: 1.8;
+}		</style>
+		<div>
+			<h2>Примеси (Mixins)</h2>
+
+<p><pre><code>mixin <mark class="el">checkbox</mark>(<mark class="var">label</mark>, <mark class="var">name</mark>, <mark class="var">value</mark>, <mark class="var">checked</mark>)
+    <mark class="tag">input</mark>(
+        <mark class="attr">type</mark>="<mark class="attr-value">checkbox</mark>"
+        <mark class="attr">name</mark>=<mark class="var">name</mark>
+        <mark class="attr">value</mark>=<mark class="var">value</mark>
+        <mark class="attr">id</mark>=<mark class="var">value</mark>
+        <mark class="attr">checked</mark>=<mark class="var">checked</mark>)
+    <mark class="tag">label</mark>(<mark class="attr">for</mark>=<mark class="var">value</mark>, <mark class="attr">class</mark>=<mark class="var">checked</mark> ? '<mark class="attr-value">checked</mark>' : ''</mark>)= <mark class="var">label</mark></code></pre><div class="next"><pre class="html-result"><code>+<mark class="el">checkbox</mark>("Нажми меня", "checkme", "ok", false)</code></pre></p>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="mixins-result">
+		<style>
+			#mixins-result pre code{
+	font-size: 22px;
+}		</style>
+		<div>
+			<h2>Примеси (Mixins)</h2>
+
+<pre><code>
+&lt;<mark class="tag">input</mark> <mark class="attr">type</mark>=&quot;<mark class="attr-value">checkbox</mark>&quot; <mark class="attr">name</mark>=&quot;<mark class="attr-value">checkme</mark>&quot; <mark class="attr">value</mark>=&quot;<mark class="attr-value">ok</mark>&quot; <mark class="attr">id</mark>=&quot;<mark class="attr-value">ok</mark>&quot; /&gt;
+&lt;<mark class="tag">label</mark> <mark class="attr">for</mark>=&quot;<mark class="attr-value">ok</mark>&quot;&gt;Нажми меня&lt;/<mark class="tag">label</mark>&gt;
+</code></pre>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="includes">
+		<style>
+			.column{
+	width: 370px;
+	float: left;
+	border-left: 1px solid #ccc;
+	padding-left: 40px;
+}
+.column:first-of-type{
+	border: none;
+	padding-left: 0;
+}		</style>
+		<div>
+			<h2>Включения (Includes)</h2>
+
+<p><div class="column"><pre><code>index.jade
+inc/
+   /header.jade
+   /footer.jade</code></pre></div><div class="column next"><p class="note">index.jade:</p><pre><code><mark class="el">include</mark> inc/header
+<mark class="tag">article</mark>
+    <mark class="tag">h1</mark> Hello world!
+<mark class="el">include</mark> inc/footer</code></pre></div></p>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="extend">
+		<style>
+					</style>
+		<div>
+			<h2>Расширение (Extend)</h2>
+
+<pre><code>index.jade
+system/html.jade
+</code></pre>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="extend2">
+		<style>
+			#extend2 pre code{
+	font-size: 20px;
+	line-height: 1.5;
+	}		</style>
+		<div>
+			<h2>html.jade</h2>
+
+<pre><code>doctype html
+<mark class="tag">html</mark>
+    <mark class="tag">head</mark>
+        <mark class="el">include</mark> head
+    <mark class="tag">body</mark>
+        <mark class="tag">header</mark>
+            <mark class="el">include</mark> header
+        <mark class="tag">main</mark>
+            <mark><mark class="el">block</mark> main</mark>
+        <mark class="tag">footer</mark>
+            <mark class="el">include</mark> footer</code></pre>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="extend3">
+		<style>
+			#extend2 pre code{
+	font-size: 22px;
+	line-height: 32px;
+	}		</style>
+		<div>
+			<h2>index.jade</h2>
+
+<pre><code><mark><mark class="el">extend</mark> system/html</mark>
+<mark><mark class="el">block</mark> main</mark>
+    <mark class="tag">article</mark>
+        <mark class="tag">h1</mark> Hello world!</code></pre>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="filters">
+		<style>
+			#filters pre code{
+	font-size: 20px;
+	line-height: 1.8;
+}		</style>
+		<div>
+			<h2>Фильтры</h2>
+
+<pre><code><mark class="el">:markdown</mark>
+    ## Some header
+
+    * List item 1
+    * List item 2
+    * List item 3
+
+<mark class="tag">script</mark>
+    <mark class="el">:coffee</mark>
+        console.log 'This is coffee script'</code></pre>
+		</div>
+
+	</section>
+
+
+	<section class="slide cover" id="tasty">
+		<style>
+					</style>
+		<div>
+			<p><img src="content/075-tasty/tasty.jpg" title="tasty" alt="tasty" /></p>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="jade-install">
+		<style>
+					</style>
+		<div>
+			<h2>Установка Jade</h2>
+
+<p class="note">Нужен установленный <a href="http://nodejs.org">Node.js</a></p>
+
+<pre><code>$ npm install jade
+</code></pre>
+
+<pre class="next"><code>$ npm install jade -g</code></pre>
+
+<p><pre class="next"><code>$ sudo npm install jade -g</code></pre></p>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="jade-usage">
+		<style>
+			#jade-usage pre{
+	font-size: 22px;
+	margin-bottom: 30px;
+	}
+#jade-usage pre code{
+	line-height: 2;
+}		</style>
+		<div>
+			<h2>Использование Jade</h2>
+
+<p><pre><code>$ echo "h1 Hello world!" | jade<br><span class="next">&lt;h1&gt;Hello world!&lt;/h1&gt;</span></code></pre><div class="next"><pre><code>$ jade &lt; index.jade > index.html</code></pre><div class="next"><pre><code>$ jade -w -P templates</code></pre><p class="note">-w — watch<br>-P — pretty</p></p>
+		</div>
+
+	</section>
+
+
+	<section class="slide cover" id="grunt">
+		<style>
+					</style>
+		<div>
+			<p><img src="content/088-grunt/grunt-logo.png" title="grunt-logo" alt="grunt-logo" /></p>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="grunt-contrib">
+		<style>
+			#grunt-contrib .note,
+#grunt-contrib pre{
+	margin: 0 0 25px;
+
+}
+#grunt-contrib .note code{
+	background: none;
+	padding: 0;
+	}
+#grunt-contrib pre+.note{
+	font-size: 20px;
+	line-height: 2;
+	}		</style>
+		<div>
+			<h2>Установка Grunt и Jade</h2>
+
+<p class="note">Необходим <a href="http://nodejs.org">Node.js</a></p>
+
+<pre><code>$ npm install grunt-cli -g
+$ npm install grunt --save-dev
+$ npm install grunt-contrib-jade --save-dev
+</code></pre>
+
+<p class="note next">Или расписать package.json и<br>
+<code>$ npm install</code><br>
+<a href="http://gruntjs.com/getting-started">Инструкция</a></p>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="grunt-eg">
+		<style>
+			#grunt-eg pre code{
+	font-size: 18px;
+	line-height: 24px;
+	}		</style>
+		<div>
+			<h2>Gruntfile.js</h2>
+
+<p><pre><code>module.exports = function(grunt)
+{   grunt.initConfig
+    ({  <mark>jade:</mark>
+        {   compile:
+            {   files:
+                {   <mark>"index.html": "index.jade"</mark>
+                }
+            <span class="next">,   options:
+                {   <mark>pretty: true</mark>
+                }</span>
+            }
+        }
+    });
+    <span class="next">grunt.loadNpmTasks('<mark>grunt-contrib-jade</mark>');</span>
+    <span class="next">grunt.registerTask('default', ['<mark>jade</mark>']);</span>
+};</code></pre></p>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="grunt-eg2">
+		<style>
+					</style>
+		<div>
+			<h2>Gruntfile.js</h2>
+
+<p><pre><code>files:
+[{  <mark>expand: true</mark>
+<span class="next">,   cwd: "app/"
+,   src: "<mark>**/*</mark>.jade"
+,   dest: "site/"
+,   ext: ".php"</span>
+}]</code></pre></p>
+		</div>
+
+	</section>
+
+
+	<section class="slide cover" id="watching-you">
+		<style>
+			#watching-you img{
+	left: 50%;
+	margin-left: -480px
+}		</style>
+		<div>
+			<p><img src="content/105-watching-you/watching-you.jpg" title="watching-you" alt="watching-you" /></p>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="grunt-watch">
+		<style>
+			#grunt-watch pre code{
+	font-size: 22px;
+	line-height: 32px;
+	}		</style>
+		<div>
+			<h2>Grunt Watch</h2>
+
+<p class="note">Gruntfile.js:</p>
+
+<pre><code>watch:
+{   jade:
+    {   files: ["<mark>app/**/*.jade</mark>"]
+    ,   tasks: "<mark>jade</mark>"
+    }
+<span class="next">,   options:
+    {   <mark>livereload: true</mark>
+    }</span>
+}</code></pre>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="grunt-watch2">
+		<style>
+			#grunt-watch pre code{
+	font-size: 22px;
+	line-height: 32px;
+	}		</style>
+		<div>
+			<h2>В шаблон</h2>
+
+<pre><code><mark class="tag">script</mark>(<mark class="attr">src</mark>="<mark class="attr-value">//localhost:35729/livereload.js</mark>")</code></pre>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="grunt-watch3">
+		<style>
+					</style>
+		<div>
+			<h2>Установка Grunt Watch</h2>
+
+<pre><code>$ npm install grunt-contrib-watch --save-dev
+</code></pre>
+
+<p class="note">Gruntfile.js:</p>
+
+<pre><code>grunt.loadNpmTasks('<mark>grunt-contrib-watch</mark>');
+grunt.registerTask('default', [<mark>'jade', 'watch'</mark>]);</code></pre>
+		</div>
+
+	</section>
+
+
+	<section class="slide shout" id="jade-php">
+		<style>
+					</style>
+		<div>
+			<h2>Jade + PHP</h2>
+		</div>
+
+	</section>
+
+
+	<section class="slide cover" id="learning">
+		<style>
+					</style>
+		<div>
+			<p><img src="content/142-learning/learning.jpg" title="learning" alt="learning" /></p>
+		</div>
+
+	</section>
+
+
+	<section class="slide cover shout" id="code-php">
+		<style>
+			#code-php img{
+	width: 100%;
+	top: 50%;
+	margin-top: -29%;
+}
+#code-php h2{
+	font-size: 65px;
+	bottom: 0;
+	top: auto;
+}		</style>
+		<div>
+			<h2>PHP конечно гадит, но все равно лучше</h2>
+
+<p><img src="content/145-code-php/code.png" title="code" alt="code" /></p>
+		</div>
+
+	</section>
+
+
+	<section class="slide cover shout" id="code-php2">
+		<style>
+			#code-php2 img{
+	width: 100%;
+	top: 50%;
+	margin-top: -29%;
+}
+#code-php2 h2{
+	font-size: 65px;
+	bottom: 0;
+	top: auto;
+}		</style>
+		<div>
+			<h2>Немного оптимизируем</h2>
+
+<p><img src="content/146-code-php2/code.png" title="code" alt="code" /></p>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="jade-php-eg-h1">
+		<style>
+			#jade-php-eg-h1 pre code{
+	font-size: 22px;
+	line-height: 40px;
+}
+.slide mark.php{
+	color: #00ff00;
+}
+.slide .php_operator{
+	color: #777;
+}		</style>
+		<div>
+			<h2>Jade + PHP</h2>
+
+<pre><code><mark class="tag">h1</mark> <mark>&lt;?php</mark> <span class="php_operator">echo</span> $heading <mark>?&gt;</mark>
+<span class="next"><mark class="tag">h1</mark> <mark>&lt;?</mark> <span class="php_operator">echo</span> $heading <mark>?&gt;</mark></span>
+<span class="next"><mark class="tag">h1</mark> <mark>&lt;?=</mark> $heading <mark>?&gt;</mark></span>
+
+<span class="next">&lt;? if($heading): ?&gt;
+<mark class="tag">h1</mark> &lt;?= $heading ?&gt;
+&lt;? endif ?&gt;</span></code></pre>
+
+<p class="note next">.htaccess: php_flag short_open_tag on</p>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="jade-php-eg-attr">
+		<style>
+			.slide mark.important.slim{
+	padding: 3px
+}		</style>
+		<div>
+			<h2>В атрибутах</h2>
+
+<pre><code><mark class="tag">a</mark>(<mark class="attr">href</mark><mark class="slim">!=</mark><mark class="attr-value">"&lt;?= $page->url() ?&gt;"</mark>) &lt;?= $page->title() ?&gt;
+
+<span class="next"><mark class="tag">a</mark>(…, <del><mark class="important">&lt;? if ($active): ?&gt;class="active"&lt;? endif ?&gt;</mark></del>)</span>
+
+<span class="next">&lt;? if ($active) { $class = "active" } ?&gt;
+<mark class="tag">a</mark>(…, <mark class="attr">class</mark>!=<mark class="attr-value">"&lt;?= $class ?&gt;"</mark>) &lt;?= $page->title() ?&gt;</span></code></pre>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="jade-php-eg-attr-input">
+		<style>
+			#jade-php-eg-attr-input pre code{
+	font-size: 22px;
+	line-height: 46px
+}		</style>
+		<div>
+			<h2>В атрибутах</h2>
+
+<pre><code><mark class="tag">input</mark>(<mark class="attr">type</mark>=<mark class="attr-value">"text"</mark> <mark>disabled</mark>)
+<span class="next"><mark class="tag">input</mark>(<mark class="attr">type</mark>=<mark class="attr-value">"text"</mark>, <del><mark class="important">&lt;?php if($disabled): ?&gt;disabled&lt;? endif ?&gt;</mark></del>)</span>
+
+<span class="next">&lt;? if ($disabled): ?&gt;
+<mark class="tag">input</mark>(<mark class="attr">type</mark>=<mark class="attr-value">"text"</mark>, <mark class="attr">disabled</mark>)
+&lt;? else: ?&gt;
+<mark class="tag">input</mark>(<mark class="attr">type</mark>=<mark class="attr-value">"text"</mark>)
+&lt;? endif ?&gt;
+</span></code></pre>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="jade-php-eg-mline">
+		<style>
+			.next.invisible {
+	display: none;
+}
+.next.invisible.active {
+	display: inline;
+}		</style>
+		<div>
+			<h2>В несколько строк</h2>
+
+<pre><code><mark class="tag">.screen_items</mark>
+    <mark class="next invisible">|</mark>&lt;? $cur = 'cur';
+    <mark>|</mark>   foreach ($screens as $key => $screen):
+    <mark>|</mark>       $src = $screen->url() || "blank.gif"; ?&gt;
+    <mark class="tag">img</mark>(<mark class="attr">src</mark>!=<mark class="attr-value">"&lt;?= $src() ?&gt;"</mark>, <mark class="attr">class</mark>!=<mark class="attr-value">"&lt;?= $cur ?&gt;"</mark>)
+    <mark class="next invisible">|</mark>&lt;?     $cur = '';
+    <mark>|</mark>   endforeach ?&gt;</code></pre>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="jade-php-eg-mline2">
+		<style>
+					</style>
+		<div>
+			<h2>В несколько строк</h2>
+
+<pre><code><mark class="tag">.screen_items</mark><mark>.</mark>
+    &lt;?   $cur = 'cur';
+         foreach ($screens as $key => $screen):
+             $src = $screen->url() || "blank.gif"; ?&gt;
+    &lt;<mark class="tag">img</mark> <mark class="attr">src</mark>=<mark class="attr-value">"&lt;?= $src() ?&gt;"</mark> <mark class="attr">class</mark>=<mark class="attr-value">"&lt;?= $cur ?&gt;"</mark>&gt;
+    &lt;?       $cur = '';
+         endforeach ?&gt;</code></pre>
+		</div>
+
+	</section>
+
+
+	<section class="slide cover shout" id="jade-php-spaces">
+		<style>
+			#jade-php-spaces h2{
+	font-size: 100px;
+	color: #fff;
+	}		</style>
+		<div>
+			<h2>Jade не выносит смесь пробелов и табов</h2>
+
+<p><img src="content/200-jade-php-spaces/keys.jpg" title="keys" alt="keys" /></p>
+		</div>
+
+	</section>
+
+
+	<section class="slide cover shout" id="electro">
+		<style>
+			#electro h2{
+	color: #fff;
+	text-shadow: 0 1px 5px rgba(0,0,0,.8)
+	}		</style>
+		<div>
+			<h2>Includes</h2>
+
+<p><img src="content/210-electro/solidcordz3.jpg" title="solidcordz3" alt="solidcordz3" /></p>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="jade-php-includes">
+		<style>
+					</style>
+		<div>
+			<h2>Включение файлов</h2>
+
+<pre><code><mark class="tag">h1</mark> Hello world!
+    <mark class="tag">article</mark>
+        &lt;?php include('article.php'); ?&gt;
+
+<span class="next"><mark class="tag">h1</mark> Hello world!
+    <mark class="tag">article</mark>
+        <mark>include</mark> article    <mark class="comment">// article.jade</mark></span></code></pre>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="jade-php-includes2">
+		<style>
+					</style>
+		<div>
+			<h2>А так?</h2>
+
+<pre><code>&lt;?php include('header.php'); ?&gt;    <mark class="comment next">// &lt;body&gt;</mark>
+<mark class="tag">article</mark>
+    <mark class="tag">h1</mark> Hello world!
+&lt;?php include('footer.php'); ?&gt;    <mark class="comment next">// &lt;/body&gt;</mark></code></pre>
+		</div>
+
+	</section>
+
+
+	<section class="slide cover" id="just-extend">
+		<style>
+			#just-extend h2{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	text-align: center;
+	font-size: 100px;
+	color: #fff;
+	text-shadow: 0 2px 5px rgba(0,0,0,.5);
+	}		</style>
+		<div>
+			<h2>Just Extend!</h2>
+
+<p><img src="content/244-just-extend/photo-of-extension-cord-in-swimming-pool.jpg" title="photo-of-extension-cord-in-swimming-pool" alt="photo-of-extension-cord-in-swimming-pool" /></p>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="php-extend">
+		<style>
+					</style>
+		<div>
+			<h2>Расширение (Extend)</h2>
+
+<pre><code>index.jade
+system/html.jade
+</code></pre>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="php-extend2">
+		<style>
+			#php-extend2 pre code{
+	font-size: 22px;
+	line-height: 1.5;
+	}		</style>
+		<div>
+			<h2>html.jade</h2>
+
+<pre><code>doctype html
+<mark class="tag">html</mark>
+    <mark class="tag">head</mark>
+        <mark class="el">include</mark> head
+    <mark class="tag">body</mark>
+        <mark class="tag">header</mark>
+            &lt;?php include('header.php'); ?&gt;
+        <mark class="tag">main</mark>
+            <mark><mark class="el">block</mark> main</mark>
+        <mark class="tag">footer</mark>
+            &lt;?php include('footer.php'); ?&gt;</code></pre>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="php-extend3">
+		<style>
+			#extend2 pre code{
+	font-size: 22px;
+	line-height: 32px;
+	}		</style>
+		<div>
+			<h2>index.jade</h2>
+
+<pre><code><mark><mark class="el">extend</mark> system/html</mark>
+<mark><mark class="el">block</mark> main</mark>
+    <mark class="tag">article</mark>
+        <mark class="tag">h1</mark> Hello world!</code></pre>
+		</div>
+
+	</section>
+
+
+	<section class="slide cover" id="static">
+		<style>
+					</style>
+		<div>
+			<p><img src="content/275-static/static.jpg" title="static" alt="static" /></p>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="static-eg">
+		<style>
+					</style>
+		<div>
+			<h2>Статичные данные</h2>
+
+<pre><code><mark>-</mark> var labels = { pass: "Password" }
+<mark class="tag">input</mark>(<mark class="attr">type</mark>="<mark class="attr-value">text</mark>", <mark class="attr">placeholder</mark>=<mark>labels.pass</mark>)
+
+<span class="next">&lt;<mark class="tag">input</mark> <mark class="attr">type</mark>="<mark class="attr-value">text</mark>" <mark class="attr">placeholder</mark>="<mark class="attr-value">Password</mark>" /&gt;</span></code></pre>
+		</div>
+
+	</section>
+
+
+	<section class="slide cover" id="adam">
+		<style>
+					</style>
+		<div>
+			<p><img src="content/290-adam/adam.jpg" title="adam" alt="adam" /></p>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="json">
+		<style>
+			#json pre code{
+	font-size: 23px;
+	}		</style>
+		<div>
+			<h2>Подключение JSON через Grunt</h2>
+
+<pre><code>jade:
+{   compile:
+    {   options:
+        {   pretty: true
+        ,   <mark>data: grunt.file.readJSON("data/data.json")</mark>
+        }
+        …
+</code></pre>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="yaml">
+		<style>
+			#yaml pre code{
+	font-size: 23px;
+	}		</style>
+		<div>
+			<h2>Подключение YAML через Grunt</h2>
+
+<pre><code>jade:
+{   compile:
+    {   options:
+        {   pretty: true
+        ,   <mark>data: grunt.file.readYAML("data/data.yaml")</mark>
+        }
+        …
+</code></pre>
+		</div>
+
+	</section>
+
+
+	<section class="slide cover shout" id="framework">
+		<style>
+			#framework h2{
+	color: #fff;
+	text-shadow: 0 5px 20px rgba(0,0,0, .7)
+	}		</style>
+		<div>
+			<h2>Фреймворки</h2>
+
+<p><img src="http://seleckis.lv/framework.jpg" /></p>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="framework-eg">
+		<style>
+					</style>
+		<div>
+			<h2>Настройка Grunt для MVC фреймворка</h2>
+
+<pre><code>files: [{
+    expand: true,
+    <mark>cwd: "jade/",</mark>
+    src: "**/*</mark>.jade",
+    <mark>dest: "application/view/",</mark>
+    ext: ".php"
+}]</code></pre>
+		</div>
+
+	</section>
+
+
+	<section class="slide cover" id="wordpress">
+		<style>
+					</style>
+		<div>
+			<p><img src="content/346-wordpress/wp.jpg" title="wp" alt="wp" /></p>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="wordpress-index">
+		<style>
+					</style>
+		<div>
+			<h2>index.php</h2>
+
+<pre><code>&lt;?php <mark>get_header();</mark> ?&gt;
+<mark class="comment">&lt;div id="main-content" class="main-content"&gt;
+    …
+&lt;/div&gt;&lt;!-- #main-content --&gt;</mark>
+&lt;?php
+get_sidebar();
+<mark>get_footer();</mark></code></pre>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="wordpress-get_header">
+		<style>
+					</style>
+		<div>
+			<h2>function get_header ()</h2>
+
+<pre><code>$templates = array();
+$name = (string) $name;
+if ( '' !== $name )
+    $templates[] = "header-{$name}.php";
+
+$templates[] = 'header.php';
+</code></pre>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="wordpress-get_footer">
+		<style>
+					</style>
+		<div>
+			<h2>function get_footer ()</h2>
+
+<pre><code>$templates = array();
+$name = (string) $name;
+if ( '' !== $name )
+    $templates[] = "footer-{$name}.php";
+
+$templates[] = 'footer.php';
+</code></pre>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="wordpress-header">
+		<style>
+					</style>
+		<div>
+			<h2>header.php</h2>
+
+<pre><code>&lt;!doctype html&gt;
+<mark>&lt;html</mark> &lt;?php language_attributes(); ?&gt;&gt;
+    …
+    <mark>&lt;body</mark> &lt;?php body_class(); ?&gt;&gt;
+        <mark>&lt;div id="page" class="hfeed site"&gt;</mark>
+            …
+            <mark>&lt;div id="main" class="site-main"&gt;</mark>
+
+</code></pre>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="wordpress_footer">
+		<style>
+					</style>
+		<div>
+			<h2>footer.php</h2>
+
+<pre><code>            <mark>&lt;/div&gt;&lt;!-- #main --&gt;</mark>
+        <mark>&lt;/div&gt;&lt;!-- #page --&gt;</mark>
+        …
+    <mark>&lt;/body&gt;</mark>
+<mark>&lt;/html&gt;</mark></code></pre>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="wordpress_html">
+		<style>
+					</style>
+		<div>
+			<h2>Базовый шаблон</h2>
+
+<pre><code>doctype html
+<mark class="tag">html</mark>
+    <mark class="tag">head</mark>
+        …
+    <mark class="tag">body</mark>
+        <mark class="tag">div</mark>#page.hfeed.site
+            <mark><mark class="el">block</mark> page</mark></code></pre>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="wordpress_new_index">
+		<style>
+					</style>
+		<div>
+			<h2>index.php</h2>
+
+<pre><code><mark><mark class="el">extend</mark> ../system/html</mark>
+<mark class="el">block</mark> page
+    <mark><mark class="el">include</mark> ../templates/header</mark>
+    <mark class="tag">div</mark>#main.site-main
+            …
+    <mark><mark class="el">include</mark> ../templates/footer</mark></code></pre>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="wordpress_new_index_jadestyle">
+		<style>
+					</style>
+		<div>
+			<h2>index.php</h2>
+
+<pre><code><mark><mark class="el">extend</mark> ../system/html</mark>
+<mark class="el">block</mark> page
+    <mark>&lt;?php include('header.php'); ?&gt;</mark>
+    <mark class="tag">div</mark>#main.site-main
+            …
+    <mark>&lt;?php include('footer.php'); ?&gt;</mark></code></pre>
+		</div>
+
+	</section>
+
+
+	<section class="slide cover" id="beard-or-mustage">
+		<style>
+					</style>
+		<div>
+			<p><img src="content/360-beard-or-mustage/cover.png" title="cover" alt="cover" /></p>
+		</div>
+
+	</section>
+
+
+	<section class="slide cover" id="beard1">
+		<style>
+					</style>
+		<div>
+			<p><img src="content/362-beard1/cover.jpg" title="cover" alt="cover" /></p>
+		</div>
+
+	</section>
+
+
+	<section class="slide cover" id="mustage1">
+		<style>
+					</style>
+		<div>
+			<p><img src="content/363-mustage1/cover.jpg" title="cover" alt="cover" /></p>
+		</div>
+
+	</section>
+
+
+	<section class="slide cover" id="beard2">
+		<style>
+					</style>
+		<div>
+			<p><img src="content/365-beard2/cover.jpg" title="cover" alt="cover" /></p>
+		</div>
+
+	</section>
+
+
+	<section class="slide cover" id="mustage2">
+		<style>
+					</style>
+		<div>
+			<p><img src="content/366-mustage2/cover.jpg" title="cover" alt="cover" /></p>
+		</div>
+
+	</section>
+
+
+	<section class="slide cover" id="beard3">
+		<style>
+					</style>
+		<div>
+			<p><img src="content/368-beard3/cover.jpg" title="cover" alt="cover" /></p>
+		</div>
+
+	</section>
+
+
+	<section class="slide cover" id="mustage3">
+		<style>
+					</style>
+		<div>
+			<p><img src="content/369-mustage3/cover.jpg" title="cover" alt="cover" /></p>
+		</div>
+
+	</section>
+
+
+	<section class="slide shout" id="mustache">
+		<style>
+					</style>
+		<div>
+			<h2>Mustache.php</h2>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="mustache-eg">
+		<style>
+					</style>
+		<div>
+			<h2>Mustache.php</h2>
+
+<pre><code><mark class="tag">article</mark>
+    <mark class="tag">h1</mark> <mark>{{ title }}</mark>
+    .<mark class="attr-value">bodytext</mark>.
+        <mark>{{#start}}</mark>
+        This is <mark>${{some_value}}</mark>.
+        <mark>{{/stop}}</mark></code></pre>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="mustache-eg2">
+		<style>
+					</style>
+		<div>
+			<h2>Mustache.php</h2>
+
+<pre><code>&lt;<mark class="tag">article</mark>&gt;
+    &lt;<mark class="tag">h1</mark>&gt;<mark>{{ title }}</mark>&lt;/<mark class="tag">h1</mark>&gt;
+    &lt;<mark class="tag">div</mark> <mark class="attr">class</mark>=&quot;<mark class="attr-value">bodytext</mark>&quot;&gt;
+        <mark>{{#start}}</mark>
+        This is <mark>${{some_value}}</mark>.
+        <mark>{{/stop}}</mark>
+    &lt;/<mark class="tag">div</mark>&gt;
+&lt;/<mark class="tag">article</mark>&gt;</code></pre>
+		</div>
+
+	</section>
+
+
+	<section class="slide shout" id="blade">
+		<style>
+					</style>
+		<div>
+			<h2>Blade</h2>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="blade-eg">
+		<style>
+					</style>
+		<div>
+			<h2>Blade</h2>
+
+<pre><code>| <mark>@section('sidebar')</mark>
+.<mark class="attr-value">sidebar</mark> This is the master sidebar.
+| <mark>@show</mark>
+
+<mark class="tag">article</mark> <mark>@yield('content')</mark></code></pre>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="blade-eg2">
+		<style>
+					</style>
+		<div>
+			<h2>Blade</h2>
+
+<pre><code><mark>@section('sidebar')</mark>
+&lt;<mark class="tag">div</mark> <mark class="attr">class</mark>=&quot;<mark class="attr-value">sidebar</mark>&quot;&gt;This is the master sidebar.&lt;/<mark class="tag">div</mark>&gt;
+<mark>@show</mark>
+
+&lt;<mark class="tag">article</mark>&gt;<mark>@yield('content')</mark>&lt;/<mark class="tag">article</mark>&gt;</code></pre>
+		</div>
+
+	</section>
+
+
+	<section class="slide shout" id="twig">
+		<style>
+					</style>
+		<div>
+			<h2>Twig</h2>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="twig-eg">
+		<style>
+					</style>
+		<div>
+			<h2>Twig</h2>
+
+<pre><code>| <mark>{% for user in users %}</mark>
+<mark class="tag">span</mark>.<mark class="attr-value">username</mark> {{ user.name }}
+| <mark>{% else %}</mark>
+| No user have been found.
+| <mark>{% endfor %}</mark></code></pre>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="twig-eg2">
+		<style>
+					</style>
+		<div>
+			<h2>Twig</h2>
+
+<pre><code><mark>{% for user in users %}</mark>
+&lt;<mark class="tag">span</mark> <mark class="attr">class</mark>=&quot;<mark class="attr-value">username</mark>&quot;&gt;<mark>{{ user.name }}</mark>&lt;/<mark class="tag">span</mark>&gt;
+<mark>{% else %}</mark>
+No user have been found.
+<mark>{% endfor %}</mark></code></pre>
+		</div>
+
+	</section>
+
+
+	<section class="slide shout" id="smarty">
+		<style>
+					</style>
+		<div>
+			<h2>Smarty</h2>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="smarty-eg">
+		<style>
+					</style>
+		<div>
+			<h2>Smarty</h2>
+
+<pre><code>| <mark>{foreach $users as $user}</mark>
+| <mark>{strip}</mark>
+<mark class="tag">tr</mark>
+    <mark class="tag">td</mark> <mark>{$user.name}</mark>
+    <mark class="tag">td</mark> <mark>{$user.phone}</mark>
+| <mark>{/strip}</mark>
+| <mark>{/foreach}</mark></code></pre>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="smarty-eg2">
+		<style>
+					</style>
+		<div>
+			<h2>Smarty</h2>
+
+<pre><code><mark>{foreach $users as $user}</mark>
+<mark>{strip}</mark>
+&lt;<mark class="tag">tr</mark>&gt;
+    &lt;<mark class="tag">td</mark>&gt;<mark>{$user.name}</mark>&lt;/<mark class="tag">td</mark>&gt;
+    &lt;<mark class="tag">td</mark>&gt;<mark>{$user.phone}</mark>&lt;/<mark class="tag">td</mark>&gt;
+&lt;/<mark class="tag">tr</mark>&gt;
+<mark>{/strip}</mark>
+<mark>{/foreach}</mark></code></pre>
+		</div>
+
+	</section>
+
+
+	<section class="slide shout" id="contract">
+		<style>
+			#contract h2{
+	font-size: 80px;
+}
+#contract .hang{
+	margin-right: -70px;
+}		</style>
+		<div>
+			<h2>Совмещение технологий <span class="hang">—</span><br> это брачный контракт</h2>
+		</div>
+
+	</section>
+
+
+	<section class="slide cover" id="try">
+		<style>
+			#try img{
+	left: 50%;
+	margin-left: -320px;
+}		</style>
+		<div>
+			<p><img src="content/390-try/try.png" title="try" alt="try" /></p>
+		</div>
+
+	</section>
+
+
+	<section class="slide " id="end">
+		<style>
+			#end h3{
+	margin-top: 40px;
+	}		</style>
+		<div>
+			<h2>Спасибо за внимание!</h2>
+
+<h3><strong>Никита Селецкий</strong> — Директор и преподаватель <a href="http://webskola.lv">Webskola</a></h3>
+
+<ul>
+<li><a href="https://twitter.com/seleckis">@seleckis</a></li>
+<li><a href="http://fb.com/nikita.seleckis">fb.com/nikita.seleckis</a></li>
+<li><a href="http://linkedin.com/in/seleckis/">linkedin.com/in/seleckis</a></li>
+</ul>
+		</div>
+
+	</section>
+
+
+	<section class="slide shout" id="questions">
+		<style>
+					</style>
+		<div>
+			<h2>Вопросы?</h2>
+		</div>
+
+	</section>
+
+
+	<!--
+		To hide progress bar from entire presentation
+		just remove “progress” element.
+		-->
+	<div class="progress"><div></div></div>
+	<script src="assets/shower-core/shower.min.js"></script>
+</body>
+
+</html>

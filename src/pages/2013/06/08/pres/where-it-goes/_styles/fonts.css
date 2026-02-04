@@ -1,0 +1,144 @@
+/* PT Sans
+---------------------------------------- */
+@font-face {
+	font-family: 'PT Sans';
+	src: url('../_fonts/pts55f_w.eot');
+	src: local('PT Sans'),
+		url('../_fonts/pts55f_w.woff') format('woff'),
+		url('../_fonts/pts55f_w.ttf') format('truetype'),
+		url('../_fonts/pts55f_w.svg#PTSans-Regular') format('svg');
+	}
+@font-face {
+	font-family: 'PT Sans';
+	font-style: italic;
+	src: url('../_fonts/pts56f_w.eot');
+	src: local('PT Sans Italic'),
+		url('../_fonts/pts56f_w.woff') format('woff'),
+		url('../_fonts/pts56f_w.ttf') format('truetype'),
+		url('../_fonts/pts56f_w.svg#PTSans-Italic') format('svg');
+	}
+@font-face {
+	font-family: 'PT Sans';
+	src: url('../_fonts/pts75f_w.eot');
+	font-style: normal;
+	font-weight: bold;
+	src: local('PT Sans Bold'),
+		url('../_fonts/pts75f_w.woff') format('woff'),
+		url('../_fonts/pts75f_w.ttf') format('truetype'),
+		url('../_fonts/pts75f_w.svg#PTSans-Bold') format('svg');
+	}
+@font-face {
+	font-family: 'PT Sans';
+	font-style: italic;
+	font-weight: bold;
+	src: url('../_fonts/pts76f_w.eot');
+	src: local('PT Sans Bold Italic'),
+		url('../_fonts/pts76f_w.woff') format('woff'),
+		url('../_fonts/pts76f_w.ttf') format('truetype'),
+		url('../_fonts/pts76f_w.svg#PTSans-BoldItalic') format('svg');
+	}
+@font-face {
+	font-family: 'PT Sans Caption';
+	src: url('../_fonts/ptc55f_w.eot');
+	src: local('PT Sans Caption'),
+		url('../_fonts/ptc55f_w.woff') format('woff'),
+		url('../_fonts/ptc55f_w.ttf') format('truetype'),
+		url('../_fonts/ptc55f_w.svg#PTSans-Caption') format('svg');
+	}
+@font-face {
+	font-family: 'PT Sans Caption';
+	font-weight: bold;
+	src: url('../_fonts/ptc75f_w.eot');
+	src: local('PT Sans Caption Bold'),
+		url('../_fonts/ptc75f_w.woff') format('woff'),
+		url('../_fonts/ptc75f_w.ttf') format('truetype'),
+		url('../_fonts/ptc75f_w.svg#PTSans-CaptionBold') format('svg');
+	}
+@font-face {
+	font-family: 'PT Sans Narrow';
+	src: url('../_fonts/ptn57f_w.eot');
+	src: local('PT Sans Narrow'),
+		url('../_fonts/ptn57f_w.woff') format('woff'),
+		url('../_fonts/ptn57f_w.ttf') format('truetype'),
+		url('../_fonts/ptn57f_w.svg#PTSans-Narrow') format('svg');
+	}
+@font-face {
+	font-family: 'PT Sans Narrow';
+	font-weight: bold;
+	src: url('../_fonts/ptn77f_w.eot');
+	src: local('PT Sans Narrow Bold'),
+		url('../_fonts/ptn77f_w.woff') format('woff'),
+		url('../_fonts/ptn77f_w.ttf') format('truetype'),
+		url('../_fonts/ptn77f_w.svg#PTSans-NarrowBold') format('svg');
+	}
+
+/* PT Serif
+---------------------------------------- */
+@font-face {
+	font-family: 'PT Serif';
+	src: url('../_fonts/ptf55f_w.eot');
+	src: local('PT Serif'),
+		url('../_fonts/ptf55f_w.woff') format('woff'),
+		url('../_fonts/ptf55f_w.ttf') format('truetype'),
+		url('../_fonts/ptf55f_w.svg#PTSerif-Regular') format('svg');
+	}
+@font-face {
+	font-family: 'PT Serif';
+	font-style: italic;
+	src: url('../_fonts/ptf56f_w.eot');
+	src: local('PT Serif Italic'),
+		url('../_fonts/ptf56f_w.woff') format('woff'),
+		url('../_fonts/ptf56f_w.ttf') format('truetype'),
+		url('../_fonts/ptf56f_w.svg#PTSerif-Italic') format('svg');
+	}
+@font-face {
+	font-family: 'PT Serif';
+	src: url('../_fonts/ptf75f_w.eot');
+	font-style: normal;
+	font-weight: bold;
+	src: local('PT Serif Bold'),
+		url('../_fonts/ptf75f_w.woff') format('woff'),
+		url('../_fonts/ptf75f_w.ttf') format('truetype'),
+		url('../_fonts/ptf75f_w.svg#PTSerif-Bold') format('svg');
+	}
+@font-face {
+	font-family: 'PT Serif';
+	font-style: italic;
+	font-weight: bold;
+	src: url('../_fonts/ptf76f_w.eot');
+	src: local('PT Serif Bold Italic'),
+		url('../_fonts/ptf76f_w.woff') format('woff'),
+		url('../_fonts/ptf76f_w.ttf') format('truetype'),
+		url('../_fonts/ptf76f_w.svg#PTSerif-BoldItalic') format('svg');
+	}
+@font-face {
+	font-family: 'PT Serif Caption';
+	src: url('../_fonts/ptz55f_w.eot');
+	src: local('PT Serif Caption'),
+		url('../_fonts/ptz55f_w.woff') format('woff'),
+		url('../_fonts/ptz55f_w.ttf') format('truetype'),
+		url('../_fonts/ptz55f_w.svg#PTSerif-Caption') format('svg');
+	}
+@font-face {
+	font-family: 'PT Serif Caption';
+	font-style: italic;
+	src: url('../_fonts/ptz56f_w.eot');
+	src: local('PT Serif Caption Italic'),
+		url('../_fonts/ptz56f_w.woff') format('woff'),
+		url('../_fonts/ptz56f_w.ttf') format('truetype'),
+		url('../_fonts/ptz56f_w.svg#PTSerif-CaptionItalic') format('svg');
+	}
+
+/* PT Mono
+---------------------------------------- */
+@font-face {
+	font-family: 'PT Mono';
+	font-style: normal;
+	font-weight: normal;
+	src: url('../_fonts/ptm55f_w.eot');
+	src: local('PT Mono'), local('PTMonoRegular'),
+	     url('../_fonts/ptm55f_w.eot?#iefix') format('embedded-opentype'),
+	     url('../_fonts/ptm55f_w.woff') format('woff'),
+	     url('../_fonts/ptm55f_w.ttf') format('truetype'),
+	     url('../_fonts/ptm55f_w.svg#PTMono-Regular') format('svg');
+	}

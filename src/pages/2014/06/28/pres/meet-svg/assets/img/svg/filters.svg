@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 900 500">
+    <defs>
+        <filter id="fl-blur" filterUnits="userSpaceOnUse" x="-7" y="0"
+              width="200" height="200">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+        </filter>
+        <!--        -->
+        <filter id="fl-shadow" filterUnits="userSpaceOnUse" x="-7" y="0"
+              width="1000" height="900">
+        <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="blur"/>
+        <feOffset in="blur" dx="0" dy="4" result="offsetBlr" />
+        <feFlood flood-color="rgba(0,0,0,.7)"/>
+        <feComposite operator="in" in2="offsetBlr" result="colBlur"/>
+        <feMerge>
+          <feMergeNode in="colBlur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <!--        -->
+
+      <filter id="fl-shadow-win" filterUnits="userSpaceOnUse" x="-7" y="0"
+              width="1000" height="900">
+        <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur"/>
+        <feOffset in="blur" dx="0" dy="0" result="offsetBlr" />
+        <feFlood flood-color="orangered"/>
+        <feComposite operator="in" in2="offsetBlr" result="colBlur"/>
+        <feMerge>
+          <feMergeNode in="colBlur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <!--        -->
+      <filter id="fl-striped-shadow">
+        <feOffset dx="3" dy="3" in="SourceGraphic" result="offset"/>
+        <feFlood flood-color="#F2385A"/>
+        <feComposite operator="in" in2="offset" result="res"/>
+
+        <feOffset dx="6" dy="6" in="SourceGraphic" result="offset2"/>
+        <feFlood flood-color="#F5A503"/>
+        <feComposite operator="in" in2="offset2" result="res2"/>
+
+        <feOffset dx="9" dy="9" in="SourceGraphic" result="offset3"/>
+        <feFlood flood-color="#E9F1DF"/>
+        <feComposite operator="in" in2="offset3" result="res3"/>
+
+        <feOffset dx="12" dy="12" in="SourceGraphic" result="offset4"/>
+        <feFlood flood-color="#4AD9D9"/>
+        <feComposite operator="in" in2="offset4" result="res4"/>
+
+        <feOffset dx="15" dy="15" in="SourceGraphic" result="offset5"/>
+        <feFlood flood-color="#36B1BF"/>
+        <feComposite operator="in" in2="offset5" result="res5"/>
+
+        <feMerge>
+          <feMergeNode in="res5"/>
+          <feMergeNode in="res4"/>
+          <feMergeNode in="res3"/>
+          <feMergeNode in="res2"/>
+          <feMergeNode in="res"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+
+      <filter id="fl-striped-shadow-kuler">
+        <feOffset dx="2" dy="2" in="SourceGraphic" result="offset"/>
+        <feFlood flood-color="#1F8A70"/>
+        <feComposite operator="in" in2="offset" result="res"/>
+
+        <feOffset dx="4" dy="4" in="SourceGraphic" result="offset2"/>
+        <feFlood flood-color="#BEDB39"/>
+        <feComposite operator="in" in2="offset2" result="res2"/>
+
+        <feOffset dx="6" dy="6" in="SourceGraphic" result="offset3"/>
+        <feFlood flood-color="#FFE11A"/>
+        <feComposite operator="in" in2="offset3" result="res3"/>
+
+        <feOffset dx="8" dy="8" in="SourceGraphic" result="offset4"/>
+        <feFlood flood-color="#FD7400"/>
+        <feComposite operator="in" in2="offset4" result="res4"/>
+
+        <feOffset dx="10" dy="10" in="SourceGraphic" result="offset5"/>
+        <feFlood flood-color="#004358"/>
+        <feComposite operator="in" in2="offset5" result="res5"/>
+
+        <feMerge>
+          <feMergeNode in="res5"/>
+          <feMergeNode in="res4"/>
+          <feMergeNode in="res3"/>
+          <feMergeNode in="res2"/>
+          <feMergeNode in="res"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+
+      <!-- Shadow offset -->
+      <filter id='fl-inner-shadow'>
+        <feOffset dx='0' dy='0'/>
+        <feGaussianBlur stdDeviation='5' result='offset-blur'/>
+        <feComposite operator='out' in='SourceGraphic' in2='offset-blur' result='inverse'/>
+        <feFlood flood-color='#000' flood-opacity='1' result='color'/>
+        <feComposite operator='in' in='color' in2='inverse' result='shadow'/>
+        <feComposite operator='over' in='shadow' in2='SourceGraphic'/>
+      </filter>
+
+    </defs>
+</svg>

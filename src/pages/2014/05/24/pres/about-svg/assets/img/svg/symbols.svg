@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <!--  width="300" height="60" -->
+    <defs>
+      <symbol id="s-path">
+        <path d="M 50,30 250,30" stroke-width="60"/>
+      </symbol>
+
+      <symbol id="s-path-guide">
+        <g transform="translate(0,20)">
+        <circle r="9" cx="50" cy="10"/>
+        <circle r="9" cx="250" cy="10"/>
+        <path d="M 50,10 250 10" stroke-width="5"/>
+        </g>
+      </symbol>
+
+      <symbol id="s-corner">
+         <path d="M 0 50 h 80 v 80" stroke-width="60" fill="none" transform="rotate(-45 70 50)"/>
+      </symbol>
+
+      <symbol id="s-corner-guide">
+        <g transform="rotate(-45 70 50)">
+            <circle r="9" cx="0" cy="50"/>
+            <circle r="9" cx="80" cy="130"/>
+            <path d="M 0 50 h 80 v 80" stroke-width="5" fill="none" />
+        </g>
+      </symbol>
+
+      <symbol id="s-dasharray">
+          <path d="M 0,50
+               Q100,0 200,50
+               300,100 400,50
+               500,0 600,50
+               700,100 800,50" transform="translate(10)"/>
+      </symbol>
+
+      <symbol id="s-dashoffset">
+          <circle r="100" cx="135" cy="135"></circle>
+      </symbol>
+
+      <symbol id="s-strokefill">
+          <circle r="100" cx="150" cy="150"></circle>
+      </symbol>
+
+      <symbol id="s-stroke-opacity">
+          <circle r="95" cx="150" cy="150"></circle>
+      </symbol>
+
+      <symbol id="s-transform-before">
+          <rect x="2" y="2" width="496" height="276"
+            class="rect-transform-before"></rect>
+      </symbol>
+      <symbol id="s-transform-after">
+          <rect x="2" y="2" width="496" height="276"
+            class="rect-transform-after"></rect>
+      </symbol>
+
+      <symbol id="s-viewbox">
+          <g class="gr--star-viewbox">
+            <rect width="100%" height="100%"/>
+            <circle r="100" cx="100" cy="100"/>
+            <use xlink:href="#s-star" class="star"/>
+          </g>
+      </symbol>
+
+      <symbol id="s-star">
+        <polygon points="98.4999978 153.75 38.2520165 185.424245 49.7583542 118.337123 1.01670635 70.8257603 68.3760155 61.037872 98.5000012 1.1379786e-14 128.624005 61.0378871 195.98331 70.8258091 147.241642 118.337136 158.747982 185.424247" />
+      </symbol>
+
+      <symbol id="s-kuler-bg">
+        <rect y="0" width="200" height="300" fill="url(#gr-kuler)"/>
+      </symbol>
+
+      <symbol id="s-flower-m">
+        <image xlink:href="./assets/img/parts/violet-flower-l.jpg" width="199" height="300"/>
+      </symbol>
+
+      <symbol id="s-flower-l">
+        <image xlink:href="./assets/img/parts/violet-flower-l.jpg" width="332" height="500" transform="translate(0,-30)"/>
+      </symbol>
+
+      <symbol id="s-mosaic-colored">
+        <rect width="100%" height="100%" fill="url(#pt-mosaic-colored)"/>
+      </symbol>
+
+      <symbol id="s-airballoon">
+        <g class="g-icon--airballoon">
+          <path d="M175 58.756c0-39.538-28.619-58.756-87.5-58.756s-87.5 19.219-87.5 58.756c0 45.469 82.331 97.925 85.831 100.131 0.006 0.006 0.019 0 0.031 0.006 0.069 0.044 0.144 0.044 0.219 0.081 0.45 0.238 0.925 0.4 1.419 0.4s0.969-0.162 1.419-0.394c0.069-0.037 0.15-0.037 0.219-0.081 0.006-0.006 0.019 0 0.031-0.006 3.5-2.213 85.831-54.663 85.831-100.137z" />
+          <path d="M71.875 168.75c-1.725 0-3.125 1.4-3.125 3.125v18.75c0 5.256 4.119 9.375 9.375 9.375h18.75c5.256 0 9.375-4.119 9.375-9.375v-18.75c0-1.725-1.4-3.125-3.125-3.125h-31.25z"/>
+          <path d="M6.25 58.756c0-24.819 12.419-40.438 38.475-47.7-13.213 9.575-19.725 25.4-19.725 47.7 0 26.269 19.594 54.95 36.487 74.831-24.113-19.175-55.237-48.937-55.237-74.831z"/>
+          <path d="M56.25 58.756c0 29.981 12.369 63.381 20.819 82.725-17.138-18.106-45.819-52.85-45.819-82.725 0-29.313 11.988-45.794 37.356-50.825-8.275 9.050-12.356 25.888-12.356 50.825z"/>
+          <path d="M112.5 58.756c0 34.75-17.975 75.756-25 90.456-7.025-14.694-25-55.681-25-90.456 0-47.063 14.269-52.506 25-52.506s25 5.444 25 52.506z"/>
+          <path d="M118.75 58.756c0-24.938-4.075-41.775-12.356-50.825 25.369 5.031 37.356 21.519 37.356 50.825 0 29.875-28.681 64.612-45.819 82.725 8.45-19.337 20.819-52.744 20.819-82.725z"/>
+          <path d="M113.512 133.588c16.894-19.881 36.488-48.556 36.488-74.831 0-22.3-6.513-38.131-19.725-47.7 26.056 7.263 38.475 22.881 38.475 47.7 0 25.894-31.125 55.656-55.238 74.831z"/>
+          <path d="M100 190.625c0 1.838-1.287 3.125-3.125 3.125h-18.75c-1.838 0-3.125-1.287-3.125-3.125v-15.625h25v15.625z"/>
+        </g>
+      </symbol>
+
+    </defs>
+</svg>

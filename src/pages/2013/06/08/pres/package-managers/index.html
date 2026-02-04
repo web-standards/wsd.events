@@ -1,0 +1,697 @@
+<!doctype html>
+<html lang="ru-RU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Mikhail Baranov">
+    <title>Менеджеры пакетов в JavaScript</title>
+    <link rel="stylesheet" href="styles/screen-d90984e344.css"/>
+    <style type="text/css">
+        .cover h2,
+        .cover a {
+            float: left;
+            clear: left;
+            padding: 0.2em;
+            text-decoration: none;
+            background: rgba(255,255,255,0.8);
+            border: none;
+        }
+
+        ul.short-list {
+            font-size: 40px;
+        }
+
+        .note {
+            color: #999;
+        }
+
+        table {
+
+        }
+        thead {
+            border-bottom: solid 3px #52a2df;
+        }
+
+        thead th {
+            font-size: 0.8em;
+            padding: 10px;
+            text-align: center;
+            vertical-align: bottom;
+        }
+        thead tr {
+            border: none;
+        }
+        tr {
+            border-bottom: solid 1px #999;
+        }
+        tr:last-child {
+            border-bottom: none;
+        }
+        th {
+            text-align: right;
+            vertical-align: middle;
+        }
+        td {
+            line-height: 1;
+            padding: 10px;
+            text-align: center;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body class="list">
+<header class="caption">
+    <h1>Менеджеры пакетов в JavaScript</h1>
+</header>
+<section class="slide cover h" id="Cover">
+    <div>
+        <h2>Менеджеры пакетов в JavaScript</h2>
+
+        <p><a href="http://mkhl.brnv.ru">Михаил Баранов</a></p>
+        <img src="img/cover.jpg" alt="">
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Исходные данные</h2>
+
+        <ul>
+            <li>Проект Repka.com</li>
+            <li class="next">В истории — более 20 разработчиков</li>
+            <li class="next">Около 40 сторонних js-библиотек</li>
+            <li class="next">Более 20 — jQuery-плагины</li>
+            <li class="next">Бекенд: Composer, Cheff</li>
+        </ul>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Чего хочется</h2>
+
+        <ul class="short-list">
+            <li>Знать установленные версии</li>
+            <li class="next">Быстрое обновление и развёртывание</li>
+            <li class="next">Разрешение зависимостей</li>
+        </ul>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Copy & paste</h2>
+
+        <ul class="short-list">
+            <li>Копать в код</li>
+            <li class="next">Мусор в VCS</li>
+            <li class="next">Зависимости? Какие зависимости?</li>
+        </ul>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Git submodule</h2>
+
+        <img src="img/git-submodule.png" alt=""
+                style="position: relative; left: -60px" />
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Задачи пакетного менеджера</h2>
+
+        <ul>
+            <li>Организация установленных пакетов</li>
+            <li class="next">Поиск необходимого пакета по имени и метаданным</li>
+            <li class="next">Загрузка пакета</li>
+            <li class="next">Разрешение зависимостей</li>
+            <li class="next">Обновление установленных пакетов</li>
+            <li class="next">Удаление пакетов и связанных зависимостей</li>
+        </ul>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Пакет (Package)</h2>
+
+        <ul>
+            <li>Код</li>
+            <li class="next">Метаданные
+                <ul>
+                    <li class="next">Название</li>
+                    <li class="next">Версия</li>
+                    <li class="next">Зависимости</li>
+                    <li class="next">Прочее</li>
+                </ul>
+            </li>
+            <li class="next">Индекс в реестре</li>
+        </ul>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>За границей JavaScript</h2>
+
+        <ul>
+            <li><code>dpkg</code> и прочие линуксы</li>
+            <li class="next">python: <code>PyPI</code></li>
+            <li class="next">ruby: <code>RubyGems</code></li>
+            <li class="next">php: <code>Composer</code></li>
+            <li class="next">Sublime packages</li>
+            <li class="next">.NET: <code>NuGet</code></li>
+        </ul>
+    </div>
+</section>
+<section class="slide cover h">
+    <div>
+        <img src="img/js-managers.png" alt=""/>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Почему npm, bower и volo</h2>
+
+        <ul class="short-list">
+            <li>Количество пакетов в реестре</li>
+            <li class="next">Возраст и стабильность</li>
+            <li class="next">Независимость от загрузчика</li>
+            <li class="next">Возможность создания приватного реестра</li>
+        </ul>
+    </div>
+</section>
+<section class="slide">
+    <!--TODO: Выровнять-->
+    <div>
+        <img src="img/npm.svg" alt=""
+                style="width: 750px" />
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>npm</h2>
+
+        <p class="note"><a href="https://npmjs.org/">npmjs.org</a></p>
+
+        <ul>
+            <li class="next">Появился в 2010 году</li>
+            <li class="next">С 2011 г. уставливается с Node.js</li>
+            <li class="next"><code>npm --version</code> 1.2.24</li>
+        </ul>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Установка</h2>
+
+        <img src="img/npm-install.png" alt=""/>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Обновление</h2>
+
+        <pre style="font-size: 40px">
+            <code>$ sudo npm update npm</code>
+        </pre>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Опять консоль?</h2>
+        <pre>
+            <code>var <mark>pmList</mark> == [ 'npm', 'volo', 'bower', 'component' ]</code>
+            <code>pmList.filter(<mark>hasGui</mark>) == <mark>[ ]</mark></code>
+            <code> </code>
+            <code>function hasGui(elem) {</code>
+            <code>    return "<mark>gui</mark>" in elem;</code>
+            <code>}</code>
+        </pre>
+    </div>
+</section>
+<section class="slide shout">
+    <h2>96 команд</h2>
+</section>
+<section class="slide">
+    <div>
+        <h2>96 команд</h2>
+
+        <ul>
+            <li class="next">install</li>
+            <li class="next">isntall</li>
+            <li class="next">update</li>
+            <li class="next">uninstall</li>
+            <li class="next">list</li>
+            <li class="next">publish</li>
+        </ul>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Реестр</h2>
+
+        <ul>
+            <li><a href="http://registry.npmjs.org/">registry.npmjs.org</a></li>
+            <li class="next">31 777 packages</li>
+            <li class="next">Иногда лежит <span class="note next">(например, вчера)</span></li>
+            <li class="next">Есть <a href="https://gist.github.com/streunerlein/3331671">лекарства</a></li>
+        </ul>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Настройка npm</h2>
+
+        <ul>
+            <li class="next"><code>.npmrc</code></li>
+            <li class="next"><code>.npmignore</code></li>
+            <li class="next">более 80 параметров</li>
+            <li class="next"><code>registy</code></li>
+        </ul>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>node_modules</h2>
+
+        <p class="next"><img src="img/node_modules-NO.png" alt=""></p>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>node_modules</h2>
+
+        <p>Can I configure npm to use a <em>different</em> folder?</p>
+
+        <blockquote class="next"><strong>No</strong>. This will never happen. This question comes up sometimes, because it seems silly from the outside that
+            npm couldn't just be configured to put stuff somewhere else, and then npm could load them from there.
+            It's an arbitrary spelling choice, right? What's the big deal?</blockquote>
+        <p><a href="https://npmjs.org/doc/faq.html#node_modules-is-the-name-of-my-deity-s-arch-rival-and-a-Forbidden-Word-in-my-religion-Can-I-configure-npm-to-use-a-different-folder">npmjs.org/doc/faq.html</a></p>
+    </div>
+</section>
+
+<section class="slide">
+    <div>
+        <h2>Актуальность пакетов</h2>
+
+        <ul class="short-list">
+            <li class="next">Не всегда</li>
+            <li class="next">Кто первый встал...</li>
+            <li class="next"><a href="https://npmjs.org/doc/disputes.html">Диспут</a> решает</li>
+        </ul>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Проект как пакет</h2>
+
+        <ul>
+            <li class="next"><code>npm init</code></li>
+            <li class="next"><code>package.json</code></li>
+            <li class="next">Это простой json</li>
+            <li class="next">Это всё-таки json</li>
+        </ul>
+
+        <p class="next"><a href="http://package.json.jit.su/">Все доступные параметры</a></p>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Самое необходимое</h2>
+
+        <pre>
+            <code><mark>"name"</mark>: "Death Star",</code>
+            <code><mark>"version"</mark>: "1.0.0",</code>
+            <code>"description": "That's no moon...",</code>
+            <code><mark>"dependencies"</mark>: {</code>
+            <code>    "Reactor core": "<mark>~0.1.0</mark>"</code>
+            <code>},</code>
+            <code>"devDependencies": {</code>
+            <code>    "titanium": <mark>"*"</mark></code>
+            <code>}</code>
+        </pre>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Версии зависимостей</h2>
+
+        <pre>
+            <code>"dependencies" : {</code>
+            <code>    "foo" : "1.0.0 - 2.9999.9999",</code>
+            <code>    "bar" : ">=1.0.2 <2.1.2",</code>
+            <code>    "baz" : ">1.0.2 <=2.3.4",</code>
+            <code>    "qux" : "<1.0.0 || >=2.3.1 <2.4.5 || >=2.5.2 <3.0.0",</code>
+            <code>    "asd" : "http://asdf.com/asdf.tar.gz",</code>
+            <code>    "til" : "~1.2",</code>
+            <code>    "elf" : "~1.2.3",</code>
+            <code>    "thr" : <mark>"3.3.x"</mark></code>
+            <code>}</code>
+        </pre>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Если нет в реестре</h2>
+
+        <ul>
+            <li>git://github.com/user/project.git#commit-ish</li>
+            <li class="next">git+ssh://user@hostname:project.git#commit-ish</li>
+            <li class="next">git+ssh://user@hostname/project.git#commit-ish</li>
+            <li class="next">git+http://user@hostname/project/blah.git#commit-ish</li>
+            <li class="next">git+https://user@hostname/project/blah.git#commit-ish</li>
+        </ul>
+        <p class="next"><code>#commit-ish</code>: тег, хеш или имя ветки. По умолчанию <code>master</code>.</p>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Публикация пакета</h2>
+
+        <pre>
+            <code>$ npm adduser</code>
+            <code class="next">$ npm init</code>
+            <code class="next">...</code>
+            <code class="next">$ npm publish</code>
+            <code class="next">$ npm unpublish &lt;project>[@&lt;version>]</code>
+            <code class="next">$ npm unpublish --force &lt;project></code>
+        </pre>
+    </div>
+</section>
+<section class="slide cover">
+    <div>
+
+        <img src="img/volo-logo.png" alt="">
+    
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>volo</h2>
+
+        <ul>
+            <li>Январь 2012</li>
+            <li class="next"><code>volo --version</code> 0.2.10</li>
+            <li class="next">Джейм Бирк — автор RequireJS</li>
+            <li class="next">bootstrapping</li>
+            <li class="next">scaffolding</li>
+            <li class="next">Базируется на поиске по Гитхабу</li>
+            <li class="next">Расширение <code>package.json</code></li>
+        </ul>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Установка</h2>
+
+        <pre style="font-size: 40px">
+            <code>$ npm install -g volo</code>
+        </pre>
+    </div>
+</section>
+<section class="slide shout">
+    <div>
+        <h2>Ну не на руби же его писать</h2>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Команды</h2>
+
+        <ul>
+            <li class="next">add</li>
+            <li class="next note">amdify</li>
+            <li class="next">create</li>
+            <li class="next">info</li>
+            <li class="next note">install</li>
+            <li class="next">search</li>
+            <li class="next">
+                <del>remove</del>
+            </li>
+        </ul>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Установка пакетов</h2>
+
+        <ul class="short-list">
+            <li class="next"><code>./js/</code>, <span class="next"><code>./scripts/</code>,</span> <span class="next"><code>./</code></span></li>
+            <li class="next"><code>volo.{baseDir,baseUrl}</code></li>
+            <li class="next">Ставится минимум</li>
+        </ul>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Метаданные</h2>
+
+        <pre>
+        <code class="note">... // package.json</code>
+        <code>{</code>
+        <code>    <mark>"volo"</mark>: {</code>
+        <code>        "baseUrl": "",</code>
+        <code>        "url": "",</code>
+        <code>        "dependencies": {},</code>
+        <code>        <mark>"ignore"</mark>: []</code>
+        <code>    }</code>
+        <code>}</code>
+        </pre>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Источники пакетов</h2>
+
+        <ul>
+            <li class="next">Github search
+                <ul>
+                    <li class="next">searchterm</li>
+                    <li class="next">searchterm/version</li>
+                    <li class="next">user/repo</li>
+                    <li class="next">user/repo/tag</li>
+                    <li class="next">user/repo/semverVersion</li>
+                </ul>
+            </li>
+            <li class="next">http://some.domain.com/path/to/archive.zip</li>
+            <li class="next">http://some.domain.com/path/to/archive.zip#specific/file.js:</li>
+            <li class="next">local:path/to/directory</li>
+        </ul>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Semver</h2>
+
+        <p>Semantic Versioning</p>
+
+        <ul>
+            <li class="next"><code>X.Y.Z</code> (Major.Minor.Patch)</li>
+            <li class="next"><code>1.9.0</code> -> <code>1.10.0</code> -> <code>1.11.0</code></li>
+            <li class="next"><code>0.y.z</code> — начальная версия</li>
+            <li class="next"><code>0.x</code> -> <code>1.x</code> — несовместимые изменения</li>
+            <li class="next">Предрелиз: <code>1.0.0<mark>-</mark>alpha</code>, <code>1.0.0<mark>-</mark>x.7.z.92</code></li>
+            <li class="next"><a href="http://semver.org/">semver.org</a></li>
+        </ul>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <img src="img/bower-logo.svg" alt="">
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Bower</h2>
+
+        <ul>
+            <li>Изначально разрабатывался в Twitter</li>
+            <li class="next">Появился в сентябре 2012</li>
+            <li class="next"><code>bower --version</code> 0.9.2</li>
+            <li class="next">Часть Yoman</li>
+            <li class="next">JavaScript, CSS, картинки</li>
+        </ul>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Установка</h2>
+
+        <pre class="next" style="font-size: 40px">
+            <code>$ npm <span class="next">install</span> <span class="next">-g</span> <span class="next">bower</span></code>
+        </pre>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Команды</h2>
+
+        <ul>
+            <li class="next">install</li>
+            <li class="next">list, ls</li>
+            <li class="next">update</li>
+            <li class="next">init</li>
+            <li class="next">uninstall</li>
+            <li class="next">info</li>
+            <li class="next">search</li>
+            <li class="next">register</li>
+            <li class="next">cache-clean</li>
+        </ul>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Установка пакетов</h2>
+
+        <ul class="short-list">
+            <li class="next">В реестре <strong>2346</strong> пакета (компонента)</li>
+            <li class="next">Можно поднять свой реестр</li>
+            <li class="next">Возможна установка не из реестра</li>
+        </ul>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Установка пакетов</h2>
+
+        <ul class="short-list">
+            <li class="next">Клонируется репозиторий</li>
+            <li class="next">Копируется компонент</li>
+        </ul>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Настройка</h2>
+
+        <p style="font-size: 40px"><code>.bowerrc</code></p>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>bower.json</h2>
+
+        <pre>
+            <code><mark>"name"</mark>: "X-wing fighter",</code>
+            <code><mark>"version"</mark>: "1.23.4",</code>
+            <code><mark>"ignore"</mark>: [],</code>
+            <code>"dependencies": {</code>
+            <code>    "&lt;name>": "&lt;version>",</code>
+            <code>    "&lt;name>": "&lt;folder>",</code>
+            <code>    "&lt;name>": "&lt;<mark>package</mark>>"</code>
+            <code>},</code>
+            <code>"devDependencies": {}</code>
+        </pre>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Источник пакета</h2>
+
+        <ul>
+            <li>Имя из реестра</li>
+            <li class="next"><code>{GH-user}/{repo}</code></li>
+            <li class="next">git://bitbucket.com/someone/some-package.git</li>
+            <li class="next">Локальный гит-репозиторий</li>
+            <li class="next">Ссылка на <code>.zip</code>|<code>.tar.gz</code></li>
+        </ul>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Публикация пакета</h2>
+
+        <ul>
+            <li class="next"><code>$ bower init</code></li>
+            <li class="next"><code>$ git push</code></li>
+            <li class="next"><code>$ bower register <mark>&lt;name></mark> <mark>&lt;url></mark></code></li>
+            <li class="next">Удаление вручную через <a href="https://github.com/bower/bower/issues/120">issue на Гитхабе</a></li>
+        </ul>
+    </div>
+</section>
+<section class="slide cover h">
+    <div>
+        <h2>Небольшой тест</h2>
+
+        <img src="img/test.jpg" alt="">
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Тест</h2>
+
+        <ol>
+            <li class="next"><code>Backbone.js</code> + <code>jQuery</code> в зависимостях</li>
+            <li class="next">явно указываем устаревший <code>Underscore.js</code></li>
+            <li class="next"><code>$ %util% uninstall underscore</code></li>
+        </ol>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Итоги</h2>
+
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>&nbsp;</th>
+                    <th style="width: 29%">Backbone.js +<br>jQuery</th>
+                    <th style="width: 29%">устаревший Underscore.js</th>
+                    <th style="width: 29%">удаление Underscore.js</th>
+                </tr>
+            </thead>
+            <tr>
+                <th>npm</th>
+                <td><img src="img/appbar.check.png" alt=""> <img src="img/appbar.stop.png" alt=""></td>
+                <td><img src="img/appbar.check.png" alt=""></td>
+                <td><img src="img/appbar.warning.png" alt=""></td>
+            </tr>
+            <tr>
+                <th>volo</th>
+                <td><img src="img/appbar.check.png" alt=""></td>
+                <td><img src="img/appbar.warning.png" alt=""></td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <th>bower</th>
+                <td><img src="img/appbar.warning.png" alt=""></td>
+                <td><img src="img/appbar.warning.png" alt=""></td>
+                <td><img src="img/appbar.check.png" alt=""></td>
+            </tr>
+        </table>
+    </div>
+</section>
+<section class="slide cover">
+    <div>
+        <h2>jQuery в npm</h2>
+
+        <img src="img/npm-jquery.png" alt="">
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Backbone.js и bower</h2>
+
+        <p><img src="img/bower-backbone.png" alt=""></p>
+    </div>
+</section>
+<section class="slide shout">
+    <div>
+        <h2 style="font-size: 70px">github.com/components</h2>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Спасибо!</h2>
+
+        <p style="margin-bottom: 0">Михаил Баранов</p>
+
+        <p style="font-size: 20px">repka.com</p>
+
+        <ul>
+            <li><a href="https://twitter.com/_h4_">_h4_</a></li>
+            <li><a href="mailto:mkhl@brnv.ru">mkhl@brnv.ru</a></li>
+            <li><a href="http://designnotfound.ru/">designnotfound.ru</a></li>
+        </ul>
+    </div>
+</section>
+<div class="progress"><div></div></div>
+<script type="text/javascript" src="lib/shower/shower.js"></script>
+</body>
+</html>

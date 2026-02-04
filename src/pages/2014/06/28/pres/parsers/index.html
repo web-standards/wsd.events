@@ -1,0 +1,1002 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Shower Presentation Engine</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=792, user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="screen.css">
+    <style>
+        #cover {
+            background: #000;
+            text-align:center;
+            color:#fff;
+            }
+        #cover h2 {
+            font-size:65px;
+            }
+        #tree {
+            position: relative;
+            }
+        #tree div:before {
+            content: '';
+            display: block;
+            height: 400px;
+            width: 350px;
+            background: yellow;
+            position: absolute;
+            top:50%;
+            margin: -200px 100px 0 0;
+            right: 0;
+            z-index: -1;
+            }
+        .list #tree div:before {
+            margin: -220px 0 0 580px;
+            }
+        .shout.center code {
+            font-size: 1.2em;
+            color: rgba(255,255,255,0.5);
+            }
+        .shout.center code.now {
+            background: rgba(255,255,255,0.15);
+            color: #fff;
+            text-shadow: 1px 1px 0 #fff;
+            }
+    </style>
+</head>
+<body class="list">
+    <header class="caption">
+        <h1>Парсеры для чайников</h1>
+    </header>
+
+    <section class="slide cover center" id="cover"><div>
+        <h2>Парсеры для чайников</h2>
+    </div></section>
+
+    <section class="slide center"><div>
+        <code>@tonyganch</code>
+    </div></section>
+
+    <section class="slide center"><div>
+        <p>CSScomb</p>
+        <a href="https://github.com/csscomb">github.com/csscomb</a>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre>
+            <code> .a,  .b,</code>
+            <code>   .c{</code>
+            <code>color: tomato;width:100px;</code>
+            <code>height:auto}</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre>
+            <code>.a, .b, .c {</code>
+            <code>    width: 100px;</code>
+            <code>    height: auto;</code>
+            <code>    color: tomato;</code>
+            <code>}</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre style="font-size: 0.9em">
+            <code>Success story:</code>
+            <code>  - препроцессоры</code>
+            <code>  - php <span class="arrow">&rarr;</span> js</code>
+            <code>  - регулярные выражения <span class="arrow">&rarr;</span> парсер</code>
+        </pre>
+    </div></section>
+
+    <section class="slide shout center"><div>
+        <pre>
+            <code class="now">  1. Парсеры  </code>
+            <code>  2. Как работают  </code>
+            <code>  3. Что выбрать  </code>
+            <code>  4. Как написать  </code>
+        </pre>
+    </div></section>
+
+    <section class="slide"><div>
+        <h2>Инструменты разработчика</h2>
+        <ol>
+            <li>Препроцессоры: Sass, Stylus, CoffeeScript</li>
+            <li class="next">Оптимизаторы: CSSO, UglifyJS</li>
+            <li class="next">Линтеры: CSScomb, JSCS, JSHint</li>
+        </ol>
+    </div></section>
+
+    <section class="slide"><div>
+        <h2>Инструменты разработчика</h2>
+        <ol>
+            <li>Препроцессоры: Sass, Stylus, CoffeeScript</li>
+            <li>Оптимизаторы: CSSO, UglifyJS</li>
+            <li>Линтеры: CSScomb, JSCS, JSHint</li>
+            <li>Постпроцессоры</li>
+            <li>Украшатели</li>
+            <li>Плагины для систем сборки и текстовых редакторов</li>
+            <li>Автодополнение кода</li>
+        </ol>
+    </div></section>
+
+    <section class="slide center"><div>
+        <code>p {</code>
+        <code class="yellow">color:</code>
+        <code>white }</code>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre>
+            <code>   p</code>
+            <code>   <span class="arrow">&darr;</span></code>
+            <code class="yellow"> color </code>
+            <code>   <span class="arrow">&darr;</span></code>
+            <code> white</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre>
+            <code>     p</code>
+            <code>     <span class="arrow">&darr;</span></code>
+            <code class="yellow">&thinsp;&thinsp;background&thinsp;&thinsp;</code>
+            <code>     <span class="arrow">&darr;</span></code>
+            <code>   white</code>
+        </pre>
+    </div></section>
+
+
+    <section class="slide center"><div>
+        <code>p {</code>
+        <code class="yellow">background:</code>
+        <code>white }</code>
+    </div></section>
+
+    <section class="slide center"><div>
+        <p>
+            <code>p {</code>
+            <code class="yellow">color:</code>
+            <code>white }</code>
+        </p>
+        <p><span class="arrow">&darr;</span></p>
+        <p>
+            <code>p {</code>
+            <code class="yellow">background:</code>
+            <code>white }</code>
+        </p>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre>
+          <code>   строка    <span class="arrow">&rarr;</span>    дерево   </code>
+          <code>                     <span class="arrow">&darr;</span>   </code>
+          <code>   строка    <span class="arrow">&larr;</span>    дерево   </code>
+        </pre>
+    </div></section>
+
+    <section class="slide center" id="tree"><div>
+        <pre>
+          <code>   строка    <span class="arrow">&rarr;</span>    дерево   </code>
+          <code>                     <span class="arrow">&darr;</span>    </code>
+          <code>   строка    <span class="arrow">&larr;</span>    дерево   </code>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre>
+          <code class="yellow">   строка    <span class="arrow">&rarr;</span>    дерево   </code>
+          <code>                     <span class="arrow">&darr;</span>   </code>
+          <code>   строка    <span class="arrow">&larr;</span>    дерево   </code>
+        </pre>
+    </div></section>
+
+
+    <section class="slide shout center"><div>
+        <pre>
+            <code>  1. Парсеры  </code>
+            <code class="now">  2. Как работают  </code>
+            <code>  3. Что выбрать  </code>
+            <code>  4. Как написать  </code>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre>
+            <code>.panda {</code>
+            <code>    color: black-and-white;</code>
+            <code>}</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre>
+            <code>function getPanda() {</code>
+            <code>    return this.panda;</code>
+            <code>}</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div>
+        <code>строка <span class="arrow">&rarr;</span> дерево</code>
+    </div></section>
+
+    <section class="slide center small"><div style="text-align:left; padding: 0
+            100px; width: 824px">
+        <code>/* A comment describing the ruleset.*/ .selector-1,.selector-2,.selector-3[type="text"] { box-sizing: border-box; display: block; margin: 0; color: #333; background: #fff; } /* A longer comment describing this ruleset. */ .selector-4, .selector-5 { padding: 10px; } /* This logical grouping of rulesets has no interleaving blank lines. */ .profile { margin: 0; }</code>
+    </div></section>
+
+    <section class="slide center small"><div style="text-align:left; padding: 0
+            100px; width: 824px">
+        <code class="red">/* A comment describing the ruleset.*/</code>
+        <code class="green">.selector-1,.selector-2,.selector-3[type="text"] { box-sizing: border-box; display: block; margin: 0; color: #333; background: #fff; }</code>
+        <code class="red">/* A longer comment describing this ruleset. */</code>
+        <code class="green">.selector-4, .selector-5 { padding: 10px; }</code>
+        <code class="red">/* This logical grouping of rulesets has no interleaving blank lines. */</code>
+        <code class="green">.profile { margin: 0; }</code>
+    </div></section>
+
+    <section class="slide center small"><div style="text-align:left; padding: 0
+            100px;width:824px">
+        <code class="green">.selector-1,.selector-2,.selector-3[type="text"] { box-sizing: border-box; display: block; margin: 0; color: #333; background: #fff; }</code>
+        <code class="green">.selector-4, .selector-5 { padding: 10px; }</code>
+        <code class="green">.profile { margin: 0; }</code>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre style="font-size:0.8em">
+            <code>           <span style="display:inline-block;border:1px solid;padding:2px">      документ      </span></code>
+            <code style="line-height:1">          <span class="arrow">&#8601;</span>     <span class="arrow">&#8601;</span>     <span class="arrow">&#8600;</span>      <span class="arrow">&#8600;</span></code>
+            <code>комментарий  текст  комментарий  текст</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center small"><div>
+        <pre>
+            <code>[</code>
+            <code>  {</code>
+            <code>    type: 'comment',</code>
+            <code>    start: 0,</code>
+            <code>    end: 12</code>
+            <code>  },</code>
+            <code>  {</code>
+            <code>    type: 'text',</code>
+            <code>    start: 13,</code>
+            <code>    end: 32</code>
+            <code>  }</code>
+            <code>]</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center small"><div>
+        <pre>
+            <code>[</code>
+            <code>  {</code>
+            <code>    type: 'comment',</code>
+            <code>    start: 0,</code>
+            <code>    end: 12</code>
+            <code>  },</code>
+            <code>  {</code>
+            <code class="yellow">    type: 'text',</code>
+            <code>    start: 13,</code>
+            <code>    end: 32</code>
+            <code>  }</code>
+            <code>]</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre>
+            <code>Парсер:</code>
+            <code>  1. читает символы</code>
+            <code>  2. группирует по правилам</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div>
+        <code class="yellow">/*</code>
+        <code> Comment </code>
+        <code class="yellow">*/</code>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre>
+            <code>p {</code>
+            <code>  /* Comment */</code>
+            <code>  color: white; / Comment */</code>
+            <code>}</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre>
+            <code><span class="green">p</span> {</code>
+            <code>  /* Comment */</code>
+            <code>  color: white; / Comment */</code>
+            <code>}</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre>
+            <code><span class="green">p </span>{</code>
+            <code>  /* Comment */</code>
+            <code>  color: white; / Comment */</code>
+            <code>}</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre>
+            <code><span class="green">p {</span></code>
+            <code>  /* Comment */</code>
+            <code>  color: white; / Comment */</code>
+            <code>}</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre>
+            <code><span class="green">p {</span></code>
+            <code><span class="green">  </span>/* Comment */</code>
+            <code>  color: white; / Comment */</code>
+            <code>}</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre>
+            <code><span class="green">p {</span></code>
+            <code><span class="green">  </span><span class="yellow">/</span>* Comment */</code>
+            <code>  color: white; / Comment */</code>
+            <code>}</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre>
+            <code><span class="green">p {</span></code>
+            <code><span class="green">  </span><span class="yellow">/*</span> Comment */</code>
+            <code>  color: white; / Comment */</code>
+            <code>}</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre>
+            <code><span class="green">p {</span></code>
+            <code><span class="green">  </span><span class="yellow">/* Comment *</span>/</code>
+            <code>  color: white; / Comment */</code>
+            <code>}</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre>
+            <code><span class="green">p {</span></code>
+            <code><span class="green">  </span><span class="yellow">/* Comment */</span></code>
+            <code>  color: white; / Comment */</code>
+            <code>}</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre>
+            <code><span class="green">p {</span></code>
+            <code><span class="green">  </span><span class="red">/* Comment */</span></code>
+            <code>  color: white; / Comment */</code>
+            <code>}</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre>
+            <code><span class="green">p {</span></code>
+            <code><span class="green">  </span><span class="red">/* Comment */</span></code>
+            <code><span class="green">  color: white; </span><span class="yellow">/</span> Comment */</code>
+            <code>}</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre>
+            <code><span class="green">p {</span></code>
+            <code><span class="green">  </span><span class="red">/* Comment */</span></code>
+            <code><span class="green">  color: white; </span><span class="yellow">/ </span>Comment */</code>
+            <code>}</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre>
+            <code><span class="green">p {</span></code>
+            <code><span class="green">  </span><span class="red">/* Comment */</span></code>
+            <code><span class="green">  color: white; / </span>Comment */</code>
+            <code>}</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre>
+            <code><span class="green">p {</span></code>
+            <code><span class="green">  </span><span class="red">/* Comment */</span></code>
+            <code><span class="green">  color: white; / Comment */</span></code>
+            <code><span class="green">}</span></code>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre style="font-size:0.8em">
+            <code>     <span style="display:inline-block;border:1px solid;padding:2px">    документ    </span></code>
+            <code style="line-height:1">    <span class="arrow">&#8601;</span>       <span class="arrow">&darr;</span>       <span class="arrow">&#8600;</span></code>
+            <code>текст  комментарий  текст</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center small"><div>
+        <pre>
+            <code>function parse(string) {</code>
+            <code>  var tree = [], node;</code>
+            <code> </code>
+            <code>  for (var i = 0; i < string.length; i++;) {</code>
+            <code>    node = getComment(i) || getText(i);</code>
+            <code>    tree.push(node);</code>
+            <code>    i += node.value.length;</code>
+            <code>  }</code>
+            <code> </code>
+            <code>  return tree;</code>
+            <code>}</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center small"><div>
+        <pre>
+            <code>function getComment(i) {</code>
+            <code>    if (string.indexOf('/*', i) !== i) return;</code>
+            <code> </code>
+            <code>    var end = string.indexOf('*/', i + 2) + 1;</code>
+            <code>    var value = string.splice(i, end);</code>
+            <code> </code>
+            <code>    return createNode('comment', value);</code>
+            <code>}</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center small"><div>
+        <pre>
+            <code>[{</code>
+            <code>  type: 'text',</code>
+            <code>  value: 'p {\n  '</code>
+            <code>}, {</code>
+            <code>  type: 'comment',</code>
+            <code>  value: '/* Comment */'</code>
+            <code>}, {</code>
+            <code>  type: 'text',</code>
+            <code>  value: '\n  color: white; / Comment */\n}' },</code>
+            <code>}]</code>
+    </div></section>
+
+    <section class="slide center chapter"><div>
+        <h2>Токены</c>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre>
+            <code>пробелы</code>
+            <code>комментарии</code>
+            <code>идентификаторы</code>
+            <code>знаки препинания</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div>
+        <code>строка <span class="arrow">&rarr;</span> токены <span class="arrow">&rarr;</span> дерево</code>
+    </div></section>
+
+    <section class="slide center"><div>
+        <code>парные скобки</code>
+    </div></section>
+
+    <section class="slide center"><div>
+        <code style="font-size:0.9em">[^};]*?{((([^\{\}]+)|(?R))*)}</code>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre style="font-size: 0.7em">
+            <code>[^};]*?</code>
+            <code>{(</code>
+            <code>  (</code>
+            <code>    ([^\{\}]+)</code>
+            <code>    |</code>
+            <code>    (?R)</code>
+            <code>  )*</code>
+            <code>)}</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre style="font-size: 0.7em">
+            <code>[^};]*?</code>
+            <code>{(</code>
+            <code>  (</code>
+            <code>    ([^\{\}]+)</code>
+            <code>    |</code>
+            <code class="yellow">    (?R)</code>
+            <code>  )*</code>
+            <code>)}</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre>
+            <code>{</code>
+            <code>  type: 'leftCurlyBrace',</code>
+            <code>  matchingBrace: 12</code>
+            <code>}</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center chapter"><div>
+        <h2>Дерево</h2>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre>
+            <code>Дерево:</code>
+            <code>  - дерево разбора</code>
+            <code>    (parse tree)</code>
+            <code>  - AST</code>
+            <code>    (abstract syntax tree)</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre>
+            <code>AST не сохраняет:</code>
+            <code>  - пробелы</code>
+            <code>  - знаки препинаний: <span class="yellow">;</span> <span class="yellow">,</span></code>
+            <code>  - ключевые слова: <span class="yellow">function</span> <span class="yellow">if</span></code>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre style="font-size:0.8em">
+            <code>            функция</code>
+            <code style="line-height:1">         <span class="arrow">&#8601;</span>         <span class="arrow">&#8600;</span></code>
+            <code> аргументы           тело</code>
+            <code style="line-height:1"> <span class="arrow">&#8601;</span>   <span class="arrow">&#8600;</span>               <span class="arrow">&darr;</span></code>
+            <code>x       y          выражение</code>
+            <code style="line-height:1">                   <span class="arrow">&#8601;</span>       <span class="arrow">&#8600;</span></code>
+            <code>           присвоение      присвоение</code>
+            <code style="line-height:1">            <span
+            class="arrow">&#8601;</span>   <span class="arrow">&#8600;</span>          <span class="arrow">&#8601;</span>   <span class="arrow">&#8600;</span></code>
+            <code>           x       5       y       10</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre>
+            <code>function (x, y) {</code>
+            <code>    x = 5, y = 10;</code>
+            <code>}</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre>
+            <code>function (<span class="green">x</span>, <span class="green">y</span>) {</code>
+            <code>    <span class="green">x</span> = <span
+            class="green">5</span>, <span class="green">y</span> = <span class="green">10</span>;</code>
+            <code>}</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre>
+            <code><span class="red">function (</span><span
+            class="green">x</span><span class="red">, </span><span class="green">y</span><span class="red">) {</span></code>
+            <code><span class="red">    </span><span class="green">x</span><span
+            class="red"> = </span><span class="green">5</span><span
+            class="red">, </span><span class="green">y</span><span class="red"> = </span><span class="green">10</span><span class="red">;</span></code>
+            <code><span class="red">}</span></code>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre style="font-size:0.8em">
+            <code>            функция</code>
+            <code style="line-height:1">         <span class="arrow">&#8601;</span>         <span class="arrow">&#8600;</span></code>
+            <code> аргументы           тело</code>
+            <code style="line-height:1"> <span class="arrow">&#8601;</span>   <span class="arrow">&#8600;</span>               <span class="arrow">&darr;</span></code>
+            <code>x       y          выражение</code>
+            <code style="line-height:1">                   <span class="arrow">&#8601;</span>       <span class="arrow">&#8600;</span></code>
+            <code>           присвоение      присвоение</code>
+            <code style="line-height:1">            <span
+            class="arrow">&#8601;</span>   <span class="arrow">&#8600;</span>          <span class="arrow">&#8601;</span>   <span class="arrow">&#8600;</span></code>
+            <code>           x       5       y       10</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre>
+            <code>function (x, y) {</code>
+            <code>    x = 5, y = 10;</code>
+            <code>}</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre>
+            <code>(x, y) -></code>
+            <code>    x = 5</code>
+            <code>    y = 10</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre>
+            <code><span class="green"> строка </span></code>
+            <code>          <span class="arrow">&#8600;</span></code>
+            <code>             parse tree</code>
+            <code>          <span class="arrow">&#8601;</span></code>
+            <code><span class="green"> строка </span></code>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre>
+            <code><span class="green"> строка </span></code>
+            <code>          <span class="arrow">&#8600;</span></code>
+            <code>             AST       </code>
+            <code>          <span class="arrow">&#8601;</span></code>
+            <code><span class="red"> строка </span></code>
+        </pre>
+    </div></section>
+
+    <section class="slide shout center"><div>
+        <pre>
+            <code>  1. Парсеры  </code>
+            <code>  2. Как работают  </code>
+            <code class="now">  3. Что выбрать  </code>
+            <code>  4. Как написать  </code>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div style="font-size:1.5em">
+        <p><code>Ometa</code><br/>
+            <a href="http://tinlizzie.org/ometa-js">tinlizzie.org/ometa-js</a></p>
+        <p><code>Jison</code><br/>
+            <a href="https://github.com/zaach/jison">github.com/zaach/jison</a></p>
+        <p><code>PEG.js</code><br/>
+            <a href="https://github.com/dmajda/pegjs">github.com/dmajda/pegjs</a></p>
+    </div></section>
+
+    <section class="slide center"><div>
+        <p><code>Esprima</code></p>
+        <p><a href="https://github.com/atiya/esprima">github.com/ariya/esprima</a></p>
+        <p><code>Acorn</code></p>
+        <p><a href="https://github.com/marijnh/acorn">github.com/marijnh/acorn</a></p>
+    </div></section>
+
+    <section class="slide center"><div>
+        <p><code>Mozilla Parser API</code></p>
+        <p style="font-size:0.8em"><a href="http://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey/Parser_API">developer.mozilla.org/en-US/docs/<br/>
+            Mozilla/Projects/SpiderMonkey/Parser_API</a></p>
+    </div></section>
+
+    <section class="slide center"><div>
+        <p><code>UglifyJS</code></p>
+        <p><a href="https://github.com/mishoo/UglifyJS2">github.com/mishoo/UglifyJS2</a></p>
+    </div></section>
+
+    <section class="slide center"><div>
+        <p>PostCSS</p>
+        <p><a href="https://github.com/ai/postcss">github.com/ai/postcss</a></p>
+    </div></section>
+
+    <section class="slide center"><div>
+        <p>CSS</p>
+        <p><a href="https://github.com/reworkcss/css">github.com/reworkcss/css</a></p>
+    </div></section>
+
+    <section class="slide center"><div>
+        <p>Gonzales</p>
+        <p><a href="https://github.com/css/gonzales">github.com/css/gonzales</a></p>
+    </div></section>
+
+    <section class="slide center"><div>
+        <p>Gonzales PE</p>
+        <p><a href="https://github.com/tonyganch/gonzales-pe">github.com/tonyganch/gonzales-pe</a></p>
+    </div></section>
+
+    <section class="slide center chapter"><div>
+        <h2>Формат дерева</h2>
+    </div></section>
+
+    <section class="slide center"><div>
+        <p><code>CSSOM</code></p>
+        <p><a href="https://github.com/NV/CSSOM">github.com/NV/CSSOM</a></p>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre>
+            <code>.panda {</code>
+            <code>    color: white;</code>
+            <code>    color: black;</code>
+            <code>}</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre style="font-size: 0.8em">
+            <code>.panda {color:white}</code>
+            <code>.panda       {   color:  white  ; }</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center small"><div>
+        <pre>
+            <code>[</code>
+            <code>  {</code>
+            <code>    start: 12,</code>
+            <code>    end: 14,</code>
+            <code>    line: 2,</code>
+            <code>  }, {</code>
+            <code>    start: 27,</code>
+            <code>    end: 38,</code>
+            <code>    line: 2</code>
+            <code>  }</code>
+            <code>]</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre>
+            <code>&#10003; PostCSS        &#10007; CSSOM</code>
+            <code>&#10003; Gonzales       &#10007; CSS</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center chapter"><div>
+        <h2>Скорость</h2>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre>
+            <code>меньше деталей —</code>
+            <code>выше скорость</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center chapter"><div>
+        <h2>API</h2>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre style="font-size: 0.8em">
+            <code>css.eachDecl(function (decl) {</code>
+            <code>  decl.parent.prepend(decl.clone());</code>
+            <code>});</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre style="font-size: 0.8em">
+            <code>API:</code>
+            <code>  - как часть парсера (PostCSS)</code>
+            <code>  - как отдельный модуль (Gonzales AST)</code>
+            <code> </code>
+    </div></section>
+
+    <section class="slide center chapter"><div>
+        <h2>Препроцессоры</h2>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre>
+            <code>.panda</code>
+            <code>    color white</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre>
+            <code>color()</code>
+            <code>    color black</code>
+            <code> </code>
+            <code>.panda</code>
+            <code>    color white</code>
+        </pre>
+    </div></section>
+
+    <section class="slide shout center"><div>
+        <pre>
+            <code>  1. Парсеры  </code>
+            <code>  2. Как работают  </code>
+            <code>  3. Что выбрать  </code>
+            <code class="now">  4. Как написать  </code>
+        </pre>
+    </div></section>
+
+    <section class="slide center chapter"><div>
+        <h2>Форк</h2>
+    </div></section>
+
+    <section class="slide center"><div>
+        <code>форк = экономия</code>
+    </div></section>
+
+    <section class="slide center"><div>
+        <code>Gonzales</code>
+    </div></section>
+
+    <section class="slide center"><div>
+        <p><code>Gonzales PE</code></p>
+        <p><a href="https://github.com/tonyganch/gonzales-pe">github.com/tonyganch/gonzales-pe</a></p>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre>
+            <code style="font-size:0.9em">   Gonzales      LESS, SCSS,</code>
+            <code style="font-size:0.9em">                    Sass</code>
+            <code>       <span class="arrow">&#8600;</span>       <span class="arrow">&#8601;</span></code>
+            <code>       Gonzales PE</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center chapter"><div>
+        <h2>Спецификации</h2>
+    </div></section>
+
+    <section class="slide center"><div>
+        <p><code>CSSOM</code></p>
+        <p><a href="https://dev.w3.org/csswg/cssom">dev.w3.org/csswg/cssom</a></p>
+    </div></section>
+
+    <section class="slide center"><div>
+        <p><code>ECMAScript</code></p>
+        <p style="font-size:0.9em"><a href="http://ecma-international.org/publications/standards/Ecma-262.htm">ecma-international.org/publications/<br/>
+            standards/Ecma-262.htm
+        </a></p>
+    </div></section>
+
+    <section class="slide center"><div>
+        <p><code>Препроцессоры</code></p>
+        <p style="line-height:1.3"><a href="http://coffeescript.org">coffeescript.org</a></p>
+        <p style="line-height:1.3"><a href="http://sass-lang.com/documentation">sass-lang.com/documentation</a></p>
+        <p style="line-height:1.3"><a href="http://lesscss.org/features">lesscss.org/features</a></p>
+        <p style="line-height:1.3"><a href="http://learnboost.github.io/stylus">learnboost.github.io/stylus</a></p>
+    </div></section>
+
+    <section class="slide center chapter"><div>
+        <h2>Тесты</h2>
+    </div></section>
+
+    <section class="slide center"><div>
+        <code>W3C ≠ реальность</code>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre>
+            <code>.panda {</code>
+            <code>    color/*\**/: white\9;</code>
+            <code>}</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre style="font-size:0.9em">
+            <p> </p>
+            <code>@media \0screen\,screen\9 {}</code>
+            <code>.panda { [;color: white;]; }</code>
+            <code>.panda { )color: white; }</code>
+            <code>.panda { =color: white; }</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div>
+        <p><a href="http://browserhacks.com">browserhacks.com</a></p>
+        <pre style="font-size:0.9em">
+            <code>@media \0screen\,screen\9 {}</code>
+            <code>.panda { [;color: white;]; }</code>
+            <code>.panda { )color: white; }</code>
+            <code>.panda { =color: white; }</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div>
+        <p><a href="http://jquery.com">jquery.com</a></p>
+        <p><a href="http://getbootstrap.com">getbootstrap.com</a></p>
+        <p><a href="http://yuilibrary.com">yuilibrary.com</a></p>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre>
+            <code><a href="https://github.com/search">github.com/search</a></code>
+        </pre>
+    </div></section>
+
+    <section class="slide shout"><div>
+        <h2 style="text-align:center">*&thinsp;*&thinsp;*</h2>
+    </div></section>
+
+    <section class="slide center"><div>
+            <code>строка <span class="arrow">&rarr;</span> дерево</code>
+    </div></section>
+
+    <section class="slide center"><div>
+            <code>строка <span class="arrow">&rarr;</span> токены <span class="arrow">&rarr;</span> дерево</code>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre>
+            <code>Парсер:</code>
+            <code>  - читает символы</code>
+            <code>  - группирует по правилам</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre>
+            <code>Дерево:</code>
+            <code>  - parse tree</code>
+            <code>  - AST</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre>
+            <code>AST не сохраняет:</code>
+            <code>  - пробелы</code>
+            <code>  - знаки препинаний</code>
+            <code>  - ключевые слова</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre>
+            <code>При выборе смотрите на:</code>
+            <code>  - формат дерева</code>
+            <code>  - скорость</code>
+            <code>  - API</code>
+            <code>  - препроцессоры</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div>
+        <code>форки = хорошо</code>
+    </div></section>
+
+    <section class="slide center"><div>
+        <code>спецификации = хорошо</code>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre style="font-size:0.9em">
+            <code>@media \0screen\,screen\9 {}</code>
+            <code>.panda { [;color: white;]; }</code>
+            <code>.panda { )color: white; }</code>
+            <code>.panda { =color: white; }</code>
+        </pre>
+    </div></section>
+
+    <section class="slide center"><div>
+        <pre>
+            <code>           <a href="https://twitter.com/tonyganch">@tonyganch</a></code>
+            <code> </code>
+            <code>           Gonzales PE</code>
+            <code><a href="https://github.com/tonyganch/gonzales-pe">github.com/tonyganch/gonzales-pe</a></code>
+    </div></section>
+
+
+
+
+
+
+    <div class="progress"><div></div></div>
+    <script src="shower.min.js"></script>
+    <script>(function(b,c,a){(c[a]=c[a]||[]).push(function(){try{c.yaCounter545187=new Ya.Metrika({id:545187})}catch(a){}});var e=b.getElementsByTagName('script')[0],d=b.createElement('script'),a=function(){e.parentNode.insertBefore(d,e)};d.async=!0;d.src='//mc.yandex.ru/metrika/watch.js';'[object Opera]'==c.opera?b.addEventListener('DOMContentLoaded',a):a()})(document,window,'yandex_metrika_callbacks');</script><noscript><img src="//mc.yandex.ru/watch/545187" alt=""></noscript>
+</body>
+</html>

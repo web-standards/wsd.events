@@ -1,0 +1,962 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+	<title>Роботы для людей: боевой арсенал фронтендера</title>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=1274, user-scalable=no">
+    <link rel="stylesheet" href="themes/yandex/styles/screen-d90984e344.css">
+    <link rel="stylesheet" href="themes/yandex/styles/print.css" media="print">
+
+    <style>
+
+        .slide .min code
+        {
+            line-height: 40px;
+        }
+
+        .slide .min-min code
+        {
+            line-height: 30px;
+            font-size: 80%
+        }
+
+        .slide p.pre
+        {
+            margin-bottom: 10px;
+        }
+
+        .slide pre.min
+        {
+            margin-bottom: 30px;
+        }
+
+        .ico.mail
+        {
+            background: url("pictures/favicon-ie9.ico") no-repeat;
+            background-size: 18px 18px;
+        }
+
+        .slide ul.bullet-minus > li::before
+        {
+            content: '− ';
+        }
+
+        .slide ul.bullet-plus > li::before
+        {
+            content: '+ ';
+        }
+
+        .results
+        {
+            border-collapse: collapse;
+        }
+        .results td,
+        .results th
+        {
+            border: 1px solid #000;
+            padding: 0 1em;
+        }
+
+        .results .good
+        {
+            color: #00a86b;
+        }
+
+        .results .avg
+        {
+            color: #cfb53b;
+        }
+
+        .results .bad
+        {
+            color: #de3163;
+        }
+
+        code.comment
+        {
+            color: #999
+        }
+
+        .xml-deleted
+        {
+            color: #aaa !important;
+            text-decoration: line-through;
+        }
+
+        .xml-comment
+        {
+            color: #428d06 !important;
+        }
+
+        .xml-decl
+        {
+            color: red !important;
+        }
+
+        .xml-tag
+        {
+            color: orange !important;
+        }
+
+        .xml-attr-name
+        {
+            color: #ed65a2 !important;
+        }
+
+        .xml-attr-value
+        {
+            color: #359ad8 !important;
+        }
+    </style>
+</head>
+<body class="list">
+	<header class="caption">
+		<h1>Роботы для людей: боевой арсенал фронтендера</h1>
+        <p>Алексей Андросов</p>
+        <p>Старший разработчик интерфейсов</p>
+        <p>WSD, Санкт-Петербург, 8 июня 2013 года</p>
+	</header>
+	<div class="slide first" id="Cover">
+        <h2 style="left: 50px; width: 815px; font-size: 60px">Роботы для людей: боевой арсенал фронтендера</h2>
+        <div class="info" style="width: 500px; left: 50px; font-size: 70%; bottom: 20px">
+            <p>Алексей Андросов</p>
+            <p>Старший разработчик интерфейсов</p>
+            <p>WSD, Санкт-Петербург, 8 июня 2013 года</p>
+        </div>
+	</div>
+	<div class="slide" id="page00">
+        <h2>Обо мне</h2>
+        <img src="pictures/photo_160x160.jpg" style="float: right; padding: 0 0 40px 40px"/>
+        <p>
+            <img src="pictures/favicon-ie9.ico" style="width: 25px; height: 25px; margin-bottom: -7px"/>
+            <a href="mailto:doochik@ya.ru" style="margin-right: 20px">doochik@ya.ru</a>
+            <img src="pictures/twitter-bird-blue-on-white.png" style="width: 40px; height: 40px; margin: 0 0 -15px -10px"/>
+            <a style="margin-left: -8px" href="https://twitter.com/doochik">@doochik</a>
+        </p>
+        <ul>
+            <li>По образованию – специалист по защите информации</li>
+            <li>6 лет в Яндексе, 2 года ведущий разработчик фронтенда в Я.Почте</li>
+            <li>Люблю копаться в браузерах и внедрять новые фичи из HTML5</li>
+            <li>Можете спрашивать про JS, CSS и frontend в целом</li>
+        </ul>
+	</div>
+    <div class="slide">
+        <h2>Роботы для людей</h2>
+        <p>Borschik, CSSO и SVGO</p>
+        <ul>
+            <li>Входят в БЭМ-стек</li>
+            <li>Не привязаны к БЭМ-методологии</li>
+            <li>Open-source</li>
+            <li>Написаны на node.js</li>
+        </ul>
+        <p>Презентация: <a href="http://bit.ly/doochik-wsd-spb">bit.ly/doochik-wsd-spb</a></p>
+    </div>
+    <div class="slide shout ribbon" id="borschik-title">
+        <h2>Borschik</h2>
+    </div>
+    <div class="slide">
+        <h2>Borschik</h2>
+        <p></p>
+        <ul>
+            <li>Это <strong>текстовый процессор</strong> для файлов</li>
+            <li>Умеет <strong>склеивать</strong> файлы</li>
+            <li>Умеет <strong>преобразовывать</strong> файлы</li>
+            <li>Умеет <strong>минимизировать</strong> файлы</li>
+            <li>Поддерживает «из коробки» <strong>CSS</strong> и <strong>JS</strong></li>
+            <li>Можно <strong>расширять</strong> своими «технологиями»</li>
+        </ul>
+    </div>
+    <div class="slide">
+        <h2>Внутри два понятия</h2>
+        <p></p>
+        <ul>
+            <li><strong>include</strong> – вы указываете ссылку на файл, после сборки ссылка заменяется на содержимое файла</li>
+            <li><strong>link</strong> – вы указываете ссылку на файл, после сборки ссылка преобразовывается</li>
+        </ul>
+    </div>
+    <div class="slide shout ribbon" id="borschik-include">
+        <h2>Borschik: include</h2>
+    </div>
+    <div class="slide">
+        <h2>Склейка CSS</h2>
+        <p class="pre">page.css</p>
+        <pre>
+            <code>@import url("b-header/b-header.css");</code>
+            <code>@import url("b-footer/b-footer.css");</code>
+        </pre>
+        <p class="pre">Запускаем</p>
+        <pre class="min">
+            <code>$ borschik --input=page.css</code>
+        </pre>
+    </div>
+    <div class="slide">
+        <h2>Склейка CSS</h2>
+        <p class="pre">Получаем</p>
+        <pre class="min">
+            <code class="comment">/* b-header/b-header.css begin */</code>
+            <code>  .b-header {...}</code>
+            <code class="comment">/* b-header/b-header.css end */</code>
+            <code> </code>
+            <code class="comment">/* b-footer/b-footer.css begin */</code>
+            <code>  .b-footer {...}</code>
+            <code class="comment">/* b-footer/b-footer.css end */</code>
+        </pre>
+    </div>
+    <div class="slide">
+        <h2>Склейка CSS</h2>
+        <p>Правильное раскрытие путей</p>
+        <p class="pre">b-footer/b-footer.css</p>
+        <pre class="min">
+            <code>.b-footer {</code>
+            <code>    background: url("<mark>bg.png</mark>");</code>
+            <code>}</code>
+        </pre>
+    </div>
+    <div class="slide">
+        <h2>Склейка CSS</h2>
+        <p>Правильное раскрытие путей</p>
+        <p class="pre">В page.css получим</p>
+        <pre class="min">
+            <code>.b-footer {</code>
+            <code>    background: url("<mark>b-footer/bg.png</mark>");</code>
+            <code>}</code>
+        </pre>
+    </div>
+    <div class="slide">
+        <h2>Склейка JS (вариант 1)</h2>
+        <p><code>borschik:include</code> в /**/ раскрываются без преобразований</p>
+        <p class="pre">page.js</p>
+        <pre>
+            <code>/* <mark>borschik:include:b-header/b-header.js</mark> */</code>
+            <code>/* <mark>borschik:include:b-footer/b-footer.js</mark> */</code>
+        </pre>
+        <p class="pre">Запускаем</p>
+        <pre class="min">
+            <code>$ borschik --input=page.js</code>
+        </pre>
+    </div>
+    <div class="slide">
+        <h2>Склейка JS (вариант 1)</h2>
+        <p class="pre">Получаем</p>
+        <pre class="min">
+            <code class="comment">/* b-header/b-header.js begin */</code>
+            <code>  ...b-header/b-header.js content ...</code>
+            <code class="comment">/* b-header/b-header.js end */</code>
+            <code> </code>
+            <code class="comment">/* b-footer/b-footer.js begin */</code>
+            <code>  ...b-footer/b-footer.js content ...</code>
+            <code class="comment">/* b-footer/b-footer.js end */</code>
+        </pre>
+    </div>
+    <div class="slide">
+        <h2>Склейка JS (вариант 2)</h2>
+        <p><code>"borschik:include"</code> раскрывается через JSON.stringify</p>
+        <p class="pre">page.js</p>
+        <pre>
+            <code>var prj = {};</code>
+            <code>prj.STATIC_HOST = "<mark>borschik:include:configs/host.txt</mark>";</code>
+        </pre>
+        <p class="pre">host.txt</p>
+        <pre class="min">
+            <code>http://yandex.st</code>
+        </pre>
+    </div>
+    <div class="slide">
+        <h2>Склейка JS (вариант 2)</h2>
+        <p class="pre">Получаем</p>
+        <pre>
+            <code>var prj = {};</code>
+            <code>prj.STATIC_HOST = "<mark>http://yandex.st</mark>";</code>
+        </pre>
+    </div>
+    <div class="slide shout ribbon" id="borschik-link">
+        <h2>Borschik: link</h2>
+    </div>
+    <div class="slide">
+        <h2>Относительные ссылки на ресурсы</h2>
+        <ul>
+            <li>Можно изменить ссылки с относительных на абсолютные или другие относительные</li>
+            <li>Управляется с помощью конфигов в файле .borschik</li>
+            <li>Конфигов может быть много (в разных директориях)</li>
+        </ul>
+    </div>
+    <div class="slide">
+        <h2>Конфиг .borschik</h2>
+        <pre>
+            <code>{</code>
+            <code>    "paths" : {</code>
+            <code>        "./": "/",</code>
+            <code>        "css/": "//yandex.st/my-prj/css/"</code>
+            <code>    }</code>
+            <code>}</code>
+        </pre>
+    </div>
+    <div class="slide">
+        <h2>Попробуем!</h2>
+        <p class="pre"><strong>css/style.css</strong></p>
+        <pre class="min">
+            <code>background: url("../imgs/bg1.png")</code>
+        </pre>
+        <p class="pre"><strong>Правило</strong></p>
+        <pre class="min">
+            <code>"./": "/"</code>
+        </pre>
+        <p class="pre"><strong>Результат</strong></p>
+        <pre class="min">
+            <code>background: url("/imgs/bg1.png")</code>
+        </pre>
+    </div>
+    <div class="slide">
+        <h2>Попробуем!</h2>
+        <p class="pre"><strong>css/style.css</strong></p>
+        <pre class="min">
+            <code>background: url("bg2.png")</code>
+        </pre>
+        <p class="pre"><strong>Правило</strong></p>
+        <pre class="min">
+            <code>"css/": "//yandex.st/my-prj/css/"</code>
+        </pre>
+        <p class="pre"><strong>Результат</strong></p>
+        <pre class="min">
+            <code>background: url("//yandex.st/my-prj/css/bg2.png")</code>
+        </pre>
+    </div>
+    <div class="slide shout ribbon" id="borschik-freeze">
+        <h2>Borschik: freeze</h2>
+    </div>
+    <div class="slide">
+        <h2>Заморозка файлов</h2>
+        <p>Загрузка ресурсов (например, картинок) по урлу, зависящему от содержимого файла (хеш-суммы)</p>
+        <p>Все ссылки на ресурсы заменяются на хеш от контента файла и создается файл, у которого имя – хеш</p>
+    </div>
+    <div class="slide">
+        <h2>Заморозка файлов: конфиг</h2>
+        <pre class="min">
+            <code>{</code>
+            <code>    "freeze_paths" : {</code>
+            <code>        "css": "../_"</code>
+            <code>    }</code>
+            <code>}</code>
+        </pre>
+    </div>
+    <div class="slide">
+        <h2>Попробуем</h2>
+        <p class="pre">css/style.css</p>
+        <pre>
+            <code>.style {</code>
+            <code>    background: url("<mark>hot.png</mark>");</code>
+            <code>}</code>
+        </pre>
+        <p class="pre">Запускаем</p>
+        <pre>
+            <code>$ borschik --input=css/style.css --freeze=yes</code>
+        </pre>
+    </div>
+    <div class="slide">
+        <h2>Получаем</h2>
+        <pre>
+            <code>.style {</code>
+            <code>  background: url("<mark>../_/jUK5O9GsR0hf0.png</mark>");</code>
+            <code>}</code>
+        </pre>
+    </div>
+    <div class="slide">
+        <h2>Заморозка файлов</h2>
+        <p>Можно фризить:</p>
+        <ul>
+            <li>не только картинки, а шрифты, swf и т.п.</li>
+            <li>картинки в JS(!)</li>
+            <li>картинки с динамическими урлами в JS(!!!)</li>
+            <li>сами JS- и CSS-файлы</li>
+        </ul>
+    </div>
+    <div class="slide shout">
+        <h2>И это еще не всё!</h2>
+    </div>
+    <div class="slide">
+        <h2>Минимизация</h2>
+        <ul>
+            <li>CSS – через CSSO</li>
+            <li>JS – через UglifyJS</li>
+            <li>У каждой технологии можно переопределить метод minimize</li>
+        </ul>
+    </div>
+    <div class="slide">
+        <h2>Borschik</h2>
+        <p>GitHub: <a href="https://github.com/bem/borschik">github.com/bem/borschik</a></p>
+    </div>
+    <div class="slide">
+        <h2>Borschik</h2>
+        <p>GitHub: <a href="https://github.com/bem/borschik">github.com/bem/borschik</a></p>
+        <p>Подробная статья: <a href="http://bit.ly/ru-borschik ">bit.ly/ru-borschik</a></p>
+    </div>
+    <div class="slide">
+        <h2>Borschik</h2>
+        <p>GitHub: <a href="https://github.com/bem/borschik">github.com/bem/borschik</a></p>
+        <p>Подробная статья: <a href="http://bit.ly/ru-borschik ">bit.ly/ru-borschik</a></p>
+        <p>Всё про заморозку в моем докладе на Я.Субботнике:<br/><a href="http://bit.ly/doochik-kiev">bit.ly/doochik-kiev</a></p>
+    </div>
+    <div class="slide cover h c" style="background: #fff">
+        <img src="pictures/advice-dog.jpg" style="width: 660px;">
+    </div>
+    <div class="slide shout ribbon" id="csso-title">
+        <h2>CSSO</h2>
+    </div>
+    <div class="slide shout" id="csso-1">
+        <h2>CSS Optimizer</h2>
+    </div>
+    <div class="slide shout" id="csso-2">
+        <h2>Да, еще один минимизатор CSS =)</h2>
+    </div>
+    <div class="slide">
+        <h2>Всё вроде бы как обычно...</h2>
+        <ul>
+            <li>Вырезает комментарии и пробелы</li>
+        </ul>
+    </div>
+    <div class="slide">
+        <h2>Всё вроде бы как обычно...</h2>
+        <ul>
+            <li>Вырезает комментарии и пробелы</li>
+            <li>Удаляет пустые декларации</li>
+        </ul>
+    </div>
+    <div class="slide">
+        <h2>Всё вроде бы как обычно...</h2>
+        <ul>
+            <li>Вырезает комментарии и пробелы</li>
+            <li>Удаляет пустые декларации</li>
+            <li>Укорачивает записи (цвет, размер)</li>
+        </ul>
+    </div>
+    <div class="slide">
+        <h2>Всё вроде бы как обычно...</h2>
+        <ul>
+            <li>Вырезает комментарии и пробелы</li>
+            <li>Удаляет пустые декларации</li>
+            <li>Укорачивает записи (цвет, размер)</li>
+            <li>???</li>
+        </ul>
+    </div>
+    <div class="slide">
+        <h2>Всё вроде бы как обычно...</h2>
+        <ul>
+            <li>Вырезает комментарии и пробелы</li>
+            <li>Удаляет пустые декларации</li>
+            <li>Укорачивает записи (цвет, размер)</li>
+            <li>???</li>
+            <li><code>Строит AST дерево</code></li>
+        </ul>
+    </div>
+    <div class="slide">
+        <h2>Зачем AST?</h2>
+        <p>AST дает полное понимание всех деклараций и селекторов.</p>
+        <p>А значит можно менять структуру самих CSS-деклараций!</p>
+    </div>
+    <div class="slide shout">
+        <h2>Лучше один раз увидеть, чем сто раз услышать</h2>
+    </div>
+    <div class="slide">
+        <h2>Объединение селекторов</h2>
+        <pre>
+            <code>.merge0 {color: red}</code>
+            <code><mark>.merge1</mark> {color: blue}</code>
+            <code><mark>.merge1</mark> {margin: 0}</code>
+        </pre>
+        <p class="pre">&darr;</p>
+        <pre>
+            <code>.merge0 {color: red}</code>
+            <code><mark>.merge1</mark> {color: blue; margin: 0}</code>
+        </pre>
+    </div>
+    <div class="slide">
+        <h2>Объединение свойств</h2>
+        <pre>
+            <code>.property0 {margin: 1em}</code>
+            <code><mark>.property1</mark> {margin: 0}</code>
+            <code><mark>.property2</mark> {margin: 0}</code>
+        </pre>
+        <p class="pre">&darr;</p>
+        <pre>
+            <code>.property0 {margin: 1em}</code>
+            <code><mark>.property1, property2</mark> {margin: 0}</code>
+        </pre>
+    </div>
+    <div class="slide">
+        <h2>Разделение селекторов</h2>
+        <pre>
+            <code>.split0 {color: red; <mark>border: none; margin: 0</mark>}</code>
+            <code>.split1 {color: blue; <mark>border: none; margin: 0</mark>}</code>
+        </pre>
+        <p class="pre">&darr;</p>
+        <pre>
+            <code>.split0 {color: red}</code>
+            <code>.split1 {color: blue}</code>
+            <code>.split0, split1 {<mark>border: none; margin: 0</mark>}</code>
+        </pre>
+    </div>
+    <div class="slide">
+        <h2>Удаление перекрываемых свойств</h2>
+        <pre>
+            <code>.override {<mark>padding: 1em</mark>; margin: 0; <mark>padding: 0</mark>}</code>
+        </pre>
+        <p class="pre">&darr;</p>
+        <pre>
+            <code>.override {margin: 0; <mark>padding: 0</mark>}</code>
+        </pre>
+    </div>
+    <div class="slide" id="csso-test">
+        <h2>В цифрах</h2>
+        <p>В тестах использовались</p>
+        <ul>
+            <li>Microsoft Ajax Minifier 4.93</li>
+            <li>CSSO 1.3.7</li>
+            <li>CSSmin (YUICompressor) 0.4.1</li>
+            <li>CSScomb 2.12 (<a href="http://csscomb.ru">csscomb.ru</a>) – форматтер CSS-свойств</li>
+        </ul>
+    </div>
+    <div class="slide" id="csso-test-bootstrap">
+        <h2>В цифрах. bootstrap 2.3.2</h2>
+        <table class="results">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Ajax Minifier</th>
+                    <th>CSSO</th>
+                    <th>CSScomb + CSSO</th>
+                    <th>CSSmin</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>source</td>
+                    <td style="text-align: center" colspan="4">127352</td>
+                </tr>
+                <tr>
+                    <td>source.gz</td>
+                    <td style="text-align: center" colspan="4">18384</td>
+                </tr>
+                <tr>
+                    <td>min</td>
+                    <td>105710</td>
+                    <td class="good">105644</td>
+                    <td class="good">105644</td>
+                    <td>106035</td>
+                </tr>
+                <tr>
+                    <td>min.gz</td>
+                    <td>17103</td>
+                    <td class="good">17085</td>
+                    <td>17097</td>
+                    <td>17101</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="slide" id="csso-test-jquery-ui">
+        <h2>В цифрах. jQuery UI 1.10.3</h2>
+        <table class="results">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Ajax Minifier</th>
+                    <th>CSSO</th>
+                    <th>CSScomb + CSSO</th>
+                    <th>CSSmin</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>source</td>
+                    <td style="text-align: center" colspan="4">32456</td>
+                </tr>
+                <tr>
+                    <td>source.gz</td>
+                    <td style="text-align: center" colspan="4">6101</td>
+                </tr>
+                <tr>
+                    <td>min</td>
+                    <td>25669</td>
+                    <td>25250</td>
+                    <td class="good">24756</td>
+                    <td>25645</td>
+                </tr>
+                <tr>
+                    <td>min.gz</td>
+                    <td>4918</td>
+                    <td>4885</td>
+                    <td class="good">4659</td>
+                    <td>4899</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="slide" id="csso-test-jquery-mobile">
+        <h2>В цифрах. jQuery Mobile 1.3.0</h2>
+        <table class="results">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Ajax Minifier</th>
+                    <th>CSSO</th>
+                    <th>CSScomb + CSSO</th>
+                    <th>CSSmin</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>source</td>
+                    <td style="text-align: center" colspan="4">136008</td>
+                </tr>
+                <tr>
+                    <td>source.gz</td>
+                    <td style="text-align: center" colspan="4">19410</td>
+                </tr>
+                <tr>
+                    <td>min</td>
+                    <td>94010</td>
+                    <td class="good">92884</td>
+                    <td class="good">92884</td>
+                    <td>93995</td>
+                </tr>
+                <tr>
+                    <td>min.gz</td>
+                    <td>13209</td>
+                    <td class="good">13128</td>
+                    <td>13136</td>
+                    <td>13206</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="slide" id="csso-test-mail">
+        <h2>В цифрах. Синяя тема Я.Почты</h2>
+        <table class="results">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Ajax Minifier</th>
+                    <th>CSSO</th>
+                    <th>CSScomb + CSSO</th>
+                    <th>CSSmin</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>source</td>
+                    <td style="text-align: center" colspan="4">371466</td>
+                </tr>
+                <tr>
+                    <td>source.gz</td>
+                    <td style="text-align: center" colspan="4">53235</td>
+                </tr>
+                <tr>
+                    <td>min</td>
+                    <td>250373</td>
+                    <td class="good">247153</td>
+                    <td class="good">247153</td>
+                    <td>249066</td>
+                </tr>
+                <tr>
+                    <td>min.gz</td>
+                    <td>41212</td>
+                    <td>41064</td>
+                    <td class="good">40631</td>
+                    <td>40987</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="slide">
+        <h2>CSSO</h2>
+        <p>Github <a href="https://github.com/css/csso">github.com/css/csso</a></p>
+    </div>
+    <div class="slide">
+        <h2>CSSO</h2>
+        <p>Github <a href="https://github.com/css/csso">github.com/css/csso</a></p>
+        <p>Подробная статья с примерами <a href="http://bit.ly/ru-csso">bit.ly/ru-csso</a></p>
+    </div>
+    <div class="slide cover h c" style="background: white">
+        <img src="pictures/advice-dog.jpg" style="width: 660px;">
+    </div>
+    <div class="slide shout ribbon" id="svgo-title">
+        <h2>SVGO</h2>
+    </div>
+    <div class="slide shout">
+        <h2>SVG Optimizer</h2>
+    </div>
+    <div class="slide">
+        <h2>Зачем?</h2>
+        <ul>
+            <li>Уменьшает размер файла</li>
+            <li>Увеличивает скорость парсинга</li>
+            <li>Увеличивает скорость рендеринга</li>
+        </ul>
+    </div>
+    <div class="slide slide_counter_no" id="svgo-example-src">
+        <h2>Как?</h2>
+        <pre class="min-min">
+            <code class="xml-decl">&lt;?xml version="1.0" encoding="utf-8"?></code>
+            <code class="xml-comment">&lt;!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In .</code>
+            <code class="xml-comment">SVG Version: 6.00 Build 0) --></code>
+            <code class="xml-decl">&lt;!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://</code>
+            <code class="xml-decl">www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"></code>
+            <code><span class="xml-tag">&lt;svg</span> <span class="xml-attr-name">version=</span><span class="xml-attr-value">"1.1"</span> <span class="xml-attr-name">xmlns=</span><span class="xml-attr-value">"http://www.w3.org/2000/svg"</span></code>
+            <code>  <span class="xml-attr-name">xmlns:xlink=</span><span class="xml-attr-value">"http://www.w3.org/1999/xlink"</span> <span class="xml-attr-name">x=</span><span class="xml-attr-value">"0px"</span> <span class="xml-attr-name">y=</span><span class="xml-attr-value">"0px"</span></code>
+            <code>  <span class="xml-attr-name">width=</span><span class="xml-attr-value">"120px"</span> <span class="xml-attr-name">height=</span><span class="xml-attr-value">"120px"</span> <span class="xml-attr-name">viewBox=</span><span class="xml-attr-value">"0 0 120 120"</span></code>
+            <code>  <span class="xml-attr-name">enable-background=</span><span class="xml-attr-value">"new 0 0 120 120"</span> <span class="xml-attr-name">xml:space=</span><span class="xml-attr-value">"preserve"</span><span class="xml-tag">></span></code>
+            <code>  <span class="xml-tag">&lt;g></span></code>
+            <code>    <span class="xml-tag">&lt;g></span></code>
+            <code>      <span class="xml-tag">&lt;circle</span> <span class="xml-attr-name">fill=</span><span class="xml-attr-value">"#ff0000"</span> <span class="xml-attr-name">cx=</span><span class="xml-attr-value">"60px"</span> <span class="xml-attr-name">cy=</span><span class="xml-attr-value">"60px"</span> <span class="xml-attr-name">r=</span><span class="xml-attr-value">"50px"</span><span class="xml-tag">/></span></code>
+            <code>    <span class="xml-tag">&lt;/g></span></code>
+            <code>  <span class="xml-tag">&lt;/g></span></code>
+            <code><span class="xml-tag">&lt;/svg></span></code>
+        </pre>
+    </div>
+    <div class="slide slide_counter_no" id="svgo-example-remove-comment">
+        <h2>Как?</h2>
+        <pre class="min-min">
+            <code class="xml-decl">&lt;?xml version="1.0" encoding="utf-8"?></code>
+            <code class="xml-deleted">&lt;!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In .</code>
+            <code class="xml-deleted">SVG Version: 6.00 Build 0) --></code>
+            <code class="xml-decl">&lt;!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://</code>
+            <code class="xml-decl">www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"></code>
+            <code><span class="xml-tag">&lt;svg</span> <span class="xml-attr-name">version=</span><span class="xml-attr-value">"1.1"</span> <span class="xml-attr-name">xmlns=</span><span class="xml-attr-value">"http://www.w3.org/2000/svg"</span></code>
+            <code>  <span class="xml-attr-name">xmlns:xlink=</span><span class="xml-attr-value">"http://www.w3.org/1999/xlink"</span> <span class="xml-attr-name">x=</span><span class="xml-attr-value">"0px"</span> <span class="xml-attr-name">y=</span><span class="xml-attr-value">"0px"</span></code>
+            <code>  <span class="xml-attr-name">width=</span><span class="xml-attr-value">"120px"</span> <span class="xml-attr-name">height=</span><span class="xml-attr-value">"120px"</span> <span class="xml-attr-name">viewBox=</span><span class="xml-attr-value">"0 0 120 120"</span></code>
+            <code>  <span class="xml-attr-name">enable-background=</span><span class="xml-attr-value">"new 0 0 120 120"</span> <span class="xml-attr-name">xml:space=</span><span class="xml-attr-value">"preserve"</span><span class="xml-tag">></span></code>
+            <code>  <span class="xml-tag">&lt;g></span></code>
+            <code>    <span class="xml-tag">&lt;g></span></code>
+            <code>      <span class="xml-tag">&lt;circle</span> <span class="xml-attr-name">fill=</span><span class="xml-attr-value">"#ff0000"</span> <span class="xml-attr-name">cx=</span><span class="xml-attr-value">"60px"</span> <span class="xml-attr-name">cy=</span><span class="xml-attr-value">"60px"</span> <span class="xml-attr-name">r=</span><span class="xml-attr-value">"50px"</span><span class="xml-tag">/></span></code>
+            <code>    <span class="xml-tag">&lt;/g></span></code>
+            <code>  <span class="xml-tag">&lt;/g></span></code>
+            <code><span class="xml-tag">&lt;/svg></span></code>
+        </pre>
+    </div>
+    <div class="slide slide_counter_no" id="svgo-example-remove-xmldecl">
+        <h2>Как?</h2>
+        <pre class="min-min">
+            <code class="xml-deleted">&lt;?xml version="1.0" encoding="utf-8"?></code>
+            <code class="xml-deleted">&lt;!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In .</code>
+            <code class="xml-deleted">SVG Version: 6.00 Build 0) --></code>
+            <code class="xml-deleted">&lt;!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://</code>
+            <code class="xml-deleted">www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"></code>
+            <code><span class="xml-tag">&lt;svg</span> <span class="xml-attr-name">version=</span><span class="xml-attr-value">"1.1"</span> <span class="xml-attr-name">xmlns=</span><span class="xml-attr-value">"http://www.w3.org/2000/svg"</span></code>
+            <code>  <span class="xml-attr-name">xmlns:xlink=</span><span class="xml-attr-value">"http://www.w3.org/1999/xlink"</span> <span class="xml-attr-name">x=</span><span class="xml-attr-value">"0px"</span> <span class="xml-attr-name">y=</span><span class="xml-attr-value">"0px"</span></code>
+            <code>  <span class="xml-attr-name">width=</span><span class="xml-attr-value">"120px"</span> <span class="xml-attr-name">height=</span><span class="xml-attr-value">"120px"</span> <span class="xml-attr-name">viewBox=</span><span class="xml-attr-value">"0 0 120 120"</span></code>
+            <code>  <span class="xml-attr-name">enable-background=</span><span class="xml-attr-value">"new 0 0 120 120"</span> <span class="xml-attr-name">xml:space=</span><span class="xml-attr-value">"preserve"</span><span class="xml-tag">></span></code>
+            <code>  <span class="xml-tag">&lt;g></span></code>
+            <code>    <span class="xml-tag">&lt;g></span></code>
+            <code>      <span class="xml-tag">&lt;circle</span> <span class="xml-attr-name">fill=</span><span class="xml-attr-value">"#ff0000"</span> <span class="xml-attr-name">cx=</span><span class="xml-attr-value">"60px"</span> <span class="xml-attr-name">cy=</span><span class="xml-attr-value">"60px"</span> <span class="xml-attr-name">r=</span><span class="xml-attr-value">"50px"</span><span class="xml-tag">/></span></code>
+            <code>    <span class="xml-tag">&lt;/g></span></code>
+            <code>  <span class="xml-tag">&lt;/g></span></code>
+            <code><span class="xml-tag">&lt;/svg></span></code>
+        </pre>
+    </div>
+    <div class="slide slide_counter_no" id="svgo-example-remove-svgversion">
+        <h2>Как?</h2>
+        <pre class="min-min">
+            <code class="xml-deleted">&lt;?xml version="1.0" encoding="utf-8"?></code>
+            <code class="xml-deleted">&lt;!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In .</code>
+            <code class="xml-deleted">SVG Version: 6.00 Build 0) --></code>
+            <code class="xml-deleted">&lt;!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://</code>
+            <code class="xml-deleted">www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"></code>
+            <code><span class="xml-tag">&lt;svg</span> <span class="xml-deleted">version="1.1"</span> <span class="xml-attr-name">xmlns=</span><span class="xml-attr-value">"http://www.w3.org/2000/svg"</span></code>
+            <code>  <span class="xml-deleted">xmlns:xlink="http://www.w3.org/1999/xlink"</span> <span class="xml-attr-name">x=</span><span class="xml-attr-value">"0px"</span> <span class="xml-attr-name">y=</span><span class="xml-attr-value">"0px"</span></code>
+            <code>  <span class="xml-attr-name">width=</span><span class="xml-attr-value">"120px"</span> <span class="xml-attr-name">height=</span><span class="xml-attr-value">"120px"</span> <span class="xml-attr-name">viewBox=</span><span class="xml-attr-value">"0 0 120 120"</span></code>
+            <code>  <span class="xml-attr-name">enable-background=</span><span class="xml-attr-value">"new 0 0 120 120"</span> <span class="xml-deleted">xml:space="preserve"</span><span class="xml-tag">></span></code>
+            <code>  <span class="xml-tag">&lt;g></span></code>
+            <code>    <span class="xml-tag">&lt;g></span></code>
+            <code>      <span class="xml-tag">&lt;circle</span> <span class="xml-attr-name">fill=</span><span class="xml-attr-value">"#ff0000"</span> <span class="xml-attr-name">cx=</span><span class="xml-attr-value">"60px"</span> <span class="xml-attr-name">cy=</span><span class="xml-attr-value">"60px"</span> <span class="xml-attr-name">r=</span><span class="xml-attr-value">"50px"</span><span class="xml-tag">/></span></code>
+            <code>    <span class="xml-tag">&lt;/g></span></code>
+            <code>  <span class="xml-tag">&lt;/g></span></code>
+            <code><span class="xml-tag">&lt;/svg></span></code>
+        </pre>
+    </div>
+    <div class="slide slide_counter_no" id="svgo-example-remove-defaults">
+        <h2>Как?</h2>
+        <pre class="min-min">
+            <code class="xml-deleted">&lt;?xml version="1.0" encoding="utf-8"?></code>
+            <code class="xml-deleted">&lt;!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In .</code>
+            <code class="xml-deleted">SVG Version: 6.00 Build 0) --></code>
+            <code class="xml-deleted">&lt;!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://</code>
+            <code class="xml-deleted">www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"></code>
+            <code><span class="xml-tag">&lt;svg</span> <span class="xml-deleted">version="1.1"</span> <span class="xml-attr-name">xmlns=</span><span class="xml-attr-value">"http://www.w3.org/2000/svg"</span></code>
+            <code>  <span class="xml-deleted">xmlns:xlink="http://www.w3.org/1999/xlink"</span> <span class="xml-deleted">x="0px"</span> <span class="xml-deleted">y="0px"</span></code>
+            <code>  <span class="xml-attr-name">width=</span><span class="xml-attr-value">"120px"</span> <span class="xml-attr-name">height=</span><span class="xml-attr-value">"120px"</span> <span class="xml-deleted">viewBox="0 0 120 120"</span></code>
+            <code>  <span class="xml-deleted">enable-background="new 0 0 120 120"</span> <span class="xml-deleted">xml:space="preserve"</span><span class="xml-tag">></span></code>
+            <code>  <span class="xml-tag">&lt;g></span></code>
+            <code>    <span class="xml-tag">&lt;g></span></code>
+            <code>      <span class="xml-tag">&lt;circle</span> <span class="xml-attr-name">fill=</span><span class="xml-attr-value">"#ff0000"</span> <span class="xml-attr-name">cx=</span><span class="xml-attr-value">"60px"</span> <span class="xml-attr-name">cy=</span><span class="xml-attr-value">"60px"</span> <span class="xml-attr-name">r=</span><span class="xml-attr-value">"50px"</span><span class="xml-tag">/></span></code>
+            <code>    <span class="xml-tag">&lt;/g></span></code>
+            <code>  <span class="xml-tag">&lt;/g></span></code>
+            <code><span class="xml-tag">&lt;/svg></span></code>
+        </pre>
+    </div>
+    <div class="slide slide_counter_no" id="svgo-example-remove-px">
+        <h2>Как?</h2>
+        <pre class="min-min">
+            <code class="xml-deleted">&lt;?xml version="1.0" encoding="utf-8"?></code>
+            <code class="xml-deleted">&lt;!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In .</code>
+            <code class="xml-deleted">SVG Version: 6.00 Build 0) --></code>
+            <code class="xml-deleted">&lt;!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://</code>
+            <code class="xml-deleted">www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"></code>
+            <code><span class="xml-tag">&lt;svg</span> <span class="xml-deleted">version="1.1"</span> <span class="xml-attr-name">xmlns=</span><span class="xml-attr-value">"http://www.w3.org/2000/svg"</span></code>
+            <code>  <span class="xml-deleted">xmlns:xlink="http://www.w3.org/1999/xlink"</span> <span class="xml-deleted">x="0px"</span> <span class="xml-deleted">y="0px"</span></code>
+            <code>  <span class="xml-attr-name">width=</span><span class="xml-attr-value">"120px"</span> <span class="xml-attr-name">height=</span><span class="xml-attr-value">"120px"</span> <span class="xml-deleted">viewBox="0 0 120 120"</span></code>
+            <code>  <span class="xml-deleted">enable-background="new 0 0 120 120"</span> <span class="xml-deleted">xml:space="preserve"</span><span class="xml-tag">></span></code>
+            <code>  <span class="xml-tag">&lt;g></span></code>
+            <code>    <span class="xml-tag">&lt;g></span></code>
+            <code>      <span class="xml-tag">&lt;circle</span> <span class="xml-attr-name">fill=</span><span class="xml-attr-value">"#ff0000"</span> <span class="xml-attr-name">cx=</span><span class="xml-attr-value">"60<span class="xml-deleted">px</span>"</span> <span class="xml-attr-name">cy=</span><span class="xml-attr-value">"60<span class="xml-deleted">px</span>"</span> <span class="xml-attr-name">r=</span><span class="xml-attr-value">"50<span class="xml-deleted">px</span>"</span><span class="xml-tag">/></span></code>
+            <code>    <span class="xml-tag">&lt;/g></span></code>
+            <code>  <span class="xml-tag">&lt;/g></span></code>
+            <code><span class="xml-tag">&lt;/svg></span></code>
+        </pre>
+    </div>
+    <div class="slide slide_counter_no" id="svgo-example-remove-g-tag">
+        <h2>Как?</h2>
+        <pre class="min-min">
+            <code class="xml-deleted">&lt;?xml version="1.0" encoding="utf-8"?></code>
+            <code class="xml-deleted">&lt;!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In .</code>
+            <code class="xml-deleted">SVG Version: 6.00 Build 0) --></code>
+            <code class="xml-deleted">&lt;!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://</code>
+            <code class="xml-deleted">www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"></code>
+            <code><span class="xml-tag">&lt;svg</span> <span class="xml-deleted">version="1.1"</span> <span class="xml-attr-name">xmlns=</span><span class="xml-attr-value">"http://www.w3.org/2000/svg"</span></code>
+            <code>  <span class="xml-deleted">xmlns:xlink="http://www.w3.org/1999/xlink"</span> <span class="xml-deleted">x="0px"</span> <span class="xml-deleted">y="0px"</span></code>
+            <code>  <span class="xml-attr-name">width=</span><span class="xml-attr-value">"120px"</span> <span class="xml-attr-name">height=</span><span class="xml-attr-value">"120px"</span> <span class="xml-deleted">viewBox="0 0 120 120"</span></code>
+            <code>  <span class="xml-deleted">enable-background="new 0 0 120 120"</span> <span class="xml-deleted">xml:space="preserve"</span><span class="xml-tag">></span></code>
+            <code>  <span class="xml-deleted">&lt;g></span></code>
+            <code>    <span class="xml-deleted">&lt;g></span></code>
+            <code>      <span class="xml-tag">&lt;circle</span> <span class="xml-attr-name">fill=</span><span class="xml-attr-value">"#ff0000"</span> <span class="xml-attr-name">cx=</span><span class="xml-attr-value">"60<span class="xml-deleted">px</span>"</span> <span class="xml-attr-name">cy=</span><span class="xml-attr-value">"60<span class="xml-deleted">px</span>"</span> <span class="xml-attr-name">r=</span><span class="xml-attr-value">"50<span class="xml-deleted">px</span>"</span><span class="xml-tag">/></span></code>
+            <code>    <span class="xml-deleted">&lt;/g></span></code>
+            <code>  <span class="xml-deleted">&lt;/g></span></code>
+            <code><span class="xml-tag">&lt;/svg></span></code>
+        </pre>
+    </div>
+    <div class="slide slide_counter_no" id="svgo-example-remove-red">
+        <h2>Как?</h2>
+        <pre class="min-min">
+            <code class="xml-deleted">&lt;?xml version="1.0" encoding="utf-8"?></code>
+            <code class="xml-deleted">&lt;!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In .</code>
+            <code class="xml-deleted">SVG Version: 6.00 Build 0) --></code>
+            <code class="xml-deleted">&lt;!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://</code>
+            <code class="xml-deleted">www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"></code>
+            <code><span class="xml-tag">&lt;svg</span> <span class="xml-deleted">version="1.1"</span> <span class="xml-attr-name">xmlns=</span><span class="xml-attr-value">"http://www.w3.org/2000/svg"</span></code>
+            <code>  <span class="xml-deleted">xmlns:xlink="http://www.w3.org/1999/xlink"</span> <span class="xml-deleted">x="0px"</span> <span class="xml-deleted">y="0px"</span></code>
+            <code>  <span class="xml-attr-name">width=</span><span class="xml-attr-value">"120px"</span> <span class="xml-attr-name">height=</span><span class="xml-attr-value">"120px"</span> <span class="xml-deleted">viewBox="0 0 120 120"</span></code>
+            <code>  <span class="xml-deleted">enable-background="new 0 0 120 120"</span> <span class="xml-deleted">xml:space="preserve"</span><span class="xml-tag">></span></code>
+            <code>  <span class="xml-deleted">&lt;g></span></code>
+            <code>    <span class="xml-deleted">&lt;g></span></code>
+            <code>      <span class="xml-tag">&lt;circle</span> <span class="xml-attr-name">fill=</span><span class="xml-attr-value">"red<span class="xml-deleted">#ff0000</span>"</span> <span class="xml-attr-name">cx=</span><span class="xml-attr-value">"60<span class="xml-deleted">px</span>"</span> <span class="xml-attr-name">cy=</span><span class="xml-attr-value">"60<span class="xml-deleted">px</span>"</span> <span class="xml-attr-name">r=</span><span class="xml-attr-value">"50<span class="xml-deleted">px</span>"</span><span class="xml-tag">/></span></code>
+            <code>    <span class="xml-deleted">&lt;/g></span></code>
+            <code>  <span class="xml-deleted">&lt;/g></span></code>
+            <code><span class="xml-tag">&lt;/svg></span></code>
+        </pre>
+    </div>
+    <div class="slide">
+        <h2>Еще больше!</h2>
+        <ul>
+            <li>удаление невидимых элементов</li>
+        </ul>
+    </div>
+    <div class="slide">
+        <h2>Еще больше!</h2>
+        <ul>
+            <li>удаление невидимых элементов</li>
+            <li>конвертирование <code>&lt;style></code> в атрибуты</li>
+        </ul>
+    </div>
+    <div class="slide">
+        <h2>Еще больше!</h2>
+        <ul>
+            <li>удаление невидимых элементов</li>
+            <li>конвертирование <code>&lt;style></code> в атрибуты</li>
+            <li>вынесение общих атрибутов в группу</li>
+        </ul>
+    </div>
+    <div class="slide">
+        <h2>Еще больше!</h2>
+        <ul>
+            <li>удаление невидимых элементов</li>
+            <li>конвертирование <code>&lt;style></code> в атрибуты</li>
+            <li>вынесение общих атрибутов в группу</li>
+            <li>оптимизация кривых в <code>Path</code></li>
+        </ul>
+    </div>
+    <div class="slide">
+        <h2>Еще больше!</h2>
+        <ul>
+            <li>удаление невидимых элементов</li>
+            <li>конвертирование <code>&lt;style></code> в атрибуты</li>
+            <li>вынесение общих атрибутов в группу</li>
+            <li>оптимизация кривых в <code>Path</code></li>
+            <li>уменьшение количества точек в <code>Polyline</code></li>
+        </ul>
+    </div>
+    <div class="slide">
+        <h2>Еще больше!</h2>
+        <ul>
+            <li>удаление невидимых элементов</li>
+            <li>конвертирование <code>&lt;style></code> в атрибуты</li>
+            <li>вынесение общих атрибутов в группу</li>
+            <li>оптимизация кривых в <code>Path</code></li>
+            <li>уменьшение количества точек в <code>Polyline</code></li>
+            <li>округление дробных значений</li>
+        </ul>
+    </div>
+    <div class="slide">
+        <h2>Еще больше!</h2>
+        <ul>
+            <li>удаление невидимых элементов</li>
+            <li>конвертирование <code>&lt;style></code> в атрибуты</li>
+            <li>вынесение общих атрибутов в группу</li>
+            <li>оптимизация кривых в <code>Path</code></li>
+            <li>уменьшение количества точек в <code>Polyline</code></li>
+            <li>округление дробных значений</li>
+            <li>... и это еще не всё!</li>
+        </ul>
+    </div>
+    <div class="slide">
+        <h2>SVGO</h2>
+        <p>Github <a href="https://github.com/svg/svgo">github.com/svg/svgo</a></p>
+    </div>
+    <div class="slide cover h c" style="background: white">
+        <img src="pictures/advice-dog.jpg" style="width: 660px;">
+    </div>
+    <div class="slide" id="about-bem">
+        <h2>Ждем отзывы и вопросы!</h2>
+        <ul>
+            <li><a href="https://twitter.com/bem_ru">@bem_ru</a> <a href="https://twitter.com/search?q=%23askbem">#askbem</a></li>
+            <li><a href="https://www.facebook.com/groups/bem.info">facebook.com/groups/bem.info</a>
+            <li><a href="https://github.com/bem">github.com/bem</a></li>
+        </ul>
+    </div>
+    <div class="slide" id="about-bem-site">
+        <div style="text-align: center">
+            <img src="pictures/sign_theme_robin.png" style="width: 400px"/><br/>
+            <a href="http://ru.bem.info" style="font-size: 250%">ru.bem.info</a>
+        </div>
+
+    </div>
+    <div class="slide first" id="CoverEnd">
+        <div class="info" style="width: 500px; left: 50px; font-size: 100%; top: 200px">
+            <p>Алексей Андросов</p>
+            <p>Старший разработчик интерфейсов</p>
+            <p>
+                <img src="pictures/favicon-ie9.ico" style="width: 25px; height: 25px; margin-bottom: -7px"/>
+                <a href="mailto:doochik@ya.ru" style="margin-right: 20px">doochik@ya.ru</a>
+            </p>
+            <p>
+                <img src="pictures/twitter-bird-blue-on-white.png" style="width: 40px; height: 40px; margin: 0 0 -15px -10px"/>
+                <a style="margin-left: -8px" href="https://twitter.com/doochik">@doochik</a>
+            </p>
+            <p>
+                <img src="pictures/github.svg" style="width: 40px; height: 40px; margin: 0 0 -15px -10px"/>
+                <a style="margin-left: -8px" href="https://github.com/doochik">github.com/doochik</a>
+            </p>
+        </div>
+    </div>
+	<div class="progress"><div></div></div>
+	<script src="scripts/script-adfea3dfb6.js"></script>
+</body>
+</html>

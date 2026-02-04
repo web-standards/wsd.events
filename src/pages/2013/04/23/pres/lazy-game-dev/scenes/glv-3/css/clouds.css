@@ -1,0 +1,76 @@
+
+  #world {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -500px;
+    margin-top: -300px;
+    width: 1000px;
+    height: 600px;
+
+    //border: 1px solid rgb( 255, 0, 0 );
+
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform:translateZ(-30px);
+    pointer-events: none;
+
+    -webkit-animation:  cloudZ 400s linear infinite;
+  }
+  
+  #world div {
+    -webkit-transform-style: preserve-3d;
+  }
+  
+  .cloudBase {
+    //border: 1px solid #ff00ff;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0px;
+    height: 0px;
+
+    //-webkit-animation:  cloudX 3s linear infinite,
+    //                   cloudY 8s linear infinite,
+    //                   cloudZ 12s linear infinite;
+
+  }
+  
+  .cloudLayer {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 256px;
+    height: 256px;
+    margin-left: -128px;
+    margin-top: -128px;
+    //border: 1px solid red;
+    -webkit-transition: opacity .5s ease-out;
+  }
+
+
+@-webkit-keyframes cloudZ {
+  from {
+    -webkit-transform: rotateZ(0deg);
+  }
+  to {
+    -webkit-transform: rotateZ(-360deg);
+  }
+}
+
+@-webkit-keyframes cloudX {
+  from {
+    -webkit-transform: rotateX(0deg);
+  }
+  to {
+    -webkit-transform: rotateX(-360deg);
+  }
+}
+
+@-webkit-keyframes cloudY {
+  from {
+    -webkit-transform: rotateY(0deg);
+  }
+  to {
+    -webkit-transform: rotateY(-360deg);
+  }
+}

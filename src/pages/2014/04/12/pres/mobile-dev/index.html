@@ -1,0 +1,444 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+	<title>Особенноси мобильной разработки</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=1024, user-scalable=no">
+	<link rel="stylesheet" href="res/shower-ok/styles/screen-d90984e344.css">
+	<link rel="stylesheet" href="css/style.css">
+
+	<!--Video plugin-->
+	<!--<link rel="stylesheet" href="../res/shower-video/shower-video.css">-->
+	<!--<script src="../res/shower-video/shower-video.min.js"></script>-->
+	<!--/Video plugin-->
+
+</head>
+<body class="list">
+
+
+<header class="caption">
+	<h1>Особенноси мобильной разработки</h1>
+	<p>Дмитрий Ляпунов</p>
+	<p>Web Standart Days, <a href="http://ru.wikipedia.org/wiki/%D0%A0%D0%B8%D0%B3%D0%B0">Рига</a>, 2014</p>
+</header>
+
+
+<!-- 1. Стартовый слайд -->
+<section class="slide cover" id="cover"><div>
+	<h2 class="bold light">Особенности мобильной разработки</h2>
+	<div class="place b author">
+		<span class="author_tx">Дмитрий Ляпунов</span>
+		<a href="http://v.ok.ru" class="ok">
+			<img class="uncover" src="res/shower-ok/images/ok-logo-or.svg" alt="одноклассники"></a>
+	</div>
+
+	</div>
+	<img src="i/cover.jpeg" alt=""/>
+
+</div></section>
+
+
+<!-- 2. О себе бла-бла -->
+<section class="slide intro"><div>
+	<h2>Я: <b>Дмитрий Ляпунов</b></h2>
+
+	<ul>
+		<li>ex-фрилансер</li>
+		<li>делаю фронтенды для Одноклассников</li>
+		<li>немного пишу для <a href="https://github.com/sourcejs/Source">Sourcejs</a></li>
+		<li>комичу в <a href="#">DevShelf.us</a></li>
+	</ul>
+</div></section>
+
+
+<!-- 3. Вводная -->
+<!--<section class="slide">-->
+<!--<div>-->
+	<!--<h2>О чем поговорим</h2>-->
+	<!--<ul class="headings">-->
+		<!--<li class="">~/Общее</li>-->
+		<!--<li class="">.вёрстка</li>-->
+		<!--<li class="">{ JavaScript }</li>-->
+		<!--<li class="">#Bugs-001</li>-->
+	<!--</ul>-->
+<!--</div>-->
+<!--</section>-->
+
+
+<!-- Общее -->
+<section class="slide shout"><div>
+	<h2>Этот странный мобильный мир</h2>
+</div></section>
+<section class="slide cover"><div>
+	<h2 class="invert">Мобильный фронтенд?</h2>
+	<img class="place" src="i/world2.gif" alt="Strange world" height="500" style="right: 0"/>
+</div></section>
+<section class="slide"><div>
+	<h2>~/Общее</h2>
+	<ul>
+		<li>
+			Этот странный, странный мобильный мир
+		</li>
+		<li>
+			Mobile first
+<!-- TODO: слайд: рассказать больше -->
+				<!--<li>responsive, adaptive</li>-->
+				<!--<li>progressive enchancement & graceful degradation</li>-->
+				<!--<li>доступность контента с любым коннектом</li>-->
+			<br/>
+			<img src="i/mobilefirst.jpg" alt=""/>
+		</li>
+	</ul>
+</div></section>
+<section class="slide"><div>
+	<h2>~/Общее</h2>
+	<ul>
+		<li>
+			Этот странный, странный мобильный мир
+		</li>
+		<li>
+			Mobile first
+				<!-- TODO: слайд: рассказать больше -->
+				<!--<li>responsive, adaptive</li>-->
+				<!--<li>progressive enchancement & graceful degradation</li>-->
+				<!--<li>доступность контента с любым коннектом</li>-->
+		</li>
+		<li>
+			Физиологические особенности
+				<!--<li>жесты</li>-->
+				<!--<li>близкое расположение экрана и разный тип позиционирования: портретный, альбомный</li>-->
+				<!--<li>непредсказуемый размер области отображения</li>-->
+				<!--<li>жизнь без мышки, ховера и клавиатуы: touchstart, touchend, touchmove, и целый набор Touch Gestures;</li>-->
+			<br/><img class="next" src="i/gestures.gif" alt="gestures"/>
+		</li>
+	</ul>
+</div></section>
+<section class="slide"><div>
+	<h2>~/Общее</h2>
+	<ul>
+		<li>
+			Этот странный, странный мобильный мир
+		</li>
+		<li>
+			Mobile first
+			<!-- TODO: слайд: рассказать больше -->
+			<!--<li>responsive!</li>-->
+		</li>
+		<li>
+			Физиологические особенности
+			<!--<li>жесты</li>-->
+			<!--<li>близкое расположение экрана и разный тип позиционирования: портретный, альбомный</li>-->
+			<!--<li>непредсказуемый размер области отображения</li>-->
+			<!--<li>жизнь без мышки, ховера и клавиатуы: touchstart, touchend, touchmove, и целый набор Touch Gestures;</li>-->
+		</li>
+		<li>
+			Browser !== UIWebView<span class="lp">&nbsp;&nbsp;&nbsp;&nbsp;// true</span>
+			<!--<li>не может использовать проприетарные технологии</li>-->
+			<!--<li>может отличаться поддержка стандартов</li>-->
+			<!--<li>сложнее дебажить</li>-->
+		</li>
+
+		<li>
+			Непредсказуемая <span class="lp">(..медленная!)</span> сеть
+			<!--<li>редиректы, 404+, много внешних ресурсов</li>-->
+		</li>
+	</ul>
+</div></section>
+
+
+
+<!-- вёрстка -->
+<section class="slide"><div>
+	<h2>.вёрстка</h2>
+
+	<ul>
+		<li>
+			GPU + CPU
+				<!--<li>Слабый, в сравнении с дестопами, ограничен в энерго-ресурсах и памяти,</li>-->
+				<!--<li>Угроза переполнение и без того небольшого объема памяти</li>-->
+		</li>
+		<li>
+			Графика
+				<!--<li>
+					data-uri в 6+ раз медленнее, чем ссылка на ресурс
+					<a href="http://www.mobify.com/blog/data-uris-are-slow-on-mobile/">link</a>
+				</li>-->
+				<!--<li>отлчиный выход - CSS(http://cssdeck.com/labs/dancing-robot-with-reflection), sprites(http://csssprites.org/), canvas, emoji(unicode) </li>-->
+				<!--<li>SVG - до 100-150px</li>-->
+				<!--<li>css, canvas, emoji (uncode symbols)</li>-->
+		</li>
+		<li>
+			Избранное от W3C
+				<!--<li>семантика, masks, gradients, transitions, border-images, ...</li>-->
+				<!--<li>-webkit-tap-highhlite-color</li>-->
+				<!--<li>Правильный инпуты</li>-->
+				<!--<li>можем использовать :active, однако его надо инициализировать, например ontouchstart=return false;</li>-->
+				<!--<li><link rel="stylesheet" href="css/style.css" media="screen and (-webkit-min-device-pixel-ratio: 2)"></li>-->
+		</li>
+	</ul>
+
+</div></section>
+<!-- GPU -->
+<section class="slide"><div>
+	<h2>.вёрстка[<span class="lp">GPU + CPU</span>]</h2>
+	<ul>
+		<li>Размер <a href="http://help.adobe.com/en_US/as3/mobile/WS901d38e593cd1bac-3d719af412b2b394529-8000.html">области (~1024x1024)</a> и <a href="http://www.w3.org/TR/mobile-bp/#bpgroupplayout">размера</a>  страницы ограничен</li>
+	</ul>
+	<figure>
+		<blockquote>
+			<p>If pages are too big they may take an unduly long time to load. In addition, mobile devices typically have restrictions on the largest page they can accommodate.</p>
+		</blockquote>
+		<figcaption><a href="http://www.w3.org/TR/mobile-bp/#bpgroupplayout">W3C - Mobile Web Best Practices 1.0</a></figcaption>
+	</figure>
+</div></section>
+<section class="slide"><div>
+	<h2>.вёрстка[<span class="lp">GPU + CPU</span>]</h2>
+	<ul class="fz-ld">
+		<li>Размер <a href="http://help.adobe.com/en_US/as3/mobile/WS901d38e593cd1bac-3d719af412b2b394529-8000.html">области (~1024x1024)</a> и <a href="http://www.w3.org/TR/mobile-bp/#bpgroupplayout">размера</a>  страницы ограничен</li>
+		<li class="lp stroke-out">text-indent: -9999px</span></li>
+		<li class="next">Дешевые CSS-анимации: <code>translate</code>, <code>transform</code>, <code>opacity</code></li>
+		<li class="next">Контексты рендеринга</li>
+			<!--<li>translate3d(0), не бесконечны</li>-->
+	</ul>
+</div></section>
+
+
+
+
+<section class="slide"><div>
+	<h2>.вёрстка[<span class="lp">графика</span>]</h2>
+	<ul>
+		<li><a href="http://www.mobify.com/blog/data-uris-are-slow-on-mobile/">data-uri <span class="next">в 6+ раз медленнее, чем ссылка на ресурс</span></a></li>
+	</ul>
+</div></section>
+<section class="slide cover h"><div>
+	<img src="i/datauri.jpg" width="800" alt=""/>
+</div></section>
+<section class="slide"><div>
+	<h2>.вёрстка[<span class="lp">data-uri</span>]</h2>
+	<ul>
+		<li><a href="http://www.mobify.com/blog/data-uris-are-slow-on-mobile/">data-uri <span>в 6+ раз медленнее, чем ссылка на ресурс</span></a></li>
+		<li>но у нас есть <a href="http://csssprites.org/">sprites</a>, canvas, svg, <a href="http://en.wikipedia.org/wiki/Emoji">emoji</a>
+			<br/>
+			<span class="next">
+				и конечно наша <a href="http://cssdeck.com/labs/dancing-robot-with-reflection">CSS магия</a><br/>
+				<img src="i/magick1.gif" alt=""/>
+			</span>
+		</li>
+	</ul>
+</div></section>
+<section class="slide"><div>
+	<h2>.вёрстка[<span class="lp">избранное от W3C</span>]</h2>
+	<ul>
+		<li>-webkit-tap-highlight-color</li>
+	</ul>
+</div></section>
+<section class="slide cover h"><div>
+	<img src="i/taps.jpg" alt="" style="height: 450px !important"/>
+</div></section>
+<section class="slide w"><div>
+	<h2>.вёрстка[<span class="lp">inputs</span>]</h2>
+	<pre>&lt;input type="<mark>email</mark>, <mark>url</mark>, <mark>password</mark>, <mark>number</mark>, ..."/&gt;</pre>
+	<img class="place w" src="i/inputs.png" alt="inputs" width="800"/>
+</div></section>
+<section class="slide"><div>
+	<h2>.вёрстка[<span class="lp">избранное от W3C</span>]</h2>
+	<ul>
+		<li>-webkit-tap-highlight-color (покрытие: ~60%)</li>
+		<li>Правильные инпуты</li>
+		<li><code>:active</code></li>
+		<li>&lt;style media="..."&gt;</li>
+		<li><code>@media (min-device-pixel-ratio: 1.5) {...}</code></li>
+	</ul>
+</div></section>
+
+
+
+<!-- JavaScript -->
+<section class="slide"><div>
+	<h2>{ Javascript }</h2>
+
+	<ul>
+		<li>
+			Frameworks: можно, но осторожно
+		</li>
+		<li>
+			Особый подход
+		<li>
+			APIs
+				<!--<li>AmbientLightEvents, NetworkInformation, WebAudio/Video, -->
+				<!--WebGL, GamePad, PageVisibility, Geo, WebApp, Devices, -->
+				<!--BatteryStatus, Vibration, Messaging, FileApi</li>-->
+		</li>
+	</ul>
+</div></section>
+<section class="slide"><div>
+	<h2>{ Javascript: "Особый подход" }</h2>
+	<ul>
+		<li>JavaScript &mdash; любезен, пока вы не трогаете его dom</li>
+			<!--<li>изменять стили друг за другом, применять - разом</li>-->
+			<!--<li>использовать templates</li>-->
+			<!--<li>все опреации с нодами производить на клонах или созданных элементах,
+			вставлять уже готовые ноды, желательно сразу</li>-->
+		<li><code>requestAnimationFrame(func)</code></li>
+			<!--<li>уменьшаяет перерисовку</li>-->
+			<!--<li>не анимирует страницы в табах</li>-->
+			<!--<li>синхронизирует анимацию</li>-->
+		<li>Fullscreen</li>
+	</ul>
+</div></section>
+<section class="slide"><div>
+	<h2>{ Javascript: "Fullscreen" }</h2>
+	<ul>
+		<li>
+			<code>window.scrollTo(0, 1)</code>
+			<span class="lp">&nbsp;// Andorid, iPhone 6-</span>
+		</li>
+		<li>
+			<code>&lt;meta name="app-mobile-web-appcapable" content="yes"&gt;</code>
+			<!--<code>&lt;meta name="vieport" content="width=320.1"&gt;</code>-->
+			<span class="lp">&nbsp;// iPhone</span>
+		</li>
+		<li>
+			<code>body.requestFullScreen()</code>
+			<span class="lp">&nbsp;// Mozilla, светлое будущее</span>
+		</li>
+	</ul>
+</div></section>
+<section class="slide"><div>
+	<h2>{ Javascript: "Особый подход" }</h2>
+	<ul>
+		<li>JavaScript &mdash; любезен, пока не трогают его dom</li>
+		<li><code>requestAnimationFrame(func)</code></li>
+		<li>Fullscreen</li>
+		<li>Application cache</li>
+		<li><code>window.ontouchstart = func</code></li>
+		<li>Иннерционный скроллл</li>
+	</ul>
+</div></section>
+<section class="slide"><div>
+	<h2>{ JavaScript: "API" }</h2>
+	<ul>
+		<li>Ambient Light Events</li>
+		<li>Gamepad</li>
+		<li>Battery Status</li>
+		<li>The Network Information</li>
+		<li>Messaging</li>
+	</ul>
+</div></section>
+
+
+
+<!-- Bugs -->
+<section class="slide"><div>
+	<h2>#Bugs-001</h2>
+
+	<ul>
+		<li>
+			Козни нативного UI
+				<!--<li>Браузер может закрывать своими UI часть страницы при загрузке, при этом иногда позволяя кликать (или не позволяя)</li>-->
+				<!--<li>Добавляем паддинг до onload</li>-->
+		</li>
+		<li>
+			Touch Events
+				<!--<li>touchstart имеет continuos-эффект - меняем элемент на тач, и новый элмент получает всю ту же любовь, что и старый</li>-->
+				<!--<li>есть девайсы, на которых TouchMove срабатывает только один раз (HTC Desire)</li>-->
+		</li>
+		<li>
+			hDPI дисплеи и остальные
+				<!--<li>разные контексты рендеринга и способы сглаживания на экранах выосокой плотности и на простых</li>-->
+				<!--<li>производительность fixed элементов, качество шрифтов и пиксельных элементов будет отличаться</li>-->
+		</li>
+		<li>
+			Шрифтовые иконки
+				<!--<li>имеют особенность пропадать, фиксится пересохранением шрифта</li>-->
+		</li>
+		<li>
+			Links
+			<!--<ul>-->
+				<!--<li>overlink</li>-->
+				<!--<li><code>Node.onclick</code> не на <code>&lt;a&gt;</code></li>-->
+			<!--</ul>-->
+				<!--<li>добавить прозрачный фон</li>-->
+		</li>
+		<li>
+			Вёрстка + Unicode + <code>:checked</code>
+				<!--<li>http://take.ms/tkXVy</li>-->
+		</li>
+	</ul>
+</div></section>
+<section class="slide cover"><div>
+	<h2 class="invert">CSS магия. Опять.</h2>
+	<img src="i/git.png" alt=""/>
+</div></section>
+
+
+
+<section class="slide cover h"><div>
+	<h2 class="invert">> Инспектирование</h2>
+	<img src="i/iphone.gif" alt=""/>
+</div></section>
+<section class="slide"><div>
+	<h2>> Инспектирование</h2>
+	<ul>
+		<li><a href="http://people.apache.org/~pmuellr/weinre/docs/latest/Home.html">Weinre</a></li>
+	</ul>
+</div></section>
+<section class="slide"><div>
+	<h2>> Инспектирование</h2>
+	<pre>
+		<code>$> weinre httpPort <mark>7771</mark> boundHost <mark>127.0.0.1</mark></code>
+	</pre>
+	<img src="i/weinre1.jpg" alt="Weinre" height="300"/>
+
+</div></section>
+<section class="slide cover"><div>
+	<img src="i/weinre1.jpg" alt="Weinre" width="1024" />
+</div></section>
+<section class="slide"><div>
+	<h2>> Инспектирование</h2>
+	<ul>
+		<li>Chrome Developer Tools</li>
+	</ul>
+	<img src="i/devtools.jpg" alt="devtools" height="250"/>
+</div></section>
+<section class="slide cover"><div>
+	<img class="" src="i/devtools.jpg" alt="chrome dev tools"/>
+</div></section>
+<section class="slide"><div>
+	<h2>> Инспектирование</h2>
+	<ul>
+		<li><a href="http://people.apache.org/~pmuellr/weinre/docs/latest/Home.html">Weinre</a></li>
+		<li>Chrome Developer Tools</li>
+		<li>XCode + Safari Develop</li>
+		<li class="next">Android SDK (Eclipse), Windows Phone SDK</li>
+	</ul>
+</div></section>
+
+
+<!-- Firefox -->
+<section class="slide"><div>
+	<h2>Firefox OS</h2>
+	<img class="place m" src="i/firefox.png" alt="Firefox OS" height="320"/>
+</div></section>
+
+
+<section class="slide"><div>
+	<h2>Спасибо!</h2>
+	<div class="fz-l">Дмитрий Ляпунов</div>
+	<ul>
+		<li><a class="fz-l" href="https://twitter.com/lapynow">@lapynow</a></li>
+		<li><a class="fz-l" href="mailto:lapynow.d@gmail.com">lapynow.d@gmail.com</a></li>
+		<li><a class="fz-l" href="https://github.com/Leikam">GitHub me</a></li>
+	</ul>
+
+	<p style="margin-top: 1em;">Слайды презентации — <a href="http://leikam.github.io/pres-mobiles">leikam.github.io</a></p>
+	<!--<code>git clone https://....</code>-->
+</div></section>
+
+<div class="progress"><div></div></div>
+<script src="res/shower-core/shower.min.js"></script>
+
+<!-- Powered by Shower presentation engine - Copyright © 2010–2013 Vadim Makeev — pepelsbey.net -->
+</body>
+</html>

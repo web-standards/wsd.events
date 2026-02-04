@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Video and Gif management plugin for Shower</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=792, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link rel="stylesheet" href="node_modules/shower-ribbon/styles/screen-d90984e344.css">
+
+	<!--Video plugin-->
+	<link rel="stylesheet" href="shower-video.css">
+	<script src="shower-video.min.js"></script>
+	<!--/Video plugin-->
+</head>
+<body class="list">
+	<header class="caption">
+		<h1>Video and Gif management plugin for Shower</h1>
+		<p><a href="http://rhr.me">Robert Haritonov</a>, <a href="https://twitter.com/operatino">@operatino</a></p>
+	</header>
+
+	<section class="slide"><div>
+		<h2>Insert video to your slide</h2>
+
+		<pre><code>&lt;section class="<mark>slide cover h</mark>"&gt;&lt;div&gt;
+	<mark>&lt;video&gt;</mark>
+		<mark>&lt;source src="videos/spec.mp4" type="video/mp4;"&gt;</mark>
+	&lt;video&gt;
+&lt;/div&gt;&lt;/section&gt;</code></pre>
+
+	</div></section>
+
+	<section class="slide cover"><div>
+		<div class="video_wrapper">
+			<video preload>
+				<source src="videos/spec.mp4" type="video/mp4;">
+				<source src="videos/spec.webm" type="video/webm;">
+
+				To watch demo video, please open slides in browser that supports .mp4 or .webm playback.
+			</video>
+		</div>
+	</div></section>
+	<section class="slide cover w"><div>
+		<h2 class="place m b" style="text-align: center">Video in Cover mode, scale by width</h2>
+		<div class="video_wrapper">
+			<video preload>
+				<source src="videos/spec.mp4" type="video/mp4;">
+				<source src="videos/spec.webm" type="video/webm;">
+
+				To watch demo video, please open slides in browser that supports .mp4 or .webm playback.
+			</video>
+		</div>
+	</div></section>
+	<section class="slide cover h"><div>
+		<h2 class="place m b" style="text-align: center">Video in Cover mode, scale by height</h2>
+		<div class="video_wrapper">
+			<video preload>
+				<source src="videos/spec.mp4" type="video/mp4;">
+				<source src="videos/spec.webm" type="video/webm;">
+
+				To watch demo video, please open slides in browser that supports .mp4 or .webm playback.
+			</video>
+		</div>
+	</div></section>
+	<section class="slide cover w h"><div>
+		<h2 class="place m b" style="text-align: center">Video in Cover mode, scale by height and width</h2>
+		<div class="video_wrapper">
+			<video preload>
+				<source src="videos/spec.mp4" type="video/mp4;">
+				<source src="videos/spec.webm" type="video/webm;">
+
+				To watch demo video, please open slides in browser that supports .mp4 or .webm playback.
+			</video>
+		</div>
+	</div></section>
+	<p class="badge"><a href="https://github.com/operatino/shower-video">Fork me on Github</a></p>
+
+	<div class="progress"><div></div></div>
+	<script src="node_modules/shower-core/shower.min.js"></script>
+</body>
+</html>

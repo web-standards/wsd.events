@@ -1,0 +1,1006 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Чарт побери!</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=792, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen-d90984e344.css">
+	<link rel="stylesheet" href="tauCharts/css/graphic-elements.css">
+	<script src="src/presentations.js"></script>
+	<script src="src/data.js"></script>
+	<script src="underscore/underscore.js"></script>
+	<script src="d3/d3.min.js"></script>
+	<script src="tauCharts/src/class.js"></script>
+	<script src="tauCharts/src/tau.plugins.js"></script>
+	<script src="tauCharts/plugins/tooltip.js"></script>
+	<script src="tauCharts/plugins/highlighter.js"></script>
+	<script src="src/sizePoint.js"></script>
+	<script src="tauCharts/build/tauCharts.min.js"></script>
+	<script src="jquery/dist/jquery.min.js"></script>
+	<script src="highcharts/highcharts.js"></script>
+	<script src="codemirror/lib/codemirror.js"></script>
+	<script src="codemirror/mode/javascript/javascript.js"></script>
+	<link rel="stylesheet" href="codemirror/lib/codemirror.css"/>
+	<style>
+		textarea {
+			display: none;
+		}
+
+		.link-list {
+			font-size: 1.5em;
+		}
+
+		.slide.cover {
+			background: #fff;
+		}
+
+		.cover .CodeMirror {
+			padding: 20px 0 20px 0;
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+</head>
+<body class="list">
+<header class="caption">
+	<h1>Чарт побери!</h1>
+
+	<p><a href="https://twitter.com/krivlenia">Константин Кривленя</a></p>
+
+	<p>Компания <a href="http://www.targetprocess.com">Taucraft</a></p>
+</header>
+<section class="slide shout">
+	<div>
+		<h2>Чарт побери!</h2>
+	</div>
+</section>
+<section class="slide shout">
+	<div>
+		<h2>Как люди воспринимают информацию?</h2>
+	</div>
+</section>
+<section class="slide shout">
+	<div>
+		<h2 style="font-size: 120px">Как отобразить информацию, чтобы быстро понять ее смысл?</h2>
+	</div>
+</section>
+<section class="slide cover" style="background: #fff;" id="speakerByCity">
+
+</section>
+<style>
+	#speakerByCity .color10-1 {
+		stroke: #2B81AF;
+		fill: #2B81AF;
+	}
+
+	#speakerByCity .tick text {
+		font-size: 52px;
+	}
+</style>
+<script>
+	var effortAndCycleTime = new tauChart.Plot({
+		data: speakerByCityGt2,
+		plugins: [tau.plugins.tooltip('speaker', 'city'), tau.plugins.highlighter(), tau.plugins.sizePoint(2.45)],
+		spec: {
+			unit: {
+				type: 'COORDS.RECT',
+				guide: {
+					showGridLines: 'xy',
+					padding: {l: 310, b: 56, r: 8, t: 15}
+				},
+				x: 'city',
+				y: 'name',
+				unit: [
+					{
+						type: 'ELEMENT.POINT',
+						color: 'speaker'
+					}
+				]
+			}
+		}
+	});
+	effortAndCycleTime.renderTo('#speakerByCity', {
+		width: 1024,
+		height: 640
+	});
+</script>
+<section class="slide">
+	<div>
+		<h2>Типы данных</h2>
+		<ol class="link-list">
+			<li>Количественные (Quantitative)</li>
+			<li>Упорядоченные / Качественные <br> (Ordered / Qualitative)</li>
+			<li>Категорийные (Categorical)</li>
+		</ol>
+	</div>
+</section>
+<section class="slide cover">
+	<h2 style="margin:61px 0 0px 82px">Количественные</h2>
+	<img src="pictures/quantitive.svg" alt="quantitive"/>
+
+	<p style="margin:23px 0 0px 82px">
+		Все что может быть выражено в числах.<br>
+		Например, длина удава в попугаях.
+	</p>
+</section>
+<section class="slide cover">
+	<h2 style="margin:61px 0 0px 82px">Упорядоченные / Качественные</h2>
+	<img src="pictures/ordered.png" alt="order"/>
+</section>
+<section class="slide cover">
+	<img src="pictures/size-choe.png" alt=""/>
+</section>
+<section class="slide cover">
+	<h2 style="margin:61px 0 0px 82px">Категорийные</h2>
+	<img src="pictures/category.png" alt="category"/>
+</section>
+<section class="slide">
+	<div>
+		<h2>Визуальное кодирование (Visual encoding)</h2>
+		Переменные: <br/>
+		<ul class="link-list">
+			<li>Планарные (Planar)</li>
+			<li>Визуальные (Retinal)</li>
+		</ul>
+		<span>Jacques Bertin - <a href="http://www.amazon.com/Semiology-Graphics-Diagrams-Networks-Maps/dp/1589482611/">Semiology
+			of Graphics</a></span>
+	</div>
+</section>
+<section class="slide cover">
+	<h2 style="margin:61px 0 0 0;text-align: center">Планарные</h2>
+	<img src="pictures/planar.svg" alt=""/>
+</section>
+<section class="slide">
+	<div>
+		<h2>Визуальные</h2>
+		<ol class="link-list">
+			<li>Размер (Size)</li>
+			<li>Текстура (Texture)</li>
+			<li>Форма (Shape)</li>
+			<li>Ориентация (Orientation)</li>
+			<li>Цвет (Color)</li>
+		</ol>
+	</div>
+</section>
+<section class="slide cover">
+	<h2 style="margin:61px 0 0 0;text-align: center">Размер</h2>
+	<img src="pictures/sizes.svg" alt=""/>
+</section>
+<section class="slide cover">
+	<h2 style="margin:61px 0 0 0;text-align: center">Текстура</h2>
+	<img src="pictures/texture.svg" alt=""/>
+</section>
+<section class="slide cover">
+	<h2 style="margin:61px 0 0 0;text-align: center">Форма</h2>
+	<img src="pictures/shape.svg" alt=""/>
+</section>
+<section class="slide cover">
+	<h2 style="margin:61px 0 0 0;text-align: center">Ориентация</h2>
+	<img src="pictures/orient.svg" alt=""/>
+</section>
+<section class="slide cover">
+	<h2 style="margin:61px 0 0 0;text-align: center">Оттенки цвета (Color Value)</h2>
+	<img src="pictures/color-value.svg" alt=""/>
+</section>
+<section class="slide cover">
+	<h2 style="margin:61px 0 0 0;text-align: center">Значения цвета (Color Hue)</h2>
+	<img src="pictures/color-hue.svg" alt=""/>
+</section>
+<section class="slide shout">
+	<div>
+		<h2>
+			Как это применить к данным?
+		</h2>
+	</div>
+</section>
+<section class="slide cover">
+	<img src="pictures/wrap-visual.png" alt=""/>
+</section>
+<section class="slide shout">
+	<div>
+		<h2>Примеры</h2>
+	</div>
+</section>
+<section class="slide cover">
+	<img src="pictures/ex_100m.png" alt=""/><br>
+
+	<h2 style="
+    position: absolute;
+    bottom: 0;
+    margin: 0 0 19px 22px;
+">
+		<a href="http://www.nytimes.com/interactive/2012/08/05/sports/olympics/the-100-meter-dash-one-race-every-medalist-ever.html">Men’s 100-Meter Sprint</a></h2>
+</section>
+<section class="slide cover">
+	<img src="pictures/ex_100m_1.png" alt=""/>
+</section>
+<section class="slide cover">
+	<img src="pictures/ex_100m_2.png" alt=""/>
+</section>
+<section class="slide cover">
+	<img src="pictures/ex_medals.png" alt=""/>
+
+	<h2 style="
+    position: absolute;
+    bottom: 20px;
+    margin: 0 0 19px 22px;"><a
+			href="http://london2012.nytimes.com/results">Сравнение стран мира по выигранным медалям</a></h2>
+</section>
+<section class="slide cover">
+	<img src="pictures/ex_medals_1.png" alt=""/>
+</section>
+<section class="slide cover">
+	<img src="pictures/ex_basketball.png" alt=""/>
+
+	<h2 style="
+		position: absolute;
+		bottom: 20px;
+	margin: 0 0 19px 22px;"><a
+			href="http://www.nytimes.com/interactive/2012/06/11/sports/basketball/nba-shot-analysis.html">Анализ баскетбольных игр</a></h2>
+</section>
+<section class="slide cover">
+	<img src="pictures/ex_basketball_1.png" alt=""/>
+</section>
+<section class="slide cover">
+	<img src="pictures/ex_basketball_2.png" alt=""/>
+</section>
+<section class="slide cover">
+	<img src="pictures/ex_basketball_3.png" alt=""/>
+</section>
+<section class="slide shout">
+	<div>
+		<h2>Типы чартов</h2>
+	</div>
+</section>
+<section class="slide shout">
+	<div>
+		<h2>Scatterplot</h2>
+	</div>
+</section>
+<section class="slide cover" style="background: #fff;" id="Scatterplot">
+
+</section>
+<style>
+	#Scatterplot .color10-1 {
+		stroke: #2B81AF;
+		fill: #2B81AF;
+	}
+
+	#Scatterplot svg .label, #Scatterplot .tick text {
+		font-size: 45px;
+	}
+
+
+</style>
+<script>
+	var effortAndCycleTime = new tauChart.Plot({
+		data: tpUserStories,
+		plugins: [tau.plugins.tooltip('name', 'cycleTime', 'effort'), tau.plugins.sizePoint(3)],
+		spec: {
+			unit: {
+				type: 'COORDS.RECT',
+				guide: {
+					showGridLines: 'xy',
+					padding: {l: 145, b: 100, r: 35, t: 45},
+					x: {padding: 25, label: {text: 'Cycle Time', padding: 85}, density: 60},
+					y: {padding: 30, label: {text: 'Effort', padding: 65}, density: 40}
+				},
+				x: 'effort',
+				y: 'cycleTime',
+				unit: [
+					{
+						type: 'ELEMENT.POINT'
+					}
+				]
+			}
+		}
+	});
+	effortAndCycleTime.renderTo('#Scatterplot', {
+		width: 1024,
+		height: 610
+	});
+</script>
+<section class="slide shout">
+	<div>
+		<h2>Line</h2>
+	</div>
+</section>
+<section class="slide cover" style="background: #fff;" id="line">
+
+</section>
+<style>
+	#line .color10-1 {
+		stroke: #2B81AF;
+		fill: #2B81AF;
+		stroke-width: 10px;
+	}
+
+	#line .tick text {
+		font-size: 16px;
+	}
+	#line svg .label {
+		font-size: 25px;
+		display: block;
+	}
+</style>
+<script>
+	var facet2x1 = {
+		unit: {
+			type: 'COORDS.RECT',
+			guide: {
+				padding: {l: 66, b: 52, r: 8, t: 12},
+				showGridLines: 'xy',
+				x: {label: {text: 'Month', padding: 46}},
+				y: {label: {text: 'Count', padding: 36}, density: 60}
+			},
+			x: 'month',
+			y: 'count',
+			unit: [
+				{
+
+					type: 'ELEMENT.LINE'
+				}
+			]
+		}
+
+
+	};
+
+	new tauChart.Plot(
+			{
+				data: _.chain(barData).groupBy(function (item) {
+					return item.month;
+				}).reduce(function (values, item, key) {
+					values.push({
+						month: key, count: _.reduce(item, function (count, value) {
+							return count + value.count
+						}, 0)
+					})
+					return values
+				}, []).value(),
+				spec: facet2x1,
+				plugins: [
+					tau.plugins.tooltip('count', 'month'),
+					tau.plugins.highlighter()
+				]
+			})
+			.renderTo('#line', {
+				width: 1024,
+				height: 625
+			});
+</script>
+<section class="slide shout">
+	<div>
+		<h2>Bar</h2>
+	</div>
+</section>
+<style>
+	#bar .bar {
+		stroke: #2B81AF;
+		fill: #2B81AF;
+	}
+	#bar .tick text {
+		font-size: 16px;
+	}
+	#bar svg .label {
+		font-size: 25px;
+		display: block;
+	}
+</style>
+<section class="slide cover" style="background: #fff;" id="bar">
+
+</section>
+
+<script>
+	var facet2x1 = {
+		unit: {
+			type: 'COORDS.RECT',
+			guide: {
+				padding: {l: 66, b: 52, r: 8, t: 12},
+				showGridLines: 'xy',
+				x: {label: {text: 'Month', padding: 46}},
+				y: {label: {text: 'Count', padding: 36}, density: 60}
+			},
+			x: 'month',
+			y: 'count',
+			unit: [
+				{
+
+					type: 'ELEMENT.INTERVAL'
+				}
+			]
+		}
+
+
+	};
+
+	new tauChart.Plot(
+			{
+				data: _.chain(barData).groupBy(function (item) {
+					return item.month;
+				}).reduce(function (values, item, key) {
+					values.push({
+						month: key, count: _.reduce(item, function (count, value) {
+							return count + value.count
+						}, 0)
+					})
+					return values
+				}, []).value(),
+				spec: facet2x1,
+				plugins: [
+					tau.plugins.tooltip('count', 'month'),
+					tau.plugins.highlighter()
+				]
+			})
+			.renderTo('#bar', {
+				width: 1024,
+				height: 625
+			});
+</script>
+<section class="slide shout">
+	<div>
+		<h2>Pie</h2>
+	</div>
+</section>
+<section class="slide cover" style="background: #fff;" id="pie">
+
+</section>
+<script>
+	$('#pie').highcharts({
+		chart: {
+			plotBackgroundColor: null,
+			plotBorderWidth: null,
+			plotShadow: false
+		},
+		title: {
+			text: 'Browser usage, 2014/09'
+		},
+		tooltip: {
+			pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+		},
+		plotOptions: {
+			pie: {
+				allowPointSelect: true,
+				cursor: 'pointer',
+				dataLabels: {
+					enabled: false
+				},
+				showInLegend: true
+			}
+		},
+		series: [{
+			type: 'pie',
+			data: browserSt.map(function (item) {
+				return [item.name, item.data[0][1]]
+			})
+		}]
+	});
+</script>
+<section class="slide shout">
+	<div>
+		<h2>Статистика врет</h2>
+	</div>
+</section>
+<style>
+	#barUsage {
+		padding: 0;
+		width: 512px;
+		height: 535px;
+		float: left;
+		position: static;
+	}
+
+	#filter {
+		cursor: pointer;
+		padding: 10px 0 10px 10px;
+		position: static;
+		width: 512px;
+		height: 30px;
+		float: left;
+		clear: left;
+	}
+
+	#pieUsage {
+		padding: 0;
+		position: static;
+		width: 512px;
+		height: 535px;
+		float: left;
+	}
+</style>
+<section class="slide cover" style="background: #fff;">
+	<div id="barUsage">
+
+	</div>
+	<div id="pieUsage">
+
+	</div>
+	<div id="filter">
+		<a onclick="drawChartBrowser(['Chrome','Opera'])">Hide Chrome and Opera</a>
+		<a onclick="drawChartBrowser([])">Show Chrome and Opera</a>
+	</div>
+</section>
+
+<script>
+	function drawChartBrowser(filter) {
+		var $filter = $('#filter').find('a');
+		if (filter.length) {
+			$filter.eq(0).hide();
+			$filter.eq(1).show();
+		} else {
+			$filter.eq(0).show();
+			$filter.eq(1).hide();
+		}
+
+
+		var facet2x1 = {
+			dimensions: {
+				percent: {scaleType: 'linear'},
+				name: {scaleType: 'ordinal'}
+			},
+
+			unit: {
+				type: 'COORDS.RECT',
+				guide: {
+					padding: {l: 56, b: 32, r: 8, t: 8},
+					showGridLines: 'xy',
+					x: {label: 'browser'},
+					y: {label: 'percent'}
+				},
+				x: 'name',
+				y: 'percent',
+				unit: [
+					{
+						type: 'ELEMENT.INTERVAL'
+					}
+				]
+			}
+
+
+		};
+		$('#barUsage').empty();
+		//debugger
+		new tauChart.Plot(
+				{
+					data: browserSt.map(function (item) {
+						return {name: item.name, percent: item.data[0][1]}
+					}).filter(function (item) {
+						return !_.contains(filter, item.name);
+					}).sort(function (a, b) {
+						return b.percent < a.percent;
+					}),
+					spec: facet2x1,
+					plugins: [
+						tau.plugins.tooltip('name', 'percent'),
+						tau.plugins.highlighter()
+					]
+				}).renderTo('#barUsage', {
+					width: 512,
+					height: 535
+				});
+	}
+	drawChartBrowser([]);
+	$('#pieUsage').highcharts({
+		chart: {
+			plotBackgroundColor: null,
+			plotBorderWidth: null,
+			plotShadow: false
+		},
+		title: {
+			text: 'Browser usage, 2014/09'
+		},
+		tooltip: {
+			pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+		},
+		plotOptions: {
+			pie: {
+				allowPointSelect: true,
+				cursor: 'pointer',
+				dataLabels: {
+					enabled: false
+				},
+				showInLegend: true
+			}
+		},
+		series: [{
+			type: 'pie',
+			data: browserSt.map(function (item) {
+				return [item.name, item.data[0][1]]
+			})
+		}]
+	});
+</script>
+<section class="slide shout">
+	<div>
+		<h2>Готовые решения</h2>
+	</div>
+</section>
+<section class="slide">
+	<div>
+		<h2>Бесплатные</h2>
+		<ul class="link-list">
+			<li><a href="http://c3js.org/">C3.js (использует D3 для отрисовки)</a></li>
+			<li><a href="http://gionkunz.github.io/chartist-js/">Chartist (адаптивный, красивые анимации)</a></li>
+			<!--<li><a href="http://www.Plotjs.org/">Plot.js (отзывчивый, рисуется на canvas)</a></li>-->
+			<li><a href="http://www.flotcharts.org/">Flot (использует jQuery)</a></li>
+			<li><a href="http://dc-js.github.io/dc.js/">dc.js (использует D3 для отрисовки)</a></li>
+		</ul>
+	</div>
+</section>
+<section class="slide">
+	<div>
+		<h2>Платные</h2>
+		<ul class="link-list">
+			<li><a href="http://www.amcharts.com/">Amcharts</a></li>
+			<li><a href="http://www.fusioncharts.com/">Fusioncharts</a></li>
+			<li><a href="http://www.highcharts.com/">Highcharts</a></li>
+		</ul>
+	</div>
+</section>
+<section class="slide">
+	<div>
+		<h2>Визуальные библиотеки</h2>
+		<ul class="link-list">
+			<li><a href="http://d3js.org/">D3.js</a></li>
+			<li><a href="http://raphaeljs.com/">Raphaël</a></li>
+		</ul>
+	</div>
+</section>
+<section class="slide">
+	<div>
+		<h2>Cравнение</h2>
+		<ul class="link-list">
+			<li><a href="http://socialcompare.com/en/comparison/javascript-graphs-and-charts-libraries">Удобное
+				сравнение на SocialCompare</a></li>
+			<li><a href="http://kraskniga.blogspot.com/2012/06/comparison-of-javascript-data.html">Таблица с критерием мобильности</a></li>
+			<li><a href="http://en.wikipedia.org/wiki/Comparison_of_JavaScript_charting_frameworks">Стaтья в Википедии</a></li>
+			<li><a href="http://www.fusioncharts.com/javascript-charting-comparison/">Сравнение от Fusioncharts</a></li>
+		</ul>
+	</div>
+</section>
+<section class="slide shout">
+	<div>
+		<h2>Проблемы</h2>
+	</div>
+</section>
+<section class="slide shout">
+	<div>
+		<h2 style="font-size: 130px">Все рисуют только чарты</h2>
+	</div>
+</section>
+<section class="slide shout">
+	<div>
+		<h2>Решение</h2>
+	</div>
+</section>
+<section class="slide cover">
+	<div>
+		<h2>Grammar of graphics</h2>
+		<span>Leland Wilkinson</span>
+		<img style="top: 12%;
+left: 49%;" src="pictures/grammar.jpg" alt=""/>
+	</div>
+</section>
+<section class="slide shout">
+	<div>
+		<h2 style="font-size: 100px">Давайте композировать элементы, а не рисовать готовые чарты</h2>
+	</div>
+</section>
+<style>
+	.slide pre {
+		margin: 0 0 0px;
+	}
+	.slide.dsl pre code:before {
+		content: '';
+	}
+</style>
+<section class="slide dsl">
+	<div>
+		<ul>
+			<li>
+				Scatterplot:<pre><code><mark>ELEMENT</mark>: <mark>point</mark>(position(d*r))</code></pre>
+			</li>
+			<li class="next">
+				Line Chart: <pre><code><mark>ELEMENT</mark>:  <mark>line</mark>(position(d*r))</code></pre>
+			</li>
+			<li class="next">
+				Bar Chart: <pre><code><mark>ELEMENT</mark>:  <mark>interval</mark>(position(d*r))</code></pre>
+			</li>
+			<li class="next">
+				Pie Chart:<pre><code><mark>COORD</mark>: polar.theta(dim(1))</code><code><mark>ELEMENT</mark>: <mark>interval</mark>.stack(position(</code><code>summary.proportion(r)), color(c))</code></pre>
+			</li>
+		</ul>
+	</div>
+</section>
+<section class="slide shout">
+	<div>
+		<h2><a href="https://github.com/TargetProcess/tauCharts">TauCharts</a></h2>
+	</div>
+</section>
+<section class="slide cover" style="background: #fff;" id="bar2">
+
+</section>
+
+<script>
+	var facet2x1 = {
+		dimensions: {
+			month: {scaleType: 'ordinal'},
+			team: {scaleType: 'ordinal'},
+			count: {scaleType: 'linear'}
+		},
+		unit: {
+			type: 'COORDS.RECT',
+			guide: {
+				padding: {l: 104, b: 8, r: 8, t: 8},
+				y: {label: {text: 'TargetProcess Teams', padding: 80}}
+			},
+			x: null,
+			y: 'team',
+			unit: [
+				{
+					type: 'COORDS.RECT',
+					guide: {
+						padding: {l: 56, b: 32, r: 8, t: 8},
+						showGridLines: 'xy',
+						x: {label: 'Month'},
+						y: {label: {text: 'Count', padding: 36}}
+					},
+					x: 'month',
+					y: 'count',
+					unit: [
+						{
+							type: 'ELEMENT.INTERVAL'
+						}
+					]
+				}
+			]
+		}
+	};
+	new tauChart.Plot(
+			{
+				data: barData,
+				spec: facet2x1,
+				plugins: [
+					tau.plugins.tooltip('team', 'count', 'month'),
+					tau.plugins.highlighter()
+				]
+			}).renderTo('#bar2', {
+				width: 1024,
+				height: 620
+			});
+</script>
+<section class="slide cover">
+	<textarea name="facet" id="facet_code" cols="30" rows="10">
+		var facet2x1 = {
+			unit: {
+				type: 'COORDS.RECT',
+				guide: {
+					padding: {l: 104, b: 8, r: 8, t: 8},
+					y: {label: {text: 'TargetProcess Teams', padding: 80}}
+				},
+				x: null,
+				y: 'team',
+				unit: [{
+					type: 'COORDS.RECT',
+					guide: {
+						x: {label: 'Month'},
+						y: {label: {text: 'Count', padding: 36}}
+					},
+					x: 'month',
+					y: 'count',
+					unit: [{
+						type: 'ELEMENT.INTERVAL'
+					}]
+				}]
+			}
+		};
+	</textarea>
+</section>
+<script>
+	var myCodeMirror = CodeMirror.fromTextArea(document.getElementById('facet_code'), {mode: 'javascript'});
+</script>
+<section class="slide cover">
+	<textarea name="facet" id="facet_code_init" cols="30" rows="10">
+		//init chart
+
+
+		new tauChart.Plot({
+				data: facetData,
+				spec: facet2x1,
+				plugins: [
+					tau.plugins.tooltip('team', 'count', 'month'),
+					tau.plugins.highlighter()
+				]
+			})
+			.renderTo('#facet', {
+				width: 1024,
+				height: 620
+			});
+	</textarea>
+</section>
+<script>
+	var myCodeMirror = CodeMirror.fromTextArea(document.getElementById('facet_code_init'), {mode: 'javascript'});
+</script>
+<section class="slide cover">
+	<textarea name="" id="simpleChartData" cols="30" rows="10">
+		//simple scatterplot
+		var defData = [{
+			"team": "d",
+			"cycleTime": 1,
+			"effort": 1,
+			"count": 1,
+			"priority": "low"
+		},{
+			"team": "d",
+			"cycleTime": 2,
+			"effort": 2,
+			"count": 5,
+			"priority": "low"
+		},{
+			"team": "d",
+			"cycleTime": 3,
+			"effort": 3,
+			"count": 8,
+			"priority": "medium"
+		}];
+
+	</textarea>
+</section>
+<script>
+	var myCodeMirror = CodeMirror.fromTextArea(document.getElementById('simpleChartData'), {mode: 'javascript'});
+</script>
+<section class="slide cover">
+	<textarea name="" id="simpleChart" cols="30" rows="10">
+
+
+		var chart = new tauChart.Chart({
+			data: defData,
+			type: 'scatterplot',
+			x: 'cycleTime',
+			y: 'effort',
+			color: 'team',
+			size: 'count'
+		});
+
+		chart.renderTo('#scatter');
+	</textarea>
+</section>
+<script>
+	var myCodeMirror = CodeMirror.fromTextArea(document.getElementById('simpleChart'), {mode: 'javascript'});
+</script>
+<style>
+	#simpleScatterplot svg .label, #simpleScatterplot .tick text {
+		font-size: 24px;
+	}
+</style>
+<section id="simpleScatterplot" class="slide cover">
+
+</section>
+<script>
+	//simple scatterplot
+
+	var defData = [
+		{"team": "d", "cycleTime": 1, "effort": 1, "count": 1, "priority": "low"}, {
+			"team": "d",
+			"cycleTime": 2,
+			"effort": 2,
+			"count": 5,
+			"priority": "low"
+		}, {"team": "d", "cycleTime": 3, "effort": 3, "count": 8, "priority": "medium"}, {
+			"team": "d",
+			"cycleTime": 4,
+			"effort": 4,
+			"count": 3,
+			"priority": "high"
+		}, {"team": "l", "cycleTime": 2, "effort": 1, "count": 1, "priority": "low"}, {
+			"team": "l",
+			"cycleTime": 3,
+			"effort": 2,
+			"count": 5,
+			"priority": "low"
+		}, {"team": "l", "cycleTime": 4, "effort": 3, "count": 8, "priority": "medium"}, {
+			"team": "l",
+			"cycleTime": 5,
+			"effort": 4,
+			"count": 3,
+			"priority": "high"
+		},
+		{"team": "k", "cycleTime": 2, "effort": 4, "count": 1, "priority": "low"}, {
+			"team": "k",
+			"cycleTime": 3,
+			"effort": 5,
+			"count": 5,
+			"priority": "low"
+		}, {"team": "k", "cycleTime": 4, "effort": 6, "count": 8, "priority": "medium"}, {
+			"team": "k",
+			"cycleTime": 5,
+			"effort": 8,
+			"count": 3,
+			"priority": "high"
+		}];
+
+	var chart = new tauChart.Chart({
+		data: defData,
+		guide: {
+			showGridLines: 'xy',
+			padding: {l: 145, b: 100, r: 35, t: 45},
+			x: {padding: 25, label: {text: 'Cycle Time', padding: 55}, density: 60},
+			y: {padding: 30, label: {text: 'Effort', padding: 65}, density: 40}
+		},
+		plugins:[
+			tau.plugins.sizePoint()
+		],
+		type: 'scatterplot',
+		x: 'cycleTime',
+		y: 'effort',
+		color: 'team',
+		size: 'count'
+	});
+
+	chart.renderTo('#simpleScatterplot', {width: 1024, height: 620});
+</script>
+<section class="slide">
+	<div>
+		<h2>Что используем</h2>
+		<ul style="font-size: 1.4em;" class="link-list">
+			<li class="next">D3 для отрисовки</li>
+			<li class="next">ES6</li>
+			<li class="next">Mocha и Chai</li>
+			<li class="next">Karma</li>
+			<li class="next">Grunt</li>
+			<li class="next">TravisCI</li>
+		</ul>
+	</div>
+</section>
+<section class="slide cover">
+	<img src="pictures/schema.png" alt=""/>
+</section>
+<section class="slide shout">
+	<div>
+		<h2>Какой же построить график?</h2>
+	</div>
+</section>
+<section class="slide shout">
+	<div>
+		<h2 style="font-size: 130px;">Экспериментируй!</h2>
+	</div>
+</section>
+<section class="slide shout">
+	<h2>Вопросы?</h2>
+</section>
+<section class="slide">
+	<div>
+		<h2>Контакты</h2>
+		<a style="background:url(pictures/twitter-bird-light-bgs.png) no-repeat;padding-left:40px;"
+		   href="https://twitter.com/Krivlenia">twitter.com/Krivlenia</a><br>
+		<a style="background:url(pictures/GitHub-Mark-32px.png) no-repeat;padding-left:40px;"
+		   href="https://github.com/Mavrin">github.com/Mavrin</a><br>
+		<a style="background:url(pictures/habrahabr.png) center left no-repeat;padding-left:20px;"
+		   href="http://habrahabr.ru/users/mavrin/">habr.ru/users/mavrin</a><br>
+	</div>
+</section>
+<section class="slide">
+	<div>
+		<h2>Links</h2>
+		<ul>
+			<li><a href="http://www.targetprocess.com/articles/visual-encoding.html">Статья о визуальном кодировании</a>
+			</li>
+			<li><a href="https://github.com/TargetProcess/tauCharts">API TauCharts</a></li>
+			<li><a href="http://api.taucharts.com/">TauCharts</a></li>
+			<li><a href="https://www.stevefenton.co.uk/Content/Pie-Charts-Are-Bad/">Почему PIE-чарты плохие</a></li>
+		</ul>
+	</div>
+</section>
+<section class="slide cover">
+	<div>
+		<img style=" height: 100%; width: 100%;" src="pictures/tlen.png">
+	</div>
+</section>
+<div class="progress">
+	<div></div>
+</div>
+<script src="shower/shower.min.js"></script>
+
+</body>
+</html>

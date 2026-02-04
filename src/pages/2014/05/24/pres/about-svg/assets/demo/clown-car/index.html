@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Машина с клоунами</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body id="body">
+        <div class="wrapper">
+            <header>
+                <h1>&laquo;Машина с&nbsp;клоунами&raquo;</h1>
+                <h2 class="partial-hide">Техника &laquo;отзывчивых&raquo; изображений</h2>
+            </header>
+
+            <p>
+                <object data="img/pic.svg" type="image/svg+xml"></object>
+
+                <p class="partial-hide">
+                    <b>Источник идеи:</b> <a href="http://www.smashingmagazine.com/2013/06/02/clown-car-technique-solving-for-adaptive-images-in-responsive-web-design/">Clown Car Technique: Solving Adaptive Images In Responsive Web Design</a>
+                    <br><br>
+                    <b>Автор:</b> <a href="http://www.standardista.com/">Estelle Weyl</a></p>
+
+                <p>Техника состоит в использовании SVG c Media Queries для загрузки на страницу изображений только нужного размера.</p>
+
+                <p>Чтобы увидеть пример в действии, поизменяйте размер окна браузера: при разных размерах окна картинка слева будет разной (всего три размера).</p>
+
+                <p class="partial-hide">SVG вставляется через <code>object</code>. Внутри файла задаются стили, которые в зависимости от ширины внешнего контейнера загружают для всего SVG подходящее фоновое изображение.</p>
+
+                <p class="partial-hide">Медиазапросы работают именно относительно размеров <code>object</code>, в котором находится SVG, а не всей страницы, таким образом, меняя размеры внешнего <code>object</code> можно через SVG получать разные картинки для разных разрешений. При этом каждое изображение будет загружено только если сработает соответствующее медиавыражение.</p>
+
+            <figure class="partial-hide">
+                <p>Примерный код:</p>
+
+                <figcaption>SVG</figcaption>
+                <pre><code class="language-markup">&lt;svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 532 800"
+     preserveAspectRatio="xMidYMid meet">
+    &lt;style>
+       svg {
+            background-size: content;
+            background-repeat: no-repeat;
+            }
+
+        @media screen and (max-width: 100px) {
+            svg {
+                background-image: url(small.jpg);
+            }
+        }
+        @media screen and (min-width: 101px) and (max-width: 300px) {
+            svg {
+                background-image: url(middle.jpg);
+            }
+        }
+
+        @media screen and (min-width: 301px) and (max-width: 700px) {
+            svg {
+                background-image: url(large.jpg);
+            }
+        }
+    &lt;/style>
+&lt;/svg></code></pre> </figure>
+
+            <figure class="partial-hide">
+                <figcaption>Object</figcaption>
+                <pre><code class="language-markup">&lt;object data="your.svg" type="image/svg+xml">&lt;/object></code></pre>
+            </figure>
+
+            <figure class="partial-hide">
+                Размеры <code>object</code> также задаются через Media Queries:
+
+                <pre><code class="language-css">@media screen and (max-width: 600px) {
+  OBJECT {
+    width: 100px;
+    height: 150px;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 800px) {
+  OBJECT {
+    width: 200px;
+    height: 300px;
+    }
+}
+@media screen and (min-width: 801px) {
+  OBJECT {
+    width: 332px;
+    height: 500px;
+    }
+}</code></pre>
+            </figure>
+
+        </div>
+    </body>
+</html>

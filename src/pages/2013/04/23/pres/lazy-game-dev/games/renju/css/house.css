@@ -1,0 +1,283 @@
+.house.marked_win:after{
+    content:".";
+    width: 50px;
+    height: 50px;
+    display: block;
+    overflow: hidden;
+    text-indent: -999px;
+    background: rgba(0,255,0,.5);
+    position: absolute;
+    top: -25px;
+    left: -25px;
+    -webkit-transform: translateZ(.5px);
+    -moz-transform: translateZ(.5px);
+    transform: translateZ(.5px);
+    }
+
+.house.marked_loose:after{
+    content:".";
+    width: 50px;
+    height: 50px;
+    display: block;
+    overflow: hidden;
+    text-indent: -999px;
+    background: rgba(255,0,0,.5);
+    position: absolute;
+    top: -25px;
+    left: -25px;
+    -webkit-transform: translateZ(.5px);
+    -moz-transform: translateZ(.5px);
+    transform: translateZ(.5px);
+    }
+
+html.no-preserve-3d .house.marked_win:after{
+    top: 0;
+    left: 0;
+    }
+
+html.no-preserve-3d .house.marked_loose:after{
+    top: 0;
+    left: 0;
+    }
+
+.house{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+
+  -webkit-transform: translateZ(.5px);
+  -moz-transform: translateZ(.5px);
+  transform: translateZ(.5px);
+
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  }
+  .house .wall-roof{
+    width: 34px;
+    height: 34px;
+    display: block;
+
+    position: absolute;
+    top: -17px;
+    left: -17px;
+
+    -webkit-transform-origin: 100% 100% 0;
+    -moz-transform-origin: 100% 100% 0;
+    transform-origin: 100% 100% 0;
+
+    -webkit-transform: translateZ(105px);
+    -moz-transform: translateZ(105px);
+    transform: translateZ(105px);
+
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility:    hidden;
+    -ms-backface-visibility:     hidden;
+
+    background: url('../img/tiles.jpg') 50% 100% no-repeat;
+    -webkit-background-size: cover;
+         -o-background-size: cover;
+            background-size: cover;
+
+    }
+
+.house .wall-roof{
+  -webkit-transition: -webkit-transform .2s linear;
+  -moz-transition: -moz-transform .2s linear;
+  transition: transform .2s linear;
+  }
+
+.house.level-1 .wall-roof{
+  -webkit-transform: translateZ(27px);
+  -moz-transform: translateZ(27px);
+  transform: translateZ(27px);
+  }
+
+.house.level-2 .wall-roof{
+  -webkit-transform: translateZ(54px);
+  -moz-transform: translateZ(54px);
+  transform: translateZ(54px);
+  }
+
+.house.level-3 .wall-roof{
+  -webkit-transform: translateZ(79px);
+  -moz-transform: translateZ(79px);
+  transform: translateZ(79px);
+  }
+
+.house.level-4 .wall-roof{
+  -webkit-transform: translateZ(105px);
+  -moz-transform: translateZ(105px);
+  transform: translateZ(105px);
+  }
+
+  .house .wall-front{
+    width: 30px;
+    height: 105px;
+    display: block;
+
+    position: absolute;
+    top: -105px;
+    left: -15px;
+
+    -webkit-transform-origin: 100% 100% 0;
+    -moz-transform-origin: 100% 100% 0;
+    transform-origin: 100% 100% 0;
+
+    -webkit-transform: rotateX(-90deg) translateZ(15px);
+    -moz-transform: rotateX(-90deg) translateZ(15px);
+    transform: rotateX(-90deg) translateZ(15px);
+
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility:    hidden;
+    -ms-backface-visibility:     hidden;
+
+    background: url('../img/bordello-front.png') 50% 100% no-repeat;
+    -webkit-background-size: cover;
+         -o-background-size: cover;
+            background-size: cover;
+    }
+  .house .wall-back{
+    width: 30px;
+    height: 105px;
+    display: block;
+
+    position: absolute;
+    top: -105px;
+    left: -15px;
+
+    -webkit-transform-origin: 50% 100% 0;
+    -moz-transform-origin: 50% 100% 0;
+    transform-origin: 50% 100% 0;
+
+    -webkit-transform: rotateX(-90deg) translateZ(-15px) rotateY(180deg);
+    -moz-transform: rotateX(-90deg) translateZ(-15px) rotateY(180deg);
+    transform: rotateX(-90deg) translateZ(-15px) rotateY(180deg);
+
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility:    hidden;
+    -ms-backface-visibility:     hidden;
+
+    background: url('../img/bordello-side.png') 50% 100% no-repeat;
+    -webkit-background-size: cover;
+         -o-background-size: cover;
+            background-size: cover;
+
+    }
+  .house .wall-left{
+    width: 30px;
+    height: 105px;
+    display: block;
+
+    position: absolute;
+    top: -105px;
+    left: -15px;
+
+    -webkit-transform-origin: 100% 100% 0;
+    -moz-transform-origin: 100% 100% 0;
+    transform-origin: 100% 100% 0;
+
+    -webkit-transform: rotateX(-90deg) rotateY(90deg) translateX(15px);
+    -moz-transform: rotateX(-90deg) rotateY(90deg) translateX(15px);
+    transform: rotateX(-90deg) rotateY(90deg) translateX(15px);
+
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility:    hidden;
+    -ms-backface-visibility:     hidden;
+
+    background: url('../img/bordello-side.png') 50% 100% no-repeat;
+    -webkit-background-size: cover;
+         -o-background-size: cover;
+            background-size: cover;
+
+    }
+  .house .wall-right{
+    width: 30px;
+    height: 105px;
+    display: block;
+
+    position: absolute;
+    top: -105px;
+    left: -15px;
+
+    -webkit-transform-origin: 100% 100% 0;
+    -moz-transform-origin: 100% 100% 0;
+    transform-origin: 100% 100% 0;
+
+    -webkit-transform: rotateX(-90deg) rotateY(-90deg) translateX(15px) translateZ(30px);
+    -moz-transform: rotateX(-90deg) rotateY(-90deg) translateX(15px) translateZ(30px);
+    transform: rotateX(-90deg) rotateY(-90deg) translateX(15px) translateZ(30px);
+
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility:    hidden;
+    -ms-backface-visibility:     hidden;
+
+    background: url('../img/bordello-side.png') 50% 100% no-repeat;
+    -webkit-background-size: cover;
+         -o-background-size: cover;
+            background-size: cover;
+
+    }
+
+.house .wall-back,
+.house .wall-front,
+.house .wall-left,
+.house .wall-right{
+  -webkit-transition: height .2s linear, top .2s linear;
+  -moz-transition: height .2s linear, top .2s linear;
+  transition: height .2s linear, top .2s linear;
+  }
+
+.house.level-1 .wall-back,
+.house.level-1 .wall-front,
+.house.level-1 .wall-left,
+.house.level-1 .wall-right{
+  height: 27px;
+  top: -27px;
+  }
+
+.house.level-2 .wall-back,
+.house.level-2 .wall-front,
+.house.level-2 .wall-left,
+.house.level-2 .wall-right{
+  height: 54px;
+  top: -54px;
+  }
+
+.house.level-3 .wall-back,
+.house.level-3 .wall-front,
+.house.level-3 .wall-left,
+.house.level-3 .wall-right{
+  height: 79px;
+  top: -79px;
+  }
+
+.house.level-4 .wall-back,
+.house.level-4 .wall-front,
+.house.level-4 .wall-left,
+.house.level-4 .wall-right{
+  height: 105px;
+  top: -105px;
+  }
+
+
+html.no-preserve-3d .house{
+    width: 50px;
+    height: 50px;
+    margin: -25px 0 0 -25px;
+    background: url("../img/house.gif") 50% 50% no-repeat;
+    -webkit-background-size: auto 100%;
+         -o-background-size: auto 100%;
+            background-size: auto 100%;
+    }
+
+html.no-preserve-3d .house{
+  -webkit-transform: none;
+  -moz-transform: none;
+  transform: none;
+  }
+html.no-preserve-3d .house *{
+  display: none;
+  }

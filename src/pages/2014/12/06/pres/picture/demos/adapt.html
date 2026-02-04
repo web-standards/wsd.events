@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Адаптация</title>
+	<meta charset="utf-8">
+	<style>
+		html, body {
+			margin:0;
+			padding:0;
+			}
+		img {
+			width:100%;
+			max-width:100%;
+			}
+		@media (min-width:600px) {
+			img {
+				width:50%;
+				}
+			}
+	</style>
+</head>
+<body>
+	<img
+		src="400.png"
+		srcset="400.png 400w, 800.png 800w, 1200.png 1200w"
+		sizes="(min-width:600px) 50vw, 100vw">
+</body>
+</html>

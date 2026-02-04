@@ -1,0 +1,74 @@
+/*!
+	Video plugin for Shower, HTML presentation engine (github.com/shower/shower)
+
+	Browser support: latest versions of all major browsers
+
+	@url github.com/operatino/shower-video
+	@author Robert Haritonov <r@rhr.me>
+	@twitter @operatino
+*/
+
+/*
+    TODO:
+    * build with preprocessor
+*/
+
+
+// Layout
+$width:1024px; // Slide width, permanent in most cases
+$height:768px; // Slide height, 640px for 16/10, 768px for 4/3
+$ratio:'';
+
+// Ratio
+@if $height == 640px {
+	$ratio:'16x10';
+}
+@if $height == 768px {
+	$ratio:'4x3';
+}
+
+
+/*
+
+    .video_wrapper - generated automatically
+        video
+
+*/
+
+
+video {
+	background-color: #000; /* for overlaying fallback text */
+	}
+
+/* Hiding all videos by default, to stop browser crashing from multiple video init */
+.mobile .video_wrapper {
+	display: none;
+	}
+
+/* Making video above all content in cover mode by default */
+.slide.cover video:not(.background) {z-index: 1}
+
+/*
+    iPads wont calculate proporcional dimensions by themselves
+    So we'll do it for it, assuming that video is 16:9
+*/
+.ipad .slide.cover.w video {
+    width: 1024px;
+    height: 576px;
+    }
+
+.ipad .slide.cover.h video {
+    width: $height/9*16;
+    height: $height;
+    }
+
+/* Turning off video stretch for iphone */
+.iphone .slide.cover .video_wrapper {
+	position: relative; /* making video stretch relatively to its wrapper fo mobile devices */
+	height: 300px;
+	}
+
+.iphone .slide.cover .video_wrapper video {
+    width: 100%;
+    height: 100%;
+	}

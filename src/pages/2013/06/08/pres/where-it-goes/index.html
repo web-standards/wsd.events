@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+
+<html lang="ru-RU">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Куда катится этот мир?</title>
+	<link rel="stylesheet" href="_styles/all.css">
+	<!--[if lt IE 9]><link rel="stylesheet" href="_styles/ie-lt-9.css"><![endif]-->
+	<!--[if lt IE 8]><link rel="stylesheet" href="_styles/ie-lt-8.css"><![endif]-->
+	<!--[if lt IE 9]><script src="_scripts/html5.js"></script><![endif]-->
+</head>
+
+<body>
+
+	<div class="wrapper">
+
+		<article class="slide intro" id="1">
+			<h1 class="intro__title">Куда катится этот мир?</h1>
+			<footer class="about-author vcard">
+				<p class="about-author__name fn n"><span class="first-name">Артемий</span> <span class="last-name">Ломов</span></p>
+				<ul class="about-author__contacts">
+					<li class="about-author__contacts__item"><a href="http://lomov.ru/" lang="en-US" class="url">lomov.ru</a></li>
+					<li class="about-author__contacts__item"><a href="mailto:artemy@lomov.ru" lang="en-US" class="email">artemy@lomov.ru</a></li>
+				</ul>
+			</footer>
+		</article>
+
+		<article class="slide generic bulky" id="2">
+			<figure><a href="http://www.nic.ru/" lang="en-US"><img src="_images/ru-center.svg" alt="RU-CENTER" width="351" height="150"></a></figure>
+			<ul>
+				<li>Исследуем <em class="accent">инфраструктуру Интернета</em> во&#160;всех проявлениях</li>
+				<li><em class="accent">Публикуем</em> результаты на&#160;сайте <a href="http://stat.nic.ru/" lang="en-US">stat.nic.ru</a></li>
+				<li><em class="accent">Мониторинг распространенности веб-технологий</em>&#160;— один из&#160;свежих проектов</li>
+			</ul>
+		</article>
+
+		<article class="slide topic" id="3">
+			<h2 class="topic__title">Что, как и&#160;зачем</h2>
+		</article>
+
+		<article class="slide generic" id="4">
+			<h3>Вкратце</h3>
+			<ul>
+				<li>Исследуются <em class="accent">российские и&#160;зарубежные</em> веб-узлы</li>
+				<li>Анализируются <em class="accent">десятки признаков</em> и&#160;показателей</li>
+				<li>Накапливается и&#160;систематизируется <em class="accent">интересная статистика</em></li>
+			</ul>
+		</article>
+
+		<article class="slide generic" id="5">
+			<h3>Технология</h3>
+			<ul>
+				<li>В&#160;основе&#160;— робот, <em class="accent">«паук»</em>, опрашивающий хосты из&#160;заданного списка по&#160;протоколу <abbr title="HyperText Transfer Protocol" lang="en-US">HTTP</abbr></li>
+				<li>Имеет <em class="accent">собственный</em> <code>User-Agent</code></li>
+				<li><em class="accent">Поведение</em> подробно <a href="http://monoid.nic.ru/">задокументировано</a></li>
+			</ul>
+		</article>
+
+		<article class="slide generic bulky" id="6">
+			<h3>Обработанные выборки. «Рунет»</h3>
+			<ul>
+				<li>Хосты в&#160;доменах второго уровня&#160;<code>.RU</code>, делегированных и&#160;не&#160;размещенных на&#160;парковках&#160;— <em class="accent nobr">порядка 3 миллионов × 7 раз</em></li>
+				<li>Хосты в&#160;делегированных доменах&#160;<code>.РФ</code>&#160;— <em class="accent">573&#160;тысячи</em></li>
+				<li>Хосты в&#160;делегированных доменах&#160;<code>.SU</code>&#160;— <em class="accent">95&#160;тысяч</em></li>
+			</ul>
+		</article>
+
+		<article class="slide generic" id="7">
+			<h3>Обработанные выборки. «Общемировой веб»</h3>
+			<ul>
+				<li>Хосты в&#160;случайных делегированных доменах&#160;<code>.COM</code>&#160;— <em class="accent">1&#160;миллион</em>, <em class="accent">3&#160;миллиона</em></li>
+				<li>Веб-ресурсы, занимающие верхние позиции в&#160;общемировом рейтинге <a href="http://www.alexa.com/" lang="en-US">Alexa</a>&#160;— <em class="accent nobr">1 миллион × 2 раза</em></li>
+			</ul>
+		</article>
+
+		<article class="slide generic bulky" id="8">
+			<h3>Исследуемые особенности стороны сервера</h3>
+			<ul>
+				<li><em class="accent">Доступность</em> хостов по&#160;протоколу <abbr title="HyperText Transfer Protocol" lang="en-US">HTTP</abbr></li>
+				<li>Работоспособность <em class="accent">алиасов</em> с&#160;и&#160;без&#160;<code>www.</code></li>
+				<li>Наличие <em class="accent">индексных <abbr title="HyperText Markup Language" lang="en-US">HTML</abbr>-страниц</em></li>
+				<li>Наиболее <em class="accent">общеупотребительные <abbr title="Content Management Systems" lang="en-US">CMS</abbr></em> и&#160;их версии</li>
+				<li>Наиболее <em class="accent">популярные веб-серверы</em> и&#160;их&#160;версии</li>
+			</ul>
+		</article>
+
+		<article class="slide generic bulky" id="9">
+			<h3>Исследуемые особенности стороны клиента</h3>
+			<ul>
+				<li><em class="accent">Кодировки</em> содержимого</li>
+				<li><em class="accent">Объемы</em> <abbr title="HyperText Markup Language" lang="en-US">HTML</abbr>-кода</li>
+				<li><em class="accent">Длительности</em> загрузки индексных страниц</li>
+				<li>Заданные конструкции <abbr title="HyperText Markup Language" lang="en-US">HTML</abbr>-кода, соблюдение <em class="accent">веб-стандартов</em></li>
+			</ul>
+		</article>
+
+		<article class="slide generic" id="10">
+			<h3>Объекты исследования</h3>
+			<ul>
+				<li><em class="accent"><abbr title="HyperText Transfer Protocol" lang="en-US">HTTP</abbr>-заголовок</em> сообщения ответа на&#160;<span lang="en-US">GET</span>-запрос ресурса&#160;<code>/</code></li>
+				<li><em class="accent"><abbr title="HyperText Markup Language" lang="en-US">HTML</abbr>-код</em> индексной страницы</li>
+				<li><em class="accent">Коды статуса</em> <abbr title="HyperText Transfer Protocol" lang="en-US">HTTP</abbr>-ответов на&#160;<span lang="en-US">HEAD</span>-запросы нескольких десятков <abbr title="Uniform Resource Locators" lang="en-US">URL</abbr>, характерных для различных <abbr title="Content Management Systems" lang="en-US">CMS</abbr></li>
+			</ul>
+		</article>
+
+		<article class="slide generic" id="11">
+			<h3>Принципы анализа <abbr title="HyperText Markup Language" lang="en-US">HTML</abbr>-кода</h3>
+			<ol>
+				<li>Простейший <em lang="en-US" class="accent">tokenizer</em> (как это по-русски?..) последовательно проходит <abbr title="HyperText Markup Language" lang="en-US">HTML</abbr>-код и&#160;разделяет его на&#160;составляющие</li>
+				<li>Интересные вхождения внутрь этих составляющих детектируются при помощи <em class="accent">регулярных выражений</em></li>
+			</ol>
+		</article>
+
+		<article class="slide generic" id="12">
+			<h3><a href="http://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags/1732454#1732454" lang="en-US">StackOverflow</a>:</h3>
+			<blockquote lang="en-US">«Всякий раз, когда ты&#160;пытаешься <em class="accent">парсить <abbr title="HyperText Markup Language" lang="en-US">HTML</abbr> регулярными выражениями</em>, сын нечестивый умывается кровью девственниц, и&#160;русские хакеры павнят твое веб-приложение»</blockquote>
+		</article>
+
+		<article class="slide topic" id="13">
+			<h2 class="topic__title">Пара слов об&#160;общей картине</h2>
+		</article>
+
+		<article class="slide generic" id="14">
+			<h3>Откликнувшиеся веб-узлы</h3>
+			<figure class="bar-chart bar-chart_3-bars">
+				<div class="bar-chart__body bar-chart__body_lowest-0 bar-chart__body_highest-100">
+					<span class="bar-chart__bar bar-chart__bar_type-1" style="height: 79%"></span><span class="bar-chart__bar bar-chart__bar_type-2" style="height: 67%"></span><span class="bar-chart__bar bar-chart__bar_type-3" style="height: 86%"></span>
+					<span class="bar-chart__value bar-chart__value_highest">100%</span>
+					<span class="bar-chart__value bar-chart__value_lowest">0%</span>
+				</div>
+				<figcaption class="bar-chart__legend">
+					<p class="bar-chart__legend__caption"><code>.RU</code>, <em class="accent">79%</em></p>
+					<p class="bar-chart__legend__caption"><code>.COM</code>, <em class="accent">67%</em></p>
+					<p class="bar-chart__legend__caption"><span lang="en-US">Alexa</span>, <em class="accent">86%</em></p>
+				</figcaption>
+			</figure>
+		</article>
+
+		<article class="slide generic" id="15">
+			<h3>Обнаружения одной из&#160;популярных <abbr title="Content Management Systems" lang="en-US">CMS</abbr></h3>
+			<figure class="bar-chart bar-chart_3-bars">
+				<div class="bar-chart__body bar-chart__body_stretched bar-chart__body_lowest-0">
+					<span class="bar-chart__bar bar-chart__bar_type-1" style="height: 72%"></span><span class="bar-chart__bar bar-chart__bar_type-2" style="height: 25%"></span><span class="bar-chart__bar bar-chart__bar_type-3" style="height: 62%"></span>
+					<span class="bar-chart__value bar-chart__value_highest">40%</span>
+					<span class="bar-chart__value bar-chart__value_lowest">0%</span>
+				</div>
+				<figcaption class="bar-chart__legend">
+					<p class="bar-chart__legend__caption"><code>.RU</code>, <em class="accent">29%</em></p>
+					<p class="bar-chart__legend__caption"><code>.COM</code>, <em class="accent">10%</em></p>
+					<p class="bar-chart__legend__caption"><span lang="en-US">Alexa</span>, <em class="accent">25%</em></p>
+				</figcaption>
+			</figure>
+		</article>
+
+		<article class="slide generic" id="16">
+			<h3>Популярные <abbr title="Content Management Systems" lang="en-US">CMS</abbr>, <code>.RU</code></h3>
+			<figure class="bar-chart bar-chart_7-bars">
+				<div class="bar-chart__body bar-chart__body_stretched bar-chart__body_lowest-0">
+					<span class="bar-chart__bar bar-chart__bar_type-1" style="height: 14%"></span><span class="bar-chart__bar bar-chart__bar_type-2" style="height: 75%"></span><span class="bar-chart__bar bar-chart__bar_type-3" style="height: 77%"></span><span class="bar-chart__bar bar-chart__bar_type-4" style="height: 10%"></span><span class="bar-chart__bar bar-chart__bar_type-5" style="height: 18%"></span><span class="bar-chart__bar bar-chart__bar_type-6" style="height: 4%"></span><span class="bar-chart__bar bar-chart__bar_type-7" style="height: 2%"></span>
+					<span class="bar-chart__value bar-chart__value_highest">50%</span>
+					<span class="bar-chart__value bar-chart__value_lowest">0%</span>
+				</div>
+				<figcaption class="bar-chart__legend super-extra-bulky">
+					<p class="bar-chart__legend__caption"><span lang="en-US">Dru&shy;pal</span>, <em class="accent">7%</em></p>
+					<p class="bar-chart__legend__caption"><span lang="en-US">Word&shy;Press</span>, <em class="accent">38%</em></p>
+					<p class="bar-chart__legend__caption"><span lang="en-US">Joom&shy;la!</span>, <em class="accent">38%</em></p>
+					<p class="bar-chart__legend__caption"><span lang="en-US">MODx</span>, <em class="accent">5%</em></p>
+					<p class="bar-chart__legend__caption">«1С-<wbr>Бит&shy;рикс», <em class="accent">9%</em></p>
+					<p class="bar-chart__legend__caption"><span lang="en-US">UMI.<wbr><abbr title="Content Management System">CMS</abbr></span>, <em class="accent">2%</em></p>
+					<p class="bar-chart__legend__caption"><span lang="en-US">NetCat</span>, <em class="accent">1%</em></p>
+				</figcaption>
+			</figure>
+		</article>
+
+		<article class="slide generic" id="17">
+			<h3>Популярные <abbr title="Content Management Systems" lang="en-US">CMS</abbr>, <code>.COM</code></h3>
+			<figure class="bar-chart bar-chart_7-bars">
+				<div class="bar-chart__body bar-chart__body_lowest-0 bar-chart__body_highest-100">
+					<span class="bar-chart__bar bar-chart__bar_type-1" style="height: 4%"></span><span class="bar-chart__bar bar-chart__bar_type-2" style="height: 78%"></span><span class="bar-chart__bar bar-chart__bar_type-3" style="height: 17%"></span><span class="bar-chart__bar bar-chart__bar_type-4" style="height: .5%"></span><span class="bar-chart__bar bar-chart__bar_type-5" style="height: .1%"></span><span class="bar-chart__bar bar-chart__bar_type-6" style="height: .2%"></span><span class="bar-chart__bar bar-chart__bar_type-7" style="height: .01%"></span>
+					<span class="bar-chart__value bar-chart__value_highest">100%</span>
+					<span class="bar-chart__value bar-chart__value_lowest">0%</span>
+				</div>
+				<figcaption class="bar-chart__legend super-extra-bulky">
+					<p class="bar-chart__legend__caption"><span lang="en-US">Dru&shy;pal</span>, <em class="accent">4%</em></p>
+					<p class="bar-chart__legend__caption"><span lang="en-US">Word&shy;Press</span>, <em class="accent">78%</em></p>
+					<p class="bar-chart__legend__caption"><span lang="en-US">Joom&shy;la!</span>, <em class="accent">17%</em></p>
+					<p class="bar-chart__legend__caption"><span lang="en-US">MODx</span>, <em class="accent">0%</em></p>
+					<p class="bar-chart__legend__caption">«1С-<wbr>Бит&shy;рикс», <em class="accent">0%</em></p>
+					<p class="bar-chart__legend__caption"><span lang="en-US">UMI.<wbr><abbr title="Content Management System">CMS</abbr></span>, <em class="accent">0%</em></p>
+					<p class="bar-chart__legend__caption"><span lang="en-US">NetCat</span>, <em class="accent">0%</em></p>
+				</figcaption>
+			</figure>
+		</article>
+
+		<article class="slide generic" id="18">
+			<h3>Популярные <abbr title="Content Management Systems" lang="en-US">CMS</abbr>, <span lang="en-US">Alexa</span></h3>
+			<figure class="bar-chart bar-chart_7-bars">
+				<div class="bar-chart__body bar-chart__body_lowest-0 bar-chart__body_highest-100">
+					<span class="bar-chart__bar bar-chart__bar_type-1" style="height: 9%"></span><span class="bar-chart__bar bar-chart__bar_type-2" style="height: 74%"></span><span class="bar-chart__bar bar-chart__bar_type-3" style="height: 14%"></span><span class="bar-chart__bar bar-chart__bar_type-4" style="height: 1%"></span><span class="bar-chart__bar bar-chart__bar_type-5" style="height: 2%"></span><span class="bar-chart__bar bar-chart__bar_type-6" style="height: 1%"></span><span class="bar-chart__bar bar-chart__bar_type-7" style="height: .1%"></span>
+					<span class="bar-chart__value bar-chart__value_highest">100%</span>
+					<span class="bar-chart__value bar-chart__value_lowest">0%</span>
+				</div>
+				<figcaption class="bar-chart__legend super-extra-bulky">
+					<p class="bar-chart__legend__caption"><span lang="en-US">Dru&shy;pal</span>, <em class="accent">9%</em></p>
+					<p class="bar-chart__legend__caption"><span lang="en-US">Word&shy;Press</span>, <em class="accent">74%</em></p>
+					<p class="bar-chart__legend__caption"><span lang="en-US">Joom&shy;la!</span>, <em class="accent">14%</em></p>
+					<p class="bar-chart__legend__caption"><span lang="en-US">MODx</span>, <em class="accent">1%</em></p>
+					<p class="bar-chart__legend__caption">«1С-<wbr>Бит&shy;рикс», <em class="accent">2%</em></p>
+					<p class="bar-chart__legend__caption"><span lang="en-US">UMI.<wbr><abbr title="Content Management System">CMS</abbr></span>, <em class="accent">1%</em></p>
+					<p class="bar-chart__legend__caption"><span lang="en-US">NetCat</span>, <em class="accent">0%</em></p>
+				</figcaption>
+			</figure>
+		</article>
+
+		<article class="slide topic" id="19">
+			<h2 class="topic__title">Доктайпы и&#160;режимы рендеринга</h2>
+		</article>
+
+		<article class="slide generic" id="20">
+			<h3>Доктайпы как таковые</h3>
+			<figure class="bar-chart bar-chart_3-bars">
+				<div class="bar-chart__body bar-chart__body_lowest-0 bar-chart__body_highest-100">
+					<span class="bar-chart__bar bar-chart__bar_type-1" style="height: 82%"></span><span class="bar-chart__bar bar-chart__bar_type-2" style="height: 64%"></span><span class="bar-chart__bar bar-chart__bar_type-3" style="height: 90%"></span>
+					<span class="bar-chart__value bar-chart__value_highest">100%</span>
+					<span class="bar-chart__value bar-chart__value_lowest">0%</span>
+				</div>
+				<figcaption class="bar-chart__legend">
+					<p class="bar-chart__legend__caption"><code>.RU</code>, <em class="accent">82%</em></p>
+					<p class="bar-chart__legend__caption"><code>.COM</code>, <em class="accent">64%</em></p>
+					<p class="bar-chart__legend__caption"><span lang="en-US">Alexa</span>, <em class="accent">90%</em></p>
+				</figcaption>
+			</figure>
+		</article>
+
+		<article class="slide generic" id="21">
+			<h3><span lang="en-US">Standards-Mode</span>-доктайпы</h3>
+			<figure class="bar-chart bar-chart_3-bars">
+				<div class="bar-chart__body bar-chart__body_lowest-0 bar-chart__body_highest-100">
+					<span class="bar-chart__bar bar-chart__bar_type-1" style="height: 71%"></span><span class="bar-chart__bar bar-chart__bar_type-2" style="height: 56%"></span><span class="bar-chart__bar bar-chart__bar_type-3" style="height: 83%"></span>
+					<span class="bar-chart__value bar-chart__value_highest">100%</span>
+					<span class="bar-chart__value bar-chart__value_lowest">0%</span>
+				</div>
+				<figcaption class="bar-chart__legend">
+					<p class="bar-chart__legend__caption"><code>.RU</code>, <em class="accent">71%</em></p>
+					<p class="bar-chart__legend__caption"><code>.COM</code>, <em class="accent">56%</em></p>
+					<p class="bar-chart__legend__caption"><span lang="en-US">Alexa</span>, <em class="accent">83%</em></p>
+				</figcaption>
+			</figure>
+		</article>
+
+		<article class="slide generic" id="22">
+			<h3>Разновидности доктайпов, <code>.RU</code></h3>
+			<figure class="bar-chart bar-chart_8-bars">
+				<div class="bar-chart__body bar-chart__body_stretched bar-chart__body_lowest-0">
+					<span class="bar-chart__bar bar-chart__bar_type-1" style="height: 30%"></span><span class="bar-chart__bar bar-chart__bar_type-2" style="height: 14%"></span><span class="bar-chart__bar bar-chart__bar_type-3" style="height: 19%"></span><span class="bar-chart__bar bar-chart__bar_type-4" style="height: 74%"></span><span class="bar-chart__bar bar-chart__bar_type-5" style="height: 2%"></span><span class="bar-chart__bar bar-chart__bar_type-6" style="height: 14%"></span><span class="bar-chart__bar bar-chart__bar_type-7" style="height: 8%"></span><span class="bar-chart__bar bar-chart__bar_type-9" style="height: 37%"></span>
+					<span class="bar-chart__value bar-chart__value_highest">50%</span>
+					<span class="bar-chart__value bar-chart__value_lowest">0%</span>
+				</div>
+				<figcaption class="bar-chart__legend extremely-bulky">
+					<p class="bar-chart__legend__caption"><abbr title="HyperText Markup Language Level&#160;5" lang="en-US">HTML5</abbr>, <em class="accent">15%</em></p>
+					<p class="bar-chart__legend__caption"><abbr title="HyperText Markup Language" lang="en-US">HTML</abbr> 4.01 (<abbr title="Standards Mode" lang="en-US">SM</abbr>), <em class="accent">7%</em></p>
+					<p class="bar-chart__legend__caption"><abbr title="eXtensible HyperText Markup Language" lang="en-US">XHTML</abbr> 1.0 <span lang="en-US">Strict</span>, <em class="accent">10%</em></p>
+					<p class="bar-chart__legend__caption"><abbr title="eXtensible HyperText Markup Language" lang="en-US">XHTML</abbr> 1.0 <span lang="en-US">Transi&shy;tional</span>, <em class="accent">37%</em></p>
+					<p class="bar-chart__legend__caption"><abbr title="eXtensible HyperText Markup Language" lang="en-US">XHTML</abbr> 1.1, <em class="accent">1%</em></p>
+					<p class="bar-chart__legend__caption"><abbr title="HyperText Markup Language" lang="en-US">HTML</abbr> 4.0/4.01 (<abbr title="Quirks Mode" lang="en-US">QM</abbr>), <em class="accent">7%</em></p>
+					<p class="bar-chart__legend__caption">Другой, <em class="accent">4%</em></p>
+					<p class="bar-chart__legend__caption">Никакой, <em class="accent">18%</em></p>
+				</figcaption>
+			</figure>
+		</article>
+
+		<article class="slide generic" id="23">
+			<h3>Разновидности доктайпов, <code>.COM</code></h3>
+			<figure class="bar-chart bar-chart_8-bars">
+				<div class="bar-chart__body bar-chart__body_stretched bar-chart__body_lowest-0">
+					<span class="bar-chart__bar bar-chart__bar_type-1" style="height: 22%"></span><span class="bar-chart__bar bar-chart__bar_type-2" style="height: 16%"></span><span class="bar-chart__bar bar-chart__bar_type-3" style="height: 17%"></span><span class="bar-chart__bar bar-chart__bar_type-4" style="height: 51%"></span><span class="bar-chart__bar bar-chart__bar_type-5" style="height: 1%"></span><span class="bar-chart__bar bar-chart__bar_type-6" style="height: 9%"></span><span class="bar-chart__bar bar-chart__bar_type-7" style="height: 10%"></span><span class="bar-chart__bar bar-chart__bar_type-9" style="height: 73%"></span>
+					<span class="bar-chart__value bar-chart__value_highest">50%</span>
+					<span class="bar-chart__value bar-chart__value_lowest">0%</span>
+				</div>
+				<figcaption class="bar-chart__legend extremely-bulky">
+					<p class="bar-chart__legend__caption"><abbr title="HyperText Markup Language Level&#160;5" lang="en-US">HTML5</abbr>, <em class="accent">11%</em></p>
+					<p class="bar-chart__legend__caption"><abbr title="HyperText Markup Language" lang="en-US">HTML</abbr> 4.01 (<abbr title="Standards Mode" lang="en-US">SM</abbr>), <em class="accent">8%</em></p>
+					<p class="bar-chart__legend__caption"><abbr title="eXtensible HyperText Markup Language" lang="en-US">XHTML</abbr> 1.0 <span lang="en-US">Strict</span>, <em class="accent">9%</em></p>
+					<p class="bar-chart__legend__caption"><abbr title="eXtensible HyperText Markup Language" lang="en-US">XHTML</abbr> 1.0 <span lang="en-US">Transi&shy;tional</span>, <em class="accent">26%</em></p>
+					<p class="bar-chart__legend__caption"><abbr title="eXtensible HyperText Markup Language" lang="en-US">XHTML</abbr> 1.1, <em class="accent">1%</em></p>
+					<p class="bar-chart__legend__caption"><abbr title="HyperText Markup Language" lang="en-US">HTML</abbr> 4.0/4.01 (<abbr title="Quirks Mode" lang="en-US">QM</abbr>), <em class="accent">5%</em></p>
+					<p class="bar-chart__legend__caption">Другой, <em class="accent">5%</em></p>
+					<p class="bar-chart__legend__caption">Никакой, <em class="accent">36%</em></p>
+				</figcaption>
+			</figure>
+		</article>
+
+		<article class="slide generic" id="24">
+			<h3>Разновидности доктайпов, <span lang="en-US">Alexa</span></h3>
+			<figure class="bar-chart bar-chart_8-bars">
+				<div class="bar-chart__body bar-chart__body_stretched bar-chart__body_lowest-0">
+					<span class="bar-chart__bar bar-chart__bar_type-1" style="height: 43%"></span><span class="bar-chart__bar bar-chart__bar_type-2" style="height: 11%"></span><span class="bar-chart__bar bar-chart__bar_type-3" style="height: 21%"></span><span class="bar-chart__bar bar-chart__bar_type-4" style="height: 87%"></span><span class="bar-chart__bar bar-chart__bar_type-5" style="height: 3%"></span><span class="bar-chart__bar bar-chart__bar_type-6" style="height: 8%"></span><span class="bar-chart__bar bar-chart__bar_type-7" style="height: 6%"></span><span class="bar-chart__bar bar-chart__bar_type-9" style="height: 21%"></span>
+					<span class="bar-chart__value bar-chart__value_highest">50%</span>
+					<span class="bar-chart__value bar-chart__value_lowest">0%</span>
+				</div>
+				<figcaption class="bar-chart__legend extremely-bulky">
+					<p class="bar-chart__legend__caption"><abbr title="HyperText Markup Language Level&#160;5" lang="en-US">HTML5</abbr>, <em class="accent">21%</em></p>
+					<p class="bar-chart__legend__caption"><abbr title="HyperText Markup Language" lang="en-US">HTML</abbr> 4.01 (<abbr title="Standards Mode" lang="en-US">SM</abbr>), <em class="accent">6%</em></p>
+					<p class="bar-chart__legend__caption"><abbr title="eXtensible HyperText Markup Language" lang="en-US">XHTML</abbr> 1.0 <span lang="en-US">Strict</span>, <em class="accent">11%</em></p>
+					<p class="bar-chart__legend__caption"><abbr title="eXtensible HyperText Markup Language" lang="en-US">XHTML</abbr> 1.0 <span lang="en-US">Transi&shy;tional</span>, <em class="accent">43%</em></p>
+					<p class="bar-chart__legend__caption"><abbr title="eXtensible HyperText Markup Language" lang="en-US">XHTML</abbr> 1.1, <em class="accent">1%</em></p>
+					<p class="bar-chart__legend__caption"><abbr title="HyperText Markup Language" lang="en-US">HTML</abbr> 4.0/4.01 (<abbr title="Quirks Mode" lang="en-US">QM</abbr>), <em class="accent">4%</em></p>
+					<p class="bar-chart__legend__caption">Другой, <em class="accent">3%</em></p>
+					<p class="bar-chart__legend__caption">Никакой, <em class="accent">10%</em></p>
+				</figcaption>
+			</figure>
+		</article>
+
+		<article class="slide generic super-extra-bulky" id="25">
+			<h3>Рост распространенности доктайпа <abbr title="HyperText Markup Language Level&#160;5" lang="en-US">HTML5</abbr>, <code>.RU</code></h3>
+			<figure class="bar-chart bar-chart_6-bars">
+				<div class="bar-chart__body bar-chart__body_stretched bar-chart__body_iceberg">
+					<span class="bar-chart__bar bar-chart__bar_type-2" style="height: 2%"></span><span class="bar-chart__bar bar-chart__bar_type-2" style="height: 23%"></span><span class="bar-chart__bar bar-chart__bar_type-2" style="height: 41%"></span><span class="bar-chart__bar bar-chart__bar_type-2" style="height: 56%"></span><span class="bar-chart__bar bar-chart__bar_type-2" style="height: 75%"></span><span class="bar-chart__bar bar-chart__bar_type-2" style="height: 99%"></span>
+					<span class="bar-chart__value bar-chart__value_highest">15%</span>
+					<span class="bar-chart__value bar-chart__value_lowest">10%</span>
+				</div>
+				<figcaption class="bar-chart__legend">
+					<p class="bar-chart__legend__caption"><time datetime="2012-12-01">01.12</time>, <em class="accent">10,11%</em></p>
+					<p class="bar-chart__legend__caption"><time datetime="2012-12-28">28.12</time>, <em class="accent">11,15%</em></p>
+					<p class="bar-chart__legend__caption"><time datetime="2013-02-01">01.02</time>, <em class="accent">12,06%</em></p>
+					<p class="bar-chart__legend__caption"><time datetime="2013-03-07">07.03</time>, <em class="accent">12,82%</em></p>
+					<p class="bar-chart__legend__caption"><time datetime="2013-04-05">05.04</time>, <em class="accent">13,77%</em></p>
+					<p class="bar-chart__legend__caption"><time datetime="2013-05-06">06.05</time>, <em class="accent">14,96%</em></p>
+				</figcaption>
+			</figure>
+			<p>Прирост в&#160;абсолютных цифрах&#160;— <em class="accent">почти&#160;140&#160;тысяч!</em></p>
+		</article>
+
+		<article class="slide topic" id="26">
+			<h2 class="topic__title"><abbr title="HyperText Markup Language Level&#160;5" lang="en-US">HTML5</abbr> завоевывает планету</h2>
+		</article>
+
+		<article class="slide generic bulky" id="27">
+			<h3>Новые структурные элементы <abbr title="HyperText Markup Language Level&#160;5" lang="en-US">HTML5</abbr></h3>
+			<p><code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code>, <code>&lt;audio&gt;</code>, <code>&lt;bdi&gt;</code>, <code>&lt;canvas&gt;</code>, <code>&lt;command&gt;</code>, <code>&lt;datalist&gt;</code>, <code>&lt;details&gt;</code>, <code>&lt;figcaption&gt;</code>, <code>&lt;figure&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;header&gt;</code>, <code>&lt;hgroup&gt;</code>, <code>&lt;keygen&gt;</code>, <code>&lt;mark&gt;</code>, <code>&lt;math&gt;</code>, <code>&lt;meter&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;output&gt;</code>, <code>&lt;progress&gt;</code>, <code>&lt;rp&gt;</code>, <code>&lt;rt&gt;</code>, <code>&lt;ruby&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;source&gt;</code>, <code>&lt;summary&gt;</code>, <code>&lt;svg&gt;</code>, <code>&lt;time&gt;</code>, <code>&lt;track&gt;</code>, <code>&lt;video&gt;</code></p>
+		</article>
+
+		<article class="slide generic" id="28">
+			<h3>Новые структурные элементы <abbr title="HyperText Markup Language Level&#160;5" lang="en-US">HTML5</abbr>. Распространенность</h3>
+			<figure class="bar-chart bar-chart_3-bars">
+				<div class="bar-chart__body bar-chart__body_stretched bar-chart__body_lowest-0">
+					<span class="bar-chart__bar bar-chart__bar_type-1" style="height: 50%"></span><span class="bar-chart__bar bar-chart__bar_type-2" style="height: 36%"></span><span class="bar-chart__bar bar-chart__bar_type-3" style="height: 87%"></span>
+					<span class="bar-chart__value bar-chart__value_highest">15%</span>
+					<span class="bar-chart__value bar-chart__value_lowest">0%</span>
+				</div>
+				<figcaption class="bar-chart__legend">
+					<p class="bar-chart__legend__caption"><code>.RU</code>, <em class="accent">7%</em></p>
+					<p class="bar-chart__legend__caption"><code>.COM</code>, <em class="accent">5%</em></p>
+					<p class="bar-chart__legend__caption"><span lang="en-US">Alexa</span>, <em class="accent">13%</em></p>
+				</figcaption>
+			</figure>
+		</article>
+
+		<article class="slide generic super-extra-bulky" id="29">
+			<h3>Рост распространенности новых элементов <abbr title="HyperText Markup Language Level&#160;5" lang="en-US">HTML5</abbr>, <code>.RU</code></h3>
+			<figure class="bar-chart bar-chart_6-bars">
+				<div class="bar-chart__body bar-chart__body_stretched bar-chart__body_iceberg">
+					<span class="bar-chart__bar bar-chart__bar_type-2" style="height: 11%"></span><span class="bar-chart__bar bar-chart__bar_type-2" style="height: 22%"></span><span class="bar-chart__bar bar-chart__bar_type-2" style="height: 37%"></span><span class="bar-chart__bar bar-chart__bar_type-2" style="height: 53%"></span><span class="bar-chart__bar bar-chart__bar_type-2" style="height: 69%"></span><span class="bar-chart__bar bar-chart__bar_type-2" style="height: 87%"></span>
+					<span class="bar-chart__value bar-chart__value_highest">8%</span>
+					<span class="bar-chart__value bar-chart__value_lowest">4%</span>
+				</div>
+				<figcaption class="bar-chart__legend">
+					<p class="bar-chart__legend__caption"><time datetime="2012-12-01">01.12</time>, <em class="accent">4,43%</em></p>
+					<p class="bar-chart__legend__caption"><time datetime="2012-12-28">28.12</time>, <em class="accent">4,86%</em></p>
+					<p class="bar-chart__legend__caption"><time datetime="2013-02-01">01.02</time>, <em class="accent">5,47%</em></p>
+					<p class="bar-chart__legend__caption"><time datetime="2013-03-07">07.03</time>, <em class="accent">6,13%</em></p>
+					<p class="bar-chart__legend__caption"><time datetime="2013-04-05">05.04</time>, <em class="accent">6,77%</em></p>
+					<p class="bar-chart__legend__caption"><time datetime="2013-05-06">06.05</time>, <em class="accent">7,47%</em></p>
+				</figcaption>
+			</figure>
+			<p>Прирост в&#160;абсолютных цифрах&#160;— <em class="accent">более&#160;80&#160;тысяч</em></p>
+		</article>
+
+		<article class="slide generic bulky" id="30">
+		<h3>Новые типы полей ввода <abbr title="HyperText Markup Language" lang="en-US">HTML</abbr>-форм</h3>
+			<ul>
+			<li>Новые <em class="accent">атрибуты</em> элемента <code>&lt;input&gt;</code>: <code>autocomplete</code>, <code>dirname</code>, <code>list</code>, <code>max</code>, <code>min</code>, <code>multiple</code>, <code>pattern</code>, <code>placeholder</code>, <code>step</code></li>
+			<li>Новые разрешенные <em class="accent">значения</em> атрибута <code>type</code> элемента <code>&lt;input&gt;</code>: <code>color</code>, <code>date</code>, <code>datetime</code>, <code>datetime-local</code>, <code>email</code>, <code>month</code>, <code>number</code>, <code>range</code>, <code>search</code>, <code>tel</code>, <code>time</code>, <code>url</code>, <code>week</code></li>
+			</ul>
+		</article>
+
+		<article class="slide generic" id="31">
+			<h3>Новые типы полей ввода <abbr title="HyperText Markup Language" lang="en-US">HTML</abbr>-форм. Распространенность</h3>
+			<figure class="bar-chart bar-chart_3-bars">
+				<div class="bar-chart__body bar-chart__body_stretched bar-chart__body_lowest-0">
+					<span class="bar-chart__bar bar-chart__bar_type-1" style="height: 27%"></span><span class="bar-chart__bar bar-chart__bar_type-2" style="height: 19%"></span><span class="bar-chart__bar bar-chart__bar_type-3" style="height: 79%"></span>
+					<span class="bar-chart__value bar-chart__value_highest">15%</span>
+					<span class="bar-chart__value bar-chart__value_lowest">0%</span>
+				</div>
+				<figcaption class="bar-chart__legend">
+					<p class="bar-chart__legend__caption"><code>.RU</code>, <em class="accent">4%</em></p>
+					<p class="bar-chart__legend__caption"><code>.COM</code>, <em class="accent">3%</em></p>
+					<p class="bar-chart__legend__caption"><span lang="en-US">Alexa</span>, <em class="accent">12%</em></p>
+				</figcaption>
+			</figure>
+		</article>
+
+		<article class="slide topic" id="32">
+			<h2 class="topic__title">«Проблемные» конструкции <abbr title="HyperText Markup Language" lang="en-US">HTML</abbr></h2>
+		</article>
+
+		<article class="slide generic" id="33">
+			<h3>1.&#160;Опротестованные</h3>
+			<p>Объявлены как <em lang="en-US" class="accent">deprecated</em> в&#160;спецификации <a href="http://www.w3.org/TR/html4/"><abbr title="HyperText Markup Language" lang="en-US">HTML</abbr>&#160;4.01</a> и&#160;в&#160;итоге <em class="accent">упразднены</em> в&#160;<a href="http://www.w3.org/TR/html5/"><abbr title="HyperText Markup Language Level&#160;5" lang="en-US">HTML5</abbr></a></p>
+		</article>
+
+		<article class="slide generic" id="34">
+			<h3>Опротестованные элементы</h3>
+			<p><code>&lt;applet&gt;</code>, <code>&lt;basefont&gt;</code>, <code>&lt;center&gt;</code>, <code>&lt;dir&gt;</code>, <code>&lt;font&gt;</code>, <code>&lt;isindex&gt;</code>, <code>&lt;strike&gt;</code></p>
+		</article>
+
+		<article class="slide generic" id="35">
+			<h3>Опротестованные элементы. Распространенность</h3>
+			<figure class="bar-chart bar-chart_3-bars">
+				<div class="bar-chart__body bar-chart__body_stretched bar-chart__body_lowest-0">
+					<span class="bar-chart__bar bar-chart__bar_type-1" style="height: 63%"></span><span class="bar-chart__bar bar-chart__bar_type-2" style="height: 37%"></span><span class="bar-chart__bar bar-chart__bar_type-3" style="height: 67%"></span>
+					<span class="bar-chart__value bar-chart__value_highest">50%</span>
+					<span class="bar-chart__value bar-chart__value_lowest">0%</span>
+				</div>
+				<figcaption class="bar-chart__legend">
+					<p class="bar-chart__legend__caption"><code>.RU</code>, <em class="accent">31%</em></p>
+					<p class="bar-chart__legend__caption"><code>.COM</code>, <em class="accent">19%</em></p>
+					<p class="bar-chart__legend__caption"><span lang="en-US">Alexa</span>, <em class="accent">33%</em></p>
+				</figcaption>
+			</figure>
+		</article>
+
+		<article class="slide generic bulky" id="36">
+			<h3>Опротестованные атрибуты</h3>
+			<ul>
+				<li><code>align</code>, <code>alink</code>, <code>background</code>, <code>bgcolor</code>, <code>clear</code>, <code>code</code>, <code>color</code>, <code>compact</code>, <code>face</code>, <code>hspace</code>, <code>language</code>, <code>link</code>, <code>noshade</code>, <code>nowrap</code>, <code>object</code>, <code>prompt</code>, <code>text</code>, <code>version</code>, <code>vlink</code>, <code>vspace</code>&#160;— <em class="accent">без оговорок</em></li>
+				<li><code>border</code>&#160;— <em class="accent">за&#160;исключением случая</em> использования в&#160;контексте элемента <code>&lt;table&gt;</code> со&#160;значением&#160;<code>1</code></li>
+			</ul>
+		</article>
+
+		<article class="slide generic extra-bulky" id="37">
+			<h3>Опротестованные атрибуты. Продолжение</h3>
+			<ul>
+				<li><code>height</code>, <code>width</code>&#160;— <em class="accent">за&#160;исключением случаев</em> использования в&#160;контексте элементов <code>&lt;canvas&gt;</code>, <code>&lt;embed&gt;</code>, <code>&lt;iframe&gt;</code>, <code>&lt;img&gt;</code>, <code>&lt;input&gt;</code>, <code>&lt;object&gt;</code>, <code>&lt;video&gt;</code></li>
+				<li><code>size</code>&#160;— <em class="accent">за&#160;исключением случаев</em> использования в&#160;контексте элементов <code>&lt;input&gt;</code> и&#160;<code>&lt;select&gt;</code></li>
+				<li><code>type</code>&#160;— <em class="accent">в&#160;случаях</em> использования в&#160;контексте элементов <code>&lt;li&gt;</code>, <code>&lt;ol&gt;</code>, <code>&lt;ul&gt;</code></li>
+				<li>Средняя распространенность&#160;— <em class="accent">77%</em></li>
+			</ul>
+		</article>
+
+		<article class="slide generic" id="38">
+			<h3>2.&#160;Упраздненные</h3>
+			<p><em class="accent">Не&#160;объявлены</em> как <span lang="en-US">deprecated</span>, но&#160;в&#160;итоге все&#160;же <em class="accent">исключены</em> из&#160;<abbr title="HyperText Markup Language Level&#160;5" lang="en-US">HTML5</abbr></p>
+		</article>
+
+		<article class="slide generic" id="39">
+			<h3>Упраздненные элементы</h3>
+			<ul>
+				<li><code>&lt;acronym&gt;</code>, <code>&lt;big&gt;</code>, <code>&lt;tt&gt;</code></li>
+				<li>Средняя распространенность&#160;— <em class="accent">1%</em></li>
+			</ul>
+		</article>
+
+		<article class="slide generic" id="40">
+			<h3>Упраздненные атрибуты</h3>
+			<ul>
+				<li><code>cellpadding</code>, <code>cellspacing</code>, <code>valign</code></li>
+				<li>Средняя распространенность&#160;— <em class="accent">36%</em></li>
+			</ul>
+		</article>
+
+		<article class="slide generic" id="41">
+			<h3>3.&#160;Реабилитированные</h3>
+			<p>Объявлены как <em lang="en-US" class="accent">deprecated</em>, но&#160;в&#160;итоге <em class="accent">восстановлены</em> в&#160;<abbr title="HyperText Markup Language Level&#160;5" lang="en-US">HTML5</abbr> в&#160;каком-либо новом качестве</p>
+		</article>
+
+		<article class="slide generic" id="42">
+			<h3>Реабилитированные элементы</h3>
+			<ul>
+				<li><code>&lt;menu&gt;</code>, <code>&lt;s&gt;</code>, <code>&lt;u&gt;</code></li>
+				<li>Средняя распространенность&#160;— <em class="accent">6%</em></li>
+			</ul>
+		</article>
+
+		<article class="slide generic" id="43">
+			<h3>Реабилитированные атрибуты</h3>
+			<ul>
+				<li><code>start</code>, <code>target</code>&#160;— <em class="accent">без оговорок</em></li>
+				<li><code>value</code>&#160;— в&#160;контексте <em class="accent">элемента</em> <code>&lt;li&gt;</code></li>
+				<li>Средняя распространенность&#160;— <em class="accent">57%</em></li>
+			</ul>
+		</article>
+
+		<article class="slide generic" id="44">
+			<h3>4.&#160;Фреймовые</h3>
+			<p>Актуальны только в&#160;документах типа <span lang="en-US">Frameset</span> и&#160;<em class="accent">не&#160;используются</em> в&#160;<abbr title="HyperText Markup Language Level&#160;5" lang="en-US">HTML5</abbr></p>
+		</article>
+
+		<article class="slide generic" id="45">
+			<h3>Фреймовые элементы</h3>
+			<p><code>&lt;frame&gt;</code>, <code>&lt;frameset&gt;</code>, <code>&lt;noframes&gt;</code></p>
+		</article>
+
+		<article class="slide generic super-extra-bulky" id="46">
+			<h3>Фреймовые элементы. Распространенность</h3>
+			<figure class="bar-chart bar-chart_3-bars">
+				<div class="bar-chart__body bar-chart__body_stretched bar-chart__body_lowest-0">
+					<span class="bar-chart__bar bar-chart__bar_type-1" style="height: 5%"></span><span class="bar-chart__bar bar-chart__bar_type-2" style="height: 77%"></span><span class="bar-chart__bar bar-chart__bar_type-3" style="height: 8%"></span>
+					<span class="bar-chart__value bar-chart__value_highest">15%</span>
+					<span class="bar-chart__value bar-chart__value_lowest">0%</span>
+				</div>
+				<figcaption class="bar-chart__legend">
+					<p class="bar-chart__legend__caption"><code>.RU</code>, <em class="accent">1%</em></p>
+					<p class="bar-chart__legend__caption"><code>.COM</code>, <em class="accent">12%</em></p>
+					<p class="bar-chart__legend__caption"><span lang="en-US">Alexa</span>, <em class="accent">1%</em></p>
+				</figcaption>
+			</figure>
+			<p><em class="accent">Почти&#160;3%</em>&#160;сайтов в&#160;доменах <code>.COM</code> имеют честные <span lang="en-US">Frameset</span>-доктайпы</p>
+		</article>
+
+		<article class="slide generic" id="47">
+			<h3>Фреймовые атрибуты</h3>
+			<ul>
+				<li><code>marginheight</code>, <code>marginwidth</code>, <code>noresize</code>, <code>scrolling</code></li>
+				<li>Средняя распространенность&#160;— <em class="accent">16%</em></li>
+			</ul>
+		</article>
+
+		<article class="slide generic" id="48">
+			<h3>5.&#160;Нестандартные</h3>
+			<p><em class="accent">Не&#160;описаны</em> ни&#160;в&#160;одной из&#160;официальных спецификаций <abbr title="HyperText Markup Language" lang="en-US">HTML</abbr></p>
+		</article>
+
+		<article class="slide generic" id="49">
+			<h3>Нестандартные элементы</h3>
+			<p><code>&lt;bgsound&gt;</code>, <code>&lt;blink&gt;</code>, <code>&lt;comment&gt;</code>, <code>&lt;marquee&gt;</code>, <code>&lt;multicol&gt;</code>, <code>&lt;nobr&gt;</code>, <code>&lt;noembed&gt;</code>, <code>&lt;noindex&gt;</code>, <code>&lt;plaintext&gt;</code>, <code>&lt;spacer&gt;</code>, <code>&lt;xmp&gt;</code></p>
+		</article>
+
+		<article class="slide generic" id="50">
+			<h3>Нестандартные элементы. Распространенность</h3>
+			<figure class="bar-chart bar-chart_3-bars">
+				<div class="bar-chart__body bar-chart__body_stretched bar-chart__body_lowest-0">
+					<span class="bar-chart__bar bar-chart__bar_type-1" style="height: 84%"></span><span class="bar-chart__bar bar-chart__bar_type-2" style="height: 11%"></span><span class="bar-chart__bar bar-chart__bar_type-3" style="height: 38%"></span>
+					<span class="bar-chart__value bar-chart__value_highest">20%</span>
+					<span class="bar-chart__value bar-chart__value_lowest">0%</span>
+				</div>
+				<figcaption class="bar-chart__legend">
+					<p class="bar-chart__legend__caption"><code>.RU</code>, <em class="accent">17%</em></p>
+					<p class="bar-chart__legend__caption"><code>.COM</code>, <em class="accent">2%</em></p>
+					<p class="bar-chart__legend__caption"><span lang="en-US">Alexa</span>, <em class="accent">8%</em></p>
+				</figcaption>
+			</figure>
+		</article>
+
+		<article class="slide generic" id="51">
+			<h3>Нестандартные атрибуты</h3>
+			<ul>
+				<li><code>bottommargin</code>, <code>leftmargin</code>, <code>rightmargin</code>, <code>topmargin</code></li>
+				<li>Средняя распространенность&#160;— <em class="accent">6%</em></li>
+			</ul>
+		</article>
+
+		<article class="slide generic" id="52">
+			<h3>6.&#160;Легитимизированные</h3>
+			<p>Изначально нестандартные, <em class="accent">«узаконены»</em> в&#160;<abbr title="HyperText Markup Language Level&#160;5" lang="en-US">HTML5</abbr></p>
+		</article>
+
+		<article class="slide generic" id="53">
+			<h3>Легитимизированные элементы</h3>
+			<ul>
+				<li><code>&lt;embed&gt;</code>, <code>&lt;wbr&gt;</code></li>
+				<li>Средняя распространенность&#160;— <em class="accent">8%</em></li>
+			</ul>
+		</article>
+
+		<article class="slide topic" id="54">
+			<h2 class="topic__title">Использование <abbr title="Cascading Style Sheets" lang="en-US">CSS</abbr></h2>
+		</article>
+
+		<article class="slide generic" id="55">
+			<h3><abbr title="Cascading Style Sheets" lang="en-US">CSS</abbr> в&#160;любом виде</h3>
+			<figure class="bar-chart bar-chart_3-bars">
+				<div class="bar-chart__body bar-chart__body_lowest-0 bar-chart__body_highest-100">
+					<span class="bar-chart__bar bar-chart__bar_type-1" style="height: 93%"></span><span class="bar-chart__bar bar-chart__bar_type-2" style="height: 63%"></span><span class="bar-chart__bar bar-chart__bar_type-3" style="height: 95%"></span>
+					<span class="bar-chart__value bar-chart__value_highest">100%</span>
+					<span class="bar-chart__value bar-chart__value_lowest">0%</span>
+				</div>
+				<figcaption class="bar-chart__legend">
+					<p class="bar-chart__legend__caption"><code>.RU</code>, <em class="accent">93%</em></p>
+					<p class="bar-chart__legend__caption"><code>.COM</code>, <em class="accent">63%</em></p>
+					<p class="bar-chart__legend__caption"><span lang="en-US">Alexa</span>, <em class="accent">95%</em></p>
+				</figcaption>
+			</figure>
+		</article>
+
+		<article class="slide generic" id="56">
+			<h3>Внешние таблицы стилей</h3>
+			<figure class="bar-chart bar-chart_3-bars">
+				<div class="bar-chart__body bar-chart__body_lowest-0 bar-chart__body_highest-100">
+					<span class="bar-chart__bar bar-chart__bar_type-1" style="height: 82%"></span><span class="bar-chart__bar bar-chart__bar_type-2" style="height: 48%"></span><span class="bar-chart__bar bar-chart__bar_type-3" style="height: 87%"></span>
+					<span class="bar-chart__value bar-chart__value_highest">100%</span>
+					<span class="bar-chart__value bar-chart__value_lowest">0%</span>
+				</div>
+				<figcaption class="bar-chart__legend">
+					<p class="bar-chart__legend__caption"><code>.RU</code>, <em class="accent">82%</em></p>
+					<p class="bar-chart__legend__caption"><code>.COM</code>, <em class="accent">48%</em></p>
+					<p class="bar-chart__legend__caption"><span lang="en-US">Alexa</span>, <em class="accent">87%</em></p>
+				</figcaption>
+			</figure>
+		</article>
+
+		<article class="slide generic" id="57">
+			<h3>Таблицы стилей внутри <abbr title="HyperText Markup Language" lang="en-US">HTML</abbr>-кода</h3>
+			<figure class="bar-chart bar-chart_3-bars">
+				<div class="bar-chart__body bar-chart__body_lowest-0 bar-chart__body_highest-100">
+					<span class="bar-chart__bar bar-chart__bar_type-1" style="height: 39%"></span><span class="bar-chart__bar bar-chart__bar_type-2" style="height: 33%"></span><span class="bar-chart__bar bar-chart__bar_type-3" style="height: 50%"></span>
+					<span class="bar-chart__value bar-chart__value_highest">100%</span>
+					<span class="bar-chart__value bar-chart__value_lowest">0%</span>
+				</div>
+				<figcaption class="bar-chart__legend">
+					<p class="bar-chart__legend__caption"><code>.RU</code>, <em class="accent">39%</em></p>
+					<p class="bar-chart__legend__caption"><code>.COM</code>, <em class="accent">33%</em></p>
+					<p class="bar-chart__legend__caption"><span lang="en-US">Alexa</span>, <em class="accent">50%</em></p>
+				</figcaption>
+			</figure>
+		</article>
+
+		<article class="slide generic" id="58">
+			<h3><span lang="en-US">Inline</span>-стили</h3>
+			<figure class="bar-chart bar-chart_3-bars">
+				<div class="bar-chart__body bar-chart__body_lowest-0 bar-chart__body_highest-100">
+					<span class="bar-chart__bar bar-chart__bar_type-1" style="height: 79%"></span><span class="bar-chart__bar bar-chart__bar_type-2" style="height: 46%"></span><span class="bar-chart__bar bar-chart__bar_type-3" style="height: 84%"></span>
+					<span class="bar-chart__value bar-chart__value_highest">100%</span>
+					<span class="bar-chart__value bar-chart__value_lowest">0%</span>
+				</div>
+				<figcaption class="bar-chart__legend">
+					<p class="bar-chart__legend__caption"><code>.RU</code>, <em class="accent">79%</em></p>
+					<p class="bar-chart__legend__caption"><code>.COM</code>, <em class="accent">46%</em></p>
+					<p class="bar-chart__legend__caption"><span lang="en-US">Alexa</span>, <em class="accent">84%</em></p>
+				</figcaption>
+			</figure>
+		</article>
+
+		<article class="slide topic" id="59">
+			<h2 class="topic__title">Интересные частности</h2>
+		</article>
+
+		<article class="slide generic bulky" id="60">
+			<h3>Метатеги <code>viewport</code></h3>
+			<figure class="bar-chart bar-chart_3-bars">
+				<div class="bar-chart__body bar-chart__body_stretched bar-chart__body_lowest-0">
+					<span class="bar-chart__bar bar-chart__bar_type-1" style="height: 32%"></span><span class="bar-chart__bar bar-chart__bar_type-2" style="height: 56%"></span><span class="bar-chart__bar bar-chart__bar_type-3" style="height: 85%"></span>
+					<span class="bar-chart__value bar-chart__value_highest">15%</span>
+					<span class="bar-chart__value bar-chart__value_lowest">0%</span>
+				</div>
+				<figcaption class="bar-chart__legend">
+					<p class="bar-chart__legend__caption"><code>.RU</code>, <em class="accent">5%</em></p>
+					<p class="bar-chart__legend__caption"><code>.COM</code>, <em class="accent">8%</em></p>
+					<p class="bar-chart__legend__caption"><span lang="en-US">Alexa</span>, <em class="accent">13%</em></p>
+				</figcaption>
+			</figure>
+			<p>Теме посвящен доклад <a href="http://vimeo.com/channels/wstdays/33180097/">«Прокрустовы окна»</a></p>
+		</article>
+
+		<article class="slide generic super-extra-bulky" id="61">
+			<h3>Рост распространенности метатегов <code>viewport</code>, <code>.RU</code></h3>
+			<figure class="bar-chart bar-chart_6-bars">
+				<div class="bar-chart__body bar-chart__body_stretched bar-chart__body_iceberg">
+					<span class="bar-chart__bar bar-chart__bar_type-2" style="height: 20%"></span><span class="bar-chart__bar bar-chart__bar_type-2" style="height: 37%"></span><span class="bar-chart__bar bar-chart__bar_type-2" style="height: 52%"></span><span class="bar-chart__bar bar-chart__bar_type-2" style="height: 63%"></span><span class="bar-chart__bar bar-chart__bar_type-2" style="height: 79%"></span><span class="bar-chart__bar bar-chart__bar_type-2" style="height: 95%"></span>
+					<span class="bar-chart__value bar-chart__value_highest">5%</span>
+					<span class="bar-chart__value bar-chart__value_lowest">2%</span>
+				</div>
+				<figcaption class="bar-chart__legend">
+					<p class="bar-chart__legend__caption"><time datetime="2012-12-01">01.12</time>, <em class="accent">2,60%</em></p>
+					<p class="bar-chart__legend__caption"><time datetime="2012-12-28">28.12</time>, <em class="accent">3,12%</em></p>
+					<p class="bar-chart__legend__caption"><time datetime="2013-02-01">01.02</time>, <em class="accent">3,55%</em></p>
+					<p class="bar-chart__legend__caption"><time datetime="2013-03-07">07.03</time>, <em class="accent">3,88%</em></p>
+					<p class="bar-chart__legend__caption"><time datetime="2013-04-05">05.04</time>, <em class="accent">4,37%</em></p>
+					<p class="bar-chart__legend__caption"><time datetime="2013-05-06">06.05</time>, <em class="accent">4,84%</em></p>
+				</figcaption>
+			</figure>
+			<p>Прирост в&#160;абсолютных цифрах&#160;— <em class="accent">почти&#160;60&#160;тысяч</em></p>
+		</article>
+
+		<article class="slide generic" id="62">
+			<h3>Условные комментарии для&#160;<abbr title="Internet Explorer" lang="en-US">IE</abbr></h3>
+			<figure class="bar-chart bar-chart_3-bars">
+				<div class="bar-chart__body bar-chart__body_stretched bar-chart__body_lowest-0">
+					<span class="bar-chart__bar bar-chart__bar_type-1" style="height: 69%"></span><span class="bar-chart__bar bar-chart__bar_type-2" style="height: 33%"></span><span class="bar-chart__bar bar-chart__bar_type-3" style="height: 83%"></span>
+					<span class="bar-chart__value bar-chart__value_highest">50%</span>
+					<span class="bar-chart__value bar-chart__value_lowest">0%</span>
+				</div>
+				<figcaption class="bar-chart__legend">
+					<p class="bar-chart__legend__caption"><code>.RU</code>, <em class="accent">34%</em></p>
+					<p class="bar-chart__legend__caption"><code>.COM</code>, <em class="accent">16%</em></p>
+					<p class="bar-chart__legend__caption"><span lang="en-US">Alexa</span>, <em class="accent">42%</em></p>
+				</figcaption>
+			</figure>
+		</article>
+
+		<article class="slide generic bulky" id="63">
+			<h3><abbr title="Блок, элемент, модификатор">БЭМ</abbr>-классы</h3>
+			<ul>
+				<li>Имена классов, удовлетворяющие <em class="accent">регулярному выражению</em>: <code class="nobr">/^(b|i)-\S+__\S+$/</code></li>
+				<li>Речь идет, таким образом, об&#160;осторожной <em class="accent">оценке снизу</em></li>
+				<li>Явление характерно скорее <em class="accent">для Рунета</em></li>
+				<li>Выявлено <em class="accent">8596&#160;сайтов</em>, использующих <abbr title="Блок, элемент, модификатор">БЭМ</abbr>-классы, в&#160;доменах <code>.RU</code></li>
+			</ul>
+		</article>
+
+		<article class="slide generic" id="64">
+			<h3>Кодировка <span class="nobr"><abbr title="Unicode Transformation Format" lang="en-US">UTF</abbr>-8</span></h3>
+			<figure class="bar-chart bar-chart_3-bars">
+				<div class="bar-chart__body bar-chart__body_lowest-0 bar-chart__body_highest-100">
+					<span class="bar-chart__bar bar-chart__bar_type-1" style="height: 50%"></span><span class="bar-chart__bar bar-chart__bar_type-2" style="height: 51%"></span><span class="bar-chart__bar bar-chart__bar_type-3" style="height: 54%"></span>
+					<span class="bar-chart__value bar-chart__value_highest">100%</span>
+					<span class="bar-chart__value bar-chart__value_lowest">0%</span>
+				</div>
+				<figcaption class="bar-chart__legend">
+					<p class="bar-chart__legend__caption"><code>.RU</code>, <em class="accent">50%</em></p>
+					<p class="bar-chart__legend__caption"><code>.COM</code>, <em class="accent">51%</em></p>
+					<p class="bar-chart__legend__caption"><span lang="en-US">Alexa</span>, <em class="accent">54%</em></p>
+				</figcaption>
+			</figure>
+		</article>
+
+		<article class="slide topic" id="65">
+			<h2 class="topic__title">Концепты сайтов</h2>
+		</article>
+
+		<article class="slide generic extra-bulky" id="66">
+			<h3>Сайты будущего</h3>
+			<ul>
+				<li>Используется <em class="accent">доктайп <abbr title="HyperText Markup Language Level&#160;5" lang="en-US">HTML5</abbr></em></li>
+				<li>Используются хотя&#160;бы какие-то <em class="accent">нововведения <abbr title="HyperText Markup Language Level&#160;5" lang="en-US">HTML5</abbr></em></li>
+				<li>Не&#160;используется <em class="accent">никаких нестандартных</em> с&#160;точки зрения <abbr title="HyperText Markup Language Level&#160;5" lang="en-US">HTML5</abbr> элементов и&#160;атрибутов</li>
+				<li><em class="accent">Не</em>&#160;используются <em class="accent"><span lang="en-US">inline</span>-стили</em></li>
+				<li>Используется <em class="accent">метатег</em> <code>viewport</code></li>
+				<li>Используется <em class="accent">кодировка <span class="nobr"><abbr title="Unicode Transformation Format" lang="en-US">UTF</abbr>-8</span></em></li>
+			</ul>
+		</article>
+
+		<article class="slide generic super-extra-bulky" id="67">
+			<h3>Сайты будущего. Распространенность</h3>
+			<figure class="bar-chart bar-chart_3-bars">
+				<div class="bar-chart__body bar-chart__body_stretched bar-chart__body_lowest-0">
+					<span class="bar-chart__bar bar-chart__bar_type-1" style="height: 57%"></span><span class="bar-chart__bar bar-chart__bar_type-2" style="height: 77%"></span><span class="bar-chart__bar bar-chart__bar_type-3" style="height: 57%"></span>
+					<span class="bar-chart__value bar-chart__value_highest">1%</span>
+					<span class="bar-chart__value bar-chart__value_lowest">0%</span>
+				</div>
+				<figcaption class="bar-chart__legend">
+					<p class="bar-chart__legend__caption"><code>.RU</code>, <em class="accent">0,57%</em></p>
+					<p class="bar-chart__legend__caption"><code>.COM</code>, <em class="accent">0,77%</em></p>
+					<p class="bar-chart__legend__caption"><span lang="en-US">Alexa</span>, <em class="accent">0,57%</em></p>
+				</figcaption>
+			</figure>
+			<p>Абсолютное количество таких сайтов в&#160;доменах&#160;<code>.RU</code>&#160;— <em class="accent">13<span class="digits-group">970</span></em></p>
+		</article>
+
+		<article class="slide generic" id="68">
+			<h3>Современные сайты</h3>
+			<ul>
+				<li>Используется <em class="accent">доктайп <abbr title="HyperText Markup Language Level&#160;5" lang="en-US">HTML5</abbr></em></li>
+				<li>Не&#160;используется <em class="accent">никаких нестандартных</em> с&#160;точки зрения <abbr title="HyperText Markup Language Level&#160;5" lang="en-US">HTML5</abbr> элементов и&#160;атрибутов</li>
+				<li><em class="accent">Не</em>&#160;используются <em class="accent"><span lang="en-US">inline</span>-стили</em></li>
+			</ul>
+		</article>
+
+		<article class="slide generic bulky" id="69">
+			<h3>Современные сайты. Распространенность</h3>
+			<figure class="bar-chart bar-chart_3-bars">
+				<div class="bar-chart__body bar-chart__body_stretched bar-chart__body_lowest-0">
+					<span class="bar-chart__bar bar-chart__bar_type-1" style="height: 85%"></span><span class="bar-chart__bar bar-chart__bar_type-2" style="height: 84%"></span><span class="bar-chart__bar bar-chart__bar_type-3" style="height: 61%"></span>
+					<span class="bar-chart__value bar-chart__value_highest">3%</span>
+					<span class="bar-chart__value bar-chart__value_lowest">0%</span>
+				</div>
+				<figcaption class="bar-chart__legend">
+					<p class="bar-chart__legend__caption"><code>.RU</code>, <em class="accent">2,6%</em></p>
+					<p class="bar-chart__legend__caption"><code>.COM</code>, <em class="accent">2,5%</em></p>
+					<p class="bar-chart__legend__caption"><span lang="en-US">Alexa</span>, <em class="accent">1,8%</em></p>
+				</figcaption>
+			</figure>
+		</article>
+
+		<article class="slide generic" id="70">
+			<h3>Сайты разных эпох, сделанные с&#160;оглядкой на&#160;стандарты</h3>
+			<ul>
+				<li>Используется <em class="accent">один из&#160;доктайпов</em>: <abbr title="HyperText Markup Language Level&#160;5" lang="en-US">HTML5</abbr>, <abbr title="HyperText Markup Language" lang="en-US">HTML</abbr>&#160;4.01 <span lang="en-US">Strict</span>, <abbr title="eXtensible HyperText Markup Language" lang="en-US">XHTML</abbr>&#160;1.0 <span lang="en-US">Strict</span>, <abbr title="eXtensible HyperText Markup Language" lang="en-US">XHTML</abbr>+<abbr title="Resource Description Framework through attributes" lang="en-US">RDFa</abbr>&#160;1.0, <abbr title="eXtensible HyperText Markup Language" lang="en-US">XHTML</abbr>&#160;1.1</li>
+				<li><em class="accent">Не</em>&#160;используются <em class="accent">недопустимые в&#160;рамках доктайпа</em> элементы и&#160;атрибуты</li>
+			</ul>
+		</article>
+
+		<article class="slide generic bulky" id="71">
+			<h3>Сайты разных эпох, сделанные с&#160;оглядкой на&#160;стандарты. Распространенность</h3>
+			<figure class="bar-chart bar-chart_3-bars">
+				<div class="bar-chart__body bar-chart__body_stretched bar-chart__body_lowest-0">
+					<span class="bar-chart__bar bar-chart__bar_type-1" style="height: 84%"></span><span class="bar-chart__bar bar-chart__bar_type-2" style="height: 75%"></span><span class="bar-chart__bar bar-chart__bar_type-3" style="height: 82%"></span>
+					<span class="bar-chart__value bar-chart__value_highest">10%</span>
+					<span class="bar-chart__value bar-chart__value_lowest">0%</span>
+				</div>
+				<figcaption class="bar-chart__legend">
+					<p class="bar-chart__legend__caption"><code>.RU</code>, <em class="accent">8%</em></p>
+					<p class="bar-chart__legend__caption"><code>.COM</code>, <em class="accent">7%</em></p>
+					<p class="bar-chart__legend__caption"><span lang="en-US">Alexa</span>, <em class="accent">8%</em></p>
+				</figcaption>
+			</figure>
+		</article>
+
+		<article class="slide generic" id="72">
+			<h3>Сайты темного прошлого</h3>
+			<ul>
+				<li><em class="accent">Доктайпа нет</em>, либо он&#160;переключает браузер в&#160;<span lang="en-US">quirks mode</span></li>
+				<li>Используются элементы или атрибуты, объявленные как <em lang="en-US" class="accent">deprecated</em> в&#160;спецификации <abbr title="HyperText Markup Language" lang="en-US">HTML</abbr>&#160;4.01 или являющиеся <em class="accent">нестандартными</em></li>
+			</ul>
+		</article>
+
+		<article class="slide generic" id="73">
+			<h3>Сайты темного прошлого. Распространенность</h3>
+			<figure class="bar-chart bar-chart_3-bars">
+				<div class="bar-chart__body bar-chart__body_stretched bar-chart__body_lowest-0">
+					<span class="bar-chart__bar bar-chart__bar_type-1" style="height: 56%"></span><span class="bar-chart__bar bar-chart__bar_type-2" style="height: 91%"></span><span class="bar-chart__bar bar-chart__bar_type-3" style="height: 31%"></span>
+					<span class="bar-chart__value bar-chart__value_highest">40%</span>
+					<span class="bar-chart__value bar-chart__value_lowest">0%</span>
+				</div>
+				<figcaption class="bar-chart__legend">
+					<p class="bar-chart__legend__caption"><code>.RU</code>, <em class="accent">22%</em></p>
+					<p class="bar-chart__legend__caption"><code>.COM</code>, <em class="accent">36%</em></p>
+					<p class="bar-chart__legend__caption"><span lang="en-US">Alexa</span>, <em class="accent">12%</em></p>
+				</figcaption>
+			</figure>
+		</article>
+
+		<article class="slide generic" id="74">
+			<h3>Дальнейшее чтение</h3>
+			<p><a href="http://stat.nic.ru/reports/whist-ru/cms2.html">«Мониторинг серверных и&#160;клиентских веб-решений»</a>&#160;— подробнейший отчет о&#160;результатах исследований, включающий почти <em class="accent">40&#160;тысяч&#160;знаков текста</em> и&#160;более <em class="accent">20&#160;диаграмм</em></p>
+		</article>
+
+		<article class="slide thanks" id="75">
+			<h2 class="thanks__title">Спасибо! Вопросы?</h2>
+			<p class="urgent generic">Презентация: <a href="http://lomov.ru/wsd/" lang="en-US">lomov.ru/wsd</a></p>
+			<footer class="about-author vcard">
+				<p class="about-author__name fn n"><span class="first-name">Артемий</span> <span class="last-name">Ломов</span></p>
+				<ul class="about-author__contacts">
+					<li class="about-author__contacts__item"><a href="http://lomov.ru/" lang="en-US" class="url">lomov.ru</a></li>
+					<li class="about-author__contacts__item"><a href="mailto:artemy@lomov.ru" lang="en-US" class="email">artemy@lomov.ru</a></li>
+				</ul>
+			</footer>
+		</article>
+
+	</div>
+
+	<div id="slide-number"></div>
+
+	<!--[if gt IE 8]><!-->
+	<script src="_scripts/switcher.js"></script>
+	<!--<![endif]-->
+
+</body>
+
+</html>

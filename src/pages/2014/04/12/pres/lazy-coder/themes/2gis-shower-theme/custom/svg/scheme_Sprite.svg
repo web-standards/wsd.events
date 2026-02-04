@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="960px" height="600px" viewBox="0 0 960 600" enable-background="new 0 0 960 600" xml:space="preserve">
+<rect x="45" y="302.269" fill="none" width="158" height="28"/>
+<text transform="matrix(1 0 0 1 64.9938 320.3933)"><tspan x="0" y="0" font-family="'SuisseIntl-Condensed'" font-size="24" letter-spacing="1">PNG</tspan><tspan x="42.863" y="0" font-family="'SuisseIntl-Condensed'" font-size="25">-файлы</tspan></text>
+<rect x="104.275" y="245.269" fill="none" width="219" height="182"/>
+<text transform="matrix(1 0 0 1 203.0604 270.2686)" font-family="'FontAwesome'" font-size="25"></text>
+<rect x="452.275" y="178.269" fill="none" width="219" height="182"/>
+<text transform="matrix(1 0 0 1 551.0604 203.2686)" font-family="'FontAwesome'" font-size="25"></text>
+<rect x="625.275" y="178.269" fill="none" width="219" height="182"/>
+<text transform="matrix(1 0 0 1 724.0604 203.2686)" font-family="'FontAwesome'" font-size="25"></text>
+<g>
+	<path d="M406.116,235.24l0,12.84c-0.01,0.463-0.197,0.927-0.533,1.262c-0.335,0.335-0.789,0.513-1.253,0.523l-1.479,0
+		c-0.473,0-0.937-0.187-1.272-0.523s-0.523-0.799-0.523-1.272v-5.779l-6.943,6.943c-0.71,0.71-1.746,0.562-2.416-0.109l-1.262-1.262
+		c-0.671-0.671-0.819-1.706-0.108-2.416l6.943-6.943l-5.789-0.01c-0.463,0.01-0.927-0.177-1.262-0.513s-0.523-0.799-0.513-1.262
+		l0-1.479c0-0.473,0.177-0.927,0.513-1.262c0.335-0.335,0.799-0.523,1.272-0.523l12.84,0c0.464-0.01,0.917,0.187,1.253,0.523
+		S406.116,234.766,406.116,235.24z"/>
+</g>
+<g>
+	<path d="M404.321,289.026l-12.84,0c-0.463-0.01-0.927-0.197-1.262-0.533c-0.335-0.335-0.513-0.789-0.523-1.253l0-1.479
+		c0-0.473,0.187-0.937,0.523-1.272s0.799-0.523,1.272-0.523h5.779l-6.943-6.943c-0.71-0.71-0.562-1.745,0.108-2.416l1.262-1.262
+		c0.671-0.671,1.706-0.819,2.416-0.109l6.943,6.943l0.01-5.789c-0.01-0.463,0.177-0.927,0.513-1.262s0.799-0.523,1.262-0.513
+		l1.479,0c0.473,0,0.927,0.177,1.262,0.513c0.335,0.335,0.523,0.799,0.523,1.272l0,12.84c0.01,0.463-0.187,0.917-0.523,1.253
+		S404.794,289.026,404.321,289.026z"/>
+</g>
+<rect x="15" y="216.269" fill="none" width="219" height="182"/>
+<text transform="matrix(1 0 0 1 92.5005 280.2686)" font-family="'FontAwesome'" font-size="64"></text>
+<rect x="205" y="302.269" fill="none" width="194" height="28"/>
+<text transform="matrix(1 0 0 1 224.1456 319.6684)" font-family="'SuisseIntl-Condensed'" font-size="24">grunt-spritesmith</text>
+<rect x="223" y="333.269" fill="none" width="158" height="55"/>
+<text transform="matrix(1 0 0 1 241.233 344.8684)"><tspan x="0" y="0" fill="#808080" font-family="'SuisseIntl-Condensed'" font-size="16">Генерация спрайта  </tspan><tspan x="33.288" y="19" fill="#808080" font-family="'SuisseIntl-Condensed'" font-size="16">и стилей</tspan></text>
+<rect x="731" y="266.269" fill="none" width="158" height="55"/>
+<text transform="matrix(1 0 0 1 785.2003 277.8684)" font-family="'SuisseIntl-Condensed'" font-size="16">Сжатый</text>
+<rect x="192" y="216.269" fill="none" width="219" height="182"/>
+<text transform="matrix(1 0 0 1 267.2149 280.2686)" font-family="'FontAwesome'" font-size="64"></text>
+<rect x="557" y="235.269" fill="none" width="182" height="28"/>
+<text transform="matrix(1 0 0 1 563.839 253.3933)" font-family="'SuisseIntl-Condensed'" font-size="25">grunt-imageoptim</text>
+<rect x="569" y="266.269" fill="none" width="158" height="55"/>
+<text transform="matrix(1 0 0 1 605.1447 277.8684)"><tspan x="0" y="0" fill="#808080" font-family="'SuisseIntl-Condensed'" font-size="16">Оптимизация </tspan><tspan x="0.84" y="19" fill="#808080" font-family="'SuisseIntl-Condensed'" font-size="16">изображения</tspan></text>
+<rect x="539" y="149.269" fill="none" width="219" height="182"/>
+<text transform="matrix(1 0 0 1 614.2149 213.2686)" font-family="'FontAwesome'" font-size="64"></text>
+<rect x="375.25" y="334.269" fill="none" width="158" height="28"/>
+<text transform="matrix(1 0 0 1 438.6353 347.3184)" font-family="'SuisseIntl-CondensedBold'" font-size="18" letter-spacing="1">CSS</text>
+<rect x="428" y="334.269" fill="none" width="158" height="28"/>
+<text transform="matrix(1 0 0 1 488.0374 347.3184)" fill="#717762" font-family="'SuisseIntl-CondensedBold'" font-size="18">SCSS</text>
+<rect x="401" y="371.269" fill="none" width="158" height="28"/>
+<text transform="matrix(1 0 0 1 450.1253 389.3933)" font-family="'SuisseIntl-Condensed'" font-size="25">Стили</text>
+<rect x="371" y="289.269" fill="none" width="219" height="140"/>
+<text transform="matrix(1 0 0 1 431.5871 353.2686)"><tspan x="0" y="0" font-family="'FontAwesome'" font-size="64" letter-spacing="6"></tspan><tspan x="52.113" y="0" fill="#717762" font-family="'FontAwesome'" font-size="64" letter-spacing="6"></tspan></text>
+<rect x="57" y="268.602" fill="none" width="158" height="28"/>
+<text transform="matrix(1 0 0 1 123.4071 278.7518)" font-family="'SuisseIntl-CondensedBold'" font-size="14">PNG</text>
+<rect x="402.25" y="197.269" fill="none" width="158" height="28"/>
+<text transform="matrix(1 0 0 1 464.6092 210.3184)" font-family="'SuisseIntl-CondensedBold'" font-size="18" letter-spacing="1">PNG</text>
+<rect x="401" y="234.269" fill="none" width="158" height="28"/>
+<text transform="matrix(1 0 0 1 444.2017 252.3933)"><tspan x="0" y="0" font-family="'SuisseIntl-Condensed'" font-size="24" letter-spacing="1">С</tspan><tspan x="13.872" y="0" font-family="'SuisseIntl-Condensed'" font-size="25">прайт</tspan></text>
+<rect x="371" y="152.269" fill="none" width="219" height="140"/>
+<text transform="matrix(1 0 0 1 457.6436 216.2686)" font-family="'FontAwesome'" font-size="64" letter-spacing="6"></text>
+<rect x="732.25" y="197.269" fill="none" width="158" height="28"/>
+<text transform="matrix(1 0 0 1 794.6092 210.3184)" font-family="'SuisseIntl-CondensedBold'" font-size="18" letter-spacing="1">PNG</text>
+<rect x="731" y="234.269" fill="none" width="158" height="28"/>
+<text transform="matrix(1 0 0 1 774.2017 252.3933)"><tspan x="0" y="0" font-family="'SuisseIntl-Condensed'" font-size="24" letter-spacing="1">С</tspan><tspan x="13.872" y="0" font-family="'SuisseIntl-Condensed'" font-size="25">прайт</tspan></text>
+<rect x="701" y="152.269" fill="none" width="219" height="140"/>
+<text transform="matrix(1 0 0 1 787.6436 216.2686)" font-family="'FontAwesome'" font-size="64" letter-spacing="6"></text>
+</svg>

@@ -1,0 +1,68 @@
+.player{
+  font-size: 0;
+  color:#fff;
+  white-space: nowrap;
+  height: 44px;
+  position: relative;
+  display: inline-block;
+  margin:0 10px 10px 0;
+  text-align: left;
+  position: relative;
+  }
+.player .details{
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0 10px;
+    background: rgba(0,154,172,.75);
+    }
+    .player .avatar{
+      vertical-align: middle;
+      display: inline-block;
+      overflow: hidden;
+      margin: 0 5px 0 0;
+      width: 22px;
+      height: 22px;
+      background: url('../img/avatars.png') 0 0 no-repeat;
+      -webkit-background-size: 230px auto;
+           -o-background-size: 230px auto;
+              background-size: 230px auto;
+      }
+    .player .name{
+      display: inline-block;
+      vertical-align: middle;
+      max-width: 200px;
+      -ms-text-overflow: ellipsis;
+          text-overflow: ellipsis;
+      overflow: hidden;
+      font:24px/44px serif;
+      }
+  .player nav{
+    font-size: 0;
+    line-height: 44px;
+    height: 44px;
+    vertical-align: middle;
+    display: inline-block;
+    overflow: hidden;
+    }
+    .player a.pass{
+      display: none;
+      }
+    .player a.remove{
+      display: none;
+      }
+    .player nav a:hover{
+      background-color: rgba(0,160,0,.75);
+      color:#fff;
+      }
+    .player nav a{
+      height: 44px;
+      font:14px/44px serif;
+      vertical-align: middle;
+      display: inline-block;
+      background-color: rgba(0,154,172,.75);
+      color:#fff;
+      margin:0 0 0 1px;
+      text-decoration: none;
+      padding:0 20px;
+      }

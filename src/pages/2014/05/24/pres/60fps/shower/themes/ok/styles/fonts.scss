@@ -1,0 +1,45 @@
+// Odnoklassniki Shower theme github.com/operatino/OK.shower
+// Robert Haritonov @operatino http://rhr.me
+
+// Forked from Ribbon theme for Shower HTML presentation engine: github.com/shower/shower Copyright © 2010–2013 Vadim Makeev, pepelsbey.net
+// Licensed under MIT license: github.com/shower/shower/wiki/MIT-License
+
+// PF DIN TEXT PRO
+@font-face {
+	font-family:'PF DIN TEXT PRO';
+	src:url(../fonts/pfdintextpro-regular-webfont.woff) format('woff');
+	}
+@font-face {
+	font-weight:bold;
+	font-family:'PF DIN TEXT PRO';
+	src:url(../fonts/pfdintextpro-bold-webfont.woff) format('woff');
+	}
+@font-face {
+	font-style:italic;
+	font-family:'PF DIN TEXT PRO';
+	src:url(../fonts/pfdintextpro-italic-webfont.woff) format('woff');
+	}
+@font-face {
+	font-style:italic;
+	font-weight:bold;
+	font-family:'PF DIN TEXT PRO';
+	src:url(../fonts/pfdintextpro-boldital-webfont.woff) format('woff');
+	}
+
+@font-face {
+	font-family:'PF DIN TEXT PRO Light';
+	font-weight:bold;
+	src:url(../fonts/pfdintextpro-light-webfont.woff) format('woff');
+	}
+
+@font-face {
+	font-family:'PF DIN TEXT PRO Medium';
+	font-weight:bold;
+	src:url(../fonts/pfdintextpro-medium-webfont.woff) format('woff');
+	}
+
+// PT Mono
+@font-face {
+	font-family:'PT Mono';
+	src:url(../fonts/PTMono.woff) format('woff');
+	}

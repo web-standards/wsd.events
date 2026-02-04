@@ -1,0 +1,38 @@
+{
+  "name": "shower-ok",
+  "version": "0.1.4",
+  "description": "Odnoklassniki theme for Shower, HTML presentation engine (github.com/shower/shower)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/operatino/shower-ok.git"
+  },
+  "keywords": [
+    "shower",
+    "theme",
+    "odnoklassniki"
+  ],
+  "author": {
+    "name": "Robert Haritonov"
+  },
+  "bugs": {
+    "url": "https://github.com/operatino/shower-ok/issues"
+  },
+  "homepage": "https://github.com/operatino/shower-ok",
+  "dependencies": {},
+  "devDependencies": {
+    "shower": "^1.0.5",
+    "load-grunt-tasks": "~0.4.0",
+    "time-grunt": "~0.3.1",
+    "grunt": "~0.4.4",
+    "grunt-contrib-sass": "~0.7.3",
+    "grunt-contrib-watch": "~0.6.1"
+  },
+  "readme": "# Odnoklassniki theme for Shower\n\nOdnoklassniki theme for [Shower](https://github.com/shower/shower) presentation engine, forked from [Ribbon theme](https://github.com/shower/ribbon).\n\n[Demo](http://rhr.me/projects/shower-ok/).\n\n## Examples:\n\n1. \"[Source - front-end documentation engine](http://rhr.me/pres/source-live)\"\n2. \"[Автоматизация фронтенда](http://rhr.me/pres/automation/)\" - presentation about front-end automatiin (ru).\n\n## Start instructions\n\n```\ngit clone https://github.com/operatino/shower-ok.git\ncd shower-ok\nnpm install\nopen index.html\n```",
+  "readmeFilename": "README.md",
+  "_id": "shower-ok@0.1.4",
+  "dist": {
+    "shasum": "383f4ee5ccbe056f07827a083bea2fcebcd56ad9"
+  },
+  "_resolved": "git://github.com/operatino/shower-ok#3949869bab2e6fc87968e06d8de008418cffc3a7",
+  "_from": "shower-ok@git://github.com/operatino/shower-ok"
+}

@@ -1,0 +1,688 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+    <title>Документирование вёрстки по-взрослому</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=1274, user-scalable=no">
+    <link rel="stylesheet" href="shower/themes/ok/styles/screen-d90984e344.css">
+    <!--
+         To apply styles to the certain slides
+         set slide ID to get needed elements
+         -->
+    <style>
+        /*Print reset*/
+        /*.slide.cover:after {*/
+            /*visibility: hidden;*/
+            /*}*/
+        /*/Print reset*/
+
+        @font-face {
+		    font-family: 'Museo';
+		    src: url('fonts/museocyrl_500-webfont.woff') format('woff');
+		    font-weight: normal;
+		    font-style: normal;
+		}
+
+	    /* Tech slide decoration */
+	    @media screen { /* bug with ok-hack logo in print to PDF verstion */
+		    .slide:before {
+			    right: 10px;
+			    bottom: -18px;
+			    width: 118px;
+			    height: 200px;
+			    background-image: url(shower/themes/ok/images/ok-hack.svg);
+			    }
+		    }
+
+	    #Cover {}
+
+	        #Cover h2 {
+	            color: #fff;
+	            font-size: 2.8em;
+	            text-align: center;
+	            margin-top: -100px;
+	            }
+
+            #Cover h2 em {
+                font-style: normal;
+                line-height: 1.4;
+                font-family: 'PF DIN TEXT PRO Medium';
+                }
+
+            #Cover .author {
+                width: 100%;
+                margin-bottom: 120px;
+                font-size: 1.5em;
+                text-align: center;
+                color: #fff;
+                }
+
+            #Cover .bl {
+                color: inherit !important;
+                border-bottom: none !important;
+                }
+
+                #Cover .bl:hover {
+                    border-bottom: solid 2px !important;
+                    }
+
+            #Cover .ok {
+                margin-top: 10px;
+                height: 65px;
+                }
+
+        .source h2  {
+		    font-family: 'Museo' !important;
+            color: #FFF !important;
+            text-shadow: 0 1px 5px rgba(0, 0, 0, .3);
+            }
+
+        h3 {
+            font-weight: 700;
+            }
+
+        #end {
+            color: #fff;
+            font-size: 1.3em;
+            }
+
+            #end a {
+                color: #A6E4FF;
+                }
+
+            #end .author {
+                text-align: center;
+                margin-top: -30px;
+                width: 100%;;
+                }
+
+            #end .work {
+                margin-bottom: 20px;
+                }
+
+            #end .author .name {
+                font-size: 2.5em;
+                color: #fff;
+                font-family: 'Museo';
+                text-shadow: 0 1px 5px rgba(0, 0, 0, .3);
+                }
+
+            #end .author .contacts {
+                font-size: 1.1em;
+                }
+
+            #end .links {
+                margin-top: .5em;
+                }
+
+    </style>
+</head>
+<body class="list">
+
+<header class="caption">
+    <h1>Документирование вёрстки по-взрослому</h1>
+    <p><a href="http://rhr.me">Роберт Харитонов</a>, <a href="http://corp.mail.ru/communications/odnoklassniki">Одноклассники</a></p>
+
+	<p style="font-size:.8em;"><a href="http://webstandardsdays.ru/2013/06/08/">Web Standards Days</a>, Санкт-Петербург, 2013.</p>
+	<p style="font-size:.8em;"><a href="http://ritconf.ru/">РИТ ++</a>, Москва, 2013. <a href="http://www.youtube.com/watch?v=3HNW5Bru0Ws">Видео запись</a> доклада.</p>
+</header>
+
+<section class="slide shout brand-bg" id="Cover"><div>
+    <h2>Документирование вёрстки<br> <em>по-взрослому</em></h2>
+
+    <div class="place b author">
+        <div><a href="http://rhr.me" class="bl">Роберт Харитонов</a></div>
+        <img class="ok" src="shower/themes/ok/images/ok-logo-or.svg" alt="одноклассники">
+    </div>
+</div></section>
+
+<section class="slide cover"><div>
+    <h2 class="dark">Боль</h2>
+    <img src="i/pain.jpg" alt="Обама стреляет себе в ногу" class="place t" width="100%">
+</div></section>
+
+<section class="slide cover white"><div>
+    <h2>Боль</h2>
+    <img src="i/ie.svg" alt="Internet Explorer" class="place m" width="500">
+</div></section>
+
+<section class="slide cover white h"><div>
+    <h2 class="place m invert bold" style="font-size:200px;">Боль</h2>
+    <img src="i/designer.jpg" alt="Internet Explorer">
+</div></section>
+
+<section class="slide"><div>
+	<!-- Для одиночек -->
+    <h2>Рутина</h2>
+
+	<div class="fz-l">
+		<h3>Повторная вёрстка</h3>
+		<ul>
+			<li>Лишняя работа</li>
+			<li>Плохое качество</li>
+            <li class="next">Рутина!</li>
+		</ul>
+	</div>
+
+</div></section>
+
+<section class="slide"><div>
+	<h2>Backend-разработчики</h2>
+	<div class="fz-l">
+		<h3>Качество клиентского кода</h3>
+		<ul>
+			<li class="next">Я тут немного поправил...</li>
+			<li class="next">.class .class .class ... { }</li>
+			<li class="next">!important</li>
+		</ul>
+	</div>
+</div></section>
+
+<section class="slide"><div>
+    <h2>Дизайнеры</h2>
+	<div class="fz-l">
+		<h3>Вечный редизайн</h3>
+		<ul>
+			<li class="next">А где ховер стейт?</li>
+			<li class="next">Градиентик не такой</li>
+			<li class="next">Шрифт побольше</li>
+		</ul>
+	</div>
+</div></section>
+
+<section class="slide"><div>
+    <h2>Команда</h2>
+
+	<div class="fz-l">
+		<h3>Проблемы взаимодействия</h3>
+		<ul>
+			<li class="next">Единый стиль</li>
+			<li class="next">Обмен кодом</li>
+			<li class="next">Коммуникация</li>
+		</ul>
+	</div>
+</div></section>
+
+<section class="slide shout"><div>
+    <h2>Что делать?</h2>
+</div></section>
+
+<section class="slide cover"><div>
+    <img src="i/services.jpg" alt="Программы и сервисы решаюшие перечисленные проблемы">
+</div></section>
+
+<section class="slide shout cover w h source"><div>
+    <h2>Source</h2>
+    <img src="i/header_bg_x2.png">
+</div></section>
+
+<section class="slide"><div>
+    <h2>Source</h2>
+	<b class="fz-l">Решает проблемы с</b>
+    <ul class="fz-l">
+        <li>Разработкой верстки</li>
+        <li>Поддержкой и документированием библиотеки блоков</li>
+        <li>Разработкой интерфейсов в команде</li>
+    </ul>
+</div></section>
+
+<section class="slide shout"><div>
+    <h2 style="margin-top: -80px;">Открыто!</h2>
+    <a href="http://github.com/sourcejs" class="place m" style="font-size:60px; line-height: 1.2; margin-top: 60px;">github.com/sourcejs</a>
+</div></section>
+
+<section class="slide cover"><div>
+	<h2 class="invert">Документация</h2>
+	<img src="i/library.jpg" alt="Библиотека">
+</div></section>
+
+<section class="slide"><div>
+    <h2>Документация</h2>
+
+	<div class="fz-l">
+		<b>Для</b>
+		<ul>
+		    <li>Продукта</li>
+		    <li>Верстальщиков</li>
+		    <li>Команды (дизайнеры, программисты...)</li>
+		</ul>
+	</div>
+</div></section>
+
+<section class="slide"><div>
+    <h2>Масштаб</h2>
+	<div class="fz-l">
+	    <ul>
+	        <li>6 верстальщиков, 9 UI дизайнеров, ≈50 разработчиков</li>
+	        <li>35 модулей в 1 слое по <a href="http://rhr.me/MCSS">rhr.me/MCSS</a></li>
+	        <li>54 модулей в 2 слое <span class="lp">+ смежные</span></li>
+	    </ul>
+	</div>
+</div></section>
+
+<section class="slide shout"><div>
+    <h2>≈650 кб<br> сжатого CSS</h2>
+</div></section>
+
+<section class="slide"><div>
+    <h2>Проблемы</h2>
+
+	<div class="fz-l">
+	    <h3>Для верстальщиков</h3>
+	    <ul>
+		    <li>Обмен кодом</li>
+		    <li>Поддержка чужого кода</li>
+	        <li class="next">Велосипеды</li>
+	    </ul>
+	</div>
+</div></section>
+
+<section class="slide cover"><div>
+    <h2 class="place m invert bold" style="font-size:200px;">Хаос</h2>
+	<img src="i/bikes.jpg" alt="Велосипеды">
+</div></section>
+
+<section class="slide"><div>
+    <h2>Решение</h2>
+    <ul class="fz-l">
+        <li>Определить методологию и стиль кода</li>
+        <li class="next">Собирать библиотеку блоков</li>
+        <li class="next">Максимально документировать вёрстку</li>
+    </ul>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Документация в CSS</h2>
+	<pre>
+		<code><mark>.cb {</mark> <mark class="comment">/* complex block */</mark></code>
+		<code>    overflow: hidden;  <mark class="comment">/* have floats inside */</mark></code>
+		<code>    position: relative;  <mark class="comment">/* have p:abs inside */</mark></code>
+		<code>    width: 100%;</code>
+		<code>    <mark class="comment">/* .cb-head height + .cf-footer / 20 + 17 */</mark></code>
+		<code>    min-height: 37px;</code>
+		<code><mark>}</mark></code>
+	</pre>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Документация в CSS</h2>
+	<pre>
+		<code><mark>.cb {</mark> <mark class="important">/* complex block */</mark></code>
+		<code>    overflow: hidden;  <mark class="important">/* have floats inside */</mark></code>
+		<code>    position: relative;  <mark class="important">/* have p:abs inside */</mark></code>
+		<code>    width: 100%;</code>
+		<code>    <mark class="important">/* .cb-head height + .cf-footer / 20 + 17 */</mark></code>
+		<code>    min-height: 37px;</code>
+		<code><mark>}</mark></code>
+	</pre>
+</div></section>
+
+<section class="slide cover h"><div>
+	<!--<h2 class="invert">Документация в Source</h2>-->
+	<img src="i/spec.jpg" alt="Страница документации">
+</div></section>
+
+<section class="slide cover h"><div>
+	<!--<h2 class="invert">Документация в Source</h2>-->
+	<img src="i/spec2.jpg" alt="Страница документации">
+</div></section>
+
+<section class="slide cover"><div>
+    <h2 class="invert">Для команды</h2>
+	<img src="i/team.jpg" alt="Команда Одноклассников">
+</div></section>
+
+<section class="slide cover w"><div>
+    <h2>Программисты<br> верстали...</h2>
+
+	<img src="i/programmers_html.jpg" alt="">
+</div></section>
+
+<section class="slide cover h"><div>
+    <!--<h2 class="invert">Примеры кода</h2>-->
+
+	<img src="i/code.jpg" alt="">
+</div></section>
+
+<section class="slide shout"><div>
+    <h2>Навигация</h2>
+</div></section>
+
+<section class="slide cover h"><div>
+	<img src="i/nav.jpg" alt="">
+</div></section>
+
+<section class="slide cover h"><div>
+	<img src="i/nav2.jpg" alt="">
+</div></section>
+
+<section class="slide shout"><div>
+    <h2>Общение</h2>
+</div></section>
+
+<section class="slide cover h"><div>
+	<img src="i/comment.jpg" alt="">
+</div></section>
+
+<section class="slide cover h"><div>
+	<img src="i/comment2.jpg" alt="">
+</div></section>
+
+<section class="slide shout"><div>
+    <h2>Документация проектов</h2>
+</div></section>
+
+<section class="slide cover h"><div>
+
+	<img src="i/project_spec.jpg" alt="">
+
+</div></section>
+
+<section class="slide cover h"><div>
+
+	<img src="i/project_spec2.jpg" alt="">
+
+</div></section>
+
+<section class="slide"><div>
+    <h2>На живую?</h2>
+
+	<div class="fz-l">
+		Отличия от продуктовой среды
+		<ul>
+			<li>Гибкость</li>
+			<li>Скорость имплементации</li>
+			<li>Быстрое тестирование</li>
+		</ul>
+	</div>
+</div></section>
+
+<section class="slide shout"><div>
+    <h2>Инструменты</h2>
+</div></section>
+
+<style>
+    .process {
+        margin-top: 30px;
+        margin-left: -7%;
+        }
+
+    .process_i {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        width: 26%;
+        margin-left: 7%;
+        border: solid 4px #EB7218;
+        text-align: center;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 50px 10px 0;
+        min-height: 130px;
+        border-radius: 10px;
+        line-height: 1.2;
+        }
+
+    .process_i.__arrw:after {
+        content: "➧";
+        position: absolute;
+        top: 50%;
+        color: #eb722e;
+        left: 100%;
+        font-size: 75px;
+        margin-left: 15px;
+        line-height: 0;
+        border-radius: 13px;
+        }
+
+</style>
+
+<section class="slide"><div>
+    <h2>Разработка кода вчера</h2>
+
+	<div class="fz-l">Обычный процесс</div>
+
+	<div class="process">
+		<div class="process_i __arrw">Редактор</div
+		><div class="process_i __arrw">Статика</div
+		><div class="process_i"><div style="margin-top: -18px;">Конечный продукт</div></div>
+	</div>
+</div></section>
+
+<section class="slide"><div>
+    <h2>Сегодня</h2>
+
+	<div class="fz-l">Улучшенный</div>
+
+	<div class="process">
+		<div class="process_i __arrw">Редактор</div
+		><div class="process_i __arrw"><div style="margin-top: -37px;">Среда разработки<br> и тестирования</div></div
+		><div class="process_i"><div style="margin-top: -18px;">Конечный продукт</div></div>
+	</div>
+</div></section>
+
+<section class="slide"><div>
+    <h2>Завтра</h2>
+
+	<div class="fz-l">Новый инструмент</div>
+
+	<div class="process">
+		<div class="process_i __arrw">Редактор</div
+		><div class="process_i __arrw"><div class="bold" style="font-size: 1.7em; margin-top: -12px;">Source</div></div
+		><div class="process_i"><div style="margin-top: -18px;">Конечный продукт</div></div>
+	</div>
+</div></section>
+
+<section class="slide shout"><div>
+	<h2>Новый<br> процесс</h2>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Новый процесс с Source</h2>
+
+    <div class="fz-l">Разрабатываем прямо в документации</div>
+
+	<div class="process">
+		<div class="process_i __arrw">Дизайн</div
+		><div class="process_i __arrw"><div style="margin-top: -15px; font-size: .85em;">Документированная<br> библиотека блоков</div></div
+		><div class="process_i">Внедрение</div>
+	</div>
+</div></section>
+
+<section class="slide shout"><div>
+    <h2>Плагины</h2>
+</div></section>
+
+<section class="slide"><div>
+    <h2>Дебаг-режим</h2>
+
+	<ul class="fz-l">
+		<li>Автоматическое тестирование по <a href="http://habrahabr.ru/post/114256/">чеклисту</a></li> <!-- Игорь Зеничь -->
+		<li>Проверка на контенто-усточивость</li>
+	</ul>
+</div></section>
+
+<section class="slide cover h"><div>
+    <!--<h2 class="invert">Дебаг-режим</h2>-->
+	<img src="i/debug.jpg" alt="">
+</div></section>
+
+<section class="slide cover h"><div>
+    <!--<h2 class="invert">Чеклист</h2>-->
+	<img src="i/debug2.jpg" alt="">
+</div></section>
+
+<section class="slide"><div>
+	<h2>Тестирование</h2>
+
+	<ul class="fz-l">
+		<li>Подстановка тестовых данных</li>
+		<li>Скриншоты и эталоны</li>
+		<li>Версии</li>
+	</ul>
+</div></section>
+
+<section class="slide shout"><div>
+    <h2>Дизайнеры</h2>
+</div></section>
+
+<section class="slide"><div>
+    <em class="place m" style="font-size: 40px; width: 600px; margin-top:-52px; text-align:center;">Не разделяйте сущности,<br> дизайн и вёрстка — <b>одно целое</b>.</em>
+</div></section>
+
+<section class="slide"><div>
+	<img src="i/one.jpg" alt="Две сложеные половинки яблока" class="place m">
+</div></section>
+
+<section class="slide cover w"><div>
+	<h2 class="dark bold">Котики</h2>
+	<img src="i/cat.jpg" alt="Кот хипстер">
+</div></section>
+
+<section class="slide shout"><div>
+	<h2>Интерактивные документации</h2>
+</div></section>
+
+<section class="slide"><div>
+    <h2>Стили</h2>
+
+	<div class="fz-l">
+		<ul>
+			<li>Цвета, размеры, шрифты</li>
+			<li>Удобно и настраиваемо</li>
+		</ul>
+	</div>
+</div></section>
+
+<section class="slide cover h"><div>
+	<!--<h2 class="invert">Стили</h2>-->
+
+	<img src="i/styles.jpg" alt="">
+</div></section>
+
+<section class="slide"><div>
+    <h2>Графика</h2>
+
+	<div class="fz-l">
+		<ul>
+			<li>Фильтры</li>
+			<li>Загрузка</li>
+			<li>Автоматизация</li>
+		</ul>
+	</div>
+
+</div></section>
+
+<section class="slide shout source cover w h"><div>
+    <h2 style="margin-top: -80px;">Source!</h2>
+    <a href="http://sourcejs.com" class="place m" style="font-size:60px; line-height: 1.2; margin-top: 60px; color:  #A6E4FF">sourcejs.com</a>
+    <img src="i/header_bg_x2.png">
+</div></section>
+
+<section class="slide"><div>
+	<h2>Решенные проблемы</h2>
+
+	<ul class="fz-l">
+		<li>Документирование</li>
+		<li>Разработка и тестирование</li>
+		<li>Взаимодействие с командой</li>
+	</ul>
+</div></section>
+
+<section class="slide"><div>
+    <h2>Архитектура</h2>
+    <ul class="fz-l">
+        <li>Минимальное ядро</li>
+        <li>Плагины</li>
+	    <li>Страницы/Инструменты</li>
+    </ul>
+</div></section>
+
+<section class="slide"><div>
+    <h2>Технологии</h2>
+    <ul class="fz-l">
+        <li>JavaScript</li>
+        <li><a href="http://requirejs.org/">RequireJS</a></li>
+        <li><a href="http://pivotal.github.io/jasmine/">Jasmine</a></li>
+        <li><a href=http://gruntjs.com/>Grunt</a></li>
+	    <li class="next">Скоро — <a href="http://nodejs.org/">NodeJS</a>, <a href="http://phantomjs.org/">PhantomJS</a></li>
+    </ul>
+</div></section>
+
+<section class="slide"><div>
+    <h2>Будущее</h2>
+    <ul class="fz-l">
+        <li>Авто-тестирование и ревизии</li>
+        <li class="next">Авто-генерация простых документаций</li>
+        <li class="next">Интерфейс для быстрого редактирования вёрстки</li>
+        <li class="next">Интерфейс для прототипирования</li>
+    </ul>
+</div></section>
+
+<section class="slide shout"><div>
+    <h2>Спасибо!</h2>
+</div></section>
+
+<section class="slide cover w h" id="end"><div>
+	<div class="place m author">
+		<div class="name">Роберт Харитонов</div>
+		<div class="contacts">
+			<a href="https://twitter.com/operatino">@operatino</a> &nbsp;&nbsp; <a href="http://rhr.me">rhr.me</a></div>
+		<div class="links">слайды на <a href="http://rhr.me/pres/source">rhr.me/pres/source</a></div>
+	</div>
+    <img src="i/header_bg_x2.png">
+</div></section>
+
+<section class="slide shout source cover w h"><div>
+    <h2 style="margin-top: -80px;">Source!</h2>
+    <a href="http://sourcejs.com" class="place m" style="font-size:60px; line-height: 1.2; margin-top: 60px; color:  #A6E4FF">sourcejs.com</a>
+    <img src="i/header_bg_x2.png">
+</div></section>
+
+<div class="progress"><div></div></div>
+<script src="shower/shower.js"></script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter9913402 = new Ya.Metrika({id:9913402,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+                s = d.createElement("script"),
+                f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/9913402" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<script type="text/javascript">
+  var _gauges = _gauges || [];
+  (function() {
+    var t   = document.createElement('script');
+    t.type  = 'text/javascript';
+    t.async = true;
+    t.id    = 'gauges-tracker';
+    t.setAttribute('data-site-id', '520c8f3d613f5d40400002a7');
+    t.src = '//secure.gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+<!-- Powered by Shower presentation engine - Copyright © 2010–2013 Vadim Makeev — pepelsbey.net -->
+</body>
+</html>

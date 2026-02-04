@@ -1,0 +1,151 @@
+.house{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+
+  -webkit-transform: translateZ(.5px);
+  -moz-transform: translateZ(.5px);
+  transform: translateZ(.5px);
+
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  }
+  .house .wall-floor{
+    width: 50px;
+    height: 50px;
+    display: block;
+
+    position: absolute;
+    top: -25px;
+    left: -25px;
+
+/*
+    -webkit-transform-origin: 100% 100% 0;
+    -moz-transform-origin: 100% 100% 0;
+    transform-origin: 100% 100% 0;
+
+    -webkit-transform: translateZ(.1px);
+    -moz-transform: translateZ(.1px);
+    transform: translateZ(.1px);
+
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility:    hidden;
+    -ms-backface-visibility:     hidden;
+
+    background: url('../img/asp.jpg') 50% 50% repeat;
+    -webkit-background-size: 100%;
+     -o-background-size: 100%;
+        background-size: 100%;*/
+    }
+  .house .wall-roof{
+    width: 36px;
+    height: 36px;
+    display: block;
+
+    position: absolute;
+    top: -18px;
+    left: -18px;
+
+    -webkit-transform-origin: 100% 100% 0;
+    -moz-transform-origin: 100% 100% 0;
+    transform-origin: 100% 100% 0;
+
+    -webkit-transform: translateZ(59px);
+    -moz-transform: translateZ(59px);
+    transform: translateZ(59px);
+
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility:    hidden;
+    -ms-backface-visibility:     hidden;
+
+    background: url('../img/tiles.jpg') 50% 100% no-repeat;
+    -webkit-background-size: 34px 59px;
+     -o-background-size: 34px 59px;
+        background-size: 34px 59px;
+
+    }
+  .house .wall-front{
+    width: 34px;
+    height: 59px;
+    display: block;
+
+    position: absolute;
+    top: -59px;
+    left: -17px;
+
+    -webkit-transform-origin: 100% 100% 0;
+    -moz-transform-origin: 100% 100% 0;
+    transform-origin: 100% 100% 0;
+
+    -webkit-transform: rotateX(-90deg) translateZ(17px);
+    -moz-transform: rotateX(-90deg) translateZ(17px);
+    transform: rotateX(-90deg) translateZ(17px);
+
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility:    hidden;
+    -ms-backface-visibility:     hidden;
+
+    background: url('../img/house-0.jpg') 50% 100% no-repeat;
+    -webkit-background-size: 34px 59px;
+     -o-background-size: 34px 59px;
+        background-size: 34px 59px;
+    }
+  .house .wall-left{
+    width: 34px;
+    height: 59px;
+    display: block;
+
+    position: absolute;
+    top: -59px;
+    left: -17px;
+
+    -webkit-transform-origin: 100% 100% 0;
+    -moz-transform-origin: 100% 100% 0;
+    transform-origin: 100% 100% 0;
+
+    -webkit-transform: rotateX(-90deg) rotateY(90deg) translateX(17px);
+    -moz-transform: rotateX(-90deg) rotateY(90deg) translateX(17px);
+    transform: rotateX(-90deg) rotateY(90deg) translateX(17px);
+
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility:    hidden;
+    -ms-backface-visibility:     hidden;
+
+    background: url('../img/house-0.jpg') 50% 100% no-repeat;
+    -webkit-background-size: 34px 59px;
+     -o-background-size: 34px 59px;
+        background-size: 34px 59px;
+
+    }
+  .house .wall-right{
+    width: 34px;
+    height: 59px;
+    display: block;
+
+    position: absolute;
+    top: -59px;
+    left: -17px;
+
+    -webkit-transform-origin: 100% 100% 0;
+    -moz-transform-origin: 100% 100% 0;
+    transform-origin: 100% 100% 0;
+
+    -webkit-transform: rotateX(-90deg) rotateY(-90deg) translateX(17px) translateZ(34px);
+    -moz-transform: rotateX(-90deg) rotateY(-90deg) translateX(17px) translateZ(34px);
+    transform: rotateX(-90deg) rotateY(-90deg) translateX(17px) translateZ(34px);
+
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility:    hidden;
+    -ms-backface-visibility:     hidden;
+
+    background: url('../img/house-0.jpg') 50% 100% no-repeat;
+    -webkit-background-size: 34px 59px;
+     -o-background-size: 34px 59px;
+        background-size: 34px 59px;
+
+    }
+
+

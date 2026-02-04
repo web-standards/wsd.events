@@ -1,0 +1,117 @@
+.user-list-screen{
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  background:url('../img/boke.jpg') 50% 50% repeat;
+  }
+.user-list-screen header{
+  font-size: 0;
+  margin: 0 0 10px;
+  }
+  .user-list-screen .common-navigation{
+    margin: 0 0 20px 30px;
+    }
+    .user-list-screen .common-navigation a:hover{
+      background-color: rgba(0,165,0,.75);
+      }
+    .user-list-screen .common-navigation a{
+      display: inline-block;
+      text-decoration: none;
+      background-color: rgba(0,154,172,.75);
+      padding: 0 10px;
+      color:#fff;
+      font: 14px/44px serif;
+      vertical-align: middle;
+      position: relative;
+      }
+    .user-list-screen .common-navigation a:hover{
+      background-color: rgba(0,160,0,.75);
+      }
+    .user-list-screen .common-navigation a:hover:after{
+      border-color: rgba(0,160,0,.75) transparent transparent;
+      }
+    .user-list-screen .common-navigation a:after{
+      content:".";
+      font-size: 0;
+      line-height: 0;
+      height: 0;
+      width: 0;
+      display: block;
+      overflow: hidden;
+      position: absolute;
+      top: 100%;
+      left: 20px;
+      border-style:solid;
+      border-width: 10px 10px 0 0;
+      border-color: rgba(0,154,172,.75) transparent transparent;
+      }
+  .user-list-screen header .player-holder{
+    display: inline-block;
+    font-size: 0;
+    vertical-align: middle;
+    margin-right: 10px;
+    }
+    .user-list-screen header .player{
+      margin: 0;
+      }
+    .user-list-screen header .details{
+      background-color: rgba(255,0,0,.75);
+      }
+  .user-list-screen .word:first-child{
+    width: 20px;
+    text-align: right;
+    }
+  .user-list-screen .word{
+    font: 24px/44px serif;
+    vertical-align: middle;
+    margin-right: 10px;
+    display: inline-block;
+    }
+  .user-list-screen header .turn{
+    display: inline-block;
+    text-decoration: none;
+    background-color: rgba(0,154,172,.75);
+    padding: 0 10px;
+    color:#fff;
+    font: 24px/44px serif;
+    margin-right: 10px;
+    vertical-align: middle;
+    }
+  .user-list-screen header .turn.selected{
+    background-color: rgba(255,0,0,.75);
+    color:#fff;
+    cursor: default;
+    }
+  .user-list-screen header .turn.selected:hover{
+    background-color: rgba(255,0,0,.75);
+    color:#fff;
+    }
+  .user-list-screen header .turn:hover{
+    background-color: rgba(0,160,0,.75);
+    }
+.user-list-screen .wrapper{
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  padding: 20px;
+  text-align: left;
+  margin: 0;
+  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  font-size: 0;
+  background: rgba(255,255,255,.95) url('../img/clock.png') 50% 50% no-repeat;
+  -webkit-background-size: 24px;
+       -o-background-size: 24px;
+          background-size: 24px;
+  }
+  .user-list-screen .players .player:hover .details{
+    background-color: rgba(0,160,0,.75);
+    cursor: pointer;
+    }

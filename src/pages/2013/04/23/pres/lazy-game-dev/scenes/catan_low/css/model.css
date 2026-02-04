@@ -1,0 +1,585 @@
+html{
+height: 100%;
+width: 100%;
+}
+body{
+  -webkit-perspective: 600px;
+  -moz-perspective: 600px;
+  perspective: 600px;
+
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  }
+
+.model:hover ~ .base .top-side .inner,
+.base:hover .top-side .inner{
+  box-shadow: inset 0 0 0 140px rgba(255, 121, 0, .35);
+  }
+
+.base.sea:hover .top-side .inner{
+  box-shadow: none;
+  }
+
+.passive,
+.passive div{
+  cursor: default;
+  pointer-events: none;
+  }
+
+.base.sea-2,
+.base.sea-1{
+  -webkit-transform: translateZ(-20px);
+  -moz-transform: translateZ(-20px);
+  transform: translateZ(-20px);
+  }
+
+.base.sea-1 .side-1,
+.base.sea-1 .side-2,
+.base.sea-1 .side-3,
+.base.sea-1 .side-4,
+.base.sea-1 .side-5,
+.base.sea-1 .side-6,
+.base.sea-1 .top-side .inner,
+.base.sea-1 .bottom-side .inner{
+  background: url('../img/sea-1.png') no-repeat;
+  -webkit-background-size: 100%;
+          background-size: 100%;
+  opacity: 0.7;
+  }
+
+.base.sea-2 .side-1,
+.base.sea-2 .side-2,
+.base.sea-2 .side-3,
+.base.sea-2 .side-4,
+.base.sea-2 .side-5,
+.base.sea-2 .side-6,
+.base.sea-2 .top-side .inner,
+.base.sea-2 .bottom-side .inner{
+  background: url('../img/sea-2.png') no-repeat;
+  -webkit-background-size: 100%;
+          background-size: 100%;
+  opacity: 0.8;
+  }
+
+.base{
+  cursor: pointer;
+  width:140px;
+  height:140px;
+  position: absolute;
+  top:-10px;
+  left:-10px;
+  display: block;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  }
+  .base .top-side{
+    position: absolute;
+    width: 140px;
+    height: 122px;
+    overflow: hidden;
+    -webkit-transform: translateY(9px);
+    -moz-transform: translateY(9px);
+    transform: translateY(9px);
+    }
+    .base .top-side .outer{
+      width: 140px;
+      height: 121px;
+      overflow: hidden;
+      -webkit-transform: rotateZ(-60deg);
+      -moz-transform: rotateZ(-60deg);
+      transform: rotateZ(-60deg);
+      }
+      .base .top-side .inner{
+        width: 140px;
+        height: 121px;
+        -webkit-transform: rotateZ(-60deg);
+        -moz-transform: rotateZ(-60deg);
+        transform: rotateZ(-60deg);
+        overflow: hidden;
+        background: url('../img/dirt.png') 50% 50% repeat;
+        -webkit-background-size: 100% auto;
+                background-size: 100% auto;
+        }
+  .base .bottom-side{
+    position: absolute;
+    width: 140px;
+    height: 122px;
+    overflow: hidden;
+    -webkit-transform: translateZ(-20px) translateY(9px);
+    -moz-transform: translateZ(-20px) translateY(9px);
+    transform: translateZ(-20px) translateY(9px);
+    }
+    .base .bottom-side .outer{
+      width: 140px;
+      height: 121px;
+      overflow: hidden;
+      -webkit-transform: rotateZ(-60deg);
+      -moz-transform: rotateZ(-60deg);
+      transform: rotateZ(-60deg);
+      }
+      .base .bottom-side .inner{
+        width: 140px;
+        height: 121px;
+        overflow: hidden;
+        background: url('../img/dirt.png') 50% 50% no-repeat;
+        -webkit-transform: rotateZ(-60deg);
+        -moz-transform: rotateZ(-60deg);
+        transform: rotateZ(-60deg);
+        }
+  .base .side-1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0 0 0 -35px;
+    width: 70px;
+    height: 20px;
+    -webkit-transform-origin: 50% 0;
+    -moz-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+
+    -webkit-transform: rotateX(-90deg) translateZ(60px) rotateY(0);
+    -moz-transform: rotateX(-90deg) translateZ(60px) rotateY(0);
+    transform: rotateX(-90deg) translateZ(60px) rotateY(0);
+
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+
+    background: url('../img/dirt.png') 0 0 repeat;
+        -webkit-background-size: 100% auto;
+                background-size: 100% auto;
+    }
+  .base .side-2{
+    width: 70px;
+    height: 20px;
+    display: block;
+
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+
+    -webkit-transform-origin: 100% 0;
+    -webkit-transform: rotateY(-120deg);
+
+    -moz-transform-origin: 100% 0;
+    -moz-transform: rotateY(-120deg);
+
+    transform-origin: 100% 0;
+    transform: rotateY(-120deg);
+
+    background: url('../img/dirt.png') 0 0 repeat;
+        -webkit-background-size: 100% auto;
+                background-size: 100% auto;
+    }
+  .base .side-3{
+    width: 70px;
+    height: 20px;
+    display: block;
+
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+
+    -webkit-transform-origin: 0 0;
+    -webkit-transform: rotateY(-120deg);
+
+    -moz-transform-origin: 0 0;
+    -moz-transform: rotateY(-120deg);
+
+    transform-origin: 0 0;
+    transform: rotateY(-120deg);
+
+    background: url('../img/dirt.png') 0 0 repeat;
+        -webkit-background-size: 100% auto;
+                background-size: 100% auto;
+    }
+  .base .side-4{
+    width: 70px;
+    height: 20px;
+    display: block;
+
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+
+    -webkit-transform-origin: 100% 0;
+    -webkit-transform: rotateY(-120deg);
+
+    -moz-transform-origin: 100% 0;
+    -moz-transform: rotateY(-120deg);
+
+    transform-origin: 100% 0;
+    transform: rotateY(-120deg);
+
+    background: url('../img/dirt.png') 0 0 repeat;
+        -webkit-background-size: 100% auto;
+                background-size: 100% auto;
+    }
+  .base .side-5{
+    width: 70px;
+    height: 20px;
+    display: block;
+
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+
+    -webkit-transform-origin: 0 0;
+    -webkit-transform: rotateY(-120deg);
+
+    -moz-transform-origin: 0 0;
+    -moz-transform: rotateY(-120deg);
+
+    transform-origin: 0 0;
+    transform: rotateY(-120deg);
+
+    background: url('../img/dirt.png') 0 0 repeat;
+        -webkit-background-size: 100% auto;
+                background-size: 100% auto;
+    }
+  .base .side-6{
+    width: 70px;
+    height: 20px;
+    display: block;
+
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+
+    -webkit-transform-origin: 100% 0;
+    -webkit-transform: rotateY(-120deg);
+
+    -moz-transform-origin: 100% 0;
+    -moz-transform: rotateY(-120deg);
+
+    transform-origin: 100% 0;
+    transform: rotateY(-120deg);
+
+    background: url('../img/dirt.png') 0 0 repeat;
+        -webkit-background-size: 100% auto;
+                background-size: 100% auto;
+    }
+
+.element{
+  width: 120px;
+  height: 120px;
+  position: relative;
+
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  }
+
+.pos-1{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -50px 0 0 -50px;
+  }
+
+.pos-4{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: 10px 0 0 55px;
+  }
+.pos-5{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: 10px 0 0 -155px;
+  }
+.pos-6{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: 70px 0 0 -50px;
+  }
+.pos-7{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -170px 0 0 -50px;
+  }
+
+
+.pos-2{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -110px 0 0 55px;
+  }
+
+.pos-3{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -110px 0 0 -155px;
+  }
+
+.plane{
+  line-height: 0;
+  font-size: 0;
+  text-align: center;
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -250px 0 0 -250px;
+
+  -webkit-animation: spin 8s linear 0s infinite;
+  -moz-animation: spin 8s linear 0s infinite;
+  -ms-animation: spin 8s linear 0s infinite;
+  animation: spin 8s linear 0s infinite;
+
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+
+  -webkit-transform: rotateX(40deg);
+  -moz-transform: rotateX(40deg);
+  transform: rotateX(40deg);
+
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  }
+
+.desert .landscape,
+.desert .landscape div{
+  -webkit-transform: translateZ(.75px);
+  -moz-transform: translateZ(.75px);
+  transform: translateZ(.75px);
+  }
+
+.forest div{
+  -webkit-transform: translateZ(1px);
+  -moz-transform: translateZ(1px);
+  transform: translateZ(1px);
+  }
+
+.mountain .landscape,
+.mountain .landscape div{
+  -webkit-transform: translateZ(.75px);
+  -moz-transform: translateZ(.75px);
+  transform: translateZ(.75px);
+  }
+
+.field{
+  width:100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  }
+.field .grass{
+  -webkit-transform: translateZ(.75px);
+  -moz-transform: translateZ(.75px);
+  transform: translateZ(.75px);
+  }
+.field .yap.yap-2{
+  -webkit-transform: translateZ(1.1px) translateY(-25px) translateX(-15px) scaleX(.1) scaleY(.1) scaleZ(.1) rotateZ(45deg);
+  -moz-transform: translateZ(1.1px) translateY(-25px) translateX(-15px) scaleX(.1) scaleY(.1) scaleZ(.1) rotateZ(45deg);
+  transform: translateZ(1.1px) translateY(-25px) translateX(-15px) scaleX(.1) scaleY(.1) scaleZ(.1) rotateZ(45deg);
+  }
+.field .yap.yap-3{
+  -webkit-transform: translateZ(1.1px) translateY(-30px) translateX(-40px) scaleX(.1) scaleY(.1) scaleZ(.1) rotateZ(45deg);
+  -moz-transform: translateZ(1.1px) translateY(-30px) translateX(-40px) scaleX(.1) scaleY(.1) scaleZ(.1) rotateZ(45deg);
+  transform: translateZ(1.1px) translateY(-30px) translateX(-40px) scaleX(.1) scaleY(.1) scaleZ(.1) rotateZ(45deg);
+  }
+.field .yap.yap-4{
+  -webkit-transform: translateZ(1.1px) translateY(-30px) translateX(20px) scaleX(.1) scaleY(.1) scaleZ(.1) rotateZ(45deg);
+  -moz-transform: translateZ(1.1px) translateY(-30px) translateX(20px) scaleX(.1) scaleY(.1) scaleZ(.1) rotateZ(45deg);
+  transform: translateZ(1.1px) translateY(-30px) translateX(20px) scaleX(.1) scaleY(.1) scaleZ(.1) rotateZ(45deg);
+  }
+.field .yap.yap-5{
+  -webkit-transform: translateZ(1.1px) translateY(-50px) translateX(-5px) scaleX(.1) scaleY(.1) scaleZ(.1) rotateZ(45deg);
+  -moz-transform: translateZ(1.1px) translateY(-50px) translateX(-5px) scaleX(.1) scaleY(.1) scaleZ(.1) rotateZ(45deg);
+  transform: translateZ(1.1px) translateY(-50px) translateX(-5px) scaleX(.1) scaleY(.1) scaleZ(.1) rotateZ(45deg);
+  }
+.field .yap{
+  box-shadow: 0 20px 60px 25px rgba(44, 65, 43, .4);
+
+  width: 33px;
+  height: 66px;
+  display: block;
+  position: absolute;
+  top:40px;
+  left: 40px;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: translateZ(1.2px) scaleX(.1) scaleY(.1) scaleZ(.1) rotateZ(45deg);
+  -moz-transform: translateZ(1.2px) scaleX(.1) scaleY(.1) scaleZ(.1) rotateZ(45deg);
+  transform: translateZ(1.2px) scaleX(.1) scaleY(.1) scaleZ(.1) rotateZ(45deg);
+  }
+  .field .yap .front{
+    width: 74px;
+    height: 74px;
+    background: url('../img/yap-front.png') 50% 50% no-repeat;
+    -webkit-background-size: 100%;
+            background-size: 100%;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -33px 0 0 -38px;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-origin: 50% 0;
+    -webkit-transform: rotateX(90deg) translateY(-3px);
+    -moz-transform-origin: 50% 0;
+    -moz-transform: rotateX(90deg) translateY(-3px);
+    transform-origin: 50% 0;
+    transform: rotateX(90deg) translateY(-3px);
+    }
+    .field .yap .front div{
+      width: 74px;
+      height: 74px;
+      background: url('../img/yap-front.png') 50% 50% no-repeat;
+      -webkit-background-size: 100%;
+              background-size: 100%;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      -webkit-transform-style: preserve-3d;
+      -moz-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+      -webkit-transform-origin: 50% 0;
+      -webkit-transform: translateZ(-100px);
+      -moz-transform-origin: 50% 0;
+      -moz-transform: translateZ(-100px);
+      transform-origin: 50% 0;
+      transform: translateZ(-100px);
+      }
+  .field .yap .sides{
+    width: 33px;
+    height: 100px;
+    background: url("../img/yap-side.png") repeat;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    }
+    .field .yap .sides div{
+      width: 29px;
+      height: 100px;
+      background: url("../img/yap-side.png") repeat;
+      -webkit-transform-style: preserve-3d;
+      -moz-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+
+      -webkit-transform-origin: 50% 50% 34px;
+      -webkit-transform: rotateY(45deg);
+      -moz-transform-origin: 50% 50% 34px;
+      -moz-transform: rotateY(45deg);
+      transform-origin: 50% 50% 34px;
+      transform: rotateY(45deg);
+      }
+
+
+  .forest .forest-bottom{
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    -webkit-transform: translateZ(1.5px);
+    -moz-transform: translateZ(1.5px);
+    transform: translateZ(1.5px);
+    }
+
+.model{
+  z-index: 100;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  display: block;
+  position: absolute;
+  top:0;
+  left:0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 100px;
+  height: 100px;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  }
+  .model img{
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    }
+  .model .landscape{
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    }
+  .model .landscape div{
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    }
+
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: translate(0,20px) rotateX(30deg) translateZ(150px) scale(1.2) scaleZ(1.2) rotateZ(0deg);
+    }
+  50% {
+    -webkit-transform: translate(0,20px) rotateX(30deg) translateZ(150px) scale(1.2) scaleZ(1.2) rotateZ(180deg);
+    }
+  100% {
+    -webkit-transform: translate(0,20px) rotateX(30deg) translateZ(150px) scale(1.2) scaleZ(1.2) rotateZ(360deg);
+    }
+  }
+
+@-moz-keyframes spin {
+  0% {
+    -moz-transform: rotateX(30deg) translateZ(150px) scale(1.2) scaleZ(1.2) rotateZ(0deg);
+    }
+  50% {
+    -moz-transform: rotateX(30deg) translateZ(150px) scale(1.2) scaleZ(1.2) rotateZ(180deg);
+    }
+  100% {
+    -moz-transform: rotateX(30deg) translateZ(150px) scale(1.2) scaleZ(1.2) rotateZ(360deg);
+    }
+  }
+
+@keyframes spin {
+  0% {
+    transform: rotateX(30deg) translateZ(150px) scale(1.2) scaleZ(1.2) rotateZ(0deg);
+    }
+  50% {
+    transform: rotateX(30deg) translateZ(150px) scale(1.2) scaleZ(1.2) rotateZ(180deg);
+    }
+  100% {
+    transform: rotateX(30deg) translateZ(150px) scale(1.2) scaleZ(1.2) rotateZ(360deg);
+    }
+  }
+
+
+
+

@@ -1,0 +1,258 @@
+.game-screen{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+
+  -webkit-perspective: 900px;
+  -moz-perspective: 900px;
+  perspective: 900px;
+  overflow: auto;
+  }
+
+
+.field.played{
+  -webkit-transition: -webkit-transform .4s ease;
+     -moz-transition: -moz-transform .4s ease;
+      -ms-transition: -ms-transform .4s ease;
+          transition: transform .4s ease;
+
+  -webkit-transform: rotateX(0) scale(.7) scaleZ(.7) translateZ(-200px) !important;
+  -moz-transform: rotateX(0) scale(.7) scaleZ(.7) translateZ(-200px) !important;
+  transform: rotateX(0) scale(.70) scaleZ(.7) translateZ(-200px) !important;
+  }
+
+.field{
+  height: 750px;
+  width: 750px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left:0;
+  bottom:0;
+
+  margin: auto;
+
+  -webkit-transform-origin: 50% 50% 0;
+  -moz-transform-origin: 50% 50% 0;
+  transform-origin: 50% 50% 0;
+
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+
+  -webkit-transform: rotateX(30deg) scale(.75) scaleZ(.75) translateZ(-150px) translateY(-100px);
+  -moz-transform: rotateX(30deg) scale(.75) scaleZ(.75)  translateZ(-150px) translateY(-100px);
+  transform: rotateX(30deg) scale(.75) scaleZ(.75)  translateZ(-150px) translateY(-100px);
+  }
+
+.game-screen .field .place .marked_win .wall-floor{
+  box-shadow: inset 0 0 0 50px rgba(0,154,172,.5);
+  }
+
+.game-screen .field .place .marked_loose .wall-floor{
+  box-shadow: inset 0 0 0 50px rgba(255,0,0,.5);
+  }
+
+.board{
+  z-index:1;
+  width: 750px;
+  height: 750px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  }
+
+  .board .board-right{
+    width: 750px;
+    height: 50px;
+    display: block;
+    position: absolute;
+    top: 750px;
+    left: 0;
+    right: 0;
+
+    background: url('../img/front.jpg') repeat;
+
+    -webkit-transform-origin: 0 0 0;
+    -moz-transform-origin: 0 0 0;
+    transform-origin: 0 0 0;
+
+    -webkit-transform: rotateX(-90deg) rotateY(-90deg) translateX(-750px);
+    -moz-transform: rotateX(-90deg) rotateY(-90deg) translateX(-750px);
+    transform: rotateX(-90deg) rotateY(-90deg) translateX(-750px);
+
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+    -webkit-background-size: auto 100%;
+         -o-background-size: auto 100%;
+            background-size: auto 100%;
+
+    }
+
+  .board .board-left{
+    width: 750px;
+    height: 50px;
+    display: block;
+    position: absolute;
+    top: 750px;
+    left: 0;
+    right: 0;
+
+    background: url('../img/front.jpg') repeat;
+
+    -webkit-transform-origin: 0 0 0;
+    -moz-transform-origin: 0 0 0;
+    transform-origin: 0 0 0;
+
+    -webkit-transform: rotateX(-90deg) rotateY(90deg) translateZ(750px);
+    -moz-transform: rotateX(-90deg) rotateY(90deg) translateZ(750px);
+    transform: rotateX(-90deg) rotateY(90deg) translateZ(750px);
+
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+    -webkit-background-size: auto 100%;
+         -o-background-size: auto 100%;
+            background-size: auto 100%;
+
+    }
+  .board .board-front{
+    width: 750px;
+    height: 50px;
+    display: block;
+    position: absolute;
+    top: 750px;
+    left: 0;
+    right: 0;
+
+    background: url('../img/front.jpg') repeat;
+
+    -webkit-transform-origin: 0 0 0;
+    -moz-transform-origin: 0 0 0;
+    transform-origin: 0 0 0;
+
+    -webkit-transform: rotateX(-90deg);
+    -moz-transform: rotateX(-90deg);
+    transform: rotateX(-90deg);
+
+    -webkit-background-size: auto 100%;
+         -o-background-size: auto 100%;
+            background-size: auto 100%;
+
+    }
+  .board .board-top{
+    width: 750px;
+    height: 750px;
+    z-index: 0;
+    position: relative;
+    background:
+      url('../img/place.png') 350px 350px no-repeat,
+      url('../img/place.png') 250px 450px no-repeat,
+      url('../img/place.png') 450px 250px no-repeat,
+      url('../img/place.png') 250px 250px no-repeat,
+      url('../img/place.png') 450px 450px no-repeat,
+      url('../img/hl.png')  0 0 repeat,
+      url('../img/grass.jpg') 0 0 repeat;
+    -webkit-background-size: 50px, 50px, 50px, 50px, 50px, 100px 100px, 256px;
+         -o-background-size: 50px, 50px, 50px, 50px, 50px, 100px 100px, 256px;
+            background-size: 50px, 50px, 50px, 50px, 50px, 100px 100px, 256px;
+
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    }
+    .board .board-top .place{
+      z-index: 1;
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      display: block;
+
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility:    hidden;
+      -ms-backface-visibility:     hidden;
+
+      -webkit-transform: translateZ(.5px);
+      -moz-transform: translateZ(.5px);
+      transform: translateZ(.5px);
+
+      -webkit-transform-style: preserve-3d;
+      -moz-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+      }
+      .board .board-top .place:hover{
+        box-shadow:inset 0 0 0 50px rgba(0,255,0,.25);
+        }
+      .board .board-stop .place.passive:hover{
+        box-shadow:none;
+        }
+
+html.no-preserve-3d .game-screen{
+  -webkit-perspective: none;
+  -moz-perspective: none;
+  perspective: none;
+
+  overflow:auto;
+  width: 750px;
+  height: 750px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  }
+
+html.no-preserve-3d .played{
+  -webkit-transform: none;
+  -moz-transform: none;
+  transform: none;
+
+  -webkit-transition: none;
+     -moz-transition: none;
+      -ms-transition: none;
+          transition: none;
+  }
+
+html.no-preserve-3d .board .board-top{
+ /* background:
+            url('../img/tail.png') 0 0 repeat;
+  -webkit-background-size: 100px;
+       -o-background-size: 100px;
+          background-size: 100px;*/
+  }
+
+html.no-preserve-3d .information{
+  z-index: 1000;
+  }
+
+html.no-preserve-3d .field{
+  /*zoom:.75;*/
+  }
+
+html.no-preserve-3d .board .board-top .place,
+html.no-preserve-3d .field{
+  z-index: 1;
+  -webkit-transform: none;
+  -moz-transform: none;
+  transform: none;
+  }
+
+html.no-preserve-3d .board .board-front,
+html.no-preserve-3d .board .board-left,
+html.no-preserve-3d .board .board-right{
+  display: none;
+  }

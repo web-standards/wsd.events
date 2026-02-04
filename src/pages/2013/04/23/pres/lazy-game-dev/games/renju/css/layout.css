@@ -1,0 +1,40 @@
+body,
+html{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+
+  -webkit-perspective: 900px;
+  -moz-perspective: 900px;
+  perspective: 900px;
+  }
+
+#templates,
+.popup,
+.screen{
+  display: none;
+  }
+
+.loading-screen{
+  display: block;
+  }
+
+a{
+  outline:none;
+  text-decoration: none;
+  }
+
+html.no-preserve-3d{
+  -webkit-transform-style: flat;
+  -moz-transform-style: flat;
+  transform-style: flat;
+
+  -webkit-perspective: none;
+  -moz-perspective: none;
+  perspective: none;
+  }

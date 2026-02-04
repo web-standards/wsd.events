@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html class="page" lang="ru">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#416E87">
+	<title>WSD в Минске 19 октября 2013</title>
+	<link rel="preload" href="/fonts/ubuntu-regular.woff2" crossorigin as="font" type="font/woff2">
+	<link rel="stylesheet" href="/styles/screen.css">
+	<link rel="manifest" href="/wsd.webmanifest">
+	<link rel="mask-icon" href="/favicon.svg" color="#416E87">
+	<link rel="icon" href="/favicon.ico">
+	<link rel="icon" type="image/png" href="/images/icon-228x228.png" sizes="228x228">
+	<link rel="apple-touch-icon" type="image/png" href="/images/icon-228x228.png">
+</head>
+<body class="page__body">
+	<header class="header" id="header">
+		<a class="title" href="/">
+			<span class="title__text">
+				Web<br>
+				Standards<br>
+				Days
+			</span>
+		</a>
+		<nav class="section section--open" id="navigation">
+			<div class="section__box">
+				<ul class="navigation">
+					<li><a class="navigation__link" href="#schedule">Программа</a></li>
+					<li><a class="navigation__link" href="#speakers">Докладчики</a></li>
+					<li><a class="navigation__link" href="#organisers">Организаторы</a></li>
+					<li><a class="navigation__link" href="#venue">Площадка</a></li>
+				</ul>
+			</div>
+		</nav>
+		<div class="social">
+			<a class="social__link social__link--twitter" href="https://twitter.com/webstandards_ru"><span class="social__text">Твиттер</span></a>
+			<a class="social__link social__link--vkontakte" href="https://vk.com/webstandards_ru"><span class="social__text">ВКонтакте</span></a>
+			<a class="social__link social__link--github" href="https://github.com/web-standards-ru"><span class="social__text">Гитхаб</span></a>
+			<a class="social__link social__link--facebook" href="https://fb.com/webstandardsru"><span class="social__text">Фейсбук</span></a>
+			<a class="social__link social__link--youtube" href="https://www.youtube.com/webstandards_ru"><span class="social__text">Ютуб</span></a>
+			<a class="social__link social__link--slack" href="http://slack.web-standards.ru"><span class="social__text">Слак</span></a>
+			<a class="social__link social__link--telegram" href="https://telegram.me/webstandards_ru"><span class="social__text">Телеграм</span></a>
+		</div>
+	</header>
+	<main class="main" id="main">
+		<div class="section" id="intro">
+			<div class="section__box content">
+				<h1 class="section__title">Минск, 19 октября 2013</h1>
+				<p>Конференция прошла во 2-м корпусе БГУИР на Петруся Бровки, 4. Остались вопросы? Пишите: <a href="mailto:wst@web-standards.ru">wst@web-standards.ru</a>.</p>
+				<p>Понравилась конференция? Поддержите нас!</p>
+				<p>
+					<a class="support" href="https://www.patreon.com/bePatron?u=15894589">
+						Станьте Патроном
+					</a>
+				</p>
+			</div>
+		</div>
+		<section class="section section--open" id="schedule">
+			<div class="section__box">
+				<h2 class="section__title">
+					Программа
+					<a class="up" href="#navigation">
+						<span class="up__text">Наверх</span>
+					</a>
+				</h2>
+			</div>
+			<ol class="calendar">
+				<li class="calendar__event calendar__event--break">
+					<time class="calendar__time">11:00</time> Открытие
+				</li>
+				<li class="calendar__event">
+					<time class="calendar__time">11:10</time>
+					<div class="content content--inline" id="department">
+						<h3>Отдел вёрстки с нуля</h3>
+						<p>История развития отдела верстки в <a href="http://corp.mail.ru/communications/odnoklassniki">Одноклассниках</a> — причины, опыт организации, рефакторинг и путь к чистому коду. Помимо личного опыта и процессах в отделе, речь пойдёт о методологиях вёрстки и инструментах для командной разработки — зачем, как выбрать, на что обратить внимание. <a href="/2013/10/19/pres/department.pdf">Презентация в PDF</a></p>
+						<p><a class="anchor" href="#robert-haritonov">Роберт Харитонов</a></p>
+					</div>
+				</li>
+				<li class="calendar__event">
+					<time class="calendar__time">11:50</time>
+					<div class="content content--inline" id="jquery">
+						<h3>Как знать jQuery и не облажаться</h3>
+						<p>Доклад для тех, у кого в резюме есть строчка «знаю JavaScript (jQuery)». Всё больше фронтенд-разработчиков сильно зависят от jQuery. Чем же отличается фреймворк от библиотеки? Что такое такое JavaScript на самом деле? Доклад расскажет о том, как побороть эту вредную привычку и начать жить. <a href="/2013/10/19/pres/jquery/">Презентация в HTML</a></p>
+						<p><a class="anchor" href="#vadim-pacev">Вадим Пацев</a></p>
+					</div>
+				</li>
+				<li class="calendar__event calendar__event--break">
+					<time class="calendar__time">12:30</time> Перерыв
+				</li>
+				<li class="calendar__event">
+					<time class="calendar__time">12:40</time>
+					<div class="content content--inline" id="dom">
+						<h3>Как построить DOM</h3>
+						<p>Шаблонизаторы упрощают процесс формирования HTML и только. Но браузеру нужен совсем не HTML, а DOM. Необходимо преобразование. И вот тут начинается самое интересное: танцы с бубном и стрельба по ногам. В докладе пойдёт речь об общепринятом подходе получения DOM фрагмента, постпроцессинге и альтернативах. Сравним, измерим и узнаем как это делать быстрее всего. <a href="/2013/10/19/pres/dom.pdf">Презентация в PDF</a></p>
+						<p><a class="anchor" href="#roman-dvornov">Роман Дворнов</a></p>
+					</div>
+				</li>
+				<li class="calendar__event">
+					<time class="calendar__time">13:20</time>
+					<div class="content content--inline" id="web-audio">
+						<h3>Потрясающие возможности Web Audio API</h3>
+						<p>Генерация, запись, обработка звука, эффекты, фильтрация, визуализация и объемное распределение звука в браузере без использования сторонних плагинов. Простой, богатый и интуитивно понятный API для создания потрясающих воображение игр и интерактивных веб-приложений. Все о том как веб и аудио наконец-то пришли к взаимопониманию. <a href="/2013/10/19/pres/web-audio/">Презентация в HTML</a></p>
+						<p><a class="anchor" href="#dmitry-dudin">Дмитрий Дудин</a></p>
+					</div>
+				</li>
+				<li class="calendar__event calendar__event--break">
+					<time class="calendar__time">14:00</time> Обед
+				</li>
+				<li class="calendar__event">
+					<time class="calendar__time">15:00</time>
+					<div class="content content--inline" id="rest-in-ps">
+						<h3>Rest in PSD: воркфлоу современного веб-дизайнера</h3>
+						<p>Еще год назад многие сомневались, что дизайн и прототипировние должно начинаться сразу в браузере. В текущих реалиях это фактически неоспоримо. Илья расскажет об уже сложившемся современном подходе к веб-дизайну: опыт применения, способы, инструменты, трюки и проблемы подхода. <a href="/2013/10/19/pres/rest-in-ps.pdf">Презентация в PDF</a></p>
+						<p><a class="anchor" href="#ilya-pukhalski">Илья Пухальский</a></p>
+					</div>
+				</li>
+				<li class="calendar__event">
+					<time class="calendar__time">15:40</time>
+					<div class="content content--inline" id="autoprefixer">
+						<h3>Автопрефиксер: мир без CSS-префиксов</h3>
+						<p>Доклад для тех, кто хочет жить в другом идеальном мире, где в CSS нет никаких префиксов и можно писать чистый код без препроцессоров и примесей. <a href="/2013/10/19/pres/autoprefixer.pdf">Презентация в PDF</a></p>
+						<p><a class="anchor" href="#andrey-sitnik">Андрей Ситник</a></p>
+					</div>
+				</li>
+				<li class="calendar__event calendar__event--break">
+					<time class="calendar__time">16:20</time> Перерыв
+				</li>
+				<li class="calendar__event">
+					<time class="calendar__time">16:30</time>
+					<div class="content content--inline" id="knife-train">
+						<h3>Возвращение ножа и паровоза. Работа с графикой для веба</h3>
+						<p>Как нарезать графику для вашей вёрстки и не порезаться? Плёвое дело: узнать поближе Фотошоп, посмотреть на альтернативные редакторы графики, разобраться в растровых и векторных форматах и методах экспорта, оптимизации и сборки, приготовиться реализовать всё на чистом CSS, сделать красиво для ретины и предложить фолбеки для старых браузеров. <a href="/2013/10/19/pres/knife-train.pdf">Презентация в PDF</a></p>
+						<p><a class="anchor" href="#vadim-makeev">Вадим Макеев</a></p>
+					</div>
+				</li>
+				<li class="calendar__event">
+					<time class="calendar__time">17:10</time>
+					<div class="content content--inline" id="ya-maps">
+						<h3>Распечатай Яндекс.Карты</h3>
+						<p>В Яндексе разработали лучшую в мире страницу печати Карт. Как они это сделали, с какими проблемами столкнулись, какие трюки изобрели. А вы точно хотите научиться печатать фоновые цвета и изображения? <a href="/2013/10/19/pres/ya-maps.pdf">Презентация в PDF</a></p>
+						<p><a class="anchor" href="#vadim-makishvili">Вадим Макишвили</a></p>
+					</div>
+				</li>
+				<li class="calendar__event calendar__event--break">
+					<time class="calendar__time">17:50</time> Закрытие
+				</li>
+			</ol>
+		</section>
+		<section class="section" id="speakers">
+			<div class="section__box">
+				<h2 class="section__title">
+					Докладчики
+					<a class="up" href="#navigation">
+						<span class="up__text">Наверх</span>
+					</a>
+				</h2>
+			</div>
+			<div class="card" id="roman-dvornov">
+				<div class="card__description content">
+					<h3>Роман Дворнов <a href="https://twitter.com/rdvornov">@rdvornov</a></h3>
+					<p>Фронтенд-разработчик Ostrovok.ru. До этого руководил разработкой веб-клиентов в платежной системе Единый кошелёк. Автор и мейнтейнер опенсорсного JavaScript-фреймворка <a href="http://basisjs.com/">basis.js</a>.</p>
+				</div>
+				<div class="card__column">
+					<img class="card__picture" src="/speakers/roman-dvornov.jpeg" alt="Роман Дворнов">
+				</div>
+			</div>
+			<div class="card" id="dmitry-dudin">
+				<div class="card__description content">
+					<h3>Дмитрий Дудин <a href="https://twitter.com/nedudi">@nedudi</a></h3>
+					<p>Разработчик фронтенда, API, компонентов и приложений в <a href="http://xbsoftware.com/">XBSoftware</a>, автор статей на <a href="http://html5.by">HTML5.by</a>.</p>
+				</div>
+				<div class="card__column">
+					<img class="card__picture" src="/speakers/dmitry-dudin.jpeg" alt="Дмитрий Дудин">
+				</div>
+			</div>
+			<div class="card" id="vadim-makeev">
+				<div class="card__description content">
+					<h3>Вадим Макеев <a href="https://twitter.com/pepelsbey">@pepelsbey</a></h3>
+					<p>Веб-евангелист в компании <a href="http://opera.com/">Opera</a>. Веб-разработчик, организатор и участник IT-конференций, автор блога <a href="http://pepelsbey.net/">Пепелсбей.net</a>, пропагандист веб-стандартов.</p>
+				</div>
+				<div class="card__column">
+					<img class="card__picture" src="/speakers/vadim-makeev.jpeg" alt="Вадим Макеев">
+				</div>
+			</div>
+			<div class="card" id="vadim-makishvili">
+				<div class="card__description content">
+					<h3>Вадим Макишвили <a href="https://twitter.com/makishvili">@makishvili</a></h3>
+					<p>Руководитель группы HTML-вёрстки поисковых и контентных сервисов компании <a href="https://company.yandex.ru/">Яндекс</a>, автор блога <a href="http://makishvili.com/">Makishvili.com</a>. Докладчик конференций <a href="http://www.client2007.ru/">ClientSide 2007</a> и <a href="http://uaweb.in.ua/">UA Web 2008</a>.</p>
+				</div>
+				<div class="card__column">
+					<img class="card__picture" src="/speakers/vadim-makishvili.jpeg" alt="Вадим Макишвили">
+				</div>
+			</div>
+			<div class="card" id="vadim-pacev">
+				<div class="card__description content">
+					<h3>Вадим Пацев <a href="https://twitter.com/basvasilich">@basvasilich</a></h3>
+					<p>Руководитель отдела разработки интерфейсов в Яндексе. Был в роли дизайнера и разработчика интерфейсов. Интересуется быстрым прототипированием и визуальными возможностями современных веб-технологий.</p>
+				</div>
+				<div class="card__column">
+					<img class="card__picture" src="/speakers/vadim-pacev.jpeg" alt="Вадим Пацев">
+				</div>
+			</div>
+			<div class="card" id="ilya-pukhalski">
+				<div class="card__description content">
+					<h3>Илья Пухальский <a href="https://twitter.com/pukhalski">@pukhalski</a></h3>
+					<p>Solution Architect в компании <a href="http://www.epam-group.ru/">EPAM Systems</a>. Веб-разработчик с более чем шестилетним опытом, JavaScript-lover. Текущая страсть — разработка мобильных приложений и сайтов.</p>
+				</div>
+				<div class="card__column">
+					<img class="card__picture" src="/speakers/ilya-pukhalski.jpeg" alt="Илья Пухальский">
+				</div>
+			</div>
+			<div class="card" id="andrey-sitnik">
+				<div class="card__description content">
+					<h3>Андрей Ситник <a href="https://twitter.com/andrey_sitnik">@andrey_sitnik</a></h3>
+					<p>Фронтенд- и руби-разработчик в «<a href="http://evilmartians.ru">Злых марсианах</a>», автор <a href="http://easings.net/ru">шпаргалки Easings.net</a>, <a href="http://css-tricks.com/autoprefixer/">Автопрефиксера</a> и доклада «<a href="http://www.youtube.com/watch?v=KzCX9xBzUbk">Вращай, двигай, загибай — практика 3D в вебе</a>» с РИТ 2012.</p>
+				</div>
+				<div class="card__column">
+					<img class="card__picture" src="/speakers/andrey-sitnik.jpeg" alt="Андрей Ситник">
+				</div>
+			</div>
+			<div class="card" id="robert-haritonov">
+				<div class="card__description content">
+					<h3>Роберт Харитонов <a href="https://twitter.com/operatino">@operatino</a></h3>
+					<p>Руководитель отдела разработки интерфейсов в <a href="http://corp.mail.ru/communications/odnoklassniki">Одноклассниках</a>, занимается внутренними стандартами вёрстки и организацией процессов разработки интерфейсов. Проживает в Риге, автор блога <a href="http://tohtml.it">ToHTML.it</a> и движка для документирования верстки <a href="http://sourcejs.com">Source</a>.</p>
+				</div>
+				<div class="card__column">
+					<img class="card__picture" src="/speakers/robert-haritonov.jpeg" alt="Роберт Харитонов">
+				</div>
+			</div>
+		</section>
+		<section class="section" id="organisers">
+			<div class="section__box">
+				<h2 class="section__title">
+					Организаторы
+					<a class="up" href="#navigation">
+						<span class="up__text">Наверх</span>
+					</a>
+				</h2>
+			</div>
+			<div class="card" id="opera">
+				<div class="card__description content">
+					<h3>Opera</h3>
+					<p>Норвежская компания, известная своими браузерами: <a href="http://www.opera.com/computer">Opera для компьютеров</a>, <a href="http://www.opera.com/mobile/android">Opera для Android</a>, <a href="http://www.opera.com/mobile/mini">Opera Mini</a>. Участвует в разработке движков Chromium и Blink, подробнее о технологиях на <a href="https://dev.opera.com/">Dev.Opera</a>.</p>
+				</div>
+				<div class="card__column card__column--logo">
+					<a href="http://opera.com/">
+						<img class="card__picture" src="/partners/opera.svg" alt="Opera">
+					</a>
+				</div>
+			</div>
+			<div class="card" id="epam">
+				<div class="card__description content">
+					<h3>EPAM Systems</h3>
+					<p>Американская ИТ-компания, производитель заказного программного обеспечения, специалист по консалтингу. Штаб-квартира компании расположена в Ньютауне, США, а её отделения представлены в 17 странах мира.</p>
+				</div>
+				<div class="card__column card__column--logo">
+					<a href="http://www.epam-group.ru/">
+						<img class="card__picture" src="/partners/epam.svg" alt="EPAM Systems">
+					</a>
+				</div>
+			</div>
+		</section>
+		<section class="section section--open" id="venue">
+			<div class="section__box">
+				<h2 class="section__title">
+					Площадка
+					<a class="up" href="#navigation">
+						<span class="up__text">Наверх</span>
+					</a>
+				</h2>
+			</div>
+			<div class="map" id="map">
+				<img class="map__image"
+					src="https://static-maps.yandex.ru/1.x/?ll=27.593623,53.918966&amp;z=17&amp;l=map&amp;size=640,450&amp;pt=27.593623,53.918966,org"
+					alt="Минск, 2-й корпус БГУИР на Петруся Бровки, 4.">
+			</div>
+			<div class="section__box content">
+				<p>Минск, 2-й корпус БГУИР на Петруся Бровки, 4.</p>
+			</div>
+		</section>
+	</main>
+	<script defer src="/scripts/script.js"></script>
+	<script defer src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;onload=yandexMap"></script>
+</body>
+</html>

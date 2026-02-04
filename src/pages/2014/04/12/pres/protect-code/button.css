@@ -1,0 +1,170 @@
+.button {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    border-radius: 3px;
+    background: rgba(51, 51, 51, 0.95);
+    box-shadow: 0 3px 8px -2px rgba(0, 0, 0, 0.66); /* Experementally found */
+    font-size: 25px;
+    }
+    .button:before {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        z-index: 1;
+        width: 20px;
+        height: 20px;
+        background: url('pictures/icons_ads.svg');
+        content: '';
+        }
+    .button__close {
+        position: absolute;
+        top: 3px;
+        right: 4px;
+        z-index: 1;
+        width: 24px;
+        height: 24px;
+        border-radius: 2px;
+        background: url('pictures/ui_callout-close.svg') center no-repeat;
+        background-color: #222;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, .5);
+        cursor: pointer;
+        }
+
+.button._center {
+    top: 350px;
+    left: 50%;
+    margin-left: -16px;
+    }
+
+.button._text {
+    color: #fff;
+    padding: 0 8px 0 30px;
+    line-height: 32px;
+    }
+
+.button._longText {
+    width: auto;
+    }
+
+.button._multiText {
+    max-width: 200px;
+    height: auto;
+    line-height: 24px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    }
+.button._multiText._unfixed {
+    padding-top: 0;
+    padding-bottom: 0;
+    }
+
+.button._hint .button__hint {
+    color: #ccc;
+    font-size: 16px;
+    line-height: 16px;
+    margin: 4px 0;
+    }
+
+.button._longWord {
+    word-wrap: break-word;
+    }
+
+.button._close .button__title {
+    padding-right: 20px;
+    }
+
+.button._skin {
+    background-image: linear-gradient(to bottom, #fee 0%, #fdd 100%);
+    color: #000;
+    border-radius: 0;
+    box-shadow: none;
+    }
+.button._skin .button__hint {
+    color: #666;
+    }
+.button._skin .button__close {
+    box-shadow: none;
+    background-color: #fdd;
+    }
+
+.button._noTitle .button__hint {
+    margin-top: 2px;
+    }
+
+
+
+.superButton {
+    word-wrap: break-word;
+    position: absolute;
+    padding: 4px 8px;
+    min-height: 24px;
+    min-width: 16px;
+    max-width: 200px;
+    border-radius: 3px;
+    background: rgba(51, 51, 51, 0.95);
+    box-shadow: 0 3px 8px -2px rgba(0, 0, 0, 0.66); /* Experementally found */
+    color: #fff;
+    font-size: 25px;
+    line-height: 32px;
+    line-height: 24px;
+    }
+.superButton._pink {
+    background-image: linear-gradient(to bottom, #fee 0%, #fdd 100%);
+    color: #000;
+    border-radius: 0;
+    box-shadow: none;
+    }
+    .superButton:before {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        z-index: 1;
+        width: 20px;
+        height: 20px;
+        background: url('pictures/icons_ads.svg');
+        content: '';
+        }
+    .superButton__title {
+        margin-left: 30px;
+        }
+    .superButton._close .superButton__title {
+        margin-right: 20px;
+        }
+    .superButton__hint {
+        margin: 4px 0;
+        margin-left: 30px;
+        color: #ccc;
+        font-size: 16px;
+        line-height: 16px;
+        }
+    .superButton._close .superButton__hint {
+        margin-right: 20px;
+        }
+    .superButton._noTitle .superButton__hint {
+        margin-top: 2px;
+        }
+    .superButton._close .superButton__title {
+        margin-right: 20px;
+        }
+    .superButton__close {
+        position: absolute;
+        top: 3px;
+        right: 4px;
+        z-index: 1;
+        width: 24px;
+        height: 24px;
+        border-radius: 2px;
+        background: url('pictures/ui_callout-close.svg') center no-repeat;
+        background-color: #222;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, .5);
+        cursor: pointer;
+        }
+    .superButton._pink .superButton__close {
+        box-shadow: none;
+        background-color: #fdd;
+        }
+    .superButton._pink .button__close {
+        box-shadow: none;
+        background-color: #fdd;
+        }

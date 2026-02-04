@@ -1,0 +1,109 @@
+.letter {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    overflow: hidden;
+    color: transparent;
+    height: 96px;
+    }
+.letter._upper {
+    /*height: 80px;*/
+    }
+.letter__it {
+    top: 0;
+    left: -16px;
+    position: absolute;
+    display: inline-block;
+    width: 80px;
+    /*height: 300px;*/
+    -webkit-animation: letter__it 2s linear infinite;
+    /*-webkit-animation: letter__it 2s linear -1s;*/
+    color: #666;
+    }
+
+@-webkit-keyframes letter__it {
+    0% {
+        -webkit-transform: translate3d(0, 0, 0);
+    }
+    100% {
+        -webkit-transform: translate3d(0, -3000px, 0);
+    }
+}
+@-webkit-keyframes letter__stop {
+    0% {
+        -webkit-transform: translate3d(0, 0, 0);
+    }
+    100% {
+        -webkit-transform: translate3d(0, -3000px, 0);
+    }
+}
+
+.active ~ .letter > .letter__it {
+    -webkit-animation: letter__stop 2.2s linear -2s 1;
+    }
+
+.active ~ .letter:nth-of-type(1) > .letter__it {
+    -webkit-animation-delay: -2.1s;
+    }
+.active ~ .letter:nth-of-type(2) > .letter__it {
+    -webkit-animation-delay: -2.0s;
+    }
+.active ~ .letter:nth-of-type(3) > .letter__it {
+    -webkit-animation-delay: -1.9s;
+    }
+.active ~ .letter:nth-of-type(4) > .letter__it {
+    -webkit-animation-delay: -1.8s;
+    }
+.active ~ .letter:nth-of-type(5) > .letter__it {
+    -webkit-animation-delay: -1.7s;
+    }
+.active ~ .letter:nth-of-type(6) > .letter__it {
+    -webkit-animation-delay: -1.6s;
+    }
+.active ~ .letter:nth-of-type(7) > .letter__it {
+    -webkit-animation-delay: -1.5s;
+    }
+.active ~ .letter:nth-of-type(8) > .letter__it {
+    -webkit-animation-delay: -1.4s;
+    }
+.active ~ .letter:nth-of-type(9) > .letter__it {
+    -webkit-animation-delay: -1.3s;
+    }
+.active ~ .letter:nth-of-type(10) > .letter__it {
+    -webkit-animation-delay: -1.2s;
+    }
+.active ~ .letter:nth-of-type(11) > .letter__it {
+    -webkit-animation-delay: -1.1s;
+    }
+.active ~ .letter:nth-of-type(12) > .letter__it {
+    -webkit-animation-delay: -1.0s;
+    }
+.active ~ .letter:nth-of-type(13) > .letter__it {
+    -webkit-animation-delay: -0.9s;
+    }
+.active ~ .letter:nth-of-type(14) > .letter__it {
+    -webkit-animation-delay: -0.8s;
+    }
+.active ~ .letter:nth-of-type(15) > .letter__it {
+    -webkit-animation-delay: -0.7s;
+    }
+.active ~ .letter:nth-of-type(16) > .letter__it {
+    -webkit-animation-delay: -0.6s;
+    }
+.active ~ .letter:nth-of-type(17) > .letter__it {
+    -webkit-animation-delay: -0.5s;
+    }
+.active ~ .letter:nth-of-type(18) > .letter__it {
+    -webkit-animation-delay: -0.4s;
+    }
+.active ~ .letter:nth-of-type(19) > .letter__it {
+    -webkit-animation-delay: -0.3s;
+    }
+.active ~ .letter:nth-of-type(20) > .letter__it {
+    -webkit-animation-delay: -0.2s;
+    }
+.active ~ .letter:nth-of-type(21) > .letter__it {
+    -webkit-animation-delay: -.01s;
+    -webkit-animation-iteration-count: 2;
+    }
