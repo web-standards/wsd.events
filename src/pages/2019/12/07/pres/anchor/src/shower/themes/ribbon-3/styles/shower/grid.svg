@@ -1,0 +1,63 @@
+<svg width="1024" height="768" xmlns="http://www.w3.org/2000/svg">
+	<defs>
+		<style>
+			.square {
+				stroke: red;
+                stroke-opacity: 0.1;
+				stroke-width: 1;
+				fill: transparent;
+			}
+
+            .grid {
+                fill: url(#grid);
+            }
+
+            .line {
+                stroke: #8af8f9;
+            }
+		</style>
+		<pattern x="0" y="0" width="25" height="25" viewBox="0 0 25 25" patternUnits="userSpaceOnUse" id="grid">
+			<rect x="0" y="0" width="25" height="25" class="square"/>
+		</pattern>
+	</defs>
+
+	<rect x="0" y="0" width="1024" height="768" class="grid"/>
+
+	<line x1="100" x2="100" y1="0" y2="768" class="line"/>
+	<line x1="475" x2="475" y1="0" y2="768" class="line"/>
+	<line x1="550" x2="550" y1="0" y2="768" class="line"/>
+	<line x1="925" x2="925" y1="0" y2="768" class="line"/>
+
+	<line y1="125" y2="125" x1="0" x2="1024" class="line"/>
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function() {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					head.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					head.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function(msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			console.log('Live reload enabled.');
+		})();
+	}
+	// ]]>
+</script>
+</svg>

@@ -1,0 +1,193 @@
+/*@import "black-theme.css";*/
+@import "white-theme.css";
+
+body {
+  background: var(--background);
+  font-family: PT Serif, serif;
+  margin: 0;
+}
+code {
+  font-family: PT Mono, monospace;
+}
+
+h1 {
+  text-align: center;
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+h3 {
+  font-size: 2rem;
+}
+
+section {
+  min-height: 100vh;
+  padding: 2rem;
+  width: 60rem;
+  margin: auto;
+}
+
+img {
+  display: block;
+  object-fit: contain;
+  height: 100vh;
+  width: 100vw;
+  object-fit: contain;
+  position: relative;
+  left: 30rem;
+  transform: translate(-50vw, 0);
+}
+
+.example-form {
+  position: relative;
+  width: 60rem;
+  vertical-align: bottom;
+}
+.example-form__error-message {
+  font-family: PT Sans, sans-serif;
+  height: 3rem;
+  position: absolute;
+  bottom: -2rem;
+  width: 100%;
+  left: 8.5rem;
+  color: var(--error-color);
+  font-size: 2rem;
+}
+
+.example-form__label {
+  display: block;
+  line-height: 4rem;
+  padding: 0.5rem;
+  font-size: 2rem;
+  color: #ccc;
+}
+
+.example-form input {
+  font-family: PT Sans, sans-serif;
+  font-size: 3rem;
+  padding: 0.5rem;
+  border: none;
+  border-bottom: 4px dashed #ccc;
+  transition: border 0.3s;
+  width: 60rem;
+}
+
+.example-form input:invalid {
+  outline: none !important;
+  box-shadow: none;
+}
+
+.example-form input:focus {
+  border-bottom: 4px dashed dodgerblue;
+}
+
+.example-form__hero-button {
+  margin: 1rem auto;
+  width: 15rem;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  font-size: 2rem;
+}
+
+.email-input {
+  font-family: PT Sans, sans-serif;
+  font-size: 2rem;
+  padding: 0.2em;
+  border: none;
+  /*border-bottom: 2px dashed #ccc;*/
+  transition: border 0.3s;
+  width: 60rem;
+  margin: 0;
+}
+.email-input_check {
+  font-size: 1rem;
+  display: inline;
+  width: 30rem;
+}
+.email-input_check:invalid {
+  color: var(--error-color) !important;
+}
+
+.email-input:invalid,
+.email-input__error {
+  box-shadow: none;
+  color: var(--error-color);
+}
+
+.example-form_inline .example-form__label {
+  display: inline-block;
+}
+.example-form_inline input {
+  width: 35rem;
+  display: inline-block;
+  margin: 1rem;
+}
+.example-form_inline .example-form__hero-button {
+  width: 9rem;
+  margin: 1rem;
+}
+
+.DFA-test {
+  display: block;
+}
+.DFA-test__input {
+  font-family: "PT Mono", monospace;
+  font-size: 1rem;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  padding: 0;
+  margin: 0;
+}
+.DFA-test__error {
+  font-family: "PT Mono", monospace;
+  display: block;
+  color: var(--error-color);
+  font-size: 3rem;
+  margin: 1rem;
+  top: -1.5rem;
+  position: relative;
+}
+
+.code-label {
+  opacity: 0.81;
+  position: absolute;
+  padding: 0.5rem;
+  font-size: 1rem;
+  background: var(--highlight-color);
+  border-radius: 3px;
+}
+.arrow {
+  position: absolute;
+  height: 0px;
+  width: 0px;
+}
+
+.DFA-test {
+}
+.DFA-test__input {
+  width: 50rem;
+}
+.error-message {
+  color: var(--error-color);
+  font-family: PT Mono, monospace;
+  font-size: 3rem;
+  margin: 0.3rem;
+}
+
+.terminal {
+  color: var(--terminal-color);
+}
+.terminal:before {
+  content: '"';
+}
+.terminal:after {
+  content: '"';
+}
+
+.highlight {
+  background: var(--highlight-color);
+  border-radius: 4px;
+  padding: 0 0.4rem;
+}

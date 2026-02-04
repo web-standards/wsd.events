@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Семантика для циников</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="shower/themes/ribbon/styles/styles.css">
+    <style>
+        /* Large */
+
+        .large {
+            white-space: nowrap;
+            line-height: 1.5;
+            font-size: 50px;
+        }
+
+        /* Daria */
+
+        .daria {
+            background-color: #eff0ab;
+        }
+
+        .daria h2 {
+            color: black;
+        }
+
+        .daria img {
+            height: 90%;
+        }
+
+        /* VoiceOver */
+
+        .voiceover img {
+            width: 100%;
+            margin-left: -25px;
+        }
+
+        /* Webpage */
+
+        .webpage .element:active,
+        .webpage .element:focus {
+            fill: #4b86c2;
+            outline: none;
+        }
+
+        /* Visually Hidden */
+
+        .visually-hidden {
+            position: absolute;
+            clip: rect(0 0 0 0);
+        }
+
+        /* Error */
+        .mistype {
+            background-image: url(pictures/error.svg);
+            background-repeat: repeat-x;
+            background-position: 0 100%;
+            background-size: auto 0.15em;
+        }
+    </style>
+</head>
+<body class="shower list">
+
+    <header class="caption">
+        <h1>Семантика для циников</h1>
+        <p>Вадим Макеев, HTML Academy</p>
+    </header>
+
+    <section class="slide clear daria" id="cover">
+        <h2 class="place left">Семантика для циников</h2>
+        <figure>
+            <img class="place bottom left" src="pictures/daria.svg" alt="Daria">
+            <figcaption class="copyright right">© MTV</figcaption>
+        </figure>
+        <style>
+            #cover h2 {
+                margin-left: 400px;
+                font-size: 120px;
+            }
+
+            #cover img {
+                margin-left: 80px;
+            }
+        </style>
+    </section>
+
+    <section class="slide clear" style="background: #302683">
+		<a href="https://htmlacademy.ru/">
+			<img class="place" width="700" src="pictures/html-academy.svg" alt="Логотип HTML Academy">
+		</a>
+	</section>
+
+    <section class="slide clear">
+		<img class="cover" src="pictures/podcast.jpg" alt="Лёша, Оля и Вадим записывают подкаст">
+	</section>
+
+    <section class="slide clear">
+		<img class="cover" src="pictures/blog.jpg" alt="Вадим в видеоблоге">
+        <h2 class="shout" style="color: white; font-size: 100px">youtube.com/pepelsbey</h2>
+	</section>
+
+    <section class="slide">
+        <h2 class="visually-hidden">Логотип семантики HTML5</h2>
+        <svg class="place" style="fill: #4b86c2; width: 400px" role="image" aria-label="Логотип семантики HTML5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 256 256"><polygon id="chevron" points="128.106,0 0,64.744 0,107.32 128.106,42.577 256.155,107.32 256.155,64.744"/><use xlink:href="#chevron" y="74.316"/><use xlink:href="#chevron" y="148.653"/></svg>
+    </section>
+
+    <section class="slide clear">
+        <p class="large place" style="font-size: 100px">
+            <span class="next">Семантика —</span><br>
+            <span class="next">это как монады.</span>
+        </p>
+    </section>
+
+    <section class="slide black clear">
+        <h2 class="shout shrink" style="color: white">Спасибо</h2>
+        <img class="cover" src="pictures/curtains.jpg" alt="Закрытые красные театральные шторы.">
+    </section>
+
+    <section class="slide clear" id="html5">
+        <h2 class="place bottom right">HTML5</h2>
+        <style>
+            #html5 h2 {
+                margin: 0 0 50px 30px;
+                padding: 10px 50px;
+                background: #E34C26;
+                color: #FFF;
+                box-shadow: 16px 16px 40px rgba(0, 0, 0, 0.3);
+                font-size: 100px;
+            }
+        </style>
+        <figure>
+            <img class="cover" src="pictures/html5.jpg" alt="Дядя Оуэн и Люк Скайуокер">
+            <figcaption class="copyright bottom">© Lucasfilm</figcaption>
+        </figure>
+    </section>
+
+    <section class="slide clear">
+        <h2 class="visually-hidden">Блог Пепелсбей.net</h2>
+        <img class="cover height" src="pictures/pepelsbey.png" alt="Pepelsbey.net blog">
+    </section>
+
+    <section class="slide">
+        <h2 class="visually-hidden">Семантическая вёрстка</h2>
+        <ol class="place large">
+            <li class="next"><a href="https://pepelsbey.net/2008/04/semantic-coding-1/">Семантическая вёрстка, ч. 1</a></li>
+            <li class="next"><a href="https://pepelsbey.net/2008/04/semantic-coding-2/">Семантическая вёрстка, ч. 2</a></li>
+            <li class="next"><a href="http://web.archive.org/web/20080730163823/http://ay4.getalime.ru/blog/2008/04/24/semantics-shmemantics/">Семантика-шмемантика, ay4</a></li>
+        </ol>
+    </section>
+
+    <section class="slide">
+        <h2 class="visually-hidden">Важные вопросы</h2>
+        <ol class="place large">
+            <li class="next"><code>&lt;b&gt;</code> или <code>&lt;strong&gt;</code></li>
+            <li class="next"><code>&lt;section&gt;</code> или <code>&lt;article&gt;</code></li>
+            <li class="next"><code>&lt;div&gt;</code> или <code>&lt;span&gt;</code></li>
+            <li class="next"><code>&lt;i&gt;</code> для иконок?</li>
+        </ol>
+    </section>
+
+    <section class="slide clear daria">
+        <h2 class="visually-hidden">Дарья</h2>
+        <figure>
+            <img class="place bottom" src="pictures/daria.svg" alt="Дарья">
+            <figcaption class="copyright right">© MTV</figcaption>
+        </figure>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout">
+            <span class="next">Это</span>
+            <span class="next">совсем</span>
+            <span class="next">не</span> <span class="next">важно</span>
+        </h2>
+        <p class="place bottom next">
+            Ну или важно, но вам <em>может быть</em> всё равно.
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout">А что важно?</h2>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout">UX</h2>
+        <p class="place bottom">Удобно ли пользоваться сайтом.</p>
+    </section>
+
+    <section class="slide">
+        <h2 class="visually-hidden">Роли разметки</h2>
+        <ol class="place large" style="font-size: 100px">
+            <li class="next">Контент</li>
+            <li class="next">Интерфейс</li>
+        </ol>
+    </section>
+
+    <section class="slide daria">
+        <h2 class="shout grow">Контент?</h2>
+        <figure>
+            <img class="place bottom" style="margin-bottom: -330px" height="90%" src="pictures/daria.svg" alt="Дарья">
+            <figcaption class="copyright right">© MTV</figcaption>
+        </figure>
+    </section>
+
+    <section class="slide clear">
+        <h2 class="visually-hidden">Главная страница KharkivJS</h2>
+        <img class="cover" src="pictures/kharkivjs/main.jpg" alt="Главная страница KharkivJS">
+    </section>
+
+    <section class="slide">
+        <h2 class="visually-hidden">Пофиг и беда</h2>
+        <ol class="place large" style="font-size: 43px">
+            <li class="next"><code>&lt;div&gt;</code> — 497 шт. <mark class="next">да пофиг</mark></li>
+            <li class="next"><code>&lt;img alt&gt;</code> — 0 из 53 шт. <mark class="next">ой, беда</mark></li>
+            <li class="next"><code>&lt;a href&gt;&lt;/a&gt;</code> — 7 шт. <mark class="next">очень беда</mark></li>
+            <li class="next"><code>&lt;h*&gt;</code> — 0 шт. <mark class="next">вообще беда</mark></li>
+        </ol>
+    </section>
+
+    <section class="slide clear">
+        <h2 class="shout">
+            <span class="next">Мы с вами…</span><br>
+            <span class="mistype next">дивелоперы</span>
+        </h2>
+        <div class="copyright right">
+            <a href="https://twitter.com/chriscoyier/status/1050456501414838272">
+                Крис Койер
+            </a>
+        </div>
+    </section>
+
+    <section class="slide voiceover">
+        <h2>Пустота в пустоте</h2>
+        <img class="next" src="pictures/kharkivjs/makeev.png" alt="Сообщение VoiceOver: /makeev.jpg, image">
+        <img class="next" src="pictures/kharkivjs/youtube.png" alt="Сообщение VoiceOver: link, UCYCPt7SWMZa4T8GwkQ-K-0A">
+    </section>
+
+    <section class="slide">
+        <h2>Контент</h2>
+        <ul>
+            <li class="next">Язык: <code>&lt;html lang="en"&gt;</code>, <code>&lt;html lang="uk"&gt;</code></li>
+            <li class="next">Заголовки: <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>, <code>&lt;h4&gt;</code>, <code>&lt;h5&gt;</code>, <code>&lt;h6&gt;</code></li>
+            <li class="next">Картинки: <code>&lt;img alt=""&gt;</code>, <code>&lt;svg role="image" aria-label=""&gt;</code></li>
+            <li class="next">Фигуры: <code>&lt;figure&gt;</code>, <code>&lt;figcaption&gt;</code></li>
+            <li class="next">Списки: <code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>, <code>&lt;li&gt;</code></li>
+        </ul>
+        <p class="next">Для поисковиков, режимов чтения, скринридеров, новых устройств.</p>
+    </section>
+
+    <section class="slide black clear">
+        <h2 class="visually-hidden">Меню заголовков VoiceOver</h2>
+        <img class="cover" src="pictures/kharkivjs/main.jpg" alt="Главная страница KharkivJS">
+        <img class="place next" width="50%" src="pictures/kharkivjs/headings-none.png" alt="Пустое меню заголовков VoiceOver">
+        <img class="place next" width="50%" src="pictures/kharkivjs/headings.png" alt="Полное меню заголовков VoiceOver">
+    </section>
+
+    <section class="slide black clear">
+        <h2 class="visually-hidden">OdessaJS</h2>
+        <img class="cover" src="pictures/odessajs/main.jpg" alt="Главная страница OdessaJS">
+        <img class="place next" width="50%" src="pictures/odessajs/headings.png" alt="Меню заголовков VoiceOver">
+    </section>
+
+    <section class="slide clear">
+        <h2 class="visually-hidden">Контролы форм в watchOS</h2>
+        <figure>
+            <img class="cover" src="pictures/watch/label.jpg" alt="Контролы форм в watchOS">
+            <img class="cover next" src="pictures/watch/forms.jpg" alt="Контролы форм в watchOS">
+            <figcaption class="copyright right white">
+                <a href="https://developer.apple.com/videos/play/wwdc2018/239/">Designing Web Content for watchOS</a>
+            </figcaption>
+        </figure>
+    </section>
+
+    <section class="slide clear">
+        <h2 class="visually-hidden">Режим чтения Safari в watchOS</h2>
+        <figure>
+            <img class="cover" src="pictures/watch/article.jpg" alt="Режим чтения Safari в watchOS">
+            <img class="cover next" src="pictures/watch/schema.jpg" alt="Режим чтения Safari в watchOS">
+            <img class="cover next" src="pictures/watch/figure.jpg" alt="Режим чтения Safari в watchOS">
+            <img class="cover next" src="pictures/watch/blockquote.jpg" alt="Режим чтения Safari в watchOS">
+            <img class="cover next" src="pictures/watch/emphasis.jpg" alt="Режим чтения Safari в watchOS">
+            <figcaption class="copyright right white">
+                <a href="https://developer.apple.com/videos/play/wwdc2018/239/">Designing Web Content for watchOS</a>
+            </figcaption>
+        </figure>
+    </section>
+
+    <section class="slide daria">
+        <h2 class="shout grow">Интерфейс?</h2>
+        <figure>
+            <img class="place bottom" style="margin-bottom: -330px" height="90%" src="pictures/daria.svg" alt="Дарья">
+            <figcaption class="copyright right">© MTV</figcaption>
+        </figure>
+    </section>
+
+    <section class="slide">
+        <h2>Интерфейс</h2>
+        <ul>
+            <li class="next">Ориентиры: <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;aside&gt;</code>, <code>&lt;footer&gt;</code></li>
+            <li class="next">Заголовки: <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>, <code>&lt;h4&gt;</code>, <code>&lt;h5&gt;</code>, <code>&lt;h6&gt;</code></li>
+            <li class="next">Элементы форм: <code>&lt;fieldset&gt;</code>, <code>&lt;legend&gt;</code>, <code>&lt;input&gt;</code></li>
+            <li class="next">Интерактивные: <code>&lt;button&gt;</code> и <code>&lt;a&gt;</code></li>
+            <li class="next">Лейблы: <code>&lt;a href="" aria-label="Twitter"&gt;&lt;/a&gt;</code></li>
+        </ul>
+        <p class="next">Для пользователей клавиатур и скринридеров.</p>
+    </section>
+
+    <section class="slide black clear">
+        <h2 class="visually-hidden">Меню ориентиров VoiceOver</h2>
+        <img class="cover" src="pictures/kharkivjs/main.jpg" alt="Главная страница KharkivJS">
+        <img class="place next" width="50%" src="pictures/kharkivjs/landmarks-none.png" alt="Пустое меню ориентиров VoiceOver">
+        <img class="place next" width="50%" src="pictures/kharkivjs/landmarks-all.png" alt="Полное меню ориентиров VoiceOver">
+    </section>
+
+    <section class="slide clear daria">
+        <h2 class="shout grow">Но апки…</h2>
+        <figure>
+            <img class="place bottom" style="margin-bottom: -330px" height="90%" src="pictures/daria.svg" alt="Дарья">
+            <figcaption class="copyright right">© MTV</figcaption>
+        </figure>
+    </section>
+
+    <section class="slide clear">
+        <h2 class="visually-hidden">Документ</h2>
+        <svg role="image" aria-label="Схема частей документа" class="place webpage" width="1024" height="576" viewBox="0 0 1024 576">
+            <!-- Title -->
+            <g>
+                <rect tabindex="0" stroke="#585A5E" stroke-width="4" fill="#E6E6E6" x="2" y="2" width="1020" height="28"></rect>
+                <g transform="translate(20, 10)" fill="#585A5E">
+                    <circle cx="46" cy="6" r="6"></circle>
+                    <circle cx="26" cy="6" r="6"></circle>
+                    <circle cx="6" cy="6" r="6"></circle>
+                </g>
+            </g>
+            <!-- Page -->
+            <g transform="translate(0, 28)">
+                <rect class="element element-back" tabindex="0" stroke="#585A5E" stroke-width="4" fill="#FFFFFF" x="2" y="2" width="1020" height="544"></rect>
+                <rect class="element" tabindex="0" fill="#585A5E" x="211" y="101" width="400" height="32"></rect>
+                <rect class="element" tabindex="0" stroke="#585A5E" stroke-width="4" fill="#E6E6E6" x="213" y="165" width="598" height="138"></rect>
+                <rect class="element" tabindex="0" fill="#585A5E" x="211" y="345" width="222" height="16"></rect>
+                <rect class="element" tabindex="0" stroke="#585A5E" stroke-width="4" fill="#E6E6E6" x="213" y="393" width="598" height="153"></rect>
+            </g>
+        </svg>
+    </section>
+
+    <section class="slide">
+        <h2>Документ</h2>
+        <pre>
+            <code>&lt;body&gt;</code>
+            <code>    <mark>&lt;h1&gt;</mark>Заголовок 1&lt;/h1&gt;</code>
+            <code>    <mark>&lt;p&gt;</mark>Съешь ещё этих булок&lt;/p&gt;</code>
+            <code>    <mark>&lt;h2&gt;</mark>Заголовок 2&lt;/h2&gt;</code>
+            <code>    <mark>&lt;p&gt;</mark>Да выпей кавы&lt;/p&gt;</code>
+            <code>&lt;/body&gt;</code>
+        </pre>
+    </section>
+
+    <section class="slide clear">
+        <h2 class="visually-hidden">Сайт</h2>
+        <svg role="image" aria-label="Схема частей сайта" class="place webpage" width="1024" height="576" viewBox="0 0 1024 576">
+            <!-- Title -->
+            <g>
+                <rect tabindex="0" stroke="#585A5E" stroke-width="4" fill="#E6E6E6" x="2" y="2" width="1020" height="28"></rect>
+                <g transform="translate(20, 10)" fill="#585A5E">
+                    <circle cx="46" cy="6" r="6"></circle>
+                    <circle cx="26" cy="6" r="6"></circle>
+                    <circle cx="6" cy="6" r="6"></circle>
+                </g>
+            </g>
+            <!-- Header -->
+            <g transform="translate(0, 28)">
+                <rect class="element element-back" tabindex="0" stroke="#585A5E" stroke-width="4" fill="#FFFFFF" x="2" y="2" width="1020" height="60"></rect>
+                <g transform="translate(876, 16)">
+                    <rect stroke="#585A5E" stroke-width="4" fill="#E6E6E6" x="2" y="2" width="124" height="28" rx="14"></rect>
+                    <rect fill="#585A5E" x="104" y="8" width="16" height="16" rx="8"></rect>
+                </g>
+                <g transform="translate(274, 24)" fill="#585A5E">
+                    <rect x="336" y="0" width="64" height="16" rx="8"></rect>
+                    <rect x="252" y="0" width="64" height="16" rx="8"></rect>
+                    <rect x="168" y="0" width="64" height="16" rx="8"></rect>
+                    <rect x="84" y="0" width="64" height="16" rx="8"></rect>
+                    <rect x="0" y="0" width="64" height="16" rx="8"></rect>
+                </g>
+                <rect fill="#585A5E" x="19" y="16" width="195" height="32" rx="16"></rect>
+            </g>
+            <!-- Aside -->
+            <g transform="translate(0, 88)">
+                <rect class="element" tabindex="0" stroke="#585A5E" stroke-width="4" fill="#E6E6E6" x="2" y="2" width="230" height="424"></rect>
+                <rect stroke="#585A5E" stroke-width="4" fill="#FFFFFF" x="22" y="347" width="190" height="59" rx="29.5"></rect>
+                <g transform="translate(20, 113)" fill="#585A5E">
+                    <rect x="0" y="143" width="132" height="16" rx="8"></rect>
+                    <rect x="0" y="108" width="98" height="16" rx="8"></rect>
+                    <rect x="0" y="72" width="185" height="16" rx="8"></rect>
+                    <rect x="0" y="36" width="132" height="16" rx="8"></rect>
+                    <rect x="0" y="0" width="98" height="16" rx="8"></rect>
+                </g>
+            </g>
+            <!-- Main -->
+            <g transform="translate(230, 88)">
+                <rect class="element" tabindex="0" stroke="#585A5E" stroke-width="4" fill="#FFFFFF" x="2" y="2" width="790" height="484"></rect>
+                <rect stroke="#585A5E" stroke-width="4" fill="#E6E6E6" x="46" y="333" width="598" height="153"></rect>
+                <rect fill="#585A5E" x="44" y="285" width="222" height="16"></rect>
+                <rect stroke="#585A5E" stroke-width="4" fill="#E6E6E6" x="46" y="105" width="598" height="138"></rect>
+                <rect fill="#585A5E" x="44" y="41" width="400" height="32"></rect>
+            </g>
+            <!-- Footer -->
+            <g transform="translate(0, 512)">
+                <rect class="element" tabindex="0" stroke="#585A5E" stroke-width="4" fill="#585A5E" x="2" y="2" width="1020" height="60"></rect>
+                <rect fill="#FFFFFF" x="876" y="16" width="128" height="32" rx="16"></rect>
+                <g transform="translate(20, 24)" fill="#FFFFFF">
+                    <rect x="162" y="0" width="32" height="16" rx="8"></rect>
+                    <rect x="108" y="0" width="32" height="16" rx="8"></rect>
+                    <rect x="54" y="0" width="32" height="16" rx="8"></rect>
+                    <rect x="0" y="0" width="32" height="16" rx="8"></rect>
+                </g>
+            </g>
+        </svg>
+    </section>
+
+    <section class="slide">
+        <h2>Сайт</h2>
+        <pre>
+            <code>&lt;body&gt;</code>
+            <code>    <mark>&lt;header&gt;</mark>Шапка сайта&lt;/header&gt;</code>
+            <code>    <mark>&lt;nav&gt;</mark>Навигация&lt;/nav&gt;</code>
+            <code>    <mark>&lt;main&gt;</mark>Главный контент&lt;/main&gt;</code>
+            <code>    <mark>&lt;aside&gt;</mark>Прочий контент&lt;/aside&gt;</code>
+            <code>    <mark>&lt;footer&gt;</mark>О сайте&lt;/footer&gt;</code>
+            <code>&lt;/body&gt;</code>
+        </pre>
+        <img class="place bottom right next" style="margin: 0 100px -330px 0" height="90%" src="pictures/daria.svg" alt="Дарья">
+    </section>
+
+    <section class="slide clear">
+        <h2 class="visually-hidden">Меню ориентиров VoiceOver</h2>
+        <img class="place top" width="80%" style="margin-top: 10%" src="pictures/kharkivjs/landmarks-all.png" alt="Полное меню ориентиров VoiceOver">
+    </section>
+
+    <section class="slide clear">
+        <h2 class="visually-hidden">Приложение</h2>
+        <svg role="image" aria-label="Схема частей приложения" class="place webpage" width="1024" height="576" viewBox="0 0 1024 576">
+            <!-- Title -->
+            <g>
+                <rect tabindex="0" stroke="#585A5E" stroke-width="4" fill="#E6E6E6" x="2" y="2" width="1020" height="28"></rect>
+                <g transform="translate(20, 10)" fill="#585A5E">
+                    <circle cx="46" cy="6" r="6"></circle>
+                    <circle cx="26" cy="6" r="6"></circle>
+                    <circle cx="6" cy="6" r="6"></circle>
+                </g>
+            </g>
+            <!-- Contacts -->
+            <g transform="translate(0, 28)">
+                <rect class="element" tabindex="0" fill="#FFFFFF" stroke="#585A5E" stroke-width="4" x="2" y="2" width="252" height="484"></rect>
+                <!-- Title -->
+                <g>
+                    <rect class="element" tabindex="0" fill="none" stroke="#585A5E" stroke-width="4" x="2" y="2" width="252" height="60"></rect>
+                    <rect fill="#585A5E" x="64" y="24" width="128" height="16" rx="8"></rect>
+                </g>
+                <!-- List -->
+                <g>
+                    <g transform="translate(0, 60)">
+                        <rect class="element" tabindex="0" fill="none" stroke="#585A5E" stroke-width="4" x="2" y="2" width="252" height="80"></rect>
+                        <rect fill="#E6E6E6" x="84" y="48" width="144" height="16" rx="8"></rect>
+                        <rect fill="#585A5E" x="84" y="20" width="144" height="16" rx="8"></rect>
+                        <circle fill="#585A5E" cx="52" cy="42" r="24"></circle>
+                    </g>
+                    <g transform="translate(0, 140)">
+                        <rect class="element" tabindex="0" fill="none" stroke="#585A5E" stroke-width="4" x="2" y="2" width="252" height="80"></rect>
+                        <rect fill="#E6E6E6" x="84" y="48" width="144" height="16" rx="8"></rect>
+                        <rect fill="#585A5E" x="84" y="20" width="144" height="16" rx="8"></rect>
+                        <circle fill="#585A5E" cx="52" cy="42" r="24"></circle>
+                    </g>
+                    <g transform="translate(0, 220)">
+                        <rect class="element" tabindex="0" fill="none" stroke="#585A5E" stroke-width="4" x="2" y="2" width="252" height="80"></rect>
+                        <rect fill="#E6E6E6" x="84" y="48" width="144" height="16" rx="8"></rect>
+                        <rect fill="#585A5E" x="84" y="20" width="144" height="16" rx="8"></rect>
+                        <circle fill="#585A5E" cx="52" cy="42" r="24"></circle>
+                    </g>
+                    <g transform="translate(0, 300)">
+                        <rect class="element" tabindex="0" fill="none" stroke="#585A5E" stroke-width="4" x="2" y="2" width="252" height="80"></rect>
+                        <rect fill="#E6E6E6" x="84" y="48" width="144" height="16" rx="8"></rect>
+                        <rect fill="#585A5E" x="84" y="20" width="144" height="16" rx="8"></rect>
+                        <circle fill="#585A5E" cx="52" cy="42" r="24"></circle>
+                    </g>
+                    <g transform="translate(0, 380)">
+                        <rect class="element" tabindex="0" fill="none" stroke="#585A5E" stroke-width="4" x="2" y="2" width="252" height="80"></rect>
+                        <rect fill="#E6E6E6" x="84" y="48" width="144" height="16" rx="8"></rect>
+                        <rect fill="#585A5E" x="84" y="20" width="144" height="16" rx="8"></rect>
+                        <circle fill="#585A5E" cx="52" cy="42" r="24"></circle>
+                    </g>
+                </g>
+            </g>
+            <!-- Dialog -->
+            <g transform="translate(252, 28)">
+                <rect class="element" tabindex="0" fill="#FFFFFF" stroke="#585A5E" stroke-width="4" x="2" y="2" width="768" height="544"></rect>
+                <!-- Title -->
+                <g>
+                    <rect class="element" tabindex="0" fill="none" stroke="#585A5E" stroke-width="4" x="2" y="2" width="768" height="60"></rect>
+                    <rect fill="#585A5E" x="19" y="24" width="256" height="16" rx="8"></rect>
+                </g>
+                <!-- Messages -->
+                <g transform="translate(0, 60)" stroke="#585A5E" stroke-width="4">
+                    <rect class="element" tabindex="0" fill="none" x="2" y="2" width="768" height="424"></rect>
+                    <rect fill="#E6E6E6" x="242" y="290" width="508" height="112" rx="32"></rect>
+                    <rect fill="#E6E6E6" x="366" y="210" width="384" height="60" rx="30"></rect>
+                    <rect fill="#E6E6E6" x="22" y="130" width="396" height="60" rx="30"></rect>
+                    <path d="M315,2 L315,79.9989965 C315,96.5683346 328.4284,110 344.993084,110 L724.006916,110 C740.566792,110 754,96.5655965 754,79.9989965 L754,2 L315,2 Z" fill="#E6E6E6"></path>
+                </g>
+                <!-- Form -->
+                <g transform="translate(0, 484)">
+                    <rect class="element" tabindex="0" fill="none" stroke="#585A5E" stroke-width="4" x="2" y="2" width="768" height="60"></rect>
+                    <circle fill="#585A5E" cx="736" cy="32" r="16"></circle>
+                    <rect fill="#585A5E" x="20" y="16" width="680" height="32" rx="16"></rect>
+                </g>
+            </g>
+            <!-- Navigation -->
+            <g transform="translate(0, 512)">
+                <rect class="element" tabindex="0" fill="none" stroke="#585A5E" stroke-width="4" x="2" y="2" width="252" height="60"></rect>
+                <circle fill="#585A5E" cx="216" cy="32" r="16"></circle>
+                <circle fill="#585A5E" cx="157" cy="32" r="16"></circle>
+                <circle fill="#585A5E" cx="99" cy="32" r="16"></circle>
+                <circle fill="#585A5E" cx="40" cy="32" r="16"></circle>
+            </g>
+        </svg>
+    </section>
+
+    <section class="slide">
+        <h2>Приложение</h2>
+        <pre>
+            <code><mark>&lt;header&gt;</mark></code>
+            <code>    <mark>&lt;h1&gt;</mark>Телеграм&lt;/h1&gt;</code>
+            <code>    <mark>&lt;a</mark> href="/contacts"&gt;Контакты&lt;/a&gt;</code>
+            <code>    <mark>&lt;a</mark> href="/chats"&gt;Чаты&lt;/a&gt;</code>
+            <code>    <mark>&lt;a</mark> href="/options"&gt;Настройки&lt;/a&gt;</code>
+            <code><mark>&lt;/header&gt;</mark></code>
+        </pre>
+        <img class="place bottom right next" style="margin: 0 100px -330px 0" height="90%" src="pictures/daria.svg" alt="Дарья">
+    </section>
+
+    <section class="slide">
+        <h2>Приложение</h2>
+        <pre>
+            <code><mark>&lt;nav&gt;</mark></code>
+            <code>    <mark>&lt;h2&gt;</mark>Чаты&lt;/h2&gt;</code>
+            <code>    <mark>&lt;a</mark> href="/chat-1"&gt;</code>
+            <code>        <mark>&lt;img</mark> src="chat-1" alt="Чат 1"&gt;</code>
+            <code>        <mark>&lt;h3&gt;</mark>Чат 1&lt;/h3&gt;</code>
+            <code>    <mark>&lt;/a&gt;</mark></code>
+            <code><mark>&lt;/nav&gt;</mark></code>
+        </pre>
+        <img class="place bottom right next" style="margin: 0 100px -330px 0" height="90%" src="pictures/daria.svg" alt="Дарья">
+    </section>
+
+    <section class="slide">
+        <h2>Приложение</h2>
+        <pre>
+            <code><mark>&lt;main</mark> id="chat-1"&gt;</code>
+            <code>    <mark>&lt;h2&gt;</mark>Чат 1&lt;/h2&gt;</code>
+            <code>    <mark>&lt;p&gt;</mark>Как дела?&lt;/p&gt;</code>
+            <code>    <mark>&lt;p&gt;</mark>Ну такое…&lt;/p&gt;</code>
+            <code><mark>&lt;/main</mark>&gt;</code>
+            <code><mark>&lt;main</mark> id="chat-2" hidden&gt;</code>
+            <code><mark>&lt;main</mark> id="chat-3" hidden&gt;</code>
+        </pre>
+        <img class="place bottom right next" style="margin: 0 100px -330px 0" height="90%" src="pictures/daria.svg" alt="Дарья">
+    </section>
+
+    <section class="slide black clear">
+        <h2 class="visually-hidden">Не бойтесь</h2>
+        <figure>
+            <video class="cover width" playsinline autoplay loop>
+    			<source src="pictures/daria.webm" type="video/webm">
+    			<source src="pictures/daria.mp4" type="video/mp4">
+    		</video>
+            <figcaption class="copyright right white">© MTV</figcaption>
+        </figure>
+    </section>
+
+    <section class="slide">
+        <p class="place large" style="font-size: 70px">
+            <span class="next">Разметка — это просто.</span>
+            <br>
+            <span class="next">Если вы знаете зачем.</span>
+            <br>
+            <span class="next"><em>Теперь вы знаете.</em></span>
+        </p>
+    </section>
+
+    <section class="slide clear daria">
+        <h2 class="shout grow">
+            <span class="next" style="position: absolute;margin-left: -0.55em">
+                d’
+            </span>ARIA
+        </h2>
+        <figure>
+            <img class="place bottom" style="margin-bottom: -330px" height="90%" src="pictures/daria.svg" alt="Дарья">
+            <figcaption class="copyright right">© MTV</figcaption>
+        </figure>
+    </section>
+
+    <section class="slide">
+        <h2>Ссылки</h2>
+        <ul>
+            <li><a href="https://inclusive-components.design/">Inclusive Components</a></li>
+            <li><a href="https://medium.com/@mandy.michael/understanding-why-semantic-html-is-important-as-told-by-typescript-bd71ad41e6c4">Understanding why Semantic HTML is important, as told by TypeScript</a></li>
+            <li><a href="https://alistapart.com/article/conversational-semantics">Conversational Semantics</a></li>
+            <li><a href="https://medium.com/@mandy.michael/building-websites-for-safari-reader-mode-and-other-reading-apps-1562913c86c9">Building websites for Safari Reader Mode and other reading apps</a></li>
+            <li><a href="https://developer.apple.com/videos/play/wwdc2018/239/">Designing Web Content for watchOS</a></li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout">
+            <a href="https://sokr.me/sfc">sokr.me/sfc</a>
+        </h2>
+    </section>
+
+    <section class="slide clear">
+        <h2 class="shout">Спасибо!</h2>
+    </section>
+
+    <footer class="badge">
+        <a href="https://github.com/shower/shower">Сделано в Шовере</a>
+    </footer>
+
+    <div class="progress"></div>
+
+    <script src="shower/shower.min.js"></script>
+    <!-- Copyright © 2018 Вадим Макеев -->
+
+</body>
+</html>

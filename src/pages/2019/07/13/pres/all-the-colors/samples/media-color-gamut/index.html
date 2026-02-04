@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Color gamut test page</title>
+    <style>
+        body {
+            font: 16px/1.25 sans-serif;
+        }
+
+        .space {
+            display: none;
+            padding: 3px 8px;
+            border: 1px solid #cccccc;
+        }
+
+        @media (color-gamut: srgb) {
+            .space.srgb {
+                display: inline-block;
+            }
+        }
+
+        @media (color-gamut: p3) {
+            .space.p3 {
+                display: inline-block;
+            }
+        }
+
+        @media (color-gamut: rec2020) {
+            .space.rec2020 {
+                display: inline-block;
+            }
+        }
+    </style>
+    <link href="twentytwenty/twentytwenty.css" rel="stylesheet">
+</head>
+<body>
+<p>
+    Available color spaces:
+    <span class="space srgb">sRGB</span>
+    <span class="space p3">DCI-P3</span>
+    <span class="space rec2020">Rec.2020</span>
+</p>
+<div class="container">
+    <img src="test-picture-srgb.jpg" alt="Test picture sRGB">
+    <img src="test-picture-p3.jpg" alt="Test picture DCI-P3">
+<!--    <img src="test-picture-rec2020.jpg" alt="Test picture Rec.2020">-->
+</div>
+<script src="twentytwenty/jquery-3.4.1.min.js"></script>
+<script src="twentytwenty/jquery.event.move.js"></script>
+<script src="twentytwenty/jquery.twentytwenty.js"></script>
+<script>
+    $(function () {
+        $('.container').twentytwenty({
+            before_label: 'sRGB',
+            after_label: 'DCI-P3',
+        });
+    });
+</script>
+</body>
+</html>

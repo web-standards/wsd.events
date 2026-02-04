@@ -1,0 +1,152 @@
+@font-face {
+    font-family: Yandex Sans Text Web;
+    font-weight: 100;
+    src: url(src/shower/themes/yandex2/fonts/yandex-sans-text-web-thin.woff) format("woff")
+}
+
+@font-face {
+    font-family: Yandex Sans Text Web;
+    font-weight: 300;
+    src: url(src/shower/themes/yandex2/fonts/yandex-sans-text-web-light.woff) format("woff")
+}
+
+@font-face {
+    font-family: Yandex Sans Text Web;
+    font-weight: 400;
+    src: url(src/shower/themes/yandex2/fonts/yandex-sans-text-web-regular.woff) format("woff")
+}
+
+@font-face {
+    font-style: italic;
+    font-family: Yandex Sans Text Web;
+    font-weight: 400;
+    src: url(src/shower/themes/yandex2/fonts/yandex-sans-text-web-regular-italic.woff) format("woff")
+}
+
+@font-face {
+    font-family: Yandex Sans Text Web;
+    font-weight: 500;
+    src: url(src/shower/themes/yandex2/fonts/yandex-sans-text-web-medium.woff) format("woff")
+}
+
+@font-face {
+    font-family: Yandex Sans Text Web;
+    font-weight: 700;
+    src: url(src/shower/themes/yandex2/fonts/yandex-sans-text-web-bold.woff) format("woff")
+}
+
+.slide h2, .caption h1 {
+    font-family: 'Yandex Sans Text Web', 'PT Sans Narrow', sans-serif;
+    font-weight: 300;
+}
+
+.caption {
+    color: white;
+}
+
+.caption a {
+    color: var(--yandex-yellow);
+}
+
+.slide h2 {
+    color: black;
+}
+
+.shower.list {
+    background: #444;
+}
+
+.shower.list .slide.active {
+    box-shadow: 0 0 5px 1px rgba(0,0,0, 0.5), 0 0 0 20px var(--yandex-yellow), 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.slide .shout {
+    font-size: 3em;
+}
+
+.slide s {
+    text-decoration: none;
+    position: relative;
+}
+
+.slide s::after {
+    content: '';
+    display: block;
+    background-color: var(--yandex-red);
+    width: 110%;
+    height: 0.1em;
+    position: absolute;
+    top: 50%;
+    left: -5%;
+    transform: rotate(-7deg);
+}
+
+.slide::after {
+    height: auto;
+    width: calc(var(--ribbon-size) * 1.5);
+    background-color: var(--yandex-yellow);
+    color: black;
+    background-image: none;
+    margin-top: 1em;
+    padding-right: 0.5em;
+    padding-top: 0;
+    left: auto;
+    right: 0;
+}
+
+.slide pre code {
+    line-height: 1.4;
+    font-size: 0.9em;
+}
+
+.slide.title {
+    background-color: var(--yandex-yellow);
+}
+
+.slide.title::after {
+    content: '';
+}
+
+.slide.title h2 {
+    color: black;
+    text-align: left;
+    padding: 0 100px;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --yandex-yellow: #FFCC00;
+    --yandex-blue: #0077FF;
+    --yandex-red: #FF3333;
+}
+
+.shower {
+    font-family: 'Yandex Sans Text Web', 'PT Sans', sans-serif;
+    line-height: 1.6;
+    --color-blue: var(--yandex-yellow);
+}
+
+.slide .mark-trigger:not(.active) + * mark {
+    background: none;
+}
+
+.slide .grey {
+    color: #bbb;
+}
+
+.slide ul li:lang(ru)::before {
+    font-size: 1.4em;
+    content: '›';
+    line-height: 1.15em;
+    color: black;
+    font-weight: 300;
+}
+
+.badge a {
+    color: black;
+}
+
+.slide a {
+    color: var(--yandex-red);
+}

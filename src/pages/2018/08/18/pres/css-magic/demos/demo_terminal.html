@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Terminal</title>
+</head>
+
+<body>
+
+    <div class="terminal" data-content="~/macos/single-div/terminal">
+        <p>Welcome to Web Standards Days!</p>
+        <p>sudo rm -rf /
+            <br>Password: </p>
+    </div>
+
+    <style>
+        @font-face {
+            font-family: PT Sans;
+            src: url(https://mefody.github.io/talks/src/shower/themes/ribbon/fonts/pt-sans-regular.woff) format("woff")
+        }
+
+        @font-face {
+            font-weight: 700;
+            font-family: PT Sans;
+            src: url(https://mefody.github.io/talks/src/shower/themes/ribbon/fonts/pt-sans-bold.woff) format("woff")
+        }
+
+        @font-face {
+            font-family: PT Mono;
+            src: url(https://mefody.github.io/talks/src/shower/themes/ribbon/fonts/pt-mono-regular.woff) format("woff")
+        }
+
+        html {
+            font-family: "PT Mono", monospace;
+            font-size: 16px;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            display: flex;
+            min-height: 100vh;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(#40bfbf, #4095bf);
+        }
+
+        .terminal {
+            font-size: 1em;
+            line-height: 1.2em;
+            width: 70vw;
+            min-height: 300px;
+            margin-top: 25px;
+            background-color: #0f3642;
+            color: #b4c4c6;
+            padding: 10px;
+            border-radius: 0 0 7px 7px;
+            position: relative;
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 0 30px 1px rgba(0, 0, 0, 0.2);
+        }
+
+        .terminal::before {
+            border-radius: 7px 7px 0 0;
+            position: absolute;
+            content: attr(data-content);
+            display: block;
+            width: 100%;
+            text-overflow: ellipsis;
+            padding: 0 80px;
+            white-space: nowrap;
+            overflow: hidden;
+            height: 25px;
+            line-height: 25px;
+            text-align: center;
+            color: #4c3436;
+            font-size: 1em;
+            background: linear-gradient(0deg, #d8d8d8, #ececec);
+            top: -25px;
+            left: 0;
+            font-family: "PT Sans", sans-serif;
+        }
+
+        .terminal::after {
+            content: "";
+            position: absolute;
+            top: -18px;
+            left: 10px;
+            width: 12px;
+            height: 12px;
+            background: #f95c5b;
+            border-radius: 100%;
+            box-shadow: 0 0 0 1px #da3d42, 22px 0 0 0 #fabe3b, 22px 0 0 1px #ecb03e, 44px 0 0 0 #38cd46, 44px 0 0 1px #2eae32;
+        }
+
+        .terminal p {
+            margin: 0;
+        }
+
+        .terminal p::before {
+            color: #5ed7ff;
+            content: '~$ ';
+        }
+    </style>
+</body>
+
+</html>

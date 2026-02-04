@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Математика в вебе</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="shower/themes/ribbon/styles/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif&amp;subset=cyrillic-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400,500&amp;subset=cyrillic-ext"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Forum&amp;subset=cyrillic-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora&amp;subset=cyrillic-ext" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css">
+    <style>
+        /* .MathJax {
+            font-size: 7em;
+        } */
+        :root {
+            --violet: #3a3550;
+        }
+
+        body, .slide h2 {
+            /*font-family: 'Noto Serif', serif;*/
+            /*font-family: 'Cormorant Garamond', serif;*/
+            /*font-family: 'Forum', cursive;*/
+            font-family: 'Cormorant';
+            font-weight: 200;
+            color: #6f2680;
+        }
+
+        .slide .shout {
+            font-size: 110px;
+            letter-spacing: 10px;
+        }
+
+        .slide h2 {
+            letter-spacing: 5px;
+        }
+
+        .slide h2.shout {
+            text-transform: none;
+        }
+
+        .shower {
+            --slide-ratio: calc(16 / 9);
+            font-family: 'XXII Centar';
+            font-weight: 200;
+            font-size: 30px;
+        }
+
+        .slide::after {
+            position: absolute;
+            bottom: 10px;
+            top: initial;
+            left: 980px;
+            padding-top: 0;
+            width: 35px;
+            height: 35px;
+            background: none;
+            counter-increment: slide;
+            content: counter(slide);
+            color: #585a5e;
+            border: dashed 1px gray;
+            border-radius: 50%;
+            font-size: 12px;
+            /*color: #7996af;*/
+            color: var(--violet);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Colus;
+            /*display: none;*/
+        }
+
+        .slide.pic::after {
+            display: none;
+        }
+
+        .progress {
+            left: -20px;
+            bottom: 0;
+            z-index: 1;
+            display: none;
+            width: 0;
+            height: 0;
+            -webkit-box-sizing: content-box;
+            box-sizing: content-box;
+            border: 10px solid #000000;
+            border-right-color: transparent;
+            -webkit-transition: width .2s linear;
+            transition: width .2s linear;
+            clip: rect(10px, 1044px, 20px, 20px);
+        }
+
+        .slide.pic .cover {
+            height: 100%;
+            width: 100%;
+        }
+
+        .slide.pic-wheels .cover {
+            height: 100%;
+            width: auto;
+        }
+
+        .slide {
+            padding-top: 55px;
+            /* font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif; */
+            /* font-family: 'PT Sans Caption', sans-serif; */
+            /* -webkit-font-smoothing: antialiased; */
+        }
+
+        .slide h2 {
+            position: relative;
+            /*display: inline-block;*/
+        }
+
+        .slide h2:before {
+            /*height: 5px;*/
+            /*position: absolute;*/
+            /*top: 75%;*/
+            /*display: block;*/
+            /*z-index: -1;*/
+            /*width: 1000px;*/
+            /*left: -100px;*/
+            /*background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);*/
+            /*content: '';*/
+        }
+
+        .slide.formulas {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            padding-top: 0px;
+        }
+
+        .codepen {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .slide code {
+            font-family: 'Fira Code';
+            font-variant-ligatures: contextual;
+            letter-spacing: 0;
+        }
+
+        .pic-slide {
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .pic-slide h2 {
+            letter-spacing: 15px;
+            color: white;
+        }
+
+        .formula-background {
+            color: gray;
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            font-size: 69px;
+            opacity: 0.3;
+        }
+
+        .slide-smile {
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body class="shower list">
+
+<header class="caption">
+    <h1>Математика в вебе</h1>
+    <p>Маша Просвирнина</p>
+</header>
+
+<section class="slide first" id="cover">
+    <h2 id="ff">Математика в вебе</h2>
+    <figure>
+        <img class="cover" src="pictures/universe3.jpg" alt="Hands on the orange typewriter in a park">
+        <figcaption class="white">
+        </figcaption>
+    </figure>
+    <style>
+        .first.slide .cover {
+            max-width: inherit;
+            max-height: inherit;
+        }
+
+        .first#cover h2 {
+            margin-top: 160px;
+            font-family: 'Cormorant Garamond';
+            font-weight: 400;
+            text-transform: none;
+        }
+
+        #cover h2 {
+            margin: 0;
+            color: #FFF;
+            text-align: center;
+            font-size: 70px;
+            width: 100%;
+            height: 100%;
+        }
+
+        #cover #ff {
+            font-size: 40px;
+            letter-spacing: 13px;
+        }
+
+        #cover p {
+            margin: 10px 0 0;
+            text-align: center;
+            color: #FFF;
+            font-style: italic;
+            font-size: 20px;
+        }
+
+        #cover p a {
+            color: #FFF;
+        }
+    </style>
+</section>
+
+<!--<section class="slide pic">-->
+    <!--<figure>-->
+        <!--<img class="cover" src="pictures/be10eb446e9f2a2ac20f40fc3b6edc16.jpg" alt="Universe">-->
+    <!--</figure>-->
+<!--</section>-->
+
+<section class="slide pic">
+    <figure>
+        <img class="cover" src="pictures/tesla.jpg" alt="Tesla">
+    </figure>
+</section>
+
+<section class="slide pic">
+    <figure>
+        <img class="cover" src="pictures/falcon2.jpg" alt="Falcon">
+    </figure>
+</section>
+
+<section class="slide formulas">
+    $$v_1 = \sqrt{G {M \over R_0 + h}}$$
+</section>
+
+<section class="slide">
+    <video onclick="if (this.paused) {
+       this.play();
+   } else {
+       this.pause();
+  }" class="cover height">
+        <source src="pictures/m-hmm.webm" type="video/webm">
+        <source src="pictures/m-hmm.mp4" type="video/mp4">
+    </video>
+</section>
+
+<section class="slide formulas">
+    $$P(Y = 1|x) ={1 \over 1 + e^{-(w^Tx + b)}}$$
+</section>
+
+<section class="slide pic">
+    <video onclick="if (this.paused) {
+       this.play();
+   } else {
+       this.pause();
+  }" class="cover height">
+        <source src="pictures/boston-dance.webm" type="video/webm">
+        <source src="pictures/boston-dance.mp4" type="video/mp4">
+    </video>
+</section>
+
+<section class="slide pic">
+    <video onclick="if (this.paused) {
+       this.play();
+   } else {
+       this.pause();
+  }" class="cover height">
+        <source src="pictures/robots.webm" type="video/webm">
+        <source src="pictures/robots.mp4" type="video/mp4">
+    </video>
+</section>
+
+<section class="slide formulas">
+    $$M_{ij} =
+    \begin{cases} h^t_j I^C_i h_i, & \mbox{if } i \in v(j)
+    \\ h^T_jI^c_j, & \mbox{if } j \in v(i)
+    \\ 0, & \mbox{otherwise}
+    \end{cases}$$
+</section>
+
+<section class="slide formulas">
+    $$ A = \begin{bmatrix}
+    w_0 A_0\\
+    w_1 A_1\\
+    \vdots\\
+    w_n A_n\\
+    \end{bmatrix},
+    b = \begin{bmatrix}
+    w_0 b_0\\
+    w_1 b_1\\
+    \vdots\\
+    w_n b_n\\
+    \end{bmatrix}$$
+</section>
+
+<section class="slide formulas slide-smile">
+    😮
+</section>
+
+<!--<section class="slide pic-wheels">-->
+    <!--<figure>-->
+        <!--<img class="cover pic-wheels-small" src="pictures/color-wheels.jpg" alt="RGB vs RYB color wheels">-->
+    <!--</figure>-->
+    <!--<style>-->
+        <!--.slide.pic-wheels .pic-wheels-small {-->
+            <!--height: 500px;-->
+        <!--}-->
+    <!--</style>-->
+<!--</section>-->
+
+<section class="slide pic-wheels black">
+    <figure>
+        <img class="cover" src="pictures/manifest_orig.jpg" alt="Manifeste Dimensioniste">
+    </figure>
+</section>
+
+<section class="slide formulas">
+    <figure>
+        <img class="cover" src="pictures/kazimir4.jpg" alt="Kazimir font">
+    </figure>
+</section>
+
+<section class="slide">
+    <figure>
+        <img class="cover" src="pictures/symbols.png" alt="Math symbols">
+        <figcaption class="white">
+        </figcaption>
+    </figure>
+</section>
+
+<section class="slide">
+    <h2>Latin vs Arabic vs Mirrored latin</h2>
+    <figure>
+        <img class="cover"
+             src="pictures/arabic.PNG"
+             alt="Orange typewriter on a wooden table close-up">
+    </figure>
+</section>
+
+<section class="slide greek">
+    <img src="pictures/greektex.png">
+    <img class="next" src="pictures/greekrussian.png">
+    <style>
+        .greek img {
+            max-height: 50%;
+            max-width: 100%;
+        }
+    </style>
+</section>
+
+<section class="slide">
+    <figure>
+        <img class="cover" src="pictures/интегралы.png"
+             alt="Orange typewriter on a wooden table close-up">
+        <figcaption class="white">
+        </figcaption>
+    </figure>
+</section>
+
+<section class="slide">
+    <figure>
+        <img class="cover" src="pictures/root.png"
+             alt="Orange typewriter on a wooden table close-up">
+        <figcaption class="white">
+        </figcaption>
+    </figure>
+</section>
+
+<section class="slide formulas">
+    $$He
+    \\H \cdot e
+    \\H \times e$$
+</section>
+
+<section class="slide trivialno-slide">
+    <div class="trivialno">
+        <img class="next" src="pictures/очевидноcolor.png"/>
+        <img class="next" src="pictures/всамомделеcolor.png"/>
+        <img class="next" src="pictures/легкоcolor.png"/>
+        <!--<img src="pictures/легкоcolor2.png" />-->
+        <img class="next" src="pictures/тривиальноcolor.jpg"/>
+    </div>
+    <style>
+        .trivialno-slide {
+            padding: 0;
+        }
+
+        .trivialno {
+        }
+
+        .trivialno img {
+            display: inline-block;
+            width: 49%;
+        }
+    </style>
+</section>
+
+<!--<section class="slide">-->
+    <!--<figure>-->
+        <!--<img class="cover" src="pictures/Spinoza_Ethica_Pars1_Prop1.jpg"-->
+             <!--alt="Orange typewriter on a wooden table close-up">-->
+        <!--<figcaption class="white">-->
+        <!--</figcaption>-->
+    <!--</figure>-->
+<!--</section>-->
+
+<section class="slide">
+    <h2>Сложности</h2>
+    <ol>
+        <li>Шрифт.</li>
+        <li>Двумерность и нестандартная компоновка.</li>
+        <li>Доступность.</li>
+        <li>Культурные особенности.</li>
+    </ol>
+    <div class="formula-background formula-background--difficult">
+        $$ Q(\lambda,\hat{\lambda}) =
+        \\ \qquad\qquad\quad -\frac{1}{2} P{(O \mid \lambda )} \sum_s \sum_m \sum_t \gamma_m^{(s)} (t) \left( n \log(2
+        \pi )
+        \\ + \log \left| C_m^{(s)} \right| + \left( \mathbf{o}_t - \hat{\mu}_m^{(s)} \right) ^T C_m^{(s)-1}
+        \left(\mathbf{o}_t - \hat{\mu}_m^{(s)}\right) \right)$$
+    </div>
+    <style>
+        .formula-background--difficult {
+            left: 100px;
+            font-size: 60px;
+        }
+    </style>
+</section>
+
+<section class="slide pic-slide pic-slide--tex">
+    <h2 class="shout">TEX</h2>
+    <style>
+        .pic-slide--tex {
+            background-image: url("pictures/universe5.jpg");
+        }
+    </style>
+</section>
+
+
+<section class="slide">
+    <figure>
+        <img class="cover" src="pictures/typography.png" alt="Orange typewriter on a wooden table close-up">
+        <figcaption class="white">
+        </figcaption>
+    </figure>
+</section>
+
+<section class="slide pic-slide pic-slide--mathml">
+    <h2 class="shout clip-header">MathML</h2>
+    <style>
+        .pic-slide--mathml {
+            background-image: url("pictures/universe2.jpg");
+        }
+    </style>
+</section>
+
+<section class="slide">
+    <h2 class="">Визуальная разметка</h2>
+    <ol>
+        <li>Токены</li>
+        <li>Лайаут</li>
+    </ol>
+    <div class="formula-background formula-background--presentation-markup">
+        $$ \lim_{x\to 0}{\frac{e^x-1}{2x}}
+        \overset{\left[\frac{0}{0}\right]}{\underset{\mathrm{H}}{=}}
+        \\ \lim_{x\to 0}{\frac{e^x}{2}}={\frac{1}{2}}$$
+    </div>
+    <style>
+        .formula-background--presentation-markup {
+            left: 380px;
+            top: 0px;
+            font-size: 80px;
+        }
+    </style>
+</section>
+
+<section class="slide">
+    <h2 class="">Семантическая разметка</h2>
+    <ol>
+        <li>Базовые выражения</li>
+        <li>Операторы</li>
+        <li>Лайаут семантики</li>
+        <li>Разметка ошибок</li>
+    </ol>
+    <div class="formula-background formula-background--content-markup">
+        $$ 1 + \frac{q^2}{(1-q)}+\frac{q^6}{(1-q)(1-q^2)}+\cdots =
+        \\ \prod_{j=0}^{\infty}\frac{1}{(1-q^{5j+2})(1-q^{5j+3})},
+        \quad \text{for $|q|<1$}.$$
+    </div>
+    <style>
+        .formula-background--content-markup {
+            left: 200px;
+            top: 80px;
+            font-size: 60px;
+        }
+    </style>
+</section>
+
+<section class="slide formulas">
+    $${a \over b} = c$$
+</section>
+
+<section class="slide">
+    <h2>Визуальная разметка</h2>
+    <article class="content">
+				<pre>
+					<code>&lt;mrow&gt;</code>
+					<code>  &lt;mfrac&gt;</code>
+					<code>      &lt;mrow&gt;</code>
+					<code>			&lt;mi&gt; a &lt;/mi&gt;</code>
+					<code>		&lt;/mrow&gt;</code>
+					<code>		&lt;mrow&gt;</code>
+					<code>			&lt;mi&gt; b &lt;/mi&gt;</code>
+					<code>		&lt;/mrow&gt;</code>
+					<code>	&lt;/mfrac&gt;</code>
+					<code>	&lt;mo&gt; = &lt;/mo&gt;</code>
+					<code>	&lt;mi&gt; c &lt;/mi&gt;</code>
+					<code>&lt;/mrow&gt;</code>
+				</pre>
+        <style>
+            .content {
+                display: flex;
+                flex-direction: row;
+            }
+
+            pre {
+                font-size: 16px;
+            }
+        </style>
+    </article>
+</section>
+
+<section class="slide">
+    <h2>Семантическая разметка</h2>
+    <div class="img-header">
+    </div>
+    <article class="content">
+				<pre>
+                    <code>&lt;apply&gt;&lt;eq/&gt;</code>
+                    <code>  &lt;apply&gt;&lt;divide/&gt;</code>
+                    <code>      &lt;ci&gt;a&lt;/ci&gt;</code>
+                    <code>      &lt;ci>b&lt;/ci&gt;</code>
+                    <code>  &lt;/apply&gt;</code>
+                    <code>  &lt;cn&gt;0&lt;/cn&gt;</code>
+                    <code>&lt;/apply&gt;</code>
+				</pre>
+        <style>
+            .content {
+                display: flex;
+                flex-direction: row;
+            }
+
+            pre {
+                font-size: 16px;
+            }
+        </style>
+    </article>
+</section>
+
+<section class="slide">
+    <h2>MathML vs LaTeX</h2>
+    <div class="img-header">
+    </div>
+    <article class="content">
+				<pre>
+					<code>&lt;mrow&gt;</code>
+					<code>  &lt;mfrac&gt;</code>
+					<code>      &lt;mrow&gt;</code>
+					<code>			&lt;mi&gt; a &lt;/mi&gt;</code>
+					<code>		&lt;/mrow&gt;</code>
+					<code>		&lt;mrow&gt;</code>
+					<code>			&lt;mi&gt; b &lt;/mi&gt;</code>
+					<code>		&lt;/mrow&gt;</code>
+					<code>	&lt;/mfrac&gt;</code>
+					<code>	&lt;mo&gt; = &lt;/mo&gt;</code>
+					<code>	&lt;mi&gt; c &lt;/mi&gt;</code>
+					<code>&lt;/mrow&gt;</code>
+				</pre>
+        <article class="formula"><span>&#36;</span>&#36;{a \over b} = c&#36;&#36;</article>
+    </article>
+    <style>
+        .content {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .formula {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-top: -120px;
+            margin-right: -50px;
+        }
+
+        pre {
+            font-size: 16px;
+        }
+    </style>
+</section>
+
+<section class="slide">
+    <figure>
+        <img class="cover" src="pictures/mathml.png" alt="">
+        <figcaption class="white">
+        </figcaption>
+    </figure>
+</section>
+
+<!--<section class="slide pic">-->
+<!--<figure>-->
+<!--<img class="cover" src="pictures/perekati.jpg" alt="">-->
+<!--<figcaption class="white">-->
+<!--</figcaption>-->
+<!--</figure>-->
+<!--</section>-->
+
+<section class="slide pic black">
+    <video onclick="if (this.paused) {
+       this.play();
+   } else {
+       this.pause();
+  }"
+           class="cover height"
+    >
+        <source src="pictures/tumbleweed.webm" type="video/webm">
+        <source src="pictures/tumbleweed.mp4" type="video/mp4">
+    </video>
+</section>
+
+<section class="slide">
+    <h2>Способы</h2>
+    <div class="img-header">
+    </div>
+    <ul>
+        <li>нативная поддержка MathML</li>
+        <li class="next">SVG</li>
+        <li class="next">HTML и CSS</li>
+    </ul>
+    <div class="formula-background formula-background--ways">
+        $$ \begin{align}
+        \nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} & =
+        \frac{4\pi}{c}\vec{\mathbf{j}}
+        \\ \nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & =
+        \vec{\mathbf{0}}
+        \\ \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \quad \nabla \cdot \vec{\mathbf{B}} & = 0
+        \end{align}$$
+    </div>
+    <style>
+        .formula-background--ways {
+            left: 300px;
+            top: 0px;
+            font-size: 65px;
+        }
+    </style>
+</section>
+
+<section class="slide pic-slide pic-slide--mathjax">
+    <h2 class="shout">MathJax</h2>
+    <style>
+        .pic-slide--mathjax {
+            background-image: url("pictures/universe9.jpg");
+        }
+    </style>
+</section>
+
+<section class="slide">
+    <h2>Форматы ввода</h2>
+    <div class="img-header">
+    </div>
+    <ol>
+        <li>LaTeX</li>
+        <li>MathML</li>
+        <li>AsciiMath</li>
+    </ol>
+    <div class="formula-background formula-background--input-formats">
+        $$ \begin{vmatrix}
+        \mathbf{i} & \mathbf{j} & \mathbf{k} \\
+        \frac{\partial X}{\partial u} & \frac{\partial Y}{\partial u} & 0 \\
+        \frac{\partial X}{\partial v} & \frac{\partial Y}{\partial v} & 0
+        \end{vmatrix}$$
+    </div>
+    <style>
+        .formula-background--input-formats {
+            left: 300px;
+            top: -100px;
+            font-size: 110px;
+        }
+    </style>
+</section>
+
+<section class="slide">
+    <h2>Форматы вывода</h2>
+    <div class="img-header">
+    </div>
+    <div class="img-header">
+    </div>
+    <ol>
+        <li>HTML</li>
+        <li>SVG</li>
+        <li>MathML</li>
+    </ol>
+    <div class="formula-background formula-background--output-formats">
+        $$ \begin{vmatrix}
+        \mathbf{i} & \mathbf{j} & \mathbf{k} \\
+        \frac{\partial X}{\partial u} & \frac{\partial Y}{\partial u} & 0 \\
+        \frac{\partial X}{\partial v} & \frac{\partial Y}{\partial v} & 0
+        \end{vmatrix}$$
+    </div>
+    <style>
+        .formula-background--output-formats {
+            left: 300px;
+            top: -100px;
+            font-size: 110px;
+        }
+    </style>
+</section>
+
+<!--<section class="slide">-->
+<!--<h2>Как работает</h2>-->
+<!--<div class="img-header">-->
+<!--</div>-->
+<!--<article class="content">-->
+
+<!--</article>-->
+<!--</section>-->
+
+<section class="slide">
+    <article class="content">
+				<pre>
+						<code>&lt;script <mark>type="math/tex; mode=display"</mark> id="MathJax-Element-8"&gt;</code>
+                        <code>  M_{ij} =</code>
+						<code>  \begin{cases} h^t_j I^C_i h_i, & \mbox{if } i \in v(j)</code>
+						<code>  \\ h^T_jI^c_j, & \mbox{if } j \in v(i)</code>
+						<code>  \\ 0, & \mbox{otherwise}</code>
+						<code>  \end{cases}</code>
+						<code>&lt;/script&gt;</code>
+				</pre>
+    </article>
+</section>
+
+<section class="slide">
+    <h2>Конфигурация</h2>
+    <div class="img-header">
+    </div>
+    <article class="content">
+				<pre>
+                    <code>&lt;script type="text/javascript"</code>
+                    <code>  src="path-to-MathJax/MathJax.js?config=default"&gt;</code>
+                    <code>&lt;/script&gt;</code>
+				</pre>
+    </article>
+</section>
+
+<section class="slide">
+    <h2>Конфигурация</h2>
+    <div class="img-header">
+    </div>
+    <article class="content">
+				<pre>
+                    <code>MathJax.Hub.Config({</code>
+                    <code>  config: ["MMLorHTML.js"],</code>
+                    <code>  jax: ["input/TeX","input/MathML","input/AsciiMath",</code>
+                    <code>      "output/HTML-CSS", "output/NativeMML", "output/PreviewHTML"</code>
+                    <code>  ],</code>
+                    <code>  extensions: ["tex2jax.js","mml2jax.js","asciimath2jax.js",</code>
+                    <code>      "MathMenu.js", "MathZoom.js", "fast-preview.js",</code>
+                    <code>      "AssistiveMML.js", "a11y/accessibility-menu.js"],</code>
+                    <code>  "HTML-CSS":: {</code>
+                    <code>       { fonts: ["TeX"] }</code>
+                    <code>  }</code>
+                    <code>});</code>
+				</pre>
+    </article>
+</section>
+
+<section class="slide">
+    <h2>Wikipedia</h2>
+    <div class="img-header">
+    </div>
+    $$\int_{a}^{b} f(x) dx$$
+    <article class="content">
+				<pre>
+					<code>&lt;img src="https://wikimedia.org/api/..."</code>
+					<code>	class="mwe-math-fallback-image-inline"</code>
+					<code>	aria-hidden="true" style="vertical-align: -3.838ex; width:9.544ex; height:9.176ex;"</code>
+					<code><mark>	alt="{\displaystyle \int \limits _{a}^{b}f(x)dx}"</mark></code>
+					<code>/&gt;</code>
+				</pre>
+    </article>
+</section>
+
+<section class="slide">
+    <h2>WolframAlpha</h2>
+    <div class="img-header">
+    </div>
+    $$\int_{0}^{\pi} sin(x) dx = 2$$
+    <article class="content">
+				<pre>
+						<code>&lt;img</code>
+						<code><mark>	alt="integral_0^π sin(x) dx = 2"</mark></code>
+						<code>	img-on-load="doPodLoad(results, pod)" onerror="this.style.color = 'black'" </code>
+						<code>	onload="this.style.opacity='1'" class="ng-isolate-scope" </code>
+						<code>	src="http://www4f.wolframalpha.com/Calculate/..." </code>
+						<code>/&gt;</code>
+				</pre>
+    </article>
+</section>
+
+<section class="slide pic">
+    <figure>
+        <img class="cover" src="pictures/пошелвон.png" alt="">
+        <figcaption class="white">
+        </figcaption>
+    </figure>
+</section>
+
+<section class="slide">
+    <video onclick="if (this.paused) {
+       this.play();
+   } else {
+       this.pause();
+  }">
+        <source src="pictures/zapis.mov" type="video/mp4">
+    </video>
+</section>
+
+
+<section class="slide pic-slide pic-slide--katex">
+    <h2 class="shout">Katex</h2>
+    <style>
+        .pic-slide--katex {
+            background-image: url("pictures/universe3.jpg");
+        }
+    </style>
+</section>
+
+<section class="slide pic">
+    <figure>
+        <img class="cover" src="https://katex.org/img/katex-comparison.gif" alt="">
+        <figcaption class="white">
+        </figcaption>
+    </figure>
+</section>
+
+<section class="slide">
+    <article class="content">
+				<pre>
+                    <code>katex.render("c = \\pm\\sqrt{a^2 + b^2}\\in\\RR", </code>
+                    <code>  element,</code>
+                    <code>  {</code>
+                    <code>      displayMode: true,</code>
+                    <code>      macros: {</code>
+                    <code>              "\\RR": "\\mathbb{R}"</code>
+                    <code>  }</code>
+                    <code>});</code>
+				</pre>
+    </article>
+</section>
+
+<!--<section class="slide formulas">-->
+<!--$$\Biggl(\biggl(\Bigl(\bigl((x)\bigr)\Bigr)\biggr)\Biggr)$$-->
+<!--</section>-->
+
+<!--<section class="slide formulas">-->
+<!--$$\widehat{II}+\widehat{III}+\widehat{IIII}$$-->
+<!--</section>-->
+
+<!--<section class="slide">-->
+<!--<iframe class="place codepen"-->
+<!--src="https://codepen.io/daniwiris/embed/JOqvpB/?height=640&theme-id=light&embed-version=2"></iframe>-->
+<!--</section>-->
+
+<!--<section class="slide">-->
+<!--<iframe class="place codepen"-->
+<!--src="https://codepen.io/pkra/embed/gvvagd/?height=640&theme-id=light&embed-version=2"></iframe>-->
+<!--</section>-->
+
+<section class="slide pic">
+    <figure>
+        <img class="cover" src="pictures/nyashi.png" alt="">
+        <figcaption class="white">
+        </figcaption>
+    </figure>
+</section>
+
+<section class="slide">
+    <figure>
+        <img class="cover" src="pictures/google.png" alt="Orange typewriter on a wooden table close-up">
+        <figcaption class="white">
+        </figcaption>
+    </figure>
+</section>
+
+<section class="slide pic">
+    <figure>
+        <img class="cover" src="pictures/mars.jpg" alt="">
+        <figcaption class="white">
+        </figcaption>
+    </figure>
+</section>
+
+<section class="slide">
+    <h2>Ссылки</h2>
+    <ol>
+        <li><a href="https://github.com/w3c/mathonwebpages/">W3C Math-On-Web-Pages Community Group</a></li>
+        <li><a href="http://classes.dma.ucla.edu/Winter09/9-1/_pdf/2-henderson_fourth-dimension.pdf">The Fourth Dimension and Non-Euclidean Geometry in Modern Art</a></li>
+        <li><a href="https://www.peterkrautzberger.org/0186/">MathML is a failed web standard</a></li>
+        <li><a href="https://www.w3.org/Math/planet/">W3C Planet MathML</a></li>
+        <li><a href="https://www.americanscientist.org/article/writing-math-on-the-web">Writing Math on the Web</a></li>
+    </ol>
+</section>
+
+<section class="slide" id="see-more">
+    <h2 class="shout link">
+        <a href="https://github.com/shower/shower">@prosvirnina12</a>
+    </h2>
+    <style>
+        h2.link a {
+            color: #000;
+        }
+
+        #see-more h2 {
+            font-size: 100px
+        }
+    </style>
+</section>
+
+<div class="progress"></div>
+
+<script src="shower/shower.min.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+</body>
+</html>

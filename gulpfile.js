@@ -20,30 +20,46 @@ import { glob } from 'glob';
 
 const sync = browserSync.create();
 
-// HTML
+// HTML (event pages and standalone pages)
 
 gulp.task('html', () => {
-	return gulp.src('src/pages/*.html', {
-			ignore: 'src/pages/3000-01-01-city.html'
-		})
+	return gulp.src([
+			'src/pages/*.html',
+			'src/pages/**/index.html',
+			'!src/pages/**/pres/**'
+		])
 		.pipe(htmlmin({
 			removeComments: true,
 			collapseWhitespace: true
 		}))
-		.pipe(rename((path) => {
-			if (path.basename != 'index') {
-				const events = /(\d{4})-(\d{2})-(\d{2})-\w+/;
-				if (events.test(path.basename)) {
-					path.dirname = path.basename.replace(events, '$1/$2/$3');
-				} else {
-					path.dirname = path.basename;
-				}
-				path.basename = 'index';
+		.pipe(rename((file) => {
+			if (file.basename !== 'index') {
+				file.dirname = file.basename;
+				file.basename = 'index';
 			}
 		}))
 		.pipe(gulp.dest('dist'))
 		.pipe(sync.stream({ once: true }));
 });
+
+// Presentations
+
+async function symlinkPres() {
+	const srcDirs = await glob('src/pages/**/pres');
+	for (const srcDir of srcDirs) {
+		const destDir = srcDir.replace('src/pages', 'dist');
+		const destParent = path.dirname(destDir);
+		await fs.mkdir(destParent, { recursive: true });
+		const srcAbsolute = path.resolve(srcDir);
+		try {
+			await fs.symlink(srcAbsolute, destDir);
+		} catch (err) {
+			if (err.code !== 'EEXIST') throw err;
+		}
+	}
+}
+
+gulp.task('pres', symlinkPres);
 
 // Styles
 
@@ -101,7 +117,7 @@ async function resizeImages() {
 gulp.task('images:resize', resizeImages);
 
 gulp.task('images:replace', () => {
-	return gulp.src('dist/**/index.html')
+	return gulp.src(['dist/index.html', 'dist/**/index.html'])
 		.pipe(replace(
 			/<img class="speakers__picture" (src|data-src)="\/speakers\/([^"]+)" alt="([^"]+)">/g,
 			'<img class="speakers__picture" $1="/speakers/128/$2" $1set="/speakers/256/$2 2x" alt="$3">'
@@ -135,7 +151,7 @@ gulp.task('cache:hash', () => {
 });
 
 gulp.task('cache:replace', () => {
-	return gulp.src('dist/**/*.html')
+	return gulp.src('dist/**/index.html')
 		.pipe(revision({
 			manifest: gulp.src('dist/rev-manifest.json').pipe(vinylPaths(deleteAsync))
 		}))
@@ -156,7 +172,7 @@ gulp.task('clean', () => {
 // Copy
 
 gulp.task('copy', () => {
-	return gulp.src('src/assets/**')
+	return gulp.src('src/assets/**', { encoding: false })
 		.pipe(gulp.dest('dist'))
 		.pipe(sync.stream({
 			once: true
@@ -182,7 +198,11 @@ gulp.task('server', () => {
 
 gulp.task('watch', () => {
 	gulp.watch('src/assets/**', gulp.parallel('copy'));
-	gulp.watch('src/pages/**/*.html', gulp.parallel('html'));
+	gulp.watch([
+		'src/pages/*.html',
+		'src/pages/**/index.html'
+	], gulp.parallel('html'));
+	gulp.watch('src/pages/**/pres/**', gulp.parallel('pres'));
 	gulp.watch('src/styles/**/*.css', gulp.parallel('styles'));
 	gulp.watch('src/scripts/*.js', gulp.parallel('scripts'));
 });
@@ -192,6 +212,7 @@ gulp.task('watch', () => {
 gulp.task('build:dev', gulp.series(
 	'copy',
 	'html',
+	'pres',
 	'styles',
 	'scripts'
 ));

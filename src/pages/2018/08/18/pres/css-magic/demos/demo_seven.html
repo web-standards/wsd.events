@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Seven</title>
+</head>
+
+<body>
+    <div class="circles">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+    <style>
+        body {
+            background: rgba(0, 0, 0, 0.85);
+            padding: 0;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            -webkit-filter: invert(0.15);
+            filter: invert(0.15);
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+        }
+
+        .circles {
+            width: 60vmin;
+            height: 60vmin;
+            position: relative;
+            -webkit-animation: zoom infinite 5s linear;
+            animation: zoom infinite 5s linear;
+        }
+
+        .circle {
+            width: 50%;
+            height: 50%;
+            border-radius: 50%;
+            background-color: #fff;
+            mix-blend-mode: difference;
+            position: absolute;
+            top: 0;
+            left: 25%;
+            -webkit-transform-origin: bottom center;
+            transform-origin: bottom center;
+            -webkit-animation: rotate infinite 5s ease-in-out;
+            animation: rotate infinite 5s ease-in-out;
+        }
+
+        .circle:nth-child(1) {
+            --i: 0;
+        }
+
+        .circle:nth-child(2) {
+            --i: 1;
+        }
+
+        .circle:nth-child(3) {
+            --i: 2;
+        }
+
+        .circle:nth-child(4) {
+            --i: 3;
+        }
+
+        .circle:nth-child(5) {
+            --i: 4;
+        }
+
+        .circle:nth-child(6) {
+            --i: 5;
+        }
+
+        .circle:nth-child(7) {
+            --i: 6;
+        }
+
+        @-webkit-keyframes zoom {
+            0% {
+                -webkit-transform: scale(1) translatey(0);
+                transform: scale(1) translatey(0);
+            }
+            100% {
+                -webkit-transform: scale(0.5) translatey(-50%);
+                transform: scale(0.5) translatey(-50%);
+            }
+        }
+
+        @keyframes zoom {
+            0% {
+                -webkit-transform: scale(1) translatey(0);
+                transform: scale(1) translatey(0);
+            }
+            100% {
+                -webkit-transform: scale(0.5) translatey(-50%);
+                transform: scale(0.5) translatey(-50%);
+            }
+        }
+
+        @-webkit-keyframes rotate {
+            0% {
+                -webkit-transform: rotate(0) translatey(0) scale(1);
+                transform: rotate(0) translatey(0) scale(1);
+            }
+            50% {
+                -webkit-transform: rotate(calc(0.1428571429turn * var(--i))) translatey(0) scale(1);
+                transform: rotate(calc(0.1428571429turn * var(--i))) translatey(0) scale(1);
+            }
+            100% {
+                -webkit-transform: rotate(calc(0.1428571429turn * var(--i))) translatey(100%) scale(2);
+                transform: rotate(calc(0.1428571429turn * var(--i))) translatey(100%) scale(2);
+            }
+        }
+
+        @keyframes rotate {
+            0% {
+                -webkit-transform: rotate(0) translatey(0) scale(1);
+                transform: rotate(0) translatey(0) scale(1);
+            }
+            50% {
+                -webkit-transform: rotate(calc(0.1428571429turn * var(--i))) translatey(0) scale(1);
+                transform: rotate(calc(0.1428571429turn * var(--i))) translatey(0) scale(1);
+            }
+            100% {
+                -webkit-transform: rotate(calc(0.1428571429turn * var(--i))) translatey(100%) scale(2);
+                transform: rotate(calc(0.1428571429turn * var(--i))) translatey(100%) scale(2);
+            }
+        }
+    </style>
+</body>
+
+</html>

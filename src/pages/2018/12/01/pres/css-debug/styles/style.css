@@ -1,0 +1,27 @@
+.slide ul>li:lang(ru)::before {
+    content: '';
+}
+
+.slide ol>li strong,
+.slide ul>li strong {
+    display: inline;
+}
+
+.danger {
+    background: red;
+    color: white;
+    padding: 5px;
+}
+
+.slide .columns-2 ol {
+    float: left;
+    margin-left: 70px;
+    list-style: none;
+    padding: 0;
+    line-height: 60px;
+    width: 780px;
+}
+
+.slide .shout {
+    font-size: 2em;
+}

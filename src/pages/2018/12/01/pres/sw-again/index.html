@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <title>Service worker</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="shower/themes/ribbon/styles/styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>
+  <style>
+    .shower {
+      --slide-ratio: calc(16 / 9);
+    }
+    .visually-hidden {
+      position: absolute;
+      clip: rect(0 0 0 0);
+    }
+    h2.sw-font {
+        font-size: 80px;
+        text-align: center;
+        font-weight: bold;
+        letter-spacing: 8px;
+        color: black;
+        text-shadow: 
+          2px 2px 0 yellow,
+          -2px 2px 0 yellow,
+          2px -2px 0 yellow,
+          -2px -2px 0 yellow;
+      }
+  </style>
+</head>
+
+<body class="shower list">
+  <header class="caption">
+    <h1>Про сервис-воркеры. Снова!</h1>
+    <p>Кирилл Чугаинов, iTechArt</p>
+  </header>
+
+  <section class="slide clear" id="cover-1">
+    <h2 class="shout">Про сервис-воркеры. Снова!</h2>
+    <figure>
+      <img class="cover" src="pictures/Ravens.jpeg" alt="React icon">
+    </figure>
+    <style>
+      #cover-1 h2 {
+        background-color: black;
+        color: white;
+        font-size: 75px;
+        padding: .2em;
+      }
+    </style>
+  </section>
+
+  <section class="slide">
+    <h2>Сервис-воркер</h2>
+    <p>Это событийно-управляемый <strong>веб-воркер</strong>, регистрируемый на уровне источника и пути.<br>
+    Он может контролировать сайт, с которым ассоциируется, перехватывать и модифицировать запросы навигации и ресурсов.<br>
+    Если говорить проще, то это <strong>программируемый сетевой проксификатор</strong>.</p>
+  </section>
+
+  <section class="slide clear" id="wolf-again">
+    <figure>
+      <img class="cover" src="pictures/Wolf-again.jpg" alt="Волк говорит: 'Шо, опять?'">
+    </figure>
+    <style>
+      #wolf-again {
+        background-color: #0D1430;
+      }
+    </style>
+  </section>
+
+  <section class="slide clear" id="cover-2">
+    <h2 class="shout">Про сервис-воркеры. Снова!</h2>
+    <figure>
+      <img class="cover" src="pictures/clones.jpg" alt="React icon">
+    </figure>
+    <style>
+      #cover-2 h2 {
+        background-color: black;
+        color: white;
+        font-size: 75px;
+        padding: .2em;
+      }
+    </style>
+  </section>
+
+  <section class="slide clear">
+    <ul style="margin-right: 300px;">
+      <li class="next">Постоянный ведущий известного подкаста</li>
+      <li class="next">Организатор фронтенд-сообществ </li>
+      <li class="next">Просто хороший человек</li>
+      <img src="pictures/vadimMakeev_edited.jpg" alt="Фотография Вадима Макеева" class="place right cover height z-top next">
+    </ul>
+  </section>
+
+  <section class="slide clear">
+    <figure>
+      <img class="cover" src="pictures/here.jpg" alt="Стрелочки на меня">
+    </figure>
+  </section>
+
+  <section class="slide clear">
+    <h2 style="margin-left: 350px;">Кирилл Чугаинов</h2>
+    <ul style="margin-left: 400px;">
+      <li>Веб-разработчик в iTechArt</li>
+      <img src="pictures/kirill_edited.jpg" alt="Фотография спикера" class="place left cover height z-top">
+    </ul>
+  </section>
+  
+  <section class="slide">
+    <h2 class="shout">???</h2>
+  </section>
+
+  <section class="slide clear">
+    <figure>
+      <img class="cover" src="pictures/sadness.jpg" alt="Штурмовик грустит">
+    </figure>
+  </section>
+
+  <section class="slide">
+    <h2>Почему вы не используете <br>сервис-воркеры?</h2>
+    <ol>
+      <li class="next">Ну мы используем, но так, там картинки вроде закэшировали...</li>
+      <li class="next">А что это?</li>
+      <li class="next">По-моему это слишком сложно!</li>
+      <li class="next">Они нестабильны и мало где поддерживаются.</li>
+      <li class="next">Мы вообще на Python пишем, чё ты пристал к нам? Ходит тут, вопросы спрашивает постоянно!</li>
+    </ol>
+  </section>
+
+  <section class="slide" id="answer">
+    <h2 class="shout">Не было задачи <br>добавить сервис-воркер</h2>
+    <style>
+      #answer .shout {
+        font-size: 80px;
+      }
+    </style>
+  </section>
+  
+  <section class="slide" id="tasks">
+    <h2 class="visually-hidden">А какие задачи стояли?</h2>
+    <div class="columns two">
+      <ol>
+        <li>Добавить в приложение Redux-Saga</li>
+        <li>Прописать стили для ::before</li>
+        <li>Настройте Guetzli для картинок</li>
+      </ol>
+      <ol class="requests">
+        <li class="next">Привязать таблицу к данным</li>
+        <li class="next">Добавить стрелочку перед ссылкой</li>
+        <li class="next">Сайт тормозит, посмотри в чём дело</li>
+      </ol>
+    </div>
+    <style>
+      #tasks ol {
+        margin-top: 4em; 
+        font-size: .9em;
+      }
+
+      #tasks li {
+        position: relative;
+        margin-top: 1em;
+      }
+
+      #tasks .requests li::before {
+        content: '';
+        position: absolute;
+        top: 36%;
+        left: -30px;
+        display: block;
+        border: 10px solid transparent;
+        border-right-color: red;
+      }
+
+      .list-bigger {
+        font-size: 1.5em;
+      }
+    </style>
+  </section>
+
+  <section class="slide">
+    <div class="place">
+      <blockquote class="twitter-tweet" data-cards="hidden" data-lang="en">
+        <p lang="en" dir="ltr">Service workers are opt-in in the next version of Create React App. They are an amazing technology but the pitfalls today are too significant to be a good default. Will revisit in a year or two! 
+          <a href="https://t.co/UPqiLKnZzB">pic.twitter.com/UPqiLKnZzB</a>
+        </p>&mdash; Dan Abramov (@dan_abramov) 
+          <a href="https://twitter.com/dan_abramov/status/954146978564395008?ref_src=twsrc%5Etfw">January 19, 2018</a>
+        </blockquote>
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+  </section>
+  
+  <section class="slide" id="articles">
+    <h2>Статьи о сервис-воркерах</h2>
+    <div class="columns two articles-list">
+      <ul>
+        <li><a href="https://getinstance.info/articles/javascript/introduction-to-service-workers/">Введение в Service Worker'ы</a></li>
+        <li><a href="https://habr.com/company/ruvds/blog/349858/">Как работает JS: сервис-воркеры</a></li>
+        <li><a href="https://habr.com/company/2gis/blog/345552/">Service Workers. Инструкция по применению</a></li>
+        <li><a href="https://habr.com/post/351194/">Подводные камни Service Workers</a></li>
+        <li><a href="http://prgssr.ru/development/sozdaem-service-worker.html">Создание сервис-воркера: разбор примера</a></li>
+        <li><a href="https://developers.google.com/web/fundamentals/primers/service-workers/">Service Workers: an Introduction</a></li>
+        <li><a href="https://medium.com/commencis/what-is-service-worker-4f8dc478f0b9">What is a Service Worker?</a></li>
+        <li><a href="https://alligator.io/js/service-workers/">Getting Started with Service Workers</a></li>
+        <li><a href="https://css-tricks.com/serviceworker-for-offline/">Making a Simple Site Work Offline with ServiceWorker</a></li>
+        <li><a href="https://developers.google.com/web/fundamentals/primers/service-workers/registration">Service Worker Registration</a></li>
+        <li><a href="http://freaksidea.com/javascript/show-103-progressivnyj-internet-magazin-service-worker-v-magento">Прогрессивный интернет магазин. SW в Magento</a></li>
+      </ul>
+      <ul>
+        <li><a href="https://habr.com/post/358060/">Service Workers: прозрачное обновление кэша</a></li>
+        <li><a href="https://habr.com/company/badoo/blog/318000/">Использование SW для создания ботнета</a></li>
+        <li><a href="https://www.filamentgroup.com/lab/inlining-cache.html">Inlining or Caching? Both Please!</a></li>
+        <li><a href="https://habr.com/company/2gis/blog/350034/">Service Workers. Web Push и где они обитают</a></li>
+        <li><a href="https://uncaughtexception.ru/2017/04/04/testing-service-workers.html">Тестируем сервис-воркеры</a></li>
+        <li><a href="https://habr.com/company/oleg-bunin/blog/348150/">Как мы запустили offline-версию сайта RG.RU</a></li>
+        <li><a href="https://habr.com/post/315660/">Некоторые тонкости использования Service Workers</a></li>
+        <li><a href="http://www.cat-in-web.ru/chto-takoe-servis-vorkery-i-kak-oni-pomogayut-povysit-proizvoditelnost/">Что такое SW и как они помогают повысить производительность</a></li>
+        <li><a href="https://vk.com/@cupmrg-generaciya-stranic-saita-sredstvami-servis-vorkerov">Генерация страниц сайта средствами SW</a></li>
+      </ul>
+    </div>
+    <style>
+      #articles .articles-list {
+        font-size: .6em;
+      }
+    </style>
+  </section>
+
+  <section class="slide" id="videos">
+    <h2>Доклады о сервис-воркерах</h2>
+    <ol>
+      <li><a href="https://www.youtube.com/watch?v=SmZ9XcTpMS4">Jake Archibald: The ServiceWorker is coming, look busy | JSConf EU 2014</a></li>
+      <li><a href="https://youtu.be/V7bnSOwuO4M?t=9218">Service Workers как предчувствие</a></li>
+      <li><a href="https://www.youtube.com/watch?v=jVfXiv03y5c">Introduction to Service Workers</a></li>
+      <li><a href="https://www.youtube.com/watch?v=Tiv_9uweA7w">Погружение в Service Worker. Олег Наянов, Restream</a></li>
+      <li><a href="https://www.youtube.com/watch?v=BfL3pprhnms">How to Setup a Basic Service Worker (with Caching)</a></li>
+      <li><a href="https://www.youtube.com/watch?v=__xAtWgfzvc">How does a service worker work?</a></li>
+      <li><a href="https://www.youtube.com/watch?v=A6MHtKkA0CA">What is a service workers</a></li>
+      <li><a href="https://www.youtube.com/watch?v=QaxdXXB50B8">Краткое введние в Service Workers в подкасте Суровый веб #113</a></li>
+      <li><a href="https://www.oreilly.com/ideas/what-is-a-service-worker">What is a service worker?</a></li>
+      <li><a href="https://www.youtube.com/watch?v=MlvkwBvn3jw">Сервис воркеры: используем накопленные знания для светлого будущего PWA, Максим Сальников</a></li>
+    </ol>
+    <style>
+      #videos {
+        font-size: .7em;
+      }
+    </style>
+  </section>
+
+  <section class="slide clear" id="fist">
+    <figure>
+      <img class="cover" src="pictures/fist.jpg" alt="Удар кулаком по столу">
+    </figure>
+  </section>
+
+  <section class="slide">
+    <h2>Сервис-воркер</h2>
+    <p>
+      Это событийно-управляемый worker. Он представляет собой JavaScript-файл, который может контролировать web-страницу/сайт, 
+      с которым он ассоциируется, перехватывать и модифицировать запросы навигации и ресурсов, кэшировать их, 
+      для того чтобы предоставить вам по лный контроль над тем, как приложение ведет себя в определенных ситуациях (например, когда сеть не доступна).
+    </p>
+  </section>
+
+  <section class="slide" id="what-is">
+    <h2>Сервис-воркер</h2>
+    <p class="text">
+      Это событийно-управляемый worker. Он представляет собой JavaScript-файл, который может контролировать web-страницу/сайт, 
+      с которым он ассоциируется, перехватывать и модифицировать запросы навигации и ресурсов, кэшировать их, 
+      для того чтобы предоставить вам полный контроль над тем, как приложение ведет себя в определенных ситуациях (например, когда сеть не доступна).
+    </p>
+    <h2 class="shout grow">это прокси</h2>
+    <style>
+      #what-is .text {
+        opacity: .1;
+      }
+    </style>
+  </section>
+
+  <section class="slide">
+    <h2>Где находится сервис-воркер?</h2>
+    <figure>
+      <img class="cover" src="pictures/service-worker.svg" alt="схема расположения сервис-воркера">
+    </figure>
+  </section>
+
+  <section class="slide clear" id="long-time-ago">
+    <h2 class="place large">Давным-давно <br>в далёком-далёком <br>посёлке городского типа...</h2>
+    <style>
+      #long-time-ago {
+        background-color: black;
+      }
+      #long-time-ago .place {
+        color: aqua;
+        font-size: 50px;
+        line-height: 1.2em;
+      }
+    </style>
+  </section>
+
+  <section class="slide clear">
+    <h2 class="visually-hidden">Жил-был мальчик</h2>
+    <figure>
+      <img class="cover" src="pictures/tatooine.jpg" alt="Люк Скайуокер">
+    </figure>
+  </section>
+  
+  <section class="slide clear">
+    <h2 class="visually-hidden">появился у мальчика смартфон</h2>
+    <figure>
+      <img class="cover" src="pictures/smartphone.jpg" alt="Люк Скайуокер и r2d2">
+    </figure>
+  </section>
+
+  <section class="slide clear" style="background-color: black; ">
+    <video src="pictures/slow-site.mp4" class="cover height" autoplay="" muted="" playsinline=""></video>    
+  </section>
+
+  <section class="slide clear">
+    <h2 class="visually-hidden">Ты должен был помочь</h2>
+    <figure>
+      <img class="cover" src="pictures/problems.jpg" alt="Оби Ван кричит">
+    </figure>
+  </section>
+
+  <section class="slide clear" id="episode-1">
+    <h2 class="place sw-font">SW: Эпизод 1 Кэширование всего</h2>
+    <style>
+      #episode-1 {
+        background-color: black;
+      }
+    </style>
+  </section>
+
+  <section class="slide">
+    <h2 class="shout" style="font-size: 70px;">Проблема: <br>медленный интернет</h2>   
+  </section>
+
+  <section class="slide">
+    <h2>Помещаем файлы в кэш</h2>
+    <figure>
+      <img class="cover" src="pictures/cahse-first-1.png" alt="Схема кэширования">
+    </figure>
+  </section>
+  
+  <section class="slide">
+    <h2>Используем файлы из кэша</h2>
+    <figure>
+      <img class="cover" src="pictures/cahse-first-2.png" alt="Схема кэширования">
+    </figure>
+  </section>
+
+  <section class="slide">
+    <h2 class="shout" style="font-size: 70px;">Первый раз сервис-воркер <br>не поможет</h2>   
+  </section>
+
+  <section class="slide clear" style="background: black; ">
+    <video src="pictures/Slow-internet.mp4" class="cover height" 
+      autoplay="" loop="" muted="" playsinline=""
+      style="width: 100%; height: auto; max-height: none;"
+    >
+    </video>
+  </section>
+
+  <section class="slide" id="code-sw-1">
+    <h2>В сервис-воркере</h2>
+    <div class="columns two">
+      <pre>
+        <code>const filesForCache = [</code>
+        <code>  '/styles/main.css'</code>
+        <code>  '/scripts/script-adfea3dfb6.js'</code>
+        <code>  '/pictures/logo.png'</code>
+        <code><mark>...</mark></code>
+        <code>];</code>
+      </pre>
+      <pre>
+        <code>self.addEventListener('install', (e) => {</code>
+        <code>  e.waitUntil(</code>
+        <code>    caches.open(<mark>'cache-name'</mark>).then(function (cache) {</code>
+        <code>      return cache.addAll(<mark>filesForCache</mark>);</code>
+        <code>  })</code>
+        <code> );</code>
+        <code>});</code>
+        <code>self.addEventListener(<mark>'fetch'</mark>, (event) => {</code>
+        <code>  event.respondWith(</code>
+        <code>    caches.open(<mark>'cache-name'</mark>).then((cache) => </code>
+        <code>      cache.match(event.request)</code>
+        <code>      .then((matching) => </code>
+        <code>        matching || Promise.reject('no-match'))</code>
+        <code>    ))</code>
+        <code>});</code>
+      </pre>
+    </div>
+    <style>
+      #code-sw-1 pre {
+        font-size: 12px;
+      }
+    </style>
+  </section>
+
+  <section class="slide clear" style="background: black; ">
+    <video src="pictures/Slow-internet-sw.mp4" 
+      class="cover height" autoplay="" loop="" muted="" playsinline=""
+      style="width: 100%; height: auto; max-height: none;"
+    >
+    </video>
+  </section>
+
+  <section class="slide clear" style="background: black; ">
+    <video src="pictures/no-internet-sw.mp4" class="cover height" autoplay="" loop="" muted="" playsinline=""></video>
+  </section>
+
+  <section class="slide">
+    <h2>Где применять хорошо</h2>
+    <ul>
+      <li>Много статики</li>
+      <li>Редкое обновление</li>
+      <li>Без динамических данных</li>
+    </ul>
+  </section>
+  
+  <section class="slide">
+    <h2>Где применять плохо</h2>
+    <ul>
+      <li>Большие файлы</li>
+      <li>Неиспользуемые файлы</li>
+    </ul>
+  </section>
+
+  <section class="slide clear" id="episode-2">
+    <h2 class="place sw-font">SW: Эпизод 2 Выборочный офлайн</h2>
+    <style>
+      #episode-2 {
+        background-color: black;
+      }
+    </style>
+  </section>
+
+  <section class="slide">
+    <h2 class="shout" style="font-size: 70px;">Проблема: <br>сохранять страницы в офлайн</h2>   
+  </section>
+
+  <section class="slide">
+    <h2>Помещаем файлы в кэш по запросу</h2>
+    <figure>
+      <img class="cover" src="pictures/save-to-off-1.png" alt="Схема кэширования по запросу">
+    </figure>
+  </section>
+
+  <section class="slide clear">
+    <video src="pictures/save-for-offline.mp4" class="cover" autoplay="" loop="" muted="" playsinline=""></video>
+  </section>
+
+  <section class="slide" id="una-im">
+    <a href="https://una.im/save-offline/"> 
+      <h2 class="shout link" style="font-size: 100px; color: white;">una.im/save-offline</h2>
+    </a>
+    <style>
+      #una-im .link {
+        text-decoration: underline;
+        background-color: black;
+        color: white;
+        font-size: 75px;
+        padding-bottom: .1em;
+      }
+    </style>
+  </section>
+
+  <section class="slide">
+    <h2>Где применять хорошо</h2>
+    <ul>
+      <li>Редкое обновление</li>
+      <li>Страницы, подходящие для офлайн</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>Где применять плохо</h2>
+    <ul>
+      <li>Динамические данные</li>
+    </ul>
+  </section>
+
+  <section class="slide clear" id="episode-3">
+    <h2 class="place sw-font">SW: Эпизод 3 Резервный ответ</h2>
+    <style>
+      #episode-3 {
+        background-color: black;
+      }
+    </style>
+  </section>
+
+  <section class="slide clear">
+    <figure>
+      <img class="cover" src="pictures/404.jpg" alt="Адмирал Акбар кричит это 404">
+    </figure>
+  </section>
+
+  <section class="slide">
+    <h2>Сеть недоступна</h2>
+    <figure>
+      <img class="cover" src="pictures/dinos.png" alt="Нет доступа к сети">
+    </figure>
+  </section>
+
+  <section class="slide clear">
+    <h2 class="visually-hidden">Сеть недоступна</h2>
+    <figure>
+      <img class="cover" src="pictures/else-droids.jpg" alt="это не те дроиды, которых вы ищете">
+    </figure>
+  </section>
+
+  <section class="slide">
+    <h2 class="shout" style="font-size: 70px;">Проблема: <br>недружелюбный интерфейс <br>без интернета</h2>   
+  </section>
+
+  <section class="slide">
+    <h2>Идея</h2>
+    <figure>
+      <img class="cover" src="pictures/embedded.png" alt="идея резервного ответа">
+    </figure>
+  </section>
+
+  <section class="slide clear">
+    <video src="pictures/embedded-falback.mp4" class="cover" autoplay="" loop="" muted="" playsinline=""
+      style="width: 100%; height: auto; max-height: none;"
+    >
+    </video>
+  </section>
+
+  <section class="slide clear">
+    <video src="pictures/embedded-falback-2.mp4" class="cover" autoplay="" loop="" muted="" playsinline=""
+      style="width: 100%; height: auto; max-height: none;"
+    >
+    </video>
+  </section>
+
+  <section class="slide">
+    <h2 class="shout">Любой сайт</h2>
+  </section>
+
+  <section class="slide clear">
+    <h2 class="visually-hidden">Настало время стать мастером</h2>
+    <figure>
+      <img class="cover" src="pictures/power.jpg" alt="Люк Скайуокер с мечом">
+    </figure>
+  </section>
+
+  <section class="slide">
+    <video src="pictures/form.mp4" class="cover" autoplay="" loop="" muted="" playsinline=""></video>
+  </section>
+
+  <section class="slide clear" style="background-color: black;">
+    <video src="pictures/broken-server.mp4" class="cover" autoplay="" loop="" muted="" playsinline=""
+      style="width: 100%; height: auto; max-height: none;"
+    >
+    </video>
+  </section>
+
+  <section class="slide clear">
+    <h2 class="visually-hidden">Неееееет</h2>
+    <figure>
+      <img class="cover" src="pictures/noooooooo.jpg" alt="Люк Скайуокер кричит нееееет">
+    </figure>
+  </section>
+
+  <section class="slide clear" id="episode-4">
+    <h2 class="place sw-font">SW: Эпизод 4 Отложенная отправка</h2>
+    <style>
+      #episode-4 {
+        background-color: black;
+      }
+    </style>
+  </section>
+
+  <section class="slide">
+    <h2 class="shout" style="font-size: 70px;">Проблема: <br>нестабильный интернет</h2>   
+  </section>
+
+  <section class="slide">
+    <h2>Идея</h2>
+    <figure>
+      <img class="cover" src="pictures/demand-sending.png" alt="Схема отложенной отправки">
+    </figure>
+  </section>
+
+  <section class="slide">
+    <h2>Background Sync API</h2>
+    <pre>
+      <code>navigator.serviceWorker.ready</code>
+      <code>  .then(function(swRegistration) {</code>
+      <code>    return swRegistration.sync.register('mySync');</code>
+      <code>  });</code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h2>Background Sync API</h2>
+    <pre>
+      <code>self.addEventListener('sync', function(event) {</code>
+      <code>  if (event.tag == 'mySync') {</code>
+      <code>    event.waitUntil(<mark>doSomeStuff()</mark>);</code>
+      <code>  }</code>
+      <code>});</code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h2 class="shout">Демонстрация</h2>
+  </section>
+
+  <section class="slide">
+    <h2>Где применять хорошо</h2>
+    <ul>
+      <li>Формы</li>
+      <li>Отправка данных</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>Где применять плохо</h2>
+    <ul>
+      <li>Медленный или ограниченный трафик</li>
+      <li>Актуальность данных</li>
+    </ul>
+  </section>
+
+  <section class="slide clear" id="episode-5">
+    <h2 class="place sw-font">SW: Эпизод 5 Загрузка кусками</h2>
+    <style>
+      #episode-5 {
+        background-color: black;
+      }
+    </style>
+  </section>
+
+  <section class="slide">
+    <h2 class="shout" style="font-size: 70px;">Проблема: <br>загрузить большой файл</h2>   
+  </section>
+
+  <section class="slide">
+    <h2>Идея</h2>
+    <figure>
+      <img class="cover" src="pictures/big-file-1.png" alt="идея загрузки большого файла">
+    </figure>
+  </section>
+
+  <section class="slide">
+    <h2>Идея</h2>
+    <figure>
+      <img class="cover" src="pictures/big-file-2.png" alt="идея загрузки большого файла">
+    </figure>
+  </section>
+
+  <section class="slide">
+    <h2 class="shout" style="font-size: 80px;">Content-Length и Range</h2>
+  </section>
+
+  <section class="slide">
+    <h2>Добавить заголовок</h2>
+    <pre>
+      <code>fetch(url, {</code>
+      <code>  headers: {</code>
+      <code>    Range: 'bytes=START_RANGE - END_RANGE / TOTAL'</code>
+      <code>  }</code>
+      <code>});</code>
+    </pre>
+  </section>
+
+  <section class="slide clear">
+    <figure>
+      <img class="cover" src="pictures/dev-tools-loads.jpg_large" alt="как загружаются данные">
+    </figure>
+  </section>
+
+  <section class="slide" id="parallel-chunk">
+    <a href="https://blog.ghaiklor.com/parallel-chunk-requests-in-a-browser-via-service-workers-7be10be2b75f"> 
+      <h2 class="shout link" style="font-size: 100px; color: white;">Parallel chunk requests</h2>
+    </a>
+    <style>
+      #parallel-chunk .link {
+        text-decoration: underline;
+        background-color: black;
+        color: white;
+        font-size: 75px;
+        padding-bottom: .1em;
+      }
+    </style>
+  </section>
+
+  <section class="slide">
+    <h2 class="shout">Рекомендации</h2>
+    <figure>
+      <img class="place bottom right" width="200" height="auto" src="pictures/yoda.jpg" alt="мастер йода">
+    </figure>
+  </section>
+
+  <section class="slide" id="advice-1">
+    <h2 class="shout">Прогрессивно улучшайте!</h2>
+    <style>
+      #advice-1 .shout {
+        font-size: 80px;
+      } 
+    </style>
+  </section>
+
+  <section class="slide" style="background-color: #F6E9D5;">
+    <h2 class="visually-hidden">Поддержка сервис-воркеров</h2>
+    <figure>
+      <img class="cover" src="pictures/ciu-sw.PNG" alt="Поддержка сервис-воркеров">
+    </figure>
+  </section>
+
+  <section class="slide" style="background-color: #F6E9D5;">
+    <h2 class="visually-hidden">Поддержка Background Sync</h2>
+    <figure>
+      <img class="cover" src="pictures/ciu-bs.PNG" alt="Поддержка Background Sync">
+    </figure>
+  </section>
+
+  <section class="slide">
+    <h2>Прогрессивно улучшайте!</h2>
+    <pre>
+      <code>if (<mark>'serviceWorker' in navigator</mark>) { </code>
+      <code>  navigator.serviceWorker.register('./sw.js');</code>
+      <code>};</code>
+      <code> ...</code>
+      <code>if (<mark>'SyncManager' in window</mark>) { </code>
+      <code>  ...</code>
+      <code>};</code>
+    </pre>
+  </section>
+
+  <section class="slide" id="advice-2">
+    <h2 class="shout">Ресурсы пользователя ограничены!</h2>
+    <style>
+      #advice-2 .shout {
+        font-size: 80px;
+      } 
+    </style>
+  </section>
+
+  <section class="slide">
+    <h2 class="visually-hidden">Задачка</h2>
+    <pre class="place large-code">
+      <code>const cacheName =
+      self.cachePrefix + '-cache';</code>
+    </pre>
+    <style>
+      .large-code {
+        font-size: 35px;
+      }
+    </style>
+  </section>
+
+  <section class="slide" id="advice-3">
+    <h2 class="shout">Не доверяйте глобальному состоянию скрипта</h2>
+    <style>
+      #advice-3 .shout {
+        font-size: 75px;
+      } 
+    </style>
+  </section>
+
+  <section class="slide">
+    <h2>Кто использует?</h2>
+    <figure>
+      <img class="cover" src="pictures/who-uses.png" alt="кто использует сервис-воркеры">
+    </figure>
+  </section>
+
+  <section class="slide">
+    <figure>
+      <img class="top" width="200" height="auto" src="pictures/aliexpress.jpg" alt="логотип алиэкспресс">
+    </figure>
+    <ul>
+      <li><span class="mark">104% рост</span> конверсии для новых пользователей</li>
+      <li><span class="mark">82% рост</span> конверсии на iOS</li>
+      <li><span class="mark">В 2 раза больше</span> посещённых страниц</li>
+      <li><span class="mark">74% увеличение</span> времени сессии</li>
+    </ul>
+    <style>
+      .mark {
+        font-weight: bold;
+        color: #c00;
+      }
+    </style>
+  </section>
+
+  <section class="slide clear" id="book">
+    <a href="https://www.awwwards.com/PWA-ebook/">
+      <img class="cover"src="pictures/book.jpg" alt="книга про PWA">
+    </a>
+  </section>
+
+  <section class="slide" id="links">
+    <a href="index.html"> 
+      <h2 class="shout link" style="font-size: 100px; color: white;">ссылка на ссылки</h2>
+    </a>
+    <figure>
+      <img class="cover" src="pictures/stalin.jpg" alt="сталин">
+    </figure>
+    <style>
+      #links .link {
+        text-decoration: underline;
+        background-color: black;
+        color: white;
+        font-size: 75px;
+        padding-bottom: .1em;
+      }
+    </style>
+  </section>
+
+  <section class="slide">
+    <a href="https://twitter.com/Chugainovkirill" class="place" style="font-size: 60px;">@Chugainovkirill</a>
+  </section>
+  
+  <section class="slide">
+    <h2 class="shout">Спасибо за внимание!</h2>
+  </section>
+
+  <section class="slide">
+    <h2 class="shout">Вопросы?</h2>
+  </section>
+  
+  <div class="progress"></div>
+
+  <script src="shower/shower.min.js"></script>
+  <!-- Copyright © 2018 Yours Truly, Famous Inc. -->
+
+</body>
+
+</html>

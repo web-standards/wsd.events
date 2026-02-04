@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>&lt;a&gt;</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="src/shower/themes/ribbon-3/styles/styles.css">
+    <link rel="stylesheet" href="src/highlight/styles/github-gist.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="shower list">
+
+    <header class="caption">
+        <h1>&lt;a&gt;</h1>
+        <p>
+            <a href="https://twitter.com/dark_mefody">Никита Дубко</a>, Яндекс.Поиск
+        </p>
+    </header>
+
+
+    <section class="slide clear">
+        <img src="pictures/title-logo-ru.svg" alt="" height="50px">
+        <h2 style="font-size: 4em; font-weight: 300; margin-top: 100px">&lt;a&gt;</h2>
+        <p style="margin-top: 110px; margin-bottom: 0; font-size: 0.7em;">Никита Дубко, разработчик интерфейсов</p>
+        <p style="font-size: 0.7em;" class="grey">Web Standards Days, 7 декабря 2019, Минск</p>
+    </section>
+
+
+    <section class="slide">
+        <div style="margin-left: 310px;">
+            <h2>Кто я?</h2>
+            <ul>
+                <li>доброжелюбный бородач</li>
+                <li>соорганизатор MinskCSS, MinskJS<br>и CSS-Minsk-JS</li>
+                <li>редактор новостей в Веб-стандартах</li>
+                <li>разработчик интерфейсов в <span style="color: red;">Я</span>ндекс.Поиске</li>
+            </ul>
+        </div>
+        <img src="pictures/nikita-fc-2019.jpg" alt="" class="place left cover height">
+    </section>
+
+
+    <section class="slide clear">
+        <h2><span style="color: red;">П</span>оиск — это:</h2>
+        <ul>
+            <li class="next">1 инпут;<span style="border: 2px solid green;
+                position: absolute;
+                right: 105px;
+                top: 5px;
+                width: 396px;
+                height: 31px;"></span></li>
+            <li class="next">1 кнопка;<span style="border: 2px solid red;
+                position: absolute;
+                right: 47px;
+                top: 8px;
+                width: 60px;
+                height: 25px;"></span></li>
+            <li class="next">10 ссылок;<span style="border: 2px solid blue;
+                position: absolute;
+                right: 97px;
+                top: 78px;
+                width: 430px;
+                height: 275px;"></span></li>
+            <li class="next">иногда колдунщики.<span style="border: 2px solid orange;
+                position: absolute;
+                right: 97px;
+                top: 358px;
+                width: 430px;
+                height: 215px;"></span></li>
+        </ul>
+        <img src="pictures/serp_2019.jpg" alt="" class="cover place right" style="right: -43%">
+    </section>
+
+
+    <section class="slide clear">
+        <img src="pictures/serp_2011.png" alt="" class="place top cover width">
+        <a class="copyright" href="https://www.artlebedev.ru/yandex/serp-2011/">Навигация по результатам поиска Яндекса</a>
+    </section>
+
+
+    <section class="slide clear">
+        <img src="pictures/serp_2019_il.jpg" alt="" class="place top cover width">
+    </section>
+
+
+    <section class="slide">
+        <h2 class="shout">1 СЕРП ≈ 250 ссылок</h2>
+    </section>
+
+
+    <section class="slide">
+        <h2 class="shout">≈ 160 000 000<br> показов в день</h2>
+        <a class="copyright" href="https://radar.yandex.ru/search?period=month">Поисковые системы в России</a>
+    </section>
+
+
+    <section class="slide">
+        <h2 class="shout">≈ 40 000 000 000<br> ссылок в день</h2>
+    </section>
+
+
+    <section class="slide title">
+        <h2 class="shout">1991</h2>
+    </section>
+
+
+    <section class="slide">
+        <img src="pictures/www_first_site.jpg" alt="" class="place" style="width: 80%">
+        <img src="pictures/desktop.png" alt="" class="place" style="width: 80%">
+        <a class="copyright" href="http://info.cern.ch/hypertext/WWW/TheProject.html">World Wide Web</a>
+    </section>
+
+
+    <section class="slide">
+        <img src="pictures/iphone6.png" alt="iPhone" class="place" style="height: 90%; z-index: 1;">
+        <img src="pictures/www_first_site_iphone_5.jpg" alt="" class="place" style="height: 69%">
+    </section>
+
+
+    <section class="slide">
+        <h2>Первые теги</h2>
+        <ul class="columns two">
+            <li><code>&lt;TITLE&gt;</code></li>
+            <li><code>&lt;NEXTID 27&gt;</code></li>
+            <li><code class="mark">&lt;A NAME=xxx HREF=XXX&gt;</code></li>
+            <li><code>&lt;ISINDEX&gt;</code></li>
+            <li><code>&lt;PLAINTEXT&gt;</code></li>
+            <li><code>&lt;LISTING&gt;</code></li>
+            <li><code>&lt;P&gt;</code></li>
+            <li><code>&lt;H1&gt;–&lt;H6&gt;</code></li>
+            <li><code>&lt;ADDRESS&gt;</code></li>
+            <li><code>&lt;HP1&gt;, &lt;HP2&gt;</code></li>
+            <li><code>&lt;DL&gt;, &lt;DT&gt;, &lt;DD&gt;</code></li>
+            <li><code>&lt;UL&gt;, &lt;MENU&gt;, &lt;DIR&gt;</code></li>
+        </ul>
+        <a class="copyright" href="https://www.w3.org/History/19921103-hypertext/hypertext/WWW/MarkUp/Tags.html">HTML Tags</a>
+    </section>
+
+
+    <section class="slide">
+        <pre class="place"><code>&lt;A HREF=&quot;page.html&quot;
+   NAME=1
+   TYPE=void&gt;
+   ...
+&lt;/A&gt;</code></pre>
+    </section>
+
+
+    <section class="slide">
+        <pre style="font-size: 0.8em;"><code>anchoraddress
+    docaddress [ # anchor ]
+docaddress
+    httpaddress | fileaddress | newsaddress | telnetaddress | prosperoaddress | gopheraddress | waisaddress
+httpaddress
+    h t t p : / / hostport [ / path ] [ ? search ]
+prosperoaddress
+    p r o s p e r o : / / hostport / path
+fileaddress
+    f i l e : / / host / path
+newsaddress
+    n e w s : groupart
+waisaddress
+    waisindex | waisdoc
+waisindex
+    w a i s : / / hostport / database [ ? search ]
+waisdoc
+    w a i s : / / hostport / database / wtype / digits / path
+...</code></pre>
+        <a class="copyright" href="https://www.w3.org/History/19921103-hypertext/hypertext/WWW/Addressing/BNF.html">W3 address syntax: BNF</a>
+    </section>
+
+
+    <section class="slide">
+        <h2>Поддерживаемые протоколы</h2>
+        <ul>
+            <li>http</li>
+            <li>file</li>
+            <li>news</li>
+            <li>telnet</li>
+            <li>prospero</li>
+            <li>gopher</li>
+            <li>wais</li>
+            <li>x500</li>
+        </ul>
+    </section>
+
+
+    <section class="slide title">
+        <h2 class="shout">2019</h2>
+    </section>
+
+
+    <section class="slide">
+        <span class="next mark-trigger"></span>
+        <pre class="place"><code>&lt;a <mark>href=&quot;doc.pdf&quot;</mark>
+   download
+   <mark>type=&quot;application/pdf&quot;</mark>
+   hreflang=&quot;en&quot;
+   ping=&quot;./trackpings&quot;
+   rel=&quot;noopener&quot;
+   target=&quot;_self&quot;&gt;
+   ...
+&lt;/a&gt;</code></pre>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a" class="copyright">&lt;a&gt;: The Anchor element</a>
+    </section>
+
+
+    <section class="slide">
+        <h2>&lt;a href="..."&gt;</h2>
+        <p>предназначен для создания гиперссылки на веб-страницу, файл, email-адрес, элемент на текущей странице или другой ресурс, <mark>достижимый при помощи URL</mark>.</p>
+        <a class="copyright" href="https://www.w3.org/TR/html50/links.html#hyperlink">A vocabulary and associated APIs for HTML and XHTML</a>
+    </section>
+
+
+    <section class="slide">
+        <h2 class="shout">Адрес можно скопировать и открыть в другой вкладке</h2c>
+    </section>
+
+
+    <section class="slide">
+        <iframe src="demos/link.html" frameborder="0" class="cover width height"></iframe>
+    </section>
+
+
+    <section class="slide title">
+        <h2 class="shout">Атрибуты</h2>
+    </section>
+
+
+    <section class="slide">
+        <h2>href</h2>
+        <pre><code>&lt;a href=&quot;another.html&quot;&gt;Text&lt;/a&gt;
+&lt;a href=&quot;https://absolute.url/page/&quot;&gt;Page&lt;/a&gt;
+&lt;a href=&quot;mailto:johndoe@mail.kk&quot;&gt;Send mail&lt;/a&gt;
+&lt;a href=&quot;tel:+123456789&quot;&gt;Call me&lt;/a&gt;</code></pre>
+    </section>
+
+
+    <section class="slide">
+        <h2>download</h2>
+        <pre><code>&lt;a href=&quot;code-of-conduct.pdf&quot; download&gt;
+    Code of Conduct
+&lt;/a&gt;
+
+&lt;a href=&quot;1h24v9lj.jpg&quot; download=&quot;cat&quot;&gt;
+    Kitty photo
+&lt;/a&gt;</code></pre>
+    </section>
+
+
+    <section class="slide">
+        <h2>hreflang</h2>
+        <pre><code>&lt;a href=&quot;korean.html&quot; hreflang=&quot;ko&quot;&gt;
+    Корейская версия
+&lt;/a&gt;
+
+&lt;a href=&quot;english.html&quot; hreflang=&quot;en-US&quot;&gt;
+    Английская версия
+&lt;/a&gt;</code></pre>
+        <a class="copyright" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang">lang</a>
+    </section>
+
+
+    <section class="slide">
+        <h2>ping</h2>
+        <pre><code>&lt;a href=&quot;#header&quot;
+   ping=&quot;./tracker&quot;&gt;Ping #id&lt;/a&gt;
+&lt;a href=&quot;ping.html&quot;
+   ping=&quot;./tracker&quot;&gt;Ping Link&lt;/a&gt;</code></pre>
+        <a class="copyright" href="demos/ping.html">Ping Demo</a>
+    </section>
+
+
+    <section class="slide">
+        <img src="pictures/ping-demo.jpg" alt="" class="cover">
+        <a class="copyright" href="demos/ping.html">Ping Demo</a>
+    </section>
+
+
+    <section class="slide">
+        <h2>rel</h2>
+        <ul class="columns two">
+            <li>alternate</li>
+            <li>author</li>
+            <li>bookmark</li>
+            <li>external</li>
+            <li>help</li>
+            <li>license</li>
+            <li>next</li>
+            <li><mark>nofollow</mark></li>
+            <li><mark>noopener</mark></li>
+            <li><mark>noreferrer</mark></li>
+            <li>prefetch</li>
+            <li>prev</li>
+            <li>search</li>
+            <li>tag</li>
+        </ul>
+        <a class="copyright" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types">Link types</a>
+    </section>
+
+
+    <section class="slide">
+        <h2>target</h2>
+        <ul>
+            <li><code>_blank</code> — открыть в новой вкладке;</li>
+            <li><code>_self</code> — открыть в текущем контексте;</li>
+            <li><code>_parent</code> — открыть в родительском контексте;</li>
+            <li><code>_top</code> — открыть в верхнем контексте;</li>
+            <li><code>iframe-name</code> — открыть в контексте с <code>name='iframe-name'</code>.</li>
+        </ul>
+
+        <a class="copyright" href="demos/target.html">Target Demo</a>
+    </section>
+
+
+    <section class="slide">
+        <h2>type</h2>
+        <pre><code>&lt;a href=&quot;https://wsd.events&quot; type=&quot;text/html&quot;&gt;
+    Web Standards Days
+&lt;/a&gt;
+
+&lt;a href=&quot;doc.pdf&quot; type=&quot;application/pdf&quot;&gt;
+    PDF
+&lt;/a&gt;</code></pre>
+        <a class="copyright" href="https://developer.mozilla.org/en-US/docs/Glossary/MIME_type">MIME type</a>
+    </section>
+
+
+    <section class="slide">
+        <h2>referrerpolicy</h2>
+        <p>Управляет доступом к заголовку Referer</p>
+        <pre><code>&lt;a href=&quot;https://some-site.com&quot;
+   referrerpolicy=&quot;no-referrer&quot;&gt;
+   External Resource
+&lt;/a&gt;</code></pre>
+        <a class="copyright" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a>
+    </section>
+
+
+    <section class="slide title">
+        <h2 class="shout">Что может быть внутри<br>href?</h2>
+    </section>
+
+
+    <section class="slide">
+        <h2 class="shout">Гиперссылки</h2>
+        <a class="copyright" href="https://www.w3.org/TR/html50/links.html">4.8 Links</a>
+    </section>
+
+
+    <section class="slide">
+        <dl>
+            <dt style="font-weight: bold;">Гиперссылка —</dt>
+            <dd>ссылка на другой ресурс, который обычно предоставляется пользователю юзер-агентом (браузером) так, чтобы пользователь мог заставить юзер-агент перейти к этому ресурсу, например, открыть его в браузере или скачать его.</dd>
+        </dl>
+    </section>
+
+
+    <section class="slide">
+        <img src="pictures/ietf-uri.jpg" alt="" class="cover">
+        <a class="copyright" href="https://tools.ietf.org/rfc/rfc3986.txt">Uniform Resource Identifier (URI): Generic Syntax</a>
+    </section>
+
+
+    <section class="slide">
+        <h2 class="shout"><span class="grey">https://</span>yandex.ru</h2>
+    </section>
+
+
+    <section class="slide">
+        <h2 class="shout"><span class="grey">https://</span>яндекс.рф</h2>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout" style="font-size: 2em; line-height: 1.5em;"><span class="grey">https://</span>яндекс.рф<br>⬇️<br><span class="grey">https://</span>xn--d1acpjx3f.xn--p1ai</h2>
+        <a class="copyright" href="https://tools.ietf.org/rfc/rfc3987.txt">Internationalized Resource Identifiers (IRIs)</a>
+    </section>
+
+
+    <section class="slide">
+        <h2 class="shout">Из браузера<br>можно звонить</h2>
+    </section>
+
+
+    <section class="slide">
+        <h2 class="shout">tel:+375291234567</h2>
+    </section>
+
+
+    <section class="slide">
+        <h2 class="shout">tel:+375291234567<mark>p1</mark></h2>
+    </section>
+
+
+    <section class="slide black">
+        <img src="pictures/ios_tel.jpg" alt="" class="cover">
+    </section>
+
+
+    <section class="slide">
+        <img src="pictures/android-tel.jpeg" alt="" class="cover" style="box-shadow: 0 0 30px rgba(0,0,0,0.3);">
+    </section>
+
+
+    <section class="slide" style="background-color: #f6f6f6;">
+        <img src="pictures/iphone-keypad.jpg" alt="" class="place" height="400">
+    </section>
+
+
+    <section class="slide">
+        <h2 class="shout" style="font-size: 2em; line-height: 1.5em;"><span class="grey">+37529</span>telecom<br>⬇️<br><span class="grey">+37529</span>8353266</h2>
+    </section>
+
+
+    <section class="slide">
+        <img src="pictures/ietf-tel.jpg" alt="" class="cover">
+        <a class="copyright" href="https://www.ietf.org/rfc/rfc3966.txt">The tel URI for Telephone Numbers</a>
+    </section>
+
+
+    <section class="slide">
+        <pre>Compared to RFC 2806, references to carrier selection, dial context,
+fax and modem URIs, post-dial strings, and <mark>pause characters have been
+removed</mark>.  The URI syntax now conforms to RFC 2396 [RFC2396].</pre>
+        <a class="copyright" href="https://www.ietf.org/rfc/rfc3966.txt">The tel URI for Telephone Numbers</a>
+    </section>
+
+
+    <section class="slide">
+        <h2 class="shout">tel:+375291234567<mark>,1</mark></h2>
+    </section>
+
+
+    <section class="slide">
+        <img src="pictures/hercules.jpg" alt="" class="cover">
+    </section>
+
+
+    <section class="slide">
+        <h2 class="shout">Из браузера можно отправлять письма</h2>
+    </section>
+
+
+    <section class="slide">
+        <h2 class="shout" style="font-size: 2em;"><mark>mailto:</mark>mefody@yandex-team.ru</h2>
+    </section>
+
+
+    <section class="slide">
+        <pre class="place"><code>mailto:mefody@yandex-team.ru
+      ?<mark>cc</mark>=dark.mefody@yandex.ru,n.a.dubko@gmail.com
+      &amp;<mark>bcc</mark>=n.a.dubko@gmail.com
+      &amp;<mark>subject</mark>=I%20Love%20Frontend%202020
+      &amp;<mark>body</mark>=Хочу%20выступить</code></pre>
+        <a class="copyright" href="https://tools.ietf.org/html/rfc6068.html">The 'mailto' URI Scheme</a>
+    </section>
+
+
+    <section class="slide">
+        <h2 class="shout">Из браузера можно открывать приложения</h2>
+    </section>
+
+
+    <section class="slide">
+        <img src="pictures/slack-open.jpg" alt="" class="cover width">
+    </section>
+
+
+    <section class="slide">
+        <h2>deeplink</h2>
+        <pre><code>&lt;a href=&quot;slack://open?team=T12345&quot;&gt;Open in Slack&lt;/a&gt;</code></pre>
+    </section>
+
+
+    <section class="slide">
+        <h2>Максимальная длина ссылки</h2>
+        <span class="place next" style="font-size: 3em;">🤷‍♂️</span>
+        <a class="copyright" href="https://stackoverflow.com/questions/417142/what-is-the-maximum-length-of-a-url-in-different-browsers">What is the maximum length of a URL in different browsers?</a>
+    </section>
+
+
+    <section class="slide">
+        <img src="pictures/ie-link-limit.jpg" alt="" class="cover place top">
+        <a href="https://support.microsoft.com/ru-ru/help/208427/maximum-url-length-is-2-083-characters-in-internet-explorer" class="copyright">Поддержка Internet Explorer</a>
+    </section>
+
+
+    <section class="slide" style="background-color: #f4f4f6;">
+        <img src="pictures/death-to-ie.jpg" alt="" class="cover place top">
+        <a class="copyright" href="https://death-to-ie11.netlify.com/">death-to-ie11.netlify.com</a>
+    </section>
+
+
+    <section class="slide">
+        <pre class="place" style="font-size: 1.5em;"><code>&lt;a href=&quot;javascript:void(0);&quot;&gt;🤦‍♂️&lt;/a&gt;</code></pre>
+    </section>
+
+
+    <section class="slide">
+        <pre class="place" style="font-size: 2em;"><code>&lt;a href=&quot;#&quot;&gt;🙈&lt;/a&gt;</code></pre>
+    </section>
+
+
+    <section class="slide">
+        <img src="pictures/shame-on-you.jpg" alt="" class="place">
+    </section>
+
+
+    <section class="slide">
+        <pre class="place" style="font-size: 1.5em;"><code>&lt;button type=&quot;button&quot;&gt;👍&lt;/button&gt;</code></pre>
+    </section>
+
+
+    <section class="slide">
+        <h2 class="shout">&lt;base&gt;</h2>
+        <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-base-element" class="copyright">Living Standard — Last Updated 19 October 2019</a>
+    </section>
+
+
+    <section class="slide">
+        <pre class="place" style="font-size: 1.5em;"><code>&lt;base target=&quot;_top&quot;
+      href=&quot;https://my.blog/articles/&quot;&gt;</code></pre>
+    </section>
+
+
+    <section class="slide">
+        <pre><code>&lt;head&gt;
+    &lt;base target=&quot;_top&quot; href=&quot;https://my.blog/articles/&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;a href=&quot;page-1&quot;&gt;Article&lt;/a&gt;
+    &lt;!-- https://my.blog/articles/page-1 --&gt;
+
+    &lt;a href=&quot;../index.html&quot;&gt;Main page&lt;/a&gt;
+    &lt;!-- https://my.blog/index.html --&gt;
+&lt;/body&gt;</code></pre>
+    </section>
+
+
+    <section class="slide title">
+        <h2 class="shout">Безопасность</h2>
+    </section>
+
+
+    <section class="slide">
+        <img src="pictures/referer.jpg" alt="" class="cover">
+    </section>
+
+
+    <section class="slide">
+        <pre class="place" style="font-size: 1.5em;"><code>&lt;a href=&quot;https://fakebook.com&quot;
+   rel=&quot;noreferrer&quot;&gt;</code></pre>
+    </section>
+
+
+    <section class="slide">
+        <h2>window.opener</h2>
+        <pre class="place"><code>// На странице злоумышленника
+window.opener.location = 'https://fakebook.com/page.html';</code></pre>
+        <a href="https://www.jitbit.com/alexblog/256-targetblank---the-most-underestimated-vulnerability-ever/" class="copyright">Target="_blank" - the most underestimated vulnerability ever</a>
+    </section>
+
+
+    <section class="slide">
+        <pre class="place" style="font-size: 1.5em;"><code>&lt;a href=&quot;https://fakebook.com&quot;
+   rel=&quot;noopener&quot;&gt;</code></pre>
+    </section>
+
+
+    <section class="slide">
+        <pre class="place" style="font-size: 1.5em;"><code>var win = window.open(url, '_blank');
+
+if (win) {
+    win.opener = null;
+}</code></pre>
+    </section>
+
+
+    <section class="slide">
+        <h2 class="shout" style="line-height: 1.2">ТИЦ<br>PR</h2>
+    </section>
+
+
+    <section class="slide">
+        <pre class="place" style="font-size: 1.5em;"><code>&lt;a href=&quot;https://not-my.site&quot;
+   rel=&quot;nofollow&quot;&gt;</code></pre>
+    </section>
+
+
+    <section class="slide title">
+        <h2 class="shout">a11y</h2>
+    </section>
+
+
+    <section class="slide">
+        <h2>Список всех ссылок в VoiceOver</h2>
+        <ol>
+            <li><kbd>⌘ Cmd</kbd> + <kbd>F5</kbd></li>
+            <li><kbd>VO (Caps Lock)</kbd> + <kbd>U</kbd></li>
+            <li><kbd>⟶ Arrow Right</kbd> или <kbd>⟵ Arrow Left</kbd></li>
+        </ol>
+    </section>
+
+
+    <section class="slide">
+        <video src="pictures/voiceover.mp4" controls class="cover width"></video>
+    </section>
+
+
+    <section class="slide">
+        <h2 class="shout">Осмысленный текст для озвучки</h2>
+    </section>
+
+
+    <section class="slide">
+        <span>❌</span>
+        <pre><code>перейдите по
+&lt;a href=&quot;/link&quot;&gt;ссылке&lt;/a&gt;</code></pre>
+        <br>
+        <span>✅</span>
+        <pre><code>перейдите по
+&lt;a href=&quot;/link&quot; aria-label=&quot;Форма регистрации&quot;&gt;ссылке&lt;/a&gt;</code></pre>
+        <a href="https://www.w3.org/TR/wai-aria/#aria-label" class="copyright">Accessible Rich Internet Applications (WAI-ARIA) 1.1</a>
+    </section>
+
+
+    <section class="slide">
+        <h2>Навигация по ссылкам</h2>
+        <ul>
+            <li class="next"><kbd>⇥ Tab</kbd> — следующая</li>
+            <li class="next"><kbd>Shift</kbd> + <kbd>⇥ Tab</kbd> — предыдущая</li>
+            <li class="next"><kbd>↵ Enter</kbd> — переход по ссылке</li>
+        </ul>
+    </section>
+
+
+    <section class="slide">
+        <video src="pictures/tab-jump.mp4" class="cover width place bottom" autoplay muted loop playsinline></video>
+    </section>
+
+
+    <section class="slide">
+        <video src="pictures/grid-broken-tab.mp4" class="cover height" autoplay muted loop playsinline></video>
+        <a class="copyright" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/CSS_Grid_Layout_and_Accessibility">CSS Grid Layout and Accessibility</a>
+    </section>
+
+
+    <section class="slide">
+        <pre><code>document.onkeypress = function(e) {
+    e.preventDefault();
+
+    // The Enter/Return key
+    if (e.keyCode === 13) {
+        <mark>doSomething();</mark>
+        document.activeElement.click();
+    }
+};</code></pre>
+    </section>
+
+
+    <section class="slide">
+        <h2 class="shout">target="_blank"</h2>
+    </section>
+
+
+    <section class="slide clear">
+        <img src="pictures/habr_reading.jpg" alt="" class="cover width place top">
+    </section>
+
+
+    <section class="slide clear">
+        <img src="pictures/habr_reading_click.jpg" alt="" class="cover width place top">
+        <span class="place top next" style="font-size: 3em; top: 10%">😱</span>
+    </section>
+
+
+    <section class="slide">
+        <div class="place" style="text-align: center; font-size: 1.5em;">
+            <p>
+                <a href="index.html#85"><img src="pictures/icon-new-tab.svg" alt="" style="height: 1em; margin-right: 0.25em;"> Статья про котиков</a>
+            </p>
+            <p>
+                <a href="index.html#85">Статья про котиков</a>
+            </p>
+        </div>
+    </section>
+
+
+    <section class="slide">
+        <pre class="place"><code>a[href^="http"]:not([href^="https://mysite.com"])::before {
+    content: url('path-to-icon.svg');
+}</code></pre>
+    </section>
+
+
+    <section class="slide">
+        <pre class="place"><code>a[href^="http"]:not([href^="https://mysite.com"])::after {
+    content: '(откроется в новом окне)';
+}</code></pre>
+    </section>
+
+
+    <section class="slide">
+        <h2 class="shout">Изучайте, как люди пользуются вашим сайтом</h2>
+        <a href="https://css-tricks.com/use-target_blank/" class="copyright">When to use target=”_blank”</a>
+    </section>
+
+
+    <section class="slide title">
+        <h2 class="shout">Мобильная вёрстка</h2>
+    </section>
+
+
+    <section class="slide">
+        <img src="pictures/desktop-vs-touch.jpg" alt="" class="cover">
+        <a class="copyright" href="https://radar.yandex.ru/device_categories?chart_type=line2">Типы устройств</a>
+    </section>
+
+
+    <section class="slide">
+        <h2>44px — минимальный размер интерактивного элемента</h2>
+        <img src="pictures/interactivity-hit-areas.png" alt="" class="place bottom" width="600">
+        <a href="https://developer.apple.com/design/tips/" class="copyright">UI Design Do’s and Don’ts</a>
+    </section>
+
+
+    <section class="slide">
+        <q class="place">Success Criterion 2.5.5 Target Size (Level AAA): The size of the target for pointer inputs is at least 44 by 44 CSS pixels</q>
+        <a href="https://www.w3.org/WAI/WCAG21/Understanding/target-size.html" class="copyright">Understanding Success Criterion 2.5.5: Target Size</a>
+    </section>
+
+
+    <section class="slide">
+        <img src="pictures/yandex_tap_area.jpg" alt="" class="cover">
+    </section>
+
+
+    <section class="slide">
+        <pre class="place"><code>.button2.button2_size_m {
+    line-height: 44px;
+    height: 44px;
+}</code></pre>
+    </section>
+
+
+    <section class="slide">
+        <h2 class="shout">⏱ 300ms</h2>
+    </section>
+
+
+    <section class="slide">
+        <video src="pictures/double-tap.mp4" muted loop autoplay playsinline class="cover height"></video>
+    </section>
+
+
+    <section class="slide">
+        <pre class="place" style="font-size: 1.5em;"><code>touch-action: manipulation</code></pre>
+    </section>
+
+
+    <section class="slide">
+        <img src="pictures/caniuse-touch-action.jpg" alt="" class="place" width="900">
+        <a class="copyright" href="https://caniuse.com/#feat=css-touch-action">CSS touch-action property</a>
+    </section>
+
+
+    <section class="slide">
+        <img src="pictures/fastclick.jpg" alt="" class="cover">
+        <a class="copyright" href="https://github.com/ftlabs/fastclick">github.com/ftlabs/fastclick</a>
+    </section>
+
+
+    <section class="slide title">
+        <h2 class="shout">CSS</h2>
+    </section>
+
+
+    <section class="slide">
+        <h2 class="shout">Псевдоклассы</h2>
+    </section>
+
+
+    <section class="slide">
+        <h2>:link</h2>
+        <pre><code>a:link {
+    color: orange;
+}</code></pre>
+
+        <div class="next">
+            <b>Пример:</b><br>
+            <a class="link-test">Link without href</a>
+            <br>
+            <a class="link-test" href="http://127.0.0.1:8080/some-another-page.html">Not visited link</a>
+            <br>
+            <a class="link-test" href="index.html">Visited link</a>
+        </div>
+        <style>
+            .link-test:link {
+                color: orange !important;
+            }
+        </style>
+    </section>
+
+
+    <section class="slide">
+        <h2>:visited</h2>
+        <pre><code>a:visited {
+    color: darkviolet;
+}</code></pre>
+
+        <div class="next">
+            <b>Пример:</b><br>
+            <a class="visited-test">Link without href</a>
+            <br>
+            <a class="visited-test" href="http://127.0.0.1:8080/some-another-page.html">Not visited link</a>
+            <br>
+            <a class="visited-test" href="index.html">Visited link</a>
+        </div>
+        <style>
+            .visited-test:visited {
+                color: darkviolet !important;
+            }
+        </style>
+    </section>
+
+
+    <section class="slide">
+        <h2 class="shout">Посещённые ссылки — другим цветом</h2>
+    </section>
+
+
+    <section class="slide">
+        <img src="pictures/click-all-the-links.jpg" alt="" class="cover">
+        <a class="copyright" href="https://medium.com/@ABatickaya/%D1%83%D1%82%D0%B5%D1%80%D1%8F%D0%BD%D0%BD%D0%BE%D0%B5-%D0%B8%D1%81%D0%BA%D1%83%D1%81%D1%81%D1%82%D0%B2%D0%BE-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BF%D0%BE%D1%81%D0%B5%D1%89%D0%B5%D0%BD%D0%BD%D1%8B%D1%85-%D1%81%D1%81%D1%8B%D0%BB%D0%BE%D0%BA-33c5fe44a862">Утерянное искусство оформления посещенных ссылок</a>
+    </section>
+
+
+    <section class="slide">
+        <img src="pictures/js-evil.jpg" alt="" class="cover">
+    </section>
+
+
+    <section class="slide">
+        <pre><code>&lt;a class=&quot;hidden fb&quot; href=&quot;https://facebook.com&quot;&gt;&lt;/a&gt;
+&lt;a class=&quot;hidden vk&quot; href=&quot;https://vk.com&quot;&gt;&lt;/a&gt;
+&lt;a class=&quot;hidden shoes&quot; href=&quot;https://shoes.buy&quot;&gt;&lt;/a&gt;</code></pre>
+        <br>
+        <pre class="next"><code>.fb<mark>:visited</mark> {
+    background-image: url('track-fb-users.gif?uid=123');
+}
+.shoes<mark>:visited</mark> {
+    background-image: url('track-shop-users.gif?uid=123');
+}</code></pre>
+    </section>
+
+
+    <section class="slide">
+        <h2>Разрешённые свойства внутри :visited</h2>
+        <ul>
+            <li><code>color</code></li>
+            <li><code>background-color</code></li>
+            <li><code>border-color</code></li>
+            <li><code>column-rule-color</code></li>
+            <li><code>outline-color</code></li>
+            <li>цвета внутри <code>fill</code> и <code>stroke</code></li>
+        </ul>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Privacy_and_the_:visited_selector" class="copyright">Privacy and the :visited selector</a>
+    </section>
+
+
+    <section class="slide">
+        <pre><code>&lt;a class=&quot;test&quot; href=&quot;.&quot;&gt;Visited test&lt;/a&gt;</code></pre>
+        <br>
+        <pre class="next"><code>.test { color: red; }
+.test:visited { color: blue; }</code></pre>
+        <br>
+        <pre class="next"><code>var link = document.querySelector('.test');
+window.getComputedStyle(link).color; // rgb(255, 0, 0)</code></pre>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:visited" class="copyright">:visited</a>
+    </section>
+
+
+    <section class="slide">
+        <h2>:hover</h2>
+        <pre><code>a:hover {
+    color: lightsteelblue;
+}</code></pre>
+    </section>
+
+
+    <section class="slide">
+        <h2>cursor: pointer</h2>
+        <img src="pictures/cursor-pointer.jpg" alt="" class="cover" width="300">
+        <a class="copyright" href="https://ilyabirman.ru/meanwhile/all/arrow-and-finger/">Стрелка и пальчик</a>
+    </section>
+
+
+    <section class="slide">
+        <img src="pictures/yandex_color.jpg" alt="" class="cover place top">
+    </section>
+
+
+    <section class="slide">
+        <video src="pictures/yandex_blindness.mp4" class="cover place top" autoplay muted playsinline loop></video>
+        <a href="https://chrome.google.com/webstore/detail/colorblinding/dgbgleaofjainknadoffbjkclicbbgaa" class="copyright">Colorblinding</a>
+    </section>
+
+
+    <section class="slide">
+        <h2>:active, :focus</h2>
+        <pre><code>.link_theme_normal:active,
+.link_theme_normal:visited:active {
+    color: #d00;
+}
+
+.utilityfocus .link:focus {
+    outline: 2px solid #fc0;
+}</code></pre>
+    </section>
+
+
+    <section class="slide" style="background-color: #efefef;">
+        <video src="pictures/flying-focus.mp4" class="cover height" autoplay muted loop></video>
+        <a href="https://github.com/NV/flying-focus" class="copyright">github.com/NV/flying-focus</a>
+    </section>
+
+
+    <section class="slide">
+        <h2 class="shout">text-decoration: underline</h2>
+    </section>
+
+
+    <section class="slide" style="background-color: #efefef;">
+        <img src="pictures/underline.jpg" alt="" class="cover">
+        <a href="https://adrianroselli.com/2016/06/on-link-underlines.html" class="copyright">On Link Underlines</a>
+    </section>
+
+
+    <section class="slide">
+        <iframe src="demos/underline.html" frameborder="0" class="cover width height"></iframe>
+        <a href="demos/underline.html" class="copyright">Underline Demo</a>
+    </section>
+
+
+    <section class="slide">
+        <h2 class="shout">У пользователя есть привычки</h2>
+    </section>
+
+
+    <section class="slide">
+        <img src="pictures/oskar_underline.jpg" alt="" class="cover">
+    </section>
+
+
+    <section class="slide">
+        <h2>text-decoration-skip-ink: auto</h2>
+        <iframe src="demos/skip-ink.html" frameborder="0" class="cover width place" height="300"></iframe>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-skip-ink" class="copyright">text-decoration-skip-ink</a>
+    </section>
+
+
+    <section class="slide">
+        <img src="pictures/caniuse-skip-ink.jpg" alt="" class="place" width="900">
+        <a href="https://caniuse.com/#search=text-decoration-skip-ink" class="copyright">caniuse.com/#search=text-decoration-skip-ink</a>
+    </section>
+
+
+    <section class="slide">
+        <img src="pictures/firefox-70.jpg" alt="" class="place">
+        <a href="https://hacks.mozilla.org/2019/10/firefox-70-a-bountiful-release-for-all/" class="copyright">Firefox 70 — a bountiful release for all</a>
+    </section>
+
+
+    <section class="slide">
+        <h2 class="shout">display: inline</h2>
+    </section>
+
+
+    <section class="slide">
+        <img src="pictures/multiline-text.jpg" alt="" class="cover width place top">
+        <a href="https://css-tricks.com/multi-line-padded-text/" class="copyright white">Multi-Line Padded Text</a>
+    </section>
+
+
+    <section class="slide title">
+        <h2 class="shout">Карточки</h2>
+    </section>
+
+
+    <section class="slide">
+        <img src="pictures/kanban-cards.png" alt="" class="cover">
+    </section>
+
+
+    <section class="slide">
+        <pre><code><mark>&lt;a href=&quot;https://...&quot;&gt;</mark>
+    &lt;div&gt;
+        &lt;h4&gt;Friends of Photography&lt;/h4&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;h5&gt;Fly with the Monarchs!&lt;/h5&gt;
+        &lt;time datetime=&quot;2018-01-29T13:00:00.000-05:00&quot;&gt;
+            &lt;span&gt;Today&lt;/span&gt;
+            &lt;span&gt;1:00 PM&lt;/span&gt;
+        &lt;/time&gt;
+    &lt;/div&gt;
+<mark>&lt;/a&gt;</mark></code></pre>
+        <a href="https://codepen.io/thierry/full/gvYPbN/" class="copyright">Be nice to screen-reader users</a>
+    </section>
+
+
+    <section class="slide">
+            <pre><code>&lt;div class="link-wrapper"&gt;
+    &lt;div&gt;
+        &lt;h4&gt;
+            <mark>&lt;a href=&quot;https://...&quot;&gt;Friends of Photography&lt;/a&gt;</mark>
+        &lt;/h4&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;h5&gt;Fly with the Monarchs!&lt;/h5&gt;
+        &lt;time datetime=&quot;2018-01-29T13:00:00.000-05:00&quot;&gt;
+            &lt;span&gt;Today&lt;/span&gt;
+            &lt;span&gt;1:00 PM&lt;/span&gt;
+        &lt;/time&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        <a href="https://codepen.io/thierry/full/gvYPbN/" class="copyright">Be nice to screen-reader users</a>
+    </section>
+
+
+    <section class="slide">
+        <pre><code>.link-wrapper {
+    position: relative;
+}
+
+.link-wrapper <mark>a::before</mark> {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}</code></pre>
+        <a href="https://codepen.io/thierry/full/gvYPbN/" class="copyright">Be nice to screen-reader users</a>
+    </section>
+
+
+    <section class="slide">
+        <h2 class="shout">Ссылка внутри ссылки</h2>
+    </section>
+
+
+    <section class="slide">
+        <img src="pictures/nested-illegal.jpg" alt="" class="cover">
+        <a href="https://www.w3.org/TR/REC-html40/struct/links#idx-link-6" class="copyright">Nested links are illegal</a>
+    </section>
+
+
+    <section class="slide">
+        <q class="place" style="width: 900px;">The a element may be wrapped around entire paragraphs, lists, tables, and so forth, even entire sections, so long as there is <mark>no interactive content within (e.g. buttons or other links)</mark>.</q>
+        <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element" class="copyright">HTML Standard</a>
+    </section>
+
+
+    <section class="slide">
+        <pre><code>&lt;a href=&quot;#a&quot;&gt;
+    Foo
+    <mark>&lt;object type=&quot;owo/uwu&quot;&gt;</mark>
+        &lt;a href=&quot;#b&quot;&gt;
+            Bar
+        &lt;/a&gt;
+    <mark>&lt;/object&gt;</mark>
+    Baz
+&lt;/a&gt;</code></pre>
+        <a href="https://www.kizu.ru/nested-links/" class="copyright">Nested Links</a>
+    </section>
+
+
+    <section class="slide title">
+        <h2 class="shout">Кнопка или ссылка?</h2>
+    </section>
+
+
+    <section class="slide">
+        <h2 class="shout">
+            <span>Если навигация, то ссылка.</span><br>
+            <span class="next">Иначе — кнопка.</span>
+        </h2>
+    </section>
+
+
+    <section class="slide">
+        <pre style="font-size: 0.7em;"><code>(function() {
+    const wannabeButtons = document.querySelectorAll('[data-button]');
+
+    Array.prototype.forEach.call(wannabeButtons, wannabeButton => {
+
+        wannabeButton.outerHTML = `
+            &lt;button data-link=&quot;${wannabeButton.href}&quot;&gt;
+            ${wannabeButton.textContent}
+            &lt;/button&gt;
+        `;
+
+        const btn = document.querySelector('[data-link="' + wannabeButton.href + '"]');
+
+        btn.onclick = () => {
+            console.log('clicked the button');
+        };
+
+    });
+})();</code></pre>
+        <a href="https://justmarkup.com/articles/2019-01-21-the-link-to-button-enhancement/" class="copyright">The link to button enhancement</a>
+    </section>
+
+
+    <section class="slide">
+        <pre><code>&lt;button&gt;
+    &lt;a href=&quot;link.html&quot;&gt;Link Text&lt;/a&gt;
+&lt;/button&gt;</code></pre>
+        <iframe src="demos/button-link.html" frameborder="0" class="cover width height next" height="300"></iframe>
+    </section>
+
+
+    <section class="slide">
+        <img src="pictures/try-not-to-cry.jpg" alt="" class="place">
+    </section>
+
+
+    <section class="slide title">
+        <h2 class="shout">Скорость</h2>
+    </section>
+
+
+    <section class="slide">
+        <pre class="place" style="font-size: 1.5em"><code>&lt;a rel=&quot;prefetch&quot;
+   href=&quot;next.html&quot;&gt;
+   Next Article
+&lt;/a&gt;</code></pre>
+    </section>
+
+
+    <section class="slide">
+        <img src="pictures/prefetch-unimplemented.jpg" alt="" class="cover">
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types" class="copyright">Link types</a>
+    </section>
+
+
+    <section class="slide">
+        <img src="pictures/quicklink.png" alt="" class="cover">
+        <a href="https://github.com/GoogleChromeLabs/quicklink" class="copyright">github.com/GoogleChromeLabs/quicklink</a>
+    </section>
+
+
+    <section class="slide">
+        <img src="pictures/boom.png" alt="" class="cover">
+    </section>
+
+
+    <section class="slide title">
+        <h2 class="shout">Как всё запомнить?</h2>
+    </section>
+
+
+    <section class="slide">
+        <h2>link-api</h2>
+        <pre><code>blocks['link-api'](context, {
+    url: data.url,
+    text: data.title,
+    theme: 'ghost'
+});</code></pre>
+    </section>
+
+
+    <section class="slide">
+        <h2>&lt;Link&gt;</h2>
+        <pre><code>&lt;Link
+    url={this.props.linkUrl}
+    onClick={this.handleClick}&gt;
+    {
+        this.props.linkText
+    }
+&lt;/Link&gt;</code></pre>
+    </section>
+
+
+    <section class="slide">
+        <h2 class="shout">Прокси для ссылок</h2>
+    </section>
+
+
+    <section class="slide title">
+        <h2 class="shout">Лайфхак</h2>
+    </section>
+
+
+    <section class="slide">
+        <video src="pictures/select-the-link.mp4" class="cover width" autoplay muted loop></video>
+    </section>
+
+
+    <section class="slide">
+        <kbd class="place" style="font-size: 3em;">⎇ Alt</kbd>
+    </section>
+
+
+    <section class="slide">
+        <video src="pictures/select-the-link-success.mp4" class="cover width" autoplay muted loop></video>
+        <kbd class="place" style="font-size: 3em;">⎇ Alt</kbd>
+    </section>
+
+
+    <section class="slide clear" id="final">
+        <h2>Спасибо за внимание!</h2>
+        <a href="https://mefody.github.io/talks/a/wsd.html">mefody.github.io/talks/a/wsd.html</a>
+        <br>
+        <a href="https://twitter.com/dark_mefody">@dark_mefody</a>
+        <br>
+        <a href="mailto:mefody@yandex-team.ru">mefody@yandex-team.ru</a>
+        <img src="pictures/qr-code-wsd.gif" alt="" class="place bottom right" width="300">
+    </section>
+
+
+    <footer class="badge">
+        <a href="https://github.com/shower/shower">Сделано в Shower</a>
+    </footer>
+
+    <div class="progress"></div>
+
+    <script src="src/shower/shower.min.js"></script>
+    <script src="src/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function() {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					head.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					head.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function(msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			console.log('Live reload enabled.');
+		})();
+	}
+	// ]]>
+</script>
+</body>
+
+</html>

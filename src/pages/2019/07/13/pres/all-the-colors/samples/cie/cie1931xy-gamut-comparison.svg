@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 494.6 525.8">
+ <title>CIE1931xy gamut comparison</title>
+ <desc>Comparison of some RGB and CMYK colour gamuts on a CIE 1931 xy chromaticity diagram, drawn by CMG Lee, based on http://commons.wikimedia.org/wiki/File:CIE1931xy_blank.svg and data from Blatner and Fraser's "Real World Photoshop CS", p179: http://canopuscomputing.com.au/gallery2/d/8631-1/Gamuts_comparison-B_F.jpg .</desc>
+ <defs>
+  <path id="border" d="M 150,473 C 147,473 145,471 142,469 C 135,462 129,455 124,446 C 121,441 118,436 116,431 C 113,424 110,416 107,408 C 103,396 99,385 95,373 C 86,339 77,298 72,264 C 66,226 61,179 62,141 C 63,118 65,81 80,60 C 84,54 91,50 98,49 C 105,48 112,51 118,53 C 140,60 160,76 178,90 C 236,135 287,191 339,243 C 360,264 380,284 401,305 C 409,313 417,321 426,329 C 428,332 430,334 433,337 C 434,337 434,338 435,339 C 435,339 436,340 436,340"/>
+
+  <path id="gamut_p" d="M 20,-5    L 150,-849 L 735,-265 Z"/>
+  <path id="gamut_a" d="M 157,-70  L 209,-714 L 643,-332 Z"/>
+  <path id="gamut_s" d="M 162,-78  L 301,-597 L 637,-332 Z"/>
+  <path id="gamut_c" d="M 155,-70  L 290,-616 L 640,-335 Z"/>
+  <path id="gamut_k" d="M 212,-128 L 170,-230 L 234,-546 L 445,-508 L 614,-321 L 460,-235 Z"/>
+  <g id="outlines">
+   <use xlink:href="#gamut_p"/>
+   <use xlink:href="#gamut_a"/>
+   <use xlink:href="#gamut_s"/>
+<!--   <use xlink:href="#gamut_c"/>-->
+   <use xlink:href="#gamut_k"/>
+  </g>
+  <g id="lines">
+   <use xlink:href="#gamut_p" stroke="#660099"/>
+   <use xlink:href="#gamut_a" stroke="#ff6600" stroke-dasharray="16,2"/>
+   <use xlink:href="#gamut_s" stroke="#000000" stroke-dasharray="5,2"/>
+<!--   <use xlink:href="#gamut_c" stroke="#006666" stroke-dasharray="16,2,2,2"/>-->
+   <use xlink:href="#gamut_k" stroke="#cc00cc" stroke-width="5"/>
+  </g>
+  <g id="labels">
+   <text x="140" y="-860" text-anchor="start" fill="#660099">ProPhoto RGB</text>
+   <text x="205" y="-720" text-anchor="start" fill="#ff6600">Adobe RGB 1998 </text>
+   <text x="295" y="-598" text-anchor="start" fill="#000000">sRGB</text>
+<!--   <text x="290" y="-620" text-anchor="end"   fill="#006666">Colormatch RGB</text>-->
+   <text x="240" y="-555" text-anchor="end"   fill="#cc00cc">SWOP CMYK</text>
+   <text x="275" y="-335" text-anchor="start" fill="#333333">D65 white point</text>
+  </g>
+ </defs>
+ <path opacity="0.25" stroke="black" stroke-width="1" fill="#ffffff" d="M 85.5,475.5 v -460.8 M 111.5,475.5 v -460.8 M 136.5,475.5 v -435.2 M 162.5,475.5 v -409.6 M 188.5,475.5 v -384 M 213.5,475.5 v -358.4 M 239.5,475.5 v -332.8 M 264.5,475.5 v -307.2 M 290.5,475.5 v -281.6 M 316.5,475.5 v -256 M 341.5,475.5 v -230.4 M 367.5,475.5 v -204.8 M 392.5,475.5 v -179.2 M 418.5,475.5 v -153.6 M 444.5,475.5 v -128 M 469.5,475.5 v -102.4 M 60.5,450.5 h 409.6 M 60.5,424.5 h 409.6 M 60.5,399.5 h 409.6 M 60.5,373.5 h 409.6 M 60.5,347.5 h 384 M 60.5,322.5 h 358.4 M 60.5,296.5 h 332.8 M 60.5,271.5 h 307.2 M 60.5,245.5 h 281.6 M 60.5,219.5 h 256 M 60.5,194.5 h 230.4 M 60.5,168.5 h 204.8 M 60.5,143.5 h 179.2 M 60.5,117.5 h 153.6 M 60.5,91.5 h 128 M 60.5,66.5 h 102.4 M 60.5,40.5 h 76.8 M 60.5,15.5 h 51.2 M 111.5,15.5 L 469.5,373.5"/>
+ <clipPath id="clipborder"><use xlink:href="#border"/></clipPath>
+ <g clip-path="url(#clipborder)">
+ <!-- mediawiki thinks it contains a script
+  <filter id="blur"><feGaussianBlur stdDeviation="0.5"/></filter>
+   filter="url(#blur)"
+ -->
+  <image opacity="1" width="27" height="28" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAcCAIAAAAfs1O6AAAAAXNSR0IArs4c6QAAA7tJREFUeF591cuKHFUYwPH/d+rUpaenZ5JMLkaMuBAJQly5EeJCtz6M+AC+khvxIbIw4AVMAsEQJ5kkM+mpnumu7rqdz65zOHQxgvCnqCqoX38f1XQL+gsALTRQwwYquIRzOIHH3/HkM/gQbsF1uKbMlKljryfvyDpsS9JgtrVIi0UNgCQwzsYywMS7KVhIdci6oaTDxCSIkACgEbpSGkV/raShwPVe9FCIJn48muB1346LM4aLUBwwcF40DdKAP5r4cETHXBSTEZ/5AdMe25F4a8SNZ8T+t6uikoXCgHE0qaEOxyjuUB0vl43FFPJtSu5I4/s1NSZyxBODBiimV7ic8MqjmPVerDEbZAOjYzgJECgIoODAoxEhDlgohSNvd5ysI9dAqMWgCTpeOUOj5Z0jHuYcTpRtRUdaY9eYakgqqAaXyrceMuNliSv7im0Zk5t8co2vpnw67Ska0jVmNcQSWQ2xrdqhCT9+DwZklwiAOGge4h6Qf0xx1x3caPYmyxO7wFx6bumttW/jq2EziD9E0SAmnCOAIt3XmPtbUfM7XX6wKrJylsyPWSAXEMTqKmpxFkAUHDpGFeoPSI6or7v9WV1kl2JKlUXC+Z8sy0Gpfa2vC4UXAqh6IkEckgwZ8wC9w+wmzfV2NblMkrKVsqHsKYXF31THnov1Xuyx9BaIa/pIMT2afm7y2/RHrp1VF+l5I/OVzNect5z3LISLnNVz2gDtilsDeBS8C+I+Qm+i19omnztzNpWzKfN93teUHaWjhDJl/gTHOEtnxyAICio4ua1y4HRSrZN3Be9yTgvOJsy3bsu840x5Ba9n0EdPwVm6BAiKvyP0hla+rc2Bo2jVLFveWN5kbN3TCWcbThtetTwXmELnC2jvxdaAh0KdUAuV3Ktkr8XWjguj7ywnGW+35RwX/NGA8VzrC2IXxSbxInQ7jnO5sSKvMRWUom8TfW35J5VHGW4K5r9fnCj2diCAXmiFmoFbyL0TZhuyFeYSPYVjw++WNwXsg0ACqa8NXRENQMtAr+FCOOX+a/ZW2BI5hWeiT42SCYXSCRpQXwM20MTFDWuGKmEJC+E9vOTWS4pn2F/V/AxPcSRKqmThNxeK/8myFoANrIQS3sJfHL6geEwBFgUUo7tNs/hFAST+URroIPFbV16s4IIw4Bc/cQsOIQcTn1QS9QsKveIEBUaoQBK3rhi6JAzIb3wJRzCFDDUAKEIYE+tLNc7rS8MxZFkCccAXfPOIuzCDHLVxRkXUbxdQoSdOSlwiZv4FiZsWgB+yll0AAAAASUVORK5CYII=" transform="translate(36,35.8) scale(16)"/>
+ </g>
+ <use stroke="black" stroke-width="1" fill="none" xlink:href="#border"/>
+ <path d="M 148.4,473.3 l -0.4,6 M 148.1,473.3 l -1.3,5.9 M 147.8,473.2 l -4.5,8.9 M 147.2,472.8 l -3.4,4.9 M 146.5,472.3 l -3.8,4.7 M 145.5,471.4 l -4,4.5 M 144.2,470.2 l -6.7,7.4 M 142.5,468.7 l -4,4.5 M 140.2,466.7 l -4,4.5 M 137.3,464.2 l -4.1,4.4 M 133.7,460.6 l -7.4,6.8 M 129.4,455.4 l -4.8,3.5 M 123.5,446.2 l -5.2,3 M 116.1,431.3 l -5.5,2.5 M 106.7,407.9 l -9.4,3.4 M 95.2,373 l -5.8,1.7 M 83.2,324.8 l -5.9,1.3 M 72,264.5 l -5.9,0.9 M 64.2,200.1 l -10,0.8 M 62,140.5 l -6,-0.2 M 67.1,91.7 l -5.8,-1.5 M 79.9,60 l -4.6,-3.9 M 98,48.9 l -1.8,-9.8 M 118.5,52.8 l 1.9,-5.7 M 139.2,63.2 l 3,-5.2 M 158.8,75.6 l 3.4,-4.9 M 177.6,89.6 l 6.2,-7.9 M 196.1,104.9 l 3.9,-4.5 M 214.4,121.3 l 4,-4.4 M 232.7,138.5 l 4.1,-4.4 M 251,156.1 l 7,-7.2 M 269.3,173.9 l 4.2,-4.3 M 287.4,191.8 l 4.2,-4.3 M 305.1,209.5 l 4.2,-4.3 M 322.4,226.7 l 7.1,-7.1 M 338.9,243.1 l 4.2,-4.3 M 354.5,258.6 l 4.2,-4.3 M 368.7,272.8 l 4.2,-4.2 M 381,285.1 l 7.1,-7.1 M 391.9,295.9 l 4.2,-4.3 M 400.9,304.8 l 4.2,-4.3 M 408.2,312.1 l 4.2,-4.2 M 414.1,317.9 l 7.1,-7.1 M 418.7,322.6 l 4.2,-4.3 M 422.5,326.3 l 4.2,-4.3 M 425.6,329.4 l 4.2,-4.2 M 428.1,332 l 7.1,-7.1 M 430.2,334 l 4.2,-4.3 M 431.7,335.5 l 4.2,-4.2 M 432.9,336.7 l 4.2,-4.2 M 433.7,337.5 l 7.1,-7.1 M 434.3,338.1 l 4.2,-4.2 M 434.8,338.6 l 4.2,-4.2 M 435.2,339 l 4.2,-4.2 M 435.5,339.3 l 7.1,-7.1 M 435.8,339.6 l 4.2,-4.2 M 436,339.8 l 4.2,-4.2 M 436.1,339.9 l 4.2,-4.2" stroke="black" stroke-width="1"/>
+ <path stroke="black" stroke-width="2" stroke-linecap="square" fill="none" d="M 60,15 v 461 h 410 M 60,476 v 4 M 86,476 v 4 M 111,476 v 4 M 137,476 v 4 M 162,476 v 4 M 188,476 v 4 M 214,476 v 4 M 239,476 v 4 M 265,476 v 4 M 290,476 v 4 M 316,476 v 4 M 342,476 v 4 M 367,476 v 4 M 393,476 v 4 M 418,476 v 4 M 444,476 v 4 M 470,476 v 4 M 60,476 h -4 M 60,450 h -4 M 60,425 h -4 M 60,399 h -4 M 60,373 h -4 M 60,348 h -4 M 60,322 h -4 M 60,297 h -4 M 60,271 h -4 M 60,245 h -4 M 60,220 h -4 M 60,194 h -4 M 60,169 h -4 M 60,143 h -4 M 60,117 h -4 M 60,92 h -4 M 60,66 h -4 M 60,41 h -4 M 60,15 h -4"/>
+ <g font-family="Nimbus Roman No9 L, Times, serif" font-size="19" stroke="none">
+  <g fill="blue" text-anchor="start">
+   <text x="124.9" y="474.7" text-anchor="end">460</text>
+   <text x="95.5" y="418" text-anchor="end">480</text>
+   <text x="52.2" y="207.1" text-anchor="end">500</text>
+   <text x="95.9" y="37.1" text-anchor="middle">520</text>
+   <text x="185" y="80.1">540</text>
+   <text x="259.4" y="147.5">560</text>
+   <text x="330.9" y="218.2">580</text>
+   <text x="389.5" y="276.6">600</text>
+   <text x="422.5" y="309.4">620</text>
+  </g>
+  <g fill="black">
+   <g text-anchor="middle">
+    <text x="264.8" y="515.8" font-style="italic">x</text>
+    <text x="60" y="495.8">0.0</text>
+    <text x="111.2" y="495.8">0.1</text>
+    <text x="162.4" y="495.8">0.2</text>
+    <text x="213.6" y="495.8">0.3</text>
+    <text x="264.8" y="495.8">0.4</text>
+    <text x="316" y="495.8">0.5</text>
+    <text x="367.2" y="495.8">0.6</text>
+    <text x="418.4" y="495.8">0.7</text>
+    <text x="469.6" y="495.8">0.8</text>
+   </g>
+   <g text-anchor="end">
+    <text x="20" y="251.4" font-style="italic">y</text>
+    <text x="52" y="481.8">0.0</text>
+    <text x="52" y="430.6">0.1</text>
+    <text x="52" y="379.4">0.2</text>
+    <text x="52" y="328.2">0.3</text>
+    <text x="52" y="277">0.4</text>
+    <text x="52" y="225.8">0.5</text>
+    <text x="52" y="174.6">0.6</text>
+    <text x="52" y="123.4">0.7</text>
+    <text x="52" y="72.2">0.8</text>
+    <text x="52" y="21">0.9</text>
+   </g>
+  </g>
+ </g>
+
+ <g transform="translate(60.5,475.5) scale(0.512)" font-family="sans-serif" font-weight="bold" font-size="32" letter-spacing="-1" stroke-width="3" stroke-linejoin="round" stroke="#ffffff" fill="none">
+  <circle class="line" cx="310" cy="-316" r="10" stroke="#333333"/>
+  <use xlink:href="#outlines" stroke-opacity="0.25" stroke-width="7"/>
+  <use xlink:href="#outlines" stroke-opacity="0.5"  stroke-width="5"/>
+  <use xlink:href="#lines"/>
+  <use xlink:href="#lines"  stroke-opacity="0.5"/>
+  <use xlink:href="#labels" stroke-opacity="0.25" stroke-width="5"/>
+  <use xlink:href="#labels" stroke-opacity="0.5"/>
+  <use xlink:href="#labels" stroke="none"/>
+ </g>
+</svg>

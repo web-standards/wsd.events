@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cube</title>
+</head>
+
+<body>
+    <div class='cube'>
+        <div class='cube__face'></div>
+        <div class='cube__face'></div>
+        <div class='cube__face'></div>
+        <div class='cube__face'></div>
+        <div class='cube__face'></div>
+        <div class='cube__face'></div>
+    </div>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            perspective: 35em;
+        }
+
+        [class*='cube'] {
+            position: absolute;
+        }
+
+        .cube {
+            top: 50%;
+            left: 50%;
+            transform-style: preserve-3d;
+            font-size: 8vmin;
+            animation: ani 8s linear infinite;
+        }
+
+        .cube__face {
+            margin: -2.5em;
+            width: 5em;
+            height: 5em;
+            backface-visibility: hidden;
+            transform: rotate3d(var(--i, 0), var(--j, 1), 0, var(--a)) translateZ(2.5em);
+            background: linear-gradient(var(--ga), var(--gs));
+        }
+
+        .cube__face:nth-child(n + 5) {
+            --i: 1;
+            --j: 0;
+        }
+
+        .cube__face:nth-child(1) {
+            --a: 0deg;
+            --ga: 212deg;
+            --gs: #feffaa, #b2ff90;
+        }
+
+        .cube__face:nth-child(2) {
+            --a: 90deg;
+            --ga: 158deg;
+            --gs: #fbc2eb, #a6c1ee;
+        }
+
+        .cube__face:nth-child(3) {
+            --a: 180deg;
+            --ga: 271deg;
+            --gs: #84fab0, #8fd3f4;
+        }
+
+        .cube__face:nth-child(4) {
+            --a: 270deg;
+            --ga: 260deg;
+            --gs: #a1c4fd, #c2e9fb;
+        }
+
+        .cube__face:nth-child(5) {
+            --a: 90deg;
+            --ga: 69deg;
+            --gs: #f6d365, #fda085;
+        }
+
+        .cube__face:nth-child(6) {
+            --a: -90deg;
+            --ga: 118deg;
+            --gs: #ffecd2, #fcb69f;
+        }
+
+        @keyframes ani {
+            to {
+                transform: rotate3d(1, 1, 1, 1turn) rotate3d(1, -1, 1, 1turn);
+            }
+        }
+    </style>
+</body>
+
+</html>

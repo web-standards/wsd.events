@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Brain Teaser</title>
+</head>
+
+<body>
+
+    <div class="grid"></div>
+
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .grid {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            background-image: linear-gradient(45deg, #D2D2D2 0, #D2D2D2 25%, transparent 25%, transparent 75%, #D2D2D2 75%), linear-gradient(45deg, #D2D2D2 0, #D2D2D2 25%, transparent 25%, transparent 75%, #D2D2D2 75%), linear-gradient(#BFBFBF 0, #BFBFBF 100%);
+            background-repeat: repeat;
+            background-size: 128px 128px, 128px 128px, 100% 100%;
+            background-position: 0 0, 64px 64px, 0 0;
+        }
+
+        .grid::before,
+        .grid::after {
+            content: '';
+            position: absolute;
+            display: block;
+            width: 100vw;
+            height: 100vh;
+            left: 0;
+            top: 0;
+            -webkit-animation: hide 10s linear infinite;
+            animation: hide 10s linear infinite;
+            will-change: opacity;
+        }
+
+        .grid::before {
+            background: radial-gradient(15% 80% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat 448px 0px / 512px 512px, radial-gradient(15% 80% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat 384px 0px / 512px 512px, radial-gradient(15% 80% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat 320px 0px / 512px 512px, radial-gradient(15% 80% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat 256px 0px / 512px 512px, radial-gradient(15% 80% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat 192px 0px / 512px 512px, radial-gradient(15% 80% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat 128px 0px / 512px 512px, radial-gradient(15% 80% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat 64px 0px / 512px 512px, radial-gradient(15% 80% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat 0px 0px / 512px 512px, radial-gradient(15% 80% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat 384px 64px / 512px 512px, radial-gradient(15% 80% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat 320px 64px / 512px 512px, radial-gradient(15% 80% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat 256px 64px / 512px 512px, radial-gradient(15% 80% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat 192px 64px / 512px 512px, radial-gradient(15% 80% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat 128px 64px / 512px 512px, radial-gradient(15% 80% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat 64px 64px / 512px 512px, radial-gradient(15% 80% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat 0px 64px / 512px 512px, radial-gradient(15% 80% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat -64px 64px / 512px 512px, radial-gradient(15% 80% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat 320px 128px / 512px 512px, radial-gradient(15% 80% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat 256px 128px / 512px 512px, radial-gradient(15% 80% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat 192px 128px / 512px 512px, radial-gradient(15% 80% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat 128px 128px / 512px 512px, radial-gradient(15% 80% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat 64px 128px / 512px 512px, radial-gradient(15% 80% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat 0px 128px / 512px 512px, radial-gradient(15% 80% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat -64px 128px / 512px 512px, radial-gradient(15% 80% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat -128px 128px / 512px 512px, radial-gradient(15% 80% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat 256px 192px / 512px 512px, radial-gradient(15% 80% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat 192px 192px / 512px 512px, radial-gradient(15% 80% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat 128px 192px / 512px 512px, radial-gradient(15% 80% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat 64px 192px / 512px 512px, radial-gradient(15% 80% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat 0px 192px / 512px 512px, radial-gradient(15% 80% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat -64px 192px / 512px 512px, radial-gradient(15% 80% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat -128px 192px / 512px 512px, radial-gradient(15% 80% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat -192px 192px / 512px 512px, radial-gradient(15% 80% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat 192px 256px / 512px 512px, radial-gradient(15% 80% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat 128px 256px / 512px 512px, radial-gradient(15% 80% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat 64px 256px / 512px 512px, radial-gradient(15% 80% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat 0px 256px / 512px 512px, radial-gradient(15% 80% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat -64px 256px / 512px 512px, radial-gradient(15% 80% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat -128px 256px / 512px 512px, radial-gradient(15% 80% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat -192px 256px / 512px 512px, radial-gradient(15% 80% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat -256px 256px / 512px 512px, radial-gradient(15% 80% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat 128px 320px / 512px 512px, radial-gradient(15% 80% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat 64px 320px / 512px 512px, radial-gradient(15% 80% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat 0px 320px / 512px 512px, radial-gradient(15% 80% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat -64px 320px / 512px 512px, radial-gradient(15% 80% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat -128px 320px / 512px 512px, radial-gradient(15% 80% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat -192px 320px / 512px 512px, radial-gradient(15% 80% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat -256px 320px / 512px 512px, radial-gradient(15% 80% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat -320px 320px / 512px 512px, radial-gradient(15% 80% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat 64px 384px / 512px 512px, radial-gradient(15% 80% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat 0px 384px / 512px 512px, radial-gradient(15% 80% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat -64px 384px / 512px 512px, radial-gradient(15% 80% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat -128px 384px / 512px 512px, radial-gradient(15% 80% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat -192px 384px / 512px 512px, radial-gradient(15% 80% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat -256px 384px / 512px 512px, radial-gradient(15% 80% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat -320px 384px / 512px 512px, radial-gradient(15% 80% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat -384px 384px / 512px 512px, radial-gradient(15% 80% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat 0px 448px / 512px 512px, radial-gradient(15% 80% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat -64px 448px / 512px 512px, radial-gradient(15% 80% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat -128px 448px / 512px 512px, radial-gradient(15% 80% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat -192px 448px / 512px 512px, radial-gradient(15% 80% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat -256px 448px / 512px 512px, radial-gradient(15% 80% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat -320px 448px / 512px 512px, radial-gradient(15% 80% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat -384px 448px / 512px 512px, radial-gradient(15% 80% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat -448px 448px / 512px 512px;
+        }
+
+        .grid::after {
+            background: radial-gradient(80% 15% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat 448px 0px / 512px 512px, radial-gradient(80% 15% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat 384px 0px / 512px 512px, radial-gradient(80% 15% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat 320px 0px / 512px 512px, radial-gradient(80% 15% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat 256px 0px / 512px 512px, radial-gradient(80% 15% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat 192px 0px / 512px 512px, radial-gradient(80% 15% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat 128px 0px / 512px 512px, radial-gradient(80% 15% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat 64px 0px / 512px 512px, radial-gradient(80% 15% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat 0px 0px / 512px 512px, radial-gradient(80% 15% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat 384px 64px / 512px 512px, radial-gradient(80% 15% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat 320px 64px / 512px 512px, radial-gradient(80% 15% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat 256px 64px / 512px 512px, radial-gradient(80% 15% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat 192px 64px / 512px 512px, radial-gradient(80% 15% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat 128px 64px / 512px 512px, radial-gradient(80% 15% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat 64px 64px / 512px 512px, radial-gradient(80% 15% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat 0px 64px / 512px 512px, radial-gradient(80% 15% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat -64px 64px / 512px 512px, radial-gradient(80% 15% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat 320px 128px / 512px 512px, radial-gradient(80% 15% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat 256px 128px / 512px 512px, radial-gradient(80% 15% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat 192px 128px / 512px 512px, radial-gradient(80% 15% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat 128px 128px / 512px 512px, radial-gradient(80% 15% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat 64px 128px / 512px 512px, radial-gradient(80% 15% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat 0px 128px / 512px 512px, radial-gradient(80% 15% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat -64px 128px / 512px 512px, radial-gradient(80% 15% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat -128px 128px / 512px 512px, radial-gradient(80% 15% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat 256px 192px / 512px 512px, radial-gradient(80% 15% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat 192px 192px / 512px 512px, radial-gradient(80% 15% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat 128px 192px / 512px 512px, radial-gradient(80% 15% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat 64px 192px / 512px 512px, radial-gradient(80% 15% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat 0px 192px / 512px 512px, radial-gradient(80% 15% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat -64px 192px / 512px 512px, radial-gradient(80% 15% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat -128px 192px / 512px 512px, radial-gradient(80% 15% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat -192px 192px / 512px 512px, radial-gradient(80% 15% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat 192px 256px / 512px 512px, radial-gradient(80% 15% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat 128px 256px / 512px 512px, radial-gradient(80% 15% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat 64px 256px / 512px 512px, radial-gradient(80% 15% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat 0px 256px / 512px 512px, radial-gradient(80% 15% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat -64px 256px / 512px 512px, radial-gradient(80% 15% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat -128px 256px / 512px 512px, radial-gradient(80% 15% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat -192px 256px / 512px 512px, radial-gradient(80% 15% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat -256px 256px / 512px 512px, radial-gradient(80% 15% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat 128px 320px / 512px 512px, radial-gradient(80% 15% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat 64px 320px / 512px 512px, radial-gradient(80% 15% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat 0px 320px / 512px 512px, radial-gradient(80% 15% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat -64px 320px / 512px 512px, radial-gradient(80% 15% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat -128px 320px / 512px 512px, radial-gradient(80% 15% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat -192px 320px / 512px 512px, radial-gradient(80% 15% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat -256px 320px / 512px 512px, radial-gradient(80% 15% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat -320px 320px / 512px 512px, radial-gradient(80% 15% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat 64px 384px / 512px 512px, radial-gradient(80% 15% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat 0px 384px / 512px 512px, radial-gradient(80% 15% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat -64px 384px / 512px 512px, radial-gradient(80% 15% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat -128px 384px / 512px 512px, radial-gradient(80% 15% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat -192px 384px / 512px 512px, radial-gradient(80% 15% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat -256px 384px / 512px 512px, radial-gradient(80% 15% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat -320px 384px / 512px 512px, radial-gradient(80% 15% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat -384px 384px / 512px 512px, radial-gradient(80% 15% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat 0px 448px / 512px 512px, radial-gradient(80% 15% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat -64px 448px / 512px 512px, radial-gradient(80% 15% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat -128px 448px / 512px 512px, radial-gradient(80% 15% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat -192px 448px / 512px 512px, radial-gradient(80% 15% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat -256px 448px / 512px 512px, radial-gradient(80% 15% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat -320px 448px / 512px 512px, radial-gradient(80% 15% at center, #a6a6a6 0%, #a6a6a6 3%, transparent 3%) repeat -384px 448px / 512px 512px, radial-gradient(80% 15% at center, #ececec 0%, #ececec 3%, transparent 3%) repeat -448px 448px / 512px 512px;
+        }
+
+        @-webkit-keyframes hide {
+            0%,
+            20%,
+            80%,
+            100% {
+                opacity: 0;
+            }
+            30%,
+            70% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes hide {
+            0%,
+            20%,
+            80%,
+            100% {
+                opacity: 0;
+            }
+            30%,
+            70% {
+                opacity: 1;
+            }
+        }
+    </style>
+</body>
+
+</html>

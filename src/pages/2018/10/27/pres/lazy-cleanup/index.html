@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Уменьшаем CSS лениво – слайды доклада</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/styles.css">
+    <style>
+        .shower {
+            --slide-ratio: calc(16 / 9);
+        }
+    </style>
+</head>
+<body class="shower list">
+
+    <header class="caption">
+        <h1>Уменьшаем CSS лениво</h1>
+        <p><a href="https://twitter.com/DenisZavgorodny">Денис Завгородний</a></p>
+    </header>
+
+    <section class="slide centered">
+        <figure>
+            <img src="images/wsd.svg" width="35%" alt="WSD #2018 Kiyv">
+        </figure>
+        <h2 class="middle">Привет, WSD!</h2>
+    </section>
+
+    <section class="slide clear" id="chernivtsi">
+        <div class="chernivtsi-layer">
+            <img src="images/chernivtsi3.png" width="600" alt="ChernivtsiJS">
+            <div class="chernivtsi-link"><a target="_blank" href="http://chernivtsi.js.org">chernivtsi.js.org</a></div>
+        </div>
+        <figure>
+            <img class="cover full" src="images/chernivtsi2.jpg" alt="ChernivtsiJS">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout">Уменьшаем CSS
+        <br />
+        <small>*лениво</small></h3>
+    </section>
+
+    <section class="slide">
+        <figure>
+            <img src="images/shame.jpeg" class="cover full" alt="">
+        </figure>
+    </section>
+
+    <section class="slide place-left">
+        <h2>Что имеем?</h2>
+        <img src="images/figure-out-css.jpg" class="place left half">
+        <div class="place-left__container">
+            <ol>
+                <li>беспорядочный проект</li>
+                <li>хаотичный редизайн</li>
+                <li>нет организации CSS кода</li>
+                <li>слабая структурированность</li>
+            </ol>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>Что мы хотим?</h2>
+        <img src="images/who-we-are.jpg" class="place right bottom small">
+        <ol>
+            <li>быструю загрузку</li>
+            <li>быструю отрисовку</li>
+            <li>красивый код</li>
+            <li>модульность</li>
+            <li>постоянный рефакторинг</li>
+        </ol>
+    </section>
+
+    <section class="slide">
+        <h2>Что для этого нужно?</h2>
+        <img src="images/who-we-are.jpg" class="place right bottom small">
+        <ol>
+            <li><s>переделать все</s></li>
+            <li>уменьшить размер CSS</li>
+            <li>оптимизировать загрузку ресурсов</li>
+            <li>разделить CSS на логические части</li>
+            <li>много трудиться</li>
+        </ol>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout">Очистить CSS</h2>
+    </section>
+
+    <section class="slide">
+        <h2 class="">Инструменты и практики</h2>
+        <figure>
+            <img src="images/tools.jpg" style="width: 70%;" class="place bottom middle" alt="">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout">UnCSS</h2>
+    </section>
+
+    <section class="slide">
+        <h2>UnCSS</h2>
+        <ul>
+            <li>анализирует статические файлы или URL</li>
+            <li><code>JSDOM</code> для эмуляции работы браузера</li>
+            <li><code>PostCSS</code> для парсинга CSS</li>
+        </ul>
+        <pre>npm install uncss</pre>
+    </section>
+
+    <section class="slide">
+        <h2>UnCSS</h2>
+        <pre>
+            <code>const <mark>uncss</mark> = require('uncss');</code>
+            <code>const files = ['index.html', 'https://google.com'];</code>
+            <code><mark>uncss</mark>(files, function (error, clearCSS) {</code>
+            <code>    console.log(clearCSS);</code>
+            <code>});</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>UnCSS | Преимущества</h2>
+        <ul>
+            <li value="+">можно использовать в системах сборки: gulp, grunt, broccoli</li>
+            <li value="+">есть online версия <a href="https://uncss-online.com/">https://uncss-online.com/</a></li>
+            <li value="+">умеет анализировать <code>CSS</code>, добавленный на <code>JS</code></li>
+            <li value="+">использует <code>JSDOM</code>, не требует запуска браузера</li>
+            <li value="+">отлично подходит для статических сайтов</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>UnCSS | Недостатки</h2>
+        <ul>
+            <li value="−">проводит анализ стилей только по событию "<code>onload</code>"</li>
+            <li value="−">не умеет обрабатывать изменения <code>DOM</code></li>
+            <li value="−">не умеет обрабатывать закрытые разделы</li>
+            <li value="−"><em>отлично подходит для статических сайтов</em></li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout">uCSS</h2>
+    </section>
+
+    <section class="slide">
+        <h2>uCSS</h2>
+        <ul>
+            <li>анализирует статические файлы или URL</li>
+            <li><code>Cheerio</code> для работы с <code>DOM</code></li>
+            <li><code>CSSOM</code> для парсинга CSS</li>
+        </ul>
+        <pre>npm install ucss</pre>
+    </section>
+
+    <section class="slide">
+        <h2>uCSS | Выводы</h2>
+        <ul>
+            <li>преимущества и недостатки как у <code>UnCSS</code></li>
+            <li value="−">не нашел интеграции с системами сборки</li>
+            <li value="−">не поддерживается, не было коммитов 2 года</li>
+            <li value="−">нет online версии</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout">...</h2>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout">Helium CSS</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Helium CSS</h2>
+        <pre>
+            <code>&lt;script src="<mark>helium.js</mark>"&gt;&lt;/script&gt;</code>
+            <code>&lt;script type="text/javascript"&gt;</code>
+            <code>    window.addEventListener('<mark>load</mark>', function(){</code>
+            <code class="mark">        helium.init();</code>
+            <code>    }, false);</code>
+            <code>&lt;/script&gt;</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <figure>
+            <img src="images/helium.png" width="100%" class="place bottom" alt="">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <h2>Helium CSS | Выводы</h2>
+        <ul>
+            <li value="+">исполняется в браузере</li>
+            <li value="−">сложно встроить в линию сборки</li>
+            <li value="−">предоставляет информацию, но не понятно что с ней делать</li>
+            <li value="−">не поддерживается, не было коммитов 4 года</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <figure>
+            <img src="images/shame.jpeg" class="cover full" alt="">
+        </figure>
+    </section>
+
+    <!-- <section class="slide">
+        <figure>
+            <img src="images/technology-river.jpg" class="cover full" alt="">
+        </figure>
+    </section> -->
+
+    <section class="slide">
+        <h2>Finding Dead CSS</h2>
+        <figure>
+            <blockquote>
+                <p style="line-height: 1.6;">Как мы узнаем о том, что CSS код мертв?
+                    Несмотря на то, что инструменты вроде uncss очень мощные, они не совсем подходят под наши требования.
+                    А что, если нам нужно решение в основу которого положен принцип мониторинга реальных пользователей,
+                    который позволяет увидеть какой код действительно используется у реальных пользователей на реальном сайте?
+                </p>
+            </blockquote>
+            <figcaption>Harry Roberts, <a target="_blank" href="https://csswizardry.com/2018/01/finding-dead-css/">ссылка на статью</a> <span style="font-style: normal;">→</span> </figcaption>
+        </figure>
+        <figure>
+            <img src="images/qr-dead-css.svg" width="20%" class="place bottom right" alt="">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <h2>Finding Dead CSS | Реализация</h2>
+        <pre>
+            <code><mark>.some .selector</mark> {</code>
+            <code class="mark">    background-image: url('/img/dead/some_selector.gif');</code>
+            <code>    color: red;</code>
+            <code>    padding: 0;</code>
+            <code>}</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Finding Dead CSS | Идея</h2>
+        <ul>
+            <li>помечаем селекторы</li>
+            <li>включаем access логи сервера</li>
+            <li>накапливаем информацию</li>
+            <li>все что попало в access логи – живо</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Finding Dead CSS | Анализ</h2>
+        <ul>
+            <li value="−">дополнительные ресурсы у страницы</li>
+            <li value="−">нужно вручную пометить весь CSS код</li>
+            <li value="−">сложно анализировать access логи</li>
+            <li value="+">GIF можно не создавать и сделать rewrite на сервере</li>
+            <li value="+">пользователи сами накапливают статистику</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout">RUM<br /><small>Real User Monitoring</small></h2>
+    </section>
+
+    <section class="slide">
+        <h2>Требования</h2>
+        <ul>
+            <li>анализ существующего CSS</li>
+            <li>автономный сбор и хранение данных</li>
+            <li>анализ динамического контента:
+                <ul>
+                    <li>модальные окна</li>
+                    <li>отложенно загружаемый контент</li>
+                </ul>
+            </li>
+            <li>повторное использование с тем же результатом</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Идея</h2>
+        <ul>
+            <li>собрать существующие селекторы</li>
+            <li>протестировать на актуальность силами посетителей</li>
+            <li>накопить результат</li>
+            <li>очистить CSS</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Инструменты</h2>
+        <ul>
+            <li>парсер AST для CSS</li>
+            <li>временное хранилище данных на клиенте</li>
+            <li>постоянное хранилище данных на сервере</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Требования к парсеру в AST</h2>
+        <ul>
+            <li>нет требований к производительности</li>
+            <li>должен обрабатывать комментарии</li>
+            <li>простой и с хорошей документацией</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>С чем работаем?</h2>
+        <div class="columns two">
+            <div>
+                <h3>Rule | Правило</h3>
+                <pre style="font-size: 18px;">
+                        <code><mark>.title-search-item :hover</mark> {</code>
+                        <code>    <span class="comment">/* declarations */</span></code>
+                        <code>    prop: value;</code>
+                        <code>    ...</code>
+                        <code>}</code>
+                    </pre>
+            </div>
+            <div>
+                <h3>At-rule | Директива</h3>
+                <pre style="font-size: 18px;">
+                    <code>@media screen and (max-width: 1200px) {</code>
+                    <code>    <span class="comment">/* rules */</span></code>
+                    <code>    ...</code>
+                    <code>}</code>
+                </pre>
+            </div>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>Работаем с правилами и селекторами</h2>
+        <pre>
+                <code>.title-search-item { ... }</code>
+                <code>.title-search-item <mark>a:hover</mark> { ... }</code>
+                <code>.title-search-item <mark>:hover</mark> { ... }</code>
+                <code>.cart-amount__title<mark>::after</mark> { ... }</code>
+            </pre>
+        <div>
+            Отбрасываем псевдоклассы и псевдоэлементы <code>/(>?\s?:[\S]+)/g</code>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>Парсер в AST</h2>
+        <br />
+        <table>
+            <tr>
+                <td width="33%" align="center"><img src="images/rework.jpeg" width="90%" alt=""></td>
+                <td width="33%" align="center"><img src="images/csstree.png" width="50%" alt=""></td>
+                <td width="33%" align="center"><img src="images/PostCSS_Logo.svg.png" width="70%" alt=""></td>
+            </tr>
+            <tr>
+                <td align="center">Rework CSS parser</td>
+                <td align="center">CSSTree</td>
+                <td align="center">PostCSS</td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="slide">
+        <h2>Rework CSS parser</h2>
+        <pre>
+            <code>const parser = require('css')</code>
+            <code>...</code>
+            <code class="mark">var { stylesheet: { rules } } = parser.parse(cssString)</code>
+            <code><mark>walker</mark>(rules, (filtered) => {</code>
+            <code>    ...</code>
+            <code>}, walker);</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Rework CSS parser</h2>
+        <ul>
+            <li value="+">работает</li>
+            <li value="+">комментарии входят в AST как отдельный тип правил</li>
+            <li value="−">нет собственного метода обхода дерева</li>
+            <li value="−">коммит 4 года назад</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Rework устарел</h2>
+        <figure>
+            <img src="images/tweet1.jpg" class="place bottom middle" style="width: 70%" width="70%" alt="">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <figure>
+            <img src="images/river.jpg" class="cover full" alt="">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <h2>CSSTree</h2>
+        <pre>
+            <code>const csstree = require('css-tree');</code>
+            <code>...</code>
+            <code class="mark">var ast = csstree.parse(cssString);</code>
+            <code>csstree.<mark>walk</mark>(ast, function(node) {</code>
+            <code>    ...</code>
+            <code>});</code>
+            <code><span class="comment">//csstree.<mark>generate</mark>(ast)</span></code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>CSSTree</h2>
+        <ul>
+            <li value="+">быстрый</li>
+            <li value="+">современный</li>
+            <li value="+">отличная документация и API</li>
+            <li value="−">отбрасываются комментарии</li>
+            <li value="−">отбрасываются пробелы, теряется форматирование</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <figure>
+            <img src="images/PostCSS_Logo.svg.png" class="place center middle" style="width: 40%" alt="">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <h2>PostCSS</h2>
+        <pre>
+            <code>const postcss = require('postcss');</code>
+            <code class="mark">const proc = postcss((ast) => {</code>
+            <code>    ast.<mark>walkRules</mark>(/^\D/, (rule) => {</code>
+            <code>        let { selector } = rule;</code>
+            <code>        ...</code>
+            <code>    });</code>
+            <code>}).process(cssString).then(result => {...});</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>PostCSS</h2>
+        <ul>
+            <li value="+">быстрый</li>
+            <li value="+">современный</li>
+            <li value="+">отличная документация и API</li>
+            <li value="+">можно сохранить форматирование</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Получаем список селекторов</h2>
+        <pre>
+            <code class="mark">ast.walkRules(/^\D/, (rule) => {</code>
+            <code>    let { selector } = rule;</code>
+            <code>    selector = selector.replace(/\n/g, '');</code>
+            <code>    <mark>selectors</mark>.push(...selector.split(','));</code>
+            <code class="mark">});</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Получаем список селекторов</h2>
+        <pre>
+            <code>[</code>
+            <code>    ".rightcol-profile .button-cancel",</code>
+            <code>    ".cart-step-3 .prb span",</code>
+            <code>    "#block-analogues-popup .prb span",</code>
+            <code class="mark">    ".cart-step-3 .prb.old<mark>::after</mark>",</code>
+            <code>    ...</code>
+            <code>]</code>
+
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout">Что дальше?</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Что дальше?</h2>
+        <ul>
+            <li>"заставляем" посетителей загрузить список селекторов</li>
+            <li>пользователи тестируют селекторы
+                <pre>
+                    <code>document.querySelector(<mark>selector</mark>)</code>
+                </pre>
+                и отбирают только существующие
+            </li>
+            <li>результат отбора сохраняем в <code>localStorage</code> и БД</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <figure>
+<img src="images/site-screen.jpg" class="place bottom middle" style="width: 100%; box-shadow: 0 0 20px 0 RGBA(0,0,0,0.5);"
+    alt="">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <h2>Что-то забыли?</h2>
+        <ul>
+            <li>модальные окна</li>
+            <li>состояния UI компонентов</li>
+            <li>рендер компонентов на стороне клиента</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout">Событие</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Событие</h2>
+        <ul>
+            <li>использовали <code>DOM EventListener</code></li>
+            <li>добавили генерацию события для случаев изменения DOM</li>
+            <li><b><i>модифицировали JS код проекта</i></b></li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout">Где хранить?</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Где хранить?</h2>
+        <ul>
+            <li>свой сервер с БД</li>
+<li><a target="_blank" href="https://firebase.google.com">Google Firebase</a> или любой другой SaaS (<a target="_blank" href="https://www.mongodb.com/cloud/atlas">MongoDB
+        Atlas</a> и др.)</li>
+            <li>еще что-то</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Свой сервер с БД</h2>
+        <ul>
+            <li value="+">он обычно есть</li>
+            <li value="+">легко интегрировать (например, POST запрос с клиента)</li>
+            <li value="−">дополнительная нагрузка на сервер</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Google Firebase</h2>
+        <ul>
+            <li value="+">есть бесплатный аккаунт, не требует дополнительных расходов</li>
+            <li value="+">не нагружается основная база и сервер</li>
+            <li value="+">относительная легкость в интеграции</li>
+            <li value="−">тяжеловесная клиентская библиотека (~ 100KB, gzip)</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <figure>
+            <img src="images/firebase.png" style="width: 100%" class="place bottom middle" alt="">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <h2>Результат в JSON</h2>
+        <pre style="font-size: 22px;">
+            <code>{</code>
+            <code>    "url" : "/index.html",</code>
+            <code>    "data" : [</code>
+            <code>        ".rightcol-profile .button-cancel",</code>
+            <code>        ".cart-step-3 .prb span",</code>
+            <code>        ".selector1", ".selector2", ".selector3"</code>
+            <code>        ...</code>
+            <code>    ]</code>
+            <code>}</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout">Очищаем</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Схема работы</h2>
+        <figure>
+            <img src="images/css-clear-diagram.svg" width="93%" style="margin-bottom: 3%" class="place bottom center" alt="">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <h2>На сервере</h2>
+        <ul>
+            <li>создаем индекс CSS селекторов
+                <br />
+                <code>cssclear <mark>index</mark> ./css path/to/selectors.json</code>
+            </li>
+            <li>...</li>
+            <li>очищаем CSS файлы
+                <br />
+                <code>cssclear <mark>clear</mark> -f path/to/live.json ./css ./dest</code>
+            </li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>На клиенте</h2>
+        <pre style="font-size:14px">
+            <code>&lt;script&gt;</code>
+            <code>  var cssClear = {</code>
+            <code class="mark">    pathToSelectors: 'https://yourdomain.com/selectors.json',</code>
+            <code>    dataStoreProvider: {</code>
+            <code class="mark">      name: 'postData',</code>
+            <code>      options: {</code>
+            <code>        apiKey: "d58e3582afa99040e27b92b13c8f2280",</code>
+            <code class="mark">        URL: 'https://apidomain.com/save/point/'</code>
+            <code>      }</code>
+            <code>    }</code>
+            <code>  };</code>
+            <code>&lt;/script&gt;</code>
+            <code class="mark">&lt;script async src="path/to/csscleaner.bundle.js"&gt;&lt;/script&gt;</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Подготовка</h2>
+        <ul>
+            <li>тестирование
+                <ul>
+                    <li>E2E тесты</li>
+                    <li>тесты CSS регрессий</li>
+                </ul>
+            </li>
+            <li>мониторинг метрик загрузки сайта</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Результат</h2>
+        <ul>
+            <li value="+">сократили CSS код в <b>3 раза</b> <br />
+                365кб не сжатого CSS против ~1200кб</li>
+            <li value="+">получили небольшой прирост в Google Insights</li>
+            <li value="+">получили инструмент для повторного использования</li>
+            <li value=";)">получили удовольствие</li>
+        </ul>
+        <a target="_blank" href="https://github.com/denis-zavgorodny/cssclear">ссылка на GitHub</a>
+        <figure>
+            <img src="images/qr-code-git.svg" width="20%" class="place bottom right" alt="">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <figure>
+            <img src="images/shame.jpeg" class="cover full" alt="">
+        </figure>
+    </section>
+
+    <section class="slide">
+        <h2>Спасибо!</h2>
+        <table class="simple-table">
+			<tbody><tr>
+				<td>
+					<p>
+						<big>Denis Zavgorodny</big><br>
+						web technologist, founder of @ChernivtsiJS,<br>co-founder @NodeSchool Chernivtsi
+					</p>
+					<p><a href="https://twitter.com/DenisZavgorodny">@DenisZavgorodny</a></p>
+					<p><a href="mailto:denis.zavgorodny@gmail.com">denis.zavgorodny@gmail.com</a></p>
+				</td>
+			</tr>
+		</tbody></table>
+    </section>
+
+
+
+    <div class="progress"></div>
+
+    <footer class="badge">
+        <a href="https://github.com/shower/shower">Fork me on GitHub</a>
+    </footer>
+
+    <script src="js/shower.min.js"></script>
+
+    <!-- Copyright © 2018 Yours Truly, Famous Inc. -->
+</body>
+</html>

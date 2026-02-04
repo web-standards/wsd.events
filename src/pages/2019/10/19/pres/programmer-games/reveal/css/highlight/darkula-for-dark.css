@@ -1,0 +1,76 @@
+/*
+
+Darcula color scheme from the JetBrains family of IDEs
+
+*/
+
+section.has-dark-background .hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #2b2b2b;
+}
+
+section.has-dark-background .hljs {
+  color: #bababa;
+}
+
+section.has-dark-background .hljs-strong,
+section.has-dark-background .hljs-emphasis {
+  color: #a8a8a2;
+}
+
+section.has-dark-background .hljs-bullet,
+section.has-dark-background .hljs-quote,
+section.has-dark-background .hljs-link,
+section.has-dark-background .hljs-number,
+section.has-dark-background .hljs-regexp,
+section.has-dark-background .hljs-literal {
+  color: #6896ba;
+}
+
+section.has-dark-background .hljs-code,
+section.has-dark-background .hljs-selector-class {
+  color: #a6e22e;
+}
+
+section.has-dark-background .hljs-emphasis {
+  font-style: italic;
+}
+
+section.has-dark-background .hljs-keyword,
+section.has-dark-background .hljs-selector-tag,
+section.has-dark-background .hljs-section,
+section.has-dark-background .hljs-attribute,
+section.has-dark-background .hljs-name,
+section.has-dark-background .hljs-variable {
+  color: #cb7832;
+}
+
+section.has-dark-background .hljs-params {
+  color: #b9b9b9;
+}
+
+section.has-dark-background .hljs-string {
+  color: #6a8759;
+}
+
+section.has-dark-background .hljs-subst,
+section.has-dark-background .hljs-type,
+section.has-dark-background .hljs-built_in,
+section.has-dark-background .hljs-builtin-name,
+section.has-dark-background .hljs-symbol,
+section.has-dark-background .hljs-selector-id,
+section.has-dark-background .hljs-selector-attr,
+section.has-dark-background .hljs-selector-pseudo,
+section.has-dark-background .hljs-template-tag,
+section.has-dark-background .hljs-template-variable,
+section.has-dark-background .hljs-addition {
+  color: #e0c46c;
+}
+
+section.has-dark-background .hljs-comment,
+section.has-dark-background .hljs-deletion,
+section.has-dark-background .hljs-meta {
+  color: #7f7f7f;
+}

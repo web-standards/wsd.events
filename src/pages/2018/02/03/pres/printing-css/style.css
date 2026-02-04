@@ -1,0 +1,49 @@
+.slide pre {
+    background-color: transparent;
+    padding: 0;
+}
+
+.slide pre code[class*="language-"] {
+    line-height: 1.5;
+    font-size: 22px;
+    width: 100%;
+}
+
+.slide pre.line-numbers > code {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.slide footer {
+    line-height: 1.5;
+}
+
+.slide .shout-mini {
+    font-size: 80px;
+    padding: 0 20px;
+}
+
+.slide .secondary {
+    color: #777;
+}
+
+.slide .strike {
+    text-decoration: none;
+}
+
+.slide .strike::after {
+    content: '';
+    display: block;
+    background-color: red;
+    width: 100%;
+    height: 7px;
+    position: absolute;
+    top: 50%;
+    left: -5px;
+    transform: rotate(-4deg);
+}
+
+img[src=''] {
+    background: yellow;
+    padding: 10px;
+}

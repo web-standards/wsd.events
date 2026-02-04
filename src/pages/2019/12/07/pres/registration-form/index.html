@@ -1,0 +1,1066 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Как я верстал форму регистрации</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML'
+            async></script>
+</head>
+<body class="black-theme">
+<section id="1">
+    <h1>Как я верстал форму регистрации</h1>
+</section>
+
+<section id="2">
+    <h2>Однажды мне доверили реализовать<br> форму регистрации</h2>
+
+    <form class="example-form" action="index.html">
+        <label>
+            <span class="example-form__label">Email:</span>
+            <input type="email" name="email" placeholder="mivankiv@developer.com" value=""/><br/>
+        </label>
+        <label>
+            <span class="example-form__label">Password:</span>
+            <input type="password" name="password" placeholder="'asdfg' is the best password ever"/><br/>
+        </label>
+
+        <button class="example-form__hero-button">Just do it!</button>
+    </form>
+</section>
+
+<section id="3">
+    <h2>После месяца дискуссий, боев и противостояний</h2>
+
+    <form class="example-form example-form_inline" action="index.html">
+        <label>
+            <span class="example-form__label">Email:</span>
+            <input name="email" type="email" placeholder="mivankiv@developer.com"/>
+        </label>
+        <button class="example-form__hero-button example-form__hero-button__inline">Do it!</button>
+    </form>
+</section>
+
+<section id="4">
+    <form class="example-form example-form_inline" action="index.html">
+        <label>
+            <span class="example-form__label">Email:</span>
+            <input type="email" placeholder="mivankiv@developer.com"/>
+        </label>
+        <button class="example-form__hero-button example-form__hero-button__inline">Do it!</button>
+    </form>
+    <pre style="margin-top: 2rem; font-size: 2rem">
+<code>&lt;input type="email"/></code></pre>
+</section>
+
+<section  id="5">
+    <h2>Проблемка...</h2>
+    <code style="margin-top: 2rem; font-size: 2rem">пробелы + проверка на сервере === собственная валидация</code>
+
+    <pre>
+    <code style="margin-top: 2rem; font-size: 2rem">
+//MDN
+/^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+
+  @[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}
+   [a-zA-Z0-9])?(?:\.[a-zA-Z0-9]
+   (?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*
+$/
+    </code></pre>
+</section>
+
+<section  id="6">
+    <h2>QA</h2>
+    <h3>Открыли википедию - <a href="https://en.wikipedia.org/wiki/Email_address">Email address</a> </h3>
+
+
+</section>
+
+<section  id="7">
+    <h3>Valid email addresses</h3>
+    <form>
+        <br/><input style="width: 25rem;" id="check_2" required type="email" class="email-input"/>
+        <br/><input style="width: 45rem;" id="check_3" required type="email" class="email-input"/>
+        <br/><input style="width: 35rem;" id="check_4" required type="email" class="email-input"/>
+        <br/><input style="width: 33rem;"  id="check_6" required type="email" class="email-input"/>
+        <br/><input style="width: 15rem;"  id="check_7" required type="email" class="email-input"/> one-letter local-part
+        <br/><input style="width: 53rem;"  id="check_8" required type="email" class="email-input"/>
+        <br/><input style="width: 35rem;"  id="check_9" required type="email" class="email-input"/>
+        <br/><input style="width: 17.5rem;"  id="check_10" required type="email" class="email-input"/> local domain name with no TLD, although
+        ICANN highly discourages dotless email addresses
+        <br/><input style="width: 30rem;" id="check_11" required type="email" class="email-input"/>
+        <br/><input style="width: 42rem;" id="check_12" required type="email" class="email-input"/>
+        <br/><input style="width: 19rem;" id="check_13" required type="email" class="email-input"/>see the List of Internet top-level
+        domains
+        <br/><input style="width: 18rem;" id="check_14" required type="email" class="email-input"/>
+        <br/><input style="width: 15rem;" id="check_15" required type="email" class="email-input"/> space between the quotes
+    </form>
+
+
+    <script>
+        document.getElementById("check_2").value = `very.common@example.com`
+        document.getElementById("check_3").value = `disposable.style.email.with+symbol@example.com`
+        document.getElementById("check_4").value = `other.email-with-hyphen@example.com`
+        document.getElementById("check_6").value = `user.name+tag+sorting@example.com`
+        document.getElementById("check_7").value = `x@example.com`
+        document.getElementById("check_8").value = `"very.(),:;<>[]\\".VERY.\\"very@\\\\ \\"very\\".unusual"@strange.com`
+        document.getElementById("check_9").value = `example-indeed@strange-example.com`
+        document.getElementById("check_10").value = `admin@mailserver1`
+        document.getElementById("check_11").value = `#!$%&'*+-/=?^_\`{}|~@example.org`
+        document.getElementById("check_12").value = `"()<>[]:,;@\\\\\\"!#$%&'-/=?^_\`{}| ~.a"@example.org`
+        document.getElementById("check_13").value = `example@s.example`
+        document.getElementById("check_14").value = `user@[2001:DB8::1]`
+        document.getElementById("check_15").value = `" "@example.org`
+    </script>
+    </form>
+</section>
+
+<section  id="8">
+    <h3>Invalid email addresses</h3>
+    <br/><input id="check_16" required type="email" class="email-input"/> no @ character
+    <br/><input id="check_17" required type="email" class="email-input"/> only one @ is allowed outside quotation marks
+    <br/><input id="check_18" required type="email" class="email-input"/> none of the special characters in this
+    local-part are allowed outside quotation marks
+    <br/><input id="check_19" required type="email" class="email-input"/> quoted strings must be dot separated or the
+    only element making up the local-part
+    <br/><input id="check_20" required type="email" class="email-input"/> spaces, quotes, and backslashes may only exist
+    when within quoted strings and preceded by a backslash
+    <br/><input id="check_21" required type="email" class="email-input"/> even if escaped (preceded by a backslash),
+    spaces, quotes, and backslashes must still be contained by quotes
+    <br/><input id="check_22" required type="email" class="email-input"/> local part is longer than 64 characters
+    <br/><input id="check_23" required type="email" class="email-input"/> double dot before @
+    <br/><input id="check_24" required type="email" class="email-input"/> double dot after @
+
+
+    <script>
+        document.getElementById("check_16").value = `Abc.example.com`
+        document.getElementById("check_17").value = `A@b@c@example.com`
+        document.getElementById("check_18").value = `a"b(c)d,e:f;g<h>i[j\\k]l@example.com`
+        document.getElementById("check_19").value = `just"not"right@example.com`
+        document.getElementById("check_20").value = `this is"not\\allowed@example.com`
+        document.getElementById("check_21").value = `this\\ still\\"not\\\\allowed@example.com`
+        document.getElementById("check_22").value = `1234567890123456789012345678901234567890123456789012345678901234+x@example.com`
+        document.getElementById("check_23").value = `john..doe@example.com`
+        document.getElementById("check_24").value = `john.doe@example..com`
+    </script>
+</section>
+
+<section  id="9">
+    <a href="http://emailregex.com/">http://emailregex.com/</a>  <br/>
+    <h1>General Email Regex <br> RFC 5322 Official Standard</h1>
+
+    <code style="font-size: 2rem">
+        (?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])
+    </code>
+</section>
+
+<section  id="10">
+    <h2>Проверяем ...</h2>
+    <form action="index.html">
+        <h3>Valid</h3>
+        <input style="width: 10rem" id="re-check_1" required type="email" class="email-input email-input_check"/>
+        <input style="width: 13rem" id="re-check_2" required type="email" class="email-input email-input_check"/>
+        <input style="width: 22rem" id="re-check_3" required type="email" class="email-input email-input_check"/>
+        <input style="width: 18rem" id="re-check_4" required type="email" class="email-input email-input_check"/>
+        <input style="width: 17rem" id="re-check_5" required type="email" class="email-input email-input_check"/>
+        <input style="width: 17rem" id="re-check_6" required type="email" class="email-input email-input_check" />
+        <input style="width: 8rem" id="re-check_7" required type="email" class="email-input email-input_check" />
+        <input style="width: 30rem" id="re-check_8" required type="email" class="email-input email-input_check" />
+        <input style="width: 18rem" id="re-check_9" required type="email" class="email-input email-input_check" />
+        <input style="width: 9rem" id="re-check_10" required type="email" class="email-input email-input_check"/>
+        <input style="width: 15rem" id="re-check_11" required type="email" class="email-input email-input_check" />
+        <input style="width: 21rem" id="re-check_12" required type="email" class="email-input email-input_check" />
+        <input style="width: 9rem" id="re-check_13" required type="email" class="email-input email-input_check" />
+        <input style="width: 9rem" id="re-check_14" required type="email" class="email-input email-input_check" />
+        <input style="width: 8rem" id="re-check_15" required type="email" class="email-input email-input_check" />
+
+        <h3>Invalid</h3>
+        <input id="re-check_16" required type="email" class="email-input email-input_check"/>
+        <input id="re-check_17" required type="email" class="email-input email-input_check"/>
+        <input id="re-check_18" required type="email" class="email-input email-input_check"/>
+        <input id="re-check_19" required type="email" class="email-input email-input_check"/>
+        <input id="re-check_20" required type="email" class="email-input email-input_check"/>
+        <input id="re-check_21" required type="email" class="email-input email-input_check"/>
+        <input id="re-check_22" required type="email" class="email-input email-input_check" style="width: 43rem;"/>
+        <input id="re-check_23" required type="email" class="email-input email-input_check"/>
+        <input id="re-check_24" required type="email" class="email-input email-input_check"/>
+
+        <script>
+            document.getElementById("re-check_1").value = `simple@example.com`
+            document.getElementById("re-check_2").value = `very.common@example.com`
+            document.getElementById("re-check_3").value = `disposable.style.email.with+symbol@example.com`
+            document.getElementById("re-check_4").value = `other.email-with-hyphen@example.com`
+            document.getElementById("re-check_5").value = `fully-qualified-domain@example.com`
+            document.getElementById("re-check_6").value = `user.name+tag+sorting@example.com`
+            document.getElementById("re-check_7").value = `x@example.com`
+            document.getElementById("re-check_8").value = `"very.(),:;<>[]\\".VERY.\\"very@\\\\ \\"very\\".unusual"@strange.example.com`
+            document.getElementById("re-check_9").value = `example-indeed@strange-example.com`
+            document.getElementById("re-check_10").value = `admin@mailserver1`
+            document.getElementById("re-check_11").value = `#!$%&'*+-/=?^_\`{}|~@example.org`
+            document.getElementById("re-check_12").value = `"()<>[]:,;@\\\\\\"!#$%&'-/=?^_\`{}| ~.a"@example.org`
+            document.getElementById("re-check_13").value = `example@s.example`
+            document.getElementById("re-check_14").value = `user@[2001:DB8::1]`
+            document.getElementById("re-check_15").value = `" "@example.org`
+
+
+            document.getElementById("re-check_16").value = `Abc.example.com`
+            document.getElementById("re-check_17").value = `A@b@c@example.com`
+            document.getElementById("re-check_18").value = `a"b(c)d,e:f;g<h>i[j\\k]l@example.com`
+            document.getElementById("re-check_19").value = `just"not"right@example.com`
+            document.getElementById("re-check_20").value = `this is"not\\allowed@example.com`
+            document.getElementById("re-check_21").value = `this\\ still\\"not\\\\allowed@example.com`
+            document.getElementById("re-check_22").value = `1234567890123456789012345678901234567890123456789012345678901234+x@example.com`
+            document.getElementById("re-check_23").value = `john..doe@example.com`
+            document.getElementById("re-check_24").value = `john.doe@example..com`
+
+            let emailPattern = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/
+            for (let i = 1; i <= 24; i++) {
+                let el = document.getElementById(`re-check_${i}`);
+                if (!emailPattern.test(el.value)) {
+                    el.classList.add("email-input_error")
+                }
+            }
+        </script>
+
+    </form>
+</section>
+
+<section id="11">
+<form class="example-form example-form_inline" action="index.html">
+    <label>
+        <span class="example-form__label">Email:</span>
+        <input class="example-form__input" type="text" value="mivankiv\developer.com"/>
+        <span class="example-form__error-message">это не есть хороший email</span>
+    </label>
+    <button class="example-form__hero-button example-form__hero-button__inline">Do it!</button>
+</form>
+</section>
+
+<section id="12">
+    <form class="example-form example-form_inline" action="index.html">
+        <label>
+            <span class="example-form__label">Email:</span>
+            <input class="example-form__input" type="text" value="mivankiv\developer.com"/>
+            <span class="example-form__error-message">
+                <span style="color: transparent; font-size: 3rem; display: inline-block; height: 0; vertical-align: bottom;">mivankiv</span>^<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;здеся ошибка
+            </span>
+        </label>
+        <button class="example-form__hero-button example-form__hero-button__inline">Do it!</button>
+    </form>
+</section>
+
+<section id="13">
+    <h1>
+        Finite Automata <br/>
+        алгоритм реализации <br/>
+        RegExp
+    </h1>
+</section>
+
+<section id="14">
+    <img src="https://neformal13.github.io/parsers-presentation/img/drawing-automata-1.jpg" alt="">
+</section>
+
+<section id="15">
+    <h2>Набор состояний <br>&nbsp;</h2>
+    <img style="height: 40rem;" src="img/FA_explanation_1.svg" alt="">
+</section>
+
+<section id="16">
+    <h2>Переходы между состояниями<br>&nbsp;</h2>
+    <img style="height: 40rem;" src="img/FA_explanation_2.svg" alt="">
+</section>
+
+<section id="17">
+    <h2>Одно состояние - начальное<br>&nbsp;</h2>
+    <img style="height: 40rem;" src="img/FA_explanation_3.svg" alt="">
+</section>
+
+<section id="18">
+    <h2>Как минимум одно <br>конечное состояние</h2>
+    <img style="height: 40rem;" src="img/FA_explanation_4.svg" alt="">
+</section>
+
+<section id="19">
+    <h2>Все переходы происходят при<br> определенном условии</h2>
+    <img style="height: 40rem;" src="img/FA_explanation_5.svg" alt="">
+</section>
+
+<section id="20">
+    <h3>
+        Если взглянуть подробнее на регулярные выражения, то всех их можно привести к трем простым операциям
+    </h3>
+    <img style="height: 40rem;" src="img/PrimitiveRegexp_1.svg" alt="">
+</section>
+
+<section id="21">
+    <h2>Попробуем реализовать FA для выражения <code>a*b*c*</code></h2>
+
+    <img style="height: 25rem" src="img/DFAvsNFA_example_1.svg" alt="">
+</section>
+
+<section id="22">
+    <h2>Попробуем реализовать FA для выражения <code>a*b*c*</code></h2>
+
+    <img style="height: 20rem" src="img/DFAvsNFA_example_2.svg" alt="">
+</section>
+
+<section id="23">
+    <h2>Ок, а как это запрограммировать? (DFA)</h2>
+    <img style="height: 30rem;" src="img/DFA_table.svg" alt="">
+</section>
+
+<section id="24">
+    <h2>Исходное состояние</h2>
+    <img style="height: 30rem;" src="img/DFA_table_0.svg" alt="">
+</section>
+
+<section id="25">
+    <h2>Прочитали <code>"a" -></code> переход в <code>"S1"</code></h2>
+    <img style="height: 34rem;" src="img/DFA_table_1.svg" alt="">
+</section>
+
+<section id="26">
+    <h2>Прочитали <code>"b" -></code> переход в <code>"S2"</code></h2>
+    <img style="height: 34rem;" src="img/DFA_table_2.svg" alt="">
+</section>
+
+<section id="27">
+    <h2>Прочитали <code>"c" -></code> переход в <code>"S3"</code></h2>
+    <img style="height: 34rem;" src="img/DFA_table_3.svg" alt="">
+</section>
+
+<section id="28">
+    <h2>Код обхода графа <br>довольно простой.</h2>
+    <pre><code style="font-size: 2rem;">
+//Матрица переходов
+const TRANSITIONS = [...];
+
+//Входная строка (например "abbbcc")
+const input = ...
+
+let i = 0
+let state = 0;
+while (input[i]) {
+    state = TRANSITIONS[state][input[i++]]
+}
+        </code></pre>
+</section>
+
+<section id="29">
+    <h2>Обработка ошибок также тривиальная.</h2>
+    <pre><code style="font-size: 2rem;">
+//Матрица переходов
+const TRANSITIONS = [...];
+
+//Входная строка (например "abbbcc")
+const input = ...
+
+let i = 0
+let state = 0;
+while (input[i]) {
+    state = <span class="highlight">TRANSITIONS[state][input[i++]]</span>
+}
+        </code></pre>
+</section>
+
+<section id="30">
+    <h2>NFA</h2>
+    <img style="height: 20rem" src="img/NFA_table.svg" alt="">
+</section>
+
+<section id="31">
+    <h2>Исходное состояние</h2>
+    <img style="height: 20rem" src="img/NFA_table_0.svg" alt="">
+</section>
+
+<section id="32">
+    <h2>Символ <code>"a"</code></h2>
+    <img style="height: 25rem" src="img/NFA_table_1.svg" alt="">
+</section>
+
+<section id="33">
+    <h2>Символ <code>"b"</code></h2>
+    <img style="height: 25rem" src="img/NFA_table_2.svg" alt="">
+</section>
+
+<section id="34">
+    <h2>Символ <code>"c"</code></h2>
+    <img style="height: 25rem" src="img/NFA_table_3.svg" alt="">
+</section>
+
+<section id="35">
+    <h2>Пробуем в бою</h2>
+    <span class="DFA-test example-form example-form_inline">
+        <input style="font-family: PT Mono, monospace" class="DFA-test__input" type="text" id="DFA-test" placeholder="a*b*c*"/>
+        <span style="font-size: 3rem; margin: 1rem" class="DFA-test__error "></span>
+    </span>
+
+    <script>
+        const DFA = (TRANSITIONS) => (input) => {
+            let i = 0
+            let state = 0;
+
+            while (input[i]) {
+                state = TRANSITIONS[state][input[i++]];
+                if (state === undefined || state === -1) return i
+            }
+            return true
+        }
+
+        const TRANSITIONS = [
+            {a: 0, b: 1, c: 2},
+            {b: 1, c: 2},
+            {c: 2}
+        ];
+
+        const verify = DFA(TRANSITIONS);
+
+        document
+            .querySelector(".DFA-test__input")
+            .addEventListener("input", (ev) => {
+                const errorMessage = document.querySelector(".DFA-test__error");
+                const {value} = ev.target;
+
+                const result = verify(value);
+                if (typeof result === "number") {
+                    errorMessage.innerHTML = `
+                        ${Array(result - 1).fill("&nbsp;").join("")}^ <br/>
+                        Здеся ошибка
+                        `
+                } else {
+                    errorMessage.innerHTML = ``
+                }
+            })
+
+    </script>
+</section>
+
+<section id="36">
+    <h2>Email regexp</h2>
+    <pre style="margin-top: 2rem; font-size: 2rem;"><code>
+/^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+
+  @[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}
+  [a-zA-Z0-9])?(?:\.[a-zA-Z0-9]
+  (?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
+</code></pre>
+</section>
+
+<section id="37">
+    <h2>
+    Очевидно, что должны быть алгоритмы автоматической конвертации <br><code>RegEx</code> в <code>DFA</code> и <code>NFA</code>.<br>
+    </h2>
+    <a href="https://en.wikipedia.org/wiki/Thompson%27s_construction">Thompson's construction</a><br/>
+    <a href="http://ivanzuzak.info/noam/webapps/fsm2regex/">FSM2Regex</a><br>
+    <a href="http://hokein.github.io/Automata.js/#">Automata.js</a><br>
+</section>
+
+<section id="38">
+    <h2>Засада!</h2>
+    <h3>
+        Мы можем сказать где у нас возникла ошибка, <br> но не можем сказать, <span class="highlight">причину</span> этой ошибки
+    </h3>
+</section>
+
+<section id="39">
+    <h2>Ошибка, как она есть</h2>
+
+    <form class="example-form" action="index.html">
+        <input style="font-family: PT Mono, monospace" type="text" required value="mivankiv\developer.com"/>
+        <span class="error-message">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;^ <br>
+        &nbsp;&nbsp;&nbsp;Здеся ошибка
+        </span>
+    </form>
+</section>
+
+<section id="40">
+    <h2>Как бы хотелось</h2>
+    <form class="example-form" action="index.html">
+        <input style="font-family: PT Mono, monospace"  type="text" required value="mivankiv.developer.com"/>
+        <span class="error-message">Собака! <br/>
+            Мил господин, <br> а собачку(@) ты ведь забыл вставить!</span>
+    </form>
+</section>
+
+<section id="41">
+    <h2>Как бы хотелось</h2>
+    <form class="example-form" action="index.html">
+        <input style="font-family: PT Mono, monospace"  type="text" required value="google@mivankiv"/>
+        <span class="error-message">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;^<br>
+        Все классно, только вот было бы еще хорошо добавить доменное имя. <code class="highlight">.com</code> или <code class="highlight">.org</code> к примеру
+        </span>
+
+    </form>
+
+</section>
+
+<section id="42">
+    <h2>Lexer -> Parser -> <span style="color: #999">Semantic Analysis -> Optimization -> Code gen</span></h2>
+</section>
+
+<section id="43">
+    <h1>Контекстно-свободные грамматики</h1>
+</section>
+
+<section id="44">
+    <h2>
+        Контекстно-свободная грамматика (сокращенно КС грамматика) - формальная грамматика типа 2 в иерархии Хомски.
+    </h2>
+</section>
+
+<section id="45" style="font-size: 1.5rem">
+    <p>
+        Контекстно-свободная грамматика \(G\) это четверка \((N,T,P,S)\):
+    <ul>
+        <li>\(S\in N\)</li>
+        <li>\( N\) и \( T\) конечные множества, которые не пересекаются</li>
+        <li>\(P\) конечное подмножество \( N\times (N\cup T)^{*} \)</li>
+    </ul>
+
+
+    При этом, используют такие названия: <br>
+    \(N\) — множество нетерминальных символов, <br>
+    \(T\) — множество терминальных символов, <br>
+    \(P\) — множество правил вывода <br>
+    \(S\) начальный символ. <br>
+    Правила \( (\alpha ,\beta )\in P \) записывают как
+    \(\alpha \rightarrow \beta \).
+    <br>
+
+    В левой части правила вывода должен находиться одна переменная (нетерминальный символ). <br> Формально, должен выполняться \(
+    \alpha \in N,\beta \in (N\cup T)^{*}, де |\beta |\geq 1\).<br/>
+
+    Расширением КС-грамматик является стохастические КВ грамматики. Правилам вывода сопоставляют вероятность использования: \(
+    \rho :P\rightarrow \mathbb {R} \) де \( \sum _{p_{r}\in P_{r}}\rho (p_{r})=1 \)
+    </p>
+</section>
+
+<section id="46">
+    <img src="img/alien_vs_predator.jpg" alt="Aliens vs predator">
+</section>
+
+<section id="47" style="position: relative;">
+    <pre style="position: relative; font-size: 2rem"><code>
+Exp  -> Term <span class="terminal">+</span> Exp
+      | Term
+
+Term -> <span class="terminal">(</span> Exp <span class="terminal">)</span>
+      | Int <span class="terminal">*</span> Term
+      | Int
+
+Int  -> <span class="terminal">1</span> | <span class="terminal">2</span> | <span class="terminal">3</span> |
+        <span class="terminal">4</span> | <span class="terminal">5</span> | <span class="terminal">6</span> |
+        <span class="terminal">7</span> | <span class="terminal">8</span> | <span class="terminal">9</span> | <span class="terminal">0</span>
+
+    </code></pre>
+
+    <br/>
+    // Грамматика для арифметических выражений типа: <code> 1 + 3 * ( 8 + 5 )</code>
+    <!--//TODO: можливо варто втулити діаграми Вірта?-->
+</section>
+
+<section id="48" style="position: relative;">
+    <span style="top: 1.9rem; left: 3.5rem;" class="code-label">
+        <span class="arrow" style="
+            border-top: 31px solid var(--highlight-color);
+            border-left: 0 solid transparent;
+            border-right: 11px solid transparent;
+            left: 1px;
+            bottom: -30px;
+        "></span>
+        Стартовый символ
+    </span>
+    <span style="top: 270px; left: 12px;" class="code-label">
+        <span class="arrow"
+              style="
+                border-top: 23px solid var(--highlight-color);
+                border-left: 7px solid transparent;
+                border-right: 7px solid transparent;
+                left: 31px;
+                bottom: -22px;
+              "></span>
+        <span class="arrow"
+              style="
+                border-bottom: 23px solid var(--highlight-color);
+                border-left: 7px solid transparent;
+                border-right: 7px solid transparent;
+                left: 50px;
+                top: -22px;
+              "></span>
+        Продукция <br>(production)
+    </span>
+    <span style="left: 280px; top: 157px;" class="code-label">
+                <span class="arrow"
+                      style="
+                    border-top: 24px solid var(--highlight-color);
+                    border-left: 0 solid transparent;
+                    border-right: 21px solid transparent;
+                    left: 4px;
+                    bottom: -24px;"></span>
+                <span class="arrow"
+                      style="
+                border-bottom: 23px solid var(--highlight-color);
+                border-left: 7px solid white;
+                border-right: 7px solid white;
+                left: 95px;
+                top: -22px;
+              "></span>
+        <span class="arrow"
+              style="
+                border-right: 14px solid var(--highlight-color);
+                border-top: 2px solid transparent;
+                border-bottom: 7px solid transparent;
+                top: 5px;
+                left: -13px;
+              "></span>
+        Нетерминальные символы (non terminal)
+    </span>
+    <span style="top: 292px; left: 272px;" class="code-label">
+        <span class="arrow"
+              style="
+                border-bottom: 16px solid var(--highlight-color);
+                border-left: 4px solid transparent;
+                border-right: 7px solid transparent;
+                left: 15px;
+                top: -16px;
+              "></span>
+        <span class="arrow"
+              style="
+                border-top: 16px solid var(--highlight-color);
+                border-left: 7px solid transparent;
+                border-right: 7px solid transparent;
+                left: 55px;
+                bottom: -16px;
+              "></span>
+        <span class="arrow"
+              style="
+                border-top: 16px solid var(--highlight-color);
+                border-left: 7px solid transparent;
+                border-right: 7px solid transparent;
+                left: 170px;
+                bottom: -16px;
+              "></span>
+        Терминальные символы (terminal)
+    </span>
+
+    <pre style="position: relative; font-size: 2rem"><code>
+Exp  -> Term <span class="terminal">+</span> Exp
+      | Term
+
+Term -> <span class="terminal">(</span> Exp <span class="terminal">)</span>
+      | Int <span class="terminal">*</span> Term
+      | Int
+
+Int  -> <span class="terminal">1</span> | <span class="terminal">2</span> | <span class="terminal">3</span> |
+        <span class="terminal">4</span> | <span class="terminal">5</span> | <span class="terminal">6</span> |
+        <span class="terminal">7</span> | <span class="terminal">8</span> | <span class="terminal">9</span> | <span class="terminal">0</span>
+
+    </code></pre>
+
+    <!--//TODO: можливо варто втулити діаграми Вірта?-->
+</section>
+
+<section id="49">
+    <h3>Превращаем это все в код<br></h3>
+    <pre style="font-size: 1.5rem"><code>
+    Exp  -> Term <span class="terminal">+</span> Exp
+          | Term
+
+    Term -> <span class="terminal">(</span> Exp <span class="terminal">)</span>
+          | Int <span class="terminal">*</span> Term
+          | Int
+
+    Int  -> <span class="terminal">1</span>
+          | <span class="terminal">2</span>
+          | <span class="terminal">3</span>
+          | <span class="terminal">4</span>
+          | <span class="terminal">5</span>
+          | <span class="terminal">6</span>
+          | <span class="terminal">7</span>
+          | <span class="terminal">8</span>
+          | <span class="terminal">9</span>
+          | <span class="terminal">0</span>
+    </code></pre>
+</section>
+
+<section id="50">
+    <h3>Каждая продукция - это функция<br></h3>
+    <pre style="font-size: 1.5rem"><code>
+    <span class="highlight">const</span> Exp  <span class="highlight">= () => {</span>
+        <span class="highlight">return</span> Term <span class="terminal">+</span> Exp
+             | Term
+    <span class="highlight">}</span>
+
+    <span class="highlight">const</span> Term <span class="highlight">= () => {</span>
+        <span class="highlight">return</span> <span class="terminal">(</span> Exp <span class="terminal">)</span>
+             | Int <span class="terminal">*</span> Term
+             | Int
+    }
+
+    <span class="highlight">const</span> Int  <span class="highlight">= () => {</span>
+        <span class="highlight">return</span> <span class="terminal">1</span>
+              | <span class="terminal">2</span>
+              | <span class="terminal">3</span>
+              | <span class="terminal">4</span>
+              | <span class="terminal">5</span>
+              | <span class="terminal">6</span>
+              | <span class="terminal">7</span>
+              | <span class="terminal">8</span>
+              | <span class="terminal">9</span>
+              | <span class="terminal">0</span>
+        <span class="highlight">}</span>
+    </code></pre>
+</section>
+
+<section id="51">
+<h3>Каждый нетерминальный символ - вызов функции.<br></h3>
+<pre style="font-size: 1.5rem"><code>
+    const Exp  = () => {
+        return Term<span class="highlight">()</span> <span class="terminal">+</span> Exp<span class="highlight">()</span>
+             | Term<span class="highlight">()</span>
+    }
+
+    const Term = () => {
+        return <span class="terminal">(</span> Exp<span class="highlight">()</span>  <span class="terminal">)</span>
+             | Int<span class="highlight">()</span> <span class="terminal">*</span> Term<span class="highlight">()</span>
+             | Int<span class="highlight">()</span>
+    }
+
+    const Int  = () => {
+        return <span class="terminal">1</span>
+             | <span class="terminal">2</span>
+             | <span class="terminal">3</span>
+             | <span class="terminal">4</span>
+             | <span class="terminal">5</span>
+             | <span class="terminal">6</span>
+             | <span class="terminal">7</span>
+             | <span class="terminal">8</span>
+             | <span class="terminal">9</span>
+             | <span class="terminal">0</span>
+    }
+</code></pre>
+</section>
+
+<section id="52">
+    <h3>Вписываем "&&" и "||", расставляем скобки<br></h3>
+    <pre style="font-size: 1.5rem"><code>
+    const Exp  = () => {
+        return ( Term() <span class="highlight">&&</span> <span class="terminal">+</span> <span class="highlight">&&</span> Exp() )
+            <span class="highlight">||</span> ( Term() )
+    }
+
+    const Term = () => {
+        return ( <span class="terminal">(</span> <span class="highlight">&&</span> Exp() <span class="highlight">&&</span> <span class="terminal">)</span> )
+            <span class="highlight">||</span> ( Int() <span class="highlight">&&</span> <span class="terminal">*</span> <span class="highlight">&&</span> Term() )
+            <span class="highlight">||</span> ( Int() )
+    }
+
+    const Int  = () => {
+        return ( <span class="terminal">1</span> )
+            <span class="highlight">||</span>( <span class="terminal">2</span> )
+            <span class="highlight">||</span>( <span class="terminal">3</span> )
+            <span class="highlight">||</span>( <span class="terminal">4</span> )
+            <span class="highlight">||</span>( <span class="terminal">5</span> )
+            <span class="highlight">||</span>( <span class="terminal">6</span> )
+            <span class="highlight">||</span>( <span class="terminal">7</span> )
+            <span class="highlight">||</span>( <span class="terminal">8</span> )
+            <span class="highlight">||</span>( <span class="terminal">9</span> )
+            <span class="highlight">||</span>( <span class="terminal">0</span> )
+    }
+    </code></pre>
+</section>
+
+<section id="53">
+    <h3>Все терминальные символы используем через функцию match<br></h3>
+    <pre style="font-size: 1.5rem"><code>
+    <span class="highlight">const match = (term) => {}</span>
+
+    const Exp  = () => {
+        return ( Term() && <span class="highlight">match(<span class="terminal">+</span>)</span> && Exp() )
+            || ( Term() )
+    }
+
+    const Term = () => {
+        return ( <span class="highlight">match(<span class="terminal">(</span>)</span> && Exp() && <span class="highlight">match(<span class="terminal">)</span>)</span> )
+            || ( Int() && <span class="highlight">match(<span class="terminal">*</span>)</span> && Term() )
+            || ( Int() )
+    }
+
+    const Int  = () => {
+        return ( <span class="highlight">match(<span class="terminal">1</span>)</span> )
+            || ( <span class="highlight">match(<span class="terminal">2</span>)</span> )
+            || ( <span class="highlight">match(<span class="terminal">3</span>)</span> )
+            || ( <span class="highlight">match(<span class="terminal">4</span>)</span> )
+            || ( <span class="highlight">match(<span class="terminal">5</span>)</span> )
+            || ( <span class="highlight">match(<span class="terminal">6</span>)</span> )
+            || ( <span class="highlight">match(<span class="terminal">7</span>)</span> )
+            || ( <span class="highlight">match(<span class="terminal">8</span>)</span> )
+            || ( <span class="highlight">match(<span class="terminal">9</span>)</span> )
+            || ( <span class="highlight">match(<span class="terminal">0</span>)</span> )
+    }
+    </code></pre>
+</section>
+
+<section id="54">
+    <h3>Добавляем работу с указателем <br></h3>
+    <pre style="font-size: 1.3rem"><code>
+    <span class="highlight">let i = 0</span>
+    const match = (term) => {}
+
+    const Exp =  () => {
+        <span class="highlight">const s = i;</span>
+        return (<span class="highlight">i = s</span>, Term() && match("+") && Exp() )
+            || (<span class="highlight">i = s</span>, Term() )
+    }
+
+    const Term = () => {
+        <span class="highlight">const s = i;</span>
+        return (<span class="highlight">i = s</span>, match("(") && Exp && match(")") )
+            || (<span class="highlight">i = s</span>, Int() && match("*") && Term() )
+            || (<span class="highlight">i = s</span>, Int() )
+    }
+
+    const Int  = () => {
+        <span class="highlight">const s = i;</span>
+        return (<span class="highlight">i = s</span>, match("1") )
+            || (<span class="highlight">i = s</span>, match("2") )
+            || (<span class="highlight">i = s</span>, match("3") )
+            || (<span class="highlight">i = s</span>, match("4") )
+            || (<span class="highlight">i = s</span>, match("5") )
+            || (<span class="highlight">i = s</span>, match("6") )
+            || (<span class="highlight">i = s</span>, match("7") )
+            || (<span class="highlight">i = s</span>, match("8") )
+            || (<span class="highlight">i = s</span>, match("9") )
+            || (<span class="highlight">i = s</span>, match("0") )
+    }
+    </code></pre>
+</section>
+
+<section id="55">
+    <h3>Реализуем match, и добавляем враппер</h3>
+    <pre style="font-size: 1.2rem"><code>
+<span class="highlight">const Parser (input)</span>{
+    let i = 0
+    const match = (term) => <span class="highlight">term === input[i++];</span>
+
+    const Exp =  () => {
+        const s = i;
+        return (i = s, Term() && match("+") && Exp() )
+            || (i = s, Term() )
+    }
+
+    const Term = () => {
+        const s = i;
+        return (i = s, match("(") && Exp && match(")") )
+            || (i = s, Int() && match("*") && Term() )
+            || (i = s, Int() )
+    }
+
+    const Int  = () => {
+        const s = i;
+        return (i = s, match("1") )
+            || (i = s, match("2") )
+            || (i = s, match("3") )
+            || (i = s, match("4") )
+            || (i = s, match("5") )
+            || (i = s, match("6") )
+            || (i = s, match("7") )
+            || (i = s, match("8") )
+            || (i = s, match("9") )
+            || (i = s, match("0") )
+    }
+
+    <span class="highlight">return Exp()</span>
+}
+    </code></pre>
+</section>
+
+<section id="56">
+    <span class="DFA-test example-form" id="top-bottom-parsing">
+        <input style="font-family: PT Mono, monospace" class="DFA-test__input" type="text" value="1+2*(4+4)" />
+        <span style="margin: 1.3rem 0.3rem; " class="DFA-test__error"></span>
+    </span>
+
+    <script>
+        const Parser = (input) => {
+            let next = 0;
+
+            const match = (term) => term.test(input[next++]);
+
+            const INT = /\d/;
+            const PLUS = /\+/;
+            const OPEN = /\(/;
+            const CLOSE = /\)/;
+            const TIMES = /\*/;
+
+            //BNF
+            const Exp = () => {
+                const save = next;
+                return ( next = save, Term() && match(PLUS) && Exp()  ) ||
+                       ( next = save, Term())
+            }
+
+            const Term = () =>  {
+                const save = next;
+                return (next = save, match(OPEN) && Exp() && match(CLOSE)) ||
+                       (next = save, match(INT) && match(TIMES) && Term()) ||
+                       (next = save, match(INT))
+            }
+
+            const  result = Exp();
+
+            if (next < input.length) return {
+                message: "Unexpected symbol",
+                position: next
+            }
+
+            if (!result) return {
+                message: "Syntax error",
+                position: next
+            }
+
+            return
+        };
+
+
+        const exampleEl = document.getElementById("top-bottom-parsing");
+
+        exampleEl
+            .querySelector("input")
+            .addEventListener("input",(ev) => {
+                const {value} = ev.target;
+                const result = Parser(value);
+
+                const errorMessage = exampleEl.querySelector(".DFA-test__error");
+
+                if ( typeof  result !== "undefined") {
+                    errorMessage.innerHTML = `
+                        ${Array(result.position).fill("&nbsp;").join("")}^ <br/>
+                        Аяяй
+                        `
+                } else {
+                    errorMessage.innerHTML = ``
+                }
+            })
+
+
+    </script>
+
+</section>
+
+<section id="57">
+    <h2>Ok теперь email</h2>
+    <p>
+        <h3>
+            Internet Message Format. Spec RFC 5322<br/>
+            ...<br/>
+            <a href="https://tools.ietf.org/html/rfc5322#section-3.4.1">3.4.1.  Addr-Spec Specification</a><br/>
+            ...<br/>
+        </h3>
+
+
+    </p>
+    <p>
+        <h3><a href="https://www.w3.org/Protocols/rfc822/#z7">RFC822: Standard for ARPA Internet Text Messages</a></h3>
+    </p>
+
+</section>
+
+<section id="58">
+    <h2>ABNF</h2>
+    <pre style="font-size: 1.5rem"><code>
+email-address   = local "@" domain
+local           = local-word *("." local-word)
+domain          = 1*(sub-domain ".") top-domain
+local-word      = 1*local-char
+sub-domain      = 1*sub-domain-char
+top-domain      = 2*6top-domain-char
+local-char      = alpha / num / special
+sub-domain-char = alpha / num / "-"
+top-domain-char = alpha
+alpha           = %d65-90 / %d97-122
+num             = %d48-57
+special         = %d33 / %d35 / %d36-39 / %d42-43 / %d45 / %d47
+            / %d61 / %d63 / %d94-96 / %d123-126
+    </code></pre>
+</section>
+
+<section id="59">
+    <span class="DFA-test example-form" id="final">
+        <input style="font-family: PT Mono, monospace" class="DFA-test__input" type="text" value="mivankiv@developer.com"/>
+        <span class="DFA-test__error"></span>
+    </span>
+</section>
+
+<section id="60">
+    <h3>RegEx</h3>
+    <br><a href="https://blog.chromium.org/2009/02/irregexp-google-chromes-new-regexp.html">Irregexp, Google Chrome's New Regexp Implementation </a>
+    <br><a href="https://github.com/ashinn/irregex">irregex</a>
+    <br><a href="https://github.com/google/re2">re2</a>
+    <br><a href="http://emailregex.com/">Email Address Regular Expression That 99.99% Works.</a>
+    <br><a href="https://en.wikipedia.org/wiki/Thompson%27s_construction">Thompson's construction</a>
+    <br><a href="http://ivanzuzak.info/noam/webapps/fsm2regex/">FSM2Regex</a>
+    <br><a href="http://hokein.github.io/Automata.js/">Automata.js</a>
+    <h3>Контекстно свободные грамматики</h3>
+    <br><a href="https://en.wikipedia.org/wiki/Augmented_Backus%E2%80%93Naur_form">Augmented Backus–Naur form</a>
+    <br><a href="https://github.com/ldthomas/apg-js2">apg-js2</a>
+    <br><a href="https://www.sitepoint.com/alternative-to-regular-expressions/">An Alternative to Regular Expressions: apg-exp</a>
+    <br><a href="https://pegjs.org/documentation">PEG.js</a>
+    <br><a href="https://nearley.js.org/docs/grammar">nearley.js</a>
+
+</section>
+
+<section id="61">
+
+    <h2>Благодарю за внимание :)</h2>
+    <dl style="font-size: 1.2rem; ">
+        <td>Доклад: Как я верстал форму регистрации</td>
+        <dd><br>https://neformal13.github.io/parsers-presentation/</dd>
+        <td><br>Git</td>
+        <dd>https://github.com/neformal13/parsers-presentation</dd>
+    </dl>
+    <br>
+    <br>
+    <h4>Мыхайло Иванкив (Mykhailo Ivankiv)</h4>
+    <dl style="font-size: 1rem; ">
+        <dt>twitter:</dt>
+        <dd>neformal</dd>
+
+        <dt>skype:</dt>
+        <dd>neformal.lviv</dd>
+
+        <dt>email:</dt>
+        <dd>neformal.lviv@gmail.com</dd>
+
+        <dt>github:</dt>
+        <dd>neformal13</dd>
+    </dl>
+</section>
+
+<script src="dist/main.js"></script>
+<script>
+
+    [...document.body.querySelectorAll("input")]
+        .forEach(el => el.addEventListener("keydown", (ev)=> ev.stopPropagation()))
+
+
+    let pointer = Number(window.location.hash.slice(1));
+    document.body.addEventListener("keydown", (ev)=>{
+        if (ev.key === "ArrowRight") {
+            pointer++
+            window.location.hash = "" + pointer;
+        }
+        if (ev.key === "ArrowLeft") {
+            pointer--
+            window.location.hash = "" + pointer
+        }
+
+    })
+</script>
+
+</body>
+</html>

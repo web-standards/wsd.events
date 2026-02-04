@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Link Outline Example</title>
+</head>
+
+<body>
+
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f6f6f6;
+            min-height: 100vh;
+        }
+
+        :focus {
+            outline: 0;
+        }
+
+        p {
+            max-width: 1200px;
+            font-size: 42px;
+            line-height: 1.4;
+            font-family: PT Sans, sans-serif;
+        }
+
+        .link {
+            color: hsl(210, 89%, 40%);
+            text-decoration: none;
+        }
+
+        .link:hover,
+        .link:active {
+            text-decoration: underline;
+        }
+
+        .link:focus,
+        .button_type_ghost:focus,
+        .title:focus,
+        .popup__button:not(.popup .popup__button_disabled):focus,
+        .menu__item:focus,
+        /* ... */
+        .more__button:focus {
+            outline: 0;
+            box-shadow: 0 0 1px 2px hsl(210, 89%, 40%);
+            background-color: hsl(210, 89%, 40%);
+            color: white;
+        }
+    </style>
+
+    <p>В 1975 году <a href="https://ru.wikipedia.org/wiki/Рыбников,_Алексей_Львович" class="link">Алексей Рыбников</a>
+        написал для
+        «Ленкома» рок-оперу <a href="https://ru.wikipedia.org/wiki/Звезда_и_смерть_Хоакина_Мурьеты_(рок-опера)" class="link">«Звезда
+            и смерть Хоакина Мурьеты»</a>; спектакль пользовался большим успехом, и в 1978 году композитор предложил
+        Марку Захарову новый совместный проект.</p>
+
+</body>
+
+</html>

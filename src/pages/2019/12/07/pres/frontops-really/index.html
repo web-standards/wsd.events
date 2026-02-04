@@ -1,0 +1,1487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title>Фронтопс? Серьёзно?</title>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="shower/themes/ribbon/styles/styles.css">
+ <style>
+  .shower {
+    --slide-ratio: calc(16 / 9);
+    --color-grey: #3f4850;
+    --color-red: #c72722;
+    --color-green: #4bc287;
+    --color-purple: #694bc2;
+  }
+
+  .slide::after {
+    background: none;
+    color: var(--color-grey);
+    opacity: 0.75;
+  }
+
+  .slide h2.with-bg > span,
+  .slide h2.with-bg > a {
+    display: inline-flex;
+    padding: 4px 8px;
+    margin: -4px 0 0 -8px;
+    color: #fff;
+    background: var(--color-blue);
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+  }
+
+  .slide mark {
+    background: rgba(75, 194, 135, 0.5);
+  }
+
+  .slide blockquote > p > strong {
+    padding: 4px 8px;
+    margin: -4px 0 0 -8px;
+    color: #fff;
+    background: var(--color-blue);
+    border-radius: 4px;
+  }
+
+  .slide .choices {
+    display: flex;
+    justify-content: space-between;
+    margin: 48px 48px 0 0;
+  }
+
+  .slide .choices li {
+    width: 200px;
+    height: 200px;
+    box-sizing: border-box;
+    padding: 75px 0 0;
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 50px;
+    color: #fff;
+    background: var(--color-blue);
+    border-radius: 50%;
+    text-align: center;
+  }
+
+  .slide .choices li:nth-child(2) {
+    background: var(--color-purple);
+  }
+
+  .slide .choices li:nth-child(3) {
+    background: var(--color-green);
+  }
+
+  .slide .choices li::before {
+    display: none;
+  }
+
+  .text-logo {
+    position: absolute;
+    top: 55%;
+    left: 45%;
+    width: 100px;
+    height: 100px;
+    box-sizing: border-box;
+    padding: 33px 0 0;
+    font-size: 25px;
+    line-height: 40px;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+  }
+  .text-logo::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 10px;
+    left: 10px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #000;
+  }
+  .text-logo--html::before {
+    background-color: #f36518;
+  }
+  .text-logo--css::before {
+    background-color: #2360f5;
+  }
+  .text-logo--js::before {
+    background-color: #f1dd3f;
+  }
+  .text-logo--ts::before {
+    background-color: #007acc;
+  }
+
+  .text-logo--js {
+    color: #000;
+  }
+
+  .icon-upload {
+    position: absolute;
+    top: 55%;
+    left: 45%;
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%234bc287' d='M446.313,208.813C447.031,203.25,448,197.75,448,192c0-70.688-57.281-128-128-128c-41.813,0-78.594,20.344-101.938,51.375 C209.656,113.344,201,112,192,112c-61.875,0-112,50.125-112,112c0,1.75,0.438,3.313,0.5,5.063C34.094,242.719,0,285.156,0,336 c0,61.875,50.125,112,112,112h272c70.719,0,128-57.281,128-128C512,272.063,485.344,230.75,446.313,208.813z M288,288v96h-64v-96 h-64l96-96l96,96H288z'/%3E%3C/svg%3E");
+    background-size: 75% 75%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+  }
+
+  .img-logo {
+    position: absolute;
+    top: 55%;
+    left: 45%;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .icon-upload.inactive {
+    opacity: 0.1;
+  }
+  .img-logo.inactive {
+    opacity: 0.3;
+  }
+
+  .old-logo {
+    transform: scale(0.5);
+  }
+
+  .slide.active .new-logo {
+    animation: blink 1s 1 0.25s;
+  }
+
+  .slide.active .icon-upload.inactive,
+  .slide.active .img-logo.inactive {
+    animation: deactivate 0.5s 1 forwards 0.5s;
+  }
+
+  .slide.active .img-logo.dropped {
+    animation: drop 1s 1 forwards 0.5s;
+  }
+
+  .legacy {
+    margin: 135px 0 0 -39px;
+    box-sizing: border-box;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 6px solid rgba(75, 194, 135, 0.5);
+  }
+
+  .legacy.first-time {
+    opacity: 0;
+  }
+
+  .slide.active .legacy.first-time {
+    animation: fadein 1s 1 forwards 2s;
+  }
+
+  .company-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .company-logos img {
+    margin: 30px;
+  }
+
+  .logos {
+    list-style: none;
+  }
+
+  .logos li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+  }
+
+  .logos li::before {
+    display: none;
+  }
+
+  .logos li.visited {
+    opacity: 0.5;
+  }
+
+  .logos li > span {
+    margin-left: 1em;
+  }
+
+  .place-author {
+    margin: -60px 20px 0 0;
+  }
+  .author {
+    width: 240px;
+    height: 240px;
+    border: 8px solid var(--color-blue);
+    border-radius: 22px;
+    transform: scale(.84) translateX(15%) rotateZ(calc(-1 * (11 * 1deg)));
+    transform-origin: 0 100%;
+    overflow: hidden;
+  }
+  .author--me {
+    width: 320px;
+    height: 320px;
+  }
+  .author > img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    transform: scale(1.2) rotateZ(calc(11 * 1deg));
+  }
+
+  .slide .problems > li::before {
+    content: '\274C';
+  }
+
+  .social {
+    position: relative;
+    margin-right: 360px;
+    padding-left: 72px;
+  }
+
+  .social:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 48px;
+    height: 48px;
+    background-size: 48px 48px;
+    background-repeat: no-repeat;
+    background-image: url('data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2032%2032%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M31.993%206.077c-1.177.523-2.441.876-3.77%201.033%201.355-.812%202.396-2.098%202.887-3.63-1.269.751-2.673%201.299-4.168%201.592-1.198-1.275-2.904-2.072-4.793-2.072-3.625%200-6.562%202.938-6.562%206.563%200%20.514.057%201.016.169%201.496-5.455-.274-10.291-2.887-13.529-6.858-.564.97-.888%202.097-.888%203.3%200%202.278%201.159%204.286%202.919%205.464-1.075-.035-2.087-.329-2.972-.821l-.001.082c0%203.181%202.262%205.834%205.265%206.437-.55.149-1.13.23-1.729.23-.424%200-.834-.041-1.234-.117.834%202.606%203.259%204.504%206.13%204.558-2.245%201.76-5.075%202.811-8.15%202.811-.53%200-1.053-.031-1.566-.092%202.904%201.86%206.354%202.947%2010.061%202.947%2012.072%200%2018.675-10.001%2018.675-18.675%200-.284-.008-.568-.02-.85%201.283-.925%202.395-2.08%203.276-3.398z%22%20fill%3D%22%2355ACEE%22/%3E%3C/svg%3E');
+  }
+
+  .lego {
+    margin-top: -10px;
+  }
+  .lego li {
+    position: relative;
+    color: var(--color-blue);
+  }
+  .lego li::before {
+    display: none;
+  }
+  .lego div {
+    position: relative;
+    display: inline-block;
+    padding: 5px 20px;
+    background: #fff;
+    text-align: center;
+  }
+  .lego span {
+    position: relative;
+    color: #000;
+  }
+  .lego div::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: currentColor;
+    opacity: 0.5;
+  }
+  .lego div::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(to right, transparent 25%, currentColor 25%, currentColor 75%, transparent 75%);
+    background-size: 80px;
+    opacity: 0.5;
+  }
+  .lego li:nth-child(2) {
+    color: var(--color-green);
+  }
+  .lego li:nth-child(3) {
+    color: var(--color-purple);
+  }
+  .lego li:nth-child(4) {
+    color: var(--color-red);
+  }
+  /* .lego li:nth-child(5) {
+    color: var(--color-grey);
+  } */
+
+  @keyframes blink {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.5);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes deactivate {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0.75);
+    }
+  }
+
+  @keyframes drop {
+    0% {
+      transform: scale(1);
+      filter: saturate(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0.5);
+      filter: saturate(0);
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes fadein {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+ </style>
+</head>
+<body class="shower list">
+
+  <header class="caption">
+    <h1>Фронтопс? Серьёзно?</h1>
+    <p>Анна Селезнёва</p>
+  </header>
+
+  <section class="slide clear" id="cover">
+    <h2 class="with-bg"><span>Фронтопс?</span><span style="letter-spacing: 1px;padding-right: 12px">Серьёзно?</span></h2>
+    <!--<p>Анна Селезнёва</p>-->
+    <figure>
+      <img class="cover" src="pictures/cover.jpg" width="1024" alt="">
+      <figcaption class="copyright right white">
+        © MICHAEL STEWART / GC IMAGESGETTY IMAGES
+      </figcaption>
+    </figure>
+    <style>
+      #cover h2 {
+        float: right;
+        width: 33%;
+        font-size: 70px;
+        line-height: 1.25;
+      }
+      #cover h2 > span {
+        background: #fff;
+        box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+        color: var(--color-grey);
+      }
+    </style>
+  </section>
+
+  <section class="slide clear">
+    <h2>Обо мне</h2>
+    <div class="place r place-author">
+      <div class="author author--me"><img src="pictures/bluebeanie.jpg" alt="" width="320"></div>
+    </div>
+    <p>Анна Селезнёва</p>
+    <p>Ведущий фронтенд-разработчик в <a href="https://spiralscout.com/">Spiral Scout</a></p>
+    <p>Соорганизатор сообществ <a href="https://www.facebook.com/MinskCSS">MinskCSS</a>,
+      <a href="https://www.facebook.com/MinskJS">MinskJS</a>,
+      <a href="https://www.facebook.com/beerjsminsk">BeerJS</a>
+    </p>
+    <p><code style="background:none;color:var(--color-grey)">#freehugs</code></p>
+
+    <!-- Поздороваться на языке жестов – но сейчас речь пойдет о других жестах -->
+  </section>
+
+  <section class="slide">
+    <h2 class="shout">Что делает фронтенд-разработчик?</h2>
+  </section>
+
+  <section class="slide">
+    <div style="margin: -100px 0 0" class="text-logo text-logo--js">JS</div>
+    <div style="margin: 0 0 0 -50px" class="text-logo text-logo--css next">CSS</div>
+    <div style="margin: 0 0 0 50px" class="text-logo text-logo--html next">HTML</div>
+    <!--<p>И так уже 20 лет</p>-->
+  </section>
+
+  <section class="slide">
+    <!--или в архиве по почте отправил-->
+    <div style="margin: -100px 0 0" class="text-logo text-logo--js">JS</div>
+    <div style="margin: 0 0 0 -50px" class="text-logo text-logo--css">CSS</div>
+    <div style="margin: 0 0 0 50px" class="text-logo text-logo--html">HTML</div>
+    <div style="margin: -100px 0 0 200px" class="icon-upload"></div>
+    <div style="margin: -100px 0 0 300px" class="text-logo text-logo--ftp new-logo">FTP</div>
+  </section>
+
+  <section class="slide">
+    <h2>Автоматизация</h2>
+    <div style="margin: -100px 0 0" class="text-logo text-logo--js">JS</div>
+    <div style="margin: 0 0 0 -50px" class="text-logo text-logo--css">CSS</div>
+    <div style="margin: 0 0 0 50px" class="text-logo text-logo--html">HTML</div>
+    <div style="margin: -100px 0 0 200px" class="icon-upload"></div>
+    <div style="margin: -100px 0 0 300px" class="text-logo text-logo--ftp">FTP</div>
+    <div style="margin: -100px 0 0 -100px" class="img-logo new-logo"><img src="pictures/logos/grunt.svg" height="80">
+    </div>
+  </section>
+
+  <section class="slide">
+    <h2>Контроль версий</h2>
+    <div style="margin: -100px 0 0" class="text-logo text-logo--js">JS</div>
+    <div style="margin: 0 0 0 -50px" class="text-logo text-logo--css">CSS</div>
+    <div style="margin: 0 0 0 50px" class="text-logo text-logo--html">HTML</div>
+    <div style="margin: -100px 0 0 200px" class="icon-upload"></div>
+    <div style="margin: -100px 0 0 300px" class="text-logo text-logo--ftp">FTP</div>
+    <div style="margin: -100px 0 0 -100px" class="img-logo"><img src="pictures/logos/grunt.svg" height="80"></div>
+    <div style="margin: -200px 0 0 50px" class="img-logo new-logo"><img src="pictures/logos/git.svg" height="80"></div>
+  </section>
+
+  <section class="slide">
+    <h2>Деплой</h2>
+    <!--capistrano 2006-->
+    <div style="margin: -100px 0 0" class="text-logo text-logo--js">JS</div>
+    <div style="margin: 0 0 0 -50px" class="text-logo text-logo--css">CSS</div>
+    <div style="margin: 0 0 0 50px" class="text-logo text-logo--html">HTML</div>
+    <div style="margin: -100px 0 0 200px" class="icon-upload"></div>
+    <div style="margin: -100px 0 0 300px" class="img-logo new-logo"><img src="pictures/logos/capistrano.svg" height="80">
+    </div>
+    <div style="margin: -100px 0 0 -100px" class="img-logo"><img src="pictures/logos/grunt.svg" height="80"></div>
+    <div style="margin: -200px 0 0 50px" class="img-logo"><img src="pictures/logos/git.svg" height="80"></div>
+  </section>
+
+  <section class="slide">
+    <h2>Новые технологии</h2>
+    <!--legacy-->
+    <div class="legacy first-time">
+      <div style="margin: 0px 0 0 -400px" class="img-logo old-logo"><img src="pictures/logos/grunt.svg" height="80"></div>
+    </div>
+
+    <div style="margin: -100px 0 0" class="text-logo text-logo--js">JS</div>
+    <div style="margin: 0 0 0 -50px" class="text-logo text-logo--css">CSS</div>
+    <div style="margin: 0 0 0 50px" class="text-logo text-logo--html">HTML</div>
+    <div style="margin: -100px 0 0 200px" class="icon-upload"></div>
+    <div style="margin: -100px 0 0 300px" class="img-logo"><img src="pictures/logos/capistrano.svg" height="80">
+    </div>
+    <div style="margin: -100px 0 0 -100px" class="img-logo new-logo"><img src="pictures/logos/gulp.svg" height="80"></div>
+    <div style="margin: -200px 0 0 50px" class="img-logo"><img src="pictures/logos/git.svg" height="80"></div>
+  </section>
+
+  <section class="slide">
+    <h2>Пакетный менеджер</h2>
+    <!--legacy-->
+    <div class="legacy"></div>
+    <div style="margin: 0px 0 0 -400px" class="img-logo old-logo"><img src="pictures/logos/grunt.svg" height="80"></div>
+
+    <div style="margin: -100px 0 0" class="text-logo text-logo--js">JS</div>
+    <div style="margin: 0 0 0 -50px" class="text-logo text-logo--css">CSS</div>
+    <div style="margin: 0 0 0 50px" class="text-logo text-logo--html">HTML</div>
+    <div style="margin: -100px 0 0 200px" class="icon-upload"></div>
+    <div style="margin: -100px 0 0 300px" class="img-logo"><img src="pictures/logos/capistrano.svg" height="80">
+    </div>
+    <div style="margin: -100px 0 0 -100px" class="img-logo"><img src="pictures/logos/gulp.svg" height="80"></div>
+    <div style="margin: -200px 0 0 50px" class="img-logo"><img src="pictures/logos/git.svg" height="80"></div>
+    <div style="margin: -200px 0 0 -50px" class="img-logo new-logo"><img src="pictures/logos/npm.svg" width="80"></div>
+  </section>
+
+  <section class="slide">
+    <h2>Новые технологии</h2>
+    <!--legacy-->
+    <div class="legacy"></div>
+    <div style="margin: 0px 0 0 -400px" class="img-logo old-logo"><img src="pictures/logos/grunt.svg" height="80"></div>
+    <div style="margin: 50px 0 0 -375px" class="img-logo old-logo"><img src="pictures/logos/capistrano.svg" height="80"></div>
+
+    <!--<p>mocha 2011-->
+    <div style="margin: -100px 0 0" class="text-logo text-logo--js">JS</div>
+    <div style="margin: 0 0 0 -50px" class="text-logo text-logo--css">CSS</div>
+    <div style="margin: 0 0 0 50px" class="text-logo text-logo--html">HTML</div>
+    <div style="margin: -100px 0 0 200px" class="icon-upload"></div>
+    <div style="margin: -100px 0 0 300px" class="img-logo new-logo"><img src="pictures/logos/jenkins.png" height="80">
+    </div>
+    <div style="margin: -100px 0 0 -100px" class="img-logo"><img src="pictures/logos/gulp.svg" height="80"></div>
+    <div style="margin: -200px 0 0 50px" class="img-logo"><img src="pictures/logos/git.svg" height="80"></div>
+    <div style="margin: -200px 0 0 -50px" class="img-logo"><img src="pictures/logos/npm.svg" width="80"></div>
+  </section>
+
+  <section class="slide">
+    <h2>Локальный веб-сервер</h2>
+    <!--legacy-->
+    <div class="legacy"></div>
+    <div style="margin: 0px 0 0 -400px" class="img-logo old-logo"><img src="pictures/logos/grunt.svg" height="80"></div>
+    <div style="margin: 50px 0 0 -375px" class="img-logo old-logo"><img src="pictures/logos/capistrano.svg" height="80"></div>
+
+    <div style="margin: -100px 0 0" class="text-logo text-logo--js">JS</div>
+    <div style="margin: 0 0 0 -50px" class="text-logo text-logo--css">CSS</div>
+    <div style="margin: 0 0 0 50px" class="text-logo text-logo--html">HTML</div>
+    <div style="margin: -100px 0 0 200px" class="icon-upload"></div>
+    <div style="margin: -100px 0 0 300px" class="img-logo"><img src="pictures/logos/jenkins.png" height="80">
+    </div>
+    <div style="margin: -100px 0 0 -100px" class="img-logo"><img src="pictures/logos/gulp.svg" height="80"></div>
+    <div style="margin: -200px 0 0 50px" class="img-logo"><img src="pictures/logos/git.svg" height="80"></div>
+    <div style="margin: -200px 0 0 -50px" class="img-logo"><img src="pictures/logos/npm.svg" width="80"></div>
+    <div style="margin: -200px 0 0 -150px" class="img-logo new-logo"><img src="pictures/logos/nodejs.svg" height="80"></div>
+  </section>
+
+  <section class="slide">
+    <h2>Тесты</h2>
+    <!--legacy-->
+    <div class="legacy"></div>
+    <div style="margin: 0px 0 0 -400px" class="img-logo old-logo"><img src="pictures/logos/grunt.svg" height="80"></div>
+    <div style="margin: 50px 0 0 -375px" class="img-logo old-logo"><img src="pictures/logos/capistrano.svg" height="80"></div>
+
+    <!--jasmine 2014-->
+    <div style="margin: -100px 0 0" class="text-logo text-logo--js">JS</div>
+    <div style="margin: 0 0 0 -50px" class="text-logo text-logo--css">CSS</div>
+    <div style="margin: 0 0 0 50px" class="text-logo text-logo--html">HTML</div>
+    <div style="margin: -100px 0 0 200px" class="icon-upload"></div>
+    <div style="margin: -100px 0 0 300px" class="img-logo"><img src="pictures/logos/jenkins.png" height="80">
+    </div>
+    <div style="margin: -100px 0 0 -100px" class="img-logo"><img src="pictures/logos/gulp.svg" height="80"></div>
+    <div style="margin: -200px 0 0 50px" class="img-logo"><img src="pictures/logos/git.svg" height="80"></div>
+    <div style="margin: -200px 0 0 -50px" class="img-logo"><img src="pictures/logos/npm.svg" width="80"></div>
+    <div style="margin: -200px 0 0 -150px" class="img-logo"><img src="pictures/logos/nodejs.svg" height="80"></div>
+    <div style="margin: -100px 0 0 100px" class="img-logo new-logo"><img src="pictures/logos/mocha.svg" height="80"></div>
+  </section>
+
+  <section class="slide">
+    <h2>Линтеры</h2>
+    <!--legacy-->
+    <div class="legacy"></div>
+    <div style="margin: 0px 0 0 -400px" class="img-logo old-logo"><img src="pictures/logos/grunt.svg" height="80"></div>
+    <div style="margin: 50px 0 0 -375px" class="img-logo old-logo"><img src="pictures/logos/capistrano.svg" height="80"></div>
+
+    <div style="margin: -100px 0 0" class="text-logo text-logo--js">JS</div>
+    <div style="margin: 0 0 0 -50px" class="text-logo text-logo--css">CSS</div>
+    <div style="margin: 0 0 0 50px" class="text-logo text-logo--html">HTML</div>
+    <div style="margin: -100px 0 0 200px" class="icon-upload"></div>
+    <div style="margin: -100px 0 0 300px" class="img-logo"><img src="pictures/logos/jenkins.png" height="80">
+    </div>
+    <div style="margin: -100px 0 0 -100px" class="img-logo"><img src="pictures/logos/gulp.svg" height="80"></div>
+    <div style="margin: -200px 0 0 50px" class="img-logo"><img src="pictures/logos/git.svg" height="80"></div>
+    <div style="margin: -200px 0 0 -50px" class="img-logo"><img src="pictures/logos/npm.svg" width="80"></div>
+    <div style="margin: -200px 0 0 -150px" class="img-logo"><img src="pictures/logos/nodejs.svg" height="80"></div>
+    <div style="margin: -100px 0 0 100px" class="img-logo"><img src="pictures/logos/mocha.svg" height="80"></div>
+    <div style="margin: -100px 0 0 -200px" class="img-logo new-logo"><img src="pictures/logos/eslint.svg" width="80"></div>
+    <div style="margin: 0 0 0 -150px" class="img-logo new-logo"><img src="pictures/logos/stylelint.svg" width="80"></div>
+  </section>
+
+  <section class="slide">
+    <h2>Сборка</h2>
+    <!--legacy-->
+    <div class="legacy"></div>
+    <div style="margin: 0px 0 0 -400px" class="img-logo old-logo"><img src="pictures/logos/grunt.svg" height="80"></div>
+    <div style="margin: 50px 0 0 -375px" class="img-logo old-logo"><img src="pictures/logos/capistrano.svg" height="80"></div>
+    <div style="margin: -50px 0 0 -375px" class="img-logo old-logo"><img src="pictures/logos/gulp.svg" height="80"></div>
+
+    <!--jest 2015-->
+    <div style="margin: -100px 0 0" class="text-logo text-logo--js">JS</div>
+    <div style="margin: 0 0 0 -50px" class="text-logo text-logo--css">CSS</div>
+    <div style="margin: 0 0 0 50px" class="text-logo text-logo--html">HTML</div>
+    <div style="margin: -100px 0 0 200px" class="icon-upload"></div>
+    <div style="margin: -100px 0 0 300px" class="img-logo"><img src="pictures/logos/jenkins.png" height="80">
+    </div>
+    <div style="margin: -100px 0 0 -100px" class="img-logo new-logo"><img src="pictures/logos/webpack.svg" height="80"></div>
+    <div style="margin: -200px 0 0 50px" class="img-logo"><img src="pictures/logos/git.svg" height="80"></div>
+    <div style="margin: -200px 0 0 -50px" class="img-logo"><img src="pictures/logos/npm.svg" width="80"></div>
+    <div style="margin: -200px 0 0 -150px" class="img-logo"><img src="pictures/logos/nodejs.svg" height="80"></div>
+    <div style="margin: -100px 0 0 100px" class="img-logo"><img src="pictures/logos/mocha.svg" height="80"></div>
+    <div style="margin: -100px 0 0 -200px" class="img-logo"><img src="pictures/logos/eslint.svg" width="80">
+    </div>
+    <div style="margin: 0 0 0 -150px" class="img-logo"><img src="pictures/logos/stylelint.svg" width="80"></div>
+  </section>
+
+  <section class="slide">
+    <h2>Новые технологии</h2>
+    <!--legacy-->
+    <div class="legacy"></div>
+    <div style="margin: 0px 0 0 -400px" class="img-logo old-logo"><img src="pictures/logos/grunt.svg" height="80"></div>
+    <div style="margin: 50px 0 0 -375px" class="img-logo old-logo"><img src="pictures/logos/capistrano.svg" height="80"></div>
+    <div style="margin: -50px 0 0 -375px" class="img-logo old-logo"><img src="pictures/logos/gulp.svg" height="80"></div>
+    <div style="margin: 50px 0 0 -325px" class="img-logo old-logo"><img src="pictures/logos/jenkins.png" height="80"></div>
+    <div style="margin: -50px 0 0 -325px" class="img-logo old-logo"><img src="pictures/logos/npm.svg" width="80"></div>
+    <div style="margin: 0px 0 0 -300px" class="img-logo old-logo"><img src="pictures/logos/mocha.svg" height="80"></div>
+    <div style="margin: 0px 0 0 -350px" class="text-logo text-logo--js old-logo">JS</div>
+
+    <div style="margin: 0 0 0 -50px" class="text-logo text-logo--css">CSS</div>
+    <div style="margin: 0 0 0 50px" class="text-logo text-logo--html">HTML</div>
+    <div style="margin: -100px 0 0 200px" class="icon-upload"></div>
+    <div style="margin: -100px 0 0 300px" class="img-logo new-logo"><img src="pictures/logos/circleci.svg" height="80">
+    </div>
+    <div style="margin: -100px 0 0 -100px" class="img-logo"><img src="pictures/logos/webpack.svg" height="80"></div>
+    <div style="margin: -200px 0 0 50px" class="img-logo"><img src="pictures/logos/git.svg" height="80"></div>
+    <div style="margin: -200px 0 0 -50px" class="img-logo new-logo"><img src="pictures/logos/yarn.svg" width="80"></div>
+    <div style="margin: -200px 0 0 -150px" class="img-logo"><img src="pictures/logos/nodejs.svg" height="80"></div>
+    <div style="margin: -100px 0 0 100px" class="img-logo new-logo"><img src="pictures/logos/jest.svg" height="80"></div>
+    <div style="margin: -100px 0 0 -200px" class="img-logo"><img src="pictures/logos/eslint.svg" width="80">
+    </div>
+    <div style="margin: 0 0 0 -150px" class="img-logo"><img src="pictures/logos/stylelint.svg" width="80"></div>
+    <div style="margin: -100px 0 0" class="text-logo text-logo--ts new-logo">TS</div>
+  </section>
+
+  <section class="slide">
+    <!--<p>И это только первый релиз</p>-->
+    <figure>
+      <img class="cover" src="pictures/beginning.png" width="1024" alt="">
+    </figure>
+  </section>
+
+  <section class="slide">
+    <h2 class="with-bg"><span>Производительность</span></h2>
+    <figure>
+      <img class="cover" src="pictures/performance.png" width="1024" alt="">
+      <figcaption class="copyright right">
+        <a href="https://uxdesign.cc/the-amazing-world-of-browser-performance-how-to-be-performant-44f8749b3617">© UX Collective</a>
+      </figcaption>
+    </figure>
+  </section>
+
+  <section class="slide">
+    <h2 class="with-bg"><span>Мониторинг</span></h2>
+    <figure>
+      <img class="cover" src="pictures/errors.png" width="1024" alt="">
+      <figcaption class="copyright right">
+        <a href="https://sentry.io/integrations/datadog/">© Sentry.io</a>
+      </figcaption>
+    </figure>
+  </section>
+
+  <section class="slide">
+    <h2 class="with-bg"><span>Актуальность</span></h2>
+    <figure>
+      <img class="cover" src="pictures/dependencies.png" width="1024" alt="">
+      <figcaption class="copyright right">
+        <a href="https://www.robertcooper.me/how-yarn-lock-files-work-and-upgrading-dependencies">© Robert Cooper</a>
+      </figcaption>
+    </figure>
+  </section>
+
+  <section class="slide">
+    <h2 class="shout">Причем здесь фронтопс?</h2>
+  </section>
+
+  <section class="slide">
+    <h2>Термин</h2>
+    <figure class="next">
+      <blockquote>
+        <p><strong>Девопс</strong> &mdash;методология взаимодействия специалистов по разработке со специалистами по
+          информационно-технологическому обслуживанию и интеграцию их рабочих процессов друг в друга для
+          обеспечения качества продукта. </p>
+      </blockquote>
+      <figcaption><a href="https://ru.wikipedia.org/wiki/DevOps">Википедия</a></figcaption>
+    </figure>
+  </section>
+
+  <section class="slide">
+    <div style="text-align: center; font-size: 1.5em">
+    <p><strong class="next abs">Front End</strong> Development</p>
+    <p class="sign">+</p>
+    <p>Operations</p>
+    <p class="sign">=</p>
+    <p><strong class="next abs">Front End Ops</strong><span class="prevterm">DevOps</span></p>
+    </div>
+    <style>
+      .sign {
+        font-size: 40px;
+        color: var(--color-grey);
+        line-height: 0.5;
+      }
+      .abs {
+        color: var(--color-blue);
+      }
+      .shower.list .abs {
+        opacity: 0;
+      }
+      .next.abs {
+        position: absolute;
+      }
+      .shower.full .next.abs.active {
+        position: static;
+      }
+      .shower.full .next.active + .prevterm {
+        position: absolute;
+        visibility: hidden;
+      }
+    </style>
+  </section>
+
+  <section class="slide">
+    <h2>2013</h2>
+    <figure style="font-size: 1.1em">
+      <blockquote>
+        <p><strong>Фронтопс</strong> &mdash; это мост между целью приложения<br>и его реальностью</p>
+      </blockquote>
+      <figcaption>Алекс Секстон @ Stripe / <a href="https://www.smashingmagazine.com/2013/06/front-end-ops/">Smashing Magazine</a></figcaption>
+    </figure>
+    <div class="place r place-author">
+      <div class="author"><img src="pictures/alexsexton.jpeg" alt=""></div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <h2 class="with-bg"><a href="https://www.youtube.com/channel/UCFdA1LIvjYDLrqeHiZphNWA">Front End Ops Conference</a>
+    </h2>
+    <figure>
+      <img class="cover" src="pictures/feoc.jpg" width="1024" alt="">
+      <figcaption class="copyright right white">
+        <a href="http://www.studiointersect.com/feoc-conference">© INTERSECT</a>
+      </figcaption>
+    </figure>
+  </section>
+
+  <!--<section class="slide">
+    <h2>2014</h2>
+    <figure>
+      <blockquote>
+        <p><strong>Фронтопс</strong> &mdash; это набор вещей, которые вы можете сделать, чтобы&nbsp;упростить
+          обслуживание веб-страниц так, что&nbsp;вы&nbsp;можете сосредоточиться на своем продукте.</p>
+      </blockquote>
+      <figcaption>Алекс Секстон @ Stripe / <a href="https://www.youtube.com/channel/UCFdA1LIvjYDLrqeHiZphNWA">Front End Ops Conference</a></figcaption>
+    </figure>
+  </section>-->
+
+  <section class="slide">
+    <h2>2015</h2>
+    <figure>
+      <blockquote>
+        <p><strong>Фронтопс</strong> &mdash; это тот, кто поставляет в&nbsp;компанию
+          лучшие&nbsp;инструменты&nbsp;и&nbsp;практики, помогая разработчикам
+        эффективно&nbsp;сосредоточиться на&nbsp;своей работе
+        и&nbsp;обеспечивая&nbsp;высокое&nbsp;качество кода
+        и&nbsp;производительность</p>
+      </blockquote>
+      <figcaption>Стивен Кокс @ <a href="https://agile.coop/blog/introduction-to-front-end-ops/">agile{collective}</a></figcaption>
+    </figure>
+    <div class="place r place-author">
+      <div class="author"><img src="pictures/stephen.png" alt=""></div>
+    </div>
+  </section>
+
+  <!--<section class="slide">
+    <h2>2018</h2>
+    <figure>
+      <blockquote>
+        <p><strong>Фронтопс</strong> &mdash; это комбинация практик и инструментов,<br>которая делает доставку
+          оптимизированных<br>веб-ресурсов более эффективной.</p>
+      </blockquote>
+      <figcaption>Джамир Бонкристиани @ <a href="https://www.youtube.com/watch?v=ofPBQuJvQ74">ThoughtWorks XConf EU</a>
+      </figcaption>
+    </figure>
+    <div class="place r place-author">
+      <div class="author"><img src="pictures/giamir.jpeg" alt=""></div>
+    </div>
+  </section>-->
+
+  <section class="slide">
+    <h2>Только код</h2>
+    <div style="margin: -100px 0 0" class="text-logo text-logo--ts">TS</div>
+    <div style="margin: 0 0 0 -50px" class="text-logo text-logo--css">CSS</div>
+    <div style="margin: 0 0 0 50px" class="text-logo text-logo--html">HTML</div>
+    <div style="margin: -100px 0 0 200px" class="icon-upload inactive"></div>
+    <div style="margin: -100px 0 0 300px" class="img-logo inactive"><img src="pictures/logos/circleci.svg" height="80">
+    </div>
+    <div style="margin: -100px 0 0 -100px" class="img-logo inactive"><img src="pictures/logos/webpack.svg" height="80">
+    </div>
+    <div style="margin: -200px 0 0 50px" class="img-logo inactive"><img src="pictures/logos/git.svg" height="80"></div>
+    <div style="margin: -200px 0 0 -50px" class="img-logo inactive"><img src="pictures/logos/yarn.svg" width="80"></div>
+    <div style="margin: -200px 0 0 -150px" class="img-logo inactive"><img src="pictures/logos/nodejs.svg" height="80">
+    </div>
+    <div style="margin: -100px 0 0 100px" class="img-logo inactive"><img src="pictures/logos/jest.svg" height="80"></div>
+    <div style="margin: -100px 0 0 -200px" class="img-logo inactive"><img src="pictures/logos/eslint.svg" width="80">
+    </div>
+    <div style="margin: 0 0 0 -150px" class="img-logo inactive"><img src="pictures/logos/stylelint.svg" width="80"></div>
+  </section>
+
+  <section class="slide">
+    <h2 class="with-bg" style="margin-top:350px"><span>Команда</span></h2>
+    <figure>
+      <img class="cover" src="pictures/team.jpg" width="1024" alt="">
+      <figcaption class="copyright right white">
+        <a href="https://hdqwalls.com/">© HDQWALLS</a>
+      </figcaption>
+    </figure>
+  </section>
+
+  <section class="slide">
+    <h2>Нет тестов</h2>
+    <!--<p>Либо тесты (у кого в проекте есть unit-тесты?)</p>-->
+    <div style="margin: -100px 0 0" class="text-logo text-logo--ts">TS</div>
+    <div style="margin: 0 0 0 -50px" class="text-logo text-logo--css">CSS</div>
+    <div style="margin: 0 0 0 50px" class="text-logo text-logo--html">HTML</div>
+    <div style="margin: -100px 0 0 200px" class="icon-upload"></div>
+    <div style="margin: -100px 0 0 300px" class="img-logo"><img src="pictures/logos/circleci.svg" height="80">
+    </div>
+    <div style="margin: -100px 0 0 -100px" class="img-logo"><img src="pictures/logos/webpack.svg" height="80">
+    </div>
+    <div style="margin: -200px 0 0 50px" class="img-logo"><img src="pictures/logos/git.svg" height="80"></div>
+    <div style="margin: -200px 0 0 -50px" class="img-logo"><img src="pictures/logos/yarn.svg" width="80"></div>
+    <div style="margin: -200px 0 0 -150px" class="img-logo"><img src="pictures/logos/nodejs.svg" height="80"></div>
+    <div style="margin: -100px 0 0 100px" class="img-logo dropped"><img src="pictures/logos/jest.svg" height="80"></div>
+    <div style="margin: -100px 0 0 -200px" class="img-logo"><img src="pictures/logos/eslint.svg" width="80">
+    </div>
+    <div style="margin: 0 0 0 -150px" class="img-logo"><img src="pictures/logos/stylelint.svg" width="80"></div>
+  </section>
+
+  <section class="slide">
+    <h2>Нет линтеров</h2>
+    <!--<p>Либо codestyle (у кого в проекте есть?)</p>-->
+    <div style="margin: -100px 0 0" class="text-logo text-logo--ts">TS</div>
+    <div style="margin: 0 0 0 -50px" class="text-logo text-logo--css">CSS</div>
+    <div style="margin: 0 0 0 50px" class="text-logo text-logo--html">HTML</div>
+    <div style="margin: -100px 0 0 200px" class="icon-upload"></div>
+    <div style="margin: -100px 0 0 300px" class="img-logo"><img src="pictures/logos/circleci.svg" height="80">
+    </div>
+    <div style="margin: -100px 0 0 -100px" class="img-logo"><img src="pictures/logos/webpack.svg" height="80">
+    </div>
+    <div style="margin: -200px 0 0 50px" class="img-logo"><img src="pictures/logos/git.svg" height="80"></div>
+    <div style="margin: -200px 0 0 -50px" class="img-logo"><img src="pictures/logos/yarn.svg" width="80"></div>
+    <div style="margin: -200px 0 0 -150px" class="img-logo"><img src="pictures/logos/nodejs.svg" height="80"></div>
+    <div style="margin: -100px 0 0 100px" class="img-logo"><img src="pictures/logos/jest.svg" height="80"></div>
+    <div style="margin: -100px 0 0 -200px" class="img-logo dropped"><img src="pictures/logos/eslint.svg" width="80">
+    </div>
+    <div style="margin: 0 0 0 -150px" class="img-logo dropped"><img src="pictures/logos/stylelint.svg" width="80"></div>
+  </section>
+
+  <section class="slide">
+    <h2>Некачественная сборка</h2>
+    <!--<p>Либо настройка бандлера (берутся готовые но не всегда оптимальные решения типа create-app)</p>-->
+    <div style="margin: -100px 0 0" class="text-logo text-logo--ts">TS</div>
+    <div style="margin: 0 0 0 -50px" class="text-logo text-logo--css">CSS</div>
+    <div style="margin: 0 0 0 50px" class="text-logo text-logo--html">HTML</div>
+    <div style="margin: -100px 0 0 200px" class="icon-upload"></div>
+    <div style="margin: -100px 0 0 300px" class="img-logo"><img src="pictures/logos/circleci.svg" height="80">
+    </div>
+    <div style="margin: -100px 0 0 -100px" class="img-logo dropped"><img src="pictures/logos/webpack.svg" height="80"></div>
+    <div style="margin: -200px 0 0 50px" class="img-logo"><img src="pictures/logos/git.svg" height="80"></div>
+    <div style="margin: -200px 0 0 -50px" class="img-logo dropped"><img src="pictures/logos/yarn.svg" width="80"></div>
+    <div style="margin: -200px 0 0 -150px" class="img-logo dropped"><img src="pictures/logos/nodejs.svg" height="80"></div>
+    <div style="margin: -100px 0 0 100px" class="img-logo"><img src="pictures/logos/jest.svg" height="80"></div>
+    <div style="margin: -100px 0 0 -200px" class="img-logo"><img src="pictures/logos/eslint.svg" width="80">
+    </div>
+    <div style="margin: 0 0 0 -150px" class="img-logo"><img src="pictures/logos/stylelint.svg" width="80"></div>
+  </section>
+
+  <section class="slide">
+    <h2>Всё плохо</h2>
+    <!--<p>Либо все сразу</p>-->
+    <!--<p>И это не удивительно</p>-->
+    <div style="margin: -100px 0 0" class="text-logo text-logo--ts">TS</div>
+    <div style="margin: 0 0 0 -50px" class="text-logo text-logo--css">CSS</div>
+    <div style="margin: 0 0 0 50px" class="text-logo text-logo--html">HTML</div>
+    <div style="margin: -100px 0 0 200px" class="icon-upload"></div>
+    <div style="margin: -100px 0 0 300px" class="img-logo"><img src="pictures/logos/circleci.svg" height="80">
+    </div>
+    <div style="margin: -100px 0 0 -100px" class="img-logo dropped"><img src="pictures/logos/webpack.svg" height="80">
+    </div>
+    <div style="margin: -200px 0 0 50px" class="img-logo"><img src="pictures/logos/git.svg" height="80"></div>
+    <div style="margin: -200px 0 0 -50px" class="img-logo dropped"><img src="pictures/logos/yarn.svg" width="80"></div>
+    <div style="margin: -200px 0 0 -150px" class="img-logo dropped"><img src="pictures/logos/nodejs.svg" height="80"></div>
+    <div style="margin: -100px 0 0 100px" class="img-logo dropped"><img src="pictures/logos/jest.svg" height="80"></div>
+    <div style="margin: -100px 0 0 -200px" class="img-logo dropped"><img src="pictures/logos/eslint.svg" width="80">
+    </div>
+    <div style="margin: 0 0 0 -150px" class="img-logo dropped"><img src="pictures/logos/stylelint.svg" width="80"></div>
+  </section>
+
+  <!--<section class="slide" style="background:#070707;">
+    <h2 class="shout" style="color:#bdbdbd">Фронтенд<br>стал сложным</h2>
+  </section>-->
+
+  <section class="slide">
+    <h2>Проблемы приложения</h2>
+    <ul class="problems">
+      <li class="next">Долго загружается <!--Тяжелый бандл (некачественная сборка)--></li>
+      <li class="next">Медленно работает <!--не оптимизировали--></li>
+      <li class="next">Часто падает <!--плохо тестировали--></li>
+      <li class="next">Сложно отлаживать ошибки <!--нет трекинга--></li>
+      <li class="next">Непросто разобраться в коде <!--Долгое вхождение в проект (нет кодстайла)--></li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>Что такое фронтопс?</h2>
+    <ul class="choices">
+      <li class="next">Идея</li>
+      <li class="next">Задача</li>
+      <li class="next">Роль</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>Опыт крупных компаний</h2>
+    <div class="company-logos">
+      <img src="pictures/logos/paypal.svg" height="80" alt="">
+      <img src="pictures/logos/flickr.svg" height="80" alt="">
+      <img src="pictures/logos/apple.svg" height="100" alt="">
+    </div>
+  </section>
+
+  <section class="slide">
+    <h2 class="with-bg"><span>Тимлид</span></h2>
+    <!--<p>Обычно роль frontops берут на себя тим/тех лиды</p>-->
+    <figure>
+      <img class="cover" src="pictures/teamlead.jpg" width="1024" alt="">
+      <!--<figcaption class="copyright right white">
+        <a href="https://marvel.com">© Marvel</a>
+      </figcaption>-->
+    </figure>
+  </section>
+
+  <section class="slide">
+    <h2 class="shout">Что делает фронтопс?</h2>
+  </section>
+
+  <section class="slide">
+    <h2>Инфраструктура</h2>
+    <ul class="logos">
+      <li>
+        <img src="pictures/logos/git.svg" height="80">
+        <span>Настройка репозитория</span>
+      </li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>Настройка репозитория</h2>
+    <img src="pictures/branches.png" width="850">
+  </section>
+
+  <section class="slide">
+    <h2>Настройка репозитория</h2>
+    <p class="note">package.json:</p>
+    <pre>
+      <code>"husky": {
+  "hooks": {
+    "pre-commit": "yarn lint && yarn test",
+  }
+}</code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h2>Настройка репозитория</h2>
+    <pre>
+      <code>$ git config core.autocrlf false</code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h2>Инфраструктура</h2>
+    <ul class="logos">
+      <li class="visited">
+        <img src="pictures/logos/git.svg" height="80">
+        <span>Настройка репозитория</span>
+      </li>
+      <li>
+        <img src="pictures/logos/yarn.svg" width="80">
+        <span>Выбор и установка необходимых пакетов</span>
+      </li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>package.json</h2>
+    <pre>
+      <code>"devDependencies": {
+  "typescript": "<mark>^</mark>3.7.2",
+},
+"dependencies": {
+  "react": "<mark>^</mark>16.12.0",
+},
+      </code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h2>Контроль версий пакетов</h2>
+    <p>
+      <code>package-lock.json</code>
+    </p>
+    <p>
+      <code>yarn.lock</code>
+    </p>
+
+    <p class="note">Использование:</p>
+    <pre>
+      <code>$ npm <mark>ci</mark></code></pre>
+    <pre>
+      <code>$ yarn</code></pre>
+  </section>
+
+  <section class="slide">
+    <h2>Инфраструктура</h2>
+    <ul class="logos">
+      <li class="visited">
+        <img src="pictures/logos/git.svg" height="80">
+        <span>Настройка репозитория</span>
+      </li>
+      <li class="visited">
+        <img src="pictures/logos/yarn.svg" width="80">
+        <span>Выбор и установка необходимых пакетов</span>
+      </li>
+      <li>
+        <img src="pictures/logos/nodejs.svg" height="80">
+        <span>Настройка локального веб-сервера</span>
+      </li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>Локальный веб-сервер</h2>
+    <pre>
+      <code>const express = require('express');
+const app = express();
+const middleware = <mark>require('./middleware');</mark>
+middleware(app, config);
+app.listen(port, host, async (err) => {
+  ...
+});</code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h2>Качество кода</h2>
+    <ul class="logos">
+      <li>
+        <img src="pictures/logos/vscode.svg" width="80">
+        <span>Настройка редактора</span>
+      </li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>.editorconfig</h2>
+    <pre>
+      <code>[*]
+end_of_line = lf
+insert_final_newline = true
+indent_style = space
+indent_size = 2
+charset = 'utf-8'
+trim_trailing_whitespace = true</code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h2>Качество кода</h2>
+    <ul class="logos">
+      <li class="visited">
+        <img src="pictures/logos/vscode.svg" width="80">
+        <span>Настройка редактора</span>
+      </li>
+      <li>
+        <img src="pictures/logos/eslint.svg" width="40">
+        <img src="pictures/logos/stylelint.svg" width="40">
+        <span>Настройка линтеров</span>
+      </li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>.eslintrc.js</h2>
+    <pre>
+      <code>module.exports =  {
+  extends: <mark>["airbnb-typescript"],</mark>
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaVersion:  2018,
+    ...
+};</code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h2>.stylelintrc.json</h2>
+    <pre>
+      <code>{
+  "extends": "stylelint-config-standard"
+}
+      </code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h2>Сборка</h2>
+    <ul class="logos">
+      <li>
+        <img src="pictures/logos/webpack.svg" height="80" alt="webpack">
+        <span>Настройка бандлера</span>
+      </li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>webpack.config.js</h2>
+    <pre>
+      <code>module.exports = {
+  ...
+  devtool: <span class="comment">/* Карты кода */</span>,
+  plugins: <span class="comment">/* Необходимые плагины */</span>,
+  optimization: <span class="comment">/* Настройка оптимизации */</span>,
+  ...
+};    </code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h2 class="next with-bg"><span>webpack-bundle-analyzer</span></h2>
+    <figure>
+      <img class="cover" src="pictures/webpack-bundle-analyzer.png" width="1024" alt="webpack-bundle-analyzer">
+      <figcaption class="copyright right">
+        <a href="https://razorjack.net/visualizing-optimizing-javascript-bundle-size-rails-webpacker/">© Jacek
+          Galanciak</a>
+      </figcaption>
+    </figure>
+  </section>
+
+  <section class="slide">
+    <h2>Сборка</h2>
+    <ul class="logos">
+      <li class="visited">
+        <img src="pictures/logos/webpack.svg" height="80">
+        <span>Настройка бандлера</span>
+      </li>
+      <li>
+        <img src="pictures/logos/env.svg" width="80">
+        <span>Настройка окружений</span>
+      </li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>Окружения</h2>
+    <ul>
+      <li>development</li>
+      <li>production</li>
+      <li>test</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>.env</h2>
+    <pre>
+      <code>DB_HOST=127.0.0.1
+DB_USER=root
+DB_PASSWORD=password
+STRIPE_SECRET_KEY=secret
+GOOGLE_API_KEY=value</code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h2>CI/CD</h2>
+    <ul class="logos">
+      <li>
+        <img src="pictures/logos/jest.svg" height="80">
+        <span>Настройка тестов</span>
+      </li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>jest.config.js</h2>
+    <pre>
+      <code>module.exports = {
+  preset: <mark>'ts-jest'</mark>,
+  ...
+};
+      </code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h2>CI/CD</h2>
+    <ul class="logos">
+      <li class="visited">
+        <img src="pictures/logos/jest.svg" height="80">
+        <span>Настройка тестов</span>
+      </li>
+      <li>
+        <img src="pictures/logos/circleci.svg" height="80">
+        <span>Помощь с настройкой деплоя</span>
+      </li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>Инструкции</h2>
+    <ol>
+      <li>Установить NodeJS</li>
+      <li>Установить Yarn</li>
+      <li>Выполнить <code>yarn install</code></li>
+      <li>Выполнить <code>yarn build</code></li>
+      <li>Скопировать папку <code>dist</code></li>
+    </ol>
+  </section>
+
+  <section class="slide">
+    <h2 style="display: none;">README</h2>
+    <figure><img src="pictures/readme.png" width="800" alt="README"></figure>
+  </section>
+
+  <section class="slide">
+    <h2>Мониторинг</h2>
+    <ul class="logos">
+      <li>
+        <img src="pictures/logos/sentry.svg" width="80">
+        <span>Настройка трекинга ошибок</span>
+      </li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>Sentry.io</h2>
+    <pre>
+      <code>import * as Sentry from '@sentry/browser';
+Sentry.init({ dsn: `https://${key}@sentry.io/${project}` });
+
+<span class="comment">// Использование:</span>
+try { ... } catch (err) {
+  Sentry.<mark>captureException</mark>(err);
+}     </code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h2>Мониторинг</h2>
+    <ul class="logos">
+      <li class="visited">
+        <img src="pictures/logos/sentry.svg" width="80">
+        <span>Настройка трекинга ошибок</span>
+      </li>
+      <li>
+        <img src="pictures/logos/npm.svg" width="80">
+        <span>Регулярная проверка пакетов</span>
+      </li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>Проверка пакетов</h2>
+    <p>Актуальность:<br><code>yarn outdated</code></p>
+  </section>
+
+  <section class="slide">
+    <img class="cover" src="pictures/yarn-outdated.png" width="1024">
+  </section>
+
+  <section class="slide">
+    <h2>Проверка пакетов</h2>
+    <p style="opacity:0.5">Актуальность:<br><code>yarn outdated</code></p>
+    <p>Уязвимость:<br><code>yarn audit</code></p>
+  </section>
+
+  <section class="slide">
+    <img class="cover" src="pictures/yarn-audit.png" width="1024">
+  </section>
+
+  <section class="slide">
+    <h2>Аудит</h2>
+    <!--<div style="display: flex; align-items: center; justify-content: space-between; width: 280px; margin-bottom: 28px">
+      <img src="pictures/logos/google-lighthouse.svg" width="80">
+      <img src="pictures/logos/speedcurve.svg" width="80">
+      <img src="pictures/logos/webpagetest.svg" width="80">
+    </div>-->
+    <div style="display:flex; align-items: flex-start;">
+      <img src="pictures/logos/google-lighthouse.svg" width="105">
+      <ul style="margin-left: 2.5em">
+        <li class="next">
+          Производительность
+        </li>
+        <li class="next">
+          Доступность
+        </li>
+        <li class="next">
+          SEO
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="slide">
+    <h2>Chrome → DevTools → Audits</h2>
+    <img src="pictures/lighthouse.png" width="480">
+  </section>
+
+  <section class="slide">
+    <h2><a href="https://github.com/GoogleChrome/lighthouse-ci">Lighthouse CI</a></h2>
+    <pre style="font-size:18px">
+      <code>language: node_js
+node_js:
+  - 10 <span class="comment"># use Node 10 LTS or later</span>
+before_install:
+  - npm install -g @lhci/cli@0.3.x
+script:
+  - npm run build <span class="comment"># build your site</span>
+  - <mark>lhci autorun</mark> <span class="comment"># run lighthouse CI</span>
+addons:
+  chrome: stable <span class="comment"># make sure you have Chrome available</span></code>
+    </pre>
+  </section>
+
+  <!--<section class="slide">
+    <h2>Проверка доступности</h2>
+    <img src="pictures/logos/axe.png" width="80">
+    <p><a href="https://chrome.google.com/webstore/detail/axe-web-accessibility-tes/lhdoppojpmngadmnindnejefpokejbdd">Web
+      Accessibility Testing</a></p>
+  </section>-->
+
+  <section class="slide">
+    <h2 class="shout">Нужен ли нам фронтопс?</h2>
+    <p></p>
+  </section>
+
+  <section class="slide">
+    <h2>Задачи фронтопса</h2>
+    <ul class="lego">
+      <li class="next">
+        <div style="width: 520px; margin-left: 80px"><span>Анализ производительности и доступности</span></div>
+      </li>
+      <li class="next">
+        <div style="width: 520px"><span>Проверка актуальности и уязвимости пакетов</span></div>
+      </li>
+      <li class="next">
+        <div style="width: 280px; margin-left: 80px"><span>Актуализация сборки</span></div>
+      </li>
+      <li class="next">
+        <div style="width: 360px; margin-left: 160px"><span>Мониторинг покрытия тестами</span></div>
+      </li>
+      <li class="next">
+        <div style="width: 280px; margin-left: 0px"><span>Контроль качества кода</span></div>
+      </li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>Задачи фронтопса</h2>
+    <p>+ запуск новых проектов:</p>
+    <ul class="lego">
+      <li class="next">
+        <div style="width: 360px"><span>Создание инфраструктуры</span></div>
+      </li>
+      <li class="next">
+        <div style="width: 280px; margin-left: 240px"><span>Организация сборки</span></div>
+      </li>
+      <li class="next">
+        <div style="width: 360px; margin-left: 80px"><span>Настройка и примеры тестов</span></div>
+      </li>
+      <li class="next">
+        <div style="width: 360px"><span>Настройка трекинга ошибок</span></div>
+      </li>
+    </ul>
+  </section>
+
+  <!--<section class="slide">
+    <h2 class="shout">Где взять фронтопса?</h2>
+  </section>-->
+
+  <section class="slide">
+    <h2>Где взять фронтопса?</h2>
+    <ul>
+      <li class="next">Нанять 🤔</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>Вакансии</h2>
+    <figure>
+      <img src="pictures/vacancy1.png" width="735" alt="">
+      <figcaption class="copyright right">
+        <a href="https://www.linkedin.com/">© LinkedIn</a>
+      </figcaption>
+    </figure>
+  </section>
+  <section class="slide">
+    <h2>Вакансии</h2>
+    <figure>
+      <img src="pictures/vacancy2.png" width="480" alt="">
+      <figcaption class="copyright right">
+        <a href="https://www.linkedin.com/">© LinkedIn</a>
+      </figcaption>
+    </figure>
+  </section>
+  <section class="slide">
+    <h2>Вакансии</h2>
+    <figure>
+      <img src="pictures/vacancy3.png" width="480" alt="">
+      <figcaption class="copyright right">
+        <a href="https://www.linkedin.com/">© LinkedIn</a>
+      </figcaption>
+    </figure>
+  </section>
+
+  <section class="slide">
+    <h2>Где взять фронтопса?</h2>
+    <!--<p>Не все компании готовы себе позволить отдельного фронтопс,
+        but even if someone puts on the “front-end operations” hat for one day a week and prioritizes their work accordingly, users win</p>-->
+    <ul>
+      <li>Нанять 😞</li>
+      <li class="next">Вырастить 👌</li>
+      <li class="next">Стать им 👍</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2></h2>
+    <figure>
+      <blockquote>
+        <p>Мы, как фронтендеры, заботимся о пользователях.<br>От того, насколько доволен пользователь, напрямую зависит успешность проекта.</p>
+      </blockquote>
+      <figcaption>Алексей Плуталов @ Evil Martians / <a href="https://spb-frontend.ru/podcast/8">Spb Frontend Drinkast</a></figcaption>
+    </figure>
+  </section>
+
+  <section class="slide">
+    <h2>Я – тимлид. Что делать?</h2>
+    <ul>
+      <li class="next">Разработать единый кодстайл</li>
+      <li class="next">Запланировать проверку пакетов (<code>yarn audit</code>, <code>yarn outdated</code>)</li>
+      <li class="next">Проанализировать сборку (<code>webpack-bundle-analyzer</code>)</li>
+      <li class="next">Настроить репозиторий (<code>git config</code>, <code>pre-commit</code>)</li>
+      <li class="next">Обеспечить мониторинг ошибок</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>Я – разработчик. Что делать?</h2>
+    <ul>
+      <li class="next">Проверить пакеты (<code>yarn audit<mark>--fix</mark></code>, <code>yarn outdated</code>)</li>
+      <li class="next">Открыть вкладку <b>Audits</b> в DevTools и составить план</li>
+      <li class="next">Проанализировать сборку (<code>webpack-bundle-analyzer</code>)</li>
+      <li class="next">Настроить и запустить линтеры</li>
+      <li class="next">Начать писать тесты</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2 class="with-bg"><span>Действуй!</span></h2>
+    <figure>
+      <img class="cover" src="pictures/doit.jpg" width="1024" alt="">
+      <figcaption class="copyright right white">
+        <a href="https://time.com/4553274/doctor-strange-mid-credits-scene-marvel/">© TIME</a>
+      </figcaption>
+    </figure>
+  </section>
+
+  <section class="slide clear">
+    <h2><span>Спасибо!</span></h2>
+    <p class="social"> <a href="https://twitter.com/asktwi">asktwi</a></p>
+    <br>
+    <p>Слайды: <a href="index.html">askd.rocks/pres/frontops</a></p>
+    <p><code style="background:none;color:var(--color-grey)">#freehugs</code></p>
+  </section>
+
+  <div class="progress"></div>
+
+  <script src="shower/shower.min.js"></script>
+</body>
+</html>

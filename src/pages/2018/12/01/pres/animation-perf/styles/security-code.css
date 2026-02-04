@@ -1,0 +1,23 @@
+/*COLORS*/
+:root {
+    --security-code-theme: #6CA64D;
+    --yellow: #EFC463;
+    --purple: #9E7AE1;
+    --green: #6EB26A;
+}
+
+/*PROGRESS BAR*/
+.progress::before {
+    background: var(--security-code-theme);
+}
+
+/*BADGE*/
+.slide::after {
+    background-image: url("../pictures/security-code.svg");
+}
+
+
+h3 {
+  margin: 0.5em 0;
+}
+

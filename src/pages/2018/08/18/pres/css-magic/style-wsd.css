@@ -1,0 +1,40 @@
+
+.slide footer {
+    line-height: 1.5;
+}
+
+.slide .shout-mini {
+    font-size: 50px;
+    line-height: 1.3;
+}
+
+.slide .shout-light {
+    color: white;
+    text-shadow: 0 0 2px rgb(39, 17, 11), 5px 3px 10px rgba(39, 17, 11, 0.7);
+}
+
+.slide .strike {
+    text-decoration: none;
+}
+
+.slide .strike::after {
+    content: '';
+    display: block;
+    background-color: red;
+    width: 100%;
+    height: 7px;
+    position: absolute;
+    top: 50%;
+    left: -5px;
+    transform: rotate(-4deg);
+}
+
+img[src=''] {
+    background: yellow;
+    padding: 10px;
+}
+
+.slide pre code {
+    line-height: 1.6em;
+    font-size: 0.9em;
+}

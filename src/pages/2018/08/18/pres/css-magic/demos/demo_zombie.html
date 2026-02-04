@@ -1,0 +1,2113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zombie</title>
+</head>
+
+<body>
+
+    <div class="title">
+        <span>Day 17. Zombie</span>
+    </div>
+    <div class="scene">
+        <div class="block grass-left">
+            <div class="right"></div>
+            <div class="left"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+        <div class="block grass-right">
+            <div class="right"></div>
+            <div class="left"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+        <div class="block road">
+            <div class="right"></div>
+            <div class="left"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+        <div class="block head">
+            <div class="right"></div>
+            <div class="left"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+        <div class="block neck">
+            <div class="right"></div>
+            <div class="left"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+        <div class="block body">
+            <div class="right"></div>
+            <div class="left"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+        <div class="block left-hand">
+            <div class="right"></div>
+            <div class="left"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+        <div class="block right-hand">
+            <div class="right"></div>
+            <div class="left"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+        <div class="block left-boot">
+            <div class="right"></div>
+            <div class="left"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+        <div class="block right-boot">
+            <div class="right"></div>
+            <div class="left"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+        <div class="block left-leg">
+            <div class="right"></div>
+            <div class="left"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+        <div class="block right-leg">
+            <div class="right"></div>
+            <div class="left"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+    </div>
+    <div class="controls">
+        <span>x: </span>
+        <input type="range" value="0" min="-360" max="360" id="x-angle-r" oninput="setX(this.value)">
+        <input type="number" value="0" min="-360" max="360" id="x-angle-n" oninput="setX(this.value)">
+        <br>
+        <span>z: </span>
+        <input type="range" value="0" min="-360" max="360" id="z-angle-r" oninput="setZ(this.value)">
+        <input type="number" value="0" min="-360" max="360" id="z-angle-n" oninput="setZ(this.value)">
+    </div>
+
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Pacifico");
+        :root {
+            --x-angle: 0deg;
+            --z-angle: 0deg;
+        }
+
+        body {
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+            background-color: #246;
+            overflow: hidden;
+            -webkit-perspective: 700;
+            perspective: 700;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        }
+
+        .title {
+            padding: 10px 20px;
+            font-family: 'Pacifico', cursive;
+            position: absolute;
+        }
+
+        .title span {
+            font-size: 20px;
+            font-weight: bold;
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        .scene {
+            display: block;
+            margin: auto;
+            width: 450px;
+            height: 450px;
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            -webkit-transform: rotatex(var(--x-angle)) rotatez(var(--z-angle));
+            transform: rotatex(var(--x-angle)) rotatez(var(--z-angle));
+            will-change: transform;
+        }
+
+        .block {
+            display: block;
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .grass-left {
+            -webkit-transform: translate3d(0px, 0px, -30px) rotate3d(0, 0, 0, 0);
+            transform: translate3d(0px, 0px, -30px) rotate3d(0, 0, 0, 0);
+            will-change: transform;
+        }
+
+        .grass-left .front {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 150px;
+            height: 34.5px;
+            background-color: #264;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform-origin: top center;
+            transform-origin: top center;
+            -webkit-transform: translate3d(0, 450px, 34.5px) rotatex(-90deg);
+            transform: translate3d(0, 450px, 34.5px) rotatex(-90deg);
+        }
+
+        .grass-left .back {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 150px;
+            height: 34.5px;
+            background-color: #264;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform-origin: top center;
+            transform-origin: top center;
+            -webkit-transform: translate3d(0, 0, 0) rotatex(90deg);
+            transform: translate3d(0, 0, 0) rotatex(90deg);
+        }
+
+        .grass-left .right {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 450px;
+            height: 34.5px;
+            background-color: #15402b;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform-origin: top left;
+            transform-origin: top left;
+            -webkit-transform: translate3d(150px, 0, 0) rotatex(90deg) rotatey(90deg);
+            transform: translate3d(150px, 0, 0) rotatex(90deg) rotatey(90deg);
+        }
+
+        .grass-left .left {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 450px;
+            height: 34.5px;
+            background-color: #15402b;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform-origin: top left;
+            transform-origin: top left;
+            -webkit-transform: translate3d(0, 0, 0) rotatex(90deg) rotatey(90deg);
+            transform: translate3d(0, 0, 0) rotatex(90deg) rotatey(90deg);
+        }
+
+        .grass-left .top {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 150px;
+            height: 450px;
+            background-color: #1c5337;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform: translate3d(0, 0, 34.5px);
+            transform: translate3d(0, 0, 34.5px);
+        }
+
+        .grass-left .bottom {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 150px;
+            height: 450px;
+            background-color: #1c5337;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+
+        .grass-right {
+            -webkit-transform: translate3d(300px, 0px, -30px) rotate3d(0, 0, 0, 0);
+            transform: translate3d(300px, 0px, -30px) rotate3d(0, 0, 0, 0);
+            will-change: transform;
+        }
+
+        .grass-right .front {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 150px;
+            height: 34.5px;
+            background-color: #264;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform-origin: top center;
+            transform-origin: top center;
+            -webkit-transform: translate3d(0, 450px, 34.5px) rotatex(-90deg);
+            transform: translate3d(0, 450px, 34.5px) rotatex(-90deg);
+        }
+
+        .grass-right .back {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 150px;
+            height: 34.5px;
+            background-color: #264;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform-origin: top center;
+            transform-origin: top center;
+            -webkit-transform: translate3d(0, 0, 0) rotatex(90deg);
+            transform: translate3d(0, 0, 0) rotatex(90deg);
+        }
+
+        .grass-right .right {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 450px;
+            height: 34.5px;
+            background-color: #15402b;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform-origin: top left;
+            transform-origin: top left;
+            -webkit-transform: translate3d(150px, 0, 0) rotatex(90deg) rotatey(90deg);
+            transform: translate3d(150px, 0, 0) rotatex(90deg) rotatey(90deg);
+        }
+
+        .grass-right .left {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 450px;
+            height: 34.5px;
+            background-color: #15402b;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform-origin: top left;
+            transform-origin: top left;
+            -webkit-transform: translate3d(0, 0, 0) rotatex(90deg) rotatey(90deg);
+            transform: translate3d(0, 0, 0) rotatex(90deg) rotatey(90deg);
+        }
+
+        .grass-right .top {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 150px;
+            height: 450px;
+            background-color: #1c5337;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform: translate3d(0, 0, 34.5px);
+            transform: translate3d(0, 0, 34.5px);
+        }
+
+        .grass-right .bottom {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 150px;
+            height: 450px;
+            background-color: #1c5337;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+
+        .road {
+            -webkit-transform: translate3d(150px, 0px, -30px) rotate3d(0, 0, 0, 0);
+            transform: translate3d(150px, 0px, -30px) rotate3d(0, 0, 0, 0);
+            will-change: transform;
+        }
+
+        .road .front {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 150px;
+            height: 30px;
+            background-color: #666;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform-origin: top center;
+            transform-origin: top center;
+            -webkit-transform: translate3d(0, 450px, 30px) rotatex(-90deg);
+            transform: translate3d(0, 450px, 30px) rotatex(-90deg);
+        }
+
+        .road .back {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 150px;
+            height: 30px;
+            background-color: #666;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform-origin: top center;
+            transform-origin: top center;
+            -webkit-transform: translate3d(0, 0, 0) rotatex(90deg);
+            transform: translate3d(0, 0, 0) rotatex(90deg);
+        }
+
+        .road .right {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 450px;
+            height: 30px;
+            background-color: #4d4d4d;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform-origin: top left;
+            transform-origin: top left;
+            -webkit-transform: translate3d(150px, 0, 0) rotatex(90deg) rotatey(90deg);
+            transform: translate3d(150px, 0, 0) rotatex(90deg) rotatey(90deg);
+        }
+
+        .road .left {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 450px;
+            height: 30px;
+            background-color: #4d4d4d;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform-origin: top left;
+            transform-origin: top left;
+            -webkit-transform: translate3d(0, 0, 0) rotatex(90deg) rotatey(90deg);
+            transform: translate3d(0, 0, 0) rotatex(90deg) rotatey(90deg);
+        }
+
+        .road .top {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 150px;
+            height: 450px;
+            background-color: #595959;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform: translate3d(0, 0, 30px);
+            transform: translate3d(0, 0, 30px);
+        }
+
+        .road .bottom {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 150px;
+            height: 450px;
+            background-color: #595959;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+
+        .head {
+            -webkit-transform: translate3d(180px, 180px, 180px) rotate3d(0, 0, 0, 0);
+            transform: translate3d(180px, 180px, 180px) rotate3d(0, 0, 0, 0);
+            will-change: transform;
+            -webkit-animation: head-animation 1.5s ease infinite;
+            animation: head-animation 1.5s ease infinite;
+            -webkit-animation-delay: -0.75s;
+            animation-delay: -0.75s;
+        }
+
+        .head .front {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 90px;
+            height: 90px;
+            background-color: #B1C4B3;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform-origin: top center;
+            transform-origin: top center;
+            -webkit-transform: translate3d(0, 90px, 90px) rotatex(-90deg);
+            transform: translate3d(0, 90px, 90px) rotatex(-90deg);
+        }
+
+        .head .back {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 90px;
+            height: 90px;
+            background-color: #B1C4B3;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform-origin: top center;
+            transform-origin: top center;
+            -webkit-transform: translate3d(0, 0, 0) rotatex(90deg);
+            transform: translate3d(0, 0, 0) rotatex(90deg);
+        }
+
+        .head .right {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 90px;
+            height: 90px;
+            background-color: #94ae97;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform-origin: top left;
+            transform-origin: top left;
+            -webkit-transform: translate3d(90px, 0, 0) rotatex(90deg) rotatey(90deg);
+            transform: translate3d(90px, 0, 0) rotatex(90deg) rotatey(90deg);
+        }
+
+        .head .left {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 90px;
+            height: 90px;
+            background-color: #94ae97;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform-origin: top left;
+            transform-origin: top left;
+            -webkit-transform: translate3d(0, 0, 0) rotatex(90deg) rotatey(90deg);
+            transform: translate3d(0, 0, 0) rotatex(90deg) rotatey(90deg);
+        }
+
+        .head .top {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 90px;
+            height: 90px;
+            background-color: #a2b9a5;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform: translate3d(0, 0, 90px);
+            transform: translate3d(0, 0, 90px);
+        }
+
+        .head .bottom {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 90px;
+            height: 90px;
+            background-color: #a2b9a5;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+
+        @-webkit-keyframes head-animation {
+            0%,
+            100% {
+                -webkit-transform: translate3d(180px, 180px, 183px);
+                transform: translate3d(180px, 180px, 183px);
+            }
+            50% {
+                -webkit-transform: translate3d(180px, 180px, 180px);
+                transform: translate3d(180px, 180px, 180px);
+            }
+        }
+
+        @keyframes head-animation {
+            0%,
+            100% {
+                -webkit-transform: translate3d(180px, 180px, 183px);
+                transform: translate3d(180px, 180px, 183px);
+            }
+            50% {
+                -webkit-transform: translate3d(180px, 180px, 180px);
+                transform: translate3d(180px, 180px, 180px);
+            }
+        }
+
+        .neck {
+            -webkit-transform: translate3d(210px, 210px, 150px) rotate3d(0, 0, 0, 0);
+            transform: translate3d(210px, 210px, 150px) rotate3d(0, 0, 0, 0);
+            will-change: transform;
+            -webkit-animation: neck-animation 1.5s ease infinite;
+            animation: neck-animation 1.5s ease infinite;
+            -webkit-animation-delay: -0.75s;
+            animation-delay: -0.75s;
+        }
+
+        .neck .front {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 30px;
+            height: 30px;
+            background-color: #B1C4B3;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform-origin: top center;
+            transform-origin: top center;
+            -webkit-transform: translate3d(0, 30px, 30px) rotatex(-90deg);
+            transform: translate3d(0, 30px, 30px) rotatex(-90deg);
+        }
+
+        .neck .back {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 30px;
+            height: 30px;
+            background-color: #B1C4B3;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform-origin: top center;
+            transform-origin: top center;
+            -webkit-transform: translate3d(0, 0, 0) rotatex(90deg);
+            transform: translate3d(0, 0, 0) rotatex(90deg);
+        }
+
+        .neck .right {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 30px;
+            height: 30px;
+            background-color: #94ae97;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform-origin: top left;
+            transform-origin: top left;
+            -webkit-transform: translate3d(30px, 0, 0) rotatex(90deg) rotatey(90deg);
+            transform: translate3d(30px, 0, 0) rotatex(90deg) rotatey(90deg);
+        }
+
+        .neck .left {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 30px;
+            height: 30px;
+            background-color: #94ae97;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform-origin: top left;
+            transform-origin: top left;
+            -webkit-transform: translate3d(0, 0, 0) rotatex(90deg) rotatey(90deg);
+            transform: translate3d(0, 0, 0) rotatex(90deg) rotatey(90deg);
+        }
+
+        .neck .top {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 30px;
+            height: 30px;
+            background-color: #a2b9a5;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform: translate3d(0, 0, 30px);
+            transform: translate3d(0, 0, 30px);
+        }
+
+        .neck .bottom {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 30px;
+            height: 30px;
+            background-color: #a2b9a5;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+
+        @-webkit-keyframes neck-animation {
+            0%,
+            100% {
+                -webkit-transform: translate3d(210px, 210px, 153px);
+                transform: translate3d(210px, 210px, 153px);
+            }
+            50% {
+                -webkit-transform: translate3d(210px, 210px, 150px);
+                transform: translate3d(210px, 210px, 150px);
+            }
+        }
+
+        @keyframes neck-animation {
+            0%,
+            100% {
+                -webkit-transform: translate3d(210px, 210px, 153px);
+                transform: translate3d(210px, 210px, 153px);
+            }
+            50% {
+                -webkit-transform: translate3d(210px, 210px, 150px);
+                transform: translate3d(210px, 210px, 150px);
+            }
+        }
+
+        .body {
+            -webkit-transform: translate3d(187.5px, 202.5px, 75px) rotate3d(0, 0, 0, 0);
+            transform: translate3d(187.5px, 202.5px, 75px) rotate3d(0, 0, 0, 0);
+            will-change: transform;
+            -webkit-animation: body-animation 1.5s ease infinite;
+            animation: body-animation 1.5s ease infinite;
+            -webkit-animation-delay: -0.75s;
+            animation-delay: -0.75s;
+        }
+
+        .body .front {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 75px;
+            height: 90px;
+            background-color: #B1C4B3;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform-origin: top center;
+            transform-origin: top center;
+            -webkit-transform: translate3d(0, 60px, 90px) rotatex(-90deg);
+            transform: translate3d(0, 60px, 90px) rotatex(-90deg);
+        }
+
+        .body .back {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 75px;
+            height: 90px;
+            background-color: #B1C4B3;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform-origin: top center;
+            transform-origin: top center;
+            -webkit-transform: translate3d(0, 0, 0) rotatex(90deg);
+            transform: translate3d(0, 0, 0) rotatex(90deg);
+        }
+
+        .body .right {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 60px;
+            height: 90px;
+            background-color: #94ae97;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform-origin: top left;
+            transform-origin: top left;
+            -webkit-transform: translate3d(75px, 0, 0) rotatex(90deg) rotatey(90deg);
+            transform: translate3d(75px, 0, 0) rotatex(90deg) rotatey(90deg);
+        }
+
+        .body .left {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 60px;
+            height: 90px;
+            background-color: #94ae97;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform-origin: top left;
+            transform-origin: top left;
+            -webkit-transform: translate3d(0, 0, 0) rotatex(90deg) rotatey(90deg);
+            transform: translate3d(0, 0, 0) rotatex(90deg) rotatey(90deg);
+        }
+
+        .body .top {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 75px;
+            height: 60px;
+            background-color: #a2b9a5;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform: translate3d(0, 0, 90px);
+            transform: translate3d(0, 0, 90px);
+        }
+
+        .body .bottom {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 75px;
+            height: 60px;
+            background-color: #a2b9a5;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+
+        @-webkit-keyframes body-animation {
+            0%,
+            100% {
+                -webkit-transform: translate3d(187.5px, 202.5px, 78px);
+                transform: translate3d(187.5px, 202.5px, 78px);
+            }
+            50% {
+                -webkit-transform: translate3d(187.5px, 202.5px, 75px);
+                transform: translate3d(187.5px, 202.5px, 75px);
+            }
+        }
+
+        @keyframes body-animation {
+            0%,
+            100% {
+                -webkit-transform: translate3d(187.5px, 202.5px, 78px);
+                transform: translate3d(187.5px, 202.5px, 78px);
+            }
+            50% {
+                -webkit-transform: translate3d(187.5px, 202.5px, 75px);
+                transform: translate3d(187.5px, 202.5px, 75px);
+            }
+        }
+
+        .left-hand {
+            -webkit-transform: translate3d(165px, 210px, 136.5px) rotate3d(0, 0, 0, 0);
+            transform: translate3d(165px, 210px, 136.5px) rotate3d(0, 0, 0, 0);
+            will-change: transform;
+            -webkit-animation: left-hand-animation 1.5s ease infinite;
+            animation: left-hand-animation 1.5s ease infinite;
+            -webkit-animation-delay: -0.75s;
+            animation-delay: -0.75s;
+        }
+
+        .left-hand .front {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 30px;
+            height: 30px;
+            background-color: #B1C4B3;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform-origin: top center;
+            transform-origin: top center;
+            -webkit-transform: translate3d(0, 135px, 30px) rotatex(-90deg);
+            transform: translate3d(0, 135px, 30px) rotatex(-90deg);
+        }
+
+        .left-hand .back {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 30px;
+            height: 30px;
+            background-color: #B1C4B3;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform-origin: top center;
+            transform-origin: top center;
+            -webkit-transform: translate3d(0, 0, 0) rotatex(90deg);
+            transform: translate3d(0, 0, 0) rotatex(90deg);
+        }
+
+        .left-hand .right {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 135px;
+            height: 30px;
+            background-color: #94ae97;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform-origin: top left;
+            transform-origin: top left;
+            -webkit-transform: translate3d(30px, 0, 0) rotatex(90deg) rotatey(90deg);
+            transform: translate3d(30px, 0, 0) rotatex(90deg) rotatey(90deg);
+        }
+
+        .left-hand .left {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 135px;
+            height: 30px;
+            background-color: #94ae97;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform-origin: top left;
+            transform-origin: top left;
+            -webkit-transform: translate3d(0, 0, 0) rotatex(90deg) rotatey(90deg);
+            transform: translate3d(0, 0, 0) rotatex(90deg) rotatey(90deg);
+        }
+
+        .left-hand .top {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 30px;
+            height: 135px;
+            background-color: #a2b9a5;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform: translate3d(0, 0, 30px);
+            transform: translate3d(0, 0, 30px);
+        }
+
+        .left-hand .bottom {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 30px;
+            height: 135px;
+            background-color: #a2b9a5;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+
+        @-webkit-keyframes left-hand-animation {
+            0%,
+            100% {
+                -webkit-transform: translate3d(165px, 210px, 139.5px);
+                transform: translate3d(165px, 210px, 139.5px);
+            }
+            50% {
+                -webkit-transform: translate3d(165px, 210px, 136.5px);
+                transform: translate3d(165px, 210px, 136.5px);
+            }
+        }
+
+        @keyframes left-hand-animation {
+            0%,
+            100% {
+                -webkit-transform: translate3d(165px, 210px, 139.5px);
+                transform: translate3d(165px, 210px, 139.5px);
+            }
+            50% {
+                -webkit-transform: translate3d(165px, 210px, 136.5px);
+                transform: translate3d(165px, 210px, 136.5px);
+            }
+        }
+
+        .right-hand {
+            -webkit-transform: translate3d(255px, 210px, 136.5px) rotate3d(0, 0, 0, 0);
+            transform: translate3d(255px, 210px, 136.5px) rotate3d(0, 0, 0, 0);
+            will-change: transform;
+            -webkit-animation: right-hand-animation 1.5s ease infinite;
+            animation: right-hand-animation 1.5s ease infinite;
+            -webkit-animation-delay: -0.75s;
+            animation-delay: -0.75s;
+        }
+
+        .right-hand .front {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 30px;
+            height: 30px;
+            background-color: #B1C4B3;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform-origin: top center;
+            transform-origin: top center;
+            -webkit-transform: translate3d(0, 135px, 30px) rotatex(-90deg);
+            transform: translate3d(0, 135px, 30px) rotatex(-90deg);
+        }
+
+        .right-hand .back {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 30px;
+            height: 30px;
+            background-color: #B1C4B3;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform-origin: top center;
+            transform-origin: top center;
+            -webkit-transform: translate3d(0, 0, 0) rotatex(90deg);
+            transform: translate3d(0, 0, 0) rotatex(90deg);
+        }
+
+        .right-hand .right {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 135px;
+            height: 30px;
+            background-color: #94ae97;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform-origin: top left;
+            transform-origin: top left;
+            -webkit-transform: translate3d(30px, 0, 0) rotatex(90deg) rotatey(90deg);
+            transform: translate3d(30px, 0, 0) rotatex(90deg) rotatey(90deg);
+        }
+
+        .right-hand .left {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 135px;
+            height: 30px;
+            background-color: #94ae97;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform-origin: top left;
+            transform-origin: top left;
+            -webkit-transform: translate3d(0, 0, 0) rotatex(90deg) rotatey(90deg);
+            transform: translate3d(0, 0, 0) rotatex(90deg) rotatey(90deg);
+        }
+
+        .right-hand .top {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 30px;
+            height: 135px;
+            background-color: #a2b9a5;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform: translate3d(0, 0, 30px);
+            transform: translate3d(0, 0, 30px);
+        }
+
+        .right-hand .bottom {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 30px;
+            height: 135px;
+            background-color: #a2b9a5;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+
+        @-webkit-keyframes right-hand-animation {
+            0%,
+            100% {
+                -webkit-transform: translate3d(255px, 210px, 139.5px);
+                transform: translate3d(255px, 210px, 139.5px);
+            }
+            50% {
+                -webkit-transform: translate3d(255px, 210px, 136.5px);
+                transform: translate3d(255px, 210px, 136.5px);
+            }
+        }
+
+        @keyframes right-hand-animation {
+            0%,
+            100% {
+                -webkit-transform: translate3d(255px, 210px, 139.5px);
+                transform: translate3d(255px, 210px, 139.5px);
+            }
+            50% {
+                -webkit-transform: translate3d(255px, 210px, 136.5px);
+                transform: translate3d(255px, 210px, 136.5px);
+            }
+        }
+
+        .left-leg {
+            -webkit-transform: translate3d(187.5px, 202.5px, 15px) rotate3d(0, 0, 0, 0);
+            transform: translate3d(187.5px, 202.5px, 15px) rotate3d(0, 0, 0, 0);
+            will-change: transform;
+            -webkit-animation: left-leg-animation 1.5s ease infinite;
+            animation: left-leg-animation 1.5s ease infinite;
+            -webkit-animation-delay: -0.75s;
+            animation-delay: -0.75s;
+        }
+
+        .left-leg .front {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 37.5px;
+            height: 90px;
+            background-color: #B1C4B3;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform-origin: top center;
+            transform-origin: top center;
+            -webkit-transform: translate3d(0, 60px, 90px) rotatex(-90deg);
+            transform: translate3d(0, 60px, 90px) rotatex(-90deg);
+        }
+
+        .left-leg .back {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 37.5px;
+            height: 90px;
+            background-color: #B1C4B3;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform-origin: top center;
+            transform-origin: top center;
+            -webkit-transform: translate3d(0, 0, 0) rotatex(90deg);
+            transform: translate3d(0, 0, 0) rotatex(90deg);
+        }
+
+        .left-leg .right {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 60px;
+            height: 90px;
+            background-color: #94ae97;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform-origin: top left;
+            transform-origin: top left;
+            -webkit-transform: translate3d(37.5px, 0, 0) rotatex(90deg) rotatey(90deg);
+            transform: translate3d(37.5px, 0, 0) rotatex(90deg) rotatey(90deg);
+        }
+
+        .left-leg .left {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 60px;
+            height: 90px;
+            background-color: #94ae97;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform-origin: top left;
+            transform-origin: top left;
+            -webkit-transform: translate3d(0, 0, 0) rotatex(90deg) rotatey(90deg);
+            transform: translate3d(0, 0, 0) rotatex(90deg) rotatey(90deg);
+        }
+
+        .left-leg .top {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 37.5px;
+            height: 60px;
+            background-color: #a2b9a5;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform: translate3d(0, 0, 90px);
+            transform: translate3d(0, 0, 90px);
+        }
+
+        .left-leg .bottom {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 37.5px;
+            height: 60px;
+            background-color: #a2b9a5;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+
+        @-webkit-keyframes left-leg-animation {
+            0%,
+            100% {
+                -webkit-transform: translate3d(187.5px, 202.5px, 18px);
+                transform: translate3d(187.5px, 202.5px, 18px);
+            }
+            50% {
+                -webkit-transform: translate3d(187.5px, 202.5px, 15px);
+                transform: translate3d(187.5px, 202.5px, 15px);
+            }
+        }
+
+        @keyframes left-leg-animation {
+            0%,
+            100% {
+                -webkit-transform: translate3d(187.5px, 202.5px, 18px);
+                transform: translate3d(187.5px, 202.5px, 18px);
+            }
+            50% {
+                -webkit-transform: translate3d(187.5px, 202.5px, 15px);
+                transform: translate3d(187.5px, 202.5px, 15px);
+            }
+        }
+
+        .right-leg {
+            -webkit-transform: translate3d(225px, 202.5px, 15px) rotate3d(0, 0, 0, 0);
+            transform: translate3d(225px, 202.5px, 15px) rotate3d(0, 0, 0, 0);
+            will-change: transform;
+            -webkit-animation: right-leg-animation 1.5s ease infinite;
+            animation: right-leg-animation 1.5s ease infinite;
+            -webkit-animation-delay: -0.75s;
+            animation-delay: -0.75s;
+        }
+
+        .right-leg .front {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 37.5px;
+            height: 90px;
+            background-color: #B1C4B3;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform-origin: top center;
+            transform-origin: top center;
+            -webkit-transform: translate3d(0, 60px, 90px) rotatex(-90deg);
+            transform: translate3d(0, 60px, 90px) rotatex(-90deg);
+        }
+
+        .right-leg .back {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 37.5px;
+            height: 90px;
+            background-color: #B1C4B3;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform-origin: top center;
+            transform-origin: top center;
+            -webkit-transform: translate3d(0, 0, 0) rotatex(90deg);
+            transform: translate3d(0, 0, 0) rotatex(90deg);
+        }
+
+        .right-leg .right {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 60px;
+            height: 90px;
+            background-color: #94ae97;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform-origin: top left;
+            transform-origin: top left;
+            -webkit-transform: translate3d(37.5px, 0, 0) rotatex(90deg) rotatey(90deg);
+            transform: translate3d(37.5px, 0, 0) rotatex(90deg) rotatey(90deg);
+        }
+
+        .right-leg .left {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 60px;
+            height: 90px;
+            background-color: #94ae97;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform-origin: top left;
+            transform-origin: top left;
+            -webkit-transform: translate3d(0, 0, 0) rotatex(90deg) rotatey(90deg);
+            transform: translate3d(0, 0, 0) rotatex(90deg) rotatey(90deg);
+        }
+
+        .right-leg .top {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 37.5px;
+            height: 60px;
+            background-color: #a2b9a5;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform: translate3d(0, 0, 90px);
+            transform: translate3d(0, 0, 90px);
+        }
+
+        .right-leg .bottom {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 37.5px;
+            height: 60px;
+            background-color: #a2b9a5;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+
+        @-webkit-keyframes right-leg-animation {
+            0%,
+            100% {
+                -webkit-transform: translate3d(225px, 202.5px, 18px);
+                transform: translate3d(225px, 202.5px, 18px);
+            }
+            50% {
+                -webkit-transform: translate3d(225px, 202.5px, 15px);
+                transform: translate3d(225px, 202.5px, 15px);
+            }
+        }
+
+        @keyframes right-leg-animation {
+            0%,
+            100% {
+                -webkit-transform: translate3d(225px, 202.5px, 18px);
+                transform: translate3d(225px, 202.5px, 18px);
+            }
+            50% {
+                -webkit-transform: translate3d(225px, 202.5px, 15px);
+                transform: translate3d(225px, 202.5px, 15px);
+            }
+        }
+
+        .left-boot {
+            -webkit-transform: translate3d(187.5px, 202.5px, 0px) rotate3d(0, 0, 0, 0);
+            transform: translate3d(187.5px, 202.5px, 0px) rotate3d(0, 0, 0, 0);
+            will-change: transform;
+            -webkit-animation: left-boot-animation 1.5s ease infinite;
+            animation: left-boot-animation 1.5s ease infinite;
+            -webkit-animation-delay: -0.75s;
+            animation-delay: -0.75s;
+        }
+
+        .left-boot .front {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 37.5px;
+            height: 22.5px;
+            background-color: #B1C4B3;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform-origin: top center;
+            transform-origin: top center;
+            -webkit-transform: translate3d(0, 75px, 22.5px) rotatex(-90deg);
+            transform: translate3d(0, 75px, 22.5px) rotatex(-90deg);
+        }
+
+        .left-boot .back {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 37.5px;
+            height: 22.5px;
+            background-color: #B1C4B3;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform-origin: top center;
+            transform-origin: top center;
+            -webkit-transform: translate3d(0, 0, 0) rotatex(90deg);
+            transform: translate3d(0, 0, 0) rotatex(90deg);
+        }
+
+        .left-boot .right {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 75px;
+            height: 22.5px;
+            background-color: #94ae97;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform-origin: top left;
+            transform-origin: top left;
+            -webkit-transform: translate3d(37.5px, 0, 0) rotatex(90deg) rotatey(90deg);
+            transform: translate3d(37.5px, 0, 0) rotatex(90deg) rotatey(90deg);
+        }
+
+        .left-boot .left {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 75px;
+            height: 22.5px;
+            background-color: #94ae97;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform-origin: top left;
+            transform-origin: top left;
+            -webkit-transform: translate3d(0, 0, 0) rotatex(90deg) rotatey(90deg);
+            transform: translate3d(0, 0, 0) rotatex(90deg) rotatey(90deg);
+        }
+
+        .left-boot .top {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 37.5px;
+            height: 75px;
+            background-color: #a2b9a5;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform: translate3d(0, 0, 22.5px);
+            transform: translate3d(0, 0, 22.5px);
+        }
+
+        .left-boot .bottom {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 37.5px;
+            height: 75px;
+            background-color: #a2b9a5;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+
+        @-webkit-keyframes left-boot-animation {
+            0%,
+            100% {
+                -webkit-transform: translate3d(187.5px, 202.5px, 3px);
+                transform: translate3d(187.5px, 202.5px, 3px);
+            }
+            50% {
+                -webkit-transform: translate3d(187.5px, 202.5px, 0px);
+                transform: translate3d(187.5px, 202.5px, 0px);
+            }
+        }
+
+        @keyframes left-boot-animation {
+            0%,
+            100% {
+                -webkit-transform: translate3d(187.5px, 202.5px, 3px);
+                transform: translate3d(187.5px, 202.5px, 3px);
+            }
+            50% {
+                -webkit-transform: translate3d(187.5px, 202.5px, 0px);
+                transform: translate3d(187.5px, 202.5px, 0px);
+            }
+        }
+
+        .right-boot {
+            -webkit-transform: translate3d(225px, 202.5px, 0px) rotate3d(0, 0, 0, 0);
+            transform: translate3d(225px, 202.5px, 0px) rotate3d(0, 0, 0, 0);
+            will-change: transform;
+            -webkit-animation: right-boot-animation 1.5s ease infinite;
+            animation: right-boot-animation 1.5s ease infinite;
+            -webkit-animation-delay: -0.75s;
+            animation-delay: -0.75s;
+        }
+
+        .right-boot .front {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 37.5px;
+            height: 22.5px;
+            background-color: #B1C4B3;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform-origin: top center;
+            transform-origin: top center;
+            -webkit-transform: translate3d(0, 75px, 22.5px) rotatex(-90deg);
+            transform: translate3d(0, 75px, 22.5px) rotatex(-90deg);
+        }
+
+        .right-boot .back {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 37.5px;
+            height: 22.5px;
+            background-color: #B1C4B3;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform-origin: top center;
+            transform-origin: top center;
+            -webkit-transform: translate3d(0, 0, 0) rotatex(90deg);
+            transform: translate3d(0, 0, 0) rotatex(90deg);
+        }
+
+        .right-boot .right {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 75px;
+            height: 22.5px;
+            background-color: #94ae97;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform-origin: top left;
+            transform-origin: top left;
+            -webkit-transform: translate3d(37.5px, 0, 0) rotatex(90deg) rotatey(90deg);
+            transform: translate3d(37.5px, 0, 0) rotatex(90deg) rotatey(90deg);
+        }
+
+        .right-boot .left {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 75px;
+            height: 22.5px;
+            background-color: #94ae97;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform-origin: top left;
+            transform-origin: top left;
+            -webkit-transform: translate3d(0, 0, 0) rotatex(90deg) rotatey(90deg);
+            transform: translate3d(0, 0, 0) rotatex(90deg) rotatey(90deg);
+        }
+
+        .right-boot .top {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 37.5px;
+            height: 75px;
+            background-color: #a2b9a5;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform: translate3d(0, 0, 22.5px);
+            transform: translate3d(0, 0, 22.5px);
+        }
+
+        .right-boot .bottom {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            display: block;
+            width: 37.5px;
+            height: 75px;
+            background-color: #a2b9a5;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            position: absolute;
+            box-sizing: border-box;
+            will-change: transform;
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+
+        @-webkit-keyframes right-boot-animation {
+            0%,
+            100% {
+                -webkit-transform: translate3d(225px, 202.5px, 3px);
+                transform: translate3d(225px, 202.5px, 3px);
+            }
+            50% {
+                -webkit-transform: translate3d(225px, 202.5px, 0px);
+                transform: translate3d(225px, 202.5px, 0px);
+            }
+        }
+
+        @keyframes right-boot-animation {
+            0%,
+            100% {
+                -webkit-transform: translate3d(225px, 202.5px, 3px);
+                transform: translate3d(225px, 202.5px, 3px);
+            }
+            50% {
+                -webkit-transform: translate3d(225px, 202.5px, 0px);
+                transform: translate3d(225px, 202.5px, 0px);
+            }
+        }
+
+        .head .front {
+            background-color: #B1C4B3;
+            background-image: linear-gradient(#422, #422);
+            background-repeat: no-repeat;
+            background-size: 50% 5%;
+            background-position: 50% 80%;
+        }
+
+        .head .front::before,
+        .head .front::after {
+            content: '';
+            position: absolute;
+            background-color: #eee;
+            background-image: linear-gradient(#eee, #eee), linear-gradient(#eee, #eee), linear-gradient(#000, #000);
+            background-position: 60% 60%, 30% 30%, 0 0;
+            background-size: 15% 15%, 30% 30%, 100% 100%;
+            background-repeat: no-repeat;
+            display: block;
+            width: 30%;
+            height: 30%;
+            top: 30%;
+            border-radius: 7.5px;
+        }
+
+        .head .front::before {
+            left: 10%;
+        }
+
+        .head .front::after {
+            left: 60%;
+        }
+
+        .left-leg {
+            -webkit-animation: left-leg-animation 3s ease infinite;
+            animation: left-leg-animation 3s ease infinite;
+        }
+
+        @keyframes left-leg-animation {
+            0%,
+            100% {
+                -webkit-transform: translate3d(187.5px, 211.5px, 15px) rotate3d(1, 0, 0, 5deg);
+                transform: translate3d(187.5px, 211.5px, 15px) rotate3d(1, 0, 0, 5deg);
+            }
+            50% {
+                -webkit-transform: translate3d(187.5px, 186px, 15px) rotate3d(1, 0, 0, -10deg);
+                transform: translate3d(187.5px, 186px, 15px) rotate3d(1, 0, 0, -10deg);
+            }
+        }
+
+        .right-leg {
+            -webkit-animation: right-leg-animation 3s ease infinite;
+            animation: right-leg-animation 3s ease infinite;
+            -webkit-animation-delay: -1.5s;
+            animation-delay: -1.5s;
+        }
+
+        @keyframes right-leg-animation {
+            0%,
+            100% {
+                -webkit-transform: translate3d(225px, 211.5px, 15px) rotate3d(1, 0, 0, 5deg);
+                transform: translate3d(225px, 211.5px, 15px) rotate3d(1, 0, 0, 5deg);
+            }
+            50% {
+                -webkit-transform: translate3d(225px, 186px, 15px) rotate3d(1, 0, 0, -10deg);
+                transform: translate3d(225px, 186px, 15px) rotate3d(1, 0, 0, -10deg);
+            }
+        }
+
+        .left-boot {
+            -webkit-animation: left-boot-animation 3s ease infinite;
+            animation: left-boot-animation 3s ease infinite;
+        }
+
+        @keyframes left-boot-animation {
+            0%,
+            100% {
+                -webkit-transform: translate3d(187.5px, 211.5px, 0);
+                transform: translate3d(187.5px, 211.5px, 0);
+            }
+            50% {
+                -webkit-transform: translate3d(187.5px, 186px, 0);
+                transform: translate3d(187.5px, 186px, 0);
+            }
+        }
+
+        .right-boot {
+            -webkit-animation: right-boot-animation 3s ease infinite;
+            animation: right-boot-animation 3s ease infinite;
+            -webkit-animation-delay: -1.5s;
+            animation-delay: -1.5s;
+        }
+
+        @keyframes right-boot-animation {
+            0%,
+            100% {
+                -webkit-transform: translate3d(225px, 211.5px, 0);
+                transform: translate3d(225px, 211.5px, 0);
+            }
+            50% {
+                -webkit-transform: translate3d(225px, 186px, 0);
+                transform: translate3d(225px, 186px, 0);
+            }
+        }
+
+        .grass-left .top,
+        .grass-right .top {
+            overflow: hidden;
+        }
+
+        .grass-left .top::before,
+        .grass-left .top::after,
+        .grass-right .top::before,
+        .grass-right .top::after {
+            position: absolute;
+            display: block;
+            content: '';
+            background: #184730;
+            width: 30px;
+            height: 30px;
+            top: 100%;
+            left: 10%;
+            box-shadow: 90px 112.5px 0 0 #184730, 45px 225px 0 0 #184730, 60px 337.5px 0 0 #184730;
+            -webkit-animation: grass-animation 60s ease infinite;
+            animation: grass-animation 60s ease infinite;
+            -webkit-animation-delay: -60s;
+            animation-delay: -60s;
+        }
+
+        .grass-left .top::after,
+        .grass-right .top::after {
+            -webkit-animation-delay: -30s;
+            animation-delay: -30s;
+        }
+
+        .grass-right .top::before {
+            -webkit-animation-delay: -37.5s;
+            animation-delay: -37.5s;
+        }
+
+        .grass-right .top::after {
+            -webkit-animation-delay: -7.5s;
+            animation-delay: -7.5s;
+        }
+
+        @-webkit-keyframes grass-animation {
+            0% {
+                top: 100%;
+            }
+            2.5% {
+                top: 95%;
+            }
+            5% {
+                top: 90%;
+            }
+            7.5% {
+                top: 85%;
+            }
+            10% {
+                top: 80%;
+            }
+            12.5% {
+                top: 75%;
+            }
+            15% {
+                top: 70%;
+            }
+            17.5% {
+                top: 65%;
+            }
+            20% {
+                top: 60%;
+            }
+            22.5% {
+                top: 55%;
+            }
+            25% {
+                top: 50%;
+            }
+            27.5% {
+                top: 45%;
+            }
+            30% {
+                top: 40%;
+            }
+            32.5% {
+                top: 35%;
+            }
+            35% {
+                top: 30%;
+            }
+            37.5% {
+                top: 25%;
+            }
+            40% {
+                top: 20%;
+            }
+            42.5% {
+                top: 15%;
+            }
+            45% {
+                top: 10%;
+            }
+            47.5% {
+                top: 5%;
+            }
+            50% {
+                top: 0%;
+            }
+            52.5% {
+                top: -5%;
+            }
+            55% {
+                top: -10%;
+            }
+            57.5% {
+                top: -15%;
+            }
+            60% {
+                top: -20%;
+            }
+            62.5% {
+                top: -25%;
+            }
+            65% {
+                top: -30%;
+            }
+            67.5% {
+                top: -35%;
+            }
+            70% {
+                top: -40%;
+            }
+            72.5% {
+                top: -45%;
+            }
+            75% {
+                top: -50%;
+            }
+            77.5% {
+                top: -55%;
+            }
+            80% {
+                top: -60%;
+            }
+            82.5% {
+                top: -65%;
+            }
+            85% {
+                top: -70%;
+            }
+            87.5% {
+                top: -75%;
+            }
+            90% {
+                top: -80%;
+            }
+            92.5% {
+                top: -85%;
+            }
+            95% {
+                top: -90%;
+            }
+            97.5% {
+                top: -95%;
+            }
+            100% {
+                top: -100%;
+            }
+        }
+
+        @keyframes grass-animation {
+            0% {
+                top: 100%;
+            }
+            2.5% {
+                top: 95%;
+            }
+            5% {
+                top: 90%;
+            }
+            7.5% {
+                top: 85%;
+            }
+            10% {
+                top: 80%;
+            }
+            12.5% {
+                top: 75%;
+            }
+            15% {
+                top: 70%;
+            }
+            17.5% {
+                top: 65%;
+            }
+            20% {
+                top: 60%;
+            }
+            22.5% {
+                top: 55%;
+            }
+            25% {
+                top: 50%;
+            }
+            27.5% {
+                top: 45%;
+            }
+            30% {
+                top: 40%;
+            }
+            32.5% {
+                top: 35%;
+            }
+            35% {
+                top: 30%;
+            }
+            37.5% {
+                top: 25%;
+            }
+            40% {
+                top: 20%;
+            }
+            42.5% {
+                top: 15%;
+            }
+            45% {
+                top: 10%;
+            }
+            47.5% {
+                top: 5%;
+            }
+            50% {
+                top: 0%;
+            }
+            52.5% {
+                top: -5%;
+            }
+            55% {
+                top: -10%;
+            }
+            57.5% {
+                top: -15%;
+            }
+            60% {
+                top: -20%;
+            }
+            62.5% {
+                top: -25%;
+            }
+            65% {
+                top: -30%;
+            }
+            67.5% {
+                top: -35%;
+            }
+            70% {
+                top: -40%;
+            }
+            72.5% {
+                top: -45%;
+            }
+            75% {
+                top: -50%;
+            }
+            77.5% {
+                top: -55%;
+            }
+            80% {
+                top: -60%;
+            }
+            82.5% {
+                top: -65%;
+            }
+            85% {
+                top: -70%;
+            }
+            87.5% {
+                top: -75%;
+            }
+            90% {
+                top: -80%;
+            }
+            92.5% {
+                top: -85%;
+            }
+            95% {
+                top: -90%;
+            }
+            97.5% {
+                top: -95%;
+            }
+            100% {
+                top: -100%;
+            }
+        }
+
+        .controls {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            margin-left: 10px;
+            margin-bottom: 10px;
+            background: rgba(125, 214, 232, 0.5);
+            border: rgba(64, 170, 191, 0.5) solid 1px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            line-height: 14px;
+            font-size: 12px;
+            opacity: 0.2;
+            transition: opacity 0.3s ease;
+        }
+
+        .controls>* {
+            vertical-align: middle;
+        }
+
+        .controls:hover {
+            opacity: 1;
+        }
+    </style>
+
+    <script>
+        function setX(x) {
+            document.documentElement.style.setProperty('--x-angle', x + 'deg');
+            document.getElementById("x-angle-r").value = x;
+            document.getElementById("x-angle-n").value = x;
+        }
+
+        function setZ(z) {
+            document.documentElement.style.setProperty('--z-angle', z + 'deg');
+            document.getElementById("z-angle-r").value = z;
+            document.getElementById("z-angle-n").value = z;
+        }
+
+        setX(65);
+        setZ(-24);</script>
+</body>
+
+</html>

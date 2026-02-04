@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Panda</title>
+</head>
+
+<body>
+    <div class="poe">
+        <div class="poe__shadow"></div>
+        <div class="poe__body"></div>
+        <div class="poe__neck"></div>
+        <div class="poe__hand poe__hand--left">
+            <div class="poe__toe poe__toe--left"></div>
+        </div>
+        <div class="poe__hand poe__hand--right">
+            <div class="poe__toe poe__toe--right"></div>
+        </div>
+        <div class="poe__leg poe__leg--left"></div>
+        <div class="poe__leg poe__leg--right"></div>
+        <div class="poe__tummy"></div>
+        <div class="poe__head">
+            <div class="poe__eye__dot poe__eye__dot--left">
+                <div class="poe__eye poe__eye--left"></div>
+            </div>
+            <div class="poe__eye__dot poe__eye__dot--right">
+                <div class="poe__eye poe__eye--right"></div>
+            </div>
+            <div class="poe__nose">
+                <div class="poe__nose__black"></div>
+                <div class="poe__mouth"></div>
+                <div class="poe__dot poe__dot-1"></div>
+                <div class="poe__dot poe__dot-2"></div>
+                <div class="poe__dot poe__dot-3"></div>
+                <div class="poe__dot poe__dot-4"></div>
+                <div class="poe__dot poe__dot-5"></div>
+                <div class="poe__dot poe__dot-6"></div>
+            </div>
+        </div>
+        <div class="poe__ear poe__ear--left"></div>
+        <div class="poe__ear poe__ear--right"></div>
+    </div>
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Pacifico");
+        *,
+        *::before,
+        *::after {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        *::before,
+        *::after {
+            content: '';
+            display: block;
+            position: absolute;
+        }
+
+        body {
+            background-color: white;
+            background-image: radial-gradient(#F5D657 0, #F6AD34 100%);
+            min-height: 100vh;
+            width: 100vw;
+            margin: 0;
+            padding: 0;
+            font-family: 'Pacifico', cursive;
+        }
+
+        body::before {
+            content: '';
+            display: block;
+            width: 100%;
+            position: absolute;
+            height: 40vh;
+            background: radial-gradient(#B61217 0%, #79080B 100%);
+            bottom: 0;
+        }
+
+        body::after {
+            content: '';
+            display: block;
+            width: 100%;
+            position: absolute;
+            height: 3vh;
+            background: #59030B;
+            bottom: 40vh;
+            z-index: -1;
+        }
+
+        .poe {
+            --size: 80vmin;
+            position: absolute;
+            width: var(--size);
+            height: var(--size);
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
+        .poe__shadow {
+            position: absolute;
+            bottom: -4%;
+            height: 15%;
+            width: 60%;
+            background: rgba(0, 0, 0, 0.1);
+            left: 20%;
+            border-radius: 100%;
+        }
+
+        .poe__body {
+            position: absolute;
+            border-radius: 50%;
+            width: 60%;
+            height: 60%;
+            top: 20%;
+            left: 20%;
+            background-color: #17130F;
+        }
+
+        .poe__neck {
+            position: absolute;
+            border-radius: 50%;
+            width: 36%;
+            height: 50%;
+            top: 6%;
+            left: 36%;
+            background-color: #17130F;
+            -webkit-transform: rotate(12deg);
+            transform: rotate(12deg);
+        }
+
+        .poe__leg {
+            position: absolute;
+            border-radius: 50%;
+            background-color: #17130F;
+        }
+
+        .poe__leg--left {
+            width: 20%;
+            height: 40%;
+            top: 59%;
+            left: 27%;
+            -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+        }
+
+        .poe__leg--left::before {
+            width: 90%;
+            height: 20%;
+            background: #17130F;
+            bottom: 0;
+            right: 17%;
+            border-radius: 100% 0% 70% 70% / 100% 100% 60% 60%;
+            -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+        }
+
+        .poe__leg--right {
+            width: 21%;
+            height: 40%;
+            top: 60%;
+            left: 47%;
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+
+        .poe__leg--right::before {
+            width: 90%;
+            height: 20%;
+            background: #17130F;
+            bottom: 0;
+            right: 10%;
+            border-radius: 100% 0 70% 70% / 100% 100% 60% 60%;
+        }
+
+        .poe__toe {
+            position: absolute;
+            border-radius: 50%;
+            height: 20%;
+            background-color: #17130F;
+            width: 50%;
+        }
+
+        .poe__toe--right {
+            bottom: -5%;
+            left: 26%;
+        }
+
+        .poe__toe--left {
+            bottom: -3%;
+            left: 30%;
+            -webkit-transform: rotate(-32deg);
+            transform: rotate(-32deg);
+        }
+
+        .poe__hand {
+            position: absolute;
+            border-radius: 50%;
+            background-color: #17130F;
+        }
+
+        .poe__hand--left {
+            width: 20%;
+            height: 60%;
+            top: 18%;
+            left: 19%;
+            -webkit-transform: rotate(22deg);
+            transform: rotate(22deg);
+        }
+
+        .poe__hand--right {
+            width: 25%;
+            height: 60%;
+            top: 23%;
+            right: 18%;
+            -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+        }
+
+        .poe__tummy {
+            position: absolute;
+            border-radius: 50%;
+            width: 45%;
+            height: 50%;
+            top: 35%;
+            left: 24%;
+            background-color: #E9EBE9;
+            background-image: radial-gradient(#E9EBE9 0, #c1c7c1 100%);
+        }
+
+        .poe__head {
+            position: absolute;
+            border-radius: 50%;
+            width: 31%;
+            height: 25%;
+            top: 4%;
+            left: 42%;
+            background-color: #E9EBE9;
+            background-image: radial-gradient(#E9EBE9 0, #c1c7c1 100%);
+            -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+        }
+
+        .poe__dot {
+            position: absolute;
+            border-radius: 50%;
+            width: 2%;
+            height: 2%;
+            background-color: #17130F;
+        }
+
+        .poe__dot-1 {
+            top: 56%;
+            left: 19%;
+        }
+
+        .poe__dot-2 {
+            top: 55%;
+            left: 25%;
+        }
+
+        .poe__dot-3 {
+            top: 54%;
+            left: 35%;
+        }
+
+        .poe__dot-4 {
+            top: 54%;
+            left: 65%;
+        }
+
+        .poe__dot-5 {
+            top: 56%;
+            left: 75%;
+        }
+
+        .poe__dot-6 {
+            top: 57%;
+            left: 83%;
+        }
+
+        .poe__nose {
+            position: absolute;
+            border-radius: 50%;
+            width: 38%;
+            height: 65%;
+            top: 34%;
+            left: 34%;
+            background-color: #E9EBE9;
+            background-image: radial-gradient(#E9EBE9 0, #dcdfdc 100%);
+            -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+        }
+
+        .poe__nose__black {
+            position: absolute;
+            border-radius: 50%;
+            width: 65%;
+            height: 25%;
+            top: 25%;
+            left: 20%;
+            background-color: #17130F;
+        }
+
+        .poe__mouth {
+            position: absolute;
+            border-radius: 50%;
+            width: 65%;
+            height: 3%;
+            top: 70%;
+            left: 20%;
+            background-color: #17130F;
+        }
+
+        .poe__eye {
+            position: absolute;
+            border-radius: 50%;
+            width: 42%;
+            height: 35%;
+            background-color: white;
+        }
+
+        .poe__eye::before {
+            width: 60%;
+            height: 60%;
+            background: radial-gradient(circle, black 0, black 30%, green 30%, #0a2a10 100%);
+            border-radius: 100%;
+            top: 35%;
+            -webkit-animation: eyes 2s infinite;
+            animation: eyes 2s infinite;
+        }
+
+        .poe__eye--left {
+            top: 38%;
+            left: 34%;
+        }
+
+        .poe__eye--right {
+            top: 30%;
+            left: 16%;
+        }
+
+        .poe__eye__dot {
+            position: absolute;
+            border-radius: 90% 20% 60% 60% / 70% 20% 60% 60%;
+            background-color: #17130F;
+            z-index: -1;
+        }
+
+        .poe__eye__dot--left {
+            width: 28%;
+            height: 43%;
+            left: 18%;
+            top: 13%;
+        }
+
+        .poe__eye__dot--right {
+            width: 25%;
+            height: 36%;
+            border-radius: 20% 70% 60% 90% / 20% 70% 60% 70%;
+            right: 18%;
+            top: 18%;
+        }
+
+        .poe__ear {
+            position: absolute;
+            border-radius: 50%;
+            width: 5%;
+            height: 5%;
+            background-color: #17130F;
+            z-index: -1;
+        }
+
+        .poe__ear--left {
+            top: 1.5%;
+            left: 49%;
+        }
+
+        .poe__ear--right {
+            top: 3.5%;
+            left: 65%;
+        }
+
+        @-webkit-keyframes eyes {
+            0%,
+            100% {
+                -webkit-transform: translateX(0);
+                transform: translateX(0);
+            }
+            50% {
+                -webkit-transform: translateX(20%);
+                transform: translateX(20%);
+            }
+        }
+
+        @keyframes eyes {
+            0%,
+            100% {
+                -webkit-transform: translateX(0);
+                transform: translateX(0);
+            }
+            50% {
+                -webkit-transform: translateX(20%);
+                transform: translateX(20%);
+            }
+        }
+    </style>
+</body>
+
+</html>

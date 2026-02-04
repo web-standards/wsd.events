@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>_ ___ ______?</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="shower/themes/ribbon/styles/styles.css">
+    <style>
+        .gray {
+            background-color: #808080;
+        }
+
+        .large {
+            line-height: 1.3;
+            font-size: 50px;
+        }
+
+        .large * + * {
+            margin-top: 0.7em;
+        }
+
+        .slide .times {
+            color: white;
+        }
+
+        .shower.full .slide.active .times {
+            animation-name: times;
+            animation-duration: 2s;
+        }
+
+        .spotlight {
+            width: 256px;
+            height: 256px;
+            border-radius: 50%;
+            box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes times {
+            from {
+                font-family: serif;
+            }
+            to {
+                font-family: 'PT Sans Narrow', sans-serif;
+            }
+        }
+    </style>
+</head>
+<body class="shower list">
+    <header class="caption">
+        <h1>_ ___ ______?</h1>
+        <p>Вадим Макеев, HTML Academy</p>
+    </header>
+
+    <section class="slide clear" id="cover">
+        <h2 class="shout">
+            _ ___ ______?
+        </h2>
+    </section>
+
+    <section class="slide clear">
+        <h2 class="shout" >
+            Я был неправ?
+        </h2>
+    </section>
+
+    <section class="slide clear">
+        <h2 class="shout" >
+            И что дальше?
+        </h2>
+    </section>
+
+    <section class="slide clear" style="background: #302683">
+		<a href="https://htmlacademy.ru/">
+            <img class="place" width="700"
+                 src="pictures/academy/logo.svg"
+                 alt="Логотип HTML Academy">
+        </a>
+        <img class="place next" style="margin: -100px 0 0 -350px" width="128" src="pictures/academy/1.svg" alt="">
+        <img class="place next" style="margin: 170px 0 0 65px" width="128" src="pictures/academy/2.svg" alt="">
+        <img class="place next" style="margin: -150px 0 0 300px" width="128" src="pictures/academy/3.svg" alt="">
+	</section>
+
+    <section class="slide clear">
+        <a href="https://itunes.apple.com/podcast/id1080500016">
+            <img class="place" width="80%"
+                 style="margin-top: 106px"
+                 src="pictures/podcast/logo.svg"
+                 alt="Веб-стандарты">
+        </a>
+        <img class="cover"
+             src="pictures/podcast/hosts.jpg"
+             alt="Лёша, Оля и Вадим записывают подкаст">
+	</section>
+
+    <section class="slide">
+        <h2>Используйте системные</h2>
+        <pre>
+            <code>body {</code>
+            <code>    font-family: -apple-system, BlinkMacSystemFont,</code>
+            <code>    'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',</code>
+            <code>    'Helvetica Neue', Arial, sans-serif,</code>
+            <code>    'Apple Color Emoji', 'Segoe UI Emoji',</code>
+            <code>    'Segoe UI Symbol';</code>
+            <code>}</code>
+        </pre>
+        <svg class="place next" width="1024" height="576" viewBox="0 0 16 9" style="pointer-events: none">
+            <line x1="0" y1="0" x2="16" y2="9" stroke="#c00" stroke-width="0.1" />
+        </svg>
+    </section>
+
+    <section class="slide black clear">
+        <figure>
+            <video class="cover width" cover="pictures/video/awesome.png" loop muted autoplay>
+                <source type="video/webm" src="pictures/video/awesome.webm">
+                <source type="video/mp4" src="pictures/video/awesome.mp4">
+            </video>
+            <figcaption class="copyright white">
+                <a href="https://codepen.io/mandymichael/pen/vYYLByj">Mandy Michael</a>
+            </figcaption>
+        </figure>
+        <svg class="place next" width="1024" height="576" viewBox="0 0 16 9" style="pointer-events: none">
+            <line x1="0" y1="0" x2="16" y2="9" stroke="#c00" stroke-width="0.1" />
+        </svg>
+    </section>
+
+    <section class="slide clear">
+        <img class="cover" src="pictures/old/before.jpg" alt="Рекламный листок с обычными шрифтами">
+    </section>
+
+    <section class="slide clear">
+        <img class="cover" src="pictures/old/after.jpg" alt="Рекламный листок с красивыми шрифтами">
+    </section>
+
+    <section class="slide clear">
+        <h2 class="shout">
+            70% сайтов со шрифтами
+        </h2>
+    </section>
+
+    <section class="slide black clear">
+        <h2 class="shout times">
+            Дизайн
+        </h2>
+    </section>
+
+    <section class="slide clear gray">
+        <img class="place" width="800" src="pictures/substitute.png" alt="Photoshop предлагает заменить шрифт">
+    </section>
+
+    <section class="slide clear">
+        <img class="cover" src="pictures/design/preview.png" alt="Обычный макет с перечёркнутыми буквами">
+    </section>
+
+    <section class="slide clear">
+        <img class="cover" src="pictures/design/zoomed.png" alt="Крупный макет с перечёркнутыми буквами">
+        <img class="place next" width="256" src="pictures/idiotos/kiwi.png" alt="Волосатый киви">
+        <p class="copyright"><a href="https://www.instagram.com/sashalvo/">Саша Львова</a></p>
+    </section>
+
+    <section class="slide black clear">
+        <h2 class="shout times">
+            Сабсеттинг
+        </h2>
+    </section>
+
+    <section class="slide clear">
+        <img class="cover" src="pictures/lp.png" alt="Сайт подкаста LP">
+    </section>
+
+    <section class="slide clear">
+        <h2 class="shout">
+            611
+        </h2>
+        <img class="cover" src="pictures/glyphs/full.png" alt="Полный репертуар глифов шрифта">
+    </section>
+
+    <section class="slide clear">
+        <h2 class="shout">
+            254
+        </h2>
+        <img class="cover" src="pictures/glyphs/latin.png" alt="Сабсет латиницы из шрифта">
+        <p class="place bottom">Сабсет латиницы</p>
+    </section>
+
+    <section class="slide clear">
+        <h2 class="shout">
+            186
+        </h2>
+        <img class="cover" src="pictures/glyphs/latin-extended.png" alt="Сабсет расширенной латиницы из шрифта">
+        <p class="place bottom">Сабсет расширенной латиницы</p>
+    </section>
+
+    <section class="slide clear">
+        <h2 class="shout">
+            131
+        </h2>
+        <img class="cover" src="pictures/glyphs/cyrillic.png" alt="Сабсет кириллицы из шрифта">
+        <p class="place bottom">Сабсет кириллицы</p>
+    </section>
+
+    <section class="slide">
+        <h2>
+            DIN Condensed
+        </h2>
+        <table class="striped">
+        <col width="35%">
+        <col width="20%">
+        <col width="15%">
+        <col width="15%">
+        <col width="15%">
+        <tr>
+            <th></th>
+            <th>Глифы</th>
+            <th>TTF</th>
+            <th>WOFF</th>
+            <th>WOFF2</th>
+        </tr>
+        <tr>
+            <th>Полный</th>
+            <td>611</td>
+            <td>115</td>
+            <td>50</td>
+            <td>36</td>
+        </tr>
+        <tr>
+            <th>Латиница</th>
+            <td>254</td>
+            <td>45</td>
+            <td>21</td>
+            <td>16</td>
+        </tr>
+        <tr>
+            <th>Латиница+</th>
+            <td>186</td>
+            <td>24</td>
+            <td>12</td>
+            <td>9</td>
+        </tr>
+        <tr>
+            <th>Кириллица</th>
+            <td>131</td>
+            <td>27</td>
+            <td>13</td>
+            <td>10</td>
+        </tr>
+        </table>
+        <p></p>
+    </section>
+
+    <section class="slide">
+        <h2>Glyphhanger</h2>
+        <pre>
+            <code>npm install -g <mark>glyphhanger</mark></code>
+            <code>glyphhanger <mark>--whitelist=…</mark> --subset=*.ttf --formats=ttf</code>
+        </pre>
+        <ol>
+            <li>din-latin.ttf</li>
+            <li>din-latin-extended.ttf</li>
+            <li>din-cyrillic.ttf</li>
+        </ol>
+    </section>
+
+    <section class="slide black clear">
+        <h2 class="shout times">
+            Конвертация
+        </h2>
+    </section>
+
+    <section class="slide clear">
+        <img class="cover" src="pictures/squirrel.png" alt="Страница сервиса Font Squirrel">
+    </section>
+
+    <section class="slide black clear">
+        <figure>
+            <video class="cover width" cover="pictures/video/homer.jpg" muted onclick="this.play()">
+                <source type="video/webm" src="pictures/video/homer.webm">
+                <source type="video/mp4" src="pictures/video/homer.mp4">
+            </video>
+            <figcaption class="copyright white">
+                © Matt Groening
+            </figcaption>
+        </figure>
+    </section>
+
+    <section class="slide clear">
+        <img class="cover" src="pictures/brew.png" alt="Homebrew">
+        <img class="place left next" width="256" src="pictures/homer.png" alt="Гомер с кружкой пива">
+    </section>
+
+    <section class="slide">
+        <h2>Web font tools</h2>
+        <pre>
+            <code>brew tap bramstein/webfonttools</code>
+            <code>brew install woff2 sfnt2woff-zopfli</code>
+            <code><mark>woff2_compress</mark> din.ttf               <span class="comment">>> din.woff2</span></code>
+            <code><mark>sfnt2woff-zopfli</mark> din.ttf             <span class="comment">>> din.woff</span></code>
+        </pre>
+        <p class="next">
+            А ещё у вас появятся <code>woff2_decompress</code> и <code>woff2sfnt-zopfli</code>,<br>
+            чтобы разжимать файлы обратно, если нужно.
+        </p>
+    </section>
+
+    <section class="slide black clear">
+        <h2 class="shout times">
+            Подключение
+        </h2>
+    </section>
+
+    <section class="slide">
+        <h2>
+            Google Fonts
+        </h2>
+        <pre>
+            <code>&lt;link rel="stylesheet"</code>
+            <code>    href="https://fonts.googleapis.com/css?</code>
+            <code>    <mark>family</mark>=Roboto:400,400i,700&amp;</code>
+            <code>    <mark>subset</mark>=cyrillic&amp;<mark>text</mark>=Logo&amp;</code>
+            <code>    <mark>display</mark>=swap"&gt;</code>
+        </pre>
+        <p class="next">
+            <code>&lt;link rel="dns-prefetch"&gt;</code> и
+            <code>&lt;link rel="preconnect"&gt;</code>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>
+            Adobe Fonts (Typekit)
+        </h2>
+        <pre>
+            <code>&lt;link rel="stylesheet"</code>
+            <code>    href="https://use.typekit.net/<mark>idy4xgk.css</mark>"&gt;</code>
+        </pre>
+        <p>
+            <code>&lt;link rel="dns-prefetch"&gt;</code> и
+            <code>&lt;link rel="preconnect"&gt;</code>
+        </p>
+    </section>
+
+    <section class="slide clear">
+        <img class="cover" src="pictures/webfont-helper.png"
+            alt="Настройка шрифта Roboto в Google Webfonts Helper">
+        <div class="place spotlight next" style="
+            width: 512px;
+            height: 512px;
+            margin: 390px 0 0 350px
+        "></div>
+    </section>
+
+    <section class="slide">
+        <h2>
+            Старьё
+        </h2>
+        <pre style="font-size: 16px">
+            <code><mark>@font-face</mark> {</code>
+            <code>    font-family: 'DIN Condensed';</code>
+            <code>    src: url('din.<mark>eot</mark>');</code>
+            <code>    src: url('din.<mark>eot?#iefix</mark>') format('embedded-opentype'),</code>
+            <code class="mark">         url('din.woff2') format('woff2'),</code>
+            <code class="mark">         url('din.woff') format('woff'),</code>
+            <code>         url('din.<mark>ttf</mark>') format('truetype'),</code>
+            <code>         url('din.<mark>svg#din</mark>') format('svg');</code>
+            <code>    font-weight: bold;</code>
+            <code>    font-style: normal;</code>
+            <code>}</code>
+        </pre>
+        <img class="place next" width="250" style="margin: 140px 0 0 150px"
+            src="pictures/browsers/ie8.png" alt="Internet Explorer 8">
+        <img class="place next" width="220" style="margin: 132px 0 0 340px"
+            src="pictures/browsers/safari.png" alt="Safari 5">
+    </section>
+
+    <section class="slide">
+        <h2>
+            Новьё
+        </h2>
+        <pre>
+            <code><mark>@font-face</mark> {</code>
+            <code>    font-family: 'DIN Condensed';</code>
+            <code>    font-style: normal;</code>
+            <code>    font-weight: bold;</code>
+            <code class="mark">    src: url('din.woff2') format('woff2'),</code>
+            <code class="mark">         url('din.woff') format('woff');</code>
+            <code>}</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <ol class="large place">
+            <li>WOFF2</li>
+            <li>WOFF</li>
+        </ol>
+        <div class="place spotlight next" style="
+            width: 380px;
+            height: 380px;
+            margin-left: -25px;
+        "></div>
+    </section>
+
+    <section class="slide">
+        <h2>
+            Локальные
+        </h2>
+        <pre>
+            <code><mark>@font-face</mark> {</code>
+            <code>    font-family: 'DIN Condensed';</code>
+            <code class="mark">    src: local('DINCondensed-Bold'),</code>
+            <code class="mark">         local('DIN Condensed Bold'),</code>
+            <code>         url('din.woff2') format('woff2'),</code>
+            <code>         url('din.woff') format('woff');</code>
+            <code>}</code>
+        </pre>
+        <img class="place next" width="256"
+            style="margin: 20px 0 0 325px"
+            src="pictures/idiotos/date.png"
+            alt="Грустный финик">
+        <p class="copyright"><a href="https://www.instagram.com/sashalvo/">Саша Львова</a></p>
+    </section>
+
+    <section class="slide">
+        <h2>
+            Латиница
+        </h2>
+        <pre>
+            <code><mark>@font-face</mark> {</code>
+            <code>    font-family: 'DIN Condensed';</code>
+            <code>    font-style: normal;</code>
+            <code>    font-weight: bold;</code>
+            <code class="mark">    src: url('din-latin.woff2') format('woff2'),</code>
+            <code class="mark">         url('din-latin.woff') format('woff');</code>
+            <code><span class="comment">✂️------------------------</span>︎</span></code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>
+            Латиница
+        </h2>
+        <pre>
+            <code><span class="comment">------------------------✂️</span></code>
+            <code>    <mark>unicode-range:</mark></code>
+            <code>        U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC,</code>
+            <code>        U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074,</code>
+            <code>        U+20AC, U+2122, U+2191, U+2193, U+2212,</code>
+            <code>        U+2215, U+FEFF, U+FFFD;</code>
+            <code>}</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>
+            Расширенная латиница
+        </h2>
+        <pre>
+            <code><mark>@font-face</mark> {</code>
+            <code>    font-family: 'DIN Condensed';</code>
+            <code>    font-style: normal;</code>
+            <code>    font-weight: bold;</code>
+            <code class="mark">    src: url('din-latin-extended.woff2') format('woff2'),</code>
+            <code class="mark">         url('din-latin-extended.woff') format('woff');</code>
+            <code><span class="comment">✂️------------------------</span>︎</span></code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>
+            Расширенная латиница
+        </h2>
+        <pre>
+            <code><span class="comment">------------------------✂️</span></code>
+            <code>    <mark>unicode-range:</mark></code>
+            <code>        U+0100-024F, U+0259, U+1E00-1EFF, U+2020,</code>
+            <code>        U+20A0-20AB, U+20AD-20CF, U+2113,</code>
+            <code>        U+2C60-2C7F, U+A720-A7FF;</code>
+            <code>}</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>
+            Кириллица
+        </h2>
+        <pre>
+            <code><mark>@font-face</mark> {</code>
+            <code>    font-family: 'DIN Condensed';</code>
+            <code>    font-style: normal;</code>
+            <code>    font-weight: bold;</code>
+            <code class="mark">    src: url('din-cyrillic.woff2') format('woff2'),</code>
+            <code class="mark">         url('din-cyrillic.woff') format('woff');</code>
+            <code><span class="comment">✂️------------------------</span>︎</span></code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>
+            Кириллица
+        </h2>
+        <pre>
+            <code><span class="comment">------------------------✂️</span></code>
+            <code>    <mark>unicode-range:</mark></code>
+            <code>        U+0400-045F, U+0490-0491,</code>
+            <code>        U+04B0-04B1, U+2116;</code>
+            <code>}</code>
+        </pre>
+    </section>
+
+    <section class="slide black clear">
+        <h2 class="shout times">
+            Загрузка
+        </h2>
+    </section>
+
+    <section class="slide">
+        <h2>
+            Как работают шрифты
+        </h2>
+        <ol>
+            <li class="next">Загружаем и парсим HTML, находим стили</li>
+            <li class="next">Загружаем стили, находим шрифты</li>
+            <li class="next">Сравниваем стили и текст, решаем какие шрифты нужны</li>
+            <li class="next">Загружаем шрифты</li>
+            <li class="next"><strong>Рисуем интерфейс</strong></li>
+        </ol>
+        <img class="place next" width="256"
+            style="margin: 140px 0 0 300px"
+            src="pictures/idiotos/donut.png"
+            alt="Радостная пышка">
+        <p class="copyright">
+            <a href="https://www.instagram.com/sashalvo/">Саша Львова</a>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>
+            Google Fonts
+        </h2>
+        <pre>
+            <code>&lt;link rel="stylesheet"</code>
+            <code>    href="https://fonts.googleapis.com/css?</code>
+            <code>    family=Roboto:400,400i,700&amp;</code>
+            <code>    subset=cyrillic&amp;text=Logo&amp;</code>
+            <code>    <mark>display=swap</mark>"&gt;</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>
+            Подсказка
+        </h2>
+        <pre>
+            <code><mark>@font-face</mark> {</code>
+            <code>    font-family: 'DIN Condensed';</code>
+            <code>    <mark>font-display: swap;</mark></code>
+            <code>    src: url('din.woff2') format('woff2'),</code>
+            <code>         url('din.woff') format('woff');</code>
+            <code>}</code>
+        </pre>
+    </section>
+
+    <section class="slide clear">
+        <img class="place" height="400" src="pictures/font-display.png" alt="Сравнение значений свойства font-display">
+        <p class="copyright">
+            <a href="https://font-display.glitch.me/">Monica Dinculescu</a>
+        </p>
+    </section>
+
+    <section class="slide black clear">
+        <figure>
+            <video class="cover height" muted
+                cover="pictures/video/frontendconf.png"
+                onclick="this.play()">
+                <source type="video/webm"
+                    src="pictures/video/frontendconf.webm">
+                <source type="video/mp4"
+                    src="pictures/video/frontendconf.mp4">
+            </video>
+            <figcaption class="copyright white">
+                <a href="https://www.instagram.com/sashalvo/">Саша Львова</a>
+            </figcaption>
+        </figure>
+        <img class="place right next" width="150"
+            style="margin: 15px 100px 0 0"
+            src="pictures/idiotos/banana.png"
+            alt="Грустный банан">
+    </section>
+
+    <section class="slide clear">
+        <h2 class="shout">FOIT</h2>
+    </section>
+
+    <section class="slide black clear">
+        <figure>
+            <img class="place left next" height="576" src="pictures/webpage/fc-content.png" alt="Сайт FrontendConf на 5.3 секунды">
+            <img class="place next" height="576" src="pictures/webpage/fc-giveup.png" alt="Сайт FrontendConf на 8.4 секунды">
+            <img class="place right next" height="576" src="pictures/webpage/fc-font.png" alt="Сайт FrontendConf на 9.7 секунды">
+            <figcaption class="copyright white">
+                <a href="https://www.webpagetest.org/video/compare.php?tests=191014_1M_d1c0adce3e60f7fad55fef292a2204a2-r:1-c:0">WebPage Test</a>
+            </figcaption>
+        </figure>
+    </section>
+
+    <section class="slide">
+        <h2>
+            Предзагрузка рано
+        </h2>
+        <pre>
+            <code>&lt;link rel="preload" href="rubik-<mark>regular-latin</mark>.woff2"</code>
+            <code>      as="<mark>font</mark>" type="<mark>font/woff2</mark>"</code>
+            <code>      crossorigin&gt;</code>
+            <code>&lt;link rel="preload" href="rubik-<mark>regular-cyrillic</mark>.woff2"</code>
+            <code>      as="<mark>font</mark>" type="<mark>font/woff2</mark>"</code>
+            <code>      crossorigin&gt;</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <img class="cover" src="pictures/faux.png"
+            alt="Сравнение настоящих и фальшивых начертаний">
+    </section>
+
+    <section class="slide black clear">
+        <h2 class="shout times">
+            Стилизация
+        </h2>
+    </section>
+
+    <section class="slide">
+        <h2>
+            Прямое начертание
+        </h2>
+        <pre>
+            <code>@font-face {</code>
+            <code class="mark">    font-family: 'Rubik';</code>
+            <code>    font-style: <mark>normal</mark>;</code>
+            <code>    font-weight: <mark>normal</mark>;</code>
+            <code>    src: url('rubik-<mark>regular</mark>.woff2') format('woff2'),</code>
+            <code>         url('rubik-<mark>regular</mark>.woff') format('woff');</code>
+            <code>}</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>
+            Курсивное начертание
+        </h2>
+        <pre>
+            <code>@font-face {</code>
+            <code class="mark">    font-family: 'Rubik';</code>
+            <code>    font-style: <mark>italic</mark>;</code>
+            <code>    font-weight: normal;</code>
+            <code>    src: url('rubik-<mark>italic</mark>.woff2') format('woff2'),</code>
+            <code>         url('rubik-<mark>italic</mark>.woff') format('woff');</code>
+            <code>}</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>
+            Полужирное начертание
+        </h2>
+        <pre>
+            <code>@font-face {</code>
+            <code class="mark">    font-family: 'Rubik';</code>
+            <code>    font-style: normal;</code>
+            <code>    font-weight: <mark>bold</mark>;</code>
+            <code>    src: url('rubik-<mark>bold</mark>.woff2') format('woff2'),</code>
+            <code>         url('rubik-<mark>bold</mark>.woff') format('woff');</code>
+            <code>}</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>
+            Использование
+        </h2>
+        <pre>
+            <code>body {</code>
+            <code>    font-family: '<mark>Rubik</mark>', sans-serif;</code>
+            <code>}</code>
+            <code>h2 {</code>
+            <code>    font-weight: <mark>bold</mark>;</code>
+            <code>}</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>
+            Фолбэк на общий тип шрифта
+        </h2>
+        <pre>
+            <code>body {</code>
+            <code>    font-family: 'Rubik', <mark class="important">sans-serif;</mark></code>
+            <code>    font-family: 'Georgia', <mark class="important">serif;</mark></code>
+            <code>    font-family: 'Fira Code', <mark class="important">monospace;</mark></code>
+            <code>}</code>
+        </pre>
+    </section>
+
+    <section class="slide black clear">
+        <img class="place" width="512" src="pictures/idiotos/dragon.png" alt="Злобный фрукт-дракон">
+        <p class="copyright white"><a href="https://www.instagram.com/sashalvo/">Саша Львова</a></p>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout">Спасибо!</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Ссылки</h2>
+        <ul>
+            <li><a href="https://github.com/filamentgroup/glyphhanger">Glyphhanger</a> и <a href="https://github.com/bramstein/homebrew-webfonttools">Web font tools</a></li>
+            <li><a href="https://meowni.ca/font-style-matcher/">Font style matcher</a></li>
+            <li><a href="https://font-display.glitch.me/">Font-display playground</a></li>
+            <li><a href="https://vimeo.com/241111413">Fontastic Web Performance</a></li>
+            <li><a href="https://youtu.be/FbguhX3n3Uc">The 5 Ys of Web Font Loading Perf</a></li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout">
+            <a href="https://twitter.com/pepelsbey">@pepelsbey</a>
+        </h2>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout">
+            <a href="https://sokr.me/waf">sokr.me/waf</a>
+        </h2>
+    </section>
+
+    <footer class="badge">
+        <a href="https://github.com/shower/shower">Сделано в Шовере</a>
+    </footer>
+
+    <div class="progress"></div>
+
+    <script src="shower/shower.min.js"></script>
+</body>
+</html>

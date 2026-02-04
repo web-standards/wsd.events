@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Семь Будущих Чудес CSS -- Сэм Булатов</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="shower/themes/ribbon/styles/styles.css">
+  <link rel="stylesheet" href="assets/styles/index.css">
+</head>
+<body class="shower list custom-scrollbar">
+
+  <header class="caption">
+    <h1>Семь Будущих Чудес CSS</h1>
+    <p>
+      <a href="https://twitter.com/_stylesam">Сэм Булатов</a>,
+      <a href="https://firstmk.ru">Первая Мониторинговая Компания</a>
+    </p>
+  </header>
+
+  <section class="slide">
+    <h2 class='shout'>Семь будущих чудес CSS</h2>
+  </section>
+
+  <section class="slide clear">
+    <img class='place left me' src="assets/images/sam.jpg" alt="">
+    <div class="about-me-list place right">
+      <h3>Сэм Булатов</h3>
+      <ul>
+        <li>Frontend разработчик в <a href="https://firstmk.ru">Первой Мониторинговой компании</a> над <a href="https://waliot.com">Waliot</a></li>
+        <li>Люблю CSS</li>
+        <li>и еще спецификации :)</li>
+      </ul>
+    </div>
+    <!-- <img class='place right waliot-logo' src="assets/images/logos/logotype1.svg" alt="Waliot" width='300px'> -->
+    <img class='stylesam-logo place right top' src="assets/images/logos/stylesam.svg" alt="Stylesam Logo">
+  </section>
+
+  <section class="slide kdd-section black clear">
+    <h2>Krasnodar Dev Days</h2>
+    <div class="kdd-wrap">
+      <div class="kdd-logos">
+        <img src="assets/images/logos/kdd.svg" alt="Krasnodar Dev Days">
+        <img src="assets/images/logos/kf.svg" alt="Krasnodar Frontend Meetup">
+        <img src="assets/images/logos/kb.svg" alt="Krasnodar Backend Meetup">
+      </div>
+  
+      <div class="kdd-links">
+        <ul>
+          <li><a href="http://t.me/krddevdays_chat">@krddevdays_chat</a></li>
+          <li><a href="http://t.me/krdfrontend">@krdfrontend</a></li>
+          <li><a href="http://t.me/krdbackend">@krdbackend</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <h2 class="shout">Спецификации?</h2>
+  </section>
+
+  <section class="slide">
+    <img class='place' src="assets/images/csswg-1.jpeg" alt="Рабочая группа CSS: состав">
+    <img class='place next' src="assets/images/csswg-2.jpeg" alt="Рабочая группа CSS: митинг">
+
+    <p class='place bottom next csswg-link'>
+      <a href="https://twitter.com/csswg" style='color: white;'>@csswg</a>
+    </p>
+  </section>
+
+  <section class="slide clear">
+    <img class='place' src="assets/images/drafts-csswg.png" alt="Сайт черновиков спецификаций CSS">
+
+    <div class="note-container flex place bottom next">
+      <a href="https://drafts.csswg.org/">CSS Working Group Editors Drafts</a>
+    </div>
+  </section>
+
+  <section class="slide clear">
+    <img class='place' src="assets/images/current-work.csswg.png" alt="Основной сайт CSS">
+
+    <div class="note-container flex place bottom next">
+      <a href="http://w3.org/Style/CSS/current-work">CSS Working Group</a>
+    </div>
+  </section>
+
+  <section class="slide">
+    <table class='simple place spec-levels'>
+      <tr>
+        <td class='fpwd'>FPWD</td>
+        <td class='level-definition'>First Public Working Draft</td>
+      </tr>
+      <tr>
+        <td class='wd'>WD</td>
+        <td class='level-definition'>Working Draft</td>
+      </tr>
+      <tr>
+        <td class='cr'>CR</td>
+        <td class='level-definition'>Candidate Recommendation</td>
+      </tr>
+      <tr>
+        <td class='pr'>PR</td>
+        <td class='level-definition'>Proposed Recommendation</td>
+      </tr>
+      <tr>
+        <td class='rec'>REC</td>
+        <td class='level-definition'>W3C Recommendation</td>
+      </tr>
+      <tr>
+        <td class='spsd'>SPSD</td>
+        <td class='level-definition'>Superseded Recommendation</td>
+      </tr>
+    </table>
+
+    <div class="note-container flex place bottom next">
+      <a href="https://www.w3.org/2019/Process-20190301/">World Wide Web Consortium Process Document</a>
+    </div>
+  </section>
+
+  <section class="slide clear black" id='roadmap'>
+		<h2 class="shout">Roadmap</h2>
+		<img class='place top left roadmap-bg' src="assets/images/roadmap.png" aria-hidden='true'>
+  </section>
+  
+  <section class="slide clear">
+    <img class='place' src="assets/images/platforms/mozilla-platform-status.png" alt="Firefox Platform Status">
+
+    <div class="note-container is-firefox-status platform-statuses flex place bottom next">
+      <a href="https://platform-status.mozilla.org/">Mozilla Firefox Platform Status</a>
+    </div>
+  </section>
+
+  <section class="slide clear">
+    <img class='place' src="assets/images/platforms/chromeplatform-status.png" alt="Google Chrome Platform Status">
+
+    <div class="note-container is-chrome-status platform-statuses flex place bottom next">
+      <a href="https://www.chromestatus.com/features">Google Chrome Platform Status</a>
+    </div>
+  </section>
+
+  <section class="slide clear">
+    <img class='place' src="assets/images/platforms/webKit-feature-status.png" alt="Firefox Platform Status">
+
+    <div class="note-container is-safari-status platform-statuses flex place bottom next">
+      <a href="https://webkit.org/status/">Webkit Feature Status</a>
+    </div>
+  </section>
+
+  <section class="slide clear">
+    <img class='place' src="assets/images/platforms/microsoft-edge-development.png" alt="Firefox Platform Status">
+
+    <div class="note-container is-edge-status platform-statuses flex place bottom next">
+      <a title='https://developer.microsoft.com/en-us/microsoft-edge/platform/status/' href="https://developer.microsoft.com/en-us/microsoft-edge/platform/status/">Microsoft Edge Platform Status</a>
+    </div>
+  </section>
+
+  <section class="slide w3c">
+    <h2 class="shout">Вы можете помочь!</h2>
+  </section>
+
+  <section class='slide w3c-github'>
+    <h2 class="shout"><a href="https://github.com/w3c/csswg-drafts">Репозиторий с черновиками рабочей группы CSS</a></h2>
+  </section>
+
+  <section class="slide motion-path-cover">
+    <h2 class="shout">Motion Path Module: Level 1</h2>
+    <img class='plane place top left' src="assets/images/icons/plane.svg" alt="Самолет">
+  </section>
+
+  <section class="slide">
+    <pre class='place' style="width: 88%;">
+      <code>.car {</code>
+      <code class='next'>  offset-path: path('M490,100 l 115,0 l 30,460 l -80,0 l 0,-300 q-70,-70 -76,-110 z');</code>
+      <code class='next'>  offset-distance: 0;</code>
+      <code class='next'>  offset-rotate: auto 90deg;</code>
+      <code >}</code>
+    </pre>
+  </section>
+
+  <section class="slide clear motion-path-demo">
+    <div>
+      <svg id='path' viewBox="0 0 1280 720" class='place top left path-visualize next' width='1280px'>
+      <path
+      id='path'
+      stroke="#5a00ff"
+      stroke-width="4"
+      fill="transparent"
+      d="M490,100 l115,0 l30,460 l-80,0 l0,-300 q-70,-70 -76,-110 z" />
+    </svg>
+    <img class='place top left map' src="assets/images/map.png" alt="Карта">
+    <img class='next car place top left' src="assets/images/icons/car.svg" alt="Машина">
+    </div>
+  </section>
+
+  <section class="slide">
+    <pre>
+      <code>.car {</code>
+      <code class='next'>  animation: move 8s linear infinite;</code>
+      <code>}</code>
+      <div class="next">
+      <code>@keyframes move {</code>
+      <code>  from { offset-distance: 0; }</code>
+      <code>  to { offset-distance: 100%; }</code>
+      <code>}</code>
+      </div>
+    </pre>
+  </section>
+
+  <section class="slide motion-path-demo-2 clear">
+    <svg id='path' viewBox="0 0 1280 720" class='place top left path-visualize next' width='1280px'>
+      <path
+        id='path'
+        stroke="#5a00ff"
+        stroke-width="4"
+        fill="transparent"
+        d="M490,100 l115,0 l30,460 l-80,0 l0,-300 q-70,-70 -76,-110 z" />
+    </svg>
+    <img class='place top left map' src="assets/images/map.png" alt="Карта">
+    <img class='next car place top left' src="assets/images/icons/car.svg" alt="Машина">
+  </section>
+
+  <section class="slide">
+    <table>
+			<tr>
+				<th>Edge</th>
+				<th>Firefox</th>
+				<th>Chrome</th>
+				<th>Safari</th>
+			</tr>
+			<tr>
+				<td class='unsupported'>16</td>
+				<td class='unsupported'>63</td>
+				<td class='supported'>71</td>
+				<td class='unsupported'>11</td>
+			</tr>
+			<tr>
+				<td class='unsupported'>17</td>
+				<td class='unsupported'>64</td>
+				<td class='supported'>72</td>
+				<td class='unsupported'>11.1</td>
+			</tr>
+			<tr class='stable'>
+				<td class='unsupported'>18</td>
+				<td class='unsupported'>65</td>
+				<td class='supported'>72</td>
+				<td class='unsupported'>12</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td class='unsupported'>66</td>
+				<td class='supported'>73</td>
+				<td class='unsupported'>TP</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td class='unsupported'>67</td>
+				<td class='supported'>74+</td>
+				<td></td>
+			</tr>
+    </table>
+    
+    <a class='place bottom' href="https://caniuse.com/#feat=css-motion-paths">Подробнее на Can I use</a>
+  </section>
+
+  <section class="slide">
+    <h2 class="shout"><a href="https://www.w3.org/TR/motion-1/">CSS Motion Path Module: Level 1</a></h2>
+  </section>
+
+  <section class="slide" id='css-shapes-cover'>
+		<div class="wrap">
+			<div class="shape"></div>
+			<h2 class="shout">CSS Shapes Module Level 1</h2>
+		</div>
+  </section>
+  
+  <section class="slide element-diagram">
+		<img src="assets/images/diagrams/diagram.svg" class='diagram'>
+
+		<ul class='element-diagram-points'>
+			<li class='next'>
+				<code>A (0, 0)</code>
+			</li>
+			<li class='next'>
+				<code>B (100%, 0)</code>
+			</li>
+			<li class='next'>
+				<code>C (100%, 100%)</code>
+			</li>
+			<li class='next'>
+				<code>D (0, 100%)</code>
+			</li>
+			<li class='next'>
+				<code>E (50%, 50%)</code>
+			</li>
+		</ul>
+  </section>
+  
+  <section class="slide">
+		<pre class='place'>
+			<code>.shape {</code>
+			<code>	float: left;</code>
+			<code>}</code>
+		</pre>
+	</section>
+
+	<section class="slide" id='css-shape-demo'>
+    <div class="demo-shape"></div>
+		<p class='small-font-size'>The shape is extracted and computed based on the alpha channel of the specified image as defined by shape-image-threshold.</p>
+
+		<p class='small-font-size'>User agents must use the potentially CORS-enabled fetch method defined by the [HTML5] specification for all URLs in a shape-outside value. When fetching, user agents must use "Anonymous" mode, set the referrer source to the stylesheet’s URL and set the origin to the URL of the containing document. If this results in network errors such that there is no valid fallback image, the effect is as if the value none had been specified.</p>
+	</section>
+
+	<section class="slide">
+		<pre class='place'>
+			<code>.shape {</code>
+			<code>	float: left;</code>
+			<code>	<mark>shape-outside</mark>: circle(50% at 50% 50%);</code>
+			<code>}</code>
+		</pre>
+	</section>
+
+	<section class="slide" id='css-shape-demo-2'>
+    <div class="demo-shape circled"></div>
+		<p class='small-font-size'>The shape is extracted and computed based on the alpha channel of the specified image as defined by shape-image-threshold.</p>
+
+		<p class='small-font-size'>User agents must use the potentially CORS-enabled fetch method defined by the [HTML5] specification for all URLs in a shape-outside value. When fetching, user agents must use "Anonymous" mode, set the referrer source to the stylesheet’s URL and set the origin to the URL of the containing document. If this results in network errors such that there is no valid fallback image, the effect is as if the value none had been specified.</p>
+	</section>
+
+	<section class="slide">
+		<pre class='small-font-size'>
+			<code>.shape {</code>
+			<code>	float: left;</code>
+			<code>	shape-outside: <mark>polygon</mark>(
+		50% 0%,
+		100% 25%,
+		100% 75%,
+		50% 100%,
+		0% 75%,
+		0% 25%
+	);</code>
+			<code>}</code>
+		</pre>
+	</section>
+
+	<section class="slide" id='css-shape-demo-3'>
+		<div class="demo-shape circled"></div>
+
+		<p>User agents must use the potentially CORS-enabled fetch method defined by the [HTML5] specification for all URLs in a shape-outside value. When fetching, user agents must use "Anonymous" mode, set the referrer source to the stylesheet’s URL and set the origin to the URL of the containing document. If this results in network errors such that there is no valid fallback image, the effect is as if the value none had been specified.URL and set the origin to the URL of the containing document. If this results in network errors such that there is no valid fallback image, the effect is as if the value none had been specified.URL and set the origin to the URL of the containing document. If this results in network errors such that there is no valid fallback image, the effect is as if the value none had been specified.URL and set the origin to the URL of the containing document. If this results in network errors such that there is no valid fallback image, the effect is as if the value none had been specified.URL and set the origin to the URL of the containing document. If this results in network errors such that there is no valid fallback image, the effect is as if the value none had been specified.URL and set the origin to the URL of the containing document. If this results in network errors such that there is no valid fallback image, the effect is as if the value none had been specified.URL and set the origin to the URL of the containing document. If this results in network errors such that there is no valid fallback image, the effect is as if the value none had been specified.URL and set the origin to the URL of the containing document. If this results in network errors such that there is no valid fallback image, the effect is as if the value none had been specified.URL and set the origin to the URL of the containing document. If this results in network errors such that there is no valid fallback image, the effect is as if the value none had been specified.</p>
+  </section>
+
+  <section class="slide">
+    <table>
+			<tr>
+				<th>Edge</th>
+				<th>Firefox</th>
+				<th>Chrome</th>
+				<th>Safari</th>
+			</tr>
+			<tr>
+				<td class='unsupported'>16</td>
+				<td class='supported'>63</td>
+				<td class='supported'>71</td>
+				<td class='supported'>11</td>
+			</tr>
+			<tr>
+				<td class='unsupported'>17</td>
+				<td class='supported'>64</td>
+				<td class='supported'>72</td>
+				<td class='supported'>11.1</td>
+			</tr>
+			<tr class='stable'>
+				<td class='unsupported'>18</td>
+				<td class='supported'>65</td>
+				<td class='supported'>72</td>
+				<td class='supported'>12</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td class='supported'>66</td>
+				<td class='supported'>73</td>
+				<td class='supported'>TP</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td class='supported'>67</td>
+				<td class='supported'>74+</td>
+				<td></td>
+			</tr>
+    </table>
+
+    <a class='place bottom' href="https://caniuse.com/#feat=css-shapes">CSS Shapes - Can I use</a>
+  </section>
+
+  <section class="slide">
+    <h2 class="shout"><a href="https://drafts.csswg.org/css-shapes-1">CSS Shapes Module: Level 1</a></h2>
+    <div class="demo-shape demo-shape--spec place right"></div>
+  </section>
+
+  <section class="slide">
+    <h2 class="shout" style='writing-mode: vertical-rl;transform: translate(-290px, -190px);'>
+      CSS Writing Modes: Level 3
+    </h2>
+  </section>
+
+  <section class="slide" id='block-flow'>
+		<div class="row">
+			<div class="col block-flow-demo">
+				<div>
+					As Rising Seas Erode Shorelines, Tasmania Shows What Can Be Lost
+				</div>
+				<div class='next'>
+					Champions League: Cristiano Ronaldo
+				</div>
+				<div class='next'>
+					<code>...</code>
+				</div>
+
+			</div>
+			<div class="col block-flow-direction">
+				<div class="block-flow-arrow next">
+					<img src="assets/images/icons/block-arrow.svg">
+					<p>Block Flow</p>
+				</div>
+			</div>
+		</div>
+  </section>
+  
+  <section class="slide">
+		<p>
+			<span>CSS Writing Modes Level 3 defines CSS support for various international</span>
+			<span class='next'>writing modes, such as left-to-right (e.g. Latin or Indic), right-to-left (e.g.</span>
+			<span class='next'>Hebrew or Arabic), bidirectional (e.g. mixed Latin and Arabic) and vertical (e.g. Asian scripts).</span>
+		</p>
+		<p>
+			<div class="text-flow-arrow next">
+				<p>Text Flow</p>
+				<img src="assets/images/icons/text-arrow.svg">
+			</div>
+		</p>
+  </section>
+  
+  <section class="slide centered" id='flow'>
+		<div class="flow">
+			<img class='block-flow-image' src="assets/images/icons/block-arrow.svg">
+			<img class='text-flow-image' src="assets/images/icons/text-arrow.svg">
+		</div>
+  </section>
+  
+  <section class="slide" id='arabic-demo'>
+		<div class="row">
+			<div class="col" style='flex-basis: 80%;'>
+				<img src="assets/images/arabic.jpg">
+			</div>
+			<div class="col next">
+				<div class="flow">
+          <img class='text-flow-image' src="assets/images/icons/text-arrow.svg">
+					<img class='block-flow-image' src="assets/images/icons/block-arrow.svg">
+				</div>
+			</div>
+    </div>
+
+		<footer class="footer">
+			<p class="note">Анкета для подачи на Визу в Иордании</p>
+		</footer>
+  </section>
+  
+  <section class="slide" id='japanese-demo'>
+    <div class="row">
+      <div class="col">
+        <img src="assets/images/nisekoi.jpg">
+      </div>
+      <div class="col next">
+        <div class="flow">
+          <img class='block-flow-image' src="assets/images/icons/block-arrow.svg">
+          <img class='text-flow-image' src="assets/images/icons/text-arrow.svg">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide centered">
+    <pre>
+      <code>&lt;article&gt;</code>
+      <code>	&lt;h2&gt;はだかの王さま&lt;/h2&gt;</code>
+      <code>	&lt;p&gt;城のまわりには町が広がっていました。...&lt;/p&gt;</code>
+      <code>&lt;/article&gt;</code>
+    </pre>
+
+    <article class='next'>
+      <h2>はだかの王さま</h2>
+      <p>
+        城のまわりには町が広がっていました。とても大きな町で、いつも活気に満ちていました。世界中のあちこちから知らない人が毎日、おおぜいやって来ます。
+      </p>
+    </article>
+  </section>
+
+  <section class="slide">
+    <pre class='place'>
+      <code>article {</code>
+      <code>	writing-mode: <mark>vertical-rl</mark>;</code>
+      <code>}</code>
+    </pre>
+  </section>
+
+  <section class="slide" id='css-writing-mode-demo'>
+    <article>
+      <h2>はだかの王さま</h2>
+      <p>
+        城のまわりには町が広がっていました。とても大きな町で、いつも活気に満ちていました。世界中のあちこちから知らない人が毎日、おおぜいやって来ます。
+      </p>
+    </article>
+  </section>
+
+  <section class="slide">
+    <table>
+      <tr>
+        <th>Edge</th>
+        <th>Firefox</th>
+        <th>Chrome</th>
+        <th>Safari</th>
+      </tr>
+      <tr>
+        <td class='supported'>16</td>
+        <td class='supported'>63</td>
+        <td class='supported'>71</td>
+        <td class='supported'>11</td>
+      </tr>
+      <tr>
+        <td class='supported'>17</td>
+        <td class='supported'>64</td>
+        <td class='supported'>72</td>
+        <td class='supported'>11.1</td>
+      </tr>
+      <tr class='stable'>
+        <td class='supported'>18</td>
+        <td class='supported'>65</td>
+        <td class='supported'>72</td>
+        <td class='supported'>12</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class='supported'>66</td>
+        <td class='supported'>73</td>
+        <td class='supported'>TP</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class='supported'>67</td>
+        <td class='supported'>74+</td>
+        <td></td>
+      </tr>
+    </table>
+
+    <a class='place bottom' href="https://caniuse.com/#feat=css-writing-mode">Подробнее на Can I use</a>
+  </section>
+
+  <section class="slide">
+    <select id="css-writing-mode-select" class='select'>
+      <option value="horizontal-tb">horizontal-tb</option>
+      <option value="vertical-rl">vertical-rl</option>
+      <option value="vertical-lr">vertical-lr</option>
+      <option value="sideways-rl">sideways-rl</option>
+      <option value="sideways-lr">sideways-lr</option>
+    </select>
+
+    <h2 class="shout css-writing-mode-title-demo"><a href="https://www.w3.org/TR/css-writing-modes-3">CSS Writing Modes: Level 3</a></h2>
+
+    <script>
+      let select = document.querySelector('#css-writing-mode-select'),
+          title = document.querySelector('.css-writing-mode-title-demo')
+
+      select.addEventListener('change', event => {
+        title.style.setProperty('writing-mode', event.target.value)
+      })
+    </script>
+  </section>
+
+  <section class="slide">
+    <h2 class="shout">
+      CSS Logical Properties and Values: Level 1
+    </h2>
+  </section>
+
+  <section class="slide logical-props-demo clear">
+    <article class='logical-props-demo-1'>
+      <h2>はだかの王さま</h2>
+      <p>
+        城のまわりには町が広がっていました。とても大きな町で、いつも活気に満ちていました。世界中のあちこちから知らない人が毎日、おおぜいやって来ます。
+      </p>
+    </article>
+
+    <article class='logical-props-demo-2 next'>
+      <h2>はだかの王さま</h2>
+      <p>
+        城のまわりには町が広がっていました。とても大きな町で、いつも活気に満ちていました。世界中のあちこちから知らない人が毎日、おおぜいやって来ます。
+      </p>
+    </article>
+  </section>
+
+  <section class="slide">
+    <div class="place box-scheme-for-latin box-scheme-for-latin-logical">
+
+      <p>A criminal pleads insanity after getting into trouble again and once in the mental institution rebels against the oppressive nurse and rallies up the scared patients.</p>
+      <p>A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.</p>
+
+      <span class='block-start'><strong>block-start</strong></span>
+      <span class='inline-start next'><strong>inline-start</strong></span>
+      <span class='block-end next'><strong>block-end</strong></span>
+      <span class='inline-end next'><strong>inline-end</strong></span>
+    </div>
+  </section>
+
+  <section class="slide">
+    <h2>Размеры</h2>
+    <table class='simple left-alignment'>
+      <tr>
+        <th>Физическое свойство</th>
+        <th>Логическое свойство</th>
+      </tr>
+      <tr>
+        <td>width</td>
+        <td>inline-size</td>
+      </tr>
+      <tr>
+        <td>height</td>
+        <td>block-size</td>
+      </tr>
+      <tr>
+        <td>min-width</td>
+        <td>min-inline-size</td>
+      </tr>
+      <tr>
+        <td>max-width</td>
+        <td>max-inline-size</td>
+      </tr>
+      <tr>
+        <td>min-height</td>
+        <td>min-block-size</td>
+      </tr>
+      <tr>
+        <td>max-height</td>
+        <td>max-block-size</td>
+      </tr>
+    </table>
+  </section>
+
+  <section class="slide">
+    <h2>Отступы</h2>
+    <table class='simple left-alignment'>
+      <tr>
+        <th>Физическое свойство</th>
+        <th>Логическое свойство</th>
+      </tr>
+      <tr>
+        <td>margin-top</td>
+        <td>margin-block-start</td>
+      </tr>
+      <tr>
+        <td>margin-bottom</td>
+        <td>margin-block-end</td>
+      </tr>
+      <tr>
+        <td>margin-left</td>
+        <td>margin-inline-start</td>
+      </tr>
+      <tr>
+        <td>margin-right</td>
+        <td>margin-inline-end</td>
+      </tr>
+    </table>
+  </section>
+
+  <section class="slide logical-props-demo logical-props-demo--right clear">
+    <article class='logical-props-demo-1'>
+      <h2>はだかの王さま</h2>
+      <p>
+        城のまわりには町が広がっていました。とても大きな町で、いつも活気に満ちていました。世界中のあちこちから知らない人が毎日、おおぜいやって来ます。
+      </p>
+    </article>
+
+    <article class='logical-props-demo-2 next'>
+      <h2>はだかの王さま</h2>
+      <p>
+        城のまわりには町が広がっていました。とても大きな町で、いつも活気に満ちていました。世界中のあちこちから知らない人が毎日、おおぜいやって来ます。
+      </p>
+    </article>
+  </section>
+
+  <section class="slide">
+      <h2>Позиционирование</h2>
+      <table class='simple left-alignment'>
+        <tr>
+          <th>Физическое свойство</th>
+          <th>Логическое свойство</th>
+        </tr>
+        <tr>
+          <td>top</td>
+          <td>inset-block-start</td>
+        </tr>
+        <tr>
+          <td>bottom</td>
+          <td>inset-block-end</td>
+        </tr>
+        <tr>
+          <td>left</td>
+          <td>inset-inline-start</td>
+        </tr>
+        <tr>
+          <td>right</td>
+          <td>inset-inline-end</td>
+        </tr>
+      </table>
+  </section>
+
+  <section class="slide">
+    <pre class='place'>
+      <code>.absolute {</code>
+      <code>	position: absolute;</code>
+      <code class='next'>	inset-block-start: 0;</code>
+      <code class='next'>	inset-inline-start: 0;</code>
+      <code>}</code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h2 class="shout" style='font-size: 100px;'><a href="https://drafts.csswg.org/css-logical/">CSS Logical Properties and Values: Level 1</a></h2>
+    <a class='place bottom' href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties">CSS_Logical_Properties</a>
+  </section>
+
+  <section class="slide">
+      <table>
+        <tr>
+          <th>Edge</th>
+          <th>Firefox</th>
+          <th>Chrome</th>
+          <th>Safari</th>
+        </tr>
+        <tr>
+          <td class='unsupported'>16</td>
+          <td class='supported'>63</td>
+          <td class='supported'>71</td>
+          <td class='partial'>11</td>
+        </tr>
+        <tr>
+          <td class='unsupported'>17</td>
+          <td class='supported'>64</td>
+          <td class='supported'>72</td>
+          <td class='partial'>11.1</td>
+        </tr>
+        <tr class='stable'>
+          <td class='unsupported'>18</td>
+          <td class='supported'>65</td>
+          <td class='supported'>72</td>
+          <td class='partial'>12</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class='supported'>66</td>
+          <td class='supported'>73</td>
+          <td class='supported'>TP</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class='supported'>67</td>
+          <td class='supported'>74+</td>
+          <td></td>
+        </tr>
+      </table>
+  
+      <a class='place bottom' href="https://caniuse.com/#feat=css-writing-mode">Подробнее на Can I use</a>
+    </section>
+
+
+  <section class="slide centered" id='css-composing-mode'>
+    <h2 class='shout'>Composing and Blending Level 1</h2>
+  </section>
+
+  <section class="slide clear">
+    <img class='mixer-image place' src="assets/images/wonderwoman-3.jpg">
+    <div class="mixer-color place next"></div>
+  </section>
+
+  <section class="slide">
+    <pre class='place'>
+      <code>.mixer-color {</code>
+      <code>	mix-blend-mode: <mark>multiply</mark>;</code>
+      <code>}</code>
+    </pre>
+  </section>
+
+  <section class="slide clear">
+    <img class='mixer-image place' src="assets/images/wonderwoman-3.jpg">
+    <div class="mixer-color place next" style="mix-blend-mode: multiply;"></div>
+  </section>
+
+  <!-- #ef6b8e -->
+
+  <section class="slide multiply-colors-demo" style='background-color: rgb(239, 107, 142);'>
+    <div class="multiply-colors place">
+      <div class="color">
+        <code>239, 107, 142</code>
+      </div>
+      <div class="operator">*</div>
+      <div class="color next">
+        <code>0, 255, 255</code>
+      </div>
+      <div class="operator">=</div>
+      <div class="color next">
+        <code>0, 107, 142</code>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide  centered clear" id='blendmode-demo'>
+    <img class='logo-difference place' src="assets/images/logos/wsd.svg" alt="Web Standarts Days Logo">
+    <div class="scaling-circle next"></div>
+  </section>
+
+  <section class="slide">
+    <pre class='place'>
+      <code>.wsd-logo {</code>
+      <code>	mix-blend-mode: <mark>difference</mark>;</code>
+      <code>}</code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <blockquote class='place'>Вычитает более темный из более светлого в контексте двух цветов</blockquote>
+  </section>
+
+  <section class="slide multiply-colors-demo">
+    <div class="multiply-colors place">
+      <div class="color">
+        <code style='color: black'>255, 255, 255</code>
+      </div>
+      <div class="operator">-</div>
+      <div class="color next">
+        <code>0, 0, 255</code>
+      </div>
+      <div class="operator">=</div>
+      <div class="color next">
+        <code style='color: black'>255, 255, 0</code>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide black clear" id='blendmode-demo-2'>
+    <div class="circles place next">
+      <div class="circle circle-1"></div>
+      <div class="circle circle-2"></div>
+      <div class="circle circle-3"></div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <pre class='place'>
+      <code>.circle {</code>
+      <code>	mix-blend-mode: <mark>screen</mark>;</code>
+      <code>}</code>
+    </pre>
+
+    <footer class="footer">
+      <p>&lt;blend-mode&gt; умножает цвета</p>
+    </footer>
+  </section>
+
+  <section class="slide clear" id='blendmode-demo-3'>
+    <div class="step zero-step">
+      <div class="circle circle-1"></div>
+      <div class="circle circle-3"></div>
+    </div>
+
+    <div class="step first-step next">
+      <div class="circle circle-1"></div>
+      <div class="circle circle-3"></div>
+    </div>
+
+    <div class="step second-step next">
+      <div class="circle circle-1"></div>
+      <div class="circle circle-3"></div>
+    </div>
+
+    <div class="step third-step next">
+      <div class="elipse"></div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <h2>Несколько демок</h2>
+    <ul>
+      <li>
+        <a href="https://codepen.io/alexzaworski/full/bZkxLG/">Ghosty text with mix-blend-mode/text-shadow</a>
+      </li>
+      <li>
+        <a href="https://codepen.io/arthurcamara1/full/QgKjov/">Animated logo with CSS + mix-blend-mode</a>
+      </li>
+      <li>
+        <a href="https://codepen.io/ajerez/full/bdwxMQ/">Candy crash blend mode</a>
+      </li>
+      <li>
+        <a href="https://codepen.io/jasesmith/full/dpPBGR/">Dark Star Pinwheel</a>
+      </li>
+      <li>
+        <b><a href="https://codepen.io/iAmNathanJ/full/pvLQJY/">CSS Parallax</a></b>
+      </li>
+      <li>
+        <b><a href="https://codepen.io/dudleystorey/full/XJppvR/">Fashion Visualisation with mix-blend-mode</a></b>
+      </li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <table>
+      <tr>
+        <th>Edge</th>
+        <th>Firefox</th>
+        <th>Chrome</th>
+        <th>Safari</th>
+      </tr>
+      <tr>
+        <td class='unsupported'>16</td>
+        <td class='supported'>63</td>
+        <td class='supported'>71</td>
+        <td class='partial'>11</td>
+      </tr>
+      <tr>
+        <td class='unsupported'>17</td>
+        <td class='supported'>64</td>
+        <td class='supported'>72</td>
+        <td class='partial'>11.1</td>
+      </tr>
+      <tr class='stable'>
+        <td class='unsupported'>18</td>
+        <td class='supported'>65</td>
+        <td class='supported'>72</td>
+        <td class='partial'>12</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class='supported'>66</td>
+        <td class='supported'>73</td>
+        <td class='partial'>TP</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class='supported'>67</td>
+        <td class='supported'>74+</td>
+        <td></td>
+      </tr>
+    </table>
+
+    <a class='place bottom' href="https://caniuse.com/#feat=css-mixblendmode">Подробнее на Can I use</a>
+  </section>
+
+  <sections class="slide composing-blending-demo clear">
+    <h2 class="shout"><a href="https://www.w3.org/TR/compositing-1/">Composing and Blending: Level 1</a></h2>
+  </sections>
+
+  <section class="slide">
+    <h2 class="shout">CSS Scroll Snap Module: Level 1</h2>
+  </section>
+
+  <section class="slide">
+    <pre class='place'>
+      <code>.container {</code>
+      <code>  scroll-snap-type: <mark>y mandatory</mark>;</code>
+      <code>}</code>
+      <div class='next'>
+        <code>.container section {</code>
+        <code>  scroll-snap-align: center;</code>
+        <code>}</code>
+      </div>
+    </pre>
+  </section>
+
+  <section class="slide clear">
+    <select id="scroll-snap-type-select" class='place top select'>
+      <option value="mandatory">mandatory</option>
+      <option value="proximity">proximity</option>
+    </select>
+    <div class="scroll-snap-demo place custom-scrollbar">
+      <section class="ss-item">
+        <h2>Section 1</h2>
+      </section>    
+      <section class="ss-item">
+        <h2>Section 2</h2>
+      </section>    
+      <section class="ss-item">
+        <h2>Section 3</h2>
+      </section>
+    </div>
+    <script>
+      let scrollSnapTypeSelect = document.querySelector('#scroll-snap-type-select'),
+        scrollSnapDemo = document.querySelector('.scroll-snap-demo')
+
+        scrollSnapTypeSelect.addEventListener('change', event => {
+          scrollSnapDemo.style.setProperty('scroll-snap-type', `y ${event.target.value}`)
+        })
+    </script>
+  </section>
+
+  <section class="slide">
+    <table>
+      <tr>
+        <th>Edge</th>
+        <th>Firefox</th>
+        <th>Chrome</th>
+        <th>Safari</th>
+      </tr>
+      <tr>
+        <td class='partial'>16</td>
+        <td class='partial'>63</td>
+        <td class='supported'>71</td>
+        <td class='supported'>11</td>
+      </tr>
+      <tr>
+        <td class='partial'>17</td>
+        <td class='partial'>64</td>
+        <td class='supported'>72</td>
+        <td class='supported'>11.1</td>
+      </tr>
+      <tr class='stable'>
+        <td class='partial'>18</td>
+        <td class='partial'>65</td>
+        <td class='supported'>72</td>
+        <td class='supported'>12</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class='partial'>66</td>
+        <td class='supported'>73</td>
+        <td class='supported'>TP</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class='partial'>67</td>
+        <td class='supported'>74+</td>
+        <td></td>
+      </tr>
+    </table>
+
+    <a class='place bottom' href="https://caniuse.com/#feat=css-snappoints">Подробнее на Can I use</a>
+  </section>
+
+  <section class="slide">
+    <h2 class="shout"><a href="https://drafts.csswg.org/css-scroll-snap-1/">CSS Scroll snap Module: Level 1</a></h2>
+  </section>
+
+  <section class="slide">
+    <h2 class="shout">
+      CSS Typed Object Model: Level 1
+    </h2>
+  </section>
+
+  <section class="slide">
+    <pre class="place">
+        <code>let el = document.querySelector('.el');</code>
+        <code class='next'>el.style.opacity = 1</code>
+        <code class='next'>console.log(el.style.opacity) <span class='comment'>// "1"</span></code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <pre class='place'>
+			<code>let el = document.querySelector('.el');</code>
+      <code class='next'>let styleMap = el.attributeStyleMap;</code>
+      <code class='next'>styleMap.set('opacity', 1);</code>
+			<code class='next'>console.log( styleMap.get('opacity') );</code>
+			<code class='next comment'>// CSSUnitValue { value: 1, unit: "number" }</code>
+		</pre>
+  </section>
+
+  <section class="slide">
+		<pre class='place'>
+			<code>el.style.transform = `translate(</code>
+			<code>	100%,</code>
+			<code>	calc( 100vw + 10px )</code>
+			<code>)`;</code>
+		</pre>
+  </section>
+  
+  <section class="slide">
+		<pre>
+			<code>let styleMap  = document.querySelector('.el').attributeStyleMap;</code>
+			<code class='next'>let calc      = new <mark>CSSMathSum</mark>( CSS.vw(100), CSS.px(10) );</code>
+			<code class='next' data-order='1'>let transform = new <mark>CSSTransformValue</mark>(</code>
+			<code class='next' data-order='2'>	new <mark>CSSTranslate</mark>(</code>
+			<code class='next'>		CSS.percent(100),</code>
+			<code class='next'>		calc</code>
+			<code data-order='2'>	)</code>
+			<code data-order='1'>);</code>
+			<code class='next'>styleMap.set( 'transform', transform );</code>
+		</pre>
+
+		<footer class="footer">
+			<p>Есть так же функции CSSRotate, CSScale, CSSSkew, CSSSkewX, CSSSkewY</p>
+		</footer>
+  </section>
+  
+  <section class="slide">
+		<h2 class="shout" style="font-size: 40px">
+			<code>CSS.supports('display', 'contents');</code>
+		</h2>
+		<p class='note place bottom' id='supports-result'>true</p>
+
+		<script>
+			let supportsResTag = document.getElementById('supports-result');
+			let supportsRes    = CSS.supports('display', 'contents');
+
+			supportsResTag.innerText = supportsRes;
+		</script>
+	</section>
+
+	<section class="slide">
+		<pre class='place'>
+			<code>if ( window.CSS && CSS.number ) { </code>
+			<code class='comment'>	// CSS Typed OM</code>
+			<code>}</code>
+		</pre>
+
+		<div class="gradient place next"></div>
+  </section>
+  
+  <section class="slide">
+		<div class='place' style='font-size: 1.4em;'>
+			<blockquote>Теперь в JavaScript есть объектно-ориентированный API для работы с CSS свойствами. Дни конкатенации строк и плавающих багов подходят к концу!</blockquote>
+			<cite><strong>Эрик Бидельман</strong></cite>
+		</div>
+  </section>
+  
+  <section class="slide">
+    <table>
+      <tr>
+        <th>Edge</th>
+        <th>Firefox</th>
+        <th>Chrome</th>
+        <th>Safari</th>
+      </tr>
+      <tr>
+        <td class='unsupported'>16</td>
+        <td class='unsupported'>63</td>
+        <td class='supported'>71</td>
+        <td class='unsupported'>11</td>
+      </tr>
+      <tr>
+        <td class='unsupported'>17</td>
+        <td class='unsupported'>64</td>
+        <td class='supported'>72</td>
+        <td class='unsupported'>11.1</td>
+      </tr>
+      <tr class='stable'>
+        <td class='unsupported'>18</td>
+        <td class='unsupported'>65</td>
+        <td class='supported'>72</td>
+        <td class='unsupported'>12</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class='unsupported'>66</td>
+        <td class='supported'>73</td>
+        <td class='unsupported'>TP</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class='unsupported'>67</td>
+        <td class='supported'>74+</td>
+        <td></td>
+      </tr>
+    </table>
+
+    <a class='place bottom' href="https://ishoudinireadyyet.com/">Подробнее на - Is Houdini Ready Yet</a>
+  </section>
+
+  <section class="slide">
+    <h2 class="shout"><a href="https://www.w3.org/TR/css-typed-om-1/">CSS Typed Object Model</a></h2>
+  </section>
+
+  <section class="slide literature custom-scrollbar">
+		<h2>Что еще почитать?</h2>
+		<ul class='small-font-size'>
+			<li>
+				<a href="http://css-live.ru/articles/dvizhenie-po-traektorii-v-css-pomimo-bolshoj-trojki-svojstv.html">Движение по траектории в CSS</a> — Максим Усачев
+			</li>
+			<li>
+				<a href="https://css-tricks.com/svg-path-syntax-illustrated-guide/">The SVG `path` Syntax: An Illustrated Guide</a> — Крис Койер
+			</li>
+			<li>
+				<a href="http://razvancaliman.com/writing/css-shapes-reference-boxes/">Understanding Reference Boxes for CSS Shapes</a> — Разван Климан
+			</li>
+			<li>
+				<a href="https://habr.com/company/2gis/blog/358148/">Справа налево. Что такое dir=rtl и как приручить арабский язык</a> — Владислав Сапожников
+			</li>
+			<li>
+				<a href="https://24ways.org/2016/css-writing-modes/">CSS Writing Modes</a> — Джен Симмонс
+			</li>
+			<li>
+				<a href="https://en.wikipedia.org/wiki/Blend_modes">Blend modes</a> — Википедия
+			</li>
+			<li>
+				<a href="https://xsltdev.ru/css/mix-blend-mode/">mix-blend-mode</a>
+			</li>
+			<li>
+				<a href="https://css-tricks.com/introducing-css-scroll-snap-points/">Introducing CSS Scroll Snap Points</a> — Сара Дрейзнер
+			</li>
+			<li>
+				<a href="https://developers.google.com/web/updates/2018/03/cssom">Working with the new CSS Typed Object Model</a> — Эрик Бидельман
+			</li>
+		</ul>
+  </section>
+  
+  <section class="slide literature custom-scrollbar">
+    <h2>Кого читать?</h2>
+
+    <div class="columns two">
+      <ul>
+        <li><a href="https://twitter.com/w3c">@w3c</a></li>
+        <li><a href="https://twitter.com/csswg">@csswg</a></li>
+        <li><a href="https://twitter.com/jensimmons">Jen Simmons</a></li>
+        <li><a href="https://twitter.com/rachelandrew">Rachel Andrew</a></li>
+        <li><a href="https://twitter.com/cssrossen">Rossen Atanassov</a></li>
+      </ul>
+      <ul>
+        <li><a href="https://twitter.com/hj_chen">Chen Hui Jing</a></li>
+      <li><a href="https://twitter.com/LeaVerou">Lea Verou</a></li>
+      <li><a href="https://twitter.com/Una">Una Kravets</a></li>
+      <li><a href="https://twitter.com/heydonworks">Heydon Pickering</a></li>
+      </ul>
+    </div>
+  </section>
+
+	<section  class="slide">
+		<h2>Полезные ссылки</h2>
+		<ul class="small-font-size">
+			<li>
+				<a href="https://bennettfeely.com/clippy/">CSS clip-path maker</a> — Bennett Feely
+			</li>
+			<li>
+				<a href="http://jsfiddle.net/ms1ycwh7/52/">CSS Shape example</a> — Sam Bulatov
+			</li>
+			<li>
+				<a href="https://en.wikipedia.org/wiki/Languages_used_on_the_Internet">Languages used on the Internet</a> — Wikipedia
+			</li>
+		</ul>
+  </section>
+  
+  <section class="slide">
+		<h2 class="shout with-custom-link">
+			<a href="https://twitter.com/_stylesam">@_stylesam</a>
+		</h2>
+  </section>
+
+  <footer class="badge">
+    <a href="https://github.com/shower/shower">Fork me on GitHub</a>
+  </footer>
+
+  <div class="progress"></div>
+
+  <script src="shower/shower.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <!-- Copyright © 2019 Sam Bulatov, First Monitoring Company -->
+
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flower Step 3</title>
+</head>
+
+<body>
+
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background-color: #ededed;
+        }
+
+        .square {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            background-color: #ededed;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
+        .square:nth-child(2n+1) {
+            background-color: #232323;
+        }
+
+        .square:nth-child(14) {
+            width: 3vmin;
+            height: 3vmin;
+            -webkit-animation: rot infinite ease 1.5s;
+            animation: rot infinite ease 1.5s;
+        }
+
+        .square:nth-child(13) {
+            width: 6vmin;
+            height: 6vmin;
+            -webkit-animation: rot infinite ease 1.5s;
+            animation: rot infinite ease 1.5s;
+        }
+
+        .square:nth-child(12) {
+            width: 9vmin;
+            height: 9vmin;
+            -webkit-animation: rot infinite ease 1.5s;
+            animation: rot infinite ease 1.5s;
+        }
+
+        .square:nth-child(11) {
+            width: 12vmin;
+            height: 12vmin;
+            -webkit-animation: rot infinite ease 1.5s;
+            animation: rot infinite ease 1.5s;
+        }
+
+        .square:nth-child(10) {
+            width: 15vmin;
+            height: 15vmin;
+            -webkit-animation: rot infinite ease 1.5s;
+            animation: rot infinite ease 1.5s;
+        }
+
+        .square:nth-child(9) {
+            width: 18vmin;
+            height: 18vmin;
+            -webkit-animation: rot infinite ease 1.5s;
+            animation: rot infinite ease 1.5s;
+        }
+
+        .square:nth-child(8) {
+            width: 21vmin;
+            height: 21vmin;
+            -webkit-animation: rot infinite ease 1.5s;
+            animation: rot infinite ease 1.5s;
+        }
+
+        .square:nth-child(7) {
+            width: 24vmin;
+            height: 24vmin;
+            -webkit-animation: rot infinite ease 1.5s;
+            animation: rot infinite ease 1.5s;
+        }
+
+        .square:nth-child(6) {
+            width: 27vmin;
+            height: 27vmin;
+            -webkit-animation: rot infinite ease 1.5s;
+            animation: rot infinite ease 1.5s;
+        }
+
+        .square:nth-child(5) {
+            width: 30vmin;
+            height: 30vmin;
+            -webkit-animation: rot infinite ease 1.5s;
+            animation: rot infinite ease 1.5s;
+        }
+
+        .square:nth-child(4) {
+            width: 33vmin;
+            height: 33vmin;
+            -webkit-animation: rot infinite ease 1.5s;
+            animation: rot infinite ease 1.5s;
+        }
+
+        .square:nth-child(3) {
+            width: 36vmin;
+            height: 36vmin;
+            -webkit-animation: rot infinite ease 1.5s;
+            animation: rot infinite ease 1.5s;
+        }
+
+        .square:nth-child(2) {
+            width: 39vmin;
+            height: 39vmin;
+            -webkit-animation: rot infinite ease 1.5s;
+            animation: rot infinite ease 1.5s;
+        }
+
+        .square:nth-child(1) {
+            width: 42vmin;
+            height: 42vmin;
+            -webkit-animation: rot infinite ease 1.5s;
+            animation: rot infinite ease 1.5s;
+        }
+
+        @-webkit-keyframes rot {
+            0%,
+            100% {
+                -webkit-transform: rotate(30deg);
+                transform: rotate(30deg);
+            }
+            50% {
+                -webkit-transform: rotate(-15deg);
+                transform: rotate(-15deg);
+            }
+        }
+
+        @keyframes rot {
+            0%,
+            100% {
+                -webkit-transform: rotate(30deg);
+                transform: rotate(30deg);
+            }
+            50% {
+                -webkit-transform: rotate(-15deg);
+                transform: rotate(-15deg);
+            }
+        }
+    </style>
+</body>
+
+</html>

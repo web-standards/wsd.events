@@ -1,0 +1,13 @@
+[
+  {
+    "browser_name": "Firefox",
+    "stable_version": "65",
+    "stats": {
+      "63": false,
+      "64": false,
+      "65": false,
+      "66": false,
+      "67": false
+    }
+  }
+]

@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Распечатай мне курсач. На CSS</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./src/shower/themes/ribbon/styles/screen-16x9.css">
+    <link rel="stylesheet" href="./src/prism/prism.min.css">
+    <link rel="stylesheet" href="style.css?v=0.0.1">
+</head>
+
+<body class="shower list">
+
+    <header class="caption">
+        <h1>Распечатай мне курсач. На CSS</h1>
+        <p>
+            <a href="https://twitter.com/dark_mefody">Никита Дубко</a>, iTechArt Group
+        </p>
+    </header>
+
+
+    <section class="slide clear" id="cover">
+        <h2>Распечатай мне курсач.
+            <br>На CSS</h2>
+        <hr>
+        <p>
+            <a href="https://twitter.com/dark_mefody">Никита Дубко</a>
+        </p>
+        <figure>
+            <img class="cover width" src="pictures/cover.jpg" alt="Printer">
+            <figcaption class="white">
+                <a href="https://stock.tookapic.com/photos/2749">Michał Kulesza</a>
+            </figcaption>
+        </figure>
+
+        <style>
+            #cover h2 {
+                margin: 0 0 20px;
+                font-size: 70px;
+                color: white;
+                text-shadow: 0 0 2px rgb(39, 17, 11), 5px 3px 10px rgba(39, 17, 11, 0.7);
+            }
+
+            #cover hr {
+                border-color: white;
+                margin-left: 0;
+                width: 250px;
+                opacity: 0.7;
+            }
+
+            #cover p {
+                margin: 0;
+                font-size: 24px;
+            }
+        </style>
+    </section>
+
+    <section class="slide" id="about">
+        <img class="cover width" src="pictures/me.jpg" alt="Никита Дубко">
+        <div class="info">
+            <h2>Никита Дубко</h2>
+            <ul>
+                <li>Sofware Engineer в iTechArt;</li>
+                <li>адепт философии Pure CSS Images;</li>
+                <li>преподавал в БГУИР.</li>
+            </ul>
+        </div>
+        <footer>
+            <p>Меня зовут Никита Дубко, и я фронтенд-разработчик, который любит верстать.</p>
+            <p>Важным фактом для этого доклада является то, что 2.5 года я преподавал в БГУИР. Почему это важно — чуть позже.</p>
+        </footer>
+
+        <style>
+            #about .info {
+                margin-left: 50%;
+            }
+        </style>
+    </section>
+
+    <section class="slide clear">
+        <img src="./pictures/itechart-logo.svg" alt="iTechArt Group" class="place" style="max-height:60%;">
+    </section>
+
+    <section class="slide clear">
+        <div style="display: flex; width: 100%; height: 80%; align-items: center; justify-content: space-around;">
+            <img src="./pictures/minskcss-logo.svg" alt="MinskCSS">
+            <img src="./pictures/minskjs-logo.svg" alt="MinskJS">
+        </div>
+    </section>
+
+    <section class="slide clear">
+        <img src="./pictures/htmlacademy-logo.svg" alt="HTML Academy" class="cover width">
+    </section>
+
+    <section class="slide clear">
+        <div style="display: flex; justify-content: center; align-items: center; height: 80%;">
+            <img src="./pictures/bsuir.png" alt="BSUIR">
+            <p style="line-height: 1.4; font-size: 40px; font-weight: bold; margin-left: 40px; color: steelblue;">Белорусский
+                <br>Государственный
+                <br>Университет
+                <br>Информатики и
+                <br>Радиэлектроники</p>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout shout-mini">Когда вы в последний раз пробовали распечатать ваш сайт?</h2>
+        <footer>
+            <p>
+                И сразу вопрос в лоб: когда вы в последний раз пробовали распечатать ваш сайт? Или когда вы оптимизировали сайт для отображения
+                не только на экране?
+            </p>
+        </footer>
+    </section>
+
+    <section class="slide">
+        <img class="place" src="./pictures/indiegogo.jpg" alt="Твит Aaron Gustafson">
+        <footer>
+            <p>В октябре 2016 года с твита Аарона Густафсона начался хайп вокруг того, как многие сайты не готовы к тому, чтобы
+                их печатали. Появилось много статей, докладов, заметок, твитов по этой проблеме.</p>
+            <p>Прошел год. Мне стало интересно, а изменилось вообще что-нибудь? Или хайп прошел и про проблему забыли?</p>
+        </footer>
+    </section>
+
+    <section class="slide">
+        <img class="cover height" src="./pictures/halfmarathon.jpg" alt="Сайт Минского полумарафона">
+        <footer>
+            <p>В сентябре мне нужно было распечатать информацию о регистрации на Минский полумарафон. Для меня было важно именно
+                распечатать страницу, чтобы иметь ее под рукой без доступа к Интернету.</p>
+            <p>Год прошел. Проблемы остались те же.</p>
+        </footer>
+    </section>
+
+    <section class="slide" id="tutby">
+        <img class="cover height" src="./pictures/tutby.jpg" alt="Портал Tut.by">
+        <div class="hightlight next"></div>
+
+        <footer>
+            <p>Ладно, допустим, сайт полумарафона все-таки не является информационным или новостным по своей сути. Но как обстоят
+                дела у новостных ресурсов?</p>
+            <p>У самого посещаемого белорусского новостного портала ситуация уже лучше. Но все же при печати новости только
+                40% пространства занято именно полезной информацией. К чему мне навигация, поиск и раздел "Сейчас читают"
+                на бумаге?</p>
+        </footer>
+
+        <style>
+            #tutby .hightlight {
+                display: block;
+                width: 250px;
+                height: 370px;
+                border: 3px solid red;
+                position: absolute;
+                left: 530px;
+                top: 95px;
+            }
+        </style>
+    </section>
+
+    <section class="slide" id="tutby-steps">
+        <img class="place" src="./pictures/tutby_step_1.jpg">
+        <img class="place next" src="./pictures/tutby_step_2.jpg">
+        <div class="hightlight next"></div>
+        <img class="cover height next z-top" src="./pictures/tutby_step_3.jpg">
+        <footer>
+            <p>Я немного слукавил. У tut.by все же есть версия для печати. Только чтобы к ней достучаться, нужно найти спрятанную
+                за плюсом иконку, видимо, принтера, и уже по нажатию на нее портал отдаст отдельный документ, где только
+                полезная информация в компактном виде. Даже без изображений, экономия тонера в действии.</p>
+        </footer>
+        <style>
+            #tutby-steps .hightlight {
+                display: block;
+                width: 50px;
+                height: 50px;
+                border: 3px solid red;
+                position: absolute;
+                left: 650px;
+                top: 295px;
+            }
+
+            #tutby-steps .z-top {
+                z-index: 1;
+            }
+
+            #tutby-steps footer {
+                z-index: 2;
+            }
+        </style>
+    </section>
+
+    <section class="slide examples">
+        <div class="place left block next">
+            <img src="./pictures/newsru.jpg" alt="Newsru">
+            <h2>NEWSru</h2>
+        </div>
+        <div class="place right block next">
+            <img src="./pictures/lentaru.jpg" alt="Lenta.ru">
+            <h2>Lenta.ru</h2>
+        </div>
+        <div class="place block next">
+            <img src="./pictures/ria_ru.jpg" alt="РИА Новости">
+            <h2>РИА Новости</h2>
+        </div>
+
+        <style>
+            .examples .block {
+                width: 50%;
+                height: 100%;
+            }
+
+            .examples .block img {
+                max-width: 100%;
+                border: 5px solid gray;
+            }
+
+            .examples .block h2 {
+                position: absolute;
+                top: 5%;
+                left: 5%;
+                color: white;
+                text-shadow: 0 0 4px black, 1px 1px 10px black;
+            }
+        </style>
+    </section>
+
+    <section class="slide clear">
+        <img class="place" src="./pictures/why.jpg">
+        <footer>
+            <p>Но разве это нормально, что из браузера можно управлять Bluetooth- и USB-устройствами, а для банальной печати
+                страницы нужно совершить столько лишних телодвижений?</p>
+        </footer>
+    </section>
+
+    <section class="slide">
+        <blockquote class="place">
+            <p>— У вас не стоит точка в сноске.</p>
+            <p>— Да, но мое исследование совершит револ...</p>
+            <p>— У вас не стоит точка в сноске.</p>
+        </blockquote>
+        <footer>
+            <p>Задался этим вопросом я тогда, когда работал в университете. В мои обязанности входило проверять курсовые и дипломные
+                работы на соответствие стандартам оформления. ГОСТ — как много в этом слове!</p>
+            <p>Вспомните, что для вас было тяжелее: написать диплом или пройти нормоконтроль?</p>
+        </footer>
+    </section>
+
+    <section class="slide">
+        <div style="display: flex; justify-content: space-around; align-items: center;">
+            <img src="./pictures/gost.png" style="max-width: 40%;" alt="ГОСТ">
+            <img src="./pictures/stb.jpg" style="max-width: 50%;" alt="СТБ">
+        </div>
+        <footer>
+            <p>В мире научных работ есть такое страшное словосочетание: государственный стандарт.</p>
+        </footer>
+    </section>
+
+    <section class="slide">
+        <h2>Стандарты оформления</h2>
+        <ul>
+            <li class="next">ГОСТ 7.32—2001 «Отчет о научно-исследовательской работе»</li>
+            <li class="next">ГОСТ 2.105—95 «Общие требования к текстовым документам»</li>
+            <li class="next secondary">СТП 01—2013 «Дипломные проекты (работы). Общие требования»</li>
+            <li class="next secondary">Рекомендации выпускающей кафедры</li>
+            <li class="next secondary">«Неоспоримый» опыт нормоконтроллера</li>
+        </ul>
+        <footer>
+            <p>В белорусских вузах действуют следующие стандарты, которыми нужно руководствоваться при оформлении научной работы.
+                И, увы, два крайних пункта ломают зачастую процесс стандартизации чуть менее, чем полностью.</p>
+        </footer>
+    </section>
+
+    <section class="slide clear">
+        <img src="./pictures/cry.jpg" class="place" alt="Cry Meme">
+        <footer>
+            <p>Среднестатистический студент, когда пытается оформить курсовую или дипломную работу идеально по ГОСТ-ам, выглядит
+                как-то так.</p>
+        </footer>
+    </section>
+
+    <section class="slide clear">
+        <img src="./pictures/cry.jpg" style="transform: translate(-50%,-50%) scaleX(-1);" class="place" alt="Cry Meme">
+        <footer>
+            <p>Среднестатистический преподаватель, когда пытается проверить курсовую или дипломную работу на соответствие ГОСТ-ам,
+                выглядит как-то так.</p>
+        </footer>
+    </section>
+
+    <section class="slide clear">
+        <img src="./pictures/css-logo.png" class="cover" alt="CSS3 Logo">
+        <footer>
+            <p>Но мы же фронтендщики! Мы можем использовать CSS, чтобы оформлять все, что угодно!</p>
+            <p>Собственно, поэтому я задался целью оформить свою же дипломную работу исключительно при помощи веб-стандартов.
+                Хочу поделиться тем, что я узнал в процессе и что в итоге получилось.</p>
+        </footer>
+    </section>
+
+    <section class="slide clear" id="examples">
+        <h2>Уже используют CSS
+            <br> для печати</h2>
+        <ul>
+            <li class="next">
+                <a href="https://github.com/web-standards-ru/stickers">Web Standards Days</a>
+                <div class="proof-container">
+                    <img class="proof" src="./pictures/example-wsd.jpg">
+                </div>
+            </li>
+            <li class="next">
+                <a href="https://twitter.com/pitercss_conf/status/866586952740556800">pitercss_conf</a>
+                <div class="proof-container">
+                    <img class="proof" src="./pictures/example-pitercss.jpg">
+                </div>
+            </li>
+            <li class="next">
+                <a href="https://minskcss.timepad.ru/events/">TimePad</a>
+                <div class="proof-container">
+                    <img class="proof" src="./pictures/example-timepad.jpg">
+                </div>
+            </li>
+            <li class="next">
+                <a href="http://booking.com/">Booking.com</a>
+                <div class="proof-container">
+                    <img class="proof" src="./pictures/booking.jpg">
+                </div>
+            </li>
+            <li class="next">
+                <a href="https://medium.com/@sandersk/streamlining-css-print-design-with-sass-debaa2a204c3">O’Reilly</a>
+                <div class="proof-container">
+                    <img class="proof" src="./pictures/example-oreilly.jpg">
+                </div>
+            </li>
+        </ul>
+        <footer>
+            <p>CSS для печати уже используют организаторы конференций pitercss_conf и WSD — бэджики готовятся на HTML и CSS.</p>
+            <p>Если вы ходите на митапы MinskCSS легально, то есть предварительно зарегистрировавшись, то вы точно видели страницу
+                печати билета на TimePad. И печать реализована именно на CSS.</p>
+            <p>Если этих примеров недостаточно, то вот вам очень весомый аргумент: издательство O'Reilly (то самое, которое
+                украшает свои книги запоминающимися животными) использует для печати своих книг CSS. Правда, у них есть свой
+                движок для рендеринга с большим количеством дополнительных CSS-свойств, но факт использования CSS для печати
+                книг это не отменяет.</p>
+        </footer>
+        <style>
+            #examples .proof-container {
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 50%;
+                height: 100%;
+                position: absolute;
+                right: 0;
+                top: 0;
+                background-color: #fff;
+            }
+
+            #examples .proof {
+                width: 100%;
+                max-height: 100%;
+            }
+        </style>
+    </section>
+
+    <section class="slide">
+        <h2>Как подключить стили для печати</h2>
+        <pre><code class="language-css">/* CSS */
+@import "print.css" print;
+
+@media print { /* IE 9+ */
+    body {
+        background-color: #fff;
+        color: #000;
+    }
+}
+</code></pre>
+        <footer>
+            <p>Подключить стили для печати можно несколькими способами.</p>
+            <p>Первый — при помощи
+                <code>media</code>-выражения.</p>
+            <p>Второй — нативной функцией импорта в CSS с указанием медиа-выражения после имени файла.</p>
+        </footer>
+    </section>
+
+    <section class="slide">
+        <h2>Как подключить стили для печати</h2>
+        <pre><code class="language-html">&lt;!-- HTML --&gt;
+&lt;!-- IE 3+ --&gt;
+&lt;link rel=&quot;stylesheet&quot;
+      media=&quot;print&quot;
+      href=&quot;print.css&quot;
+      type=&quot;text/css&quot; /&gt;</code></pre>
+        <footer>
+            <p>Третий, и при этом самый старый, — тегом
+                <code>link</code>. Причем поддерживается такой способ еще IE3. IE3, Карл! Половины современных тегов тогда просто не существовало,
+                а стили для печати уже можно было реализовать отдельно.</p>
+        </footer>
+    </section>
+
+    <section class="slide">
+        <h2>Как вызвать печать</h2>
+        <pre><code class="language-html">&lt;!-- HTML --&gt;
+&lt;button type=&quot;button&quot;
+        onclick=&quot;callPrint()&quot;&gt;
+    &lt;i class=&quot;icon-print&quot;&gt;&lt;/i&gt; Вжух!
+&lt;/button&gt;
+
+</code></pre>
+        <pre><code class="language-js">// JavaScript
+function callPrint() {
+    // ...
+    window.print();
+}
+</code></pre>
+        <footer>
+            <p>Если вы хотите вызвать печать при помощи JavaScript, предварительно как-то обработав страницу — можно использовать
+                метод
+                <code>window.print()</code>. Браузер либо вызовет встроенное в него окно настройки печати страницы, либо отобразит системное диалоговое
+                окно печати документов.</p>
+        </footer>
+    </section>
+
+    <section class="slide">
+        <h2>Спецификации</h2>
+        <ul>
+            <li><a href="https://drafts.csswg.org/css-page-3/">CSS Paged Media Module Level 3</a></li>
+            <li><a href="https://www.w3.org/TR/css-gcpm-3/">CSS Generated Content for Paged Media Module</a></li>
+            <li><a href="https://books.idea.whatwg.org">CSS Books</a></li>
+        </ul>
+        <footer>
+            <p>На данный момент есть три спецификации, которые подробно описывают то, как браузер должен отдавать страницу на
+                печать.
+            </p>
+            <p>CSS Books — скорее набор идей, чем спецификация. Но некоторые идеи там настолько хорошие, что очень хотелось
+                бы увидеть их на практике.</p>
+        </footer>
+    </section>
+
+    <section class="slide">
+        <pre><code class="language-css">@page {
+    margin: 20mm 15mm;
+    size: A4 portrait; /* landscape */
+    @bottom-right {
+        content: counter(page);
+    }
+}
+
+@page :left {
+    margin-left: 3cm;
+}
+@page :right {
+    margin-right: 3cm;
+}
+</code></pre>
+        <footer>
+            <p>Что дает нам спецификация CSS Paged Media Module?</p>
+            <p>Во-первых, она дает нам отдельный селектор
+                <code>@page</code>, который имеет собственный набор свойств. Вы можете задать размер, положение и поля страницы.</p>
+        </footer>
+    </section>
+
+    <section class="slide">
+        <img src="./pictures/caiuse_page_1.jpg" class="cover width" alt="Can I Use Paged Media">
+        <footer>
+            <p>И хотя спецификация существует уже очень давно, полной браузерной поддержки нет до сих пор.</p>
+        </footer>
+    </section>
+
+    <section class="slide">
+        <pre><code class="language-css">@page :blank {
+    @top-center {
+        content: "Пустая страница";
+    }
+}
+@page :first {
+    @bottom-center {
+        content: "Здесь могла быть ваша реклама";
+    }
+}
+</code></pre>
+        <footer>
+            <p>Также спецификация дает нам дополнительные селекторы: первая страница, пустая страница, левая или правая. Для
+                каждого вида страниц можно отдельно настроить не только стили отображения, но и размеры и содержание полей.</p>
+        </footer>
+    </section>
+
+    <section class="slide clear" id="margin-boxes">
+        <div class="page-grid">
+            <div style="grid-area: tlc;">top-left-corner</div>
+            <div style="grid-area: tl;">top-left</div>
+            <div style="grid-area: tc;">top-center</div>
+            <div style="grid-area: tr;">top-right</div>
+            <div style="grid-area: trc;">top-right-corner</div>
+            <div style="grid-area: lt;">left-top</div>
+            <div style="grid-area: lm;">left-middle</div>
+            <div style="grid-area: lb;">left-bottom</div>
+            <div style="grid-area: c;">
+                <a href="https://www.smashingmagazine.com/wp-content/uploads/2014/12/1-image-margin-boxes-large-opt.jpg">Margin Boxes</a>
+            </div>
+            <div style="grid-area: rt;">right-top</div>
+            <div style="grid-area: rm;">right-middle</div>
+            <div style="grid-area: rb;">right-bottom</div>
+            <div style="grid-area: blc;">bottom-left-corner</div>
+            <div style="grid-area: bl;">bottom-left</div>
+            <div style="grid-area: bc;">bottom-center</div>
+            <div style="grid-area: br;">bottom-right</div>
+            <div style="grid-area: brc;">bottom-right-corner</div>
+        </div>
+
+        <footer>
+            <p>Страницу можно условно изобразить как контейнер, в котором центральную часть занимает содержимое, а по краям
+                есть отдельные именованные элементы —
+                <b>margin boxes</b>. Каждый такой элемент можно оформить отдельно и даже заполнить текстом при помощи свойства
+                <code>content</code>.</p>
+        </footer>
+
+        <style>
+            #margin-boxes {
+                padding: 20px;
+            }
+
+            #margin-boxes .page-grid {
+                font-size: 16px;
+                color: #aaa;
+                display: grid;
+                width: 100%;
+                height: 100%;
+                grid-template-columns: repeat(5, 1fr);
+                grid-template-areas: 'tlc tl tc tr trc' 'lt  c  c  c  rt' 'lm  c  c  c  rm' 'lb  c  c  c  rb' 'blc bl bc br brc';
+                grid-gap: 10px;
+            }
+
+            #margin-boxes .page-grid div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 1px dashed #444;
+                transition: all 0.1s ease;
+            }
+
+            #margin-boxes .page-grid div:hover {
+                color: #444;
+                background-color: #eee;
+            }
+        </style>
+    </section>
+
+    <section class="slide">
+        <h2>Абсолютные единицы измерения</h2>
+        <ul>
+            <li>mm</li>
+            <li>cm (10 mm)</li>
+            <li>in (2.54 cm)</li>
+            <li>pt (1/72 in)</li>
+            <li>pc (12 pt)</li>
+            <li><del>px</del></li>
+        </ul>
+        <p class="next">1in всегда равен 96px</p>
+        <footer>
+            <p>При печати необходимо использовать только печатные единицы измерения. Тяжело сказать, чему равен пиксель на листе
+                бумаги, не так ли? А вот сантиметр или дюйм можно довольно точно измерить.</p>
+            <p>Чтобы расхождений не было, разработчики спецификации предусмотрели жесткое правило: 1 дюйм всегда равен 96 пикселям.
+                Вот только плотность пикселей на экране далеко не всегда позволяет браузерам использовать это соотношение
+                корректно (привет Apple с их Retina-дисплеями).</p>
+        </footer>
+    </section>
+
+    <section class="slide">
+        <img src="./pictures/diploma_chapter.jpg" alt="Пример оформления главы">
+        <pre class="next"><code class="language-css">body {
+    counter-reset: chapternum figurenum;
+}
+
+h1.numered::before {
+    counter-increment: chapternum;
+    content: counter(chapternum) " ";
+}</code></pre>
+        <footer>
+            <p>В научной работе, как правило, есть разделы, подразделы и прочие нумерованные элементы. Держать в голове всю
+                структуру документа при написании монументального шедевра сложно, да и не нужно — CSS отлично справится сам.</p>
+            <p>CSS-счетчики работают давно и почти везде. А свойство
+                <code>content</code> позволяет их использовать для псевдоэлементов
+                <code>before</code> и
+                <code>after</code>. Соединяем — получаем автоматическую нумерацию разделов, подразделов, изображений, таблиц и вообще чего
+                угодно.
+            </p>
+        </footer>
+    </section>
+
+    <section class="slide">
+        <img src="./pictures/diploma_figure.jpg" alt="Пример оформления рисунка">
+        <pre class="next"><code class="language-css">h1 {
+    counter-reset: figurenum;
+}
+
+figcaption::before {
+    counter-increment: figurenum;
+    content: counter(chapternum) "." counter(figurenum) " — ";
+}
+</code></pre>
+        <footer>
+            <p>Подписи к изображениям делаются по тому же принципу. Свойство
+                <code>content</code> позволяет комбинировать строки и результаты вызовов CSS-функций.</p>
+        </footer>
+    </section>
+
+    <section class="slide">
+        <pre><code class="language-css">h1 {
+    page-break-before: always;
+}
+
+.page-break {
+    page-break-after: always; /* auto | avoid | left | right */
+}
+
+figure {
+    page-break-inside: avoid;
+}</code></pre>
+        <footer>
+            <p>К некоторым элементам научной работы есть требование начинать их с новой страницы, для других разрывы внутри
+                элемента не разрешаются.</p>
+            <p>CSS это умеет. Причем разрыв можно задавать как до, так и после элемента, а еще можно книжным разворотом управлять,
+                чтобы красиво было. Браузер попытается разместить элемент на странице по указанным правилам, но со слишком
+                большими элементами могут возникнуть артефакты при печати в виде "распиленной" на несколько страниц картинки.</p>
+        </footer>
+    </section>
+
+    <section class="slide">
+        <img src="./pictures/caniuse_page-break.jpg" class="cover" alt="Can I Use page-break">
+        <footer>
+            <p>Увы, и тут браузеры поддерживают спецификацию не полностью. Если точнее, пока ни один браузер ее полностью не
+                поддерживает.
+            </p>
+        </footer>
+    </section>
+
+    <section class="slide">
+        <pre><code class="language-css">p {
+    widows: 2; /* new page */
+    orphans: 2; /* old page */
+}</code></pre>
+        <img src="./pictures/caniuse_widows.jpg" style="width:100%;" class="next" alt="Can I Use widows and orphans">
+        <footer>
+            <p>В типографике есть понятие
+                <i>"висячие строки"</i>. CSS позволяет управлять ими. Причем эти свойства используются не только для печати,
+                но и для мультиколоночной разметки.</p>
+            <p>Firefox, к сожалению, не считает эти свойства важными настолько, чтобы хотя бы запланировать их реализацию.</p>
+        </footer>
+    </section>
+
+    <section class="slide">
+        <p class="place" style="font-size: 32px;">Тетрагидропиранилциклопентилтетрагидропиридопиридиновые</p>
+        <footer>
+            <p>Я не упал лицом на клавиатуру. Это — самое длинное слово в русском языке, которое вполне может встретиться в
+                научной работе по химии.</p>
+        </footer>
+    </section>
+
+    <section class="slide">
+        <pre><code class="language-css">p {
+    word-break: break-all;
+    hyphens: auto; /* manual | none */
+}</code></pre>
+        <pre class="next"><code class="language-html">&amp;shy;</code></pre>
+        <img src="./pictures/caniuse_hyphens.jpg" style="width:100%;" class="next" alt="Can I Use Hyphentaion">
+        <footer>
+            <p>Часто в стандартах оформления научных работ требуют расстановку переносов. Оно и понятно, попробуйте вставить
+                на страницу название какого-нибудь органического химического соединения без разрыва.</p>
+            <p>Добавить переносы в браузере можно как автоматически (если браузер и операционная система это умеют), так и вручную,
+                расставляя "невидимые" переносы в тексте специальной escape-последовательностью.</p>
+        </footer>
+    </section>
+
+    <section class="slide">
+        <img src="./pictures/book_top.jpg" alt="Пример заголовка разворота">
+        <pre class="next"><code class="language-css">h1 {
+    string-set: heading content();
+}
+
+@page :right {
+    @top-right {
+        content: string(heading);
+    }
+}
+</code></pre>
+        <footer>
+            <p>Часто в книгах особенным образом оформляются развороты.</p>
+            <p>В спецификации есть набор функций, который позволяет работать со значениями тегов. С из помощью можно создавать
+                почти настоящие именованные строковые переменные, в которые помещать, например, значения текстовых тегов.
+                Принцип схож с CSS-счетчиками, но, к сожалению, ни одним браузером пока этот набор функций не поддерживается.</p>
+            <p>Используя эти функции, можно оформлять книжные развороты распространенным образом: на левой странице помещать
+                название книги, а на правой — название раздела. Удобно для быстрой навигации по книге.</p>
+        </footer>
+    </section>
+
+    <section class="slide">
+        <img src="./pictures/footnote.png" alt="Пример сноски">
+        <pre class="next"><code class="language-html">Сноска&lt;span class=&quot;footnote&quot;&gt;Примечание (замечание), помещаемое
+внизу полосы (постраничная сноска) или в конце текста
+(концевая сноска).&lt;/span&gt;</code></pre>
+        <footer>
+            <p>В научных работах принято использовать ссылки на использованные источники. Оформлять их можно в виде сносок.</p>
+            <p>Здесь CSS нужна помощь в виде специальной разметки, в которой, на самом деле, нет ничего специфического.</p>
+        </footer>
+    </section>
+
+    <section class="slide">
+        <pre><code class="language-css">@page {
+    @footnote {
+        border-top: 1pt solid black;
+    }
+}
+.footnote {
+    float: footnote;
+    counter-increment: footnote;
+}
+.footnote::footnote-call {
+    content: counter(footnote);
+    font-size: 9pt;
+    vertical-align: super;
+}
+.footnote::footnote-marker { font-weight: bold; }</code></pre>
+        <footer>
+            <p>Еще одним элементом, который дает нам CSS Paged Media Module, является область для сносок. В комплекте идет оформление
+                маркеров сноски, как в тексте, так и в самой области для сносок.</p>
+        </footer>
+    </section>
+
+    <section class="slide">
+        <pre><code class="language-html">&lt;!-- HTML --&gt;
+&lt;a class=&quot;xref&quot; href=&quot;#chapter-1&quot; title=&quot;Глава 1&quot;&gt;Глава 1&lt;/a&gt;
+</code></pre>
+        <br>
+        <pre><code class="language-css">/* CSS */
+a.xref::after {
+    content: " (страница " target-counter(attr(href url), page) ")";
+}</code></pre>
+        <footer>
+            <p>Внутри раздела научной работы могут быть ссылки на другие разделы этой же работы.</p>
+            <p>CSS-функция
+                <code>target-counter</code> — еще одна интересная возможность из спецификации. С ее помощью можно получить значение счетчика другого
+                элемента, получив его по ссылке-якорю.</p>
+            <p>К слову,
+                <code>page</code> — имя счетчика, который браузер автоматически создает при печати, управлять им из кода нельзя.</p>
+        </footer>
+    </section>
+
+    <section class="slide">
+        <img src="./pictures/diploma_toc.jpg" alt="Пример содержания">
+        <pre class="next"><code class="language-css">ul.toc a::after {
+    content: leader('.') target-counter(attr(href url), page);
+}</code></pre>
+        <footer>
+            <p>То, что редко студенты оформляют правильно с первой попытки, — это содержание документа. Кроме того, мелкая правка
+                (удаление одной блок-схемы, например) может значительно изменить порядок страниц, а ночь до нормоконтроля
+                не всегда на это обращаешь внимание.</p>
+            <p>Хватит это терпеть! Пусть CSS сделает все за нас!</p>
+            <p>
+                <code>leader</code> — функция, которая заполняет свободное пространство строкой, которую вы в нее передадите.</p>
+        </footer>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout shout-mini">
+            <img src="./pictures/github.png" style="height: 80px; vertical-align: middle;">
+            <a href="https://github.com/mefody/print-css">mefody/print-css</a>
+        </h2>
+        <footer>
+            <p>Что у меня получилось в итоге, можно посмотреть в репозитории на гитхабе.</p>
+        </footer>
+    </section>
+
+    <section class="slide clear black">
+        <img src="./pictures/travolta.gif" class="cover height" alt="Как применить к сайту?">
+        <footer>
+            <p>Может возникнуть резонный вопрос: зачем нам это знать, если мы обычно сайты верстаем, а не дипломные работы в
+                CSS оформляем?</p>
+            <p>Постараюсь дать советы по тому, как минимальными усилиями сделать ваш сайт читаемым на бумаге, а не только на
+                экране.
+            </p>
+        </footer>
+    </section>
+
+    <section class="slide">
+        <h2>Как сделать сайт печатаемым?</h2>
+        <ol>
+            <li class="next">Используйте семантическую верстку</li>
+        </ol>
+    </section>
+
+    <section class="slide clear demos">
+        <div class="cover container">
+            <iframe src="./demos/good.html" frameborder="0" class="iframe"></iframe>
+            <iframe src="./demos/bad.html" frameborder="0" class="next iframe"></iframe>
+        </div>
+        <style>
+            .demos .container {
+                display: flex;
+                width: 100%;
+                height: 90%;
+            }
+
+            .demos .container .iframe {
+                flex: 1 0 auto;
+                border: 1px solid #ccc;
+                margin: 0 10px;
+            }
+
+            .demos .container .iframe:first-child {
+                margin-right: 0;
+            }
+        </style>
+    </section>
+
+    <section class="slide">
+        <h2>Как сделать сайт печатаемым?</h2>
+        <ol>
+            <li>Используйте семантическую верстку</li>
+            <li>Проставьте размеры для всех изображений и svg</li>
+        </ol>
+    </section>
+
+    <section class="slide">
+        <img class="place" src="./pictures/indiegogo.jpg" alt="Твит Aaron Gustafson">
+    </section>
+
+    <section class="slide">
+        <h2>Как сделать сайт печатаемым?</h2>
+        <ol>
+            <li>Используйте семантическую верстку</li>
+            <li>Проставьте размеры для всех изображений и svg</li>
+            <li>Уберите
+                <code>@media screen</code>
+            </li>
+            <li class="next">Напишите отдельный CSS с печатными стилями</li>
+            <li class="next">Верните
+                <code>@media screen</code>
+            </li>
+        </ol>
+        <footer>
+            <p>Простой алгоритм — на слайде.</p>
+            <p>Семантическая верстка — самый простой способ обеспечить приемлемый вид на любом устройстве. Браузеры подставят
+                оформление тегов по умолчанию, и если ваш сайт не болеет "диватозом", то выглядеть это будет не так уж и
+                ужасно. Минимализм — будьте в тренде.</p>
+            <p>Если не хотите, чтобы svg-иконки заняли все свободное на странице пространство, задайте им четкие размеры.</p>
+            <p>Если на сайте есть оформление, которое применяется внутри
+                <code>@media screen</code>, есть вероятность, что для
+                <code></code> оно тоже будет выглядеть нормально. Не жадничайте, дайте принтеру тоже использовать это оформление.</p>
+        </footer>
+    </section>
+
+    <section class="slide">
+        <a href="https://github.com/h5bp/html5-boilerplate/blob/master/dist/css/main.css">html5-boilerplate</a>
+        <pre><code class="language-css">*,
+*::before,
+*::after {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster: http://www.sanbeiji.com/archives/953 */
+    box-shadow: none !important;
+    text-shadow: none !important;
+}</code></pre>
+        <footer>
+            <p>Писать отдельную версию стилей для печати? А как же заказчик, который не выделяет на это деньги и время?</p>
+            <p>Если времени нет, подключите минимальный набор правил, который сделает страницу печатаемой и удобной для чтения
+                на бумаге.</p>
+            <p>На заметку: черный цвет печатаеся быстрее, чем почти черный серый, а прозрачный фон на цветной бумаге печатать
+                логичнее, чем белый.</p>
+        </footer>
+    </section>
+
+    <section class="slide">
+        <pre><code class="language-css">a { text-decoration: underline; }
+
+a[href^="http"]:not([href*="mysite.com"])::after {
+    content: " (" attr(href) ")";
+}
+
+a[href^="#"]::after,
+a[href^="javascript:"]::after {
+    content: "";
+}
+
+img { max-width: 100% !important; }</code></pre>
+        <footer>
+            <p>На бумаге я не могу перейти по ссылке. Помогите своим пользователям, дайте им возможность набрать ссылку при
+                необходимости руками. Только не забудьте спрятать ссылки-якоря.</p>
+            <p>Чтобы изображения не "радовали" вас сразу на нескольких страницах, задайте им максимальную ширину в процентах.
+                Так браузер даже гигабайтную панораму Марса разместит на одной странице (если, конечно, хватит мощности).</p>
+            <p>Кстати, стили для печати — то самое место, где
+                <code>!important</code> можно.</p>
+        </footer>
+    </section>
+
+    <section class="slide">
+        <pre><code class="language-css">* {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}</code></pre>
+        <img src="./pictures/caniuse_color-adjust.jpg" class="next" alt="Can I Use print-color-adjust">
+        <p class="next">
+            <a href="https://www.youtube.com/watch?v=VIG6e7uYDG4">Распечатай Яндекс.Карты</a> — Вадим Макишвили</p>
+        <footer>
+            <p>Известная проблема — печать фоновых изображений. Современные браузеры имеют настройку "Печатать фоновые изображения",
+                но если вам нужно поддерживать не только самые последние версии браузеров, рекомендую посмотреть доклад Вадима
+                Макишвили про то, как он и его команда делали печатную версию Яндекс.Карт.</p>
+        </footer>
+    </section>
+
+
+    <section class="slide">
+        <h2 class="shout shout-mini">display: none;</h2>
+        <footer>
+            <p>Если из всей презентации вы запомните что-то одно, запомните этот слайд.</p>
+            <p>Чтобы печатная версия выглядела полезной, просто скройте все ненужные элементы.</p>
+        </footer>
+    </section>
+
+    <section class="slide" id="tutby-example">
+        <img class="cover height" src="./pictures/tutby.jpg" alt="Портал Tut.by">
+        <div class="hightlight"></div>
+        <footer>
+            <p>Вернемся к примеру с tut.by. Если просто скрыть при помощи CSS все ненужные элементы на странице при печати,
+                то отдельная печатная версия просто не нужна.</p>
+        </footer>
+
+        <style>
+            #tutby-example .hightlight {
+                display: block;
+                width: 250px;
+                height: 370px;
+                border: 3px solid green;
+                position: absolute;
+                left: 530px;
+                top: 95px;
+            }
+        </style>
+    </section>
+
+    <section class="slide">
+        <h2 class="place shout-mini">
+            <del class="strike">position: fixed</del>
+        </h2>
+        <footer>
+            <p>Не используйте
+                <code>position: fixed</code>. Потому что у него есть особенность при печати: браузер постарается разместить фиксированные элементы
+                <b>на каждой странице</b>.</p>
+        </footer>
+    </section>
+
+    <section class="slide">
+        <img src="./pictures/blenda_1.jpg" class="cover" alt="Страница 1">
+        <img src="./pictures/blenda_2.jpg" class="cover next" alt="Страница 2">
+        <footer>
+            <p>Пример из практики.</p>
+            <p>На странице крупнейшей фотошколы Беларуси есть много всплывающих окон, а еще окошко чата в углу. Все эти элементы
+                фиксированны. В итоге на каждой странице при печати мы видим чат и пустой фиксированный элемент всплывающего
+                окна. Не надо так.</p>
+        </footer>
+    </section>
+
+    <section class="slide">
+        <pre><code class="language-js">function beforePrint() { /* add print styles */ }
+function afterPrint() { /* remove print styles */ }
+
+window.onbeforeprint = beforePrint; // IE5+
+window.onafterprint = afterPrint;
+
+if (window.matchMedia) { // IE10+
+    window
+        .matchMedia('print')
+        .addListener(function(mq) {
+            mq.matches ? beforePrint() : afterPrint();
+        });
+}</code></pre>
+        <footer>
+            <p>Если вам нужно отловить событие печати (например, для сбора статистики), пример кода на слайде позволяет это
+                сделать почти в любом браузере. Так вы можете при помощи JavaScript каким-то образом видоизменять страницу
+                перед печатью, а потом возвращать стили обратно. Или же собирать AJAX-запросами статистику, как часто вообще
+                пользователи распечатывают ваш сайт.</p>
+        </footer>
+    </section>
+
+    <section class="slide">
+        <h2>Как тестировать?</h2>
+        <ol>
+            <li class="next">Принтер (внезапно)</li>
+            <li class="next">Предпросмотр печати</li>
+            <li class="next">Сохранить как PDF</li>
+            <li class="next">Developer Tools (Chrome, Firefox)</li>
+            <li class="next">Prince</li>
+            <li class="next">Puppeteer</li>
+        </ol>
+        <footer>
+            <p>Тестировать печатные стили можно разными способами: от непосредственно печати до специальных инструментов.</p>
+        </footer>
+    </section>
+
+    <section class="slide">
+        <h2>Chrome Developer Tools</h2>
+        <img src="./pictures/chrome_step1.jpg" alt="Chrome. Шаг 1">
+        <footer>
+            <p>В Chrome есть режим просмотра страницы с печатными стилями. К сожалению, браузер не имитирует разбиение на листы
+                бумаги, поэтому так можно тестировать только общие свойства вроде шрифтов и цветов.</p>
+        </footer>
+    </section>
+
+    <section class="slide">
+        <h2>Chrome Developer Tools</h2>
+        <img src="./pictures/chrome_step2.jpg" alt="Chrome. Шаг 2">
+    </section>
+
+    <section class="slide">
+        <h2>
+            <a href="http://www.princexml.com">Prince</a>
+        </h2>
+        <pre><code class="language-js">const prince = require('prince');
+const options = {};
+prince(options)
+    .inputs('page.html')
+    .output('page.pdf')
+    .execute()
+    .then(function () {
+        console.log('OK: Done');
+    }, function (error) {
+        console.log('ERROR: ', util.inspect(error));
+    });</code></pre>
+        <footer>
+            <p>Как было сказано выше, браузеры не поддерживают CSS Paged Media Module полностью. Многие действительно классные
+                свойства не реализованы ни в одном браузере.</p>
+            <p>На помощь приходят специальные инструменты, которые нацелены именно на работу с печатью. Один из них — Prince.</p>
+        </footer>
+    </section>
+
+    <section class="slide">
+        <h2>
+            <a href="https://github.com/GoogleChrome/puppeteer">Puppeteer</a>
+        </h2>
+        <pre><code class="language-js">const puppeteer = require('puppeteer');
+(async () => {
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
+    await page.goto(
+        'https://news.ycombinator.com',
+        { waitUntil: 'networkidle2' }
+    );
+    await page.pdf({ path: 'hn.pdf', format: 'A4' });
+    await browser.close();
+})();
+</code></pre>
+        <footer>
+            <p>Если вам все же важно видеть печатную версию сайта так, как ее будет видеть пользователь, можно воспользоваться
+                "безголовым" Chrome, который имеет API для сохранения страницы в PDF (что по сути делает браузер перед печатью).</p>
+        </footer>
+    </section>
+
+    <section class="slide">
+        <h2>Готовые решения для сайтов</h2>
+        <ul>
+            <li><a href="https://github.com/BafS/Gutenberg">Gutenberg</a></li>
+            <li><a href="https://github.com/vladocar/Hartija---CSS-Print-Framework">Hartija---CSS-Print-Framework</a></li>
+        </ul>
+        <footer>
+            <p>Если у вас нет времени даже на такие простые манипуляции, то есть отдельные фреймворки, которые стилизуют ваши
+                страницы при печати, в большинстве случаев не требуя никаких специальных селекторов. Просто скройте все лишние
+                при печати элементы, а остальное возьмет на себя фреймворк.</p>
+        </footer>
+    </section>
+
+    <section class="slide">
+        <h2 style="margin-bottom:0.2em;">Материалы</h2>
+        <ul>
+            <li><a href="https://www.smashingmagazine.com/2015/01/designing-for-print-with-css/">Designing For Print With CSS</a> — Rachel Andrew</li>
+            <li><a href="https://alistapart.com/article/improvingprint">Improving Link Display for Print</a> — Aaron Gustafson</li>
+            <li><a href="https://uxdesign.cc/i-totally-forgot-about-print-style-sheets-f1e6604cfd6">I totally forgot about print style sheets</a> — Manuel Matuzovic</li>
+        </ul>
+        <h2 style="margin-bottom:0.2em;">Видео</h2>
+        <ul>
+            <li><a href="https://www.youtube.com/watch?v=VIG6e7uYDG4">Распечатай Яндекс.Карты</a> — Вадим Макишвили</p></li>
+        </ul>
+        <footer>
+            <p>Надеюсь, тема вас заинтересовала. Материалов по ней не так уж и много, так как обычно все-таки фронтендщики занимаются
+                немного другими задачами, нежели распечатывают сайты.</p>
+            <p>Статья Rachel Andrew являет собой наглядное и понятное руководство по тому, как подготовить книгу при помощи
+                CSS.
+            </p>
+            <p>Видео доклада Вадима Макишвили — интересный опыт борьбы с браузерами в занимательной форме.</p>
+        </footer>
+    </section>
+
+    <section class="slide">
+        <h2>Спасибо за внимание!</h2>
+        <p>
+            <a href="https://mefody.github.io/talks/print-with-css/">mefody.github.io/talks/print-with-css/</a>
+            <br>
+            <a href="https://twitter.com/dark_mefody">@dark_mefody</a>
+            <br>
+            <a href="mailto:n.a.dubko@gmail.com">n.a.dubko@gmail.com</a>
+        </p>
+        <img src="./pictures/qr-code.gif" width="250" alt="QR code — ссылка на презентацию" class="place bottom right">
+    </section>
+
+
+    <footer class="badge">
+        <a href="https://github.com/shower/shower">Powered by Shower</a>
+    </footer>
+
+    <div class="progress"></div>
+
+    <script src="./src/shower/shower.min.js"></script>
+    <script src="./src/prism/prism.min.js"></script>
+
+</body>
+
+</html>

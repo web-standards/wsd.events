@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!-- saved from url=(0066)https://www.html5rocks.com/static/demos/parallax/demo-1a/demo.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="Parallax Demo">
+    <meta name="viewport" content="width=device-width">
+
+	<title>Parallax Demo - DOM + Absolute Positions</title>
+	<link href="Parallax&#32;Demo&#32;-&#32;DOM&#32;+&#32;Absolute&#32;Positions_files/css" rel="stylesheet" type="text/css">
+	<link href="Parallax&#32;Demo&#32;-&#32;DOM&#32;+&#32;Absolute&#32;Positions_files/style.css" rel="stylesheet">
+<style type="text/css"></style><style type="text/css">.pixelParallel-panel[data-v-54cb82b4]{position:fixed;right:10px;bottom:10px;z-index:2147483647;width:375px;height:265px;transform:translate(0);background:#fff;transition:width .2s ease-out,height .2s ease-out;will-change:top,left,width,height,transform;opacity:0}.pixelParallel-panel-inner[data-v-54cb82b4]{position:relative;overflow:hidden;height:100%;border:1px solid #dddedf;box-shadow:0 2px 10px rgba(0,0,0,.1);box-sizing:border-box}.pixelParallel-panel-handle[data-v-54cb82b4]{position:absolute;top:-10px;right:-10px;z-index:3;width:20px;height:20px;background:red;transform:rotate(45deg);background:linear-gradient(0deg,transparent,transparent 50%,#ccc 0,#ccc);background-size:100% 2px;cursor:move}.pixelParallel-panel-isolator[data-v-54cb82b4]{border:0;width:100%;height:100%;overflow:hidden;position:relative}.pixelParallel-panel-dragging .pixelParallel-panel-inner[data-v-54cb82b4]{pointer-events:none}.pixelParallel-panel-minimized[data-v-54cb82b4]{width:112px;height:50px;transition:width .2s ease-out .15s,height .2s ease-out .15s}@media (max-width:395px){.pixelParallel-panel[data-v-54cb82b4]{right:0;bottom:0;width:320px}.pixelParallel-panel-minimized[data-v-54cb82b4]{width:112px}}</style><style type="text/css">.pixelParallel-overlay{position:absolute;left:0;top:0;width:100%;text-align:center;white-space:nowrap;display:none}.pixelParallel-overlay-enabled{display:block}</style><style type="text/css">.pixelParallel-image-outer{visibility:hidden;position:absolute;top:0;left:0;width:100%;overflow:hidden;max-width:100vw;min-height:100vh}.pixelParallel-image-inner{position:absolute;z-index:2147483646;left:50%;top:0;cursor:move;transform:translateX(-50%);transition:opacity .15s}.pixelParallel-image-inner img{width:auto;height:auto;max-width:none;max-height:none;vertical-align:top;margin:0;padding:0;position:relative;transform-origin:50% 0;top:-1px;border:1px dashed #333}.pixelParallel-image-inner img:not([src]),.pixelParallel-image-inner img[src=""]{visibility:hidden}.pixelParallel-image-enabled{visibility:visible}.pixelParallel-image-difference{mix-blend-mode:difference}.pixelParallel-image-difference img{opacity:1!important}.pixelParallel-image-locked,.pixelParallel-image-no-image{pointer-events:none}.pixelParallel-image-locked .pixelParallel-image-inner img{top:0;border:0 none}</style><style type="text/css">.pixelParallel-grids{position:relative;z-index:2147483646;pointer-events:none}.pixelParallel-grid-horizontal,.pixelParallel-grid-vertical{position:fixed;z-index:1;pointer-events:none;visibility:hidden}.pixelParallel-grid-horizontal{top:50%;left:50%;display:table;width:100vw;height:200vh;opacity:.5;table-layout:fixed;border-spacing:30px;transform:translate(-50%,-50%)}.pixelParallel-grid-horizontal span{display:table-cell;background:red;height:200vh}.pixelParallel-grid-vertical{top:0;left:0;width:100%;height:100%;background:linear-gradient(180deg,transparent,transparent 90%,blue 0,blue);background-size:100% 10px;opacity:.5}.pixelParallel-grid-horizontal-enabled,.pixelParallel-grid-vertical-enabled{visibility:visible}</style><style type="text/css">.pixelParallel-rulers{position:relative;z-index:2147483646}.pixelParallel-ruler-x,.pixelParallel-ruler-y{display:none;position:fixed;top:0;left:0;z-index:2;background:cyan}.pixelParallel-ruler-x:after,.pixelParallel-ruler-y:after{content:"";position:absolute;top:-8px;left:-8px;right:0;bottom:0;padding:10px}.pixelParallel-ruler-x{right:0;height:1px;cursor:row-resize}.pixelParallel-ruler-y{bottom:0;width:1px;cursor:col-resize}.pixelParallel-rulers-enabled .pixelParallel-ruler-x,.pixelParallel-rulers-enabled .pixelParallel-ruler-y{display:block}</style></head>
+<body cz-shortcut-listen="true">
+	<section id="content" style="background-position: center 0px;">
+		<header>
+			<h1 id="parallaxing">Parallaxing</h1>
+			<h2 id="demosite">Demo Site</h2>
+		</header>
+
+		<section id="part-1">
+			<header>
+				<h3>A title</h3>
+			</header>
+
+			<div class="content">
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget purus erat, sit amet volutpat felis. Sed et lectus nisl, id ultricies felis. Vivamus non ante augue, sit amet pellentesque magna. Donec eu dapibus sapien. Morbi in ipsum vel massa hendrerit porttitor. Morbi leo magna, faucibus sed vulputate lacinia, adipiscing a massa. Mauris vitae sem neque, at volutpat nisi. Nullam turpis est, porttitor et sagittis ultricies, volutpat sit amet velit. Donec euismod, tellus sit amet commodo molestie, nunc turpis tincidunt tortor, varius consequat massa eros sed ipsum. Morbi eleifend risus sed mauris elementum in ultrices tortor fermentum. Nunc auctor, mi nec tempor facilisis, nunc orci egestas elit, eu aliquet purus eros vitae libero. Aliquam turpis lectus, hendrerit id lobortis at, faucibus eget dui. Praesent ornare massa placerat nulla vestibulum eu pellentesque est adipiscing.
+				</p>
+				<p>
+					Aliquam erat volutpat. Etiam vel felis eget urna pellentesque venenatis eu et nulla.
+				</p>
+				<p>
+					Suspendisse vitae turpis id orci elementum ornare. Proin tempus tortor in velit gravida condimentum. Mauris bibendum nunc quis nibh vulputate egestas. Proin pellentesque, tortor at sodales facilisis, lacus nunc rhoncus felis, a bibendum tortor ante ut massa. Vestibulum interdum posuere feugiat. Morbi pulvinar faucibus pharetra. Nullam nisl massa, consequat sed pellentesque ac, hendrerit at nunc. Curabitur pellentesque est sit amet turpis tempor in venenatis felis hendrerit. Proin dictum molestie consequat.
+				</p>
+			</div>
+		</section>
+
+		<section id="part-2">
+			<header>
+				<h3>Another title</h3>
+			</header>
+			<div class="content">
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget purus erat, sit amet volutpat felis. Sed et lectus nisl, id ultricies felis. Vivamus non ante augue, sit amet pellentesque magna. Donec eu dapibus sapien. Morbi in ipsum vel massa hendrerit porttitor. Morbi leo magna, faucibus sed vulputate lacinia, adipiscing a massa. Mauris vitae sem neque, at volutpat nisi. Nullam turpis est, porttitor et sagittis ultricies, volutpat sit amet velit. Donec euismod, tellus sit amet commodo molestie, nunc turpis tincidunt tortor, varius consequat massa eros sed ipsum. Morbi eleifend risus sed mauris elementum in ultrices tortor fermentum. Nunc auctor, mi nec tempor facilisis, nunc orci egestas elit, eu aliquet purus eros vitae libero. Aliquam turpis lectus, hendrerit id lobortis at, faucibus eget dui. Praesent ornare massa placerat nulla vestibulum eu pellentesque est adipiscing.
+				</p>
+				<p>
+					Aliquam erat volutpat. Etiam vel felis eget urna pellentesque venenatis eu et nulla.
+				</p>
+				<p>
+					Suspendisse vitae turpis id orci elementum ornare. Proin tempus tortor in velit gravida condimentum. Mauris bibendum nunc quis nibh vulputate egestas. Proin pellentesque, tortor at sodales facilisis, lacus nunc rhoncus felis, a bibendum tortor ante ut massa. Vestibulum interdum posuere feugiat. Morbi pulvinar faucibus pharetra. Nullam nisl massa, consequat sed pellentesque ac, hendrerit at nunc. Curabitur pellentesque est sit amet turpis tempor in venenatis felis hendrerit. Proin dictum molestie consequat.
+				</p>
+			</div>
+		</section>
+
+		<section id="part-3">
+			<header>
+				<h3>Final title</h3>
+			</header>
+			<div class="content">
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget purus erat, sit amet volutpat felis. Sed et lectus nisl, id ultricies felis. Vivamus non ante augue, sit amet pellentesque magna. Donec eu dapibus sapien. Morbi in ipsum vel massa hendrerit porttitor. Morbi leo magna, faucibus sed vulputate lacinia, adipiscing a massa. Mauris vitae sem neque, at volutpat nisi. Nullam turpis est, porttitor et sagittis ultricies, volutpat sit amet velit. Donec euismod, tellus sit amet commodo molestie, nunc turpis tincidunt tortor, varius consequat massa eros sed ipsum. Morbi eleifend risus sed mauris elementum in ultrices tortor fermentum. Nunc auctor, mi nec tempor facilisis, nunc orci egestas elit, eu aliquet purus eros vitae libero. Aliquam turpis lectus, hendrerit id lobortis at, faucibus eget dui. Praesent ornare massa placerat nulla vestibulum eu pellentesque est adipiscing.
+				</p>
+				<p>
+					Aliquam erat volutpat. Etiam vel felis eget urna pellentesque venenatis eu et nulla.
+				</p>
+				<p>
+					Suspendisse vitae turpis id orci elementum ornare. Proin tempus tortor in velit gravida condimentum. Mauris bibendum nunc quis nibh vulputate egestas. Proin pellentesque, tortor at sodales facilisis, lacus nunc rhoncus felis, a bibendum tortor ante ut massa. Vestibulum interdum posuere feugiat. Morbi pulvinar faucibus pharetra. Nullam nisl massa, consequat sed pellentesque ac, hendrerit at nunc. Curabitur pellentesque est sit amet turpis tempor in venenatis felis hendrerit. Proin dictum molestie consequat.
+				</p>
+			</div>
+		</section>
+
+		<div id="blob-container">
+			<img id="blob-1" src="Parallax&#32;Demo&#32;-&#32;DOM&#32;+&#32;Absolute&#32;Positions_files/blob-1.png" class="force-show" style="top: 254px; left: 484px;">
+			<img id="blob-2" src="Parallax&#32;Demo&#32;-&#32;DOM&#32;+&#32;Absolute&#32;Positions_files/blob-2.png" class="force-show" style="top: 954px; left: 84px;">
+			<img id="blob-3" src="Parallax&#32;Demo&#32;-&#32;DOM&#32;+&#32;Absolute&#32;Positions_files/blob-3.png" class="force-show" style="top: 1054px; left: 584px;">
+			<img id="blob-4" src="Parallax&#32;Demo&#32;-&#32;DOM&#32;+&#32;Absolute&#32;Positions_files/blob-4.png" class="force-show" style="top: 1400px; left: 44px;">
+			<img id="blob-5" src="Parallax&#32;Demo&#32;-&#32;DOM&#32;+&#32;Absolute&#32;Positions_files/blob-5.png" class="force-show" style="top: 1730px; left: -40px;">
+			<img id="blob-6" src="Parallax&#32;Demo&#32;-&#32;DOM&#32;+&#32;Absolute&#32;Positions_files/blob-6.png" class="force-show" style="top: 2860px; left: 325px;">
+			<img id="blob-7" src="Parallax&#32;Demo&#32;-&#32;DOM&#32;+&#32;Absolute&#32;Positions_files/blob-7.png" class="force-show" style="top: 2550px; left: 725px;">
+			<img id="blob-8" src="Parallax&#32;Demo&#32;-&#32;DOM&#32;+&#32;Absolute&#32;Positions_files/blob-8.png" class="force-show" style="top: 2300px; left: 570px;">
+			<img id="blob-9" src="Parallax&#32;Demo&#32;-&#32;DOM&#32;+&#32;Absolute&#32;Positions_files/blob-9.png" class="force-show" style="top: 3700px; left: 640px;">
+		</div>
+	</section>
+
+	<script src="https://shabalin-nikolai.ru/wsd/demo/1/Parallax%20Demo%20-%20DOM%20+%20Absolute%20Positions_files/parallax.js.%D0%91%D0%B5%D0%B7%20%D0%BD%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F"></script>
+
+
+</body></html>

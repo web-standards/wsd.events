@@ -1,0 +1,96 @@
+/*
+
+Intellij Idea-like styling (c) Vasily Polovnyov <vast@whiteants.net>
+
+*/
+
+.has-light-background .hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #000;
+  background: #f7f7f7;
+}
+
+.has-light-background .hljs-subst, {
+  font-weight: normal;
+  color: #000;
+}
+
+.has-light-background .hljs-comment,
+.has-light-background .hljs-quote {
+  color: #808080;
+  font-style: italic;
+}
+
+.has-light-background .hljs-meta {
+  color: #808000;
+}
+
+.has-light-background .hljs-tag {
+  background: #efefef;
+}
+
+.has-light-background .hljs-section,
+.has-light-background .hljs-name,
+.has-light-background .hljs-literal,
+.has-light-background .hljs-keyword,
+.has-light-background .hljs-selector-tag,
+.has-light-background .hljs-type,
+.has-light-background .hljs-selector-id,
+.has-light-background .hljs-selector-class {
+  font-weight: bold;
+  color: #000080;
+}
+
+.has-light-background .hljs-attribute,
+.has-light-background .hljs-number,
+.has-light-background .hljs-regexp,
+.has-light-background .hljs-link {
+  font-weight: bold;
+  color: #0000ff;
+}
+
+.has-light-background .hljs-number,
+.has-light-background .hljs-regexp,
+.has-light-background .hljs-link {
+  font-weight: normal;
+}
+
+.has-light-background .hljs-string {
+  color: #008000;
+  font-weight: bold;
+}
+
+.has-light-background .hljs-symbol,
+.has-light-background .hljs-bullet,
+.has-light-background .hljs-formula {
+  color: #000;
+  background: #d0eded;
+  font-style: italic;
+}
+
+.has-light-background .hljs-doctag {
+  text-decoration: underline;
+}
+
+.has-light-background .hljs-variable,
+.has-light-background .hljs-template-variable {
+  color: #660e7a;
+}
+
+.has-light-background .hljs-addition {
+  background: #baeeba;
+}
+
+.has-light-background .hljs-deletion {
+  background: #ffc8bd;
+}
+
+.has-light-background .hljs-emphasis {
+  font-style: italic;
+}
+
+.has-light-background .hljs-strong {
+  font-weight: bold;
+}

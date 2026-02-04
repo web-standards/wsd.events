@@ -1,0 +1,1287 @@
+<!DOCTYPE HTML>
+
+<html lang="ru">
+
+<head>
+    <title>Отладка CSS в боевых условиях</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="https://mefody.github.io/talks/src/shower/themes/yandex2/styles/screen-16x9.css">
+    <link rel="stylesheet" href="https://mefody.github.io/talks/src/highlight/styles/mono-blue.css">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body class="shower list">
+    <header class="caption">
+        <h1>Отладка CSS в боевых условиях</h1>
+        <p>Никита Дубко,
+            <a href="http://yandex.ru/">Яндекс</a>
+        </p>
+
+    </header>
+
+    <section class="slide cover">
+        <div>
+            <h2><img src="https://mefody.github.io/talks/src/shower/themes/yandex2/images/logo-ru.svg" alt="" class="logo" /></h2>
+        </div>
+    </section>
+
+    <section class="slide title">
+        <div>
+            <h2>Отладка CSS в боевых условиях</h2>
+
+            <h3><img src="https://mefody.github.io/talks/src/shower/themes/yandex2/images/title-logo-ru.svg" alt="" /></h3>
+
+            <div class="authors">
+                <p>Никита Дубко, разработчик интерфейсов</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Никита Дубко</h2>
+            <ul>
+                <li>доброжелюбный бородач;</li>
+                <li>адепт философии Pure CSS Images;</li>
+                <li>состою в MinskCSS и MinskJS.</li>
+            </ul>
+            <br>
+            <img src="pictures/minskcss-logo.svg" alt="MinskCSS" width="200" style="margin-right: 50px;">
+            <img src="pictures/minskjs-logo.svg" alt="MinskJS" width="200" style="margin-right: 50px;">
+            <img src="pictures/css-minsk-js-logo.svg" alt="CSS-Minsk-JS" width="200" height="200" style="padding: 10px; background-color: #2b2727;">
+        </div>
+
+        <img class="place right height cover" src="pictures/me.jpg" alt="Никита Дубко">
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Приходит к вам тестировщик...</h2>
+            <p class="next">«У нас критический баг ...</p>
+            <p class="next">... в очень важной функции.</p>
+            <p class="next">Релиз сегодня».</p>
+        </div>
+        <img src="pictures/harold.jpg" alt="Гарольд" class="next place right bottom">
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Алгоритм решения проблемы</h2>
+            <ol>
+                <li class="next">подобрать решение;</li>
+                <li class="next">закоммитить;</li>
+                <li class="next">отдать тестировщику.</li>
+            </ol>
+            <img src="pictures/like2.svg" alt="Дизлайк" class="next place right bottom" style="width: 500px; transform: scaleY(-1);">
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Хороший алгоритм решения проблемы</h2>
+            <ol>
+                <li>воспроизвести проблему;</li>
+                <li class="next">локализовать ошибку;</li>
+                <li class="next">исправить ошибку;</li>
+                <li class="next">протестировать;</li>
+                <li class="next">избежать повторения в будущем;</li>
+                <li class="next">отдать тестировщику.</li>
+            </ol>
+            <img src="pictures/like1.svg" alt="Лайк" class="next place right bottom" style="width: 500px;">
+        </div>
+    </section>
+
+    <section class="slide contacts">
+        <div>
+            <h2>Спасибо за внимание!</h2>
+            <figure>
+                <h3>Никита Дубко</h3>
+                <p>разработчик интерфейсов</p>
+            </figure>
+
+            <hr />
+            <ul>
+                <li class="mail">mefody@yandex-team.ru</li>
+                <li class="github">MeFoDy</li>
+            </ul>
+            <ul>
+                <li class="twitter">@dark_mefody</li>
+                <li class="facebook">Dark.MeFoDy</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <img src="pictures/boromir.jpg" alt="Нельзя просто взять и отладить CSS" class="cover height">
+    </section>
+
+    <section class="slide section">
+        <div>
+            <h2>Фигура первая.<br>Рабочая</h2>
+            <h3>Десктоп, популярный браузер</h3>
+        </div>
+    </section>
+
+    <section class="slide blockquote">
+        <div>
+            <h2>У ссылок пропали выделения по фокусу.</h2>
+            <h3>Ваш тестировщик</h3>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <img src="pictures/outlinenone.jpg" alt="outlinenone" class="cover">
+            <h3>
+                <a href="http://www.outlinenone.com">www.outlinenone.com</a>
+            </h3>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Вы стараетесь делать хорошо, у вас...</h2>
+            <ul>
+                <li>на все взаимодействия есть визуальные зацепки;</li>
+                <li class="next">выделение по умолчанию сброшено;</li>
+                <li class="next">но взамен установлено красивое, дизайнерское.</li>
+            </ul>
+        </div>
+        <iframe src="demos/link.html" frameborder="0" class="place bottom next" style="width: 100%; height: 45%;"></iframe>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Алгоритм решения проблемы</h2>
+            <ol>
+                <li><mark>воспроизвести проблему;</mark></li>
+                <li>локализовать ошибку;</li>
+                <li>исправить ошибку;</li>
+                <li>протестировать;</li>
+                <li>избежать повторения в будущем;</li>
+                <li>отдать тестировщику.</li>
+            </ol>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Инструменты разработчика</h2>
+            <ul>
+                <li>Ctrl + Shift + I</li>
+                <li>⌘ + ⌥ + I</li>
+                <li>F12</li>
+            </ul>
+            <img src="pictures/devtools.jpg" alt="Dev Tools" class="place bottom cover width next" style="border: 1px solid #aaa;">
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Включение состояний</h2>
+            <img src="pictures/hov-panel.jpg" alt="Dev Tools Hover Panel" style="border: 1px solid #aaa">
+        </div>
+        <iframe src="demos/link-with-error.html" frameborder="0" class="place bottom next" style="width: 100%; height: 35%;"></iframe>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Алгоритм решения проблемы</h2>
+            <ol>
+                <li>воспроизвести проблему;</li>
+                <li><mark>локализовать ошибку;</mark></li>
+                <li>исправить ошибку;</li>
+                <li>протестировать;</li>
+                <li>избежать повторения в будущем;</li>
+                <li>отдать тестировщику.</li>
+            </ol>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>style.scss</h2>
+            <pre><code>%outline {
+    outline: 0;
+    box-shadow: 0 0 1px 2px $color_outline;
+    background-color: $color_link;
+    color: $color_background;
+}
+
+.link:focus {
+    @extend %outline;
+}</code></pre>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Увеличиваем специфичность</h2>
+            <p>Было:</p>
+            <ul>
+                <li><code>.link</code></li>
+            </ul>
+            <p class="next">Стало:</p>
+            <ul>
+                <li class="next"><code>.link.link</code></li>
+                <li class="next"><code>.link[class]</code></li>
+                <li class="next"><code>.link:not(.foo)</code></li>
+                <li class="next"><code>.link:not(#foo)</code></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide" style="background-color: #fdf6e3;">
+        <div>
+            <h3>http://specificity.keegan.st</h3>
+        </div>
+        <img src="pictures/specificity-calculator.jpg" alt="Калькулятор специфичности" class="cover height">
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Специфичность не помогла :(</h2>
+            <iframe src="demos/link-with-error.html" frameborder="0" class="place bottom" style="width: 100%; height: 80%;"></iframe>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <p>Как хорошо вы знаете CSS? 👨🏼‍🏫</p>
+            <p>Даны следующие классы:</p>
+            <pre><code>.red { color: red; }
+.blue { color: blue; }</code></pre>
+            <p>Какого цвета должны быть эти дивы?</p>
+            <pre><code>&lt;div class=&quot;red blue&quot;&gt;
+&lt;div class=&quot;blue red&quot;&gt;</code></pre>
+            <h3>https://twitter.com/mxstbr/status/1038073603311448064</h3>
+            <img src="pictures/twitter-war.jpg" alt="Twitter War" class="place right next" style="width: 40%;">
+        </div>
+        <img src="pictures/facepalm.png" alt="Facepalm" class="place right bottom next" style="right: 10%">
+    </section>
+
+    <section class="slide">
+        <div>
+            <h3 style="top: 0; bottom: auto;" class="next">http://css-live.ru/css/nikto-ne-znaet-css-specifichnost-ne-kaskad.html</h3>
+        </div>
+        <img src="pictures/csslive-kaskad.jpg" alt="CSS-live.ru" class="place bottom" style="height: 80%">
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Приоритетность стилей (по убыванию)</h2>
+            <ol>
+                <li class="next">Стили во время CSS-переходов (transition)</li>
+                <li class="next">Браузерные стили с <code>!important</code></li>
+                <li class="next">Пользовательские стили с <code>!important</code></li>
+                <li class="next">Авторские стили с <code>!important</code></li>
+                <li class="next">Стили во время анимаций</li>
+                <li class="next">Обычные (т.е. без <code>!important</code>) авторские стили</li>
+                <li class="next">Обычные пользовательские стили</li>
+                <li class="next">Обычные браузерные стили</li>
+            </ol>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Браузерные стили</h2>
+            <img src="pictures/browser-styles.jpg" alt="Браузерные стили" style="border: 1px solid #aaa;">
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>style.scss</h2>
+            <pre><code>%outline {
+    outline: 0;
+    box-shadow: 0 0 1px 2px $color_outline <mark>!important</mark>;
+    background-color: $color_link <mark>!important</mark>;
+    color: $color_background;
+}
+
+.link:focus {
+    @extend %outline;
+}</code></pre>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>!important не помог :(</h2>
+            <iframe src="demos/link-with-error.html" frameborder="0" class="place bottom" style="width: 100%; height: 80%;"></iframe>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div style="text-align: center; overflow: hidden;">
+            <img src="pictures/computed-styles.jpg" alt="Вычисленные стили" style="border: 1px solid #aaa;">
+        </div>
+    </section>
+
+    <section class="slide">
+        <div style="text-align: center;">
+            <img src="pictures/computed-styles-bs.jpg" alt="box-shadow" style="border: 1px solid #aaa;">
+        </div>
+    </section>
+
+    <section class="slide">
+        <div style="text-align: center;">
+            <img src="pictures/computed-styles-outline.jpg" alt="outline" style="border: 1px solid #aaa;">
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Source maps</h2>
+            <h3>https://github.com/ryanseddon/source-map/wiki/Source-maps:-languages,-tools-and-other-info</h3>
+            <img src="pictures/sass-scss-css.jpg" alt="SASS" class="place">
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>style.css.map</h2>
+            <code>{"version":3,"file":"style.css","sources":["style.scss","imports/reset.css"],"sourcesContent":["@import './imports/reset';\n\n$color_outline: hsl(210, 89%, 40%);\n$color_link: hsl(210, 89%, 40%);\n$color_background: white;\n\n%outline {\n    outline: 0;\n    box-shadow: 0 0 1px 2px $color_outline;\n    background-color: $color_link;\n    color: $color_background;\n}\n\n.link:focus {\n    @extend %outline;\n}","/* http://meyerweb.com/eric/tools/css/reset/ */\n/* v1.0 | 20080212 */\n\nhtml, body, div, span, applet, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\na, abbr, acronym, address, big, cite, code,\ndel, dfn, em, font, img, ins, kbd, q, s, samp,\nsmall, strike, strong, sub, sup, tt, var,\nb, u, i, center,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td {\n\tmargin: 0;\n\tpadding: 0;\n\tborder: 0;\n\toutline: 0;\n\tfont-size: 100%;\n\tvertical-align: ...</code>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Пример включения для gulp</h2>
+            <pre><code>const
+    sass = require('gulp-sass'),
+    sourcemaps = require('gulp-sourcemaps');
+
+gulp.task('build:scss', function () {
+    return gulp
+        .src('path/to/scss')
+        <mark>.pipe(sourcemaps.init())</mark>
+        .pipe(sass())
+        <mark>.pipe(sourcemaps.write('.'))</mark>
+        .pipe(gulp.dest('path/to/css'));
+});</code></pre>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div style="text-align: center">
+            <img src="pictures/map-to-reset.jpg" alt="Map" style="height: 110%;">
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>reset.css:37</h2>
+            <h3>https://meyerweb.com/eric/tools/css/reset/reset200802.css</h3>
+            <pre><code>/* remember to define focus styles! */
+:focus {
+    outline: 0;
+}</code></pre>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Дебаг препроцессорного кода</h2>
+            <h3>https://www.sitepoint.com/using-sass-error-warn-and-debug-directives/</h3>
+            <p>В SASS есть отладочные директивы:</p>
+            <ul>
+                <li><code>@error</code></li>
+                <li><code>@warn</code></li>
+                <li><code>@debug</code></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>style.scss</h2>
+            <pre><code>%outline {
+    outline: 0;
+    box-shadow: 0 0 1px 2px $color_outline;
+    background-color: $color_link;
+    color: $color_background;
+}
+
+.link:focus {
+    @extend %outline;
+    <mark>@debug $color_outline;</mark>
+}</code></pre>
+
+            <p class="next">
+                <code>style.scss:10: DEBUG: hsl(210, 89%, 40%)</code>
+            </p>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>style.scss</h2>
+            <pre><code>%outline {
+    outline: 0;
+    box-shadow: 0 0 1px 2px $color_outline;
+    background-color: $color_link;
+    color: $color_background;
+    <mark>@debug $color_outline;</mark>
+}
+
+.link:focus {
+    @extend %outline;
+}</code></pre>
+
+            <p class="next">
+                <code>style.scss:6: DEBUG: hsl(210, 89%, 40%)</code>
+            </p>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>style.css</h2>
+            <pre><code>.link:focus,
+.button_type_ghost:focus,
+.title:focus,
+.popup__button:not(.popup .popup__button_disabled):focus,
+.menu__item:focus,
+/* ... */
+.more__button:focus {
+    outline: 0;
+    box-shadow: 0 0 1px 2px #0b66c1;
+    background-color: #0b66c1;
+    color: #fff;
+}</code></pre>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>style.css</h2>
+            <pre><code>.link:focus,
+.button_type_ghost:focus,
+.title:focus,
+<mark>.popup__button:not(.popup .popup__button_disabled):focus</mark>,
+.menu__item:focus,
+/* ... */
+.more__button:focus {
+    outline: 0;
+    box-shadow: 0 0 1px 2px #0b66c1;
+    background-color: #0b66c1;
+    color: #fff;
+}</code></pre>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>:not</h2>
+            <h3>https://www.w3.org/TR/selectors-3/#negation</h3>
+            <ul>
+                <li>сам по себе не увеличивает специфичность селектора;</li>
+                <li>может содержать вложенный <code>:not</code>;</li>
+                <li><mark>принимает внутрь себя простой селектор</mark>.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Простой селектор</h2>
+            <h3>https://www.w3.org/TR/selectors-3/#simple-selectors</h3>
+            <ul>
+                <li>селектор типа: <code>h1</code>;</li>
+                <li>универсальный селектор: <code>*</code>;</li>
+                <li>селектор атрибута: <code>[href]</code>;</li>
+                <li>селектор класса: <code>.link</code>;</li>
+                <li>ID-селектор: <code>#header</code>;</li>
+                <li>псевдокласс: <code>:visited</code>;</li>
+                <li>пустой селектор: <code></code>.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2 class="shout" style="font-size: 2em;">:not(.popup .popup__button_disabled)</h2>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Алгоритм решения проблемы</h2>
+            <ol>
+                <li>воспроизвести проблему;</li>
+                <li>локализовать ошибку;</li>
+                <li><mark>исправить ошибку;</mark></li>
+                <li>протестировать;</li>
+                <li>избежать повторения в будущем;</li>
+                <li>отдать тестировщику.</li>
+            </ol>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Правильный селектор</h2>
+            <p>Было:</p>
+            <pre><code>.popup__button:not(.popup .popup__button_disabled):focus {
+    @extend %outline;
+}</code></pre>
+            <p>Стало:</p>
+            <pre><code>.popup__button:not(.popup__button_disabled):focus {
+    @extend %outline;
+}</code></pre>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Алгоритм решения проблемы</h2>
+            <ol>
+                <li>воспроизвести проблему;</li>
+                <li>локализовать ошибку;</li>
+                <li>исправить ошибку;</li>
+                <li><mark>протестировать;</mark></li>
+                <li>избежать повторения в будущем;</li>
+                <li>отдать тестировщику.</li>
+            </ol>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>После исправления</h2>
+            <iframe src="demos/link.html" frameborder="0" class="place bottom" style="width: 100%; height: 80%;"></iframe>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Алгоритм решения проблемы</h2>
+            <ol>
+                <li>воспроизвести проблему;</li>
+                <li>локализовать ошибку;</li>
+                <li>исправить ошибку;</li>
+                <li>протестировать;</li>
+                <li><mark>избежать повторения в будущем;</mark></li>
+                <li>отдать тестировщику.</li>
+            </ol>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Принятые решения</h2>
+            <ul>
+                <li>отказаться от
+                    <code>@extend</code>
+                    в пользу
+                    <code>@mixin</code>;
+                </li>
+                <li class="next">сделать класс вроде
+                    <code>.custom-focus</code>;
+                </li>
+                <li class="next">отказаться от устаревшего
+                    <code>reset.css</code>.
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Советы</h2>
+            <ul>
+                <li>Проверяйте сборку.</li>
+                <li class="next">Знайте свои инструменты.</li>
+                <li class="next">Настройте линтеры.
+                    <ul style="font-size: 0.7em;">
+                        <li><a href="https://www.youtube.com/watch?v=Bf2ZUsBdCn4">Как внедрить стандарты разработки,
+                                чтобы никто не пострадал</a> — Александра Шинкевич</li>
+                        <li><a href="https://www.youtube.com/watch?v=HZF3XRNOpGo">Кодстайл и насилие</a> — Антон Немцев</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide section">
+        <div>
+            <h2>Фигура вторая.<br>Печальная</h2>
+            <h3>Смартфон, популярная ОС</h3>
+        </div>
+    </section>
+
+    <section class="slide blockquote">
+        <div>
+            <h2>На iOS в любом браузере при скролле блок становится невидимым.</h2>
+            <h3>Ваш тестировщик</h3>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Алгоритм решения проблемы</h2>
+            <ol>
+                <li><mark>воспроизвести проблему;</mark></li>
+                <li>локализовать ошибку;</li>
+                <li>исправить ошибку;</li>
+                <li>протестировать;</li>
+                <li>избежать повторения в будущем;</li>
+                <li>отдать тестировщику.</li>
+            </ol>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <img src="pictures/iphone6.png" alt="iPhone" class="place" style="height: 100%; z-index: 1;">
+            <video src="pictures/scroll.mp4" loop muted autoplay class="place" style="height: 97%;"></video>
+        </div>
+        <img src="pictures/fear.jpg" alt="Чегооо?" class="place bottom left next" style="left: 5%">
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Алгоритм решения проблемы</h2>
+            <ol>
+                <li>воспроизвести проблему;</li>
+                <li><mark>локализовать ошибку;</mark></li>
+                <li>исправить ошибку;</li>
+                <li>протестировать;</li>
+                <li>избежать повторения в будущем;</li>
+                <li>отдать тестировщику.</li>
+            </ol>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Отладка мобильного устройства</h2>
+            <ul>
+                <li>в эмуляторе;</li>
+                <li>на реальном устройстве.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Эмуляторы</h2>
+            <ul>
+                <li>VirtualBox</li>
+                <li>Vagrant</li>
+                <li>Parallels</li>
+                <li>Xcode</li>
+                <li>Android Studio</li>
+                <li>...</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Подключаем Android для дебага</h2>
+            <h3>https://developers.google.com/web/tools/chrome-devtools/remote-debugging/</h3>
+        </div>
+        <img src="pictures/open-remote-devices.png" alt="Android debug" class="place" style="height: 80%; top: 55%">
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Подключаем iOS для дебага</h2>
+            <ul>
+                <li>Safari</li>
+                <li>ios-webkit-debug-proxy</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <img src="pictures/iphone6.png" alt="iPhone" class="place" style="height: 100%; z-index: 1;">
+            <img src="pictures/ios-safari.jpg" alt="Safari" class="place" style="height: 83%; top: 52%;"></img>
+        </div>
+    </section>
+
+    <section class="slide fullscreen">
+        <div style="overflow: hidden;">
+            <img src="pictures/osx-safari.jpg" alt="macOS Safari" class="cover width place top">
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Правильная вёрстка и стили</h2>
+            <ul>
+                <li>Валидатор W3C</li>
+                <li>CSSTree</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2 class="shout">https://validator.w3.org/</h2>
+        </div>
+    </section>
+
+    <section class="slide fullscreen">
+        <div style="overflow: hidden;">
+            <img src="pictures/w3c-validator.jpg" alt="w3c валидатор" class="cover width place top">
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2 class="shout">https://csstree.github.io/docs/</h2>
+        </div>
+    </section>
+
+    <section class="slide fullscreen">
+        <div style="overflow: hidden;">
+            <img src="pictures/csstree-validator.jpg" alt="csstree валидатор" class="cover width place top">
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2 class="shout">animation: ease ease-in-out 2s 2s;</h2>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h3>https://csstree.github.io/docs/syntax.html</h3>
+            <img src="pictures/csstree-animation.jpg" alt="CSS Tree inspector" class="place">
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <img src="pictures/iphone6.png" alt="iPhone" class="place" style="height: 100%; z-index: 1;">
+            <video src="pictures/scroll-touch.mp4" loop muted autoplay class="place" style="height: 97%;"></video>
+        </div>
+        <img src="pictures/mr-been.jpeg" alt="Чегооо?" class="place bottom left next" style="height: 60%">
+    </section>
+
+    <section class="slide">
+        <div>
+            <img src="pictures/print-maps.jpg" alt="Распечатай Яндекс.Карты" class="place cover height">
+            <h3>https://www.youtube.com/watch?v=7-qUm-N_fyA</h3>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>В стабильных браузерах есть баги</h2>
+            <ul>
+                <li><a href="https://bugs.chromium.org/p/chromium/issues/list">Баги в Chrome</a></li>
+                <li><a href="https://bugzilla.mozilla.org">Баги в Firefox</a></li>
+                <li><a href="https://bugs.webkit.org">Баги в Safari (WebKit)</a></li>
+                <li><a href="https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/">Баги в Microsoft
+                        Edge</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h3>https://bugs.webkit.org/buglist.cgi?product=WebKit&resolution=---</h3>
+            <img src="pictures/webkit-bug-list.jpg" alt="WebKit Bug List" class="cover">
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2 class="shout">-webkit-overflow-scrolling: touch</h2>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h3>https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-overflow-scrolling</h3>
+        </div>
+        <img src="pictures/non-standard.jpg" alt="Attention" class="place" style="width: 70%;">
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Шаг 3. Исправить</h2>
+            <ul>
+                <li>Вынести на новый графический слой.</li>
+                <li class="next">Отказаться от использования <code>-webkit-overflow-scrolling</code>.</li>
+                <li class="next">Переверстать без бага.</li>
+                <li class="next">Костыль на JavaScript.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Вынести на новый графический слой</h2>
+            <ul>
+                <li><code>transform: translateZ(0)</code></li>
+                <li class="next"><code>will-change: transform</code></li>
+                <li class="next"><code>filter: invert(100%) invert(100%)</code></li>
+                <li class="next"><code>opacity: 0.9999999</code></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <img src="pictures/iphone6.png" alt="iPhone" class="place" style="height: 100%; z-index: 1;">
+            <video src="pictures/scroll-fixed.mp4" loop muted autoplay class="place" style="height: 97%;"></video>
+        </div>
+    </section>
+
+    <section class="slide">
+        <iframe src="demos/will-change.html" frameborder="0" class="cover width height"></iframe>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Containing block</h2>
+            <ul>
+                <li class="next">для <code>position: absolute</code> формируется по краям padding box
+                    ближайшего родителя, у которого <code>position</code> не <code>static</code>;</li>
+                <li class="next">для <code>position: absolute</code> или <code>position: fixed</code>
+                    также может формироваться по краям padding box ближайшего родителя, у которого: <ul>
+                        <li><code>transform</code> не равен <code>none</code>;</li>
+                        <li><code>perspective</code> не равен <code>none</code>;</li>
+                        <li><code>will-change: transform</code> или <code>will-change: perspective</code>;</li>
+                        <li><code>filter</code> не равен <code>none</code>.</li>
+                    </ul>
+                </li>
+            </ul>
+            <h3>https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block</h3>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>И что нам делать?</h2>
+        </div>
+        <img src="pictures/sad.jpg" alt="Грусть" class="cover">
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Очень странное решение</h2>
+            <pre><code>.gallery__item {
+    animation-name: scroller-overflow-hack;
+    animation-fill-mode: forwards;
+    animation-duration: 1ms;
+}
+
+@keyframes scroller-overflow-hack {
+    0% { opacity: .9999; }
+    100% { opacity: 1; }
+}</code></pre>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <img src="pictures/iphone6.png" alt="iPhone" class="place" style="height: 100%; z-index: 1;">
+            <video src="pictures/scroll-fixed.mp4" loop muted autoplay class="place" style="height: 97%;"></video>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Шаг 5. Избежать повторения в будущем</h2>
+            <ul>
+                <li>Добавить тесты скриншотами.</li>
+                <li>Добавить в сборщик <code>@warn</code> или <code>@error</code> на использование нестабильных
+                    свойств.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Тестирование скриншотами</h2>
+            <ul>
+                <li><a href="https://habr.com/company/yandex/blog/346608/">Тестируем пользовательские сценарии вместе с
+                        «Гермионой»</a> — Николай Ильченко</li>
+                <li><a href="https://habr.com/company/avito/blog/350604/">Unit-тестирование скриншотами: преодолеваем
+                        звуковой барьер</a> — Роман Дворнов</li>
+                <li><a href="https://habr.com/company/tinkoff/blog/429054/">«Найди N отличий». Опыт тестирования
+                        верстки Tinkoff.ru</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Советы</h2>
+            <ul>
+                <li>По возможности не используйте нестабильные свойства.</li>
+                <li class="next">Тестируйте на реальных устройствах.</li>
+                <li class="next">Знайте спецификацию.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide section">
+        <div>
+            <h2>Фигура третья.<br>Разлучная</h2>
+            <h3>UC Browser, Nokia 6300</h3>
+        </div>
+    </section>
+
+    <section class="slide blockquote">
+        <div>
+            <h2>В UC Browser на Nokia 6300 не работает шапка сайта.</h2>
+            <h3>Ваш тестировщик</h3>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Nokia 6300 ???</h2>
+        </div>
+        <img src="pictures/nokia6300.jpg" alt="Nokia 6300" class="place bottom">
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Целевой рынок</h2>
+        </div>
+        <img src="pictures/china.png" alt="Китай" class="place cover">
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Самые продаваемые смартфоны, Китай (2017)</h2>
+            <h3>http://mobile.zol.com.cn/657/6570496.html</h3>
+            <div class="columns-2">
+                <ol>
+                    <li>Honor8 32GB</li>
+                    <li>iPhone7 Plus 32GB</li>
+                    <li>Vivo X9 64GB</li>
+                    <li>Huawei Mate9 32 GB</li>
+                    <li><mark>Oppo RII 64GB</mark></li>
+                </ol>
+                <ol>
+                    <li style="counter-reset: list 5;">Samsung Galaxy S8 64GB</li>
+                    <li>Honor V9 64GB</li>
+                    <li><mark>Oppo R9S Plus 64 GB</mark></li>
+                    <li><mark>Gionee M2017 128 GB</mark></li>
+                    <li>Moto Z 65 GB</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2 class="shout">caniuse.com</h2>
+        </div>
+    </section>
+
+    <section class="slide">
+        <img src="pictures/caniuse-settings.jpg" alt="Настройки" class="cover width">
+    </section>
+
+    <section class="slide">
+        <img src="pictures/uc-usage.jpg" alt="Доля UC Browser" class="place">
+    </section>
+
+    <section class="slide">
+        <img src="pictures/font-display.jpg" alt="Распределение браузеров" class="cover width">
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Шаг 1. Воспроизвести</h2>
+            <ul>
+                <li>Реальное устройство</li>
+                <li class="next"><a href="http://www.browserstack.com/newsletter/digest-mobile-live-v3">BrowserStack</a></li>
+                <li class="next"><a href="http://www.uc.cn/business/developer/">UC Browser — версия для разработчиков</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <img src="pictures/uc-site.jpg" alt="Сайт UC-браузера" class="cover width place top">
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2 class="shout">Но как жить без инструментов разработчика?</h2>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <img src="pictures/firebug.png" alt="FireBug" class="place">
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>FireBug</h2>
+            <h3>https://en.wikipedia.org/wiki/Firebug_(software)</h3>
+            <ul>
+                <li>Январь 2006</li>
+            </ul>
+            <h2 class="shout next">всего 12 лет назад</h2>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>FireBug Lite</h2>
+            <h3>https://getfirebug.com/releases/lite/1.2/</h3>
+            <img src="pictures/iphone6.png" alt="iPhone" class="place" style="height: 100%; z-index: 1;">
+            <video src="pictures/firebug-light-ios.mp4" loop muted autoplay class="place" style="height: 97%;"></video>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <img src="pictures/firebig-lite-ios.jpg" alt="Firebug lite ios" class="place">
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Шаг 2. Локализовать</h2>
+            <ol>
+                <li>собрать демо;</li>
+                <li class="next">запустить демо на устройстве;</li>
+                <li class="next">отключить потенциально проблемные стили;</li>
+                <li class="next">goto 1.</li>
+            </ol>
+        </div>
+    </section>
+
+    <section class="slide">
+        <img src="pictures/girl.jpg" alt="Странности" class="cover height">
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Отладка слоёв #1</h2>
+            <h3>https://medium.freecodecamp.org/heres-my-favorite-weird-trick-to-debug-css-88529aa5a6a3</h3>
+            <pre><code>*:not(path):not(g) {
+    color: hsla(210, 100%, 100%, 0.9) !important;
+    background: hsla(210, 100%,  50%, 0.5) !important;
+    outline: solid 0.25rem hsla(210, 100%, 100%, 0.5) !important;
+    box-shadow: none !important;
+}</code></pre>
+        </div>
+    </section>
+
+    <section class="slide fullscreen">
+        <div style="overflow: hidden;">
+            <img src="pictures/wsd-debug-1.jpg" alt="Debug 1" class="cover width place top">
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Отладка слоёв #2</h2>
+            <h3>https://habr.com/post/65009/</h3>
+            <pre><code>* { outline: 2px dotted red; }
+* * { outline: 2px dotted green; }
+* * * { outline: 2px dotted orange; }
+* * * * { outline: 2px dotted blue; }
+* * * * * { outline: 1px solid red; }
+* * * * * * { outline: 1px solid green; }
+* * * * * * * { outline: 1px solid orange; }
+* * * * * * * * { outline: 1px solid blue; }</code></pre>
+        </div>
+    </section>
+
+    <section class="slide fullscreen">
+        <div style="overflow: hidden;">
+            <img src="pictures/wsd-debug-2.jpg" alt="Debug 2" class="cover width place top">
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>debug.css</h2>
+            <h3>https://github.com/nternetinspired/debug-css</h3>
+            <pre><code>:empty { outline:5px solid yellow; }
+
+img { outline:5px solid red; }
+img[alt] { outline:none; }
+img[alt=""] { outline:5px solid yellow; }
+
+ul > *:not(li),
+ol > *:not(li) { outline: 5px solid red; }
+
+/* ... */</code></pre>
+        </div>
+    </section>
+
+    <section class="slide fullscreen">
+        <div style="overflow: hidden;">
+            <img src="pictures/wsd-debug-3.jpg" alt="Debug 3" class="cover width place top">
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Как понять, что класс есть на странице?</h2>
+            <ul>
+                <li>JavaScript</li>
+                <li class="next">CSS image
+                    <ul>
+                        <li>
+                            <code>background-image: url('/api/check?s=.my-class')</code>
+                        </li>
+                        <li>
+                            <code>list-style-image: url('/api/check?s=.my-class')</code>
+                        </li>
+                        <li>
+                            <code>content: url('/api/check?s=.my-class')</code>
+                        </li>
+                        <li>...</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Помните про псевдоэлементы</h2>
+            <pre><code>.link {
+    position: relative;
+}
+.link:before {
+    content: '.link';
+    color: red;
+}
+.link:after {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    border: 1px solid red;
+}</code></pre>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Используйте div и span для отладки</h2>
+            <ul>
+                <li>У некоторых HTML5-элементов есть предопределённые стили.</li>
+                <li>Некоторые браузеры не умеют HTML5.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Не так давно...</h2>
+            <h3>https://github.com/afarkas/html5shiv</h3>
+            <pre><code>&lt;!--[if IE]&gt;
+&lt;script src=&quot;http://html5shiv.googlecode.com/svn/trunk/html5.js&quot;&gt;&lt;/script&gt;
+&lt;![endif]--&gt;</code></pre>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Шаг 3. Исправить</h2>
+            <p class="next">... может быть критически дорого.</p>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h3>https://github.com/google/material-design-lite</h3>
+        </div>
+        <img src="pictures/material-lite-head.jpg" alt="Material Lite" class="cover width">
+    </section>
+
+    <section class="slide">
+        <div>
+            <h3>https://github.com/google/material-design-lite</h3>
+        </div>
+        <img src="pictures/material-support.jpg" alt="Material Lite" class="place">
+    </section>
+
+    <section class="slide">
+        <div>
+            <h3>https://github.com/google/material-design-lite/issues/4524</h3>
+        </div>
+        <img src="pictures/material-uc.jpg" alt="Material Lite" class="place">
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Шаг 5. Избежать повторения</h2>
+            <ul>
+                <li class="next">Если важно — делайте отдельную лёгкую версию сайта.</li>
+                <li class="next">Используйте прогрессивное улучшение.</li>
+                <li class="next">Всегда проверяйте совместимость внешних библиотек с вашим стеком браузеров.</li>
+                <li class="next">Мыслите нестандартно.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide section">
+        <div>
+            <h2>Послесловие</h2>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Для размышления</h2>
+            <ul>
+                <li class="next">Верстать не сложно. Сложно верстать правильно.</li>
+                <li class="next">Ваш сайт могут открыть даже на холодильнике.</li>
+                <li class="next">Упасть может что угодно.</li>
+                <li class="next">Пользователь не должен страдать из-за лени разработчика.</li>
+                <li class="next">Знайте свои инструменты.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide contacts">
+        <div>
+            <h2>Спасибо за внимание!</h2>
+            <figure>
+                <h3>Никита Дубко</h3>
+                <p>разработчик интерфейсов</p>
+            </figure>
+
+            <hr />
+            <ul>
+                <li class="mail">mefody@yandex-team.ru</li>
+                <li class="github">MeFoDy</li>
+            </ul>
+            <ul>
+                <li class="twitter">@dark_mefody</li>
+                <li class="facebook">Dark.MeFoDy</li>
+            </ul>
+        </div>
+    </section>
+
+    <div class="progress"></div>
+    <footer class="badge">
+        <a href="https://github.com/shower/shower">Powered by Shower</a>
+    </footer>
+
+    <script src="https://mefody.github.io/talks/src/shower/shower.min.js"></script>
+    <script src="https://mefody.github.io/talks/src/highlight/highlight.pack.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
+
+    <!-- Copyright © 2018 Никита Дубко, Яндекс — http://yandex.ru/ -->
+</body>
+
+</html>

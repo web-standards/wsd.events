@@ -1,0 +1,2313 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <title>Code Complexity</title>
+  <meta http-equiv="Content-Type"
+        content="text/html; charset=utf-8" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700%7CRoboto+Mono:400,700&amp;subset=cyrillic"
+        rel="stylesheet" />
+  <style>
+    .slides {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-auto-rows: 100vh;
+    }
+
+    .slides-loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--magenta, #ffffff);
+      transform: translateZ(0);
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <section class="slides">
+      <article class="slides__item js-slide content-intro">
+        <div class="slides__main grid grid--y-center grid--col-1 grid--text-center">
+          <h1 class="grid__item title title--xxl title--iconed title--centered">
+            <img alt="WSD logo"
+                 width="100"
+                 height="110"
+                 class="title__icon"
+                 src="dist/assets/wsd-logo.svg" />
+            Понимание как основа устойчивости к ошибкам
+          </h1>
+
+          <h2 class="js-slide-step title title--xl content-intro__subtitle">
+            на примерах из жизни
+          </h2>
+
+          <p class="js-slide-step content-intro__ridinghood title title--xl title--iconed title--centered">
+            <img class="title__icon content-intro__girl"
+                 width="130"
+                 alt="Красная Шапочка"
+                 src="dist/assets/red-ridinghood.png" />
+            Красной Шапочки
+          </p>
+          <p class="js-slide-step content-intro__pies title title--xl title--iconed title--centered">
+            и пирожочков
+            <img class="title__icon content-intro__pie-1"
+                 width="70"
+                 alt="Пирожок"
+                 src="dist/assets/pie.png" />
+            <img class="title__icon content-intro__pie-2"
+                 width="85"
+                 alt="Пирожок"
+                 src="dist/assets/pie.png" />
+          </p>
+        </div>
+      </article>
+      <article class="slides__item content-roles js-slide">
+        <h2 class="title title--xl">
+          В главных ролях
+        </h2>
+        <div class="grid grid--fixed-y grid--l grid--col-3 grid--row-5">
+          <figure
+                  class="content-roles__main grid__item grid__item--y-stretch grid__item--rowspan-2 grid grid--row-1 grid--col-2 content-roles__figure grid--y-center grid--x-center">
+            <img src="dist/assets/girl.png"
+                 alt="Докладчик" />
+            <figcaption class="title title--s content-roles__title">
+              Докладчик <br />
+              Мария Гришкевич <br />
+              из Exadel
+            </figcaption>
+          </figure>
+          <figure
+                  class="js-slide-step grid__item grid__item--y-stretch grid__item--rowspan-2 grid grid--row-1 grid--col-2 content-roles__figure grid--y-center grid--x-center">
+            <img src="dist/assets/red-ridinghood.png"
+                 alt="Красная Шапочка" />
+            <figcaption class="title title--s content-roles__title">
+              Красная шапочка
+            </figcaption>
+          </figure>
+          <figure
+                  class="js-slide-step grid__item grid__item--y-stretch grid__item--rowspan-2 grid grid--row-1 grid--col-2 content-roles__figure grid--y-center grid--x-center">
+            <img src="dist/assets/guy.png"
+                 alt="Программист Петя" />
+            <figcaption class="title title--s content-roles__title">
+              Разработчик Петя
+            </figcaption>
+          </figure>
+          <figure
+                  class="js-slide-step grid__item grid__item--y-stretch grid__item--rowspan-2 grid grid--row-1 grid--col-2 content-roles__figure grid--y-center grid--x-center">
+            <img src="dist/assets/grandma.png"
+                 class="content-roles__grandma"
+                 alt="Бабушка" />
+            <figcaption class="title title--s content-roles__title">
+              Бабушка
+            </figcaption>
+          </figure>
+          <figure
+                  class="js-slide-step content-roles__figure-wolves grid__item grid__item--y-stretch grid__item--colspan-2 grid__item--rowspan-2 grid--x-center grid grid--row-2 grid--col-1">
+            <div class="content-roles__wolves grid grid--y-end">
+              <img src="dist/assets/wolf.png"
+                   alt="Волк" />
+              <img src="dist/assets/wolf.png"
+                   alt="Волк" />
+              <img src="dist/assets/wolf.png"
+                   alt="Волк" />
+            </div>
+            <figcaption class="title title--s content-roles__wolves-title">
+              Стая волков (голодных)
+            </figcaption>
+          </figure>
+          <figure
+                  class="js-slide-step grid__item grid__item--y-stretch grid__item--rowspan-1 grid grid--row-1 grid--col-2 content-roles__figure grid--y-center grid--x-center">
+            <img src="dist/assets/chinkal.png"
+                 alt="Хинкаль" />
+            <figcaption class="title title--s content-roles__title">
+              Случайный <br />
+              Хинкаль
+            </figcaption>
+          </figure>
+          <figure
+                  class="js-slide-step grid__item grid__item--y-stretch grid__item--rowspan-1 grid grid--row-1 grid--col-2 content-roles__figure grid--y-center grid--x-center">
+            <img src="dist/assets/pie.png"
+                 alt="Пирожок" />
+            <figcaption class="title title--s content-roles__title">
+              Пирожочек
+            </figcaption>
+          </figure>
+          <figure
+                  class="js-slide-step grid__item grid__item--y-stretch grid__item--rowspan-1 grid grid--row-1 grid--col-2 content-roles__figure grid--y-center grid--x-center">
+            <img src="dist/assets/cheburek.png"
+                 alt="Чебурек" />
+            <figcaption class="title title--s content-roles__title">
+              Чебурек <br />
+              (а то пирожочки надоели!)
+            </figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          Как улучшить код?
+        </h2>
+        <div class="grid grid--y-center grid--col-1 grid--row-3 grid--stretch grid--x-center">
+          <div class="grid grid--col-2 grid--row-1 grid--y-start">
+            <ul class="list list--large">
+              <li data-step-order="0"
+                  class="js-slide-step">Рефакторить</li>
+              <li data-step-order="0"
+                  class="js-slide-step">Оптимизировать</li>
+              <li data-step-order="0"
+                  class="js-slide-step">
+                Добавить обработку ошибок
+              </li>
+            </ul>
+            <ul class="list list--large">
+              <li data-step-order="0"
+                  class="js-slide-step">Написать тесты</li>
+              <li data-step-order="0"
+                  class="js-slide-step">Декомпозиция</li>
+              <li data-step-order="0"
+                  class="js-slide-step">
+                Написать уже документацию
+              </li>
+            </ul>
+          </div>
+          <h3 class="title title--xl js-slide-step"
+              data-step-order="0">
+            <span class="js-slide-step"
+                  data-step-class="crossed"
+                  data-step-order="2">Ожидание</span>
+            <span class="hide js-slide-step"
+                  data-step-class="show"
+                  data-step-order="2">Реальность</span>
+          </h3>
+
+          <ul class="no-list large  grid grid--col-3 reality-list">
+            <li class="reality-list__item js-slide-step">
+              Количество <br/>кода
+              <span class="reality-list__arrow arrow arrow--top"></span>
+            </li>
+            <li class="reality-list__item js-slide-step">
+              Сложность
+              <span class="reality-list__arrow arrow arrow--top"></span>
+            </li>
+            <li class="reality-list__item js-slide-step">
+              Устойчивость <br/>к ошибкам
+              <span class="reality-list__arrow arrow arrow--bottom"></span>
+            </li>
+          </ul>
+
+          <div class="rocket js-slide-step"
+               data-step-class="show"
+               data-step-order="1">
+            <div class="rocket__content js-slide-step"
+                 data-step-class="rocket-fail"
+                 data-step-order="3">
+              <img class="rocket__img"
+                   src="dist/assets/rocket.png"
+                   alt="Ракета с Красной Шапочкой" />
+              <div class="rocket__fire">
+                <i class="rocket__fire-particle"></i>
+                <i class="rocket__fire-particle"></i>
+                <i class="rocket__fire-particle"></i>
+                <i class="rocket__fire-particle"></i>
+                <i class="rocket__fire-particle"></i>
+                <i class="rocket__fire-particle"></i>
+                <i class="rocket__fire-particle"></i>
+                <i class="rocket__fire-particle"></i>
+                <i class="rocket__fire-particle"></i>
+                <i class="rocket__fire-particle"></i>
+                <i class="rocket__fire-particle"></i>
+                <i class="rocket__fire-particle"></i>
+                <i class="rocket__fire-particle"></i>
+                <i class="rocket__fire-particle"></i>
+                <i class="rocket__fire-particle"></i>
+                <i class="rocket__fire-particle"></i>
+                <i class="rocket__fire-particle"></i>
+                <i class="rocket__fire-particle"></i>
+                <i class="rocket__fire-particle"></i>
+                <i class="rocket__fire-particle"></i>
+                <i class="rocket__fire-particle"></i>
+                <i class="rocket__fire-particle"></i>
+                <i class="rocket__fire-particle"></i>
+                <i class="rocket__fire-particle"></i>
+                <i class="rocket__fire-particle"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          Процесс решения задачи
+        </h2>
+        <div class="grid--stretch grid grid--row-3 grid--hidden grid--y-center grid--text-center grid--x-center grid--col-2">
+          <h3 class="js-slide-step grid__item title title--m"
+              data-step-order="1">
+              Мир
+          </h3>
+          <h3 class="js-slide-step grid__item title title--m"
+              data-step-order="5">
+              Представление
+          </h3>
+          <div class="js-slide-step content-ps__task grid__item"
+               data-step-order="2">
+            <h3 class="title title--s">мир Красной Шапочки</h3>
+            <h4 class="title title--xs">задача: доставить бабушке пирожок</h4>
+              <div class="content-ps__task-grid grid__item grid grid--col-24 grid--row-5">
+                <img class="grid__item grid__item--y-center grid__item--colspan-3 grid__item--colstart-1 grid__item--rowspan-5
+                  graphic content-ps__task-img"
+                     alt="Красная шапочка"
+                     src="dist/assets/red-ridinghood.png" />
+                <img class="grid__item grid__item--y-center grid__item--colspan-3 grid__item--rowspan-5 grid__item--colstart-4
+                  graphic content-ps__task-img content-ps__task-img--pie"
+                     alt="Пирожок"
+                     src="dist/assets/pie.png" />
+                <img class="grid__item grid__item--y-center grid__item--colspan-3 grid__item--rowspan-2 grid__item--colstart-21 grid__item--rowstart-1
+                  graphic content-ps__task-img content-ps__task-img--grandma"
+                     alt="Бабушка"
+                     src="dist/assets/grandma-small.png" />
+                <img class="grid__item grid__item--y-center grid__item--colspan-8 grid__item--rowspan-2 grid__item--colstart-17 grid__item--rowstart-4
+                  graphic content-ps__task-img content-ps__task-img--wolf"
+                     alt="Волк"
+                     src="dist/assets/wolf.png" />
+              </div>
+          </div>
+          <div class="js-slide-step content-ps__task grid__item"
+               data-step-order="6">
+            <h3 class="title title--s">мозг программиста Пети</h3>
+            <h4 class="title title--xs">задача: что-то кому-то доставить</h4>
+              <div class="content-ps__task-grid grid__item grid grid--col-24 grid--row-4">
+                <img class="grid__item grid__item--y-center grid__item--colspan-3 grid__item--colstart-1 grid__item--rowspan-2
+                  graphic content-ps__task-img"
+                     alt="Красная шапочка"
+                     src="dist/assets/red-ridinghood.png" />
+                <img class="grid__item grid__item--y-center grid__item--colspan-2 grid__item--rowspan-4 grid__item--colstart-14
+                  graphic content-ps__task-img content-ps__task-img--pie-reverse"
+                     alt="Хинкаль"
+                     src="dist/assets/chinkal.png" />
+                <img class="grid__item grid__item--y-center grid__item--colspan-3 grid__item--rowspan-2 grid__item--colstart-2 grid__item--rowstart-3
+                  graphic content-ps__task-img content-ps__task-img--grandma-flip"
+                     alt="Бабушка"
+                     src="dist/assets/grandma-small.png" />
+                <img class="grid__item grid__item--y-center grid__item--colspan-8 grid__item--rowspan-4 grid__item--colstart-16 grid__item--rowstart-1
+                  graphic content-ps__task-img content-ps__task-img--wolf"
+                     alt="Волк"
+                     src="dist/assets/wolf.png" />
+              </div>
+          </div>
+
+          <div
+               class="content-ps__object grid__item grid__item--colspan-2 grid__item--y-stretch grid grid--hidden grid--collapse grid--x-center grid--col-1">
+            <div class="js-slide-step grid__item grid__item--overflow"
+                 data-step-order="4">
+              <img class="content-ps__programmer"
+                   src="dist/assets/guy.png"
+                   alt="Разработчик Петя" />
+            </div>
+            <h3 class="js-slide-step title title--s"
+                data-step-order="3">
+              Объект (условный программист Петя)
+            </h3>
+          </div>
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          Решение задач в команде
+        </h2>
+        <div class="grid--stretch grid grid--row-3 grid--hidden grid--y-center grid--text-center grid--x-center grid--col-2">
+          <h3 class="grid__item js-slide-step title title--m"
+              data-step-order="1">
+              Мое представление
+          </h3>
+          <h3 class="grid__item js-slide-step title title--m"
+              data-step-order="3">
+              Представление Пети
+          </h3>
+          <div class="js-slide-step content-ps__task grid__item"
+               data-step-order="2">
+            <h3 class="title title--s">Есть ли разница между <br/>пирожком и чебуреком?</h3>
+            <div class="content-ps__task-grid grid__item grid grid--col-24 grid--row-5">
+              <img class="grid__item grid__item--y-center grid__item--colspan-3 grid__item--colstart-1 grid__item--rowspan-5
+                  graphic content-ps__task-img"
+                   alt="Красная шапочка"
+                   src="dist/assets/red-ridinghood.png" />
+              <img class="grid__item grid__item--y-center grid__item--colspan-3 grid__item--rowspan-5 grid__item--colstart-4
+                  graphic content-ps__task-img content-ps__task-img--pie-success"
+                   alt="Чебурек"
+                   src="dist/assets/cheburek.png" />
+              <img class="grid__item grid__item--y-center grid__item--colspan-3 grid__item--rowspan-2 grid__item--colstart-21 grid__item--rowstart-1
+                  graphic content-ps__task-img content-ps__task-img--grandma"
+                   alt="Бабушка"
+                   src="dist/assets/grandma-small.png" />
+              <img class="grid__item grid__item--y-center grid__item--colspan-8 grid__item--rowspan-2 grid__item--colstart-17 grid__item--rowstart-4
+                  graphic content-ps__task-img content-ps__task-img--wolf"
+                   alt="Волк в костюмчике"
+                   src="dist/assets/wolf-in-pants.png" />
+            </div>
+          </div>
+          <div class="js-slide-step content-ps__task grid__item"
+               data-step-order="4">
+            <h3 class="title title--s">Вот бы пельмешек съесть...</h3>
+            <div class="content-ps__task-grid grid__item grid grid--col-24 grid--row-5">
+              <img class="grid__item grid__item--y-center grid__item--colspan-3 grid__item--colstart-1 grid__item--rowspan-5
+                  graphic content-ps__task-img"
+                   alt="Красная шапочка"
+                   src="dist/assets/red-ridinghood.png" />
+              <img class="grid__item grid__item--y-center grid__item--colspan-3 grid__item--rowspan-5 grid__item--colstart-4
+                  graphic content-ps__task-img content-ps__task-img--pie-success"
+                   alt="Хинкаль"
+                   src="dist/assets/chinkal.png" />
+              <img class="grid__item grid__item--y-center grid__item--colspan-3 grid__item--rowspan-2 grid__item--colstart-21 grid__item--rowstart-1
+                  graphic content-ps__task-img content-ps__task-img--grandma"
+                   alt="Бабушка"
+                   src="dist/assets/grandma-small.png" />
+              <img class="grid__item grid__item--y-center grid__item--colspan-6 grid__item--rowspan-2 grid__item--colstart-11 grid__item--rowstart-4
+                  graphic content-ps__task-img content-ps__task-img--wolf"
+                   alt="Злой Волк"
+                   src="dist/assets/angry-wolf.png" />
+              <img class="grid__item grid__item--y-center grid__item--colspan-8 grid__item--rowspan-2 grid__item--colstart-17 grid__item--rowstart-4
+                  graphic content-ps__task-img content-ps__task-img--wolf"
+                   alt="Злой Волк"
+                   src="dist/assets/angry-wolf.png" />
+            </div>
+          </div>
+
+          <div class="content-ps__object grid__item grid__item--y-stretch">
+            <img class="content-ps__programmer"
+                 src="dist/assets/girl.png"
+                 alt="Докладчик" />
+          </div>
+
+          <div class="content-ps__object grid__item grid__item--y-stretch">
+            <img class="content-ps__programmer"
+                 src="dist/assets/guy.png"
+                 alt="Коллега Петя" />
+          </div>
+
+          <p class="js-slide-step grid__item grid__item--text-center grid__item--colspan-2">
+            Оба представления содержат ошибки, что не мешает коду работать
+          </p>
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          Когнитивная модель
+        </h2>
+        <div class="grid grid--y-center grid--x-center grid--col-1">
+          <blockquote class="blockquote blockquote--centered grid__item grid__item--text-center">
+            субъективное представление о том, как что-то в реальном мире работает
+          </blockquote>
+          <p class="js-slide-step large">код &mdash; формальное описание такой модели</p>
+          <div class="grid large grid--col-24 grid--y-center">
+
+            <div class="js-slide-step grid__item grid__item--colspan-5 grid__item--y-stretch grid grid--y-center grid--row-4 grid--col-1">
+              <p class="grid__item">Изменения</p>
+              <p class="grid__item">Изменения</p>
+              <p class="grid__item">Изменения</p>
+              <p class="grid__item">Изменения</p>
+            </div>
+
+            <div class="js-slide-step grid__item grid__item--colspan-3 grid__item--y-stretch grid grid--y-center grid--row-4 grid--col-1">
+              <span class="arrow arrow--right grid__item"></span>
+              <span class="arrow arrow--right grid__item"></span>
+              <span class="arrow arrow--right grid__item"></span>
+              <span class="arrow arrow--right grid__item"></span>
+            </div>
+
+            <div
+                 class="js-slide-step grid__item grid__item--y-stretch grid__item--colspan-7 grid grid--y-center grid--text-center grid--row-4 grid--col-1">
+              <p class="grid__item">Иcкажение</p>
+              <p class="grid__item">Исправление ошибок</p>
+              <p class="grid__item">Добавление ошибок</p>
+              <p class="grid__item">Иcкажение</p>
+            </div>
+
+            <div class="js-slide-step grid__item grid__item--colspan-3 grid__item--y-stretch grid grid--y-center grid--row-4 grid--col-1">
+              <span class="arrow arrow--right grid__item"></span>
+              <span class="arrow arrow--right grid__item"></span>
+              <span class="arrow arrow--right grid__item"></span>
+              <span class="arrow arrow--right grid__item"></span>
+            </div>
+
+            <p class="js-slide-step grid__item grid__item--text-center grid__item--colspan-6 grid__item--y-center">
+              <strong>Сложность</strong>
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          Сложность
+        </h2>
+        <div class="grid grid--y-center grid--x-center grid--text-center grid--col-1">
+          <blockquote class="blockquote blockquote--centered">Количество мысленных усилий, требуемых для воссоздания исходной когнитивной модели</blockquote>
+          <div class="js-slide-step grid__item grid grid--x-center grid--col-1">
+            <h3 class="title title--xl">Задачи</h3>
+            <ul class="list list--narrow list--large">
+              <li class="js-slide-step">Как измерить сложность?</li>
+              <li class="js-slide-step">Как минимизировать сложность при написании кода?</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          Формальные характеристики сложности
+        </h2>
+        <div class="grid grid--y-center grid--x-center grid--col-1">
+          <ul class="list list--large">
+            <li class="js-slide-step">Количество строк кода: SLOC (LOC) и LLOC</li>
+            <li class="js-slide-step">Глубина вложенности</li>
+            <li class="js-slide-step">Цикломатическая сложность</li>
+            <li class="js-slide-step">Когнитивная сложность </li>
+            <li class="js-slide-step">Метрики Холстеда</li>
+            <li class="js-slide-step">Комплексный показатель качества </li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          Цикломатическая сложность <small>(Маккейб, 1976)</small>
+        </h2>
+        <div class="grid content-metrics grid--y-center grid--x-center grid--row-2 grid--col-1 grid--stretch">
+          <div class="grid__item blockquote blockquote--xs">
+            Число линейно независимых маршрутов выполнения
+          </div>
+          <div class="js-slide-step grid__item grid__item--colstart-1 grid grid--row-1 grid--col-1"
+               data-step-order="1">
+            <pre class="code code--l js-slide-step"
+                 data-step-class="show-comments"
+                 data-step-order="2">
+                  <code class="javascript">function packPies(redRidingHood, packA, packB, pies) {</code>
+                  <code class="javascript">  const parcel = [];<span class="code-comment">/*1*/</span></code>
+                  <code class="javascript">  for (<span class="code-comment">/*2*/</span>let i = 0; <span class="code-comment">/*3*/</span>i &lt; pies.length;<span class="code-comment">/*4*/</span>i++) {</code>
+                  <code class="javascript">    let pie = null;<span class="code-comment">/*5*/</span></code>
+                  <code class="javascript">    switch (pies[i].type) {<span class="code-comment">/*6*/</span></code>
+                  <code class="javascript">      case <span class="content-code__icon content-code__icon--hinkal">"HINKAL"</span><span class="code-comment">/*7*/</span>: pie = packA(pies[i]); break;<span class="code-comment">/*8*/</span></code>
+                  <code class="javascript">      case <span class="content-code__icon content-code__icon--cheburek">"CHEBUREK"</span><span class="code-comment">/*9*/</span>:</code>
+                  <code class="javascript">      case <span class="content-code__icon content-code__icon--pie">"PIE"</span><span class="code-comment">/*10*/</span>: pie = packB(pies[i]); break;<span class="code-comment">/*11*/</span></code>
+                  <code class="javascript">    }</code>
+                  <code class="javascript">    if (pie <span class="code-comment">/*12*/</span>) { parcel.push(pie);<span class="code-comment">/*13*/</span> }</code>
+                  <code class="javascript">  }</code>
+                  <code class="javascript">  if (parcel.length <span class="code-comment">/*14*/</span>) {</code>
+                  <code class="javascript">    redRidingHood.carry(parcel);<span class="code-comment">/*15*/</span></code>
+                  <code class="javascript">  }</code>
+                  <code class="javascript">}</code>
+                </pre>
+          </div>
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          Цикломатическая сложность
+        </h2>
+        <div class="grid content-metrics grid--y-center grid--x-center grid--row-2 grid--stretch grid--col-12">
+          <div class="grid__item grid__item--colspan-12 grid__item--colstart-1 grid__item--rowspan-2 grid__item--rowstart-1"
+               data-step-order="4">
+            <div class="js-slide-step content-metrics__graph graph graph grid grid--col-4 grid--row-14 grid--x-center"
+                 style="--rows: 13"
+                 data-step-class="graph--areas"
+                 data-step-order="5">
+              <div class="graph__node graph__arrow graph__arrow--bottom graph__node--start grid__item grid__item--colstart-2">
+              </div>
+              <div class="graph__node graph__arrow graph__arrow--bottom grid__item grid__item--colstart-2">1</div>
+              <div class="graph__area grid__item grid__item--colstart-1">1</div>
+              <div class="graph__node graph__arrow graph__arrow--bottom grid__item grid__item--colstart-2">2</div>
+              <div class="graph__node graph__arrow graph__arrow--bottom grid__item grid__item--colstart-2">
+                3
+                <span class=" graph__arrow graph__arrow--bottom-right-rounded"
+                      style="--spread: 14"></span>
+              </div>
+              <div class="graph__area grid__item grid__item--colstart-1">2</div>
+              <div class="graph__node graph__arrow graph__arrow--bottom grid__item grid__item--colstart-2">5</div>
+              <div class="graph__node graph__arrow graph__arrow--bottom grid__item grid__item--colstart-2"
+                   style="--spread: 3">
+                6
+                <span class="graph__arrow graph__arrow--bottom-left"
+                      style="--spread: 1"></span>
+                <span class="graph__arrow graph__arrow--bottom-right"
+                      style="--spread: 1"></span>
+                <span class="graph__arrow graph__arrow--bottom-right-special"
+                      style="--spread: 1; --horspread: 3;"></span>
+              </div>
+              <div class="graph__node graph__arrow graph__arrow--bottom grid__item grid__item--colstart-1">7</div>
+              <div class="graph__area graph__area--left grid__item grid__item--colstart-2"
+                   style="--rowstart:7">3</div>
+              <div class="graph__area graph__area--right grid__item grid__item--colstart-2"
+                   style="--rowstart:7">4</div>
+              <div class="graph__node graph__arrow graph__arrow--bottom grid__item grid__item--colstart-3">9</div>
+              <div class="graph__node graph__arrow graph__arrow--bottom-left grid__item grid__item--colstart-4"
+                   style="--rowstart:7">10</div>
+              <div class="graph__area graph__area--left grid__item grid__item--colstart-4"
+                   style="--rowstart:7">5</div>
+              <div class="graph__node graph__arrow graph__arrow--right grid__item grid__item--colstart-1">
+                8
+              </div>
+              <div class="graph__node graph__arrow graph__arrow--bottom grid__item grid__item--colstart-2"
+                   style="--spread: 3">
+                12
+                <span class="graph__arrow graph__arrow--bottom-left"
+                      style="--spread: 1"></span>
+              </div>
+              <div class="graph__node graph__arrow graph__arrow--left grid__item grid__item--colstart-3">
+                11
+              </div>
+              <div class="graph__node graph__arrow graph__arrow--bottom-right grid__item grid__item--colstart-1">13</div>
+              <div class="graph__area graph__area--left grid__item grid__item--colstart-2">6</div>
+              <div class="graph__node graph__arrow graph__arrow--top-left-rounded grid__item grid__item--colstart-2"
+                   style="--rowstart: 10; --spread: 12">
+                4
+              </div>
+              <div class="graph__node graph__arrow graph__arrow--bottom grid__item grid__item--colstart-2"
+                   style="--rowstart: 11; --spread: 3">
+                14
+                <span class="graph__arrow graph__arrow--bottom-left"
+                      style="--spread: 1"></span>
+              </div>
+              <div class="graph__node graph__arrow graph__arrow--bottom-right grid__item grid__item--colstart-1"
+                   style="--rowstart: 12">15</div>
+              <div class="graph__area graph__area--left grid__item grid__item--colstart-2"
+                   style="--rowstart: 12">7</div>
+              <div class="graph__node graph__node--end grid__item grid__item--colstart-2"
+                   style="--rowstart: 13"></div>
+            </div>
+          </div>
+          <div class="js-slide-step grid__item grid__item--rowspan-2 grid__item--colspan-3 grid__item--y-start grid__item--colstart-1 grid__item--rowstart-1"
+               data-step-order="7">
+            <ul class="content-metrics__formula-list no-list">
+              <li>
+                <strong class="title title--m"><span class="highlight">P</span> = 1 </strong>
+                компоненты 
+                связности
+              </li>
+              <li>
+                <strong class="title title--m"><span class="highlight">E</span> = 22 </strong>
+                ребра
+              </li>
+              <li>
+                <strong class="title title--m"><span class="highlight">P</span> = 17 </strong>
+                узлы
+              </li>
+            </ul>
+          </div>
+          <div class="js-slide-step grid__item--rowspan-2 grid__item grid__item--colspan-4 grid__item--y-start grid__item--colstart-9 grid__item--rowstart-1 content-metrics__formula"
+               data-step-order="6">
+            <strong class="highlight">
+              G&nbsp;
+            </strong>
+            <div>
+              = <strong class="highlight">N <sub>regions</sub></strong><br />
+              <span class="js-slide-step"
+                    data-step-order="8">
+                = <strong class="highlight">E − N + 2P</strong><br />
+                = 22 − 17 + 2 <br />
+                = 7 <br />
+              </span>
+            </div>
+          </div>
+          <div class="js-slide-step content-metrics__graph-subtitle grid__item--rowspan-2 grid__item grid__item--colspan-3 grid__item--y-end grid__item--colstart-1 grid__item--rowstart-1"
+               data-step-order="3">
+            Граф <br />
+            потока управления
+          </div>
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          Цикломатическая сложность
+        </h2>
+        <div class="grid content-metrics grid--y-center grid--x-center grid--row-1 grid--col-1">
+          <div
+               class="grid large grid--col-1 grid--x-center grid__item">
+            <div>
+              <strong class="highlight">G</strong>
+              = <strong class="highlight">π + 1</strong>
+            </div>
+            <div class="js-slide-step">π &mdash; число следующих конструкций</div>
+            <ul class="list js-slide-step">
+              <li>if</li>
+              <li>for</li>
+              <li>while</li>
+              <li>case</li>
+              <li>?</li>
+              <li>&&</li>
+              <li>||</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          Цикломатическая сложность<small class="js-slide-step"
+          data-step-order="3">, <span class="highlight">&lt; 10 на функцию</span></small>
+        </h2>
+        <div class="grid content-metrics grid--y-center grid--x-center grid--row-2 grid--col-1">
+          <div class="grid__item grid__item--text-center">
+              <div class="large">
+                  <strong class="highlight">G</strong>
+                  = <strong class="highlight">π + 1</strong>
+                  <span class="js-slide-step"
+                        data-step-order="2">
+                    = 7
+                  </span>
+                </div>
+          </div>
+          <pre class="code code--l js-slide-step grid__item"
+                data-step-class="show-comments"
+                data-step-order="1">
+            <code class="javascript">function packPies(redRidingHood, packA, packB, pies) { <span class="code-comment">// 1</span></code>
+            <code class="javascript">  const parcel = [];                                   <span class="code-comment">// 0</span></code>
+            <code class="javascript">  for (let i = 0; i &lt; pies.length; i++) {              <span class="code-comment">// 1</span></code>
+            <code class="javascript">    let pie = null;                                    <span class="code-comment">// 0</span></code>
+            <code class="javascript">    switch (pies[i].type) {                            <span class="code-comment">// 0</span></code>
+            <code class="javascript">      case <span class="content-code__icon content-code__icon--hinkal">"HINKAL"</span>: pie = packA(pies[i]); break;        <span class="code-comment">// 1</span></code>
+            <code class="javascript">      case <span class="content-code__icon content-code__icon--cheburek">"CHEBUREK"</span>:                                     <span class="code-comment">// 1</span></code>
+            <code class="javascript">      case <span class="content-code__icon content-code__icon--pie">"PIE"</span>: pie = packB(pies[i]); break;        <span class="code-comment">// 1</span></code>
+            <code class="javascript">    }                                                  <span class="code-comment">// 0</span></code>
+            <code class="javascript">    if (pie) { parcel.push(pie); }                     <span class="code-comment">// 1</span></code>
+            <code class="javascript">  }                                                    <span class="code-comment">// 0</span></code>
+            <code class="javascript">  if (parcel.length) {                                 <span class="code-comment">// 1</span></code>
+            <code class="javascript">    redRidingHood.carry(parcel);                       <span class="code-comment">// 0</span></code>
+            <code class="javascript">  }                                                    <span class="code-comment">// 0</span></code>
+            <code class="javascript">}                                                      <span class="code-comment">// 0</span></code>
+          </pre>
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          Когнитивная сложность, <small>Энн Кэмпбелл, 2018</small>
+        </h2>
+        <div class="grid content-metrics grid--y-center grid--x-center grid--row-2 grid--col-1">
+          <div class="grid__item blockquote blockquote--xs">
+            Строится на цикломатической сложности, <br/>но учитывает глубину вложенности
+          </div>
+          <div
+               class="grid grid--col-2 grid--x-center grid__item">
+            <ul class="list">
+              <li class="js-slide-step" data-step-order="0">
+                По умолчанию для функции &mdash; ноль
+              </li>
+              <li class="js-slide-step" data-step-order="2">
+                  <div>
+                    Выражения, которые можно объединить, считаем за единицу
+                    <br />
+                    <pre class="code code--l code--counterless">
+                      <code class="javascript">a || b || c</code>
+                      <code class="javascript">a && b && c</code>
+                      <code class="javascript">switch + case + default</code>
+                      <code class="javascript">try + catch + finally</code>
+                    </pre>
+                  </div>
+              </li>
+            </ul>
+            <ul class="list">
+              <li class="js-slide-step" data-step-order="1">
+                <div>
+                  К каждой конструкции прибавляем единицу и уровень вложенности <br/>
+                  <pre class="code code--l code--counterless">
+                    <code class="javascript">if for while switch ? && || catch</code>
+                  </pre>
+                </div>
+              </li>
+              <li class="js-slide-step" data-step-order="3">
+                Добавляем единицу, если нарушается линейная последовательность
+              </li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          Когнитивная сложность
+        </h2>
+        <div class="grid content-metrics grid--y-center grid--x-center grid--row-2 grid--col-1 grid--stretch">
+          <div class="js-slide-step large"
+                data-step-order="5">
+            <strong class="highlight">C</strong> = 6
+          </div>
+          <div
+               class="grid__item grid grid--row-1 grid--col-1">
+            <pre class="code code--l js-slide-step "
+                 data-step-class="show-comments"
+                 data-step-order="4">
+                  <code class="javascript">function packPies(redRidingHood, packA, packB, pies) { <span class="code-comment">// 0</span></code>
+                  <code class="javascript">  const parcel = [];                                   <span class="code-comment">// 0</span></code>
+                  <code class="javascript">  for (let i = 0; i &lt; pies.length; i++) {              <span class="code-comment">// 1</span></code>
+                  <code class="javascript">    let pie = null;                                    <span class="code-comment">// 0</span></code>
+                  <code class="javascript">    switch (pies[i].type) {                            <span class="code-comment">// 1 + 1</span></code>
+                  <code class="javascript">      case <span class="content-code__icon content-code__icon--hinkal">"HINKAL"</span>: pie = packA(pies[i]); break;        <span class="code-comment">// 0</span></code>
+                  <code class="javascript">      case <span class="content-code__icon content-code__icon--cheburek">"CHEBUREK"</span>:                                     <span class="code-comment">// 0</span></code>
+                  <code class="javascript">      case <span class="content-code__icon content-code__icon--pie">"PIE"</span>: pie = packB(pies[i]); break;        <span class="code-comment">// 0</span></code>
+                  <code class="javascript">    }                                                  <span class="code-comment">// 0</span></code>
+                  <code class="javascript">    if (pie) { parcel.push(pie); }                     <span class="code-comment">// 1 + 1</span></code>
+                  <code class="javascript">  }                                                    <span class="code-comment">// 0</span></code>
+                  <code class="javascript">  if (parcel.length) {                                 <span class="code-comment">// 1</span></code>
+                  <code class="javascript">    redRidingHood.carry(parcel);                       <span class="code-comment">// 0</span></code>
+                  <code class="javascript">  }                                                    <span class="code-comment">// 0</span></code>
+                  <code class="javascript">}                                                      <span class="code-comment">// 0</span></code>
+                </pre>
+          </div>
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          Метрики Холстеда
+        </h2>
+        <div class="grid grid--stretch grid--y-stretch grid--x-center grid--col-2">
+          <div class="js-slide-step grid__item">
+            <div class="title title--l highlight">Операторы</div>
+            <p>
+              служебные слова и операторы, например
+            </p>
+            <pre class="code code--l code--counterless">
+              <code class="javascript">! != === !=== && || * *= </code>
+              <code class="javascript">+ += - -= / /= % </code>
+              <code class="javascript">() {} [] let const var</code>
+              <code class="javascript">for if while catch case</code>
+            </pre>
+          </div>
+          <div class="js-slide-step grid__item">
+            <div class="title title--l highlight">Операнды</div>
+            <p>
+              идентификаторы, константы, типы, свойства объектов
+            </p>
+            <pre class="code code--l code--counterless">
+              <code class="javascript">1 'hello' true testName length</code>
+              <code class="javascript">null undefined</code>
+            </pre>
+          </div>
+          <div class="js-slide-step grid__item grid__item--colspan-2 grid grid--col-2">
+            <div class="grid__item title title--m">
+              <span class="highlight">n1</span> &mdash; количество уникальных операторов
+            </div>
+            <div class="grid__item title title--m">
+              <span class="highlight">n2</span> &mdash; количество уникальных операндов
+            </div>
+            <div class="grid__item title title--m">
+              <span class="highlight">N1</span> &mdash; общее количество операторов
+            </div>
+            <div class="grid__item title title--m">
+              <span class="highlight">N2</span> &mdash; общее количество операндов
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          Метрики Холстеда
+        </h2>
+        <div class="grid content-metrics grid--y-center grid--x-center grid--row-1 grid--stretch grid--col-1">
+          <div class="grid__item grid__item--colstart-1 grid grid--row-1 grid--col-1">
+            <pre class="code code--l js-slide-step" data-step-class="show-colors">
+              <code class="javascript">function packPies(redRidingHood, packA, packB, pies) {</code>
+              <code class="code-dark-color javascript">  const <span class="code-color">parcel</span> = [];</code>
+              <code class="code-dark-color javascript">  for (let <span class="code-color">i</span> = <span class="code-color">0</span>; <span class="code-color">i</span> &lt; <span class="code-color">pies</span>.<span class="code-color">length</span>; <span class="code-color">i</span>++) {</code>
+              <code class="code-dark-color javascript">    let <span class="code-color">pie</span> = <span class="code-color">null</span>;</code>
+              <code class="code-dark-color javascript">    switch (<span class="code-color">pies</span>[<span class="code-color">i</span>].<span class="code-color">type</span>) {</code>
+              <code class="code-dark-color javascript">      case <span class="code-icon-color content-code__icon content-code__icon--hinkal">"HINKAL"</span>: <span class="code-color">pie</span> = <span class="code-color">packA</span>(<span class="code-color">pies</span>[<span class="code-color">i</span>]); break;</code>
+              <code class="code-dark-color javascript">      case <span class="code-icon-color content-code__icon content-code__icon--cheburek">"CHEBUREK"</span>:</code>
+              <code class="code-dark-color javascript">      case <span class="code-icon-color content-code__icon content-code__icon--pie">"PIE"</span>: <span class="code-color">pie</span> = <span class="code-color">packB</span>(<span class="code-color">pies</span>[<span class="code-color">i</span>]); break;</code>
+              <code class="code-dark-color javascript">    }</code>
+              <code class="code-dark-color javascript">    if (<span class="code-color">pie</span>) { <span class="code-color">parcel</span>.<span class="code-color">push</span>(<span class="code-color">pie</span>); }</code>
+              <code class="code-dark-color javascript">  }</code>
+              <code class="code-dark-color javascript">  if (<span class="code-color">parcel</span>.<span class="code-color">length</span>) {</code>
+              <code class="code-dark-color javascript">    <span class="code-color">redRidingHood</span>.<span class="code-color">carry</span>(<span class="code-color">parcel</span>);</code>
+              <code class="code-dark-color javascript">  }</code>
+              <code class="javascript">}</code>
+            </pre>
+          </div>
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          Метрики Холстеда
+        </h2>
+        <div class="grid content-metrics grid--y-center grid--x-center grid--row-1 grid--stretch grid--col-1">
+          <div class="grid__item">
+              <table class="content-metrics__table">
+                  <thead>
+                    <tr>
+                      <th>оператор</th>
+                      <th>N</th>
+                      <th>оператор</th>
+                      <th>N</th>
+                      <th>операнд</th>
+                      <th>N</th>
+                      <th>операнд</th>
+                      <th>N</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>const</td>
+                      <td>1</td>
+                      <td>.</td>
+                      <td>5</td>
+                      <td>parcel</td>
+                      <td>4</td>
+                      <td>
+                        <img src="dist/assets/chinkal.png"
+                             width="40"
+                             alt="Хинкаль">
+                      </td>
+                      <td>1</td>
+                    </tr>
+                    <tr>
+                      <td>=</td>
+                      <td>5</td>
+                      <td>++</td>
+                      <td>1</td>
+                      <td>i</td>
+                      <td>6</td>
+                      <td>
+                        <img src="dist/assets/cheburek.png"
+                             width="40"
+                             alt="Чебурек">
+                      </td>
+                      <td>1</td>
+                    </tr>
+                    <tr>
+                      <td>[]</td>
+                      <td>3</td>
+                      <td>switch</td>
+                      <td>1</td>
+                      <td>pies</td>
+                      <td>4</td>
+                      <td>
+                        <img src="dist/assets/pie.png"
+                             width="40"
+                             alt="Пирожок">
+                      </td>
+                      <td>1</td>
+                    </tr>
+                    <tr>
+                      <td>;</td>
+                      <td>10</td>
+                      <td>case</td>
+                      <td>3</td>
+                      <td>length</td>
+                      <td>2</td>
+                      <td>packA</td>
+                      <td>1</td>
+                    </tr>
+                    <tr>
+                      <td>for</td>
+                      <td>1</td>
+                      <td>break</td>
+                      <td>2</td>
+                      <td>null</td>
+                      <td>1</td>
+                      <td>packB</td>
+                      <td>1</td>
+                    </tr>
+                    <tr>
+                      <td>{}</td>
+                      <td>4</td>
+                      <td>()</td>
+                      <td>6</td>
+                      <td>type</td>
+                      <td>1</td>
+                      <td>push</td>
+                      <td>1</td>
+                    </tr>
+                    <tr>
+                      <td>let</td>
+                      <td>2</td>
+                      <td>if</td>
+                      <td>1</td>
+                      <td>pie</td>
+                      <td>5</td>
+                      <td>redRidingHood</td>
+                      <td>1</td>
+                    </tr>
+                    <tr>
+                      <td>&lt;</td>
+                      <td>1</td>
+                      <td></td>
+                      <td></td>
+                      <td>0</td>
+                      <td>1</td>
+                      <td>carry</td>
+                      <td>1</td>
+                    </tr>
+                    <tr class="highlight centered title title--m g">
+                      <td colspan="4">n1=15 <br/>N1=46</td>
+                      <td colspan="4">n2=16 <br/>N2=32</td>
+                    </tr>
+                  </tbody>
+                </table>
+          </div>
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          Метрики Холстеда<small class="js-slide-step"
+                 data-step-order="10">, <span class="highlight">20 &lt; V &lt; 1000 на функцию</span></small>
+        </h2>
+        <div class="grid content-metrics grid--y-start grid--x-center grid--stretch grid--row-2 grid--col-12">
+          <div class="title title--xs grid__item grid__item--text-center grid__item--colspan-3">
+            Уникальные операторы<br/>
+            <span class="highlight">n1 = 15</span>
+          </div>
+          <div class="title title--xs grid__item grid__item--text-center grid__item--colspan-3">
+            Операторы<br/>
+            <span class="highlight">N1 = 46</span>
+          </div>
+          <div class="title title--xs grid__item grid__item--text-center grid__item--colspan-3">
+            Уникальные операнды<br/>
+            <span class="highlight">n2 = 16</span>
+          </div>
+          <div class="title title--xs grid__item grid__item--text-center grid__item--colspan-3">
+            Операнды<br/>
+            <span class="highlight">N2 = 32</span>
+          </div>
+          <div class="grid__item grid__item--y-center grid__item--colspan-12 grid grid--col-1">
+            <div class="grid__item grid__item--y-center grid grid--col-1">
+              <table class="title title---s content-metrics__formula-table">
+                <tbody>
+                  <tr class="js-slide-step"
+                      data-step-order="1">
+                    <td>Длина программы</td>
+                    <td><span class="highlight">N</span> = <span class="highlight">N1 + N2</span> = 46 + 32 = 78</td>
+                  </tr>
+                  <tr class="js-slide-step"
+                      data-step-order="2">
+                    <td>Размер словаря</td>
+                    <td><span class="highlight">n</span> = <span class="highlight">n1 + n2</span> = 15 + 16 = 31</td>
+                  </tr>
+                  <tr class="js-slide-step"
+                      data-step-order="3">
+                    <td>Объем программы</td>
+                    <td><span class="highlight">V</span> = <span class="highlight">N * log<sub>2</sub>n</span> = 386,43</td>
+                  </tr>
+                  <tr class="js-slide-step"
+                      data-step-order="4">
+                    <td>Сложность</td>
+                    <td><span class="highlight">D</span> = <span class="highlight">(n1 * N2) / (2 * n2)</span> = 15</td>
+                  </tr>
+                  <tr class="js-slide-step"
+                      data-step-order="5">
+                    <td>Усилия программиста</td>
+                    <td><span class="highlight">E</span> = <span class="highlight">V * D</span> = 5796,43</td>
+                  </tr>
+                  <tr class="js-slide-step"
+                      data-step-order="6">
+                    <td>Число багов</td>
+                    <td><span class="highlight">B</span> = <span class="highlight">E<sup>2/3</sup>/3000</span> = 0,107</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          Комплексный <br/>показатель качества
+          <small class="js-slide-step"
+                 data-step-order="5">, <span class="highlight">20 &lt; MI<sub>%</sub> &lt; 100</span></small>
+        </h2>
+        <div class="grid grid--y-center grid--text-center grid--x-center grid--col-1">
+          <p class="grid__item large">Объединяет предыдущие метрики в один показатель относительной надежности кода </p>
+          <div class="js-slide-step title title--xl"
+               data-step-order="1">
+            <span class="highlight">MI</span> = <span class="highlight">171 - ln(V) - 0.23G - 16.2ln(LOC)</span> = <br />
+            <span class="js-slide-step"
+                  data-step-order="2">= 171 - ln(386,43) - 0.23*7 - 16.2 * ln(15) = 119.56</span>
+          </div>
+          <div class="js-slide-step title title--xl"
+               data-step-order="3">
+            <span class="highlight">MI<sub>%</sub></span> = <span class="highlight">MAX(0, MI * 100/171)</span> <span
+                  class="js-slide-step"
+                  data-step-order="4">= 69.92</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          И что с этим делать? Использовать инструменты!
+        </h2>
+        <div class="grid grid--y-center grid--x-center grid--col-1">
+          <div>
+            <h3 class="title tile--xl title--centered">Eslint</h3>
+            <ul class="no-list">
+              <li class="js-slide-step">
+                <div>
+                  <a target="_blank"
+                     href="https://eslint.org/docs/rules/complexity">
+                    Ограничить цикломатическую сложность
+                  </a>
+                  <pre class="code code--l code--counterless">
+                    <code>"complexity": ["error", { "max": 10 }]</code>
+                  </pre>
+                </div>
+              </li>
+              <li class="js-slide-step">
+                <div>
+                  <a target="_blank"
+                     href="https://eslint.org/docs/rules/max-lines-per-function">
+                    Ограничить LOC
+                  </a>
+                  <pre class="code code--l code--counterless">
+                    <code>"max-lines-per-function": [</code>
+                    <code>  "error", {"max": 2, "skipBlankLines": true}</code>
+                    <code>]</code>
+                  </pre>
+                </div>
+              </li>
+              <li class="js-slide-step">
+                <div>
+                  <a href="https://eslint.org/docs/rules/max-depth"
+                     class="href">
+                    Ограничить глубину вложенности
+                  </a>
+                  <pre class="code code--l code--counterless">
+                    <code>"max-depth": ["error", 3]</code>
+                  </pre>
+                </div>
+              </li>
+            </ul>
+            <h3 class="title title--xl title--centered">Tslint</h3>
+            <ul class="no-list">
+              <li class="js-slide-step">
+                <div>
+                  <a target="_blank"
+                     href="https://eslint.org/docs/rules/complexity">
+                    Ограничить цикломатическую сложность
+                  </a>
+                  <pre class="code code--l code--counterless"><code>"cyclomatic-complexity": ["error", { "max": 10 }]</code></pre>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          Плагины для редакторов кода
+        </h2>
+        <div class="grid grid--y-stretch grid--col-2 grid--row-2 grid--stretch">
+          <div class="js-slide-step" data-step-order="1">
+            <h3 class="title title--xl">VS Code</h3>
+            <ul class="no-list" data-step-order="1">
+              <li>
+                <a target="_blank"
+                    class="title title--l"
+                    href="https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-codemetrics">
+                  Code Metrics
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="js-slide-step" data-step-order="3">
+            <h3 class="title title--xl">Web Storm</h3>
+            <ul class="no-list">
+              <li>
+                <a target="_blank"
+                    class="title title--l"
+                    href="https://plugins.jetbrains.com/plugin/10395-cyclomaticcomplexity">
+                  Cyclomatic Complexity
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div data-step-order="2" class="js-slide-step grid__item grid--x-center grid__item--colspan-2 grid grid--y-center grid--col-1 grid--row-1">
+            <video class="content-tools__video"
+                    width="1400"
+                    height="622"
+                    loop
+                    autoplay
+                    muted>
+              <source src="dist/assets/code-metrics.webm"
+                      type="video/webm">
+              <source src="dist/assets/code-metrics.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          Инструменты для получения аналитики.
+        </h2>
+        <div class="grid grid--stretch grid--y-stretch grid--col-1 grid--row-2">
+          <h3 class="title title--xl title--centered">
+            <a target="_blank"
+                href="https://github.com/the-simian/es6-plato">
+              Es6-Plato
+            </a>
+          </h3>
+          <div class="grid grid--col-1 grid--row-1 grid--x-center grid--y-center">
+            <video class="content-tools__video"
+                    data-step-class="hide"
+                    width="1400"
+                    height="810"
+                    loop
+                    autoplay
+                    muted>
+              <source src="dist/assets/es6-plato.webm"
+                      type="video/webm">
+              <source src="dist/assets/es6-plato.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          Синтаксические анализаторы javascript, <br/>использующие парсер Esprima
+        </h2>
+        <div class="grid grid--y-center grid--x-center grid--col-1">
+          <div>
+            <ul class="no-list grid grid--y-end grid--col-2">
+              <li>
+                <a target="_blank"
+                   class="title title--xl"
+                   href="https://github.com/escomplex/escomplex">
+                  Escomplex
+                </a>
+                <div>
+                  <video class="content-tools__video"
+                         data-step-class="hide"
+                         width="800"
+                         height="421"
+                         loop
+                         autoplay
+                         muted>
+                    <source src="dist/assets/escomplex.webm"
+                            type="video/webm">
+                    <source src="dist/assets/escomplex.mp4"
+                            type="video/mp4">
+                  </video>
+                </div>
+              </li>
+              <li>
+                <a target="_blank"
+                   class="title title--xl"
+                   href="https://github.com/typhonjs-node-escomplex/typhonjs-escomplex">
+                  TyphonJS-Escomplex
+                </a>
+                <div>
+                  <video class="content-tools__video"
+                         data-step-class="hide"
+                         width="800"
+                         height="421"
+                         loop
+                         autoplay
+                         muted>
+                    <source src="dist/assets/typhonjs.webm"
+                            type="video/webm">
+                    <source src="dist/assets/typhonjs.mp4"
+                            type="video/mp4">
+                  </video>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          Эмпирические характеристики сложности
+        </h2>
+        <div class="grid grid--y-stretch grid--text-center grid--col-2 grid--row-2">
+          <div
+               class="content-mental__title js-slide-step grid__item grid__item--bordered grid grid--y-center grid--col-1 grid--row-1 grid--x-center title title--m">
+            Динамизм
+            <div class="content-mental__dynamic grid grid--x-center grid--y-center grid--col-6 grid--row-2">
+
+              <div
+                   class="grid__item grid__item--colstart-1 grid__item--rowstart-1 grid__item--colspan-5 arrow arrow--narrow arrow--right">
+              </div>
+              <img class="content-mental__dynamic-img grid__item content-mental__dynamic-clock"
+                   src="dist/assets/clock.png"
+                   alt="Часы">
+              <div
+                   class="grid__item grid__item--colstart-1 grid__item--rowstart-2 grid__item--colspan-6 arrow arrow--narrow arrow--right">
+              </div>
+              <img class="content-mental__dynamic-img grid__item grid__item--colstart-2 grid__item--rowstart-1"
+                   src="dist/assets/pie.png"
+                   alt="Пирожок">
+              <img class="content-mental__dynamic-img grid__item grid__item--colstart-4 grid__item--rowstart-1"
+                   src="dist/assets/pie.png"
+                   alt="Пирожок">
+              <img class="content-mental__dynamic-img grid__item grid__item--colstart-3 grid__item--rowstart-2"
+                   src="dist/assets/cheburek.png"
+                   alt="Чебурек">
+              <img class="content-mental__dynamic-img grid__item grid__item--colstart-1 grid__item--rowstart-2"
+                   src="dist/assets/cheburek.png"
+                   alt="Чебурек">
+              <img class="content-mental__dynamic-img grid__item grid__item--colstart-5 grid__item--rowstart-2"
+                   src="dist/assets/chinkal.png"
+                   alt="Хинкаль">
+            </div>
+          </div>
+          <div
+               class="content-mental__title js-slide-step grid__item grid__item--bordered grid grid--y-center grid--col-1 grid--row-1 grid--x-center title title--m">
+            Множество частей (переменных) <br /> и связи между ними
+            <div class="content-mental__parts">
+              <img class="content-mental__parts-grandma"
+                   src="dist/assets/grandma.png"
+                   alt="Бабушка">
+              <img class="content-mental__parts-pie"
+                   src="dist/assets/pie.png"
+                   alt="Пирожок">
+              <img class="content-mental__parts-cheburek"
+                   src="dist/assets/cheburek.png"
+                   alt="Чебурек">
+              <img class="content-mental__parts-hinkal"
+                   src="dist/assets/chinkal.png"
+                   alt="Хинкаль">
+              <img class="content-mental__parts-cheburek"
+                   src="dist/assets/cheburek.png"
+                   alt="Чебурек">
+              <img class="content-mental__parts-hinkal"
+                   src="dist/assets/chinkal.png"
+                   alt="Хинкаль">
+              <img class="content-mental__parts-hinkal"
+                   src="dist/assets/chinkal.png"
+                   alt="Хинкаль">
+              <img class="content-mental__parts-cheburek"
+                   src="dist/assets/cheburek.png"
+                   alt="Чебурек">
+              <img class="content-mental__parts-hinkal"
+                   src="dist/assets/chinkal.png"
+                   alt="Хинкаль">
+              <img class="content-mental__parts-pie"
+                   src="dist/assets/pie.png"
+                   alt="Пирожок">
+              <img class="content-mental__parts-wolf"
+                   src="dist/assets/wolf.png"
+                   alt="Волк">
+              <img class="content-mental__parts-guy"
+                   src="dist/assets/guy.png"
+                   alt="Петя">
+            </div>
+          </div>
+          <div
+               class="content-mental__title js-slide-step grid__item grid__item--bordered grid grid--y-center grid--col-1 grid--row-1 grid--x-center title title--m">
+            Неопределенность
+            <div class="content-mental__uncertainty">
+              <img class="content-mental__uncertainty-pie"
+                   src="dist/assets/pie.png"
+                   alt="Пирожок">
+              <img class="content-mental__uncertainty-hinkal"
+                   src="dist/assets/chinkal.png"
+                   alt="Хинкаль">
+              <img class="content-mental__uncertainty-cheburek"
+                   src="dist/assets/cheburek.png"
+                   alt="Чебурек">
+              <img class="content-mental__uncertainty-carrot"
+                   src="dist/assets/carrot.png"
+                   alt="Морковка">
+            </div>
+          </div>
+          <div
+               class="content-mental__title js-slide-step grid__item grid__item--bordered grid grid--y-center grid--col-1 grid--row-1 grid--x-center title title--m">
+            Риск
+            <div class="content-mental__risk">
+              <img class="content-mental__risk-pie"
+                   src="dist/assets/pie.png"
+                   alt="Пирожок">
+              <img class="content-mental__risk-wolf"
+                   src="dist/assets/wolf.png"
+                   alt="Волк">
+              <img class="content-mental__risk-cheburek"
+                   src="dist/assets/cheburek-scream.png"
+                   alt="Испуганный Чебурек">
+              <img class="content-mental__risk-hinkal"
+                   src="dist/assets/chinkal-scream.png"
+                   alt="Испуганный Хинкаль">
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          Динамизм
+        </h2>
+        <div class="grid grid--stretch grid--y-start grid--x-center grid--col-6 grid--row-2">
+          <div class="grid__item grid__item--colspan-6">
+            Решение задачи строится на событиях. События происходят в произвольное время.
+          </div>
+          <div class="grid__item grid__item--colspan-2 grid grid--auto-x grid--col-1">
+            <h3 class="grid__item title title--s">Проблема</h3>
+            <p class="grid__item">Если волк съел пирожок, попытаться еще <strong class="highlight">N</strong> раз </p>
+          </div>
+          <div class="js-slide-step grid__item grid__item--y-stretch grid__item--colspan-4 grid grid--col-1 grid--row-1 grid--y-stretch">
+            <pre class="code grid__item js-slide-step" data-step-class="show-colors">
+                <code class="javascript">phone</code>
+                <code class="javascript"> .addEventListener("callFromGrandma", makePie);</code>
+                <code class="javascript">function makePie(event, <span class="code-color">counter = 0</span>) {</code>
+                <code class="javascript">  bakePie(event)</code>
+                <code class="javascript">   .then(sendPie)</code>
+                <code class="javascript">   .then(grandmaGetsPie)</code>
+                <code class="javascript">   .catch(() => <span class="code-color">eatenByWolf(event, counter++)</span>);</code>
+                <code class="javascript">}</code>
+                <code class="javascript">function eatenByWolf(event, <span class="code-color">counter</span>) {</code>
+                <code class="javascript">  if (counter &lt; <span class="highlight">N</span>) {</code>
+                <code class="javascript">    return <span class="code-color">makePie(event, counter)</span>;</code>
+                <code class="javascript">  } else {</code>
+                <code class="javascript">    return excuse();</code>
+                <code class="javascript">  }</code>
+                <code class="javascript">}</code>
+            </pre>
+          </div>
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          Динамизм
+        </h2>
+        <div class="grid grid--stretch grid--x-center grid--col-6 grid--row-2">
+          <div class="grid__item grid__item--colspan-6">
+            Решение задачи строится на событиях. События происходят в произвольное время.
+          </div>
+          <div class="grid__item grid__item--colspan-2 grid grid--col-1 grid--row-3 grid--stretch grid--y-stretch">
+            <h3 class="grid__item title title--s">Проблема</h3>
+            <p class="grid__item">Если волк съел пирожок, попытаться еще <strong class="highlight">N</strong> раз </p>
+          </div>
+          <div class="grid__item grid__item--colspan-4 js-slide-step grid grid--col-1 grid--row-3 grid--stretch grid--y-stretch">
+            <h3 class="grid__item title title--s">Рецепт: <strong class="highlight">реактивное программирование</strong> </h3>
+            <p class="grid__item js-slide-step">Работа с потоками событий в декларативном стиле.</p>
+            <div class="grid__item grid grid--col-1 grid--row-1 grid--y-stretch js-slide-step">
+              <pre class="js-slide-step" data-step-class="show-colors">
+                <code class="javascript">fromEvent("callFromGrandma", phone)</code>
+                <code class="javascript">.pipe(</code>
+                <code class="javascript">  concatMap(event => of(event).pipe(</code>
+                <code class="javascript">    concatMap(bakePies),</code>
+                <code class="javascript">    concatMap(sendPies),</code>
+                <code class="javascript">    <span class="code-color">retry(<span class="highlight">N</span>)</span></code>
+                <code class="javascript">  )),</code>
+                <code class="javascript">  catchError(excuse)</code>
+                <code class="javascript">)</code>
+                <code class="javascript">.subscribe(grandma);</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          Множество частей и связи между ними
+        </h2>
+        <div class="grid grid--stretch grid--y-start grid--x-center grid--col-6 grid--row-2">
+          <div class="grid__item grid__item--colspan-6">
+            Как сделать так, чтобы код быстрее читался?
+          </div>
+          <div class="grid__item grid__item--colspan-2 grid grid--stretch grid--y-stretch grid--col-1 grid--row-4">
+            <h3 class="grid__item title title--m">Проблема</h3>
+            <div class="grid__item">
+              Что делает эта функция? Можно ли понять, что происходит, не читая каждое условие?
+            </div>
+          </div>
+          <pre class="grid__item grid__item--colspan-4 grid__item js-slide-step">
+              <code class="javascript">function eatenByWolf(event, counter) {</code>
+              <code class="javascript">  if (counter &lt; N) {</code>
+              <code class="javascript">    return makePie(event, counter);</code>
+              <code class="javascript">  } else {</code>
+              <code class="javascript">    return excuse();</code>
+              <code class="javascript">  }</code>
+              <code class="javascript">}</code>
+          </pre>
+          <div class="grid__item grid__item--colspan-6 grid__item--y-end content-multiparts__eaten">
+            <img class="content-multiparts__eaten-pie"
+                 alt="Чебурек"
+                 src="dist/assets/cheburek.png" />
+            <img class="content-multiparts__eaten-wolf"
+                 alt="Волк в костюмчике"
+                 src="dist/assets/wolf-in-pants.png" />
+          </div>
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          Множество частей и связи между ними
+        </h2>
+        <div class="grid grid--stretch grid--y-stretch grid--x-center grid--col-6 grid--row-2">
+          <div class="grid__item grid__item--colspan-6">
+            Как сделать так, чтобы код быстрее читался?
+          </div>
+          <div class="grid__item grid__item--colspan-2 grid grid--stretch grid--y-stretch grid--col-1 grid--row-4">
+            <h3 class="grid__item title title--m">Проблема</h3>
+            <div class="grid__item">
+              Что делает эта функция? Можно ли понять, что происходит, не читая каждое условие?
+            </div>
+          </div>
+          <div class="grid__item grid__item--colspan-4 grid grid--stretch grid--row-3 grid--y-stretch grid--col-1 js-slide-step">
+            <h3 class="grid__item title title--m">Рецепт: <strong class="highlight">линия видимости (<small><i> line of sight </i></small>)</strong> </h3>
+            <ul class="grid__item">
+              <li class="js-slide-step">"Счастливый путь" &mdash; по левому краю</li>
+              <li class="js-slide-step">Самый "успешный" return &mdash; последний</li>
+              <li class="js-slide-step">В случаи неудачи &mdash; завершайте </li>
+              <li class="js-slide-step">Сложную логику &mdash; выносите</li>
+              <li class="js-slide-step">Нет return-ам внутри else</li>
+              <li class="js-slide-step">Инвертируйте условия для выхода</li>
+            </ul>
+            <pre class="js-slide-step grid__item grid__item--y-end">
+                <code class="javascript">function eatenByWolf(event, counter) {</code>
+                <code class="javascript">  if (counter > N) {</code>
+                <code class="javascript">    return excuse();</code>
+                <code class="javascript">  } </code>
+                <code class="javascript">  return makePie(event, counter);</code>
+                <code class="javascript">}</code>
+            </pre>
+          </div>
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          Множество частей и связи между ними
+        </h2>
+        <div class="grid grid--stretch grid--y-stretch grid--x-center grid--col-6 grid--row-1">
+          <div class="grid__item grid__item--colspan-2 grid grid--stretch grid--y-stretch grid--col-1 grid--row-3">
+            <h3 class="grid__item title title--m">Проблема</h3>
+            <div class="grid__item">
+              В коде есть "сквозные" (<i>pass-through</i>) методы
+            </div>
+          </div>
+          <div class="grid__item grid__item--colspan-4 grid grid--stretch grid--y-stretch grid--row-1 grid--col-1 js-slide-step">
+            <pre class="grid__item js-slide-step" data-step-class="show-colors">
+                <code class="javascript">class PieFactory {</code>
+                <code class="javascript">  constructor() {</code>
+                <code class="javascript">   this.maker = new RedRidingHood();</code>
+                <code class="javascript">  }</code>
+                <code class="javascript code-color">  bakePie(pie) { this.maker.bakePie(pie); }</code>
+                <code class="javascript code-color">  sendPie(pie) { this.maker.sendPie(pie); }</code>
+                <code class="javascript">}</code>
+                <code class="javascript"></code>
+                <code class="javascript">const factory = new PieFactory();</code>
+                <code class="javascript">fromEvent("callFromGrandma", phone)</code>
+                <code class="javascript">  .pipe(</code>
+                <code class="javascript">    concatMap(factory.bakePie),</code>
+                <code class="javascript">    concatMap(factory.sendPie)</code>
+                <code class="javascript">  ).subscribe(grandmaGetsPie);</code>
+            </pre>
+          </div>
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          Множество частей и связи между ними
+        </h2>
+        <div class="grid grid--stretch grid--y-stretch grid--x-center grid--col-6 grid--row-1">
+          <div class="grid__item grid__item--colspan-2 grid grid--stretch grid--y-stretch grid--col-1 grid--row-3">
+            <h3 class="grid__item title title--m">Проблема</h3>
+            <div class="grid__item">
+              В коде есть "сквозные" (<i>pass-through</i>) методы
+            </div>
+          </div>
+          <div class="grid__item grid__item--colspan-4 grid grid--stretch grid--y-stretch grid--row-5 grid--col-1 js-slide-step">
+            <h3 class="grid__item title title--m">Рецепт: <strong class="highlight">пересмотрите архитектуру</strong> </h3>
+            <div class="grid__item">
+              Возможно, чего-то не хватает
+            </div>
+            <pre class="js-slide-step grid__item">
+                <code class="javascript">class PieFactory {</code>
+                  <code class="javascript">  constructor() {</code>
+                  <code class="javascript">   this.maker = new RedRidingHood();</code>
+                  <code class="javascript">   this.friend = new Friend();</code>
+                  <code class="javascript">  }</code>
+                  <code class="javascript">  bakePie(pie) { return pie.type === <span class="content-code__icon content-code__icon--small content-code__icon--pie">'PIE'</span></code>
+                  <code class="javascript">     ? this.maker.bakePie(pie)</code>
+                  <code class="javascript">     : this.friend.buyPie(pie)</code>
+                  <code class="javascript">  }</code>
+                  <code class="javascript">}</code>
+            </pre>
+            <div class="grid__item js-slide-step">
+              Или же разделение ошибочно
+            </div>
+            <pre class="js-slide-step grid__item">
+              <code class="javascript">const factory = new RedRidingHood();</code>
+            </pre>
+          </div>
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          Множество частей и связи между ними
+        </h2>
+        <div class="grid grid--stretch grid--x-center grid--col-6 grid--row-1">
+          <div class="grid__item grid__item--colspan-2 grid grid--y-stretch grid--col-1 grid--row-3 grid--stretch">
+            <h3 class="grid__item title title--m">Проблема</h3>
+            <div class="grid__item">
+              Смесь общего и частного
+            </div>
+            <div class="grid__item grid__item--y-center grid__item--text-center">
+              <img alt="Хинкаль" width="60" src="dist/assets/chinkal.png" />
+              <img alt="Морковка" width="60" src="dist/assets/carrot.png" />
+              <img alt="Пирожок" width="60" src="dist/assets/pie.png" />
+            </div>
+            <div class="grid__item grid__item--text-center">
+              <img alt="Коробка" class="content-multiparts__box" width="160" src="dist/assets/box.png" />
+            </div>
+          </div>
+          <div class="grid__item grid__item--colspan-4 grid grid--y-stretch grid--col-1 grid--row-1 js-slide-step">
+            <pre class="code code--l grid__item js-slide-step" data-step-class="show-colors">
+                <code class="javascript">function basePresentPack(item) {</code>
+                <code class="javascript">  const box = putInBox(item);</code>
+                <code class="javascript">  const pack = addCard(box);</code>
+                <code class="javascript code-color">  return item.type && item.type === <span class="content-code__icon content-code__icon--small content-code__icon--hinkal">'HINKAL'</span></code>
+                <code class="javascript code-color">   ? addFork(pack)</code>
+                <code class="javascript code-color">   : pack;</code>
+                <code class="javascript">}</code>
+                <code class="javascript"></code>
+                <code class="javascript">/*где-то в коде*/</code>
+                <code class="javascript">const pie = bakePie(pieType);</code>
+                <code class="javascript">const box = <span class="code-color">basePresentPack(pie)</span>;</code>
+            </pre>
+          </div>
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          Множество частей и связи между ними
+        </h2>
+        <div class="grid grid--stretch grid--x-center grid--col-6 grid--row-1">
+          <div class="grid__item grid__item--colspan-2 grid grid--y-stretch grid--col-1 grid--row-3 grid--stretch">
+            <h3 class="grid__item title title--m">Проблема</h3>
+            <div class="grid__item">
+              Смесь общего и частного
+            </div>
+          </div>
+          <div class="grid__item grid__item--colspan-4 grid grid--y-stretch grid--col-1 grid--row-3 grid--stretch js-slide-step">
+            <h3 class="grid__item title title--m">Рецепт: <strong class="highlight">разделить</strong></h3>
+            <div class="grid__item">
+              Не засоряйте универсальные методы спецификой
+            </div>
+            <pre class="code code--l grid__item js-slide-step">
+                <code class="javascript">function basePresentPack(item) {</code>
+                <code class="javascript">  const box = putInBox(item);</code>
+                <code class="javascript">  const pack = addCard(box);</code>
+                <code class="javascript">  return pack;</code>
+                <code class="javascript">}</code>
+                <code class="javascript"></code>
+                <code class="javascript">function piePack(pie) {</code>
+                <code class="javascript">  const pack = basePresentPack(item);</code>
+                <code class="javascript">  return pie.type === <span class="content-code__icon content-code__icon--small content-code__icon--hinkal">'HINKAL'</span></code>
+                <code class="javascript">    ? addFork(pack)</code>
+                <code class="javascript">    : pack;</code>
+                <code class="javascript">}</code>
+            </pre>
+          </div>
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          Множество частей и связи между ними
+        </h2>
+        <div class="grid grid--stretch grid--x-center grid--col-6 grid--row-1">
+          <div class="grid__item grid__item--colspan-2 grid grid--y-stretch grid--col-1 grid--row-3 grid--stretch">
+            <h3 class="grid__item title title--m">Проблема: <strong class="highlight">сильная связь</strong></h3>
+            <div class="grid__item">
+              Один метод не понять без другого
+            </div>
+          </div>
+          <div class="grid__item grid__item--colspan-4 grid grid--y-stretch grid--col-1 grid--row-1 js-slide-step">
+            <pre class="grid__item js-slide-step" data-step-class="show-colors">
+                <code class="javascript">function cook(recipe, ingredients) {</code>
+                <code class="javascript">  const mixture = mix(recipe, ingredients);</code>
+                <code class="javascript">  const cookedItem = bake(mixture);</code>
+                <code class="javascript code-color">  const result = someCookingMagic(cookedItem);</code>
+                <code class="javascript">  return result;</code>
+                <code class="javascript">}</code>
+                <code class="javascript"></code>
+                <code class="javascript code-color">function someCookingMagic(item) {</code>
+                <code class="javascript code-color">  const result = decorate(item);</code>
+                <code class="javascript code-color">  return sayAbracadabra(result);</code>
+                <code class="javascript code-color">}</code>
+            </pre>
+          </div>
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          Множество частей и связи между ними
+        </h2>
+        <div class="grid grid--stretch grid--x-center grid--col-6 grid--row-1">
+          <div class="grid__item grid__item--colspan-2 grid grid--y-stretch grid--col-1 grid--row-3 grid--stretch">
+            <h3 class="grid__item title title--m">Проблема: <strong class="highlight">сильная связь</strong></h3>
+            <div class="grid__item">
+              Один метод не понять без другого
+            </div>
+          </div>
+          <div class="grid__item grid__item--colspan-4 grid grid--y-stretch grid--col-1 grid--row-3 grid--stretch js-slide-step">
+            <h3 class="grid__item title title--m">Рецепт: <strong class="highlight">объединить</strong></h3>
+            <div class="grid__item">
+              Или разделить как-нибудь по-другому
+            </div>
+            <pre class="grid__item js-slide-step">
+                <code class="javascript">function cook(recipe, ingredients) {</code>
+                <code class="javascript">    const mixture = mix(recipe, ingredients);</code>
+                <code class="javascript">    const cookedItem = bake(mixture);</code>
+                <code class="javascript">    const result = decorate(cookedItem);</code>
+                <code class="javascript">    return sayAbracadabra(result);</code>
+                <code class="javascript">}</code>
+            </pre>
+          </div>
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          Множество частей и связи между ними
+        </h2>
+        <div class="grid grid--stretch grid--y-stretch grid--x-center grid--col-6 grid--row-1">
+          <div class="grid__item grid__item--colspan-2 grid grid--stretch grid--y-stretch grid--col-1 grid--row-3">
+            <h3 class="grid__item title title--m">Проблема</h3>
+            <div class="grid__item">
+              Перенасыщенность переменными <br />
+              Каскад условий, вытекающих друг из друга
+            </div>
+          </div>
+          <div class="grid__item grid__item--colspan-4 grid grid--stretch grid--col-1 grid--row-1 js-slide-step">
+            <pre class="grid__item js-slide-step" data-step-class="show-colors">
+                <code class="javascript">fromEvent("callFromGrandma", phone).pipe(</code>
+                <code class="javascript">  .pipe(</code>
+                <code class="javascript">    concatMap(event => {</code>
+                <code class="javascript code-color">      const needPie = !!event.pie;</code>
+                <code class="javascript code-color">      const pie = needPie ? event.pie : null;</code>
+                <code class="javascript code-color">      const type = needPie ? pie.type : null;</code>
+                <code class="javascript code-color">      const pieType = type || <span class="content-code__icon content-code__icon--pie">'DEFAULT_TYPE'</span>;</code>
+                <code class="javascript code-color">      return type ? bakePie(pieType) : null;</code>
+                <code class="javascript">    }),</code>
+                <code class="javascript">    concatMap(sendPie)</code>
+                <code class="javascript">  ).subscribe(grandmaGetsPie);</code>
+            </pre>
+          </div>
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          Множество частей и связи между ними
+        </h2>
+        <div class="grid grid--stretch grid--y-stretch grid--x-center grid--col-6 grid--row-1">
+          <div class="grid__item grid__item--colspan-2 grid grid--stretch grid--y-stretch grid--col-1 grid--row-3">
+            <h3 class="grid__item title title--m">Проблема</h3>
+            <div class="grid__item">
+              Перенасыщенность переменными <br />
+              Каскад условий, вытекающих друг из друга
+            </div>
+          </div>
+          <div class="grid__item grid__item--colspan-4 grid grid--stretch grid--col-1 grid--row-3 grid--y-stretch js-slide-step">
+            <h3 class="grid__item title title--m">Рецепт: <strong class="highlight">перечитайте и удалите лишнее</strong></h3>
+            <div class="grid__item">
+              Иногда лучше написать условие подлиннее, чем создать переменную
+            </div>
+            <pre class="grid__item js-slide-step">
+                <code class="javascript">fromEvent("callFromGrandma", phone).pipe(</code>
+                <code class="javascript">    concatMap(event => event.pie</code>
+                <code class="javascript">      ? bakePie(event.pie.type || <span class="content-code__icon content-code__icon--pie">'DEFAULT_TYPE'</span>)</code>
+                <code class="javascript">      : null</code>
+                <code class="javascript">    ),</code>
+                <code class="javascript">    concatMap(sendPie)</code>
+                <code class="javascript">  ).subscribe(grandmaGetsPie);</code>
+            </pre>
+          </div>
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          Множество частей и связей между ними
+        </h2>
+        <div class="grid grid--stretch grid--y-stretch grid--x-center grid--col-6 grid--row-2">
+          <div class="grid__item grid__item--colspan-6">
+            Самодокументируемый код. Миф или Реальность?
+          </div>
+          <div class="grid__item grid__item--colspan-4 grid grid--col-1 grid--row-3 grid--stretch grid--y-stretch">
+            <h3 class="grid__item title title--m">Проблема: <span class="highlight">комментарии</span></h3>
+            <p class="grid__item">Тратят время и засоряют код?</p>
+            <div class="js-slide-step grid grid--col-1 grid--row-1 grid--y-stretch"
+                 data-step-order="-1">
+              <pre class="js-slide-step"
+                   data-step-class="show-comments"
+                   data-step-order="3">
+                  <code class="javascript js-slide-step" data-step-class="crossed" data-step-order="2">// спечь пирожок по просьбе бабушки</code>
+                  <code class="javascript">function bakePie(grandmaRequest, resources) {</code>
+                  <code class="javascript">  let pie = grandmaRequest.pie;</code>
+                  <code class="javascript">  if (pie.ingredients.some(x => !resources[x])) {</code>
+                  <code class="javascript">    pie = X.availablePie(resourses)<span class="code-comment"> /*1*/</span>;</code>
+                  <code class="javascript">  }</code>
+                  <code class="javascript">  switch (pie.type <span class="code-comment">/*2*/</span>) {</code>
+                  <code class="javascript">    case <span class="content-code__icon content-code__icon--hinkal">"PIE"</span>: return makeA();</code>
+                  <code class="javascript">    case <span class="content-code__icon content-code__icon--cheburek">"HINKAL"</span>: return makeB();</code>
+                  <code class="javascript">    case <span class="content-code__icon content-code__icon--pie">"CHEBUREK"</span>: return makeC();</code>
+                  <code class="javascript">    ....<span class="code-comment">/*3*/</span></code>
+                  <code class="javascript">  }</code>
+                  <code class="javascript">}</code>
+              </pre>
+            </div>
+          </div>
+          <div class="grid__item grid__item--colspan-2 js-slide-step grid grid--col-1 grid--row-3 grid--stretch grid--y-stretch"
+               data-step-order="0">
+            <h3 class="grid__item title title--m">Рецепт: <strong class="highlight">комментарии нужны, но не любые</strong> </h3>
+            <p class="grid__item">Два золотых правила</p>
+            <ol class="grid__item">
+              <li class="js-slide-step"
+                  data-step-order="1">
+                Удалите все, что дублирует код. Добавьте то, чего в нём нет
+              </li>
+            </ol>
+          </div>
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          Множество частей и связей между ними
+        </h2>
+        <div class="grid grid--stretch grid--y-stretch grid--x-center grid--col-6 grid--row-2">
+          <div class="grid__item grid__item--colspan-6 grid grid--col-1 grid--row-3 grid--stretch grid--y-stretch"
+               data-step-order="0">
+            <h3 class="grid__item title title--m">Рецепт: <strong class="highlight">комментарии нужны, но не любые</strong> </h3>
+            <p class="grid__item">Два золотых правила</p>
+          </div>
+          <ol class="grid__item grid__item--colspan-6">
+            <li>
+              Удалите все, что дублирует код. Добавьте то, чего в нём нет
+              <pre class="code code--counterless js-slide-step">
+                <code class="javascript">// 1: используем X для оптимизации (Y работало плохо)</code>
+                <code class="javascript">// 2: не проверяем на null, потому что Z</code>
+                <code class="javascript">// 3: список из JIRA-XXX</code>
+              </pre>
+            </li>
+            <li class="js-slide-step">Конкретика лучше абстракции
+              <pre class="code code--counterless js-slide-step">
+                  <code class="javascript">// bakePie(</code>
+                  <code class="javascript">//   { type: <span class="content-code__icon content-code__icon--small content-code__icon--pie">'PIE'</span>, ingredients: ['flour','oil','meat'] },</code>
+                  <code class="javascript">//   { 'flour': true, 'oil': true, 'meat' true }</code>
+                  <code class="javascript">// )</code>
+              </pre>
+            </li>
+          </ol>
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          Множество частей и связей между ними
+        </h2>
+        <div class="grid grid--y-center grid--x-center grid--col-12 grid--row-1">
+          <div class="grid__item grid__item-y--center grid__item--colspan-8">
+            <h3 class="title title--m">Советы от вашего капитана</h3>
+            <ul class="grid__item grid__item--colspan-8 grid__item--y-center">
+              <li class="js-slide-step">
+                По возможности пишите <strong class="highlight">чистые</strong> функции <strong class="highlight">без побочных
+                  эффектов</strong>
+              </li>
+              <li class="js-slide-step">
+                При сложной бизнес-логике &mdash; используйте <strong class="highlight">TypeScript</strong>
+              </li>
+              <li class="js-slide-step"><strong class="highlight">Не дублируйте</strong> код</li>
+              <li class="js-slide-step">
+                Когда рефакторите и удаляете что-то &mdash; <strong class="highlight">удаляйте до конца</strong>
+                (если кажется, что удалили всё &mdash; проверьте еще раз)
+              </li>
+              <li class="js-slide-step">
+                <strong class="highlight">Не оставляйте закомментаренный код</strong>
+                (он есть в истории и путает других)
+              </li>
+            </ul>
+          </div>
+          <img class="grid__item grid__item-y--start grid__item--colstart-9 grid__item--colspan-4 grid__item--y-center content-multiparts__cap"
+               src="dist/assets/girl-cap.png"
+               alt="Капитан Очевидность" />
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          Неопределенность
+        </h2>
+        <div class="grid grid__item--y-stretch grid--x-center grid--col-2 grid--row-1">
+          <div class="grid__item grid grid--row-3 grid--col-1 grid--stretch grid--y-stretch">
+            <h3 class="grid__item title title--m">Проблема</h3>
+            <p class="grid__item">Слишком много условий в коде</p>
+            <pre class="code code--xs grid__item js-slide-step"
+                 data-step-class="show-comments"
+                 data-step-order="3">
+                <code class="javascript">function cookForGrandma(recipeNames) {</code>
+                <code class="javascript">  getRecipesFromServer(recipeNames)</code>
+                <code class="javascript">    .then(cookByRecipe)</code>
+                <code class="javascript">    .catch(handleErr);</code>
+                <code class="javascript">}</code>
+                <code class="javascript">function cookByRecipe(recipes) {</code>
+                <code class="javascript js-slide-step" data-step-class="crossed" data-step-order="2">   if (!recipes) return; </code>
+                <code class="javascript">   recipes.forEach(recipe => {</code>
+                <code class="javascript js-slide-step" data-step-class="crossed" data-step-order="4">     if (recipe.ingredients) {</code>
+                <code class="javascript">         /* mixIngedients */</code>
+                <code class="javascript">     }</code>
+                <code class="javascript  js-slide-step" data-step-class="crossed" data-step-order="6">     if (recipe.type === 'soup') {</code>
+                <code class="javascript  js-slide-step" data-step-class="crossed" data-step-order="6">       /* Cook soup */</code>
+                <code class="javascript">     } else { /* Bake pie */ }</code>
+                <code class="javascript">   });</code>
+                <code class="javascript">}</code>
+            </pre>
+          </div>
+          <div class="grid__item js-slide-step grid grid--row-3 grid--col-1 grid--stretch grid--y-stretch"
+               data-step-order="0">
+            <h3 class="grid__item title title--m">Рецепт: <strong class="highlight">возможно они вам не нужны?</strong> </h3>
+            <p class="grid__item">Удалите лишнее</p>
+            <ul class="grid__item">
+              <li class="js-slide-step"
+                  data-step-order="1">
+                Не проверяйте на true то, что и так существует (массивы)
+              </li>
+              <li class="js-slide-step"
+                  data-step-order="3">
+                Проверьте типы/контракты/моменты вызова.
+                Не надо проверять, что свойство существует, если оно точно есть в объекте, а объект точно есть на момент
+                вызова.
+              </li>
+              <li class="js-slide-step"
+                  data-step-order="5">
+                Не проверяйте то, чего не может быть.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          Неопределенность
+        </h2>
+        <div class="grid grid--y-stretch grid--x-center grid--col-6 grid--row-1">
+          <div class="grid__item grid__item--colspan-2 grid grid--col-1 grid--row-2 grid--stretch grid--y-start">
+            <h3 class="grid__item title title--m">Проблема</h3>
+            <p class="grid__item">Слишком много условий, и они нужны</p>
+          </div>
+          <div class="grid__item grid__item--colspan-4 js-slide-step grid grid--row-1 grid--col-1 grid--stretch grid--y-stretch"
+               data-step-order="0">
+            <pre class="js-slide-step" data-step-class="show-colors">
+              <code class="javascript">function packPies(courier, packA, packB, pies) {</code>
+              <code class="javascript">  const parcel = [];</code>
+              <code class="javascript">  for (let i = 0; i &lt; pies.length;i++) {</code>
+              <code class="javascript">    let pie = null;</code>
+              <code class="javascript code-color">    switch (pies[i].type) {</code>
+              <code class="javascript code-color">      case <span class="content-code__icon content-code__icon--hinkal">"HINKAL"</span>: pie = packA(pies[i]); break;</code>
+              <code class="javascript code-color">      case <span class="content-code__icon content-code__icon--cheburek">"CHEBUREK"</span>:</code>
+              <code class="javascript code-color">      case <span class="content-code__icon content-code__icon--pie">"PIE"</span>: pie = packB(pies[i]); break;</code>
+              <code class="javascript code-color">    }</code>
+              <code class="javascript code-color">    if (pie ) { parcel.push(pie); }</code>
+              <code class="javascript">  }</code>
+              <code class="javascript">  if (parcel.length ) {</code>
+              <code class="javascript">    courier.send(parcel);</code>
+              <code class="javascript">  }</code>
+              <code class="javascript">}</code>
+          </pre>
+          </div>
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          Неопределенность
+        </h2>
+        <div class="grid grid--y-stretch grid--x-center grid--col-6 grid--row-1">
+          <div class="grid__item grid__item--colspan-2 grid grid--row-2 grid--stretch grid--col-1 grid--y-start">
+            <h3 class="grid__item title title--m">Проблема</h3>
+            <p class="grid__item">Слишком много условий, и они нужны</p>
+          </div>
+          <div class="grid__item grid__item--colspan-4 js-slide-step grid grid--row-3 grid--col-1 grid--stretch grid--y-stretch"
+               data-step-order="0">
+            <h3 class="grid__item title title--m">Рецепт: <strong class="highlight">сделать так, чтобы они исчезли</strong> </h3>
+            <p class="grid__item js-slide-step">Измените поведение/архитектуру, чтобы проверки больше не требовались</p>
+            <ul class="grid__item">
+              <li class="js-slide-step">Параметры по умолчанию у методов</li>
+              <li class="js-slide-step">Дефолтные значения вместо null</li>
+              <li class="js-slide-step">Объекты вместо условий</li>
+              <li class="js-slide-step">ФП и монады</li>
+            </ul>
+          </div>
+          <pre class="js-slide-step grid__item grid__item--colspan-6">
+            <code>const pack = {<span class="content-code__icon content-code__icon--small content-code__icon--hinkal">'HINKAL'</span>: packA,<span class="content-code__icon content-code__icon--small content-code__icon--cheburek">'CHEBUREK'</span>: packB,<span class="content-code__icon content-code__icon--small content-code__icon--pie">'PIE'</span>: packB };</code>
+            <code>function packPies(courier, pies, packMap = pack) {</code>
+            <code>  courier.send(pies</code>
+            <code>    .filter(pie => packMap[pie.type])</code>
+            <code>    .map(pie => packMap[pie.type](pie)));</code>
+            <code>}</code>
+          </pre>
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          Неопределенность
+        </h2>
+        <div class="grid grid--y-stretch grid--x-center grid--col-6 grid--row-1">
+          <div class="grid__item grid__item--colspan-2 grid grid--row-3 grid--col-1 grid--stretch grid--y-stretch">
+            <h3 class="grid__item title title--m">Проблема</h3>
+            <p class="grid__item">Слишком много условий, и они точно нужны!!!</p>
+          </div>
+          <div class="grid__item grid__item--colspan-4 js-slide-step grid grid--row-5 grid--col-1 grid--stretch grid--y-stretch">
+            <pre class="js-slide-step" data-step-class="show-colors">
+                <code class="javascript">function getRecipe(pieType) {</code>
+                <code class="javascript">  return getHttpRecipe(pieType).then(extract);</code>
+                <code class="javascript">)</code>
+                <code class="javascript">/*где-то в коде*/</code>
+                <code class="javascript">getRecipe(<span class="content-code__icon content-code__icon--cheburek">'CHEBUREK'</span>)</code>
+                <code class="javascript code-color">  .catch(error => {</code>
+                <code class="javascript code-color">    if (error && error.message) {</code>
+                <code class="javascript code-color">      notify(error);</code>
+                <code class="javascript code-color">    }</code>
+                <code class="javascript code-color">    return DEFAULT_RECIPE;</code>
+                <code class="javascript code-color">  });</code>
+                <code class="javascript">/*где-то еще в коде*/</code>
+                <code class="javascript">getRecipe(<span class="content-code__icon content-code__icon--hinkal">'HINKAL'</span>)</code>
+                <code class="javascript code-color">  .catch(error => {</code>
+                <code class="javascript code-color">    if (error) { console.log(error.message); }</code>
+                <code class="javascript code-color">    return DEFAULT_RECIPE;</code>
+                <code class="javascript code-color">  });</code>
+              </pre>
+          </div>
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          Неопределенность
+        </h2>
+        <div class="grid grid--y-stretch grid--x-center grid--col-6 grid--row-1">
+          <div class="grid__item grid__item--colspan-2 grid grid--row-2 grid--col-1 grid--stretch grid--y-stretch">
+            <h3 class="grid__item title title--m">Проблема</h3>
+            <p class="grid__item">Слишком много условий, и они точно нужны!!!</p>
+          </div>
+          <div class="grid__item grid__item--colspan-4 js-slide-step grid grid--row-2 grid--col-1 grid--stretch grid--y-stretch">
+            <h3 class="grid__item title title--m">Рецепт: <strong class="highlight">маскирование и агрегация</strong> </h3>
+            <p class="grid__item">Перенесите условие туда, где оно меньше всего мешает (на более базовый уровень).</p>
+          </div>
+          <pre class="grid__item grid__item--colspan-6 js-slide-step">
+            <code class="javascript">function getRecipe(pieType) {</code>
+            <code class="javascript">  return getHttpRecipe(pieType).then(extract).catch(error => {</code>
+            <code class="javascript">    if (error.message) { notify(error.message); }</code>
+            <code class="javascript">    return DEFAULT_RECIPE;</code>
+            <code class="javascript">  });</code>
+            <code class="javascript">)</code>
+          </pre>
+
+          <p class="grid__item grid__item--colspan-6 js-slide-step">Или объедините и обрабатывайте разом.</p>
+          <pre class="grid__item grid__item--colspan-6 js-slide-step">
+            <code class="javascript">function bake(pieType) {</code>
+            <code class="javascript">  return getRecipe(pieType).then(mix).then(bake).catch(handleBakeError);</code>
+            <code class="javascript">)</code>
+          </pre>
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          Риск
+        </h2>
+        <div class="grid grid--y-stretch grid--x-center grid--col-6 grid--row-1">
+          <div class="grid__item grid__item--colspan-2 grid grid--row-3 grid--col-1 grid--stretch grid--y-stretch">
+            <h3 class="grid__item title title--m">Проблема: <strong class="highlight">риск &mdash; благородное дело</strong></h3>
+            <p class="grid__item">Задача не сложная и не очень важная, сделаем потом</p>
+          </div>
+          <div class="grid__item grid__item--colspan-4 js-slide-step grid grid--row-1 grid--col-1 grid--y-stretch">
+            <pre class="js-slide-step" data-step-class="show-colors">
+              <code class="javascript code-color">// добавить loader</code>
+              <code class="javascript">fromEvent("callFromGrandma", phone)</code>
+              <code class="javascript">.pipe(</code>
+              <code class="javascript">  concatMap(event => of(event).pipe(</code>
+              <code class="javascript">      concatMap(bakePies),</code>
+              <code class="javascript">      concatMap(sendPies),</code>
+              <code class="javascript">      retry(N)</code>
+              <code class="javascript">    )),</code>
+              <code class="javascript">  catchError(excuse)</code>
+              <code class="javascript">)</code>
+              <code class="javascript">.subscribe(grandma);</code>
+            </pre>
+          </div>
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          Риск
+        </h2>
+        <div class="grid grid--y-stretch grid--x-center grid--col-6 grid--row-1">
+          <div class="grid__item grid__item--colspan-2 grid grid--row-3 grid--col-1 grid--stretch grid--y-stretch">
+            <h3 class="grid__item title title--m">Проблема: <strong class="highlight">риск &mdash; благородное дело</strong></h3>
+            <p class="grid__item">Задача не сложная и не очень важная, сделаем потом</p>
+          </div>
+          <div class="grid__item grid__item--colspan-4 js-slide-step grid grid--row-4 grid--col-1 grid--stretch grid--y-stretch">
+            <h3 class="grid__item title title--m">Рецепт: <strong class="highlight">на самом деле нет</strong></h3>
+            <p class="grid__item">Стандартные вещи делайте сразу, пока они еще не требуют значительных усилий, например:</p>
+            <ul class="grid__item">
+              <li class="js-slide-step">Отслеживание состояний HTTP запросов</li>
+              <li class="js-slide-step">Добавление прелоадера</li>
+              <li class="js-slide-step">Сообщение об ошибках в приложении</li>
+            </ul>
+            <div class="grid__item grid--col-1 grid--row-1 grid--y-stretch js-slide-step">
+              <pre class="js-slide-step" data-step-class="show-colors">
+                <code class="javascript">concatMap(event => of(event).pipe(</code>
+                <code class="javascript">  <span class="code-color">tap(loaderIncrement)</span>,</code>
+                <code class="javascript">  concatMap(bakePies),</code>
+                <code class="javascript">  concatMap(sendPies),</code>
+                <code class="javascript">  retry(N),</code>
+                <code class="javascript">  <span class="code-color">finally(loaderDecrement)</span>,</code>
+                <code class="javascript">)),</code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          Риск
+        </h2>
+        <div class="grid grid--stretch grid--x-center grid--col-6 grid--row-2">
+          <div class="grid__item grid__item--colspan-2">
+            <h3 class="title title--m">Проблема</h3>
+            <p>Не надо обсуждать код, который работает</p>
+          </div>
+          <div class="grid__item grid__item--colspan-4 js-slide-step">
+            <h3 class="title title--s"><span class="highlight">Ошибочная общность взглядов</span> <br /> (<i>fundamental common-ground breakdown</i>)
+            </h3>
+            <div class="js-slide-step grid grid--x-center grid--col-6 content-risk__problem">
+              <div class="grid__item grid__item--text-center title title--s">А</div>
+              <div class="grid__item grid__item--colspan-2 grid grid--col-1">
+                <img class="content-risk__problem-img"
+                      src="dist/assets/girl.png"
+                      alt="группа А - докладчик" />
+              </div>
+              <div class="grid__item grid__item--text-center title title--s">B</div>
+              <div class="grid__item grid__item--colspan-2 grid grid--x-center grid--col-1">
+                <img class="content-risk__problem-img"
+                      src="dist/assets/guy.png"
+                      alt="группа B - коллега Петя" />
+              </div>
+              <ul class="grid__item grid__item--colspan-6">
+                <li class="js-slide-step">A думает, что B знает про X</li>
+                <li class="js-slide-step">B про X не знает и не знает, что должен знать</li>
+                <li class="js-slide-step">Поэтому B ничего не спрашивает</li>
+                <li class="js-slide-step">Поэтому A считает, что B всё знает</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          Риск
+        </h2>
+        <div class="grid grid--stretch grid--x-center grid--col-6 grid--row-2">
+          <div class="grid__item grid__item--colspan-2">
+            <h3 class="title title--m">Проблема</h3>
+            <p>Не надо обсуждать код, который работает</p>
+          </div>
+          <div class="grid__item grid__item--colspan-4 js-slide-step grid grid--col-1">
+            <h3 class="grid__item title title--m">Рецепт: <strong class="highlight">на самом деле надо</strong> </h3>
+            <p class="grid__item">Постоянная рекалибровка когнитивных моделей повышает устойчивость.</p>
+            <ul class="grid__item">
+              <li class="js-slide-step">Грамотное код-ревью</li>
+              <li class="js-slide-step">Ретроспектива с разбором багов</li>
+              <li class="js-slide-step">
+                Программирование хаоса:
+                <ul>
+                  <li class="js-slide-step">Bыбор "ошибочной" ситуации</li>
+                  <li class="js-slide-step">Построение гипотезы</li>
+                  <li class="js-slide-step">Намеренное моделирование этой ситуации</li>
+                  <li class="js-slide-step">Сбор данных и сравнение с гипотезой</li>
+                </ul>
+              </li>
+            </ul>
+            <div class="js-slide-step">
+              Например: что будет, если волк съест <br/>только половину пирожка?
+            </div>
+          </div>
+        </div>
+        <div class="content-risk__half-pie js-slide-step">
+          <img class="content-risk__half-pie-img"
+               src="dist/assets/pie.png"
+               alt="Половина пирожка" />
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          Выводы
+        </h2>
+        <div class="grid grid--stretch grid--y-stretch grid--col-2 grid--row-3">
+          <div class="grid__item grid__item--rowspan-2">
+            <div class="content-final__graph">
+              <svg class="content-final__graph-svg" viewBox="0 0 456 282" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <path data-step-order="3" class="js-slide-step" d="M7 275L314 2" stroke="#F9198A" stroke-width="2" stroke-linecap="square"/>
+                  <path data-step-order="1" class="js-slide-step" d="M7 275c9-44 32-83 71-117 38-34 134-55 287-63" stroke="#0040A5" stroke-width="2" stroke-linecap="square"/>
+                  <path d="M8 16L7 276l-2-1L6 16H0L7 2l7 14H8z" fill="#000000" fill-rule="nonzero"/>
+                  <path d="M442 276H6v-2h436v-6l14 7-14 7v-6z" fill="#000000" fill-rule="nonzero"/>
+                </g>
+              </svg>
+              <div class="content-final__graph-y">Прогресс</div>
+              <div class="content-final__graph-x">Время</div>
+              <div class="content-final__graph-tactical js-slide-step"
+                   data-step-order="2">Тактическое программирование</div>
+              <div class="content-final__graph-strategic js-slide-step"
+                   data-step-order="4">Стратегическое программирование</div>
+            </div>
+          </div>
+          <div
+               class="js-slide-step title title--s grid__item grid__item--text-center grid__item--rowstart-1 grid__item--rowspan-1 grid__item--colstart-2">
+            Осознанное написание понятного кода в перспективе делает кодовую базу более поддерживаемой и расширяемой
+          </div>
+          <div
+               class="js-slide-step  title title--xl grid__item grid__item--text-center grid__item--rowstart-3 grid__item--rowspan-1 grid__item--colstart-1">
+            Пирамида потребностей программного кода
+          </div>
+          <div class="grid__item grid__item--y-center grid__item--rowstart-2 grid__item--rowspan-2 grid__item--colstart-2">
+            <div class="content-final__pyramid">
+              <svg class="js-slide-step content-final__pyramid-svg" viewBox="0 0 674 543" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                <g fill="none" fill-rule="evenodd" stroke="#000000" stroke-width="2">
+                  <path d="M337 2l335 540H2z"/><path d="M169 273h335" fill="#D8D8D8"/>
+                  <path d="M116 362h444M59 452h556M222 189h231" stroke-linecap="square"/>
+                </g>
+              </svg>
+              <div class="js-slide-step content-final__pyramid-text content-final__pyramid-text--understandable">Понятный</div>
+              <div class="js-slide-step content-final__pyramid-text content-final__pyramid-text--debuggable">Отлаживаемый</div>
+              <div class="js-slide-step content-final__pyramid-text content-final__pyramid-text--testable">Тестируемый</div>
+              <div class="js-slide-step content-final__pyramid-text content-final__pyramid-text--extensible">Расширяемый</div>
+              <div class="js-slide-step content-final__pyramid-text content-final__pyramid-text--maintainable">Поддерживаемый
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          Выводы
+        </h2>
+        <div class="grid grid--stretch grid--row-3 grid--x-center  grid--y-stretch grid--col-2">
+          <h3 class="grid__item grid__item--text-center grid__item--colspan-2 title title--xl">Не верьте себе, код всегда понятен сразу после написания!</h3>
+          <ul class="large grid__item">
+            <li class="js-slide-step">Пользуйтесь метриками</li>
+            <li class="js-slide-step">Спрашивайте мнения коллег</li>
+          </ul>
+          <ul class="large grid__item">
+              <li class="js-slide-step">Пишите комментарии</li>
+            <li class="js-slide-step">Думайте о понимании на каждом этапе разработке</li>
+          </ul>
+          <div class="grid__item grid__item--text-center grid__item--y-center grid__item--colspan-2 js-slide-step">
+            <p>
+              <strong>
+                И тогда пирожочки будут реже теряться на пути к бабушке!
+              </strong>
+            </p>
+            <div class="grid grid--col-12 grid--row-1 grid--y-end content-final__delivery">
+              <img class="grid__item content-final__delivery-girl"
+                   src="dist/assets/red-ridinghood.png"
+                   alt="Красная Шапочка">
+              <img class="grid__item grid__item--colspan-9 content-final__delivery-pie"
+                   src="dist/assets/pie.png"
+                   alt="Пирожок">
+              <img class="grid__item content-final__delivery-grandma grid__item--colspan-2 grid__item--colstart-11"
+                   src="dist/assets/grandma.png"
+                   alt="Бабушка">
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          Полезные ссылки
+        </h2>
+        <div class="grid grid--y-center grid--x-center grid--col-1">
+          <ul class="list list--wide">
+            <li>
+              <a href="https://medium.com/@copyconstruct/effective-mental-models-for-code-and-systems-7c55918f1b3e"
+                 target="_blank">
+                Cindy Sridharan. Effective Mental Models for Code and Systems
+              </a>
+            </li>
+            <li>
+              David D. Woods. Coping with complexity: the psychology of human
+              behaviour in complex systems.
+            </li>
+            <li>
+              <a href="https://www.dropbox.com/s/6dv5n3zhv1ozt3w/infoq.pdf?dl=0"
+                 target="_blank">John Allspaw. Recalibrating Mental Models Through Design of
+                Chaos Experiments. eMag, issue 67 - Nov 2018.
+              </a>
+            </li>
+            <li>John Ousterhout. A philosophy of software design.</li>
+            <li>
+              Elements of Software Science, Halstead, Maurice H. 1977
+            </li>
+            <li>Expert JavaScript. Mark E. Daggett.</li>
+            <li>
+              Structured Testing: A Testing Methodology Using the Cyclomatic Complexity Metric. Arthur H. Watson Thomas J. McCabe,
+              1996.
+            </li>
+            <li>Applying Halstead Metrics in Your Programs, Abdul Rehman Shaikh.</li>
+            <li>The Software Maintainability index revised, Kurt D. Welker.</li>
+            <li>
+              <a href="https://medium.com/@matryer/line-of-sight-in-code-186dd7cdea88"
+                 target="_blank">Mat Ryer. Code: Align the happy path to the left edge.
+              </a>
+            </li>
+            <li>Cognitive Complexity. A new way of measuring understandability, G. Ann Campbell.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="slides__item js-slide">
+        <h2 class="title title--xl">
+          Сссылка на слайды на гитхабе
+        </h2>
+        <div class="grid grid--y-center grid--x-center grid--col-1">
+          <a href="https://github.com/fr-ench/complexity-slides" title="_blank">
+            <img src="dist/assets/qr-code.png" alt="QR Code"/>
+          </a>
+        </div>
+      </article>
+
+      <aside class="slides-loader"></aside>
+    </section>
+  </main>
+  <script src="dist/app.js?ver=7"></script>
+</body>
+
+</html>

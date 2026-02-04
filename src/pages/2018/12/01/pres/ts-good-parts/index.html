@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>TypeScript: the good parts</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="shower/themes/ribbon/styles/styles.css" />
+    <style>
+      .shower {
+        --slide-ratio: calc(16 / 9);
+      }
+    </style>
+    <style>
+      .centered {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      header.caption {
+        color: white;
+      }
+
+      .cover.cover {
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body class="shower list">
+    <header class="caption">
+      <h1>Typescript: the good parts</h1>
+      <p>
+        Михаил Башуров
+        <a href="https://twitter.com/saitonakamura" target="_blank" rel="noopener noreferrer">@saitonakamura</a>
+      </p>
+    </header>
+
+    <section class="slide" id="title">
+      <figure><img src="pictures/mahaon.png" alt="Бабочка махаон" /></figure>
+      <h2><span class="main-title"> TypeScript:</span><br />The good parts</h2>
+      <style>
+        #title {
+          position: relative;
+        }
+
+        #title h2 {
+          margin: 0 180px;
+          margin-top: 200px;
+          padding: 25px;
+          color: white;
+          text-align: center;
+          font-size: 70px;
+          background-color: rgb(3, 165, 187);
+          line-height: 120%;
+        }
+
+        #title h2 .main-title {
+          font-size: 100px;
+        }
+
+        #title figure {
+          position: absolute;
+          left: 360px;
+          top: -20px;
+          transform: rotate(-30deg);
+        }
+
+        #title figure img {
+          width: 350px;
+        }
+      </style>
+    </section>
+
+    <section class="slide" id="me">
+      <div class="columns two">
+        <div>
+          <h2>Михаил Башуров</h2>
+
+          <a class="twitter-link" href="https://twitter.com/saitonakamura" target="_blank" rel="noopener noreferrer"
+            ><img class="twitter-logo" src="pictures/Twitter_Logo_Blue.svg" alt="Лого твиттер" />@saitonakamura</a
+          >
+          <ul>
+            <li>.NET</li>
+            <li>React</li>
+            <li>Typescript</li>
+            <li>...</li>
+          </ul>
+        </div>
+        <div>
+          <a class="github-link" href="https://github.com/saitonakamura" target="_blank" rel="noopener noreferrer"
+            ><img class="github-logo" src="pictures/GitHub-Mark-32px.png" alt="Лого твиттер" />@saitonakamura</a
+          >
+          <ul>
+            <li>Тесты</li>
+            <li>Красивый UI</li>
+            <li>Типы</li>
+            <li>...</li>
+          </ul>
+        </div>
+      </div>
+
+      <style>
+        #me .twitter-link {
+          text-decoration: none;
+        }
+
+        #me .twitter-logo {
+          height: 40px;
+          margin-bottom: -10px;
+        }
+
+        #me .github-link {
+          text-decoration: none;
+        }
+
+        #me .github-logo {
+          height: 32px;
+          margin-bottom: -8px;
+          margin-right: 5px;
+        }
+      </style>
+    </section>
+
+    <section class="slide centered" id="twitter">
+      <blockquote class="twitter-tweet" data-lang="eng">
+        <p lang="en" dir="ltr">
+          JavaScript. It&#39;s basically TypeScript with implicit `any`, but you don&#39;t have to write any types
+        </p>
+        &mdash; Horse JS (@horse_js)
+        <a href="https://twitter.com/horse_js/status/1057279482447515650?ref_src=twsrc%5Etfw">30 октября 2018 г.</a>
+      </blockquote>
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+      <style>
+        #twitter .twitter-tweet {
+          margin-top: -50px;
+        }
+      </style>
+    </section>
+
+    <section class="slide" id="greyGoo">
+      <h2>Any это Серая слизь</h2>
+      <figure>
+        <img
+          class="cover"
+          src="pictures/day_the_earth_stood_still05.jpg"
+          alt="Серая слизь - апокалиптический сценарий самореплицирующихся наномашин"
+        />
+      </figure>
+      <style>
+        #greyGoo h2 {
+          margin: 100px 0 0;
+          color: white;
+          text-align: center;
+          font-size: 90px;
+        }
+      </style>
+    </section>
+
+    <section class="slide">
+      <div class="columns two">
+        <div>
+          <h2>any</h2>
+          <ul>
+            <li>Отключает все проверки</li>
+            <li>Растекается по кодовой базе</li>
+            <li>Полезен в исключительных случаях</li>
+          </ul>
+        </div>
+        <div>
+          <h2>unknown</h2>
+          <ul>
+            <li>>= typescript@3.0</li>
+            <li>Заставляет сделать рантайм проверки</li>
+            <li>Нужен при общении с внешней средой</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="strict">
+      <img src="pictures/san-andreas.jpg" alt="Постер фильма Разлом Сан-Андреас" class="cover" />
+      <h2 class="shout">Strict</h2>
+
+      <style>
+        #strict .shout {
+          color: white;
+        }
+      </style>
+    </section>
+
+    <section class="slide">
+      <div class="columns two">
+        <div>
+          <h2>strictNullChecks</h2>
+          <ul>
+            <li>
+              <a
+                href="https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Ошибка на миллиард долларов</a
+              >
+            </li>
+            <li><code>number | null</code></li>
+          </ul>
+        </div>
+        <div>
+          <h2>noImplicitAny</h2>
+          <ul>
+            <li>any только явно</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="schism">
+      <img
+        src="pictures/import-schism.png"
+        alt="Great christian schism illustration as a metaphor for typescript and babel different view on imports"
+        class="cover"
+      />
+      <a
+        class="link"
+        href="https://itnext.io/great-import-schism-typescript-confusion-around-imports-explained-d512fc6769c2"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Great import schism: Typescript confusion around imports explained</a
+      >
+
+      <style>
+        #schism .link {
+          position: absolute;
+          color: white;
+          bottom: 32px;
+          left: 140px;
+        }
+      </style>
+    </section>
+
+    <section class="slide">
+      <h2>--esModuleInterop</h2>
+      <ul>
+        <li>Удобно</li>
+        <li>Стандарт = совместимость</li>
+        <li>Унификация!</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <div class="columns two">
+        <div>
+          <h2>Named imports</h2>
+          <ul>
+            <li>Рефакторинг</li>
+            <li>Реэкспорт</li>
+            <li>Автоимпорт</li>
+            <li>Тришейкинг</li>
+          </ul>
+        </div>
+        <div>
+          <h2>Default imports</h2>
+          <ul>
+            <li>Совместимость с require</li>
+            <li><s>Рефакторинг</s></li>
+            <li><code>export { default } from './module'</code></li>
+            <li><s>Автоимпорт</s></li>
+            <li><s>Тришейкинг</s></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <h2>Typescript = ES201* + типы</h2>
+      <ul>
+        <li><s>Experimental decorators</s> => функция pipe</li>
+        <li><s>Enums</s> => строковые литералы</li>
+        <li><s>namespaces</s> => ES6 imports</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>И еще</h2>
+      <ul>
+        <li>--forceConsistentFilenames</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Проверка типов</h2>
+      <ul>
+        <li>Нет синхронной проверке</li>
+        <li><code>tsc --noEmit --pretty --project .</code></li>
+        <li><code>CheckerPlugin</code>&nbsp; или &nbsp;<code>fork-ts-checker</code></li>
+      </ul>
+    </section>
+
+    <section class="slide" id="terminator">
+      <img src="pictures/terminator.jpg" alt="Т-100 из фильма Терминатор" class="cover" />
+      <h2 class="shout">Линтеры</h2>
+
+      <style>
+        #terminator .shout {
+          color: white;
+        }
+      </style>
+    </section>
+
+    <section class="slide">
+      <h2>Линтеры</h2>
+      <ul>
+        <li>tslint</li>
+        <li>tslint:recommended</li>
+        <li>tslint:latest</li>
+        <li>Можно даже eslint!</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <div class="columns two">
+        <div>
+          <h2>Type</h2>
+          <ul>
+            <li>Более гибко <code>& |</code></li>
+            <li>Чуть меньше писать</li>
+            <li>Нет слияния деклараций</li>
+          </ul>
+        </div>
+        <div>
+          <h2>Interface</h2>
+          <ul>
+            <li>Слияние деклараций</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide"><h2>Классы</h2></section>
+
+    <section class="slide">
+      <div class="columns two">
+        <div>
+          <h2>Bind</h2>
+          <ul>
+            <li><code>this.handle = this.handle.bind(this)</code></li>
+            <li>Больше писать</li>
+            <li>Сложнее поддерживать</li>
+            <li>Стандарт</li>
+            <li>Чуть быстрее</li>
+          </ul>
+        </div>
+        <div>
+          <h2>bound class fields</h2>
+          <ul>
+            <li><code>handle = val => this.setState({ val })</code></li>
+            <li>Кратко</li>
+            <li>Удобно</li>
+            <li>Еще нет в стандарте</li>
+            <li>Менее производительные</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <h2>babel 7</h2>
+      <ul>
+        <li>@babel/preset-typescript</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Генерить в рантайм по типу</h2>
+      <ul>
+        <li>Валидация Json</li>
+        <li>Prop-types</li>
+      </ul>
+      <pre>
+        <code>type Task = { title: string }</code>
+        <code>const json = JSON.parse("{}")</code>
+        <code>const isValid = validate&lt;Task&gt;(json)</code>
+      </pre>
+    </section>
+
+    <section class="slide" id="links">
+      <ul>
+        <li>
+          <a href="https://twitter.com/saitonakamura" target="_blank" rel="noopener noreferrer">@saitonakamura</a>
+        </li>
+        <li>
+          <a
+            href="https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Ошибка на миллиард долларов</a
+          >
+        </li>
+        <li>
+          <a
+            class="link"
+            href="https://itnext.io/great-import-schism-typescript-confusion-around-imports-explained-d512fc6769c2"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Great import schism: Typescript confusion around imports explained</a
+          >
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide" id="end">
+      <h2 class="shout"><a href="http://bit.ly/ts_good_parts">bit.ly/ts_good_parts</a></h2>
+
+      <style>
+        #end .shout {
+          font-size: 130px;
+        }
+      </style>
+    </section>
+
+    <section class="slide">
+      <h2>Inner navigation</h2>
+      <ol>
+        <li>Lets you reveal list items one by one</li>
+        <li class="next">To keep some key points</li>
+        <li class="next">In secret from audience</li>
+        <li class="next">But it will work only once</li>
+        <li class="next">Nobody wants to see the same joke twice</li>
+      </ol>
+    </section>
+
+    <footer class="badge"><a href="https://github.com/shower/shower">Fork me on GitHub</a></footer>
+
+    <div class="progress"></div>
+
+    <script src="shower/shower.min.js"></script>
+    <!-- Copyright © 2018 Yours Truly, Famous Inc. -->
+  </body>
+</html>

@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="322" height="300">
+  <g transform="translate(.5 .5)">
+    <path d="M10 48h267.65" fill="none" stroke="#e85d75" stroke-width="3" stroke-miterlimit="10" pointer-events="none"/>
+    <path d="M286.65 48l-9 3v-6z" fill="#e85d75" stroke="#e85d75" stroke-width="3" stroke-miterlimit="10" pointer-events="none"/>
+    <path d="M50 8v267.65" fill="none" stroke="#e85d75" stroke-width="3" stroke-miterlimit="10" pointer-events="none"/>
+    <path d="M50 284.65l-3-9h6z" fill="#e85d75" stroke="#e85d75" stroke-width="3" stroke-miterlimit="10" pointer-events="none"/>
+    <path fill="transparent" stroke="#000" pointer-events="none" d="M60 58h190v190H60z"/>
+    <switch transform="translate(293.5 17.5)">
+      <foreignObject style="overflow:visible" pointer-events="all" width="11" height="20" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;font-size:18px;font-family:Ubuntu;color:#e85d75;line-height:1.2;vertical-align:top;width:12px;white-space:nowrap;overflow-wrap:normal;text-align:center">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit">
+            X
+          </div>
+        </div>
+      </foreignObject>
+      <text x="6" y="19" fill="#E85D75" text-anchor="middle" font-size="18" font-family="Ubuntu">
+        X
+      </text>
+    </switch>
+    <switch transform="translate(24.5 277.5)">
+      <foreignObject style="overflow:visible" pointer-events="all" width="11" height="20" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;font-size:18px;font-family:Ubuntu;color:#e85d75;line-height:1.2;vertical-align:top;width:12px;white-space:nowrap;overflow-wrap:normal;text-align:center">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit">
+            Y
+          </div>
+        </div>
+      </foreignObject>
+      <text x="6" y="19" fill="#E85D75" text-anchor="middle" font-size="18" font-family="Ubuntu">
+        Y
+      </text>
+    </switch>
+    <ellipse cx="60" cy="58" rx="5" ry="5" fill="#0000A1" pointer-events="none"/>
+    <ellipse cx="250" cy="58" rx="5" ry="5" fill="#f39" pointer-events="none"/>
+    <ellipse cx="250" cy="248" rx="5" ry="5" fill="#0cc" pointer-events="none"/>
+    <ellipse cx="60" cy="248" rx="5" ry="5" fill="#f07818" pointer-events="none"/>
+    <ellipse cx="155" cy="153" rx="5" ry="5" fill="#40f99b" pointer-events="none"/>
+    <path d="M30 248h20" fill="none" stroke="#e85d75" stroke-width="3" stroke-miterlimit="10" pointer-events="none"/>
+    <switch transform="translate(4.5 222.5)">
+      <foreignObject style="overflow:visible" pointer-events="all" width="31" height="20" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;font-size:18px;font-family:Helvetica;color:#40f99b;line-height:1.2;vertical-align:top;width:32px;white-space:nowrap;overflow-wrap:normal;text-align:center">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit">
+            <font style="font-size:11px">
+              100%
+            </font>
+          </div>
+        </div>
+      </foreignObject>
+      <text x="16" y="19" fill="#40F99B" text-anchor="middle" font-size="18" font-family="Helvetica">
+        [Not supported by viewer]
+      </text>
+    </switch>
+    <switch transform="translate(208.5 22.5)">
+      <foreignObject style="overflow:visible" pointer-events="all" width="31" height="20" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;font-size:18px;font-family:Helvetica;color:#40f99b;line-height:1.2;vertical-align:top;width:32px;white-space:nowrap;overflow-wrap:normal;text-align:center">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit">
+            <font style="font-size:11px">
+              100%
+            </font>
+          </div>
+        </div>
+      </foreignObject>
+      <text x="16" y="19" fill="#40F99B" text-anchor="middle" font-size="18" font-family="Helvetica">
+        [Not supported by viewer]
+      </text>
+    </switch>
+    <path d="M250 28v20" fill="none" stroke="#e85d75" stroke-width="3" stroke-miterlimit="10" pointer-events="none"/>
+    <switch transform="translate(74.5 17.5)">
+      <foreignObject style="overflow:visible" pointer-events="all" width="11" height="20" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;font-size:18px;font-family:Helvetica;color:#40f99b;line-height:1.2;vertical-align:top;width:12px;white-space:nowrap;overflow-wrap:normal;text-align:center">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit">
+            0
+          </div>
+        </div>
+      </foreignObject>
+      <text x="6" y="19" fill="#40F99B" text-anchor="middle" font-size="18" font-family="Helvetica">
+        0
+      </text>
+    </switch>
+    <switch transform="translate(14.5 57.5)">
+      <foreignObject style="overflow:visible" pointer-events="all" width="11" height="20" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;font-size:18px;font-family:Helvetica;color:#40f99b;line-height:1.2;vertical-align:top;width:12px;white-space:nowrap;overflow-wrap:normal;text-align:center">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit">
+            0
+          </div>
+        </div>
+      </foreignObject>
+      <text x="6" y="19" fill="#40F99B" text-anchor="middle" font-size="18" font-family="Helvetica">
+        0
+      </text>
+    </switch>
+    <!-- <ellipse cx="155" cy="153" rx="90" ry="90" fill="transparent" stroke="#40f99b" stroke-width="3" pointer-events="none"/>
+    <ellipse cx="250" cy="248" rx="45" ry="45" fill="transparent" stroke="#0cc" stroke-width="3" pointer-events="none"/>
+    <ellipse cx="250" cy="58" rx="50" ry="50" fill="transparent" stroke="#f39" stroke-width="3" pointer-events="none"/> -->
+  </g>
+</svg>

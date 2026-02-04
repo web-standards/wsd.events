@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Война текстовых редакторов: редактор кода vs IDE</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x9.css">
+    <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="slides.css">
+  </head>
+  <body class="shower list">
+    <header class="caption">
+      <h1>Война текстовых редакторов: редактор кода vs IDE</h1>
+    </header>
+    <section id="cover" class="slide  cover">
+      <h2>Война текстовых редакторов: редактор кода vs IDE</h2>
+      <p>Александра Шинкевич (<a href="https://twitter.com/neesoglasnaja" target="_blank">@neesoglasnaja</a>)</p><img src="pictures/cover.jpg" class="cover"/>
+    </section>
+    <section id="" class="slide  label-header white">
+      <h2>Кто я?</h2>
+      <ul>
+        <li>Глава отдела фронтенда, LOVATA</li>
+        <li>Full-stack Node.js разработчик</li>
+        <li class="next">Пользователь Sublime Text 6+ лет</li>
+      </ul>
+      <p><img src="pictures/minskcss.png" class="logo"><img src="pictures/minskjs.png" class="logo"><img src="pictures/css-minsk-js.svg" class="logo css-m-js"></p><img src="pictures/about-cover.jpg" class="cover"/>
+    </section>
+    <section id="" class="slide  white center"><img src="pictures/warning.png" width="150px">
+      <p>Оценки, приведенные в докладе, во многом субъективны.</p>
+      <p>Автор работает с определенным набором технологий, и обращает внимание на моменты, которые могуть быть незначительны для кого-то другого</p><img src="pictures/blur-cover.jpg" class="cover"/>
+    </section>
+    <section id="" class="slide  white center"><img src="pictures/warning.png" width="150px">
+      <p>Данный доклад не охватывает особенности программирования в языках, которые не относятся ко фронтенду <span class="next">(почти)</span></p><img src="pictures/blur-cover.jpg" class="cover"/>
+    </section>
+    <section id="" class="slide  label-header white">
+      <h2>Редактор кода</h2>
+      <ul>
+        <li class="next">Редактирование кода</li>
+        <li class="next">Подсветка синтаксиса</li>
+        <li class="next">Проверка синтаксиса</li>
+        <li class="next">Форматирование</li>
+        <li class="next">Автодополнение</li>
+        <li class="next">Контекстная помощь по коду</li>
+      </ul><img src="pictures/text-editor-bg.jpg" class="cover"/>
+    </section>
+    <section id="" class="slide  label-header right white">
+      <h2>IDE</h2>
+      <ul class="next"> 
+        <li>Редактор кода</li>
+      </ul>
+      <p class="bold next">+</p>
+      <ul>
+        <li class="next">«Умная» работа с синтаксисом</li>
+        <li class="next">Средства автоматизации</li>
+        <li class="next">Отладчик</li>
+      </ul><img src="pictures/ide-bg.jpg" class="cover"/>
+    </section>
+    <section id="" class="slide  white center"><img src="pictures/warning.png" width="150px">
+      <p>Я допускаю некоторую небрежность в именовании, называя «текстовый редактор», «редактор кода», «редактор исходного кода» и «IDE» общим словом «редактор»</p><img src="pictures/blur-cover.jpg" class="cover"/>
+    </section>
+    <section id="" class="slide  label-header">
+      <h2>Технологии фронтенда</h2><img src="pictures/logos/html-css-js.png" width="80%" style="margin-left: 10%" class="next">
+      <p class="next center"><span class="bold">НЕТ</span><br><span class="next">(или да, если вы живете в 2008)</span></p>
+    </section>
+    <section id="" class="slide  label-header-"><img src="pictures/tech-stack.jpg" class="cover"/><img src="pictures/logos/php.png" width="235px" class="next logo-img php"><img src="pictures/logos/sublime-text-full.png" width="100%" class="next logo-img sublime-full"><img src="pictures/confused.gif" class="next logo-img">
+    </section>
+    <section id="" class="slide  label-header white">
+      <h2>Эксперимент</h2>
+      <ul>
+        <li class="next">4 редактора</li>
+        <li class="next">Использование «в бою» минимум неделю</li>
+        <li class="next">Разные по величине и технологиям проекты</li>
+        <li class="next">Сравнить возможности</li>
+        <li class="next">«Синтетические» тесты производительности</li>
+      </ul><img src="pictures/experiment-bg.jpg" class="cover"/>
+    </section>
+    <section id="" class="slide  label-header">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th><img src="pictures/logos/sublime-text.png" width="100px">
+              <div>Sublime Text</div>
+            </th>
+            <th class="next"> <img src="pictures/logos/atom.png" width="100px">
+              <div>Atom</div>
+            </th>
+            <th class="next"> <img src="pictures/logos/vs-code.png" width="100px">
+              <div>VS Code</div>
+            </th>
+            <th class="next"> <img src="pictures/logos/webstorm.png" width="100px">
+              <div>WebStorm</div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="next">
+            <td>2008</td>
+            <td>2014</td>
+            <td>2015</td>
+            <td>2010</td>
+          </tr>
+          <tr class="next">
+            <td>Очень редко</td>
+            <td>~1-3/мес</td>
+            <td>~3/мес</td>
+            <td>~1.5/мес</td>
+          </tr>
+          <tr class="next">
+            <td>Python</td>
+            <td>Electron</td>
+            <td>Electron</td>
+            <td>Java</td>
+          </tr>
+          <tr class="next">
+            <td>Английский</td>
+            <td>Английский</td>
+            <td>Мультиязычный</td>
+            <td>Английский</td>
+          </tr>
+          <tr class="next">
+            <td>Proprietary</td>
+            <td>Open Source</td>
+            <td>Open Source</td>
+            <td>Proprietary</td>
+          </tr>
+          <tr class="next">
+            <td>Условно-бесплатный</td>
+            <td>Бесплатный</td>
+            <td>Бесплатный</td>
+            <td>Платный</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="" class="slide  label-header white">
+      <h2>Что общего</h2>
+      <ul>
+        <li class="next">Мультиплатформенность</li>
+        <li class="next">Поддерживают HTML/CSS/JS «из коробки»</li>
+        <li class="next">Имеют системы плагинов</li>
+        <li class="next">Хорошо кастомизируются:<br>горячие клавиши, внешний вид, настройки</li>
+      </ul><img src="pictures/common-bg.jpg" class="cover"/>
+    </section>
+    <section id="" class="slide  capture label-header">
+      <h2 class=" shout shrink">Отброчный тур: все против всех</h2><img src="pictures/battle-bg.jpg" class="cover"/>
+    </section>
+    <section id="" class="slide  label-header">
+      <h2>Sublime Text 3</h2>
+      <ul class="plus">
+        <li class="next">Начать работу очень просто</li>
+        <li class="next">Действительно легкий и быстрый</li>
+        <li class="next">Отлично подойдет для небольших базовых проектов</li>
+      </ul>
+      <ul class="minus">
+        <li class="next">Всего лишь «блокнот»</li>
+        <li class="next">Нет встроенного менеджера пакетов</li>
+        <li class="next">Условно-бесплатный</li>
+      </ul><img src="pictures/logos/sublime-text.png" width="150px" class="logo-img">
+    </section>
+    <section id="" class="slide  label-header-">
+      <h2 class=" shout shrink">Atom<br>==<br>Sublime&nbsp;Text&nbsp;3</h2><img src="pictures/equals-bg.jpg" class="cover"/>
+    </section>
+    <section id="" class="slide  label-header">
+      <h2>Atom</h2>
+      <ul class="plus gray">
+        <li>Начать работу очень просто</li>
+        <li>Действительно легкий и быстрый</li>
+        <li>Отлично подойдет для небольших базовых проектов</li>
+      </ul>
+      <ul class="minus">
+        <li class="gray">Всего лишь блокнот</li>
+        <li><span class="gray">Нет встроенного менеджера пакетов </span><span class="next">&#8594; Есть</span></li>
+        <li><span class="gray">Условно-бесплатный </span><span class="next">&#8594; Бесплатный</span></li>
+        <li class="next">Проблемы с производительностью</li>
+      </ul><img src="pictures/logos/atom.png" width="150px" class="logo-img">
+    </section>
+    <section id="" class="slide  label-header">
+      <h2>Visual Studio Code</h2>
+      <ul class="plus">
+        <li class="next">Подойдет под проекты практически любой сложности;<br>для некоторых технологий есть много встроенных бонусов</li>
+        <li class="next">Встроенная отладка Node.js, терминал и git</li>
+        <li class="next">Поддержка IntelliSence</li>
+        <li class="next">По ощущениям более производительный, чем Atom</li>
+      </ul>
+      <ul class="minus">
+        <li class="next">Многие функции только через плагины</li>
+        <li class="next"><span>Все еще есть баги </span><span class="next">&#8594; Очень много фиксов к каждом релизе</span></li>
+      </ul><img src="pictures/logos/vs-code.png" width="150px" class="logo-img">
+    </section>
+    <section id="" class="slide  label-header">
+      <h2>WebStorm</h2>
+      <ul class="plus">
+        <li class="next">Может (почти) все «из коробки»</li>
+        <li class="next">А что не может, есть еще доп. плагины</li>
+        <li class="next">Быстрый производительный поиск по большим проектам</li>
+      </ul>
+      <ul class="minus">
+        <li class="next">Интерфейс кажется слишком сложным</li>
+        <li class="next">Для простых проектов кажется overhead</li>
+        <li class="next">Проблемы производительности на не очень мощных компьютерах</li>
+        <li class="next">Цена</li>
+      </ul><img src="pictures/logos/webstorm.png" width="150px" class="logo-img">
+    </section>
+    <section id="" class="slide"><img src="pictures/go-to-ide-bg.jpg" class="cover"/>
+    </section>
+    <section id="" class="slide  capture label-header">
+      <h2 class=" shout shrink">Visual Studio Code <span class='smallest'>vs</span> WebStorm</h2><img src="pictures/versus-bg.jpg" class="cover"/>
+    </section>
+    <section id="" class="slide  label-header">
+      <h2>Запуск и производительность</h2>
+      <table>
+        <thead>
+          <tr>
+            <th class="condition"> </th>
+            <th class="editor"> <img src="pictures/logos/vs-code.png" width="32px" class="table-logo"><span> VS Code</span></th>
+            <th class="editor2"><img src="pictures/logos/webstorm.png" width="32px" class="table-logo"><span> WebStorm</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Первый запуск</th>
+            <td class="green">~15s</td>
+            <td>~40s</td>
+          </tr>
+          <tr>
+            <th>Базовый проект</th>
+            <td class="green">~15s</td>
+            <td>~40s</td>
+          </tr>
+          <tr>
+            <th>C зависимостями (~6000 файлов)</th>
+            <td class="green">~10s / ~8s</td>
+            <td>~60s / ~40s</td>
+          </tr>
+          <tr>
+            <th>Мультиязычный (~22 000 файлов)</th>
+            <td class="green">~5s</td>
+            <td>~7min / ~45s</td>
+          </tr>
+          <tr>
+            <th>Поиск</th>
+            <td>~10s</td>
+            <td class="green">~0s</td>
+          </tr>
+          <tr>
+            <th>Открытие файла извне</th>
+            <td class="green">~6s</td>
+            <td>~40s</td>
+          </tr>
+          <tr class="next">
+            <th> </th>
+            <th>+</th>
+            <th></th>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="" class="slide  label-header">
+      <h2>Базовый проект</h2>
+      <table>
+        <thead>
+          <tr>
+            <th class="condition"> </th>
+            <th class="editor"> <img src="pictures/logos/vs-code.png" width="32px" class="table-logo"><span> VS Code</span></th>
+            <th class="editor2"><img src="pictures/logos/webstorm.png" width="32px" class="table-logo"><span> WebStorm</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>HTML</th>
+            <td class="green">+</td>
+            <td class="green">+</td>
+          </tr>
+          <tr>
+            <th>CSS</th>
+            <td class="green">+</td>
+            <td class="green">+</td>
+          </tr>
+          <tr>
+            <th>JS</th>
+            <td class="green">+</td>
+            <td class="green">+</td>
+          </tr>
+          <tr>
+            <th>Emmet</th>
+            <td class="green">+</td>
+            <td>нет HTML</td>
+          </tr>
+          <tr>
+            <th>Formatter</th>
+            <td>нет CSS</td>
+            <td class="green">+</td>
+          </tr>
+          <tr class="next">
+            <th> </th>
+            <th>++</th>
+            <th>+</th>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="" class="slide  label-header">
+      <h2>Разметка</h2>
+      <table>
+        <thead>
+          <tr>
+            <th class="condition"> </th>
+            <th class="editor"> <img src="pictures/logos/vs-code.png" width="32px" class="table-logo"><span> VS Code</span></th>
+            <th class="editor2"><img src="pictures/logos/webstorm.png" width="32px" class="table-logo"><span> WebStorm</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Pug/Jade</th>
+            <td class="green">+</td>
+            <td class="green">+</td>
+          </tr>
+          <tr>
+            <th>Pug/Jade автокомплит</th>
+            <td class="green">+</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <th>Markdown синтаксис</th>
+            <td class="green">+</td>
+            <td>Просит плагин</td>
+          </tr>
+          <tr class="next">
+            <th> </th>
+            <th>+++</th>
+            <th>+</th>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="" class="slide  label-header">
+      <h2>Препроцессоры</h2>
+      <table>
+        <thead>
+          <tr>
+            <th class="condition"> </th>
+            <th class="editor"> <img src="pictures/logos/vs-code.png" width="32px" class="table-logo"><span> VS Code</span></th>
+            <th class="editor2"><img src="pictures/logos/webstorm.png" width="32px" class="table-logo"><span> WebStorm</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>SASS</th>
+            <td class="green">+</td>
+            <td class="green">+</td>
+          </tr>
+          <tr>
+            <th>Less</th>
+            <td class="green">+</td>
+            <td class="green">+</td>
+          </tr>
+          <tr>
+            <th>Stylus</th>
+            <td>-</td>
+            <td class="green">+</td>
+          </tr>
+          <tr>
+            <th>Форматирование</th>
+            <td>-</td>
+            <td class="green">+</td>
+          </tr>
+          <tr class="next">
+            <th> </th>
+            <th>+++</th>
+            <th>++</th>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="" class="slide  label-header">
+      <h2>Angular</h2>
+      <table>
+        <thead>
+          <tr>
+            <th class="condition"> </th>
+            <th class="editor"> <img src="pictures/logos/vs-code.png" width="32px" class="table-logo"><span> VS Code</span></th>
+            <th class="editor2"><img src="pictures/logos/webstorm.png" width="32px" class="table-logo"><span> WebStorm</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Angular (TypeScript)</th>
+            <td class="green">+</td>
+            <td class="green">+</td>
+          </tr>
+          <tr>
+            <th>Автоимпорт</th>
+            <td class="green">+</td>
+            <td class="green">+</td>
+          </tr>
+          <tr>
+            <th>Переход по компонентам</th>
+            <td class="green">+</td>
+            <td class="green">+</td>
+          </tr>
+          <tr class="next">
+            <th> </th>
+            <th>++++</th>
+            <th>+++</th>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="" class="slide  label-header">
+      <h2>React</h2>
+      <table>
+        <thead>
+          <tr>
+            <th class="condition"> </th>
+            <th class="editor"> <img src="pictures/logos/vs-code.png" width="32px" class="table-logo"><span> VS Code</span></th>
+            <th class="editor2"><img src="pictures/logos/webstorm.png" width="32px" class="table-logo"><span> WebStorm</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>JSX</th>
+            <td class="green">+</td>
+            <td class="green">+</td>
+          </tr>
+          <tr>
+            <th>Автоимпорт</th>
+            <td class="green">+</td>
+            <td class="green">+</td>
+          </tr>
+          <tr>
+            <th>Переход по компонентам</th>
+            <td class="green">+</td>
+            <td class="green">+</td>
+          </tr>
+          <tr class="next">
+            <th> </th>
+            <th>+++++</th>
+            <th>++++</th>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="" class="slide  label-header">
+      <h2>Vue</h2>
+      <table>
+        <thead>
+          <tr>
+            <th class="condition"> </th>
+            <th class="editor"> <img src="pictures/logos/vs-code.png" width="32px" class="table-logo"><span> VS Code</span></th>
+            <th class="editor2"><img src="pictures/logos/webstorm.png" width="32px" class="table-logo"><span> WebStorm</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>.vue</th>
+            <td>Просит плагин</td>
+            <td class="green">+</td>
+          </tr>
+          <tr>
+            <th>Автоимпорт</th>
+            <td class="green">+</td>
+            <td class="green">+</td>
+          </tr>
+          <tr>
+            <th>Переход по компонентам</th>
+            <td class="green">+</td>
+            <td class="green">+</td>
+          </tr>
+          <tr class="next">
+            <th> </th>
+            <th>+++++</th>
+            <th>+++++</th>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="" class="slide  label-header">
+      <h2>Линтинг</h2>
+      <table>
+        <thead>
+          <tr>
+            <th class="condition"> </th>
+            <th class="editor"> <img src="pictures/logos/vs-code.png" width="32px" class="table-logo"><span> VS Code</span></th>
+            <th class="editor2"><img src="pictures/logos/webstorm.png" width="32px" class="table-logo"><span> WebStorm</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Stylelint</th>
+            <td>Есть плагин</td>
+            <td class="green">+</td>
+          </tr>
+          <tr>
+            <th>ESLint</th>
+            <td>Есть плагин</td>
+            <td class="green">+</td>
+          </tr>
+          <tr>
+            <th>TSLint</th>
+            <td>Есть плагин</td>
+            <td class="green">+</td>
+          </tr>
+          <tr>
+            <th>.editorconfig</th>
+            <td class="green">+</td>
+            <td class="green">+</td>
+          </tr>
+          <tr class="next">
+            <th> </th>
+            <th>+++++</th>
+            <th>++++++</th>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="" class="slide  label-header">
+      <h2>Терминал, таски, дебаггинг</h2>
+      <table>
+        <thead>
+          <tr>
+            <th class="condition"> </th>
+            <th class="editor"> <img src="pictures/logos/vs-code.png" width="32px" class="table-logo"><span> VS Code</span></th>
+            <th class="editor2"><img src="pictures/logos/webstorm.png" width="32px" class="table-logo"><span> WebStorm</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Интеграция с консолью</th>
+            <td class="green">+</td>
+            <td class="green">+</td>
+          </tr>
+          <tr>
+            <th>Просит установить зависимости</th>
+            <td>-</td>
+            <td class="green">+</td>
+          </tr>
+          <tr>
+            <th>Таск-раннер</th>
+            <td class="green">+</td>
+            <td class="green">+</td>
+          </tr>
+          <tr>
+            <th>Инструменты для дебага</th>
+            <td class="green">+</td>
+            <td class="green">+</td>
+          </tr>
+          <tr>
+            <th>Live Share</th>
+            <td class="green">+</td>
+            <td>Есть плагин</td>
+          </tr>
+          <tr class="next">
+            <th> </th>
+            <th>++++++</th>
+            <th>+++++++</th>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="" class="slide  label-header">
+      <h2>Git</h2>
+      <table>
+        <thead>
+          <tr>
+            <th class="condition"> </th>
+            <th class="editor"> <img src="pictures/logos/vs-code.png" width="32px" class="table-logo"><span> VS Code</span></th>
+            <th class="editor2"><img src="pictures/logos/webstorm.png" width="32px" class="table-logo"><span> WebStorm</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Базовая интеграция</th>
+            <td class="green">+</td>
+            <td class="green">+</td>
+          </tr>
+          <tr>
+            <th>Diff</th>
+            <td class="green">+</td>
+            <td class="green">+</td>
+          </tr>
+          <tr>
+            <th>Проверка Git в системе</th>
+            <td class="green">+</td>
+            <td class="green">+</td>
+          </tr>
+          <tr class="next">
+            <th> </th>
+            <th>+++++++</th>
+            <th>++++++++</th>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="" class="slide  label-header">
+      <h2>Разное</h2>
+      <table>
+        <thead>
+          <tr>
+            <th class="condition"> </th>
+            <th class="editor"> <img src="pictures/logos/vs-code.png" width="32px" class="table-logo"><span> VS Code</span></th>
+            <th class="editor2"><img src="pictures/logos/webstorm.png" width="32px" class="table-logo"><span> WebStorm</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Цена</th>
+            <td class="green">+</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <th>Работа редактора без багов</th>
+            <td>-</td>
+            <td class="green">+</td>
+          </tr>
+          <tr>
+            <th>Правописание</th>
+            <td>Есть плагин</td>
+            <td class="green">+</td>
+          </tr>
+          <tr>
+            <th>Простота интерфейса</th>
+            <td class="green">+</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <th>Частота обновления</th>
+            <td class="green">+</td>
+            <td>-</td>
+          </tr>
+          <tr class="next">
+            <th> </th>
+            <th>++++++++ <span class="next">/ 8</span></th>
+            <th>++++++++ <span class="next">/ 8</span></th>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="" class="slide  label-header"><img src="pictures/logos/webstorm.png" width="200px" class="logo-img winner"><img src="pictures/change-bg.jpg" class="cover"/>
+    </section>
+    <section id="" class="slide  label-header">
+      <h2>А если по-другому считать?</h2>
+      <table>
+        <thead>
+          <tr>
+            <th class="condition"> </th>
+            <th class="editor"> <img src="pictures/logos/vs-code.png" width="32px" class="table-logo"><span> VS Code</span></th>
+            <th class="editor2"><img src="pictures/logos/webstorm.png" width="32px" class="table-logo"><span> WebStorm</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Абсолютные значения</th>
+            <th>++++++++++<br>++++++++++<br>++++++++++<br>++++++++++<br>++ <span class="next">/ 32</span></th>
+            <th>++++++++++<br>++++++++++<br>++++++++++<br>++++++++++ <br><span class="next">/ 30</span></th>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="" class="slide  label-header"><img src="pictures/logos/vs-code.png" width="180px" class="logo-img winner2"><img src="pictures/change-bg.jpg" class="cover"/>
+    </section>
+    <section id="" class="slide  capture top-center label-header">
+      <h2 class=" shout shrink">Редакторы кода в браузере</h2><img src="pictures/online.jpg" class="cover"/>
+    </section>
+    <section id="" class="slide  label-header white"><img src="pictures/online-options.jpg" class="cover"/><img src="pictures/logos/codepen.png" style="width: 200px; position: absolute; top: 50px; left: 250px" class="next"><img src="pictures/logos/jsfiddle.png" style="width: 200px; position: absolute; top: 175px; left: 425px" class="next"><img src="pictures/logos/jsbin.png" style="width: 200px; position: absolute; top: 350px; left: 575px" class="next">
+    </section>
+    <section id="" class="slide  label-header white"><a href="https://stackoverflow.com/a/11828573" class="bottom">Как выйти из Vim</a><img src="pictures/vim-bg.jpg" class="cover"/>
+    </section>
+    <section id="" class="slide  label-header white">
+      <h2>Выводы</h2>
+      <ul>
+        <li class="next">Каждый из редакторов хорош для своих задач</li>
+        <li class="next">Для написания HTML/CSS/JS не должен быть нужен<br>ни один из современных редакторов кода</li>
+        <li class="next">Отбросьте предрассудки в выборе инструментов</li>
+        <li class="next">Не бойтесь пробовать новое и искать лучшее</li>
+      </ul><img src="pictures/end-bg.jpg" class="cover"/>
+    </section>
+    <section id="" class="slide  label-header">
+      <h2>Ссылки на тему</h2>
+      <ul> 
+        <li><a href="https://ru.wikipedia.org/wiki/Текстовый_редактор">Текстовый редактор</a> (wiki)</li>
+        <li><a href="https://ru.wikipedia.org/wiki/Интегрированная_среда_разработки">IDE</a> (wiki)</li>
+        <li><a href="https://www.sublimetext.com/">Siblime Text</a></li>
+        <li><a href="https://atom.io/">Atom</a></li>
+        <li><a href="https://code.visualstudio.com/">Visual Studio Code</a></li>
+        <li><a href="https://www.jetbrains.com/webstorm/">WebStorm</a></li>
+        <li><a href="https://2018.stateofjs.com/other-tools/text_editors">#StateOfJS 2018: Text Editors   </a></li>
+      </ul>
+    </section>
+    <section id="theend" class="slide  cover label-header">
+      <h2 class=" shout shrink">Вопросы?</h2>
+      <p class="end-link"><a href="http://bit.ly/wsd-editors" target="_blank" class="bigger">bit.ly/wsd-editors</a><br>Александра Шинкевич (<a href="https://twitter.com/neesoglasnaja" target="_blank">@neesoglasnaja</a>)</p><img src="pictures/blur-cover.jpg" class="cover"/>
+    </section>
+    <div class="progress"></div>
+    <script src="shower/shower.min.js"></script>
+  </body>
+</html>

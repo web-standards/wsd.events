@@ -1,0 +1,15 @@
+.slide.place-left h2 {
+    margin-left: 40%;
+}
+.slide.place-left img.place.left.half {
+    width: 40%;
+}
+.slide img.place.bottom.small {
+    width: 35%;
+}
+.slide img.place.bottom.middle {
+    width: 60%;
+}
+.slide.place-left .place-left__container {
+    margin-left: 40%;
+}

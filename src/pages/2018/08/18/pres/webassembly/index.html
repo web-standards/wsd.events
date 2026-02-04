@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>[REDACTED]</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/styles.css">
+	<style>
+        .shower {
+            --slide-ratio: calc(16 / 9);
+        }
+    </style>
+</head>
+<body class="shower list">
+
+	<header class="caption">
+		<h1>WebAssembly сегодня</h1>
+		<p>Тим Маринин, 2018, WSD Saint Petersburg</p>
+	</header>
+
+	<section class="slide" id="cover">
+		<h2>WebAssembly сегодня</h2>
+		<p>Говорит и показывает <a href="https://marinintim.com">Тим Маринин</a></p>
+		<figure>
+			<img class="cover" src="pictures/cover.jpg" alt="Old computer">
+			<figcaption class="copyright right white">
+				<a href="http://unsplash.com/">© Federica Galli</a>
+			</figcaption>
+		</figure>
+		<style>
+			#cover {
+				background-color: #D5D5D8;
+			}
+			#cover h2 {
+				margin: 30px 0 0;
+				color: #111;
+				text-align: center;
+				font-size: 70px;
+			}
+
+			#cover p {
+				margin: 10px 0 0;
+				text-align: center;
+				color: #333;
+				font-style: italic;
+				font-size: 20px;
+			}
+
+			#cover p a {
+				color: #333;
+			}
+			.cover {
+				object-fit: cover;
+				width: 100%;
+				object-position: bottom;
+			}
+		</style>
+	</section>
+
+	<section class="slide">
+	  <h2>Кто я такой</h2>
+	  <p>Программист, делаю подкаст Веб-истории.</p>
+	  <p>@marinintim в твиттере, гитхабе, доткоме.</p>
+	  <p>В свободное время пишу сервис на Rust: <a href="https://seccopy.com">seccopy</a>.</p>
+	</section>
+
+	<section class="slide">
+	  <h2>План</h2>
+	  <ol>
+            <li>Что такое WebAssembly?</li>
+            <li>Что уже можно делать?</li>
+            <li>Зачем оно нам?</li>
+	  </ol>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">Джаваскрипт победил</h2>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">good_parts.jpg</h2>
+	</section>
+
+	<section class="slide">
+		<h2>good_parts.jpg</h2>
+		<p>Новые слои поверх древнего языка (который становится лучше).</p>
+		<ol style="display: flex; flex-direction: column-reverse;">
+			<li>JavaScript</li>
+			<li class="next">babel + eslint</li>
+			<li class="next">TypeScript || flow</li>
+			<li class="next">Prepack</li>
+			<li class="next">Mackerel? <span class="next note">(это я только что придумал)</span></li>
+		</ol>
+
+	</section>
+
+	<section class="slide">
+		<img src="pictures/layers.jpg" class="cover" style="width: 100%;" alt="">
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">Шаг в сторону</h2>
+	</section>
+
+	<section class="slide">
+		<h2>asm.js</h2>
+		<div class="columns two">
+			<div>
+				<p>Подмножество JavaScript с кучей ограничений.</p>
+				<p>— Типы в джаваскрипте до того, как это было модно.</p>
+				<p>— Память — массив.</p>
+			</div>
+			<pre>
+				<code>function avg(a, b) {</code>
+				<code>  a = a|0; <span class="next">// 32-bit int</span></code>
+				<code>  b = b|0;</code>
+				<code>  return ((a + b) / 2)|0;</code>
+				<code>}</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide">
+		<h2>asm.js</h2>
+		<p>Можно компилировать C в JS с помощью компилятора Emscripten (основан на LLVM).</p>
+		<p>LLVM — основа для многих компиляторов, например, Clang.</p>
+		<p>Можно использовать кучу оптимизаций LLVM!</p>
+		<p>На выходе — джаваскрипт с определенными гарантиями.</p>
+	</section>
+
+	<section class="slide">
+		<h2>Но… зачем?</h2>
+		<ul>
+			<li>Экспорт в HTML5 из Unity, Unreal Engine, etc.</li>
+			<li>В мире много кода, который либо проще написать на чём-то ещё, либо он <strong>уже написан</strong> на чём-то ещё</li>
+			<li>Internet Archive <a href="http://ascii.textfiles.com/archives/4471">используют</a> DOSBox, эмулятор DOS, скомпилированный под веб: сотни старых игр доступны сегодня из браузера.</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>WebAssembly</h2>
+		<p>Спецификация виртуальной машины, формат файлов (два: текстовый и бинарный), модель для работы с памятью.</p>
+		<p>Бинарный формат парсится быстрее, чем asm.js (читай: джаваскрипт).</p>
+		<p></p>
+	</section>
+
+	<section class="slide">
+		<h2>WebAssembly</h2>
+		<pre>
+			<code>(module</code>
+			<code>  (func $avg (export "avg")</code>
+			<code>    (param $p0 i32) (param $p1 i32) (result i32)</code>
+			<code>    (i32.div_s</code>
+			<code>      (i32.add (get_local $p1)</code>
+			<code>               (get_local $p0))</code>
+			<code>      (i32.const 2))))</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>WebAssembly</h2>
+		<pre>
+			<code>00 61 73 6D 01 00 00 00 01 07 01 60 02 7F 7F 01</code>
+			<code>7F 03 02 01 00 07 07 01 03 61 76 67 00 00 0A 0C</code>
+			<code>01 0A 00 20 01 20 00 6A 41 02 6D 0B 00 1A 04 6E</code>
+			<code>61 6D 65 01 06 01 00 03 61 76 67 02 0B 01 00 02</code>
+			<code>00 02 70 30 01 02 70 31</code>
+		</pre>
+		<p>72 байта.</p>
+	</section>
+
+	<section class="slide" id="caniuse">
+		<img src="pictures/caniuse.png" class="cover">
+		<style>
+			#caniuse {
+				background: #3E3523;
+			}
+		</style>
+	</section>
+
+	<section class="slide"><img src="pictures/unity.png" alt="" class="cover" style="height: 100%; object-fiT:contain;"></section>
+
+
+
+	<section class="slide">
+		<h2>Не только про веб</h2>
+		<p>Несмотря на то, что WebAssembly появился в <em>браузере</em>, одна из целей проекта — быть настолько универсальным форматом, чтобы можно было использовать везде.</p>
+		<p>Уже есть <em>два</em> проекта, которые запускают WebAssembly поверх ядра Linux.</p>
+	</section>
+
+	<section class="slide">
+		<h2>Что компилировать в WebAssembly</h2>
+		<ul class="columns two" style="font-size: 50px;">
+			<li>C/C++</li>
+			<li><a href="https://github.com/AssemblyScript">TypeScript</a></li>
+			<li class="mark"><mark>Rust</mark></li>
+			<li><a href="https://www.tweag.io/posts/2018-05-29-hello-asterius.html">Haskell</a></li>
+			<li><a href="https://go-review.googlesource.com/c/go/+/102835">Go</a></li>
+			<li><a href="https://github.com/vvanders/wasm_lua">Lua</a></li>
+			<li>...</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<img src="pictures/crabs.jpg" alt="" class="cover" style="object-position: top; width: 60%;">
+	</section>
+
+	<section class="slide">
+		<h2>Rust</h2>
+		<p>Молодой язык программирования, в который сильно вкладывается Mozilla (в частности, на него переписывают части Firefox; Servo)</p>
+		<p>Ключевая особенность: необычная система работы с памятью.</p>
+		<p>Mix of ML and C++ for the modern age.</p>
+		<img src="pictures/ferris.png" style="width: 200px; position: absolute; bottom: 30px; right: 30px;">
+	</section>
+
+	<section class="slide">
+		<h2>Rust</h2>
+		<pre>
+			<code>fn avg(a: i32, b: i32) -> i32 {</code>
+			<code>  (a + b) / 2</code>
+			<code>}</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Rust + WebAssembly</h2>
+		<p>Есть инициативная группа, которая разрабатывает инструменты.</p>
+		<p>Поддержка на уровне компилятора — просто указать другой <em>target</em></p>
+		<p>Rust не нужен GC и у него практически нет рантайма.</p>
+		<p>Приятнее, чем C и C++ для разработки <em>нового</em> кода.</p>
+	</section>
+
+	<section class="slide">
+		<h2>WASM <-> JS</h2>
+		<p>Сейчас в функции WebAssembly можно передавать, по сути, только числа.</p>
+		<p>Но в джаваскрипте есть доступ к памяти WebAssembly — можем вручную доставать и записывать, что нам нужно.</p>
+	</section>
+
+	<section class="slide">
+		<h2>wasm-bindgen</h2>
+		<p>Тулза для взаимодействия Rust &lt;-> JS</p>
+		<p>Автоматически генерирует код, который связывает WASM и JS.</p>
+	</section>
+
+	<section class="slide">
+		<h2>wasm-bindgen</h2>
+		<pre>
+			<code><mark>#[wasm_bindgen]</mark></code>
+			<code>pub fn avg(a: i32, b: i32) -> i32 {</code>
+			<code>  (a + b) / 2</code>
+			<code>}</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>wasm-bindgen</h2>
+		<p>Используем из JS:</p>
+		<pre>
+			<code>const myModule = import('./mymodule')</code>
+			<code>myModule.then(myModule => {</code>
+			<code>  let num = myModule.avg(10, 20)</code>
+			<code>  console.log(num) // 15</code>
+			<code>})</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout" style="text-align: left; margin-left: 40px;">А нам-то что с&nbsp;этого?</h2>
+	</section>
+
+	<section class="slide">
+		<h2>Оптимизация тяжелых вычислений</h2>
+		<p>Сначала, конечно, нужно измерять.</p>
+		<p>Game-dev like: считаем в WASM, обновляем UI из JS.</p>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">Использование готового</h2>
+		<p class="note" style="position: absolute; bottom: 40px;">PSPDFKit: 500 000 строк C++</p>
+	</section>
+
+	<section class="slide">
+		<h2>Внутри инструментов</h2>
+		<p>Люди, разрабатывающие Ember, экспериментируют с выносом virtual DOM в WebAssembly.</p>
+		<p>WebAssembly + обёртка на JS = быстрый инструмент для нас</p>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">Веб — не&nbsp;джаваскрипт</h2>
+	</section>
+
+	<section class="slide">
+		<h2>Веб — не джаваскрипт</h2>
+		<p>Сила веб-приложений не в джаваскрипте, а в <strong>доступности</strong>.</p>
+		<p>Это не означает, что джаваскрипт не нужен.</p>
+	</section>
+
+	<section class="slide">
+		<img src="pictures/leave-js-alone.png" alt="" class="cover" style="height: 100%; object-fit: contain;">
+	</section>
+
+	<section class="slide">
+		<h2>Будущее</h2>
+		<p>Пока только MVP: minimum viable product.</p>
+		<p>Будет Garbage Collection, взаимодействие напрямую с DOM, треды, etc.</p>
+	</section>
+
+
+	<section class="slide" id="see-more">
+		<h2 class="shout">
+			<a href="https://marinintim.com/presents/webassembly">marinintim.com/presents/webassembly</a>
+		</h2>
+		<style>
+			#see-more h2 {
+				font-size: 50px
+			}
+		</style>
+	</section>
+
+	<div class="progress"></div>
+
+	<script src="shower/shower.min.js"></script>
+	<!-- Copyright © 2018 Yours Truly, Famous Inc. -->
+
+</body>
+</html>

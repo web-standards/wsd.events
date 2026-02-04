@@ -1,0 +1,22 @@
+.reveal {
+  font-family: 'Roboto', sans-serif;
+}
+
+.gsreveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  text-transform: none;
+}
+
+.reveal section img {
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+.reveal pre code {
+  max-height: 500px;
+}

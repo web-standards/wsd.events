@@ -1,0 +1,86 @@
+.terminal {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.slide pre code {
+    line-height: 1.6em;
+    font-size: 0.9em;
+}
+
+.z-top {
+    z-index: 1 !important;
+}
+
+.slide.gray {
+    background-color: #eeeeee;
+}
+
+.shadowed {
+    box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.3);
+}
+
+.highcharts-credits {
+    color: white !important;
+    fill: white !important;
+}
+
+.slide .shout-mini {
+    font-size: 60px;
+    line-height: 1.3;
+}
+
+.slide::after {
+    background-color: #78191a;
+}
+
+.progress {
+    border-color: #78191a;
+    border-right-color: transparent;
+}
+
+.slide h2:not(.no-bg) {
+    background-color: #78191a;
+    padding-right: 20px;
+}
+
+.slide h2:not(.no-bg)::after {
+    display: none;
+}
+
+.shower.list {
+    background: rgba(199, 199, 199, 0.86);
+}
+
+.caption a {
+    color: #c24b4f;
+    text-shadow: 0 -1px 0 #601f1f;
+}
+
+.shower.list .slide {
+    box-shadow: 0 20px 50px rgba(67, 7, 7, 0.3);
+}
+
+.shower.list .slide:hover {
+    box-shadow: 0 0 0 20px rgba(136, 15, 15, 0.1), 0 20px 50px rgba(136, 15, 15, 0.3);
+}
+
+.shower.list .slide.active {
+    box-shadow: 0 0 0 1px #a33737, 0 0 0 20px #c24b4b, 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.badge {
+    background-image: none;
+}
+
+.badge a {
+    background-color: #dc3333;
+}
+
+.slide a {
+    color: #c24b4b;
+}
+
+.slide ol li::before, .slide ul li::before {
+    color: #dc3333;
+}

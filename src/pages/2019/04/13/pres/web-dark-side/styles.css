@@ -1,0 +1,96 @@
+.slide {
+    background: rgb(45, 45, 45);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.slide .shout {
+    font-size: 4em;
+}
+
+.slide .shout.bg {
+    text-shadow: 0 0 0.5em rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.3);
+}
+
+.slide h2 {
+    color: rgb(255, 255, 255);
+}
+
+.slide.white {
+    background: white;
+    color: #000000;
+}
+
+.slide.white h2 {
+    color: #585a5e;
+}
+
+.slide .iphone-picture {
+    width: 338px;
+    top: 45px;
+}
+
+.slide .iphone-frame {
+    width: 500px;
+    top: 20px;
+}
+
+.slide .app-icon {
+    width: 120px;
+}
+
+.slide pre code {
+    line-height: 1.6em;
+    font-size: 0.9em;
+}
+
+.slide .strike {
+    text-decoration: none;
+    position: relative;
+}
+
+.slide .strike::after {
+    content: '';
+    display: block;
+    background-color: red;
+    width: calc(100% + 10px);
+    height: 7px;
+    position: absolute;
+    top: 50%;
+    left: -5px;
+    transform: rotate(-4deg);
+}
+
+.slide::after {
+    background: black;
+    height: 2em;
+    width: 5em;
+    line-height: 2.1em;
+    padding-top: 0;
+    margin-top: 15px;
+    left: 980px;
+    font-size: 18px;
+    text-align: left;
+    padding-left: 0.5em
+}
+
+.shower {
+    line-height: 1.5;
+    --color-blue: #7bb3ec;
+}
+
+.shower li {
+    margin-bottom: 0.5em;
+}
+
+.slide li::before {
+    color: rgba(255,255,255,0.6);
+}
+
+.progress::before {
+    background: rgba(255,255,255, 0.2);
+}
+
+.slide .shout.shout-mini {
+    font-size: 3em;
+}

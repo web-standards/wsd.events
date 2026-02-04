@@ -1,0 +1,3547 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <title>Неквадратный веб</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="shower/themes/ribbon/styles/styles.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+   <style>
+    .shower {
+      --slide-ratio: calc(16 / 9);
+    }
+  </style>
+  <script src="assets/js/demo.js"></script>
+</head>
+<body class="shower list">
+  <header class="caption">
+    <h1>Неквадратный веб</h1>
+    <p>Бухвалова Юлия, LiveJournal</p>
+  </header>
+
+  <div class="hidden-includes">
+    <svg>
+      <clipPath id="path-heart" clipPathUnits="objectBoundingBox">
+        <path d="M0.5,1
+          C 0.5,1,0,0.7,0,0.25
+          A 0.25,0.25,1,1,1,0.5,0.25
+          A 0.25,0.25,1,1,1,1,0.25
+          C 1,0.7,0.5,1,0.5,1 Z" />
+      </clipPath>
+    
+      <clipPath id="path-heart-abs" viewBox="0 0 100 100" height="100" width="100" clipPathUnits="userSpaceOnUse">
+        <path d="M150,300
+          C 150,300,0,210,0,75
+          A 75,75,1,1,1,150,75
+          A 75,75,1,1,1,300,75
+          C 300,210,150,300,150,300 Z" />
+      </clipPath>
+    
+      <clipPath id="path-star" clipPathUnits="objectBoundingBox">
+        <path d="M0.463,0.031 L0.365,0.348 L0.042,0.348 C0.02,0.348,0.002,0.368,0.002,0.392 C0.002,0.405,0.009,0.418,0.019,0.426 C0.026,0.431,0.28,0.625,0.28,0.625 C0.28,0.625,0.183,0.938,0.181,0.943 C0.179,0.947,0.178,0.952,0.178,0.958 C0.178,0.981,0.196,1,0.219,1 C0.227,1,0.235,0.997,0.242,0.992 L0.502,0.764 C0.502,0.764,0.761,0.991,0.763,0.992 C0.769,0.997,0.777,1,0.786,1 C0.808,1,0.826,0.981,0.826,0.958 C0.826,0.952,0.825,0.947,0.824,0.943 C0.822,0.938,0.724,0.625,0.724,0.625 C0.724,0.625,0.978,0.431,0.985,0.426 C0.995,0.419,1.002,0.406,1.002,0.391 C1.002,0.368,0.985,0.348,0.963,0.348 L0.64,0.348 L0.541,0.031 C0.536,0.013,0.521,0,0.502,0 C0.484,0,0.468,0.013,0.463,0.031"/>
+      </clipPath>
+    
+      <clipPath id="path-leaf" clipPathUnits="objectBoundingBox"><path d="M0.989,0.131 c-0.108,-0.082,-0.275,-0.131,-0.446,-0.131 c-0.211,0,-0.384,0.074,-0.473,0.202 c-0.042,0.06,-0.065,0.132,-0.069,0.212 c-0.003,0.072,0.009,0.151,0.036,0.237 c0.093,-0.278,0.352,-0.495,0.651,-0.495 c0,0,-0.28,0.074,-0.455,0.301 c0,0,-0.002,0.003,-0.006,0.009 c-0.035,0.047,-0.066,0.101,-0.089,0.162 c-0.039,0.093,-0.075,0.22,-0.075,0.373 h0.125 c0,0,-0.019,-0.119,0.014,-0.257 c0.055,0.007,0.104,0.011,0.148,0.011 c0.115,0,0.197,-0.025,0.258,-0.078 c0.054,-0.048,0.084,-0.112,0.116,-0.18 c0.048,-0.104,0.103,-0.222,0.263,-0.313 c0.009,-0.005,0.015,-0.015,0.016,-0.025 s-0.004,-0.021,-0.012,-0.027"></path></clipPath>
+    </svg>
+    
+    <svg>
+      <linearGradient id="gradient" x1="0" y1="0" x2 ="110%" y2="0%">
+        <stop stop-color="#fff" offset="0"/><stop stop-color="#fff" offset="10%"/>
+        <stop stop-color="#AAA" offset="10%"/><stop stop-color="#AAA" offset="20%"/>
+        <stop stop-color="#777" offset="20%"/><stop stop-color="#777" offset="30%"/>
+        <stop stop-color="#333" offset="30%"/><stop stop-color="#333" offset="40%"/>
+        <stop stop-color="#000" offset="40%"/><stop stop-color="#000" offset="50%"/>
+        <stop stop-color="#fff" offset="50%"/><stop stop-color="#fff" offset="60%"/>
+        <stop stop-color="#AAA" offset="60%"/><stop stop-color="#AAA" offset="70%"/>
+        <stop stop-color="#777" offset="70%"/><stop stop-color="#777" offset="80%"/>
+        <stop stop-color="#333" offset="80%"/><stop stop-color="#333" offset="90%"/>
+        <stop stop-color="#000" offset="90%"/><stop stop-color="#000" offset="100%"/>
+      </linearGradient>
+    
+      <mask id="mask"  x="0" y="0" maskUnits="objectBoundingBox" maskContentUnits="objectBoundingBox">
+        <rect y="0" width="1" height="1" fill="url(#gradient)" />
+        <circle cx=".5" cy=".5" r=".42" fill="black" />
+    
+        <circle cx="0" cy=".5" r=".32" fill="black" />
+        <circle cx="1" cy=".5" r=".32" fill="black" />
+    
+        <circle cx="0" cy=".5" r=".3" fill="gray" />
+        <circle cx=".5" cy=".5" r=".4" fill="gray" />
+        <circle cx="1" cy=".5" r=".3" fill="gray" />
+    
+        <circle cx="0" cy=".5" r=".25" fill="white" />
+        <circle cx=".5" cy=".5" r=".35" fill="white" />
+        <circle cx="1" cy=".5" r=".25" fill="white" />
+      </mask>
+    
+      <radialgradient id="mask-radial-gradient" cy="52%" fy="5.5%">
+        <stop stop-color="#FFF" offset="50%" />
+        <stop stop-color="#000" offset="100%" />
+      </radialgradient>
+    
+      <mask id="mask-soft" maskunits="objectBoundingBox" maskcontentunits="objectBoundingBox" x="0" y="0">
+        <rect y="0" width="1" height="1" fill="url(#mask-radial-gradient)" />
+      </mask>
+    
+      <mask id="mask-shells" x="0" y="0">
+        <image xlink:href="./assets/img/demo/shells.png" width="250" height="375" />
+      </mask>
+    
+      <mask id="mask-bird" x="0" y="0" width="250" height="375" maskunits="userSpaceOnUse" maskcontentunits="userSpaceOnUse">
+        <rect x="0" y="0" width="100%" height="100%"/>
+        <image xlink:href="./assets/img/demo/bird.gif"
+          width="250" height="375"></image>
+      </mask>
+    
+      <mask id="mask-shape" x="0" y="0" width="200" height="200" maskunits="userSpaceOnUse" maskcontentunits="userSpaceOnUse">
+        <g fill-rule="nonzero" fill="none"><path d="M77.5 0c36.784 0 67.583 25.627 75.516 60H200v140H60v-46.984C25.627 145.083 0 114.284 0 77.5 0 34.698 34.698 0 77.5 0zM190 70h-35.358c.237 2.468.358 4.97.358 7.5 0 42.802-34.698 77.5-77.5 77.5-2.53 0-5.032-.121-7.5-.358V190h120V70zm-45.412 0H70v74.588c2.462.272 4.965.412 7.5.412 37.28 0 67.5-30.22 67.5-67.5 0-2.535-.14-5.038-.412-7.5zM77.5 10C40.22 10 10 40.22 10 77.5c0 31.227 21.205 57.501 50 65.21V60h82.71C135 31.205 108.726 10 77.5 10z" fill-opacity=".2" fill="#000"/><circle fill="#757575" cx="77.5" cy="77.5" r="67.5"/><path fill="#FFF" d="M70 70h120v120H70z"/><path fill="#000" d="M100 100h60v60h-60z"/></g>
+      </mask>
+    
+      <mask id="mask-shape-alpha" x="0" y="0" width="200" height="200" maskunits="userSpaceOnUse" maskcontentunits="userSpaceOnUse" mask-type="alpha">
+        <g fill-rule="nonzero" fill="none"><path d="M77.5 0c36.784 0 67.583 25.627 75.516 60H200v140H60v-46.984C25.627 145.083 0 114.284 0 77.5 0 34.698 34.698 0 77.5 0zM190 70h-35.358c.237 2.468.358 4.97.358 7.5 0 42.802-34.698 77.5-77.5 77.5-2.53 0-5.032-.121-7.5-.358V190h120V70zm-45.412 0H70v74.588c2.462.272 4.965.412 7.5.412 37.28 0 67.5-30.22 67.5-67.5 0-2.535-.14-5.038-.412-7.5zM77.5 10C40.22 10 10 40.22 10 77.5c0 31.227 21.205 57.501 50 65.21V60h82.71C135 31.205 108.726 10 77.5 10z" fill-opacity=".2" fill="#000"/><circle fill="#757575" cx="77.5" cy="77.5" r="67.5"/><path fill="#FFF" d="M70 70h120v120H70z"/><path fill="#000" d="M100 100h60v60h-60z"/></g>
+      </mask>
+    
+      <mask id="mask-text" x="0" y="0"  width="100%" height="100%" maskunits="userSpaceOnUse" maskcontentunits="userSpaceOnUse">
+        <rect x="0" y="0" width="100%" height="100%"/>
+    
+        <text
+          id="mask-text__text"
+          x="50%" y="50%" dy=".315em"
+          text-anchor="middle"
+          >
+          SVG Mask
+        </text>
+      </mask>
+    
+    </svg>
+    
+    <svg>
+      <filter id="filter-broken">
+        <feTurbulence type="turbulence" baseFrequency="0.002 0.008" numOctaves="2" seed="2" stitchTiles="stitch" result="turbulence"/>
+        <feColorMatrix type="saturate" values="30" in="turbulence" result="colormatrix"/>
+        <feColorMatrix type="matrix" values="1 0 0 0 0
+      0 1 0 0 0
+      0 0 1 0 0
+      0 0 0 150 -15" in="colormatrix" result="colormatrix1"/>
+        <feComposite in="SourceGraphic" in2="colormatrix1" operator="in" result="composite"/>
+        <feDisplacementMap in="SourceGraphic" in2="colormatrix1" scale="10" xChannelSelector="R" yChannelSelector="A" result="displacementMap"/>
+      </filter>
+    </svg>
+    
+  </div>
+
+  <section class="slide about-slide slide--no-label">
+    <div class="about-slide__content">
+      <h2 class="visually-hidden">Об авторе</h2>
+      <div class="about-slide__author">
+        <span class="about-slide__name">Бухвалова Юлия</span>
+        <span class="about-slide__company">LiveJournal</span>
+      </div>
+
+      <div class="columns">
+        <div class="column">
+          <ul class="about-slide__list">
+            <li><a href="https://github.com/yoksel/common-words">Common Words</a></li>
+            <li><a href="http://yoksel.github.io/html-tree/">HTML Tree</a></li>
+            <li><a href="http://yoksel.github.io/url-encoder/">URL-encoder для SVG</a></li>
+            <li><a href="http://yoksel.github.io/svg-filters/#/">SVG Filters</a></li>
+          </ul>
+        </div>
+
+        <div class="column">
+          <ul class="about-slide__list">
+            <li><a href="http://css.yoksel.ru/">css.yoksel.ru</a></li>
+            <li><a href="https://twitter.com/yoksel">@yoksel</a></li>
+            <li><a href="http://codepen.io/yoksel">codepen.io/yoksel</a></li>
+            <li><a href="https://github.com/yoksel">github.com/yoksel</a></li>
+          </ul>
+        </div>
+
+        <div class="column">
+          <img src="./assets/img/me.jpeg" class="about-slide__photo">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide slide--dark slide--section-title slide--main-title slide--poly slide--no-label">
+    <!-- viewBox="0 0 1000 800" -->
+    <svg class="dancing-poly cover" viewBox="0 0 1800 800">
+      <g>
+        <defs>
+          <polygon id="poly"
+            transform="translate(400,0)"
+            transform-origin="700 400"
+            points="295.658872 800 38.6124623 587.648204 0 286.720959 431.692573 0 1000 98.2730802 927.01575 587.648204"></polygon>
+    
+            <text
+              class="dancing-poly__text"
+              fill="currentColor"
+              id="dancing-poly__text"
+              x="50%" y="50%" dy=".315em"
+              text-anchor="middle"
+              >Неквадратный веб</text>
+    
+            <mask id="mask-poly-text" x="0" y="0"  width="100%" height="100%" maskunits="userSpaceOnUse" maskcontentunits="userSpaceOnUse">
+              <use xlink:href="#poly" fill="white"/>
+              <use xlink:href="#dancing-poly__text" color="black"/>
+            </mask>
+    
+            <mask id="mask-poly-text-2" x="0" y="0"  width="100%" height="100%" maskunits="userSpaceOnUse" maskcontentunits="userSpaceOnUse">
+              <rect x="0" y="0" width="100%" height="100%" fill="white"/>
+              <use xlink:href="#poly" fill="black"/>
+            </mask>
+    
+            <radialGradient cx="50%" cy="50%" fx="50%" fy="50%" r="41.8793409%" id="radialGradient-1">
+              <stop
+                class="base-grad-color base-grad-color--1"
+                stop-color="#FF0000" offset="0%"></stop>
+              <stop stop-color="#FF0000" stop-opacity="0" offset="100%"></stop>
+            </radialGradient>
+    
+            <radialGradient cx="52.7894003%" cy="50%" fx="52.7894003%" fy="50%" r="50%" id="radialGradient-2">
+              <stop
+                class="base-grad-color base-grad-color--2"
+                stop-color="#FFE400" offset="0%"></stop>
+              <stop
+                class="base-grad-color base-grad-color--2"
+                stop-color="#FFE400"
+                stop-opacity="0" offset="100%"></stop>
+            </radialGradient>
+    
+            <radialGradient cx="50%" cy="50%" fx="50%" fy="50%" r="43.3401519%" id="radialGradient-3">
+              <stop
+                class="base-grad-color base-grad-color--3"
+                stop-color="#FFE600" offset="0%"></stop>
+              <stop
+                class="base-grad-color base-grad-color--3"
+                stop-color="#FFE600"
+                stop-opacity="0" offset="100%"></stop>
+            </radialGradient>
+    
+            <radialGradient cx="50%" cy="50%" fx="50%" fy="50%" r="43.3401731%" id="radialGradient-4">
+              <stop
+                class="base-grad-color base-grad-color--4"
+                stop-color="#FFE600" offset="0%"></stop>
+              <stop
+                class="base-grad-color base-grad-color--4"
+                stop-color="#FFE600"
+                stop-opacity="0" offset="100%"></stop>
+            </radialGradient>
+    
+            <radialGradient cx="50%" cy="50%" fx="50%" fy="50%" r="43.3401519%" id="radialGradient-5">
+              <stop
+                class="base-grad-color base-grad-color--5"
+                stop-color="#FFE400" offset="0%"></stop>
+              <stop
+                class="base-grad-color base-grad-color--5"
+                stop-color="#FFE400"
+                stop-opacity="0" offset="100%"></stop>
+            </radialGradient>
+    
+            <radialGradient cx="50%" cy="50%" fx="50%" fy="50%" r="43.3401519%" id="radialGradient-6">
+              <stop
+                class="base-grad-color base-grad-color--6"
+                stop-color="#0058FF" offset="0%"></stop>
+              <stop
+                class="base-grad-color base-grad-color--6"
+                stop-color="#0058FF"
+                stop-opacity="0" offset="100%"></stop>
+            </radialGradient>
+    
+            <radialGradient cx="50%" cy="50%" fx="50%" fy="50%" r="41.8793409%" id="radialGradient-7">
+              <stop
+                class="base-grad-color base-grad-color--7"
+                stop-color="#00F4FB" offset="0%"></stop>
+              <stop
+                class="base-grad-color base-grad-color--7"
+                stop-color="#00F4FB"
+                stop-opacity="0" offset="100%"></stop>
+            </radialGradient>
+    
+            <radialGradient cx="50%" cy="50%" fx="50%" fy="50%" r="41.8793409%" id="radialGradient-8">
+              <stop
+                class="base-grad-color base-grad-color--8"
+                stop-color="#FF9001" offset="0%"></stop>
+              <stop
+                class="base-grad-color base-grad-color--8"
+                stop-color="#FF9001"
+                stop-opacity="0" offset="100%"></stop>
+            </radialGradient>
+        </defs>
+    
+        <g mask="url(#mask-poly-text)">
+          <rect
+            width="1800" height="800" fill="turquoise"
+            class="dancing-poly__rect"/>
+          <g transform="translate(-107, -272)">
+            <circle
+                id="circle-gold-again-again"
+                fill="url(#radialGradient-2)"
+                cx="462.5" cy="981"
+                transform-origin="462.5 981"
+                r="500"/>
+            <circle
+                id="circle-gold-again"
+                fill="url(#radialGradient-3)"
+                cx="768" cy="555"
+                transform-origin="768 555"
+                r="500"/>
+            <circle
+              id="circle-red"
+              class="moving-circle"
+              fill="url(#radialGradient-1)"
+              cx="500" cy="726.5"
+              transform-origin="500 726.5"
+              r="500"/>
+            <circle
+              id="circle-blue"
+              class="moving-circle"
+              fill="url(#radialGradient-6)"
+              cx="704" cy="1229"
+              transform-origin="704 1229"
+              r="500"/>
+            <circle
+              id="circle-gold"
+              fill="url(#radialGradient-4)"
+              cx="1314.5" cy="1038.5"
+              transform-origin="1314.5 1038.5"
+              r="500"/>
+            <circle
+              id="circle-yellowgreen"
+              class="moving-circle"
+              fill="url(#radialGradient-5)"
+              cx="1351" cy="601"
+              transform-origin="1351 601"
+              r="550"/>
+            <circle
+              id="circle-aqua"
+              class="moving-circle"
+              fill="url(#radialGradient-7)"
+              cx="1160" cy="716.5"
+              transform-origin="1160 716.5"
+              r="500"/>
+            <circle
+              id="circle-orange"
+              class="moving-circle"
+              fill="url(#radialGradient-8)"
+              cx="1100" cy="1016.5"
+              transform-origin="1100 1016.5"
+              r="500"/>
+            </g>
+          </g>
+    
+        <use xlink:href="#dancing-poly__text"
+          color="white"
+          mask="url(#mask-poly-text-2)"
+          style="pointer-events: none"
+          aria-hidden="true"
+        />
+        <use xlink:href="#dancing-poly__text" color="transparent"/>
+      </g>
+    </svg>
+    
+  </section>
+
+  <section class="slide">
+    <h3>Краткое содержание</h3>
+
+    <ul>
+      <li>Рисование на CSS</li>
+      <li>Фигурные картинки</li>
+      <li>Обтекание текстом</li>
+    </ul>
+
+  </section>
+
+  <section class="slide slide--dark slide--section-title">
+    <h2>Рисование на CSS</h2>
+  </section>
+
+  <section class="slide slide--rabbit">
+    <h3>Подопытный кролик</h3>
+
+    <pre>
+        <code class="language-html">&lt;div class="shape">&lt;/div></code>
+    </pre>
+  </section>
+
+  <section class="slide slide--section-title">
+    <div class="demo demo--cells">
+      <div class="demo__item">
+        <div class="shape shape--square"></div>
+      </div>
+      <div class="demo__item">
+        <div class="shape shape--circle"></div>
+      </div>
+      <div class="demo__item">
+        <div class="shape shape--triangle"></div>
+      </div>
+      <div class="demo__item">
+        <div class="shape shape--parallelogram"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide slide--section-title">
+    <div class="demo demo--cells">
+      <div class="demo__item">
+        <div class="shape shape--moon"></div>
+      </div>
+      <div class="demo__item">
+        <div class="shape shape--infinity"></div>
+      </div>
+      <div class="demo__item">
+        <div class="shape shape--smile"></div>
+      </div>
+      <div class="demo__item">
+        <div class="shape shape--star"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide slide--section-title">
+    <div class="demo demo--cells">
+      <div class="demo__item">
+        <div class="shape shape--heart"></div>
+      </div>
+      <div class="demo__item">
+        <div class="shape shape--arrow"></div>
+      </div>
+      <div class="demo__item">
+        <div class="shape shape--flag"></div>
+      </div>
+      <div class="demo__item">
+        <div class="shape shape--in-yan"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <h3>Чем рисуем?</h3>
+
+    <ul>
+      <li>Рамки <code>border</code></li>
+      <li>Скругление <code>border-radius</code></li>
+      <li>Псевдоэлементы <code>::before</code>, <code>::after</code></li>
+      <li>Тени <code>box-shadow</code></li>
+      <li>Градиенты <code>linear-gradient()</code>, <code>radial-gradient()</code></li>
+      <li>Трансформации <code>rotate()</code>, <code>skew()</code>, ...</li>
+    </ul>
+  </section>
+
+  <section class="slide slide--no-label">
+    <div class="demo demo--cells">
+      <div class="eye-wrapper">
+        <div class="eye">
+          <div class="eyeball"></div>
+        </div>
+      </div>
+      
+      <div class="eye-wrapper">
+        <div class="eye">
+          <div class="eyeball"></div>
+        </div>
+      </div>
+      
+      <div class="eye-wrapper">
+        <div class="eye">
+          <div class="eyeball"></div>
+        </div>
+      </div>
+      
+      <div class="eye-wrapper">
+        <div class="eye">
+          <div class="eyeball"></div>
+        </div>
+      </div>
+      
+      <div class="eye-wrapper">
+        <div class="eye">
+          <div class="eyeball"></div>
+        </div>
+      </div>
+      <div class="eye-wrapper">
+        <div class="eye">
+          <div class="eyeball"></div>
+        </div>
+      </div>
+      
+      <div class="eye-wrapper">
+        <div class="eye">
+          <div class="eyeball"></div>
+        </div>
+      </div>
+      
+      <div class="eye-wrapper">
+        <div class="eye">
+          <div class="eyeball"></div>
+        </div>
+      </div>
+      
+      <div class="eye-wrapper">
+        <div class="eye">
+          <div class="eyeball"></div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <section class="slide slide--no-label slide--css-icons">
+    <figure class="figure figure--caption-aside">
+      <figcaption
+      class="copyright right">
+        <a
+          href="http://nicolasgallagher.com/pure-css-gui-icons/demo/">Pure CSS GUI icons</a>
+        by
+        <a
+          href="http://lea.verou.me/">Nicolas Gallagher</a>
+      </figcaption>
+
+      <img
+        class="cover"
+        src="./assets/img/nicolasgallagher-icons.png">
+    </figure>
+  </section>
+
+  <section class="slide">
+    <h3>Почитать про фигуры</h3>
+
+    <ul>
+      <li><a href="https://css-tricks.com/the-shapes-of-css/">The Shapes of CSS</a></li>
+      <li><a href="http://css.yoksel.ru/css-figury/">CSS-фигуры</a></li>
+    </ul>
+  </section>
+
+  <section class="slide slide--section-title">
+    <h3>Немного за гранью</h3>
+  </section>
+
+  <section class="slide slide--lace slide--no-label">
+    <figure class="figure figure--caption-aside">
+      <figcaption
+      class="copyright right white">
+        <a
+          href="https://diana-adrianne.com/purecss-lace/">Pure CSS Lace</a>
+        от
+        <a
+          href="https://diana-adrianne.com/">Diana Smith</a>
+      </figcaption>
+
+      <img
+        class="cover"
+        src="./assets/img/diana-adrianne-purecss-lace.png">
+    </figure>
+  </section>
+
+  <section class="slide slide--lemons slide--no-label">
+    <figure class="figure figure--caption-aside">
+      <figcaption
+      class="copyright right white">
+        <a
+          href="https://codepen.io/ivorjetski/pen/xMJoYO">Pure CSS Still Life - Water and Lemons</a>
+        от
+        <a
+          href="https://codepen.io/ivorjetski/">Ben Evans</a>
+      </figcaption>
+
+      <img
+        class="cover"
+        src="./assets/img/water-and-lemons.png">
+    </figure>
+  </section>
+
+  <section class="slide slide--dark slide--walking-girl slide--no-label">
+    <figure class="figure figure--caption-aside">
+      <figcaption class="copyright right white">
+        <a
+          href="https://codepen.io/ivorjetski/pen/xxKBWBN">Zero Divs! Pure CSS pixel art animation!</a>
+        от
+        <a
+          href="https://codepen.io/ivorjetski/">Ben Evans</a>
+
+        (5Mb CSS!)
+      </figcaption>
+
+      <div class="figure__content">
+        <video
+          class="cover video"
+          src="./assets/video/girl-short.mp4" loop="" muted="" playsinline="">
+      </video>
+      </div>
+    </figure>
+  </section>
+
+  <section class="slide slide--dark slide--heart slide--no-label">
+      <div class="pixel-heart">
+        <div class='pixel-heart__box'>
+          <span class='pixel-heart__dot'></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide slide--disco-cube slide--no-label">
+    <figure class="figure figure--caption-aside">
+      <figcaption class="copyright right white">
+        <a
+          href="https://codepen.io/yoksel/pen/nxgrp">
+          Disco lights on flying cube</a>
+        от
+        <a href="https://codepen.io/yoksel/">Yoksel</a>
+      </figcaption>
+
+      <div class="figure__content">
+        <div class="disco-cube">
+          <div
+            class="
+              disco-cube__side
+              disco-cube__side--back
+            ">
+            <span class="disco-cube__dot"></span>
+          </div>
+          <div
+            class="
+              disco-cube__side
+              disco-cube__side--left
+            ">
+            <span class="disco-cube__dot"></span>
+          </div>
+          <div
+            class="
+              disco-cube__side
+              disco-cube__side--right
+            ">
+            <span class="disco-cube__dot"></span>
+          </div>
+          <div
+            class="
+              disco-cube__side
+              disco-cube__side--top
+            ">
+            <span class="disco-cube__dot"></span>
+          </div>
+          <div
+            class="
+              disco-cube__side
+              disco-cube__side--bottom
+            ">
+            <span class="disco-cube__dot"></span>
+          </div>
+          <div
+            class="
+              disco-cube__side
+              disco-cube__side--front
+            ">
+            <span class="disco-cube__dot"></span>
+          </div>
+        </div>
+        
+      </div>
+    </figure>
+  </section>
+
+  <section class="slide slide--aurora-borealis slide--no-label">
+    <figure class="figure figure--caption-aside">
+      <figcaption class="copyright right white">
+        <a
+          href="https://codepen.io/yoksel/pen/xbxOGO">
+          Aurora Borealis Text</a>
+        от
+        <a href="https://codepen.io/yoksel/">Yoksel</a>
+      </figcaption>
+
+      <div class="figure__content">
+        <div class="aurora-borealis">
+          <div class="aurora-borealis__title">
+            <span class="aurora-borealis__text-wrapper">
+              <span class="aurora-borealis__text-items">
+                <span
+                  class="
+                    aurora-borealis__text-item
+                    aurora-borealis__text-item--1
+                  ">Aurora</span>
+                <span
+                  class="
+                    aurora-borealis__text-item
+                    aurora-borealis__text-item--2
+                  ">Borealis</span>
+                <span
+                  class="
+                    aurora-borealis__text-item
+                    aurora-borealis__text-item--3
+                  ">Text</span>
+              </span>
+             </span>
+          </div>
+        </div>
+        
+      </div>
+    </figure>
+  </section>
+
+  <section class="slide slide--dark slide--no-label">
+    <figure class="figure figure--caption-aside">
+      <figcaption class="copyright right white">
+        <a
+          href="https://codepen.io/miocene/pen/mjLPVp">
+          Pure CSS "Moustached Nanny"</a>
+        от
+        <a
+          href="https://codepen.io/miocene/">
+          Julia Miocene</a>
+      </figcaption>
+
+      <div class="figure__content">
+      <div class="nanny-picture">
+        <div class="forest">
+          <div class="forest__tree"></div>
+          <div class="forest__monster-1">
+            <div></div>
+            <div></div>
+          </div>
+          <div class="forest__monster-2">
+            <div></div>
+          </div>
+          <div class="forest__ghost">
+            <div></div>
+          </div>
+          <div class="forest__moss"></div>
+        </div>
+        <div class="house">
+          <div class="house__wall">
+            <div class="bat-1">
+              <div></div>
+            </div>
+            <div class="bat-2">
+              <div></div>
+            </div>
+          </div>
+          <div class="house__window">
+            <div class="greenery"></div>
+            <div class="leaf-1"></div>
+            <div class="leaf-2"></div>
+            <div class="leaf-3"></div>
+            <div class="leaf-4"></div>
+            <div class="leaf-5"></div>
+            <div class="leaf-6"></div>
+            <div class="leaf-7"></div>
+            <div class="mushroom-1"></div>
+            <div class="mushroom-2"></div>
+            <div class="lamp"></div>
+            <div class="casket"></div>
+            <div class="pineapple"></div>
+            <div class="berries"></div>
+          </div>
+          <div class="shelf">
+            <div class="shelf__staff-1"></div>
+            <div class="shelf__staff-2">
+              <div class="dust-1"></div>
+              <div class="dust-2"></div>
+              <div class="dust-3"></div>
+              <div class="dust-4"></div>
+            </div>
+            <div class="shelf__staff-3"></div>
+            <div class="shelf__staff-4"></div>
+            <div class="shelf__staff-5"></div>
+            <div class="shelf__staff-6"></div>
+            <div class="shelf__staff-7"></div>
+            <div class="shelf__staff-8">
+              <div class="dust-1"></div>
+              <div class="dust-2"></div>
+              <div class="dust-3"></div>
+              <div class="dust-4"></div>
+            </div>
+            <div class="shelf__staff-9"></div>
+            <div class="shelf__staff-10"></div>
+            <div class="shelf__staff-11"></div>
+            <div class="shelf__herb-rope-1"></div>
+            <div class="shelf__herbs-1"></div>
+            <div class="shelf__herbs-2">
+              <div class="shelf__herb-rope-2"></div>
+            </div>
+            <div class="shelf__herbs-3">
+              <div class="shelf__herb-rope-3"></div>
+            </div>
+            <div class="shelf__herbs-4">
+              <div class="shelf__herb-rope-4"></div>
+            </div>
+            <div class="shelf__thing">
+              <div class="shelf__circles"></div>
+            </div>
+          </div>
+          <div class="besom">
+            <div class="rope"></div>
+          </div>
+          <div class="moth-rope"></div>
+          <div class="moth">
+            <div class="moth__wings"></div>
+          </div>
+          <div class="ladder"></div>
+          <div class="wreath"></div>
+          <div class="hook">
+            <div class="dried-flower">
+              <div class="dried-flower__petals"></div>
+            </div>
+          </div>
+          <div class="chair"></div>
+          <div class="alchemist">
+            <div class="alchemist__coat-1"></div>
+            <div class="alchemist__leg-r"></div>
+            <div class="alchemist__leg-l"></div>
+            <div class="alchemist__body"></div>
+            <div class="alchemist__arm-r"></div>
+            <div class="alchemist__arm-l"></div>
+            <div class="alchemist__coat-2"></div>
+            <div class="alchemist__coat-3"></div>
+            <div class="alchemist__hat">
+              <div class="alchemist__cat-tail"></div>
+              <div class="alchemist__hat-1"></div>
+              <div class="alchemist__hat-2"></div>
+              <div class="alchemist__hat-3"></div>
+              <div class="alchemist__hat-4"></div>
+              <div class="alchemist__cat">
+                <div class="alchemist__cat-face"></div>
+              </div>
+              <div class="alchemist__hat-5"></div>
+              <div class="alchemist__hat-6"></div>
+              <div class="alchemist__hat-7"></div>
+              <div class="alchemist__forelock"></div>
+            </div>
+            <div class="alchemist__head">
+              <div class="alchemist__ear-r"></div>
+              <div class="alchemist__ear-l"></div>
+              <div class="alchemist__beard"></div>
+              <div class="alchemist__mustache"></div>
+              <div class="alchemist__eye-r"></div>
+              <div class="alchemist__eye-l"></div>
+            </div>
+          </div>
+          <div class="pedal">
+            <div>
+              <div></div>
+            </div>
+          </div>
+          <div class="table">
+            <div class="snail">
+              <div class="snail__tail">
+                <div></div>
+              </div>
+              <div class="snail__body">
+                <div class="snail__head"></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </div>
+            <div class="piggy">
+              <div class="piggy__front-legs"></div>
+              <div class="piggy__back-legs"></div>
+              <div class="piggy__hair"></div>
+              <div class="piggy__body"></div>
+              <div class="piggy__ear-right"></div>
+              <div class="piggy__ear-left"></div>
+              <div class="piggy__tail"></div>
+              <div class="piggy__eyes"></div>
+              <div class="piggy__mouth"></div>
+            </div>
+            <div class="wasp">
+              <div class="wasp__legs">
+                <div></div>
+              </div>
+              <div class="wasp__body">
+                <div></div>
+              </div>
+              <div class="wasp__wing"></div>
+            </div>
+            <div class="bottle-1">
+              <div></div>
+              <div></div>
+            </div>
+            <div class="bottle-2">
+              <div>
+                <div class="bottle-2__water"></div>
+                <div class="bottle-2__dude-1"></div>
+                <div class="bottle-2__dude-2"></div>
+                <div class="bottle-2__dude-3"></div>
+              </div>
+            </div>
+            <div class="bottle-3">
+              <div>
+                <div class="bottle-3__dude-1"></div>
+                <div class="bottle-3__dude-2"></div>
+                <div class="bottle-3__dude-3"></div>
+              </div>
+              <div class="dust-1"></div>
+              <div class="dust-2"></div>
+              <div class="dust-3"></div>
+              <div class="dust-4"></div>
+              <div class="dust-5"></div>
+              <div class="dust-6"></div>
+              <div class="dust-7"></div>
+              <div class="dust-8"></div>
+              <div class="dust-9"></div>
+              <div class="dust-10"></div>
+            </div>
+            <div class="mushroom-3">
+              <div></div>
+            </div>
+            <div class="mushroom-4"></div>
+            <div class="plants">
+              <div></div>
+            </div>
+            <div class="plants-2">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div class="nut"></div>
+            <div class="fire">
+              <div class="fire__item1"></div>
+              <div class="fire__item2"></div>
+              <div class="fire__item3"></div>
+              <div class="fire__item4"></div>
+              <div class="fire__item5"></div>
+              <div class="fire__item6"></div>
+              <div class="fire__item7"></div>
+              <div class="fire__item8"></div>
+              <div class="fire__item9"></div>
+              <div class="fire__item10"></div>
+            </div>
+            <div class="skulp">
+              <div></div>
+              <div></div>
+            </div>
+            <div class="soul-1">
+              <div class="soul-1__part1"></div>
+              <div class="soul-1__part2"></div>
+              <div class="soul-1__part3"></div>
+              <div class="soul-1__part4"></div>
+              <div class="soul-1__part5"></div>
+              <div class="soul-1__part6"></div>
+              <div class="soul-1__part7"></div>
+              <div class="soul-1__part8"></div>
+              <div class="soul-1__part9"></div>
+              <div class="soul-1__part10"></div>
+              <div class="soul-1__part11"></div>
+              <div class="soul-1__part12"></div>
+              <div class="soul-1__part13"></div>
+              <div class="soul-1__part14"></div>
+              <div class="soul-1__part15"></div>
+              <div class="soul-1__part16"></div>
+            </div>
+            <div class="soul-2">
+              <div class="soul-2__part1"></div>
+              <div class="soul-2__part2"></div>
+              <div class="soul-2__part3"></div>
+              <div class="soul-2__part4"></div>
+              <div class="soul-2__part5"></div>
+              <div class="soul-2__part6"></div>
+              <div class="soul-2__part7"></div>
+              <div class="soul-2__part8"></div>
+              <div class="soul-2__part9"></div>
+              <div class="soul-2__part10"></div>
+              <div class="soul-2__part11"></div>
+              <div class="soul-2__part12"></div>
+              <div class="soul-2__part13"></div>
+              <div class="soul-2__part14"></div>
+              <div class="soul-2__part15"></div>
+              <div class="soul-2__part16"></div>
+            </div>
+            <div class="soul-3">
+              <div class="soul-3__part1"></div>
+              <div class="soul-3__part2"></div>
+              <div class="soul-3__part3"></div>
+              <div class="soul-3__part4"></div>
+              <div class="soul-3__part5"></div>
+              <div class="soul-3__part6"></div>
+              <div class="soul-3__part7"></div>
+              <div class="soul-3__part8"></div>
+              <div class="soul-3__part9"></div>
+              <div class="soul-3__part10"></div>
+              <div class="soul-3__part11"></div>
+              <div class="soul-3__part12"></div>
+              <div class="soul-3__part13"></div>
+              <div class="soul-3__part14"></div>
+              <div class="soul-3__part15"></div>
+              <div class="soul-3__part16"></div>
+            </div>
+            <div class="pot">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div class="pot__drop"></div>
+              <div class="pot__bubble-1"></div>
+              <div class="pot__bubble-2"></div>
+              <div class="pot__bubble-3"></div>
+            </div>
+            <div class="bottle-4">
+              <div class="bottle-4__dude">
+                <div class="bottle-4__dude-head">
+                  <div class="bottle-4__dude-hair-1"></div>
+                  <div class="bottle-4__dude-hair-2"></div>
+                  <div class="bottle-4__dude-hair-3"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="basket">
+            <div></div>
+          </div>
+          <div class="cage"></div>
+          <div class="staff">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+      
+      </div>
+    </figure>
+  </section>
+
+  <section class="slide slide--dark slide--no-label">
+    <figure class="figure figure--caption-aside">
+      <figcaption class="copyright right white">
+        <a
+          href="https://codepen.io/thebabydino/pen/mJojKd">
+          Möbius 6hedrons (pure CSS)</a>
+        от
+        <a href="https://codepen.io/thebabydino">Ana Tudor</a>
+      </figcaption>
+
+      <div class="figure__content">
+      <div class="assembly-wrapper cover">
+          <div class='assembly'>
+            <div class='positioner'>
+              <div class='prism'>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+              </div>
+            </div>
+            <div class='positioner'>
+              <div class='prism'>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+              </div>
+            </div>
+            <div class='positioner'>
+              <div class='prism'>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+              </div>
+            </div>
+            <div class='positioner'>
+              <div class='prism'>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+              </div>
+            </div>
+            <div class='positioner'>
+              <div class='prism'>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+              </div>
+            </div>
+            <div class='positioner'>
+              <div class='prism'>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+              </div>
+            </div>
+            <div class='positioner'>
+              <div class='prism'>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+              </div>
+            </div>
+            <div class='positioner'>
+              <div class='prism'>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+              </div>
+            </div>
+            <div class='positioner'>
+              <div class='prism'>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+              </div>
+            </div>
+            <div class='positioner'>
+              <div class='prism'>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+              </div>
+            </div>
+            <div class='positioner'>
+              <div class='prism'>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+              </div>
+            </div>
+            <div class='positioner'>
+              <div class='prism'>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+              </div>
+            </div>
+            <div class='positioner'>
+              <div class='prism'>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+              </div>
+            </div>
+            <div class='positioner'>
+              <div class='prism'>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+              </div>
+            </div>
+            <div class='positioner'>
+              <div class='prism'>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+              </div>
+            </div>
+            <div class='positioner'>
+              <div class='prism'>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+              </div>
+            </div>
+            <div class='positioner'>
+              <div class='prism'>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+              </div>
+            </div>
+            <div class='positioner'>
+              <div class='prism'>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+              </div>
+            </div>
+            <div class='positioner'>
+              <div class='prism'>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+              </div>
+            </div>
+            <div class='positioner'>
+              <div class='prism'>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+              </div>
+            </div>
+            <div class='positioner'>
+              <div class='prism'>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+              </div>
+            </div>
+            <div class='positioner'>
+              <div class='prism'>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+              </div>
+            </div>
+            <div class='positioner'>
+              <div class='prism'>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+              </div>
+            </div>
+            <div class='positioner'>
+              <div class='prism'>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+                <div class='prism__face'></div>
+              </div>
+            </div>
+          </div>
+      </div>
+      
+      </div>
+    </figure>
+  </section>
+
+  <section class="slide slide--section-title">
+    <h3>Рисуем в фоне</h3>
+  </section>
+
+  <section class="slide slide--dark slide--no-label">
+    <div class="demo demo--full demo--cells">
+      <div
+        class="
+          demo__item
+          gradient
+          gradient--stripes
+        ">
+      </div>
+      <div
+        class="
+          demo__item
+          gradient
+          gradient--cells
+        ">
+      </div>
+      <div
+        class="
+          demo__item
+          gradient
+          gradient--cicada
+        ">
+      </div>
+      <div
+        class="
+          demo__item
+          gradient
+          gradient--notebook
+        ">
+      </div>
+      <div
+        class="
+          demo__item
+          gradient
+          gradient--hearts
+        ">
+      </div>
+      <div
+        class="
+          demo__item
+          gradient
+          gradient--waves
+        ">
+      </div>
+      <div
+        class="
+          demo__item
+          gradient
+          gradient--fishbone
+        ">
+      </div>
+      <div
+        class="
+          demo__item
+          gradient
+          gradient--paper
+        ">
+      </div>
+    </div>
+    
+  </section>
+
+  <section class="slide">
+    <figure class="figure figure--caption-aside">
+      <figcaption
+      class="copyright right">
+        <a
+          href="https://leaverou.github.io/css3patterns/">CSS3 Patterns Gallery</a>
+        от
+        <a
+          href="http://lea.verou.me/">Lea Verou</a>
+      </figcaption>
+
+      <img
+        class="cover"
+        src="./assets/img/lea-verou-css-patterns.png">
+    </figure>
+  </section>
+
+  <section class="slide slide--section-title">
+    <h4>+ background-blend-mode</h4>
+  </section>
+
+  <section class="slide slide--dark slide--no-label">
+    <div class="demo demo--full demo--cells">
+      <div
+        class="
+          demo__item
+          gradient
+          gradient--blue-squares
+        ">
+      </div>
+      <div
+        class="
+          demo__item
+          gradient
+          gradient--sea-waves
+        ">
+      </div>
+      <div
+        class="
+          demo__item
+          gradient
+          gradient--rainbow-corners
+        ">
+      </div>
+    </div>
+    
+  </section>
+
+  <section class="slide slide--section-title">
+    <h3>Но зачем?</h3>
+  </section>
+
+  <section class="slide slide--section-title">
+    <h3>Стоит ли рисовать на&nbsp;CSS?</h3>
+  </section>
+
+  <section class="slide slide--conclusions">
+    <div class="columns columns--2">
+      <div class="column">
+        <h4>Минусы</h4>
+
+        <ul>
+          <li>Придется подумать</li>
+          <li>Хрупкость</li>
+        </ul>
+      </div>
+      <div class="column next">
+        <h4>Плюсы</h4>
+
+        <ul>
+          <li>Придется подумать</li>
+          <li>Идеально для простых случаев</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="next">
+      <h4>Выводы</h4>
+
+      <ul>
+        <li>Градиенты, тени, простые линии &rarr; CSS</li>
+        <li>Быстро набросать иконку &rarr; CSS</li>
+        <li>Эксперименты и развитие &rarr; CSS</li>
+        <li>Сложные иконки и графика для сайта &rarr; SVG</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="slide slide--section-title">
+    <h3>Практические примеры</h3>
+  </section>
+
+  <section class="slide">
+    <figure class="figure figure--caption-aside">
+      <figcaption class="copyright right">
+        <a
+          href="http://css.yoksel.ru/strelki-s-pomoshh-yu-svojstva-border/">
+          Стрелки с помощью свойства border</a>
+      </figcaption>
+
+      <div class="figure__content">
+        <div class="demo demo--full demo--cells">
+          <div
+            class="demo__item demo__item--wide">
+            <span class="arrow arrow--top"></span>
+          </div>
+          <div
+            class="demo__item">
+            <span class="arrow arrow--left"></span>
+          </div>
+          <div
+            class="demo__item">
+            <span class="arrow arrow--right"></span>
+          </div>
+          <div
+            class="demo__item demo__item--wide">
+            <span class="arrow arrow--bottom"></span>
+          </div>
+        </div>
+        
+      </div>
+    </figure>
+  </section>
+
+  <section class="slide">
+    <div class="demo demo--cells demo--bullets">
+      <div
+        class="demo__item">
+        <ul class="bullets bullets--ul">
+          <li>item</li>
+          <li>item</li>
+          <li>item</li>
+        </ul>
+      </div>
+      <div
+        class="demo__item">
+        <ol class="bullets bullets--ol">
+          <li>item</li>
+          <li>item</li>
+          <li>item</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide slide--letter">
+    <div class="demo demo--cells">
+      <div
+        class="demo__item">
+        <div class="letter">
+          <div class="letter__content">
+            <input
+              class="letter__input"
+              type="text"
+              placeholder="yourmail@box.com"
+              type="email"
+              >
+              <button
+                class="letter__button">
+                Send
+              </button>
+    
+              <span class="letter__decor">
+    
+              </span>
+            </div>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+
+  <section class="slide">
+    <div class="demo demo--full demo--cells">
+      <div
+        class="demo__item">
+        <div class="corners corners--chamfered"></div>
+      </div>
+      <div
+        class="demo__item">
+        <div class="corners corners--bitten"></div>
+      </div>
+      <div
+        class="demo__item">
+        <div class="corners corners--polygonal">
+          <div class="corners__content"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="demo oblique-edge">
+      <p>
+        Момент фактически выстраивает экскурсионный подземный сток. Ташет, иcходя из того, что заставляет иначе взглянуть на то, что такое вектор угловой скорости.
+      </p>
+      <p>
+        Палинологическое изучение осадков онежской трансгрессии, имеющей отчетливое межморенное залегание, показало, что парадигма изоморфна времени.
+      </p>
+    </div>
+  </section>
+
+  <section class="slide">
+    <h3>Поддержка браузерами</h3>
+
+    <ul>
+      <li>Рамки <code>border</code></li>
+      <li>Скругление <code>border-radius</code></li>
+      <li>Псевдоэлементы <code>::before</code>, <code>::after</code></li>
+      <li>Тени <code>box-shadow</code></li>
+      <li>Градиенты <code>linear-gradient()</code>, <code>radial-gradient()</code></li>
+      <li>Трансформации <code>rotate()</code>, <code>skew()</code>, ...</li>
+    </ul>
+
+    <p class="text-centered">
+      <span class="browser chrome"></span>
+      <span class="browser firefox"></span>
+      <span class="browser ie"></span>
+      <span class="browser edge"></span>
+      <span class="browser opera"></span>
+      <span class="browser safari"></span>
+    </p>
+  </section>
+
+  <section class="slide slide--dark slide--section-title">
+    <h2>Как насчёт картинок?</h2>
+  </section>
+
+    <section class="slide slide--section-title">
+        <h3>CSS border-radius</h3>
+      </section>
+
+      <section class="slide">
+        <div class="demo demo--radius demo--list">
+          <div
+            class="demo__item">
+            <div class="radius radius--round"></div>
+            <pre><code class="language-css">border-radius: 50%</code></pre>
+          </div>
+          <div
+            class="demo__item next">
+            <div class="radius radius--drop"></div>
+            <pre><code class="language-css">border-radius: 50% 0 50% 50%</code></pre>
+          </div>
+          <div
+            class="demo__item next">
+            <div class="radius radius--shaped"></div>
+            <pre><code class="language-css">border-radius: 80% / 100% 100% 60% 60%</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide">
+        <div class="columns columns--2">
+          <div class="column">
+            <h4>Минусы</h4>
+
+            <ul>
+              <li>Только округлые элементы</li>
+            </ul>
+          </div>
+
+          <div class="column next">
+            <h4>Плюсы</h4>
+
+            <ul>
+              <li>Простота</li>
+              <li>Поддержка браузерами</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide slide--section-title">
+        <h3>CSS clip-path</h3>
+      </section>
+
+      <section class="slide">
+        <h3>CSS clip-path</h3>
+
+        <ul>
+          <li><code>inset()</code>, <code>circle()</code>, <code>ellipse()</code>, <code>polygon()</code></li>
+        </ul>
+      </section>
+
+      <section class="slide">
+        <div class="demo demo--clip-path demo--list">
+          <div
+            class="demo__item">
+            <div class="clip-path clip-path--inset"></div>
+            <pre><code class="language-css">clip-path: inset(10px 20px)</code></pre>
+          </div>
+          <div
+            class="demo__item next">
+            <div class="clip-path clip-path--inset-round"></div>
+            <pre><code class="language-css">clip-path: inset(10px 20px round 20%)</code></pre>
+          </div>
+          <div
+            class="demo__item next">
+            <div class="clip-path clip-path--inset-leaf"></div>
+            <pre><code class="language-css">clip-path: inset(10px 20px round 20% 0)</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide">
+        <div class="demo demo--clip-path demo--list">
+          <div
+            class="demo__item">
+            <div class="clip-path clip-path--circle-at-center"></div>
+            <pre><code class="language-css">clip-path: circle(50% at 50% 50%)</code></pre>
+          </div>
+          <div
+            class="demo__item next">
+            <div class="clip-path clip-path--circle-at-left"></div>
+            <pre><code class="language-css">clip-path: circle(50% at 0% 50%)</code></pre>
+          </div>
+          <div
+            class="demo__item next">
+            <div class="clip-path clip-path--circle-at-top-left"></div>
+            <pre><code class="language-css">clip-path: circle(65% at 75% 25%)</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide">
+        <div class="demo demo--clip-path demo--list">
+          <div
+            class="demo__item">
+            <div class="clip-path clip-path--rhomb"></div>
+            <pre><code class="language-css">clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)</code></pre>
+          </div>
+
+          <div
+            class="demo__item next">
+            <div class="clip-path clip-path--polygon"></div>
+            <pre><code class="language-css">clip-path: polygon(68% 0%, 100% 34%, 96% 76%, 37% 100%, 0% 76%, 23% 20%)</code></pre>
+          </div>
+
+          <div
+            class="demo__item next">
+            <div class="clip-path clip-path--polygon-animated"></div>
+            <pre><code class="language-css">clip-path: polygon(52% 2%, 68% 34%, 83% 64%, 100% 100%, 55% 100%, 0% 100%, 16% 70%, 35% 35%)</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide">
+        <h3>CSS clip-path</h3>
+
+        <ul>
+          <li><code>inset()</code>, <code>circle()</code>, <code>ellipse()</code>, <code>polygon()</code></li>
+
+          <li><code>url()</code><span class="next"> — ссылка на SVG <code>clipPath</code></span></li>
+        </ul>
+      </section>
+
+      <section class="slide slide--no-label">
+        <pre><code class="language-svg">&lt;svg>
+  &lt;path d="M 150,300 C 150,300,0,210,0,100 ..." />
+&lt;/svg></code></pre>
+
+        <div class="text-centered">
+          <svg viewBox="0 0 300 300" height="300">
+            <path d="M 150,300
+              C 150,300,0,210,0,100
+              A 75,75,1,1,1,150,100
+              A 75,75,1,1,1,300,100
+              C 300,210,150,300,150,300 Z" />
+          </svg>
+        </div>
+      </section>
+
+      <section class="slide slide--no-label">
+        <pre data-highlight-lines="3"><code class="language-svg">&lt;svg>
+  &lt;clipPath id="path-heart" clipPathUnits="userSpaceOnUse">
+    &lt;path d="M 150,300 C 150,300,0,210,0,100 ..." />
+  &lt;/clipPath>
+&lt;/svg></code></pre>
+
+        <div class="text-centered">
+          <div
+            class="
+              next
+              clip-path
+              clip-path--heart-abs"></div>
+        </div>
+      </section>
+
+      <section class="slide slide--no-label">
+        <h4>clipPathUnits <span class="next">= userSpaceOnUse</span> <span class="next">&rarr; <mark>objectBoundingBox</mark></span></h4>
+        <pre data-highlight-lines="2"><code class="language-svg">&lt;svg>
+  &lt;clipPath id="path-heart" clipPathUnits="objectBoundingBox">
+    &lt;path d="M 150,300 C 150,300,0,210,0,100 ..." />
+  &lt;/clipPath>
+&lt;/svg></code></pre>
+      </section>
+
+      <section class="slide slide--no-label">
+        <div class="cats">
+          <div class="cats__box">
+            <h4>userSpaceOnUse</h4>
+            <img src="./assets/img/cats/usu.jpg" alt="Cat shows userSpaceOnUse">
+          </div>
+
+          <div class="cats__box next">
+            <h4>objectBoundingBox</h4>
+            <img src="./assets/img/cats/obb.jpg" alt="Cat shows objectBoundingBox">
+          </div>
+        </div>
+      </section>
+
+      <section class="slide slide--no-label">
+        <h4>d <span class="next">= M 150,300 C 150,300 ...</span> <span class="next">&rarr; <mark>M 0.5,1 C 0.5,1 ...</mark></span></h4>
+        <pre data-highlight-lines="3"><code class="language-svg">&lt;svg>
+  &lt;clipPath id="path-heart" clipPathUnits="objectBoundingBox">
+    &lt;path d="M 0.5,1 C 0.5,1,0,0.7,0,0.3 ..." />
+  &lt;/clipPath>
+&lt;/svg></code></pre>
+
+        <div class="text-centered">
+          <div
+            class="
+              next
+              clip-path
+              clip-path--heart
+              clip-path--heart-rel"></div>
+        </div>
+      </section>
+
+      <section class="slide slide--section-title">
+        <h4>Относительные пути</h4>
+      </section>
+
+      <section class="slide slide--section-title">
+        <h4>
+          Относительные команды
+          <span class="or">или</span>
+          относительные координаты?
+        </h4>
+      </section>
+
+      <section class="slide slide--no-label">
+        <div class="columns columns--2 relative-path">
+          <div class="column">
+            <h5>Относительные <span class="text-green">команды</span></h5>
+
+            <ul class="relative-path__list next">
+              <li>M &rarr; m</li>
+              <li>L &rarr; l</li>
+            </ul>
+
+            <div class="relative-path__examples next">
+              <pre><code>M 10,20 L 100,120</code></pre>
+
+              <div class="relative-path__darr">&darr;</div>
+
+              <pre><code>M 10,20 <mark>l 90,100</mark></code></pre>
+            </div>
+
+            <div class="relative-path__tool next">
+              🛠 <a href="http://lea.verou.me/2019/05/utility-convert-svg-path-to-all-relative-or-all-absolute-commands/">Convert SVG path to all-relative or all-absolute commands</a>
+            </div>
+
+            <div class="relative-path__result next">
+              ⚠️ Путь не тянется
+            </div>
+          </div>
+          <div class="column next">
+            <h5>Относительные <span class="text-blue">координаты</span></h5>
+
+            <ul class="relative-path__list next">
+              <li>200 &rarr; 1</li>
+              <li>100 &rarr; 0.5</li>
+            </ul>
+
+            <div class="relative-path__examples next">
+              <pre><code>M 100,0 L 200,200</code></pre>
+
+              <div class="relative-path__darr">&darr;</div>
+
+              <pre><code>M <mark>0.5,0</mark> L <mark>1,1</mark></code></pre>
+            </div>
+
+            <div class="relative-path__tool next">
+              🛠 <a href="https://yoksel.github.io/relative-clip-path/">Relative clip-path</a>
+            </div>
+
+            <div class="relative-path__result next">
+              ✅ Путь становится резиновым
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide">
+        <h4>Где взять путь с относительными координатами?</h4>
+
+        <ul>
+          <li class="next">рисовать в редакторе в клетке 1х1 пиксель</li>
+          <li class="next"><del>добавить трансформацию, ужимающую путь до 1 пикселя</del></li>
+          <li class="next">
+              <a href="https://www.npmjs.com/package/malebranche">npm/Malebranche</a> — консольный инструмент (требует размеры и <code>clipPath</code> на вход, не проставляет <code>clipPathUnits</code>)
+          </li>
+          <li class="next">
+            <a href="https://yoksel.github.io/relative-clip-path/">Relative clip-path</a> — веб-инструмент
+          </li>
+        </ul>
+      </section>
+
+      <section class="slide slide--no-label">
+        <figure class="figure figure--caption-aside">
+          <figcaption
+          class="copyright right">
+            <a
+              href="https://yoksel.github.io/relative-clip-path/">Relative clip-path</a>
+          </figcaption>
+
+          <img
+            class="cover"
+            src="./assets/img/relative-clip-path.png">
+        </figure>
+      </section>
+
+      <section class="slide">
+        <div class="demo demo--clip-path demo--list">
+          <div
+            class="demo__item">
+            <div class="clip-path clip-path--heart"></div>
+            <pre><code class="language-css">clip-path: url("#path-heart")</code></pre>
+          </div>
+          <div
+            class="demo__item">
+            <div class="clip-path clip-path--star"></div>
+            <pre><code class="language-css">clip-path: url("#path-star")</code></pre>
+          </div>
+          <div
+            class="demo__item">
+            <div class="clip-path clip-path--leaf"></div>
+            <pre><code class="language-css">clip-path: url("#path-leaf")</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide slide--section-title">
+        <h3>Практические примеры</h3>
+      </section>
+
+      <section class="slide slide--no-label">
+        <div class="demo demo--clip-path-text demo--cells">
+          <div
+            class="demo__item">
+            <div class="clip-path clip-path--poly-text">
+              Палинологическое изучение осадков онежской трансгрессии показало, что парадигма изоморфна времени.
+            </div>
+          </div>
+          <div
+            class="demo__item">
+            <div class="clip-path clip-path--poly-text">
+              Согласно учению об изотопах, лирика вырождена. Кукуруза выводит знак. Момент фактически выстраивает экскурсионный подземный сток. Ташет, иcходя из того, что заставляет иначе взглянуть на то, что такое вектор угловой скорости.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide slide--no-label slide--card-beveled-edges">
+        <div class="card-beveled-edges">
+          <div class="card-beveled-edges__visual"></div>
+        
+          <div class="card-beveled-edges__right-corner"></div>
+        
+          <div class="card-beveled-edges__text">
+            <p>
+              Палинологическое изучение осадков онежской трансгрессии, имеющей отчетливое межморенное залегание, показало, что парадигма изоморфна времени.
+            </p>
+        
+            <p>
+              Понятие модернизации меняет строфоид. Априори, страх неизменяем. Газопылевое облако использует изотопный гумин. Альбатрос ищет гидрогенит.
+            </p>
+          </div>
+        </div>
+        
+      </section>
+
+      <section class="slide slide--no-label slide--rhomb-gallery">
+        <div class="rhomb-gallery">
+          <img src="./assets/img/demo/rhomb-gallery/img-1.jpeg" alt="">
+          <img src="./assets/img/demo/rhomb-gallery/img-2.jpeg" alt="">
+          <img src="./assets/img/demo/rhomb-gallery/img-3.jpeg" alt="">
+          <img src="./assets/img/demo/rhomb-gallery/img-4.jpeg" alt="">
+          <img src="./assets/img/demo/rhomb-gallery/img-5.jpeg" alt="">
+          <img src="./assets/img/demo/rhomb-gallery/img-6.jpeg" alt="">
+          <img src="./assets/img/demo/rhomb-gallery/img-7.jpeg" alt="">
+          <img src="./assets/img/demo/rhomb-gallery/img-8.jpeg" alt="">
+          <img src="./assets/img/demo/rhomb-gallery/img-9.jpeg" alt="">
+          <img src="./assets/img/demo/rhomb-gallery/img-10.jpeg" alt="">
+        </div>
+        
+      </section>
+
+      <section class="slide">
+        <h4>Управление</h4>
+
+        <pre><code class="language-css">&lt;clip-source> | [ &lt;basic-shape> || &lt;geometry-box> ] | none</code></pre>
+      </section>
+
+      <section class="slide slide--section-title">
+        <h4>Инструменты</h4>
+      </section>
+
+      <section class="slide">
+        <h5>Генераторы</h5>
+
+        <ul>
+          <li>
+            <a href="https://bennettfeely.com/clippy/">CSS clip-path maker</a>
+          </li>
+          <li>
+            <a href="http://www.cssplant.com/clip-path-generator">Clip-path generator</a>
+          </li>
+          <li>
+            <a href="https://www.mozilla.org/ru/firefox/new/">Firefox</a>
+          </li>
+        </ul>
+
+        <div class="next">
+          <h5>Конвертеры</h5>
+
+          <ul>
+            <li>
+              <a href="https://github.com/ainalem/clip-svg">npm/clip-svg</a> — конвертирует SVG path в CSS polygon (по крайней мере, обещает)
+            </li>
+            <li>
+              <a href="https://www.npmjs.com/package/malebranche">npm/Malebranche</a> — консольный инструмент для относительных координат
+            </li>
+            <li>
+              <a href="https://yoksel.github.io/relative-clip-path/">Relative clip-path</a> — веб-инструмент для относительных координат
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="slide slide--no-label">
+        <figure class="figure figure--caption-aside">
+          <figcaption
+          class="copyright right">
+            <a
+              href="https://codepen.io/thebabydino/pen/KLyjBx">Star mixin + usage</a>
+            от
+            <a href="https://codepen.io/thebabydino/">Ana Tudor</a>
+          </figcaption>
+
+          <img
+            class="cover"
+            src="./assets/img/clip-path-stars.png">
+        </figure>
+      </section>
+
+      <section class="slide slide--no-label">
+        <h4>Почитать</h4>
+
+        <ul>
+          <li>
+            <a href="https://www.w3.org/TR/css-masking-1/#the-clip-path">clip-path на W3C</a>
+          </li>
+
+          <li>
+            <a href="https://developer.mozilla.org/ru/docs/Web/CSS/clip-path">clip-path на MDN</a>
+          </li>
+
+          <li>
+            <a href="https://css-tricks.com/tag/clip-path/">clip-path на CSS Tricks</a>
+          </li>
+        </ul>
+
+        <h4>Потестить</h4>
+
+        <ul>
+          <li>
+            <a href="https://codepen.io/yoksel/pen/QWWEqPP">Test page of clip-path properties</a>
+          </li>
+        </ul>
+
+        <img
+            class="cover cover--right"
+            src="./assets/img/clip-path-test-page.png">
+      </section>
+
+      <section class="slide slide--section-title">
+        <h4>Поддержка браузерами</h4>
+      </section>
+
+      <section class="slide slide--support slide--no-label">
+        <figure class="figure figure--caption-aside">
+          <figcaption
+          class="copyright bottom">
+            <a
+              href="https://caniuse.com/#feat=css-clip-path">CSS clip-path property (for HTML)</a>
+            на
+            <a href="https://caniuse.com/">caniuse.com</a>
+          </figcaption>
+
+          <img
+            class="cover"
+            src="./assets/img/caniuse/clip-path-all.png">
+        </figure>
+      </section>
+
+      <section class="slide slide--support slide--no-label">
+        <figure class="figure figure--caption-aside">
+          <figcaption
+          class="copyright bottom">
+            <a
+              href="https://caniuse.com/#feat=mdn-css_properties_clip-path_basic_shape">CSS property: clip-path: &lt;basic-shape></a>
+            by
+            <a href="https://caniuse.com/">caniuse.com</a>
+          </figcaption>
+
+          <img
+            class="cover"
+            src="./assets/img/caniuse/clip-path-shape.png">
+        </figure>
+      </section>
+
+      <section class="slide">
+        <div class="columns columns--2">
+          <div class="column">
+            <h4>Минусы</h4>
+
+            <ul>
+              <li>Нет полупрозрачности</li>
+              <li>Нюансы SVG ClipPath</li>
+              <li>Неполная поддержка браузерами</li>
+            </ul>
+          </div>
+
+          <div class="column next">
+            <h4>Плюсы</h4>
+
+            <ul>
+              <li>Относительная простота</li>
+              <li>Производительность</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide slide--section-title">
+        <h3>CSS mask</h3>
+      </section>
+
+      <section class="slide">
+        <h3>CSS mask</h3>
+
+        <ul>
+          <li>mask-image: &lt;градиент></li>
+          <li>mask-image: &lt;картинка></li>
+          <li>mask-image: &lt;SVG-маска></li>
+        </ul>
+      </section>
+
+      <section class="slide">
+        <div class="demo demo--mask demo--list">
+          <div
+            class="demo__item">
+            <div class="mask mask--gradient"></div>
+
+            <pre><code class="language-css">mask-image: linear-gradient(to right top,
+    rgba(0,0,0,1) 25%, rgba(0,0,0,0) 75%);</code></pre>
+          </div>
+
+          <div
+            class="demo__item next">
+            <div class="mask mask--image"></div>
+
+            <pre><code class="language-css">mask-image: url(tile.png);
+mask-size: 50% 50%;</code></pre>
+          </div>
+
+          <div
+            class="demo__item next">
+            <div class="mask mask--svg"></div>
+
+            <pre><code class="language-css">mask-image: url(#mask);</code></pre>
+
+            <span class="browser chrome no-support"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide">
+        <h4>mask-mode</h4>
+
+        <div class="demo demo--mask-images demo--cells">
+          <div
+            class="demo__item demo__item--mask-example next">
+            <div class="mask-wrapper mask-wrapper--bg">
+              <img
+                src="./assets/img/mask-shape.svg">
+            </div>
+          </div>
+
+          <div
+            class="demo__item next">
+            <code>mask-image: url(<mark>mask.svg</mark>)</code>
+
+            <div class="mask-wrapper">
+              <div class="mask mask--svg-img"></div>
+            </div>
+
+            <code class="next">mask-mode: <mark>alpha</mark></code>
+          </div>
+
+          <div
+            class="demo__item next">
+            <code>mask-image: url(<mark>#mask</mark>)</code>
+
+            <div class="mask-wrapper mask-wrapper--svg">
+              <svg width="200" height="200">
+                <use
+                  mask="url(#mask-shape)"
+                  xlink:href="#img-flower"></use>
+              </svg>
+            </div>
+            <code class="next">mask-mode: <mark>luminance</mark></code>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide">
+        <h4>mask-mode и mask-type</h4>
+        <div class="demo demo--mask-images demo--cells">
+          <div
+            class="demo__item next">
+            <code>mask-image: url(#mask)</code>
+
+            <div class="mask-wrapper mask-wrapper--svg">
+              <svg width="200" height="200">
+                <use
+                  mask="url(#mask-shape-alpha)"
+                  xlink:href="#img-flower"></use>
+              </svg>
+            </div>
+
+            <footer class="demo__item-footer">
+              <code><mark>mask-type="alpha"</mark></code>
+              <br/>на <code>&lt;mask&gt;</code>
+            </footer>
+          </div>
+
+          <div
+            class="demo__item demo__item--or next">
+            или
+          </div>
+
+          <div
+            class="demo__item next">
+            <code>mask-image: url(#mask)</code>
+
+            <div class="mask-wrapper mask-wrapper--svg">
+              <svg width="200" height="200">
+                <use
+                  mask="url(#mask-shape)"
+                  xlink:href="#img-flower"></use>
+              </svg>
+            </div>
+
+            <footer class="demo__item-footer">
+              <code>mask-mode: <mark>alpha</mark> &rarr; <mark>luminance</mark></code>
+              <br/>на элементе
+            </footer>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="slide">
+        <h4>Управление</h4>
+
+        <ul class="css-columns">
+          <li>mask-image</li>
+          <li>mask-position</li>
+          <li>mask-size</li>
+          <li>mask-repeat</li>
+          <li>mask-clip</li>
+          <li>mask-origin</li>
+          <li>mask-mode</li>
+          <li>mask-composite</li>
+        </ul>
+      </section>
+
+      <section class="slide slide--section-title">
+        <h3>Практические примеры</h3>
+      </section>
+
+      <section class="slide slide--dark slide--no-label">
+        <figure class="figure figure--caption-aside">
+          <figcaption class="copyright right white">
+            <a
+              href="https://codepen.io/yoksel/pen/ZyqLGv">
+              Responsive gallery with CSS Grids</a>
+            by
+            <a href="https://codepen.io/yoksel/">Yoksel</a>
+          </figcaption>
+
+          <div class="figure__content">
+            <div class="snail-gallery">
+              <ul class="snail-gallery__grid">
+                <li
+                  class="
+                    snail-gallery__pic
+                    snail-gallery__pic--1"
+                  style="--sg-grid-area: pic1" data-num="1"></li>
+                <li
+                  class="
+                    snail-gallery__pic
+                    snail-gallery__pic--2"
+                  style="--sg-grid-area: pic2" data-num="2"></li>
+                <li
+                  class="
+                    snail-gallery__pic
+                    snail-gallery__pic--3"
+                  style="--sg-grid-area: pic3" data-num="3"></li>
+                <li
+                  class="
+                    snail-gallery__pic
+                    snail-gallery__pic--4"
+                  style="--sg-grid-area: pic4" data-num="4"></li>
+                <li
+                  class="
+                    snail-gallery__pic
+                    snail-gallery__pic--5"
+                  style="--sg-grid-area: pic5" data-num="5"></li>
+                <li
+                  class="
+                    snail-gallery__pic
+                    snail-gallery__pic--6"
+                  style="--sg-grid-area: pic6" data-num="6"></li>
+                <li
+                  class="
+                    snail-gallery__pic
+                    snail-gallery__pic--7"
+                  style="--sg-grid-area: pic7" data-num="7"></li>
+                <li
+                  class="
+                    snail-gallery__pic
+                    snail-gallery__pic--8"
+                  style="--sg-grid-area: pic8" data-num="8"></li>
+                <li
+                  class="
+                    snail-gallery__pic
+                    snail-gallery__pic--9"
+                  style="--sg-grid-area: pic9" data-num="9"></li>
+                <li
+                  class="
+                    snail-gallery__pic
+                    snail-gallery__pic--10"
+                  style="--sg-grid-area: pic10" data-num="10"></li>
+                <li
+                  class="
+                    snail-gallery__pic
+                    snail-gallery__pic--11"
+                  style="--sg-grid-area: pic11" data-num="11"></li>
+                <li
+                  class="
+                    snail-gallery__pic
+                    snail-gallery__pic--12"
+                  style="--sg-grid-area: pic12" data-num="12"></li>
+                <li
+                  class="
+                    snail-gallery__pic
+                    snail-gallery__pic--13"
+                  style="--sg-grid-area: pic13" data-num="13"></li>
+                <li
+                  class="
+                    snail-gallery__pic
+                    snail-gallery__pic--14"
+                  style="--sg-grid-area: pic14" data-num="14"></li>
+                <li
+                  class="
+                    snail-gallery__pic
+                    snail-gallery__pic--15"
+                  style="--sg-grid-area: pic15" data-num="15"></li>
+                <li
+                  class="
+                    snail-gallery__pic
+                    snail-gallery__pic--16"
+                  style="--sg-grid-area: pic16" data-num="16"></li>
+                <li
+                  class="
+                    snail-gallery__pic
+                    snail-gallery__pic--17"
+                  style="--sg-grid-area: pic17" data-num="17"></li>
+                <li
+                  class="
+                    snail-gallery__pic
+                    snail-gallery__pic--18"
+                  style="--sg-grid-area: pic18" data-num="18"></li>
+                <li
+                  class="
+                    snail-gallery__pic
+                    snail-gallery__pic--19"
+                  style="--sg-grid-area: pic19" data-num="19"></li>
+                <li
+                  class="
+                    snail-gallery__pic
+                    snail-gallery__pic--20"
+                  style="--sg-grid-area: pic20" data-num="20"></li>
+                <li
+                  class="
+                    snail-gallery__pic
+                    snail-gallery__pic--21"
+                  style="--sg-grid-area: pic21" data-num="21"></li>
+                <li
+                  class="
+                    snail-gallery__pic
+                    snail-gallery__pic--22"
+                  style="--sg-grid-area: pic22" data-num="22"></li>
+                <li
+                  class="
+                    snail-gallery__pic
+                    snail-gallery__pic--23"
+                  style="--sg-grid-area: pic23" data-num="23"></li>
+                <li
+                  class="
+                    snail-gallery__pic
+                    snail-gallery__pic--24"
+                  style="--sg-grid-area: pic24" data-num="24"></li>
+                <li
+                  class="
+                    snail-gallery__pic
+                    snail-gallery__pic--25"
+                  style="--sg-grid-area: pic25" data-num="25"></li>
+              </ul>
+            
+              <div class="snail-gallery__view">
+                  <div class="snail-gallery__view-container">
+                      <div class="snail-gallery__view-img-wrapper">
+                          <img src="" alt="" class="snail-gallery__view-img">
+                      </div>
+                      <div class="snail-gallery__arrows">
+                          <button type="snail-gallery__button"
+                                  class="
+                                    snail-gallery__arrow
+                                    snail-gallery__arrow--prev"
+                                  ></button>
+                          <button type="button"
+                                  class="
+                                    snail-gallery__arrow
+                                    snail-gallery__arrow--next"
+                                  ></button>
+                      </div>
+                  </div>
+              </div>
+            
+              <!-- <div class="snail-gallery__tip">&larr; Resize the window &rarr;</div> -->
+            </div>
+            
+          </div>
+        </figure>
+      </section>
+
+      <section class="slide slide--dark slide--no-label">
+        <figure class="figure figure--caption-aside">
+          <figcaption class="copyright right white">
+            <a
+              href="https://codepen.io/yoksel/pen/BZwWOO">
+              Butterflies drink dark matter</a>
+            by
+            <a href="https://codepen.io/yoksel/">Yoksel</a>
+          </figcaption>
+
+          <div class="figure__content">
+            <div class="butterflies cover">
+              <div class="butterflies__container">
+                <div
+                  class="
+                    butterflies__cube
+                    butterflies__cube--1
+                  ">
+                  <div
+                    class="
+                      butterflies__side
+                      butterflies__side--back
+                    ">
+                    <div
+                      class="
+                        butterflies__spot
+                        butterflies__spot--back
+                    "></div>
+                  </div>
+                  <div
+                    class="
+                      butterflies__side
+                      butterflies__side--left
+                    ">
+                    <div
+                      class="
+                        butterflies__spot
+                        butterflies__spot--left
+                    "></div>
+                  </div>
+                  <div
+                    class="
+                      butterflies__side
+                      butterflies__side--right
+                    ">
+                    <div
+                      class="
+                        butterflies__spot
+                        butterflies__spot--right
+                    "></div>
+                  </div>
+                  <div
+                    class="
+                      butterflies__side
+                      butterflies__side--top
+                    ">
+                    <div
+                      class="
+                        butterflies__spot
+                        butterflies__spot--top
+                    "></div>
+                  </div>
+                  <div
+                    class="
+                      butterflies__side
+                      butterflies__side--bottom
+                    ">
+                    <div
+                      class="
+                        butterflies__spot
+                        butterflies__spot--bottom
+                    "></div>
+                  </div>
+                  <div
+                    class="
+                      butterflies__side
+                      butterflies__side--front
+                    ">
+                    <div
+                      class="
+                        butterflies__spot
+                        butterflies__spot--front
+                    "></div>
+                  </div>
+                </div>
+            
+                <div
+                  class="
+                    butterflies__cube
+                    butterflies__cube--2
+                  ">
+                  <div
+                    class="
+                      butterflies__side
+                      butterflies__side--back
+                    ">
+                    <div
+                      class="
+                        butterflies__spot
+                        butterflies__spot--back
+                    "></div>
+                  </div>
+                  <div
+                    class="
+                      butterflies__side
+                      butterflies__side--left
+                    ">
+                    <div
+                      class="
+                        butterflies__spot
+                        butterflies__spot--left
+                    "></div>
+                  </div>
+                  <div
+                    class="
+                      butterflies__side
+                      butterflies__side--right
+                    ">
+                    <div
+                      class="
+                        butterflies__spot
+                        butterflies__spot--right
+                    "></div>
+                  </div>
+                  <div
+                    class="
+                      butterflies__side
+                      butterflies__side--top
+                    ">
+                    <div
+                      class="
+                        butterflies__spot
+                        butterflies__spot--top
+                    "></div>
+                  </div>
+                  <div
+                    class="
+                      butterflies__side
+                      butterflies__side--bottom
+                    ">
+                    <div
+                      class="
+                        butterflies__spot
+                        butterflies__spot--bottom
+                    "></div>
+                  </div>
+                  <div
+                    class="
+                      butterflies__side
+                      butterflies__side--front
+                    ">
+                    <div
+                      class="
+                        butterflies__spot
+                        butterflies__spot--front
+                    "></div>
+                  </div>
+                </div>
+            
+                <div
+                  class="
+                    butterflies__cube
+                    butterflies__cube--3
+                  ">
+                  <div
+                    class="
+                      butterflies__side
+                      butterflies__side--back
+                    ">
+                    <div
+                      class="
+                        butterflies__spot
+                        butterflies__spot--back
+                    "></div>
+                  </div>
+                  <div
+                    class="
+                      butterflies__side
+                      butterflies__side--left
+                    ">
+                    <div
+                      class="
+                        butterflies__spot
+                        butterflies__spot--left
+                    "></div>
+                  </div>
+                  <div
+                    class="
+                      butterflies__side
+                      butterflies__side--right
+                    ">
+                    <div
+                      class="
+                        butterflies__spot
+                        butterflies__spot--right
+                    "></div>
+                  </div>
+                  <div
+                    class="
+                      butterflies__side
+                      butterflies__side--top
+                    ">
+                    <div
+                      class="
+                        butterflies__spot
+                        butterflies__spot--top
+                    "></div>
+                  </div>
+                  <div
+                    class="
+                      butterflies__side
+                      butterflies__side--bottom
+                    ">
+                    <div
+                      class="
+                        butterflies__spot
+                        butterflies__spot--bottom
+                    "></div>
+                  </div>
+                  <div
+                    class="
+                      butterflies__side
+                      butterflies__side--front
+                    ">
+                    <div
+                      class="
+                        butterflies__spot
+                        butterflies__spot--front
+                    "></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- <div class="wings-src">Butterflies wings
+              were taken<br>
+              from icon made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> <br>
+              from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a><br>
+              Licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> -->
+            
+          </div>
+        </figure>
+      </section>
+
+      <section class="slide slide--no-label">
+        <h4>Почитать</h4>
+
+        <ul>
+          <li>
+            <a href="https://www.w3.org/TR/css-masking-1/#masking">mask на W3C</a>
+          </li>
+
+          <li>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/mask">mask на MDN</a>
+          </li>
+
+          <li>
+            <a href="https://css-tricks.com/tag/mask//">mask на CSS Tricks</a>
+          </li>
+        </ul>
+
+        <h4>Потестить</h4>
+
+        <ul>
+          <li>
+            <a href="https://codepen.io/yoksel/pen/JjjRPyd">Test page of mask properties</a>
+          </li>
+        </ul>
+
+        <img
+            class="cover cover--right"
+            src="./assets/img/mask-test-page.png">
+      </section>
+
+      <section class="slide slide--section-title">
+        <h4>Поддержка браузерами</h4>
+      </section>
+
+      <section class="slide slide--support slide--no-label">
+        <figure class="figure figure--caption-aside">
+          <figcaption
+          class="copyright bottom">
+            <a
+              href="https://caniuse.com/#feat=css-masks">CSS masks</a>
+            на
+            <a href="https://caniuse.com/">caniuse.com</a>
+          </figcaption>
+
+          <img
+            class="cover"
+            src="./assets/img/caniuse/mask.png">
+        </figure>
+      </section>
+
+      <section class="slide">
+        <div class="columns columns--2">
+          <div class="column">
+            <h4>Минусы</h4>
+
+            <ul>
+              <li>Mask-mode и mask-type</li>
+              <li>Нюансы SVG Mask</li>
+              <li>Неполная поддержка браузерами</li>
+            </ul>
+          </div>
+
+          <div class="column next">
+            <h4>Плюсы</h4>
+
+            <ul>
+              <li>Mask-mode и mask-type</li>
+              <li>Есть полупрозрачность</li>
+              <li>Гибкость управления</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+    <section class="slide slide--section-title">
+      <h3>SVG mask</h3>
+    </section>
+
+      <section class="slide slide--no-label">
+        <pre><code class="language-svg">&lt;svg>
+  &lt;mask id="mask" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse"&gt;
+    ...
+  &lt;/mask&gt;
+&lt;/svg>
+</code></pre>
+      </section>
+
+      <section class="slide slide--no-label">
+        <pre><code class="language-svg">&lt;svg>
+  &lt;mask id="mask" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse"&gt;
+    &lt;rect y="0" width="100%" height="100%" fill="black" /&gt;
+    &lt;g stroke="gray" stroke-width="12" fill="white"&gt;
+      &lt;circle cx="33%" cy="30%" r="20%" /&gt;
+      &lt;circle cx="52%" cy="62%" r="32%" /&gt;
+    &lt;/g&gt;
+  &lt;/mask&gt;
+&lt;/svg>
+</code></pre>
+      </section>
+
+      <section class="slide slide--no-label">
+        <pre data-highlight-lines="10"><code class="language-svg">&lt;svg>
+  &lt;mask id="mask" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse"&gt;
+    &lt;rect y="0" width="100%" height="100%" fill="black" /&gt;
+    &lt;g stroke="gray" stroke-width="12" fill="white"&gt;
+      &lt;circle cx="33%" cy="30%" r="20%" /&gt;
+      &lt;circle cx="52%" cy="62%" r="32%" /&gt;
+    &lt;/g&gt;
+  &lt;/mask&gt;
+
+  &lt;image mask="url(#mask)" xlink:href="image.jpg" width="300" height="400" />
+&lt;/svg>
+</code></pre>
+      </section>
+
+      <section class="slide slide--no-label">
+        <div class="svg-mask-steps cover">
+          <svg width="250" height="375">
+            <symbol id="s-mask-circles">
+              <g stroke="gray" stroke-width="12" fill="white">
+                <circle cx="33%" cy="30%" r="20%" />
+                <circle cx="52%" cy="62%" r="32%" />
+              </g>
+            </symbol>
+        
+            <mask id="mask-circles">
+              <use xlink:href="#s-mask-circles" />
+            </mask>
+        
+            <symbol id="img-flower">
+              <image xlink:href="./assets/img/demo/yoksel-zok-Z_rdomcVLwE-unsplash.jpg"
+                width="250" height="375" />
+            </symbol>
+        
+            <use xlink:href="#img-flower"></use>
+          </svg>
+        
+          <span class="svg-mask-steps__sign next">+</span>
+        
+          <svg
+            class="next"
+            width="250" height="375">
+            <rect y="0" width="100%" height="100%" fill="black" />
+            <use xlink:href="#s-mask-circles"></use>
+          </svg>
+        
+          <span
+            class="
+              next
+              svg-mask-steps__sign">=</span>
+        
+          <svg
+            class="next"
+            width="250" height="375">
+            <g mask="url(#mask-circles)">
+              <use xlink:href="#img-flower"></use>
+            </g>
+          </svg>
+        </div>
+        
+      </section>
+
+      <section class="slide slide--no-label">
+        <div class="demo demo--svg-masks">
+          <div
+            class="demo__item">
+            <svg width="250" height="375">
+              <use
+                mask="url(#mask-soft)"
+                xlink:href="#img-flower"></use>
+            </svg>
+          </div>
+
+          <div
+            class="demo__item next">
+            <svg width="250" height="375">
+              <use
+                mask="url(#mask-shells)"
+                width="250" height="375"
+                xlink:href="#img-flower"></use>
+            </svg>
+          </div>
+
+          <div
+            class="demo__item next">
+            <svg width="250" height="375">
+              <use
+                mask="url(#mask-bird)"
+                width="250" height="375"
+                xlink:href="#img-flower"></use>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide">
+        <div class="svg-text-demo cover">
+          <svg class="svg-text-demo__svg">
+        
+            <image
+              xlink:href="./assets/img/demo/yoksel-zok-Z_rdomcVLwE-unsplash.jpg"
+              width="100%" height="100%"
+              preserveAspectRatio="xMidYMid slice"
+              mask="url(#mask-text)"
+              class="svg-text-demo__image svg-text-demo__image--no-filter"
+              />
+          </svg>
+        
+          <input
+            class="svg-text-demo__input"
+            type="text"
+            value="SVG Mask"
+            maxlength="20"
+            spellcheck="false">
+        </div>
+        
+      </section>
+
+      <section class="slide slide--text-filtered">
+        <div class="svg-text-demo cover">
+          <svg class="svg-text-demo__svg">
+        
+            <image
+              xlink:href="./assets/img/demo/yoksel-zok-Z_rdomcVLwE-unsplash.jpg"
+              width="100%" height="100%"
+              preserveAspectRatio="xMidYMid slice"
+              mask="url(#mask-text)"
+              class="svg-text-demo__image svg-text-demo__image--no-filter"
+              />
+          </svg>
+        
+          <input
+            class="svg-text-demo__input"
+            type="text"
+            value="SVG Mask"
+            maxlength="20"
+            spellcheck="false">
+        </div>
+        
+      </section>
+
+      <section class="slide slide--dark slide--bubbles slide--no-label">
+        <figure class="figure figure--caption-aside">
+          <figcaption class="copyright right-top white">
+            <a
+              href="https://codepen.io/yoksel/pen/EyZgLo">
+              SVG Bubbles</a>
+            by
+            <a href="https://codepen.io/yoksel/">Yoksel</a>
+          </figcaption>
+
+          <div class="figure__content">
+            <!--
+              How bubble was made: https://codepen.io/yoksel/full/BzkyBJ
+            -->
+            
+            <div class="bubbles-demo">
+              <div class="bubbles-demo__content">
+                <svg class="bubbles-demo__svg svg--defs">
+            
+                  <!-- Bubble transparency -->
+                  <radialGradient id="grad--bw"
+                          fx="25%" fy="25%">
+                    <stop offset="0%"
+                        stop-color="black"/>
+                    <stop offset="30%"
+                        stop-color="black"
+                        stop-opacity=".2"/>
+                    <stop offset="97%"
+                        stop-color="white"
+                        stop-opacity=".4"/>
+                    <stop offset="100%"
+                        stop-color="black"/>
+                  </radialGradient>
+            
+                  <mask id="bubble-mask" maskContentUnits="objectBoundingBox">
+                    <rect fill="url(#grad--bw)"
+                      width="1" height="1"></rect>
+                  </mask>
+            
+                  <!-- Light spot -->
+                  <radialGradient id="grad--spot"
+                          fx="50%" fy="20%">
+                    <stop offset="10%"
+                        stop-color="white"
+                        stop-opacity=".7"/>
+                    <stop offset="70%"
+                        stop-color="white"
+                        stop-opacity="0"/>
+                  </radialGradient>
+            
+                  <!-- Top & bottom light -->
+                  <radialGradient id="grad--bw-light"
+                          _fx="25%" fy="10%">
+                    <stop offset="60%"
+                        stop-color="black"
+                        stop-opacity="0"/>
+                    <stop offset="90%"
+                        stop-color="white"
+                        stop-opacity=".25"/>
+                    <stop offset="100%"
+                        stop-color="black"/>
+                  </radialGradient>
+            
+                  <mask id="bubble-mask--light-top" maskContentUnits="objectBoundingBox">
+                    <rect fill="url(#grad--bw-light)"
+                      width="1" height="1" transform="rotate(180, .5, .5)"></rect>
+                  </mask>
+            
+                  <mask id="bubble-mask--light-bottom" maskContentUnits="objectBoundingBox">
+                    <rect fill="url(#grad--bw-light)"
+                      width="1" height="1"></rect>
+                  </mask>
+            
+                  <!-- Colors of bubble -->
+                  <linearGradient id="grad"
+                      x1="0" y1="100%" x2="100%" y2="0">
+                    <stop offset="0%" stop-color="dodgerblue"
+                        class="stop-1"/>
+                    <stop offset="50%" stop-color="fuchsia"
+                        class="stop-2"/>
+                    <stop offset="100%" stop-color="yellow"
+                        class="stop-3"/>
+                  </linearGradient>
+            
+                  <mask id="bubble-mask--collapse" maskContentUnits="objectBoundingBox">
+                    <circle r=".5" cx=".5" cy=".5"
+                        class="collapse-circle"
+                        ></circle>
+                  </mask>
+            
+                  <symbol id="splash">
+                    <g class="splash__group"
+                       fill="none"
+                       stroke="white" stroke-opacity=".8">
+                      <circle r="49%"
+                        cx="50%" cy="50%"
+                        stroke-width="3%"
+                        stroke-dasharray="1% 10%"
+                        class="splash__circle _hidden"
+                        ></circle>
+                      <circle r="44%"
+                        cx="50%" cy="50%"
+                        stroke-width="2%"
+                        stroke-dasharray="1% 5%"                     class="splash__circle _hidden"
+                        ></circle>
+                      <circle r="39%"
+                        cx="50%" cy="50%"
+                        stroke-width="1%"
+                        stroke-dasharray="1% 8%"
+                        class="splash__circle _hidden"
+                        ></circle>
+                      <circle r="33%"
+                        cx="50%" cy="50%"
+                        stroke-width="3%"
+                        stroke-dasharray="1% 6%"
+                        class="splash__circle _hidden"
+                        ></circle>
+                      <circle r="26%"
+                        cx="50%" cy="50%"
+                        stroke-width="1%"
+                        stroke-dasharray="1% 7%"
+                        class="splash__circle _hidden"
+                        ></circle>
+                      <circle r="18%"
+                        cx="50%" cy="50%"
+                        stroke-width="1%"
+                        stroke-dasharray="1% 8%"
+                        class="splash__circle _hidden"
+                        ></circle>
+                    </g>
+                  </symbol>
+                </svg>
+            
+                <div class="bubbles-demo__defs hidden">
+                  <svg class="bubbles-demo__svg bubbles-demo__bubble" viewBox="0 0 200 200">
+                    <g class="bubbles-demo__group">
+                      <ellipse rx="20%" ry="10%"
+                         cx="150" cy="150"
+                         fill="url(#grad--spot)"
+                         transform="rotate(-225, 150, 150)"
+                         class="bubbles-demo__shape _hidden"
+                         ></ellipse>
+                      <circle r="50%"
+                        cx="50%" cy="50%"
+                        fill="aqua"
+                        mask="url(#bubble-mask--light-bottom)"
+                        class="bubbles-demo__shape _hidden"
+                        ></circle>
+                      <circle r="50%"
+                        cx="50%" cy="50%"
+                        fill="yellow"
+                        mask="url(#bubble-mask--light-top)"
+                        class="bubbles-demo__shape _hidden"
+                        ></circle>
+                      <ellipse rx="55" ry="25"
+                         cx="55" cy="55"
+                         fill="url(#grad--spot)"
+                         transform="rotate(-45, 55, 55)"
+                         class="bubbles-demo__shape _hidden"
+                         ></ellipse>
+                      <circle r="50%"
+                        cx="50%" cy="50%"
+                        fill="url(#grad)"
+                        mask="url(#bubble-mask)"
+                        class="bubbles-demo__shape _hidden"
+                        ></circle>
+                    </g>
+            
+                    <use xlink:href="#splash" class="bubbles-demo__splash"/>
+            
+                    </g>
+                  </svg>
+                </div>
+            
+                <header class="bubbles-demo__header bubbles-demo-header">
+                  <svg class="svg bubbles-demo-header__splash" viewBox="0 0 200 200">
+                    <use xlink:href="#splash"/>
+                  </svg>
+            
+                  <div class="bubbles-demo__title">
+                    Bubbles
+                    <span class="bubbles-demo__tip">Click bubble to burst it!</span>
+                  </div>
+                </header>
+              </div>
+            </div>
+            
+          </div>
+        </figure>
+      </section>
+
+      <section class="slide">
+        <h4>Почитать</h4>
+
+        <ul>
+          <li>
+            <a href="https://www.w3.org/TR/css-masking-1/#MaskElement">&lt;mask> на W3C</a>
+          </li>
+
+          <li>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/mask">&lt;mask> на MDN</a>
+          </li>
+
+          <li>
+            <a href="http://css.yoksel.ru/svg-masks/">SVG-маски</a>
+          </li>
+
+          <li>
+            <a href="https://tympanus.net/codrops/2015/02/16/create-animated-text-fills/">How to Create (Animated) Text Fills</a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="slide slide--section-title">
+        <h4>Поддержка браузерами</h4>
+      </section>
+
+      <section class="slide slide--support slide--no-label">
+        <figure class="figure figure--caption-aside">
+          <figcaption
+          class="copyright bottom">
+            <a
+              href="https://caniuse.com/#feat=mdn-svg_elements_mask">SVG element: mask</a>
+            на
+            <a href="https://caniuse.com/">caniuse.com</a>
+          </figcaption>
+
+          <img
+            class="cover"
+            src="./assets/img/caniuse/svg-mask.png">
+        </figure>
+      </section>
+
+      <section class="slide">
+        <div class="columns columns--2">
+          <div class="column">
+            <h4>Минусы</h4>
+
+            <ul>
+              <li>Нюансы SVG Mask</li>
+            </ul>
+          </div>
+          <div class="column next">
+            <h4>Плюсы</h4>
+
+            <ul>
+              <li>Поддержка браузерами</li>
+              <li>Есть полупрозрачность</li>
+              <li>Гибкость управления</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+    <section class="slide slide--dark slide--section-title">
+      <h2>Обтекание текстом</h2>
+    </section>
+
+      <section class="slide slide--no-label">
+        <div class="text-wrapping text-wrapping--step-1">
+          <img
+            class="text-wrapping__img"
+            src="./assets/img/demo/yoksel-zok-Z_rdomcVLwE-unsplash.jpg" alt="">
+        </div>
+      </section>
+
+      <section class="slide slide--no-label">
+        <div class="text-wrapping text-wrapping--step-1">
+          <img
+            class="text-wrapping__img"
+            src="./assets/img/demo/yoksel-zok-Z_rdomcVLwE-unsplash.jpg" alt="">
+
+          <p>
+            Палинологическое изучение осадков онежской трансгрессии, имеющей отчетливое межморенное залегание, показало, что парадигма изоморфна времени. Согласно учению об изотопах, лирика вырождена. Кукуруза выводит знак. Момент фактически выстраивает экскурсионный подземный сток. Ташет, иcходя из того, что заставляет иначе взглянуть на то, что такое вектор угловой скорости.
+          </p>
+
+          <p>
+            Понятие модернизации меняет строфоид. Априори, страх неизменяем. Газопылевое облако использует изотопный гумин. Фузз ослабляет ураган, а после исполнения Утесовым роли Потехина в «Веселых ребятах» слава артиста стала всенародной. Альбатрос ищет гидрогенит. Художественный ритуал практически притягивает штопор.
+          </p>
+        </div>
+      </section>
+
+      <section class="slide slide--section-title">
+        <h3>CSS Shapes</h3>
+        <p class="next">Это не рисование на CSS, а отдельная спецификация</p>
+      </section>
+
+      <section class="slide">
+        <h3>CSS Shapes</h3>
+
+        <p>Работают только в сочетании с <code>float</code></p>
+
+        <ul>
+          <li class="next"><code>inset()</code>, <code>circle()</code>, <code>ellipse()</code>, <code>polygon()</code></li>
+
+          <li class="next"><code>linear-gradient()</code>, <code>radial-gradient()</code></li>
+
+          <li class="next"><code>url(&lt;картинка>)</code></li>
+        </ul>
+      </section>
+
+      <section class="slide">
+        <pre data-highlight-lines="6"><code class="language-css">.shape {
+  float: left;
+  /* форма обрезки */
+  clip-path: polygon(0% 0%, 80% 0%, 0% 100%);
+  /* форма обтекания текстом */
+  shape-outside: polygon(0% 0%, 80% 0%, 0% 100%);
+  /* отступ от контура обрезки */
+  shape-margin: 2em;
+}</code></pre>
+      </section>
+
+      <section class="slide slide--no-label">
+        <div class="text-wrapping text-wrapping--step-2">
+          <img
+            class="text-wrapping__img"
+            src="./assets/img/demo/yoksel-zok-Z_rdomcVLwE-unsplash.jpg" alt="">
+
+          <p>
+            Палинологическое изучение осадков онежской трансгрессии, имеющей отчетливое межморенное залегание, показало, что парадигма изоморфна времени. Согласно учению об изотопах, лирика вырождена. Кукуруза выводит знак. Момент фактически выстраивает экскурсионный подземный сток. Ташет, иcходя из того, что заставляет иначе взглянуть на то, что такое вектор угловой скорости.
+          </p>
+
+          <p>
+            Понятие модернизации меняет строфоид. Априори, страх неизменяем. Газопылевое облако использует изотопный гумин. Фузз ослабляет ураган, а после исполнения Утесовым роли Потехина в «Веселых ребятах» слава артиста стала всенародной. Альбатрос ищет гидрогенит. Художественный ритуал практически притягивает штопор.
+          </p>
+        </div>
+      </section>
+
+      <section class="slide slide--no-label">
+        <div class="text-wrapping text-wrapping--both-sides">
+          <img
+            class="text-wrapping__img text-wrapping__img--1"
+            src="./assets/img/demo/yoksel-zok-Z_rdomcVLwE-unsplash.jpg" alt="">
+          <img
+            class="text-wrapping__img text-wrapping__img--2"
+            src="./assets/img/demo/yoksel-zok-Z_rdomcVLwE-unsplash.jpg" alt="">
+
+          <p>
+            Палинологическое изучение осадков онежской трансгрессии, имеющей отчетливое межморенное залегание, показало, что парадигма изоморфна времени. Согласно учению об изотопах, лирика вырождена. Кукуруза выводит знак. Момент фактически выстраивает экскурсионный подземный сток. Ташет, иcходя из того, что заставляет иначе взглянуть на то, что такое вектор угловой скорости.
+          </p>
+
+          <p>
+            Понятие модернизации меняет строфоид. Априори, страх неизменяем. Газопылевое облако использует изотопный гумин. Фузз ослабляет ураган, а после исполнения Утесовым роли Потехина в «Веселых ребятах» слава артиста стала всенародной. Альбатрос ищет гидрогенит. Художественный ритуал практически притягивает штопор.
+          </p>
+        </div>
+      </section>
+
+      <section class="slide slide--no-label">
+        <div class="text-wrapping text-wrapping--cross">
+          <div class="text-wrapping__shape text-wrapping__shape--1">
+          </div>
+          <div class="text-wrapping__shape text-wrapping__shape--2">
+          </div>
+          <p>
+            Палинологическое изучение осадков онежской трансгрессии, имеющей отчетливое межморенное залегание, показало, что парадигма изоморфна времени. Согласно учению об изотопах, лирика вырождена. Кукуруза выводит знак. Момент фактически выстраивает экскурсионный подземный сток. Ташет, иcходя из того, что заставляет иначе взглянуть на то, что такое вектор угловой скорости.
+            Необходимым и достаточным условием отрицательности действительных частей корней рассматриваемого характеристического уравнения является то, что пpотопланетное облако относительно. Эзотерическое отражает комплексный кожух, но никакие ухищрения экспериментаторов не позволят наблюдать этот эффект в видимом диапазоне.
+            Понятие модернизации меняет строфоид. Априори, страх неизменяем. Газопылевое облако использует изотопный гумин.
+          </p>
+        </div>
+      </section>
+
+      <section class="slide slide--wrapping-circle slide--no-label">
+        <div class="text-wrapping text-wrapping--circle">
+          <div class="text-wrapping__shaper"></div>
+          <div class="text-wrapping__shaper"></div>
+
+          <p>
+            Фузз ослабляет ураган, а после исполнения Утесовым роли Потехина в «Веселых ребятах» слава артиста стала всенародной. Палинологическое изучение осадков онежской трансгрессии, имеющей отчетливое межморенное залегание, показало, что парадигма изоморфна времени. Согласно учению об изотопах, лирика вырождена. Кукуруза выводит знак. Ташет, иcходя из того, что заставляет иначе взглянуть на то, что такое вектор угловой скорости. Понятие модернизации меняет строфоид. Априори, страх неизменяем. Газопылевое облако использует изотопный гумин. Альбатрос ищет гидрогенит. Художественный ритуал практически притягивает штопор.
+          </p>
+        </div>
+      </section>
+
+      <section class="slide slide--no-label slide--cakes-css-shapes">
+        <div class="cakes-css-shapes">
+          <div class="cakes-css-shapes__container">
+            <img
+              class="cakes-css-shapes__img cakes-css-shapes__img--cakes"
+              src="./assets/img/demo/cake-jennifer-pallian.jpeg"
+             alt="">
+        
+            <p>
+              Палинологическое изучение осадков онежской трансгрессии, имеющей отчетливое межморенное залегание, показало, что парадигма изоморфна времени.
+            </p>
+        
+            <img
+              class="cakes-css-shapes__img cakes-css-shapes__img--drinks"
+              src="./assets/img/demo/iced-tea-jennifer-pallian.jpeg"
+             alt="">
+        
+            <p>
+              Согласно учению об изотопах, лирика вырождена. Кукуруза выводит знак. Момент фактически выстраивает экскурсионный подземный сток.
+            </p>
+        
+            <p>
+              Ташет, иcходя из того, что заставляет иначе взглянуть на то, что такое вектор угловой скорости.
+            </p>
+          </div>
+        </div>
+        
+      </section>
+
+      <section class="slide slide--no-label">
+        <pre data-highlight-lines="3"><code class="language-css">border-radius: 50%;
+margin: 0 2rem 0 0;
+shape-outside: margin-box;</code></pre>
+
+        <div class="text-wrapping text-wrapping--margin-box next">
+          <img
+          class="text-wrapping__img text-wrapping__img--1"
+          src="./assets/img/demo/yoksel-zok-Z_rdomcVLwE-unsplash.jpg" alt="">
+          Палинологическое изучение осадков онежской трансгрессии, имеющей отчетливое межморенное залегание, показало, что парадигма изоморфна времени. Кукуруза выводит знак. Момент фактически выстраивает экскурсионный подземный сток. Ташет, иcходя из того, что заставляет иначе взглянуть на то, что такое вектор угловой скорости.
+          Необходимым и достаточным условием отрицательности действительных частей корней рассматриваемого характеристического уравнения является то, что пpотопланетное облако относительно. Эзотерическое отражает комплексный кожух.
+        </div>
+      </section>
+
+      <section class="slide slide--no-label">
+        <pre><code class="language-css">shape-outside: url(circle-with-shadow.png);
+
+</code></pre>
+
+        <div class="text-wrapping  text-wrapping--image-threshold text-wrapping--image-threshold-before">
+          <img src="./assets/img/demo/circle-with-shadow.png">
+          Палинологическое изучение осадков онежской трансгрессии, имеющей отчетливое межморенное залегание, показало, что парадигма изоморфна времени. Согласно учению об изотопах, лирика вырождена. Кукуруза выводит знак. Момент фактически выстраивает экскурсионный подземный сток. Ташет, иcходя из того, что заставляет иначе взглянуть на то, что такое вектор угловой скорости.
+          Необходимым и достаточным условием отрицательности действительных частей корней рассматриваемого характеристического уравнения является то, что пpотопланетное облако относительно.
+        </div>
+      </section>
+
+      <section class="slide slide--no-label">
+        <pre data-highlight-lines="2"><code class="language-css">shape-outside: url(circle-with-shadow.png);
+shape-image-threshold: .5;</code></pre>
+
+        <div class="text-wrapping  text-wrapping--image-threshold">
+          <img src="./assets/img/demo/circle-with-shadow.png">
+          Палинологическое изучение осадков онежской трансгрессии, имеющей отчетливое межморенное залегание, показало, что парадигма изоморфна времени. Согласно учению об изотопах, лирика вырождена. Кукуруза выводит знак. Момент фактически выстраивает экскурсионный подземный сток. Ташет, иcходя из того, что заставляет иначе взглянуть на то, что такое вектор угловой скорости.
+          Необходимым и достаточным условием отрицательности действительных частей корней рассматриваемого характеристического уравнения является то, что пpотопланетное облако относительно. Эзотерическое отражает комплексный кожух.
+        </div>
+      </section>
+
+      <section class="slide">
+        <h4>Управление</h4>
+
+        <ul>
+          <li>shape-outside</li>
+          <li>shape-margin</li>
+          <li>shape-image-threshold</li>
+        </ul>
+      </section>
+
+      <section class="slide slide--no-label">
+        <h4>Почитать</h4>
+
+        <ul>
+          <li>
+            <a href="https://www.w3.org/TR/css-shapes-1/">CSS Shapes Module Level 1 на W3C</a>
+          </li>
+          <li>
+            <a href="https://developer.mozilla.org/ru/docs/Web/CSS/shape-outside">shape-outside на MDN</a>
+          </li>
+          <li>
+            <a href="https://alistapart.com/article/css-shapes-101/">CSS Shapes 101</a>
+          </li>
+          <li>
+            <a href="https://www.smashingmagazine.com/2019/04/art-direction-for-the-web-using-css-shapes/">Art Direction For The Web Using CSS Shapes</a>
+          </li>
+          <li>
+            <a href="https://benfrain.com/the-frustrations-of-using-css-shapes-and-css-exclusions/">The frustrations of using CSS Shapes and CSS Exclusions</a>
+          </li>
+          <li>
+            <a href="http://razvancaliman.com/writing/css-shapes-reference-boxes/">Understanding Reference Boxes for CSS Shapes</a>
+          </li>
+          <li>
+            <a href="https://www.smashingmagazine.com/2018/09/css-shapes/">Take A New Look At CSS Shapes</a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="slide slide--ads slide--no-label">
+        <figure class="figure figure--caption-aside">
+          <figcaption
+          class="copyright right">
+            <a href="https://www.pinterest.co.uk/kisstafurr/shapes-of-text/">Shapes of text</a>
+            на
+            <a href="https://www.pinterest.co.uk">pinterest.co.uk</a>
+          </figcaption>
+
+          <div class="figure__content figure__content--cells">
+            <img
+              class="img-screen img-screen--tall"
+              src="./assets/img/bw-ads-2.jpg">
+            <img
+              class="img-screen img-screen--tall"
+              src="./assets/img/1970-ads.jpg">
+          </div>
+        </figure>
+      </section>
+
+      <section class="slide slide--section-title">
+        <h4>Поддержка браузерами</h4>
+      </section>
+
+      <section class="slide slide--support slide--no-label">
+        <figure class="figure figure--caption-aside">
+          <figcaption
+          class="copyright bottom">
+            <a
+              href="https://caniuse.com/#feat=css-shapes">CSS Shapes Level 1</a>
+            на
+            <a href="https://caniuse.com/">caniuse.com</a>
+          </figcaption>
+
+          <img
+            class="cover"
+            src="./assets/img/caniuse/shapes.png">
+        </figure>
+      </section>
+
+      <section class="slide">
+        <div class="columns columns--2">
+          <div class="column">
+            <h4>Минусы</h4>
+
+            <ul>
+              <li><code>float</code></li>
+            </ul>
+          </div>
+
+          <div class="column next">
+            <h4>Плюсы</h4>
+
+            <ul>
+              <li>Красиво</li>
+              <li>Поддержка браузерами</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+    <section class="slide slide--section-title">
+      <h3>CSS Exclusions</h3>
+    </section>
+
+    <section class="slide">
+      <figure class="figure figure--caption-aside">
+        <figcaption
+        class="copyright right">
+          <a
+            href="https://codepen.io/yoksel/pen/pooPgXg">-ms-wrap-flow test (IE и Edge)</a>
+        </figcaption>
+
+        <img
+          class="cover"
+          src="./assets/img/css-exclusions.png">
+      </figure>
+    </section>
+
+    <section class="slide">
+        <pre><code class="language-css">.image {
+  position: absolute;
+  /* тут какое-то позиционирование */
+  -ms-wrap-flow: both;
+}</code></pre>
+    </section>
+
+    <section class="slide">
+      <h4>CSS Exclusions</h4>
+
+      <ul>
+        <li class="next">
+          Включает обтекание текстом даже для <code>position: absolute</code>
+        </li>
+        <li class="next">
+          Работает только в IE и Edge с префиксом <code>-ms-</code>
+        </li>
+        <li class="next">
+          Нет управления отступами (<code>shape-margin</code>)
+        </li>
+        <li class="next">
+          Нет управления формой обтекания (<code>shape-outside</code>)
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide">
+        <h4>Почитать</h4>
+
+        <ul>
+          <li>
+            <a href="https://www.w3.org/TR/css3-exclusions/">CSS Exclusions Module Level 1 на W3C</a>
+          </li>
+          <li>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/-ms-wrap-flow">-ms-wrap-flow на MDN</a>
+          </li>
+          <li>
+            <a href="https://benfrain.com/the-frustrations-of-using-css-shapes-and-css-exclusions/#comment-115819">The frustrations of using CSS Shapes and CSS Exclusions (комментарий про историю спецификации)</a>
+          </li>
+        </ul>
+      </section>
+
+    <section class="slide slide--section-title">
+        <h4>Поддержка браузерами</h4>
+      </section>
+
+      <section class="slide slide--support slide--no-label">
+        <figure class="figure figure--caption-aside">
+          <figcaption
+          class="copyright bottom">
+            <a
+              href="https://caniuse.com/#feat=css-exclusions">CSS Exclusions Level 1</a>
+            на
+            <a href="https://caniuse.com/">caniuse.com</a>
+          </figcaption>
+
+          <img
+            class="cover"
+            src="./assets/img/caniuse/exclusions.png">
+        </figure>
+      </section>
+
+  <section class="slide">
+    <h2>Ссылки</h2>
+    <ul>
+      <li>
+        <a href="https://www.w3.org/TR/css-masking-1/">CSS Masking Module Level 1 на W3C</a>
+      </li>
+      <li>
+        <a href="https://www.w3.org/TR/css-shapes-1/">CSS Shapes Module Level 1 на W3C</a>
+      </li>
+      <li>
+        <a href="https://codepen.io/yoksel/full/fsdbu">CSS and SVG Masks (live demo)</a>
+      </li>
+      <!-- <li>
+        <a href="http://css.yoksel.ru/svg-sizes/">Размеры в SVG</a>
+      </li> -->
+    </ul>
+  </section>
+
+  <section class="slide slide--questions">
+    <h2>Спасибо</h2>
+
+    <img
+      class="qr-code"
+      src="./assets/img/slides-qrcode.svg">
+
+    <div class="slides-link">
+      Слайды: <a href="http://yoksel.github.io/non-square-web-minsk">yoksel.github.io/non-square-web-minsk</a>
+    </div>
+  </section>
+
+  <div class="progress"></div>
+
+  <script src="shower/shower.min.js"></script>
+  <script src="assets/js/prism.js"></script>
+  <script src="assets/js/highlightLines.js"></script>
+  <script src="assets/js/autorun.js"></script>
+  <script src="assets/js/snail-gallery.js"></script>
+  <script src="assets/js/TweenMax.min.js"></script>
+  <script src="assets/js/svg-text.js"></script>
+  <script src="assets/js/svg-bubbles.js"></script>
+  <script src="assets/js/dancing-poly.js"></script>
+</body>
+</html>

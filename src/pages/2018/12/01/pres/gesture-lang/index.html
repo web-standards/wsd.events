@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Язык жестов</title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="shower/themes/material/styles/screen-16x9.css">
+  <link rel="stylesheet" href="highlight/xcode.css">
+	<style>
+    .slide .cover {
+      width: 100%;
+      max-width: none;
+      max-height: none;
+    }
+    .slide .cover_vert {
+      height: 100%;
+      width: auto;
+    }
+
+    .slide .image-source {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 10px;
+      color: #fff;
+      opacity: 0.3;
+    }
+    .slide .image-source > a {
+      color: inherit;
+    }
+
+    .slide .fullwidth-image {
+      margin: 0 -112px 0 -96px;
+    }
+
+    .slide li > code {
+      background: none;
+    }
+
+    .slide .js-events span {
+      margin-right: 12px;
+    }
+    .slide .js-events code {
+      background: none;
+      padding: 0;
+      font-size: 28px;
+    }
+    .slide .js-events_grouped code {
+      color: #d74134;
+    }
+
+    .slide .gesture {
+      position: relative;
+      margin-left: -60px;
+      width: 360px;
+      height: 300px;
+      display: inline-block;
+    }
+    .slide .gesture > img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 1;
+      animation-duration: 2s;
+      animation-timing-function: steps(1);
+      animation-iteration-count: infinite;
+    }
+    .slide .gesture > img:not(:first-child) {
+      opacity: 0;
+    }
+    .slide.active .gesture > img:first-child {
+      animation-name: gesture-hand1;
+    }
+    .slide.active .gesture > img:nth-child(2) {
+      animation-name: gesture-hand2;
+    }
+    .slide.active .gesture-3steps > img {
+      animation-duration: 3s;
+    }
+    .slide.active .gesture-4steps > img {
+      animation-duration: 4s;
+    }
+    .slide.active .gesture-3steps > img:first-child {
+      animation-name: gesture-3steps-hand1;
+    }
+    .slide.active .gesture-3steps > img:nth-child(2) {
+      animation-name: gesture-3steps-hand2;
+    }
+    .slide.active .gesture-3steps > img:nth-child(3) {
+      animation-name: gesture-3steps-hand3;
+    }
+    .slide.active .gesture-4steps > img:first-child {
+      animation-name: gesture-4steps-hand1;
+    }
+    .slide.active .gesture-4steps > img:nth-child(2) {
+      animation-name: gesture-4steps-hand2;
+    }
+    .slide.active .gesture-4steps > img:nth-child(3) {
+      animation-name: gesture-4steps-hand3;
+    }
+    .slide.active .gesture-4steps > img:nth-child(4) {
+      animation-name: gesture-4steps-hand4;
+    }
+    .slide.active .gesture-drag {
+      animation: gesture-drag 8s linear infinite;
+    }
+    .slide.active .gesture-rotate {
+      transform-origin: 24% 42%;
+      animation: gesture-rotate 3s linear infinite;
+    }
+
+    .slide .gesture-use {
+      margin-bottom: 56px;
+      margin-left: 1em;
+    }
+
+    @keyframes gesture-hand1 {
+      0% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    @keyframes gesture-hand2 {
+      0% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+    @keyframes gesture-3steps-hand1 {
+      0% { opacity: 1; }
+      33.3% { opacity: 0; }
+      66.6% { opacity: 0; }
+    }
+    @keyframes gesture-3steps-hand2 {
+      0% { opacity: 0; }
+      33.3% { opacity: 1; }
+      66.6% { opacity: 0; }
+    }
+    @keyframes gesture-3steps-hand3 {
+      0% { opacity: 0; }
+      33.3% { opacity: 0; }
+      66.6% { opacity: 1; }
+    }
+    @keyframes gesture-4steps-hand1 {
+      0% { opacity: 1; }
+      25% { opacity: 0; }
+      50% { opacity: 0; }
+      75% { opacity: 0; }
+    }
+    @keyframes gesture-4steps-hand2 {
+      0% { opacity: 0; }
+      25% { opacity: 1; }
+      50% { opacity: 0; }
+      75% { opacity: 0; }
+    }
+    @keyframes gesture-4steps-hand3 {
+      0% { opacity: 0; }
+      25% { opacity: 0; }
+      50% { opacity: 1; }
+      75% { opacity: 0; }
+    }
+    @keyframes gesture-4steps-hand4 {
+      0% { opacity: 0; }
+      25% { opacity: 0; }
+      50% { opacity: 0; }
+      75% { opacity: 1; }
+    }
+    @keyframes gesture-drag {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(0); }
+      37.5% { transform: translateX(360px); }
+      50% { transform: translateX(360px); }
+      75% { transform: translateX(360px); }
+      87.5% { transform: translateX(0); }
+      100% { transform: translateX(0); }
+    }
+    @keyframes gesture-rotate {
+      0% { transform: rotate(0); }
+      50% { transform: rotate(0); }
+      62.5% { transform: rotate(90deg); }
+      75% { transform: rotate(0); }
+      100% { transform: rotate(0); }
+    }
+	</style>
+</head>
+<body class="shower list">
+
+	<header class="caption">
+		<h1>Язык жестов</h1>
+		<p>Анна Селезнёва, Spiral Scout</p>
+	</header>
+
+	<section class="slide clear" id="cover">
+    <img class="cover" src="images/interpreter.jpg" alt="" width="1024" height="640">
+    <span class="image-source">Источник картинки: <a href="https://www.newscientist.com/article/2140592-glove-turns-sign-language-into-text-for-real-time-translation/">NewScientist</a></span>
+		<h2>Язык жестов</h2>
+    <!-- Gestural language -->
+    <p class="conf">
+      <img src="images/web-standards.svg" width="56" height="56" alt="Web Standards">
+			<span class="date">Web Standards Days, Минск, 1 декабря 2018</span>
+		</p>
+		<style>
+			#cover h2 {
+				position: relative;
+        font-size: 100px;
+        color: #fff;
+        text-shadow: 0 0 20px rgba(0,0,0,0.7);
+        text-align: center;
+			}
+      #cover .conf {
+        display: flex;
+        margin: 320px 0 0 60px;
+        color: #fff;
+      }
+      #cover .date {
+        margin-left: 20px;
+        font-size: 27px;
+        line-height: 60px;
+        font-family: 'Roboto Mono';
+      }
+		</style>
+  </section>
+
+  <section class="slide clear">
+    <h2>Обо мне</h2>
+    <img class="place t r" src="images/full.jpg" alt="" width="320" height="640">
+    <p>Анна Селезнёва</p>
+    <p>Lead frontend developer @ <a href="https://spiralscout.com/">Spiral Scout</a></p>
+    <p><code style="background: none">#freehugs</code></p>
+
+    <!-- Поздороваться на языке жестов – но сейчас речь пойдет о других жестах -->
+  </section>
+
+  <section class="slide">
+    <h2 class="shout">История</h2>
+    <!-- Появился интерфейс – появилась необходимость взаимодействовать -->
+  </section>
+
+  <section class="slide clear" style="background-color: #000">
+    <img class="cover cover_vert" src="images/gui.jpg" alt="" width="1024" height="640">
+  </section>
+
+  <section class="slide">
+    <img class="cover" src="images/keyboard.jpg" alt="" width="1024" height="640">
+    <span class="image-source">Источник картинки: <a href="https://www.vrdb.com/hardware/turret">VRDB</a></span>
+  </section>
+
+  <section class="slide">
+    <img class="cover" src="images/touch.jpg" alt="" width="1024" height="640">
+  </section>
+
+  <section class="slide">
+    <h2>Touch-устройства</h2>
+    <ul>
+      <li>смартфоны</li>
+      <li>планшеты</li>
+      <li>телевизоры с touch-экраном</li>
+      <li>умные часы</li>
+      <li>тачпады в ноутбуках</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>План</h2>
+    <ul>
+      <li>Спецификации</li>
+      <li>Типы жестов</li>
+      <li>Назначение</li>
+      <li>События</li>
+      <li>Реализация</li>
+      <li>Использование</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2 class="shout">Спецификации</h2>
+  </section>
+
+  <section class="slide">
+    <h2>Touch Events</h2>
+    <p><a href="https://www.w3.org/TR/touch-events/">www.w3.org/TR/touch-events</a></p>
+    <img class="fullwidth-image" src="images/touch-support.png" alt="" width="1024" height="250">
+  </section>
+
+  <section class="slide">
+    <h2>Pointer Events</h2>
+    <p><a href="https://www.w3.org/TR/pointerevents/">www.w3.org/TR/pointerevents</a></p>
+    <img class="fullwidth-image" src="images/pointer-support.png" alt="" width="1024" height="250">
+  </section>
+
+  <section class="slide">
+    <h2 style="margin-bottom: 24px"><a href="https://www.youtube.com/watch?v=4o9joROJVHg">Touch Events vs Pointer Events</a></h2>
+    <div class="next">
+      <span class="image-source" style="color: #000">Источник картинки: <a href="https://www.youtube.com/watch?v=4o9joROJVHg">Роман Дворнов "Карточный домик"</a></span>
+      <img class="fullwidth-image" src="images/touch-history.png" alt="" width="1024" height="180">
+      <img class="fullwidth-image" src="images/pointer-history.png" alt="" width="1024" height="180">
+    </div>
+  </section>
+
+  <section class="slide" id="patricklauke">
+    <h2>Patrick Lauke</h2>
+    <div class="columns">
+      <img src="images/patricklauke.jpg" width="200" height="200" alt="Patrick Lauke">
+      <ul>
+        <li>co-editor <a href="https://w3c.github.io/touch-events/">Touch Events Level 2</a></p>
+        <li>WG chair and co-editor <a href="https://w3c.github.io/pointerevents/">Pointer Events Level 2</a></p>
+      </ul>
+    </div>
+    <p>
+      Презентация: <a href="https://patrickhlauke.github.io/getting-touchy-presentation">patrickhlauke.github.io/getting-touchy-presentation</a>
+    </p>
+    <style>
+      #patricklauke .columns {
+        display: flex;
+        align-items: center;
+        margin-bottom: 28px;
+      }
+
+      #patricklauke .columns>img {
+        display: block;
+        margin-right: 56px;
+        border-radius: 50%;
+        border: 3px solid #bdbdbd;
+      }
+
+      #patricklauke .columns>ul {
+        flex-grow: 1;
+        margin: 0;
+      }
+    </style>
+  </section>
+
+  <section class="slide" id="choice">
+    <h2><span>Touch Events</span><span>Pointer Events</span></h2>
+    <h2 class="next"><span>Mouse Events</span></h2>
+    <img class="cover" src="images/choice.jpg" alt="" width="1024" height="640">
+    <span class="image-source">Источник картинки: <a href="https://medium.com/an-idea-for-you/dont-know-what-you-want-take-two-minutes-to-read-this-ca56f1e4043e">Medium</a></span>
+    <style>
+      #choice h2 {
+        display: flex;
+        justify-content: space-between;
+        color: #fff;
+        text-shadow: 0 0 20px rgba(0,0,0,0.7);
+      }
+      #choice h2.next {
+        margin-top: 232px;
+      }
+    </style>
+  </section>
+
+  <section class="slide">
+    <pre style="font-size: 20px">
+      <code class="javascript">if (window.<mark>PointerEvent</mark>) {
+  target.addEventListener('pointerdown', (event) => {
+    // handle event
+  });
+} else {
+  target.addEventListener('touchstart', (event) => {
+    event.<mark>preventDefault</mark>();
+    // handle event
+  });
+  target.addEventListener('mousedown',(event) => {
+    // handle event
+  });
+}
+      </code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <img class="cover" src="images/silver-bullet.png" alt="" width="1024" height="640">
+  </section>
+
+  <section class="slide">
+    <h2>Pointer Events Polyfill</h2>
+    <img src="images/pep-logo.png" alt="PEP Logo" width="228" height="266">
+    <p><a href="https://github.com/jquery/PEP">github.com/jquery/PEP</a></p>
+  </section>
+
+
+  <section class="slide">
+    <h2>ReactJS Pointer Events (16.4+)</h2>
+    <p class="js-events">
+      <code>
+      onPointerDown, onPointerMove, onPointerUp,
+      <br>
+      onGotPointerCapture, onLostPointerCapture,
+      <br>
+      onPointerEnter, onPointerLeave,
+      <br>
+      onPointerOver, onPointerOut,
+      <br>
+      onPointerCancel
+      </code>
+    </p>
+  </section>
+
+  <section class="slide" id="events">
+    <h2>События</h2>
+    <div class="events">
+      <div class="events-group">
+        <div class="events-list">
+          <p><code class="nohighlight">pointerdown</code></p>
+          <p><code class="nohighlight">touchstart</code></p>
+          <p><code class="nohighlight">mousedown</code></p>
+        </div>
+        <div class="events-comb">}</div>
+        <div class="events-name"><code class="nohighlight">down</code></div>
+      </div>
+      <div class="events-group">
+        <div class="events-list">
+          <p><code class="nohighlight">pointermove</code></p>
+          <p><code class="nohighlight">touchmove</code></p>
+          <p><code class="nohighlight">mousemove</code></p>
+        </div>
+        <div class="events-comb">}</div>
+        <div class="events-name"><code class="nohighlight">move</code></div>
+      </div>
+      <div class="events-group">
+        <div class="events-list">
+          <p><code class="nohighlight">pointerup</code></p>
+          <p><code class="nohighlight">touchend</code></p>
+          <p><code class="nohighlight">mouseup</code></p>
+        </div>
+        <div class="events-comb">}</div>
+        <div class="events-name"><code class="nohighlight">up</code></div>
+      </div>
+    </div>
+    <style>
+      #events .events {
+        display: flex;
+      }
+      #events code {
+        padding: 0;
+        background: none;
+      }
+      #events .events-group {
+        display: flex;
+        align-items: center;
+      }
+      #events .events-group:not(:first-child) {
+        margin-left: 24px;
+      }
+      #events .events-list p {
+        margin: 0;
+      }
+      #events .events-comb {
+        margin-top: -24px;
+        font-family: "Arial Narrow", sans-serif;
+        font-size: 140px;
+        line-height: 140px;
+        color: #d74134;
+      }
+      #events .events-name {
+        font-size: 36px;
+        color: #d74134;
+      }
+    </style>
+  </section>
+
+
+
+  <section class="slide">
+    <h2 class="shout">Стандартные жесты</h2>
+  </section>
+
+  <section class="slide">
+    <h2>Tap</h2>
+    <div class="gesture">
+      <img src="images/gestures/hand.svg" width="360" height="300" alt="">
+      <img style="top: -12px" src="images/gestures/tap.svg" width="360" height="300" alt="">
+    </div>
+  </section>
+
+  <section class="slide">
+    <h2>Tap</h2>
+    <p>Назначение:</p>
+    <div class="gesture-use">
+      <ul>
+        <li>Основное действие</li>
+        <li>Выбор элемента</li>
+      </ul>
+    </div>
+    <p class="js-events js-events_grouped">
+      <span>События:</span><code>down</code>
+    </p>
+  </section>
+
+  <section class="slide">
+    <h2>Press</h2>
+    <div class="gesture">
+      <img src="images/gestures/hand.svg" width="360" height="300" alt="">
+      <img style="top: -12px" src="images/gestures/press.svg" width="360" height="300" alt="">
+    </div>
+  </section>
+
+  <section class="slide" id="press">
+    <h2>Press</h2>
+    <p>Назначение:</p>
+    <div class="gesture-use">
+      <ul>
+        <li>Подтверждение действия</li>
+        <li>Отправка данных</li>
+      </ul>
+    </div>
+    <p class="js-events js-events_grouped" style="margin: 0">
+      <span>События:</span><code>down + up</code>
+    </p>
+    <p class="next js-events" style="margin-left: 118px">
+      <code>click</code>
+      <span class="next" style="margin-left: 12px; color: #9e9e9e;">(~ 300ms)</span>
+    </p>
+  </section>
+
+  <section class="slide" id="press">
+    <h2>Решение проблемы</h2>
+    <p>Исследования Patrick Lauke (<a href="https://patrickhlauke.github.io/touch/tests/results/#suppressing-300ms-delay">Suppressing 300ms delay</a>):</p>
+    <ul class="solutions">
+      <li style="margin-right:-30px">
+        <span class="comment">HTML:</span>
+        <code>&lt;meta name="viewport" content="width=device-width"&gt;</code>
+      </li>
+      <li>
+        <span class="comment">CSS:</span>
+        <code>touch-action: manipulation</code> (Pointer Events)
+      </li>
+      <li>
+        <span class="comment">JS:</span>
+        &nbsp; <a href="https://github.com/ftlabs/fastclick">fastclick.js</a>
+      </li>
+    </ul>
+    <style>
+      #press .solutions li .comment {
+        width: 80px;
+        display: inline-block;
+        text-indent: 0;
+      }
+    </style>
+  </section>
+
+  <section class="slide">
+    <h2>Pan</h2>
+    <div class="gesture gesture-4steps gesture-drag">
+      <img src="images/gestures/hand.svg" width="360" height="300" alt="">
+      <img style="top: -12px" src="images/gestures/tap.svg" width="360" height="300" alt="">
+      <img style="top: -12px" src="images/gestures/tap.svg" width="360" height="300" alt="">
+      <img style="top: -12px" src="images/gestures/tap.svg" width="360" height="300" alt="">
+    </div>
+  </section>
+
+  <section class="slide">
+    <h2>Pan</h2>
+    <p>Назначение:</p>
+    <div class="gesture-use">
+      <ul>
+        <li>Перемещение к&nbsp;элементам за&nbsp;пределами экрана (например, в&nbsp;картах)</li>
+      </ul>
+    </div>
+    <p class="js-events js-events_grouped">
+      <span>События:</span><code>down + move + up</code>
+    </p>
+  </section>
+
+  <section class="slide">
+    <h2>Drag'n'Drop</h2>
+    <div class="gesture gesture-4steps gesture-drag">
+      <img src="images/gestures/hand.svg" width="360" height="300" alt="">
+      <img style="top: -12px" src="images/gestures/press.svg" width="360" height="300" alt="">
+      <img style="top: -12px" src="images/gestures/drag.svg" width="360" height="300" alt="">
+      <img style="top: -12px" src="images/gestures/press.svg" width="360" height="300" alt="">
+    </div>
+  </section>
+
+  <section class="slide">
+    <h2>Drag'n'Drop</h2>
+    <p>Назначение:</p>
+    <div class="gesture-use">
+      <ul>
+        <li>Перемещение элементов в&nbsp;определенную часть экрана (например, файлов)</li>
+      </ul>
+    </div>
+    <p class="js-events js-events_grouped">
+      <span>События:</span><code>down + move + up</code>
+    </p>
+  </section>
+
+  <section class="slide">
+    <h2>Drag'n'Drop</h2>
+    <pre>
+      <code class="html">&lt;div draggable="true"&gt; &lt;/div&gt;</code>
+    </pre>
+    <p class="js-events">
+      <span style="display: inline-block; width: 110px;">События:</span>
+      <code>dragstart, drag, dragend</code>
+      <br>
+      <code class="next" style="margin-left: 128px">dragenter, dragover, dragleave</code>
+    </p>
+  </section>
+
+  <section class="slide">
+    <h2>Drag'n'Drop</h2>
+    <img class="fullwidth-image" src="images/dragndrop-support.png" alt="" width="1024" height="250">
+  </section>
+
+  <section class="slide">
+    <h2>Swipe / Flick</h2>
+    <div class="gesture">
+      <img src="images/gestures/swipe-left.svg" width="360" height="300" alt="">
+      <img style="left: 42px; top: 12px" src="images/gestures/swipe-right.svg" width="360" height="300" alt="">
+    </div>
+    <div class="gesture next">
+      <img src="images/gestures/swipe-up.svg" width="360" height="300" alt="">
+      <img src="images/gestures/swipe-down.svg" width="360" height="300" alt="">
+    </div>
+  </section>
+
+  <section class="slide">
+    <h2>Swipe / Flick</h2>
+    <p>Назначение:</p>
+    <div class="gesture-use">
+      <ul>
+        <li>Листание элементов</li>
+        <li>Открытие бокового меню</li>
+        <li>Выбор (за/против)</li>
+      </ul>
+    </div>
+    <p class="js-events js-events_grouped">
+      <span>События:</span><code>down + move + up</code>
+    </p>
+  </section>
+
+  <section class="slide">
+    <pre>
+      <code class="javascript">const dx = endX - startX;
+const dy = endY - startY;
+if (Math.abs(dx + dy) > distanceThreshold) {
+  if (Math.abs(dx) > Math.abs(dy)) {
+    if (dx < 0) {
+      // Swipe / Flick Left
+    }
+  }
+}
+      </code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h2>Double tap</h2>
+    <div class="gesture gesture-3steps">
+      <img src="images/gestures/hand.svg" width="360" height="300" alt="">
+      <img style="top: -12px" src="images/gestures/tap.svg" width="360" height="300" alt="">
+      <img style="top: -21px; left: -3px" src="images/gestures/doubletap.svg" width="360" height="300" alt="">
+    </div>
+  </section>
+
+  <section class="slide">
+    <h2>Double tap</h2>
+    <p>Назначение:</p>
+    <div class="gesture-use">
+      <ul>
+        <li>Быстрый зум</li>
+        <li>Ховер + клик</li>
+      </ul>
+    </div>
+    <p class="js-events js-events_grouped">
+      <span>События:</span><code>down + up</code>
+    </p>
+  </section>
+
+  <section class="slide">
+    <pre>
+      <code style="font-size: 20px">const currentTime = new Date().getTime();
+const tapDuration = currentTime - lastTime;
+clearTimeout(timeout);
+if (tapDuration > 0 && tapDuration < timeThreshold) {
+  event.preventDefault();
+  // Double tap
+} else {
+  timeout = setTimeout(() => { /* interrupted */ }, timeThreshold);
+}
+lastTime = currentTime;
+      </code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h2>Hold</h2>
+    <div class="gesture gesture-3steps">
+      <img src="images/gestures/hand.svg" width="360" height="300" alt="">
+      <img style="top: -12px" src="images/gestures/press.svg" width="360" height="300" alt="">
+      <img style="top: -12px" src="images/gestures/press-and-hold.svg" width="360" height="300" alt="">
+    </div>
+  </section>
+
+  <section class="slide">
+    <h2>Hold</h2>
+    <p>Назначение:</p>
+    <div class="gesture-use">
+      <ul>
+        <li>Контекстное меню</li>
+        <li>Дополнительная информация</li>
+      </ul>
+    </div>
+    <p class="js-events js-events_grouped">
+      <span>События:</span><code>down + up</code>
+    </p>
+  </section>
+
+  <section class="slide">
+    <h2>Hold</h2>
+    <pre>
+      <code style="font-size: 20px">requestAnimationFrame(detectHold);
+function detectHold() {
+  if (duration < holdDuration) {
+    requestAnimationFrame(detectHold);
+    duration++;
+  } else {
+    // Hold
+  }
+}
+      </code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h2 class="shout">Жесты несколькими пальцами</h2>
+  </section>
+
+  <section class="slide">
+    <h2>Определение для Touch</h2>
+    <pre>
+      <code style="font-size: 30px">
+const fingers = event.touches;
+      </code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h2>Определение для Pointer</h2>
+    <pre>
+      <code>const fingers = [];
+
+function handlePointerDown(event) {
+  fingers.push(event);
+}
+      </code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <pre>
+      <code>function handlePointerMove(event) {
+  fingers.forEach(({ pointerId }, i) => {
+    if (event.pointerId === pointerId) fingers[i] = event;
+  });
+}
+function handlePointerUpOrCancel(event) {
+  fingers.forEach(({ pointerId }, i) => {
+    if (event.pointerId === pointerId) fingers.splice(i, 1);
+  });
+}
+      </code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h2>Pinch & Spread / Zoom</h2>
+    <div class="gesture">
+      <img style="width: 250px; left: 80px; top: 2px;" src="images/gestures/hand-pinch.svg" width="360" height="300" alt="">
+      <img style="left: -1px" src="images/gestures/pinch.svg" width="360" height="300" alt="">
+    </div>
+    <div class="gesture">
+      <img style="width: 250px; left: 80px; top: 2px;" src="images/gestures/hand-pinch.svg" width="360" height="300" alt="">
+      <img style="left: 1px" src="images/gestures/zoom.svg" width="360" height="300" alt="">
+    </div>
+  </section>
+
+  <section class="slide">
+    <h2>Pinch & Spread / Zoom</h2>
+    <p>Назначение:</p>
+    <div class="gesture-use">
+      <ul>
+        <li>Зум</li>
+        <li>Разворачивание / сворачивание</li>
+      </ul>
+    </div>
+    <p class="js-events js-events_grouped">
+      <span>События:</span><code>down + move + up</code>
+    </p>
+  </section>
+
+  <section class="slide">
+    <pre>
+      <code>if (fingers.length === 2) {
+  const curDiff = Math.abs(
+    fingers[0].clientX - fingers[1].clientX
+  );
+  if (prevDiff > 0) {
+    if (curDiff > prevDiff) { /* Spread / Zoom In */ }
+    if (curDiff < prevDiff) { /* Pinch / Zoom Out */ }
+  }
+  prevDiff = curDiff;
+}
+      </code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h2>Rotate</h2>
+    <div class="gesture gesture-3steps gesture-rotate" style="margin-left: -20px;">
+      <img style="width: 250px; left: 80px;" src="images/gestures/hand-pinch.svg" width="360" height="300" alt="">
+      <img style="left: -26px; top: -12px" src="images/gestures/rotate.svg" width="360" height="300" alt="">
+      <img style="left: -26px; top: -12px" src="images/gestures/rotate.svg" width="360" height="300" alt="">
+    </div>
+  </section>
+
+  <section class="slide">
+    <h2>Rotate</h2>
+    <p>Назначение:</p>
+    <div class="gesture-use">
+      <ul>
+        <li>Поворот элемента</li>
+      </ul>
+    </div>
+    <p class="js-events js-events_grouped">
+      <span>События:</span><code>down + move + up</code>
+    </p>
+  </section>
+
+  <section class="slide">
+    <pre>
+        <code style="font-size: 20px">if (fingers.length === 2) {
+    const dx = Math.abs(
+      fingers[0].clientX - fingers[1].clientX
+    );
+    const dy = Math.abs(
+      fingers[0].clientY - fingers[1].clientY
+    );
+    const angle = Math.atan2(dy, dx);
+    // Rotate
+  }
+        </code>
+      </pre>
+  </section>
+
+  <!--
+  <section class="slide">
+    <h2>Swipe несколькими пальцами</h2>
+    <p class="js-events js-events_grouped">
+      <span>События:</span><code>down + move + up</code>
+    </p>
+  </section>
+  -->
+
+  <section class="slide">
+    <h2>Область нажатия для Pointer</h2>
+    <pre>
+      <code>target.addEventListener('pointerdown', (event) => {
+  const area = event.width * event.height;
+  // Use area
+});
+      </code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h2>Область нажатия для Touch (Level 2)</h2>
+    <pre>
+      <code>target.addEventListener('touchstart', (event) => {
+  const touch = e.touches[0];
+  const area = touch.radiusX * touch.radiusY;
+  // Use area
+});
+      </code>
+    </pre>
+  </section>
+
+  <section class="slide" id="hammer">
+    <h2>Готовые решения</h2>
+    <p><a href="http://hammerjs.github.io">hammerjs.github.io</a></p>
+    <p>Жесты: <code>pan</code>, <code>pinch</code>, <code>press</code>, <code>rotate</code>, <code>swipe</code>, <code>tap</code></p>
+
+    <pre>
+      <code>const hammertime = new Hammer(element);
+hammertime.on('rotate', (event) => {
+	// Rotate
+});
+      </code>
+    </pre>
+    <style>
+      #hammer code {
+        background-color: transparent;
+      }
+    </style>
+  </section>
+
+
+  <section class="slide">
+    <h2 class="shout">Жесты с использованием устройства</h2>
+  </section>
+
+  <section class="slide">
+    <h2>Screen Orientation</h2>
+    <pre>
+      <code>window.addEventListener('orientationchange', () => {
+  // Handle orientation change
+});
+      </code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h2>Screen Orientation</h2>
+    <img class="fullwidth-image" src="images/screen-orientation-support.png" alt="" width="1024" height="250">
+  </section>
+
+  <section class="slide">
+    <pre>
+      <code style="font-size: 20px">const orientation = screen.msOrientation || (screen.orientation || {}).type;
+if (orientation) {
+  // 'landscape-primary' || 'landscape-secondary'
+  // 'portrait-primary' || 'portrait-secondary'
+} else {
+  const angle = Math.abs(window.orientation);
+  if (angle === 90) {
+  // Landscape
+  } else {
+  // Portrait
+  }
+}
+      </code>
+    </pre>
+  </section>
+
+
+  <section class="slide" id="orientation">
+    <h2>Device Orientation</h2>
+    <div class="angles">
+      <div class="angle">
+        <img src="images/alpha.png" alt="">
+      </div>
+      <div class="angle">
+        <img src="images/beta.png" alt="">
+      </div>
+      <div class="angle">
+        <img src="images/gamma.png" alt="">
+      </div>
+    </div>
+    <p style="font-size: 20px">
+      <a href="https://developers.google.com/web/fundamentals/native-hardware/device-orientation/">developers.google.com/web/fundamentals/native-hardware/device-orientation/</a>
+    </p>
+    <style>
+      #orientation {
+        background-color: #ebebeb;
+      }
+      #orientation .angles {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      #orientation .angle {
+        width: 270px;
+      }
+      #orientation .angle>img {
+        width: 100%;
+      }
+    </style>
+  </section>
+
+  <section class="slide">
+    <h2>Device Orientation & Device Motion</h2>
+    <pre>
+      <code>if (window.DeviceOrientationEvent) {
+  // Listen deviceorientation
+}
+if (window.DeviceMotionEvent) {
+  // Listen devicemotion
+}
+      </code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h2>Device Orientation & Device Motion</h2>
+    <img class="fullwidth-image" src="images/device-orientation-support.png" alt="" width="1024" height="250">
+  </section>
+
+  <section class="slide">
+    <h2>Tilt</h2>
+    <div class="gesture-use">
+      <ul>
+        <li>Перемещение к&nbsp;элементам за&nbsp;пределами экрана (параллакс)</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="slide">
+    <h2>Tilt</h2>
+    <pre>
+      <code>if (window.DeviceOrientationEvent) {
+  window.addEventListener('deviceorientation', (event) => {
+    const { alpha, beta, gamma } = event;
+    // Handle tilt
+  });
+}
+      </code>
+  </section>
+
+  <section class="slide">
+    <pre>
+      <code>const cube = document.getElementById('cube');
+cube.style.transform = `
+  rotateX(${beta}deg)
+  rotateY(${gamma}deg)
+  rotateZ(${alpha}deg)
+`;
+      </code>
+    </pre>
+    <p><a href="http://askd.rocks/pres/gestures/cube.html">askd.rocks/pres/gestures/cube.html</a></p>
+  </section>
+
+  <section class="slide">
+    <h2>Shake</h2>
+    <div class="gesture-use">
+      <ul>
+        <li>Отмена действия</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="slide">
+    <h2>Shake</h2>
+    <pre>
+      <code>if (window.DeviceMotionEvent) {
+  window.addEventListener('devicemotion', (event) => {
+    const { x, y, z } = event.accelerationIncludingGravity;
+    // Handle shake
+  });
+}
+      </code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <pre>
+      <code style="font-size: 20px">const dx = Math.abs(lastX - x); const dy = Math.abs(lastY - y);
+const dz = Math.abs(lastZ - z);
+if ((dx > threshold && dy > threshold) || (dx > threshold && dz > threshold)
+ || (dy > threshold && dz > threshold)) {
+  currentTime = new Date().getTime();
+  if (currentTime - lastTime > timeout) {
+    // Shake
+    lastTime = currentTime;
+  }
+}
+lastX = x; lastY = y; lastZ = z;
+      </code>
+    </pre>
+    <!-- const threshold = 15; -->
+  </section>
+
+
+  <section class="slide">
+    <h2>3D touch</h2>
+    <ul>
+      <li>Peek</li>
+      <li>Pop</li>
+    </ul>
+    <img class="next" src="images/peach.jpg" width="172" height="170" alt="">
+  </section>
+
+  <section class="slide">
+    <pre>
+      <code>const handleTouchStartOrMove = (event) => {
+  const force = event.touches[0].force;
+  // Use force value (0..1)
+};</code>
+    </pre>
+    <pre class="next">
+        <code>// iOS 10+
+element.addEventListener('touchforcechange', (event) => {
+  const force = event.changedTouches[0].force;
+  // Use force value (0..1)
+});
+        </code>
+      </pre>
+      <!-- https://codepen.io/askd/pen/dgjoGL -->
+  </section>
+
+  <section class="slide">
+    <h2>Сила нажатия для Pointer</h2>
+    <pre>
+        <code>const handlePointerEvent = (event) => {
+    const pressure = event.pressure;
+    // Use pressure value
+  };
+        </code>
+      </pre>
+      <!-- https://codepen.io/askd/pen/dgjYLV -->
+  </section>
+
+
+  <section class="slide">
+    <h2>Floating Touch</h2>
+    <img src="images/sony-floating-touch.jpg" width="511" height="311" alt="">
+    <p>Источник: <a href="https://www.esato.com/news/sony-floating-touch-technology-explained-2283">Sony Floating Touch technology explained</a></p>
+  </section>
+
+  <section class="slide">
+    <h2 class="shout">Жесты с использованием человека</h2>
+  </section>
+
+  <!--<section class="slide">
+    <img class="cover" src="images/neural.jpg" alt="" width="1024" height="640">
+    <span class="image-source">Источник картинки: <a href="https://progressive.in/artificial-neural-network%E2%80%8A-201/">Progressive Infotech</a></span>
+  </section>-->
+
+  <section class="slide">
+    <img class="cover" src="images/tensorflow.png" alt="" width="1024" height="576">
+  </section>
+
+  <section class="slide">
+    <video class="cover cover_vert" muted="muted" autoplay="autoplay" loop="loop" src="images/movemirror.mp4"></video>
+    <span class="image-source">Источник видео: <a href="https://experiments.withgoogle.com/collection/ai/move-mirror/view">Google Move Mirror</a></span>
+  </section>
+
+  <section class="slide">
+    <h2>FacePause Chrome Extension</h2>
+    <img src="images/facepause.gif" width="480" height="272" alt="">
+    <!--https://chrome.google.com/webstore/detail/facepause/igoccmpimadoamkfabcpelmkhpgiafhd-->
+    <p><a href="https://github.com/Hemmingsson/FacePause">github.com/Hemmingsson/FacePause</a></p>
+  </section>
+
+  <section class="slide">
+    <h2>FaceDetector API</h2>
+    <p><img src="images/chrome-canary-logo.svg" width="100" height="100" alt=""></p>
+    <pre>
+      <code>const faceDetector = new FaceDetector();</code>
+    </pre>
+    <p><a href="https://wicg.github.io/shape-detection-api/#face-detection-api">wicg.github.io/shape-detection-api/#face-detection-api</a></p>
+  </section>
+
+  <section class="slide">
+    <h2>FaceDetector API</h2>
+    <pre>
+      <code>faceDetector.detect(imageOrCanvas)
+  .then((faces) => {
+    // Use faces array
+  }
+  .catch((e) => {
+    // Handle error
+  });
+      </code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h2>FaceDetector + WebCam</h2>
+    <p>
+      <img src="images/nofaces.jpg" width="600" height="240" alt="">
+    </p>
+    <p><a href="https://codepen.io/askd/pen/OBqJGP" target="_blank">codepen.io/askd/pen/OBqJGP</a></p>
+  </section>
+
+
+
+  <section class="slide">
+    <h2 class="shout">Итоги</h2>
+  </section>
+
+  <section class="slide" id="quote">
+    <div class="shout">
+      <h2>Жесты – <br/>это новые клики</h2>
+      <p>Главный редактор UX Planet Ник Бабич</p>
+    </div>
+    <style>
+      #quote .shout {
+        padding-left: 192px;
+        color: #212121;
+      }
+      #quote .shout::before {
+        position: absolute;
+        margin: -0.2em 0 0 -0.5em;
+        color: #d74134;
+        line-height: 1;
+        font-size: 2.5em;
+        font-family: serif;
+        content: '\201C';
+      }
+      #quote .shout::after {
+        display: none;
+      }
+      #quote h2 {
+        font-size: 90px;
+      }
+      #quote p {
+        font-size: 36px;
+        color: #9e9e9e;
+      }
+    </style>
+  </section>
+
+  <section class="slide">
+    <h2>Правила</h2>
+    <!-- https://developer.apple.com/design/human-interface-guidelines/ios/user-interaction/gestures/ -->
+    <ol>
+      <li>Используйте стандартные жесты</li>
+      <li>Не используйте стандартные жесты для нестандартных действий</li>
+      <li>Не вмешивайтесь в системные жесты устройства</li>
+      <li style="margin-right: -30px">Используйте жесты как дополнение, а не замену стандартным действиям</li>
+      <li>Используйте расширенные жесты для улучшения UX</li>
+    </ol>
+  </section>
+
+  <section class="slide" id="thanks">
+    <h2>Спасибо!</h2>
+    <p class="social social_twi"> <a href="https://twitter.com/asktwi">asktwi</a></p>
+    <p class="social social_fb"> <a href="https://www.facebook.com/anna.selezniova">anna.selezniova</a></p>
+    <p class="social social_web"> <a href="http://askd.rocks/">askd.rocks</a></p>
+    <br>
+    <p>Презентация: <a href="http://askd.rocks/pres/gestures/">askd.rocks/pres/gestures</a></p>
+
+    <style>
+      #thanks .social {
+        position: relative;
+        margin-right: 360px;
+        padding-left: 72px;
+      }
+
+      #thanks .social:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 48px;
+        height: 48px;
+        background-size: 48px 48px;
+        background-repeat: no-repeat;
+      }
+
+      #thanks .social_fb:before {
+        background-image: url('data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2032%2032%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M18%2032v-14h6l1-6h-7v-3c0-2%201.002-3%203-3h3v-6h-5c-5%200-7%203-7%208v4h-6v6h6v14h6z%22%20fill%3D%22%233B5998%22/%3E%3C/svg%3E');
+      }
+
+      #thanks .social_twi:before {
+        background-image: url('data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2032%2032%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M31.993%206.077c-1.177.523-2.441.876-3.77%201.033%201.355-.812%202.396-2.098%202.887-3.63-1.269.751-2.673%201.299-4.168%201.592-1.198-1.275-2.904-2.072-4.793-2.072-3.625%200-6.562%202.938-6.562%206.563%200%20.514.057%201.016.169%201.496-5.455-.274-10.291-2.887-13.529-6.858-.564.97-.888%202.097-.888%203.3%200%202.278%201.159%204.286%202.919%205.464-1.075-.035-2.087-.329-2.972-.821l-.001.082c0%203.181%202.262%205.834%205.265%206.437-.55.149-1.13.23-1.729.23-.424%200-.834-.041-1.234-.117.834%202.606%203.259%204.504%206.13%204.558-2.245%201.76-5.075%202.811-8.15%202.811-.53%200-1.053-.031-1.566-.092%202.904%201.86%206.354%202.947%2010.061%202.947%2012.072%200%2018.675-10.001%2018.675-18.675%200-.284-.008-.568-.02-.85%201.283-.925%202.395-2.08%203.276-3.398z%22%20fill%3D%22%2355ACEE%22/%3E%3C/svg%3E');
+      }
+
+      #thanks .social_web:before {
+        background-image: url('data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2078%2078%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M39%200c-21.539%200-39%2017.461-39%2039s17.461%2039%2039%2039%2039-17.461%2039-39-17.461-39-39-39zm1.221%2070.934c-.445.399-.907.483-1.217.483-.313%200-.78-.085-1.232-.491-5.489-4.938-9.529-11.251-11.828-18.24%208.567-2.189%2017.566-2.219%2026.146-.091-2.295%207.029-6.352%2013.379-11.869%2018.339zm-15.747-24.064c-.469-2.574-.724-5.205-.724-7.87s.255-5.296.723-7.87c4.827%201.231%209.776%201.849%2014.727%201.849%204.82%200%209.639-.587%2014.345-1.754.457%202.544.706%205.143.706%207.775s-.249%205.231-.706%207.775c-9.54-2.366-19.545-2.336-29.071.095zm13.306-39.804c.444-.399.907-.483%201.216-.483.313%200%20.78.086%201.232.491%205.513%204.959%209.566%2011.306%2011.86%2018.331-8.58%202.127-17.579%202.098-26.146-.091%202.3-6.992%206.344-13.309%2011.838-18.248zm21.538%2022.406c3.287-1.181%206.489-2.663%209.569-4.441%201.993%204.245%203.113%208.978%203.113%2013.969s-1.12%209.724-3.112%2013.969c-3.08-1.779-6.282-3.26-9.569-4.441.604-3.106.932-6.293.932-9.528-.001-3.235-.328-6.421-.933-9.528zm6.536-9.617c-2.59%201.494-5.275%202.759-8.029%203.782-1.917-5.907-4.934-11.373-8.866-16.099%206.879%202.183%2012.783%206.566%2016.895%2012.317zm-36.812-12.316c-3.901%204.689-6.899%2010.107-8.817%2015.961-2.732-1.037-5.396-2.305-7.963-3.807%204.106-5.671%209.965-9.992%2016.78-12.154zm-19.849%2017.311c3.061%201.793%206.244%203.292%209.513%204.491-.621%203.148-.956%206.379-.956%209.659%200%203.28.334%206.511.956%209.659-3.269%201.2-6.452%202.698-9.513%204.491-2.045-4.291-3.193-9.088-3.193-14.15s1.148-9.859%203.193-14.15zm3.069%2033.456c2.566-1.501%205.23-2.77%207.963-3.807%201.918%205.854%204.916%2011.273%208.817%2015.962-6.815-2.162-12.674-6.483-16.78-12.155zm36.697%2012.155c3.932-4.727%206.948-10.192%208.865-16.099%202.754%201.023%205.439%202.289%208.029%203.782-4.111%205.751-10.015%2010.134-16.894%2012.317z%22%20fill%3D%22%236988BE%22/%3E%3C/svg%3E');
+      }
+    </style>
+  </section>
+
+
+	<div class="progress"></div>
+
+  <script src="shower/shower.min.js"></script>
+  <script src="highlight/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

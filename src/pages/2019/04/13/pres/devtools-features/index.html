@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Modern debugging</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="shower/themes/ribbon/styles/styles.css">
+    <style>
+        .shower {
+            --slide-ratio: calc(16 / 9);
+        }
+
+        .slide.screenshot {
+            padding-top: 40px;
+        }
+
+        .slide.screenshot .place {
+            margin-top: 20px;
+        }
+
+        .place.shrink {
+            width: 80%;
+        }
+
+        .slide.black::after {
+            visibility: hidden;
+        }
+
+        .link-logo {
+            background-image: none !important;
+        }
+
+        .link-logo img {
+            height: 100px;
+            vertical-align: bottom;
+        }
+
+        .double {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: repeat(3, 50px);
+        }
+
+        .double .kacey {
+            grid-row: 1 / 3;
+            grid-column: 2;
+        }
+
+        .kacey img {
+            height: 150px;
+        }
+    </style>
+</head>
+
+<body class="shower list">
+
+    <header class="caption">
+        <h1>Современная <br /> отладка</h1>
+        <p>Олександр Ковтун</p>
+    </header>
+
+    <section class="slide black" id="cover">
+        <h2 class="shout">
+            Современная  <br /> отладка
+        </h2>
+        <figure>
+            <img class="cover width" src="pictures/logo.jpeg" alt="Картинка с ноутбуком">
+            <figcaption class="copyright right white">
+                <a href="https://unsplash.com/photos/w7ZyuGYNpRQ">©Kevin Ku</a>
+            </figcaption>
+        </figure>
+        <style>
+            #cover h2 {
+                text-shadow: 0 10px 5px rgba(39, 17, 11, 0.4), 20px 10px 20px rgba(39, 17, 11, 0.5);
+                color: #fff;
+                top: 30%;
+            }
+
+            #cover p a {
+                color: white;
+            }
+        </style>
+    </section>
+
+    <section class="slide clear">
+        <h2>Александр Ковтун</h2>
+        <p>Frontend developer @ <a href="https://astoundcommerce.com/us/home/">Astound Commerce</a></p>
+        <p>Frontend Build Engineer для <a href="https://www.fluidconfigure.com/">Fluid Configure</a></p>
+    </section>
+    
+    <section class="slide black">
+        <video class="cover height" controls>
+            <source src="pictures/configure-demo.webm" type="video/webm">
+            <source src="pictures/configure-demo.mp4" type="video/mp4">
+        </video>
+    </section>
+            
+    <section class="slide">
+        <img class="cover width" src="pictures/time-graph.png" alt="График распределения времени">
+    </section>
+
+    <section class="slide clear">
+        <h2 class="shout">Где мы будем работать с проблемой?</h2>
+    </section>
+
+    <section class="slide clear">
+        <img class="cover height" src="pictures/ide.png" alt="Шуточная картинка текстового редактора">
+    </section>
+
+    <section class="slide clear">
+        <img class="cover height" src="pictures/browsers.png" alt="Картинка с браузерами">
+    </section>
+
+    <section class="slide">
+        <h2>Причины выбора</h2>
+        <ul>
+            <li>Эффективный</li>
+            <li>Ежедневный</li>
+            <li>Требуемый</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>
+            <a class="link-logo" href="https://www.mozilla.org/en-US/firefox/developer/">
+                <img src="pictures/firefox-logo.png" alt="Логотип Firefox для разработчика">
+            </a>
+            Firefox Developer Edition
+        </h2>
+        <ul>
+            <li><i>Эффективный</i></li>
+            <li><del>Ежедневный</del></li>
+            <li><del>Требуемый</del></li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Основные преимущества</h2>
+        <ul>
+            <li>Инспектор доступности</li>
+            <li>Инструменты раскладки</li>
+            <li>Интерфейс для работы с шрифтами</li>
+        </ul>
+    </section>
+
+    <section class="slide clear">
+        <img class="cover height" src="pictures/firefox-a11y.png" alt="Accessibility devtools screenshot">
+    </section>
+
+    <section class="slide clear">
+        <img class="cover height" src="pictures/firefox-grid.png" alt="Grid devtools screenshot">
+    </section>
+
+    <section class="slide clear">
+        <img class="cover height" src="pictures/firefox-flex.png" alt="Flexbox devtools screenshot">
+    </section>
+
+    <section class="slide clear">
+        <img class="cover height" src="pictures/firefox-fonts.png" alt="Fonts devtools screenshot">
+    </section>
+
+    <section class="slide">
+        <h2 class="link-logo">
+            <img src="pictures/chrome-logo.png" alt="Логотип Chrome">
+            Chrome
+        </h2>
+        <ul class="double">
+            <li><b>Эффективный</b></li>
+            <li><b>Ежедневный</b></li>
+            <li><b>Требуемый</b></li>
+            <li class="next kacey">
+                <a class="link-logo" href="https://www.youtube.com/watch?v=uddZX9ZK6wY&list=PLNYkxOF6rcIBDSojZWBv4QJNoT4GNYzQD">
+                    <img height="200" src="pictures/kayce.png" alt="Kayce Basques">
+                </a>
+            </li>
+        </ul>
+    </section>
+
+    <section class="slide black">
+        <video class="cover height" controls>
+            <source src="pictures/overrides-bug.webm" type="video/webm">
+            <source src="pictures/overrides-bug.mp4" type="video/mp4">
+        </video>
+    </section>
+
+    <section class="slide screenshot">
+        <h2>Local Overrides</h2>
+        <a href="https://www.youtube.com/watch?v=D1pV7ermy6w&t=26s">
+            <img class="place shrink" src="pictures/overrides.png" alt="Скриншот с включенным local overrides">
+        </a>
+    </section>
+
+    <section class="slide black">
+        <video class="cover height" controls>
+            <source src="pictures/overrides-setup.webm" type="video/webm">
+            <source src="pictures/overrides-setup.mp4" type="video/mp4">
+        </video>
+    </section>
+
+    <section class="slide black">
+        <video class="cover height" controls>
+            <source src="pictures/overrides-result.webm" type="video/webm">
+            <source src="pictures/overrides-result.mp4" type="video/mp4">
+        </video>
+    </section>
+
+    <section class="slide black">
+        <video class="cover height" controls>
+            <source src="pictures/blackbox-bug.webm" type="video/webm">
+            <source src="pictures/blackbox-bug.mp4" type="video/mp4">
+        </video>
+    </section>
+
+    <section class="slide clear">
+        <img class="cover height" src="pictures/problem-mini.png" alt="Скриншот с мини кодом">
+    </section>
+
+    <section class="slide clear">
+        <a href="https://chrome.google.com/webstore/detail/switcheroo-redirector/cnmciclhnghalnpfhhleggldniplelbg">
+            <img class="place cover" src="pictures/switcheroo.png" alt="Скриншот switcheroo redirector">
+        </a>
+    </section>
+
+    <section class="slide black">
+        <video class="cover height" controls>
+            <source src="pictures/switcheroo-setup.webm" type="video/webm">
+            <source src="pictures/switcheroo-setup.mp4" type="video/mp4">
+        </video>
+    </section>
+
+    <section class="slide clear">
+        <img class="cover height" src="pictures/problem-frame.png" alt="Скриншот с оберткой фреймворка">
+    </section>
+
+    <section class="slide screenshot">
+        <h2>Blackboxing</h2>
+        <img height="390" src="pictures/blackboxing.png" alt="Screenshot of blackboxing enabled">
+    </section>
+
+    <section class="slide black">
+        <video class="cover height" controls>
+            <source src="pictures/blackbox-result.webm" type="video/webm">
+            <source src="pictures/blackbox-result.mp4" type="video/mp4">
+        </video>
+    </section>
+
+    <section class="slide">
+        <h2 class="link-logo">
+            <img src="pictures/ie-logo.png" alt="Логотип Internet Explorer">
+            Internet Explorer
+        </h2>
+        <ul>
+            <li><del>Эффективный</del></li>
+            <li><del>Ежедневный</del></li>
+            <li><b>Требуемый</b></li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Основные преимущества</h2>
+    </section>
+
+    <section class="slide clear">
+        <img class="cover height" src="pictures/nothing.png" alt="Картинка пустоты">
+    </section>
+
+    <section class="slide">
+        <h2>Основные возможности</h2>
+        <ul>
+            <li>Брейкпоинты</li>
+            <li>Рассчет значения по наведению</li>
+            <li>Живые значения</li>
+            <li>Точки слежки для событий</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>
+            <a class="link-logo" href="https://www.browserstack.com">
+                <img src="pictures/browserstack-logo.png" alt="Иконка Browserstack">
+            </a>
+            Браузер, которого у меня нет
+        </h2>
+        <ul>
+            <li><del>Эффективный</del></li>
+            <li><del>Ежедневный</del></li>
+            <li><b>Требуемый</b></li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Цены</h2>
+        <ul>
+            <li><b>1 пользователь</b> - от 29$ месяц</li>
+            <li><b>50 пользователей / 25 соединений</b> - от 999$ месяц</li>
+            <li><b>Фриланс пользователь</b> - 12.5$ в месяц</li>
+            <li><b>Опенсорс, 5 пользователей / 5 соединений</b> - <a href="https://www.browserstack.com/open-source">бесплатно</a></li>
+        </ul>
+    </section>
+
+    <section class="slide clear">
+        <img class="cover" src="pictures/browserstack.png" alt="Скриншот с меню browserstack">
+    </section>
+
+
+    <section class="slide clear">
+        <img class="cover height" src="pictures/browserstack-local.png" alt="Скриншот с локальной настройкой">
+    </section>
+
+
+
+    <section class="slide">
+        <h2>Custom tools</h2>
+        <ul>
+            <li><b>Bookmarklets (JS закладки)</b></li>
+            <li><b>Расширения для браузера</b></li>
+            <li><b>Параметры ссылки</b></li>
+        </ul>
+    </section>
+
+    <section class="slide black">
+        <video class="cover width" controls>
+            <source src="pictures/bookmark-js.webm" type="video/webm">
+            <source src="pictures/bookmark-js.mp4" type="video/mp4">
+        </video>
+    </section>
+
+    <section class="slide video-small">
+        <h2 class="shout">QA</h2>
+    </section>
+
+    <footer class="badge">
+        <a href="https://github.com/shower/shower">Сделано на Shower</a>
+    </footer>
+
+    <div class="progress"></div>
+
+    <script src="shower/shower.min.js"></script>
+    <!-- Copyright © 2018 Yours Truly, Famous Inc. -->
+
+</body>
+
+</html>

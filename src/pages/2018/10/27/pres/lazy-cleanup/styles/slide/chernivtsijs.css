@@ -1,0 +1,46 @@
+#chernivtsi {
+    text-align: center;
+}
+.cover.full {
+    min-width: 100%;
+    min-height: 100%
+}
+#chernivtsi h2 {
+    margin: 40% 0 0;
+    color: #FFF;
+    text-align: center;
+    font-size: 70px;
+    text-shadow: 0 0 30px #000000;
+    text-transform: uppercase;
+    background: RGBA(0, 0, 0, 0.3);
+    display: inline-block;
+    padding: 0.5% 2%;
+    box-shadow: 0 0 40px 30px RGBA(0, 0, 0, 0.3);
+    border-radius: 20px;
+}
+
+.chernivtsi-layer {
+    text-align: center;
+    margin: 30px 0 0 0;
+}
+
+.chernivtsi-layer img {
+    display: inline-block;
+}
+
+.chernivtsi-link {
+    margin: 50px 0 0 0;
+}
+
+.chernivtsi-link a {
+    color: #fff;
+    font-size: 50px;
+    text-decoration: none;
+
+    text-shadow: 0 0 30px #000000;
+    background: RGBA(0, 0, 0, 0.3);
+    display: inline-block;
+    padding: 0.5% 2%;
+    box-shadow: 0 0 40px 30px RGBA(0, 0, 0, 0.3);
+    border-radius: 20px;
+}

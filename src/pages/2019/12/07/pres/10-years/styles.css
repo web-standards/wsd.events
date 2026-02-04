@@ -1,0 +1,474 @@
+HTML {
+  font-size: 16px;
+
+  --cols: 5;
+  --rows: 2;
+  --space: .5rem;
+  --tiny-space: .25rem;
+  --radius: 5px;
+
+  --gray: #DDD;
+
+  --col-1: tomato;
+  --col-2: darkorange;
+  --col-3: gold;
+  --col-4: yellowgreen;
+  --col-5: lightseagreen;
+  --col-6: teal;
+
+  --col-automating: tomato;
+  --col-browsers: royalblue;
+  --col-css-properties: teal;
+  --col-css-editors-tools: orange;
+  --col-css-preprocessors: lightseagreen;
+  --col-features-detection: blueviolet;
+  --col-fonts: crimson;
+  --col-git: black;
+  --col-js: gold;
+  --col-linters: olive;
+  --col-markup: yellowgreen;
+  --col-node: forestgreen;
+  --col-css-toolkits: darkslateblue;
+}
+
+BODY {
+  margin: 0;
+  padding: 2rem;
+  font: 1rem/1.5 Trebuchet MS, Arial, sans-serif;
+  color: #000;
+}
+
+H1, H2, H3, H4 {
+  margin: 0;
+  font-weight: normal;
+}
+
+A {
+  color: black;
+}
+
+A:hover {
+  text-decoration: none;
+}
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+}
+
+.main {
+  position: relative;
+}
+
+.button {
+  padding: var(--space);
+  border: none;
+  border-radius: var(--radius);
+  font: inherit;
+  cursor: pointer;
+  line-height: 1;
+}
+
+/* Nav
+------------------------------ */
+.nav {
+  margin: 1rem 0
+}
+.nav__control {
+  background: #333;
+  color: #FFF;
+}
+
+.nav__control + .nav__control {
+  margin-left: var(--space);
+}
+
+.nav__control--current {
+  background: var(--col-6);
+}
+
+/* Section
+------------------------------ */
+.section {}
+
+.section--hidden {
+  display: none;
+}
+
+.section__header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: var(--space) 0;
+  background: rgba(255,255,255,.95);
+}
+
+/* List
+------------------------------ */
+.list {
+  display: grid;
+  grid-template-columns: repeat(var(--cols), 1fr);
+  grid-row-gap: 0;
+  grid-template-rows: min-content auto;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  background: linear-gradient(to right, var(--gray) 1px, transparent 0);
+  background-size: calc(100% / var(--cols)) 100%;
+  border: 1px solid var(--gray);
+}
+
+.list-data {
+  min-height: 50px;
+  padding: var(--space) 0;
+  border-width: 0 1px 1px 0;
+}
+
+.list-data__item {
+  position: relative;
+  grid-column-start: var(--col-start, 0);
+  grid-column-end: var(--col-end);
+  grid-row: var(--row-start);
+  padding: var(--tiny-space) var(--space);
+  min-width: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  border-radius: var(--radius);
+  line-height: 1.4;
+}
+
+.list-data__item + .list-data__item {
+  margin-top: var(--space);
+}
+
+.list-data__item--disabled {
+  display: none;
+}
+
+.list-data__item:hover .list-links {
+  opacity: 1;
+}
+
+.list-data__item--lehgth-1 {
+  font-size: 10px;
+}
+
+.list-data__item--lehgth-2 {
+  font-size: 12px;
+}
+
+.list-data__item--lehgth-3 {
+  font-size: 14px;
+}
+
+.list-data__item--lehgth-1 .list-data__group-name,
+.list-data__item--lehgth-2 .list-data__group-name,
+.list-data__item--lehgth-3 .list-data__group-name {
+  display: none;
+  }
+
+.list-data__title {
+  margin-right: 1rem;
+}
+
+.list-data__content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.list-data__group-name {
+  position: absolute;
+  right: 0;
+  font-weight: bold;
+  opacity: .2;
+  font-size: 1.2em;
+  color: #FFF;
+  text-shadow: 0 0 2px rgba(0,0,0,1);
+}
+
+/* Years
+------------------------------ */
+.list-years {
+  border-left: 0;
+}
+
+.list-years__item {
+  justify-self: stretch;
+  /*padding: var(--tiny-space) 0;*/
+}
+
+.list-years__container,
+.list-years__control {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.list-years__container {
+  box-sizing: border-box;
+  padding: var(--space);
+}
+
+.list-years__control {
+  border-radius: 0;
+  background: none;
+}
+
+.list-years__control:not(.list-years__control--active):hover {
+  background: var(--gray);
+}
+.list-years__control--active {
+  background: #555;
+  color: #FFF;
+}
+
+/* Data widget
+------------------------------ */
+.data-widget {
+  margin-top: 1rem;
+  padding: var(--space);
+  border-radius: var(--radius);
+}
+
+.data-widget + .data-widget {
+  margin-top: 2rem;
+}
+
+.data-widget:target {
+  border: 3px solid yellowgreen;
+}
+
+.data-widget__title {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/* Colorize only in static groups */
+.data-widget[id] .list-data__item:nth-child(6n + 1) {
+  background: var(--col-1);
+}
+.data-widget[id] .list-data__item:nth-child(6n + 2) {
+  background: var(--col-2);
+}
+.data-widget[id] .list-data__item:nth-child(6n + 3) {
+  background: var(--col-3);
+}
+.data-widget[id] .list-data__item:nth-child(6n + 4) {
+  background: var(--col-4);
+}
+.data-widget[id] .list-data__item:nth-child(6n + 5) {
+  background: var(--col-5);
+}
+.data-widget[id] .list-data__item:nth-child(6n + 6) {
+  background: var(--col-6);
+}
+
+/* Links list
+------------------------------ */
+.list-links {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  opacity: 0;
+  transition: .25s;
+}
+
+.list-links__item + .list-links__item {
+  margin-left: .5rem;
+}
+
+.list-links__item A {
+  color: inherit;
+}
+
+/* Group nav
+------------------------------ */
+.nav-group {
+  display: flex;
+  flex-wrap: wrap;
+  margin: var(--space);
+}
+
+.nav-group__control {
+  white-space: nowrap;
+  margin: var(--tiny-space) 0;
+  margin-right: var(--space);
+}
+
+.nav-group__control:last-child {
+  margin-right: 0;
+}
+
+/* Types
+------------------------------ */
+
+.nav-group__control {
+  box-shadow: 0 0 0 2px inset;
+}
+.nav-group__control--active {
+  box-shadow: none;
+}
+
+/* Git*/
+.nav-group__control--type-git {
+  background: #FFF;
+  color: var(--col-git);
+}
+
+.list-data__item--type-git,
+.nav-group__control--type-git.nav-group__control--active {
+  background: var(--col-git);
+  color: #FFF;
+}
+
+/* Node */
+.nav-group__control--type-node {
+  background: #FFF;
+  color: var(--col-node);
+}
+
+.list-data__item--type-node,
+.nav-group__control--type-node.nav-group__control--active {
+  background: var(--col-node);
+  color: #FFF;
+}
+
+/* Features detection */
+.nav-group__control--type-features-detection {
+  background: #FFF;
+  color: var(--col-features-detection);
+}
+.list-data__item--type-features-detection,
+.nav-group__control--type-features-detection.nav-group__control--active {
+  background: var(--col-features-detection);
+  color: #FFF;
+}
+
+/* Automating */
+.nav-group__control--type-automating {
+  background: #FFF;
+  color: var(--col-automating);
+}
+.list-data__item--type-automating,
+.nav-group__control--type-automating.nav-group__control--active {
+  background: var(--col-automating);
+  color: #FFF;
+}
+
+/* CSS Toolkits */
+.nav-group__control--type-css-toolkits {
+  background: #FFF;
+  color: var(--col-css-toolkits);
+}
+.list-data__item--type-css-toolkits,
+.nav-group__control--type-css-toolkits.nav-group__control--active {
+  background: var(--col-css-toolkits);
+  color: #FFF;
+}
+
+/* Linters */
+.nav-group__control--type-linters {
+  background: #FFF;
+  color: var(--col-linters);
+}
+.list-data__item--type-linters,
+.nav-group__control--type-linters.nav-group__control--active {
+  background: var(--col-linters);
+  color: #FFF;
+}
+
+/* Fonts */
+.nav-group__control--type-fonts {
+  background: #FFF;
+  color: var(--col-fonts);
+}
+.list-data__item--type-fonts,
+.nav-group__control--type-fonts.nav-group__control--active {
+  background: var(--col-fonts);
+  color: #FFF;
+}
+
+/* Preprocessors */
+.nav-group__control--type-css-preprocessors {
+  background: #FFF;
+  color: var(--col-css-preprocessors);
+}
+.list-data__item--type-css-preprocessors,
+.nav-group__control--type-css-preprocessors.nav-group__control--active {
+  background: var(--col-css-preprocessors);
+  color: #FFF;
+}
+
+/* Editors tools */
+.nav-group__control--type-css-editors-tools {
+  background: #FFF;
+  color: var(--col-css-editors-tools);
+}
+.list-data__item--type-css-editors-tools,
+.nav-group__control--type-css-editors-tools.nav-group__control--active {
+  background: var(--col-css-editors-tools);
+  color: #FFF;
+}
+
+/* JS */
+.nav-group__control--type-js {
+  background: #FFF;
+  color: var(--col-js);
+}
+.list-data__item--type-js,
+.nav-group__control--type-js.nav-group__control--active {
+  background: var(--col-js);
+  color: #FFF;
+}
+
+/* Markup */
+.nav-group__control--type-markup {
+  background: #FFF;
+  color: var(--col-markup);
+}
+.list-data__item--type-markup,
+.nav-group__control--type-markup.nav-group__control--active {
+  background: var(--col-markup);
+  color: #FFF;
+}
+
+/* CSS */
+.nav-group__control--type-css-properties {
+  background: #FFF;
+  color: var(--col-css-properties);
+}
+.list-data__item--type-css-properties,
+.nav-group__control--type-css-properties.nav-group__control--active {
+  background: var(--col-css-properties);
+  color: #FFF;
+}
+
+/* Browsers */
+.nav-group__control--type-browsers {
+  background: #FFF;
+  color: var(--col-browsers);
+}
+.list-data__item--type-browsers,
+.nav-group__control--type-browsers.nav-group__control--active {
+  background: var(--col-browsers);
+  color: #FFF;
+}
+
+/* Select/unselect */
+.list-data__item--type-select-all,
+.list-data__item--type-unselect-all {
+  background: #FFF;
+  box-shadow: 0 0 0 2px #CCC inset;
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Line Lisa</title>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+    <img id="source" src="pictures/monalisa.jpg">
+</body>
+
+<style>
+    body {
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+    }
+
+    img {
+        display: none;
+    }
+
+    #canvas {
+        filter: blur(0.5px) contrast(1.2);
+    }
+</style>
+
+<script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    const img = document.getElementById("source");
+
+    let sources = [
+        'monalisa.jpg',
+        'sasha-black.jpg',
+        //'sasha-hair.jpg',
+        'masha.jpg',
+        'sasha-square.jpg',
+        //'anya.jpg',
+        'anya-happy.jpg',
+    ];
+    let currentIndex = 0;
+
+    function fetchImage(url) {
+        return new Promise((resolve, reject) => {
+            const image = new Image();
+            image.src = url;
+            image.onload = resolve;
+            image.onerror = reject;
+        });
+    }
+
+    canvas.addEventListener('click', (e) => {
+        currentIndex = (currentIndex + 1) % sources.length;
+        const imageSrc = `pictures/${sources[currentIndex]}`;
+        fetchImage(imageSrc).then(() => { img.src = imageSrc; });
+    });
+
+    let treshold = 2000;
+
+    function resize() {
+        const w = window.innerWidth;
+        const h = window.innerHeight;
+        canvas.width = w;
+        canvas.height = h;
+        const imgRatio = w / h;
+        treshold = Math.ceil(imgRatio * 999);
+    }
+    window.addEventListener("resize", resize);
+    resize();
+
+    function scaleImage(img, width, height) {
+        const canvasRatio = width / height;
+        const imgRatio = img.width / img.height;
+        let h = height;
+        let w = height * imgRatio;
+        let x = (width - w) / 2;
+        let y = 0;
+        ctx.drawImage(img, x, y, w, h);
+        return Math.floor(w + x);
+    }
+
+    function draw(time) {
+        const w = canvas.width;
+        const h = canvas.height;
+        ctx.fillStyle = '#111';
+        ctx.fillRect(0, 0, w, h);
+        const rightBorder = scaleImage(img, w, h) - 2;
+        const imageData = ctx.getImageData(0, 0, w, h);
+        const data = imageData.data;
+        let index, avg;
+        const initialCounter = treshold * 2 - Math.ceil(time) % treshold;
+        for (let i = 0; i < h; i++) {
+            let counter = initialCounter;
+            for (let j = 0; j < rightBorder && j < w; j++) {
+                index = (i * w + j) * 4;
+                avg = (data[index] + data[index + 1] + data[index + 2]) / 3;
+                counter += avg;
+                let color;
+                if (counter > treshold) {
+                    color = [200, 200, 220];
+                    counter -= treshold / 2;
+                } else {
+                    color = [0, 25, 50];
+                }
+                [data[index], data[index + 1], data[index + 2]] = color;
+            }
+            for (let j = rightBorder; j < w; j++) {
+                index = (i * w + j) * 4;
+                counter += avg;
+                let color;
+                if (counter > treshold) {
+                    color = [200, 200, 220];
+                    counter -= treshold / 2;
+                } else {
+                    color = [0, 25, 50];
+                }
+                [data[index], data[index + 1], data[index + 2]] = color;
+            }
+        }
+
+        ctx.putImageData(imageData, 0, 0);
+        requestAnimationFrame(draw);
+    }
+    requestAnimationFrame(draw);
+</script>
+
+</html>

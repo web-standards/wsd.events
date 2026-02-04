@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Лечим непроизводительные анимации</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="shower/themes/ribbon/styles/styles.css">
+    <link rel="stylesheet" href="styles/security-code.css">
+    <link rel="stylesheet" href="styles/pipeline.css">
+    <script src="scripts/jquery.js"></script>
+    <style>
+        .shower {
+            --slide-ratio: calc(16 / 9);
+        }
+    </style>
+</head>
+<body class="shower list">
+
+    <header class="caption">
+        <h1>Лечим непроизводительные анимации</h1>
+        <p>Доклад Шабалина Николая</p>
+    </header>
+
+    <section class="slide" id="slide-1">
+        <div class="wsd-wrapper">
+            <img class="wsd" src="pictures/wsd.svg" alt="Логотип WSD">
+        </div>
+
+        <style>
+            #slide-1 {
+                background-color: black;
+                display: flex;
+            }
+
+            .wsd-wrapper {
+                animation: heart-beat 30s ease infinite;
+                margin: auto;
+                width: 100%;
+                height: 100%;
+            }
+
+            .wsd {
+                width: 30%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+
+            }
+
+            @keyframes heart-beat {
+                0% {
+                    transform:scale(1);
+                    opacity: 0.5;
+                }
+                5% {
+                    transform:scale(1.25);
+                }
+                20% {
+                    transform:scale(1);
+                }
+                30% {
+                    transform:scale(1);
+                }
+                35% {
+                    transform:scale(1.25);
+                }
+                50% {
+                    transform:scale(1);
+                    opacity: 0.8;
+                }
+                55% {
+                    transform:scale(1.25);
+                }
+                70% {
+                    transform:scale(1);
+                    opacity: 0.5;
+                }
+            }
+        </style>
+
+        <script async src="scripts/glitch.js"></script>
+    </section>
+
+    <section class="slide" id="slide-2">
+        <h2>Рендеринг</h2>
+        <img src="pictures/render-tree.png" alt="Дерево рендеринга">
+
+        <style>
+            #slide-2 img {
+                max-width: 100%;
+            }
+        </style>
+    </section>
+
+    <section class="slide" id="slide-3">
+        <h2>Pipeline</h2>
+
+        <ul class="pipeline">
+            <li class="pipeline__item js">JavaScript</li>
+            <li class="pipeline__item style">Style</li>
+            <li class="pipeline__item layout">Layout</li>
+            <li class="pipeline__item paint">Paint</li>
+            <li class="pipeline__item composite">Composite</li>
+        </ul>
+    </section>
+
+    <section class="slide" id="slide-4">
+        <h2>Pipeline > JavaScript</h2>
+
+        <ul class="pipeline">
+            <li class="pipeline__item js">JavaScript</li>
+            <li class="pipeline__item style">Style</li>
+            <li class="pipeline__item layout">Layout</li>
+            <li class="pipeline__item paint">Paint</li>
+            <li class="pipeline__item composite">Composite</li>
+        </ul>
+
+        <ul>
+            <li class="next">Сортировка DOM</li>
+            <li class="next">Добавление новых DOM Node</li>
+        </ul>
+
+        <img class="next" src="pictures/node-graphic.png" alt="График прямой пропорциональности NODE к сложности">
+
+        <style>
+            #slide-4.active .js {
+                transform: scale(1.2);
+                border: 1px solid red;
+            }
+        </style>
+    </section>
+
+    <section class="slide" id="slide-5">
+        <h2>Pipeline > Style</h2>
+
+        <ul class="pipeline">
+            <li class="pipeline__item js">JavaScript</li>
+            <li class="pipeline__item style">Style</li>
+            <li class="pipeline__item layout">Layout</li>
+            <li class="pipeline__item paint">Paint</li>
+            <li class="pipeline__item composite">Composite</li>
+        </ul>
+
+        <ul>
+            <li class="next">Высчитывание стилей nav > li, :nth-child()</li>
+            <li class="next">Media Queries</li>
+        </ul>
+
+        <style>
+            #slide-5.active .style {
+                transform: scale(1.2);
+                border: 1px solid red;
+            }
+        </style>
+    </section>
+
+    <section class="slide" id="slide-6">
+        <h2>Pipeline > Style</h2>
+
+        <ul class="pipeline">
+            <li class="pipeline__item js">JavaScript</li>
+            <li class="pipeline__item style big">Style</li>
+            <li class="pipeline__item layout">Layout</li>
+            <li class="pipeline__item paint">Paint</li>
+            <li class="pipeline__item composite">Composite</li>
+        </ul>
+
+        <pre>
+            <code>@media screen and (min-width: 670px) {  </code>
+            <code>  .block { </code>
+            <code>      background-color: rebeccapurple;</code>
+            <code>  } </code>
+            <code>}</code>
+        </pre>
+    </section>
+
+    <section class="slide" id="slide-7">
+        <h2>Pipeline > Style</h2>
+
+        <ul class="pipeline">
+            <li class="pipeline__item js">JavaScript</li>
+            <li class="pipeline__item style big">Style</li>
+            <li class="pipeline__item layout">Layout</li>
+            <li class="pipeline__item paint">Paint</li>
+            <li class="pipeline__item composite">Composite</li>
+        </ul>
+
+        <ul>
+            <li>Высчитывание стилей nav > li, :nth-child()</li>
+            <li>Media Queries</li>
+            <li>DOM Events</li>
+        </ul>
+    </section>
+
+    <section class="slide" id="slide-8">
+        <h2>Pipeline > Style</h2>
+
+        <ul class="pipeline">
+            <li class="pipeline__item js">JavaScript</li>
+            <li class="pipeline__item style big">Style</li>
+            <li class="pipeline__item layout">Layout</li>
+            <li class="pipeline__item paint">Paint</li>
+            <li class="pipeline__item composite">Composite</li>
+        </ul>
+
+        <pre>
+            <code>document.querySelector('.block')</code>
+            <code>.addEventListener('click', event => {</code>
+            <code>  event.preventDefault(); { </code>
+            <code>  const newElement = document.createElement('div');</code>
+            <code>  newElement.classList.add('active');</code>
+            <code>});</code>
+        </pre>
+    </section>
+
+    <section class="slide" id="slide-9">
+        <h2>Pipeline > Layout</h2>
+
+        <ul class="pipeline">
+            <li class="pipeline__item js">JavaScript</li>
+            <li class="pipeline__item style">Style</li>
+            <li class="pipeline__item layout">Layout</li>
+            <li class="pipeline__item paint">Paint</li>
+            <li class="pipeline__item composite">Composite</li>
+        </ul>
+
+        <h3>Любой запрос к:</h3>
+        <ul>
+            <li class="next">width</li>
+            <li class="next">height</li>
+            <li class="next">всему тому, что связано с размерами</li>
+        </ul>
+
+        <style>
+            #slide-9.active .layout {
+                transform: scale(1.2);
+                border: 1px solid red;
+            }
+        </style>
+    </section>
+
+    <section class="slide" id="slide-10">
+        <h2>Pipeline > Layout</h2>
+
+        <ul class="pipeline">
+            <li class="pipeline__item js">JavaScript</li>
+            <li class="pipeline__item style">Style</li>
+            <li class="pipeline__item layout big">Layout</li>
+            <li class="pipeline__item paint">Paint</li>
+            <li class="pipeline__item composite">Composite</li>
+        </ul>
+
+        <h3>Info</h3>
+        <ul>
+            <li class="next">Именно на этапе обычно происходит мерцание</li>
+            <li class="next">Обычно происходит для всего DOM</li>
+            <li class="next">Для ускорения сокращайте количество DOM Node</li>
+            <li class="next">Этот этап вообще можно избежать</li>
+        </ul>
+    </section>
+
+    <section class="slide" id="slide-11">
+        <h2>Pipeline > Layout</h2>
+
+        <ul class="pipeline">
+            <li class="pipeline__item js">JavaScript</li>
+            <li class="pipeline__item style">Style</li>
+            <li class="pipeline__item layout big">Layout</li>
+            <li class="pipeline__item paint">Paint</li>
+            <li class="pipeline__item composite">Composite</li>
+        </ul>
+
+        <h3>It's a trap</h3>
+        <pre>
+            <code>function frame() {</code>
+            <code>  const element = document.querySelector('.block');</code>
+            <code>  element.style.width = <mark class="important">element.offsetWidth</mark> * 2;</code>
+            <code>};</code>
+            <code>requestAnimationFrame(frame);</code>
+            <code>};</code>
+        </pre>
+    </section>
+
+    <section class="slide" id="slide-12">
+        <h2>Pipeline > Paint</h2>
+
+        <ul class="pipeline">
+            <li class="pipeline__item js">JavaScript</li>
+            <li class="pipeline__item style">Style</li>
+            <li class="pipeline__item layout">Layout</li>
+            <li class="pipeline__item paint">Paint</li>
+            <li class="pipeline__item composite">Composite</li>
+        </ul>
+
+        <ul>
+            <li class="next">color</li>
+            <li class="next">background-color</li>
+            <li class="next">border</li>
+            <li class="next">box-shadow</li>
+            <li class="next">img</li>
+        </ul>
+
+        <style>
+            #slide-12.active .paint {
+                transform: scale(1.2);
+                border: 1px solid red;
+            }
+        </style>
+    </section>
+
+    <section class="slide" id="slide-13">
+        <h2>Pipeline > Paint</h2>
+
+        <ul class="pipeline">
+            <li class="pipeline__item js">JavaScript</li>
+            <li class="pipeline__item style">Style</li>
+            <li class="pipeline__item layout">Layout</li>
+            <li class="pipeline__item paint big">Paint</li>
+            <li class="pipeline__item composite">Composite</li>
+        </ul>
+
+        <h3>Info</h3>
+        <ul>
+            <li class="next">Самый затратный этап</li>
+        </ul>
+    </section>
+
+    <section class="slide" id="slide-14">
+        <h2>Pipeline > Composite</h2>
+
+        <ul class="pipeline">
+            <li class="pipeline__item js">JavaScript</li>
+            <li class="pipeline__item style">Style</li>
+            <li class="pipeline__item layout">Layout</li>
+            <li class="pipeline__item paint">Paint</li>
+            <li class="pipeline__item composite">Composite</li>
+        </ul>
+
+        <ul>
+            <li class="next">transform</li>
+            <li class="next">opacity</li>
+        </ul>
+
+        <style>
+            #slide-14.active .composite {
+                transform: scale(1.2);
+                border: 1px solid red;
+            }
+        </style>
+    </section>
+
+    <section class="slide" id="slide-15">
+        <h2>Pipeline</h2>
+
+        <ul class="pipeline">
+            <li class="pipeline__item js">JavaScript</li>
+            <li class="pipeline__item style">Style</li>
+            <li class="pipeline__item layout">Layout</li>
+            <li class="pipeline__item paint">Paint</li>
+            <li class="pipeline__item composite">Composite</li>
+        </ul>
+    </section>
+
+    <section class="slide" id="slide-16">
+        <h2>Bad pipeline</h2>
+
+        <ul class="pipeline">
+            <li class="pipeline__item js">JavaScript</li>
+            <li class="pipeline__item style">Style</li>
+            <li class="pipeline__item layout">Layout</li>
+            <li class="pipeline__item paint">Paint</li>
+            <li class="pipeline__item composite">Composite</li>
+        </ul>
+
+        <ul>
+            <li>margin, padding</li>
+            <li>top, right, bottom, left</li>
+            <li>width, height</li>
+            <li>flex-grow, flex-direction</li>
+            <li>border</li>
+        </ul>
+    </section>
+
+    <section class="slide" id="slide-17">
+        <h2>Good pipeline</h2>
+
+        <ul class="pipeline">
+            <li class="pipeline__item js">JavaScript</li>
+            <li class="pipeline__item style">Style</li>
+            <li class="pipeline__item layout missed">Layout</li>
+            <li class="pipeline__item paint">Paint</li>
+            <li class="pipeline__item composite">Composite</li>
+        </ul>
+
+        <ul>
+            <li>color, background-color, border-color</li>
+            <li>text-shadow, box-shadow</li>
+        </ul>
+    </section>
+
+    <section class="slide" id="slide-18">
+        <h2>Best pipeline</h2>
+
+        <ul class="pipeline">
+            <li class="pipeline__item js">JavaScript</li>
+            <li class="pipeline__item style">Style</li>
+            <li class="pipeline__item layout missed">Layout</li>
+            <li class="pipeline__item paint missed">Paint</li>
+            <li class="pipeline__item composite">Composite</li>
+        </ul>
+
+        <ul>
+            <li>
+                transform
+                <div class="transform-gap">translate, scale, rotate, skew, matrix(3d)</div>
+            </li>
+            <li>opacity</li>
+        </ul>
+
+        <style>
+            .transform-gap {
+                padding-left: 40px;
+            }
+        </style>
+    </section>
+
+    <section class="slide" id="slide-19">
+        <h2>RAIL</h2>
+        <div>Response</div>
+        <div>Animation</div>
+        <div>Idle</div>
+        <div>Load</div>
+
+        <style>
+            #slide-19 div {
+                float: left;
+                margin-right: 10px;
+            }
+
+            #slide-19 div:first-letter {
+                color: red;
+
+            }
+        </style>
+    </section>
+
+    <section class="slide" id="slide-20">
+        <h2>Response</h2>
+        <div class="response-time">100ms</div>
+
+        <style>
+            .response-time {
+                text-align: center;
+                font-size: 100px;
+
+            }
+        </style>
+    </section>
+
+    <section class="slide" id="slide-21">
+        <h2>Animation</h2>
+        <div class="animation-time">16ms</div>
+
+
+        <style>
+            .animation-time {
+                text-align: center;
+                font-size: 100px;
+            }
+        </style>
+    </section>
+
+    <section class="slide" id="slide-22">
+        <h2>Animation</h2>
+        <div class="animation-time"><s>16ms</s></div>
+        <div class="animation-time true">10ms</div>
+
+
+        <style>
+            #slide-22 .animation-time {
+                opacity: .1;
+            }
+            #slide-22 .animation-time.true {
+                opacity: 1;
+                text-align: center;
+                font-size: 200px;
+                position: relative;
+                top: -300px;
+            }
+        </style>
+    </section>
+
+    <section class="slide" id="slide-23">
+        <h2>Советы</h2>
+        <ul>
+            <li class="next">Уменьшайте количество DOM узлов</li>
+            <li class="next">Упрощайте селекторы (БЭМ)</li>
+            <li class="next">Используйте правильные css-свойства</li>
+            <li class="next">используйте passive: true на мобильных устройствах</li>
+            <li class="next">Что?</li>
+        </ul>
+    </section>
+
+    <section class="slide" id="slide-24">
+        <h2>DOM Event {passive: true}</h2>
+        <pre>
+            <code>document.querySelector('.block')</code>
+            <code>.addEventListener('wheel', () => {...}, {passive:true})</code>
+            <code>.addEventListener('touchstart', () => {...}, {passive:true});</code>
+        </pre>
+
+    </section>
+
+    <section class="slide" id="slide-25">
+        <video class="cover" src="video/video-2.mp4" controls></video>
+    </section>
+
+    <section class="slide" id="slide-26">
+        <img class="cover" src="pictures/fight-club.jpg">
+    </section>
+
+    <section class="slide" id="slide-27">
+        <h2>Всем привет. Меня зовут Николай.</h2>
+        <p>Я верстаю уже 6 лет</p>
+        <p>Сейчас работаю фронтендером в Коде Безопасности</p>
+    </section>
+
+    <section class="slide" id="slide-28">
+        <img class="cover" src="pictures/security-code.png" alt="Код Безопасности">
+    </section>
+
+    <section class="slide" id="slide-29">
+        <iframe src="demo/1/Parallax&#32;Demo&#32;-&#32;DOM&#32;+&#32;Absolute&#32;Positions.html"></iframe>
+
+        <style>
+            #slide-29 iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+    </section>
+
+    <section class="slide" id="slide-30">
+        <img class="cover" src="pictures/debug-0.png">
+    </section>
+
+    <section class="slide" id="slide-31">
+        <img class="cover" src="pictures/debug-1.png">
+    </section>
+
+    <section class="slide" id="slide-32">
+        <img class="cover" src="pictures/debug-2.png">
+    </section>
+
+    <section class="slide" id="slide-33">
+        <video class="cover" src="video/video-1.mp4" controls></video>
+    </section>
+
+    <section class="slide" id="slide-34">
+        <img class="cover" src="pictures/debug-3.png">
+    </section>
+
+    <section class="slide" id="slide-35">
+        <img class="cover" src="pictures/debug-4.png">
+    </section>
+
+    <section class="slide" id="slide-36">
+        <img class="cover" src="pictures/debug-5.png">
+    </section>
+
+    <section class="slide" id="slide-37">
+        <img class="cover" src="pictures/debug-6.png">
+    </section>
+
+    <section class="slide" id="slide-38">
+        <img class="cover" src="pictures/debug-7.png">
+    </section>
+
+    <section class="slide" id="slide-39">
+        <img class="cover" src="pictures/debug-8.png">
+    </section>
+
+    <section class="slide" id="slide-40">
+        <img class="cover" src="pictures/debug-9.png">
+    </section>
+
+    <section class="slide" id="slide-41">
+        <img class="cover" src="pictures/debug-10.png">
+    </section>
+
+    <section class="slide" id="slide-42">
+        <img class="cover" src="pictures/debug-11.png">
+    </section>
+
+    <section class="slide" id="slide-43">
+        <video class="cover" controls src="video/video-3.mp4"></video>
+    </section>
+
+    <section class="slide" id="slide-44">
+        <h2 class="shout">will-change</h2>
+    </section>
+
+    <section class="slide" id="slide-45">
+        <h2>Will-change</h2>
+        <pre>
+            <code>.circles {</code>
+            <code>  will-change: transform;</code>
+            <code>}</code>
+        </pre>
+    </section>
+
+    <section class="slide" id="slide-46">
+        <img class="cover" src="pictures/debug-12.png">
+    </section>
+
+    <section class="slide" id="slide-47">
+        <img class="cover" src="pictures/debug-13.png">
+    </section>
+
+    <section class="slide">
+        <h2>Полезные ресурсы</h2>
+
+        <ul>
+            <li><a href="https://csstriggers.com/">csstriggers</a></li>
+            <li><a href="https://classroom.udacity.com/courses/ud860">udacity</a></li>
+            <li><a href="https://developers.google.com/web/fundamentals/performance/rail">RAIL</a></li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout">Вопросы?</h2>
+    </section>
+
+    <footer class="badge">
+        <a href="https://github.com/shower/shower">Fork me on GitHub</a>
+    </footer>
+
+    <div class="progress"></div>
+
+    <script src="shower/shower.min.js"></script>
+    <!-- Copyright © 2018 Yours Truly, Famous Inc. -->
+</body>
+</html>

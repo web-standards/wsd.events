@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Все цвета радуги</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="shower/styles/styles.css">
+    <style>
+        .shower {
+            --slide-ratio: calc(16 / 9);
+            --color-key: #6699cc;
+        }
+
+        #cover p, #thanks p,
+        #cover h2, #thanks h2 {
+            color: white;
+            text-align: center;
+        }
+
+        #cover h2, #thanks h2 {
+            font-size: 112px;
+        }
+
+        #cover p, #thanks p {
+            font-size: 48px;
+        }
+
+        #cover img, #thanks img, #contacts img {
+            opacity: 0.75;
+        }
+
+        #intro .next {
+            opacity: 0;
+            transition: opacity 3s;
+        }
+
+        #intro .next.active {
+            opacity: 1;
+        }
+
+        #intro .text {
+            background: white;
+            font-size: 112px;
+            line-height: 1.1;
+            text-align: center;
+        }
+
+        #contacts h2,
+        #contacts p,
+        #contacts a {
+            color: white;
+        }
+    </style>
+</head>
+<body class="shower list">
+
+<header class="caption">
+    <h1>Все цвета радуги</h1>
+    <p>Владимир Кузнецов</p>
+</header>
+
+<section class="slide clear black" id="cover">
+    <img src="samples/cover.jpg" alt="Разноцветные гибкие пластинки" class="cover w h">
+    <h2>Все цвета радуги</h2>
+    <p>Владимир Кузнецов</p>
+</section>
+
+<section class="slide clear" id="intro">
+    <div class="columns two">
+        <img src="samples/intro/camera.jpg" class="cover h place l next" alt="Camera">
+        <img src="samples/intro/devices.jpg" class="cover h place r next" alt="Devices">
+    </div>
+    <div class="cover w h text next" lang="en">
+        <span class="place">Convert to sRGB <span class="next" style="position: absolute;">🤔</span></span>
+    </div>
+    <footer>
+        Photo by <a href="https://unsplash.com/@danielkorpai" target="_blank" rel="noopener noreferrer">Daniel
+        Korpai</a> on Unsplash
+    </footer>
+</section>
+
+<section class="slide clear">
+    <h2 class="shout">Цвет &mdash; субъективная характеристика</h2>
+</section>
+
+<section class="slide clear">
+    <img src="samples/illusions/dress.jpg" class="cover w" alt="Платье бело-золотое или черно-синее">
+</section>
+
+<section class="slide clear">
+    <img src="samples/illusions/balls.jpg" class="cover w" alt="Коричневые шарики">
+</section>
+
+<section class="slide clear">
+    <img src="samples/illusions/dots.png" class="cover w place t" alt="Разная яркость одинаковых точек">
+</section>
+
+<section class="slide clear">
+    <img src="samples/test-cms/test-cms.jpg" class="cover h" alt="Тест на правильную работу с цветовыми профилем">
+</section>
+
+<section class="slide clear">
+    <img src="samples/test-cms/test-cms-info-panel.jpg" class="cover w"
+            alt="Пипетка показывает, что цвет должен быть красным">
+</section>
+
+<section class="slide clear">
+    <img src="samples/test-cms/test-cms-color-picker.png" class="cover w"
+            alt="Сравнение двух палитр с разными цветовыми профилями">
+</section>
+
+<section class="slide clear">
+    <img src="samples/test-cms/test-cms-without-profile.jpg" class="cover h" alt="Тест с отключенным цветовым профилем">
+</section>
+
+<section class="slide">
+    <h2>Международная комиссия по&nbsp;освещению</h2>
+    <img src="samples/cie/cie-logo.png" style="width: 100%;" alt="Commission internationale de l'éclairage">
+    <footer>
+        Международная комиссия по освещению. Основана 1913 году. В 1931 создает стандарт CIE1931.
+    </footer>
+</section>
+
+<section class="slide">
+    <img src="samples/cie/response-curves.gif" class="cover w" alt="Кривые отклика">
+    <footer>
+        Источник: <a href="https://medium.com/hipster-color-science/a-beginners-guide-to-colorimetry-401f1830b65a"
+            target="_blank" rel="noopener noreferrer">A Beginner’s Guide to (CIE) Colorimetry</a>
+    </footer>
+</section>
+
+<section class="slide">
+    <h2 class="place" style="text-align: center">
+        CIE 1931 XYZ<br><br>
+        <span class="next">CIE 1976 L*a*b*</span>
+    </h2>
+</section>
+
+<section class="slide clear">
+    <img src="samples/cie/planckian-locus.png" class="cover h" alt="CIExy color space and Planckian Locus">
+</section>
+
+<section class="slide">
+    <h2>Цветовые профили</h2>
+    <p>Каждое устройство ввода или вывода снабжается профилем, который однозначно определяет
+        преобразование в&nbsp;CIEXYZ или CIELAB и&nbsp;обратно.</p>
+</section>
+
+<section class="slide">
+    <h2 class="shout">
+        International<br>
+        Color<br/>
+        Consortium
+    </h2>
+    <footer>
+        Основан в 1993 году
+    </footer>
+</section>
+
+<section class="slide clear">
+    <img src="samples/cie/cie1931xy-gamut-comparison.svg" class="cover h"
+            alt="Сравнение нескольких популярных цветовых профилей">
+</section>
+
+<section class="slide clear" style="background: rgb(205, 204, 205);">
+    <h2>sRGB</h2>
+    <video controls loop preload="auto" class="cover h">
+        <source src="samples/3d/srgb.mp4" type="video/mp4">
+    </video>
+</section>
+
+<section class="slide clear" style="background: rgb(205, 204, 205);">
+    <h2>ProPhoto</h2>
+    <video controls loop preload="auto" class="cover h">
+        <source src="samples/3d/prophoto.mp4" type="video/mp4">
+    </video>
+</section>
+
+<section class="slide clear" style="background: rgb(205, 204, 205);">
+    <h2>Generic CMYK</h2>
+    <video controls loop preload="auto" class="cover h">
+        <source src="samples/3d/cmyk.mp4" type="video/mp4">
+    </video>
+</section>
+
+<section class="slide clear">
+    <img src="samples/icc/response-curve.jpg" alt="Кривые отклика в разных профилях" class="cover w"/>
+</section>
+
+<section class="slide clear">
+    <h2 class="shout">sRGB</h2>
+</section>
+
+<section class="slide">
+    <h2>sRGB</h2>
+    <ul>
+        <li class="next">Разработан в 1996 совместно HP и Microsoft</li>
+        <li class="next">Прекрасно работает для ЭЛТ и LCD-мониторов</li>
+        <li class="next">Практически вся техника для массового потребителя работает в sRGB</li>
+        <li class="next">Любое изображение без цветового профиля считается в sRGB</li>
+        <li class="next">Цвет в CSS задаётся только в пространстве sRGB 🙁</li>
+        <li class="next">Для видео применяют Rec.601 (SD) или Rec.709 (HD) 🙁</li>
+    </ul>
+</section>
+
+<section class="slide">
+    <h2 class="shout">Профили<br/>широким<br/>охватом</h2>
+</section>
+
+<section class="slide">
+    <img src="samples/tulips/tulips-srgb.jpg" class="cover w" alt="Тюльпаны в саду Версаля">
+</section>
+
+<section class="slide">
+    <img src="samples/tulips/tulips-srgb-gamut-warning.jpg" class="cover w"
+            alt="Тюльпаны в саду Версаля с отметкой искаженных цветов">
+</section>
+
+<section class="slide">
+    <img src="samples/ocean/ocean-srgb.jpg" class="cover w" alt="Океан и вилла на берегу (остров Тенерифе)">
+</section>
+
+<section class="slide">
+    <img src="samples/ocean/ocean-srgb-gamut-warning.jpg" class="cover w"
+            alt="Океан и вилла на берегу (остров Тенерифе) с отметкой искаженных цветов">
+</section>
+
+<section class="slide clear">
+    <img src="samples/prophoto/prophoto-color-picker.png" class="cover w"
+            alt="Искажения цветового пространства при конвертации">
+</section>
+
+<section class="slide">
+    <h2 class="shout">Будущее уже вокруг нас</h2>
+</section>
+
+<section class="slide clear">
+    <img src="samples/cie/display-comparison.svg" class="cover h" alt="Сравнение цветового охвата sRGB, P3 и Rec.2020">
+</section>
+
+<section class="slide">
+    <h2>Медиа-запросы</h2>
+    <pre>
+        <code>@media (color-gamut: srgb) { }</code>
+        <code>@media (color-gamut: p3) { }</code>
+        <code>@media (color-gamut: rec2020) { }</code>
+    </pre>
+</section>
+
+<section class="slide">
+    <h2>Медиа-запросы</h2>
+    <pre>
+        <code>&lt;picture></code>
+        <code>  &lt;source media="(color-gamut: rec2020)"</code>
+        <code>      src="image@rec2020.jpg"></code>
+        <code>  &lt;source media="(color-gamut: p3)"</code>
+        <code>      src="image@p3.jpg"></code>
+        <code>  &lt;img src="image.jpg"><span class="comment">&lt;!-- sRGB --></span></code>
+        <code>&lt;/picture></code>
+    </pre>
+</section>
+
+<section class="slide">
+    <h2 class="shout">
+        <a href="samples/media-color-gamut/index.html" target="_blank" rel="noopener noreferrer">Демо</a>
+    </h2>
+</section>
+
+<section class="slide">
+    <h2>Минусы</h2>
+    <ul>
+        <li value="✘" class="next">Файлы становятся больше на 1-3 Кбайта из-за внедрённого профиля.</li>
+        <li value="✘" class="next">Слабая поддержка инструментами оптимизации и CDN.</li>
+        <li value="✘" class="next">Нет согласования с цветами из CSS.</li>
+        <li value="🤷‍♂️" class="next">Возможно, 8 бит уже не хватит.</li>
+    </ul>
+</section>
+
+<section class="slide">
+    <h2>Плюсы</h2>
+    <ul>
+        <li value="✔" class="next">Специально подготовленные иллюстрации выглядят эффектнее на соответствующих
+            дисплеях.
+        </li>
+        <li value="✔" class="next">Автоматическая конвертация в профиль устройства вывода.</li>
+        <li value="✔" class="next">Есть поддержка во всех современных ОС и браузерах<sup>*</sup>.</li>
+        <li value="🤷‍♂️" class="next">В&nbsp;Firefox по-умолчанию выключена поддержка цветовых профилей&nbsp;v4,
+            а&nbsp;так&nbsp;же вместо sRGB используется весь доступный цветовой охват для изображений без цветового профиля.
+        </li>
+    </ul>
+</section>
+
+<section class="slide">
+    <h2>Где применять?</h2>
+    <ul>
+        <li class="next">Маркетинговые страницы.</li>
+        <li class="next">Проекты с качественными фото иллюстрациями.</li>
+        <li class="next">Презентационные и рекламные стенды на выставках.</li>
+    </ul>
+</section>
+
+<section class="slide">
+    <h2>Что ещё почитать?</h2>
+    <ul>
+        <li><a href="https://medium.com/hipster-color-science/a-beginners-guide-to-colorimetry-401f1830b65a"
+                target="_blank" rel="noopener noreferrer">A&nbsp;Beginner&rsquo;s Guide&nbsp;to (CIE) Colorimetry</a>
+        </li>
+        <li><a href="http://igor-bon.ru" target="_blank" rel="noopener noreferrer">Цветофобия</a></li>
+        <li><a href="https://webkit.org/blog/6682/improving-color-on-the-web/" target="_blank"
+                rel="noopener noreferrer">Improving Color on the Web</a></li>
+        <li><a href="https://cameratico.com/tools/web-browser-color-management-test/" target="_blank"
+                rel="noopener noreferrer">Web browser color management test</a></li>
+    </ul>
+</section>
+
+<section class="slide clear black" id="thanks">
+    <img src="samples/cover.jpg" alt="Разноцветные гибкие пластинки" class="cover w h">
+    <h2>Благодарю за&nbsp;внимание!</h2>
+</section>
+
+<section class="slide clear black" id="contacts">
+    <img src="samples/cover.jpg" alt="Разноцветные гибкие пластинки" class="cover w h">
+    <div style="position: absolute; bottom: 80px; left: 96px;">
+        <h2>Владимир Кузнецов</h2>
+        <p style="margin-bottom: 0">Твиттер: <a href="https://twitter.com/mista_k" target="_blank"
+                rel="noopener noreferrer">@mista_k</a>
+            и <a href="https://twitter.com/mistakster" target="_blank" rel="noopener noreferrer">@mistakster</a></p>
+        <p>Блог: <a href="https://noteskeeper.ru" target="_blank" rel="noopener noreferrer">noteskeeper.ru</a></p>
+    </div>
+</section>
+
+<div class="progress"></div>
+
+<footer class="badge">
+    <a href="https://github.com/shower/shower">
+        <svg width="81" height="79" viewBox="0 0 81 79" aria-hidden="true">
+            <path d="M40.5 0a40.5 40.5 0 0 0-12.8 78.93c2 .37 2.76-.88 2.76-2s0-3.51-.05-6.89c-11.27 2.45-13.64-5.43-13.64-5.43-1.84-4.68-4.5-5.92-4.5-5.92-3.68-2.51.28-2.46.28-2.46 4.06.29 6.2 4.17 6.2 4.17 3.61 6.19 9.48 4.4 11.79 3.37a8.65 8.65 0 0 1 2.57-5.41c-9-1-18.45-4.5-18.45-20a15.65 15.65 0 0 1 4.17-10.87 14.57 14.57 0 0 1 .4-10.72s3.4-1.09 11.14 4.15a38.39 38.39 0 0 1 20.28 0c7.73-5.24 11.13-4.15 11.13-4.15a14.55 14.55 0 0 1 .4 10.72 15.63 15.63 0 0 1 4.16 10.87c0 15.56-9.47 19-18.49 20 1.45 1.25 2.75 3.72 2.75 7.5v11.11c0 1.08.73 2.34 2.78 1.95A40.51 40.51 0 0 0 40.5 0z"></path>
+        </svg>
+        Fork me<br>on GitHub
+    </a>
+</footer>
+
+<script src="shower/shower.min.js"></script>
+
+<!-- Copyright © 2019 Владимир Кузнецов -->
+</body>
+</html>

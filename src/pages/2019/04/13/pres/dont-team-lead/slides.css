@@ -1,0 +1,155 @@
+.smaller {
+  font-size: 0.85em;
+}
+.smallest {
+  font-size: 0.55em;
+}
+iframe {
+  border: 1px solid #aaa;
+}
+#cover:after {
+  opacity: 0;
+}
+#cover h2 {
+  margin: -20px 0 0;
+  color: #fff;
+  text-align: left;
+  font-size: 48px;
+  display: inline-block;
+  max-width: 70%;
+}
+#cover p {
+  margin: 40px 0 0;
+  text-align: left;
+  color: #fff;
+  font-size: 24px;
+  opacity: 0.75;
+  line-height: 1.4;
+}
+#cover p a {
+  color: #fff;
+}
+.cover > img {
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+}
+.cover h2 {
+  color: #fff;
+}
+.img-full {
+  text-align: center;
+}
+.img-full img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin-left: -25%;
+}
+.end-link {
+  bottom: 10%;
+  position: absolute;
+  width: 100%;
+  padding: 0 35px;
+  font-size: 24px;
+  line-height: 1.8;
+  color: #aaa;
+}
+.end-link a {
+  color: #fff;
+}
+.bigger {
+  font-size: 53px;
+}
+.logo {
+  width: 150px;
+  background-color: #fff;
+  margin-top: 50px;
+}
+.logo + .logo {
+  margin-left: 50px;
+}
+.logo.css-m-js {
+  padding: 22.15px 10px;
+  background-color: #2b2727;
+}
+.compare-table {
+  table-layout: fixed;
+}
+.compare-table th,
+.compare-table td {
+  width: 15%;
+}
+.compare-table th:first-child,
+.compare-table td:first-child {
+  width: 24%;
+}
+.compare-table th:last-child,
+.compare-table td:last-child {
+  width: 17%;
+}
+.compare-table th {
+  padding-bottom: 20px;
+}
+.logo-img {
+  position: absolute;
+  top: 30%;
+  right: 10%;
+}
+.logo-img.php {
+  top: auto;
+  bottom: 7%;
+  right: 0;
+}
+.logo-img.sublime-full {
+  position: absolute;
+  top: 30%;
+  left: 0;
+  width: 100%;
+  opacity: 0.9;
+}
+.logo-img.winner {
+  top: 10%;
+}
+.logo-img.winner2 {
+  top: 15%;
+  right: 12%;
+}
+th.condition {
+  width: 50%;
+}
+th.editor,
+th.editor2 {
+  position: relative;
+}
+th.editor {
+  width: 20%;
+}
+th.editor2 {
+  width: 25%;
+}
+th .table-logo {
+  position: relative;
+  top: 10px;
+}
+td {
+  padding: 0 10px;
+}
+td.green {
+  background-color: #cff3af !important;
+}
+.slide ul>li:lang(ru)::before {
+  color: #1c2f21;
+}
+.slide ul.plus>li:lang(ru)::before {
+  content: '+';
+  color: #50891d;
+}
+.slide ul.minus>li:lang(ru)::before {
+  content: '–';
+  color: #ec190c;
+}
+.gray {
+  color: #808080;
+}

@@ -1,0 +1,44 @@
+.pipeline {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    color: white;
+    font-weight: 700;
+}
+
+
+.pipeline__item {
+    transition: transform 1s ease;
+    margin: 0 10px;
+    border-radius: 5px;
+    flex: 1 0 auto;
+    text-align: center;
+}
+
+.pipeline__item::before {
+    content: '' !important;
+}
+
+.pipeline__item.js {
+    background-color: var(--yellow);
+}
+
+.pipeline__item.style,
+.pipeline__item.layout {
+    background-color: var(--purple);
+}
+
+.pipeline__item.paint,
+.pipeline__item.composite {
+    background-color: var(--green);
+}
+
+/*THEMES*/
+.pipeline__item.big {
+    transform: scale(1.2);
+    border: 1px solid red;
+}
+
+.pipeline__item.missed {
+    opacity: 0.2;
+}

@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tyger</title>
+</head>
+
+<body>
+
+    <div class="title">
+        <span>Day 4. Tiger</span>
+    </div>
+    <div class="tiger">
+        <div class="tiger__shadow"></div>
+        <div class="tiger__tail"></div>
+        <div class="tiger__container">
+            <div class="tiger__body">
+                <div class="tiger__body__stripe tiger__body__stripe--1 tiger__body__stripe--left"></div>
+                <div class="tiger__body__stripe tiger__body__stripe--2 tiger__body__stripe--left"></div>
+                <div class="tiger__body__stripe tiger__body__stripe--3 tiger__body__stripe--left"></div>
+                <div class="tiger__body__stripe tiger__body__stripe--1 tiger__body__stripe--right"></div>
+                <div class="tiger__body__stripe tiger__body__stripe--2 tiger__body__stripe--right"></div>
+                <div class="tiger__body__stripe tiger__body__stripe--3 tiger__body__stripe--right"></div>
+            </div>
+            <div class="tiger__hand tiger__hand--left">
+                <div class="tiger__hand__stripe tiger__hand__stripe--1"></div>
+                <div class="tiger__hand__stripe tiger__hand__stripe--2"></div>
+                <div class="tiger__hand__stripe tiger__hand__stripe--3"></div>
+                <div class="tiger__hand__stripe tiger__hand__stripe--4"></div>
+            </div>
+            <div class="tiger__hand tiger__hand--right">
+                <div class="tiger__hand__stripe tiger__hand__stripe--1--right"></div>
+                <div class="tiger__hand__stripe tiger__hand__stripe--2--right"></div>
+                <div class="tiger__hand__stripe tiger__hand__stripe--3--right"></div>
+                <div class="tiger__hand__stripe tiger__hand__stripe--4--right"></div>
+            </div>
+            <div class="tiger__leg tiger__leg--left">
+                <div class="tiger__leg__stripe tiger__leg__stripe--1"></div>
+                <div class="tiger__leg__stripe tiger__leg__stripe--2"></div>
+                <div class="tiger__leg__stripe tiger__leg__stripe--3"></div>
+            </div>
+            <div class="tiger__leg tiger__leg--right">
+                <div class="tiger__leg__stripe tiger__leg__stripe--1--right"></div>
+                <div class="tiger__leg__stripe tiger__leg__stripe--2--right"></div>
+                <div class="tiger__leg__stripe tiger__leg__stripe--3--right"></div>
+            </div>
+            <div class="tiger__head">
+                <div class="tiger__head__ear tiger__head__ear--left"></div>
+                <div class="tiger__head__ear tiger__head__ear--right"></div>
+                <div class="tiger__head__mouth">
+                    <div class="tiger__mustache tiger__mustache_1 tiger__mustache_1--left"></div>
+                    <div class="tiger__mustache tiger__mustache_2 tiger__mustache_2--left"></div>
+                    <div class="tiger__mustache tiger__mustache_3 tiger__mustache_3--left"></div>
+                    <div class="tiger__mustache tiger__mustache_1 tiger__mustache_1--right"></div>
+                    <div class="tiger__mustache tiger__mustache_2 tiger__mustache_2--right"></div>
+                    <div class="tiger__mustache tiger__mustache_3 tiger__mustache_3--right"></div>
+                </div>
+                <div class="tiger__head__nose"></div>
+                <div class="tiger__head__eyes">
+                    <div class="tiger__head__brow tiger__head__brow--left"></div>
+                    <div class="tiger__head__brow tiger__head__brow--right"></div>
+                </div>
+                <div class="tiger__head__stripe"></div>
+            </div>
+        </div>
+    </div>
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Pacifico");
+        *,
+        *::before,
+        *::after {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        *::before,
+        *::after {
+            content: '';
+            display: block;
+            position: absolute;
+        }
+
+        body {
+            --border-size: 2px;
+            --orange: #E76D38;
+            --yellow: #FCF3C8;
+            --pink: #C66D66;
+            --red: #6E2D22;
+            background-color: white;
+            background: radial-gradient(circle, #cceeff 0%, #55aaee 100%);
+            min-height: 100vh;
+            width: 100vw;
+            margin: 0;
+            padding: 0;
+            font-family: 'Pacifico', cursive;
+            overflow: hidden;
+        }
+
+        body::before {
+            content: '';
+            display: block;
+            width: 100%;
+            position: absolute;
+            height: 40vh;
+            background: radial-gradient(#9fbf40 0%, #7a8f3d 100%);
+            bottom: 0;
+        }
+
+        @media (max-width: 450px) {
+            body {
+                --border-size: 1px;
+            }
+        }
+
+        @media (max-height: 450px) {
+            body {
+                --border-size: 1px;
+            }
+        }
+
+        .title {
+            padding: 10px 20px;
+        }
+
+        .title span {
+            font-size: 20px;
+            font-weight: bold;
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        .tiger {
+            --size: 80vmin;
+            width: var(--size);
+            height: var(--size);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
+        .tiger__mustache {
+            position: absolute;
+            border: 1px solid black;
+            width: 60%;
+            height: 0;
+            z-index: 10;
+        }
+
+        .tiger__mustache_1 {
+            top: 42%;
+        }
+
+        .tiger__mustache_1--left {
+            right: 85%;
+            -webkit-transform-origin: 100% 0;
+            transform-origin: 100% 0;
+            -webkit-transform: rotate(1deg);
+            transform: rotate(1deg);
+        }
+
+        .tiger__mustache_1--right {
+            left: 85%;
+            -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+            -webkit-transform: rotate(-1deg);
+            transform: rotate(-1deg);
+        }
+
+        .tiger__mustache_2 {
+            top: 40%;
+        }
+
+        .tiger__mustache_2--left {
+            right: 85%;
+            -webkit-transform-origin: 100% 0;
+            transform-origin: 100% 0;
+            -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+        }
+
+        .tiger__mustache_2--right {
+            left: 85%;
+            -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+            -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+        }
+
+        .tiger__mustache_3 {
+            top: 44%;
+        }
+
+        .tiger__mustache_3--left {
+            right: 82%;
+            -webkit-transform-origin: 100% 0;
+            transform-origin: 100% 0;
+            -webkit-transform: rotate(-6deg);
+            transform: rotate(-6deg);
+        }
+
+        .tiger__mustache_3--right {
+            left: 82%;
+            -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+            -webkit-transform: rotate(6deg);
+            transform: rotate(6deg);
+        }
+
+        .tiger__mustache--right {
+            left: 50%;
+            -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+            -webkit-transform: rotate(-2deg);
+            transform: rotate(-2deg);
+        }
+
+        .tiger__leg {
+            position: absolute;
+            height: 10%;
+            width: 28%;
+            top: 60%;
+            border-radius: calc(var(--size) / 12);
+            background: var(--orange);
+            border: var(--border-size) solid black;
+        }
+
+        .tiger__leg--left {
+            border-right-width: 0;
+            left: 20%;
+            -webkit-transform-origin: 100% 0;
+            transform-origin: 100% 0;
+            -webkit-animation: left 1s infinite;
+            animation: left 1s infinite;
+        }
+
+        .tiger__leg--left::before {
+            left: -3%;
+            border-right-width: 0 !important;
+        }
+
+        .tiger__leg--left::after {
+            left: -1%;
+        }
+
+        .tiger__leg--right {
+            border-left-width: 0;
+            right: 20%;
+            -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+            -webkit-animation: right 1s infinite;
+            animation: right 1s infinite;
+        }
+
+        .tiger__leg--right::before {
+            right: -3%;
+            border-left-width: 0 !important;
+        }
+
+        .tiger__leg--right::after {
+            right: -1%;
+        }
+
+        .tiger__leg__stripe {
+            border: calc(var(--size) / 15) solid transparent;
+            position: absolute;
+            width: 0;
+            height: 0;
+            -webkit-transform: scalex(0.15);
+            transform: scalex(0.15);
+        }
+
+        .tiger__leg__stripe--1 {
+            border-bottom-color: black;
+            bottom: 0;
+            left: 20%;
+        }
+
+        .tiger__leg__stripe--1--right {
+            border-bottom-color: black;
+            bottom: 0;
+            right: 20%;
+        }
+
+        .tiger__leg__stripe--2 {
+            border-top-color: black;
+            top: 0;
+            left: 35%;
+        }
+
+        .tiger__leg__stripe--2--right {
+            border-top-color: black;
+            top: 0;
+            right: 35%;
+        }
+
+        .tiger__leg__stripe--3 {
+            border-bottom-color: black;
+            bottom: 0;
+            left: 50%;
+        }
+
+        .tiger__leg__stripe--3--right {
+            border-bottom-color: black;
+            bottom: 0;
+            right: 50%;
+        }
+
+        .tiger__leg::before {
+            width: 30%;
+            height: 150%;
+            border: var(--border-size) solid black;
+            border-radius: 100%;
+            background: var(--orange);
+            top: -50%;
+        }
+
+        .tiger__leg::after {
+            width: 20%;
+            height: 130%;
+            border: var(--border-size) solid black;
+            border-radius: 100%;
+            background: var(--red);
+            top: -30%;
+        }
+
+        .tiger__tail {
+            position: absolute;
+            width: 6%;
+            height: 40%;
+            bottom: 0;
+            left: 47%;
+            border: var(--border-size) solid black;
+            background-image: repeating-linear-gradient(var(--orange) 0, var(--orange) 50%, black 50%, black 100%);
+            background-size: calc(var(--size) / 11) calc(var(--size) / 11);
+            -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+            -webkit-animation: tail 1s infinite;
+            animation: tail 1s infinite;
+        }
+
+        .tiger__container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-animation: tiger 1s infinite;
+            animation: tiger 1s infinite;
+        }
+
+        .tiger__hand {
+            position: absolute;
+            height: 8%;
+            width: 35%;
+            top: 23%;
+            border-radius: calc(var(--size) / 12);
+            background: var(--orange);
+            border: var(--border-size) solid black;
+        }
+
+        .tiger__hand--left {
+            left: 10%;
+            border-right-width: 0;
+            -webkit-animation: left 1s infinite;
+            animation: left 1s infinite;
+            -webkit-transform-origin: 100% 0;
+            transform-origin: 100% 0;
+        }
+
+        .tiger__hand--left::before {
+            width: 10%;
+            height: 100%;
+            border-top: var(--border-size) solid black;
+            border-radius: 100%;
+            background: var(--orange);
+            top: -40%;
+            left: 13%;
+        }
+
+        .tiger__hand--right {
+            right: 10%;
+            border-left-width: 0;
+            -webkit-animation: right 1s infinite;
+            animation: right 1s infinite;
+            -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+        }
+
+        .tiger__hand--right::before {
+            width: 10%;
+            height: 100%;
+            border-top: var(--border-size) solid black;
+            border-radius: 100%;
+            background: var(--orange);
+            top: -40%;
+            right: 13%;
+        }
+
+        .tiger__hand__stripe {
+            border: calc(var(--size) / 20) solid transparent;
+            position: absolute;
+            width: 0;
+            height: 0;
+            -webkit-transform: scalex(0.25);
+            transform: scalex(0.25);
+        }
+
+        .tiger__hand__stripe--1 {
+            border-bottom-color: black;
+            bottom: 0;
+            left: 20%;
+        }
+
+        .tiger__hand__stripe--1--right {
+            border-bottom-color: black;
+            bottom: 0;
+            right: 20%;
+        }
+
+        .tiger__hand__stripe--2 {
+            border-top-color: black;
+            top: 0;
+            left: 35%;
+        }
+
+        .tiger__hand__stripe--2--right {
+            border-top-color: black;
+            top: 0;
+            right: 35%;
+        }
+
+        .tiger__hand__stripe--3 {
+            border-bottom-color: black;
+            bottom: 0;
+            left: 50%;
+        }
+
+        .tiger__hand__stripe--3--right {
+            border-bottom-color: black;
+            bottom: 0;
+            right: 50%;
+        }
+
+        .tiger__hand__stripe--4 {
+            border-top-color: black;
+            top: 0;
+            left: 65%;
+        }
+
+        .tiger__hand__stripe--4--right {
+            border-top-color: black;
+            top: 0;
+            right: 65%;
+        }
+
+        .tiger__head {
+            position: absolute;
+            height: 30%;
+            width: 30%;
+            left: 35%;
+            top: 0%;
+        }
+
+        .tiger__head__ear {
+            border: var(--border-size) solid black;
+            position: absolute;
+            height: 15%;
+            width: 15%;
+            background: var(--orange);
+            border-radius: 50%;
+            z-index: 10;
+        }
+
+        .tiger__head__ear::before {
+            content: '';
+            display: block;
+            border: 1px solid black;
+            background: var(--yellow);
+            width: 80%;
+            height: 60%;
+            border-radius: 50%;
+            position: absolute;
+            top: 20%;
+            left: 10%;
+        }
+
+        .tiger__head__ear--left {
+            left: 10%;
+            top: 8%;
+            border-right-width: 0;
+            border-bottom-width: 0;
+        }
+
+        .tiger__head__ear--right {
+            right: 10%;
+            top: 8%;
+            border-left-width: 0;
+            border-bottom-width: 0;
+        }
+
+        .tiger__head__stripe {
+            position: absolute;
+            border: calc(var(--border-size) * 2) solid black;
+            border-bottom-width: 0;
+            border-top-width: 0;
+            width: 50%;
+            left: 25%;
+            height: 35%;
+            top: 5%;
+            border-radius: 100%;
+        }
+
+        .tiger__head__stripe::before,
+        .tiger__head__stripe::after {
+            width: 50%;
+            height: 30%;
+            top: 10%;
+            border-top: calc(var(--border-size) * 3) solid black;
+            border-radius: 100%;
+        }
+
+        .tiger__head__stripe::before {
+            left: 0;
+            -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+        }
+
+        .tiger__head__stripe::after {
+            right: 0;
+            -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+        }
+
+        .tiger__head__nose {
+            position: absolute;
+            border: var(--border-size) solid black;
+            height: 40%;
+            width: 60%;
+            left: 20%;
+            top: 5%;
+            border-radius: 50% 50% 30% 30% / 50% 50% 50% 50%;
+            background: var(--orange);
+        }
+
+        .tiger__head__nose::before {
+            border: var(--border-size) solid black;
+            height: 70%;
+            width: 50%;
+            bottom: -30%;
+            left: 25%;
+            border-radius: 100%;
+            background: var(--pink);
+            z-index: 10;
+        }
+
+        .tiger__head__brow {
+            position: absolute;
+            border-top: var(--border-size) solid black;
+            height: 50%;
+            width: 20%;
+            top: 25%;
+            border-radius: 50%;
+        }
+
+        .tiger__head__brow--left {
+            left: 25%;
+        }
+
+        .tiger__head__brow--right {
+            right: 25%;
+        }
+
+        .tiger__head__eyes {
+            display: block;
+            position: absolute;
+            border: var(--border-size) solid black;
+            height: 20%;
+            width: 50%;
+            top: 12%;
+            left: 25%;
+            border-radius: 40% 40% 30% 30% / 50% 50% 50% 50%;
+            background: var(--yellow);
+        }
+
+        .tiger__head__eyes::before {
+            width: 10%;
+            height: 25%;
+            background: black;
+            border-radius: 100%;
+            right: 55%;
+            bottom: 15%;
+        }
+
+        .tiger__head__eyes::after {
+            width: 10%;
+            height: 25%;
+            background: black;
+            border-radius: 100%;
+            left: 55%;
+            bottom: 15%;
+        }
+
+        .tiger__head__mouth {
+            position: absolute;
+            border: var(--border-size) solid black;
+            height: 90%;
+            width: 40%;
+            left: 30%;
+            top: 10%;
+            border-radius: 50% / 30%;
+            background: var(--yellow);
+        }
+
+        .tiger__head__mouth::before {
+            border: var(--border-size) solid black;
+            height: 80%;
+            width: 80%;
+            top: 0%;
+            left: 10%;
+            border-radius: 50% / 30%;
+            background: var(--red);
+        }
+
+        .tiger__head__mouth::after {
+            border: var(--border-size) solid black;
+            height: 65%;
+            width: 100%;
+            top: 0%;
+            left: 0%;
+            border-radius: 50%;
+            background: var(--yellow);
+        }
+
+        .tiger__body {
+            position: absolute;
+            border: var(--border-size) solid black;
+            height: 50%;
+            width: 20%;
+            left: 40%;
+            top: 20%;
+            border-radius: 50% / 30%;
+            background: var(--orange);
+        }
+
+        .tiger__body__stripe {
+            border: calc(var(--size) / 20) solid transparent;
+            position: absolute;
+            width: 0;
+            height: 0;
+            -webkit-transform: scaley(0.35);
+            transform: scaley(0.35);
+        }
+
+        .tiger__body__stripe--left {
+            border-left-color: black;
+            left: 0;
+        }
+
+        .tiger__body__stripe--right {
+            border-right-color: black;
+            right: 0;
+        }
+
+        .tiger__body__stripe--1 {
+            top: 40%;
+        }
+
+        .tiger__body__stripe--2 {
+            top: 20%;
+        }
+
+        .tiger__body__stripe--3 {
+            top: 60%;
+        }
+
+        .tiger__body::before {
+            border: var(--border-size) solid black;
+            height: 80%;
+            width: 60%;
+            top: 10%;
+            left: 20%;
+            border-radius: 50% / 40%;
+            background: var(--yellow);
+        }
+
+        .tiger__shadow {
+            position: absolute;
+            bottom: -7%;
+            height: 15%;
+            width: 50%;
+            background: rgba(0, 0, 0, 0.1);
+            left: 25%;
+            border-radius: 100%;
+            -webkit-animation: shadow 1s infinite;
+            animation: shadow 1s infinite;
+        }
+
+        @-webkit-keyframes tail {
+            0%,
+            100% {
+                -webkit-transform: scaley(1);
+                transform: scaley(1);
+            }
+            50% {
+                -webkit-transform: scaley(0.5);
+                transform: scaley(0.5);
+            }
+        }
+
+        @keyframes tail {
+            0%,
+            100% {
+                -webkit-transform: scaley(1);
+                transform: scaley(1);
+            }
+            50% {
+                -webkit-transform: scaley(0.5);
+                transform: scaley(0.5);
+            }
+        }
+
+        @-webkit-keyframes shadow {
+            0%,
+            100% {
+                -webkit-transform: scale(1);
+                transform: scale(1);
+            }
+            50% {
+                -webkit-transform: scale(1.2);
+                transform: scale(1.2);
+            }
+        }
+
+        @keyframes shadow {
+            0%,
+            100% {
+                -webkit-transform: scale(1);
+                transform: scale(1);
+            }
+            50% {
+                -webkit-transform: scale(1.2);
+                transform: scale(1.2);
+            }
+        }
+
+        @-webkit-keyframes tiger {
+            0%,
+            100% {
+                -webkit-transform: translatey(0%);
+                transform: translatey(0%);
+            }
+            50% {
+                -webkit-transform: translatey(15%);
+                transform: translatey(15%);
+            }
+        }
+
+        @keyframes tiger {
+            0%,
+            100% {
+                -webkit-transform: translatey(0%);
+                transform: translatey(0%);
+            }
+            50% {
+                -webkit-transform: translatey(15%);
+                transform: translatey(15%);
+            }
+        }
+
+        @-webkit-keyframes left {
+            0%,
+            100% {
+                -webkit-transform: rotate(-2deg);
+                transform: rotate(-2deg);
+            }
+            50% {
+                -webkit-transform: rotate(5deg);
+                transform: rotate(5deg);
+            }
+        }
+
+        @keyframes left {
+            0%,
+            100% {
+                -webkit-transform: rotate(-2deg);
+                transform: rotate(-2deg);
+            }
+            50% {
+                -webkit-transform: rotate(5deg);
+                transform: rotate(5deg);
+            }
+        }
+
+        @-webkit-keyframes right {
+            0%,
+            100% {
+                -webkit-transform: rotate(2deg);
+                transform: rotate(2deg);
+            }
+            50% {
+                -webkit-transform: rotate(-5deg);
+                transform: rotate(-5deg);
+            }
+        }
+
+        @keyframes right {
+            0%,
+            100% {
+                -webkit-transform: rotate(2deg);
+                transform: rotate(2deg);
+            }
+            50% {
+                -webkit-transform: rotate(-5deg);
+                transform: rotate(-5deg);
+            }
+        }
+    </style>
+</body>
+
+</html>
