@@ -1,0 +1,52 @@
+/* ------------------------------------------------------------------
+   Section
+   ------------------------------------------------------------------ */
+
+.section {
+	position: relative;
+	overflow: hidden;
+	border-bottom: 1px solid var(--color-dark-light-50);
+}
+
+/* Box */
+
+.section__box {
+	padding: 24px 24px 12px;
+}
+
+@media (min-width: 480px) {
+	.section__box {
+		padding: 36px 36px 18px;
+	}
+}
+
+/* Hidden */
+
+.section__box--hidden {
+	position: absolute;
+	clip: rect(0 0 0 0);
+	width: 0;
+	height: 0;
+	overflow: hidden;
+}
+
+/* Title */
+
+.section__title {
+	margin-bottom: 12px;
+	color: var(--color-dark);
+	line-height: 1;
+	font-size: 24px;
+}
+
+@media (min-width: 480px) {
+	.section__title {
+		margin-bottom: 18px;
+	}
+}
+
+/* No Rule */
+
+.section--open {
+	border: none;
+}

@@ -1,0 +1,71 @@
+/* ------------------------------------------------------------------
+   Speakers
+   ------------------------------------------------------------------ */
+
+/* List */
+
+.speakers__list {
+	overflow: hidden;
+	background: var(--color-blue-light-45);
+}
+
+/* Speaker */
+
+.speakers__speaker {
+	position: relative;
+	float: left;
+	padding-bottom: 25%;
+	width: 25%;
+	height: 0;
+	box-shadow: -1px -1px var(--color-dark-light-50) inset;
+}
+
+@media (min-width: 1024px) {
+	.speakers__speaker {
+		padding-bottom: 20%;
+		width: 20%;
+	}
+}
+
+/* Hidden */
+
+.speakers__speaker--hidden {
+	display: none;
+}
+
+/* Name */
+
+.speakers__name {
+	position: absolute;
+	bottom: 0;
+	z-index: 1;
+	padding: 5px 5px 6px;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	opacity: 0;
+	color: #FFF;
+	line-height: 1;
+	font-size: 12px;
+	transition: opacity 0.2s linear;
+}
+
+@media (min-width: 1024px) {
+	.speakers__name {
+		font-size: 15px;
+	}
+}
+
+/* Picture */
+
+.speakers__picture {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+/* Hover */
+
+.speakers__speaker:hover .speakers__name {
+	opacity: 1;
+}

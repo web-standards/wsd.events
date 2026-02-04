@@ -1,0 +1,52 @@
+/* ------------------------------------------------------------------
+   Card
+   ------------------------------------------------------------------ */
+
+.card {
+	display: flex;
+	padding-bottom: 24px;
+}
+
+@media (min-width: 480px) {
+	.card {
+		padding-bottom: 36px;
+	}
+}
+
+/* Column */
+
+.card__column {
+	order: -1;
+	flex-shrink: 0;
+	width: 30%;
+}
+
+.card__column--logo {
+	padding-left: 24px;
+}
+
+@media (min-width: 480px) {
+	.card__column--logo {
+		padding-left: 36px;
+	}
+}
+
+/* Picture */
+
+.card__picture {
+	display: block;
+	width: 100%;
+}
+
+/* Description */
+
+.card__description {
+	margin-top: -6px;
+	padding: 0 24px;
+}
+
+@media (min-width: 480px) {
+	.card__description {
+		padding: 0 36px;
+	}
+}

@@ -1,0 +1,127 @@
+/* ------------------------------------------------------------------
+   Badge
+   ------------------------------------------------------------------ */
+
+/* Box */
+
+.badge__box {
+	padding: 0 24px 12px;
+}
+
+@media (min-width: 480px) {
+	.badge__box {
+		padding: 0 36px 18px;
+	}
+}
+
+/* Field */
+
+.badge__field {
+	display: block;
+	padding-bottom: 6px;
+	width: 100%;
+	outline: none;
+	font-family: inherit;
+}
+
+.badge__field::placeholder {
+	color: #999;
+	opacity: 1;
+}
+
+.badge__field:invalid {
+	box-shadow: none;
+}
+
+/* Line */
+
+.badge__field--line {
+	border: none;
+	background: svg-load('../../assets/images/circle.svg') 0 100% repeat-x;
+	font-size: 24px;
+}
+
+/* Text */
+
+.badge__field--text {
+	padding: 0 4px;
+	border: 1px solid var(--color-dark-light-50);
+	background: var(--color-blue-light-45);
+	line-height: 1.6;
+	font-size: 16px;
+}
+
+/* Checkbox */
+
+.badge__hidden {
+	position: absolute;
+	clip: rect(0 0 0 0);
+}
+
+.badge__checkbox {
+	position: relative;
+	margin-right: 0.4em;
+	margin-bottom: -0.15em;
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	box-shadow: 0 0 0 0.2em currentColor;
+	color: var(--color-green);
+}
+
+.badge__hidden:checked + .badge__checkbox::before,
+.badge__hidden:checked + .badge__checkbox::after {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	margin-left: -0.1em;
+	width: 0.2em;
+	height: 100%;
+	background-color: currentColor;
+	transform-origin: 50% 50%;
+	content: '';
+}
+
+.badge__hidden:checked + .badge__checkbox::before {
+	transform: rotate(45deg);
+	height: 80%;
+	left: 60%;
+	top: 10%;
+}
+
+.badge__hidden:checked + .badge__checkbox::after {
+	transform: rotate(-45deg);
+	top: 50%;
+	height: 40%;
+	left: 30%;
+}
+
+.badge__hidden:focus + .badge__checkbox {
+	color: var(--color-blue);
+}
+
+.badge__checkbox-label::after {
+	position: absolute;
+	margin-top: 0.25em;
+	margin-left: 0.25em;
+	color: #c00;
+	content: '*';
+}
+
+/* Label */
+
+.badge__label {
+	display: block;
+	margin-bottom: 24px;
+	color: var(--color-dark);
+}
+
+/* Required */
+
+.badge__field[required] + .badge__label::before {
+	position: absolute;
+	margin-top: 0.25em;
+	margin-left: -0.9em;
+	color: #c00;
+	content: '*';
+}

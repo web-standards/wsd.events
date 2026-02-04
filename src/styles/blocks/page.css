@@ -1,0 +1,25 @@
+/* ------------------------------------------------------------------
+   Page
+   ------------------------------------------------------------------ */
+
+.page {
+	background: var(--color-dark);
+	color: #212121;
+}
+
+/* Full Height */
+
+@media (min-width: 768px) {
+	.page,
+	.page__body {
+		height: 100%;
+	}
+}
+
+/* Body */
+
+.page__body {
+	margin: auto;
+	max-width: 1024px;
+	font: 16px/1.6 Ubuntu, sans-serif;
+}

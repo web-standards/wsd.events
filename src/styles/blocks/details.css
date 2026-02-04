@@ -1,15 +1,15 @@
-// ------------------------------------------------------------------
-// Details
-// ------------------------------------------------------------------
+/* ------------------------------------------------------------------
+   Details
+   ------------------------------------------------------------------ */
 
 .details__summary {
-	color: $dark;
+	color: var(--color-dark);
 	font-weight: 500;
 	outline: none;
 }
 
 .details__summary:focus {
-	color: $green;
+	color: var(--color-green);
 }
 
 .details__summary::-webkit-details-marker {

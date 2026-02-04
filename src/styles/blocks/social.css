@@ -1,0 +1,74 @@
+/* ------------------------------------------------------------------
+   Social
+   ------------------------------------------------------------------ */
+
+.social {
+	display: flex;
+	padding: 0 0 24px 24px;
+}
+
+@media (min-width: 480px) {
+	.social {
+		padding: 0 0 36px 36px;
+	}
+}
+
+/* Link */
+
+.social__link {
+	margin-right: 16px;
+	width: 24px;
+	height: 24px;
+
+	/* Active */
+	opacity: 0.5;
+	transition: opacity 0.2s linear;
+
+	/* Icons */
+	background-position: 0 50%;
+	background-repeat: no-repeat;
+}
+
+.social__link:hover,
+.social__link:focus {
+	opacity: 1;
+}
+
+.social__link--twitter {
+	background-image: svg-load('../../assets/images/twitter.svg');
+}
+
+.social__link--vkontakte {
+	background-image: svg-load('../../assets/images/vkontakte.svg');
+}
+
+.social__link--github {
+	background-image: svg-load('../../assets/images/github.svg');
+}
+
+.social__link--facebook {
+	background-image: svg-load('../../assets/images/facebook.svg');
+}
+
+.social__link--youtube {
+	width: 28px;
+	background-image: svg-load('../../assets/images/youtube.svg');
+}
+
+.social__link--slack {
+	background-image: svg-load('../../assets/images/slack.svg');
+}
+
+.social__link--telegram {
+	background-image: svg-load('../../assets/images/telegram.svg');
+}
+
+/* Text */
+
+.social__text {
+	position: absolute;
+	clip: rect(0 0 0 0);
+	width: 0;
+	height: 0;
+	overflow: hidden;
+}

@@ -9,9 +9,8 @@ import rename from 'gulp-rename';
 import replace from 'gulp-replace';
 import revision from 'gulp-rev-replace';
 import rev from 'gulp-rev';
-import gulpSass from 'gulp-sass';
-import * as sassCompiler from 'sass';
 import svg from 'postcss-inline-svg';
+import atImport from 'postcss-import';
 import browserSync from 'browser-sync';
 import uglify from 'gulp-uglify';
 import sharp from 'sharp';
@@ -19,7 +18,6 @@ import { promises as fs } from 'fs';
 import path from 'path';
 import { glob } from 'glob';
 
-const sass = gulpSass(sassCompiler);
 const sync = browserSync.create();
 
 // HTML
@@ -50,9 +48,9 @@ gulp.task('html', () => {
 // Styles
 
 gulp.task('styles', () => {
-	return gulp.src('src/styles/screen.scss')
-		.pipe(sass().on('error', sass.logError))
+	return gulp.src('src/styles/screen.css')
 		.pipe(postcss([
+			atImport,
 			autoprefixer,
 			svg
 		]))
@@ -185,7 +183,7 @@ gulp.task('server', () => {
 gulp.task('watch', () => {
 	gulp.watch('src/assets/**', gulp.parallel('copy'));
 	gulp.watch('src/pages/**/*.html', gulp.parallel('html'));
-	gulp.watch('src/styles/**/*.scss', gulp.parallel('styles'));
+	gulp.watch('src/styles/**/*.css', gulp.parallel('styles'));
 	gulp.watch('src/scripts/*.js', gulp.parallel('scripts'));
 });
 

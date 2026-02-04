@@ -1,0 +1,36 @@
+/* ------------------------------------------------------------------
+   Button
+   ------------------------------------------------------------------ */
+
+.button {
+	margin: 0;
+	outline: none;
+	border: none;
+	background: var(--color-green);
+	color: #FFF;
+	cursor: pointer;
+	font-size: 18px;
+	font-family: inherit;
+}
+
+@media (min-width: 480px) {
+	.button {
+		font-size: 24px;
+	}
+}
+
+.button:hover,
+.button:focus {
+	background: var(--color-green-light-7);
+}
+
+.button::-moz-focus-inner {
+	border: none;
+}
+
+/* Full */
+
+.button--full {
+	padding: 0.75em 0;
+	width: 100%;
+}

@@ -1,0 +1,23 @@
+/* ------------------------------------------------------------------
+   Navigation
+   ------------------------------------------------------------------ */
+
+.navigation {
+	line-height: 1;
+}
+
+/* Link */
+
+.navigation__link {
+	display: inline-block;
+	margin-bottom: 12px;
+	color: #FFF;
+	font-size: 24px;
+}
+
+@media (min-width: 480px) {
+	.navigation__link {
+		margin-bottom: 18px;
+		font-size: 36px;
+	}
+}

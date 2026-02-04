@@ -1,0 +1,35 @@
+/* ------------------------------------------------------------------
+   Up
+   ------------------------------------------------------------------ */
+
+.up {
+	position: absolute;
+	right: 24px;
+	margin-top: 5px;
+	width: 20px;
+	height: 15px;
+	background: svg-load('../../assets/images/up.svg');
+	opacity: 0.5;
+}
+
+.up:hover {
+	opacity: 1;
+}
+
+@media (min-width: 768px) {
+	.up {
+		position: absolute;
+		clip: rect(0 0 0 0);
+		width: 0;
+		height: 0;
+		overflow: hidden;
+	}
+}
+
+.up__text {
+	position: absolute;
+	clip: rect(0 0 0 0);
+	width: 0;
+	height: 0;
+	overflow: hidden;
+}

@@ -1,0 +1,76 @@
+/* ------------------------------------------------------------------
+   Calendar
+   ------------------------------------------------------------------ */
+
+.calendar {
+	position: relative;
+}
+
+/* Item */
+
+.calendar__item--hidden {
+	display: none;
+}
+
+/* Year */
+
+.calendar__year {
+	position: absolute;
+	right: 0;
+	padding: 12px 24px;
+	color: var(--color-dark);
+}
+
+@media (min-width: 480px) {
+	.calendar__year {
+		padding: 18px 36px;
+	}
+}
+
+/* Event */
+
+.calendar__event {
+	display: flex;
+	padding: 12px 24px;
+	border-bottom: solid 1px var(--color-dark-light-50);
+}
+
+@media (min-width: 480px) {
+	.calendar__event {
+		padding: 18px 36px;
+	}
+}
+
+/* Current */
+
+.calendar__event--current {
+	border-color: var(--color-green-light-10);
+	background: var(--color-green-light-30);
+	color: var(--color-green-dark-10);
+}
+
+/* Break */
+
+.calendar__event--break {
+	background: var(--color-blue-light-45);
+}
+
+/* Time */
+
+.calendar__time {
+	min-width: 60px;
+}
+
+.calendar__time--date {
+	min-width: 108px;
+}
+
+/* Button */
+
+.calendar__button {
+	display: none;
+}
+
+.calendar__button--active {
+	display: block;
+}

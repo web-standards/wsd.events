@@ -1,0 +1,33 @@
+/* ------------------------------------------------------------------
+   Defaults
+   ------------------------------------------------------------------ */
+
+/* CSS Custom Properties */
+:root {
+	/* Colors */
+	--color-green: #A7CF40;
+	--color-green-light-7: #b5d759;
+	--color-green-light-10: #bbda66;
+	--color-green-light-30: #ddedb3;
+	--color-green-dark-10: #8ab82c;
+	--color-blue: #489DBD;
+	--color-blue-light-45: #edf5f9;
+	--color-dark: #416E87;
+	--color-dark-dark-10: #355a6e;
+	--color-dark-light-50: #d5e2ea;
+	--color-black: #133544;
+
+	/* Breakpoints (for reference) */
+	/* palm: 480px */
+	/* lap: 768px */
+	/* desk: 1024px */
+}
+
+/* Offscreen utility */
+.offscreen {
+	position: absolute;
+	clip: rect(0 0 0 0);
+	width: 0;
+	height: 0;
+	overflow: hidden;
+}
