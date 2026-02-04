@@ -1,0 +1,33 @@
+.intro h2 {
+    font-size: 100px;
+    text-shadow: 0 6px #ccc;
+    margin-bottom: 21px;
+}
+
+.intro img {
+    position: absolute;
+    bottom: 0;
+    right: 65px;
+    width: 220px;
+}
+
+.intro:after {
+    display: none;
+}
+
+.logos {
+    text-align: center;
+}
+
+.logos > img {
+    display: inline-block;
+    max-width: 160px;
+    height: 70px;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+.future h2 {
+    color: white;
+    text-shadow: 0px 0 25px black;
+}

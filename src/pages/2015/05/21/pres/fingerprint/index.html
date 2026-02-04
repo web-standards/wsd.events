@@ -1,0 +1,330 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>FingerprintJS</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=792, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen-d90984e344.css">
+	<style>
+		h2.bigger{font-size: 300%}
+		h2.smaller{font-size: 99%}
+	</style>
+</head>
+<body class="full">
+	<header class="caption">
+		<h1>Browser fingerprinting</h1>
+		<p>Анонимная идентификация браузеров</p>
+	</header>
+	<section id="first" class="slide"><div>
+		<center>
+			<h2 class="bigger">Browser Fingerprint</h2>
+			<h2>Анонимная идентификация браузеров</h2>
+			<h2>Валентин Васильев</h2>
+			<h2>FrontendConf 2015</h2>
+		</center>
+	</div></section>
+	<section class="slide"><div>
+		<h2 class="bigger">Кто я</h2>
+		<h2>
+		<ol>
+			<li>github.com/Valve</li>
+			<li>Machinio.com</li>
+			<li>JavaScript, Ruby, Java, Rust</li>
+		</ol>
+	</h2>
+	</div></section>
+	<section class="slide"><div>
+		<h2 class="bigger">Что такое</h2>
+		<h2 class="bigger">Browser Fingerprint?</h2>
+		<h2>
+			<blockquote>
+				<p>Присвоение уникального идентификатора браузеру</p>
+			</blockquote>
+		</h2>
+	</div></section>
+	<section class="slide"><div>
+		<h2 class="bigger">Для чего?</h2>
+		<h2>
+			<ol>
+        <li class="next">Учет пользователей</li>
+				<li class="next">Персональная реклама</li>
+				<li class="next">Внутренняя аналитика</li>
+			</ol>
+		</h2>
+	</div></section>
+	<section class="slide"><div>
+		<h2 class="bigger">Давайте просто использовать cookie?</h2>
+		<h2>
+			<ol>
+				<li class="next">Cookie можно очистить</li>
+				<li class="next">Режим incognito</li>
+				<li class="next">Плагины не дают сохранять cookie</li>
+			</ol>
+		</h2>
+	</div></section>
+	<section class="slide"><div>
+		<center>
+			<h2 class="bigger">Evercookie?</h2>
+		</center>
+	</div></section>
+	<section class="slide"><div>
+		<center>
+			<h2 class="bigger">Evercookie</h2>
+			<h2>HTTP Cookies</h2>
+		</center>
+	</div></section>
+	<section class="slide"><div>
+		<center>
+			<h2 class="bigger">Evercookie</h2>
+			<h2>Flash Cookies</h2>
+			<h2>(Local Shared Objects)</h2>
+		</center>
+	</div></section>
+	<section class="slide"><div>
+		<center>
+			<h2 class="bigger">Evercookie</h2>
+			<h2>Silverlight Cookies</h2>
+			<h2>(Isolated Storage)</h2>
+		</center>
+	</div></section>
+	<section class="slide"><div>
+		<center>
+			<h2 class="bigger">Evercookie</h2>
+			<h2>PNG Cookies</h2>
+			<h2>(Canvas + PNG + Caching)</h2>
+		</center>
+	</div></section>
+	<section class="slide"><div>
+		<center>
+			<h2 class="bigger">Evercookie</h2>
+			<h2>HTML5</h2>
+			<h2>Session Storage</h2>
+			<h2>Local Storage</h2>
+			<h2>Indexed DB</h2>
+		</center>
+	</div></section>
+	<section class="slide"><div>
+		<center>
+			<h2 class="bigger">Evercookie</h2>
+			<h2>ETag header</h2>
+			<h2>Java persistence</h2>
+		</center>
+	</div></section>
+	<section class="slide"><div>
+		<h2 class="bigger">Evercookie</h2>
+		<h2>
+			<ol>
+        <li>HTTP Cookies</li>
+        <li>Flash Cookies</li>
+        <li>Silverlight Isolated Storage</li>
+        <li>PNG + Canvas</li>
+        <li>Session Storage, Local Storage, Indexed DB</li>
+        <li>ETag</li>
+        <li>Java Persistence</li>
+			</ol>
+		</h2>
+	</div></section>
+	<section class="slide"><div>
+		<h2 class="bigger">Evercookie — это хорошо, но...</h2>
+		<h2>Incognito Режим</h2>
+	</div></section>
+	<section class="slide"><div>
+		<center>
+			<h2 class="bigger">FingerprintJS</h2>
+		</center>
+		<h2>
+			<ol>
+				<li class="next">Создан в 2012 году</li>
+				<li class="next">No cookies, please</li>
+				<li class="next">Incognito</li>
+				<li class="next">Не имеет зависимостей - 1.2 KB gzipped</li>
+			</ol>
+		</h2>
+	</div></section>
+	<section class="slide"><div>
+		<center>
+			<h2 class="bigger">Используется в:</h2>
+		</center>
+		<div>
+			<img src="pictures/baidu.png"/>
+			<img src="pictures/mastercard.png" style="float: right" width="280" height="152"/>
+		</div>
+		<br/>
+		<br/>
+
+		<img src="pictures/whitehouse.png" style="float: left" width="280" height="168"/>
+		<br/>
+		<img src="pictures/addthis.jpg" style="float: right"/>
+	</div></section>
+	<section class="slide"><div>
+		<h2 class="bigger">FingerprintJS</h2>
+		<h2>
+			<pre>
+				<code><mark>navigator.userAgent</mark></code>
+			</pre>
+			Mozilla/5.0 (Macintosh; Intel Mac OS X...
+		</h2>
+	</div></section>
+	<section class="slide"><div>
+		<h2 class="bigger">FingerprintJS</h2>
+		<h2>
+			<pre>
+				<code><mark>navigator.language</mark></code>
+			</pre>
+			en-US
+		</h2>
+	</div></section>
+	<section class="slide"><div>
+		<h2 class="bigger">FingerprintJS</h2>
+		<pre>
+			<code><mark>new Date().getTimezoneOffset()</mark></code>
+		</pre>
+		<h2>
+			-180
+		</h2>
+	</div></section>
+	<section class="slide"><div>
+		<h2 class="bigger">FingerprintJS</h2>
+		<h2>
+			<pre>
+				<code><mark>[screen.height, screen.width]</mark></code>
+			</pre>
+			[1200,1920]
+		</h2>
+	</div></section>
+	<section class="slide"><div>
+		<h2 class="bigger">FingerprintJS</h2>
+		<h2>
+			<pre>
+				<code><mark>screen.colorDepth</mark></code>
+			</pre>
+			24
+		</h2>
+	</div></section>
+	<section class="slide"><div>
+		<h2 class="bigger">HTML5 support</h2>
+		<h2>
+			<ol>
+				<li class="next">SessionStorage</li>
+				<li class="next">LocalStorage</li>
+				<li class="next">IndexedDB</li>
+				<li class="next">OpenDatabase</li>
+				<li class="next">...</li>
+			</ol>
+		</h2>
+	</div></section>
+	<section class="slide"><div>
+		<h2 class="bigger">User/Platform specific data</h2>
+		<h2>
+			<ol>
+				<li class="next">doNotTrack</li>
+				<li class="next">cpuClass</li>
+				<li class="next">platform</li>
+			</ol>
+		</h2>
+	</div></section>
+	<section class="slide"><div>
+		<h2 class="bigger">Plugins info</h2>
+		<pre>
+			<code>Native Client::application/x-nacl...</code>
+			<code>Chrome PDF Viewer::application/pdf~pdf...</code>
+			<code>Shockwave Flash::Shockwave Flash 17.0 r0...</code>
+      <code>Google Talk Plugin::Version 5.41.0.0...</code>
+			<code>Java Applet Plug-in::application/x-java-applet..</code>
+			<code>...</code>
+		</pre>
+	</div></section>
+	<section class="slide"><div>
+		<h2 class="bigger">Canvas Fingerprint</h2>
+		<pre>
+			<code><mark>canvas.toDataURL()</mark></code>
+			<code>data:image/png;base64,iVBORw0KGgoAAAANSU...</code>
+		</pre>
+		<img src="pictures/canvas.png" width="105%"/>
+	</div></section>
+	<section class="slide"><div>
+		<center>
+			<h2 class="bigger">FingerprintJS</h2>
+		</center>
+		<img src="pictures/murmur_svg.svg" width="110%" style="margin-left: -10%"/>
+	</div></section>
+	<section class="slide"><div>
+		<h2 class="bigger">V1 — недостатки</h2>
+		<h2>
+			<ol>
+				<li class="next">UserAgent</li>
+				<li class="next">iPhone 5</li>
+				<li class="next">Internet Explorer + China</li>
+				<li class="next">No Flash</li>
+				<li class="next">No Silverlight</li>
+				<li class="next">Chrome 42 NPAPI shutdown</li>
+			</ol>
+		</h2>
+	</div></section>
+	<section class="slide"><div>
+		<h2 class="bigger">FingerprintJS v2</h2>
+		<h2>Under Development</h2>
+		<h2>2015 - ...</h2>
+	</div></section>
+	<section class="slide"><div>
+		<h2 class="bigger">V2 — Fuzzy Hashing</h2>
+		<pre>
+			<code><mark>navigator.userAgent</mark></code>
+		</pre>
+		<pre>
+			<code>Mozilla/5.0 (Intel Mac OS X) ... Chrome/<mark>42.0.2311</mark></code>
+			<code>Mozilla/5.0 (Intel Mac OS X) ... Chrome/<mark>41.0.2272</mark></code>
+			<code>Mozilla/5.0 (Intel Mac OS X) ... Chrome/<mark>40.0.2214</mark></code>
+			<code>Mozilla/5.0 (Intel Mac OS X) ... Chrome/<mark>39.0.2171</mark></code>
+			<code>Mozilla/5.0 (Intel Mac OS X) ... Chrome/<mark>38.0.2125</mark></code>
+		</pre>
+	</div></section>
+	<section class="slide"><div>
+		<h2 class="bigger">V2 — Определение шрифтов</h2>
+		<pre>
+			<code>Flash (916 byte SWF) — <mark>все установленные</mark></code>
+			<code>CSS + JavaScript — <mark>~500</mark></code>
+		</pre>
+    <img style="margin-left: -10%" width="105%" src="pictures/fonts.gif"/>
+	</div></section>
+	<section class="slide"><div>
+		<h2 class="bigger">V2 — WebGL fingerprint</h2>
+		<img style="float: right" width="35%" src="pictures/webgl.png"/>
+		<pre>
+			<code>gl.DEPTH_BITS</code>
+			<code>gl.MAX_CUBE_MAP_TEXTURE_SIZE</code>
+			<code>gl.MAX_FRAGMENT_UNIFORM_VECTORS</code>
+			<code>gl.MAX_RENDERBUFFER_SIZE</code>
+			<code>gl.MAX_TEXTURE_SIZE</code>
+			<code>gl.SHADING_LANGUAGE_VERSION</code>
+			<code>... много других</code>
+		</pre>
+	</div></section>
+	<section class="slide"><div>
+		<h2 class="bigger">V2 — В разработке</h2>
+		<pre>
+			<code>WebRTC fingerprinting</code>
+			<code>Больше плагинов для IE</code>
+			<code>Больше информации об операционной системе</code>
+			<code>Определение нескольких мониторов</code>
+			<code>Данные о ядре Linux (Flash)</code>
+			<code>...</code>
+		</pre>
+	</div></section>
+	<section class="slide"><div>
+		<center>
+      <h2 class="bigger">Вопросы?</h2>
+      <h2>Валентин Васильев</h2>
+      <h2><img width="25%" src="pictures/links-qr.png"/></h2>
+      <h2><pre>
+        <code>is.gd/fplinks</code>
+      </pre></h2>
+    </center>
+	</div></section>
+	<div class="progress"><div></div></div>
+	<script src="shower/shower.min.js"></script>
+	<!-- Copyright © 2014 Yours Truly, Famous Inc. -->
+	<!-- Photos by John Carey, fiftyfootshadows.net -->
+</body>
+</html>

@@ -1,0 +1,52 @@
+// ------------------------------------------------------------------
+// Caption List
+// ------------------------------------------------------------------
+// 1. Breakpoints ........ Breakpoints for the font-size
+// 2. Contents ........... Content elements
+// ------------------------------------------------------------------
+
+.shower__caption {
+
+	display:block;
+	width:100%;
+	color:#3C3D40;
+	text-shadow:0 1px 0 #8D8E90;
+	font-size:20px;
+
+	// Breakpoints
+
+	@mixin scale-padding($scale) {
+		$scaled-gap:$gap / $scale;
+		padding:$scaled-gap ($scaled-gap * 2) ($scaled-gap * 1.125) $scaled-gap;
+		}
+
+	@include scale-padding(4);
+
+	@include scale-breakpoint(2) {
+		@include scale-padding(2);
+		font-size:30px;
+		}
+	@include scale-breakpoint(1) {
+		@include scale-padding(1);
+		font-size:50px;
+		}
+
+	// Contents
+
+	h1 {
+		margin-bottom:0.25em;
+		font:bold 2em/1 PT Sans Narrow, sans-serif;
+		}
+	p {
+		line-height:1;
+		font-size:1em;
+		}
+	a {
+		text-shadow:0 -1px 0 #1F3F60;
+		background:none;
+		&:hover {
+			color:lighten($blue, 5%);
+			}
+		}
+
+	}

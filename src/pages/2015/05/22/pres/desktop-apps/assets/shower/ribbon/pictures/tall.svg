@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="1200">
+	<defs>
+		<style>
+			rect {
+				fill:#979A9E;
+				}
+			text {
+				fill:#FFF;
+				text-anchor:middle;
+				font:bold 50px PT Sans Narrow, sans-serif;
+				}
+		</style>
+	</defs>
+	<rect x="0" y="0" width="400" height="1200"/>
+	<text x="200" y="620">Tall Picture</text>
+</svg>

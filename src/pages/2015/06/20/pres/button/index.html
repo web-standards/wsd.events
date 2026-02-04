@@ -1,0 +1,302 @@
+<!DOCTYPE HTML>
+
+
+<html lang="ru">
+<head>
+		<title>Кнопка</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=1024, user-scalable=no">
+		<link rel="stylesheet" href="themes/kizu/styles/screen-d90984e344.css">
+
+		<link rel="stylesheet" href="the-button.css">
+</head>
+<body class="list">
+		<header class="caption">
+				<h1>Кнопка</h1>
+				<p><a href="http://kizu.ru/">Роман Комаров</a>, <a href="http://yandex.ru/">Яндекс</a></p>
+
+		</header>
+
+		<section id="section" class="slide cover"><div><h2>Кнопка</h2>
+
+<p style="margin-top: 10em">Роман Комаров</p>
+
+<p>Web Standards Days, Санкт-Петербург, 20 июня 2015 года</p>
+
+</div></section>
+<section class="slide shout" id="section-1"><div><h2><span class="inner">Кнопки в прошлом</span></h2>
+
+</div></section>
+<section class="slide" id="section-2"><div><h2>Спрайты</h2>
+
+<p><img src="the-button/var-2002.png" alt="Спрайт: скругления и тень" style="width: 100%" /></p>
+
+<p style="text-align: center;"><img src="the-button/x-2-1.png" alt="Спрайт" /></p>
+
+</div></section>
+<section class="slide" id="section-3"><div><h2>Надёжные извращения</h2>
+
+<pre style="font-size: 0.6em"><code>&lt;div class="button"&gt;
+		Кнопка!
+		&lt;div class="top"&gt;&lt;i class="i1"&gt;&lt;/i&gt;&lt;i class="i2"&gt;&lt;/i&gt;&lt;i class="i3"&gt;&lt;/i&gt;&lt;i class="i4"&gt;&lt;/i&gt;&lt;i class="i5"&gt;&lt;/i&gt;&lt;i class="i6"&gt;&lt;/i&gt;&lt;i class="i7"&gt;&lt;/i&gt;&lt;i class="i8"&gt;&lt;/i&gt;&lt;/div&gt;
+		&lt;div class="top"&gt;&lt;b class="b1"&gt;&lt;/b&gt;&lt;b class="b3"&gt;&lt;/b&gt;&lt;b class="b4"&gt;&lt;/b&gt;&lt;b class="b5"&gt;&lt;/b&gt;&lt;b class="b6"&gt;&lt;/b&gt;&lt;/div&gt;
+		&lt;div class="bottom"&gt;&lt;i class="i8"&gt;&lt;/i&gt;&lt;i class="i7"&gt;&lt;/i&gt;&lt;i class="i6"&gt;&lt;/i&gt;&lt;i class="i5"&gt;&lt;/i&gt;&lt;i class="i4"&gt;&lt;/i&gt;&lt;i class="i3"&gt;&lt;/i&gt;&lt;i class="i1"&gt;&lt;/i&gt;&lt;i class="i2"&gt;&lt;/i&gt;&lt;/div&gt;
+		&lt;div class="bottom"&gt;&lt;b class="b6"&gt;&lt;/b&gt;&lt;b class="b5"&gt;&lt;/b&gt;&lt;b class="b4"&gt;&lt;/b&gt;&lt;b class="b3"&gt;&lt;/b&gt;&lt;b class="b1"&gt;&lt;/b&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+</div></section>
+<section class="slide" id="section-4"><div><h2>Надёжные извращения</h2>
+
+<p><img src="the-button/fake.png" alt="Надёжные извращения" /></p>
+
+</div></section>
+<section class="slide" id="section-5"><div><h2>Пиксель-пёрфект</h2>
+
+<p><img src="the-button/buttons.png" alt="Пиксель-пёрфект" width="480" /></p>
+
+</div></section>
+<section class="slide shout" id="br---"><div><h2><span class="inner">Требования исходили от дизайна:<br />соответствие макету и пиксель-пёрфект</span></h2>
+
+</div></section>
+<section class="slide shout" id="section-6"><div><h2><span class="inner">Кнопки сейчас</span></h2>
+
+</div></section>
+<section class="slide shout" id="the-buttonislandspng"><div><h2><span class="inner"><img src="the-button/islands.png" alt="…" /></span></h2>
+
+</div></section>
+<section class="slide shout" id="br----1"><div><h2><span class="inner">Требования исходят от потребностей<br />интерфейса: масштабируемость и гибкость</span></h2>
+
+</div></section>
+<section class="slide" id="anyel"><div><h2>Любой элемент — кнопка</h2>
+
+<ul class="next" style="font-size:1.7em">
+	<li><code>&lt;div&gt;</code></li>
+	<li><code>&lt;span&gt;</code></li>
+	<li><code>&lt;a&gt;</code></li>
+	<li><code>&lt;button&gt;</code></li>
+</ul>
+
+</div></section>
+<section class="slide" id="any-content"><div><h2>Любое содержимое</h2>
+
+<ul>
+	<li class="next">Многоточие для длинного текста;</li>
+	<li class="next">иконки в начале или в конце;</li>
+	<li class="next">и то, и это;</li>
+	<li class="next">и в несколько строк.</li>
+	<li><button type="button" class="button"><span class="button-content"><span class="button-before">🙀 </span><span class="button-after"> 🙀</span><span class="button-text">Кнопка<span class="aLotOfText">, в которой очень много текста, так, что он не помещается уж никак вообще<span class="secondLine"><br />И вторая строчка текста, зачем-то.</span></span></span></span></button></li>
+</ul>
+
+</div></section>
+<section class="slide" id="any-context"><div><h2>В любом контексте</h2>
+
+<ul>
+	<li class="next">Не шире родителя;</li>
+	<li class="next">фиксированные размеры;</li>
+	<li class="next">базовая линия!</li>
+	<li><span class="textBefore">Привет, </span><button type="button" class="button"><span class="button-content"><span class="button-text">Кнопка, в которой достаточно текста</span></span></button><span class="textAfter"> и пока.</span></li>
+</ul>
+
+</div></section>
+<section class="slide shout" id="section-7"><div><h2><span class="inner">Проблемы</span></h2>
+
+</div></section>
+<section class="slide" id="baseline-problem"><div><h2>Конфликт базовой линии шрифта и overflow: hidden</h2>
+
+<p class="next"><code>vertical-align: middle</code> не спасёт.</p>
+
+<p class="next"><img src="the-button/closeup.png" alt="Ещё ближе" />.</p>
+
+<p>Привет, <span type="button" class="button" style="overflow:hidden"><span class="button-content"><span class="button-text">Кнопка</span></span></span> и пока.</p>
+
+</div></section>
+<section class="slide" id="overflowhidden"><div><h2>Конфликт базовой линии шрифта и overflow: hidden</h2>
+
+<p>Общее решение: <a href="http://kizu.ru/blog/flex-baseline/" style="font-size:1.5em">http://kizu.ru/blog/flex-baseline/</a></p>
+
+<p class="next">Спойлер: решается через inline-flex, кучу проблем в ФФ и лишний враппер</p>
+
+</div></section>
+<section class="slide shout" id="section-8"><div><h2><span class="inner">Однако</span></h2>
+
+</div></section>
+<section class="slide" id="poopla"><div><h2><code>inline-flex</code> + <code>&lt;button&gt;</code> + Firefox = 💩</h2>
+
+<p class="next">Тупо не работает.</p>
+
+<p class="next">И никакие хаки не помогут.</p>
+
+</div></section>
+<section class="slide shout" id="section-9"><div><h2><span class="inner">Решение</span></h2>
+
+</div></section>
+<section class="slide" id="alot"><div><h2>Куча кода</h2>
+
+<div class="next">
+
+	<pre><code>.button {</code><code>    position: relative;</code><code>    overflow: visible;</code><code>    display: inline-block;</code><code>    padding: 0;</code><code>    border: none;</code><code>    margin: 0;</code><code>    cursor: pointer;</code><code>    -webkit-user-select: none;</code><code>       -moz-user-select: none;</code><code>        -ms-user-select: none;</code><code>            user-select: none;</code><code>    box-sizing: border-box;</code><code>    max-width: 100%;</code><code>    font: inherit;</code><code>    white-space: nowrap;</code><code>    text-decoration: none;</code><code>    color: inherit;</code><code>    background: none;</code><code>    -moz-appearance: none;</code><code>}</code><code>.button::-moz-focus-inner {</code><code>    padding: 0;</code><code>    border: none;</code><code>}</code><code>.button-content {</code><code>    display: block;</code><code>    display: -webkit-inline-box;</code><code>    display: -webkit-inline-flex;</code><code>    display: -ms-inline-flexbox;</code><code>    display: inline-flex;</code><code>    box-sizing: border-box;</code><code>    width: 100%;</code><code>    border-radius: inherit;</code><code>}</code><code>.button-content:before {</code><code>    float: left;</code><code>    content: "\a0";</code><code>    width: 0;</code><code>    min-width: 0;</code><code>}</code><code>.button-text {</code><code>    display: block;</code><code>    -webkit-flex-shrink: 1;</code><code>        -ms-flex-negative: 1;</code><code>            flex-shrink: 1;</code><code>    -webkit-flex-basis: 100%;</code><code>        -ms-flex-preferred-size: 100%;</code><code>            flex-basis: 100%;</code><code>    overflow: hidden;</code><code>    text-overflow: ellipsis;</code><code>    min-width: 0;</code><code>}</code><code>.button-text _:-ms-input-placeholder,</code><code>:root .button-text {</code><code>    -ms-flex-preferred-size: auto;</code><code>        flex-basis: auto;</code><code>    width: 100%;</code><code>}</code><code>.button-before,</code><code>.button-after {</code><code>    float: left;</code><code>    -webkit-align-self: center;</code><code>        -ms-flex-item-align: center;</code><code>            align-self: center;</code><code>    -webkit-flex-shrink: 0;</code><code>        -ms-flex-negative: 0;</code><code>            flex-shrink: 0;</code><code>}</code><code>.button-after {</code><code>    float: right;</code><code>    -webkit-box-ordinal-group: 2;</code><code>    -webkit-order: 1;</code><code>        -ms-flex-order: 1;</code><code>            order: 1;</code><code>}</code></pre>
+
+</div>
+
+</div></section>
+<section class="slide" id="section-10"><div><h2>Дополнительные обёртки</h2>
+
+<pre><code>&lt;button type="button" class="button"&gt;</code><code>    &lt;span class="button-content"&gt;</code><code>        &lt;span class="button-before"&gt;🙀 &lt;/span&gt;</code><code>        &lt;span class="button-after"&gt; 🙀&lt;/span&gt;</code><code>        &lt;span class="button-text"&gt;Текст кнопки&lt;span&gt;</code><code>    &lt;/span&gt;</code><code>&lt;/button&gt;</code></pre>
+
+</div></section>
+<section class="slide" id="section-11"><div><h2>Дополнительные обёртки</h2>
+
+<ul>
+	<li>Их не нужно бояться.</li>
+	<li class="next">Не обязательно всё время писать их руками: <a href="http://jade-lang.com/">Jade</a>, <a href="http://haml.info/">Haml</a>, <a href="http://slim-lang.com/">Slim</a> и т.д.</li>
+</ul>
+
+<div class="next">
+
+	<pre><code>+button({</code><code>  before: "🙀 ",</code><code>  content: "Текст кнопки",</code><code>  after: " 🙀"</code><code>  })</code></pre>
+
+</div>
+
+</div></section>
+<section class="slide shout" id="section-12"><div><h2><span class="inner">Проблемы флексбоксов</span></h2>
+
+</div></section>
+<section class="slide" id="section-13"><div><h2>Кроссбраузерность</h2>
+
+<p>Не ок.</p>
+
+<ul style="font-size:1.8em">
+	<li>
+		<p><a href="https://github.com/philipwalton/flexbugs">https://github.com/philipwalton/flexbugs</a></p>
+	</li>
+	<li>
+		<p><a href="https://gist.github.com/wilddeer/a7d8d806dd84bf5c03e2">https://clck.ru/9WxSv</a></p>
+	</li>
+</ul>
+
+</div></section>
+<section class="slide" id="section-14"><div><h2>Фолбек на флоатах</h2>
+
+<pre style="float:left; padding-right: 40px"><code>.button-content
+		display: inline-flex
+
+.button-text
+		display: block
+		overflow: hidden
+		flex-shrink: 1
+</code></pre>
+
+<pre style="margin-right: -40px"><code>.button-before, .button-after
+		float: left
+		flex-shrink: 0
+
+.button-after
+		float: right
+		order: 1
+</code></pre>
+
+</div></section>
+<section class="slide" id="section-15"><div><h2>«Якорь» для базовой линии</h2>
+
+<pre><code>.button-content:before {</code><code>    float: left; /* для фолбека */</code><code>    content: "\a0";</code><code>    width: 0;</code><code>    min-width: 0; /* для старой Оперы */</code><code>}</code></pre>
+
+</div></section>
+<section class="slide" id="section-16"><div><h2>Ширина внутреннему элементу на все 100%</h2>
+
+<pre><code>.button-text {</code><code>    flex-shrink: 1;</code><code>    flex-basis: 100%; /* не `width` */</code><code>    overflow: hidden;</code><code>    min-width: 0; /* для старой Оперы */</code><code>}</code></pre>
+
+</div></section>
+<section class="slide" id="section-17"><div><h2>Ширина внутреннему элементу на все 100%</h2>
+
+<p>Привет, IE!</p>
+
+<pre><code>:root .button-text,</code><code>_:-ms-input-placeholder {</code><code>    flex-basis: auto;</code><code>    width: 100%;</code><code>}</code></pre>
+
+</div></section>
+<section class="slide" id="section-18"><div><h2>На свой страх и риск</h2>
+
+<pre><code>* {</code><code>    flex-shrink: 0;</code><code>    min-width: 0;</code><code>}</code></pre>
+
+</div></section>
+<section class="slide shout" id="br----2"><div><h2><span class="inner">Домашнее задание:<br />файловый инпут и селект</span></h2>
+
+</div></section>
+<section class="slide shout" id="section-19"><div><h2><span class="inner">Современные технологии — не панацея</span></h2>
+
+</div></section>
+<section class="slide shout" id="section-20"><div><h2><span class="inner">Дополнительные обёртки спасут мир</span></h2>
+
+</div></section>
+<section class="slide" id="section-21"><div><h2>Спасибо!</h2>
+
+<ul style="font-size:1.7em">
+	<li>Роман Комаров</li>
+	<li><a href="http://kizu.ru">kizu.ru</a></li>
+	<li><a href="https://twitter.com/ki_zu/">@ki_zu</a></li>
+	<li><a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#107;&#105;&#122;&#117;&#064;&#107;&#105;&#122;&#117;&#046;&#114;&#117;">&#107;&#105;&#122;&#117;&#064;&#107;&#105;&#122;&#117;&#046;&#114;&#117;</a></li>
+</ul>
+</div></section>
+
+
+		<div class="progress"><div></div></div>
+		<script src="shower/shower.min.js"></script>
+		<!-- Copyright © 2015 Роман Комаров — http://kizu.ru/, Яндекс — http://yandex.ru/ -->
+
+
+		<script>
+
+var maxFontSize = 200;
+var minFontSize = 36;
+
+function get_fs(el) {
+		return parseFloat(document.defaultView.getComputedStyle(el,null)
+															 .getPropertyValue('font-size'));
+}
+
+function fix_contents(el) {
+		var inner = el.getElementsByClassName('inner')[0];
+		if (inner) {
+				// Reset the styles
+				inner.style.fontSize = "1em";
+				inner.style.webkitTransform = 'scale(1)';
+
+				var initial_fs = get_fs(el);
+				var modifier = el.offsetWidth / inner.offsetWidth;
+				var new_fs = Math.max(minFontSize, Math.min(initial_fs * modifier, maxFontSize));
+				inner.style.fontSize = new_fs + "px";
+
+				if (new_fs == minFontSize) {
+						inner.style.whiteSpace = 'normal';
+				} else {
+						inner.style.whiteSpace = 'nowrap';
+				}
+
+				// If browser don't support fractional font-size,
+				// then round the font-size down and resize
+				// using transform, if possible
+				if (new_fs != minFontSize && get_fs(inner) % 1 === 0 ) {
+						inner.style.fontSize = Math.floor(new_fs) + "px";
+						modifier = (el.offsetWidth / inner.offsetWidth) / ((initial_fs * modifier) / new_fs);
+						inner.style.webkitTransform = 'scale(' + modifier + ')';
+				}
+		}
+}
+
+var els = document.querySelectorAll('.shout h2, h3');
+
+function check_size() {
+		Array.prototype.forEach.call(els, fix_contents);
+}
+
+check_size();
+
+window.onresize = function(event) {
+		check_size();
+}
+
+		</script>
+
+
+</body>
+</html>

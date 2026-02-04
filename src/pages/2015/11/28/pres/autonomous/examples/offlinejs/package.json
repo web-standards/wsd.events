@@ -1,0 +1,22 @@
+{
+  "name": "offline.js-demo",
+  "version": "1.0.0",
+  "description": "Демонстрация работы offline.js",
+  "scripts": {
+    "rebuild": "browserify script.js -t babelify -o bundle.js",
+    "watch": "watchify script.js -t babelify -o bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SilentImp/offline.js-demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SilentImp/offline.js-demo/issues"
+  },
+  "homepage": "https://github.com/SilentImp/offline.js-demo#readme",
+  "dependencies": {
+    "browserify": "^12.0.0"
+  }
+}

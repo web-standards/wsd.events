@@ -1,0 +1,24 @@
+// ------------------------------------------------------------------
+// Section: Grid
+// ------------------------------------------------------------------
+
+&.grid {
+
+	background-image:
+		url(../images/grid.png),
+		url(../images/guides.png);
+	@include retina {
+		background-image:
+			url(../images/grid@2x.png),
+			url(../images/guides@2x.png);
+		background-size:
+			25px,
+			$width auto;
+		}
+
+	-ms-interpolation-mode:nearest-neighbor;
+	image-rendering:-webkit-optimize-contrast;
+	image-rendering:-moz-crisp-edges;
+	image-rendering:crisp-edges;
+
+	}

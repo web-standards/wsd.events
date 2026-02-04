@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>CSS Shapes, CSS Masking</title>
+
+    <style>
+      body
+      {
+        font: 13px/1.5em Helvetica, Arial, sans-serif;
+      }
+
+      #speakers
+      {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .card
+      {
+        max-width: 400px;
+
+        padding: 10px 10px 20px 10px;
+        margin-bottom: 20px;
+
+        border-bottom: 1px solid #ccc;
+      }
+
+      .card__column,
+      .card__picture
+      {
+        width: 126px;
+        height: 126px;
+      }
+
+      .card__picture
+      {
+        float: left;
+
+
+        -webkit-mask-image: url("rect.svg");
+        shape-outside: url("https://dl.dropboxusercontent.com/u/1744447/rect.svg");
+
+      /*
+         shape-outside: url("data:image/svg+xml;utf8,<svg width='126px' height='126px' viewBox='0 0 126 126' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:sketch='http://www.bohemiancoding.com/sketch/ns'><g id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' sketch:type='MSPage'><rect id='Rectangle-1' fill='#FF0000' sketch:type='MSShapeGroup' transform='translate(63.000000, 63.000000) rotate(-315.000000) translate(-63.000000, -63.000000) ' x='13' y='13' width='100' height='100' rx='20'></rect></g></svg>");
+      */
+
+      /*
+        shape-outside: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%) padding-box;
+        padding-right: 35px;
+      */
+      }
+
+    </style>
+  </head>
+  <body>
+    <h1>CSS Shapes, CSS Masking</h1>
+
+
+    <section class="section" id="speakers">
+    <div class="card" id="michael-bodnarchuk">
+        <div class="card__description content">
+            <h3>Михаил Бондарчук <a href="https://twitter.com/davert">@davert</a></h3>
+            <p>
+              <img class="card__picture" src="speakers/michael-bodnarchuk.jpg" alt="Михаил Бондарчук">
+              Веб-разработчик, консультант, работает в&nbsp;компании <a href="http://codegyre.com/">Codegyre</a>, разрабатывает PHP-фреймворк для функционального тестирования <a href="http://codeception.com/">Codeception</a> и&nbsp;портирует его на&nbsp;Node.js. Также пишет на&nbsp;JavaScript, Ember.js, Ruby on&nbsp;Rails, увлекается туризмом и&nbsp;немного психологией.
+            </p>
+        </div>
+    </div>
+    <div class="card" id="vadim-makeev">
+        <div class="card__description content">
+            <h3>Вадим Макеев <a href="https://twitter.com/pepelsbey">@pepelsbey</a></h3>
+            <p>
+              <img class="card__picture" src="speakers/vadim-makeev.jpg" alt="Вадим Макеев">
+              Веб-евангелист в&nbsp;<a href="http://opera.com/">Opera</a>, основатель сообщества «Веб-стандарты», автор движка для презентаций <a href="http://shwr.me/">Shower</a>, разработчик, организатор и&nbsp;участник IT-конференций, автор блога <a href="http://pepelsbey.net/">Пепелсбей.net</a>, пропагандист веб-стандартов.
+            </p>
+        </div>
+    </div>
+    <div class="card" id="igor-kononuchenko">
+        <div class="card__description content">
+            <h3>Игорь Кононученко <a href="https://twitter.com/kigorw">@kigorw</a></h3>
+            <p>
+              <img class="card__picture" src="speakers/igor-kononuchenko.jpg" alt="Игорь Кононученко">
+              Разработчик редактора и&nbsp;браузерного расширения Grammarly, которыми каждый день пользуются 3&nbsp;млн людей. В&nbsp;прошлом проводил успешные курсы по&nbsp;JavaScript, был сооснователем дизайн-студии, в&nbsp;составе которой переделал <a href="http://dou.ua/">DOU.ua</a>, личный сайт <a href="http://kigorw.com/">kigorw.com</a>.
+            </p>
+        </div>
+    </div>
+    <div class="card" id="andrey-listochkin">
+        <div class="card__description content">
+            <h3>Андрей Листочкин <a href="https://twitter.com/listochkin">@listochkin</a></h3>
+            <p>
+              <img class="card__picture" src="speakers/andrey-listochkin.jpg" alt="Андрей Листочкин">
+              Активный участник JavaScript-сообщества Украины, последние 8&nbsp;лет разрабатывает большие веб-приложения. Один из&nbsp;сооснователей самого крупного чат-сообщества <a href="https://github.com/dev-ua">dev-ua</a> для разработчиков в&nbsp;Восточной Европе, член рабочей группы локализации Node.js для украинского языка, соорганизатор <a href="http://kyivjs.org.ua/">KyivJS</a>, один из&nbsp;участников некоммерческого образовательного IT-движения <a href="http://kottans.org/">Kottans</a>.
+            </p>
+        </div>
+    </div>
+    <div class="card" id="anton-nemcev">
+        <div class="card__description content">
+            <h3>Антон Немцев <a href="https://twitter.com/silentimp">@silentimp</a></h3>
+            <p>
+              <img class="card__picture" src="speakers/anton-nemcev.jpg" alt="Антон Немцев">
+              Независимый фронтенд-разработчик на&nbsp;протяжении 15&nbsp;лет. Создатель и&nbsp;редактор журнала «<a href="http://frontender.info/">Frontender Magazine</a>». Представитель «<a href="http://web-standards.ru/editors/">Веб-стандартов</a>» в&nbsp;Украине. Докладчик на&nbsp;международных и&nbsp;локальных конференций, эксперт на&nbsp;чемпионате <a href="http://uawebchallenge.com/front-end">UA&nbsp;Web Challenge</a>.
+            </p>
+        </div>
+    </div>
+    <div class="card" id="roman-prudnikov">
+        <div class="card__description content">
+            <h3>Роман Прудников <a href="https://twitter.com/RayProud">@RayProud</a></h3>
+            <p>
+              <img class="card__picture" src="speakers/roman-prudnikov.jpg" alt="Роман Прудников">
+              Фронтенд-разработчик в компании «НГС» из Новосибирска. Любит красивый дизайн и рок-музыку. В тайне от всех пишет стихи и рассказы, выступает и записывает песни под псевдонимом «RayProud».
+            </p>
+        </div>
+    </div>
+    <div class="card" id="sergey-syrkin">
+        <div class="card__description content">
+            <h3>Сергей Сыркин <a href="https://twitter.com/jchouse_ua">@jchouse_ua</a></h3>
+            <p>
+              <img class="card__picture" src="speakers/sergey-syrkin.jpg" alt="Сергей Сыркин">
+              Старший фронтенд-разработчик в&nbsp;<a href="http://www.movedin.co/">MovedIn</a>. Начинал как верстальщик в&nbsp;середине 2000-х, потом переучился во&nbsp;фронтендера в&nbsp;Яндексе и&nbsp;провёл там три года. Сейчас стартапит в&nbsp;английской компании, в&nbsp;свободное время пишет <a href="https://atom.io/users/jchouse">плагины для Atom</a> и&nbsp;руководит <a href="https://www.facebook.com/KievFloorballClub/">спортивным клубом</a>.
+            </p>
+        </div>
+    </div>
+    <div class="card" id="yuri-tkachenko">
+        <div class="card__description content">
+            <h3>Юра Ткаченко <a href="https://twitter.com/yuritkachenko">@yuritkachenko</a></h3>
+            <p>
+              <img class="card__picture" src="speakers/yuri-tkachenko.jpg" alt="Юра Ткаченко">
+              Фронтенд-разработчик, 8&nbsp;лет занимался фронтендом в&nbsp;симферопольском офисе Яндекса и&nbsp;принимал участие в&nbsp;верстке практически каждого проекта. В&nbsp;конце 2011 года создал в&nbsp;Симферополе группу фронтенд-разработки внутренних сервисов, которая решают практически все задачи интранет-сервисов в&nbsp;Яндексе. В&nbsp;2015 году переехал в&nbsp;Киев и&nbsp;сотрудничает с&nbsp;различными компаниями, недавно присоединился к&nbsp;разработке чата <a href="https://chatgrape.com/">ChatGrape</a>, участвует в&nbsp;разработке новой версии <a href="http://learn.javascript.ru/">Современного учебника JavaScript</a>.
+            </p>
+        </div>
+    </div>
+</section>
+  </body>
+</html>

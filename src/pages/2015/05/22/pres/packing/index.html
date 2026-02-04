@@ -1,0 +1,602 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+	<title>Пакуйте чемоданы. Грузите апельсины.</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=792, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link rel="stylesheet" href="shower/themes/bright/styles/screen-d90984e344.css">
+	<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body class="full">
+
+<header class="caption">
+	<h1>Пакуйте чемоданы. Грузите апельсины.</h1>
+
+	<p>Владимир Кузнецов, Graph</p>
+</header>
+
+<section class="slide intro">
+	<div>
+		<div class="layers">
+			<img src="assets/images/intro-1.png" class="layer-1">
+			<img src="assets/images/intro-2.png" class="layer-2">
+			<img src="assets/images/intro-3.png" class="layer-3">
+		</div>
+		<div class="intro-title">
+			<h2 class="intro-title__heading">
+				Пакуйте <span class="intro-title__help">чемоданы</span>.
+				<span class="intro-title__second">Грузите <span class="intro-title__help">апельсины</span>.</span>
+			</h2>
+			<p style="margin-bottom: 0">Владимир Кузнецов, Graph</p>
+			<p>Frontend Conf 2015, Москва</p>
+		</div>
+	</div>
+</section>
+
+<section class="slide cover"><div>
+	<video preload="auto" autoplay loop style="width: 1024px; height: 640px;">
+		<source src="assets/video/bad-suitcase.mp4" type="video/mp4">
+	</video>
+</div></section>
+
+<section class="slide"><div>
+	<h2>План</h2>
+	<ol>
+		<li class="next">Модули в JavaScript — CommonJS, AMD, UMD, ES 2015</li>
+		<li class="next">Инструменты для упаковки модулей:
+			<ul>
+				<li>Browserify</li>
+				<li>Webpack</li>
+			</ul>
+		</li>
+		<li class="next">Репозитории модулей — npm и Bower</li>
+	</ol>
+</div></section>
+
+<section class="slide shout"><div>
+	<h2>Модульный код</h2>
+</div></section>
+
+<section class="slide"><div>
+	<h2>IIFE (Immediately invoked function expression)</h2>
+	<pre>
+		<code>var FooBarModule = (function () {</code>
+		<code>  return {</code>
+		<code>    foo: function () { <span class="fade">/* some useful code here */</span> },</code>
+		<code>    bar: function () { <span class="fade">/* more code here */</span> } </code>
+		<code>  };</code>
+		<code>}());</code>
+	</pre>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Плагины jQuery</h2>
+	<pre>
+		<code>jQuery.fn.foobar = function (options) {</code>
+		<code>  return this.each(function () {</code>
+		<code>    // plug-in code here</code>
+		<code>  });</code>
+		<code>};</code>
+	</pre>
+</div></section>
+
+<section class="slide shout"><div>
+	<h2>Порядок подключения фрагментов кода</h2>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Раньше делали так:</h2>
+	<pre>
+		<code>&lt;script src=&quot;jquery.js&quot;&gt;&lt;/script&gt;</code>
+		<code>&lt;script src=&quot;plugin1.js&quot;&gt;&lt;/script&gt;</code>
+		<code>&lt;script src=&quot;plugin2.js&quot;&gt;&lt;/script&gt;</code>
+		<code>&lt;script src=&quot;plugin3.js&quot;&gt;&lt;/script&gt;</code>
+		<code>&lt;script src=&quot;init.js&quot;&gt;&lt;/script&gt;</code>
+	</pre>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Потом стали делать так:</h2>
+	<pre>
+		<code>&lt;script src=&quot;bundle.js&quot;&gt;&lt;/script&gt;</code>
+	</pre>
+	<pre>
+		<code>$ cat jquery.js \</code>
+		<code>  plugin1.js plugin2.js plugin3.js \</code>
+		<code>  init.js \</code>
+		<code>    &gt; bundle.js</code>
+	</pre>
+</div></section>
+
+<section class="slide shout"><div>
+	<h2>Проблема: определять порядок автоматически</h2>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Конфигурация зависимостей</h2>
+	<ul>
+		<li>Dojo <span class="next">(перешли на AMD)</span></li>
+		<li>YUI <span class="next">(закрыли проект)</span></li>
+		<li>Самоделки</li>
+	</ul>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Конфигурация зависимостей</h2>
+	<div class="col2-left">
+		<pre class="pre">
+			<code>jquery</code>
+			<code>backbone</code>
+			<code><span class="fade">├─</span> jquery</code>
+			<code><span class="fade">└─</span> underscore</code>
+			<code>item-list</code>
+			<code><span class="fade">└─</span> backbone</code>
+			<code>search-widget</code>
+			<code><span class="fade">└─</span> autocomplete</code>
+			<code>   <span class="fade">└─</span> jquery</code>
+		</pre>
+	</div>
+	<div class="col2-right">
+		<pre class="pre">
+			<code class="next">jquery</code>
+			<code class="next">autocomplete</code>
+			<code class="next">search-widget</code>
+			<code class="next">underscore</code>
+			<code class="next">backbone</code>
+			<code class="next">item-list</code>
+		</pre>
+	</div>
+</div></section>
+
+<section class="slide shout"><div>
+	<h2>Форматы модулей</h2>
+</div></section>
+
+<section class="slide"><div>
+	<h2>CommonJS</h2>
+	<p><a href="http://wiki.commonjs.org/wiki/Modules" target="_blank">wiki.commonjs.org/wiki/Modules</a></p>
+	<ol class="next">
+		<li>Функция <code>require</code></li>
+		<li>Объект <code>exports</code></li>
+		<li>Объект <code>module</code></li>
+	</ol>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Пример CommonJS-модуля</h2>
+	<pre>
+		<code><span class="fade">/* dictionary.js */</span></code>
+		<code><mark>exports</mark>.hello = 'Hello World!';</code>
+	</pre>
+	<pre>
+		<code><span class="fade">/* app.js */</span></code>
+		<code>var dictionary = <mark>require</mark>('./dictionary.js');</code>
+		<code>console.log(dictionary.hello);</code>
+	</pre>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Особенности CommonJS-модуля</h2>
+	<p>Формат разрабатывался исключительно для выполнения на&nbsp;сервере или внутри приложения.</p>
+	<ul class="next">
+		<li>один файл &mdash; один модуль;</li>
+		<li class="next">синхронная загрузка модулей;</li>
+		<li class="next">код модулей не может быть исполнен в браузере без модификаций.</li>
+	</ul>
+</div></section>
+
+<section class="slide"><div>
+	<h2>AMD (Asynchronous Module Definition)</h2>
+	<p><a href="https://github.com/amdjs/amdjs-api" target="_blank">github.com/amdjs/amdjs-api</a></p>
+	<ol class="next">
+		<li>Функция <code>define</code></li>
+		<li>Поле <code>define.amd</code> &mdash; объект</li>
+	</ol>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Пример AMD-модуля</h2>
+	<pre>
+		<code><mark>define</mark>('dictionary', {</code>
+		<code>  hello: 'Hello World!';</code>
+		<code>});</code>
+	</pre>
+	<pre>
+		<code><mark>define</mark>('app', ['dictionary'], function (dictionary) {</code>
+		<code>  console.log(dictionary.hello);</code>
+		<code>});</code>
+	</pre>
+</div></section>
+
+<section class="slide"><div>
+	<h2>AMD используется как обёртка для&nbsp;CommonJS</h2>
+	<pre>
+		<code>define(['require', 'exports', 'module'],</code>
+		<code>    function (<mark>require</mark>, <mark>exports</mark>, <mark>module</mark>) {</code>
+		<code>  var foo = require('foo'),</code>
+		<code>  exports.bar = function () {};</code>
+		<code>});</code>
+	</pre>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Особенности AMD-модуля</h2>
+	<ul>
+		<li>код может исполнятся в браузере без модификаций;</li>
+		<li>возможна асинхронная загрузка модулей;</li>
+		<li>модуль может зависеть от данных любых типов&nbsp;&mdash;<br>текст, шаблоны, стили и т.п.</li>
+	</ul>
+</div></section>
+
+<section class="slide"><div>
+	<h2>UMD (Universal Module Definition)</h2>
+	<p><a href="https://github.com/umdjs/umd" target="_blank">github.com/umdjs/umd</a></p>
+	<p>Универсальная обёртка, которая в зависимости от окружения экспортирует модуль
+		как CommonJS или как AMD.</p>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Модули ECMAScript 2015</h2>
+	<pre>
+		<code><span class="fade">/* dictionary.js */</span></code>
+		<code><mark>export</mark> const hello = 'Hello World!';</code>
+	</pre>
+	<pre>
+		<code><span class="fade">/* app.js */</span></code>
+		<code><mark>import</mark> * as dictionary from './dictionary.js';</code>
+		<code>console.log(dictionary.hello);</code>
+	</pre>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Модули ECMAScript 2015</h2>
+	<p>Модуль экспортирует функции, переменные или константы,
+		перед объявлением которых указано ключевое слово
+		<strong>export</strong>.</p>
+	<pre>
+		<code>export var foo = &quot;Hello World!&quot;</code>
+		<code>export function bar() { return &quot;foobar&quot;; };</code>
+		<code class="next">export <mark>default</mark> function () { return &quot;default&quot;; };</code>
+	</pre>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Модули ECMAScript 2015</h2>
+	<pre>
+		<code>import theDefault from './foobar.js';</code>
+		<code class="next">import {foo, bar} from './foobar.js';</code>
+		<code class="next">import {foo as fooVariable} from './foobar.js';</code>
+		<code class="next">import * as foobar from './foobar.js';</code>
+	</pre>
+</div></section>
+
+<section class="slide shout"><div>
+	<h2>Инструменты</h2>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Инструменты</h2>
+	<img src="assets/images/browserify-webpack.png" style="width: 100%;">
+</div></section>
+
+<section class="slide shout"><div>
+	<h2>Browserify</h2>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Browserify</h2>
+	<pre>
+		<code>$ browserify main.js > bundle.js</code>
+	</pre>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Трансформации</h2>
+	<ul>
+		<li>другие языки и диалекты;</li>
+		<li>шаблоны;</li>
+		<li>внедрение статических файлов;</li>
+		<li>использование «не модульного» кода.</li>
+	</ul>
+</div></section>
+
+<section class="slide"><div>
+	<h2>CoffeeScript</h2>
+	<pre>
+		<code>$ browserify -t <mark class="important">coffeeify</mark> main.coffee > bundle.js</code>
+	</pre>
+</div></section>
+
+<section class="slide"><div>
+	<h2>ECMAScript 2015 и JSX</h2>
+	<pre>
+		<code>$ browserify -t <mark class="important">babelify</mark> main.jsx > bundle.js</code>
+	</pre>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Шаблоны Handlebars</h2>
+	<pre>
+		<code><span class="fade">/* main.js */</span></code>
+		<code>var template = require('./view.hbs');</code>
+		<code>var html = template({title: "Hello World!"});</code>
+	</pre>
+	<pre>
+		<code>$ browserify -t <mark class="important">browserify-handlebars</mark> main.js > bundle.js</code>
+	</pre>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Статические файлы</h2>
+	<pre>
+		<code><span class="fade">/* main.js */</span></code>
+		<code>var fs = require('fs');</code>
+		<code>var text = fs.readFileSync(</code>
+		<code>  __dirname + '/helloworld.txt', 'utf8'</code>
+		<code>);</code>
+	</pre>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Статические файлы</h2>
+	<pre>
+		<code>$ browserify -t <mark class="important">brfs</mark> main.js > bundle.js</code>
+	</pre>
+	<pre>
+		<code><span class="fade">/* bundle.js */</span></code>
+		<code>var text = "Hello World!";</code>
+	</pre>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Использование вместе с&nbsp;&laquo;не&nbsp;модульным&raquo; кодом</h2>
+	<pre>
+		<code>&quot;browser&quot;: {</code>
+		<code>  &quot;bootstrap&quot;: &quot;./assets/js/bootstrap.js&quot;</code>
+		<code>},</code>
+		<code>&quot;browserify-shim&quot;: {</code>
+		<code>  &quot;bootstrap&quot;: {&quot;depends&quot;: [&quot;jquery&quot;]}</code>
+		<code>}</code>
+	</pre>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Использование вместе с&nbsp;&laquo;не&nbsp;модульным&raquo; кодом</h2>
+	<pre>
+		<code><span class="fade">/* main.js */</span></code>
+		<code>require('bootstrap');</code>
+	</pre>
+	<p>В упаковку автоматически будут добавлены все модули,
+		которые были перечислены в конфигурации для «bootstrap».</p>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Использование вместе с&nbsp;&laquo;не&nbsp;модульным&raquo; кодом</h2>
+	<pre>
+		<code>&quot;browserify-shim&quot;: {</code>
+		<code>  &quot;jquery&quot;: {&quot;exports&quot;: &quot;global:$&quot;}</code>
+		<code>}</code>
+	</pre>
+	<p>Если грузим jQuery из CDN, то упаковывать её не нужно.</p>
+</div></section>
+
+<section class="slide cover"><div>
+	<video preload="auto" autoplay loop style="width: 1024px; height: 640px;">
+		<source src="assets/video/ll-studio-screens.mp4" type="video/mp4">
+	</video>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Ручное управление сборкой</h2>
+	<p>Интерактивные экраны в студии London Live:</p>
+	<ul>
+		<li>приложение для презентера;</li>
+		<li>приложение для редактора.</li>
+	</ul>
+	<p class="next">Общие модули мы вынесли в отдельную упаковку.</p>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Упаковка с общими модулями</h2>
+	<pre>
+		<code>$ browserify \</code>
+		<code>  -r jquery -r underscore -r backbone \</code>
+		<code>  > libs.js</code>
+	</pre>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Упаковка для каждого приложения</h2>
+	<pre>
+		<code>$ LIBS=&quot;-x jquery -x underscore -x backbone&quot;</code>
+		<code>$ browserify $LIBS editor.js > editor.bundle.js</code>
+		<code>$ browserify $LIBS viewer.js > viewer.bundle.js</code>
+	</pre>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Watchify</h2>
+	<pre>
+		<code>$ watchify main.js -o bundle.js</code>
+	</pre>
+	<p class="next">Нужно явно указать результирующий файл.</p>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Browserify</h2>
+	<p><a href="http://browserify.org/" target="_blank">browserify.org</a></p>
+	<ul class="next">
+		<li>Идеально подходит для небольших SPA или сайтов.</li>
+		<li class="next">Удобно собирать финальную версию пакета для npm или Bower.</li>
+		<li class="next">Легко настраивается для работы с разными типами данных.</li>
+	</ul>
+</div></section>
+
+<section class="slide shout"><div>
+	<h2>Webpack</h2>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Webpack</h2>
+	<ul>
+		<li>CommonJS и AMD модули;</li>
+		<li class="next">загрузчики любых статических ресурсов;</li>
+		<li class="next">плагины для оптимизации;</li>
+		<li class="next">может генерировать несколько упаковок;</li>
+		<li class="next">инструменты для разработчика.</li>
+	</ul>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Загрузчики</h2>
+	<p>Нужны для конвертирования любых статических ресурсов в&nbsp;JavaScript.</p>
+	<pre class="next">
+		<code>var template = require('jade!./template.jade');</code>
+		<code>require('style!css!less!./my-widget.less');</code>
+	</pre>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Загрузчики</h2>
+	<p>Конфигурация загрузчиков через <strong>webpack.config.js</strong>:</p>
+	<pre class=&quot;next&quot;>
+		<code>{ &quot;module&quot;:</code>
+		<code>  { &quot;loaders&quot;: [</code>
+		<code>    { &quot;test&quot;: /\.jade$/, &quot;loader&quot;: &quot;jade-loader&quot; }</code>
+		<code>  ]}</code>
+		<code>}</code>
+	</pre>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Плагины</h2>
+	<ul>
+		<li class="next">ContextReplacementPlugin</li>
+		<li class="next">PrefetchPlugin</li>
+		<li class="next">DedupePlugin</li>
+		<li class="next">UglifyJsPlugin</li>
+		<li class="next">CommonsChunkPlugin</li>
+		<li class="next">DefinePlugin</li>
+		<li class="next">HotModuleReplacementPlugin</li>
+	</ul>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Несколько упаковок</h2>
+	<p>Некоторые загрузчики и плагины могут создавать дополнительные&nbsp;файлы.</p>
+	<p class="next">Например, <strong>extract-text-webpack-plugin</strong> может
+		сохранить стили для модулей в&nbsp;отдельный CSS-файл, а&nbsp;не&nbsp;вставлять их&nbsp;на&nbsp;страницу.</p>
+</div></section>
+
+<section class="slide"><div>
+	<h2>«Code splitting»</h2>
+	<pre>
+		<code>if (!window.Intl) {</code>
+		<code>  var waitForChunk = require('bundle!./intl.js);</code>
+		<code>  waitForChunk(callback);</code>
+		<code>} else {</code>
+		<code>  callback();</code>
+		<code>}</code>
+	</pre>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Webpack</h2>
+	<p><a href="http://webpack.github.io/" target="_blank">webpack.github.io</a></p>
+	<ul class="next">
+		<li>Работает с любыми модулями.</li>
+		<li class="next">Даёт больше возможностей для настройки.</li>
+		<li class="next">Может делать упаковки, которые загружаются асинхронно и&nbsp;&laquo;лениво&raquo;.</li>
+	</ul>
+</div></section>
+
+<section class="slide cover"><div>
+	<video preload="auto" autoplay loop style="width: 1024px; height: 640px;">
+		<source src="assets/video/good-suitcase.mp4" type="video/mp4">
+	</video>
+</div></section>
+
+<section class="slide shout"><div>
+	<h2>Где хранить модули?!</h2>
+</div></section>
+
+<section class="slide shout"><div>
+	<h2>npm</h2>
+</div></section>
+
+<section class="slide"><div>
+	<h2>npm</h2>
+	<ul>
+		<li>JavaScript в формате <strong>CommonJS</strong> или <strong>UMD</strong>;</li>
+		<li class="next">конфигурация в <strong>package.json</strong>;</li>
+		<li class="next">пакеты устанавливаются в <strong>node_modules</strong>;</li>
+		<li class="next"><strong>древовидная структура</strong> зависимостей;</li>
+		<li class="next">пакет может содержать <strong>любой</strong> другой вспомогательный контент.</li>
+	</ul>
+</div></section>
+
+<section class="slide shout"><div>
+	<h2>Bower</h2>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Bower</h2>
+	<ul>
+		<li>JavaScript в формате <strong>AMD</strong> или <strong>UMD</strong>;</li>
+		<li class="next">конфигурация в <strong>bower.json</strong>;</li>
+		<li class="next">пакеты устанавливаются в <strong>bower_components</strong>;</li>
+		<li class="next"><strong>плоский список</strong> зависимостей;</li>
+		<li class="next">пакет может содержать <strong>любой</strong> другой вспомогательный контент.</li>
+	</ul>
+</div></section>
+
+<section class="slide"><div>
+	<h2>npm vs. Bower</h2>
+	<table>
+		<thead>
+		<tr>
+			<th style="width: 42%;">&nbsp;</th>
+			<th style="width: 29%; text-align: center;">npm</th>
+			<th style="width: 29%; text-align: center;">Bower</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<th>Пакеты</th>
+			<td style="text-align: center;">CommonJS</td>
+			<td style="text-align: center;">AMD</td>
+		</tr>
+		<tr>
+			<th>Зависимости</th>
+			<td style="text-align: center;">дерево</td>
+			<td style="text-align: center;">список</td>
+		</tr>
+		<tr>
+			<th>Модули разных версий</th>
+			<td style="text-align: center;">да</td>
+			<td style="text-align: center;">нет</td>
+		</tr>
+		</tbody>
+	</table>
+</div></section>
+
+<section class="slide shout"><div>
+	<h2>Заключение</h2>
+</div></section>
+
+<section class="slide"><div>
+	<h2>Спасибо за внимание</h2>
+	<p><strong>Владимир Кузнецов</strong><br>
+		Twitter: <a href="https://twitter.com/mista_k">@mista_k</a><br>
+		Блог: <a href="http://noteskeeper.ru">noteskeeper.ru</a></p>
+	<p>Слайды презентации: <a href="http://goo.gl/p61RpF" target="_blank">goo.gl/p61RpF</a>
+</div></section>
+
+<div class="progress">
+	<div></div>
+</div>
+<script src="shower/shower.min.js"></script>
+<!-- Copyright © 2015 Владимир Кузнецов -->
+</body>
+</html>

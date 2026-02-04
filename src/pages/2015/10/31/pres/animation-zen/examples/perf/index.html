@@ -1,0 +1,59 @@
+<html>
+<head>
+    <title>Производительность</title>
+    <meta charset="UTF-8">
+    <script src="../vendors/jquery.min.js"></script>
+    <script src="../vendors/TweenMax.min.js"></script>
+</head>
+<body>
+
+<div id="demo">
+    <div id="controls">
+        <form id="form">
+            <li style="padding-left:16px;">
+                Техника:
+                <select id="engine" size="1">
+                    <option value="gsap">GSAP (JS)</option>
+                    <option value="css" selected="selected">CSS</option>
+                </select>
+            </li>
+            <li>
+                Количество боксов:
+                <select id="quantity" size="1">
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                    <option value="200">200</option>
+                    <option value="300">300</option>
+                    <option value="400">400</option>
+                    <option value="500">500</option>
+                    <option value="750">750</option>
+                    <option value="1000">1000</option>
+                    <option value="1250">1250</option>
+                    <option value="1500">1500</option>
+                    <option value="2000">2000</option>
+                    <option value="2500">2500</option>
+                    <option value="3000" selected>3000</option>
+                    <option value="10000">10000</option>
+                </select>
+            </li>
+            <li>
+                Анимация:&nbsp;
+                <div id="x-movement-type">
+                    <label><input type="radio" name="xMovement" value="x" checked> transform:translateX()</label>
+                    <label><input type="radio" name="xMovement" value="left"> left</label>
+                </div>
+            </li>
+            <div id="start">СТАРТ</div>
+        </form>
+    </div>
+
+    <div id="field">
+        <div id="container"></div>
+    </div>
+</div>
+
+<script src="main.js"></script>
+<link rel="stylesheet" href="main.css">
+</body>
+</html>

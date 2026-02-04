@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Save form messages</title>
+  <script src="jquery.js"></script>
+  <style>
+    html, body{
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    form{
+      width: 60vw;
+      padding: 0;
+      margin: 20px auto;
+      position: absolute;
+      top: 20px;
+      left: 0;
+      right: 0;
+    }
+
+    fieldset{
+      border-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    input, textarea{
+      margin: 0 0 20px;
+      padding: 10px 20px;
+      width: 60vw;
+      border: 1px solid #333;
+      resize: none;
+      line-height: 20px;
+      box-sizing: border-box;
+    }
+
+    textarea{
+     height: 120px;
+    }
+  </style>
+</head>
+<body>
+  <form action="/comment/" method="post" id="comment-form">
+    <fieldset>
+        <input type="text" name="user_name" placeholder="Имя" required="required">
+    </fieldset>
+    <fieldset>
+        <textarea name="user_message" cols="30" rows="10" placeholder="Сообщение" required="required"></textarea>
+    </fieldset>
+    <fieldset>
+        <button type="sybmit">Отправить</button>
+    </fieldset>
+  </form>
+  <script>
+    $(document).ready(function(){
+
+      var form = $('#comment-form'),
+          messages = [];
+
+      form.on('submit', function (event) {
+        event.preventDefault();
+        if(navigator.onLine){
+          $.post(form.attr('action'), form.serialize());
+        }else{
+          messages.push(form.serialize());
+        }
+        form[0].reset();
+      });
+
+      $(window).on('online', function () {
+        while(messages.length>0){
+          $.post(form.attr('action'), messages.shift());
+      }});
+
+    });
+  </script>
+</body>
+</html>

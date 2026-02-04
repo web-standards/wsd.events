@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Вызов принят - История одного проекта</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=680, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link rel="stylesheet" href="assets/styles/screen-d90984e344.css">
+	<link rel="stylesheet" href="assets/styles/style.css">
+</head>
+<body class="list" id="hop">
+	<header class="caption">
+		<h1>Вызов принят<br> История одного проекта</h1>
+		<span class="author">Анна Селезнёва</span>
+	</header>
+
+	<section class="slide cover first"><div>
+		<div class="grid"></div>
+		<div class="title">
+			<h2>Вызов принят</h2>
+			<p>История одного проекта</p>
+		</div>
+		<img src="assets/pictures/cover.jpg" width="1024" height="640" alt="rdcm.com">
+		<div class="wsd"><img src="assets/pictures/wsd-logo.svg" width="68" height="74" alt="Web Standards Days"></div>
+	</div></section>
+	
+	<section class="slide cover"><div>
+		<img src="assets/pictures/sites-book.jpg" width="1024" height="640" alt="">
+	</div></section>
+
+	<section class="slide shout"><div>
+		<h2>Зачем?</2>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Для разработчика</h2>
+		<ul class="adv next">
+			<li>Опыт</li>
+			<li class="next">Развитие</li>
+			<li class="next">Удовольствие</li>
+		</ul>
+		
+		<h2 class="next">Для заказчика</h2>
+		<ul class="adv client next">
+			<li>Долговечность</li>
+			<li class="next">Незаурядность</li>
+			<li class="next">Посещаемость</li>
+		</ul>
+		<p class="comment">приобретённого сайта</p>
+		
+	</div></section>
+
+	<section class="slide link"><div>
+		<h2>Известность</h2>
+		<ul class="awards">
+			<li class="next">6 x Site Of The Day</li>
+			<li class="next">Золото на «Рейтинге Рунета»</li>
+			<li class="next">Золото на «Золотом Сайте»</li>
+			<li class="next"><a href="http://tympanus.net/codrops/collective/collective-171/">http://tympanus.net/codrops/collective/collective-171/</a></li>
+		</ul>
+		<img class="place b r next" src="assets/pictures/legen.jpg" width="290" height="420" alt="Legendary">
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Авторы</h2>
+		<p><span class="logo rdcm"><img src="assets/pictures/logo-rd.svg" width="36" height="36" alt="rdcm.com"></span> <a href="http://rdcm.com" target="_blank">RD Construction</a></p>
+		<p><span class="logo cpeople"><img src="assets/pictures/logo-cpeople.svg" width="22" height="24" alt="cpeople.ru"></span> <a href="http://cpeople.ru" target="_blank">CreativePeople</a></p>
+	</div></section>
+
+	<section class="slide cover"><div>
+		<video width="960" height="640" poster="assets/pictures/play.png" muted class="video" onclick="this.play();this.classList.add('playing')">
+			<source src="assets/pictures/video.mp4" type="video/mp4">
+		</video>
+		<h2>Постановка задачи</h2>
+	</div></section>
+
+	<section class="slide cover"><div>
+		<h2 class="next" style="color:#FFF">Вызов принят!</h2>
+		<img src="assets/pictures/challengeaccepted.jpg" alt="">
+	</div></section>
+
+	<section class="slide shout"><div>
+		<h2>3D</2>
+	</div></section>
+
+	<section class="slide"><div>
+		<img src="assets/pictures/axis.png" width="480" height="480" class="axis">
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="perspective">
+			<div class="perspective-val700 next"></div>
+			<div class="perspective-val200 next"></div>
+			<div class="perspective-val1200 next"></div>
+			<pre class="code"><code>.scene { perspective: <mark class="val"></mark>px; }</code></pre>
+			<div class="perspective-area">
+				<div class="perspective-scene">
+					<div class="sides">
+						<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="perspective">
+			<div class="perspective-orig next"></div>
+			<pre class="code"><code>.scene { perspective: <mark class="val"></mark>px; }</code></pre>
+			<div class="perspective-area _visible">
+				<div class="perspective-scene">
+					<div class="sides">
+						<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+					</div>
+				</div>
+				<img class="eye" src="assets/pictures/eye.png" width="64" height="40" alt="">
+			</div>
+		</div>
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="cubeshow _cube next"></div>
+		<div class="cubeshow _sides next"></div>
+		<pre class="cubestyle"><code>.scene { perspective: 200px; }</code>
+<code class="code _cube">.cube { position:relative; width: 50px; height: 50px;
+		transform-style: <mark>preserve-3d</mark>; }</code>
+<code class="code _sides">.side { position: absolute; ... }</code></pre>
+		
+		<span class="comment">HTML:</span>
+		<pre class="cubestyle _nocount"><code>&lt;div class="<i>scene</i>"&gt;</code>
+<code><span class="code _cube">	&lt;div class="<i>cube</i>"&gt;</span></code>
+<code><span class="code _sides">		&lt;div class="<i>side back</i>"&gt;&lt;/div&gt;&lt;div class="<i>side left</i>"&gt;&lt;/div&gt;
+		&lt;div class="<i>side right</i>"&gt;&lt;/div&gt;&lt;div class="<i>side top</i>"&gt;&lt;/div&gt;
+		&lt;div class="<i>side bottom</i>"&gt;&lt;/div&gt;&lt;div class="<i>side front</i>"&gt;&lt;/div&gt;</span></code>
+<code><span class="code _cube">	&lt;/div&gt;</span></code>
+<code>&lt;/div&gt;</code></pre>
+		</div>
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="cubeshow _back next"></div>
+		<div class="cubeshow _left next"></div>
+		<div class="cubeshow _right next"></div>
+		<div class="cubeshow _top next"></div>
+		<div class="cubeshow _bottom next"></div>
+		<div class="cubeshow _front next"></div>
+		<div class="scene3d cubepreview">
+			<div class="cube _outline">
+				<div class="side _back"></div>
+				<div class="side _left"></div>
+				<div class="side _right"></div>
+				<div class="side _top"></div>
+				<div class="side _bottom"></div>
+				<div class="side _front"></div>
+			</div>
+		</div>
+		<pre class="cubestyle"><code class="code_hid"></code><code class="code_hid"></code><code class="code_hid"></code>
+<code class="code _back">.back { transform: translateZ(-25px); }</code>
+<code class="code _left">.left { transform: translateX(-25px)
+		rotateY(90deg); }</code>
+<code class="code _right">.right { transform: translateX(25px)
+		rotateY(90deg); }</code>
+<code class="code _top">.top { transform: translateY(-25px)
+		rotateX(90deg); }</code>
+<code class="code _bottom">.bottom { transform: translateY(25px)
+		rotateX(90deg); }</code>
+<code class="code _front">.front { transform: translateZ(25px); }</code></pre>
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="scene3d _rotated">
+			<div class="cube">
+				<div class="side back"></div>
+				<div class="side left"></div>
+				<div class="side right"></div>
+				<div class="side top"></div>
+				<div class="side bottom"></div>
+				<div class="side front"></div>
+			</div>
+		</div>
+		<pre style="margin-top:96px;"><code>.cube { transform: rotateX(42deg); }</code></pre>
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="scene3d-togglenames next"></div>
+		<div class="scene3d-togglerotate next"></div>
+		<div class="scene3d-togglecorrect next"></div>
+		<div class="scene3d _darker">
+			<div class="cube">
+				<div class="side back"><span>BACK</span></div>
+				<div class="side top"><span>TOP</span></div>
+				<div class="side bottom"><span>BOTTOM</span></div>
+				<div class="side front"><span>FRONT</span></div>
+			</div>
+		</div>
+		<pre class="scene3d-codecorrected"><code>.back { transform: translateZ(-25px) <mark>rotateX(180deg)</mark>; }</code>
+<code>.bottom { transform: translateY(25px) rotateX(<mark>270deg</mark>); }</code></pre>
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="scene3d-label next">FRONT</div>
+		<div class="scene3d _names _bigger">
+			<div class="cube">
+				<div class="side back"><span></span></div>
+				<div class="side top"><span></span></div>
+				<div class="side bottom"><span></span></div>
+				<div class="side front"><span>FRONT</span></div>
+			</div>
+		</div>
+	</div></section>
+
+	<section class="slide cover"><div>
+		<img src="assets/pictures/3dtv.jpg" width="1024" height="640" alt="">
+	</div></section>
+
+	
+	<section class="slide"><div>
+		<div class="sideview3d">
+			<div class="sideview3d-toggle next"></div>
+			<div class="scene3d _names">
+				<div class="cube">
+					<div class="side left"><span></span></div>
+					<div class="side right"><span></span></div>
+					<div class="side back"><span></span></div>
+					<div class="side top"><span></span></div>
+					<div class="side bottom"><span></span></div>
+					<div class="side front"><span>FRONT</span></div>
+				</div>
+			</div>
+			<img class="monitor" src="assets/pictures/monitor-side.png" width="169" height="500" alt="">
+			<img class="eye" src="assets/pictures/eye.png" width="64" height="40" alt="">
+			<div class="dot"></div>
+		</div>
+	</div></section>
+
+
+	<section class="slide"><div>
+		<div class="scene3d-label blink">FRONT</div>
+		<div class="scene3d-toggledrown next"></div>
+		<div class="scene3d _names _bigger">
+			<div class="cube">
+				<div class="side back"><span></span></div>
+				<div class="side top"><span></span></div>
+				<div class="side bottom"><span></span></div>
+				<div class="side front"><span>FRONT</span></div>
+			</div>
+		</div>
+		<pre class="scene3d-drown-code" style="margin-top:8px;"><code>.cube { transform:translateZ(-25px); }</code></pre>
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="scene3d _names _bigger _drownrotating">
+			<div class="cube">
+				<div class="side back" style="background-image:url(assets/pictures/back.jpg)"><span>BACK</span></div>
+				<div class="side top" style="background-image:url(assets/pictures/top.jpg)"><span>TOP</span></div>
+				<div class="side bottom" style="background-image:url(assets/pictures/bottom.jpg)"><span>BOTTOM</span></div>
+				<div class="side front" style="background-image:url(assets/pictures/front.jpg)"><span>FRONT</span></div>
+			</div>
+		</div>
+
+		<div class="place t r"><img src="assets/pictures/ie.png" width="50" height="50" alt="Internet Explorer"></div>
+	</div></section>
+
+	<section class="slide cover"><div>
+		<img class="nooo" src="assets/pictures/nooo.jpg" width="1024" height="500" alt="" onclick="this.src='assets/pictures/nooo1.gif'">
+		<h2>Почему?</h2>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Почему?</h2>
+		<div class="preserve3d">
+			<img class="next" style="margin-top:-28px;" src="assets/pictures/preserve-3d.png" width="800" height="360" alt="http://caniuse.com/#feat=transforms3d">
+			<img class="next" style="margin-top:-28px;" src="assets/pictures/preserve-3d-big.png" width="800" height="360" alt="http://caniuse.com/#feat=transforms3d">
+		</div>
+
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>transform-origin</h2>
+		<ul class="transorig">
+			<li><label for="transorig1">50% 50%</label></li>
+			<li><label for="transorig2">50% 0</label></li>
+			<li><label for="transorig3">0 0</label></li>
+			<li><label for="transorig4">left bottom</label></li>
+			<li><label for="transorig5">50% 50% -25px</label></li>
+			<li class="_bvh"><label for="bvh">+backface-visibility:hidden</label></li>
+		</ul>
+		<input class="radio1" id="transorig1" type="radio" name="to" value="1">
+		<input class="radio2" id="transorig2" type="radio" name="to" value="2">
+		<input class="radio3" id="transorig3" type="radio" name="to" value="3">
+		<input class="radio4" id="transorig4" type="radio" name="to" value="4">
+		<input class="radio5" id="transorig5" type="radio" name="to" value="5">
+		<input class="chk_bvh" id="bvh" type="checkbox" name="bvh" value="1">
+		<div class="scene3d _transorig">
+			<div class="cube _outline">
+				<div class="side demo"><span>FRONT</span></div>
+			</div>
+			<div class="dot"></div>
+		</div>
+	</div></section>
+
+	<section class="slide"><div>
+		<pre style="margin-top:-48px"><code>.scene {}</code>
+<code class="next">.cube {
+	position:relative; width: 50px; height: 50px;
+	transform: <mark>perspective(200px)</mark> translateZ(-25px);
+}</code>
+<code class="next">.side {
+	position: absolute; ... 
+	<mark>transform-origin:50% 50% -25px;</mark>
+	backface-visibility:hidden;
+}</code></pre>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Волшебство</h2>
+		<div class="constructfake3d">
+			<ul>
+				<li><label for="constructnone">none</label></li>
+				<li><label for="constructfront">perspective(200px)</label></li>
+				<li><label for="constructback">perspective(200px) rotateY(180deg)</label></li>
+				<li><label for="constructtop">perspective(200px) rotateX(90deg)</label></li>
+				<li><label for="constructbottom">perspective(200px) rotateX(-90deg)</label></li>
+			</ul>
+			<input class="radio1" id="constructnone" type="radio" name="construct" value="1" checked="checked">
+			<input class="radio2" id="constructfront" type="radio" name="construct" value="2">
+			<input class="radio3" id="constructback" type="radio" name="construct" value="3">
+			<input class="radio4" id="constructtop" type="radio" name="construct" value="4">
+			<input class="radio5" id="constructbottom" type="radio" name="construct" value="5">
+			<div class="scenefake3d">
+				<div class="cube _outline">
+					<div class="side demo"><span>FRONT</span></div>
+				</div>
+			</div>
+		</div>
+	</div></section>
+
+	<section class="slide"><div>
+		<pre>
+<code class="code_hid"> </code>
+<code class="code_hid"></code>
+<code class="code_hid"></code>
+<code>.back   { transform: perspective(200px) rotateY(180deg); }
+
+</code>
+<code>.top    { transform: perspective(200px) rotateX(90deg);}
+
+</code>
+<code>.bottom { transform: perspective(200px) rotateX(-90deg); }
+
+</code>
+<code>.front  { transform: perspective(200px); }</code></pre>
+	</div></section>
+	
+	<section class="slide"><div>
+		<div class="next scenefake3d-toggle"></div>
+		<div class="scenefake3d">
+			<div class="cube">
+				<div class="side back" style="background-image:url(assets/pictures/back.jpg)"><span>BACK</span></div>
+				<div class="side top" style="background-image:url(assets/pictures/top.jpg)"><span>TOP</span></div>
+				<div class="side bottom" style="background-image:url(assets/pictures/bottom.jpg)"><span>BOTTOM</span></div>
+				<div class="side front" style="background-image:url(assets/pictures/front.jpg)"><span>FRONT</span></div>
+			</div>
+		</div>
+		<div class="place t r"><!--<img src="assets/pictures/ie.png" width="50" height="50" alt="Internet Explorer">--><img src="assets/pictures/chrome.png" width="50" height="50" alt="Google Chrome"></div>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Дайте два!</h2>
+		<div class="gimmetwo">
+		<div class="scene3d _names _bigger _drownrotating">
+			<div class="cube">
+				<div class="side back" style="background-image:url(assets/pictures/back.jpg)"><span>BACK</span></div>
+				<div class="side top" style="background-image:url(assets/pictures/top.jpg)"><span>TOP</span></div>
+				<div class="side bottom" style="background-image:url(assets/pictures/bottom.jpg)"><span>BOTTOM</span></div>
+				<div class="side front" style="background-image:url(assets/pictures/front.jpg)"><span>FRONT</span></div>
+			</div>
+		</div>
+		<div class="scenefake3d _rotating">
+			<div class="cube">
+				<div class="side back" style="background-image:url(assets/pictures/back.jpg)"><span>BACK</span></div>
+				<div class="side top" style="background-image:url(assets/pictures/top.jpg)"><span>TOP</span></div>
+				<div class="side bottom" style="background-image:url(assets/pictures/bottom.jpg)"><span>BOTTOM</span></div>
+				<div class="side front" style="background-image:url(assets/pictures/front.jpg)"><span>FRONT</span></div>
+			</div>
+		</div>
+		</div>
+	</div></section>
+
+	<section class="slide"><div>
+		<p><img src="assets/pictures/modernizr.png" width="375" height="56" alt="Modernizr"></p>
+		<div class="ie3d next">
+			<img src="assets/pictures/ie3d.png" width="720" height="300" alt="">
+			<div class="okay next"><img src="assets/pictures/okay.png" width="145" height="145" alt=""></div>
+		</div>
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="scenefake3d-code">
+		<pre class="next"><code>var element = document.createElement('p');</code><code
+		class="next">document.body.insertBefore(element, null);</code><code
+		class="next">var propName = 'transform-style';</code><code
+		class="next">if ('webkitTransformStyle' in document.documentElement.style) 
+	propName = '-webkit-'+propName;</code><code
+		class="next">element.style[propName] = 'preserve-3d';</code><code
+		class="next">var propValue = window.getComputedStyle(element, null)
+	.getPropertyValue(propName);</code><code
+		class="next">document.body.removeChild(element);</code><code
+		class="next">return <mark>(propValue === 'preserve-3d')</mark>;</code></pre>
+		
+		<h2>if (<span>?</span>)</h2>
+		</div>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Ротатор</h2>
+		<div class="rotator"></div>
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="twoscenes">
+			<div class="screen next"></div>
+			<div class="scene3d _bigger _drownrotating">
+				<div class="cube">
+					<div class="side back" style="background-image:url(assets/pictures/back2.jpg)"><span></span></div>
+					<div class="side top" style="background-image:url(assets/pictures/top2.jpg)"><span></span></div>
+					<div class="side bottom" style="background-image:url(assets/pictures/bottom2.jpg)"><span></span></div>
+					<div class="side front" style="background-image:url(assets/pictures/front2.jpg)"><span></span></div>
+				</div>
+			</div>
+			<div class="scene3d _rotator _v1 _anim">
+				<div class="cube">
+					<div class="side back"><span>BACK</span></div>
+					<div class="side top"><span>TOP</span></div>
+					<div class="side bottom"><span>BOTTOM</span></div>
+					<div class="side front"><span>FRONT</span></div>
+				</div>
+			</div>
+			<img class="monitor" src="assets/pictures/monitor.png" width="909" height="607" alt="">
+		</div>
+		<div class="place t r"><img src="assets/pictures/ff.png" width="50" height="50" alt="Mozilla Firefox"></div>
+	</div></section>
+
+	<section class="slide cover"><div>
+		<img src="assets/pictures/ff.jpg" width="1024" height="640" alt="Mozilla Firefox">
+	</div></section>
+
+	<section class="slide"><div>
+
+		<div class="sideview">
+			<img src="assets/pictures/monitor-side.png" width="169" height="500" alt="">
+			
+			<div class="sideview-rotate next"></div>
+			<div class="sideview-restore next"></div>
+			<div class="sideview-correct next"></div>
+
+			<div class="sideview-cube"></div>
+			<div class="sideview-rotator"></div>
+		</div>
+
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="sideview _shift">
+			<div class="z-axis"></div>
+
+			<div class="sideview-correct next"></div>
+			<div class="sideview-scale next"></div>
+			<div class="sideview-move next"></div>
+
+			<div class="sideview-cube"></div>
+			<div class="sideview-rotator"></div>
+		
+			<pre class="movecode"><code>transform:translateZ(125px) scale(.5);</code></pre>
+		</div>
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="twoscenes">
+			<div class="screen active"></div>
+			<div class="scene3d _bigger _drownrotating">
+				<div class="cube">
+					<div class="side back" style="background-image:url(assets/pictures/back2.jpg)"><span></span></div>
+					<div class="side top" style="background-image:url(assets/pictures/top2.jpg)"><span></span></div>
+					<div class="side bottom" style="background-image:url(assets/pictures/bottom2.jpg)"><span></span></div>
+					<div class="side front" style="background-image:url(assets/pictures/front2.jpg)"><span></span></div>
+				</div>
+			</div>
+			<div class="scene3d _rotator _v2 _anim">
+				<div class="cube">
+					<div class="side back"><span>BACK</span></div>
+					<div class="side top"><span>TOP</span></div>
+					<div class="side bottom"><span>BOTTOM</span></div>
+					<div class="side front"><span>FRONT</span></div>
+				</div>
+			</div>
+			<img class="monitor" src="assets/pictures/monitor.png" width="909" height="607" alt="">
+		</div>
+		<!--<div class="place t r"><img src="assets/pictures/ff.png" width="50" height="50" alt="Mozilla Firefox"></div>-->
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="parallax next">
+			<div class="parallax-anim next"></div>
+			<div class="parallax-val next"></div>
+			<span class="offset _from">X</span>
+			<span class="txt">FRONT</span>
+			<span class="offset _to">X</span>
+			<div class="parallax-rotate next"></div>
+		</div>
+		<h2>Параллакс</h2>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Решение</h2>
+		<img style="margin-left:-40px" src="assets/pictures/sin_cos.svg" width="600" height="240" alt="sin cos">
+		<div class="sincos next">
+			<p><span>front </span> sin(a) * -1</p>
+			<p><span>bottom</span> cos(a)</p>
+			<p><span>back  </span> sin(a)</p>
+			<p><span>top   </span> cos(a) * -1</p>
+		</div>
+	</div></section>
+
+	<section class="slide cover"><div>
+		<img src="assets/pictures/3doff.jpg" width="1024" height="640" alt="">
+	</div></section>
+	
+
+
+	<section class="slide shout"><div>
+		<h2>Размытие</2>
+	</div></section>
+	
+	<section class="slide"><div>
+		<img src="assets/pictures/blur1.jpg" width="248" height="440" alt="ios blur">
+		<img class="next" src="assets/pictures/blur2_.jpg" width="259" height="440" alt="ios blur">
+		<!--<img class="next" src="assets/pictures/blur2.jpg" width="248" height="440" alt="ios blur">-->
+		<img class="next" src="assets/pictures/blur3.jpg" width="249" height="440" alt="ios blur">
+	</div></section>
+	
+	<section class="slide"><div>
+		<h2>filter: blur(10px)</h2>
+		
+		<div class="blurimages">
+			<div class="next _webkit">
+				<img src="assets/pictures/ff.png" width="50" height="50" alt="Mozilla Firefox">
+				<div class="res" ><img src="assets/pictures/back.jpg" width="400" height="400" alt=""></div>
+			</div>
+			<div class="next _webkit">
+				<img src="assets/pictures/chrome.png" width="50" height="50" alt="Google Chrome">
+				<img src="assets/pictures/opera.png" width="50" height="50" alt="Opera">
+				<img src="assets/pictures/safari.png" width="50" height="50" alt="Safari">
+				<div class="res" ><img src="assets/pictures/back.jpg" width="400" height="400" alt=""></div>
+				<span>-webkit</span>
+			</div>
+			<div class="next">
+				<img src="assets/pictures/ie.png" width="50" height="50" alt="Internet Explorer">
+				<div class="res" ><img src="assets/pictures/back.jpg" width="400" height="400" alt=""></div>
+			</div>
+		</div>
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="cssblur _anim">
+			<div class="cssblur-layer"><div class="bg"></div></div>
+			<div class="cssblur-layer overlay"><div class="bg"></div></div>
+		</div>
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="cssblur _opened">
+			<div class="cssblur-nofilter next"></div>
+			<div class="cssblur-shift next"></div>
+			<div class="cssblur-yesfilter next"></div>
+			<div class="cssblur-layer"><div class="bg"></div></div>
+			<div class="cssblur-layer overlay"><div class="bg"></div></div>
+		</div>
+	</div></section>
+
+	<section class="slide cover shout"><div>
+		<h2 class="gd-ttl next">Graceful degradation</h2>
+		<img src="assets/pictures/gracefuldegradation.jpg" width="1024" height="640" alt="">
+	</div></section>
+	
+	<section class="slide"><div>
+		<h2>SVG filter</h2>
+		<p class="rightlink next"><a target="_blank" href="http://y2u.be/RJnYkbm66ZI">y2u.be/RJnYkbm66ZI</a></p>
+		<pre class="next"><code>&lt;filter id="blur"&gt;
+	&lt;feGaussianBlur stddeviation="10" /&gt;
+&lt;/filter&gt;</code></pre>
+
+		<div class="next deprecated">
+			<span class="comment">CSS:</span>
+			<pre><code>div {  filter: url(#blur);  }</code></pre>
+			<div class="cross next"></div>
+		</div>
+	
+	</div></section>
+	
+	<section class="slide"><div>
+		<pre><code>&lt;svg&gt;
+	&lt;filter id="blur"&gt;
+		&lt;feGaussianBlur stddeviation="10" /&gt;
+	&lt;/filter&gt;
+	&lt;<mark>image</mark> filter="url(#blur)" 
+		xlink:href="image.jpg" 
+		width="200" height="200"&gt;
+	&lt;/image&gt;
+&lt;/svg&gt;</code></pre>
+		
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="cssblur">
+			<div class="cssblur-showbg next"></div>
+			<div class="cssblur-showimg next"></div>
+			<div class="cssblur-highlight next"></div>
+			<div class="cssblur-layer"><div class="bg"></div><span class="lbl _bg">background-size: cover</span></div>
+			<div class="cssblur-layer orig"><div class="bg"></div></div>
+			<div class="cssblur-layer overlay"><div class="bg"></div><span class="lbl _img">svg > image</span></div>
+		</div>
+	</div></section>
+	
+	<section class="slide"><div>
+		<div class="cssblur _inner _opened">
+			<div class="cssblur-layer">
+				<div class="bg _half"></div>
+			</div>
+			<div class="cssblur-layer overlay">
+				<div class="svg">
+					<svg>
+						<filter id="blur">
+							<feGaussianBlur stddeviation="5" />
+						</filter>
+						<image filter="url(#blur)" xlink:href="assets/pictures/bghalf.jpg" width="710" height="300"></image>
+					</svg>
+				</div>
+			</div>
+		</div>
+	</div></section>
+
+	<section class="slide"><div>
+		<pre>
+			<code>&lt;svg width="100%" height="<mark>125%</mark>"&gt;
+	&lt;g filter="url(#blur)"&gt;
+		&lt;rect x="0" y="0" width="100%" height="100%" 
+			fill="#F2F3F5"&gt;&lt;/rect&gt;
+		&lt;image width="100%" height="<mark>80%</mark>" 
+			xlink:href="image.jpg"&gt;&lt;/image&gt;
+	&lt;/g&gt;
+&lt;/svg&gt;
+			</code>
+		</pre>
+	</div></section>
+	
+	<section class="slide"><div>
+		<div class="cssblur _inner _opened">
+			<div class="cssblur-showtext next"></div>
+			<div class="cssblur-layer">
+				<div class="bg _half"></div>
+				<p class="text">Леген ... дарно</p>
+			</div>
+			<div class="cssblur-layer overlay">
+				<div class="svg _after">
+					<svg>
+						<filter id="blur">
+							<feGaussianBlur stddeviation="5" />
+						</filter>
+						<g filter="url(#blur)">
+							<rect x="0" y="0" width="100%" height="100%" fill="#F2F3F5"></rect>
+							<image xlink:href="assets/pictures/bghalf.jpg" width="710" height="300"></image>
+						</g>
+					</svg>
+				</div>
+			</div>
+		</div>
+	</div></section>
+	
+	<section class="slide"><div>
+		<h2>Загрузка картинок</h2>
+		<p class="next">Способы:</p>
+		<ol class="bubbles">
+			<li class="next">Показать и пусть загружается <div class="bubble">NO!</div></li>
+			<li class="next">Загрузить, а потом показать <div class="bubble">OK</div></li>
+			<li class="next">Показать, а потом загрузить <div class="bubble">WUT?</div></li>
+		</ol>
+	</div></section>
+	
+	<section class="slide"><div>
+		<div class="cssblur _inner">
+			<div class="cssblur-layer">
+				<div class="bg _half"></div>
+			</div>
+		</div>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Действия сервера</h2>
+		<div class="col next">
+			<p style="margin-bottom:18px"><b>Обычный запрос:</b></p>
+			<ol>
+				<li>Берёт файл картинки</li>
+				<li>Отдаёт клиенту</li>
+			</ol>
+		</div>
+		<div class="col next">
+			<p style="margin-bottom:18px"><b>Нужно срочно!</b></p>
+			<ol>
+				<li class="next">Берёт файл картинки</li>
+				<li class="next">Уменьшает <mark>в 10 раз</mark> <small>(по ширине и высоте)</small></li>
+				<li class="next">Размывает</li>
+				<li class="next">Кэширует</li>
+				<li class="next">Отдаёт клиенту</li>
+			</ol>
+		</div>
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="cssblur _inner">
+			<div class="cssblur-layer">
+				<div class="bg _half _stretch" style="background-image:url(assets/pictures/bghalf_sm.jpg)"></div>
+				<h2 class="cssblur-bigttl next">В 404 раза меньше!</h2>
+				<div class="bg _half _opacity next"></div>
+			</div>
+		</div>
+	</div></section>
+	
+	<section class="slide cover" style="background:#FFF"><div>
+		<h2>Анонс</h2>
+		<img class="next" src="assets/pictures/backdrop-filter.jpg" width="1024" height="640" alt="backdrop-filter: blur(10px)">
+	</div></section>
+
+	<section class="slide shout"><div>
+		<h2>Итоги</2>
+	</div></section>
+
+	<section class="slide cover" style="background:#FFF"><div>
+		<h2><a href="http://rdcm.com/">rdcm.com</a></h2>
+		<img class="next" src="assets/pictures/tetris.jpg" width="1024" height="640" alt="rdcm.com/404">
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Спасибо!</h2>
+		<p class="social _tw"> <a href="https://twitter.com/asktwi">asktwi</a></p>
+		<p class="social _fb"> <a href="https://www.facebook.com/anna.selezniova">anna.selezniova</a></p>
+		<p class="social _web"> <a href="http://askd.rocks/">askd.rocks</a></p>
+		<p class="comment">Презентация создана с помощью <img src="assets/pictures/shwr-logo.svg" width="25" height="25" alt="shwr.me"> <a href="https://github.com/shower/shower">Shower</a></p>
+	</div></section>
+
+	<div class="progress"><div></div></div>
+	<script src="assets/scripts/shower.min.js"></script>
+</body>
+</html>

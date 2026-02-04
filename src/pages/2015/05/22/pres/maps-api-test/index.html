@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Тестирование JS API Яндекс.Карт</title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="styles/screen-d90984e344.css">
+</head>
+<body class="shower shower--list">
+	
+	<style>
+		H2.white {
+			color: white !important;
+		}
+		H2.black {
+			color: black !important;
+		}
+		H2.white.shadow {text-shadow: #000 5px 5px;}
+		H2.black.shadow {text-shadow: #fff 5px 5px;}
+		.shower__live-region {
+			display: none;
+		}
+
+		.green {
+			color: #00FF00;
+		}
+
+		.bg-red {
+			display: inline-block;
+			width: 30px;
+			height: 30px;
+			background: url(pictures/minus.svg);
+			background-size: contain;
+			vertical-align: middle;
+			/*border-left: 2px solid #ff0000 !important;*/
+		}
+		.bg-green {
+			display: inline-block;
+			width: 30px;
+			height: 30px;
+			background: url(pictures/plus.svg);
+			background-size: contain;
+			vertical-align: middle;
+			/*background: rgba(165, 200, 65, .4);*/			
+		}
+	</style>
+
+	<header class="shower__caption">
+		<h1>Тестирование JS API Яндекс.Карт</h1>
+		<p>
+			<a href="http://zloy.me">Денис Хананеин</a>, Яндекс.
+		</p>
+	</header>
+
+	<section class="cover yandex" id="welcome">
+		<div>
+			<div class="ya"></div>
+		</div>
+	</section>
+
+	<section class="cover" id="Cover">
+		<h2 style="font-size: 4em;">Тестирование JS API Яндекс.Карт</h2>
+		<p style="color: black">
+			<span class="red">Д</span>енис <span class="red">Х</span>ананеин,
+			разработчик интерфейсов, 
+			<span class="red">Я</span>ндекс
+		</p>
+		<!-- <img style="-webkit-filter: blur(5px); filter: blur(5px);" src="pictures/cover.png" class="cover"> -->
+	</section>
+
+	<section class="yellow">
+		<h2 class="shout">Зачем нужно unit-тестирование?</h2>
+	</section>
+
+	<section>
+		<h2>Коротко о JS API</h2>
+		<ul>
+			<li>Позволяет встраивать на сайт карту.</li>
+			<li>JavaScript.</li>
+			<li>Количество модулей перевалило за 1000.</li>
+			<li>Первая публичная версия вышла в 2008 году.</li>
+		</ul>
+	</section>
+	
+	<!-- иллюстрация что такое -->
+	<section class="cover">
+		<img src="pictures/map.png" class="cover" class="place">
+		<!-- <ymap style="width:100%;" data-center="55.755768, 37.617671" data-zoom="15"></ymaps> -->
+	</section>
+
+	<section>
+		<h2 class="shout white">История</h2>
+		<img src="pictures/gif_history.gif" class="cover width">
+		<figcaption class="white">© Matt Groening, 20th Century Fox, Futurama</figcaption>
+	</section>
+
+	<section>
+		<h2>История</h2>
+		<ul>
+			<li>API стало доступным в 2008 году</li>
+			<li>Сначала писали без тестов</li>
+			<li>Потом использовали YUI (сначала 1 версию, потом 2, 3)</li>
+			<li>Тесты лежали рядом с модулем, назывались так: <em>*.test.html</em></li>
+			<li>В каждом тесте был описан относительный путь для подключения API</li>
+		</ul>
+	</section>
+
+	<section>
+		<img src="pictures/old_structure.png" class="position">
+	</section>
+
+	<section>
+		<h2>Подключение окружения</h2>
+		<pre>
+			<code>&lt;script src="<mark class="important">../../</mark>test/yui3combo/combo.js"&gt;</code>
+		    <code>&lt;link href=<mark>"../../test/yui3combo/combo.css"</mark>/&gt;</code>
+		    <code><mark class="comment">// helper</mark></code>
+		    <code>&lt;script src=<mark>"../../test/run-test-case.js"</mark>&gt;</code>
+		</pre>
+
+		<p>Копировать — вставить</p>
+	</section>
+
+	<section>
+		<h2>Тесты выглядели примерно так</h2>
+		<pre>
+			<code><mark class="important">testMapEvent</mark>: () => {</code>
+			<code>  <mark class="comment">// какие-нибудь действия</mark></code>
+			<code>  <mark>Y.assert</mark>(</code>
+			<code>     res == '256,256/0,0/328,228' <mark>&&</mark> aliasRes == res,</code>
+			<code>     <strong>'Координаты вычислены неправильно, получено: ' + res</strong></code>
+			<code>  );</code>
+            <code>}</code>
+		</pre>
+	</section>
+
+	<section>
+		<h2>В чем проблема</h2>
+		<p>
+			<ul>
+				<li class="next">Имя: <code>testMapEvent</code></li>
+				<li class="next">Ассерты: <code>Y.assert(a & b & c & d, 'error')</code></li>
+				<li class="next">Асинхронность: <code>this.wait … this.resume</code></li>
+			</ul>
+		</p>
+	</section>
+
+	<section>
+		<h2>Асинхронные</h2>
+		<pre>
+            <code>ymaps.geocode('174.184804,77.380152').then(res => {</code>
+            <code>  <mark class="important">this.resume</mark>(() => {</code>
+            <code>    <mark>Y.assert</mark>(len == 34,'неверное количество геообъектов');</code>
+            <code>  });</code>
+            <code>}, this);</code>
+			<code><mark class="important">this.wait</mark>(<mark class="comment">// Y.error</mark>);</code>
+		</pre>
+	</section>
+
+	<section>
+		<img src="pictures/gif_happy.gif" class="cover width">
+		<figcaption class="white">© Matt Groening, 20th Century Fox, Futurama</figcaption>
+	</section>
+
+<!-- 	<section >
+		<img src="pictures/old_system.png" class="place">
+		<h2 class="shout black shadow">Но!</h2>
+	</section> -->
+
+	<section class="yellow">
+		<h2 class="shout">Переезд</h2>
+	</section>
+
+	<section>
+		<h2>Хотим</h2>
+		<ul>
+			<li>Mocha, Sinon, expect</li>
+			<li>Выпилить копи-паст и писать только JS</li>
+			<li>Запускать тесты в терминале</li>
+			<li><em>Удобно</em> тестировать асинхронный код</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>Масштабы</h2>
+		<ul>
+			<li class="next">220 файлов с тестами</li>
+			<li class="next">Более 800 модулей API</li>
+			<li class="next">7 человек в команде</li>
+			<li class="next">и каждому есть чем заняться</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2 class="shout white">Стратегии</h2>
+		<img src="pictures/gif_try_move.gif" class="cover width">
+		<figcaption class="white">© Matt Groening, 20th Century Fox, Futurama</figcaption>
+	</section>
+
+	<section>
+		<h2>Вариант #1. Всей командой</h2>
+		<table>
+			<tr>
+				<th>Плюсы</th>
+				<th>Минусы</th>
+			</tr>
+			<tr>
+				<td>быстро</td>
+				<td>дорого</td>
+			</tr>
+			<tr>
+				<td>вся команда понимает, <br> как писать тесты</td>
+				<td>у всех есть задачи</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>все любят писать тесты…</td>
+			</tr>
+		</table>
+	</section>
+
+	<section>
+		<h2>Вариант #2. Найдем крайнего</h2>
+		<table>
+			<tr>
+				<th>Плюсы</th>
+				<th>Минусы</th>
+			</tr>
+			<tr>
+				<td>команда работает</td>
+				<td>человека жалко</td>
+			</tr>
+			<tr>
+				<td>есть ответственный</td>
+				<td>долго</td>
+			</tr>
+			<tr>
+				<td>если стажер или практикант —<br>хорошее знакомство с проектом</td>
+				<td>команде сложно начать <br> писать тесты</td>
+			</tr>
+		</table>
+	</section>
+
+	<section>
+		<h2>Вариант #3. Демократично</h2>
+		<table>
+			<tr>
+				<th>Плюсы</th>
+				<th>Минусы</th>
+			</tr>
+			<tr>
+				<td>переписывание выполняется в фоне</td>
+				<td>долго</td>
+			</tr>
+			<tr>
+				<td>есть время разобраться и понять, <br> как что работает</td>
+				<td>очень-очень долго</td>
+			</tr>
+			<tr>
+				<td>быстро привыкается к хорошему</td>
+				<td>в проекте две версии тестов</td>
+			</tr>
+		</table>
+		
+	</section>
+
+	<section>
+		<h2 class="shout white" style="text-shadow: #000 3px 3px 2px;">Демократия</h2>
+		<img src="pictures/gif_democraty.gif" class="cover height">
+		<figcaption class="white">© Matt Groening, 20th Century Fox, Futurama</figcaption>
+	</section>
+
+	<section>
+		<h2>Правила</h2>
+		<ol>
+			<li class="next"><strong>Редактируешь модуль</strong> — переписываешь тест</li>
+			<li class="next"><strong>Пишешь новый модуль</strong> — пишешь тесты в новом формате</li>
+		</ol>
+
+		<p class="note next">Если рефакторинг ломает много старых тестов,<br>допускается просто поправить их.</p>
+	</section>
+
+	<section>
+		<img src="pictures/two_tests.jpg" class="cover width">
+		<figcaption class="white">© Matt Groening, 20th Century Fox, Futurama</figcaption>
+	</section>
+
+	<section>
+		<h2>Map.test.js</h2>
+		<pre>
+			<code>ymaps.modules.define(<mark class="important">'test.Map'</mark>, [</code>
+			<code>  <mark>'Map',</mark></code>
+			<code>  <mark>'util.bounds'</mark></code>
+			<code>], function (provide, Map, utilBounds) {</code>
+			<code>  <mark class="comment">// Тесты</mark></code>
+			<code>});</code>
+		</pre>
+	</section>
+
+	<section>
+		<h2>Тест</h2>
+		<pre>
+			<code>describe(<mark>'Map'</mark>, function () {</code>
+			<code>  it(<mark>'Должен изменить центр карты'</mark>, <mark class="important">done</mark> => {</code>
+			<code>    myMap.setCenter([55, 37]).done(newCenter => {</code>
+			<code>      expect(newCenter)<mark class="important">.to.be('55,37')</mark>;</code>
+			<code>      <mark class="important">done();</mark></code>
+			<code>    });</code>
+		</pre>
+		<p class="note">Тесты простые, для асинхронных интерфейсов нужно просто вызвать <b>done</b></p>
+	</section>
+
+	<section>
+		<h2>Сейчас</h2>
+
+		<ul>
+			<li>≈130 файлов с тестами</li>
+			<li>>1000 тест-кейсов</li>
+			<li>Протестированы все ключевые компоненты API</li>
+			<li><mark>Без прохождения всех тестов невозможно выкатиться в продакшен</mark></li>
+		</ul>
+	</section>
+
+	<section>
+		<h2 class="shout white shadow">Готово</h2>
+		<img src="pictures/gif_happy_end.gif" class="cover width">
+		<figcaption class="white">© Matt Groening, 20th Century Fox, Futurama</figcaption>
+	</section>
+
+	<section>
+		<h2 class="shout white shadow">Тестирование асинхронных интерфейсов</h2>
+		<img src="pictures/gif_async.gif" class="cover height">
+		<figcaption class="white">© Matt Groening, 20th Century Fox, Futurama</figcaption>
+	</section>
+
+	<section>
+		<img src="pictures/load.png" class="place">
+		<figcaption class="white">© Matt Groening, 20th Century Fox, Futurama</figcaption>
+	</section>
+
+	<section>
+		<h2>Проблема</h2>
+		<p>Часто в проекте есть зависимость от какой-либо библиотеки. Ещё она сама может загрузить за что-нибудь. 
+<strong>В Mocha окружение у тестов всегда одно — скрипты один раз подгрузились и всё.</strong></p>
+	</section>
+
+	<section>
+		<h2>Например</h2>
+		<p><p>Несколбко тест-кейсов создают в BODY инпут и что-то с ним делает. Может оказаться, что инпут уже есть, ID <mark>не уникальный</mark> и т.д.</p></p>
+	</section>
+
+<!-- 	<section>
+		<h2>Инструменты</h2>
+		<ul>
+			<li>Запуск тестов: <a href="http://metaskills.net/mocha-phantomjs/">mocha-phantomjs</a></li>
+			<li>Node.js / IO.js: <a href="https://nodejs.org">Node.js</a></li>
+			<li>Модульность: <a href="https://github.com/ymaps/modules">ym</a></li>
+		</ul>
+	</section> -->
+
+	<section>
+		<img src="pictures/scheme.svg" class="place">
+	</section>
+
+	<section>
+		<!-- <h2>Общая схема работы</h2> -->
+		<img src="pictures/scheme_concat.svg" class="cover">
+	</section>
+
+	<section>
+		<img src="pictures/scheme_sequence.svg" class="place right" style="margin-right: 50px;">
+		<div style="position: absolute; z-index: 99; width: 400px; top: 20%;">
+			После склейки запускается одновременно <mark>N процессов</mark> <strong>mocha-phantomjs</strong> <em>(остальные ставятся в очередь)</em>, 
+			в которые утилита передает страницу и имя теста с параметром в качестве URL. 
+			<br><br>
+			<code>server.ru/tests.html?<mark>module=test.control.Button</mark></code>
+		</div>
+	</section>
+
+	<section>
+		<h2>Парсинг в tests.html</h2>
+		<pre>
+			<code><mark class="comment">// Получим список модулей.</mark></code>
+			<code>let module = util.get('module', 'all');</code>
+			<code><mark class="comment">// Подгрузим и запустим необходимые.</mark></code>
+			<code><mark class="important">ymaps.modules.require</mark>(<mark>module</mark>, () => {</code>
+			<code>  <mark class="comment">// Run mocha</mark></code>
+			<code>});</code>
+		</pre>
+	</section>
+
+	<section>
+		<h2>Map.test.js</h2>
+		<pre>
+			<code>ymaps.modules.define(<mark class="important">'test.Map'</mark>, [</code>
+			<code>  <mark>'Map',</mark></code>
+			<code>  <mark>'util.bounds'</mark></code>
+			<code>], (provide, Map, utilBounds) => {</code>
+			<code>  <mark class="comment">// Тесты</mark></code>
+			<code>});</code>
+		</pre>
+	</section>
+
+	<section>
+		<img src="pictures/scheme_info.svg" class="place">
+	</section>
+
+	<section>
+		<pre>
+			<code><mark class="important">passing: 107</mark></code>
+			<code>	<span class="green">∆</span>  'test.LoadingObjectManager'</code>
+			<code>	<span class="green">∆</span>  'test.ObjectManager'</code>
+			<code>	<span class="green">∆</span>  'test.RemoteObjectManager'</code>
+			<code>	…</code>
+			<code>	<span class="green">∆</span>  'test.objectManager.overlays'</code>
+			<code> </code>
+			<code>failing: 0</code>
+		</pre>
+		<!-- <img src="pictures/bacillus.png" alt="" class="cover"> -->
+	</section>
+
+	<section class="cover">
+		<object width="100%" height="100%">
+		    <!-- <param name="movie" value="video/terminal_new.swf"> -->
+		    <embed src="video/terminal-new.swf" class="cover" width="100%" height="100%">
+		    </embed>
+		</object>
+		<!-- <video src="video/terminal.mov" controls class="cover height"> -->
+	</section>
+
+	<section>
+		<img src="pictures/gif_really_happy.gif" alt="" class="cover width">
+		<figcaption class="white">© Matt Groening, 20th Century Fox, Futurama</figcaption>
+	</section>
+
+	<section>
+		<img src="pictures/okey_but.png" alt="" class="place">
+		<h2 class="shout black shadow">Да, но…</h2>
+	</section>
+
+	<section>
+		<h2>Планы</h2>
+		
+		<ul>
+			<li>Упаковать решение в npm-пакет</li>
+			<li class="next">Написать инструмент для изолированного запуска в браузерах</li>
+			<li class="next">Делать мир лучше</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2 class="shout">
+			<a href="http://zloy.me/talks/tests/" style="font-size:.8em">zloy.me/talks/tests/</a>
+		</h2>
+	</section>
+
+	<section>
+		<h2>Информация об API</h2>
+		<ul>
+			<li><a href="https://tech.yandex.ru/maps">tech.yandex.ru/maps</a></li>
+			<li><a href="https://clubs.ya.ru/mapsapi">clubs.ya.ru/mapsapi</a></li>
+			<li><a href="https://facebook.com/ymapsapi">facebook.com/ymapsapi</a></li>
+			<li><a href="https://vk.com/ymapsapi">vk.com/ymapsapi</a></li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>Тестирование JS API Яндекс.Карт</h2>
+		
+		<p>Денис Хананеин, разработчик интерфейсов</p>
+		<ul>
+			<li><a href="http://zloy.me">zloy.me</a></li>
+			<li><a href="https://twitter.com/kandasoft">twitter.com/kandasoft</a></li>
+			<li><a href="mailto:zloylos@yandex-team.ru">zloylos@yandex-team.ru</a></li>
+		</ul>
+
+		<img src="pictures/denis.jpg" width="400px" alt="" class="place bottom right">
+	</section>
+
+	<div class="shower__progress"></div>
+	<footer class="shower__badge">
+		<a href="https://github.com/shower/shower">Powered by Shower</a>
+	</footer>
+
+	<script src="shower.js"></script>
+	<script src="shower-map.js"></script>
+	<!-- Copyright © 2015 Denis Hananein -->
+</body>
+</html>

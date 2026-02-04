@@ -1,0 +1,928 @@
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Is Blink the new IE6?</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=1274, user-scalable=no">
+	<link rel="stylesheet" href="themes/lawson/styles/screen-d90984e344.css">
+	<link rel="stylesheet" href="themes/lawson/styles/print.css" media="print">
+	<!--
+		To apply styles to the certain slides
+		set slide ID to get needed elements
+		-->
+	<style>
+		@-webkit-keyframes flex { to { width:30% } }
+		@-moz-keyframes flex { to { width:30% } }
+		@-o-keyframes flex { to { width:30% } }
+		@keyframes flex { to { width:30% } }
+
+		#Flex .wrapper {
+			width:100%;
+			height:350px;
+			display:-webkit-flex;
+			display:-moz-flex;
+			display:flex;
+			}
+			#Flex .wrapper .item {
+				margin:10px;
+				background:#069;
+				}
+			#Flex .wrapper .item:nth-child(1) {
+				-webkit-flex:1;
+				-moz-flex:1;
+				flex:1;
+				}
+			#Flex .wrapper .item:nth-child(2) {
+				-webkit-flex:2;
+				-moz-flex:2;
+				flex:2;
+				}
+			#Flex .wrapper .item:nth-child(3) {
+				-webkit-flex:3;
+				-moz-flex:3;
+				flex:3;
+				}
+		#Flex:target .wrapper {
+			-webkit-animation:flex 3s linear alternate infinite;
+			-moz-animation:flex 3s linear alternate infinite;
+			-o-animation:flex 3s linear alternate infinite;
+			animation:flex 3s linear alternate infinite;
+			-webkit-animation-delay:2s;
+			-moz-animation-delay:2s;
+			-o-animation-delay:2s;
+			animation-delay:2s;
+			}
+
+/* VADIM */
+
+		.first figcaption  {margin-left:40%; bottom:20%; z-index:9999;}
+		#jakob figcaption {top:17px;font-size:1em;}
+		#acks li {font-size:smaller;}
+		.slide.first header {top: 68%;}
+
+		img.wait {display:none;}
+		section.current img.wait {display:block;}
+	</style>
+
+</head>
+<body class="list">
+	<header class="caption">
+		<h1>Is Blink the new IE6?</h1>
+		<p><a href="http://brucelawson.co.uk">Bruce Lawson</a></p>
+	</header>
+	<section class="slide cover first">
+		<header>
+			<h2>Is Blink the new IE6?</h2>
+			<p>Bruce Lawson</p>
+		</header>
+		<img src="pictures/bruce-html.jpg" alt="bruce in front of 'HTML' sign">
+	</section>
+
+<section class="slide">
+<h2>Slides:</h2>
+<p>http://brucelawson.github.io/talks/2015/blink-ie6/spb.html</p>
+</section>
+
+  	<section class="slide">
+  		<h2>The Big Question</h2>
+  		<blockquote>
+			We all loved IE6 which gave us web monoculture. Are we repeating the same mistakes again with Blink?
+		</blockquote>
+	</section>
+
+
+	<section class="slide cover">
+		<img src="pictures/disclaimer.gif" alt="great big disclaimer">
+	</section>
+
+	 <section class="slide cover">
+		<img src="pictures/opera-blink-graph.gif" alt="graph showing Opera is 3rd largest committer to Blink after Google and Samsung">
+	</section>
+
+
+	<section class="slide">
+		<h2>Google</h2>
+		<blockquote>don't be a sock-puppet! We do a ton of stupid stuff all the time and need constructive criticism for Blink to be more awesome for everyone involved. Bring it on!</blockquote>
+	</section>
+
+	<section class="slide cover shout">
+		<img src="pictures/ancient.jpg" alt="painting of roman debating chamber">
+		<h2>Ancient history</h2>
+	</section>
+
+	<section class="slide cover shout">
+		<img src="pictures/tombstone.png" alt="tomsbtone 'Netscape RIP murdered by Internet Explorer' ">
+	</section>
+
+	<section class="slide cover shout">
+		<img src="pictures/sysadmins.jpg" alt="roman bust of bearded man">
+		<h2>Evil sysadmins</h2>
+	</section>
+
+	<section class="slide cover">
+		<img src="pictures/vendors.gif" alt="roman soldier with large wooden catapult machine">
+		<h2>Enterprise software vendors</h2>
+	</section>
+
+	<section class="slide cover">
+		<img src="pictures/demo.jpg" alt="huge crowd at anti-war demo in London">
+	</section>
+
+	<section class="slide cover">
+		<img src="pictures/ie6-no-more.gif" alt="IE6 no more.com screenshot">
+	</section>
+
+	<section class="slide shout">
+		<h2>But actually &hellip;</h2>
+	</section>
+
+	<section class="slide cover">
+		<img src="pictures/netscape.gif" alt="netscape 4.5 splash screen">
+		<h2>Market leader</h2>
+	</section>
+
+	<section class="slide">
+		<h2>An open letter from WaSP</h2>
+		<blockquote>
+		<p>TWO YEARS AGO, when your market share was still high as a kite, <mark>you pledged to fully support five key standards in the next version of your browser</mark>&hellip;</p>
+
+		<p>At last you are talking about shipping product by the end of the year. Sounds great – except that it’s the wrong year.</p>
+		</blockquote>
+
+	</section>
+
+	<!--
+
+	<section class="slide">
+		<blockquote><p>Continuing to periodically “upgrade” your old browser while <mark>failing to address its basic flaws</mark> has made it appear that you still consider Navigator 4 viable. It is not.</p><o>&hellip;keeping your 4.0 browser on the market has <mark>forced developers to continue writing bad code</mark> in order to support it.</p>
+		</blockquote>
+	</section>
+
+	-->
+
+	<section class="slide">
+		<blockquote><p>If you fail now, <mark>the web will essentially belong to a single company</mark>. And for once, nobody will be able to blame them for “competing unfairly.”</p>So please, for your own good, and <mark>the good of the web</mark>, deliver on your promises while <mark>Netscape 6 still has the chance to make a difference.</mark>
+		</blockquote>
+		<cite><a href="http://www.webstandards.org/2000/07/20/an-open-letter-to-netscape/">For the Good of the Web: An Open Letter to Netscape</a> 20/7/2000</cite>
+	</section>
+
+<!--
+
+	<section class="slide cover">
+		<img src="pictures/cheeky.jpg" alt="cover of 'The Cheeky Girl's' single 'Boys and Girls'">
+	</section>
+
+	<section class="slide">
+		<h2>Cheekies' chart placement</h2>
+		<ul>
+		<li>“Cheeky Song (Touch My Bum)” <mark>2</mark></li>
+		<li>“Take Your Shoes Off” <mark>3</mark></li>
+		<li>“(Hooray, Hooray!) It's a Cheeky Holiday!” <mark>3</mark></li>
+		<li>“Have a Cheeky Christmas” <mark>10</mark></li>
+		<li>“Cheeky Flamenco” <mark>29</mark></li>
+		<li>“Boys and Girls” <mark>50</mark></li>
+		</ul>
+	</section>
+
+	<section class="slide cover">
+		<img src="pictures/cheeky3.jpg" alt="The Cheeky Girls performing live">
+	</section>
+
+	<section class="slide cover">
+		<img src="pictures/cheeky2.gif" alt="review of Cheeky Girls' 'Boys and Girls' single on Amazon">
+	</section>
+
+-->
+
+	<section class="slide cover">
+		<img src="pictures/ie-mania.jpg" alt="Betalemania screaming girls with IE6 poster">
+	</section>
+
+	<section class="slide cover">
+		<img src="pictures/ie6-kiss.jpg" alt="sailor giving IE6 a kiss">
+	</section>
+
+	<section class='slide'>
+		<h2>The critics loved it!</h2>
+		<blockquote>Internet Explorer 6 beta <mark>shows great promise</mark></blockquote>
+		<cite><a href="http://www.techrepublic.com/article/internet-explorer-6-beta-shows-great-promise/1033023">Tech Republic</a></cite>
+	</section>
+
+	<section class="slide cover">
+		<img src="pictures/ie-potter.jpg" alt="IE6 kissing Rose on Titanic">
+	</section>
+
+	<section class="slide">
+		<blockquote>Microsoft Internet Explorer offers <mark>few quirks</mark> and many superb features... After introducing IE-only layout features such as scrolling marquees and colored table borders in earlier versions, <mark>Microsoft is now committed to the standards set by the World Wide Web Consortium</mark>.</blockquote>
+		<cite><a href="http://www.pcmag.com/article2/0,2817,541298,00.asp">pcmag</a></cite>
+	</section>
+
+	<section class="slide cover">
+		<img src="pictures/ie-rodin.jpg" alt="IE6 kissing Rose on Titanic">
+	</section>
+
+	<section class="slide">
+		<h2>WaSP loved it!</h2>
+		<blockquote>IE6 for Windows delivers fine support for HTML 4, CSS-1, and other important W3C standards.</blockquote>
+		<cite><a href="htttp://web.archive.org/web/20011201032740/http://www.webstandards.org/upgrade/">WaSP</a></cite>
+	</section>
+
+	<section class="slide cover">
+		<img src="pictures/ie-starwars.jpg" alt="IE6 kissing Rose on Titanic">
+	</section>
+
+	<section class="slide">
+		<h2>Everybody loved it!</h2>
+		<blockquote>I Love This Browser!  I have loved browsing the web since I started way back in the mid 90s, and I really love browsing with IE.</blockquote>
+		<cite class="next"><a href="http://blogs.msdn.com/b/ie/archive/2004/07/21/190747.aspx">Scott Stearns<br>
+Test Manager, IE</a></cite>
+	</section>
+
+	<section class="slide cover">
+		<img src="pictures/ie6-titanic.jpg" alt="IE6 kissing Rose on Titanic">
+	</section>
+
+	<section class="slide">
+		<h2>We loved</h2>
+		<ul>
+			<li>DOCTYPE switching (for broken box model)</li>
+			<li class"next">ActiveX</li>
+ 			<li class"next">HTML Components (.htc files)</li>
+ 			<li class"next">CSS Expressions</li>
+ 			<li class"next">Coloured scroll bars</li>
+ 			<li class"next">IE filters and DHTML behaviors</li>
+ 		</ul>
+ 	</section>
+
+ 	<section class="slide cover shout">
+ 		<h2>Hell is other browsers</h2>
+ 		<img src="pictures/hell.jpg" alt="renaissance picture of hell">
+ 	</section>
+
+<!--
+ 	<section class="slide cover">
+ 		<h2>Dark matter/ energy developers</h2>
+ 		<img src="pictures/dark.gif" alt="pie-chart: 4% atoms, 26% dark matter, 68% dark energy">
+	</section>
+-->
+
+	<section class="slide cover">
+		<img src="pictures/deadly-kiss.jpg" alt="painting on Berlin Wall of Leonid Brezhnev and Erich Honecker kissing with Russian and German slogan 'My God, Help Me to Survive This Deadly Love'">
+	</section>
+
+	<section class="slide cover">
+		<img src="pictures/iphone.jpg" alt="sistine chapel hand of god clicking iPhone">
+	</section>
+
+
+
+	<section class="slide shout">
+		<h2>We were in danger of getting a webkit monopoly</h2>
+	</section>
+
+	<section class="slide cover">
+		<h2>PPK survey, Xmas 2011</h2>
+ 		<img src="pictures/ppk.gif" alt="Poll: Do you hope that webkit will become the only rendering engine and the others will disappear? yes: 32%">
+	</section>
+
+	<section class="slide cover">
+		<img src="pictures/presto.jpg" alt="Presto Change-o">
+	</section>
+
+	<section class="slide cover">
+		<h2>Vendor Prefixes</h2>
+		<img src="pictures/scream.gif" alt="1950s horror film woman screaming">
+	</section>
+
+	<section class="slide">
+		<h2>For the losers:</h2>
+		<blockquote>Keywords and property names beginning with -' or '_' are reserved for <mark>vendor-specific extensions</mark>. For example, if XYZ organization added a property to describe the color of the border on the East side of the display, they might call it <code>-xyz-border-east-color</code>.
+		</blockquote>
+	</section>
+
+	<section class="slide">
+		<h2>We all read specs, right?</h2>
+		<blockquote><mark>Authors should avoid vendor-specific extensions.</mark>
+		</blockquote>
+		<cite><a href="http://www.w3.org/TR/CSS21/syndata.html#vendor-keywords">CSS 2.1 spec</a></cite>
+	</section>
+
+	<section class="slide">
+		<h2>WebKit's rationale</h2>
+		<blockquote>hober: if it's used on the web, it's hard to argue that we should remove it and make those pages render worse.</blockquote>
+		<cite><a href="https://trac.webkit.org/wiki/Deprecating%20features%20and%20vendor%20prefixes">Deprecating (web-facing) features and vendor prefixing</a> (2012 WebKit Contributors' Meeting)</cite>
+	</section>
+
+	<section class="slide">
+		<h2>I'm an English literature graduate</h2>
+		<blockquote>Vendor prefixes are like skidmarks on the underwear of web standards: <p class="next">sometimes unavoidable, but best washed and rinsed out as soon as possible.</p></blockquote><cite><a href="http://www.brucelawson.co.uk/2014/on-internet-explorer-supporting-webkit-vendor-prefixes/">Bruce "Shakespeare" Lawson</a></cite>
+	</section>
+
+	<section class="slide cover">
+		<img src="pictures/ianET.jpg" alt="">
+	</section>
+
+	<section class="slide">
+		<blockquote><mark>We're all acutely aware of what happened with IE and don't want to see that happen again</mark>. All the work on de-prefixing for example came out discussions on that issue and the feedback from Opera in particular.</blockquote>
+		<cite>Ian Ellison-Taylor (@ianet), Google's Director of Web Platform</cite>
+	</section>
+
+	<section class="slide">
+		<blockquote>Vendor Prefixes can be harmful to compatibility because web content comes to rely upon these vendor-prefixed names. Going forward, <mark>instead of enabling a feature by default with a vendor prefix, we will instead keep the (unprefixed) feature behind the “enable experimental web platform features” flag</mark> in about:flags until the feature is ready to be enabled by default.</blockquote>
+		<cite><a href="http://www.chromium.org/blink#vendor-prefixes">Blink's Mission</a></cite>
+	</section>
+
+	<section class="slide">
+		<blockquote><mark>For legacy vendor-prefixed features, we will continue to use the -webkit- prefix</mark> because renaming all these prefixes to something else would cause developers unnecessary pain. We've started looking into real world usage of HTML5 and CSS3 features and hope to use data like this to better inform how we can responsibly deprecate prefixed properties and APIs. </blockquote>
+	</section>
+
+	<section class="slide">
+	<h2>Removed by @foolip</h2>
+	<ul>
+		<li>HTMLMediaElement.webkitPreservesPitch</li>
+		<li>HTMLMediaElement.webkitHasClosedCaptions/ webkitClosedCaptionsVisible</li>
+		<li>Performance.webkit*</li>
+		<li>-webkit-transition media feature</li>
+		<li>Performance.webkitGet*</li>
+
+	</ul>
+	</section>
+
+	<section class="slide">
+		<li>-webkit-transform-2d, -webkit-animation and -webkit-view-mode media</li>
+		<li>MessageEvent.webkitInitMessageEvent()</li>
+		<li>&lt;iframe webkitallowfullscreen></li>
+		<li>webkitConvertPointFromPageToNode()</li>
+		<li>webkitConvertPointFromNodeToPage()</li>
+		<li>WheelEvent.initWebKitWheelEvent()</li>
+		<li><mark>Removal reverted:</mark> video-specific fullscreen API</li>
+	</ul>
+	</section>
+
+<!--
+
+	<section class="slide cover">
+		<h2>webkitMatchesSelector</h2>
+		<img src="pictures/webkit27.gif" alt=="graph shows use on 27% of all web pages">
+	</section>
+
+-->
+
+
+
+	<section class="slide">
+		<h2>The Mobile Web should just work for everyone</h2>
+		<blockquote>In Windows Phone 8.1 Update, we added a mapping of popular webkit-prefixed APIs to the standards based support already part of IE11.</blockquote>
+		<cite><a href="http://blogs.msdn.com/b/ie/archive/2014/07/31/the-mobile-web-should-just-work-for-everyone.aspx">IEBlog, 31 July 2014</a></cite>
+	</section>
+
+
+	<section class="slide cover">
+		<img src="pictures/ianET.jpg" alt="">
+	</section>
+
+	<section class="slide">
+		<h2>Google's Director of Web Platform</h2>
+		<blockquote><p>I was the Engineering Manager for Client Platforms at Microsoft in the early 2000s and in large part responsible for most of the engineering resource being pulled from IE\Trident. Oops :/</p>
+	</blockquote>
+	</section>
+
+	<section class="slide">
+		<blockquote>
+		<p>The issue for Microsoft back then was that <mark>a successful web actually went against their business goals, to the tune of many $B</mark>. That's definitely not the case for Google, indeed it's the opposite, as a company we benefit when more people use the web so there's absolutely no conflict of interest.</p></blockquote>
+	</section>
+
+
+	<section class="slide">
+		<blockquote>
+		<p>it's clear <mark>Microsoft is now on a very different path</mark> than when I was there and investing heavily in web stuff. Indeed they've become more open in the last 6 months than they've been in more than a decade which is great to see!</p>
+		</blockquote>
+	</section>
+
+
+	<section class="slide">
+		<blockquote>
+		<p>we [Google] know that the reason the web as a platform is successful (vs native alternatives) is *because* there is no one company in charge, it's a defining characteristic and something we're unequivocally committed to.</p>
+		</blockquote>
+	</section>
+
+	<section class="slide">
+		<h2>Google: conflict of interest?</h2>
+		<blockquote>The Google Play Store mobile app revenue will catch up to Apple’s App Store in 2018</blockquote>
+		<cite><a href="http://qz.com/235992/revenue-from-the-google-play-store-will-overtake-apples-app-store-in-2018/">qz.com</a> July 2014</cite>
+		<p>Projected $9bn/ pa (2013: total Google revenue <a href="https://investor.google.com/financial/tables.html">$55.5bn</a>)</p>
+	</section>
+
+	<section class="slide">
+		<h2>Ian again:</h2>
+		<blockquote>Play revenue has never come up with us and the guidance we've always gotten from Larry, from Sundar and every senior exec here is to just go make the web better.</blockquote>
+	</section>
+
+	<section class="slide">
+		<h2>Opera's perspective</h2>
+		<p>We have an <a href="http://apps.opera.com/">App business</a> but ultimately we want the web to win.</p>
+		<p class="next">We're the only browser maker that isn't trying to sell you a mobile OS or a locked-down device.</p>
+	</section>
+
+	<section class="slide">
+	<h2>Blink's 2014 goals</h2>
+	<blockquote>Web usage continues to shift from desktop to mobile.  Yet the mobile web remains far from reaching its potential -- in part because web engines (e.g. Blink) are not nearly as good on performance-constrained devices as they need to be.  <mark>To be successful on mobile, Blink must exit 2014 much more mobile-awesome.</mark></blockquote><cite><a href="https://groups.google.com/a/chromium.org/d/msg/blink-dev/Z5OzwYh3Wfk/IWooaY5FZowJ">Eric Seidel</a>- Blink engineering lead</cite>
+	</section>
+
+	<section class="slide cover">
+		<img src="pictures/cake.jpg" alt="celebration cake">
+	</section>
+
+	<section class="slide">
+		<h2>The webkit vs Blink analysis</h2>
+		<blockquote> the Blink project has been more focused on next-gen webapps with a heavy focus on the compositor, scheduling, and style subsystems. The WebKit project has been more focused on documents and improving existing pages with faster line layout and style selection</blockquote>
+		<cite><a href="http://browserg.nom.es/">A high-profile fork: one year of Blink and Webkit</a></cite>
+	</section>
+
+	<!--
+
+	<section class="slide cover">
+		<h2>CSS Regions</h2>
+		<img src="pictures/regions.png" alt="">
+	</section>
+
+	<section class="slide">
+		<h2><s>CSS Regions</s></h2>
+		<blockquote>I have come to understand that Regions both does not play well with existing performance optimizations [and] impedes ongoing simplification and optimization work to our core rendering code</blockquote>
+		<cite><a href="https://groups.google.com/a/chromium.org/d/msg/blink-dev/kTktlHPJn4Q/YrnfLxeMO7IJ">Eric Siedel</a></cite>
+	</section>
+
+	<section class="slide">
+		<h2>Opera</h2>
+		<p><a href="http://alistapart.com/blog/post/css-regions-considered-harmful">CSS Regions Considered Harmful</a> - Håkon Wium Lie</p>
+		<blockquote>From Opera's side we agree with the prioritization of performance optimizations in Blink, and we'd be happy to help identify issues and improve that aspect of the Regions code.</blockquote>
+		<cite><a href="https://groups.google.com/a/chromium.org/d/msg/blink-dev/kTktlHPJn4Q/_7tQYEzvMNQJ">Lars Erik Bolstad</a></cite>
+	</section>
+
+	<section class="slide">
+		<blockquote><mark>It's fair to say we kinda screwed up with the Regions work with Adobe. We do want Blink to be 'true' open source and indeed take major contributions from outside Google.</mark> The issue with Regions was that we were supportive of the feature in principle but once the patches started to land we realized how much it was going to conflict with other work going on in Blink. We had to mediate and unfortunately picked the mobile apps performance work over Regions. </blockquote>
+	</section>
+
+	<section class="slide">
+		<blockquote>&hellip; <mark>Hopefully Regions will land still but perhaps with a different, more complementary, implementation.</mark> Anyway, we learned an important lesson and since have tried to improve our processes to ensure that implementation conflicts don't happen with the whole "Intent to..." process&hellip; <mark>I think it's fair to say we're still learning here though and would encourage more feedback on how we can be more open.</mark></blockquote>
+	</section>
+
+	-->
+
+	<section class="slide">
+		<h2>My initial hopes for Blink</h2>
+		<blockquote>I also hope that it’s easier for smaller players and even individuals to contribute to the new rendering engine, with a more transparent gatekeeping process.
+		</blockquote>
+		<cite><a href="http://www.brucelawson.co.uk/2013/hello-blink/">Hello Blink</a></cite>- moi, 3 April 2013
+	</section>
+
+	<section class="slide">
+		<h2>8 Dec 2011: my strawman</h2>
+<pre><code>&lt;picture alt=&quot;angry pirate&quot;&gt;
+&lt;source src=hires.png media=&quot;min-width:800px&quot;&gt;
+&lt;source src=midres.png media=&quot;network-speed:3g&quot;&gt;
+&lt;source src=lores.png&gt;
+   &lt;!-- fallback for browsers without support --&gt;
+   &lt;img src=midres.png alt=&quot;angry pirate&quot;&gt;
+&lt;/picture&gt;</code></pre>
+
+	</section>
+
+	<section class="slide cover">
+	<img src="pictures/RICG.jpg" alt="responsive images community group logo">
+	</section>
+
+	<section class="slide">
+	<h2>&lt;picture> element</h2>
+		<blockquote>the RICG’s main contribution to the web platform wasn’t picture, srcset, or sizes&hellip; To get them done we had to punch a hole through the thick technical, cultural, and institutional walls that separate the people who make browsers from the people who make websites.</blockquote>
+
+	</section>
+
+	<!--
+
+	<section class="slide cover">
+		<h2>Why &lt;picture> not &lt;pic> ?</h2>
+		<img src="pictures/batman.gif" alt="Robin says 'it's only 8 bytes extta'. Batman slaps him sayig 'Perf matters!'">
+	</section>
+
+	<section class="slide cover">
+		<img src="pictures/pitcher2.jpg" alt="6 pitchers of beer on a bar">
+	</section>
+
+	-->
+
+
+	<section class="slide shout">
+		<h2>Is Blink the new IE6?</h2>
+	</section>
+
+	<section class='slide'>
+	<h2>Is monopoly bad?</h2>
+	<blockquote><mark>only 12.2% of the Fortune 500 companies in 1955 were still on the list &hellip;in 2014</mark>&hellip;Most of the companies on the list in 1955 are unrecognizable, forgotten companies today.</blockquote>
+	<cite><a href="http://www.aei-ideas.org/2014/08/fortune-500-firms-in-1955-vs-2014-89-are-gone-and-were-all-better-off-because-of-that-dynamic-creative-destruction/">American Enterprise Institute</a></cite>
+	</section>
+
+	<section class='slide'>
+	<h2>Is Google a monopoly?</h2>
+	<blockquote>Google is bent on establishing platform domination unlike anything we've ever seen, even from late-1990s Microsoft. Google controls Android, which is winning; Chrome, which is winning; and key Web properties in Search, Youtube, Gmail and Docs, which are all winning.</blockquote>
+	<cite><a href="http://robert.ocallahan.org/2014/08/choose-firefox-now-or-later-you-wont.html">Choose Firefox Now, Or Later You Won't Get A Choice</a> - Robert O'Callahan (Mozilla hacker)</cite>
+	</section>
+
+	<section class="slide">
+		<h2>Is Blink a monopoly?</h2>
+		<ul>
+			<li class="next">IE6 had 90% market share, on desktop</li>
+			<li class="next">MS was generally hostile to the Web</li>
+			<li class="next">Blink is open-source; Trident isn't</li>
+			<li class="next">Browser vendors have urgent need to collaborate</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>The existential threat</h2>
+		<p>For HTML5, it was Rich Internet Applications:</p>
+		<blockquote>A lot of the work started because we were really scared of Silverlight.</blockquote>
+		<cite><a href="http://youtu.be/xIxDJof7xxQ?t=1h15m31s">Ian Hickson, 25 Sept 2008</a></cite>
+	</section>
+
+	<section class="slide shout">
+		<h2>Today, it's native apps.</h2>
+	</section>
+
+<!--
+
+<section class="slide cover">
+      <div style="width:50%;">
+    <p>July 2011-12: US Mobile Web users
+          <mark>up 82%</mark>
+          from 52,435,000 to 95,176,000</p>
+    <p>Numbers from Nielsen <cite><a href="http://www.nielsen.com/us/en/reports/2012/state-of-the-media-the-social-media-report-2012.html">State of the Media: the social media report 2012</a></cite>.</p>
+  </div>
+      <img  src="pictures/mobile-web.gif" alt=""> </section>
+<section class="slide cover">
+      <p style="width:50%;">July 2011-12: US Mobile App users
+    <mark>up 85%</mark>
+    from 55,001,000 to 101,802,000</p>
+      <img  src="pictures/mobile-app.jpg" alt=""> </section>
+<section class="slide cover">
+      <div style="width:50%;">
+    <p>July 2011-12: Time spent using Mobile Web
+          <mark>up 22%</mark>
+          .</p>
+    <p>(PC use up 4%, although number of unique users down 4% from 213,253,000 to 204,721,000.</p>
+  </div>
+      <img  src="pictures/mobile-web.gif" alt=""> </section>
+<section class="slide cover">
+      <p  style="width:50%;">July 2011-12: Time spent using Mobile Apps
+    <mark>up 120%</mark>
+    .</p>
+      <img  src="pictures/mobile-app.jpg" alt=""> </section>
+ -->
+
+<section class="slide">
+	<h2>It's an App World.<br> The Web Just Lives in It</h2>
+    <blockquote>Today, the U.S. consumer spends an average of 2 hours and 38 minutes per day on smartphones and tablets. 80% of that time (2 hours and 7 minutes) is spent inside apps and 20% (31 minutes) is spent on the mobile web.</blockquote>
+    <cite><a href="http://blog.flurry.com/bid/95723/Flurry-Five-Year-Report-It-s-an-App-World-The-Web-Just-Lives-in-It">blog.flurry.com</a> April, 2013</cite>
+</section>
+
+<section class="slide cover">
+	<img src="pictures/flurry.gif" alt="breakdown of time spent: 80% apps, 20% browser (Safari 12%, Android 4%, Opera Mini 2%)">
+</section>
+
+<section class="slide cover">
+	<img src="pictures/flurry-2014.gif" alt="2013: 80% to 20% split between apps and web; 2014: 86% to 14%">
+</section>
+
+
+<section class="slide cover">
+	<img src="pictures/gap.jpg" alt="mind the gap">
+</section>
+
+
+
+<section class="slide cover">
+	<img src="pictures/page-not-found.gif" alt="Page not found error message page">
+</section>
+
+
+<section class="slide cover shout">
+ <img src="pictures/service-workers.jpg" alt="Service Workers">
+</section>
+
+<section class="slide">
+      <h2>Service Workers CheatSheet</h2>
+      <ul>
+      	<li>registered Service Workers are invoked even when offline, so enable apps that are "offline by default"</li>
+    <li>normal resource loading is the fallback behavior</li>
+    <li><mark>it forces you to have URLs! Some modern apps platforms have foresaken this core principle of the web and suffer for it.</mark> The web should never make the same mistake.</li>
+  </ul>
+ </section>
+
+
+ <section class="slide cover">
+ 	<img src="pictures/lm.jpg" alt="cutaway diagram of Apollo lunar module">
+ </section>
+
+
+<section class="slide cover">
+ 	<img src="pictures/walrus.jpg" alt="cartoon walrus in front of lunar module">
+</section>
+
+<section class="slide cover">
+ 	<img src="pictures/lamp.jpg" alt="cartoon leg with lampshade on top, next to walrus and lunar module">
+</section>
+
+
+
+<section class="slide">
+      <pre><code><mark>nnavigator.serviceWorker.register</mark>
+  ("/*", "/assets/v1/wrkr.js").then(
+    function(serviceWorker) {
+		  console.log("success!");
+		  // call window.location.reload()
+		},
+	  function(why) {
+	    console.error("failed!:", why);
+    }
+);</code></pre>
+    </section>
+
+<section class="slide cover">
+ 	<img src="pictures/no-worker.gif" alt="browser shows nothing when not connected to web">
+</section>
+
+<section class="slide cover">
+ 	<img src="pictures/with-worker.gif" alt="browser shows site when connected to web worker, even though not connected to web">
+</section>
+
+x
+<!-- engagement -->
+<!--
+
+	<section class="slide cover">
+		<img src="pictures/geolocation.jpg" alt="Geolocation" />
+	</section>
+
+	<section class="slide">
+		<h2>There's an <s>app</s> API for that</h2>
+		<ul>
+			<li>File API</li>
+			<li>Orientation</li>
+			<li>Sensors (humidity, ambient light)</li>
+			<li>WebRTC</li>
+			<li>Drag'n'Drop</li>
+		</ul>
+	</section>
+
+<section class="slide cover">
+	<img src="pictures/phonegap.jpg" alt="phonegap diagram and picture of Brian LeRoux">
+</section>
+
+<section class="slide">
+	<h2>App store discoverability</h2>
+	<blockquote>
+	<p>Device APIs not so much anymore, now that many/most of what is needed is now there or soon to be. (Especially so with WebRTC.)</p>
+<p>App Stores for discovery is big.</p>
+	</blockquote>
+	<cite>Brian "Bobbles Bon-Bon" LeRoux, PhoneGap</cite>
+</section>
+
+<section class="slide">
+	<h2>Moneti<s>z</s>sation</h2>
+	<blockquote>
+		I don't buy the monetization story, because if I did, that means I endorse $1 business models based on manufactured scarcity. ;P
+	</blockquote>
+	<cite>Bobbles Bon-Bon</cite>
+	<p>&hellip;but for Web Payments see <a href="https://web-payments.org">web-payments.org</a></p>
+</section>
+
+<section class="slide">
+	<h2>Engagement</h2>
+	<blockquote>
+		Push Notifications for the engagement part of the story.
+	</blockquote>
+	<cite>"Bobbles Bon-Bon"</cite>
+</section>
+
+-->
+
+<section class="slide cover">
+	<img src="pictures/gap.jpg" alt="mind the gap">
+</section>
+
+
+<section class="slide">
+	<h2>User Experience</h2>
+	<ul>
+	<li>People prefer the familiar; Users trust known resources</li>
+	<li>Mobile users bookmark differently. Bookmarks in mobile browsers are used sparingly, instead mobile users "bookmark" by downloading the native app.
+	</ul>
+		<p><a href="http://ux.stackexchange.com/questions/39262/any-research-on-user-experience-perceptions-of-native-apps-vs-web-or-hybrid-apps/">User Experience Stack Exchange: <cite>Any Research on User Experience Perceptions of Native Apps vs Web or Hybrid Apps?</cite></a></p>
+</section>
+
+<!--
+
+<section class="slide">
+	<h2>Scott Jenson</h2>
+		<ul>
+			<li><mark>integrate in the list of apps directly available to the user.</mark> This means that it should show up on that OS's home screen and be launched just like any other native app.
+			<li><mark>integrate into the the OS task-switcher.</mark> If the user switches from a web app to a native app, such as the contacts manager, they shouldn't have to switch to the web browser and then switch to the web app.
+		</ul>
+
+</section>
+
+
+<section class="slide">
+	<h2>Installability</h2>
+	<ul>
+	<li>install itself from any web page
+	<li>user experience to install a web app should not be just saving a bookmark. Apps should be able to have an ‘install link' on any web page that starts the <mark>safe process of downloading the app package</mark> to the device.
+	</ul>
+	<p>W3C: <a href="http://www.w3.org/QA/2013/08/enabling_new_types_of_web_user.html">Enabling new types of web user experiences</a></p>
+</section>
+-->
+
+<section class="slide cover">
+	<img src="pictures/ATHS1.gif" alt="screeshot of weight.aerotwist.com in Chrome for Android">
+</section>
+<section class="slide cover">
+	<img src="pictures/ATHS2.gif" alt="weight.aerotwist.com with Chrome for Android's menu exposed">
+</section>
+
+<section class="slide cover">
+	<img src="pictures/ATHS3.gif" alt="... scroll down the menu and see 'Add to homescreen' option">
+</section>
+
+<section class="slide cover">
+	<img src="pictures/ATHS4.gif" alt="Android home screen with weight.aerotwist.com icon on it">
+</section>
+
+<section class="slide cover">
+	<img src="pictures/ATHS5.gif" alt="Choosing icon starts weight.aerotwist.com with no browser chrome">
+</section>
+
+<section class="slide cover">
+	<img src="pictures/opera-ahs.jpg" alt="Opera: '+' button in URL bar opens dialog with 'add to homescreen' option">
+</section>
+
+<section class="slide cover">
+	<img src="pictures/ATHS6.gif" alt="Chrome's new Add to homescreen banner">
+</section>
+
+
+<section class="slide">
+	<h2>Web Manifest</h2>
+	<ul>
+		<li><code>&lt;link rel="manifest" href="install.json"></code>
+		<li>the web application's name, links to icons
+		<li>the preferred URL to open on launch
+		<li>default orientation, <code>fullscreen</code> indicator
+</ul>
+	<p><a href="http://w3c.github.io/manifest/">w3c.github.io/manifest/</a> - Mozilla's Marvellous Mr Marcos' magical manifest</p>
+</section>
+
+
+
+
+<section class="slide">
+	<h2>W3C Widgets</h2>
+	<blockquote>a <mark>packaging format</mark> and metadata for &hellip;  full-fledged client-side applications that are authored using technologies such as HTML and then <mark>packaged for distribution</mark>. Examples range from simple clocks &hellip; to complex applications that pull data from multiple sources</blockquote>
+	<cite><a href="http://www.w3.org/TR/widgets/">W3C Widgets spec</a></cite>
+</section>
+
+<section class="slide cover">
+	<img src="pictures/baby.jpg" alt="old woodcut of woman throwing baby out with bathwater">
+</section>
+
+<section class="slide cover">
+	<img src="pictures/convo.jpg" alt="">
+</section>
+
+
+<!--
+
+<section class="slide">
+	<h2>Attwood's Law</h2>
+	<blockquote>Any application that can be written in JavaScript, will eventually be written in JavaScript.</blockquote>
+	<cite><a href="http://blog.codinghorror.com/the-principle-of-least-power/">The Principle of Least Power</a> - Jeff Attwood</cite>
+</section>
+
+<section class="slide">
+	<h2>Lawson's Law</h2>
+	<blockquote>Just because you can vomit a DOM out of JavaScript doesn't mean you have to.</blockquote>
+	<cite>Me, yesterday</cite>
+</section>
+
+<section class="slide">
+	<h2>Holy Grail App</h2>
+	<blockquote> we've launched our first Holy Grail app into production! &hellip;  It looks exactly the same as the app it replaced, however <mark>initial pageload feels drastically quicker</mark> </blockquote>
+	<cite><a href="http://nerds.airbnb.com/weve-launched-our-first-nodejs-app-to-product/">AirBnB</a></cite>
+</section>
+
+<section class="slide">
+	<h2>Holy Grail App #2</h2>
+	<blockquote><p>because we serve up <mark>real HTML instead of waiting for the client to download JavaScript before rendering</mark>.</p><p>Plus, it is <mark>fully crawlable by search engines</mark>. &hellip; It feels <mark>5x faster</mark>.<p></blockquote>
+	<cite><a href="http://nerds.airbnb.com/weve-launched-our-first-nodejs-app-to-product/">AirBnB</a></cite>
+</section>
+
+<section class="slide cover">
+	<img src="pictures/prerender.gif" alt="screenshot of prerender.io">
+</section>
+
+-->
+
+<section class="slide cover shout">
+	<h2 style="bottom:0; top:auto;">Stop emulating failure</h2>
+	<img src="pictures/qr-ad.jpg" alt="advert: photo of phone with QR code and text 'scan to download timetables in PDF format">
+</section>
+
+<section class="slide">
+	<h2>What the web needs</h2>
+	<ul>
+		<li class="next">Browser vendors to work together for interop
+		<li class="next">Standards that preserve core strengths of Web
+		<li class="next">An end to silos
+	</ul>
+</section>
+
+
+<section class="slide">
+	<h2>TL;DL (Zzz)</h2>
+	<ul>
+		<li class="next">We don't want to make Blink a monopoly
+		<li class="next">We couldn't make Blink a monopoly
+		<li class="next">&hellip;but you could.
+		<li class="next">Please don't!
+		<li class="next"><mark>Love the web.</mark>
+		<li class="next">I love you. <mark>xxx</mark>
+
+	</ul>
+</section>
+
+
+	<section class="slide last">
+		<ul>
+			<li><a href="mailto:brucel@opera.com">brucel@opera.com</a></li>
+			<li><a href="http://opera.com/developer">opera.com/developer</a></li>
+			<li><a href="http://brucelawson.co.uk">brucelawson.co.uk</a></li>
+			<li><a href="https://twitter.com/brucel">@brucel</a></li>
+		</ul>
+	</section>
+
+
+
+<section class="slide" class="acks">
+<h2>Thanks</h2>
+	<ul style="font-size:.7em;">
+		<li>Ian Ellison-Taylor (Google)
+		<li>Lars Erik Bolstad (Opera)
+		<li>Philip Jägenstedt (Opera)
+		<li>Patrick Lauke (Paciello Group)
+		<li>Brian "Bobble Bon-Bon" Leroux (Adobe)
+</ul>
+</section>
+
+
+<section class="slide" class="acks">
+<h2>Image acknowledgments</h2>
+	<ul style="font-size:.7em;">
+		<li>Me by HTML sign in Tokyo by Doug Schepers (@shepazu)</li>
+		<li>Apps vs Web graphs by <a href="http://blog.flurry.com/bid/95723/Flurry-Five-Year-Report-It-s-an-App-World-The-Web-Just-Lives-in-It">Flurry</a>, used by permission</li>
+		<li><a href=="http://browserg.nom.es/">Blink/ WebKit fork analysis graphs</a> by Philip Rogers, used by permission.</li>
+
+		<li><a href="https://www.flickr.com/photos/voteprime/7381422380/">Pitcher</a> by voteprime</li>
+		<li><a hfef="http://en.wikipedia.org/wiki/My_God,_Help_Me_to_Survive_This_Deadly_Love#/media/File:Bundesarchiv_B_145_Bild-F088809-0038,_Berlin,_East_Side_Gallery.jpg">My God, Help Me to Survive This Deadly Love</a> - Bundesarchiv, B 145 Bild-F088809-0038 / Thurn, Joachim F</li>
+		<!--
+		<li><a href="http://html.adobe.com/webplatform/layout/regions/">CSS Regions logo</a> courtesy of Adobe
+		-->
+		<li>Mind the Gap - <a href="http://en.wikipedia.org/wiki/File:Mind_the_gap_2.JPG">Reinhard Dietrich</a>
+</ul>
+</section>
+<section class="slide">
+	<ul style="font-size:.7em;">
+		<h2>More acknowledgments</h2>
+		<li>Opera's <a href="https://operasoftware.github.io/upstreamtools/">Blink commits</a> cake photographed by Andreas Bovens</li>
+		<li>Add to Homescreen banner - <a href="http://updates.html5rocks.com/2015/03/increasing-engagement-with-app-install-banners-in-chrome-for-android">HTML5 Rocks</a></li>
+		<!--
+		<li>PhoneGap diagram: Adobe; Brian LeRoux pic courtesy of <a href="http:brian.io">Brian</a></li>
+		-->
+		<li><a href="https://secure.flickr.com/photos/chuckp/5766534/">Conversation photo</a> by <a href="https://secure.flickr.com/photos/chuckp/">Chuck Patch</a>
+
+		<li>HTML/ CSS Presentation Framework: <a href="https://github.com/shower/shower">Shower</a> by Vadim Makeev.</li>
+	</ul>
+</section>
+
+
+
+
+
+	<!--
+		To hide progress bar from entire presentation
+		just remove “progress” element.
+		-->
+	<div class="progress"><div></div></div>
+	<script src="scripts/script-adfea3dfb6.js"></script>
+
+</body>
+</html>

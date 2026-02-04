@@ -1,0 +1,121 @@
+.slide.intro {
+}
+.slide.intro:after {
+    content: '';
+}
+
+.intro-title {
+	position: relative;
+	z-index: 10;
+}
+
+.slide .intro-title__heading {
+	font: bold 60px/1 'Open Sans Light', sans-serif;
+}
+
+.slide .intro-title__help {
+	color: #555;
+	font-size: 50px;
+	font-weight: normal;
+}
+
+.intro-title__second {
+	display: block;
+	padding-left: 50px;
+	padding-top: 10px;
+}
+
+
+.slide .pre code {
+    line-height: 1.5;
+}
+
+.slide .pre code:before {
+    content: '';
+}
+
+.col2-left {
+    float: left;
+    width: 48%;
+}
+.col2-right {
+    float: right;
+    width: 50%;
+}
+
+.fade {
+    color: #999;
+}
+
+
+.layers {
+	-webkit-transform: scale(0.75) translateY(60px);
+	transform: scale(0.75) translateY(60px);
+}
+
+.layer-1, .layer-2, .layer-3 {
+	position: absolute;
+}
+.layer-1 {
+	width: 1024px;
+	top: 0;
+	left: 0;
+	z-index: 2;
+}
+.layer-2 {
+	width: 1024px;
+	top: 550px;
+	left: 0;
+	z-index: 3;
+	-webkit-animation-duration: 4s;
+	-webkit-animation-fill-mode: both;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-name: wave;
+	animation-duration: 4s;
+	animation-fill-mode: both;
+	animation-iteration-count: infinite;
+	animation-name: wave;
+}
+.layer-3 {
+	width: 704px;
+	top: 480px;
+	left: -20px;
+	z-index: 1;
+	-webkit-animation-duration: 4.1s;
+	-webkit-animation-fill-mode: both;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-name: wave;
+	animation-duration: 4.1s;
+	animation-fill-mode: both;
+	animation-iteration-count: infinite;
+	animation-name: wave;
+}
+
+@-webkit-keyframes wave {
+	0% {
+		-webkit-transform: translateX(0px) translateY(0px);
+		transform: translateX(0px) translateY(0px);
+	}
+	50% {
+		-webkit-transform: translateX(-20px) translateY(1px);
+		transform: translateX(-20px) translateY(1px);
+	}
+	100% {
+		-webkit-transform: translateX(0px) translateY(0px);
+		transform: translateX(0px) translateY(0px);
+	}
+}
+@keyframes wave {
+	0% {
+		-webkit-transform: translateX(0px) translateY(0px);
+		transform: translateX(0px) translateY(0px);
+	}
+	50% {
+		-webkit-transform: translateX(-20px) translateY(1px);
+		transform: translateX(-20px) translateY(1px);
+	}
+	100% {
+		-webkit-transform: translateX(0px) translateY(0px);
+		transform: translateX(0px) translateY(0px);
+	}
+}

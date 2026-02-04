@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Всем стоять и не двигаться!</title>
+    <meta charset="utf-8">
+    <link href='https://fonts.googleapis.com/css?family=Exo+2&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <style>
+
+      body { font-family: 'Exo 2', sans-serif; }
+      li, p { font-size: 30px !important; }
+      h1, h2, h3 {
+        font-family: 'Exo 2', sans-serif;
+        font-weight: normal;
+      }
+      h1 {
+        background: white;
+      }
+      #slide-logo {
+        background-size: cover !important;
+        background-position: center !important;
+      }
+      #slide-fit {
+        background-size: contain !important;
+        background-position: center !important;
+      }
+      #slide-goodcop {
+        background-size: cover !important;
+        background-position: center !important;
+      }
+      #slide-badcop {
+        background-size: cover !important;
+        background-position: center !important;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+    </style>
+
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+background-image: url(logo.jpg)
+name: logo
+
+# Всем стоять и не двигаться!
+
+---
+
+# Коротко обо мне
+
+###Алексей Охрименко - Acronis
+
+.left[Twitter: @Ai_boy]
+
+![Default-aligned image](emmet.jpg)
+
+---
+
+class: center, middle
+# Это доклад о фиксировании чего-либо к чему-нибудь относительно чего-то
+
+---
+
+class: center, middle
+# Нам точно это нужно?
+
+---
+
+class: center, middle
+
+#[Smashing Magazine UX study](http://www.smashingmagazine.com/2012/09/sticky-menus-are-quicker-to-navigate/)
+#на 22% быстрее
+
+#100% предпочли фиксированную навигацию
+
+---
+
+class: center, middle
+
+# [#Yandex - Fixed](https://yandex.ru/search/?text=%D0%90%20%D0%BD%D1%83%D0%B6%D0%BD%D0%B8%20%D0%BB%D0%B8%20%D1%84%D0%B8%D0%BA%D1%81%D0%BE%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5%20%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D1%8B%3F&lr=213)
+# [#Twitter - Sticky](https://twitter.com/webstandards_ru)
+# [#Stack Menu](http://jsbin.com/noluso/1/edit?css,output)
+
+---
+
+class: center, middle
+background-image: url(goodcop.png)
+name: goodcop
+
+# Вам понравились эти демки? :)
+
+---
+
+class: center, middle
+background-image: url(badcop.png)
+name: badcop
+
+# Ну и зря!
+
+---
+
+class: center, middle
+
+#В вебе 100% зафиксировать
+#элемент - невозможно
+
+---
+
+# С этого место поподробнее...
+
+- Viewport? Зачем? Я просто хотел зафиксировать элемент
+
+---
+
+# С этого место поподробнее...
+
+- Viewport? Зачем? Я просто хотел зафиксировать элемент
+
+- position: fixed и почему оно не работает
+
+---
+
+# С этого место поподробнее...
+
+- Viewport? Зачем? Я просто хотел зафиксировать элемент
+
+- position: fixed и почему оно не работает
+
+- position: sticky и почему оно не работает
+
+---
+
+# С этого место поподробнее...
+
+- Viewport? Зачем? Я просто хотел зафиксировать элемент
+
+- position: fixed и почему оно не работает
+
+- position: sticky и почему оно не работает
+
+- overflow: scroll и другие хаки и почему они не работают
+
+---
+
+# С этого место поподробнее<span class=""></span>
+
+- Viewport? Зачем? Я просто хотел зафиксировать элемент
+
+- position: fixed и почему оно не работает
+
+- position: sticky и почему оно не работает
+
+- overflow: scroll и другие хаки и почему они не работают
+
+- пример из реальной жизни (Hybrid iOS email) #1
+
+- пример из реальной жизни (3 way scroll) #2
+
+---
+
+class: center, middle
+
+# Viewport? Зачем? Я просто хотел зафиксировать элемент
+
+---
+
+class: center, middle
+
+# Да потому что обычный зум может сломать весь ваш сайт
+
+---
+
+# Причины:
+
+- Cтареем,
+
+- Зрение хуже
+
+- Мобильные девайсы
+
+- High DPI (aka ретина)
+
+---
+
+class: center, middle
+
+# [#Yandex Magic](https://yandex.ru/search/?text=%D0%90%20%D0%BD%D1%83%D0%B6%D0%BD%D0%B8%20%D0%BB%D0%B8%20%D1%84%D0%B8%D0%BA%D1%81%D0%BE%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5%20%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D1%8B%3F&lr=213)
+
+---
+
+<video id="vid1" width="750" height="600" controls="controls">
+  <source src="itsgone.mp4#t=30,50" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+</video>
+
+---
+
+class: center, middle
+
+#Pixels ( Device & CSS )
+
+---
+
+class: center, middle
+
+#Device Pixels
+
+
+---
+
+#Device Pixels
+
+- Обычно все просто ( 1 квадратик - 1 пиксель )
+
+.center[![Default-aligned image](csspixels_100.gif)]
+
+---
+
+#Device Pixels
+
+- Обычно все просто ( 1 квадратик - 1 пиксель )
+
+- Device Pixel Ratio / Virtual Pixels  - [(Четко и резко (c) Вадима Макеева)](https://www.youtube.com/watch?v=n0Vy9cYES-4)
+
+---
+
+#Device Pixels
+
+- Обычно все просто ( 1 квадратик - 1 пиксель )
+
+- Device Pixel Ratio / Virtual Pixels - [(Четко и резко (c) Вадима Макеева)](https://www.youtube.com/watch?v=n0Vy9cYES-4)
+
+- Downsampling - [iPhone 6 plus screens demistified](http://www.paintcodeapp.com/news/iphone-6-screens-demystified)
+
+---
+
+#Device Pixels
+
+- Обычно все просто ( 1 квадратик - 1 пиксель )
+
+- Device Pixel Ratio / Virtual Pixels  - [(Четко и резко (c) Вадима Макеева)](https://www.youtube.com/watch?v=n0Vy9cYES-4)
+
+- Downsampling - [iPhone 6 plus screens demistified](http://www.paintcodeapp.com/news/iphone-6-screens-demystified)
+
+- Многие ожидают что браузер будет использовать именно их ( но это не так )
+
+---
+
+class: center, middle
+
+#CSS Pixels
+
+---
+
+#CSS Pixels
+
+.center[![Default-aligned image](csspixels_100.gif)]
+
+.center[zoom 100%]
+
+---
+
+#CSS Pixels
+
+.center[![Default-aligned image](csspixels_out.gif)]
+
+.center[zoom 75%]
+
+---
+
+#CSS Pixels
+
+.center[![Default-aligned image](csspixels_in.gif)]
+
+.center[zoom 125%]
+
+---
+
+class: center, middle
+
+#Вьюпорт ( Десктопный и Мобильный )
+
+---
+
+class: center, middle
+
+#Десктопный вьюпорт
+
+#[#Magic](http://output.jsbin.com/koluqo/2) (with explanation)
+
+---
+
+class: center, middle
+
+#Мобильный вьюпорт
+
+---
+
+class: center, middle
+background-image: url(0.png)
+name: logo
+
+---
+
+class: center, middle
+background-image: url(1.png)
+name: logo
+
+---
+
+class: center, middle
+background-image: url(2.png)
+name: logo
+
+---
+
+class: center, middle
+background-image: url(3.png)
+name: logo
+
+---
+
+class: center, middle
+background-image: url(4.png)
+name: logo
+
+---
+
+class: center, middle
+background-image: url(5.png)
+name: logo
+
+---
+
+class: center, middle
+background-image: url(6.png)
+name: logo
+
+---
+
+class: center, middle
+
+#position: fixed и почему оно не работает
+
+---
+
+#position: fixed
+
+- [CSS Positioned Layout Module Level 3](http://www.w3.org/TR/css3-positioning/#fixed-pos)
+
+---
+
+#position: fixed
+
+- [CSS Positioned Layout Module Level 3](http://www.w3.org/TR/css3-positioning/#fixed-pos)
+
+- Фиксирует элемент на странице относительно Viewport
+
+---
+
+#position: fixed
+
+- [CSS Positioned Layout Module Level 3](http://www.w3.org/TR/css3-positioning/#fixed-pos)
+
+- Фиксирует элемент на странице относительно Viewport
+
+- Не смещается при скролле *
+
+---
+
+#position: fixed
+
+- [CSS Positioned Layout Module Level 3](http://www.w3.org/TR/css3-positioning/#fixed-pos)
+
+- Фиксирует элемент на странице относительно Viewport
+
+- Не смещается при скролле *
+
+- Повторяется на экранах на печати *
+
+---
+
+#position: fixed
+
+- [CSS Positioned Layout Module Level 3](http://www.w3.org/TR/css3-positioning/#fixed-pos)
+
+- Фиксирует элемент на странице относительно Viewport
+
+- Не смещается при скролле *
+
+- Повторяется на экранах на печати *
+
+- Если элемент выходит за рамки дозволенного - он будет обрезан
+
+---
+
+#position: fixed
+
+- [CSS Positioned Layout Module Level 3](http://www.w3.org/TR/css3-positioning/#fixed-pos)
+
+- Фиксирует элемент на странице относительно Viewport
+
+- Не смещается при скролле *
+
+- Повторяется на экранах на печати *
+
+- Если элемент выходит за рамки дозволенного - он будет обрезан
+
+- Не участвует в document flow
+
+---
+
+class: center, middle
+background-image: url(canifixed1.png)
+name: fit
+
+---
+
+class: center, middle
+background-image: url(canifixed2.png)
+name: fit
+
+---
+
+#position: fixed - не работает
+
+<br><br><br><br>
+
+.center[#[#Угадай кто?](http://jsbin.com/qodasag/1/edit?css,output)]
+
+---
+
+#position: fixed - не работает
+
+<br><br><br><br>
+
+##Input Focus
+( http://jsbin.com/caxika/edit?css,output )
+
+---
+
+#position: fixed - не работает
+
+<br><br><br><br>
+
+#[#PerfectScrollFix overscroll](https://github.com/aiboy/PerfectScrollFix)
+( http://jsbin.com/caxika/edit?css,output )
+
+---
+
+class: center, middle
+
+#position: sticky и почему оно не работает
+
+---
+
+#position: sticky
+
+- [CSS Positioned Layout Module Level 3](http://www.w3.org/TR/css3-positioning/#fixed-pos)
+
+---
+
+#position: sticky
+
+- [CSS Positioned Layout Module Level 3](http://www.w3.org/TR/css3-positioning/#fixed-pos)
+
+- Ведет себя как position:relative а после - как position:fixed
+
+#[#sticky is tricky](http://jsbin.com/kurunik/1/edit?css,output)
+
+---
+
+#position: sticky
+
+- [CSS Positioned Layout Module Level 3](http://www.w3.org/TR/css3-positioning/#fixed-pos)
+
+- Ведет себя как position:relative а после - как position:fixed
+
+- overflow, overflow-x, or overflow-y ( не равное visible ) - выключает position:sticky
+
+---
+
+#position: sticky
+
+- [CSS Positioned Layout Module Level 3](http://www.w3.org/TR/css3-positioning/#fixed-pos)
+
+- Ведет себя как position:relative а после - как position:fixed
+
+- overflow, overflow-x, or overflow-y ( не равное visible ) - выключает position:sticky
+
+- [Safari - position:sticky in table cell](http://stackoverflow.com/questions/28172079/safari-position-sticky-in-table-cell)
+
+---
+
+class: center, middle
+background-image: url(canisticky1.png)
+name: fit
+
+---
+
+class: center, middle
+background-image: url(canisticky2.png)
+name: fit
+
+---
+
+#position: sticky - не работает
+
+<br><br><br>
+
+Нормального polyfill-a по сей день не найдено!
+
+Но из всего что есть самый лучший это
+[#fixed-sticky](https://github.com/filamentgroup/fixed-sticky)
+
+Который не смотря на всю свое крутизну работает не стабильно и требует невозможного! ( jQuery )
+
+---
+
+class: center, middle
+
+#overflow: scroll и другие хаки и почему они не работают
+
+---
+
+#overflow:scroll - не работает
+
+<br><br><br><br>
+
+#[#overflow:scroll](http://jsbin.com/zogidiwagu/1/edit?css,output)
+
+---
+
+#overflow:scroll - не работает
+
+<br><br><br><br>
+
+ -webkit-overflow-scrolling: touch
+
+---
+
+#[Elastic scroll problem](http://browser.colla.me/show/disable_elastic_scroll_on_iOS_safari)
+
+![Default-aligned image](autoios1.gif)
+
+---
+
+#[Elastic scroll problem](http://browser.colla.me/show/disable_elastic_scroll_on_iOS_safari)
+
+![Default-aligned image](autoios2.gif)
+
+---
+
+class: center, middle
+
+#Эмуляция скролла
+#[http://scrollerjs.com/](http://scrollerjs.com/)
+#[http://www.youtube.com/watch?v=VAOPi9C8674](http://www.youtube.com/watch?v=VAOPi9C8674)
+
+---
+
+#Эмуляция скролла - не работает
+
+
+![Default-aligned image](cat.jpg)
+
+---
+
+#Эмуляция скролла - не работает
+
+- Остутствует ощущение нативности
+
+- Страдает Accesability
+
+- Очень много ресурсов и времени уходит на оттачивание данных реализаций
+
+---
+
+class: center, middle
+
+#Примеры
+
+---
+
+class: center, middle
+
+#[#iOS web email](https://github.com/aiboy/everybody-freeze-ios-email-app)
+
+---
+
+class: center, middle
+
+#[#3 way scroll](https://github.com/aiboy/everybody-freeze-3way-scroll)
+
+---
+
+class: center, middle
+background-image: url(end.jpg)
+name: logo
+
+#THE END
+
+---
+
+# Q&A
+
+###Алексей Охрименко - Acronis
+
+.left[Twitter: @Ai_boy]
+
+![Default-aligned image](emmet.jpg)
+
+
+
+
+
+
+
+    </textarea>
+    <script src="remark.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>

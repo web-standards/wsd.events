@@ -1,0 +1,757 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Shower Presentation Engine</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=792, user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="shower/themes/ribbon/styles/screen-d90984e344.css">
+    <!--Video plugin-->
+    <link rel="stylesheet" href="shower-video/shower-video.css">
+    <!--/Video plugin-->
+    <style>
+        .connected-1 {
+          background: #CBF2CB;
+        }
+        .connected-2 {
+          background: #FAD797;
+        }
+        .connected-3 {
+          background: #92C8F7;
+        }
+        .has-video h2 {
+            color:#fff;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body class="list">
+
+    <header class="caption">
+        <h1>Декларативное целеполагание на примере seesu.me</h1>
+    </header>
+    <section class="slide cover"><div>
+        <video width="100%" height="100%" muted><source src="videos/seesu.overview2.webm" type="video/webm"></video>
+    </div></section>
+    <section class="slide shout" id="Cover"><div>
+        <h2>Декларативное целеполагание на примере <a href="http://seesu.me">seesu.me</a></h2>
+        <style>
+            #Cover h2 {
+                padding-left:130px;
+                text-align:left;
+                font-size:100px
+                }
+        </style>
+    </div></section>
+    <!--
+        Поиск и прослушивание, сису не обладает, но комбинирует данные. last.fm, vk.com, soundcloud.com
+        быстрая и удобная навигация под муз.данным, артистов, тэгов, пользователей
+
+        посвящен опыту разработки и новому подходу с условным названием. подходу позволяющему предолет технологическую осталось разработки приложений от кулинарии
+
+        доклад из 3х глав
+
+        1ая глава посвещена причинам по котором приложение становится более динамичным и сложным в реализации
+        2ая глава посвещена сложностям организации динамичных систем а также принципу и способам преодоления их устранить. подходу, позволяющему устранить технологическую отсталось разработки от кулинарии
+
+        3ая глава посвещена способам, позволяющим в перспективе сделать код более лаконичным и производительным
+    -->
+
+    <!--
+            <img src="pictures/cover.jpg" alt="">
+
+            <style>
+                #Cover h2 {
+                    margin:30px 0 0;
+                    color:#FFF;
+                    text-align:center;
+                    font-size:70px;
+                    }
+                #Cover p {
+                    margin:10px 0 0;
+                    text-align:center;
+                    color:#FFF;
+                    font-style:italic;
+                    font-size:20px;
+                    }
+                    #Cover p a {
+                        color:#FFF;
+                        }
+            </style>
+    -->
+    <section class="slide"><div>
+        <ol style="font-size:50px;line-height:1.7">
+            <li>Причины динамизма и сложностей реализации</li>
+            <li>Организация кода</li>
+            <li>Перспективы более лаконичного и производительного кода</li>
+        </ol>
+    </div></section>
+    <section class="slide"><div>
+        <h2>Причины динамизма и сложностей</h2>
+        <ol>
+            <li>Принципы проектирования интерфейсов</li>
+            <li>Объем взаимодействия с сервисами</li>
+            <li>Технические ограничения</li>
+        </ol>
+    </div></section>
+    <!--
+
+        Причиной возникновения сложностей с разработкой приложения стали динамизм и технические ограничения. Динамизм в приложении возникает при реализации некоторых принципов проектирования интерфейсов.
+
+        Самым главным источником динамизма являются принципы проектирования интерфейсов, которыми я руководствуюсь продумывая интерфейс приложения.
+
+        Большой объем сетевых взаимодействий с сервисами и технические ограничений не делали разработку проще
+
+    -->
+    <section class="slide"><div>
+        <h2>Принципы проектирования интерфейсов</h2>
+        <p>Идеи Джефа Раскина</p>
+        <ol>
+            <li>Zoom UI</li>
+            <li>Отказ от модальных окон</li>
+            <li>Польза на чих</li>
+            <li>Три правила быстроты</li>
+        </ol>
+    </div></section>
+    <!--
+        - увлечение интерфейсами
+        - книга-вдохновление
+
+        Когда я увлекся проектированием интерфейсов я прочитал книгу Джефа Раскина "Интерфейс. Новые направления в проектировании компьютерных систем", которая меня очень вдохновила. В книге изложен системный подход к решению многих интерфейсных проблем.
+
+        В стремлении придерживаться этих идей при проектировании интефейса
+        некоторые из них добавляют много сложностей при разработке. Они в списке.
+
+
+
+        ****
+        2. Короче
+
+        - Источники моих сложностей с seesu.me
+        - Сложности с Seesu.me
+    -->
+
+    <section class="slide "><div>
+        <h2>Джеф Раскин</h2>
+        <ul>
+            <li>Автор проекта компьютера Macintosh</li>
+            <li>Автор книги «<a href="http://www.ozon.ru/context/detail/id/1332088/">Интерфейс. Новые направления в проектировании компьютерных систем</a>»</li>
+        </ul>
+
+    </div></section>
+    <section class="slide"><div>
+        <img class="place l" height="100%" src="pictures/Jef_Raskin_holding_Canon_Cat_model.png" alt="">
+        <img class="place r" height="100%" src="pictures/_Jef with MicroOptical.jpg" alt="">
+    </div></section>
+
+    <!--
+
+        <img src="picture.png" alt="" width="50%" class="place l">
+        <img src="picture.png" alt="" width="50%" class="place r">
+        Джеф Раскин это автор проекта компьютера макинтош, автор упомянутой книги "Интерфейс. Новые направления в проектировании компьютерных систем".
+        Книга опубликована около 15 лет назад.
+
+        Автор таких идей и предложений как отказ от метафоры файловой системы как интерфейса, (что как мы видим сейчас реализовано в современных мобильных устройства), мгновенная обратная связь, что реализовано в google instant seach, и развито до совершенно нового уровня Бретом Виктором в его предложениях.
+
+    -->
+    <section class="slide"><div>
+        <h2>Zoom UI</h2>
+        <p>Общий план &lt;&gt; частное</p>
+
+        <ul>
+            <li>Eagle Mode, Raskin for Mac</li>
+            <li>В современных интерфейсах</li>
+            <li>Структура, модель данных, переходы</li>
+        </ul>
+        <!--
+
+        Эта идеи повлияла на то как я организую код, структурирую модель данных
+
+        заставило с самого начала думать о том как я буду реализовывать переходы между данными.
+        -->
+    </div></section>
+    <section class="slide cover has-video"><div>
+        <h2>Zoom UI</h2>
+        <video width="100%" height="100%" muted><source src="videos/Dubai World Record Eagle Flight_4.webm" type="video/webm" ></video>
+    </div></section>
+    <section class="slide cover has-video"><div>
+        <h2>Eagle mode</h2>
+        <video width="100%" height="100%"><source src="videos/Eagle Mode_2.webm" type="video/webm"></video>
+    </div></section>
+    <section class="slide cover has-video"><div>
+        <h2>Raskin for Mac</h2>
+        <video width="100%" height="100%"><source src="videos/raskin-for-mac.webm" type="video/webm"></video>
+    </div></section>
+    <section class="slide cover has-video"><div>
+        <h2>Apple Watch</h2>
+        <video width="100%" height="100%"><source src="videos/Apple Watch _ Introducing Apple Watch_1.webm" type="video/webm"></video>
+    </div></section>
+    <section class="slide cover has-video"><div>
+        <h2>Apple Watch</h2>
+        <video width="100%" height="100%"><source src="videos/Apple Watch _ Introducing Apple Watch_2.webm" type="video/webm"></video>
+    </div></section>
+
+    <!-- http://upload.wikimedia.org/wikipedia/commons/0/0f/Eagle_Mode_0.71.0_Linux_source_zoom_3.png -->
+
+    <section class="slide"><div>
+        <h2>Отказ от модальных окон</h2>
+        <ul>
+            <li>Нет блокированию интерфейса</li>
+            <li>Нет навязчивым требованиям</li>
+            <li>Требует организации views и больше состояний</li>
+        </ul>
+    </div></section>
+    <section class="slide cover h"><div>
+        <img src="pictures/no-pixels.gif" class="h">
+    </div></section>
+
+    <section class="slide"><div>
+        <h2>Польза на чих</h2>
+        <ul>
+            <li>Мгновенная обратная связь</li>
+            <li>Поиск, Google Instant Search</li>
+            <li>Страница артиста и подобные</li>
+            <li>Поиск файлов</li>
+
+        </ul>
+        <!--
+        Принцип следующий из принципа мгновенной обратной связи
+        заставляет предоставить максим структурированных данных на минимум введенных данных. Так при наборе в поисковой строке мы отображаем результаты. Благодаря следованию этому принципу я запустил мгновенный поиск не в виде саджестов а именно в мгновенном предоставлении результатов за пол года до того как запустился google instant search.
+
+        Изза этого принципа поиск файла сейчас, наверное, самое сложная часть приложения.
+
+
+        ****
+        Короче
+
+        - Максимум полезных данных на минимум действий пользователя
+        - Больше данных, меньше действий
+        -->
+    </div></section>
+    <section class="slide cover has-video"><div>
+        <h2>Поиск</h2>
+        <video width="100%" height="100%"><source src="videos/max.search.webm" type="video/webm"></video>
+    </div></section>
+
+    <section class="slide"><div>
+        <h2>Страница артиста</h2>
+        <ul>
+            <li>3 запроса в last.fm</li>
+            <li>3 запроса в hypem.com</li>
+            <li>1 запрос в discogs.com</li>
+            <li>2 запроса в soundcloud.com</li>
+        </ul>
+    </div></section>
+    <section class="slide cover has-video"><div>
+        <h2>Страница артиста</h2>
+        <video width="100%" height="100%"><source src="videos/max.parallel.webm" type="video/webm"></video>
+    </div></section>
+    <section class="slide"><div>
+        <h2>Поиск файлов</h2>
+        <ul>
+            <li>все источники параллельно</li>
+            <li>первый лучший результат</li>
+            <li>ждать лучшего варианта</li>
+            <li>ждать выбранный сервис</li>
+            <li>искать следующую композицию</li>
+            <!-- нет собственных данных, неизвестно можно ли воспроизвести следующую композицию -->
+            <li>поиск при новом источнике</li>
+            <li>следующая композиция при новом источнике</li>
+        </ul>
+    </div></section>
+    <section class="slide cover has-video"><div>
+        <video width="100%" height="100%"><source src="videos/seesu.files.paral.webm" type="video/webm"></video>
+    </div></section>
+    <section class="slide cover has-video"><div>
+        <video width="100%" height="100%"><source src="videos/seesu.files.wait.webm" type="video/webm"></video>
+    </div></section>
+    <section class="slide cover has-video"><div>
+        <video width="100%" height="100%"><source src="videos/seesu.files.webm" type="video/webm"></video>
+    </div></section>
+    <section class="slide cover has-video"><div>
+        <video width="100%" height="100%"><source src="videos/seesu.files2.webm" type="video/webm"></video>
+    </div></section>
+
+    <section class="slide"><div>
+        <h2>Принципы проектирования</h2>
+        <p>Идеи Джефа Раскина</p>
+        <ol>
+            <li>Zoom UI</li>
+            <li>Отказ от модальных окон</li>
+            <li>Польза на чих</li>
+            <li><strong>Три правила быстроты</strong></li>
+        </ol>
+    </div></section>
+    <section class="slide"><div>
+        <h2>Три правила быстроты</h2>
+
+        <ol>
+            <li>Вычисления не блокируют пользователя</li>
+            <li>Полная схема — мгновенно</li>
+            <li>Запросы сортируются</li>
+        </ol>
+    </div></section>
+    <section class="slide cover has-video"><div>
+        <h2>Схема — мгновенно</h2>
+        <video width="100%" height="100%"><source src="videos/3fast.schema-light.webm" type="video/webm"></video>
+    </div></section>
+    <section class="slide cover has-video"><div>
+        <h2>Приоритет важному</h2>
+        <video width="100%" height="100%"><source src="videos/3fast.requests-prio.webm" type="video/webm"></video>
+    </div></section>
+    <!--
+
+        Идея Джефа Раскина предоставлять максимум данных на минимум действий пользователя оказалась очень широкой и я сформулировал для себя 3 правила высокоскоростного взаимодействия интерфейсов.
+
+        1 Что бы не происходило в приложении, как бы оно не было занято вычислениями, пользователь всегда может указывать на то, что ему нужно. В приложении, написанном на джаваскрипте я использую setTimeout для разблокирования интерфейса (так же я планирую использовать setImmediate, и requestAnimationFrame — рендеринг не должен надолго блокировать возможность кликать и т.д.).
+
+        2 Сразу, ещё до загрузки данных, наполняющих объект, отображается не просто страница объекта сама по себе, не пустой экран, но вся её структура. Отображаются её части, визуальные блоки, которые так или иначе зависят от данных, ещё не полученных из сети. Кроме этого отображаются и все блоки объектов, вложенных в этот объект. Когда приходят данные, отображаемые блоки наполняются. Это позволяет пользователю сразу анализировать структуру страницы и принимать решение о перемещении к другому объекту, не дожидаясь окончания загрузки.
+
+        3 При перемещении от объекта к объекту пользователь четко даёт знать о фокусе своих интересов. В первую очередь должны быть выполнены запросы на получение данных для целевой страницы пользователя. Остальные запросы могут быть выполнены позже либо вообще отменены, например это такие как невыполненные запросы для страниц, которые покинул пользователь. Объекты могут быть вложены в другие объекты и иметь собственные запросы. Одни из запросов могут быть нужны для отображения данных в контексте пользовательского интереса, а другие — нет. Приоритеты таких запросов также следует изменять, причём в таком порядке, в котором данные используется на странице, и, соответственно, в том порядке, в котором объявлены представления вложенных объектов. (Т.е. страница, состоящая из множества элементов и вложенных объектов, будет пополнятся по мере поступления данных сверху вниз).
+
+        ****
+         Короче
+
+        - 3 правила высокоскоростного взаимодействия интерфейсов
+        - Правила быстрого интерфейса
+
+    -->
+    <!-- <section class="slide"><div>
+        <h2>Схема страницы объекта должна отображаться до получения всех данных</h2>
+        <a href="http://habrahabr.ru/post/211659/">http://habrahabr.ru/post/211659/</a>
+        <img src="http://hsto.org/getpro/habr/post_images/44e/74a/813/44e74a813a70bdc1da54885d31d26100.png">
+
+
+    </div></section> -->
+    <!--
+        ****
+        Сделать скрины 1024х640 и каждый шаг на слайд
+
+        . Короче
+
+        - Схема страницы объекта должна отображаться до получения всех данных
+        - Схема страницы до получения данных
+        -->
+
+
+<!--    <section class="slide"><div>
+        <li>нужно сортировать запросы</li>
+    </div></section> -->
+    <section class="slide shout"><div>
+      <h2 style="font-size:100px"><a href="http://habr.ru/p/211659">habr.ru/p/211659</a></h2>
+        
+    </div></section>
+    
+    <section class="slide shout"><div>
+        <h2>Взаимодействие с сервисами</h2>
+    </div></section>
+    <section class="slide"><div>
+        <h2>Взаимодействие с сервисами</h2>
+        <ul>
+            <li>40 запросов</li>
+            <li>Плейлисты, страницы тегов, аристов, списков альбомов, чартов, пользователей Last.fm и ВКонтакте, их данных</li>
+            <li>Приоритезация, обработка, разные API, разное в одном API</li>
+        </ul>
+    </div></section>
+    <section class="slide cover has-video"><div>
+        <h2>Взаимодействие с сервисами</h2>
+        <video width="100%" height="100%"><source src="videos/services-requests.webm" type="video/webm"></video>
+    </div></section>
+    <!--
+        Стремясь использовать максимум данных с last.fm и др. сервисов я предоставляю навигацию по страницам, которые наполняются данными от около 40 уникальных запросов.
+
+        Это плейлисты, страницы тэгов, аристов, списков альбомов, чартов, пользователей ласт.фм и вконтакте, их данных.
+
+        Такой объем взаимодействий с источниками определенно создаёт проблемы когда запросы отправляются, обрабатываются, складываются, приоритезируются и парсятся в ручную, учитывая, что у каждого сервиса разные API и структуры данных в ответе.
+
+    -->
+
+    <section class="slide"><div>
+        <h2>Источники моих сложностей с seesu.me</h2>
+        <ol>
+            <li>Принципы проектирования</li>
+            <li>Объем взаимодействий с сервисами</li>
+            <li><strong>Технические ограничения</strong></li>
+        </ol>
+    </div></section>
+
+    <section class="slide"><div>
+        <h2>Технические ограничения</h2>
+        <ul>
+            <li>Взаимодействие между view и model сообщениями</li>
+            <li>Opera, Chrome, Electron</li>
+            <li>Необходимость полностью восстановить состояние</li>
+            <li>Ограничения запросов и соединений</li>
+        </ul>
+    </div></section>
+    <section class="slide cover has-video"><div>
+        <h2>Восстановление состояний</h2>
+        <video width="100%" height="100%"><source src="videos/states-restore.webm" type="video/webm"></video>
+    </div></section>
+    <!--
+        Многие архитектуры требуют жесткого разделение model и view, так, что бы можно было выгрузить view в случае ненадобности, и также чтобы как я могу предположить уменьшить утечки памяти.
+
+        Так, как только появились расширения в опере они могли взаимодействовать с основным процессом сообщениями, также расширения в хроме встраеваемые в страницы могут также общаться с основным процессом только сообщениями. Electron, бывший Atom shell запускает chromium отдельно от nodejs like процесса и общаться можно только сообщениями. Насколько я знаю это актуально и на мобильных платформах.
+
+        Мало того что нужно общаться сообщениями, и на придумывание протокола не хочется тратить много времени, и хочется чтобы оно ещё работало быстро, так важно ещё полностью восстановить состояние приложения, если view было выгружено и открыто заново спустя время.
+
+        Помимо этого у браузера ограничено количество одновременных подключений к северу, а сервисы ограничевают количество запросов в определенные интервалы времени, что не делает разработку приложения проще.
+    -->
+
+    <section class="slide"><div>
+        <h2>Принцип декларативного целеполагания</h2>
+        <ul>
+            <li>Неудачи. Отставание от кулинарии</li>
+            <ul>
+              <li>ООП, события</li>
+              <li>&laquo;Клиенские&raquo; приложения</li>
+              <li>Продвинутость кулинарии</li>
+            </ul>
+            <li>Преодоление отставания. ДЦ на практике</li>
+        </ul>
+    </div></section>
+    <!--
+    С этими идеями и ограничениями я пытался разрабатывать приложение применяя современные подходы к разработке.
+
+    ****
+    - Проблемы с организацией кода динамичного поведения на базе текущих принципов и подходов
+    - Код для динамического подхода
+    -->
+
+    <section class="slide"><div>
+        <h2>ООП, события</h2>
+        <ul>
+          <li>Рутиное дублирование кода</li>
+          <li>Именование событий</li>
+          <li>Сайдэффекты &rarr; <br/> непредсказуемый результат, неочевидное происхождение</li>
+        </ul>
+    </div></section>
+    <!--
+       Я использовал знаменитое ООП, с наследованием и методами, которое как можно судить по интернету лечит рак, пару шаблонов написания кода вроде pub-sub чтобы написать полное динамизма приложение.
+
+        Чтобы получить нечто, зависящее от 3х других вещей я подписывался на 3 события, в конечном колбэке считывал нужные состояния и вычислял эту штуку, записывал её ещё куда-то и вызывал ещё одно событие.
+
+        Регулярное написание кода подписки и чтения начального состояния, раздувало код. Утомительно и придумывать названия событиям, а потом их вспоминать. Постепенно ошибок, связанных с сайд эффектами, каким-то неправлиьным порядком выполнения становилось слишком много.
+
+        Разобратся в коде который был написан месяц назад было совсем сложно.
+
+        Я так или иначе постепенно организовывал код, но когда я пришел к выводу что клиенские приложение это не просто продолжения сервера, организация кода пошла лучше.
+     -->
+
+    <section class="slide"><div>
+        <h2>&laquo;Клиенские&raquo; приложения</h2>
+        <ul>
+          <li>Не серверные. Сложнее!</li>
+          <li>Брошенные, неудобные структуры</li>
+          <li>Модели хранятся не в полях</li>
+          <!--  На сервере модели не хранятся в полях других моделей и не обязаны храниться в обычных полях в клиенстком приложении -->
+          <li>Не хранит всё</li>
+          <li>Нет протоколов взаимоотношений</li>
+        </ul>
+    </div></section>
+
+
+        <!-- <ul>
+            <li>Повторение кода подписки и чтения начального стостояния</li>
+            <li>Именование событий</li>
+            <li>Сайдэффекты, непредсказуемый результат, неочевидное происхождение</li>
+            <li>Клиентские сложней серверных</li>
+            <li>Отсутствие протокола изменений взаимоотношений</li>
+            <li>Недоразвитость по сравнению с кулинарией</li>
+        </ul> -->
+    <!--
+
+
+        Пришел к выводу, что клиентские приложения могут быть сильно сложней, что они динамичней, и из смежных сфер разработки, вроде десктоп приложений просто нечего почерпнуть. Всё что по сути было в коллективном общественном опыте, это ООП, событийная модель, и REST как протокол обновления объектов полей.
+
+        Между клиентскими приложениями и серверными огромнейшая разница - серверно приложение переваривает данные и забывает обо всем.
+
+        В серверном приложении нет проблемы динамизма, клиентскому приложению требуется обновлять и работать с существующими структурами данных, а не формировать с чистого листа новые.
+
+        Изменяемость структур, примитивное описание взаимосвязей моделей, отсутствие состояний
+
+        Для серверного приложения в порядке вещей формировать структуру с которой оно работает в виде проекции, спокойно вкладывая поля одной модели в поле другой модели. Но в клиенском приложении в таком случае возникают проблемы, в частности когда одна модель используется в разных частях приложения, она обновляется, а с ней нужно взаимодействовать другим моделям. Или когда обновляются взаимосвязи между моделями, например когда к записи в блоге добавляют комментарий.
+
+        На сервере модели не хранятся в полях других моделей и не обязаны храниться в обычных полях в клиенстком приложении
+
+        Серверные приложения намного ограниченней в плане количества разных состояний.
+
+
+        !!! Если какое-то состояние не хранится в базе данных, это ещё не значит что это не состояние.
+
+        Отсутствие протокола изменений взаимоотношений
+
+        Недоразвитость по сравнению с кулинарией
+    -->
+    <section class="slide shout"><div>
+        <h2>Превосходство кулинарии</h2>
+    </div></section>
+    <section class="slide"><div>
+        <h2>Превосходство кулинарии</h2>
+        <ol>
+          <li class="next">Повар не ходит за картошкой</li>
+          <li class="next">Рецепты не содержат путь на рынок</li>
+          <li class="next">Взаимосвязи ≠ актуализация</li>
+        </ol>
+    </div></section>
+    <section class="slide"><div>
+        <h2>ДЦ на практике</h2>
+        <ol>
+            <li>Состояния</li>
+            <li>Сложные состояния</li>
+            <li>&laquo;Вложенности&raquo;</li>
+            <li>Взаимоотношения между моделями и &laquo;вложенными&raquo; моделями</li>
+            <li>Сильно вложенные модели</li>
+            <li>Связь между состояниями и полями данных на удаленном сервере</li>
+            <li>Шаблонизация</li>
+        </ol>
+    </div></section>
+    <!--
+        комбинирование
+
+        Последовательно занимаясь проблемой организации кода я сформулировал принцип, который назвал декларативным целеполаганием, технически детали о которых расскажу не так важны на мой вгляд как сам принцип, однако есть тонкости и я сравню своё решение проблем с другими решениями
+
+        ****
+        - Решение проблемы описания взаимосвязей по принципу декларативного целеполагания
+        - Описание взаимосвязей декларативными целями
+
+        - Взаимоотношения между моделями и "вложенными" моделями
+        - Вложенные модели
+
+
+        - Связь между состояниями и полями данных на удаленном сервере
+        - Состояния и поля данных на сервере
+    -->
+
+    <section class="slide"><div>
+        <h2>Состояния</h2>
+        <pre>
+            <code>model.states = {}</code>
+            <code>model.updateState('title', 'Jack')</code>
+        </pre>
+    </div></section>
+    <!--
+        У моделей есть состояния и вложенности.
+
+        Состояния хранятся как объект model.states = {} с полями, у которых в качестве значений обычно примитивные значения, аналогично тем как у баз данных, строка, число, правда, ложь.
+        Обновлется через model.updateState('title', 'Jack');
+
+        В общем стандарная штука для любого mvc фрейморка.
+
+    -->
+    <section class="slide shout"><div>
+        <h2>Сложные состояния</h2>
+    </div></section>
+    <section class="slide"><div>
+      <pre>
+          <code>'compx-<mark>fullName</mark>': [</code>
+          <code>  ['firstName', 'lastName'],</code>
+          <code>  function(firstName, lastName) {</code>
+          <code>    return firstName + ' ' + lastName</code>
+          <code>  }</code>
+          <code>]</code>
+      </pre>
+    </div></section>
+    <section class="slide"><div>
+      <pre>
+          <code>'compx-fullName': [</code>
+          <code>  <mark>['firstName', 'lastName']</mark>,</code>
+          <code>  function(firstName, lastName) {</code>
+          <code>    return firstName + ' ' + lastName</code>
+          <code>  }</code>
+          <code>]</code>
+      </pre>
+    </div></section>
+    <section class="slide"><div>
+      <pre>
+          <code>'compx-fullName': [</code>
+          <code>  ['firstName', 'lastName'],</code>
+          <code>  <mark>function(firstName, lastName) {</mark></code>
+          <code>    <mark>return firstName + ' ' + lastName</mark></code>
+          <code>  <mark>}</mark></code>
+          <code>]</code>
+      </pre>
+    </div></section>
+    <!--
+
+        Также я ввел такое понятие как сложные состояния. Это состояния которые вычисляются за счет других состояний.
+
+        'compx-fullName': [
+          ['firstName', 'lastName'],
+          function(firstName, lastName) {
+            return firstName + ' ' + lastName
+          }
+        ]
+        то как называется новое состояние
+        от каких состояний оно зависит
+        в чем именно заключается зависимость, как вычислить состояние
+
+        Вы указываете как называется новое состояние, от каких состояний оно зависит и как его вычислить.
+
+        Традиционно в программировании результат вы получаете в самом конце какихто действий, а тогда же записываете его куда либо.
+        Но никто не запрещает сделать запись и выход из функции посреди тела функции. Или даже записать какие-нибудь побочные вычисления куда-нибудь. И что бы понять откуда что-то берётся приходится анализировать действительно много кода.
+
+        В данном случае у функции не должно быть доступа к this. Она может вернуть только одно значение, которого строго будет записано в
+
+        model.states.fullName
+
+
+        Так или иначе подобная штука есть в популярных mvc фрейморках.
+
+        = сложные состояния в emberjs
+        = сложные состояния в angularjs
+    -->
+
+    <section class="slide"><div>
+        <h2>Сложные состояния. Ember.js</h2>
+            <pre>
+                <code>fullName: function () {</code>
+                <code>  return this.get('firstName') + ' '</code>
+                <code>    + this.get('lastName');</code>
+                <code>}.property('firstName', 'lastName')</code>
+            </pre>
+    </div></section>
+    <!--
+        В ember.js тоже есть сложные состояния. Ключевые отличия
+        это
+        1. В ember.js более хитрое написание. Я используею более примитивную структуру
+        2. Состояния нужно считывать самому через this.get, состояния не приходят как аргументы, поэтому трудно использовать вспомогательные функции. Это не чистая функция. Чистая функция, функция без сайдэффектов всегда лучше чем не чистая.
+
+
+        var itself = function(item) {
+            return !!item;
+        }
+
+        var some = Array.prototype.some;
+        var someArguments = functiob(){
+            return some.call(arguments, itself);
+        }
+
+        var every = Array.prototype.every;
+        var everyArguments = functiob(){
+            return every.call(arguments, itself);
+        }
+    -->
+
+    <section class="slide"><div>
+        <h2>Вложенность</h2>
+        <pre>
+            <code>model.nestings = {}</code>
+            <code>model.updateNesting('bestFriend', tomModel)</code>
+        </pre>
+    </div></section>
+    <!--
+    Вложенности это способ хранения/описания взаимоотношений между моделями.
+
+    Вложенности хранятся как другой объект (model.nestings = {}) с другими полями, где в качестве значений - модель или массив моделей.
+    Значение nestings обновляется только когда удаляется или добавляется модель, или каким-то образом меняется список - порядок, добавляются или удаляются элементы.
+    Обновлется через model.updateNesting('bestFriend', tomModel);
+    model.updateNesting('friends', [tomModel, sashaModel]);
+
+    -->
+    <section class="slide shout"><div>
+        <h2>Комбинирование</h2>
+    </div></section>
+    <section class="slide"><div>
+        <pre>
+            <code>'compx-isYoungest': [</code>
+            <code>  ['<strong><span class="connected-1">@age:friends</span></strong>', 'age'],</code>
+            <code>  function(<span class="connected-1">ages</span>, age) {</code>
+            <code>    return age &lt; Math.min.apply(null, ages)</code>
+            <code>  }</code>
+            <code>]</code>
+        </pre>
+    </div></section>
+
+    <section class="slide"><div>
+        <h2>Сильно вложенные объекты</h2>
+        <pre>
+            <code>'compx-averageAge': [</code>
+            <code>  ['<strong>@age:friends.friends</strong>'],</code>
+            <code>  function(ages) {</code>
+            <code>    return ...</code>
+            <code>  }</code>
+            <code>]</code>
+        </pre>
+    </div></section>
+    <section class="slide shout"><div>
+        <h2>Состояния ← данные сервера</h2>
+    </div></section>
+    <section class="slide"><div>
+        <pre>
+      <div class="next">
+                <code>req_map: [[</code>
+          <code>    ['<span class="connected-1">userid</span>', '<span class="connected-2">country</span>', '<span class="connected-3">age</span>'], {</code>
+      </div>
+            <div class="next">
+                <code>      source: 'user', props_map: {</code>
+          <code>          <span class="connected-1">userid</span>: 'name', <span class="connected-2">country</span>: null,</code>
+          <code>          <span class="connected-3">age</span>: ['num', 'age'],</code>
+          <code>    }},</code>
+            </div>
+            <div class="next">
+          <code>    ['lfm', 'get', function() {</code>
+          <code>        return ['user.getInfo', {'user': this.state('lfm_userid')}];</code>
+          <code>    }]</code>
+                <code>]]</code>
+            </div>
+        </pre>
+    </div></section>
+    <section class="slide shout"><div>
+        <h2>Шаблонизация</h2>
+    </div></section>
+    <section class="slide"><div>
+        <pre>
+          <code>&lt;span</code>
+          <code>  <mark>pv-class</mark>="{{ selected &amp;&amp; 'item-selected'}}"</code>
+          <code>  pv-text="{{item_name}}">&lt;/span></code>
+        </pre>
+    </div></section>
+    <section class="slide"><div>
+        <pre>
+          <code>&lt;span</code>
+          <code>  pv-class="<mark>{{ selected &amp;&amp; 'item-selected'}}</mark>"</code>
+          <code>  pv-text="{{item_name}}">&lt;/span></code>
+        </pre>
+    </div></section>
+    <section class="slide"><div>
+        <pre>
+          <code>&lt;span</code>
+          <code>  pv-class="{{ selected &amp;&amp; 'item-selected'}}"</code>
+          <code>  <mark>pv-text</mark>="{{item_name}}">&lt;/span></code>
+        </pre>
+    </div></section>
+    <section class="slide"><div>
+        <pre>
+          <code>&lt;span</code>
+          <code>  pv-class="{{ selected &amp;&amp; 'item-selected'}}"</code>
+          <code>  pv-text="<mark>{{item_name}}</mark>">&lt;/span></code>
+        </pre>
+    </div></section>
+    <section class="slide shout"><div>
+      <h2 style="font-size:100px"><a href="http://habr.ru/p/210558">habr.ru/p/210558</a></h2>
+        
+    </div></section>
+    <section class="slide"><div>
+        <h2>Больше оптимизаций и лаконичности</h2>
+        <ul>
+            <li>Меньше кода обслуживающего вызовы сетевых запросов</li>
+            <li>Приоретизация рендеринга, избегание повторных перерисовок</li>
+            <li>Автоматическая маркировка изолированных областей согласно новой CSS-спецификации</li>
+            <li>Построение графа зависимостей</li>
+            <li>Большие SQL-запросы</li>
+        </ul>
+    </div></section>
+    <section class="slide shout"><div>
+        <h2 style="font-size:100px"> <a href="http://dev.w3.org/csswg/css-containment/">dev.w3.org/csswg/css-containment/</a></h2>
+    </div></section>
+    <section class="slide shout"><div>
+        <h2 style="font-size:100px"><a href="mailto:gleb.arestov@gmail.com">gleb.arestov@gmail.com</a></h2>
+    </div></section>
+
+    <div class="progress"><div></div></div>
+
+    <script src="shower-video/shower.mod.min.js"></script>
+    <script src="shower-video/shower-video.js"></script>
+</body>
+</html>

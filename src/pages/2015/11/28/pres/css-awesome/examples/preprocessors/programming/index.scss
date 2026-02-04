@@ -1,0 +1,181 @@
+ @mixin check($slides) {
+   @for $i from 1 through $slides {
+     input[type=radio]:nth-of-type(#{$i}):checked ~ .slider-wrapper {
+       .slide:nth-of-type(#{$i}) {
+         // transform: translate3d(0,0,0);
+         opacity: 1;
+         .caption {
+           opacity: 1;
+           transform: translate3d(0, 0, 0);
+         }
+       }
+       @include slectIndexLeft($i, $slides);
+       @include slectIndexRight($i, $slides);
+     }
+   }
+ }
+
+ @mixin slectIndexLeft($slide, $numOfSlides) {
+   $num: 1;
+   @if $slide > 1 {
+     $num: $slide - 1;
+   }
+   @else if $slide==1 {
+     $num: $numOfSlides;
+   }
+   .slider-controls.left {
+     label[for] {
+       z-index: -1;
+       &:nth-of-type(#{$num}) {
+         z-index: 10;
+       }
+     }
+   }
+ }
+
+ @mixin slectIndexRight($slide, $numOfSlides) {
+   $num: 1;
+   @if $slide < $numOfSlides {
+     $num: $slide + 1;
+   }
+   @else if $slide==$numOfSlides {
+     $num: 1;
+   }
+   .slider-controls.right {
+     label[for] {
+       z-index: -1;
+       &:nth-of-type(#{$num}) {
+         z-index: 10;
+       }
+     }
+   }
+ }
+
+ @mixin slider($numOfSlides: 3, $sliderHeight: 250px, $animation: cubic-bezier(.17, .67, .35, .89)) {
+   position: relative;
+   @include check($numOfSlides);
+   input[type=radio] {
+     display: none;
+   }
+   .slider-controls {
+     position: absolute;
+     width: 40px;
+     height: 63px;
+     top: 45%;
+     taransform: trnaslateY(-50%);
+     opacity: 0;
+     transform: translate3d(0, -100%, 0);
+     will-change: opacity, transform;
+     transition: .3s $animation;
+     &.right {
+       right: 15px;
+       background: url('../img/arrow-right.svg') 50% 50% no-repeat;
+     }
+     &.left {
+       left: 15px;
+       background: url('../img/arrow-left.svg') 50% 50% no-repeat;
+     }
+     label[for] {
+       position: absolute;
+       display: block;
+       width: 100%;
+       cursor: pointer;
+       height: 100%;
+       top: 0;
+       left: 0;
+     }
+   }
+   .slider-wrapper {
+     height: $sliderHeight;
+     width: 100%;
+     position: relative;
+     overflow: hidden;
+     &:hover {
+       .slider-controls {
+         opacity: 1;
+         transform: translate3d(0, -50%, 0);
+       }
+     }
+     .slide {
+       transition: all .3s $animation;
+       will-change: transform, opacity;
+       position: absolute;
+       border-radius: 4px;
+       width: 100%;
+       top: 0;
+       left: 0;
+       height: inherit;
+       overflow: hidden;
+       border-radius: 4px;
+       // transform: translate3d(-100%, 0,0);
+       opacity: 0;
+       &:after {
+         position: absolute;
+         z-index: 2;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: inherit;
+         content: '';
+         background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+       }
+       img {
+         display: block;
+         height: auto;
+         min-width: 100%;
+         min-height: 100%;
+       }
+       .caption {
+         position: absolute;
+         z-index: 3;
+         opacity: 0;
+         will-change: opacity, transform;
+         transition: 1s $animation;
+         // top: 50%;
+         width: 100%;
+         bottom: 0;
+         padding: 20px;
+         padding-bottom: 16px;
+         label {
+           background: $purple;
+           display: inline-block;
+           border-radius: 25px;
+           color: white;
+           padding: 0 13px;
+           margin-bottom: 16px;
+           text-transform: uppercase;
+           font: 400 10px/19px $Montserrat;
+           letter-spacing: 3px;
+         }
+         h3 {
+           font: bold 24px $Montserrat;
+           color: white;
+           text-align: left;
+           margin-bottom: 11px;
+         }
+         p {
+           font: 300 14px/17px $Roboto;
+           color: $grey;
+           text-align: left;
+         }
+         &.left {
+           transform: translate3d(-150%, -50%, 0);
+         }
+         &.right {
+           transform: translate3d(150%, -50%, 0);
+         }
+         &.center {
+           transform: translate3d(0, 150%, 0);
+         }
+         // h1 {
+         //   color: #fff;
+         //   margin: 0;
+         //   // font: bold 28px @font-main;
+         //   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+         // }
+       }
+     }
+   }
+ }
+
+ // slide selection by radio check

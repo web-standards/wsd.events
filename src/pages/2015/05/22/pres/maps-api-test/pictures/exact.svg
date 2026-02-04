@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="640">
+	<defs>
+		<style>
+			rect {
+				fill:#979A9E;
+				}
+			text {
+				fill:#FFF;
+				text-anchor:middle;
+				font:bold 100px PT Sans Narrow, sans-serif;
+				}
+		</style>
+	</defs>
+	<rect x="0" y="0" width="1024" height="640"/>
+	<text x="512" y="360">Exact Picture</text>
+</svg>

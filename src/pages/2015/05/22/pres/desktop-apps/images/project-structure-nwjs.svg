@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="580px" height="345px" viewBox="0 0 580 345" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3 (11970) - http://www.bohemiancoding.com/sketch -->
+    <title>project-structure-nwjs</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="project-structure-nwjs" sketch:type="MSLayerGroup">
+            <rect id="Rectangle-13" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="580" height="345"></rect>
+            <rect id="Rectangle-2" fill="#3498DB" sketch:type="MSShapeGroup" x="104" y="261" width="384" height="54" rx="8"></rect>
+            <text id="Aвтономный-исполняем" sketch:type="MSTextLayer" font-family="ISOCPEUR" font-size="24" font-weight="normal" sketch:alignment="middle" fill="#FFFFFF">
+                <tspan x="144.40625" y="293">автономный исполняемый файл</tspan>
+            </text>
+            <rect id="Rectangle-1" stroke="#979797" sketch:type="MSShapeGroup" x="34" y="32" width="216" height="157" rx="8"></rect>
+            <path d="M34.5,74.8476562 L248.5,74.8476562" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+            <path d="M34.5,118.847656 L248.5,118.847656" id="Line-Copy" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+            <text id="package.json" sketch:type="MSTextLayer" font-family="ISOCPEUR" font-size="24" font-weight="normal" sketch:alignment="middle" fill="#F6A623">
+                <tspan x="84.4921875" y="58.3476562">package.json</tspan>
+            </text>
+            <text id="HTML/JS/CSS" sketch:type="MSTextLayer" font-family="ISOCPEUR" font-size="24" font-weight="normal" sketch:alignment="middle" fill="#3498DB">
+                <tspan x="80.3046875" y="104.347656">HTML/JS/CSS</tspan>
+            </text>
+            <text id="картинки-и-" sketch:type="MSTextLayer" font-family="ISOCPEUR" font-size="24" font-weight="normal" sketch:alignment="middle" fill="#3498DB">
+                <tspan x="91.3125" y="146.347656">картинки и </tspan>
+                <tspan x="61.1484375" y="166.347656">другие ресурсы ...</tspan>
+            </text>
+            <g id="node_webkit-copy" transform="translate(358.000000, 64.000000)" sketch:type="MSShapeGroup">
+                <g id="Group">
+                    <path d="M43.8340047,0.716912863 C42.2752347,-0.175410788 39.7247653,-0.175410788 38.1661878,0.716912863 L2.86846009,20.9246556 C1.30969014,21.8169793 0.0344553991,24.0072282 0.0344553991,25.7918755 L0.0344553991,66.2077427 C0.0344553991,67.99239 1.30969014,70.182639 2.86846009,71.0749627 L38.1659953,91.2830871 C39.7247653,92.1754108 42.2752347,92.1754108 43.8338122,91.2830871 L79.1313474,71.0749627 C80.6901174,70.182639 81.9653521,67.99239 81.9653521,66.2077427 L81.9653521,25.7918755 C81.9653521,24.0072282 80.6901174,21.8169793 79.1313474,20.9246556 L43.8340047,0.716912863 L43.8340047,0.716912863 Z" id="Shape" fill="#3D3B47"></path>
+                    <path d="M40.9974977,42.8651286 C41.0679484,42.8651286 41.139554,42.8674191 41.2111596,42.872 C42.2613756,42.9412863 43.2063005,43.5240166 43.739108,44.4295104 C44.0549812,44.970249 44.1999249,45.5865726 44.1587324,46.2112946 C44.0468967,47.8504979 42.681,49.1341079 41.0026948,49.1341079 C40.9324366,49.1341079 40.8616009,49.1316266 40.7901878,49.1272365 C39.7361221,49.0594772 38.7902347,48.4778921 38.260892,47.5716349 C37.9444413,47.0310871 37.7996901,46.4147635 37.8412676,45.7904232 C37.9540657,44.1542739 39.3369014,42.8693278 40.9888357,42.8649378 C40.9919155,42.8651286 40.9948028,42.8651286 40.9974977,42.8651286 L40.9974977,42.8651286 Z M40.9974977,42.6742573 L40.9974977,42.6742573 L40.9884507,42.6742573 C39.2358451,42.6788382 37.7690845,44.0420415 37.6493568,45.777444 C37.605277,46.4409129 37.7588826,47.0940747 38.0945822,47.6674523 C38.6560704,48.6286805 39.6593192,49.2459585 40.7778685,49.3177261 C40.852554,49.3224979 40.9282019,49.3249793 41.0026948,49.3249793 C42.7614601,49.3249793 44.2318779,47.9627303 44.3508357,46.224083 C44.3945305,45.5604232 44.2407324,44.9070705 43.9056103,44.3336929 C43.3400798,43.3722739 42.3376009,42.754805 41.2238638,42.6815104 C41.1491784,42.6765477 41.0731455,42.6742573 40.9974977,42.6742573 L40.9974977,42.6742573 L40.9974977,42.6742573 Z" id="Shape" fill="#EFF3F3"></path>
+                    <path id="Shape" fill="#A1A1A4" d="M41.7988263,49.9985643 L41.9732944,50.0506398 L41.7988263,50.0558473 L41.7988263,49.9985643 Z"></path>
+                    <path d="M41.074108,44.9042075 C41.6852582,44.9456266 42.1464601,45.468805 42.1052676,46.0750124 C42.0638826,46.6789295 41.5366573,47.1364481 40.926277,47.0957925 C40.3166667,47.0555187 39.8539249,46.5325311 39.8941549,45.9278506 C39.9353474,45.3225975 40.4643052,44.8643154 41.074108,44.9042075 L41.074108,44.9042075 Z" id="path4368" fill="#EFF3F3"></path>
+                    <path d="M41.0173239,50.4268797 C41.0173239,50.4268797 41.0173239,50.4268797 41.016554,50.4268797 C40.9135728,50.4268797 40.8090516,50.4238257 40.7049155,50.4167635 C39.2167887,50.3209461 37.8814977,49.4996266 37.1340657,48.219834 C36.6873005,47.4563485 36.481723,46.5857842 36.5412019,45.7030041 C36.613,44.6646639 37.0495634,43.7278672 37.7182676,43.0092365 L37.6967089,42.9720166 L8.77707981,64.8246888 L42.000939,50.3419419 L41.9851549,50.3142656 C41.672554,50.384888 41.3495587,50.4259253 41.0173239,50.4268797 L41.0173239,50.4268797 Z" id="Shape" fill="#EFF3F3"></path>
+                    <path d="M39.918216,41.6922241 L39.926493,41.7055851 C40.3632488,41.597361 40.8240657,41.5515519 41.2973944,41.5826639 C42.7805164,41.6800083 44.1148451,42.5017095 44.8659343,43.780166 C45.312507,44.5449876 45.5180845,45.4151701 45.4589906,46.2971867 C45.38623,47.3693112 44.9234883,48.331112 44.2193662,49.0581411 L44.2216761,49.0621494 L73.4296526,27.699444 L39.918216,41.6922241 L39.918216,41.6922241 Z" id="Shape" fill="#8CBB3F"></path>
+                </g>
+            </g>
+            <text id="nw.js" sketch:type="MSTextLayer" font-family="ISOCPEUR" font-size="48" font-weight="normal" sketch:alignment="middle" fill="#4A4A4A">
+                <tspan x="465.140625" y="121.847656">nw.js</tspan>
+            </text>
+            <text id="+-copy" sketch:type="MSTextLayer" font-family="Helvetica" font-size="72" font-weight="normal" fill="#DADADA">
+                <tspan x="275" y="132">+</tspan>
+            </text>
+            <text id="=" sketch:type="MSTextLayer" font-family="Helvetica" font-size="72" font-weight="normal" fill="#DADADA">
+                <tspan x="275" y="229">=</tspan>
+            </text>
+            <g id="Rectangle-1-+-автономный-исполняем" transform="translate(104.000000, 261.000000)"></g>
+        </g>
+    </g>
+</svg>

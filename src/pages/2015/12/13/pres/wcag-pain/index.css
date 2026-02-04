@@ -1,0 +1,134 @@
+#Cover h2 {
+    color: #fff;
+    top: 66%;
+}
+
+.slide.column5_shout h2 {
+    font-size: 90px;
+}
+
+.slide small {
+    font-size: 80%;
+    
+}
+
+.slide.shout .shout_h2_small {
+	font-size: 30px;
+	top: 70%;
+}
+.slide.shout .shout_h2_big_2lines {
+	font-size: 90px;
+}
+
+.slide.shout.shout_description .definition {
+	font-size:100px;
+	top:20%;
+}
+
+.slide.shout.shout_description .description {
+	font-size: 75px;
+	top:45%;
+}
+
+.slide.shout.shout_description .description:only-child {
+	font-size: 75px;
+	top:60%;
+}
+
+.slide.shout.shout_description .description.sublevel {
+	top:75%;
+}
+
+/*
+.slide.shout .shout_h2_big_2lines + .shout_h2_small {
+	font-size: 30px;
+	top: 63%;
+}
+*/
+
+.wcag-block {
+	position: absolute;
+	right: 10%;
+	bottom: 10%;
+}
+
+.wcag-read {
+	position: relative;
+	border:2px solid #111;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+.wcag-read:before {
+	position: absolute;
+	top: 0;
+	left: -85px;
+	display: block;
+	width: 90px;
+	height: 90px;
+	content: '';
+	background: url(pictures/reader.svg) no-repeat;
+}
+
+.slide.code_88 code {
+	font-size: 88%;
+}
+
+.deprecated {
+	position:relative;
+}
+.deprecated .cross {
+	position:absolute;
+	top: 30px;
+	left: 20px;
+	width:300px;
+}
+.deprecated .cross:before,
+.deprecated .cross:after {
+	content:'';
+	position:absolute;
+	top:0;
+	width:110%;
+	height:4px;
+	background:#D00;
+}
+.deprecated .cross:before {
+	left:0;
+	transform-origin:0 0;
+	transform:rotate(25deg);
+}
+.deprecated .cross:after {
+	right:0;
+	transform-origin:100% 0;
+	transform:rotate(-25deg);
+}
+
+
+.slide.no_list ul>li:before {
+	content: '';
+}
+
+.slide .adv LI:before {
+	content: '';
+	width: 2em;
+	height: 1em;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+	margin: -5px -10px -5px 10px;
+}
+.slide .adv LI.yes:before {
+	background-image: url(pictures/check.svg);
+}
+.slide .adv LI.no:before {
+	background-image: url(pictures/cross.svg);
+}
+
+.slide.links ul {
+	position: absolute;
+	top: 30%;
+}
+.slide.links ul+ul {
+	position: absolute;
+	top: 30%;
+	left:50%;
+}

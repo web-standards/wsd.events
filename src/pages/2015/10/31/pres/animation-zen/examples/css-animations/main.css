@@ -1,0 +1,76 @@
+.anim
+{
+    height: 300px;
+}
+
+.bad, .good
+{
+    width: 200px;
+    height: 100px;
+    box-shadow: 0 0 1px 0 white;
+}
+
+.bad
+{
+    background-color: red;
+}
+
+.bad:hover
+{
+    animation: bad 1s infinite alternate;
+}
+
+.good
+{
+    background-color: green;
+    transform-origin: top left;
+    will-change: transform;
+}
+
+.good:hover
+{
+    animation: good 1s infinite alternate;
+}
+
+.title {
+    font-size: 2em;
+    font-family: Signika Negative, sans-serif;
+    line-height: 1.4;
+}
+
+@keyframes bad
+ {
+     0%
+     {
+     }
+
+     50%
+     {
+         width: 400px;
+         height: 100px;
+     }
+
+     100%
+     {
+         width: 400px;
+         height: 200px;
+     }
+ }
+
+@keyframes good
+{
+    0%
+    {
+        transform: scale(1,1);
+    }
+
+    50%
+    {
+        transform: scale(2,1);
+    }
+
+    100%
+    {
+        transform: scale(2,2);
+    }
+}

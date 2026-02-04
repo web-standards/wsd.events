@@ -1,0 +1,172 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><title>Offline first. Автономность прежде всего или как сделать пользователю приятно.</title><link href="css/styles.css" rel="stylesheet"><script data-main="js/presentation" src="js/requirejs/require.js"></script></head><body><form action="/select/slide" method="post" class="go-to-page"><fieldset><input type="text" maxlength="3" value="" placeholder="1"></fieldset></form><section class="progress"><div class="value"></div></section><section id="slides" class="dark"><article class="title center dark"><div class="wrapper"><h1>Offline <span> first</span></h1></div></article><article class="new3g"></article><article class="gprs center cloud"><h1> <div class="wrapper">GPRS‽</div></h1></article><article class="service center cloud"><h1> <div class="wrapper">Не ловит‽</div></h1></article><article class="bgg center cloud"><h1> <div class="wrapper">;)</div></h1></article><article class="rape"></article><article class="two-ways center cloud"><h1> <div class="wrapper">Альтернативы<br>не очень</div></h1></article><article class="hmm center cloud"><h1> <div class="wrapper">Но как узнать, <br>что пользователь <br>offline?</div></h1></article><article class="center code-1"><div class="wrapper"><pre><code class="javascript">navigator.onLine
+// true | false</code></pre></div></article><article class="center code-1"><div class="wrapper"><pre><code class="javascript">if(navigator.onLine){
+    // …
+}else{
+    // …
+}</code></pre></div></article><article class="center code-5"><div class="wrapper"><pre><code class="javascript">window.addEventListener('online', callback);
+window.document.addEventListener('online', callback);
+window.document.body.addEventListener('online', callback);
+
+window.addEventListener('offline', callback);
+window.document.addEventListener('offline', callback);
+window.document.body.addEventListener('offline', callback);</code></pre></div></article><article><iframe src="./examples/events/index.html"></iframe></article><article class="no-internet center cloud"><h1> <div class="wrapper">Facebook <br>так тоже может</div></h1></article><article class="can-post center cloud"><h1> <div class="wrapper">Более того…</div></h1></article><article><div data-click class="backer"></div><iframe src="./examples/form/index.html"></iframe></article><article class="center code-4"><div class="wrapper"><pre><code class="javascript">var form = $('#comment-form'),
+	   messages = [];
+form.on('submit', function (event) {
+    event.preventDefault();
+    if(navigator.onLine){
+        $.post(
+		form.attr('action'), 
+		form.serialize()
+	);
+    }else{
+        messages.push(form.serialize());
+    }
+    form[0].reset();
+});</code></pre></div></article><article class="center code-2"><div class="wrapper"><pre><code class="javascript">$(window).on('online', function () {
+    while(messages.length&gt;0){
+        $.post(
+		form.attr('action'), 
+		messages.shift()
+	);
+    }
+});</code></pre></div></article><article class="refresh-pressed"></article><article class="offline-storage center dark"><div class="wrapper"><h1>Offline storage</h1></div></article><article><div data-click class="backer"></div><iframe src="./examples/storage/index.html"></iframe></article><article class="center code-5"><div class="wrapper"><pre><code class="javascript">var form = $('#comment-form'),
+    messages = JSON.parse(localStorage.getItem('messages')) || [];
+
+form.on('submit', function (event) {
+    event.preventDefault();
+    if(navigator.onLine){
+        $.post(form.attr('action'), form.serialize());
+    }else{
+        messages.push(form.serialize());
+        localStorage.setItem('messages',
+            JSON.stringify(messages));
+    }
+    form[0].reset();
+});</code></pre></div></article><article class="center code-4"><div class="wrapper"><pre><code class="javascript">if(navigator.onLine){
+    while(messages.length&gt;0){
+        $.post(form.attr('action'), messages.shift());
+    }
+    localStorage.removeItem('messages');
+}
+
+$(window).on('online', function () {
+    while(messages.length&gt;0){
+        $.post(form.attr('action'), messages.shift());
+    }
+    localStorage.removeItem('messages');
+});</code></pre></div></article><article class="expectations"></article><article class="reality"></article><article class="offline-js center dark"><div class="wrapper"><h1>Оffline.js</h1></div></article><article class="center code-1"><div class="wrapper"><pre><code class="bash">bower install --save offline
+npm install --save offline-js</code></pre></div></article><article class="center code-3"><div class="wrapper"><pre><code class="html">&lt;link
+ rel=&quot;stylesheet&quot;
+ href=&quot;themes/offline-theme-chrome.css&quot;&gt;
+&lt;link
+ rel=&quot;stylesheet&quot;
+ href=&quot;themes/offline-language-english.css&quot;&gt;
+&lt;script src=&quot;offline.min.js&quot;&gt;&lt;/script&gt;</code></pre></div></article><article class="center code-2"><div class="wrapper"><pre><code class="javascript">Offline.options = {
+	checks: {…},
+	checkmOnLoad: true,
+	interceptRequests: true,
+	requests: true,
+	reconnect: {…}
+	};</code></pre></div></article><article class="center code-1"><div class="wrapper"><pre><code class="javascript">Offline.check();
+Offline.state;</code></pre></div></article><article class="center code-1"><div class="wrapper"><pre><code class="javascript">Offline.on(
+	event,
+	handler,
+	context);
+Offline.off(
+	event,
+	handler);</code></pre></div></article><article class="center code-1"><div class="wrapper"><pre><code class="javascript">up
+down
+confirmed-up
+confirmed-down
+checking
+…</code></pre></div></article><article><div data-click class="backer"></div><iframe src="http://0.0.0.0:8083/"></iframe></article><article class="center qrcode hoodie"><div class="wrapper"><div class="half"><h3>Offline.js</h3></div><div class="half"><img src="images/offlinejs.svg" alt="QRCODE cо ссылкой на Offline.js"></div><p> <a href="goo.gl/HpvLgT" data-click>goo.gl/HpvLgT</a></p></div></article><article class="center qrcode hoodie"><div class="wrapper"><div class="half"><h3>Offline.js пример</h3></div><div class="half"><img src="images/offlinejs-demo.svg" alt="QRCODE cо ссылкой на offlinejs Пример"></div><p> <a href="https://goo.gl/wAT4rk" data-click>goo.gl/wAT4rk</a></p></div></article><article class="center dark hoodie-title"></article><article class="center code-1"><div class="wrapper"><pre><code class="bash">npm install -g hoodie-cli</code></pre></div></article><article class="center code-1"><div class="wrapper"><pre><code class="bash">hoodie new
+cd my-first-hoodie/
+hoodie start</code></pre></div></article><article class="hoodie-install-screen"></article><article class="center code-3"><div class="wrapper"><pre><code class="html">&lt;script src=&quot;jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;/_api/_files/hoodie.js&quot;&gt;&lt;/script&gt;</code></pre></div></article><article class="wtf-1"></article><article class="center code-1"><div class="wrapper"><pre><code class="javascript">hoodie
+hoodie.account
+hoodie.store</code></pre></div></article><article class="center code-2"><div class="wrapper"><pre><code class="javascript">hoodie.account
+	.signUp(username, password)
+	.done(success_callback)
+	.fail(fail_callback);</code></pre></div></article><article class="center code-2"><div class="wrapper"><pre><code class="javascript">hoodie.account
+	.signIn(username, password)
+	.done(success_callback)
+	.fail(fail_callback);</code></pre></div></article><article class="useless"></article><article class="safe"></article><article><div data-click class="backer"></div><iframe src="http://127.0.0.1:6004/index.html"></iframe></article><article class="conflict"></article><article><div data-click class="backer"></div><iframe src="http://127.0.0.1:6004/conflict.html" class="half"></iframe><iframe src="http://127.0.0.1:6004/index.html" class="half"></iframe></article><article class="wtf-2"></article><article class="prototypo"></article><article class="minutes"></article><article class="center qrcode hoodie"><div class="wrapper"><div class="half"><h3>HOODIE.JS</h3></div><div class="half"><img src="images/hoodie.svg" width="100%" alt="QRCODE cо ссылкой на Hoodie"></div><p> <a href="http://hood.ie/" data-click>hood.ie</a></p></div></article><article class="center qrcode hoodie"><div class="wrapper"><div class="half"><h3>HOODIE Slack</h3></div><div class="half"><img src="images/slack2.svg" alt="QRCODE cо ссылкой на Hoodie Slack"></div><p> <a href="http://hood.ie/chat/" data-click>hood.ie/chat/</a></p></div></article><article class="center qrcode hoodie"><div class="wrapper"><div class="half"><h3>HOODIE.JS пример</h3></div><div class="half"><img src="images/hoodie-demo.svg" alt="QRCODE cо ссылкой на Hoodie пример"></div><p> <a href="https://goo.gl/yH5xJp" data-click>goo.gl/yH5xJp</a></p></div></article><article class="center swarm-title"><div class="wrapper"><h1>Swarm.js</h1></div></article><article class="center code-1"><div class="wrapper"><pre><code class="bash">npm install --save swarm</code></pre></div></article><article class="center filename"><div class="wrapper"><h1>server.js</h1></div></article><article class="center code-3"><div class="wrapper"><pre><code class="javascript">let swarm = require('swarm'),
+    Text = require('swarm/lib/Text'),
+    fs = new swarm.FileStorage('id'),
+    host = new swarm.Host(
+	'swarm~nodejs',
+	0,
+	fs
+    ),
+    app = new Text('APP');</code></pre></div></article><article class="center code-3"><div class="wrapper"><pre><code class="javascript">ws_server.on('connection', function (ws) {
+	host.accept(
+		new swarm.EinarosWSStream(ws),
+		{delay: 50}
+	);
+});</code></pre></div></article><article class="center filename"><div class="wrapper"><h1>client.js</h1></div></article><article class="center code-2"><div class="wrapper"><pre><code class="javascript">let swarm = require('swarm'),
+  Text = require('swarm/lib/Text'),
+  host = new swarm.Host('id');
+
+this.model = new Text('APP');
+this.model.on(
+  this.eventMonitor.bind(this));</code></pre></div></article><article class="center code-2"><div class="wrapper"><pre><code class="javascript">host.connect(
+  'ws://127.0.0.1:8000/');
+window.addEventListener(
+  'onbeforeunload',
+  this.turnOff.bind(this));</code></pre></div></article><article class="center code-2"><div class="wrapper"><pre><code class="javascript">eventMonitor (spec, val, source) {
+  if (spec.op() == 'init') {
+    // Инициализировался
+  } else {
+    // Изменился
+  }
+}</code></pre></div></article><article class="center code-1"><div class="wrapper"><pre><code class="bash">this.model.text</code></pre></div></article><article class="center code-1"><div class="wrapper"><pre><code class="bash">this.model.set(value);</code></pre></div></article><article class="center code-1"><div class="wrapper"><pre><code class="bash">host.close();</code></pre></div></article><article><div data-click class="backer"></div><iframe src="http://127.0.0.1:8888/index.html"></iframe></article><article class="conflict2"></article><article><div data-click class="backer"></div><iframe src="http://127.0.0.1:8888/conflict.html" class="half"></iframe><iframe src="http://127.0.0.1:8888/index.html" class="half"></iframe></article><article class="center qrcode swarm"><div class="wrapper"><div class="half"><h3>Swarm.js</h3></div><div class="half"><img src="images/swarm.svg" alt="QRCODE cо ссылкой на Swarm.js"></div><p> <a href="http://swarmjs.github.io/" data-click>swarmjs.github.io</a></p></div></article><article class="center qrcode swarm"><div class="wrapper"><div class="half"><h3>Swarm.js пример</h3></div><div class="half"><img src="images/swarmjs-demo.svg" alt="QRCODE cо ссылкой на пример Swarm.js"></div><p> <a href="https://goo.gl/S8odgW" data-click>goo.gl/S8odgW</a></p></div></article><article class="service-worker center dark"><div class="wrapper"><h1>Service Workers</h1></div></article><article class="can"></article><article><div data-click class="backer"></div><iframe src="https://silentimp.github.io/service-worker-demo/"></iframe></article><article class="center filename"><div class="wrapper"><h1>client.js</h1></div></article><article class="center code-2"><div class="wrapper"><pre><code class="javascript">if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register(
+    'worker.js',
+    {scope: '/'})
+  .then(success)
+  .catch(error);
+}</code></pre></div></article><article class="center filename"><div class="wrapper"><h1>worker.js</h1></div></article><article class="code-1 center"><div class="wrapper"><pre><code class="javascript">// События
+
+install
+activate
+fetch
+message</code></pre></div></article><article class="center dark fetch"><div class="wrapper"><h1>Перехват запросов</h1></div></article><article class="code-1 center"><div class="wrapper"><pre><code class="javascript">this.addEventListener(
+	'fetch',
+	function(event) {});</code></pre></div></article><article class="code-1 center"><div class="wrapper"><pre><code class="javascript">event.request</code></pre></div></article><article class="code-1 center"><div class="wrapper"><pre><code class="javascript">event.request.url</code></pre></div></article><article class="code-1 center"><div class="wrapper"><pre><code class="javascript">event.respondWith(
+	new Response('Owned!')
+);</code></pre></div></article><article class="center dark cach"><div class="wrapper"><h1>Сохранение в кэш</h1></div></article><article class="code-1 center"><div class="wrapper"><pre><code class="javascript">caches.open('id')
+  .then(function(cache) {
+    return cache.addAll([…]);
+  });</code></pre></div></article><article class="code-3 center"><div class="wrapper"><pre><code class="javascript">event.respondWith(
+  caches.open('id')
+    .then(function(cache) {
+      return cache.match(event.request)
+       .then(function(response) {…}
+     });
+  });</code></pre></div></article><article class="code-2 center"><div class="wrapper"><pre><code class="javascript">if (response) {
+  return response;
+} else {
+  cache.add(event.request.url);
+  return fetch(event.request);
+}</code></pre></div></article><article class="center dark message"><div class="wrapper"><h1>Cообщения</h1></div></article><article class="code-2 center"><div class="wrapper"><pre><code class="javascript">// client.js
+
+let message = {
+  'command': 'flush'
+};
+navigator
+  .serviceWorker
+  .controller
+  .postMessage(message);</code></pre></div></article><article class="code-2 center"><div class="wrapper"><pre><code class="javascript">// worker.js
+
+switch (event.data.command) {
+  case 'flush':
+    return caches.delete('id');
+    break;
+}</code></pre></div></article><article class="center bugs dark"><div class="wrapper"><h1>Отладка</h1></div></article><article class="center code-2"><div class="wrapper"><pre><code class="javascript">// Chrome
+chrome://inspect/#service-workers
+
+// Opera
+browser://serviceworker-internals
+
+// Firefox
+about:serviceworkers</code></pre></div></article><article class="inspect"></article><article class="log"></article><article class="center qrcode swarm"><div class="wrapper"><div class="half"><h3>Service Workers </h3></div><div class="half"><img src="images/sws.svg" alt="QRCODE cо ссылкой на спецификацию Service Workers"></div><p> <a href="https://slightlyoff.github.io/ServiceWorker/spec/service_worker/" data-click>goo.gl/3LeXLw</a></p></div></article><article class="center qrcode swarm"><div class="wrapper"><div class="half"><h3>Service Workers пример</h3></div><div class="half"><img src="images/sw-demo.svg" alt="QRCODE cо ссылкой на пример Service Workers"></div><p> <a href="https://goo.gl/TRlRi3" data-click>goo.gl/TRlRi3</a></p></div></article><article class="center qrcode slack"><div class="wrapper"><div class="half"><h3> <span>Offline <br>First <br>Community</span></h3></div><div class="half"><img src="images/slack2.svg" alt="QRCODE cо ссылкой на Slack"></div><p> <a href="http://offlinefirst.org/chat" data-click>offlinefirst.org/chat</a></p></div></article><article class="cake center cloud"><h1> <div class="wrapper">Offline first<br>не тортик</div></h1></article><article class="cherry center cloud"><h1> <div class="wrapper">Offline first <br>вишенка</div></h1></article><article class="many center cloud"><h1> <div class="wrapper">Вас таких много<br>стоит выделиться</div></h1></article><article class="meanie center cloud"><h1> <div class="wrapper">Не будьте буками!</div></h1></article><article class="pleasure center cloud"><h1> <div class="wrapper">Сделайте<br>пользователю <br>приятно</div></h1></article><article class="contacts center qrcode"><div class="wrapper"><div class="about-speaker"><p class="name">Антон Немцев</p><p class="link">http://silentimp.info/</p><p class="twitter">@silentimp</p><p class="email">thesilentimp@gmail.com</p><p class="skype">skype: ravencry</p></div><img src="images/git.svg" alt="QRCODE cо ссылкой на доклад" class="link"><p> <a href="http://goo.gl/lTV0bL" data-click>goo.gl/lTV0bL</a></p></div></article></section></body></html>

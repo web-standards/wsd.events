@@ -1,0 +1,45 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    /*background-color: #9a9a9b;*/
+}
+
+.b-icon
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 500px;
+    height: 500px;
+    margin: -250px 0 0 -250px;
+
+    background: url(i/yabro2.png) 0 0 no-repeat;
+}
+
+.b-handsome,
+.b-sex
+{
+    position: absolute;
+
+    display: none;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: #000;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: contain;
+}
+
+.b-handsome
+{
+    background-image: url(i/handsome.jpg);
+}
+
+.b-sex
+{
+    background-image: url(i/sex.jpg);
+}

@@ -1,0 +1,189 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Lawson theme for Shower</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=1274, user-scalable=no">
+	<link rel="stylesheet" href="styles/screen-d90984e344.css">
+	<link rel="stylesheet" href="styles/print.css" media="print">
+	<!--
+		To apply styles to the certain slides
+		set slide ID to get needed elements
+		-->
+	<style>
+		@-webkit-keyframes flex { to { width:30% } }
+		@-moz-keyframes flex { to { width:30% } }
+		@-o-keyframes flex { to { width:30% } }
+		@keyframes flex { to { width:30% } }
+
+		#Flex .wrapper {
+			width:100%;
+			height:350px;
+			display:-webkit-flex;
+			display:-moz-flex;
+			display:flex;
+			}
+			#Flex .wrapper .item {
+				margin:10px;
+				background:#069;
+				}
+			#Flex .wrapper .item:nth-child(1) {
+				-webkit-flex:1;
+				-moz-flex:1;
+				flex:1;
+				}
+			#Flex .wrapper .item:nth-child(2) {
+				-webkit-flex:2;
+				-moz-flex:2;
+				flex:2;
+				}
+			#Flex .wrapper .item:nth-child(3) {
+				-webkit-flex:3;
+				-moz-flex:3;
+				flex:3;
+				}
+		#Flex:target .wrapper {
+			-webkit-animation:flex 3s linear alternate infinite;
+			-moz-animation:flex 3s linear alternate infinite;
+			-o-animation:flex 3s linear alternate infinite;
+			animation:flex 3s linear alternate infinite;
+			-webkit-animation-delay:2s;
+			-moz-animation-delay:2s;
+			-o-animation-delay:2s;
+			animation-delay:2s;
+			}
+	</style>
+</head>
+<body class="list">
+	<header class="caption">
+		<h1>Presentation Super Title</h1>
+		<p><a href="http://brucelawson.co.uk">Bruce Lawson</a> Opera Software</p>
+	</header>
+	<section class="slide cover first">
+		<header>
+			<h2>Presentation <strong>Super</strong> <b>Title</b></h2>
+			<p>Device-Friendly Layouts Beyond the Desktop</p>
+		</header>
+		<img src="pictures/rock.jpg" alt="">
+		<p><a href="http://opera.com">Opera Software</a></p>
+	</section>
+	<section class="slide">
+		<h2>Slide Title</h2>
+		<p>Typewriter etsy messenger bag <a href="">fingerstache</a>, aesthetic vinyl semiotics twee <strong>DIY</strong> forage chillwave. Thundercats ennui messenger bag, <em>squid</em> carles chillwave shoreditch pickled cliche <b>letterpress</b>. DIY beard locavore <i>occupy</i> salvia, <code>&lt;whatever&gt;</code> single-origin coffee fanny pack 3 wolf moon typewriter gastropub kale chips.</p>
+	</section>
+	<section class="slide">
+		<h2>Slide Title</h2>
+		<p>Typewriter etsy messenger bag <a href="">fingerstache</a>, aesthetic vinyl semiotics twee <strong>DIY</strong> forage chillwave. Thundercats ennui messenger bag, <em>squid</em> carles chillwave shoreditch pickled cliche <b>letterpress</b>.</p>
+		<p class="note">DIY beard locavore <i>occupy</i> salvia, <code>&lt;whatever&gt;</code> single-origin coffee fanny pack 3 wolf moon typewriter gastropub kale chips.</p>
+	</section>
+	<section class="slide">
+		<h2>Lists</h2>
+		<ul>
+			<li><span>Ennui</span> keffiyeh thundercats</li>
+			<li><span>Jean</span> shorts biodiesel</li>
+			<li><span>Terry</span> richardson, swag blog
+				<ol>
+					<li><span>Locavore</span> umami vegan helvetica</li>
+					<li><span>Keytar</span> sriracha gluten-free</li>
+				</ol>
+			</li>
+			<li><span>Before</span> they sold out master</li>
+		</ul>
+	</section>
+	<section class="slide">
+		<h2>Lists</h2>
+		<ol>
+			<li>Ennui keffiyeh thundercats</li>
+			<li>Jean shorts biodiesel</li>
+			<li>Terry richardson, swag blog
+				<ul>
+					<li>Locavore umami vegan helvetica</li>
+					<li>Keytar sriracha gluten-free</li>
+				</ul>
+			</li>
+			<li>Before they sold out master</li>
+		</ol>
+	</section>
+	<section class="slide">
+		<h2>Lists</h2>
+		<ol class="two-cols">
+			<li class="next">Ennui keffiyeh thundercats</li>
+			<li class="next">Jean shorts biodiesel</li>
+			<li class="next">Terry richardson, swag blog
+			<li class="next">Jean shorts biodiesel</li>
+			<li class="next">Terry richardson, swag blog
+			<li class="next">Before they sold out master</li>
+		</ol>
+	</section>
+	<section class="slide outline">
+		<ol>
+			<li class="active">Special mobile site</li>
+			<li>Do nothing at all</li>
+			<li>Optimise for mobile</li>
+			<li>Profit!</li>
+		</ol>
+	</section>
+	<section class="slide">
+		<h2>Quote</h2>
+		<figure>
+			<blockquote>
+				<p>Typewriter etsy messenger bag fingerstache, aesthetic vinyl semiotics twee DIY forage chillwave. Thundercats ennui messenger bag, squid carles chillwave shoreditch pickled cliche letterpress. DIY beard locavore occupy salvia, whatever single-origin coffee.</p>
+			</blockquote>
+			<figcaption>Bruce Lawson</figcaption>
+		</figure>
+	</section>
+	<section class="slide cover">
+		<figure>
+			<img src="images/denim.png" alt="">
+			<figcaption class="white">Copyright © Bruce Lawson</figcaption>
+		</figure>
+	</section>
+	<section class="slide cover">
+		<figure>
+			<img src="images/denim.png" alt="">
+			<figcaption>Copyright © Bruce Lawson</figcaption>
+		</figure>
+	</section>
+	<section class="slide">
+		<h2>Code listing</h2>
+<pre><code>&lt;html lang="en"&gt;
+<mark>&lt;head&gt;</mark> <mark class="comment">&lt;!--Comment--&gt;</mark>
+    &lt;title&gt;<mark class="important">Shower</mark>&lt;/title&gt;
+    &lt;meta charset="<mark class="important">UTF-8</mark>"&gt;
+    &lt;link rel="stylesheet" href="s/screen.css"&gt;
+<mark>&lt;/head&gt;</mark></code></pre>
+	</section>
+	<section class="slide shout">
+		<h2><strong>Wolf</strong> moon <b>typewriter</b> gastropub <strong>kale</strong> chips</h2>
+	</section>
+	<section class="slide cover shout">
+		<h2><strong>Wolf</strong> moon <b>typewriter</b> gastropub <strong>kale</strong> chips</h2>
+		<figure>
+			<img src="pictures/rock.jpg" alt="">
+			<figcaption class="white">Copyright © Bruce Lawson</figcaption>
+		</figure>
+	</section>
+	<section class="slide" id="Flex">
+		<h2>Wolf moon typewriter</h2>
+		<div class="wrapper">
+			<div class="item"></div>
+			<div class="item"></div>
+			<div class="item"></div>
+		</div>
+	</section>
+	<section class="slide last">
+		<ul>
+			<li><a href="mailto:brucel@opera.com">brucel@opera.com</a></li>
+			<li><a href="http://opera.com/developer">opera.com/developer</a></li>
+			<li><a href="http://brucelawson.co.uk">brucelawson.co.uk</a></li>
+			<li><a href="https://twitter.com/brucel">@brucel</a></li>
+		</ul>
+	</section>
+	<!--
+		To hide progress bar from entire presentation
+		just remove “progress” element.
+		-->
+	<div class="progress"><div></div></div>
+	<script src="../../scripts/script-adfea3dfb6.js"></script>
+</body>
+</html>

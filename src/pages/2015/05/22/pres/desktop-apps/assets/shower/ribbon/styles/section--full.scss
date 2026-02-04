@@ -1,0 +1,23 @@
+// ------------------------------------------------------------------
+// Section Full
+// ------------------------------------------------------------------
+
+> section {
+
+	position:absolute;
+	top:0;
+	left:0;
+	margin-left:150%;
+	visibility:hidden;
+
+	&:target {
+		margin:0;
+		visibility:visible;
+		}
+
+	// Elements
+
+	@import 'section__next--full';
+	@import 'section__shout--full';
+
+	}

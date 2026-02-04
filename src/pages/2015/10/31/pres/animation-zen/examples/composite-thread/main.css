@@ -1,0 +1,153 @@
+.b-wrapper
+{
+    text-align: center;
+}
+
+.b-col
+{
+    position: relative;
+
+    display: inline-block;
+
+    box-sizing: border-box;
+    width: 49%;
+    padding: 20px;
+
+    vertical-align: top;
+}
+
+.b-col.b-active .b-head,
+.b-col.b-active .b-code
+{
+    -webkit-filter: blur(0);
+}
+
+.b-head
+{
+    font: bold 20px Arial;
+
+    min-height: 50px;
+
+    transition: -webkit-filter .5s;
+
+    -webkit-filter: blur(6px);
+}
+
+.b-icon
+{
+    width: 170px;
+    height: 170px;
+    margin: 20px auto 0;
+
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+
+.b-icon_browser_chrome
+{
+    background-image: url(i/chrome.png);
+}
+
+.b-icon_browser_ff
+{
+    position: absolute;
+    left: 50%;
+
+    margin-left: -85px;
+
+    animation: 2s infinite linear move;
+
+    background-image: url(i/ff.png);
+}
+
+.b-icon_browser_yabro
+{
+    animation: 2s infinite linear rotate;
+
+    background-image: url(i/yabro.png);
+}
+
+.b-icon_browser_yabro2
+{
+    background-image: url(i/yabro2.png);
+}
+
+.b-code
+{
+    font: 16px/1.1 monospace;
+
+    display: block;
+
+    margin: 30px auto 0;
+    padding: 10px;
+
+    transition: -webkit-filter .5s;
+    text-align: left;
+
+    color: #fff;
+    background-color: #3a3a3a;
+
+    -webkit-filter: blur(6px);
+}
+
+.b-btn
+{
+    font: bold 16px/1 Arial;
+
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+
+    box-sizing: border-box;
+    width: 100px;
+    height: 101px;
+    margin: -50px 0 0 -50px;
+    padding: 60px 0 0;
+
+    cursor: pointer;
+    transition: transform .5s;
+
+    color: #fff;
+    background: url(i/bomb.png) 0 0 no-repeat;
+    text-shadow: 0 0 4px red;
+
+    will-change: transform;
+}
+
+.b-btn:hover
+{
+    transform: scale(1.1);
+}
+
+@keyframes rotate
+{
+    from
+    {
+        transform: rotate(0deg);
+    }
+    to
+    {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes move
+{
+    0%
+    {
+        left: 50%;
+    }
+    30%
+    {
+        left: 70%;
+    }
+    70%
+    {
+        left: 30%;
+    }
+    100%
+    {
+        left: 50%;
+    }
+}

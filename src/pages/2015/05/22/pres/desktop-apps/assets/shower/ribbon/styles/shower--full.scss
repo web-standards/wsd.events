@@ -1,0 +1,20 @@
+// ------------------------------------------------------------------
+// Shower Full
+// ------------------------------------------------------------------
+
+&--full {
+
+	position:absolute;
+	top:50%;
+	left:50%;
+	overflow:hidden;
+	margin:(- $height / 2) 0 0 (- $width / 2);
+	width:$width;
+	height:$height;
+	background:#000;
+
+	@import 'progress--full';
+	@import 'section--full';
+	@import 'live-region--full';
+
+	}

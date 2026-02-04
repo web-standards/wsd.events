@@ -1,0 +1,5072 @@
+<!DOCTYPE html>
+<html lang="en"  id="show-tips">
+<head>
+    <title>Оживляем текст</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=792, user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="shower/themes/bright/styles/screen-d90984e344.css">
+    <style>
+        @charset "UTF-8";
+@font-face {
+  font-family: 'Ubuntu Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Ubuntu Condensed"), local("UbuntuCondensed-Regular"), url(./assets/fonts/Ubuntu-Condensed/uc.woff) format("woff");
+}
+@font-face {
+  font-family: 'Lobster';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Lobster"), url(./assets/fonts/Lobster/font.woff) format("woff"), url(./assets/fonts/Lobster/font.woff2) format("woff2");
+}
+@font-face {
+  font-family: 'Russo One';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Russo One"), local("RussoOne-Regular"), url(./assets/fonts/Russo-One/font.woff) format("woff");
+}
+.slide H1,
+.slide H2,
+.slide H3,
+.slide H4,
+.slide H5 {
+  /*position: relative;*/
+  z-index: 2;
+  font-family: "Ubuntu Condensed",sans-serif;
+  line-height: 1;
+  font-weight: normal;
+}
+
+/* map-keys($map-headers) */
+.slide h2 {
+  margin: 0 0 38.4px;
+  font-size: 57.6px;
+}
+
+/* map-keys($map-headers) */
+.slide h3 {
+  margin: 0 0 36.8px;
+  font-size: 55.2px;
+}
+
+/* map-keys($map-headers) */
+.slide h4 {
+  margin: 0 0 27.2px;
+  font-size: 40.8px;
+}
+
+/* map-keys($map-headers) */
+.slide h5 {
+  margin: 0 0 19.2px;
+  font-size: 28.8px;
+}
+
+.slide H2 + H3 {
+  margin-top: -30px;
+  color: #BBB;
+}
+
+.slide .free-fly {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font: 90px/1.2 'Ubuntu Condensed', sans-serif;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.slide .free-fly--small {
+  font-size: 80px;
+}
+.slide .free-fly .tooltip {
+  position: absolute;
+  left: 0;
+  bottom: -1.9em;
+  width: 100%;
+  font-size: 30px;
+  color: #555;
+}
+
+.sign {
+  padding: 0 .5em;
+  vertical-align: middle;
+  font-size: 3em;
+}
+
+.comment,
+.comment code {
+  color: #AAA;
+}
+
+.comment--bright {
+  background: yellowgreen;
+}
+
+.pos-abs {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.hidden {
+  display: none;
+}
+
+.modes-wrapper {
+  counter-reset: modes-list;
+}
+.modes-wrapper LI:before {
+  counter-increment: modes-list !important;
+  content: counter(modes-list) ".  " !important;
+}
+
+.slide PRE MARK {
+  background: gold;
+  -webkit-box-shadow: -3px 0 0 gold, 3px 0 0 gold;
+  box-shadow: -3px 0 0 gold, 3px 0 0 gold;
+  color: #000;
+}
+
+/* SVG
+------------------------- */
+svg {
+  overflow: visible;
+}
+
+.svg--ovh {
+  overflow: hidden;
+}
+
+.demo--offset {
+  position: absolute !important;
+  width: 860px !important;
+  height: 500px;
+  top: 0;
+  right: 80px;
+  bottom: 0;
+  left: 80px;
+  margin: auto;
+  -webkit-box-shadow: 40px 40px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 40px 40px 20px rgba(0, 0, 0, 0.5);
+}
+
+.demo--offset-small {
+  height: 350px;
+}
+
+.hidden-svg-defs {
+  position: absolute;
+  overflow: hidden;
+}
+
+.svg-defs {
+  position: absolute;
+  left: -100%;
+}
+
+.qr-code {
+  display: block;
+  width: 480px;
+  height: 480px;
+  margin: 0 auto;
+}
+
+/* Slides
+------------------------- */
+.slide > DIV {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  padding: 60px 80px;
+}
+.slide:after {
+  right: 1em;
+  bottom: 1em;
+  mix-blend-mode: difference;
+}
+.full .slide:after {
+  left: auto;
+}
+.slide .list--morespaces LI {
+  margin-bottom: 2em;
+}
+.slide svg {
+  /*border: 2px solid green;*/
+  width: 100%;
+}
+
+.fullscreen-svg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.afterword {
+  /*background: #000;*/
+}
+
+.slide--imgcenter > DIV {
+  padding: 0;
+  text-align: center;
+}
+.slide--imgcenter > DIV:before {
+  content: "";
+  display: inline-block;
+  height: 640px;
+  vertical-align: middle;
+}
+.slide--imgcenter IMG {
+  vertical-align: middle;
+}
+
+.slide--imgfull > DIV {
+  padding: 0;
+  text-align: center;
+}
+.slide--imgfull > DIV .live-editor__content {
+  position: relative;
+  margin: 60px 80px 0;
+  z-index: 100;
+}
+.slide--imgfull .abs-link {
+  position: absolute;
+  bottom: 2em;
+  right: 3em;
+  left: 3em;
+  background: #FFF;
+  -webkit-box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
+  text-decoration: underline;
+  color: #000;
+}
+.slide--imgfull .abs-link:hover {
+  text-decoration: none;
+}
+
+.slide--vlm .slide__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.slide--vlm-code .slide__content {
+  position: absolute;
+  top: 50%;
+  /*left: 50%;*/
+  -webkit-transform: translate(0, -50%);
+  /*left: 50%;*/
+  -ms-transform: translate(0, -50%);
+  /*left: 50%;*/
+  transform: translate(0, -50%);
+}
+.slide--vlm-code PRE {
+  margin-bottom: 0;
+}
+
+.table-cell {
+  display: table-cell;
+  width: 864px;
+  height: 440px;
+  vertical-align: middle;
+  text-align: center;
+}
+.table-cell svg, .table-cell span {
+  display: inline-block;
+  vertical-align: middle;
+  margin: .5em 0;
+}
+
+.slide--horcenter {
+  text-align: center;
+}
+
+/* About
+------------------------- */
+.about__text {
+  float: left;
+}
+
+.about__company {
+  display: block;
+  margin-top: .3em;
+  font-size: .6em;
+  color: #777;
+}
+
+.full .progress {
+  z-index: 2;
+}
+
+/* Footer
+------------------------- */
+.slide footer {
+  padding: 20px 50px;
+  line-height: 1.4;
+}
+
+.slide:target footer {
+  bottom: 0;
+}
+
+/* Pre
+------------------------- */
+PRE {
+  position: relative;
+}
+PRE:before {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 0 15px;
+  border-radius: 10px;
+}
+
+/*hsl(50, 80%, 75%)*/
+.pre--css:before {
+  content: "CSS";
+  background: #cde87d;
+}
+
+.pre--svg:before {
+  content: "SVG";
+  background: #93ddec;
+}
+
+.code--smaller {
+  font-size: .75em;
+}
+
+.code--condensed {
+  line-height: 1.4 !important;
+}
+
+/* Cover
+------------------------- */
+#Cover {
+  text-align: center;
+}
+
+#Cover h2 {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  margin: 0;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  font-size: 70px;
+  line-height: 1.9;
+  color: #FFF;
+  -webkit-transform: none !important;
+  -ms-transform: none !important;
+  transform: none !important;
+}
+
+/* Popup
+------------------------- */
+.img-preview {
+  display: inline-block;
+  width: 24px;
+  height: 22px;
+  text-indent: 0;
+  vertical-align: middle;
+}
+
+.popup {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  border: 35px solid #FFF;
+  -webkit-box-shadow: 0 0 80px rgba(0, 0, 0, 0.3), 0 0 50px 300px rgba(0, 0, 0, 0.3), 0 0 50px 300px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.3), 0 0 50px 300px rgba(0, 0, 0, 0.3), 0 0 50px 300px rgba(255, 255, 255, 0.5);
+  text-indent: 0;
+  cursor: pointer;
+}
+.popup:before {
+  content: "\2573";
+  position: absolute;
+  display: block;
+  right: -2.1em;
+  top: -2.1em;
+  width: 1.5em;
+  height: 1.5em;
+  background: #444;
+  border: .2em solid #FFF;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 0.3em rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 0.3em rgba(0, 0, 0, 0.2);
+  text-align: center;
+  line-height: 1.5;
+  font-size: 1em;
+  color: #FFF;
+}
+
+/* Backgrounds
+------------------------- */
+.bg--dark {
+  background: #000;
+  -webkit-transition: background 1s;
+  transition: background 1s;
+}
+.bg--dark H2 {
+  color: #FFF;
+}
+
+.bg--dark-hover:hover {
+  background: orangered;
+}
+
+.bg--dark-gray {
+  background: #333;
+}
+.bg--dark-gray H2 {
+  color: #FFF;
+}
+
+.bg--stripes {
+  background-color: orange;
+  background-image: -webkit-linear-gradient(0deg, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 50%);
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 50%);
+  -webkit-background-size: 2em 100%;
+  background-size: 2em 100%;
+}
+
+.bg--ps-cells {
+  background: url(./assets/img/parts/ps-bg.png);
+}
+
+.bg--flowers {
+  /*violet-hyacinths*/
+  background: url(./assets/img/parts/red-leaves.jpeg) 50% 50%;
+}
+
+.bg--blue-grad {
+  background-color: #0c052e;
+  background-image: -webkit-radial-gradient(#0088cc, #0c052e);
+  background-image: radial-gradient(#0088cc, #0c052e);
+}
+
+.bg--red-grad {
+  background-color: crimson;
+  background-image: -webkit-radial-gradient(orangered, crimson);
+  background-image: radial-gradient(orangered, crimson);
+}
+
+/* Columns
+------------------------- */
+.column {
+  width: 49%;
+}
+.column--left {
+  float: left;
+}
+.column--right {
+  float: right;
+}
+
+.modes-wrapper {
+  width: 60%;
+  margin: 0 auto;
+  text-align: left;
+}
+.modes-wrapper UL {
+  margin: 0 !important;
+}
+.modes-wrapper LI {
+  text-indent: 0;
+}
+.modes-wrapper .column {
+  width: 30%;
+}
+
+.photo {
+  float: left;
+  width: 300px;
+  height: 300px;
+  margin-right: 2.5em;
+}
+
+/* Demo
+------------------------- */
+.demo--text,
+.live-editor--text .live-editor__view {
+  font: 12em/1 'Russo One', Impact;
+  letter-spacing: .05em;
+}
+
+svg.demo--text {
+  font-size: 14em;
+}
+
+svg.demo--text-afterword {
+  font-size: 9em;
+  letter-spacing: .03em;
+}
+
+.live-editor--text svg {
+  font-size: 1.2em;
+}
+
+/* Solve problem with height in IE9 */
+svg.demo--small-height,
+.live-editor--small-height svg {
+  height: 250px;
+}
+
+.demo-border {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.demo-border:after {
+  content: "";
+  position: absolute;
+  z-index: 10;
+  top: -1px;
+  right: -1px;
+  bottom: -1px;
+  left: -1px;
+  border: 5px solid #000;
+  pointer-events: none;
+}
+
+svg.demo--inverted-mask {
+  font-size: 12em;
+}
+
+svg.demo--intro {
+  font: 7em/1 'Russo One', Impact;
+}
+
+/* Demo Edit Properties
+------------------------- */
+.live-editor__code {
+  display: block;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  height: 2em;
+  margin: 0 0 20px;
+  padding: 5px;
+  background: transparent;
+  border: 0;
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+  outline: none;
+  line-height: 1.6;
+  font-family: 'Anka Coder',monospace;
+  font-size: 100%;
+  -webkit-transition: .5s;
+  transition: .5s;
+  -webkit-background-size: 30px 30px;
+  background-size: 30px 30px;
+  background-repeat: no-repeat;
+  background-position: 99% center;
+}
+.live-editor__code:focus {
+  /*background-color: $hl-color;*/
+}
+.live-editor__code--smalltext {
+  font-size: 80%;
+}
+.live-editor__code--2-lines {
+  height: 3.6em;
+}
+.live-editor__code--3-lines {
+  height: 5.4em;
+}
+.live-editor__code--4-lines {
+  height: 7.2em;
+}
+.live-editor__code--5-lines {
+  height: 9em;
+}
+.live-editor__code--6-lines {
+  height: 10.8em;
+}
+.live-editor__code--7-lines {
+  height: 12.6em;
+}
+.live-editor__code--8-lines {
+  height: 14.4em;
+}
+.live-editor__code--9-lines {
+  height: 16.2em;
+}
+.live-editor__code--10-lines {
+  height: 18em;
+}
+
+.live-editor__content {
+  position: relative;
+  border-radius: 5px;
+  background: #FFF;
+}
+.live-editor__content:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-transition: opacity .8s;
+  transition: opacity .8s;
+}
+
+.js--edited:before {
+  opacity: 0;
+}
+
+.live-editor__view {
+  position: relative;
+  /*border: 1px solid green;*/
+}
+.live-editor__view svg {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  max-height: 100%;
+  margin: auto;
+  /*border: 1px solid orange;*/
+}
+
+/* Modifications */
+.live-editor--svg-text .live-editor__content:before {
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(38.016px, palegoldenrod), color-stop(76.032px, palegoldenrod), to(transparent));
+  background: -webkit-linear-gradient(transparent 38.016px, palegoldenrod 38.016px, palegoldenrod 76.032px, transparent 76.032px);
+  background: linear-gradient(transparent 38.016px, palegoldenrod 38.016px, palegoldenrod 76.032px, transparent 76.032px);
+  background-position: 0 .2em;
+}
+.live-editor--svg-text .live-editor__view {
+  height: 280px;
+}
+
+.live-editor--stroke-base .live-editor__view {
+  height: 400px;
+}
+
+.live-editor--dasharray .live-editor__view {
+  height: 360px;
+}
+
+.live-editor--dasharray-step2 .live-editor__content:before {
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(76.032px, palegoldenrod), color-stop(114.048px, palegoldenrod), to(transparent));
+  background: -webkit-linear-gradient(transparent 76.032px, palegoldenrod 76.032px, palegoldenrod 114.048px, transparent 114.048px);
+  background: linear-gradient(transparent 76.032px, palegoldenrod 76.032px, palegoldenrod 114.048px, transparent 114.048px);
+  background-position: 0 .2em;
+}
+
+.live-editor--pattern .live-editor__view {
+  height: 240px;
+}
+
+.live-editor--pattern-step1 .live-editor__content:before {
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0px, palegoldenrod), color-stop(38.016px, palegoldenrod), to(transparent));
+  background: -webkit-linear-gradient(transparent 0px, palegoldenrod 0px, palegoldenrod 38.016px, transparent 38.016px);
+  background: linear-gradient(transparent 0px, palegoldenrod 0px, palegoldenrod 38.016px, transparent 38.016px);
+  background-position: 0 .2em;
+}
+
+.live-editor--pattern-step2 .live-editor__content:before {
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(76.032px, palegoldenrod), color-stop(114.048px, palegoldenrod), to(transparent));
+  background: -webkit-linear-gradient(transparent 76.032px, palegoldenrod 76.032px, palegoldenrod 114.048px, transparent 114.048px);
+  background: linear-gradient(transparent 76.032px, palegoldenrod 76.032px, palegoldenrod 114.048px, transparent 114.048px);
+  background-position: 0 .2em;
+}
+
+.live-editor--pattern-rastr .live-editor__content:before {
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(91.2384px, palegoldenrod), color-stop(121.6512px, palegoldenrod), to(transparent));
+  background: -webkit-linear-gradient(transparent 91.2384px, palegoldenrod 91.2384px, palegoldenrod 121.6512px, transparent 121.6512px);
+  background: linear-gradient(transparent 91.2384px, palegoldenrod 91.2384px, palegoldenrod 121.6512px, transparent 121.6512px);
+  background-position: 0 .2em;
+}
+
+.live-editor--grad .live-editor__view {
+  height: 240px;
+}
+
+.live-editor--grad-step1 .live-editor__content:before {
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0px, palegoldenrod), color-stop(38.016px, palegoldenrod), to(transparent));
+  background: -webkit-linear-gradient(transparent 0px, palegoldenrod 0px, palegoldenrod 38.016px, transparent 38.016px);
+  background: linear-gradient(transparent 0px, palegoldenrod 0px, palegoldenrod 38.016px, transparent 38.016px);
+  background-position: 0 .2em;
+}
+
+.live-editor--grad-step2 .live-editor__content:before {
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(76.032px, palegoldenrod), color-stop(114.048px, palegoldenrod), to(transparent));
+  background: -webkit-linear-gradient(transparent 76.032px, palegoldenrod 76.032px, palegoldenrod 114.048px, transparent 114.048px);
+  background: linear-gradient(transparent 76.032px, palegoldenrod 76.032px, palegoldenrod 114.048px, transparent 114.048px);
+  background-position: 0 .2em;
+}
+
+.live-editor--mask .live-editor__view {
+  height: 320px;
+}
+
+.live-editor--bgclip-step2 .live-editor__content:before {
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(38.016px, palegoldenrod), color-stop(76.032px, palegoldenrod), to(transparent));
+  background: -webkit-linear-gradient(transparent 38.016px, palegoldenrod 38.016px, palegoldenrod 76.032px, transparent 76.032px);
+  background: linear-gradient(transparent 38.016px, palegoldenrod 38.016px, palegoldenrod 76.032px, transparent 76.032px);
+  background-position: 0 .2em;
+}
+
+.live-editor--bgclip-step3 .live-editor__content:before {
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(76.032px, palegoldenrod), color-stop(114.048px, palegoldenrod), to(transparent));
+  background: -webkit-linear-gradient(transparent 76.032px, palegoldenrod 76.032px, palegoldenrod 114.048px, transparent 114.048px);
+  background: linear-gradient(transparent 76.032px, palegoldenrod 76.032px, palegoldenrod 114.048px, transparent 114.048px);
+  background-position: 0 .2em;
+}
+
+.demo--shadowstroke {
+  text-shadow: -1px -1px green, 1px -1px green, 1px 1px green, -1px 1px green, -2px -2px green, 2px -2px green, 2px 2px green, -2px 2px green, -3px -3px green, 3px -3px green, 3px 3px green, -3px 3px green, -4px -4px green, 4px -4px green, 4px 4px green, -4px 4px green, -5px -5px green, 5px -5px green, 5px 5px green, -5px 5px green, -6px -6px green, 6px -6px green, 6px 6px green, -6px 6px green, -7px -7px green, 7px -7px green, 7px 7px green, -7px 7px green;
+  color: #FFF;
+}
+
+.demo--shadowstroke-zoom {
+  position: absolute;
+  display: block;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 580px;
+  height: 580px;
+  margin: auto;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.7), 0 0 30px rgba(0, 0, 0, 0.4) inset;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7), 0 0 30px rgba(0, 0, 0, 0.4) inset;
+  background: url(./assets/img/parts/text-shadow-screen.png) 55% 50% no-repeat;
+  border: 2px solid #CCC;
+}
+
+.demo--doubleshadow {
+  text-shadow: -1px -1px white, 1px -1px white, 1px 1px white, -1px 1px white, -2px -2px white, 2px -2px white, 2px 2px white, -2px 2px white, -3px -3px white, 3px -3px white, 3px 3px white, -3px 3px white, -4px -4px white, 4px -4px white, 4px 4px white, -4px 4px white, -1px -1px orangered, 1px -1px orangered, 1px 1px orangered, -1px 1px orangered, -2px -2px orangered, 2px -2px orangered, 2px 2px orangered, -2px 2px orangered, -3px -3px orangered, 3px -3px orangered, 3px 3px orangered, -3px 3px orangered, -4px -4px orangered, 4px -4px orangered, 4px 4px orangered, -4px 4px orangered, -5px -5px orangered, 5px -5px orangered, 5px 5px orangered, -5px 5px orangered, -6px -6px orangered, 6px -6px orangered, 6px 6px orangered, -6px 6px orangered, -7px -7px orangered, 7px -7px orangered, 7px 7px orangered, -7px 7px orangered;
+  color: steelblue;
+}
+
+.demo--chasing-shadows {
+  text-shadow: 0 0 40px transparent;
+  color: teal;
+}
+
+:target .demo--chasing-shadows {
+  color: transparent;
+  -webkit-animation: chasing-shadow 3.5s infinite ease-in;
+  animation: chasing-shadow 3.5s infinite ease-in;
+}
+
+@-webkit-keyframes chasing-shadow {
+  10% {
+    text-shadow: 0 0 0 teal;
+  }
+  80% {
+    text-shadow: 0 30px 150px black;
+  }
+}
+
+@keyframes chasing-shadow {
+  10% {
+    text-shadow: 0 0 0 teal;
+  }
+  80% {
+    text-shadow: 0 30px 150px black;
+  }
+}
+.demo--multiple-shadows {
+  text-shadow: 0.01em 0.01em 0 #cc2200, 0.02em 0.02em 0 #ff2b00, 0.03em 0.03em 0 #ff5500, 0.04em 0.04em 0 #ff8000, 0.05em 0.05em 0 #ffaa00, 0.06em 0.06em 0 #ffd500, 0.07em 0.07em 0 #ffff33, 0.08em 0.08em 0 #e5ff66;
+  color: #b3000f;
+}
+
+.demo--text-stroke {
+  text-align: center;
+  -webkit-text-stroke: 15px orangered;
+  line-height: 1.5;
+  color: #FFF;
+}
+
+.font-effect {
+  font-size: 11em;
+}
+
+.font-effect-anaglyph {
+  text-shadow: -0.06em 0 red, 0.06em 0 cyan;
+}
+
+@-webkit-keyframes font-effect-fire-animation-keyframes {
+  0% {
+    text-shadow: 0 -0.05em 0.2em #FFF, 0.01em -0.02em 0.15em #FE0, 0.01em -0.05em 0.15em #FC0, 0.02em -0.15em 0.2em #F90, 0.04em -0.20em 0.3em #F70,0.05em -0.25em 0.4em #F70, 0.06em -0.2em 0.9em #F50, 0.1em -0.1em 1.0em #F40;
+  }
+  25% {
+    text-shadow: 0 -0.05em 0.2em #FFF, 0 -0.05em 0.17em #FE0, 0.04em -0.12em 0.22em #FC0, 0.04em -0.13em 0.27em #F90, 0.05em -0.23em 0.33em #F70, 0.07em -0.28em 0.47em #F70, 0.1em -0.3em 0.8em #F50, 0.1em -0.3em 0.9em #F40;
+  }
+  50% {
+    text-shadow: 0 -0.05em 0.2em #FFF, 0.01em -0.02em 0.15em #FE0, 0.01em -0.05em 0.15em #FC0, 0.02em -0.15em 0.2em #F90, 0.04em -0.20em 0.3em #F70,0.05em -0.25em 0.4em #F70, 0.06em -0.2em 0.9em #F50, 0.1em -0.1em 1.0em #F40;
+  }
+  75% {
+    text-shadow: 0 -0.05em 0.2em #FFF, 0 -0.06em 0.18em #FE0, 0.05em -0.15em 0.23em #FC0, 0.05em -0.15em 0.3em #F90, 0.07em -0.25em 0.4em #F70, 0.09em -0.3em 0.5em #F70, 0.1em -0.3em 0.9em #F50, 0.1em -0.3em 1.0em #F40;
+  }
+  100% {
+    text-shadow: 0 -0.05em 0.2em #FFF, 0.01em -0.02em 0.15em #FE0, 0.01em -0.05em 0.15em #FC0, 0.02em -0.15em 0.2em #F90, 0.04em -0.20em 0.3em #F70,0.05em -0.25em 0.4em #F70, 0.06em -0.2em 0.9em #F50, 0.1em -0.1em 1.0em #F40;
+  }
+}
+
+@keyframes font-effect-fire-animation-keyframes {
+  0% {
+    text-shadow: 0 -0.05em 0.2em #FFF, 0.01em -0.02em 0.15em #FE0, 0.01em -0.05em 0.15em #FC0, 0.02em -0.15em 0.2em #F90, 0.04em -0.20em 0.3em #F70,0.05em -0.25em 0.4em #F70, 0.06em -0.2em 0.9em #F50, 0.1em -0.1em 1.0em #F40;
+  }
+  25% {
+    text-shadow: 0 -0.05em 0.2em #FFF, 0 -0.05em 0.17em #FE0, 0.04em -0.12em 0.22em #FC0, 0.04em -0.13em 0.27em #F90, 0.05em -0.23em 0.33em #F70, 0.07em -0.28em 0.47em #F70, 0.1em -0.3em 0.8em #F50, 0.1em -0.3em 0.9em #F40;
+  }
+  50% {
+    text-shadow: 0 -0.05em 0.2em #FFF, 0.01em -0.02em 0.15em #FE0, 0.01em -0.05em 0.15em #FC0, 0.02em -0.15em 0.2em #F90, 0.04em -0.20em 0.3em #F70,0.05em -0.25em 0.4em #F70, 0.06em -0.2em 0.9em #F50, 0.1em -0.1em 1.0em #F40;
+  }
+  75% {
+    text-shadow: 0 -0.05em 0.2em #FFF, 0 -0.06em 0.18em #FE0, 0.05em -0.15em 0.23em #FC0, 0.05em -0.15em 0.3em #F90, 0.07em -0.25em 0.4em #F70, 0.09em -0.3em 0.5em #F70, 0.1em -0.3em 0.9em #F50, 0.1em -0.3em 1.0em #F40;
+  }
+  100% {
+    text-shadow: 0 -0.05em 0.2em #FFF, 0.01em -0.02em 0.15em #FE0, 0.01em -0.05em 0.15em #FC0, 0.02em -0.15em 0.2em #F90, 0.04em -0.20em 0.3em #F70,0.05em -0.25em 0.4em #F70, 0.06em -0.2em 0.9em #F50, 0.1em -0.1em 1.0em #F40;
+  }
+}
+.font-effect-fire-animation {
+  -webkit-animation-duration: 0.8s;
+  animation-duration: 0.8s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+  color: #ffe;
+}
+:target .font-effect-fire-animation {
+  -webkit-animation-name: font-effect-fire-animation-keyframes;
+  animation-name: font-effect-fire-animation-keyframes;
+}
+
+.font-effect-outline {
+  text-shadow: 0 1px 1px #000, 0 -1px 1px #000, 1px 0 1px #000, -1px 0 1px #000;
+  color: #fff;
+}
+
+.font-effect-shadow-multiple {
+  text-shadow: .04em .04em 0 #fff,.08em .08em 0 #aaa;
+}
+
+.font-effect-3d {
+  text-shadow: 0px 1px 0px #c7c8ca, 0px 2px 0px #b1b3b6, 0px 3px 0px #9d9fa2, 0px 4px 0px #8a8c8e, 0px 5px 0px #77787b, 0px 6px 0px #636466, 0px 7px 0px #4d4d4f, 0px 8px 7px #001135;
+  color: #fff;
+}
+
+.demo--background-clip,
+.demo--background-clip-no-support {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url(./assets/img/parts/tulips.jpeg) 50% 50%;
+  line-height: 750px;
+}
+
+.demo--background-clip-step0 {
+  background-image: none;
+}
+
+.demo--background-clip-step2 {
+  -webkit-background-clip: text;
+}
+
+.demo--background-clip-step3 {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.demo--background-clip-no-support {
+  /*background: url(./assets/img/parts/tulips.jpeg) 50% 50%;*/
+  line-height: 620px;
+}
+
+.demo--background-clip-fade {
+  width: 800px;
+  background: -webkit-linear-gradient(transparent, royalblue, yellow, red, darkviolet, transparent) no-repeat;
+  background-position: 50% 50%;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+  font-size: 5.5em;
+  letter-spacing: 0;
+  line-height: .85;
+  text-align: center;
+  color: #FFF;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.demo--background-clip-animation {
+  color: rgba(70, 130, 180, 0.7);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(currentColor)), linear-gradient(90deg, rgba(255, 255, 255, 0) 60%, currentColor 60%);
+  background: -webkit-linear-gradient(rgba(255, 255, 255, 0) 60%, currentColor 60%), -webkit-linear-gradient(0deg, rgba(255, 255, 255, 0) 60%, currentColor 60%);
+  background: linear-gradient(rgba(255, 255, 255, 0) 60%, currentColor 60%), linear-gradient(90deg, rgba(255, 255, 255, 0) 60%, currentColor 60%);
+  background-color: white;
+  background-position: 50% 0;
+  -webkit-background-size: 0.2em 0.2em;
+  background-size: 0.2em 0.2em;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+:target .demo--background-clip-animation {
+  -webkit-animation: move-bg 2s infinite linear;
+  animation: move-bg 2s infinite linear;
+}
+
+.demo--background-clip-animation-color {
+  background-image: -webkit-radial-gradient(center, circle, rgba(255, 255, 255, 0) 20%, currentColor 20%, currentColor 30%, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0) 40%, currentColor 40%, currentColor 50%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 60%, currentColor 60%, currentColor 70%, rgba(255, 255, 255, 0) 70%);
+  background-image: radial-gradient(circle at center, rgba(255, 255, 255, 0) 20%, currentColor 20%, currentColor 30%, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0) 40%, currentColor 40%, currentColor 50%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 60%, currentColor 60%, currentColor 70%, rgba(255, 255, 255, 0) 70%);
+  background-color: transparent;
+  -webkit-text-stroke: 5px currentColor;
+  color: teal;
+}
+:target .demo--background-clip-animation-color {
+  -webkit-animation-name: bg-currentColor;
+  animation-name: bg-currentColor;
+  -webkit-animation-duration: 5s;
+  animation-duration: 5s;
+}
+
+@-webkit-keyframes move-bg {
+  100% {
+    background-position: 50% -0.2em;
+  }
+}
+
+@keyframes move-bg {
+  100% {
+    background-position: 50% -0.2em;
+  }
+}
+@-webkit-keyframes bg-currentColor {
+  25% {
+    color: #00ff80;
+  }
+  50% {
+    color: #ff8000;
+  }
+  75% {
+    color: magenta;
+  }
+}
+@keyframes bg-currentColor {
+  25% {
+    color: #00ff80;
+  }
+  50% {
+    color: #ff8000;
+  }
+  75% {
+    color: magenta;
+  }
+}
+.text--stroke {
+  fill: none;
+}
+
+.text--stroke--base {
+  stroke: crimson;
+  stroke-width: 7;
+}
+
+.text--stroke-dasharray {
+  stroke: orangered;
+  stroke-width: 5;
+}
+
+.text--stroke-dasharray-step2 {
+  stroke-dasharray: 50 30 20 10;
+}
+
+.text--stroke-pulse {
+  stroke: yellowgreen;
+  stroke-width: 2;
+}
+:target .text--stroke-pulse {
+  -webkit-animation: stroke-pulse 2s infinite;
+  animation: stroke-pulse 2s infinite;
+  -webkit-animation-name: stroke-pulse, stroke-pulse-color;
+  animation-name: stroke-pulse, stroke-pulse-color;
+  -webkit-animation-duration: 2s, 5s;
+  animation-duration: 2s, 5s;
+}
+
+@-webkit-keyframes stroke-pulse {
+  50% {
+    stroke-width: 15;
+  }
+}
+
+@keyframes stroke-pulse {
+  50% {
+    stroke-width: 15;
+  }
+}
+@-webkit-keyframes stroke-pulse-color {
+  25% {
+    stroke: royalblue;
+  }
+  50% {
+    stroke: gold;
+  }
+  70% {
+    stroke: crimson;
+  }
+  90% {
+    stroke: teal;
+  }
+}
+@keyframes stroke-pulse-color {
+  25% {
+    stroke: royalblue;
+  }
+  50% {
+    stroke: gold;
+  }
+  70% {
+    stroke: crimson;
+  }
+  90% {
+    stroke: teal;
+  }
+}
+.text--stroke-anim-pattern {
+  stroke-width: 14;
+}
+
+.p-line {
+  stroke: gold;
+  stroke-width: 10;
+}
+:target .p-line {
+  stroke-width: 4;
+  -webkit-animation: pattern-stroke 5s linear infinite;
+  animation: pattern-stroke 5s linear infinite;
+}
+.p-line:nth-child(1n + 1) {
+  stroke: gold;
+}
+.p-line:nth-child(2n + 2) {
+  stroke: yellow;
+}
+.p-line:nth-child(3n + 3) {
+  stroke: darkorange;
+}
+.p-line:nth-child(4n + 4) {
+  stroke: orangered;
+}
+.p-line:nth-child(5n + 5) {
+  stroke: crimson;
+}
+.p-line:nth-child(6n + 6) {
+  stroke: darkslateblue;
+}
+.p-line:nth-child(7n + 7) {
+  stroke: teal;
+}
+.p-line:nth-child(8n + 8) {
+  stroke: steelblue;
+}
+.p-line:nth-child(9n + 9) {
+  stroke: cornflowerblue;
+}
+.p-line:nth-child(10n + 10) {
+  stroke: yellowgreen;
+}
+.p-line:nth-child(3n + 1) {
+  -webkit-animation-delay: -1.66667s;
+  animation-delay: -1.66667s;
+}
+.p-line:nth-child(3n) {
+  -webkit-animation-delay: -3.33333s;
+  animation-delay: -3.33333s;
+}
+
+@-webkit-keyframes pattern-stroke {
+  50% {
+    stroke-width: 100;
+  }
+}
+
+@keyframes pattern-stroke {
+  50% {
+    stroke-width: 100;
+  }
+}
+.text--stroke-appear {
+  stroke: #000;
+  stroke-width: 3;
+}
+:target .text--stroke-appear {
+  stroke-dasharray: 0 1500;
+  -webkit-animation: stroke-appear 7s linear infinite;
+  animation: stroke-appear 7s linear infinite;
+}
+
+@-webkit-keyframes stroke-appear {
+  7% {
+    stroke-dasharray: 0 1500;
+  }
+  50% {
+    stroke-dasharray: 1500 0;
+  }
+  93% {
+    stroke-dasharray: 0 1500;
+  }
+}
+
+@keyframes stroke-appear {
+  7% {
+    stroke-dasharray: 0 1500;
+  }
+  50% {
+    stroke-dasharray: 1500 0;
+  }
+  93% {
+    stroke-dasharray: 0 1500;
+  }
+}
+.text--stroke-run {
+  stroke: #FFF;
+  stroke-width: 4;
+}
+:target .text--stroke-run {
+  stroke-dasharray: 10;
+  -webkit-animation: stroke-run 1s linear infinite;
+  animation: stroke-run 1s linear infinite;
+}
+
+@-webkit-keyframes stroke-run {
+  100% {
+    stroke-dashoffset: -20;
+  }
+}
+
+@keyframes stroke-run {
+  100% {
+    stroke-dashoffset: -20;
+  }
+}
+.text--stroke-aunt-walk {
+  fill: none;
+  stroke: white;
+  stroke-dasharray: 6% 29%;
+  stroke-width: 7;
+  stroke-dashoffset: 0%;
+}
+:target .text--stroke-aunt-walk {
+  -webkit-animation: aunt-walk-stroke-offset 5s infinite linear;
+  animation: aunt-walk-stroke-offset 5s infinite linear;
+}
+.text--stroke-aunt-walk:nth-child(1) {
+  stroke: #2E0927;
+  -webkit-animation-delay: -1s;
+  animation-delay: -1s;
+}
+.text--stroke-aunt-walk:nth-child(2) {
+  stroke: #D90000;
+  -webkit-animation-delay: -2s;
+  animation-delay: -2s;
+}
+.text--stroke-aunt-walk:nth-child(3) {
+  stroke: #FF2D00;
+  -webkit-animation-delay: -3s;
+  animation-delay: -3s;
+}
+.text--stroke-aunt-walk:nth-child(4) {
+  stroke: #FF8C00;
+  -webkit-animation-delay: -4s;
+  animation-delay: -4s;
+}
+.text--stroke-aunt-walk:nth-child(5) {
+  stroke: #04756F;
+  -webkit-animation-delay: -5s;
+  animation-delay: -5s;
+}
+
+@-webkit-keyframes aunt-walk-stroke-offset {
+  100% {
+    stroke-dashoffset: -35%;
+  }
+}
+
+@keyframes aunt-walk-stroke-offset {
+  100% {
+    stroke-dashoffset: -35%;
+  }
+}
+.demo--show-pattern {
+  width: 100%;
+  height: 200px;
+  border: 2px solid #000;
+}
+
+.text--fill-solid {
+  fill: orangered;
+}
+
+:target .stop-css-anim {
+  -webkit-animation: stop-css-anim 5s linear infinite;
+  animation: stop-css-anim 5s linear infinite;
+}
+
+:target .stop-css-anim--2 {
+  -webkit-animation-delay: -2.5s;
+  animation-delay: -2.5s;
+}
+
+.stop-css-anim--1 {
+  stop-color: #00aaff;
+}
+
+.stop-css-anim--2 {
+  stop-color: magenta;
+}
+
+@-webkit-keyframes stop-css-anim {
+  20% {
+    stop-color: #ff5500;
+  }
+  55% {
+    stop-color: #2a00ff;
+  }
+  80% {
+    stop-color: #00ff80;
+  }
+}
+
+@keyframes stop-css-anim {
+  20% {
+    stop-color: #ff5500;
+  }
+  55% {
+    stop-color: #2a00ff;
+  }
+  80% {
+    stop-color: #00ff80;
+  }
+}
+:target .text--fill-smil-anim-grad {
+  fill: url(#gr-smil-anim);
+}
+
+.g-anim-cells rect {
+  fill: yellowgreen;
+  -webkit-animation: anim-cells 20s infinite linear;
+  animation: anim-cells 20s infinite linear;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+:target .g-anim-cells rect {
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
+}
+.g-anim-cells rect:nth-child(1) {
+  -webkit-animation-delay: -1.33333s;
+  animation-delay: -1.33333s;
+}
+.g-anim-cells rect:nth-child(2) {
+  -webkit-animation-delay: -2.66667s;
+  animation-delay: -2.66667s;
+}
+.g-anim-cells rect:nth-child(3) {
+  -webkit-animation-delay: -4s;
+  animation-delay: -4s;
+}
+.g-anim-cells rect:nth-child(4) {
+  -webkit-animation-delay: -5.33333s;
+  animation-delay: -5.33333s;
+}
+.g-anim-cells rect:nth-child(5) {
+  -webkit-animation-delay: -6.66667s;
+  animation-delay: -6.66667s;
+}
+.g-anim-cells rect:nth-child(6) {
+  -webkit-animation-delay: -8s;
+  animation-delay: -8s;
+}
+.g-anim-cells rect:nth-child(7) {
+  -webkit-animation-delay: -9.33333s;
+  animation-delay: -9.33333s;
+}
+.g-anim-cells rect:nth-child(8) {
+  -webkit-animation-delay: -10.66667s;
+  animation-delay: -10.66667s;
+}
+.g-anim-cells rect:nth-child(9) {
+  -webkit-animation-delay: -12s;
+  animation-delay: -12s;
+}
+.g-anim-cells rect:nth-child(10) {
+  -webkit-animation-delay: -13.33333s;
+  animation-delay: -13.33333s;
+}
+.g-anim-cells rect:nth-child(11) {
+  -webkit-animation-delay: -14.66667s;
+  animation-delay: -14.66667s;
+}
+.g-anim-cells rect:nth-child(12) {
+  -webkit-animation-delay: -16s;
+  animation-delay: -16s;
+}
+.g-anim-cells rect:nth-child(13) {
+  -webkit-animation-delay: -17.33333s;
+  animation-delay: -17.33333s;
+}
+.g-anim-cells rect:nth-child(14) {
+  -webkit-animation-delay: -18.66667s;
+  animation-delay: -18.66667s;
+}
+.g-anim-cells rect:nth-child(15) {
+  -webkit-animation-delay: -20s;
+  animation-delay: -20s;
+}
+
+@-webkit-keyframes anim-cells {
+  6.66667% {
+    fill: yellowgreen;
+  }
+  13.33333% {
+    fill: deeppink;
+  }
+  20% {
+    fill: royalblue;
+  }
+  26.66667% {
+    fill: gold;
+  }
+  33.33333% {
+    fill: orangered;
+  }
+  40% {
+    fill: yellow;
+  }
+  46.66667% {
+    fill: lightseagreen;
+  }
+  53.33333% {
+    fill: orange;
+  }
+  60% {
+    fill: darkviolet;
+  }
+  66.66667% {
+    fill: skyblue;
+  }
+  73.33333% {
+    fill: magenta;
+  }
+  80% {
+    fill: mediumslateblue;
+  }
+  86.66667% {
+    fill: lightgreen;
+  }
+  93.33333% {
+    fill: tomato;
+  }
+  100% {
+    fill: chartreuse;
+  }
+}
+
+@keyframes anim-cells {
+  6.66667% {
+    fill: yellowgreen;
+  }
+  13.33333% {
+    fill: deeppink;
+  }
+  20% {
+    fill: royalblue;
+  }
+  26.66667% {
+    fill: gold;
+  }
+  33.33333% {
+    fill: orangered;
+  }
+  40% {
+    fill: yellow;
+  }
+  46.66667% {
+    fill: lightseagreen;
+  }
+  53.33333% {
+    fill: orange;
+  }
+  60% {
+    fill: darkviolet;
+  }
+  66.66667% {
+    fill: skyblue;
+  }
+  73.33333% {
+    fill: magenta;
+  }
+  80% {
+    fill: mediumslateblue;
+  }
+  86.66667% {
+    fill: lightgreen;
+  }
+  93.33333% {
+    fill: tomato;
+  }
+  100% {
+    fill: chartreuse;
+  }
+}
+.text--fill-anim-spots {
+  stroke: royalblue;
+  stroke-width: 2;
+  stroke-dasharray: 25 10;
+}
+
+.g-anim-spots circle {
+  fill: chartreuse;
+  stroke: chartreuse;
+  stroke-width: 1;
+  stroke-dasharray: 1000;
+  -webkit-animation: anim-spots 20s infinite linear;
+  animation: anim-spots 20s infinite linear;
+  -webkit-animation-name: anim-spots, anim-spots-stroke;
+  animation-name: anim-spots, anim-spots-stroke;
+  -webkit-animation-duration: 20s, 2s;
+  animation-duration: 20s, 2s;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+:target .g-anim-spots circle {
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
+}
+.g-anim-spots circle:nth-child(1) {
+  fill: yellowgreen;
+  stroke: yellowgreen;
+  -webkit-animation-delay: -1.25s;
+  animation-delay: -1.25s;
+}
+.g-anim-spots circle:nth-child(2) {
+  fill: deeppink;
+  stroke: deeppink;
+  -webkit-animation-delay: -2.5s;
+  animation-delay: -2.5s;
+}
+.g-anim-spots circle:nth-child(3) {
+  fill: royalblue;
+  stroke: royalblue;
+  -webkit-animation-delay: -3.75s;
+  animation-delay: -3.75s;
+}
+.g-anim-spots circle:nth-child(4) {
+  fill: gold;
+  stroke: gold;
+  -webkit-animation-delay: -5s;
+  animation-delay: -5s;
+}
+.g-anim-spots circle:nth-child(5) {
+  fill: orangered;
+  stroke: orangered;
+  -webkit-animation-delay: -6.25s;
+  animation-delay: -6.25s;
+}
+.g-anim-spots circle:nth-child(6) {
+  fill: yellow;
+  stroke: yellow;
+  -webkit-animation-delay: -7.5s;
+  animation-delay: -7.5s;
+}
+.g-anim-spots circle:nth-child(7) {
+  fill: lightseagreen;
+  stroke: lightseagreen;
+  -webkit-animation-delay: -8.75s;
+  animation-delay: -8.75s;
+}
+.g-anim-spots circle:nth-child(8) {
+  fill: orange;
+  stroke: orange;
+  -webkit-animation-delay: -10s;
+  animation-delay: -10s;
+}
+.g-anim-spots circle:nth-child(9) {
+  fill: darkviolet;
+  stroke: darkviolet;
+  -webkit-animation-delay: -11.25s;
+  animation-delay: -11.25s;
+}
+.g-anim-spots circle:nth-child(10) {
+  fill: skyblue;
+  stroke: skyblue;
+  -webkit-animation-delay: -12.5s;
+  animation-delay: -12.5s;
+}
+.g-anim-spots circle:nth-child(11) {
+  fill: magenta;
+  stroke: magenta;
+  -webkit-animation-delay: -13.75s;
+  animation-delay: -13.75s;
+}
+.g-anim-spots circle:nth-child(12) {
+  fill: mediumslateblue;
+  stroke: mediumslateblue;
+  -webkit-animation-delay: -15s;
+  animation-delay: -15s;
+}
+.g-anim-spots circle:nth-child(13) {
+  fill: lightgreen;
+  stroke: lightgreen;
+  -webkit-animation-delay: -16.25s;
+  animation-delay: -16.25s;
+}
+.g-anim-spots circle:nth-child(14) {
+  fill: tomato;
+  stroke: tomato;
+  -webkit-animation-delay: -17.5s;
+  animation-delay: -17.5s;
+}
+.g-anim-spots circle:nth-child(15) {
+  fill: chartreuse;
+  stroke: chartreuse;
+  -webkit-animation-delay: -18.75s;
+  animation-delay: -18.75s;
+}
+.g-anim-spots circle:nth-child(16) {
+  fill: teal;
+  stroke: teal;
+  -webkit-animation-delay: -20s;
+  animation-delay: -20s;
+}
+
+@-webkit-keyframes anim-spots {
+  6.25% {
+    fill: yellowgreen;
+    stroke: yellowgreen;
+  }
+  12.5% {
+    fill: deeppink;
+    stroke: deeppink;
+  }
+  18.75% {
+    fill: royalblue;
+    stroke: royalblue;
+  }
+  25% {
+    fill: gold;
+    stroke: gold;
+  }
+  31.25% {
+    fill: orangered;
+    stroke: orangered;
+  }
+  37.5% {
+    fill: yellow;
+    stroke: yellow;
+  }
+  43.75% {
+    fill: lightseagreen;
+    stroke: lightseagreen;
+  }
+  50% {
+    fill: orange;
+    stroke: orange;
+  }
+  56.25% {
+    fill: darkviolet;
+    stroke: darkviolet;
+  }
+  62.5% {
+    fill: skyblue;
+    stroke: skyblue;
+  }
+  68.75% {
+    fill: magenta;
+    stroke: magenta;
+  }
+  75% {
+    fill: mediumslateblue;
+    stroke: mediumslateblue;
+  }
+  81.25% {
+    fill: lightgreen;
+    stroke: lightgreen;
+  }
+  87.5% {
+    fill: tomato;
+    stroke: tomato;
+  }
+  93.75% {
+    fill: chartreuse;
+    stroke: chartreuse;
+  }
+  100% {
+    fill: teal;
+    stroke: teal;
+  }
+}
+
+@keyframes anim-spots {
+  6.25% {
+    fill: yellowgreen;
+    stroke: yellowgreen;
+  }
+  12.5% {
+    fill: deeppink;
+    stroke: deeppink;
+  }
+  18.75% {
+    fill: royalblue;
+    stroke: royalblue;
+  }
+  25% {
+    fill: gold;
+    stroke: gold;
+  }
+  31.25% {
+    fill: orangered;
+    stroke: orangered;
+  }
+  37.5% {
+    fill: yellow;
+    stroke: yellow;
+  }
+  43.75% {
+    fill: lightseagreen;
+    stroke: lightseagreen;
+  }
+  50% {
+    fill: orange;
+    stroke: orange;
+  }
+  56.25% {
+    fill: darkviolet;
+    stroke: darkviolet;
+  }
+  62.5% {
+    fill: skyblue;
+    stroke: skyblue;
+  }
+  68.75% {
+    fill: magenta;
+    stroke: magenta;
+  }
+  75% {
+    fill: mediumslateblue;
+    stroke: mediumslateblue;
+  }
+  81.25% {
+    fill: lightgreen;
+    stroke: lightgreen;
+  }
+  87.5% {
+    fill: tomato;
+    stroke: tomato;
+  }
+  93.75% {
+    fill: chartreuse;
+    stroke: chartreuse;
+  }
+  100% {
+    fill: teal;
+    stroke: teal;
+  }
+}
+@-webkit-keyframes anim-spots-stroke {
+  50% {
+    stroke-width: 18;
+  }
+}
+@keyframes anim-spots-stroke {
+  50% {
+    stroke-width: 18;
+  }
+}
+.text--fill--wood {
+  font-size: 1.5em;
+}
+
+.text--fill--spots {
+  stroke: #000;
+  stroke-width: 3;
+  stroke-dasharray: 35 30;
+  font-size: 1.5em;
+}
+
+.text--pattern {
+  font-family: Russo One;
+  font-size: 1.57rem;
+  letter-spacing: 0;
+}
+
+.text--fill--text {
+  stroke: #000;
+  stroke-width: 5;
+  font-size: 1.5em;
+}
+
+.demo--dottes {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #7dc4e8;
+  background-image: -webkit-linear-gradient(0deg, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.4) 50%);
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.4) 50%);
+  -webkit-background-size: .12em 100%;
+  background-size: .12em 100%;
+  font: 19em/1 Lobster, Arial;
+}
+
+.text--line {
+  font-size: .5em;
+}
+
+.text-copy {
+  fill: none;
+  stroke: white;
+  stroke-width: 20px;
+}
+
+.text-copy--shadow {
+  fill: rgba(0, 0, 0, 0.25);
+  -webkit-transform: translate(0, 0.065em);
+  -ms-transform: translate(0, 0.065em);
+  transform: translate(0, 0.065em);
+}
+
+.r-fill {
+  -webkit-transform-origin: 512px 320px;
+  -ms-transform-origin: 512px 320px;
+  transform-origin: 512px 320px;
+}
+:target .r-fill {
+  -webkit-animation: rotate 10s linear infinite;
+  animation: rotate 10s linear infinite;
+}
+
+/* Fix for firefox */
+.r-fill--color {
+  fill: #ff401a;
+}
+
+@-webkit-keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+svg.demo--text-psycho {
+  font: 15em/1 Lobster, Arial;
+}
+svg.demo--text-psycho .text-psycho--line2 {
+  font-size: .7em;
+}
+svg.demo--text-psycho .text-shadow {
+  fill: rgba(0, 0, 0, 0.3);
+  -webkit-transform: translate(10px, 15px);
+  -ms-transform: translate(10px, 15px);
+  transform: translate(10px, 15px);
+}
+svg.demo--text-psycho .text-stroke {
+  fill: none;
+  stroke: gold;
+  stroke-width: 2px;
+  stroke-dasharray: 20 50;
+  -webkit-transform: translate(-7px, -7px);
+  -ms-transform: translate(-7px, -7px);
+  transform: translate(-7px, -7px);
+}
+svg.demo--text-psycho .text-stroke-2 {
+  stroke: hotpink;
+  stroke-dashoffset: 24;
+}
+svg.demo--text-psycho .text-stroke-3 {
+  stroke: aqua;
+  stroke-dashoffset: 48;
+}
+svg.demo--text-psycho .u-circle {
+  -webkit-transform-origin: 100px 100px;
+  -ms-transform-origin: 100px 100px;
+  transform-origin: 100px 100px;
+  -webkit-animation: rotate-psycho 10s linear infinite;
+  animation: rotate-psycho 10s linear infinite;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+:target svg.demo--text-psycho .u-circle {
+  /*animation: rotate-psycho 10s linear infinite;*/
+  -webkit-animation-play-state: running;
+  /*animation: rotate-psycho 10s linear infinite;*/
+  animation-play-state: running;
+}
+svg.demo--text-psycho .animated-circles-inner g:nth-of-type(odd) .u-circle {
+  -webkit-animation-direction: reverse !important;
+  animation-direction: reverse !important;
+}
+svg.demo--text-psycho .g-circles circle:nth-child(1) {
+  stroke: greenyellow;
+  stroke-dashoffset: 0;
+}
+svg.demo--text-psycho .g-circles circle:nth-child(2) {
+  stroke: fuchsia;
+  stroke-dashoffset: 5.2;
+}
+svg.demo--text-psycho .g-circles circle:nth-child(3) {
+  stroke: deepskyblue;
+  stroke-dashoffset: 10.4;
+}
+svg.demo--text-psycho .g-circles circle:nth-child(4) {
+  stroke: orange;
+  stroke-dashoffset: 15.6;
+}
+svg.demo--text-psycho .g-circles circle:nth-child(5) {
+  stroke: springgreen;
+  stroke-dashoffset: 20.8;
+}
+svg.demo--text-psycho .g-circles circle:nth-child(6) {
+  stroke: hotpink;
+  stroke-dashoffset: 26;
+}
+svg.demo--text-psycho .g-circles circle:nth-child(7) {
+  stroke: yellow;
+  stroke-dashoffset: 31.2;
+}
+
+@-webkit-keyframes rotate-psycho {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-psycho {
+  100% {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.demo--bbmode-list {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: 0px solid red;
+}
+.demo--bbmode-list .item-bbmode {
+  float: left;
+  width: 33.331%;
+  height: 320px;
+  line-height: 0;
+  background: #000 url(./assets/img/parts/bird-invert.gif) no-repeat 50% 50%;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+.demo--bbmode-list .item-bbmode:nth-child(1) {
+  mix-blend-mode: multiply;
+}
+.demo--bbmode-list .item-bbmode:nth-child(2) {
+  mix-blend-mode: screen;
+}
+.demo--bbmode-list .item-bbmode:nth-child(3) {
+  mix-blend-mode: luminosity;
+  -webkit-box-shadow: 5px 0 0px #000;
+  box-shadow: 5px 0 0px #000;
+}
+.demo--bbmode-list .item-bbmode:nth-child(4) {
+  mix-blend-mode: difference;
+}
+.demo--bbmode-list .item-bbmode:nth-child(5) {
+  mix-blend-mode: color-burn;
+}
+.demo--bbmode-list .item-bbmode:nth-child(6) {
+  mix-blend-mode: overlay;
+  -webkit-box-shadow: 5px 0 0px #000;
+  box-shadow: 5px 0 0px #000;
+}
+
+.demo--bbmode-pair {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /*background:
+      linear-gradient(to bottom,
+      crimson, orangered,gold,
+      yellowgreen, steelblue, navy
+      );*/
+}
+.demo--bbmode-pair .item-bbmode {
+  position: relative;
+  display: inline-block;
+  width: 50%;
+  height: 640px;
+  background: #000 url(./assets/img/parts/bird-invert.gif) no-repeat 50% 50%;
+}
+.demo--bbmode-pair .item-bbmode--darken {
+  mix-blend-mode: darken;
+}
+.demo--bbmode-pair .item-bbmode--lighten {
+  mix-blend-mode: lighten;
+}
+
+.item-bbmode-title {
+  position: absolute;
+  width: 50%;
+  top: 0%;
+  font-size: 2em;
+  color: #FFF;
+}
+.item-bbmode-title:nth-child(even) {
+  right: 0;
+  color: #000;
+}
+
+.demo--bbmode-text {
+  /*background: url(./assets/img/parts/violet-hyacinths.jpeg) 50% 50%/cover;*/
+}
+.demo--bbmode-text .text {
+  height: 350px;
+  line-height: 330px;
+  background: #FFF;
+  text-align: center;
+  font-size: .85em;
+}
+.demo--bbmode-text:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: 3px solid #FFF;
+}
+
+.demo--bbmode-text-step1 {
+  mix-blend-mode: lighten;
+}
+
+.demo--dancing-shadows__title {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  overflow: hidden;
+}
+.demo--dancing-shadows__title .text-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  font-size: 175px;
+  /*23vmin*/
+  line-height: 1.05;
+  font-style: italic;
+  font-family: Lobster;
+  background: black;
+  text-shadow: 0 0.1rem black, 0 0.2rem black, 0 0.3rem black, 0 0.4rem black, 0 0.6rem black, 0 0.7rem white, 0 0.8rem white;
+  color: white;
+  mix-blend-mode: darken;
+}
+.demo--dancing-shadows__title:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 20%;
+  left: 24%;
+  border-radius: 50%;
+  -webkit-box-shadow: 0vh 0vh 14.5vh 14.5vh purple, 17.4vh 0vh 14.5vh 14.5vh teal, 34.8vh 0vh 14.5vh 14.5vh orangered, 52.2vh 0vh 14.5vh 14.5vh yellow, 69.6vh 0vh 14.5vh 14.5vh crimson, 0vh 17.4vh 14.5vh 14.5vh yellowgreen, 17.4vh 17.4vh 14.5vh 14.5vh orange, 34.8vh 17.4vh 14.5vh 14.5vh darkturquoise, 52.2vh 17.4vh 14.5vh 14.5vh deeppink, 69.6vh 17.4vh 14.5vh 14.5vh steelblue, 0vh 34.8vh 14.5vh 14.5vh darkturquoise, 17.4vh 34.8vh 14.5vh 14.5vh tomato, 34.8vh 34.8vh 14.5vh 14.5vh darkviolet, 52.2vh 34.8vh 14.5vh 14.5vh gold, 69.6vh 34.8vh 14.5vh 14.5vh purple, 0vh 52.2vh 14.5vh 14.5vh teal, 17.4vh 52.2vh 14.5vh 14.5vh orangered, 34.8vh 52.2vh 14.5vh 14.5vh yellow, 52.2vh 52.2vh 14.5vh 14.5vh crimson, 69.6vh 52.2vh 14.5vh 14.5vh yellowgreen;
+  box-shadow: 0vh 0vh 14.5vh 14.5vh purple, 17.4vh 0vh 14.5vh 14.5vh teal, 34.8vh 0vh 14.5vh 14.5vh orangered, 52.2vh 0vh 14.5vh 14.5vh yellow, 69.6vh 0vh 14.5vh 14.5vh crimson, 0vh 17.4vh 14.5vh 14.5vh yellowgreen, 17.4vh 17.4vh 14.5vh 14.5vh orange, 34.8vh 17.4vh 14.5vh 14.5vh darkturquoise, 52.2vh 17.4vh 14.5vh 14.5vh deeppink, 69.6vh 17.4vh 14.5vh 14.5vh steelblue, 0vh 34.8vh 14.5vh 14.5vh darkturquoise, 17.4vh 34.8vh 14.5vh 14.5vh tomato, 34.8vh 34.8vh 14.5vh 14.5vh darkviolet, 52.2vh 34.8vh 14.5vh 14.5vh gold, 69.6vh 34.8vh 14.5vh 14.5vh purple, 0vh 52.2vh 14.5vh 14.5vh teal, 17.4vh 52.2vh 14.5vh 14.5vh orangered, 34.8vh 52.2vh 14.5vh 14.5vh yellow, 52.2vh 52.2vh 14.5vh 14.5vh crimson, 69.6vh 52.2vh 14.5vh 14.5vh yellowgreen;
+}
+:target .demo--dancing-shadows__title:before {
+  -webkit-animation: shadows-cells 4s linear infinite;
+  animation: shadows-cells 4s linear infinite;
+}
+
+.text-items {
+  display: block;
+  position: absolute;
+  top: 45%;
+  right: 0;
+  left: 0;
+  width: 3.3em;
+  margin: 0 auto;
+  -webkit-transform: translateY(-50%) rotate(-10deg);
+  -ms-transform: translateY(-50%) rotate(-10deg);
+  transform: translateY(-50%) rotate(-10deg);
+  text-align: center;
+}
+
+.text-item {
+  display: block;
+  position: relative;
+}
+.text-item--2 {
+  margin-left: -.4em;
+}
+.text-item--3 {
+  margin-left: -.7em;
+}
+
+@-webkit-keyframes shadows-cells {
+  25% {
+    -webkit-box-shadow: 0vh 0vh 14.5vh 14.5vh deeppink, 17.4vh 0vh 14.5vh 14.5vh steelblue, 34.8vh 0vh 14.5vh 14.5vh darkturquoise, 52.2vh 0vh 14.5vh 14.5vh tomato, 69.6vh 0vh 14.5vh 14.5vh darkviolet, 0vh 17.4vh 14.5vh 14.5vh gold, 17.4vh 17.4vh 14.5vh 14.5vh purple, 34.8vh 17.4vh 14.5vh 14.5vh teal, 52.2vh 17.4vh 14.5vh 14.5vh orangered, 69.6vh 17.4vh 14.5vh 14.5vh yellow, 0vh 34.8vh 14.5vh 14.5vh crimson, 17.4vh 34.8vh 14.5vh 14.5vh yellowgreen, 34.8vh 34.8vh 14.5vh 14.5vh orange, 52.2vh 34.8vh 14.5vh 14.5vh darkturquoise, 69.6vh 34.8vh 14.5vh 14.5vh deeppink, 0vh 52.2vh 14.5vh 14.5vh steelblue, 17.4vh 52.2vh 14.5vh 14.5vh darkturquoise, 34.8vh 52.2vh 14.5vh 14.5vh tomato, 52.2vh 52.2vh 14.5vh 14.5vh darkviolet, 69.6vh 52.2vh 14.5vh 14.5vh gold;
+    box-shadow: 0vh 0vh 14.5vh 14.5vh deeppink, 17.4vh 0vh 14.5vh 14.5vh steelblue, 34.8vh 0vh 14.5vh 14.5vh darkturquoise, 52.2vh 0vh 14.5vh 14.5vh tomato, 69.6vh 0vh 14.5vh 14.5vh darkviolet, 0vh 17.4vh 14.5vh 14.5vh gold, 17.4vh 17.4vh 14.5vh 14.5vh purple, 34.8vh 17.4vh 14.5vh 14.5vh teal, 52.2vh 17.4vh 14.5vh 14.5vh orangered, 69.6vh 17.4vh 14.5vh 14.5vh yellow, 0vh 34.8vh 14.5vh 14.5vh crimson, 17.4vh 34.8vh 14.5vh 14.5vh yellowgreen, 34.8vh 34.8vh 14.5vh 14.5vh orange, 52.2vh 34.8vh 14.5vh 14.5vh darkturquoise, 69.6vh 34.8vh 14.5vh 14.5vh deeppink, 0vh 52.2vh 14.5vh 14.5vh steelblue, 17.4vh 52.2vh 14.5vh 14.5vh darkturquoise, 34.8vh 52.2vh 14.5vh 14.5vh tomato, 52.2vh 52.2vh 14.5vh 14.5vh darkviolet, 69.6vh 52.2vh 14.5vh 14.5vh gold;
+  }
+  45% {
+    -webkit-box-shadow: 0vh 0vh 14.5vh 14.5vh crimson, 17.4vh 0vh 14.5vh 14.5vh yellowgreen, 34.8vh 0vh 14.5vh 14.5vh orange, 52.2vh 0vh 14.5vh 14.5vh darkturquoise, 69.6vh 0vh 14.5vh 14.5vh deeppink, 0vh 17.4vh 14.5vh 14.5vh steelblue, 17.4vh 17.4vh 14.5vh 14.5vh darkturquoise, 34.8vh 17.4vh 14.5vh 14.5vh tomato, 52.2vh 17.4vh 14.5vh 14.5vh darkviolet, 69.6vh 17.4vh 14.5vh 14.5vh gold, 0vh 34.8vh 14.5vh 14.5vh purple, 17.4vh 34.8vh 14.5vh 14.5vh teal, 34.8vh 34.8vh 14.5vh 14.5vh orangered, 52.2vh 34.8vh 14.5vh 14.5vh yellow, 69.6vh 34.8vh 14.5vh 14.5vh crimson, 0vh 52.2vh 14.5vh 14.5vh yellowgreen, 17.4vh 52.2vh 14.5vh 14.5vh orange, 34.8vh 52.2vh 14.5vh 14.5vh darkturquoise, 52.2vh 52.2vh 14.5vh 14.5vh deeppink, 69.6vh 52.2vh 14.5vh 14.5vh steelblue;
+    box-shadow: 0vh 0vh 14.5vh 14.5vh crimson, 17.4vh 0vh 14.5vh 14.5vh yellowgreen, 34.8vh 0vh 14.5vh 14.5vh orange, 52.2vh 0vh 14.5vh 14.5vh darkturquoise, 69.6vh 0vh 14.5vh 14.5vh deeppink, 0vh 17.4vh 14.5vh 14.5vh steelblue, 17.4vh 17.4vh 14.5vh 14.5vh darkturquoise, 34.8vh 17.4vh 14.5vh 14.5vh tomato, 52.2vh 17.4vh 14.5vh 14.5vh darkviolet, 69.6vh 17.4vh 14.5vh 14.5vh gold, 0vh 34.8vh 14.5vh 14.5vh purple, 17.4vh 34.8vh 14.5vh 14.5vh teal, 34.8vh 34.8vh 14.5vh 14.5vh orangered, 52.2vh 34.8vh 14.5vh 14.5vh yellow, 69.6vh 34.8vh 14.5vh 14.5vh crimson, 0vh 52.2vh 14.5vh 14.5vh yellowgreen, 17.4vh 52.2vh 14.5vh 14.5vh orange, 34.8vh 52.2vh 14.5vh 14.5vh darkturquoise, 52.2vh 52.2vh 14.5vh 14.5vh deeppink, 69.6vh 52.2vh 14.5vh 14.5vh steelblue;
+  }
+  75% {
+    -webkit-box-shadow: 0vh 0vh 14.5vh 14.5vh darkviolet, 17.4vh 0vh 14.5vh 14.5vh gold, 34.8vh 0vh 14.5vh 14.5vh purple, 52.2vh 0vh 14.5vh 14.5vh teal, 69.6vh 0vh 14.5vh 14.5vh orangered, 0vh 17.4vh 14.5vh 14.5vh yellow, 17.4vh 17.4vh 14.5vh 14.5vh crimson, 34.8vh 17.4vh 14.5vh 14.5vh yellowgreen, 52.2vh 17.4vh 14.5vh 14.5vh orange, 69.6vh 17.4vh 14.5vh 14.5vh darkturquoise, 0vh 34.8vh 14.5vh 14.5vh deeppink, 17.4vh 34.8vh 14.5vh 14.5vh steelblue, 34.8vh 34.8vh 14.5vh 14.5vh darkturquoise, 52.2vh 34.8vh 14.5vh 14.5vh tomato, 69.6vh 34.8vh 14.5vh 14.5vh darkviolet, 0vh 52.2vh 14.5vh 14.5vh gold, 17.4vh 52.2vh 14.5vh 14.5vh darkslateblue, 34.8vh 52.2vh 14.5vh 14.5vh purple, 52.2vh 52.2vh 14.5vh 14.5vh teal, 69.6vh 52.2vh 14.5vh 14.5vh orangered;
+    box-shadow: 0vh 0vh 14.5vh 14.5vh darkviolet, 17.4vh 0vh 14.5vh 14.5vh gold, 34.8vh 0vh 14.5vh 14.5vh purple, 52.2vh 0vh 14.5vh 14.5vh teal, 69.6vh 0vh 14.5vh 14.5vh orangered, 0vh 17.4vh 14.5vh 14.5vh yellow, 17.4vh 17.4vh 14.5vh 14.5vh crimson, 34.8vh 17.4vh 14.5vh 14.5vh yellowgreen, 52.2vh 17.4vh 14.5vh 14.5vh orange, 69.6vh 17.4vh 14.5vh 14.5vh darkturquoise, 0vh 34.8vh 14.5vh 14.5vh deeppink, 17.4vh 34.8vh 14.5vh 14.5vh steelblue, 34.8vh 34.8vh 14.5vh 14.5vh darkturquoise, 52.2vh 34.8vh 14.5vh 14.5vh tomato, 69.6vh 34.8vh 14.5vh 14.5vh darkviolet, 0vh 52.2vh 14.5vh 14.5vh gold, 17.4vh 52.2vh 14.5vh 14.5vh darkslateblue, 34.8vh 52.2vh 14.5vh 14.5vh purple, 52.2vh 52.2vh 14.5vh 14.5vh teal, 69.6vh 52.2vh 14.5vh 14.5vh orangered;
+  }
+}
+
+@keyframes shadows-cells {
+  25% {
+    -webkit-box-shadow: 0vh 0vh 14.5vh 14.5vh deeppink, 17.4vh 0vh 14.5vh 14.5vh steelblue, 34.8vh 0vh 14.5vh 14.5vh darkturquoise, 52.2vh 0vh 14.5vh 14.5vh tomato, 69.6vh 0vh 14.5vh 14.5vh darkviolet, 0vh 17.4vh 14.5vh 14.5vh gold, 17.4vh 17.4vh 14.5vh 14.5vh purple, 34.8vh 17.4vh 14.5vh 14.5vh teal, 52.2vh 17.4vh 14.5vh 14.5vh orangered, 69.6vh 17.4vh 14.5vh 14.5vh yellow, 0vh 34.8vh 14.5vh 14.5vh crimson, 17.4vh 34.8vh 14.5vh 14.5vh yellowgreen, 34.8vh 34.8vh 14.5vh 14.5vh orange, 52.2vh 34.8vh 14.5vh 14.5vh darkturquoise, 69.6vh 34.8vh 14.5vh 14.5vh deeppink, 0vh 52.2vh 14.5vh 14.5vh steelblue, 17.4vh 52.2vh 14.5vh 14.5vh darkturquoise, 34.8vh 52.2vh 14.5vh 14.5vh tomato, 52.2vh 52.2vh 14.5vh 14.5vh darkviolet, 69.6vh 52.2vh 14.5vh 14.5vh gold;
+    box-shadow: 0vh 0vh 14.5vh 14.5vh deeppink, 17.4vh 0vh 14.5vh 14.5vh steelblue, 34.8vh 0vh 14.5vh 14.5vh darkturquoise, 52.2vh 0vh 14.5vh 14.5vh tomato, 69.6vh 0vh 14.5vh 14.5vh darkviolet, 0vh 17.4vh 14.5vh 14.5vh gold, 17.4vh 17.4vh 14.5vh 14.5vh purple, 34.8vh 17.4vh 14.5vh 14.5vh teal, 52.2vh 17.4vh 14.5vh 14.5vh orangered, 69.6vh 17.4vh 14.5vh 14.5vh yellow, 0vh 34.8vh 14.5vh 14.5vh crimson, 17.4vh 34.8vh 14.5vh 14.5vh yellowgreen, 34.8vh 34.8vh 14.5vh 14.5vh orange, 52.2vh 34.8vh 14.5vh 14.5vh darkturquoise, 69.6vh 34.8vh 14.5vh 14.5vh deeppink, 0vh 52.2vh 14.5vh 14.5vh steelblue, 17.4vh 52.2vh 14.5vh 14.5vh darkturquoise, 34.8vh 52.2vh 14.5vh 14.5vh tomato, 52.2vh 52.2vh 14.5vh 14.5vh darkviolet, 69.6vh 52.2vh 14.5vh 14.5vh gold;
+  }
+  45% {
+    -webkit-box-shadow: 0vh 0vh 14.5vh 14.5vh crimson, 17.4vh 0vh 14.5vh 14.5vh yellowgreen, 34.8vh 0vh 14.5vh 14.5vh orange, 52.2vh 0vh 14.5vh 14.5vh darkturquoise, 69.6vh 0vh 14.5vh 14.5vh deeppink, 0vh 17.4vh 14.5vh 14.5vh steelblue, 17.4vh 17.4vh 14.5vh 14.5vh darkturquoise, 34.8vh 17.4vh 14.5vh 14.5vh tomato, 52.2vh 17.4vh 14.5vh 14.5vh darkviolet, 69.6vh 17.4vh 14.5vh 14.5vh gold, 0vh 34.8vh 14.5vh 14.5vh purple, 17.4vh 34.8vh 14.5vh 14.5vh teal, 34.8vh 34.8vh 14.5vh 14.5vh orangered, 52.2vh 34.8vh 14.5vh 14.5vh yellow, 69.6vh 34.8vh 14.5vh 14.5vh crimson, 0vh 52.2vh 14.5vh 14.5vh yellowgreen, 17.4vh 52.2vh 14.5vh 14.5vh orange, 34.8vh 52.2vh 14.5vh 14.5vh darkturquoise, 52.2vh 52.2vh 14.5vh 14.5vh deeppink, 69.6vh 52.2vh 14.5vh 14.5vh steelblue;
+    box-shadow: 0vh 0vh 14.5vh 14.5vh crimson, 17.4vh 0vh 14.5vh 14.5vh yellowgreen, 34.8vh 0vh 14.5vh 14.5vh orange, 52.2vh 0vh 14.5vh 14.5vh darkturquoise, 69.6vh 0vh 14.5vh 14.5vh deeppink, 0vh 17.4vh 14.5vh 14.5vh steelblue, 17.4vh 17.4vh 14.5vh 14.5vh darkturquoise, 34.8vh 17.4vh 14.5vh 14.5vh tomato, 52.2vh 17.4vh 14.5vh 14.5vh darkviolet, 69.6vh 17.4vh 14.5vh 14.5vh gold, 0vh 34.8vh 14.5vh 14.5vh purple, 17.4vh 34.8vh 14.5vh 14.5vh teal, 34.8vh 34.8vh 14.5vh 14.5vh orangered, 52.2vh 34.8vh 14.5vh 14.5vh yellow, 69.6vh 34.8vh 14.5vh 14.5vh crimson, 0vh 52.2vh 14.5vh 14.5vh yellowgreen, 17.4vh 52.2vh 14.5vh 14.5vh orange, 34.8vh 52.2vh 14.5vh 14.5vh darkturquoise, 52.2vh 52.2vh 14.5vh 14.5vh deeppink, 69.6vh 52.2vh 14.5vh 14.5vh steelblue;
+  }
+  75% {
+    -webkit-box-shadow: 0vh 0vh 14.5vh 14.5vh darkviolet, 17.4vh 0vh 14.5vh 14.5vh gold, 34.8vh 0vh 14.5vh 14.5vh purple, 52.2vh 0vh 14.5vh 14.5vh teal, 69.6vh 0vh 14.5vh 14.5vh orangered, 0vh 17.4vh 14.5vh 14.5vh yellow, 17.4vh 17.4vh 14.5vh 14.5vh crimson, 34.8vh 17.4vh 14.5vh 14.5vh yellowgreen, 52.2vh 17.4vh 14.5vh 14.5vh orange, 69.6vh 17.4vh 14.5vh 14.5vh darkturquoise, 0vh 34.8vh 14.5vh 14.5vh deeppink, 17.4vh 34.8vh 14.5vh 14.5vh steelblue, 34.8vh 34.8vh 14.5vh 14.5vh darkturquoise, 52.2vh 34.8vh 14.5vh 14.5vh tomato, 69.6vh 34.8vh 14.5vh 14.5vh darkviolet, 0vh 52.2vh 14.5vh 14.5vh gold, 17.4vh 52.2vh 14.5vh 14.5vh darkslateblue, 34.8vh 52.2vh 14.5vh 14.5vh purple, 52.2vh 52.2vh 14.5vh 14.5vh teal, 69.6vh 52.2vh 14.5vh 14.5vh orangered;
+    box-shadow: 0vh 0vh 14.5vh 14.5vh darkviolet, 17.4vh 0vh 14.5vh 14.5vh gold, 34.8vh 0vh 14.5vh 14.5vh purple, 52.2vh 0vh 14.5vh 14.5vh teal, 69.6vh 0vh 14.5vh 14.5vh orangered, 0vh 17.4vh 14.5vh 14.5vh yellow, 17.4vh 17.4vh 14.5vh 14.5vh crimson, 34.8vh 17.4vh 14.5vh 14.5vh yellowgreen, 52.2vh 17.4vh 14.5vh 14.5vh orange, 69.6vh 17.4vh 14.5vh 14.5vh darkturquoise, 0vh 34.8vh 14.5vh 14.5vh deeppink, 17.4vh 34.8vh 14.5vh 14.5vh steelblue, 34.8vh 34.8vh 14.5vh 14.5vh darkturquoise, 52.2vh 34.8vh 14.5vh 14.5vh tomato, 69.6vh 34.8vh 14.5vh 14.5vh darkviolet, 0vh 52.2vh 14.5vh 14.5vh gold, 17.4vh 52.2vh 14.5vh 14.5vh darkslateblue, 34.8vh 52.2vh 14.5vh 14.5vh purple, 52.2vh 52.2vh 14.5vh 14.5vh teal, 69.6vh 52.2vh 14.5vh 14.5vh orangered;
+  }
+}
+.text-fill-video {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: url(./assets/img/parts/leaves.jpg) 50% 50%/cover;
+}
+
+.video {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+:target .video {
+  display: block;
+}
+
+svg.demo--inverted-mask {
+  position: relative;
+  z-index: 1;
+}
+
+.text--invmask-multytext {
+  font-size: 1.8em;
+  font-family: Impact;
+}
+
+.u-text--transp {
+  fill: transparent;
+}
+
+.u-text--stroke {
+  fill: transparent;
+  stroke: rgba(0, 0, 0, 0.5);
+  stroke-width: 20;
+}
+.demo--intro .u-text--stroke {
+  stroke: rgba(255, 255, 255, 0.5);
+  stroke-width: 6;
+}
+
+/* Function for getting colors from list
+if we need quantity of colors more than colors in array  */
+/* Function for creating multiple box-shadow */
+/* Element with animated shadows */
+.demo--round-shadows {
+  position: absolute;
+  left: 50%;
+  top: 48%;
+  width: 0.75vmax;
+  height: 0.75vmax;
+  background: gold;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 0 1.5vmax purple, 0 0 0 3vmax crimson, 0 0 0 4.5vmax red, 0 0 0 6vmax orangered, 0 0 0 7.5vmax tomato, 0 0 0 9vmax gold, 0 0 0 10.5vmax yellow, 0 0 0 12vmax yellowgreen, 0 0 0 13.5vmax turquoise, 0 0 0 15vmax royalblue, 0 0 0 16.5vmax mediumslateblue, 0 0 0 18vmax mediumorchid, 0 0 0 19.5vmax purple, 0 0 0 21vmax crimson, 0 0 0 22.5vmax red, 0 0 0 24vmax orangered, 0 0 0 25.5vmax tomato, 0 0 0 27vmax gold, 0 0 0 28.5vmax yellow, 0 0 0 30vmax yellowgreen, 0 0 0 31.5vmax turquoise, 0 0 0 33vmax royalblue, 0 0 0 34.5vmax mediumslateblue, 0 0 0 36vmax mediumorchid, 0 0 0 37.5vmax darkviolet, 0 0 0 39vmax purple, 0 0 0 40.5vmax crimson, 0 0 0 42vmax red, 0 0 0 43.5vmax orangered, 0 0 0 45vmax tomato, 0 0 0 46.5vmax gold, 0 0 0 48vmax yellow, 0 0 0 49.5vmax yellowgreen, 0 0 0 51vmax turquoise, 0 0 0 52.5vmax royalblue, 0 0 0 54vmax mediumslateblue, 0 0 0 55.5vmax mediumorchid, 0 0 0 57vmax darkviolet, 0 0 0 58.5vmax purple, 0 0 0 60vmax crimson, 0 0 0 61.5vmax red, 0 0 0 63vmax orangered, 0 0 0 64.5vmax tomato, 0 0 0 66vmax gold, 0 0 0 67.5vmax yellow;
+  box-shadow: 0 0 0 1.5vmax purple, 0 0 0 3vmax crimson, 0 0 0 4.5vmax red, 0 0 0 6vmax orangered, 0 0 0 7.5vmax tomato, 0 0 0 9vmax gold, 0 0 0 10.5vmax yellow, 0 0 0 12vmax yellowgreen, 0 0 0 13.5vmax turquoise, 0 0 0 15vmax royalblue, 0 0 0 16.5vmax mediumslateblue, 0 0 0 18vmax mediumorchid, 0 0 0 19.5vmax purple, 0 0 0 21vmax crimson, 0 0 0 22.5vmax red, 0 0 0 24vmax orangered, 0 0 0 25.5vmax tomato, 0 0 0 27vmax gold, 0 0 0 28.5vmax yellow, 0 0 0 30vmax yellowgreen, 0 0 0 31.5vmax turquoise, 0 0 0 33vmax royalblue, 0 0 0 34.5vmax mediumslateblue, 0 0 0 36vmax mediumorchid, 0 0 0 37.5vmax darkviolet, 0 0 0 39vmax purple, 0 0 0 40.5vmax crimson, 0 0 0 42vmax red, 0 0 0 43.5vmax orangered, 0 0 0 45vmax tomato, 0 0 0 46.5vmax gold, 0 0 0 48vmax yellow, 0 0 0 49.5vmax yellowgreen, 0 0 0 51vmax turquoise, 0 0 0 52.5vmax royalblue, 0 0 0 54vmax mediumslateblue, 0 0 0 55.5vmax mediumorchid, 0 0 0 57vmax darkviolet, 0 0 0 58.5vmax purple, 0 0 0 60vmax crimson, 0 0 0 61.5vmax red, 0 0 0 63vmax orangered, 0 0 0 64.5vmax tomato, 0 0 0 66vmax gold, 0 0 0 67.5vmax yellow;
+}
+:target .demo--round-shadows {
+  -webkit-animation: shadows-move 4s linear infinite;
+  animation: shadows-move 4s linear infinite;
+}
+
+@-webkit-keyframes shadows-move {
+  25% {
+    -webkit-box-shadow: 0 0 0 1.5vmax royalblue, 0 0 0 3vmax mediumslateblue, 0 0 0 4.5vmax mediumorchid, 0 0 0 6vmax purple, 0 0 0 7.5vmax crimson, 0 0 0 9vmax red, 0 0 0 10.5vmax orangered, 0 0 0 12vmax tomato, 0 0 0 13.5vmax gold, 0 0 0 15vmax yellow, 0 0 0 16.5vmax yellowgreen, 0 0 0 18vmax turquoise, 0 0 0 19.5vmax royalblue, 0 0 0 21vmax mediumslateblue, 0 0 0 22.5vmax mediumorchid, 0 0 0 24vmax darkviolet, 0 0 0 25.5vmax purple, 0 0 0 27vmax crimson, 0 0 0 28.5vmax red, 0 0 0 30vmax orangered, 0 0 0 31.5vmax tomato, 0 0 0 33vmax gold, 0 0 0 34.5vmax yellow, 0 0 0 36vmax yellowgreen, 0 0 0 37.5vmax turquoise, 0 0 0 39vmax royalblue, 0 0 0 40.5vmax mediumslateblue, 0 0 0 42vmax mediumorchid, 0 0 0 43.5vmax darkviolet, 0 0 0 45vmax purple, 0 0 0 46.5vmax crimson, 0 0 0 48vmax red, 0 0 0 49.5vmax orangered, 0 0 0 51vmax tomato, 0 0 0 52.5vmax gold, 0 0 0 54vmax yellow, 0 0 0 55.5vmax yellowgreen, 0 0 0 57vmax turquoise, 0 0 0 58.5vmax royalblue, 0 0 0 60vmax mediumslateblue, 0 0 0 61.5vmax mediumorchid, 0 0 0 63vmax darkviolet, 0 0 0 64.5vmax purple, 0 0 0 66vmax crimson, 0 0 0 67.5vmax red;
+    box-shadow: 0 0 0 1.5vmax royalblue, 0 0 0 3vmax mediumslateblue, 0 0 0 4.5vmax mediumorchid, 0 0 0 6vmax purple, 0 0 0 7.5vmax crimson, 0 0 0 9vmax red, 0 0 0 10.5vmax orangered, 0 0 0 12vmax tomato, 0 0 0 13.5vmax gold, 0 0 0 15vmax yellow, 0 0 0 16.5vmax yellowgreen, 0 0 0 18vmax turquoise, 0 0 0 19.5vmax royalblue, 0 0 0 21vmax mediumslateblue, 0 0 0 22.5vmax mediumorchid, 0 0 0 24vmax darkviolet, 0 0 0 25.5vmax purple, 0 0 0 27vmax crimson, 0 0 0 28.5vmax red, 0 0 0 30vmax orangered, 0 0 0 31.5vmax tomato, 0 0 0 33vmax gold, 0 0 0 34.5vmax yellow, 0 0 0 36vmax yellowgreen, 0 0 0 37.5vmax turquoise, 0 0 0 39vmax royalblue, 0 0 0 40.5vmax mediumslateblue, 0 0 0 42vmax mediumorchid, 0 0 0 43.5vmax darkviolet, 0 0 0 45vmax purple, 0 0 0 46.5vmax crimson, 0 0 0 48vmax red, 0 0 0 49.5vmax orangered, 0 0 0 51vmax tomato, 0 0 0 52.5vmax gold, 0 0 0 54vmax yellow, 0 0 0 55.5vmax yellowgreen, 0 0 0 57vmax turquoise, 0 0 0 58.5vmax royalblue, 0 0 0 60vmax mediumslateblue, 0 0 0 61.5vmax mediumorchid, 0 0 0 63vmax darkviolet, 0 0 0 64.5vmax purple, 0 0 0 66vmax crimson, 0 0 0 67.5vmax red;
+  }
+  45% {
+    -webkit-box-shadow: 0 0 0 1.5vmax yellow, 0 0 0 3vmax yellowgreen, 0 0 0 4.5vmax turquoise, 0 0 0 6vmax royalblue, 0 0 0 7.5vmax mediumslateblue, 0 0 0 9vmax mediumorchid, 0 0 0 10.5vmax purple, 0 0 0 12vmax crimson, 0 0 0 13.5vmax red, 0 0 0 15vmax orangered, 0 0 0 16.5vmax tomato, 0 0 0 18vmax gold, 0 0 0 19.5vmax yellow, 0 0 0 21vmax yellowgreen, 0 0 0 22.5vmax turquoise, 0 0 0 24vmax royalblue, 0 0 0 25.5vmax mediumslateblue, 0 0 0 27vmax mediumorchid, 0 0 0 28.5vmax darkviolet, 0 0 0 30vmax purple, 0 0 0 31.5vmax crimson, 0 0 0 33vmax red, 0 0 0 34.5vmax orangered, 0 0 0 36vmax tomato, 0 0 0 37.5vmax gold, 0 0 0 39vmax yellow, 0 0 0 40.5vmax yellowgreen, 0 0 0 42vmax turquoise, 0 0 0 43.5vmax royalblue, 0 0 0 45vmax mediumslateblue, 0 0 0 46.5vmax mediumorchid, 0 0 0 48vmax darkviolet, 0 0 0 49.5vmax purple, 0 0 0 51vmax crimson, 0 0 0 52.5vmax red, 0 0 0 54vmax orangered, 0 0 0 55.5vmax tomato, 0 0 0 57vmax gold, 0 0 0 58.5vmax yellow, 0 0 0 60vmax yellowgreen, 0 0 0 61.5vmax turquoise, 0 0 0 63vmax royalblue, 0 0 0 64.5vmax mediumslateblue, 0 0 0 66vmax mediumorchid, 0 0 0 67.5vmax darkviolet;
+    box-shadow: 0 0 0 1.5vmax yellow, 0 0 0 3vmax yellowgreen, 0 0 0 4.5vmax turquoise, 0 0 0 6vmax royalblue, 0 0 0 7.5vmax mediumslateblue, 0 0 0 9vmax mediumorchid, 0 0 0 10.5vmax purple, 0 0 0 12vmax crimson, 0 0 0 13.5vmax red, 0 0 0 15vmax orangered, 0 0 0 16.5vmax tomato, 0 0 0 18vmax gold, 0 0 0 19.5vmax yellow, 0 0 0 21vmax yellowgreen, 0 0 0 22.5vmax turquoise, 0 0 0 24vmax royalblue, 0 0 0 25.5vmax mediumslateblue, 0 0 0 27vmax mediumorchid, 0 0 0 28.5vmax darkviolet, 0 0 0 30vmax purple, 0 0 0 31.5vmax crimson, 0 0 0 33vmax red, 0 0 0 34.5vmax orangered, 0 0 0 36vmax tomato, 0 0 0 37.5vmax gold, 0 0 0 39vmax yellow, 0 0 0 40.5vmax yellowgreen, 0 0 0 42vmax turquoise, 0 0 0 43.5vmax royalblue, 0 0 0 45vmax mediumslateblue, 0 0 0 46.5vmax mediumorchid, 0 0 0 48vmax darkviolet, 0 0 0 49.5vmax purple, 0 0 0 51vmax crimson, 0 0 0 52.5vmax red, 0 0 0 54vmax orangered, 0 0 0 55.5vmax tomato, 0 0 0 57vmax gold, 0 0 0 58.5vmax yellow, 0 0 0 60vmax yellowgreen, 0 0 0 61.5vmax turquoise, 0 0 0 63vmax royalblue, 0 0 0 64.5vmax mediumslateblue, 0 0 0 66vmax mediumorchid, 0 0 0 67.5vmax darkviolet;
+  }
+  75% {
+    -webkit-box-shadow: 0 0 0 1.5vmax orangered, 0 0 0 3vmax tomato, 0 0 0 4.5vmax gold, 0 0 0 6vmax yellow, 0 0 0 7.5vmax yellowgreen, 0 0 0 9vmax turquoise, 0 0 0 10.5vmax royalblue, 0 0 0 12vmax mediumslateblue, 0 0 0 13.5vmax mediumorchid, 0 0 0 15vmax purple, 0 0 0 16.5vmax crimson, 0 0 0 18vmax red, 0 0 0 19.5vmax orangered, 0 0 0 21vmax tomato, 0 0 0 22.5vmax gold, 0 0 0 24vmax yellow, 0 0 0 25.5vmax yellowgreen, 0 0 0 27vmax turquoise, 0 0 0 28.5vmax royalblue, 0 0 0 30vmax mediumslateblue, 0 0 0 31.5vmax mediumorchid, 0 0 0 33vmax darkviolet, 0 0 0 34.5vmax purple, 0 0 0 36vmax crimson, 0 0 0 37.5vmax red, 0 0 0 39vmax orangered, 0 0 0 40.5vmax tomato, 0 0 0 42vmax gold, 0 0 0 43.5vmax yellow, 0 0 0 45vmax yellowgreen, 0 0 0 46.5vmax turquoise, 0 0 0 48vmax royalblue, 0 0 0 49.5vmax mediumslateblue, 0 0 0 51vmax mediumorchid, 0 0 0 52.5vmax darkviolet, 0 0 0 54vmax purple, 0 0 0 55.5vmax crimson, 0 0 0 57vmax red, 0 0 0 58.5vmax orangered, 0 0 0 60vmax tomato, 0 0 0 61.5vmax gold, 0 0 0 63vmax yellow, 0 0 0 64.5vmax yellowgreen, 0 0 0 66vmax turquoise, 0 0 0 67.5vmax royalblue;
+    box-shadow: 0 0 0 1.5vmax orangered, 0 0 0 3vmax tomato, 0 0 0 4.5vmax gold, 0 0 0 6vmax yellow, 0 0 0 7.5vmax yellowgreen, 0 0 0 9vmax turquoise, 0 0 0 10.5vmax royalblue, 0 0 0 12vmax mediumslateblue, 0 0 0 13.5vmax mediumorchid, 0 0 0 15vmax purple, 0 0 0 16.5vmax crimson, 0 0 0 18vmax red, 0 0 0 19.5vmax orangered, 0 0 0 21vmax tomato, 0 0 0 22.5vmax gold, 0 0 0 24vmax yellow, 0 0 0 25.5vmax yellowgreen, 0 0 0 27vmax turquoise, 0 0 0 28.5vmax royalblue, 0 0 0 30vmax mediumslateblue, 0 0 0 31.5vmax mediumorchid, 0 0 0 33vmax darkviolet, 0 0 0 34.5vmax purple, 0 0 0 36vmax crimson, 0 0 0 37.5vmax red, 0 0 0 39vmax orangered, 0 0 0 40.5vmax tomato, 0 0 0 42vmax gold, 0 0 0 43.5vmax yellow, 0 0 0 45vmax yellowgreen, 0 0 0 46.5vmax turquoise, 0 0 0 48vmax royalblue, 0 0 0 49.5vmax mediumslateblue, 0 0 0 51vmax mediumorchid, 0 0 0 52.5vmax darkviolet, 0 0 0 54vmax purple, 0 0 0 55.5vmax crimson, 0 0 0 57vmax red, 0 0 0 58.5vmax orangered, 0 0 0 60vmax tomato, 0 0 0 61.5vmax gold, 0 0 0 63vmax yellow, 0 0 0 64.5vmax yellowgreen, 0 0 0 66vmax turquoise, 0 0 0 67.5vmax royalblue;
+  }
+}
+
+@keyframes shadows-move {
+  25% {
+    -webkit-box-shadow: 0 0 0 1.5vmax royalblue, 0 0 0 3vmax mediumslateblue, 0 0 0 4.5vmax mediumorchid, 0 0 0 6vmax purple, 0 0 0 7.5vmax crimson, 0 0 0 9vmax red, 0 0 0 10.5vmax orangered, 0 0 0 12vmax tomato, 0 0 0 13.5vmax gold, 0 0 0 15vmax yellow, 0 0 0 16.5vmax yellowgreen, 0 0 0 18vmax turquoise, 0 0 0 19.5vmax royalblue, 0 0 0 21vmax mediumslateblue, 0 0 0 22.5vmax mediumorchid, 0 0 0 24vmax darkviolet, 0 0 0 25.5vmax purple, 0 0 0 27vmax crimson, 0 0 0 28.5vmax red, 0 0 0 30vmax orangered, 0 0 0 31.5vmax tomato, 0 0 0 33vmax gold, 0 0 0 34.5vmax yellow, 0 0 0 36vmax yellowgreen, 0 0 0 37.5vmax turquoise, 0 0 0 39vmax royalblue, 0 0 0 40.5vmax mediumslateblue, 0 0 0 42vmax mediumorchid, 0 0 0 43.5vmax darkviolet, 0 0 0 45vmax purple, 0 0 0 46.5vmax crimson, 0 0 0 48vmax red, 0 0 0 49.5vmax orangered, 0 0 0 51vmax tomato, 0 0 0 52.5vmax gold, 0 0 0 54vmax yellow, 0 0 0 55.5vmax yellowgreen, 0 0 0 57vmax turquoise, 0 0 0 58.5vmax royalblue, 0 0 0 60vmax mediumslateblue, 0 0 0 61.5vmax mediumorchid, 0 0 0 63vmax darkviolet, 0 0 0 64.5vmax purple, 0 0 0 66vmax crimson, 0 0 0 67.5vmax red;
+    box-shadow: 0 0 0 1.5vmax royalblue, 0 0 0 3vmax mediumslateblue, 0 0 0 4.5vmax mediumorchid, 0 0 0 6vmax purple, 0 0 0 7.5vmax crimson, 0 0 0 9vmax red, 0 0 0 10.5vmax orangered, 0 0 0 12vmax tomato, 0 0 0 13.5vmax gold, 0 0 0 15vmax yellow, 0 0 0 16.5vmax yellowgreen, 0 0 0 18vmax turquoise, 0 0 0 19.5vmax royalblue, 0 0 0 21vmax mediumslateblue, 0 0 0 22.5vmax mediumorchid, 0 0 0 24vmax darkviolet, 0 0 0 25.5vmax purple, 0 0 0 27vmax crimson, 0 0 0 28.5vmax red, 0 0 0 30vmax orangered, 0 0 0 31.5vmax tomato, 0 0 0 33vmax gold, 0 0 0 34.5vmax yellow, 0 0 0 36vmax yellowgreen, 0 0 0 37.5vmax turquoise, 0 0 0 39vmax royalblue, 0 0 0 40.5vmax mediumslateblue, 0 0 0 42vmax mediumorchid, 0 0 0 43.5vmax darkviolet, 0 0 0 45vmax purple, 0 0 0 46.5vmax crimson, 0 0 0 48vmax red, 0 0 0 49.5vmax orangered, 0 0 0 51vmax tomato, 0 0 0 52.5vmax gold, 0 0 0 54vmax yellow, 0 0 0 55.5vmax yellowgreen, 0 0 0 57vmax turquoise, 0 0 0 58.5vmax royalblue, 0 0 0 60vmax mediumslateblue, 0 0 0 61.5vmax mediumorchid, 0 0 0 63vmax darkviolet, 0 0 0 64.5vmax purple, 0 0 0 66vmax crimson, 0 0 0 67.5vmax red;
+  }
+  45% {
+    -webkit-box-shadow: 0 0 0 1.5vmax yellow, 0 0 0 3vmax yellowgreen, 0 0 0 4.5vmax turquoise, 0 0 0 6vmax royalblue, 0 0 0 7.5vmax mediumslateblue, 0 0 0 9vmax mediumorchid, 0 0 0 10.5vmax purple, 0 0 0 12vmax crimson, 0 0 0 13.5vmax red, 0 0 0 15vmax orangered, 0 0 0 16.5vmax tomato, 0 0 0 18vmax gold, 0 0 0 19.5vmax yellow, 0 0 0 21vmax yellowgreen, 0 0 0 22.5vmax turquoise, 0 0 0 24vmax royalblue, 0 0 0 25.5vmax mediumslateblue, 0 0 0 27vmax mediumorchid, 0 0 0 28.5vmax darkviolet, 0 0 0 30vmax purple, 0 0 0 31.5vmax crimson, 0 0 0 33vmax red, 0 0 0 34.5vmax orangered, 0 0 0 36vmax tomato, 0 0 0 37.5vmax gold, 0 0 0 39vmax yellow, 0 0 0 40.5vmax yellowgreen, 0 0 0 42vmax turquoise, 0 0 0 43.5vmax royalblue, 0 0 0 45vmax mediumslateblue, 0 0 0 46.5vmax mediumorchid, 0 0 0 48vmax darkviolet, 0 0 0 49.5vmax purple, 0 0 0 51vmax crimson, 0 0 0 52.5vmax red, 0 0 0 54vmax orangered, 0 0 0 55.5vmax tomato, 0 0 0 57vmax gold, 0 0 0 58.5vmax yellow, 0 0 0 60vmax yellowgreen, 0 0 0 61.5vmax turquoise, 0 0 0 63vmax royalblue, 0 0 0 64.5vmax mediumslateblue, 0 0 0 66vmax mediumorchid, 0 0 0 67.5vmax darkviolet;
+    box-shadow: 0 0 0 1.5vmax yellow, 0 0 0 3vmax yellowgreen, 0 0 0 4.5vmax turquoise, 0 0 0 6vmax royalblue, 0 0 0 7.5vmax mediumslateblue, 0 0 0 9vmax mediumorchid, 0 0 0 10.5vmax purple, 0 0 0 12vmax crimson, 0 0 0 13.5vmax red, 0 0 0 15vmax orangered, 0 0 0 16.5vmax tomato, 0 0 0 18vmax gold, 0 0 0 19.5vmax yellow, 0 0 0 21vmax yellowgreen, 0 0 0 22.5vmax turquoise, 0 0 0 24vmax royalblue, 0 0 0 25.5vmax mediumslateblue, 0 0 0 27vmax mediumorchid, 0 0 0 28.5vmax darkviolet, 0 0 0 30vmax purple, 0 0 0 31.5vmax crimson, 0 0 0 33vmax red, 0 0 0 34.5vmax orangered, 0 0 0 36vmax tomato, 0 0 0 37.5vmax gold, 0 0 0 39vmax yellow, 0 0 0 40.5vmax yellowgreen, 0 0 0 42vmax turquoise, 0 0 0 43.5vmax royalblue, 0 0 0 45vmax mediumslateblue, 0 0 0 46.5vmax mediumorchid, 0 0 0 48vmax darkviolet, 0 0 0 49.5vmax purple, 0 0 0 51vmax crimson, 0 0 0 52.5vmax red, 0 0 0 54vmax orangered, 0 0 0 55.5vmax tomato, 0 0 0 57vmax gold, 0 0 0 58.5vmax yellow, 0 0 0 60vmax yellowgreen, 0 0 0 61.5vmax turquoise, 0 0 0 63vmax royalblue, 0 0 0 64.5vmax mediumslateblue, 0 0 0 66vmax mediumorchid, 0 0 0 67.5vmax darkviolet;
+  }
+  75% {
+    -webkit-box-shadow: 0 0 0 1.5vmax orangered, 0 0 0 3vmax tomato, 0 0 0 4.5vmax gold, 0 0 0 6vmax yellow, 0 0 0 7.5vmax yellowgreen, 0 0 0 9vmax turquoise, 0 0 0 10.5vmax royalblue, 0 0 0 12vmax mediumslateblue, 0 0 0 13.5vmax mediumorchid, 0 0 0 15vmax purple, 0 0 0 16.5vmax crimson, 0 0 0 18vmax red, 0 0 0 19.5vmax orangered, 0 0 0 21vmax tomato, 0 0 0 22.5vmax gold, 0 0 0 24vmax yellow, 0 0 0 25.5vmax yellowgreen, 0 0 0 27vmax turquoise, 0 0 0 28.5vmax royalblue, 0 0 0 30vmax mediumslateblue, 0 0 0 31.5vmax mediumorchid, 0 0 0 33vmax darkviolet, 0 0 0 34.5vmax purple, 0 0 0 36vmax crimson, 0 0 0 37.5vmax red, 0 0 0 39vmax orangered, 0 0 0 40.5vmax tomato, 0 0 0 42vmax gold, 0 0 0 43.5vmax yellow, 0 0 0 45vmax yellowgreen, 0 0 0 46.5vmax turquoise, 0 0 0 48vmax royalblue, 0 0 0 49.5vmax mediumslateblue, 0 0 0 51vmax mediumorchid, 0 0 0 52.5vmax darkviolet, 0 0 0 54vmax purple, 0 0 0 55.5vmax crimson, 0 0 0 57vmax red, 0 0 0 58.5vmax orangered, 0 0 0 60vmax tomato, 0 0 0 61.5vmax gold, 0 0 0 63vmax yellow, 0 0 0 64.5vmax yellowgreen, 0 0 0 66vmax turquoise, 0 0 0 67.5vmax royalblue;
+    box-shadow: 0 0 0 1.5vmax orangered, 0 0 0 3vmax tomato, 0 0 0 4.5vmax gold, 0 0 0 6vmax yellow, 0 0 0 7.5vmax yellowgreen, 0 0 0 9vmax turquoise, 0 0 0 10.5vmax royalblue, 0 0 0 12vmax mediumslateblue, 0 0 0 13.5vmax mediumorchid, 0 0 0 15vmax purple, 0 0 0 16.5vmax crimson, 0 0 0 18vmax red, 0 0 0 19.5vmax orangered, 0 0 0 21vmax tomato, 0 0 0 22.5vmax gold, 0 0 0 24vmax yellow, 0 0 0 25.5vmax yellowgreen, 0 0 0 27vmax turquoise, 0 0 0 28.5vmax royalblue, 0 0 0 30vmax mediumslateblue, 0 0 0 31.5vmax mediumorchid, 0 0 0 33vmax darkviolet, 0 0 0 34.5vmax purple, 0 0 0 36vmax crimson, 0 0 0 37.5vmax red, 0 0 0 39vmax orangered, 0 0 0 40.5vmax tomato, 0 0 0 42vmax gold, 0 0 0 43.5vmax yellow, 0 0 0 45vmax yellowgreen, 0 0 0 46.5vmax turquoise, 0 0 0 48vmax royalblue, 0 0 0 49.5vmax mediumslateblue, 0 0 0 51vmax mediumorchid, 0 0 0 52.5vmax darkviolet, 0 0 0 54vmax purple, 0 0 0 55.5vmax crimson, 0 0 0 57vmax red, 0 0 0 58.5vmax orangered, 0 0 0 60vmax tomato, 0 0 0 61.5vmax gold, 0 0 0 63vmax yellow, 0 0 0 64.5vmax yellowgreen, 0 0 0 66vmax turquoise, 0 0 0 67.5vmax royalblue;
+  }
+}
+.light-circle {
+  opacity: 0;
+}
+:target .light-circle {
+  -webkit-animation: light-opacity 3s infinite linear;
+  animation: light-opacity 3s infinite linear;
+}
+.light-circle:nth-child(5n + 1) {
+  -webkit-animation-delay: -2.4s;
+  animation-delay: -2.4s;
+}
+.light-circle:nth-child(5n + 2) {
+  -webkit-animation-delay: -1.8s;
+  animation-delay: -1.8s;
+}
+.light-circle:nth-child(5n + 3) {
+  -webkit-animation-delay: -1.2s;
+  animation-delay: -1.2s;
+}
+.light-circle:nth-child(5n + 4) {
+  -webkit-animation-delay: -0.6s;
+  animation-delay: -0.6s;
+}
+.light-circle:nth-child(5n + 5) {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+}
+
+@-webkit-keyframes light-opacity {
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes light-opacity {
+  50% {
+    opacity: 1;
+  }
+}
+.demo--longtext {
+  font: 3.9em/1 Arial, sans-serif;
+  /*letter-spacing: .05em;*/
+}
+
+.demo--longtext-multylines {
+  font-size: 4.4em;
+}
+
+svg.demo--text-showmask {
+  font-size: 12em;
+}
+
+.demo--logo {
+  font: 14em/1 'Russo One', Impact;
+  letter-spacing: .05em;
+  fill: #FFF;
+}
+
+.demo--logo-disappear {
+  position: absolute;
+  width: 870px;
+  height: 160px;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+:target .demo--logo-disappear {
+  -webkit-animation: svg-sizes 3s infinite linear alternate;
+  animation: svg-sizes 3s infinite linear alternate;
+}
+.demo--logo-disappear .demo--logo {
+  position: absolute;
+  width: 870px;
+  height: 160px;
+}
+:target .demo--logo-disappear .demo--logo {
+  -webkit-animation: logo-move 3s infinite linear alternate;
+  animation: logo-move 3s infinite linear alternate;
+}
+
+@-webkit-keyframes svg-sizes {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  10% {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  35% {
+    opacity: .2;
+    width: 870px;
+    height: 1%;
+  }
+  50% {
+    opacity: 1;
+    width: 870px;
+    height: 160px;
+  }
+}
+
+@keyframes svg-sizes {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  10% {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  35% {
+    opacity: .2;
+    width: 870px;
+    height: 1%;
+  }
+  50% {
+    opacity: 1;
+    width: 870px;
+    height: 160px;
+  }
+}
+@-webkit-keyframes logo-move {
+  0% {
+    top: -80px;
+    left: -435px;
+  }
+  10% {
+    top: -80px;
+    left: -435px;
+  }
+  35% {
+    top: -80px;
+    left: 0;
+  }
+  50% {
+    top: 0;
+    left: 0;
+  }
+}
+@keyframes logo-move {
+  0% {
+    top: -80px;
+    left: -435px;
+  }
+  10% {
+    top: -80px;
+    left: -435px;
+  }
+  35% {
+    top: -80px;
+    left: 0;
+  }
+  50% {
+    top: 0;
+    left: 0;
+  }
+}
+:target .mask-rect-gr-opacity {
+  fill: url(#gr-mask-opacity);
+}
+
+.stroke-appear-anim {
+  fill: none;
+  stroke: #FFF;
+  stroke-width: 5;
+  stroke-dasharray: 0 500;
+}
+:target .stroke-appear-anim {
+  -webkit-animation: stroke-logo-appear 4s infinite linear alternate;
+  animation: stroke-logo-appear 4s infinite linear alternate;
+}
+
+@-webkit-keyframes stroke-logo-appear {
+  20% {
+    stroke-dasharray: 0 500;
+    stroke-width: 3;
+  }
+  80% {
+    stroke-dasharray: 500 500;
+    stroke-width: 0;
+  }
+  100% {
+    stroke-dasharray: 500 500;
+    stroke-width: 0;
+  }
+}
+
+@keyframes stroke-logo-appear {
+  20% {
+    stroke-dasharray: 0 500;
+    stroke-width: 3;
+  }
+  80% {
+    stroke-dasharray: 500 500;
+    stroke-width: 0;
+  }
+  100% {
+    stroke-dasharray: 500 500;
+    stroke-width: 0;
+  }
+}
+.mask-logo-appear-rect {
+  stroke: white;
+  stroke-width: 0;
+  /*stroke-opacity: 0;*/
+}
+:target .mask-logo-appear-rect {
+  -webkit-animation: mask-logo-appear 4s infinite linear alternate;
+  animation: mask-logo-appear 4s infinite linear alternate;
+}
+
+@-webkit-keyframes mask-logo-appear {
+  20% {
+    stroke-width: 0;
+    /*stroke-opacity: 0;*/
+  }
+  80% {
+    stroke-width: 500;
+    /*stroke-opacity: 1;*/
+  }
+  100% {
+    stroke-width: 500;
+    /*stroke-opacity: 1;*/
+  }
+}
+
+@keyframes mask-logo-appear {
+  20% {
+    stroke-width: 0;
+    /*stroke-opacity: 0;*/
+  }
+  80% {
+    stroke-width: 500;
+    /*stroke-opacity: 1;*/
+  }
+  100% {
+    stroke-width: 500;
+    /*stroke-opacity: 1;*/
+  }
+}
+.aurora-stop-color-1 {
+  stop-color: #009999;
+}
+:target .aurora-stop-color-1 {
+  -webkit-animation: aurora-stop-colors 7s linear infinite alternate;
+  animation: aurora-stop-colors 7s linear infinite alternate;
+}
+
+.gr-aurora-1 .aurora-stop-color-1 {
+  -webkit-animation-delay: -1.4s;
+  animation-delay: -1.4s;
+  /*stop-color: red;*/
+}
+
+.gr-aurora-2 .aurora-stop-color-1 {
+  -webkit-animation-delay: -2.8s;
+  animation-delay: -2.8s;
+  /*stop-color: orange;*/
+}
+
+.gr-aurora-3 .aurora-stop-color-1 {
+  -webkit-animation-delay: -4.2s;
+  animation-delay: -4.2s;
+  /*stop-color: gold;*/
+}
+
+.gr-aurora-4 .aurora-stop-color-1 {
+  -webkit-animation-delay: -5.6s;
+  animation-delay: -5.6s;
+  /*stop-color: green;*/
+}
+
+.gr-aurora-5 .aurora-stop-color-1 {
+  -webkit-animation-delay: -7s;
+  animation-delay: -7s;
+  /*stop-color: blue;*/
+}
+
+.aurora-stop-color-2 {
+  stop-color: black;
+  stop-opacity: 0;
+}
+
+@-webkit-keyframes aurora-stop-colors {
+  7.14286% {
+    stop-color: #009999;
+  }
+  14.28571% {
+    stop-color: #00cc99;
+  }
+  21.42857% {
+    stop-color: #00ff95;
+  }
+  28.57143% {
+    stop-color: #c2d65c;
+  }
+  35.71429% {
+    stop-color: #d8f0a8;
+  }
+  42.85714% {
+    stop-color: #ffbb33;
+  }
+  50% {
+    stop-color: #ff7733;
+  }
+  57.14286% {
+    stop-color: #ff002b;
+  }
+  64.28571% {
+    stop-color: #b814b8;
+  }
+  71.42857% {
+    stop-color: #6614b8;
+  }
+  78.57143% {
+    stop-color: #144bb8;
+  }
+  85.71429% {
+    stop-color: #0a85c2;
+  }
+  92.85714% {
+    stop-color: #009999;
+  }
+  100% {
+    stop-color: green;
+  }
+}
+
+@keyframes aurora-stop-colors {
+  7.14286% {
+    stop-color: #009999;
+  }
+  14.28571% {
+    stop-color: #00cc99;
+  }
+  21.42857% {
+    stop-color: #00ff95;
+  }
+  28.57143% {
+    stop-color: #c2d65c;
+  }
+  35.71429% {
+    stop-color: #d8f0a8;
+  }
+  42.85714% {
+    stop-color: #ffbb33;
+  }
+  50% {
+    stop-color: #ff7733;
+  }
+  57.14286% {
+    stop-color: #ff002b;
+  }
+  64.28571% {
+    stop-color: #b814b8;
+  }
+  71.42857% {
+    stop-color: #6614b8;
+  }
+  78.57143% {
+    stop-color: #144bb8;
+  }
+  85.71429% {
+    stop-color: #0a85c2;
+  }
+  92.85714% {
+    stop-color: #009999;
+  }
+  100% {
+    stop-color: green;
+  }
+}
+svg {
+  overflow: visible;
+}
+
+.anim-multystrokes__item {
+  /*fill: red;*/
+}
+
+.anim-multystrokes__item:nth-child(6) {
+  stroke-width: 3;
+  stroke: yellow;
+}
+
+.anim-multystrokes__item:nth-child(5) {
+  stroke-width: 6;
+  stroke: orange;
+}
+
+.anim-multystrokes__item:nth-child(4) {
+  stroke-width: 9;
+  stroke: red;
+}
+
+.anim-multystrokes__item:nth-child(3) {
+  stroke-width: 15;
+  stroke: darkred;
+}
+
+.anim-multystrokes__item:nth-child(2) {
+  stroke-width: 21;
+  stroke: purple;
+}
+
+.list--support LI {
+  margin-bottom: 2.5em;
+}
+
+.browsers {
+  display: inline-block;
+  text-indent: 0;
+}
+.browsers DT {
+  display: inline-block;
+  width: 360px;
+  margin-right: 40px;
+}
+
+.browsers--biglist {
+  position: relative;
+  width: 850px;
+  text-align: center;
+}
+.browsers--biglist IMG {
+  width: 200px;
+  height: 200px;
+  margin: 0 1em;
+}
+.browsers--biglist SPAN {
+  display: inline-block;
+  position: relative;
+}
+.browsers--biglist SPAN:after {
+  content: attr(data-bubble);
+  position: absolute;
+  top: -5px;
+  left: 190px;
+  line-height: 1;
+  font-size: 1.2em;
+  white-space: nowrap;
+}
+.browsers--biglist SUP {
+  border: 1px solid gold;
+  position: absolute;
+  top: 10px;
+  /*right: 0;
+  margin-left: -60px;*/
+  font-size: 1.2em;
+  white-space: nowrap;
+}
+
+.browser {
+  display: inline-block;
+  position: relative;
+  width: 64px !important;
+  height: 64px !important;
+  margin-right: 20px;
+  background: url(./assets/img/parts/sprite-browsers-64.png) 0 0 no-repeat;
+  vertical-align: middle;
+  text-indent: 0;
+}
+.browser:after {
+  display: inline-block;
+  margin: -.5em 0 0;
+  padding: 0 5px 0 3.3em;
+  vertical-align: top;
+  font-size: .75em;
+  line-height: 1.4;
+  font-weight: bold;
+  white-space: nowrap;
+}
+.list--glasses .browser {
+  margin-right: 0;
+}
+
+.list--support-stacks .browser {
+  margin-right: 11px;
+}
+
+.no-support {
+  opacity: .5;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+.browser-partial {
+  overflow: hidden;
+}
+
+.browser-flag:before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  right: -13px;
+  bottom: 5px;
+  width: 0;
+  height: 0;
+  border: 10px solid crimson;
+  border-width: 8px 12px;
+  border-right-color: transparent;
+}
+
+.browser-partial:after,
+.browser-flag:after {
+  content: "";
+  position: absolute;
+  right: -20px;
+  top: 5px;
+  width: 70px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.7);
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-transform-origin: right bottom;
+  -ms-transform-origin: right bottom;
+  transform-origin: right bottom;
+}
+
+.chrome {
+  background-position: 0 0;
+}
+
+.canary {
+  background: url(./assets/img/browsers/canary-64.png);
+}
+
+.firefox {
+  background-position: 0 -64px;
+}
+
+.ie {
+  background-position: 0 -192px;
+}
+
+.ie-8 {
+  background-position: 0 -128px;
+}
+.ie-8:after {
+  content: "8";
+  padding-left: 3.7em;
+}
+
+.ie-9 {
+  background-position: 0 -192px;
+}
+.ie-9:after {
+  content: "9+";
+  padding-left: 3.7em;
+}
+
+.opera {
+  background-position: 0 -320px;
+}
+
+.opera-old {
+  background-position: 0 -256px;
+}
+
+.opera-12-mb-min:after {
+  content: "12, Mobile, Mini";
+}
+
+.opera-beta {
+  background: url(./assets/img/browsers/opera-beta-64.png);
+}
+
+.browser:after {
+  content: attr(data-bubble);
+}
+
+.opera-12:after {
+  content: "12";
+}
+
+.opera-min:after {
+  content: "Mini";
+}
+
+.opera-mob {
+  margin-right: 50px;
+}
+.opera-mob:after {
+  content: "Mobile";
+}
+
+.opera-15 {
+  background-position: 0 -320px;
+}
+.opera-15:after {
+  content: "15+";
+}
+
+.safari {
+  background-position: 0 -384px;
+}
+
+.safari-8 {
+  background-position: 0 -384px;
+}
+.safari-8:after {
+  content: "8+";
+}
+
+.list--glasses {
+  margin: 0 0 1rem 0 !important;
+}
+
+.list--glasses-best {
+  margin: 0 0 2.5rem 0 !important;
+}
+
+.tooltip--glasses {
+  display: inline-block;
+  width: 800px;
+  margin: 0 0 2rem 0 !important;
+  font-size: .7em;
+  line-height: 1;
+  font-style: italic;
+  color: #999;
+}
+
+.list--glasses LI {
+  text-indent: 0 !important;
+}
+.list--glasses LI:before {
+  content: none !important;
+}
+
+.list--glasses LI + LI {
+  margin-top: 1.2em;
+}
+
+.list--glasses__sign {
+  position: relative;
+  padding: 0 .2em;
+}
+
+/*.ie8:before {
+  background-position: -90px 0;
+  }*/
+/*
+.opera-mob:before {
+  background-position: -150px 0;
+  }
+.opera-mini:before {
+  background-position: -150px 0;
+  }*/
+.js-togglemode .text-off {
+  display: none;
+}
+
+.js-blendmode--off {
+  background-blend-mode: normal !important;
+  mix-blend-mode: normal !important;
+  -webkit-filter: none !important;
+}
+.js-blendmode--off *,
+.js-blendmode--off *:before,
+.js-blendmode--off *:after {
+  background-blend-mode: normal !important;
+  mix-blend-mode: normal !important;
+  -webkit-filter: none !important;
+}
+.js-blendmode--off .text-on {
+  display: none;
+}
+.js-blendmode--off .text-off {
+  display: block;
+}
+
+.js-blendmode-control {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  width: 70px;
+  padding: 1rem;
+  background: #222;
+  border: 0;
+  border-radius: 1rem;
+  -webkit-box-shadow: 0 0 0 10px rgba(173, 255, 47, 0.5);
+  box-shadow: 0 0 0 10px rgba(173, 255, 47, 0.5);
+  outline: none;
+  cursor: pointer;
+  text-align: left;
+  font-size: .9em;
+  color: greenyellow;
+}
+.js-blendmode--off .js-blendmode-control {
+  -webkit-box-shadow: 0 0 0 10px rgba(51, 51, 51, 0.5);
+  box-shadow: 0 0 0 10px rgba(51, 51, 51, 0.5);
+}
+
+.text-off {
+  color: #999;
+}
+
+.demo--gradient {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+/*@import '_print';*/
+
+/*# sourceMappingURL=style.unprefixed.css.map */
+
+    </style>
+</head>
+<body class="list" spellcheck="false">
+    <svg class="svg-defs">
+        <linearGradient id="gr-blue-defs"
+                x1="0" y1="0" x2="100%" y2="100%"
+                gradientUnits="objectBoundingBox">
+            <stop stop-color="hsl(160, 100%, 80%)" offset="10%"/>
+            <stop stop-color="hsl(250, 100%, 30%)" offset="90%"/>
+        </linearGradient>
+
+        <linearGradient id="gr-red"
+                x1="0" y1="0" x2="100%" y2="100%"
+                gradientUnits="objectBoundingBox">
+            <stop
+                stop-color="purple"
+                offset="10%"/>
+            <stop
+                stop-color="orangered"
+                offset="90%"/>
+        </linearGradient>
+
+        <pattern id="pt-wood" width="300" height="300"
+             patternUnits="userSpaceOnUse">
+            <image xlink:href="./assets/img/parts/wood.jpg" width="300" height="300"/>
+        </pattern>
+
+        <pattern id="pt-tulips" width="1024" height="681"
+             patternUnits="userSpaceOnUse">
+            <image xlink:href="./assets/img/parts/tulips.jpeg" width="1024" height="681"/>
+        </pattern>
+    </svg>
+
+    <header class="caption">
+        <h1>Оживляем текст</h1>
+        <p>Бухвалова Юлия, Livejournal</p>
+    </header>
+
+    <!-- Slide -->
+    <section class="slide slide--imgfull slide--fullscreen-svg"><div>
+        <div class="fullscreen-svg intro"></div>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+        <div class="slide__content">
+            <h4>Презентация в лучшем виде:</h4>
+            <ul class="list--glasses list--glasses-best">
+                <li>
+                <span class="browser chrome" data-bubble="41+"></span>&nbsp;&nbsp;
+                <span class="browser opera" data-bubble="29+"></span>&nbsp;&nbsp;&nbsp;
+                <span class="browser safari"></span>
+                </li>
+            </ul>
+            <ul class="list--glasses">
+                <li>
+                    <span class="browser chrome" data-bubble="< 41"></span> <span class="list--glasses__sign">+</span> флаг: <i>chrome://flags/#enable-experimental-web-platform-features</i>
+                </li>
+                <li>
+                    <span class="browser opera" data-bubble="< 29"></span> <span class="list--glasses__sign">+</span> флаг: <i>opera://flags/#enable-experimental-web-platform-features</i>
+                </li>
+            </ul>
+            <p class="tooltip--glasses">Скопируйте ссылку на флаг в адресную строку браузера, включите флаг и&nbsp;перезапустите браузер.</p>
+            <h4>Так себе вид:</h4>
+            <ul class="list--glasses">
+                <li>
+                    <span class="browser firefox"></span>
+                </li>
+            </ul>
+        </div>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+        <h4>Краткое содержание</h4>
+        <ol>
+            <li>HTML + CSS</li>
+            <li>SVG</li>
+            <li>Режимы наложения</li>
+            <li>HTML + SVG</li>
+        </ol>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide bg--dark"><div>
+        <h2 class="free-fly">1. HTML + CSS</h2>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+        <h2 class="free-fly">Обводки</h2>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+        <h2 class="free-fly">text-shadow</h2>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide slide--vlm"><div>
+        <div class="slide__content">
+            <div
+                class="
+                    demo
+                    demo--text
+                    demo--shadowstroke">
+                текст
+            </div>
+        </div>
+    </div></section>
+
+    <section class="slide slide--vlm"><div>
+        <div class="slide__content">
+            <div
+                class="
+                    demo
+                    demo--text
+                    demo--shadowstroke">
+                текст
+            </div>
+        </div>
+        <div class="demo--shadowstroke-zoom"></div>
+    </div></section>
+
+
+    <!-- Slide -->
+    <section class="slide slide--vlm"><div>
+<pre><code class="code--condensed">text-shadow: -1px -1px green,  1px -1px green,
+              1px  1px green, -1px  1px green,
+             -2px -2px green,  2px -2px green,
+              2px  2px green, -2px  2px green,
+             -3px -3px green,  3px -3px green,
+              3px  3px green, -3px  3px green,
+             -4px -4px green,  4px -4px green,
+              4px  4px green, -4px  4px green,
+             -5px -5px green,  5px -5px green,
+              5px  5px green, -5px  5px green,
+             -6px -6px green,  6px -6px green,
+              6px  6px green, -6px  6px green,
+             -7px -7px green,  7px -7px green,
+              7px  7px green, -7px  7px green;
+
+</code></pre>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide slide--vlm-code"><div>
+        <div class="slide__content">
+<pre><code class="code--smaller code--condensed">@function shadows($max: 5, $color: white){
+    $out: null;
+
+    @for $i from 0 through $max {
+
+        @if ($i > 0) {
+          $pos: #{$i}px;
+          $pos-n: -$pos;
+
+          $shadow-t-l: $pos-n $pos-n $color;
+          $out: append( $out, $shadow-t-l, comma );
+          $shadow-t-r: $pos $pos-n $color;
+          $out: append( $out, $shadow-t-r, comma );
+          $shadow-b-r: $pos $pos $color;
+          $out: append( $out, $shadow-b-r, comma );
+          $shadow-b-l: $pos-n $pos $color;
+          $out: append( $out, $shadow-b-l, comma );
+        }
+
+    }
+
+    @return $out;
+}</code></pre>
+        </div>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide bg--dark slide--vlm"><div>
+        <div class="slide__content">
+            <div
+                class="
+                    demo
+                    demo--text
+                    demo--chasing-shadows">
+                текст
+            </div>
+        </div>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide bg--dark slide--vlm"><div>
+        <div class="slide__content">
+            <div
+                class="
+                    demo
+                    demo--text
+                    demo--multiple-shadows">
+                текст
+            </div>
+        </div>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+        <h3>Google Fonts Effects</h3>
+        <br/>
+
+        <pre class="next"><code>http://fonts.googleapis.com/css?family=Rancho&<mark>effect=3d</mark></code></pre>
+
+        <pre class="next"><code>&lt;div class="<mark>font-effect-3d</mark>">текст&lt;/div></code></pre>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide slide--vlm"><div>
+        <div class="slide__content">
+            <div
+                class="
+                    demo
+                    demo--text
+                    font-effect
+                    font-effect-outline">
+                текст
+            </div>
+            <div
+                class="
+                    next
+                    demo
+                    demo--text
+                    font-effect
+                    font-effect-anaglyph">
+                текст
+            </div>
+        </div>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide slide--vlm"><div>
+        <div class="slide__content">
+            <div
+                class="
+                    demo
+                    demo--text
+                    font-effect
+                    font-effect-3d">
+                текст
+            </div>
+
+            <div
+                class="
+                    next
+                    demo
+                    demo--text
+                    font-effect
+                    font-effect-shadow-multiple">
+                текст
+            </div>
+        </div>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide slide--vlm bg--dark"><div>
+        <div class="slide__content">
+            <div
+                class="
+                    demo
+                    demo--text
+                    font-effect
+                    font-effect-fire-animation">
+                текст
+            </div>
+        </div>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+        <a href="https://developers.google.com/fonts/docs/getting_started#Effects">developers.google.com/fonts/docs/getting_started#Effects</a>
+        <img src="./assets/img/parts/google-fonts.png" alt="Google Fonts Effects" style="margin-top: 25px;"/>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide slide--vlm"><div>
+        <div class="slide__content">
+            <div class="browsers--biglist">
+                <img src="./assets/img/browsers/chrome.png" alt="Chrome"/>
+                <img src="./assets/img/browsers/safari.png" alt="Safari"/>
+                <img src="./assets/img/browsers/opera.png" alt="Opera"/>
+                <img src="./assets/img/browsers/firefox.png" alt="Firefox"/>
+                <span data-bubble="10+"><img src="./assets/img/browsers/ie.png" alt="IE"/></span>
+            </div>
+        </div>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+        <h2 class="free-fly">-webkit-text-stroke</h2>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+        <div
+            class="
+                slide__content
+                live-editor
+                live-editor--attr">
+
+            <div class="live-editor__content">
+                <textarea class="live-editor__code">-webkit-text-stroke: 15px orangered</textarea>
+            </div>
+
+            <div class="
+                demo
+                demo--text
+                demo--text-stroke
+                live-editor__view
+                live-editor__dest"
+                data-attr="style">
+                text
+              </div>
+
+        </div>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide slide--vlm"><div>
+        <div class="slide__content">
+            <div class="browsers--biglist">
+                <span data-bubble="-webkit-"><img src="./assets/img/browsers/chrome.png" alt="Chrome"/></span>
+                <span data-bubble="-webkit-"><img src="./assets/img/browsers/safari.png" alt="Safari"/></span>
+                <span data-bubble="-webkit-"><img src="./assets/img/browsers/opera.png" alt="Opera"/></span>
+                <img src="./assets/img/browsers/firefox.png" alt="Firefox" class="no-support"/>
+                <img src="./assets/img/browsers/ie.png" alt="IE" class="no-support"/>
+            </div>
+        </div>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+        <h2 class="free-fly">Заливки</h2>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+        <h2 class="free-fly">-webkit-background-clip: text</h2>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide bg--ps-cells slide--imgfull"><div>
+        <div class="
+            slide__content
+            live-editor
+            live-editor--attr">
+            <div class="live-editor__content">
+                <textarea
+                    class="
+                    live-editor__code
+                    live-editor__code--3-lines">background: url(/assets/img/parts/tulips.jpeg) 50% 50%;</textarea>
+            </div>
+            <div
+                class="
+                    demo
+                    demo--text
+                    demo--background-clip demo--background-clip-step1
+                    live-editor__view
+                    live-editor__dest"
+                    data-attr="style">
+                текст
+            </div>
+        </div>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide bg--ps-cells slide--imgfull"><div>
+        <div class="
+            slide__content
+            live-editor
+            live-editor--attr
+            live-editor--bgclip-step2
+            ">
+            <div class="live-editor__content">
+                <textarea
+                    class="
+                    live-editor__code
+                    live-editor__code--3-lines">background: url(/assets/img/parts/tulips.jpeg) 50% 50%;
+-webkit-background-clip: text;</textarea>
+            </div>
+            <div
+                class="
+                    demo
+                    demo--text
+                    demo--background-clip
+                    demo--background-clip-step2
+                    live-editor__view
+                    live-editor__dest"
+                    data-attr="style">
+                текст
+            </div>
+        </div>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide bg--ps-cells slide--imgfull"><div>
+        <div class="
+            slide__content
+            live-editor
+            live-editor--attr
+            live-editor--bgclip-step3
+            ">
+            <div class="live-editor__content">
+                <textarea
+                    class="
+                    live-editor__code
+                    live-editor__code--3-lines">background: url(/assets/img/parts/tulips.jpeg) 50% 50%;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;</textarea>
+            </div>
+            <div
+                class="
+                    demo
+                    demo--text
+                    demo--background-clip
+                    demo--background-clip-step3
+                    live-editor__view
+                    live-editor__dest"
+                    data-attr="style">
+                    текст
+            </div>
+        </div>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide bg--ps-cells slide--imgfull"><div>
+        <div class="slide__content">
+            <div
+                class="
+                    demo
+                    demo--text
+                    demo--background-clip-no-support">
+                <span class="demo__text">
+                    текст
+                </span>
+            </div>
+        </div>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide bg--ps-cells slide--vlm"><div>
+        <div class="slide__content">
+            <div
+                class="
+                    demo
+                    demo--text
+                    demo--background-clip-fade">
+                текст текст текст текст текст
+                текст текст текст текст текст
+            </div>
+        </div>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+        <h2 class="free-fly">Анимация заливки</h2>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide bg--dark slide--vlm"><div>
+        <div class="slide__content">
+            <div
+                class="
+                    demo
+                    demo--text
+                    demo--background-clip-animation">
+                текст
+            </div>
+        </div>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide bg--dark slide--vlm"><div>
+        <div class="slide__content">
+            <div
+                class="
+                    demo
+                    demo--text
+                    demo--background-clip-animation
+                    demo--background-clip-animation-color">
+                текст
+            </div>
+        </div>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide slide--vlm"><div>
+        <div class="slide__content">
+            <div class="browsers--biglist">
+                <span data-bubble="-webkit-"><img src="./assets/img/browsers/chrome.png" alt="Chrome"/></span>
+                <span data-bubble="-webkit-"><img src="./assets/img/browsers/safari.png" alt="Safari"/></span>
+                <span data-bubble="-webkit-"><img src="./assets/img/browsers/opera.png" alt="Opera"/></span>
+                <img src="./assets/img/browsers/firefox.png" alt="Firefox" class="no-support"/>
+                <img src="./assets/img/browsers/ie.png" alt="IE" class="no-support"/>
+            </div>
+        </div>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide bg--dark"><div>
+        <h2 class="free-fly">2. SVG</h2>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+        <h2 class="free-fly">SVG-текст</h2>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+        <div
+            class="
+                live-editor
+                live-editor--elem
+                live-editor--text
+                live-editor--small-height
+                live-editor--svg-text">
+          <div class="live-editor__content">
+            <textarea
+                class="
+                    live-editor__textfield
+                    live-editor__code
+                    live-editor__code--5-lines"
+                    ><svg viewBox="0 0 800 300">
+    <text x="50%" y="50%" dy=".25em" text-anchor="middle">
+        текст
+    </text>
+</svg></textarea>
+        </div></div>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+        <h2 class="free-fly">Обводки</h2>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+    <h3>Через атрибуты:</h3>
+<pre><code>&lt;text <mark>stroke</mark>="crimson" <mark>stroke-width</mark>="3">текст&lt;/text></code></pre>
+
+    <span class="next"><h3>или в CSS:</h3>
+
+    <pre><code>.text {
+        <mark>stroke</mark>: crimson;
+        <mark>stroke-width</mark>: 3;
+        }</code></pre></span>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+        <div class="
+            slide__content
+            live-editor
+            live-editor--attr
+            live-editor--text
+            live-editor--stroke-base
+            live-editor--small-height
+            text--stroke
+            text--stroke--base">
+            <div class="live-editor__content">
+                <textarea
+                    class="
+                    live-editor__code
+                    live-editor__code--2-lines">stroke: crimson;
+stroke-width: 7;</textarea>
+            </div>
+            <div class="live-editor__view">
+                <svg
+                    viewBox="0 0 800 300"
+                    >
+                    <text
+                        x="50%" y="50%"
+                        dy=".25em"
+                        text-anchor="middle"
+                        class="
+                        live-editor__dest
+                        "
+                        data-attr="style">
+                        текст
+                    </text>
+                </svg>
+            </div>
+        </div>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+        <svg viewBox="0 0 1024 620" class="demo demo--text">
+            <text x="50%" y="50%" dy=".2em" text-anchor="middle"
+                class="text--stroke text--stroke-pulse">текст</text>
+        </svg>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide bg--dark"><div>
+        <svg viewBox="0 0 1024 620" class="demo demo--text">
+            <pattern id="p-lines"
+                       viewBox="0 0 100 100"
+                       patternUnits="userSpaceOnUse"
+                       width="100" height="100">
+                <path d="M 0,0 0,100" class="p-line"/>
+                <path d="M 10,0 10,100" class="p-line"/>
+                <path d="M 20,0 20,100" class="p-line"/>
+                <path d="M 30,0 30,100" class="p-line"/>
+                <path d="M 40,0 40,100" class="p-line"/>
+                <path d="M 50,0 50,100" class="p-line"/>
+                <path d="M 60,0 60,100" class="p-line"/>
+                <path d="M 70,0 70,100" class="p-line"/>
+                <path d="M 80,0 80,100" class="p-line"/>
+                <path d="M 90,0 90,100" class="p-line"/>
+                <path d="M 100,0 100,100" class="p-line"/>
+              </pattern>
+            <text x="50%" y="50%" dy=".25em" text-anchor="middle" stroke="url(#p-lines)"
+                class="text--stroke text--stroke-anim-pattern">текст</text>
+        </svg>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+        <h2 class="free-fly">stroke-dasharray</h2>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+        <div class="
+            slide__content
+            live-editor
+            live-editor--attr
+            live-editor--text
+            live-editor--dasharray
+            live-editor--small-height
+            text--stroke
+            text--stroke-dasharray">
+            <div class="live-editor__content">
+                <textarea
+                    class="
+                    live-editor__code
+                    live-editor__code--3-lines">stroke: orangered;
+stroke-width: 5;</textarea>
+            </div>
+            <div class="live-editor__view">
+                <svg viewBox="0 0 800 300">
+                    <text
+                        x="50%" y="50%"
+                        dy=".25em"
+                        text-anchor="middle"
+                        class="live-editor__dest"
+                        data-attr="style">
+                        текст
+                    </text>
+                </svg>
+            </div>
+        </div>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+        <div class="
+            slide__content
+            live-editor
+            live-editor--attr
+            live-editor--text
+            live-editor--dasharray
+            live-editor--dasharray-step2
+            live-editor--small-height
+            text--stroke
+            text--stroke-dasharray
+            text--stroke-dasharray-step2">
+            <div class="live-editor__content">
+                <textarea
+                    class="
+                    live-editor__code
+                    live-editor__code--3-lines">stroke: orangered;
+stroke-width: 5;
+stroke-dasharray: 50 30 20 10;</textarea>
+            </div>
+            <div class="live-editor__view">
+                <svg viewBox="0 0 800 300">
+                    <text
+                        x="50%" y="50%"
+                        dy=".25em"
+                        text-anchor="middle"
+                        class="live-editor__dest"
+                        data-attr="style">
+                        текст
+                    </text>
+                </svg>
+            </div>
+        </div>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide bg--dark"><div>
+        <svg viewBox="0 0 1024 620" class="demo demo--text">
+            <text x="50%" y="50%" dy=".25em" text-anchor="middle"
+                class="text--stroke text--stroke-run">текст</text>
+        </svg>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+        <svg viewBox="0 0 1024 620"
+             class="demo demo--text">
+            <text x="50%" y="50%" dy=".25em" text-anchor="middle"
+                class="text--stroke text--stroke-appear">текст</text>
+        </svg>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+        <svg viewBox="0 0 1024 620" class="demo demo--text">
+            <text x="50%" y="50%" dy=".25em" text-anchor="middle"
+                class="text--stroke text--stroke-aunt-walk">текст</text>
+            <text x="50%" y="50%" dy=".25em" text-anchor="middle"
+                class="text--stroke text--stroke-aunt-walk">текст</text>
+            <text x="50%" y="50%" dy=".25em" text-anchor="middle"
+                class="text--stroke text--stroke-aunt-walk">текст</text>
+            <text x="50%" y="50%" dy=".25em" text-anchor="middle"
+                class="text--stroke text--stroke-aunt-walk">текст</text>
+            <text x="50%" y="50%" dy=".25em" text-anchor="middle"
+                class="text--stroke text--stroke-aunt-walk">текст</text>
+        </svg>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+        <h2 class="free-fly">Заливки</h2>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+    <h3>Через атрибут:</h3>
+<pre><code>&lt;text <mark>fill</mark>="url(#gr-blue)">текст&lt;/text></code></pre>
+
+    <span class="next"><h3>или в CSS:</h3>
+    <pre><code>.text {
+        <mark>fill</mark>: url(#gr-blue);
+        }</code></pre></span>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+        <svg viewBox="0 0 1024 620" class="demo demo--text">
+            <pattern id="pt-grass" width="300" height="300"
+                         patternUnits="userSpaceOnUse">
+                <image xlink:href="./assets/img/parts/grass.jpg" width="300" height="300"/>
+              </pattern>
+
+            <text x="50%" y="16%" dy=".25em" text-anchor="middle"
+                class="text--fill text--fill-solid">текст</text>
+            <text x="50%" y="50%" dy=".25em" text-anchor="middle"
+                class="next text--fill text--fill-gradient"
+                fill="url(#gr-blue-defs)">текст</text>
+            <text x="50%" y="86%" dy=".25em" text-anchor="middle"
+                class="next text--fill text--fill-pattern"
+                fill="url(#pt-grass)">текст</text>
+        </svg>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+        <h2 class="free-fly">Градиенты</h2>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+        <div
+            class="
+                live-editor
+                live-editor--elem
+                live-editor--grad
+                live-editor--grad-step1">
+          <div class="live-editor__content">
+            <textarea
+                class="
+                    live-editor__textfield
+                    live-editor__code
+                    live-editor__code--5-lines"
+                    data-dest="#grad-dest"
+                    ><linearGradient id="gr-blue"
+        x1="0" y1="0" x2="100%" y2="100%">
+
+
+</linearGradient></textarea>
+        </div>
+        <div class="live-editor__view">
+            <svg viewBox="0 0 1024 280" class="demo demo--text demo--small-height">
+                <g id='grad-dest'>
+                    <linearGradient id="gr-blue"
+        x1="0" y1="0" x2="100%" y2="100%">
+
+
+</linearGradient>
+                </g>
+              <text
+                x="50%" y="50%"
+                dy=".25em"
+                text-anchor="middle"
+                fill="url(#gr-blue)"
+                stroke="transparent"
+                >текст</text>
+            </svg>
+        </div>
+        </div>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+        <div
+            class="
+                live-editor
+                live-editor--elem
+                live-editor--grad
+                live-editor--grad-step2">
+          <div class="live-editor__content">
+            <textarea
+                class="
+                    live-editor__textfield
+                    live-editor__code
+                    live-editor__code--5-lines"
+                    data-dest="#grad-dest"
+                    ><linearGradient id="gr-blue"
+        x1="0" y1="0" x2="100%" y2="100%">
+    <stop stop-color="#9FD" offset="10%"/>
+    <stop stop-color="#190099" offset="90%"/>
+</linearGradient></textarea>
+        </div>
+        <div class="live-editor__view">
+            <svg viewBox="0 0 1024 280" class="demo demo--text demo--small-height">
+                <g id='grad-dest'>
+                    <linearGradient id="gr-blue"
+        x1="0" y1="0" x2="100%" y2="100%">
+    <stop stop-color="#9FD" offset="10%"/>
+    <stop stop-color="#190099" offset="90%"/>
+</linearGradient>
+                </g>
+              <text
+                x="50%" y="50%"
+                dy=".25em"
+                text-anchor="middle"
+                fill="url(#gr-blue)"
+                stroke="transparent"
+                >текст</text>
+            </svg>
+        </div>
+        </div>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+        <svg viewBox="0 0 1024 620" class="demo demo--text">
+            <defs>
+                <linearGradient id="gr-css-anim"
+                        x1="0" y1="0" x2="100%" y2="100%"
+                        gradientUnits="objectBoundingBox">
+                    <stop class="stop-css-anim stop-css-anim--1" offset="10%"/>
+                    <stop class="stop-css-anim stop-css-anim--2" offset="90%"/>
+                </linearGradient>
+            </defs>
+
+            <text x="50%" y="50%" dy=".2em" text-anchor="middle"
+                class="text--fill text--fill-gradient"
+                fill="url(#gr-css-anim)">текст</text>
+        </svg>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide bg--dark"><div>
+        <svg viewBox="0 0 1024 620" class="demo demo--text">
+            <defs>
+                <radialGradient id="gr-smil-anim"
+                  cx="50%" cy="50%" r="70%">
+                  <animate attributeName="r"
+                           values="0%;150%;130%;0%"
+                           dur="5s" repeatCount="indefinite" />
+                  <stop stop-color="#FFF" offset="0">
+                  <animate attributeName="stop-color"
+                           values="rgba(55,55,55,.5);#FFF;#FFF;rgba(55,55,55,.5)"
+                           dur="5s" repeatCount="indefinite" />
+                  </stop>
+                  <stop stop-color="rgba(55,55,55,0)" offset="100%"/>
+              </radialGradient>
+            </defs>
+
+            <text x="50%" y="50%" dy=".2em" text-anchor="middle"
+                class="text--fill text--fill-smil-anim-grad"
+                >текст</text>
+        </svg>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+        <h2 class="free-fly">Паттерны</h2>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+        <div
+            class="
+                live-editor
+                live-editor--elem
+                live-editor--pattern
+                live-editor--pattern-step1">
+          <div class="live-editor__content">
+            <textarea
+                class="
+                    live-editor__textfield
+                    live-editor__code
+                    live-editor__code--5-lines"
+                    data-dest="#pattern-dest"
+                    ><pattern id="pt-circles" width="40" height="40"
+    viewBox="0 0 50 50" patternUnits="userSpaceOnUse">
+
+
+</pattern></textarea>
+        </div>
+        <div class="live-editor__view">
+            <svg viewBox="0 0 720 200">
+                <g id='pattern-dest'>
+                    <pattern id="pt-circles" width="40" height="40"
+        viewBox="0 0 50 50" patternUnits="userSpaceOnUse">
+
+
+      </pattern>
+                </g>
+              <rect width="100%" height="100%" fill="url(#pt-circles)"/>
+            </svg>
+        </div>
+        </div>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+        <div
+            class="
+                live-editor
+                live-editor--elem
+                live-editor--pattern
+                live-editor--pattern-step2">
+          <div class="live-editor__content">
+            <textarea
+                class="
+                    live-editor__textfield
+                    live-editor__code
+                    live-editor__code--5-lines"
+                    data-dest="#pattern-dest2"
+                    ><pattern id="pt-circles" width="40" height="40"
+    viewBox="0 0 50 50" patternUnits="userSpaceOnUse">
+        <circle r="18" cx="25" cy="25" fill="yellowgreen"
+            stroke="green" stroke-width="7"/>
+</pattern></textarea>
+        </div>
+        <div class="live-editor__view">
+            <svg viewBox="0 0 720 200">
+                <g id='pattern-dest2'>
+                    <pattern id="pt-circles" width="40" height="40"
+        viewBox="0 0 50 50" patternUnits="userSpaceOnUse">
+          <circle r="18" cx="25" cy="25"
+            fill="yellowgreen" stroke="green" stroke-width="7"/>
+      </pattern>
+                </g>
+              <rect width="100%" height="100%" fill="url(#pt-circles)"/>
+            </svg>
+        </div>
+        </div>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+        <div
+            class="
+                live-editor
+                live-editor--elem
+                live-editor--pattern
+                live-editor--pattern-step2">
+          <div class="live-editor__content">
+            <textarea
+                class="
+                    live-editor__textfield
+                    live-editor__code
+                    live-editor__code--5-lines"
+                    data-dest="#pattern-wood-dest"
+                    ><pattern id="pt-wooden" width="300" height="300"
+    patternUnits="userSpaceOnUse">
+        <image xlink:href="./assets/img/parts/wood.jpg"
+            width="300" height="300"/>
+</pattern></textarea>
+        </div>
+        <div class="live-editor__view">
+            <svg viewBox="0 0 720 200">
+                <g id='pattern-wood-dest'>
+                    <pattern id="pt-wooden" width="300" height="300"
+    patternUnits="userSpaceOnUse">
+    <image xlink:href="./assets/img/parts/wood.jpg"
+        width="300" height="300"/>
+  </pattern>
+                </g>
+              <rect width="100%" height="100%" fill="url(#pt-wooden)"/>
+            </svg>
+        </div>
+        </div>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+        <svg viewBox="0 0 1024 620" class="demo demo--text demo--text-masks">
+
+          <text x="50%" y="50%" dy=".35em" text-anchor="middle"
+                fill="url(#pt-wood)" class="text--fill--wood"
+                >АБВ</text>
+        </svg>
+
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+        <svg viewBox="0 0 1024 620" class="demo demo--text demo--text-masks">
+
+          <pattern id="pt-spots" width="728" height="500"
+             patternUnits="userSpaceOnUse">
+            <image xlink:href="./assets/img/parts/spots.png" width="728" height="500"/>
+          </pattern>
+
+          <text x="50%" y="50%" dy=".35em" text-anchor="middle"
+                fill="url(#pt-spots)" class="text--fill--spots"
+                >АБВ</text>
+        </svg>
+
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+        <svg viewBox="0 0 1024 620" class="demo demo--text demo--text-masks">
+
+          <pattern id="pt-text" patternunits="userSpaceOnUse" width="480" height="112" y="5">
+            <text x="0" y="0" class="text--pattern">
+              <tspan x="0" y="1em">Nam tristique vestibulum nulla nec accumsan. Nullam commodo eget dolor et ultricies.
+              </tspan>
+              <tspan x="0" y="2.1em">Nulla ligula elit, placerat a sapien vel, eleifend tincidunt nibh. Suspendisse porta fermentum dictum. Cras eget
+              </tspan>
+              <tspan x="0" y="3.2em">Maecenas tempus elit quis sapien tempus, sit amet viverra neque mattis. Quisque a tincidunt mi.
+              </tspan>
+              <tspan x="0" y="4.3em">Proin at justo eu ipsum posuere dignissim vel quis eros. Etiam at libero commodo, varius justo quis, interdum erat.
+              </tspan>
+              <tspan x="0" y="5.4em">Fusce viverra mollis est, nec euismod ante mattis ut. Aenean eu mauris viverra enim vulputate bibendum.
+              </tspan>
+              <tspan x="0" y="6.5em">Integer velit metus, cursus et commodo sit amet, gravida vitae purus. Sed scelerisque at odio non condimentum.
+              </tspan>
+              <tspan x="0" y="7.6em">Sed neque lacus, rhoncus vitae sem ut, pharetra vestibulum elit.
+              </tspan>
+              <tspan x="0" y="8.7em">Cras ultricies aliquam dolor quis ultrices. Cras eget mauris tincidunt, aliquam erat quis, faucibus augue.
+              </tspan>
+            </text>
+          </pattern>
+
+          <text x="50%" y="50%" dy=".35em" text-anchor="middle"
+                fill="url(#pt-text)" class="text--fill--text"
+                >АБВ</text>
+          <!-- <rect width="100%" height="100%" fill="url(#pt-text)"></rect> -->
+        </svg>
+
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+        <h2 class="free-fly">Анимация заливки</h2>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide bg--dark"><div>
+        <svg viewBox="0 0 1024 620" class="demo demo--text">
+            <defs>
+                <pattern
+                   id="p-anim-cells"
+                   width="101" height="61"
+                   viewBox="0 0 100 60"
+                   patternUnits="userSpaceOnUse">
+
+                    <g class="g-anim-cells">
+                        <rect width="20" height="20"/>
+                        <rect width="20" height="20"
+                              x="20"/>
+                        <rect width="20" height="20"
+                              x="40"/>
+                        <rect width="20" height="20"
+                              x="60"/>
+                        <rect width="20" height="20"
+                              x="80"/>
+
+                        <rect width="20" height="20"
+                              y="20"/>
+                        <rect width="20" height="20"
+                              x="20" y="20"/>
+                        <rect width="20" height="20"
+                              x="40" y="20"/>
+                        <rect width="20" height="20"
+                              x="60" y="20"/>
+                        <rect width="20" height="20"
+                              x="80" y="20"/>
+
+                        <rect width="20" height="20"
+                              y="40"/>
+                        <rect width="20" height="20"
+                              x="20" y="40"/>
+                        <rect width="20" height="20"
+                              x="40" y="40"/>
+                        <rect width="20" height="20"
+                              x="60" y="40"/>
+                        <rect width="20" height="20"
+                              x="80" y="40"/>
+                    </g>
+
+                  </pattern>
+            </defs>
+
+            <text x="50%" y="50%" dy=".25em" text-anchor="middle"
+                class="text--fill"
+                fill="url(#p-anim-cells)"
+                >текст</text>
+        </svg>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide bg--dark"><div>
+        <svg viewBox="0 0 1024 620" class="demo demo--text">
+            <defs>
+                <pattern
+                   id="p-anim-spots"
+                   width="120" height="120"
+                   viewBox="0 0 120 120"
+                   patternUnits="userSpaceOnUse">
+
+                   <rect width="100%" height="100%"/>
+
+                    <g class="g-anim-spots">
+                        <circle r="5"
+                                cx="15" cy="15"/>
+                        <circle r="5"
+                                cx="45" cy="15"/>
+                        <circle r="5"
+                                cx="75" cy="15"/>
+                        <circle r="5"
+                                cx="105" cy="15"/>
+
+                        <circle r="5"
+                                cx="15" cy="45"/>
+                        <circle r="5"
+                                cx="45" cy="45"/>
+                        <circle r="5"
+                                cx="75" cy="45"/>
+                        <circle r="5"
+                                cx="105" cy="45"/>
+
+                        <circle r="5"
+                                cx="15" cy="75"/>
+                        <circle r="5"
+                                cx="45" cy="75"/>
+                        <circle r="5"
+                                cx="75" cy="75"/>
+                        <circle r="5"
+                                cx="105" cy="75"/>
+
+                        <circle r="5"
+                                cx="15" cy="105"/>
+                        <circle r="5"
+                                cx="45" cy="105"/>
+                        <circle r="5"
+                                cx="75" cy="105"/>
+                        <circle r="5"
+                                cx="105" cy="105"/>
+                    </g>
+
+                  </pattern>
+            </defs>
+
+            <text x="50%" y="50%" dy=".25em" text-anchor="middle"
+                class="text--fill text--fill-anim-spots"
+                fill="url(#p-anim-spots)"
+                >текст</text>
+        </svg>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide bg--dark"><div>
+        <svg viewBox="0 0 1024 620" class="demo demo--text">
+            <defs>
+                <pattern id="pt-water" viewBox="0 0 256 256" width="256" height="256" patternUnits="userSpaceOnUse">
+                    <image xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/parts/water.gif" width="256" height="256"></image>
+                </pattern>
+                <pattern id="pt-fire" viewBox="30 100 186 200" width="216" height="200" patternUnits="userSpaceOnUse" x="-30" y="-10">
+                    <image xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/parts/fire.gif" width="256" height="300"></image>
+                </pattern>
+            </defs>
+            <text x="50%" y="27%" dy=".25em" class="t--water t--anim" fill="url(#pt-water)" text-anchor="middle">Вода</text>
+            <text x="50%" y="80%" dy=".25em" class="t--fire t--anim" fill="url(#pt-fire)" text-anchor="middle">Огонь</text>
+      </svg>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+        <h2 class="free-fly">SVG-маски</h2>
+    </div></section>
+
+   <!-- Slide -->
+    <section class="slide"><div>
+<pre><code>&lt;mask id="mask-text"
+    maskunits="userSpaceOnUse"
+    maskcontentunits="userSpaceOnUse">
+        <span class="next">&lt;text x="50%" y="50%" dy=".2em" text-anchor="middle"
+            fill="#FFF">
+            текст
+        &lt;/text></span>
+&lt;/mask></code></pre>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide slide--imgfull bg--ps-cells"><div>
+        <div class="slide__content">
+            <svg viewBox="0 0 1015 590" class="demo demo--text demo--text-showmask demo--offset">
+                <symbol id="s-text">
+                    <text x="50%" y="50%" dy=".25em"
+                        text-anchor="middle">текст</text>
+                </symbol>
+
+                <rect fill="#000" width="100%" height="100%"/>
+                <use xlink:href="#s-text" fill="#FFF"/>
+            </svg>
+        </div>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+        <div
+            class="
+                live-editor
+                live-editor--elem
+                live-editor--mask
+                live-editor--mask-step1">
+          <div class="live-editor__content">
+            <textarea
+                class="
+                    live-editor__textfield
+                    live-editor__code
+                    live-editor__code--3-lines"
+                    data-dest="#mask-dest"
+                    ><g>
+    <rect fill="url(#pt-wood)" width="100%" height="100%"/>
+</g></textarea>
+        </div>
+        <div class="live-editor__view">
+            <svg viewBox="0 0 1024 320" class="demo demo--text">
+                <g id='mask-dest'>
+                    <g>
+    <rect fill="url(#pt-wood)" width="100%" height="100%"/>
+</g>
+                </g>
+            </svg>
+        </div>
+        </div>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+        <div
+            class="
+                live-editor
+                live-editor--elem
+                live-editor--mask
+                live-editor--mask-step2">
+          <div class="live-editor__content">
+            <textarea
+                class="
+                    live-editor__textfield
+                    live-editor__code
+                    live-editor__code--3-lines"
+                    data-dest="#mask-dest"
+                    ><g mask="url(#mask-text)">
+    <rect fill="url(#pt-wood)" width="100%" height="100%"/>
+</g></textarea>
+        </div>
+        <div class="live-editor__view">
+            <svg viewBox="0 0 1024 320" class="demo demo--text">
+                <mask id="mask-text"
+                    maskunits="userSpaceOnUse"
+                    maskcontentunits="userSpaceOnUse">
+                    <use xlink:href="#s-text" fill="#FFF"/>
+                </mask>
+                <g id='mask-dest'>
+                    <g mask="url(#mask-text)">
+    <rect fill="url(#pt-wood)" width="100%" height="100%"/>
+</g>
+                </g>
+            </svg>
+        </div>
+        </div>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+        <h2 class="free-fly">Копируемый текст</h2>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+<pre><code>.text {
+    fill: <mark>none</mark>;
+    }</code></pre>
+<h4>&nbsp;</h4>
+<pre class="next"><code>.text {
+    fill: <mark>transparent</mark>;
+    }</code></pre>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+<pre class="comment"><code>.text {
+    fill: none;
+    }</code></pre>
+<h4>Прозрачный текст, который можно выделить:</h4>
+<pre><code>.text {
+    fill: <mark>transparent</mark>;
+    }</code></pre>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+        <h2 class="free-fly">Анимация заливки</h2>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide slide--imgfull"><div>
+        <svg viewBox="0 0 1024 620" class="demo demo--dottes">
+          <symbol id="s-text-dottes">
+            <text text-anchor="middle"
+                  x="64%" y="35%"
+                  class="text--line"
+                  >
+              Dizzy
+            </text>
+            <text text-anchor="middle"
+                  x="50%" y="86.7%"
+                  class="text--line2"
+                  >
+              Dots
+            </text>
+
+          </symbol>
+
+          <mask id="mask-text-dottes"
+            maskunits="userSpaceOnUse"
+            maskcontentunits="userSpaceOnUse">
+                <use xlink:href="#s-text-dottes" fill="#FFF"/>
+          </mask>
+
+          <pattern
+                   id="p-dottes"
+                   width="50" height="50"
+                   viewBox="0 0 100 100"
+                   patternUnits="userSpaceOnUse"
+                   >
+            <rect
+                  width="100%" height="100%"
+                  fill="hsl(10,100%,55%)"></rect>
+            <g fill="#FFF">
+              <circle r="15" cx="20" cy="20"></circle>
+              <circle r="22" cx="70" cy="70"></circle>
+            </g>
+
+          </pattern>
+
+
+          <use xlink:href="#s-text-dottes"
+              class="text-copy--shadow"></use>
+
+          <use xlink:href="#s-text-dottes"
+              class="text-copy"></use>
+
+          <g mask="url(#mask-text-dottes)">
+            <circle r="540"
+                cx="512"
+                cy="320"
+              class="r-fill--color"
+            ></circle>
+            <circle r="520"
+                cx="512"
+                cy="320"
+                fill="url(#p-dottes)"
+              class="r-fill"
+            ></circle>
+          </g>
+        </svg>
+
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide bg--dark slide--imgfull"><div>
+        <svg viewBox="0 0 1024 640" class="demo demo--text demo--text-psycho">
+          <symbol id="s-circle">
+            <g fill="none" stroke-width="100"
+               stroke-dasharray="5.5 30" class="g-circles">
+              <circle r="50" cx="100" cy="100"
+              ></circle>
+              <circle r="50" cx="100" cy="100"
+              ></circle>
+              <circle r="50" cx="100" cy="100"
+              ></circle>
+              <circle r="50" cx="100" cy="100"
+              ></circle>
+              <circle r="50" cx="100" cy="100"
+              ></circle>
+              <circle r="50" cx="100" cy="100"
+              ></circle>
+              <circle r="50" cx="100" cy="100"
+              ></circle>
+            </g>
+          </symbol>
+
+          <symbol id="s-text-psycho">
+            <text text-anchor="middle"
+                  x="50%"
+                  y="52%"
+                  class="text-psycho--line"
+                  >
+              Good
+            </text>
+            <text text-anchor="middle"
+                  x="64%"
+                  y="80%"
+                  class="text-psycho--line2"
+                  >
+               trip
+            </text>
+          </symbol>
+
+          <mask id="mask-text-psycho"
+            maskunits="userSpaceOnUse"
+            maskcontentunits="userSpaceOnUse">
+                <use xlink:href="#s-text-psycho" fill="#FFF"/>
+          </mask>
+
+          <use xlink:href="#s-text-psycho" class="text-shadow"></use>
+
+          <g
+            mask="url(#mask-text-psycho)"
+            class="animated-circles">
+            <g transform="translate(137, 0)" class="animated-circles-inner">
+                <g transform="translate(-105, 105) scale(2.5)">
+                  <use xlink:href="#s-circle" class="u-circle"></use>
+                </g>
+                <g transform="translate(-10, 10) scale(1.5)">
+                  <use xlink:href="#s-circle" class="u-circle"></use>
+                </g>
+                <g transform="translate(80, 20) scale(1)">
+                  <use xlink:href="#s-circle" class="u-circle"></use>
+                </g>
+                <g transform="translate(220, 160) scale(1.2)">
+                  <use xlink:href="#s-circle" class="u-circle"></use>
+                </g>
+                <g transform="translate(470, 50) scale(1.9)">
+                  <use xlink:href="#s-circle" class="u-circle"></use>
+                </g>
+                <g transform="translate(470, 340) scale(1.5)">
+                  <use xlink:href="#s-circle" class="u-circle"></use>
+                </g>
+                <g transform="translate(255, -10) scale(1.2)">
+                  <use xlink:href="#s-circle" class="u-circle"></use>
+                </g>
+                <g transform="translate(400, 200) scale(.75)">
+                  <use xlink:href="#s-circle" class="u-circle"></use>
+                </g>
+                <g transform="translate(410, 140) scale(.8)">
+                  <use xlink:href="#s-circle" class="u-circle"></use>
+                </g>
+                <g transform="translate(275, 395) scale(1.15)">
+                  <use xlink:href="#s-circle" class="u-circle"></use>
+                </g>
+                <g transform="translate(415, 320) scale(.7)">
+                  <use xlink:href="#s-circle" class="u-circle"></use>
+                </g>
+                <g transform="translate(530, 320) scale(.3)">
+                  <use xlink:href="#s-circle" class="u-circle"></use>
+                </g>
+                <g transform="translate(320, 325) scale(.5)">
+                  <use xlink:href="#s-circle" class="u-circle"></use>
+                </g>
+                <g transform="translate(155, 90) scale(.4)">
+                  <use xlink:href="#s-circle" class="u-circle"></use>
+                </g>
+                <g transform="translate(315, 165) scale(.4)">
+                  <use xlink:href="#s-circle" class="u-circle"></use>
+                </g>
+                <g transform="translate(493, 170) scale(.35)">
+                  <use xlink:href="#s-circle" class="u-circle"></use>
+                </g>
+                <g></g>
+                <g transform="translate(630, 195) scale(.4)">
+                  <use xlink:href="#s-circle" class="u-circle"></use>
+                </g>
+                <g transform="translate(485, 510) scale(.6)">
+                  <use xlink:href="#s-circle" class="u-circle"></use>
+                </g>
+            </g>
+          </g>
+
+          <use xlink:href="#s-text-psycho" class="text-stroke"></use>
+          <use xlink:href="#s-text-psycho" class="text-stroke text-stroke-2"></use>
+          <use xlink:href="#s-text-psycho" class="text-stroke text-stroke-3"></use>
+        </svg>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+        <h2 class="free-fly">Проблемы текста в SVG</h2>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide slide--imgfull"><div>
+        <svg viewBox="0 0 1024 640" class="demo demo--longtext">
+            <text x="4%" y="50%" dy=".2em"
+            >текст, уехавший за край</text>
+        </svg>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+        <svg viewBox="0 0 1024 620" class="demo demo--longtext demo--longtext-multylines">
+            <defs>
+                <path d="M
+                0,100 1024,100
+                M0,250 1024,250
+                M0,400 1024,400
+                M0,550 1024,550" id="tp-multylines"/>
+            </defs>
+            <use xlink:href="#tp-multylines" stroke="orangered" stroke-width="10"/>
+            <text x="0" y="0%">
+                <textPath xlink:href="#tp-multylines">
+                    Однажды в студеную зимнюю пору я из лесу вышел, по-моему, зря.
+                </textPath>
+            </text>
+        </svg>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide slide--vlm"><div>
+        <div class="slide__content">
+            <div class="browsers--biglist">
+                <img src="./assets/img/browsers/chrome.png" alt="Chrome"/>
+                <img src="./assets/img/browsers/safari.png" alt="Safari"/>
+                <img src="./assets/img/browsers/opera.png" alt="Opera"/>
+                <img src="./assets/img/browsers/firefox.png" alt="Firefox"/>
+                <span data-bubble="9+"><img src="./assets/img/browsers/ie.png" alt="IE"/></span>
+            </div>
+        </div>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide bg--dark"><div>
+        <h2 class="free-fly">3. Режимы наложения</h2>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide slide--vlm bg--stripes"><div>
+        <div class="slide__content">
+            <img src="./assets/img/parts/bird-invert.gif" alt="Bird"/>
+        </div>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide slide--imgfull bg--stripes"><div>
+        <div class="slide__content">
+            <div class="demo--bbmode-list">
+                    <div class="item-bbmode"></div><!--
+                 --><div class="item-bbmode next"></div><!--
+                 --><div class="item-bbmode next"></div><!--
+                 --><div class="item-bbmode next"></div><!--
+                 --><div class="item-bbmode next"></div><!--
+                 --><div class="item-bbmode next"></div>
+            </div>
+        </div>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide slide--imgfull bg--stripes"><div>
+        <div class="slide__content">
+            <div class="demo--bbmode-pair">
+                <div class="item-bbmode item-bbmode--darken">
+                </div><!--
+                 --><div class="item-bbmode item-bbmode--lighten">
+                </div>
+                <div class="item-bbmode-title">darken</div>
+                <div class="item-bbmode-title">lighten</div>
+            </div>
+        </div>
+    </div></section>
+
+
+    <!-- Slide -->
+    <section class="slide bg--flowers"><div>
+        <div class="slide__content">
+            <div
+                class="
+                    demo
+                    demo--text
+                    demo--offset
+                    demo--offset-small
+                    demo--bbmode-text
+                    demo--bbmode-text-step0">
+                <div class="text">текст</div>
+            </div>
+        </div>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide bg--flowers"><div>
+        <div
+            class="slide__content live-editor live-editor--attr">
+            <div class="live-editor__content">
+                <textarea class="live-editor__code">mix-blend-mode: lighten</textarea>
+            </div>
+            <div class="demo
+                        demo--text
+                        demo--offset
+                        demo--offset-small
+                        demo--bbmode-text
+                        demo--bbmode-text-step1
+                        live-editor__view
+                        live-editor__dest"
+                 data-attr="style">
+                <div class="text">текст</div>
+            </div>
+        </div>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+        <h2 class="free-fly">Анимация заливки</h2>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide bg--dark"><div>
+        <div class="demo--dancing-shadows">
+          <h1 class="demo--dancing-shadows__title">
+            <span class="text-wrapper">
+              <span class="text-items">
+                <span class="text-item text-item--1">Aurora</span>
+                <span class="text-item text-item--2">Borealis</span>
+                <span class="text-item text-item--3">Text</span>
+              </span>
+             </span>
+          </h1>
+        </div>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide slide--vlm"><div>
+        <div class="slide__content">
+            <div class="browsers--biglist">
+                <span data-bubble="41+"><img src="./assets/img/browsers/chrome.png" alt="Chrome"/></span>
+                <img src="./assets/img/browsers/safari.png" alt="Safari"/>
+                <span data-bubble="29+"><img src="./assets/img/browsers/opera.png" alt="Opera"/></span>
+                <img src="./assets/img/browsers/firefox.png" alt="Firefox"/>
+                <img src="./assets/img/browsers/ie.png" class="no-support" alt="IE"/>
+            </div>
+        </div>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide bg--dark"><div>
+        <h2 class="free-fly">4. SVG + HTML</h2>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+        <h2 class="free-fly">SVG-маска</h2>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide slide--imgfull bg--ps-cells"><div>
+        <svg viewBox="0 0 1015 590" class="demo demo--inverted-mask demo--inverted-mask demo--offset demo--text">
+            <rect width="100%" height="100%" fill="#FFF"/>
+            <text x="50%" y="50%" dy=".25em"
+                text-anchor="middle">текст</text>
+        </svg>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide slide--imgfull bg--ps-cells"><div>
+        <div class="">
+            <svg viewBox="0 0 1015 590" class="demo demo--inverted-mask demo--offset demo--text">
+                <symbol id="s-text--invmask">
+                    <text x="50%" y="50%" dy=".25em"
+                        text-anchor="middle">текст</text>
+                </symbol>
+
+                <mask id="mask-text-revert"
+                maskunits="userSpaceOnUse"
+                maskcontentunits="userSpaceOnUse">
+                    <rect width="100%" height="100%" fill="#FFF"/>
+                    <use xlink:href="#s-text--invmask"/>
+                </mask>
+
+                <rect mask="url(#mask-text-revert)"
+                    width="100%" height="100%"
+                    fill="url(#gr-red)"/>
+                <use xlink:href="#s-text--invmask" class="u-text--transp"/>
+
+            </svg>
+        </div>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide slide--imgfull bg--flowers"><div>
+        <div class="">
+            <svg
+                viewBox="0 0 1015 590"
+                class="demo demo--inverted-mask demo--offset demo--text">
+                <rect mask="url(#mask-text-revert)"
+                    width="100%"
+                    height="100%"
+                    fill="#FFF"/>
+                <use xlink:href="#s-text--invmask" class="u-text--transp"/>
+
+            </svg>
+        </div>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+        <h2 class="free-fly">Анимация заливки</h2>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide slide--imgfull"><div>
+        <div class="demo-border">
+            <div class="demo--round-shadows"></div>
+            <svg viewBox="0 0 1024 640" class="demo demo--inverted-mask demo--text">
+                <symbol id="s-text--invmask2">
+                    <text x="50%" y="50%" dy=".25em"
+                        text-anchor="middle">текст</text>
+                </symbol>
+
+                <mask id="mask-text-revert2"
+                maskunits="userSpaceOnUse"
+                maskcontentunits="userSpaceOnUse">
+                    <rect width="100%" height="100%" fill="#FFF"/>
+                    <use xlink:href="#s-text--invmask2"/>
+                </mask>
+
+                <rect mask="url(#mask-text-revert2)"
+                    width="100%" height="100%"
+                    fill="#000"/>
+
+            </svg>
+        </div>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide slide--imgfull"><div>
+        <div class="demo-border">
+            <div class="text-fill-video">
+                <video class="video" autoplay loop
+                       preload="none"
+                       src="./assets/video/leaves.mp4?12">
+                </video>
+              </div>
+            <svg viewBox="0 0 1024 640" class="demo demo--inverted-mask demo--text">
+                <symbol id="s-text--invmask-multytext">
+                    <text x="50%" y="50%" dy=".4em"
+                        text-anchor="middle"
+                        class="text--invmask-multytext">АБВ</text>
+                </symbol>
+
+                <mask id="mask-text-revert-2"
+                maskunits="userSpaceOnUse"
+                maskcontentunits="userSpaceOnUse">
+                    <rect width="100%" height="100%" fill="#FFF"/>
+                    <use xlink:href="#s-text--invmask-multytext"/>
+                </mask>
+
+                <use xlink:href="#s-text--invmask-multytext" class="u-text--stroke"/>
+                <rect mask="url(#mask-text-revert-2)"
+                    width="100%" height="100%"
+                    fill="#000"/>
+
+                <use xlink:href="#s-text--invmask-multytext" class="u-text--transp"/>
+
+            </svg>
+        </div>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide slide--imgfull bg--ps-cells"><div>
+        <div class="demo-border">
+            <div class="text-fill-video">
+                <video class="video" autoplay loop
+                       preload="none"
+                       src="./assets/video/leaves.mp4?123">
+                </video>
+              </div>
+            <svg viewBox="0 0 1024 640" class="demo demo--inverted-mask demo--text">
+                <use xlink:href="#s-text--invmask-multytext" class="u-text--stroke"/>
+                <rect mask="url(#mask-text-revert-2)"
+                    width="100%" height="100%"
+                    fill="url(#pt-wood)"/>
+
+                <use xlink:href="#s-text--invmask-multytext" class="u-text--transp"/>
+
+            </svg>
+        </div>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide slide--imgfull bg--ps-cells"><div>
+        <div class="demo-border">
+            <div class="text-fill-video">
+                <video class="video" autoplay loop
+                       preload="none"
+                       src="./assets/video/leaves.mp4?1234">
+                </video>
+              </div>
+            <svg viewBox="0 0 1024 640" class="demo demo--inverted-mask demo--text">
+
+                <radialGradient id="gr-light"
+                    gradientUnits="objectBoundingBox"
+                    cx="50%" cy="50%" r="60%">
+                    <stop stop-color="hsl(30, 100%, 50%)" offset="40%"/>
+                    <stop stop-color="transparent" offset="100%"/>
+                </radialGradient>
+
+                  <pattern
+                      id="p-light-circles"
+                      viewBox="0 0 50 100"
+                      patternUnits="userSpaceOnUse"
+                      width="100" height="200">
+
+                    <rect width="100%" height="100%"/>
+
+                    <g
+                       fill="url(#gr-light)"
+                       stroke="hsla(30, 100%, 50%, .2)"
+                       stroke-width="2"
+                       >
+                      <g>
+                        <circle r="7"
+                            cx="10" cy="9"
+                            class="light-circle"/>
+                      <circle r="5"
+                            cx="10" cy="33"
+                            class="light-circle"/>
+                      <circle r="3"
+                              cx="10" cy="55"
+                              class="light-circle"/>
+                      <circle r="1.5"
+                              cx="10" cy="73"
+                              class="light-circle"/>
+                      <circle r="1.3"
+                              cx="10" cy="90"
+                              class="light-circle"/>
+                      </g>
+
+                      <g class="group-2"
+                         transform="translate(25,50)">
+                        <circle r="7"
+                            cx="10" cy="9"
+                            class="light-circle"/>
+                      <circle r="5"
+                            cx="10" cy="33"
+                            class="light-circle"/>
+                      <circle r="3"
+                              cx="10" cy="55"
+                              class="light-circle"/>
+                      <circle r="1.5"
+                              cx="10" cy="73"
+                              class="light-circle"/>
+                      <circle r="1.3"
+                              cx="10" cy="90"
+                              class="light-circle"/>
+                      </g>
+                      <g class="group-3"
+                         transform="translate(25,-50)">
+                        <circle r="7"
+                            cx="10" cy="9"
+                            class="light-circle"/>
+                      <circle r="5"
+                            cx="10" cy="33"
+                            class="light-circle"/>
+                      <circle r="3"
+                              cx="10" cy="55"
+                              class="light-circle"/>
+                      <circle r="1.5"
+                              cx="10" cy="73"
+                              class="light-circle"/>
+                      <circle r="1.3"
+                              cx="10" cy="90"
+                              class="light-circle"/>
+                      </g>
+                    </g>
+                  </pattern>
+
+                <use xlink:href="#s-text--invmask-multytext" class="u-text--stroke"/>
+                <rect mask="url(#mask-text-revert-2)"
+                    width="100%" height="100%"
+                    fill="url(#p-light-circles)"/>
+
+                <use xlink:href="#s-text--invmask-multytext" class="u-text--transp"/>
+
+            </svg>
+        </div>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide slide--vlm"><div>
+        <div class="slide__content">
+            <div class="browsers--biglist">
+                <img src="./assets/img/browsers/chrome.png" alt="Chrome"/>
+                <img src="./assets/img/browsers/safari.png" alt="Safari"/>
+                <img src="./assets/img/browsers/opera.png" alt="Opera"/>
+                <img src="./assets/img/browsers/firefox.png" alt="Firefox"/>
+                <span data-bubble="9+"><img src="./assets/img/browsers/ie.png" alt="IE"/></span>
+            </div>
+        </div>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide bg--dark"><div>
+        <h2 class="free-fly">А смысл?</h2>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+        <svg viewBox="0 0 1024 620" class="demo demo--logo">
+            <text x="50%" y="50%" dy=".25em" text-anchor="middle"
+                class="text--fill text--fill-pattern"
+                fill="url(#pt-tulips)">
+                Лето!
+            </text>
+        </svg>
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide bg--red-grad"><div>
+        <svg viewBox="0 0 1024 620" class="demo demo--logo">
+
+            <mask id="mask-logo-appear-up"
+                    maskunits="userSpaceOnUse"
+                    maskcontentunits="userSpaceOnUse">
+                    <rect width="100%" height=".1"
+                    y="70%" fill="green" class="mask-logo-appear-rect"/>
+            </mask>
+
+            <g mask="url(#mask-logo-appear-up)">
+                <use xlink:href="#s-text"/>
+            </g>
+            <use xlink:href="#s-text" class="stroke-appear-anim"/>
+        </svg>
+
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide bg--dark"><div>
+        <svg viewBox="0 0 1024 620" class="demo demo--logo">
+
+            <mask id="mask-logo-bw"
+                    maskunits="userSpaceOnUse"
+                    maskcontentunits="userSpaceOnUse">
+                    <use xlink:href="#s-text" fill="white"/>
+            </mask>
+
+            <radialGradient id="gr-aurora-1" class="gr-aurora-1"
+                  gradientUnits = "objectBoundingBox"
+                  cx="50%" cy="50%" r="50%">
+                  <stop offset="0" class="aurora-stop-color-1"/>
+                  <stop offset="90%" class="aurora-stop-color-2"/>
+              </radialGradient>
+
+            <radialGradient id="gr-aurora-2" class="gr-aurora-2"
+                  gradientUnits = "objectBoundingBox"
+                  cx="50%" cy="50%" r="50%">
+                  <stop offset="0" class="aurora-stop-color-1"/>
+                  <stop offset="90%" class="aurora-stop-color-2"/>
+            </radialGradient>
+
+            <radialGradient id="gr-aurora-3" class="gr-aurora-3"
+                  gradientUnits = "objectBoundingBox"
+                  cx="50%" cy="50%" r="50%">
+                  <stop offset="0" class="aurora-stop-color-1"/>
+                  <stop offset="90%" class="aurora-stop-color-2"/>
+            </radialGradient>
+
+            <radialGradient id="gr-aurora-4" class="gr-aurora-4"
+                  gradientUnits = "objectBoundingBox"
+                  cx="50%" cy="50%" r="50%">
+                  <stop offset="0" class="aurora-stop-color-1"/>
+                  <stop offset="90%" class="aurora-stop-color-2"/>
+            </radialGradient>
+
+            <radialGradient id="gr-aurora-5" class="gr-aurora-5"
+                  gradientUnits = "objectBoundingBox"
+                  cx="50%" cy="50%" r="50%">
+                  <stop offset="0" class="aurora-stop-color-1"/>
+                  <stop offset="90%" class="aurora-stop-color-2"/>
+            </radialGradient>
+
+            <g mask="url(#mask-logo-bw)">
+
+                <rect width="500" height="500"
+                    fill="url(#gr-aurora-1)"
+                    x="-100" y="50"/>
+
+                <rect width="500" height="500"
+                    fill="url(#gr-aurora-2)"
+                    x="-100" y="50"/>
+
+                <rect width="500" height="500"
+                    fill="url(#gr-aurora-3)"
+                    x="-200" y="100"/>
+
+                <rect width="500" height="500"
+                    fill="url(#gr-aurora-4)"
+                    x="80" y="50"/>
+
+                <rect width="500" height="500"
+                    fill="url(#gr-aurora-5)"
+                    x="300" y="50"/>
+
+                <rect width="500" height="500"
+                    fill="url(#gr-aurora-4)"
+                    x="500" y="50"/>
+
+                <rect width="500" height="500"
+                    fill="url(#gr-aurora-3)"
+                    x="600" y="50"/>
+
+                <rect width="500" height="500"
+                    fill="url(#gr-aurora-2)"
+                    x="720" y="50"/>
+
+                <rect width="500" height="500"
+                    fill="url(#gr-aurora-1)"
+                    x="550" y="100"/>
+
+                <rect width="500" height="500"
+                    fill="url(#gr-aurora-2)"
+                    x="400" y="100"/>
+
+                <rect width="500" height="500"
+                    fill="url(#gr-aurora-3)"
+                    x="300" y="100"/>
+
+                <rect width="500" height="500"
+                    fill="url(#gr-aurora-4)"
+                    x="250" y="100"/>
+
+                <rect width="500" height="500"
+                    fill="url(#gr-aurora-5)"
+                    x="100" y="100"/>
+            </g>
+
+        </svg>
+
+    </div></section>
+
+    <!-- Slide -->
+    <section class="slide"><div>
+        <svg
+            viewBox="0 0 1024 620"
+            class="
+                demo
+                demo--text
+                demo--text-afterword
+                ">
+            <text x="50%" y="50%" dy=".25em" text-anchor="middle"
+                class="text--stroke text--stroke-appear
+                text--afterword">/* End */</text>
+        </svg>
+    </div></section>
+
+    <section class="slide"><div>
+        <h4>Спецификации</h4>
+            <ul>
+                <li><a href="http://www.w3.org/TR/SVG/">Scalable Vector Graphics</a></li>
+                <li><a href="http://www.w3.org/TR/compositing-1/">Blending Modes</a></li>
+                <li><a href="http://www.w3.org/TR/css-text-decor-3/#text-shadow-property">text-shadow</a></li>
+                <li><a href="https://www.webkit.org/blog/164/background-clip-text/">-webkit-background-clip: text</a></li>
+                <a href="http://developer.apple.com/library/safari/documentation/appleapplications/reference/SafariCSSRef/Articles/StandardCSSProperties.html#//apple_ref/doc/uid/TP30001266-_webkit_text_stroke">-webkit-text-stroke</a>
+
+            </ul>
+    </div></section>
+
+    <section class="slide"><div>
+        <h4>SVG</h4>
+
+        <ul>
+            <li><a href="https://docs.webplatform.org/wiki/svg/tutorials">SVG tutorials</a></li>
+
+            <li><a href="http://yoksel.github.io/about-svg/">Позвольте представить: SVG</a> (презентация)</li>
+
+            <li><a href="http://www.sitepoint.com/getting-started-svg-gradients/">Getting Started with SVG Gradients</a></li>
+
+            <li><a href="http://css-tricks.com/guide-svg-animations-smil/">A Guide to SVG Animations (SMIL)</a></li>
+
+        </ul>
+
+    </div></section>
+
+    <section class="slide"><div>
+        <h4>Режимы наложения</h4>
+            <ul>
+
+                <li><a href="https://dev.opera.com/articles/getting-to-know-css-blend-modes/">Getting to Know CSS Blend Modes</a></li>
+
+                <li><a href="http://css.yoksel.ru/background-blend-mode/">Background-blend-mode</a> (рус.)</li>
+
+
+                <li><a href="http://yoksel.github.io/blend-modes-06dec2014/">Режимы наложения в CSS</a> (презентация)</li>
+
+            </ul>
+    </div></section>
+
+    <section class="slide"><div>
+        <h4>Эффекты для текста</h4>
+            <ul>
+
+                <li><a href="http://tympanus.net/codrops/2013/12/02/techniques-for-creating-textured-text/">Techniques for creating textured text</a></li>
+
+                <li><a href="http://tympanus.net/codrops/2015/05/13/inspiration-for-text-styles-and-hover-effects/">Inspiration for Text Styles and Hover Effects</a></li>
+
+                <li><a href="http://tympanus.net/codrops/2013/08/06/creative-link-effects/">Creative Link Effects</a></li>
+
+
+                <li><a href="https://css-tricks.com/fun-line-height/">Fun with line-height!</a></li>
+
+            </ul>
+    </div></section>
+
+    <section class="slide slide--about about"><div>
+            <img src="./assets/img/me.jpeg" class="photo"/>
+            <div class="about__text">
+                <h3>Бухвалова Юлия<span class="about__company">Livejournal</span></h3>
+
+                <ul>
+                    <li><a href="http://css.yoksel.ru/">css.yoksel.ru</a></li>
+                    <li><a href="https://twitter.com/yoksel">@yoksel</a></li>
+                    <li><a href="http://codepen.io/yoksel">codepen.io/yoksel</a></li>
+                </ul>
+
+                <p>
+                    Слайды: <a href="http://yoksel.github.io/text-may2015/">yoksel.github.io/text-may2015</a>
+                </p>
+
+                <p>
+                    Анимация заставки: <a href="http://snapsvg.io/">Snap.svg</a>
+                </p>
+            </div>
+    </div></section>
+
+    <p class="badge">
+        <a href="https://github.com/shower/shower">Powered by Shower</a>
+    </p>
+
+    <div class="progress"><div></div></div>
+
+    <script src="shower/shower.min.js"></script>
+    <script src="./assets/js/jquery-2.1.0.min.js"></script>
+    <script src="assets/js/snap.svg-min.js"></script>
+    <script src="./assets/js/live-edit.js"></script>
+    <script src="assets/js/intro.js"></script>
+    <script src="//localhost:35731/livereload.js"></script>
+    <!-- Copyright © 2015 yoksel. -->
+</body>
+</html>

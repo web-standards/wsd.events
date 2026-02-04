@@ -1,0 +1,19 @@
+{
+  "name": "offline.js-demo",
+  "version": "0.0.0",
+  "homepage": "https://github.com/SilentImp/offline.js-demo",
+  "authors": [
+    "Anton Nemtsev <thesilentimp@gmail.com>"
+  ],
+  "description": "simple demo",
+  "main": "index.html",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

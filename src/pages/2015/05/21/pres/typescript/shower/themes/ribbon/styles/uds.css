@@ -1,0 +1,104 @@
+/* User Definitions Styles */
+
+._cover header {
+	margin-left:30px;
+}
+
+._cover h2 {
+	margin:0;
+	color:#fff;
+	text-shadow:
+		0 0 5px #fff,
+		0 0 15px #ff1f06,
+		0 0 30px #ff1f06;
+	font-size:70px;
+}
+
+._cover p {
+	color:#fff;
+	text-shadow:
+		0 0 5px #fff,
+		0 0 15px #ff1f06,
+		0 0 30px #ff1f06;
+	font-size:35px;
+}
+
+._cover_g h2,
+#jedi h2 {
+	text-shadow:
+		0 0 5px #fff,
+		0 0 15px #99ff42,
+		0 0 30px #99ff42;
+}
+
+._cover_g p,
+#jedi p {
+	text-shadow:
+		0 0 5px #fff,
+		0 0 15px #99ff42,
+		0 0 30px #99ff42;
+}
+
+#jedi img {
+	height: 100%;
+}
+
+#myth h2 {
+	margin: 50% 0 0 20%;
+}
+
+#opensource img {
+	width: 40%;
+	float: right;
+	margin: 5% 0 0 0;
+}
+
+#realuse h2 {
+	text-shadow:
+		0 0 5px #fff,
+		0 0 15px #1f4dff,
+		0 0 30px #1f4dff;
+}
+#realuse p {
+	text-shadow:
+		0 0 5px #fff,
+		0 0 15px #1f4dff,
+		0 0 30px #1f4dff;
+}
+
+#realuse img {
+	margin-left: 15%;
+}
+
+.notyet {
+	text-decoration: line-through;
+}
+
+.ta-c {
+	text-align: center;
+}
+
+pre.hl {
+	padding: 1%;
+	margin: -1%;
+	font-size: 90%;
+}
+
+pre.memo {
+	font-size: 60%;
+}
+
+pre.hl.compact {
+	line-height: 1.5;
+	overflow: hidden;
+	font-size: 80%;
+}
+
+pre.bigMemo {
+	font-size: 40%;
+	line-height: 1.5;
+}
+
+.slide div.memo {
+	margin-top: -4%;
+}

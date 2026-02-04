@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Animations</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+<div class="b-wrapper">
+    <div class="b-col">
+        <div class="b-head">CSS transform animation (keyframes)</div>
+        <div class="b-icon b-icon_browser_yabro js-icon"></div>
+        <code class="b-code">
+            (CSS)<br>
+            @keyframes rotate<br>
+            {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;from { transform: rotate(0deg) }<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;to { transform: rotate(360deg) }<br>
+            }
+        </code>
+    </div>
+    <div class="b-col">
+        <div class="b-head">JS animation (GSAP)</div>
+        <div class="b-icon b-icon_browser_chrome js-icon js-chrome"></div>
+        <code class="b-code">
+            (JS)<br>
+            var logo = document.querySelector('.js-chrome');<br>
+            TweenMax.to(logo, 2, { rotation: 360, repeat: -1, ease: Linear.easeNone });<br>
+        </code>
+    </div>
+    <div class="b-btn js-btn">JS Bomb!</div>
+    <div class="b-col">
+        <div class="b-head">Web animation API</div>
+        <div class="b-icon b-icon_browser_yabro2 js-icon js-yabro2"></div>
+        <code class="b-code">
+            (JS)<br>
+            var logo = document.querySelector('.js-yabro2'),<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;animation = logo.animate([<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ transform: 'rotate(0)' },<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ transform: 'rotate(360deg)' }<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;], {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;duration: 2000,<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iterations: Infinity<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;});<br>
+        </code>
+    </div>
+    <div class="b-col">
+        <div class="b-head">CSS left animation (keyframes)</div>
+        <div class="b-icon b-icon_browser_ff js-icon"></div>
+        <code class="b-code" style="margin-top:220px">
+            (CSS)<br>
+            @keyframes move<br>
+            {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;0% { left: 50% }<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;30% { left: 70% }<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;70% { left: 30% }<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;100% { left: 50% }<br>
+            }
+        </code>
+    </div>
+</div>
+
+<script src="../vendors/jquery.min.js"></script>
+<script src="../vendors/TweenMax.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Пишем клиент без JavaScript</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link rel="stylesheet" href="styles/screen-d90984e344.css">	
+</head>
+<style type="text/css">
+	.pad {
+		padding-left: 50px;
+	}
+</style>
+
+<body class="list">
+	<header class="caption">
+		<h1>Пишем клиент без JavaScript</h1>
+		<p>Dashukevich Vladimir</p>
+	</header>
+	<section class="slide cover" id="face"><div>
+		<div style="color: #fff; font-size: 1.5em;">
+			<div>{</div>
+			<div class="pad">Тема: <mark>Пишем клиент без JavaScript</mark>,</div>
+			<div class="pad">Докладчик: <mark>Дашукевич Владимир</mark>,</div>
+			<div class="pad">Компания: <mark>XBSoftware</mark>,</div>
+			<div class="pad">Сообщество: <mark>4frontby</mark></div>
+			<div>}</div>
+		</div>
+		<img src="pictures/1.svg" style="width: 200px;" alt="" class="place t r">
+	</section>
+
+	<section class="slide cover w"><div>
+		<div>
+			<img src="pictures/2.svg">
+		</div>
+	</section>
+
+	<section class="slide cover w"><div>
+		<div>
+			<img src="pictures/4front.png">
+		</div>
+	</section>
+
+	<section class="slide cover h"><div>
+		<div>
+			<img src="pictures/2.png">
+		</div>
+	</section>
+
+	<section class="slide cover h"><div>
+		<div>
+			<img src="pictures/2.jpg">
+		</div>
+	</section>
+
+	<section class="slide shout"><div>
+		<h2>JavaScript плох</h2>
+	</section>
+
+	<section class="slide cover h"><div>
+		<div>
+			<img src="pictures/5.jpg">
+		</div>
+	</section>
+
+	<section class="slide cover h"><div>
+		<div>
+			<img src="pictures/1.jpg">
+		</div>
+	</section>
+
+	<section class="slide shout"><div>
+		<h2>Май 1995</h2>
+	</section>
+
+	<section class="slide cover h"><div>
+		<div>
+			<img src="pictures/1.png">
+		</div>
+	</section>
+
+	<section class="slide cover w"><div>
+		<div>
+			<img src="pictures/13.jpg">
+		</div>
+	</section>
+
+	<section class="slide cover w"><div>
+		<div>
+			<img src="pictures/3.png">
+		</div>
+	</section>
+
+	<section class="slide cover h"><div>
+		<div>
+			<img src="pictures/14.jpg">
+		</div>
+	</section>
+
+	<section class="slide shout"><div>
+		<h2>JavaScript</h2>
+	</section>
+
+	<section class="slide">
+		<div>
+			<h2>Чем же JavaScript плох</h2>
+			<ol>
+				<li class="next">Слишком гибкий</li>
+				<li class="next">JavaScript не Java, C, C++</li>
+				<li class="next">Медленный</li>
+			</ol>
+		</div>
+	</section>
+
+	<section class="slide shout"><div>
+		<h2>Слишком гибкий</h2>
+	</section>
+
+	<section class="slide shout"><div>
+		<h2>Как вы создаете объекты?</h2>
+	</section>
+
+	<section class="slide"><div>
+		<div>
+			<pre>
+				<code>function Person(name, age, job){</code>
+				<code>    this.name = name;</code>
+				<code>    this.age = age;</code>
+				<code>    this.print = function(){</code>
+				<code>    	  return name + " " + age;</code>
+				<code>	  };</code>
+				<code>};</code>
+				<code>var i = new Person("vlad", 26, "programmer")</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide"><div>
+		<div>
+			<pre>
+				<code>function createPerson(name, age, job){</code>
+				<code>	  var o = new Object();</code>
+				<code>    o.name = name;</code>
+				<code>    o.age = age;</code>
+				<code>    o.print = function(){</code>
+				<code>    	  return name + " " + age;</code>
+				<code>	  };</code>
+				<code>};</code>
+				<code>var i = createPerson("vlad", 26, "programmer")</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide"><div>
+		<div>
+			<pre>
+				<code>function Person(){};</code>
+				<code>Person.prototype = {</code>
+				<code>    name: "Vlad",</code>
+				<code>    age: 26,</code>
+				<code>    print: function(){</code>
+				<code>    	  return name + " " + age;</code>
+				<code>	  }</code>
+				<code>};</code>
+				<code>var i = new Person();</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide"><div>
+		<div>
+			<pre>
+				<code>function Person(){</code>
+				<code>    return {</code>
+				<code>    	  name: "Vlad",</code>
+				<code>    	  age: 26,</code>
+				<code>    	  print: function(){</code>
+				<code>    	  	  return name + " " + age;</code>
+				<code>	  	  }</code>
+				<code>	  };</code>
+				<code>};</code>
+				<code>var i = Person();</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide shout"><div>
+		<h2>Как вы наследуете классы в JS?</h2>
+	</section>
+
+	<section class="slide"><div>
+		<div>
+			<pre>
+				<code>function extend(o){</code>
+				<code>    function f(){}</code>
+				<code>    f.prototype = o;</code>
+				<code>    return new f();</code>
+				<code>};</code>
+				<code>var person = new Person();</code>
+				<code>var anotherPerson = extend(person);</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide"><div>
+		<div>
+			<pre>
+				<code>function extendClass(Child, Parent){</code>
+				<code>	var f = function () { };</code>
+    			<code>	f.prototype = Parent.prototype;</code>
+    			<code>	var f = new F();</code>
+   				<code>&nbsp;</code>
+    			<code>	for (var prop in Child.prototype)</code>
+    			<code>		f[prop] = Child.prototype[prop];</code>
+    			<code>	Child.prototype = f;</code>
+    			<code>	Child.prototype.super = Parent.prototype;</code>
+				<code>};</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide"><div>
+		<div>
+			<pre>
+				<code>var person = new Person();</code>
+				<code>var anotherPerson = Object.create(person, {</code>
+				<code>	name: {</code>
+				<code>		value: "Vladimir"</code>
+				<code>	}</code>
+				<code>});</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide shout"><div>
+		<h2>Композиция лучше наследования</h2>
+	</section>
+
+	<section class="slide cover w"><div>
+		<div>
+			<img src="pictures/7.jpg">
+		</div>
+	</section>
+
+	<section class="slide"><div>
+		<div>
+			<pre>
+				<code>var summary = data.map(convertArray)</code>
+				<code>		.filter(filterArray)</code>
+				<code>		.map(take("temperature"))</code>
+				<code>		.reduce(averageForArray, {})</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide cover w"><div>
+		<div>
+			<img src="pictures/6.jpg">
+		</div>
+	</section>
+
+	<section class="slide"><div>
+		<h2>Пример</h2>
+		<div>
+			<pre>
+				<code>function Person(name, age, job){</code>
+				<code>    this.name = name;</code>
+				<code>    this.age = age;</code>
+				<code>    this.job = job;</code>
+				<code>    this.print = function(){</code>
+				<code>    	  return name + " " + age + " " + job;</code>
+				<code>	  };</code>
+				<code>};</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide"><div>
+		<h2>Пример</h2>
+		<div>
+			<pre>
+				<code>var person = new Person("Vladimir", 26, "Empty");</code>
+				<code>//... code ...</code>
+				<code>person.type = "type1";</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide"><div>
+		<h2>Пример</h2>
+		<div>
+			<pre>
+				<code>var person = new Person("Vladimir", 26, "Empty");</code>
+				<code>//... code ...</code>
+				<code>person.type = "type1";</code>
+				<code>//... code ...</code>
+				<code>person.hair = "black";</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide cover w"><div>
+		<div>
+			<img src="pictures/15.jpg">
+		</div>
+	</section>
+
+	<section class="slide"><div>
+		<h2>Пример</h2>
+		<div>
+			<pre>
+				<code>var add = function(a, b){</code>
+				<code>    return a + b;</code>
+				<code>};</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide"><div>
+		<h2>Пример</h2>
+		<div>
+			<pre>
+				<code>var add = function(a, b){</code>
+				<code>    return a + b;</code>
+				<code>};</code>
+				<code><mark>var sum = add(3, 4);</mark></code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide"><div>
+		<h2>Пример</h2>
+		<div>
+			<pre>
+				<code>var add = function(a, b){</code>
+				<code>    return a + b;</code>
+				<code>};</code>
+				<code>var sum = add(3, 4);</code>
+				<code><mark>var concat = add("Hello ", "World");</mark></code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide cover h"><div>
+		<div>
+			<img src="pictures/9.jpg">
+		</div>
+	</section>
+
+	<section class="slide cover w"><div>
+		<div>
+			<img src="pictures/16.jpg">
+		</div>
+	</section>
+
+	<section class="slide cover h"><div>
+		<div>
+			<img src="pictures/17.jpg">
+		</div>
+	</section>
+
+	<section class="slide cover w"><div>
+		<div>
+			<img src="pictures/file.gif">
+		</div>
+	</section>
+
+	<section class="slide">
+		<div>
+			<h2>Решение</h2>
+			<ol>
+				<li class="next">ECMAScript 2015</li>
+				<li class="next">TypeScript</li>
+				<li class="next">CoffeeScript</li>
+				<li class="next">{{ слово из английского языка }}Script</li>
+				<li class="next">Dart</li>
+				<li class="next">Flow</li>
+			</ol>
+		</div>
+	</section>
+
+	<section class="slide shout"><div>
+		<h2><a href="http://www.ecma-international.org/ecma-262/6.0/">ECMAScript 2015</a></h2>
+	</section>
+
+	<section class="slide">
+		<div>
+			<h2>Почему ECMAScript 2015 (babel)?</h2>
+			<ol>
+				<li class="next">Будущее</li>
+				<li class="next">Классы и наследование</li>
+				<li class="next">Синтаксический сахар</li>
+			</ol>
+		</div>
+	</section>
+
+	<section class="slide"><div>
+		<h2>Классы</h2>
+		<div>
+			<pre>
+				<code><mark>class</mark> View {</code>
+			  	<code>	constructor(options) {</code>
+			  	<code>	  this.model = options.model;</code>
+    			<code>      this.template = options.template;</code>
+			  	<code>	}</code>
+			  	<code>	render() {</code>
+			  	<code>	  return _.template(this.template, this.model.toObject());</code>
+				<code>  }</code>
+				<code>}</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide"><div>
+		<h2>Наследование</h2>
+		<div>
+			<pre>
+				<code>class LogView <mark>extends</mark> View {</code>
+			  	<code>	render() {</code>
+			  	<code>	  var compiled = super.render();</code>
+    			<code>      console.log(compiled);</code>
+			  	<code>	}</code>
+				<code>}</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide"><div>
+		<h2>Другие ограничения</h2>
+		<div>
+			<pre>
+				<code>var person = {</code>
+			  	<code>	name: "vova"</code>
+			  	<code>};</code>
+    			<code>Object.<mark>seal</mark>(person);</code>
+    			<code>//Object.<mark>freeze</mark>(person);</code>
+			  	<code>person.age = 20;    // Error!</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide"><div>
+		<h2>Другие ограничения</h2>
+		<div>
+			<pre>
+				<code>var proxy = new <mark>Proxy</mark>({ name: "vova" }, {</code>
+			  	<code>	get: function(target, property) {</code>
+			  	<code>	  if (property in target) {</code>
+    			<code>	    return target[property];</code>
+			  	<code>	  } else {</code>
+				<code>	    throw new ReferenceError("Property does not exist.");</code>
+				<code>	  }</code>
+				<code>	}</code>
+				<code>});</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide shout"><div>
+		<h2><a href="http://coffeescript.org/">CoffeeScript</a></h2>
+	</section>
+
+	<section class="slide">
+		<div>
+			<h2>Почему CoffeeScript?</h2>
+			<ol>
+				<li class="next">Классы и наследование</li>
+				<li class="next">Ruby</li>
+				<li class="next">Читабельность</li>
+			</ol>
+		</div>
+	</section>
+
+	<section class="slide">
+		<div>
+			<h2>Операторы</h2>
+			<table>
+				<tr>
+					<th>CoffeeScript</th>
+					<th>JavaScript</th>
+				</tr>
+				<tr>
+					<td>is</td>
+					<td>===</td>
+				</tr>
+				<tr>
+					<td>isnt</td>
+					<td>!==</td>
+				</tr>
+				<tr>
+					<td>not</td>
+					<td>!</td>
+				</tr>
+				<tr>
+					<td>and</td>
+					<td>&&</td>
+				</tr>
+				<tr>
+					<td>or</td>
+					<td>||</td>
+				</tr>
+				<tr>
+					<td>true, yes, on</td>
+					<td>true</td>
+				</tr>
+				<tr>
+					<td>false, no, off</td>
+					<td>false</td>
+				</tr>
+			</table>
+		</div>
+	</section>
+
+	<section class="slide"><div>
+		<h2>Пример</h2>
+		<div>
+			<pre>
+				<code>launch() <mark>if</mark> ignition <mark>is</mark> on</code>
+			</pre>
+		</div>
+		<div>
+			<pre>
+				<code>if (ignition === true) {</code>
+			  	<code>	launch();</code>
+				<code>}</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide"><div>
+		<h2>Пример</h2>
+		<div>
+			<pre>
+				<code>linearSearch = (searchName) -> alert(name) </code>
+				<code>	<mark>for</mark> name <mark>in</mark> names <mark>when</mark> name <mark>is</mark> searchName</code></code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide shout"><div>
+		<h2><a href="http://www.dartlang.org/">Dart</a></h2>
+	</section>
+
+	<section class="slide">
+		<div>
+			<h2>Почему Dart?</h2>
+			<ol>
+				<li class="next">Типы, классы, интерфейсы</li>
+				<li class="next">Исправление ошибок на этапе написания кода (IDE)</li>
+				<li class="next">Рефакторинг</li>
+				<li class="next">Безопасность (XSS)</li>
+				<li class="next">Java</li>
+			</ol>
+		</div>
+	</section>
+
+	<section class="slide"><div>
+		<h2>Пример</h2>
+		<div>
+			<pre>
+				<code>class Point {</code>
+			  	<code>	num x;</code>
+			  	<code>    num y;</code>
+				<code>}</code>
+
+				<code>void main(List&lt;String&gt; arguments) {</code>
+			  	<code>	var point = new Point();</code>
+				<code>}</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide"><div>
+		<h2>Пример</h2>
+		<div>
+			<pre>
+				<code>abstract class Cache&lt;T&gt; {</code>
+			  	<code>	T getByKey(String key);</code>
+			  	<code>	setByKey(String key, T value);</code>
+				<code>}</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide shout"><div>
+		<h2><a href="http://www.typescriptlang.org/">TypeScript</a></h2>
+	</section>
+
+	<section class="slide">
+		<div>
+			<h2>Почему TypeScript?</h2>
+			<ol>
+				<li class="next">Полностью совместим с ECMAScript 2015</li>
+				<li class="next">Типы, классы, интерфейсы</li>
+				<li class="next">Исправление ошибок на этапе написания кода</li>
+				<li class="next">Поддержка существующих библиотек</li>
+				<li class="next">Рефакторинг</li>
+			</ol>
+		</div>
+	</section>
+
+	<section class="slide"><div>
+		<h2>Пример</h2>
+		<div>
+			<pre>
+				<code>interface Person {</code>
+			  	<code>	firstname: string;</code>
+			  	<code>	lastname: string;</code>
+				<code>}</code>
+
+				<code>function greeter(p : Person) {</code>
+			  	<code>	return "Hello, " + p.firstname + " " + p.lastname;</code>
+				<code>}</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide cover w"><div>
+		<div>
+			<img src="pictures/15.5.png">
+		</div>
+	</section>
+
+	<section class="slide cover w"><div>
+		<div>
+			<img src="pictures/16.png">
+		</div>
+	</section>
+
+	<section class="slide cover w"><div>
+		<div>
+			<img src="pictures/17.png">
+		</div>
+	</section>
+
+	<section class="slide shout"><div>
+		<h2><a href="http://definitelytyped.org/">DefinitelyTyped</a></h2>
+	</section>
+
+	<section class="slide cover h"><div>
+		<div>
+			<img src="pictures/20.png">
+		</div>
+	</section>
+
+	<section class="slide shout"><div>
+		<h2><a href="http://flowtype.org/">Flow</a></h2>
+	</section>
+
+	<section class="slide">
+		<div>
+			<h2>Почему Flow?</h2>
+			<ol>
+				<li class="next">Тот же TypeScript только от Facebook</li>
+				<li class="next">Типы, классы (но без интерфейсов)</li>
+				<li class="next">Исправление ошибок на этапе написания кода</li>
+				<li class="next">Совместим с ECMAScript 2015</li>
+			</ol>
+		</div>
+	</section>
+
+	<section class="slide cover w"><div>
+		<div>
+			<img src="pictures/18.png">
+		</div>
+	</section>
+
+	<section class="slide">
+		<div>
+			<h2>Итоги</h2>
+			<ol>
+				<li class="next">Разработчиков нужно ограничивать</li>
+				<li class="next">Можно выбрать вид ограничений</li>
+				<li class="next">Типизированные переменные уменьшают количество ошибок</li>
+				<li class="next">Typescript/Flow</li>
+			</ol>
+		</div>
+	</section>
+
+	<section class="slide shout"><div>
+		<h2>JavaScript не Java, C, C++</h2>
+	</section>
+
+	<section class="slide cover h"><div>
+		<div>
+			<img src="pictures/10.jpg">
+		</div>
+	</section>
+
+	<section class="slide cover w"><div>
+		<div>
+			<img src="pictures/22.png">
+		</div>
+	</section>
+
+	<section class="slide">
+		<div>
+			<h2>Почему Java, C, C++?</h2>
+			<ol>
+				<li class="next">Многое уже написано</li>
+				<li class="next">Не нужно обучение</li>
+				<li class="next">Java, C, C++ быстрее</li>
+			</ol>
+		</div>
+	</section>
+
+	<section class="slide shout"><div>
+		<h2>Как можно это сделать?</h2>
+	</section>
+
+	<section class="slide">
+		<div>
+			<h2>Писать нативные расширения?</h2>
+			<ol>
+				<li class="next">NPAPI</li>
+				<li class="next">ActiveX</li>
+				<li class="next">Java Applets</li>
+				<li class="next">Собрать собственный браузер</li>
+			</ol>
+		</div>
+	</section>
+
+	<section class="slide">
+		<div>
+			<h2>В чем подвох?</h2>
+			<ol>
+				<li class="next">Не безопасно</li>
+				<li class="next">Не портативно</li>
+				<li class="next">Очень старо</li>
+			</ol>
+		</div>
+	</section>
+
+	<section class="slide shout"><div>
+		<h2>Перевести C в JS</h2>
+	</section>
+
+	<section class="slide shout"><div>
+		<h2><a href="http://llvm.org/">Low Level Virtual Machine</a></h2>
+	</section>
+
+	<section class="slide">
+		<div>
+			<h2>LLVM состоит из:</h2>
+			<ol>
+				<li class="next">Frontend</li>
+				<li class="next">Optimiser (Intermediate Representation)</li>
+				<li class="next">Backend</li>
+			</ol>
+		</div>
+	</section>
+
+	<section class="slide cover w"><div>
+		<div>
+			<img src="pictures/23.png">
+		</div>
+	</section>
+
+	<section class="slide cover h"><div>
+		<div>
+			<img src="pictures/24.png">
+		</div>
+	</section>
+
+	<section class="slide">
+		<div>
+			<h2>Для перевода нам нужно</h2>
+			<ol>
+				<li class="next">Frontend для C</li>
+				<li class="next">Backend для JavaScript</li>
+				<li class="next">Готово!</li>
+			</ol>
+		</div>
+	</section>
+
+	<section class="slide shout"><div>
+		<h2><a href="http://bulletphysics.org/">Bullet</a></h2>
+	</section>
+
+	<section class="slide">
+		<div>
+			<h2>Где он используется?</h2>
+			<ol>
+				<li class="next">Grand Theft Auto IV</li>
+				<li class="next">Шерлок Холмс</li>
+				<li class="next">История игрушек 3</li>
+				<li class="next">3ds Max</li>
+				<li class="next">Maya 2012</li>
+			</ol>
+		</div>
+	</section>
+
+	<section class="slide cover w"><div>
+		<div>
+			<img src="pictures/11.jpg">
+		</div>
+	</section>
+	
+	<section class="slide shout"><div>
+		<h2><a href="https://github.com/kripken/ammo.js/">ammo.js</a></h2>
+	</section>
+
+	<section class="slide shout"><div>
+		<h2><a href="http://kripken.github.io/ammo.js/examples/new/ammo.html" target="_blank">Demo</a></h2>
+	</section>
+
+	<section class="slide">
+		<div>
+			<h2>Компиляция в Javacript</h2>
+			<ol>
+				<li class="next">2006: Google Web Toolkit (GWT), Java в JS</li>
+				<li class="next">2007: pyjamas, Python в JS</li>
+				<li class="next">2008: Bridge.NET, C# в JS</li>
+				<li class="next">2010: opal, Ruby в JS</li>
+			</ol>
+		</div>
+	</section>
+
+	<section class="slide shout"><div>
+		<h2><a href="https://github.com/jashkenas/coffeescript/wiki/list-of-languages-that-compile-to-js">Компиляторы в JS</a></h2>
+	</section>
+
+	<section class="slide shout"><div>
+		<h2><a href="http://leaningtech.com/cheerp/" target="_blank">Cheerp</a></h2>
+	</section>
+
+		<section class="slide"><div>
+		<h2>Пример</h2>
+		<div>
+			<pre>
+				<code>HTMLElement* body=document.get_body();</code>
+			  	<code>HTMLElement* newElement=document.createElement("h1");</code>
+			  	<code>newElement->set_textContent("Hello World");</code>
+				<code>body->appendChild(newElement);</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide">
+		<div>
+			<h2>Итоги</h2>
+			<ol>
+				<li class="next">Стоит забыть о ActiveX, NPAPI ...</li>
+				<li class="next">Писать можно на чем угодно</li>
+			</ol>
+		</div>
+	</section>
+
+	<section class="slide shout"><div>
+		<h2>Медленный</h2>
+	</section>
+
+	<section class="slide cover w"><div>
+		<div>
+			<img src="pictures/12.jpg">
+		</div>
+	</section>
+
+	<section class="slide">
+		<div>
+			<h2>JavaScript быстрый для:</h2>
+			<ol>
+				<li class="next">Построения UI</li>
+				<li class="next">Простейших анимаций</li>
+				<li class="next">Для обработки данных не больших размеров</li>
+			</ol>
+		</div>
+	</section>
+
+	<section class="slide shout"><div>
+		<h2>Непредсказуемый</h2>
+	</section>
+
+	<section class="slide"><div>
+		<div>
+			<pre>
+				<code>var a = 42;</code>
+			  	<code>var b = "a string";</code>
+			  	<code>var z = a + b;//z = "42a string"</code>
+			  	<code>&nbsp;</code>
+			  	<code>eval("z = z.substr(1, 2)");//z = "2a"</code>
+			  	<code>&nbsp;</code>
+			  	<code>[1, "str", true, {three: 3}].forEach(function(item){</code>
+			  	<code>	  if (typeof item === typeof z) console.log(item);</code>
+		  		<code>});</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide">
+		<div>
+			<h2>Решения</h2>
+			<ol>
+				<li class="next">Ускорить движки</li>
+				<li class="next">Запускать С/С++ процедуры (NaCl и PNaCl)</li>
+				<li class="next">Сделать его предсказуемым (asm.js)</li>
+				<li class="next">Придумать новый язык (WebAssembly)</li>
+			</ol>
+		</div>
+	</section>
+
+	<section class="slide shout"><div>
+		<h2><a href="https://www.chromium.org/nativeclient/pnacl">NaCl и PNaCl</a></h2>
+	</section>
+
+	<section class="slide">
+		<div>
+			<h2>Почему NaCl и PNaCl?</h2>
+			<ol>
+				<li class="next">Можно использовать написанный С/С++ код</li>
+				<li class="next">Супер быстрый (почти как C++)</li>
+				<li class="next">Безопасность</li>
+			</ol>
+		</div>
+	</section>
+
+	<section class="slide cover w"><div>
+		<div>
+			<img src="pictures/26.png">
+		</div>
+	</section>
+	<section class="slide cover h"><div>
+		<div>
+			<img src="pictures/27.png">
+		</div>
+	</section>
+
+	<section class="slide">
+		<div>
+			<h2>Что нужно сделать:</h2>
+			<ol>
+				<li class="next">Скомпилировать С/С++</li>
+				<li class="next">Создать манифест файл</li>
+				<li class="next">Добавить embed элемент с ссылкой на манифест</li>
+				<li class="next">Готово!</li>
+			</ol>
+		</div>
+	</section>
+
+	<section class="slide shout"><div>
+		<h2><a href="https://gonativeclient.appspot.com/demo/bullet" target="_blank">Demo</a></h2>
+	</section>
+
+	<section class="slide cover h"><div>
+		<div>
+			<img src="pictures/38.png">
+		</div>
+	</section>
+
+	<section class="slide shout"><div>
+		<h2><a href="http://asmjs.org/">asmjs</a></h2>
+	</section>
+
+	<section class="slide">
+		<div>
+			<h2>Почему asmjs?</h2>
+			<ol>
+				<li class="next">Это JavaScript</li>
+				<ol>
+					<li class="next">Портативность</li>
+					<li class="next">Безопасность</li>
+				</ol>
+				<li class="next">Супер быстрый (2 раза медленнее C++)</li>
+			</ol>
+		</div>
+	</section>
+
+	<section class="slide cover w"><div>
+		<div>
+			<img src="pictures/30.png">
+		</div>
+	</section>
+
+	<section class="slide"><div>
+		<h2>Пример</h2>
+		<div>
+			<pre>
+				<code>function MyAsmModule(stdlib, foreign, heap){</code>
+			  	<code>	<mark>"use asm";</mark></code>
+			  	<code>    //your perfect code</code>
+			  	<code>    return {</code>
+			  	<code>      export: f1</code>
+			  	<code>    };</code>
+				<code>}</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide"><div>
+		<h2>Пример</h2>
+		<div>
+			<pre>
+				<code>function MyAsmModule(<mark>stdlib</mark>, foreign, heap){</code>
+			  	<code>	"use asm";</code>
+			  	<code>    //your perfect code</code>
+			  	<code>    return {</code>
+			  	<code>      export: f1</code>
+			  	<code>    };</code>
+				<code>}</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide"><div>
+		<h2>Пример</h2>
+		<div>
+			<pre>
+				<code>function MyAsmModule(stdlib, <mark>foreign</mark>, heap){</code>
+			  	<code>	"use asm";</code>
+			  	<code>    //your perfect code</code>
+			  	<code>    return {</code>
+			  	<code>      export: f1</code>
+			  	<code>    };</code>
+				<code>}</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide"><div>
+		<h2>Пример</h2>
+		<div>
+			<pre>
+				<code>function MyAsmModule(stdlib, foreign, <mark>heap</mark>){</code>
+			  	<code>	"use asm";</code>
+			  	<code>    //your perfect code</code>
+			  	<code>    return {</code>
+			  	<code>      export: f1</code>
+			  	<code>    };</code>
+				<code>}</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide cover h"><div>
+		<div>
+			<img src="pictures/31.png">
+		</div>
+	</section>
+
+	<section class="slide">
+		<div>
+			<h2>Как писать на asmjs?</h2>
+			<ol>
+				<li class="next">Пишем на C++</li>
+				<li class="next">LLVM (Clang)</li>
+				<li class="next">Emscripten</li>
+				<li class="next">JavaScript</li>
+			</ol>
+		</div>
+	</section>
+
+	<section class="slide">
+		<div>
+			<h2>Что может C/С++?</h2>
+			<ol>
+				<li class="next">Работа с файловой системой <span class="next">-> FS и indexDB (embedded)</span></li>
+				<li class="next">Работа с "кучей" для выделение памяти <span class="next">-> Int32Array</span></li>
+				<li class="next">Библиотеки для работы с графикой <span class="next">-> WebGL</span></li>
+				<li class="next">Потоки <span class="next">-> WebWorkers</span></li>
+			</ol>
+		</div>
+	</section>
+
+	<section class="slide">
+		<div>
+			<h2>Что не может asmjs?</h2>
+			<ol>
+				<li class="next">Низкоуровневые операции</li>
+				<li class="next">Работа с числами</li>
+				<li class="next">Общая пямять для потоков</li>
+			</ol>
+		</div>
+	</section>
+
+	<section class="slide cover w"><div>
+		<div>
+			<img src="pictures/33.png">
+		</div>
+	</section>
+
+	<section class="slide">
+		<div>
+			<h2>Что было сконвертированно в JS</h2>
+			<ol>
+				<li class="next">VIM</li>
+				<li class="next">Qt</li>
+				<li class="next">Ruby (mruby), Perl, Lua</li>
+				<li class="next">Classic Mac OS System 7</li>
+				<li class="next">Dune II</li>
+				<li class="next">Quake III</li>
+				<li class="next">Doom</li>
+			</ol>
+		</div>
+	</section>
+
+	<section class="slide shout"><div>
+		<h2><a href="http://beta.unity3d.com/jonas/AngryBots/" target="_blank">Demo</a></h2>
+	</section>
+
+	<section class="slide shout"><div>
+		<h2><a href="https://github.com/WebAssembly">WebAssembly</a></h2>
+	</section>
+
+	<section class="slide">
+		<div>
+			<h2>Почему WebAssembly?</h2>
+			<ol>
+				<li class="next">Низкоуровневый типизированный язык</li>
+				<li class="next">Супер быстрый (почти как C++)</li>
+				<li class="next">Поддержка</li>
+			</ol>
+		</div>
+	</section>
+
+	<section class="slide cover w"><div>
+		<div>
+			<img src="pictures/34.png">
+		</div>
+	</section>
+
+	<section class="slide cover w"><div>
+		<div>
+			<img src="pictures/35.png">
+		</div>
+	</section>
+
+	<section class="slide cover w"><div>
+		<div>
+			<img src="pictures/36.png">
+		</div>
+	</section>
+
+	<section class="slide cover w"><div>
+		<div>
+			<img src="pictures/37.png">
+		</div>
+	</section>
+
+	<section class="slide shout"><div>
+		<h2>One more thing...</h2>
+	</section>
+
+	<section class="slide cover w"><div>
+		<div>
+			<img src="pictures/18.jpg">
+		</div>
+	</section>
+
+	<section class="slide shout"><div>
+		<h2>Каждый инструмент решает свою задачу</h2>
+	</section>
+
+	<section class="slide shout">
+		<div>
+			<h2>Вопросы?</h2>
+			<div>Facebook: <a href="https://www.facebook.com/dashukevich.vova">dashukevich.vova</a></div>
+			<div>Twitter: <a href="https://twitter.com/life__777">life__777</a></div>
+		</div>
+	</section>
+</body>
+<script src="js/shower.min.js"></script>
+<script type="text/javascript">
+
+</script>
+</html>

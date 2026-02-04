@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Контроль качества верстки или как начать делать Makeup</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=792, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link rel="stylesheet" href="style/style.css">
+	<link rel="stylesheet" href="style/custom.css">
+</head>
+<body class="list">
+
+	<header class="caption">
+		<h1>Контроль качества верстки или как начать делать Makeup</h1>
+		<p><a href="mailto:tim.chaptykov@gmail.com">Тимофей Чаптыков</a>, 2GIS</p>
+	</header>
+
+	<section class="slide cover title"><div>
+		<h2>Контроль качества верстки или как начать делать Makeup</h2>
+		<p>Тимофей Чаптыков</p>
+		<a href="mailto:t.chaptykov@2gis.ru">tim.chaptykov@gmail.com</a>
+		<a href="https://twitter.com/chaptykov">@chaptykov</a>
+	</div></section>
+
+	<section class="slide cover w" style="background: #fff;"><div>
+		<img src="images/2gis.jpg">
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Makeup</h2>
+		<div class="next">Инструмент для быстрого и комфортного регрессионого тестирования вёрстки, основанной на абсолютно независимых блоках.</div>
+	</div></section>
+
+	<section class="slide subsection _blue _first"><div>
+		<h2>Боль</h2>
+	</div></section>
+
+	<section class="slide cover w" style="background: #fff;"><div>
+		<img src="images/pain_process.png">
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="clean">
+			<h2>Как измерить качество работы?</h2>
+		</div>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Критерии качества вёрстки</h2>
+		<ul>
+			<li class="next">Соответствие макету;</li>
+			<li class="next">кроссбраузерность.</li>
+		</ul>
+	</div></section>
+
+	<section class="slide split"><div>
+
+		<div class="split__blend next"></div>
+		<div class="split__invert next"></div>
+
+		<img src="images/split-1.png" class="split__one">
+		<img src="images/split-2.png" class="split__two">
+
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="clean">
+			<h2>Реализация</h2>
+		</div>
+	</div></section>
+
+	<section class="slide listing"><div>
+		<pre><code>
+<span class="listing__comment">&lt;!-- Кладем картинку с макетом --&gt;</span>
+
+<span class="listing__block">&lt;img src=<span class="listing__attr">"index.png"</span> id=<span class="listing__attr">"psd"</span>&gt;</span>
+		</code></pre>
+	</div></section>
+
+	<section class="slide listing"><div>
+		<pre><code>
+<span class="listing__comment">/* Позиционируем поверх сайта */</span>
+
+<span class="listing__selector">#psd</span> {
+	<span class="listing__property">position: absolute;</span>
+	<span class="listing__property">top: 0;</span>
+	<span class="listing__property">left: 50%;</span>
+	<span class="listing__property">margin: 0 0 0 -640px;</span>
+	<span class="listing__property">opacity: .5;</span>
+	<span class="listing__property">pointer-events: none;</span>
+	}
+		</code></pre>
+	</div></section>
+
+	<section class="slide listing"><div>
+		<pre><code>
+<span class="listing__comment">/* Позиционируем поверх сайта */</span>
+
+<span class="listing__selector">#psd</span> {
+	<span class="listing__property">position: absolute;</span>
+	<span class="listing__property">top: 0;</span>
+	<span class="listing__property">left: 50%;</span>
+	<span class="listing__property">margin: 0 0 0 -640px;</span>
+	<span class="listing__property">opacity: .5;</span>
+	<span class="listing__selection">pointer-events: none;</span> <span class="listing__comment">/* вёрстка остается кликабельной */</span>
+	}
+		</code></pre>
+	</div></section>
+
+	<section class="slide listing"><div>
+		<pre><code>
+<span class="listing__comment">/* Можем даже инвертировать */</span>
+
+<span class="listing__selector">#psd</span> {
+	<span class="listing__property">position: absolute;</span>
+	<span class="listing__property">top: 0;</span>
+	<span class="listing__property">left: 50%;</span>
+	<span class="listing__property">margin: 0 0 0 -640px;</span>
+	<span class="listing__property">opacity: .5;</span>
+	<span class="listing__property">pointer-events: none;</span>
+	<span class="listing__property">-webkit-filter: invert(100%);</span>
+	}
+		</code></pre>
+	</div></section>
+
+	<section class="slide listing"><div>
+		<pre><code>
+<span class="listing__comment">/* И прятать по наведению */</span>
+
+<span class="listing__selector">#psd</span> {
+	<span class="listing__property">position: absolute;</span>
+	<span class="listing__property">top: 0;</span>
+	<span class="listing__property">left: 50%;</span>
+	<span class="listing__property">margin: 0 0 0 -640px;</span>
+	<span class="listing__property">opacity: .5;</span>
+	<span class="listing__property">pointer-events: none;</span>
+	<span class="listing__property">-webkit-filter: invert(100%);</span>
+	}
+<span class="listing__selector">body:hover #psd</span> {
+	<span class="listing__property">opacity: 0;</span>
+	}
+		</code></pre>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Так работают</h2>
+		<ul>
+			<li class="next">JS-плагины;</li>
+			<li class="next">расширения для браузера.</li>
+		</ul>
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="clean">
+			<h2>И всё бы хорошо, но…</h2>
+		</div>
+	</div></section>
+
+	<section class="slide cover w" style="background: #fff;"><div>
+		<img src="images/pain_before-1.png">
+	</div></section>
+
+	<section class="slide cover w" style="background: #fff;"><div>
+		<img src="images/pain_before-2.png">
+	</div></section>
+
+	<section class="slide cover w" style="background: #fff;"><div>
+		<img src="images/pain_before-3.png">
+	</div></section>
+
+	<section class="slide shout"><div>
+		<h2>АНБ</h2>
+	</div></section>
+
+	<section class="slide cover w" style="background: #fff;"><div>
+		<img src="images/pain_after-1.png">
+	</div></section>
+
+	<section class="slide cover w" style="background: #fff;"><div>
+		<img src="images/pain_after-2.png">
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="clean">
+			<h2><del>Страница</del>&nbsp;&nbsp;→&nbsp;&nbsp;Блок</h2>
+		</div>
+	</div></section>
+
+	<section class="slide cover w" style="background: #fff;"><div>
+		<img src="images/pain_after-3.png">
+	</div></section>
+
+	<section class="slide minicards"><div>
+		<div class="minicards__layer"></div>
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="clean">
+			<h2><del>Страница</del>&nbsp;&nbsp;→&nbsp;&nbsp;Блок&nbsp;&nbsp;×&nbsp;&nbsp;Состояние</h2>
+		</div>
+	</div></section>
+
+	<section class="slide cover_label"><div>
+		<h2>Держим в голове</h2>
+		<style type="text/css">
+			.sum__item-num {font-size: 76px;}
+			.sum__item:before {content: '×';}
+			.sum__item_result:before {content: '=';}
+		</style>
+		<div class="sum">
+			<div class="sum__item next">
+				<div class="sum__item-num">132</div>
+				<div class="sum__item-label">блока</div>
+			</div>
+			<div class="sum__item next">
+				<div class="sum__item-num">5</div>
+				<div class="sum__item-label">состояний</div>
+			</div>
+			<div class="sum__item next sum__item_result">
+				<div class="sum__item-num">660</div>
+				<div class="sum__item-label">кейсов</div>
+			</div>
+		</div>
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="clean">
+			<h2>«Быстрый» способ</h2>
+		</div>
+	</div></section>
+
+	<section class="slide"><div>
+		<ul>
+			<li class="next"><kbd>⌘</kbd> + <kbd>Shift</kbd> + <kbd>Control</kbd> + <kbd>4</kbd>, скриншот области в буфер;</li>
+			<li class="next"><kbd>⌘</kbd> + <kbd>Tab</kbd>, идем в Фотошоп;</li>
+			<li class="next"><kbd>⌘</kbd> + <kbd>v</kbd>, вставляем;</li>
+			<li class="next"><kbd>5</kbd>, прозрачность 50%;</li>
+			<li class="next"><kbd>v</kbd>, двигаем;</li>
+			<li class="next"><kbd>Shift</kbd> + <kbd>Arr</kbd> или <kbd>Arr</kbd> × n раз, пока не совместим с макетом;</li>
+			<li class="next"><kbd>Delete</kbd>, удаляем слой.</li>
+		</ul>
+		<div class="back next">Правим CSS, повторяем, пока макет не станет идеальным.</div>
+	</div></section>
+
+	<section class="slide subsection _blue _second"><div>
+		<h2>Makeup</h2>
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="clean">
+			<h2>Makeup решает проблему на раз-два-три</h2>
+		</div>
+	</div></section>
+
+	<section class="slide screenshot"><div>
+		<img src="images/makeup_mode-1.jpg">
+		<div class="keys">
+			<kbd class="keys__item">1</kbd>
+		</div>
+	</div></section>
+
+	<section class="slide screenshot"><div>
+		<img src="images/makeup_mode-2.jpg">
+		<div class="keys">
+			<kbd class="keys__item">2</kbd>
+		</div>
+	</div></section>
+
+	<section class="slide screenshot"><div>
+		<img src="images/makeup_mode-3.jpg">
+		<div class="keys">
+			<kbd class="keys__item">3</kbd>
+		</div>
+	</div></section>
+
+	<section class="slide screenshot"><div>
+		<img src="images/makeup_mode-4.jpg">
+		<div class="keys">
+			<kbd class="keys__item">4</kbd>
+		</div>
+	</div></section>
+
+	<section class="slide screenshot"><div>
+		<img src="images/makeup_mode-4.jpg">
+		<div class="arrow" style="top: 130px; left: 560px;"></div>
+		<div class="keys">
+			<kbd class="keys__item">[</kbd>
+			<kbd class="keys__item">]</kbd>
+		</div>
+	</div></section>
+
+	<section class="slide screenshot"><div>
+		<img src="images/makeup_mode-4.jpg">
+		<div class="arrow" style="top: 130px; left: 632px;"></div>
+		<div class="keys">
+			<kbd class="keys__item">–</kbd>
+			<kbd class="keys__item">+</kbd>
+		</div>
+	</div></section>
+
+	<section class="slide screenshot"><div>
+		<img src="images/makeup-bg.png">
+		<div class="arrow" style="top: 130px; left: 447px;"></div>
+	</div></section>
+
+	<section class="slide cover w" style="background: #fff;"><div>
+		<img src="images/makeup_doc.jpg">
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="clean">
+			<h2>Теперь вы умеете пользоваться Мейкапом</h2>
+		</div>
+	</div></section>
+
+	<section class="slide subsection _blue _third"><div>
+		<h2>Интеграция</h2>
+	</div></section>
+
+	<section class="slide cover h"><div>
+		<img src="images/scheme.png">
+	</div></section>
+
+	<section class="slide subsection"><div>
+		<div class="breadcrumbs">
+			<div class="breadcrumbs__item">Интеграция</div>
+			<div class="breadcrumbs__item">Getting started</div>
+		</div>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Демо</h2>
+		<pre><code style="word-wrap: break-word;">
+var s=document.createElement('script');s.src ="//2gis.github.io/makeup/autoload/script.js";document.body.appendChild(s)
+		</code></pre>
+	</div></section>
+
+	<section class="slide cover h"><div>
+		<img src="images/tree-1.png">
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="clean">
+			<h2>1. Сохраняем изображения</h2>
+		</div>
+	</div></section>
+
+	<section class="slide cover h"><div>
+		<img src="images/tree-2.png">
+	</div></section>
+
+	<section class="slide listing"><div>
+		<pre><code>
+<span class="listing__comment">&lt;!-- 2. Новая страница со всеми ресурсами --&gt;</span>
+
+<span class="listing__comment">&lt;!DOCTYPE html&gt;</span>
+<span class="listing__block">&lt;html lang=<span class="listing__attr">"en"</span>&gt;</span>
+<span class="listing__block">&lt;head&gt;</span>
+	<span class="listing__block">&lt;title&gt;</span>Makeup<span class="listing__block">&lt;/title&gt;</span>
+	<span class="listing__block">&lt;link rel=<span class="listing__attr">"stylesheet"</span> href=<span class="listing__attr">"style.css"</span>&gt;</span> <span class="listing__comment">&lt;!-- Стили проекта --&gt;</span>
+<span class="listing__block">&lt;/head&gt;</span>
+<span class="listing__block">&lt;body&gt;</span>
+	<span class="listing__block">&lt;button class=<span class="listing__attr">"button"</span>&gt;</span>My button<span class="listing__block">&lt;/button&gt;</span> <span class="listing__comment">&lt;!-- Разметка --&gt;</span>
+<span class="listing__block">&lt;/body&gt;</span>
+<span class="listing__block">&lt;/html&gt;</span>
+		</code></pre>
+	</div></section>
+
+	<section class="slide cover h"><div>
+		<img src="images/tree-3.png">
+	</div></section>
+
+	<section class="slide listing"><div>
+		<pre><code>
+<span class="listing__comment">&lt;!-- 3. Добавляем Мейкап --&gt;</span>
+
+<span class="listing__comment">&lt;!DOCTYPE html&gt;</span>
+<span class="listing__block">&lt;html lang=<span class="listing__attr">"en"</span>&gt;</span>
+<span class="listing__block">&lt;head&gt;</span>
+	<span class="listing__block">&lt;title&gt;</span>Makeup<span class="listing__block">&lt;/title&gt;</span>
+	<span class="listing__block">&lt;link rel=<span class="listing__attr">"stylesheet"</span> href=<span class="listing__attr">"style.css"</span>&gt;</span>
+	<span class="listing__block">&lt;link rel=<span class="listing__attr">"stylesheet"</span> href=<span class="listing__attr">"makeup.css"</span>&gt;</span> <span class="listing__comment">&lt;!-- Стили Мейкапа --&gt;</span>
+<span class="listing__block">&lt;/head&gt;</span>
+<span class="listing__block">&lt;body&gt;</span>
+	<span class="listing__block">&lt;button class=<span class="listing__attr">"button"</span>&gt;</span>My button<span class="listing__block">&lt;/button&gt;</span>
+	<span class="listing__block">&lt;script src=<span class="listing__attr">"makeup.js"</span>&gt;&lt;/script&gt;</span> <span class="listing__comment">&lt;!-- Привет, Мейкап --&gt;</span>
+<span class="listing__block">&lt;/body&gt;</span>
+<span class="listing__block">&lt;/html&gt;</span>
+		</code></pre>
+	</div></section>
+
+	<section class="slide listing"><div>
+		<pre><code>
+<span class="listing__comment">&lt;!-- 4. Прячем разметку --&gt;</span>
+
+<span class="listing__comment">&lt;!DOCTYPE html&gt;</span>
+<span class="listing__block">&lt;html lang=<span class="listing__attr">"en"</span>&gt;</span>
+<span class="listing__block">&lt;head&gt;</span>
+	<span class="listing__block">&lt;title&gt;</span>Makeup<span class="listing__block">&lt;/title&gt;</span>
+	<span class="listing__block">&lt;link rel=<span class="listing__attr">"stylesheet"</span> href=<span class="listing__attr">"style.css"</span>&gt;</span>
+	<span class="listing__block">&lt;link rel=<span class="listing__attr">"stylesheet"</span> href=<span class="listing__attr">"makeup.css"</span>&gt;</span> <span class="listing__comment">&lt;!-- Стили Мейкапа --&gt;</span>
+<span class="listing__block">&lt;/head&gt;</span>
+<span class="listing__block">&lt;body&gt;</span>
+	<span class="listing__block">&lt;div style=<span class="listing__attr">"display: none;"</span>&gt;</span>
+		<span class="listing__block">&lt;button class=<span class="listing__attr">"button"</span>&gt;</span>My button<span class="listing__block">&lt;/button&gt;</span>
+	<span class="listing__block">&lt;/div&gt;</span>
+	<span class="listing__block">&lt;script src=<span class="listing__attr">"makeup.js"</span>&gt;&lt;/script&gt;</span> <span class="listing__comment">&lt;!-- Привет, Мейкап --&gt;</span>
+<span class="listing__block">&lt;/body&gt;</span>
+<span class="listing__block">&lt;/html&gt;</span>
+		</code></pre>
+	</div></section>
+
+	<section class="slide listing"><div>
+		<pre><code>
+<span class="listing__comment">&lt;!DOCTYPE html&gt;</span>
+<span class="listing__block">&lt;html lang=<span class="listing__attr">"en"</span>&gt;</span>
+<span class="listing__block">&lt;head&gt;</span>
+	<span class="listing__block">&lt;title&gt;</span>Makeup<span class="listing__block">&lt;/title&gt;</span>
+	<span class="listing__block">&lt;link rel=<span class="listing__attr">"stylesheet"</span> href=<span class="listing__attr">"style.css"</span>&gt;</span>
+	<span class="listing__block">&lt;link rel=<span class="listing__attr">"stylesheet"</span> href=<span class="listing__attr">"makeup.css"</span>&gt;</span>
+<span class="listing__block">&lt;/head&gt;</span>
+<span class="listing__block">&lt;body&gt;</span>
+	<span class="listing__block">&lt;div style=<span class="listing__attr">"display: none;"</span>&gt;</span>
+		<span class="listing__block">&lt;button class=<span class="listing__attr">"button"</span>&gt;</span>My button<span class="listing__block">&lt;/button&gt;</span>
+	<span class="listing__block">&lt;/div&gt;</span>
+	<span class="listing__block">&lt;script src=<span class="listing__attr">"makeup.js"</span>&gt;&lt;/script&gt;</span>
+	<span class="listing__block">&lt;script&gt;</span>
+		<span class="listing__comment">// 5. Инициализируем Мейкап</span>
+	<span class="listing__block">&lt;/script&gt;</span>
+<span class="listing__block">&lt;/body&gt;</span>
+<span class="listing__block">&lt;/html&gt;</span>
+		</code></pre>
+	</div></section>
+
+	<section class="slide listing"><div>
+		<pre><code>
+<span class="listing__comment">// 5. Инициализируем Мейкап</span>
+
+<span class="listing__element">new</span> <span class="listing__block">Makeup</span>({
+
+	<span class="listing__comment">// Функция, которая создает блок в Мейкапе</span>
+	<span class="listing__block">renderModule</span>: function(module) {
+		<span class="listing__element">var</span> container = this._params.selectors.containerMarkup,
+            html = $(<span class="listing__attr">'.'</span> + module.modulename)[0].outerHTML;
+
+        $(container).html(html);
+	},
+
+	<span class="listing__comment">// Конфиг</span>
+	data: {
+		name: <span class="listing__attr">'Blocks'</span>,
+		items: [{
+			name: <span class="listing__attr">'button'</span>,
+			image: <span class="listing__attr">'button.png'</span>
+		}]
+	}
+});
+		</code></pre>
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="clean">
+			<h2>Готово!</h2>
+		</div>
+	</div></section>
+
+	<section class="slide screenshot"><div>
+		<img src="images/getting-started-result.jpg">
+	</div></section>
+
+	<section class="slide subsection"><div>
+		<div class="breadcrumbs">
+			<div class="breadcrumbs__item">Интеграция</div>
+			<div class="breadcrumbs__item">Формат данных</div>
+		</div>
+	</div></section>
+
+	<section class="slide listing"><div>
+		<h2>Добавляем на любой уровень</h2>
+		<pre><code>
+{
+	<span class="listing__comment">// Имя</span>
+	<span class="listing__attr">"name"</span>: <span class="listing__attr">"Button"</span>, <span class="next">← Единственный обязательный параметр</span>
+	<span class="listing__attr">"label"</span>: <span class="listing__attr">"button"</span>,
+
+	<span class="listing__comment">// Текст для панели статуса</span>
+	<span class="listing__attr">"hint"</span>: <span class="listing__attr">"Кнопка для формы поиска"</span>,
+
+	<span class="listing__comment">// Любые данные</span>
+	<span class="listing__attr">"data"</span>: { <span class="listing__attr">"text"</span>: <span class="listing__attr">"найти"</span> },
+
+	<span class="listing__comment">// Картинка из PSD</span>
+	<span class="listing__attr">"image"</span>: <span class="listing__attr">"psd_button.png"</span>
+}
+		</code></pre>
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="clean">
+			<h2>Мне придется нарезать картинки «правильно»?</h2>
+		</div>
+	</div></section>
+
+	<section class="slide"><div>
+		<img src="images/demo-account.png">
+	</div></section>
+
+	<section class="slide"><div>
+		<img src="images/demo-account.png" style="outline: 6px solid #9ec73d;">
+	</div></section>
+
+	<section class="slide listing"><div>
+		<pre><code>
+<span class="listing__comment">// Поправка стилей, которую можно добавить для блока или группы блоков</span>
+
+<span class="listing__attr">"styles"</span>: {
+	<span class="listing__comment">// CSS-стили для обертки</span>
+	<span class="listing__attr">"wrapper"</span>: <span class="listing__attr">"font-family: Arial;"</span>,
+
+	<span class="listing__comment">// CSS-стили для контейнера с изображением</span>
+	<span class="listing__attr">"image"</span>: <span class="listing__attr">"position: relative; top: -6px;"</span>,
+
+	<span class="listing__comment">// CSS-стили для контейнера с версткой</span>
+	<span class="listing__attr">"markup"</span>: <span class="listing__attr">"height: 200px;"</span>
+}
+		</code></pre>
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="clean">
+			<h2>Нужен JavaScript?</h2>
+		</div>
+	</div></section>
+
+	<section class="slide listing"><div>
+		<h2>Сниппет для любого уровня</h2>
+		<pre><code>
+{
+	<span class="listing__comment">// Функция, которая будет вызвана после рендера</span>
+	<span class="listing__attr">"snippet"</span>: <span class="listing__element">function</span>() {
+		block.baron();
+	}
+}
+		</code></pre>
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="clean">
+			<h2>Право на ошибку</h2>
+		</div>
+	</div></section>
+
+	<section class="slide listing"><div>
+		<h2>Почти в любом виде</h2>
+		<pre><code>
+<div class="next"><span class="listing__attr">"documentation"</span>: [
+    {
+        <span class="listing__attr">"link"</span>: <span class="listing__attr">"http://mysite.com/docs/article1/"</span>,
+        <span class="listing__attr">"label"</span>: <span class="listing__attr">"ТЗ на разработку интернет-магазина"</span>,
+        <span class="listing__attr">"modifier"</span>: <span class="listing__attr">"_important"</span>
+    }
+],</div>
+
+<div class="next"><span class="listing__attr">"documentation"</span>: [
+    <span class="listing__attr">"http://mysite.com/docs/article1/"</span>,
+    <span class="listing__attr">"http://mysite.com/docs/article2/"</span>
+],</div>
+
+<div class="next"><span class="listing__attr">"documentation"</span>: <span class="listing__attr">"http://mysite.com/docs/article/"</span></div>
+		</code></pre>
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="clean">
+			<h2>Мейкап постарается вас понять</h2>
+		</div>
+	</div></section>
+
+	<section class="slide subsection _blue _fourth"><div>
+		<h2>Использование</h2>
+	</div></section>
+
+	<section class="slide subsection"><div>
+		<div class="breadcrumbs">
+			<div class="breadcrumbs__item">Использование</div>
+			<div class="breadcrumbs__item">Кейсы</div>
+		</div>
+	</div></section>
+
+	<section class="slide cover w" style="background: #fff;"><div>
+		<img src="images/in-app.png">
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>1. Разработка</h2>
+		<ul>
+			<li class="next">Изолированная среда для модуля;</li>
+			<li class="next">исходный макет для сравнения;</li>
+			<li class="next">документация.</li>
+		</ul>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>2. Кодревью</h2>
+		<ul>
+			<li class="next">Увидеть перечень изменений;</li>
+			<li class="next">сверить с требованиями и дизайном;</li>
+			<li class="next">проверить работоспособность всех состояний.</li>
+		</ul>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>3. Рефакторинг</h2>
+		<ul>
+			<li class="next">Быстро увидеть весь блок и все его состояния;</li>
+			<li class="next">после внесения изменений проверить, что ничего не сломано.</li>
+		</ul>
+	</div></section>
+
+	<section class="slide cover h"><div>
+		<img src="images/browsers.jpg">
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="clean">
+			<h2>Работает на мобильных устройствах</h2>
+		</div>
+	</div></section>
+
+	<section class="slide subsection"><div>
+		<div class="breadcrumbs">
+			<div class="breadcrumbs__item">Использование</div>
+			<div class="breadcrumbs__item">Подготовка типов</div>
+		</div>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Какие состояния нас интересуют</h2>
+		<ul>
+			<li class="next">Состояния, описанные в дизайне;</li>
+			<li class="next">состояния, которые вызвали баг в прошлом;</li>
+			<li class="next">экстримальные состояния.</li>
+		</ul>
+	</div></section>
+
+	<section class="slide cover h"><div>
+		<img src="images/miniCard-extreme.png">
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="clean">
+			<h2><a href="http://habrahabr.ru/company/2gis/blog/246831/">Одиннадцатиклассница, или тестируем баги вёрстки</a></h2>
+		</div>
+	</div></section>
+
+	<section class="slide subsection _blue _fifth"><div>
+		<h2>Заключение</h2>
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="clean">
+			<h2>Всё ведь чертовски просто</h2>
+		</div>
+	</div></section>
+
+	<section class="slide cover_label"><div>
+		<h2>Makeup</h2>
+		<style type="text/css">
+			.sum__item-num {font-size: 76px;}
+			.sum__item:before {content: '+';}
+			.sum__item_result:before {content: '=';}
+		</style>
+		<div class="sum">
+			<div class="sum__item next">
+				<div class="sum__item-num">JSON</div>
+				<div class="sum__item-label"></div>
+			</div>
+			<div class="sum__item next">
+				<div class="sum__item-num">UI</div>
+				<div class="sum__item-label"></div>
+			</div>
+			<div class="sum__item next sum__item_result">
+				<div class="sum__item-num">♥</div>
+				<div class="sum__item-label"></div>
+			</div>
+		</div>
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="clean">
+			<h2>Основа рабочего процесса разработки интерфесов</h2>
+		</div>
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="clean">
+			<h2>Как измерить качество работы верстальщика?</h2>
+		</div>
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="clean">
+			<h2><strike>Инструмент</strike></h2>
+		</div>
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="clean">
+			<h2>Человек</h2>
+		</div>
+	</div></section>
+
+	<section class="slide cover h"><div>
+		<img src="images/speed.jpg">
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="clean">
+			<h2>Используйте инструменты<span class="next">, принимайте решение сами</span></h2>
+		</div>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Ссылки</h2>
+		<ul>
+			<li class="next"><a href="http://2gis.github.io/makeup">Сайт</a></li>
+			<li class="next"><a href="http://http://2gis.github.io/makeup/demo/">Демо</a></li>
+			<li class="next"><a href="https://github.com/chaptykov/makeup">Репозиторий</a></li>
+		</ul>
+	</div></section>
+
+	<section class="slide"><div>
+		<div class="clean">
+			<h2><a href="http://goo.gl/jJLM90">goo.gl/jJLM90</a></h2>
+		</div>
+	</div></section>
+
+	<section class="slide end"><div>
+		<h2>2ГИС</h2>
+		<p>Тимофей Чаптыков</p>
+		<a href="mailto:t.chaptykov@2gis.ru">tim.chaptykov@gmail.com</a><br>
+		<a href="https://twitter.com/chaptykov">@chaptykov</a>
+	</div></section>
+
+	<section class="slide listing"><div>
+		<h2>Смайлик</h2>
+		<pre><code>
+<span class="listing__selector">.makeup--smiley-true .makeup__container-in</span> {
+    <span class="listing__element">font:</span> 100px/1 <span class="listing__attr">'Comic Sans'</span>;
+    <span class="listing__element">color:</span> red;
+    }
+		</code></pre>
+	</div></section>
+
+	<div class="progress"><div></div></div>
+	<script src="shower.min.js"></script>
+</body>
+</html>

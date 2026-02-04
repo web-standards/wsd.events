@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    html, body{
+      width: 100%;
+      height: 100%;
+      position: relative;
+      margin: 0;
+      padding: 0;
+      }
+    img{
+      position: absolute;
+      top:0;
+      bottom:0;
+      right:0;
+      left:0;
+      margin:auto;
+      }
+  </style>
+</head>
+<body>
+  <script>
+    var img = document.createElement('IMG'),
+        storage = localStorage.getItem("storageFiles");
+        storageFiles = JSON.parse(storage) || {};
+
+    img.setAttribute('alt', 'photo');
+
+    if(storage === null){
+      img.setAttribute('src', 'weight.jpg');
+      img.addEventListener('load', function(){
+        console.log('loaded');
+        var imgCanvas = document.createElement("canvas"),
+            imgContext = imgCanvas.getContext("2d");
+
+        imgCanvas.width = img.width;
+        imgCanvas.height = img.height;
+        imgContext.drawImage(img, 0, 0, img.width, img.height);
+
+        storageFiles.img = imgCanvas.toDataURL("image/png");
+
+        try {
+          localStorage.setItem("storageFiles", JSON.stringify(storageFiles));
+        } catch (e) {
+          console.log("Storage failed: " + e);
+        }
+      });
+    }else{
+      img.setAttribute("src", storageFiles.img);
+    }
+    document.body.appendChild(img);
+
+  </script>
+</body>
+</html>

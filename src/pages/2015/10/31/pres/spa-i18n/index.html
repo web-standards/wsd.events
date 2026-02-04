@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Интернационализация одностраничных приложений</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=792, user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="shower/themes/ribbon/styles/screen-d90984e344.css">
+    <link rel="stylesheet" href="highlightjs/styles/tomorrow.css"/>
+    <style>
+        .slide .px-100.px-100 {
+            font-size: 100px;
+        }
+
+        .slide .px-90.px-90 {
+            font-size: 90px;
+        }
+        .slide .px-80.px-80 {
+            font-size: 80px;
+        }
+        .slide .px-70.px-70 {
+            font-size: 70px;
+        }
+        .slide .px-60.px-60 {
+            font-size: 60px;
+        }
+        .slide .px-50.px-50 {
+            font-size: 50px;
+        }
+    </style>
+</head>
+
+<body class="list">
+<!--
+    Debug class on <body> enables
+    cyan grid on slides
+    -->
+<header class="caption">
+    <h1>Интернационализация одностраничных приложений</h1>
+
+    <p><a href="https://twitter.com/krivlenia">Константин Кривленя</a></p>
+
+    <p>Компания <a href="http://www.targetprocess.com">Taucraft</a></p>
+</header>
+<section class="slide shout">
+    <div>
+        <h2><a href="https://goo.gl/AC3jyS">goo.gl/AC3jyS</a></h2>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Немного о себе</h2>
+        <div style="display: flex">
+            <div><img align="left" style="padding-right: 20px" src="pictures/64lMqg7R6g4.jpg" alt=""/></div>
+            <div>Разработчик в <a href="http://crew.taucraft.com/">Taucraft</a>.<br/>
+                Мейнтейнер опенсорсной JavaScript-библиотеки чартов <a href="http://taucharts.com/">Taucharts</a>. <br/>
+                <a
+                        style="background:url(pictures/twitter-bird-light-bgs.png) no-repeat;padding-left:40px;"
+                        href="https://twitter.com/Krivlenia">Twitter (https://twitter.com/Krivlenia/)</a><br>
+                <a style="background:url(pictures/GitHub-Mark-32px.png) no-repeat;padding-left:40px;"
+                   href="https://github.com/Mavrin">Github (https://github.com/Mavrin/)</a><br>
+                <a style="background:url(pictures/habrahabr.png) center left no-repeat;padding-left:20px;"
+                   href="http://habrahabr.ru/users/mavrin/">Хабр (http://habrahabr.ru/users/mavrin/)</a><br></div>
+        </div>
+    </div>
+</section>
+<section class="slide shout">
+    <div>
+        <h2 class="px-100">Трудности локализации</h2>
+    </div>
+</section>
+<section class="slide cover">
+    <div>
+        <img src="pictures/audi-tts-coupe-2.jpg" alt=""/>
+        <h2 style="color: white" class="px-50">Аudi TT Coupe</h2>
+    </div>
+</section>
+<section class="slide shout">
+    <div><h2  class="px-60">По-французcки &mdash; «отрубленная голова»</h2></div>
+</section>
+<section class="slide cover">
+    <div>
+        <h2 style="color: white" class="px-50">Fiat Uno</h2>
+        <img width="100%" src="pictures/fiat-uno-mille-eletronic-1992-1994-02-1.jpg" alt=""/>
+    </div>
+</section>
+<section class="slide shout">
+    <div><h2  class="px-70">По-фински &mdash; «кретин»</h2></div>
+</section>
+<section class="slide cover">
+    <div>
+        <img src="pictures/chevrolet-nova-ss-11.jpg" width="100%" alt=""/>
+        <h2 style="color: white" class="px-50">Chevrolet Nova</h2>
+    </div>
+</section>
+<section class="slide shout">
+    <div>
+        <h2 class="px-70">По-испански &mdash; «не едет»</h2>
+    </div>
+</section>
+<section class="slide shout">
+    <div>
+        <h2 class="px-70">Что такое интернационализация?</h2>
+    </div>
+</section>
+<!--<section class="slide">
+    <div>
+        <blockquote><p>
+            <b>Интернационализа́ция</b> (англ. internationalization) — технологические приёмы разработки, упрощающие адаптацию
+            продукта (такого как программное или аппаратное обеспечение) к языковым и культурным особенностям региона
+            (регионов), отличного от того, в котором разрабатывался продукт.
+        </p></blockquote>
+    </div>
+</section>-->
+<section class="slide shout">
+    <div>
+        <h2 class="px-80">Что такое локализация?</h2>
+    </div>
+</section>
+<!--<section class="slide">
+    <div>
+        <blockquote><p>
+            <b>Локализация</b> — процесс адаптации программного обеспечения к культуре какой-либо страны.
+            Как частность — перевод пользовательского интерфейса, документации и сопутствующих файлов программного обеспечения с одного языка на другой.
+        </p></blockquote>
+    </div>
+</section>-->
+<section class="slide shout">
+    <div>
+        <h2 class="px-60">Зачем нужна интернационализация?</h2>
+    </div>
+</section>
+<section class="slide cover">
+    <div>
+        <img width="100%" src="./pictures/1361262517_stena-priznaniy-v-lyubvi.jpg" alt="i love you"/>
+    </div>
+</section>
+<section class="slide shout">
+    <div><h2 class="px-100">251 страна</h2></div>
+</section>
+<section class="slide shout">
+    <div><h2 class="px-90">3000-6000 языков</h2></div>
+</section>
+<section class="slide shout">
+    <div><h2 class="px-100">Новые пользователи</h2></div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Различие локалей</h2>
+        <ul>
+            <li class="next">Фразы (tree — дерево — дрэва)</li>
+            <li class="next">Числа (123.456,789 — 123 456,789)</li>
+            <li class="next">Валюта (123.456,79 € — €123,456.79)</li>
+            <li class="next">Даты (1.10.2015 20.00 — 10-1-2015 8 pm)</li>
+            <li class="next">Направление текста и размещение блоков
+                <!--примеры-->
+                <ul>
+                    <li>Справа налево</li>
+                    <li>Слева направо</li>
+                    <li>Сверху вниз</li>
+                    <li>Другое...</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</section>
+<section class="slide shout">
+    <div>
+        <h2 class="px-100">Проблемы и решения</h2>
+    </div>
+</section>
+<section class="slide shout">
+    <div>
+        <h2>Фразы</h2>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Фиксированный размер</h2>
+        <img style="height: 350px;" src="./pictures/css-modules-logo.png" alt=""/>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Шрифты</h2>
+        <img src="./pictures/font-error.png" alt=""/>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Формы</h2>
+        <ul>
+            <li class="next">Падежи</li>
+            <li class="next">Род</li>
+            <li class="next">Числительные</li>
+        </ul>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Решение</h2>
+        <ul>
+            <li class="next">Динамические блоки</li>
+            <li class="next">Проверям шрифт при локализации <a
+                        href="https://www.google.com/fonts#UsePlace:use/Collection:Open+Sans">google fonts</a></li>
+            <li class="next">Подходы к решению проблемы форм (<a
+                        href="https://github.com/eligrey/l10n.js/#readme">l10n</a>, <a href="http://l20n.org/">l20n</a>,
+                <a
+                        href="http://formatjs.io/">Формат сообщений ICU</a> и др.).
+            </li>
+        </ul>
+    </div>
+</section>
+<section class="slide cover">
+    <div>
+        <img style="top: 144px;" src="pictures/fonts.png" alt=""/>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Формат сообщений ICU</h2>
+        <h5>Select</h5>
+<pre>
+    <code class="nohighlight">
+    {gender, select,
+        male {He}
+        female {She}
+        other {They}
+    } will respond shortly.
+    </code>
+</pre>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Формат сообщений ICU</h2>
+        <h5><a href="http://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html">Plural
+            (CLDR - Common Locale Data Repository)</a></h5>
+        <span>cardinal (количественные числительные), ordinal (порядковые числительные), range (промежуток)</span>
+        <pre style="font-size: 24px;">
+            <code class="nohighlight">
+    You have {itemCount, plural,
+        =0 {no items}
+        one {1 item}
+        other {{itemCount} items}
+    }.
+            </code>
+        </pre>
+    </div>
+</section>
+<section class="slide">
+    <style>
+        table, td{
+            border: 1px solid #bbb !important;
+            padding:0 10px;
+        }
+        .slide table td {
+            background: none !important;
+        }
+        .slide table td.target:nth-child(2),.slide table td.target:nth-child(1) {
+            vertical-align: middle;
+        }
+        .source-t {
+            vertical-align: middle;
+        }
+    </style>
+    <div>
+        <h2>Английский: порядковые числительные</h2>
+    <table>
+        <tr>
+            <td class="source-t" rowspan="4">ordinal</td>
+            <td class="target">one</td>
+            <td class="target">1, 21, 31, 41, 51, 61, 71, 81, 101, 1001, …</td>
+            <td class="target">Take the 1st right.</td>
+        </tr>
+        <tr>
+            <td class="target">two</td>
+            <td class="target">2, 22, 32, 42, 52, 62, 72, 82, 102, 1002, …</td>
+            <td class="target">Take the 2nd right.</td>
+        </tr>
+        <tr>
+            <td class="target">few</td>
+            <td class="target">3, 23, 33, 43, 53, 63, 73, 83, 103, 1003, …</td>
+            <td class="target">Take the 3rd right.</td>
+        </tr>
+        <tr>
+            <td class="target">other</td>
+            <td class="target">0, 4~18, 100, 1000, 10000, 100000, 1000000, …</td>
+            <td class="target">Take the 4th right.</td>
+        </tr>
+    </table>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Русский: порядковые числительные</h2>
+        <table>
+            <tr>
+                <td class="source-t">ordinal</td>
+                <td class="target">other</td>
+                <td class="target">0~15, 100, 1000, 10000, 100000, 1000000, …</td>
+                <td class="target">Сверните направо на 15-м перекрестке.</td>
+            </tr>
+        </table>
+    </div>
+</section>
+<section class="slide shout">
+    <div>
+        <h2 class="px-50"><a href="http://formatjs.io/">FormatJS</a> от <img style="vertical-align: middle; height: 1em;" src="pictures/yahoo.svg" alt=""/></h2>
+    </div>
+</section>
+<section class="slide shout">
+    <div>
+        <h2 class="px-100">Числа и даты</h2>
+    </div>
+</section>
+<section class="slide shout">
+    <div>
+        <h2 class="px-100">Где взять форматы?</h2>
+    </div>
+</section>
+<section class="slide shout">
+    <div>
+        <h2 class="px-70">Спасибо браузерам <a
+                    href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Intl">intl</a>
+            API</h2>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl">window.intl</a>  <img src="pictures/mdn.svg" style="height: 1em;vertical-align: middle;" alt=""/></h2>
+        Объект Intl является пространством имён для API интернационализации ECMAScript, предосталяющим языко-зависимое
+        сравнение строк, форматирование чисел и дат со временем. Конструкторы объектов Collator, NumberFormat и
+        DateTimeFormat являются свойствами объекта Intl.
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Collator">Intl.Collator</a>  <img src="pictures/mdn.svg" style="height: 1em;vertical-align: middle;" alt=""/></h2>
+        <pre>
+            <code style="font-size: 15px" class="javascript">
+    var collator = new Intl.Collator();
+    console.log(collator.compare('a', 'c')); // → отрицательное значение
+    console.log(collator.compare('c', 'a')); // → положительное значение
+    console.log(collator.Collator().compare('a', 'a')); // → 0
+    // В немецком буква ä идёт рядом с буквой a
+    console.log(new Intl.Collator('de').compare('ä', 'z'));
+    // → отрицательное значение
+    // В шведском буква ä следует после буквы z
+    console.log(new Intl.Collator('sv').compare('ä', 'z'));
+    // → положительное значение
+            </code>
+        </pre>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat">Intl.DateTimeFormat</a>  <img src="pictures/mdn.svg" style="height: 1em;vertical-align: middle;" alt=""/></h2>
+        <pre>
+            <code style="font-size: 15px" class="javascript">
+    var date = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
+    // Форматирование ниже предполагает, что местный часовой пояс равен
+    // America/Los_Angeles для локали США
+    // В американском английском используется порядок месяц-день-год
+    console.log(new Intl.DateTimeFormat('en-US').format(date));
+    // → "12/19/2012"
+    // В британском английском используется порядок день-месяц-год
+    console.log(new Intl.DateTimeFormat('en-GB').format(date));
+    // → "20/12/2012"
+    // В корейском используется порядок год-месяц-день
+    console.log(new Intl.DateTimeFormat('ko-KR').format(date));
+    // → "2012. 12. 20."
+            </code>
+        </pre>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NumberFormat">Intl.NumberFormat</a> <img src="pictures/mdn.svg" style="height: 1em;vertical-align: middle;" alt=""/></h2>
+        <pre>
+            <code class="javascript" style="font-size: 15px">
+    var number = 123456.789;
+    // В Германии в качестве разделителя целой и дробной части используется запятая,
+    // а в качестве разделителя разрядов - точка
+    console.log(new Intl.NumberFormat('de-DE').format(number));
+    // → 123.456,789
+    // В России в качестве разделителя целой и дробной части используется запятая,
+    //а в качестве разделителя разрядов - пробел
+    console.log(new Intl.NumberFormat('ru-RU').format(number));
+    // → 123 456,789
+    // В большинстве арабоговорящих стран используют настоящие арабские цифры
+    console.log(new Intl.NumberFormat('ar-EG').format(number));
+    // → ١٢٣٤٥٦٫٧٨٩
+            </code>
+        </pre>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NumberFormat">Intl.NumberFormat</a> <img src="pictures/mdn.svg" style="height: 1em;vertical-align: middle;" alt=""/></h2>
+        <pre>
+            <code class="javascript" style="font-size: 19px">
+var number = 123456.789;
+// Запрашиваем формат валюты
+console.log(new Intl.NumberFormat('de-DE',
+    { style: 'currency', currency: 'EUR' }).format(number)
+);
+// → 123.456,79 €
+console.log(new Intl.NumberFormat('en-IN',
+    { style: 'currency', currency: 'EUR' }
+).format(number));
+// → €123,456.79
+            </code>
+        </pre>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2><a href="https://www.npmjs.com/package/intl-relativeformat">intl-relativeformat</a> <img src="pictures/github-octocat.svg" style="height: 1em;vertical-align: middle;" alt=""/></h2>
+        <pre>
+            <code class="javascript" style="font-size: 19px">
+var english = new IntlRelativeFormat('en-US');
+var russian = new IntlRelativeFormat('en-US');
+var post = {
+    id   : 1,
+    title: 'Some Blog Post',
+    date : new Date(1426271670524)
+};
+console.log(english.format(post.date)); // => "3 hours ago"
+console.log(russian.format(post.date)); // => "3 часа назад"
+            </code>
+        </pre>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2><img style="height: 1em; vertical-align: middle" src="pictures/safari.svg" alt=""/> Safari не поддерживается</h2>
+
+        <p>Но есть полифил <a href="https://github.com/andyearnshaw/Intl.js">Intl.js</a></p>
+    </div>
+</section>
+<section class="slide shout">
+    <div>
+        <h2 class="px-90">Направление текста и размещение блоков</h2>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Направление текста</h2>
+        <div>
+            <div style="direction: ltr">Слева направо</div>
+            <div style="unicode-bidi:bidi-override;direction: rtl">Справа налево</div>
+            <div style="float:left;writing-mode:vertical-lr;-webkit-writing-mode:vertical-lr">Сверху вниз</div>
+        </div>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2 style="direction: ltr">Слева направо</h2>
+        <pre>
+            <code class="css">
+    {
+       direction: ltr;
+    }
+            </code>
+
+        </pre>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2 style="unicode-bidi:bidi-override;direction: rtl">Справа налево</h2>
+        <pre>
+            <code class="css">
+    {
+        unicode-bidi:bidi-override;
+        direction: rtl;
+    }
+            </code>
+        </pre>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2 style="float:left;writing-mode:vertical-lr;-webkit-writing-mode:vertical-lr">Сверху вниз</h2>
+        <pre>
+            <code class="css">
+    {
+        writing-mode:vertical-lr
+    }
+            </code>
+        </pre>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Размещение блоков</h2>
+        <img src="./pictures/ru-wiki.png" style="width: 784px" alt=""/>
+        <img src="./pictures/ar-wiki.png" style="width: 784px" alt=""/>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>С блоками сложнее</h2>
+        Но есть <a href="https://github.com/postcss/postcss">PostCSS</a> <a href="https://github.com/MohammadYounes/rtlcss">плагин</a>
+        <div style="display: flex">
+           <pre style="font-size: 11px;">
+            <code class="css">
+.example {
+  display:inline-block;
+  padding:5px 10px 15px 20px;
+  margin:5px 10px 15px 20px;
+  border-style:dotted dashed double solid;
+  border-width:1px 2px 3px 4px;
+  border-color:red green blue black;
+  box-shadow: -1em 0 0.4em gray, 3px 3px 30px black;
+}
+            </code>
+        </pre>
+            <span style="align-self: center;padding:30px;margin: 0 0 49px;">→</span>
+         <pre style="font-size: 11px;">
+              <code class="css">
+.example {
+  display:inline-block;
+  padding:5px 20px 15px 10px;
+  margin:5px 20px 15px 10px;
+  border-style:dotted solid double dashed;
+  border-width:1px 4px 3px 2px;
+  border-color:red black blue green;
+  box-shadow: 1em 0 0.4em gray, -3px 3px 30px black;
+}
+              </code>
+        </pre>
+        </div>
+    </div>
+</section>
+<section class="slide">
+    <div style="display: flex">
+        <div style="padding: 20px"><img style="width: 350px" src="pictures/463a6550-f674-11e4-9f7b-e2d43bf72f1b.png" alt=""/></div>
+        <div style="padding: 20px"><img style="width: 350px" src="pictures/463dd410-f674-11e4-8a4a-7b26025b79b5.png" alt=""/></div>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2 class="px-500">
+            Еще примеры
+        </h2>
+        <p>
+          Доклад <a href="http://webstandardsdays.ru/2014/05/24/pres/i18n-l20n/">Фреймворки локализации</a> Антона Немцева на WSD
+        </p>
+        <div style="display: flex">
+            <img style="margin: auto;height: 260px;" src="pictures/hex.svg" alt=""/>
+        </div>
+    </div>
+</section>
+
+<section class="slide shout">
+    <div>
+        <h2 class="px-80">Давайте перейдем к коду</h2>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Обозначение локалей и стандарты <img style="height: 1em; vertical-align: middle" src="pictures/w3c.svg" alt=""/></h2>
+
+        <div>
+            <a href="http://tools.ietf.org/html/rfc5646">BCP 47</a>
+
+            <div>zh-Hans-CN</div>
+            код языка, код письменности и код страны
+            т. е. <br/>
+            "zh-Hans-CN": упрощённый китайский, используемый в Китае.
+        </div>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Основной принцип работы библиотек</h2>
+
+        <div>
+            <pre>
+                <code class="javascript" style="font-size: 17px">
+var locale = 'ru';
+localize(keys.hello, locale);
+var dict = {
+    ru: {
+        hello:'Привет, мир'
+    },
+    default: {
+        hello:'Hello world'
+    }
+};
+                </code>
+            </pre>
+        </div>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Как хранить ключи к переводу</h2>
+        <ul>
+            <li class="next">Синтетические ключи</li>
+            <li class="next">Ключами является оригинальная фраза</li>
+        </ul>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Синтетические ключи</h2>
+
+        <div>
+            <pre>
+                <code class="javascript">
+var dict = {
+    'greeting.message':'Hello world'
+};
+var message = __('greeting.message');
+                </code>
+            </pre>
+        </div>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Проблемы</h2>
+
+        <div>
+            <ul>
+                <li class="next">
+                    Именование ключей.
+                </li>
+                <li class="next">
+                    Видеть оригинальную фразу, как программисту, так и переводчику.
+                </li>
+                <li class="next">
+                    Медленная разработка.
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Плюсы</h2>
+
+        <div>
+            <ul>
+                <li class="next">
+                    Ключи всегда доступны.
+                </li>
+                <li class="next">
+                    Легко управлять контекстом. К примеру "group" может переводиться, как группа людей или папка для группировки чего-либо.
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Ключами является оригинальная фраза</h2>
+
+        <div>
+            <pre>
+                <code class="javascript">
+var message = __('Hello world');
+/**
+Метод ищет фразу в некотором dict,
+если не нашел возвращает оригинальную фразу
+**/
+                </code>
+            </pre>
+        </div>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Проблемы</h2>
+
+        <div>
+            <ul>
+                <li class="next">
+                    Как достать все строки для формирования словаря.
+                </li>
+                <li class="next">
+                    Развязывание контекста.
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Плюсы</h2>
+
+        <div>
+            <ul>
+                <li class="next">
+                    Именование ключей.
+                </li>
+                <li class="next">
+                    Видеть оригинальную фразу, как программисту, так и переводчику.
+                </li>
+                <li class="next">
+                    Быстрая разработка.
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section class="slide shout">
+    <div>
+        <h2 class="px-90">Наш путь &mdash; оригинальные фразы</h2>
+    </div>
+</section>
+<section class="slide shout">
+    <div>
+        <h2 class="px-100">Решаем проблемы</h2>
+    </div>
+</section>
+<section class="slide shout">
+    <div>
+        <h2 class="px-90">К примеру, у нас есть следующий код</h2>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>HTML</h2>
+        <pre>
+            <code style="font-size: 19px" class="scala">
+&lt;span class="ui-label-remain ui-progressbar__data__remain"&gt;
+    &lt;%= fn.intl.formatHTMLMessage('Remain {timeRemain}',
+        {
+        timeRemain: '&lt;b class="value"&gt;' + this.timeRemain + 'h&lt;/b&gt;'
+        }
+    ) %&gt;
+&lt;/span&gt;
+            </code>
+        </pre>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>React</h2>
+        <pre>
+            <code class="xml">
+    &lt;FormattedMessage message="Action required"/&gt;
+            </code>
+        </pre>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>JavaScript</h2>
+        <pre>
+            <code style="font-size: 22px" class="javascript">
+  var tooltipTextMap = {
+    'board': intl.formatMessage('Make this View visible…'),
+    'group': intl.formatMessage('Make this Group visible…')
+  };
+            </code>
+        </pre>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Парсим шаблоны и код</h2>
+        <p><a href="https://github.com/TargetProcess/tau-extract-gettext">tau-extract-gettext</a> <img style="height: 1em; vertical-align: middle" src="pictures/github-octocat.svg" alt=""/> </p>
+
+        <p>
+            Работает на регулярных выражения и любви. Для jsx используется AST parser.
+        </p>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Контекст для компонента, шаблона, JS-файла</h2>
+        <ul>
+            <li class="next">Файл на уровне компонента .scope.json <img style="vertical-align: middle" src="pictures/folder.png" alt=""/></li>
+            <li class="next">Комментарием в JavaScript файле <pre><code class="javascript">     // intlScope:'customScope'</code></pre></li>
+            <li class="next">Комментарием в шаблоне файле <pre><code class="html">     &lt;!--intlScope:customScope--&gt;</code></pre></li>
+        </ul>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Результат</h2>
+        <pre>
+            <code class="json">
+        {
+            "menu":["group"],
+            "users":["group"]
+        }
+            </code>
+        </pre>
+    </div>
+</section>
+<section class="slide shout">
+    <div>
+        <h2 class="px-70">Что с серверными сообщениями?</h2>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Все на клиенте</h2>
+<pre>
+    <code class="javascript">
+var response = {
+    message: "You add {count} user story.",
+    data: {count: 10}
+}
+intl.formatMessage(response.message, data);
+// You add 10 user story.
+    </code>
+</pre>
+    </div>
+</section>
+<section class="slide shout">
+    <div>
+        <h2 class="px-70">Что дальше, где хранить?</h2>
+    </div>
+</section>
+<section class="slide shout">
+    <div>
+        <img  style="position: absolute; top: 80px;" src="pictures/npm.svg" alt=""/>
+        <img style="position: absolute;bottom: 20px;right: 389px;" src="pictures/bower.svg" alt=""/>
+        <img style="position: absolute;right: 61px;top: 0;" src="pictures/jspm.svg" alt=""/>
+        <h2 class="px-50">JSON-файлы переводов в отдельном пакете</h2>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Подключение словаря</h2>
+<pre>
+    <code class="javascript">
+    loadPolyfillAndDictionary(currentLocale)
+        .then(
+            ()=>    {
+             initApp();
+            }
+        )
+    </code>
+</pre>
+    </div>
+</section>
+<section class="slide shout">
+    <div>
+        <h2 class="px-80">
+            Репозиторий:<br>
+            удобно для разработчика,<br>
+            неудобно для переводчика.
+        </h2>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Загружаем словарь в систему перевода</h2>
+        <ul>
+            <li class="next"><a style="background: none" href="https://www.transifex.com/"><img style="height: 3em; vertical-align: middle" src="pictures/Transifex_Logo.png" alt=""/></a></li>
+            <li class="next"><a style="background: none" href="https://crowdin.com/"><img style="height: 3em; vertical-align: middle" src="pictures/crowdin-logo.svg" alt=""/></a></li>
+            <li class="next"><a href="https://phraseapp.com/en">PhraseApp</a></li>
+            <li class="next"><!--<img style="height: 2em; vertical-align: middle" src="pictures/ic_toplogo_unbabel.svg" alt=""/>--> <a href="https://unbabel.com/">Unbabel</a></li>
+            <li class="next"><a href="http://stackshare.io/translation-service">Подборка других сервисов</a></li>
+        </ul>
+    </div>
+</section>
+<section class="slide cover">
+    <div>
+        <img width="100%" style="top: 72px;" src="pictures/transifex_int.png" alt=""/>
+    </div>
+</section>
+<section class="slide shout">
+    <div>
+        <h2 style="font-size: 50px">
+            Пишем <a href="https://github.com/TargetProcess/transifex-github-integration-web">сервис</a><br>
+            <img style="height: 1em; vertical-align: middle" src="pictures/github-octocat.svg" alt=""/> автоматизации процесса
+        </h2>
+    </div>
+</section>
+<section class="slide shout">
+    <div>
+        <img  style="position: absolute; top: 33px; height: 237px" src="pictures/jenkins.svg" alt=""/>
+        <img style="position: absolute; height: 209px;bottom: 44px; right: 389px;" src="pictures/travis-ci.svg" alt=""/>
+        <img style="position: absolute;right: 61px; height:300px; top: 0;" src="pictures/logo_teamcity.svg" alt=""/>
+        <h2 class="px-60" >Запускаем сервисы с помощью CI</h2>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>
+            При выпуске новой версии продукта
+        </h2>
+<pre>
+    <code class="json">
+        {
+            "dependencies": {
+                "dictionary": "1.100.1"
+            }
+        }
+    </code>
+</pre>
+    </div>
+</section>
+<section class="slide shout">
+    <div>
+        <h2 class="px-100">
+            Безопасность
+        </h2>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <p>Было бы хорошо, если бы все фразы были простыми строками.</p>
+        <div style="display: flex;height: 300px;">
+            <h2 style="margin: auto">Привет, Минск!</h2>
+        </div>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2 style="font-size: 40px">Переводчик может добавить &lt;script&gt;</h2>
+        <pre style="font-size: 20px">
+            <code class="javascript">
+    _.escape('&lt;script&gt; alert("Ха") &lt;/script&gt; полезная фраза');
+    // все хорошо
+            </code>
+        </pre>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2 style="font-size: 40px">Иногда нужно форматирование</h2>
+        <pre style="font-size: 36px;">
+            <code class="html">
+&lt;b&gt;Attention!&lt;/b&gt; Remove this task?
+            </code>
+        </pre>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2 style="font-size: 40px">В словаре перевода</h2>
+        <pre>
+            <code class="html">
+&lt;b&gt;Внимание!&lt;/b&gt; Удалить эту задачу?
+&lt;script&gt;
+alert("Ха")
+// XSS во фразе с форматированием
+&lt;/script&gt;
+            </code>
+        </pre>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2 style="font-size: 40px">Или навесить обработчик события</h2>
+        <pre style="font-size: 36px;">
+            <code class="html">
+&lt;b&gt;Click me!&lt;/b&gt; Remove this task?
+            </code>
+        </pre>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2 style="font-size: 40px">В словаре перевода</h2>
+        <pre>
+            <code class="html">
+&lt;b&gt;Кликни меня!&lt;/b&gt;  Удалить эту задачу?
+&lt;script&gt;
+alert("Ха");
+// XSS, нужно навесить событие на элемент
+&lt;/script&gt;
+            </code>
+        </pre>
+    </div>
+</section>
+<section class="slide shout">
+    <div>
+        <h2 class="px-70">Чистим текст по белому списку</h2>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2 style="font-size: 40px">Если нужен обработчик</h2>
+<pre>
+    <code class="html">
+&lt;b class="i-role-action"&gt;Кликни меня!&lt;/b&gt;
+
+// В коде приложении навешиваем событие
+
+&lt;script&gt;
+   $(".i-role-action").click(()=>{action();})
+&lt;/script&gt;
+    </code>
+</pre>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2 style="font-size: 40px">FormattedMessage для React</h2>
+<pre>
+    <code class="nohighlight">
+&lt;FormattedMessage
+    message={"{name} has {numPhotos}"}
+    name={&lt;MyComponent&gtAnnie&lt;/MyComponent&gt}
+    numPhotos={1000}
+/&gt
+    </code>
+</pre>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Автоматизируем поиск XSS</h2>
+        <p>Поможет инструментация кода.</p>
+<pre>
+    <code class="javascript">
+formatMessage(stringFromDictionary +
+    '&lt;script&gtwindow.XSS++&lt;/script&gt'
+)
+    </code>
+</pre>
+    </div>
+</section>
+<section class="slide shout">
+    <div>
+        <h2 class="px-100">Забытое, но важное</h2>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <img src="pictures/materialdesign_principles_metaphor.png" style="height: 300px;float: right;" alt=""/>
+        Думайте над оригинальными фразами. Не&nbsp;усложняйте. Материальный дизайн <a
+                href="https://www.google.com/design/spec/style/writing.html">writing guide</a>.
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Личная просьба</h2>
+        <p>Не&nbsp;используйте флаги для выбора языков, пишите названия язык на целевом языке пользователя.</p>
+        <div style="display: flex;align-items: center;">
+            <img style="height: 260px;" src="pictures/16208-flags-icon-sets.jpg" alt=""/>
+            <span style="align-self: center;padding:30px;margin: 0 0 49px;">→</span>
+            <select multiple style="margin-left:80px; height: 150px" name="" id="">
+                <option value="1">English</option>
+                <option value="1">Русский</option>
+                <option value="1">Беларуская</option>
+                <option value="1">Українська</option>
+            </select>
+        </div>
+    </div>
+</section>
+<section class="slide">
+    <div>
+        <h2>Вопросы?</h2>
+        <div>
+            <a class="px-50" href="https://goo.gl/AC3jyS">goo.gl/AC3jyS</a>
+        </div>
+        <div>
+            <h3>Контакты</h3>
+            <a style="background:url(pictures/twitter-bird-light-bgs.png) no-repeat;padding-left:40px;"
+               href="https://twitter.com/Krivlenia">Twitter (https://twitter.com/Krivlenia/)</a><br>
+            <a style="background:url(pictures/GitHub-Mark-32px.png) no-repeat;padding-left:40px;"
+               href="https://github.com/Mavrin">Github (https://github.com/Mavrin/)</a><br>
+            <a style="background:url(pictures/habrahabr.png) center left no-repeat;padding-left:20px;"
+               href="http://habrahabr.ru/users/mavrin/">Хабр (http://habrahabr.ru/users/mavrin/)</a><br>
+        </div>
+    </div>
+</section>
+<!--
+    To hide progress bar from entire presentation
+    just remove “progress” element.
+    -->
+<div class="progress">
+    <div></div>
+</div>
+<script src="shower/shower.min.js"></script>
+<script src="highlightjs/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlighting();
+</script>
+<!-- Copyright © 2013 Yours Truly, Famous Inc. -->
+</body>
+</html>

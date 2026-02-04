@@ -1,0 +1,27 @@
+/*
+  example from
+  http://lea.verou.me/2011/03/on-css-preprocessors/
+*/
+
+.rotate (@degrees: 10deg) {
+  -moz-transform: rotate(@degrees);
+  -ms-transform: rotate(@degrees);
+  -o-transform: rotate(@degrees);
+  -webkit-transform: rotate(@degrees);
+  transform: rotate(@degrees);
+}
+
+#foo {
+  font-size: 150%;
+  .rotate(40deg);
+}
+
+#bar {
+  background: silver;
+  .rotate(40deg);
+}
+
+#baz {
+  background: white;
+  .rotate(40deg);
+}

@@ -1,0 +1,60 @@
+// ------------------------------------------------------------------
+// Section List
+// ------------------------------------------------------------------
+// 1. Scale ............ Scaling and size fitting with margin
+// 2. Shadow ........... Shadow, hovered and current outlines
+// 3. Cover ............ Transparent cover blocking interaction
+// ------------------------------------------------------------------
+
+> section {
+
+	// Scale
+
+	transform-origin:0 0;
+
+	@mixin scale-section($scale) {
+		$magic:1 - 1 / $scale;
+		margin:0 (0 - $width * $magic) ($gap / $scale - $height * $magic) $gap / $scale;
+		transform:scale(1 / $scale);
+		}
+
+	@include scale-section(4);
+
+	@each $scale in 2, 1 {
+		@include scale-breakpoint($scale) {
+			@include scale-section($scale);
+			}
+		}
+
+	// Shadow
+
+	border-radius:2px;
+	box-shadow:0 20px 50px rgba(black, 0.3);
+
+	&:hover {
+		box-shadow:
+			0 0 0 20px rgba(black, 0.1),
+			0 20px 50px rgba(black, 0.3);
+		}
+	&:target {
+		box-shadow:
+			0 0 0 1px darken($blue, 10%),
+			0 0 0 20px $blue,
+			0 20px 50px rgba(black, 0.3);
+		}
+
+	// Cover
+
+	&:before {
+		position:absolute;
+		top:0;
+		right:0;
+		bottom:0;
+		left:0;
+		z-index:1;
+		content:'';
+		}
+
+	@import 'section__footer--list';
+
+	}

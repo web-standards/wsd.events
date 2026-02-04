@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400">
+	<defs>
+		<style>
+			rect {
+				fill:#979A9E;
+				}
+			text {
+				fill:#FFF;
+				text-anchor:middle;
+				font:bold 50px PT Sans Narrow, sans-serif;
+				}
+		</style>
+	</defs>
+	<rect x="0" y="0" width="1200" height="400"/>
+	<text x="600" y="220">Wide Picture</text>
+</svg>

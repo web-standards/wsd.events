@@ -1,0 +1,42 @@
+// ------------------------------------------------------------------
+// Table
+// ------------------------------------------------------------------
+
+table {
+
+	margin-left:-96px;
+	margin-bottom:1em;
+	width:calc(100% + 96px + 112px);
+
+	tr:not(:last-of-type) {
+		> * {
+			@include underline($light, 0.055);
+			}
+		}
+	th:first-child,
+	td:first-child {
+		padding-left:96px;
+		}
+	th:last-child,
+	td:last-child {
+		padding-right:96px;
+		}
+	th {
+		text-align:left;
+		font-weight:bold;
+		}
+
+	// Striped
+
+	&.striped {
+		tr {
+			&:nth-child(even) {
+				background:mix($color, white, 10%);
+				}
+			> * {
+				background-image:none;
+				}
+			}
+		}
+
+	}

@@ -1,0 +1,427 @@
+#Cover h2 {
+  margin: 30px 0 0 200px;
+  text-align: center;
+  font-size: 70px;
+  line-height: 1.5;
+}
+
+#Cover p {
+  position: absolute;
+  bottom: 0;
+  left: 70px;
+  font-size: 28px;
+  line-height: 1.7;
+}
+
+.cover img {
+  margin-left: -120px;
+  margin-top: -120px;
+  width: 400px;
+}
+
+.right-bottom {
+  position: absolute;
+  bottom: 50px;
+  right: 70px;
+}
+
+.left-bottom {
+  position: absolute;
+  bottom: 50px;
+  left: 70px;
+  border: none;
+}
+
+.right-bottom a {
+  border: none;
+  font-size: 28px;
+}
+
+.slide.cover {
+  background: #fff;
+}
+
+table, tr, td {
+  border: none;
+}
+
+a {
+  color: #65247f;
+  text-decoration: none;
+  background: none;
+  border: none;
+}
+
+.slide h2 {
+  color: #000;
+  font-family: "PT Sans", sans-serif;
+}
+
+.slide img {
+  max-width: 100%;
+}
+
+.slide > div {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 50px 80px;
+  height: 100%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+table.text-center th {
+  text-align: center;
+}
+
+#webgl-player,
+#webgl-player-shader,
+#webgl-player-wireframe {
+  height: 400px;
+  width: 100%;
+  background: #dcd1fa;
+  box-shadow: 0 0 6px 2px rgba(220,209,250,1)
+}
+
+.full .progress div {
+  border-bottom-color: #CC0000;
+}
+
+.slide table.table {
+  vertical-align: middle;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 0;
+}
+
+.couple-img {
+  max-height: 225px;
+}
+
+.slide table.table img, 
+.slide table.table a,
+.slide table.table span {
+  vertical-align: middle;
+}
+
+.slide pre {
+  margin: 0;
+}
+
+.slide table.table td {
+  border: none;
+  background: none;
+  vertical-align: middle;
+  padding: 10px;
+}
+
+.slide table.table-contact {
+  width: 60%;
+  margin-bottom: 10px;
+  margin-left: 250px;
+}
+
+.slide table.table-contact td {
+  text-align: left;
+  font-size: 46px;
+}
+
+.wecan {
+  background: #0C0F54;
+}
+
+.wecan h2 {
+  line-height: 2;
+  color: #fff;
+}
+
+.wecan img{
+  position: absolute;
+  height: 100%;
+  bottom: 0;
+  right: 0;
+}
+
+.big-font {
+  font-size: 90px;
+}
+
+.slide ol li, .slide ul li {
+  text-indent: 0;
+  line-height: 3;
+}
+
+.slide h1 {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.lib-three,
+.lib-babylon,
+.lib-turbulenz,
+.lib-philo {
+  position: absolute;
+}
+
+.lib-three {
+  top: 30%;
+  right: 40%;
+  width: 200px;
+}
+
+.lib-babylon {
+  top: 40%;
+  right: 20%;
+  width: 200px;
+}
+
+.lib-turbulenz {
+  top: 60%;
+  right: 50%;
+  width: 70px;
+}
+
+.lib-philo {
+  top: 80%;
+  right: 20%;
+  width: 200px;
+}
+
+.libs ul {
+  margin-top: 80px;
+}
+
+.adv-lib .center {
+  margin-top: 200px;
+  font-size: 40px;
+}
+
+.qr {
+  max-height: 470px;
+}
+
+h3 {
+  font-size: 52px;
+}
+
+.width50 {
+  width: 50%;
+  box-sizing: border-box;
+  float: left;
+}
+
+.clearfix:after {
+  content: "";
+  clear: both;
+  float: none;
+}
+
+.big-img div {
+  padding: 0;
+}
+
+.slide.big-img img {
+  max-width: initial;
+  height: 100%;
+}
+
+.slide.shaders h2 {
+  color: #fff;
+  top: 70%;
+  text-shadow: 0 0 20px #000;
+}
+
+.slide.wireframe img {
+  height: auto;
+  margin-top: -100px;
+  max-width: 100%;
+}
+
+.slide.wireframe h2 {
+  top: 80%;
+  font-size: 100px;
+}
+
+.slide.light table img {
+  max-width: 300px;
+}
+
+.cameras p {
+  margin: 0;
+}
+
+.cameras h2 {
+  margin-bottom: 10px;
+}
+
+.cameras img {
+  max-height: 200px;
+  padding: 0;
+  margin: 0;
+}
+
+.eye {
+  position: absolute;
+  bottom: 30px;
+  left: 210px;
+  width: 100px;
+}
+
+.top-threejs a {
+  position: absolute;
+  bottom: 40px;
+  color: #fff;
+  right: 20px;
+  border: none;
+  font-size: 20px;
+}
+
+.wow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.big-img h2 {
+  position: absolute;
+  color: #fff;
+  top: 50px;
+  left: 80px;
+  text-shadow: 0 0 20px #000;
+}
+
+.whats-webgl .opengl {
+  max-width: 400px;
+}
+
+.whats-webgl .js {
+  max-width: 200px;
+}
+
+.whats-webgl .love {
+  max-width: 300px;
+}
+
+.whats-webgl * {
+  vertical-align: middle;
+  font-size: 72px;
+  margin: 0;
+}
+
+.slide ul {
+  margin: 0;
+}
+
+#cube-canvas {
+  position: absolute;
+  right: 50px;
+  top: 100px;
+}
+
+.opengles {
+  position: absolute;
+  left: 40%;
+  top: 200px;
+  width: 300px;
+}
+
+.webgl-img {
+  position: absolute;
+  right: 10%;
+  bottom: 60px;
+  width: 200px;
+}
+
+.small-img {
+  width: 100%;
+}
+
+.slide table.table .movie {
+  max-width: 450px;
+  margin-left: 200px;
+}
+
+.slide img.center-img {
+  position: relative;
+  max-width: 100%;
+  height: auto;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -web-transform: translate(-50%, -50%);
+}
+
+.vertical-middle {
+  position: relative;
+  top: 45%;
+  transform: translate(0, -50%);
+  -webkit-transform: translate(0, -50%);
+}
+
+.absolute-center {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+
+.vars table {
+  margin-bottom: 10px;
+}
+
+.vars img {
+  width: 500px;
+}
+
+.slide.input p {
+  position: absolute;
+  top: 110px;
+  left: 40%;
+  font-size: 32px;
+}
+
+.slide.input table img {
+  width: 350px;
+}
+
+.slide.input table td:first-child img {
+  width: 450px;
+}
+
+.slide.input span {
+  font-size: 18px;
+  display: inline-block;
+}
+
+.color-orange {
+  color: orange;
+}
+
+.html span {
+  font-size: 38px;
+  font-weight: bold;
+}
+
+.browsers-img {
+  position: absolute;
+  width: 65%;
+  right: 0;
+  bottom: 0;
+}
+
+.iewbgl {
+  position: absolute;
+  top: 200px;
+  left: 110px;
+}
+
+#webgl-point {
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+.connection img {
+  width: 750px;
+}

@@ -1,0 +1,686 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>CSS is still awesome</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=792, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen-d90984e344.css">
+
+	<style>
+		.overflow
+		{
+			overflow: auto;
+
+			width: 100%;
+			height: 400px;
+		}
+	</style>
+</head>
+<body class="list">
+	<header class="caption">
+		<h1>CSS is still awesome</h1>
+		<p>@yuritkachenko</p>
+	</header>
+	<section class="slide cover" id="Cover"><div>
+		<h1>CSS is <br><strong>still</strong> <span>awesome</span></h1>
+		<p>@yuritkachenko</p>
+		<style>
+			#Cover
+			{
+				position: relative;
+				background: #fff;
+			}
+
+			#Cover p
+			{
+				position: absolute;
+				bottom: 0;
+			}
+
+			#Cover h1
+			{
+				position: relative;
+
+				font-size: 90px;
+				line-height: 90px;
+
+				box-sizing: border-box;
+				width: 240px;
+				padding: 20px;
+
+				border: 2px solid #000;
+				will-change: opacity;
+
+				animation: still 15s infinite;
+			}
+
+			#Cover strong
+			{
+				position: absolute;
+				overflow: hidden;
+				width: 0;
+				vertical-align: baseline;
+				will-change: width;
+				margin: 0;
+				padding: 0;
+
+				line-height: 90px;
+
+				animation: still_strong 15s infinite;
+			}
+
+			#Cover span
+			{
+				animation: still_span 15s infinite;
+				display: inline-block;
+			}
+
+			@keyframes still_span {
+				0% {
+					margin-left: 0;
+					opacity: 1;
+					transform: skew(0deg)
+				}
+				70% {
+					margin-left: 0;
+					opacity: 1;
+					transform: skew(0deg)
+				}
+				72% {
+					margin-left: 2.5em;
+					opacity: 1;
+					transform: skew(-20deg)
+				}
+				73% {
+					margin-left: 1.9em;
+					opacity: 1;
+					transform: skew(0)
+				}
+				93% {
+					margin-left: 1.9em;
+					opacity: 1;
+					transform: skew(0deg)
+				}
+				100% {
+					margin-left: 1.9em;
+					opacity: 0;
+					transform: skew(0deg)
+				}
+			}
+
+			@keyframes still_strong {
+				0% {
+					width: 0;
+					opacity: 1;
+				}
+				70% {
+					width: 0;
+					opacity: 1;
+				}
+				73% {
+					width: 150px;
+					opacity: 1;
+				}
+				93% {
+					width: 150px;
+					opacity: 1;
+				}
+				100% {
+					opacity: 0;
+					width: 150px;
+				}
+			}
+
+			@keyframes still {
+				0% {
+					width: 200px;
+					opacity: 1;
+				}
+				10% {
+					width: 200px;
+					opacity: 1;
+				}
+				73% {
+					width: 80%;
+					opacity: 1;
+				}
+				93% {
+					width: 80%;
+					opacity: 1;
+				}
+				100% {
+					opacity: 0;
+					width: 80%;
+				}
+			}
+		</style>
+	</div></section>
+	<section class="slide cover"><div>
+		<img src="pictures/scss.jpg" alt="сахар">
+	</div></section>
+	<section class="slide shout"><div>
+		<h2>Знание — сила!</h2>
+	</div></section>
+	<section class="slide shout"><div>
+		<h2>“CSS is a compile target”</h2>
+	</div></section>
+	<section class="slide"><div>
+		<h2>“CSS is a compile target”</h2>
+		<pre class="overflow">
+<code>[core-date-range] [core-morph-popup] .content-box .footer .btn.close.disabled,
+[core-date-range] [core-morph-popup] .content-box .footer .btn.close.disabled.active,
+[core-date-range] [core-morph-popup] .content-box .footer .btn.close.disabled.focus,
+[core-date-range] [core-morph-popup] .content-box .footer .btn.close.disabled:active,
+[core-date-range] [core-morph-popup] .content-box .footer .btn.close.disabled:focus,
+[core-date-range] [core-morph-popup] .content-box .footer .btn.close.disabled:hover,
+[core-date-range] [core-morph-popup] .content-box .footer .btn.close[disabled],
+[core-date-range] [core-morph-popup] .content-box .footer .btn.close[disabled].active,
+[core-date-range] [core-morph-popup] .content-box .footer .btn.close[disabled].focus,
+[core-date-range] [core-morph-popup] .content-box .footer .btn.close[disabled]:active,
+[core-date-range] [core-morph-popup] .content-box .footer .btn.close[disabled]:focus,
+[core-date-range] [core-morph-popup] .content-box .footer .btn.close[disabled]:hover,
+[core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-facebook.close.disabled,
+[core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-facebook.close.disabled.active,
+[core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-facebook.close.disabled.focus,
+[core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-facebook.close.disabled:active,
+[core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-facebook.close.disabled:focus,
+[core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-facebook.close.disabled:hover,
+[core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-facebook.close[disabled],
+[core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-facebook.close[disabled].active,
+[core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-facebook.close[disabled].focus,
+[core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-facebook.close[disabled]:active,
+[core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-facebook.close[disabled]:focus,
+[core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-facebook.close[disabled]:hover,
+[core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-google.close.disabled,
+[core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-google.close.disabled.active,
+[core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-google.close.disabled.focus,
+[core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-google.close.disabled:active,
+[core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-google.close.disabled:focus,
+[core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-google.close.disabled:hover,
+[core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-google.close[disabled],
+[core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-google.close[disabled].active,
+[core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-google.close[disabled].focus,
+[core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-google.close[disabled]:active,
+[core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-google.close[disabled]:focus,
+[core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-google.close[disabled]:hover,
+[core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-login.close.disabled,
+[core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-login.close.disabled.active,
+[core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-login.close.disabled.focus,
+[core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-login.close.disabled:active,
+[core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-login.close.disabled:focus,
+[core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-login.close.disabled:hover,
+[core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-login.close[disabled],
+[core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-login.close[disabled].active,
+[core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-login.close[disabled].focus,
+[core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-login.close[disabled]:active,
+[core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-login.close[disabled]:focus,
+[core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-login.close[disabled]:hover,
+[core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-signup.close.disabled,
+[core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-signup.close.disabled.active,
+[core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-signup.close.disabled.focus,
+[core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-signup.close.disabled:active,
+[core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-signup.close.disabled:focus,
+[core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-signup.close.disabled:hover,
+[core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-signup.close[disabled],
+[core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-signup.close[disabled].active,
+[core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-signup.close[disabled].focus,
+[core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-signup.close[disabled]:active,
+[core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-signup.close[disabled]:focus,
+[core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-signup.close[disabled]:hover,
+[core-date-range] [core-morph-popup] .content-box .footer .frm-no-account .btn-go.close.disabled,
+[core-date-range] [core-morph-popup] .content-box .footer .frm-no-account .btn-go.close.disabled.active,
+[core-date-range] [core-morph-popup] .content-box .footer .frm-no-account .btn-go.close.disabled.focus,
+[core-date-range] [core-morph-popup] .content-box .footer .frm-no-account .btn-go.close.disabled:active,
+[core-date-range] [core-morph-popup] .content-box .footer .frm-no-account .btn-go.close.disabled:focus,
+[core-date-range] [core-morph-popup] .content-box .footer .frm-no-account .btn-go.close.disabled:hover,
+[core-date-range] [core-morph-popup] .content-box .footer .frm-no-account .btn-go.close[disabled],
+[core-date-range] [core-morph-popup] .content-box .footer .frm-no-account .btn-go.close[disabled].active,
+[core-date-range] [core-morph-popup] .content-box .footer .frm-no-account .btn-go.close[disabled].focus,
+[core-date-range] [core-morph-popup] .content-box .footer .frm-no-account .btn-go.close[disabled]:active,
+[core-date-range] [core-morph-popup] .content-box .footer .frm-no-account .btn-go.close[disabled]:focus,
+[core-date-range] [core-morph-popup] .content-box .footer .frm-no-account .btn-go.close[disabled]:hover,
+[core-date-range] [core-morph-popup] .content-box .footer .nav-bar .menu-search li .btn-close.close.disabled,
+[core-date-range] [core-morph-popup] .content-box .footer .nav-bar .menu-search li .btn-close.close.disabled.active,
+[core-date-range] [core-morph-popup] .content-box .footer .nav-bar .menu-search li .btn-close.close.disabled.focus,
+[core-date-range] [core-morph-popup] .content-box .footer .nav-bar .menu-search li .btn-close.close.disabled:active,
+[core-date-range] [core-morph-popup] .content-box .footer .nav-bar .menu-search li .btn-close.close.disabled:focus,
+[core-date-range] [core-morph-popup] .content-box .footer .nav-bar .menu-search li .btn-close.close.disabled:hover,
+[core-date-range] [core-morph-popup] .content-box .footer .nav-bar .menu-search li .btn-close.close[disabled],
+[core-date-range] [core-morph-popup] .content-box .footer .nav-bar .menu-search li .btn-close.close[disabled].active,
+[core-date-range] [core-morph-popup] .content-box .footer .nav-bar .menu-search li .btn-close.close[disabled].focus,
+[core-date-range] [core-morph-popup] .content-box .footer .nav-bar .menu-search li .btn-close.close[disabled]:active,
+[core-date-range] [core-morph-popup] .content-box .footer .nav-bar .menu-search li .btn-close.close[disabled]:focus,
+[core-date-range] [core-morph-popup] .content-box .footer .nav-bar .menu-search li .btn-close.close[disabled]:hover,
+[core-date-range] [core-morph-popup] .content-box .footer .nav-bar .menu-search li .btn-search.close.disabled,
+[core-date-range] [core-morph-popup] .content-box .footer .nav-bar .menu-search li .btn-search.close.disabled.active,
+[core-date-range] [core-morph-popup] .content-box .footer .nav-bar .menu-search li .btn-search.close.disabled.focus,
+[core-date-range] [core-morph-popup] .content-box .footer .nav-bar .menu-search li .btn-search.close.disabled:active,
+[core-date-range] [core-morph-popup] .content-box .footer .nav-bar .menu-search li .btn-search.close.disabled:focus,
+[core-date-range] [core-morph-popup] .content-box .footer .nav-bar .menu-search li .btn-search.close.disabled:hover,
+[core-date-range] [core-morph-popup] .content-box .footer .nav-bar .menu-search li .btn-search.close[disabled],
+[core-date-range] [core-morph-popup] .content-box .footer .nav-bar .menu-search li .btn-search.close[disabled].active,
+[core-date-range] [core-morph-popup] .content-box .footer .nav-bar .menu-search li .btn-search.close[disabled].focus,
+[core-date-range] [core-morph-popup] .content-box .footer .nav-bar .menu-search li .btn-search.close[disabled]:active,
+[core-date-range] [core-morph-popup] .content-box .footer .nav-bar .menu-search li .btn-search.close[disabled]:focus,
+[core-date-range] [core-morph-popup] .content-box .footer .nav-bar .menu-search li .btn-search.close[disabled]:hover,
+[core-date-range] [core-morph-popup] .content-box .footer div[chart-view] .tablet-switch .first-half-btn.close.disabled,
+[core-date-range] [core-morph-popup] .content-box .footer div[chart-view] .tablet-switch .first-half-btn.close.disabled.active,
+[core-date-range] [core-morph-popup] .content-box .footer div[chart-view] .tablet-switch .first-half-btn.close.disabled.focus,
+[core-date-range] [core-morph-popup] .content-box .footer div[chart-view] .tablet-switch .first-half-btn.close.disabled:active,
+[core-date-range] [core-morph-popup] .content-box .footer div[chart-view] .tablet-switch .first-half-btn.close.disabled:focus,
+[core-date-range] [core-morph-popup] .content-box .footer div[chart-view] .tablet-switch .first-half-btn.close.disabled:hover,
+[core-date-range] [core-morph-popup] .content-box .footer div[chart-view] .tablet-switch .first-half-btn.close[disabled],
+[core-date-range] [core-morph-popup] .content-box .footer div[chart-view] .tablet-switch .first-half-btn.close[disabled].active,
+[core-date-range] [core-morph-popup] .content-box .footer div[chart-view] .tablet-switch .first-half-btn.close[disabled].focus,
+[core-date-range] [core-morph-popup] .content-box .footer div[chart-view] .tablet-switch .first-half-btn.close[disabled]:active,
+[core-date-range] [core-morph-popup] .content-box .footer div[chart-view] .tablet-switch .first-half-btn.close[disabled]:focus,
+[core-date-range] [core-morph-popup] .content-box .footer div[chart-view] .tablet-switch .first-half-btn.close[disabled]:hover,
+[core-date-range] [core-morph-popup] .content-box .footer div[chart-view] .tablet-switch .second-half-btn.close.disabled,
+[core-date-range] [core-morph-popup] .content-box .footer div[chart-view] .tablet-switch .second-half-btn.close.disabled.active,
+[core-date-range] [core-morph-popup] .content-box .footer div[chart-view] .tablet-switch .second-half-btn.close.disabled.focus,
+[core-date-range] [core-morph-popup] .content-box .footer div[chart-view] .tablet-switch .second-half-btn.close.disabled:active,
+[core-date-range] [core-morph-popup] .content-box .footer div[chart-view] .tablet-switch .second-half-btn.close.disabled:focus,
+[core-date-range] [core-morph-popup] .content-box .footer div[chart-view] .tablet-switch .second-half-btn.close.disabled:hover,
+[core-date-range] [core-morph-popup] .content-box .footer div[chart-view] .tablet-switch .second-half-btn.close[disabled],
+[core-date-range] [core-morph-popup] .content-box .footer div[chart-view] .tablet-switch .second-half-btn.close[disabled].active,
+[core-date-range] [core-morph-popup] .content-box .footer div[chart-view] .tablet-switch .second-half-btn.close[disabled].focus,
+[core-date-range] [core-morph-popup] .content-box .footer div[chart-view] .tablet-switch .second-half-btn.close[disabled]:active,
+[core-date-range] [core-morph-popup] .content-box .footer div[chart-view] .tablet-switch .second-half-btn.close[disabled]:focus,
+[core-date-range] [core-morph-popup] .content-box .footer div[chart-view] .tablet-switch .second-half-btn.close[disabled]:hover,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer .btn.close,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer .btn.close.active,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer .btn.close.focus,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer .btn.close:active,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer .btn.close:focus,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer .btn.close:hover,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-facebook.close,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-facebook.close.active,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-facebook.close.focus,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-facebook.close:active,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-facebook.close:focus,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-facebook.close:hover,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-google.close,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-google.close.active,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-google.close.focus,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-google.close:active,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-google.close:focus,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-google.close:hover,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-login.close,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-login.close.active,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-login.close.focus,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-login.close:active,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-login.close:focus,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-login.close:hover,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-signup.close,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-signup.close.active,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-signup.close.focus,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-signup.close:active,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-signup.close:focus,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer .col-signup .signup .btn-signup.close:hover,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer .frm-no-account .btn-go.close,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer .frm-no-account .btn-go.close.active,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer .frm-no-account .btn-go.close.focus,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer .frm-no-account .btn-go.close:active,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer .frm-no-account .btn-go.close:focus,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer .frm-no-account .btn-go.close:hover,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer .nav-bar .menu-search li .btn-close.close,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer .nav-bar .menu-search li .btn-close.close.active,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer .nav-bar .menu-search li .btn-close.close.focus,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer .nav-bar .menu-search li .btn-close.close:active,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer .nav-bar .menu-search li .btn-close.close:focus,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer .nav-bar .menu-search li .btn-close.close:hover,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer .nav-bar .menu-search li .btn-search.close,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer .nav-bar .menu-search li .btn-search.close.active,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer .nav-bar .menu-search li .btn-search.close.focus,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer .nav-bar .menu-search li .btn-search.close:active,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer .nav-bar .menu-search li .btn-search.close:focus,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer .nav-bar .menu-search li .btn-search.close:hover,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer div[chart-view] .tablet-switch .first-half-btn.close,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer div[chart-view] .tablet-switch .first-half-btn.close.active,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer div[chart-view] .tablet-switch .first-half-btn.close.focus,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer div[chart-view] .tablet-switch .first-half-btn.close:active,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer div[chart-view] .tablet-switch .first-half-btn.close:focus,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer div[chart-view] .tablet-switch .first-half-btn.close:hover,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer div[chart-view] .tablet-switch .second-half-btn.close,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer div[chart-view] .tablet-switch .second-half-btn.close.active,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer div[chart-view] .tablet-switch .second-half-btn.close.focus,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer div[chart-view] .tablet-switch .second-half-btn.close:active,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer div[chart-view] .tablet-switch .second-half-btn.close:focus,
+fieldset[disabled] [core-date-range] [core-morph-popup] .content-box .footer div[chart-view] .tablet-switch .second-half-btn.close:hover {
+    <mark>background-color: #fff;</mark>
+}</code>
+
+		</pre>
+
+	</div></section>
+	<section class="slide"><div>
+		<h2>Опасные моменты с препроцессорами</h2>
+		<ul>
+			<li><code>extend</code> коварный, провоцирует дублирование</li>
+			<li class="next"><code>variables</code> хитрые и провоцируют баги с коллизиями имен</li>
+			<li class="next"><code>mixin</code> тоже коварный и провоцирует дублирование свойств</li>
+			<li class="next"><code>nesting</code> провоцирует слишком специфичные селекторы</li>
+			<li class="next">нужны source maps</li>
+			<li class="next">не программируйте на CSS</li>
+		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Правда, не надо программировать на CSS</h2>
+		<pre class="overflow">
+			<code>
+ @mixin check($slides) {
+   <mark>@for $i from 1 through $slides</mark> {
+     input[type=radio]:nth-of-type(#{$i}):checked ~ .slider-wrapper {
+       .slide:nth-of-type(#{$i}) {
+         // transform: translate3d(0,0,0);
+         opacity: 1;
+         .caption {
+           opacity: 1;
+           transform: translate3d(0, 0, 0);
+         }
+       }
+       <mark>@include slectIndexLeft($i, $slides);
+       @include slectIndexRight($i, $slides);</mark>
+     }
+   }
+ }
+
+ @mixin slectIndexLeft($slide, $numOfSlides) {
+   $num: 1;
+   @if $slide > 1 {
+     $num: $slide - 1;
+   }
+   @else if $slide==1 {
+     $num: $numOfSlides;
+   }
+   .slider-controls.left {
+     label[for] {
+       z-index: -1;
+       &:nth-of-type(#{$num}) {
+         z-index: 10;
+       }
+     }
+   }
+ }
+
+ @mixin slectIndexRight($slide, $numOfSlides) {
+   $num: 1;
+   @if $slide < $numOfSlides {
+     $num: $slide + 1;
+   }
+   @else if $slide==$numOfSlides {
+     $num: 1;
+   }
+   .slider-controls.right {
+     label[for] {
+       z-index: -1;
+       &:nth-of-type(#{$num}) {
+         z-index: 10;
+       }
+     }
+   }
+ }
+
+ @mixin slider($numOfSlides: 3, $sliderHeight: 250px, $animation: cubic-bezier(.17, .67, .35, .89)) {
+   position: relative;
+   @include check($numOfSlides);
+   input[type=radio] {
+     display: none;
+   }
+   .slider-controls {
+     position: absolute;
+     width: 40px;
+     height: 63px;
+     top: 45%;
+     taransform: trnaslateY(-50%);
+     opacity: 0;
+     transform: translate3d(0, -100%, 0);
+     will-change: opacity, transform;
+     transition: .3s $animation;
+     &.right {
+       right: 15px;
+       background: url('../img/arrow-right.svg') 50% 50% no-repeat;
+     }
+     &.left {
+       left: 15px;
+       background: url('../img/arrow-left.svg') 50% 50% no-repeat;
+     }
+     label[for] {
+       position: absolute;
+       display: block;
+       width: 100%;
+       cursor: pointer;
+       height: 100%;
+       top: 0;
+       left: 0;
+     }
+   }
+   .slider-wrapper {
+     height: $sliderHeight;
+     width: 100%;
+     position: relative;
+     overflow: hidden;
+     &:hover {
+       .slider-controls {
+         opacity: 1;
+         transform: translate3d(0, -50%, 0);
+       }
+     }
+     .slide {
+       transition: all .3s $animation;
+       will-change: transform, opacity;
+       position: absolute;
+       border-radius: 4px;
+       width: 100%;
+       top: 0;
+       left: 0;
+       height: inherit;
+       overflow: hidden;
+       border-radius: 4px;
+       // transform: translate3d(-100%, 0,0);
+       opacity: 0;
+       &:after {
+         position: absolute;
+         z-index: 2;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: inherit;
+         content: '';
+         background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+       }
+       img {
+         display: block;
+         height: auto;
+         min-width: 100%;
+         min-height: 100%;
+       }
+       .caption {
+         position: absolute;
+         z-index: 3;
+         opacity: 0;
+         will-change: opacity, transform;
+         transition: 1s $animation;
+         // top: 50%;
+         width: 100%;
+         bottom: 0;
+         padding: 20px;
+         padding-bottom: 16px;
+         label {
+           background: $purple;
+           display: inline-block;
+           border-radius: 25px;
+           color: white;
+           padding: 0 13px;
+           margin-bottom: 16px;
+           text-transform: uppercase;
+           font: 400 10px/19px $Montserrat;
+           letter-spacing: 3px;
+         }
+         h3 {
+           font: bold 24px $Montserrat;
+           color: white;
+           text-align: left;
+           margin-bottom: 11px;
+         }
+         p {
+           font: 300 14px/17px $Roboto;
+           color: $grey;
+           text-align: left;
+         }
+         &.left {
+           transform: translate3d(-150%, -50%, 0);
+         }
+         &.right {
+           transform: translate3d(150%, -50%, 0);
+         }
+         &.center {
+           transform: translate3d(0, 150%, 0);
+         }
+         // h1 {
+         //   color: #fff;
+         //   margin: 0;
+         //   // font: bold 28px @font-main;
+         //   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+         // }
+       }
+     }
+   }
+ }
+
+ // slide selection by radio check
+
+			</code>
+		</pre>
+	</div></section>
+
+	<section class="slide shout"><div>
+		<h2>Маємо те, що маємо!</h2>
+	</div></section>
+
+	<section class="slide shout"><div>
+		<h2>CSS пишут больше людей &lt;&hellip;&gt;</h2>
+	</div></section>
+
+	<section class="slide shout"><div>
+		<h2>&lt;&hellip;&gt; а знают меньше</h2>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>CSS нужно популяризировать</h2>
+		<p>Не как compile target, а как инструмент.</p>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Пробежимся по вкусняшкам</h2>
+		<ul>
+			<li>CSS Shapes, CSS Masking</li>
+			<li>CSS Image Values and Replaced Content </li>Module Level 4
+			<li>CSS Custom Properties for Cascading </li>Variables Module Level 1
+			<li>CSS Grid Layout Module Level 1</li>
+			<li>Selectors Level 4</li>
+		</ul>
+	</div></section>
+
+	<section class="slide shout"><div>
+		<h2>CSS Shapes<br>CSS&nbsp;Masking</h2>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>CSS Shapes и CSS Masking</h2>
+		<ul>
+			<li>DataURI картинки чтобы не моргало</li>
+			<li>для Shapes картинки должны быть CORS Friendly</li>
+			<li>Shapes лучше вообще без картинок</li>
+		</ul>
+	</div></section>
+
+	<section class="slide" id="LetterWrap"><div>
+		<h2>В это время в соседнем отделе</h2>
+		<p>Свойство <code>initial-letter-wrap</code> для <code>::first-letter</code></p>
+
+		<pre>
+			<code>p::first-letter {</code>
+			<code>initial-letter: 3;</code>
+			<code>initial-letter-wrap: all;</code>
+			<code>}</code>
+		</pre>
+
+		<img src="pictures/letter-wrap.png" alt="letter wrap illustration">
+
+		<style>
+			#LetterWrap img
+			{
+				position: absolute;
+				right: 0;
+				bottom: 0;
+			}
+		</style>
+	</div></section>
+
+
+	<section class="slide"><div>
+		<h2>CSS Image Values and Replaced Content Module Level 4</h2>
+		<ul>
+			<li><code>element(#someId)</code> позволит рендерить DOM-узел как изображение</li>
+			<li><code>conic-gradient()</code> уиии!</li>
+		</ul>
+	</div></section>
+
+
+	<section class="slide shout"><div>
+		<h2>CSS Custom Properties for Cascading Variables</h2>
+	</div></section>
+
+
+	<section class="slide"><div>
+		<h2>CSS Custom Properties for Cascading Variables Module Level 1</h2>
+		<ul>
+			<li>совсем скоро!</li>
+			<li>объявляются в селекторах => есть специфичность и наследование</li>
+			<li>что будет с переменными в препроцессорах?</li>
+		</ul>
+	</div></section>
+
+	<section class="slide shout"><div>
+		<h2>CSS Grid Layout Module Level 1</h2>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>CSS Grid Layout Module Level 1</h2>
+		<ul>
+			<li>самая ожидаемая спецификация</li>
+			<li>большая, сложная: новые значения и свойства — ИНСТРУМЕНТИЩЕ для лэйаутов</li>
+			<li>касается исключительно CSS и подходит для любой разметки</li>
+			<li>посмотрим пару примеров&hellip;</li>
+			<li>определенно The Next Big Thing</li>
+		</ul>
+	</div></section>
+
+	<section class="slide cover" id="kenny"><div>
+		<h2>Selectors Level 4</h2>
+		<img src="pictures/kenny.jpg" alt="">
+		<style>
+			#kenny h2
+			{
+				font-size: 60px;
+				margin-top: 0px;
+				color: #fff;
+			}
+		</style>
+	</div></section>
+
+	<section class="slide shout"><div>
+		<h2>Лирический итог</h2>
+	</div></section>
+
+	<section class="slide shout"><div>
+		<h2>Вопросы</h2>
+	</div></section>
+
+	<div class="progress"><div></div></div>
+	<script src="shower/shower.min.js"></script>
+
+</body>
+</html>

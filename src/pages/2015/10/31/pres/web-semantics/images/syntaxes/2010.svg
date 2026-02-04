@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1024 640" enable-background="new 0 0 1024 640" xml:space="preserve">
+<g>
+	<g>
+		<g>
+			<g>
+				<path fill="#FFCC66" d="M508.321,387.864l87.254-124.611c68.821,48.189,85.547,143.044,37.358,211.865
+					s-143.044,85.547-211.865,37.358c-68.821-48.189-85.547-143.044-37.358-211.865c29.299-41.843,73.53-64.869,124.611-64.869
+					V387.864z"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				<path fill="#FF6633" d="M508.321,387.864l85.066-126.115c0.279,0.188,1.913,1.311,2.188,1.504L508.321,387.864z"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				<path fill="#99CCFF" d="M508.321,387.864V235.742c32.598,0,58.041,7.779,85.066,26.007L508.321,387.864z"/>
+			</g>
+		</g>
+	</g>
+	<g>
+		<g>
+		</g>
+		<g>
+		</g>
+		<g>
+		</g>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 180.9678 401.8878)" font-family="'PT Sans'" font-size="28px">Microformats</text>
+<text transform="matrix(1 0 0 1 550.827 224.723)" font-family="'PT Sans'" font-size="28px">RDFa</text>
+<text transform="matrix(1 0 0 1 610.0621 259.9963)" font-family="'PT Sans'" font-size="28px">Microdata</text>
+</svg>

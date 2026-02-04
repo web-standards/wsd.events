@@ -1,0 +1,27 @@
+// ------------------------------------------------------------------
+// Shower List
+// ------------------------------------------------------------------
+
+&--list {
+
+	padding:0 0 7px 7px;
+	width:100%;
+	display:flex;
+	flex-wrap:wrap;
+
+	background:#585A5E url(../images/linen.png);
+	@include retina {
+		background-image:url(../images/linen@2x.png);
+		background-size:256px;
+		}
+
+	@import 'caption--list';
+	@import 'badge--list';
+	@import 'section--list';
+
+	// For IE10-11 only
+
+	position:absolute;
+	clip:rect(0, auto, auto, 0);
+
+	}

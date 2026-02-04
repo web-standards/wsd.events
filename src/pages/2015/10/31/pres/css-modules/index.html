@@ -1,0 +1,1060 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Shower Presentation Engine</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=792, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen-d90984e344.css">
+	<style>
+		.slide { font: "Roboto",​ Arial,​ sans-serif; }
+		.slide code {  }
+		.cover h2 { color: #fff; }
+		.cover img { max-height: 100% !important; }
+		.slide a { color: #31ADD6; }
+	</style>
+</head>
+<body class="list">
+	<header class="caption">
+		<h1>Shower Presentation Engine</h1>
+		<p>Yours Truly, Famous Inc.</p>
+	</header>
+	<section class="slide cover" id="Cover"><div>
+		<h2>СSS Modules. Предотвращая проблемы</h2>
+		<p>Web Standards Days, Минск, 2015, <a href="http://twitter.com/zigzag_mcquack">Павел Ловцевич</a></p>
+		<img src="pictures/cover.jpg" alt="">
+		<!--
+			To apply styles to the certain slides
+			set slide ID to get needed elements
+			-->
+		<style>
+			#Cover h2 {
+				margin:30px 0 30%;
+				color:#FFF;
+				text-align:center;
+				font-size:70px;
+				}
+			#Cover p {
+				margin:10px 0 0;
+				text-align:center;
+				color:#FFF;
+				font-style:italic;
+				font-size:20px;
+				}
+				#Cover p a {
+					color:#FFF;
+					}
+				spre {
+					font-size: 14px;
+				}
+		</style>
+	</div></section>
+
+	<section class="slide cover shout">
+		<div>
+			<h2>CSS. Все плохо!</h2>
+			<img src="pictures/shit.jpg" alt="">
+		</div>
+	</section>
+	
+	<section class="slide cover shout shit">
+		<div>
+			<h2>Жизнь без инcтрументов<br /> CSS</h2>
+			<img src="pictures/life.jpg" alt="">
+			<style>
+				.slide.cover.shout.shit h2 { width: 65%; position: absolute; left: 30%; top: 65%; font-size: 100px; text-align: right; }
+			</style>
+		</div>
+	</section>
+	
+	<section class="slide">
+		<div>
+			<h2></h2>
+			<figure>
+				<blockquote>Писать CSS легко. Масштабировать CSS и сохранять его поддерживаемым — нет.</blockquote><br />
+				<figcaption><a href="https://twitter.com/benfrain">Бен Фрейн</a></figcaption>
+			</figure>
+		</div>
+	</section>
+
+	<section class="slide cover shout date">
+		<div>
+			<h2>17 декабря 1996 года</h2>
+			<img src="pictures/date.jpg" alt="">
+		</div>
+	</section>
+	
+	<section class="slide">
+		<div>
+			<h2>CSS —</h2>
+			<ul>
+				<li class="">декларативный язык стилей,</li>
+				<li class="">создан для оформления документов...</li>
+				<li class="">не приложений!</li>
+			</ul>
+		</div>
+	</section>
+
+	<section class="slide cover shout">
+		<div>
+			<h2>Глобальная область видимости</h2>
+			<img src="pictures/scope.jpg" alt="">
+		</div>
+	</section>
+	
+	<section class="slide">
+		<div>
+			<h2>Острые углы глобальной области видимости CSS —</h2>
+			<ul>
+				<li class="">Каскад.</li>
+				<li class="">Специфичность.</li>
+				<li class="">Порядок следования в коде.</li>
+			</ul>
+		</div>
+	</section>
+	
+	<section class="slide cover shout">
+		<div>
+			<h2>Избегайте глобальных сущностей!</h2>
+			<img src="pictures/avoid.jpg" alt="">
+		</div>
+	</section>
+	
+	<section class="slide">
+		<div>
+			<h2></h2>
+			<figure>
+				<blockquote>Глобальные переменные и имена функций — невероятно плохая идея. Причина в том, что каждый файл JavaScript, подключенный к странице, работает в той же области видимости. Если в вашем коде есть глобальные переменные или функции, то сценарии, включенные после него, которые содержат такие же имена переменных и функций, перезапишут значения ваших.</blockquote><br />
+				<figcaption><a href="http://www.w3.org/wiki/JavaScript_best_practices#Avoid_globals">JavaScript best practices - W3C Wiki</a></figcaption>
+			</figure>
+		</div>
+	</section>
+	
+	<section class="slide cover shout">
+		<div>
+			<h2>Инкапсуляция</h2>
+			<img src="pictures/incapsulation.jpg" alt="">
+		</div>
+	</section>
+	
+	<section class="slide">
+		<div>
+			<h2>Инкапсуляция</h2>
+			<figure>
+				<blockquote>Механизм языка программирования, позволяющий ограничить доступ одних компонентов программы к другим.</blockquote><br />
+				<figcaption><a href="https://ru.wikipedia.org/wiki/%D0%98%D0%BD%D0%BA%D0%B0%D0%BF%D1%81%D1%83%D0%BB%D1%8F%D1%86%D0%B8%D1%8F_%28%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%29">wikipedia.com</a></figcaption>
+			</figure>
+		</div>
+	</section>
+	
+	<section class="slide">
+		<div>
+			<h2>Инкапсуляция</h2>
+			<ul>
+				<li class="">Сценарии — замыкания, модули (EcmaScript 2015).</li>
+				<li class="">Разметка — пространства имен (HTML, SVG, MathML и т.п.).</li>
+				<li class="">Стили – ???</li>
+			</ul>
+		</div>
+	</section>
+	
+	<section class="slide">
+		<div>
+			<h2>Инкапсуляция</h2>
+			<ul>
+				<li>Сценарии — замыкания, модули (EcmaScript 2015).</li>
+				<li>Разметка — пространства имен (HTML, SVG, MathML и т.п.).</li>
+				<li>Стили – CSS Scoping Module Level 1!</li>
+			</ul>
+		</div>
+	</section>
+	
+	<section class="slide cover shout incapsulation">
+		<div>
+			<h2>Инкапсуляция в CSS!</h2>
+			<img src="pictures/css-incapsulation.jpg" alt="">
+			<style>
+				.slide.cover.shout.incapsulation h2 { position: absolute; top: 70%; }
+			</style>
+		</div>
+	</section>
+	
+	<section class="slide">
+		<div>
+			<h2>@scope</h2>
+			<p>Способ ограничения области видимости правил CSS рамками границ указанного селектора (scoping root).</p>
+			<pre>
+				<code>@scope &lt;selector&gt; {</code>
+				<code>	&lt;stylesheet&gt;</code>
+				<code>} </code>
+			</pre>
+		</div>
+	</section>
+	
+	<section class="slide">
+		<div>
+			<h2>@scope</h2>
+			<p>Способ ограничения области видимости правил CSS рамками границ указанного селектора (scoping root).</p>
+			<pre>
+				<code><mark>@scope</mark> &lt;selector&gt; {</code>
+				<code>	&lt;stylesheet&gt;</code>
+				<code>} </code>
+			</pre>
+		</div>
+	</section>
+	
+	<section class="slide">
+		<div>
+			<h2>@scope</h2>
+			<p>Способ ограничения области видимости правил CSS рамками границ указанного селектора (scoping root).</p>
+			<pre>
+				<code>@scope <mark>&lt;selector&gt;</mark> {</code>
+				<code>	&lt;stylesheet&gt;</code>
+				<code>} </code>
+			</pre>
+		</div>
+	</section>
+	
+	<section class="slide">
+		<div>
+			<h2>@scope</h2>
+			<p>Способ ограничения области видимости правил CSS рамками границ указанного селектора (scoping root).</p>
+			<pre>
+				<code>@scope &lt;selector&gt; {</code>
+				<code>	<mark>&lt;stylesheet&gt;</mark></code>
+				<code>} </code>
+			</pre>
+		</div>
+	</section>
+	
+	<section class="slide">
+		<div>
+			<h2>Особенности @scope</h2>
+			<ul>
+				<li class="">Применяется ко всем подходящим элементам независимо.</li>
+				<li class="">Может быть вложенным.</li>
+				<li class="">Более высокая специфичность селекторов внутри @scope, чем за его пределами!</li>
+			</ul>
+			<p class="">Подробнее в черновике спецификации <a href="https://drafts.csswg.org/css-scoping/">CSS Scoping Module Level 1</a>.</p>
+		</div>
+	</section>
+	
+	<section class="slide cover shout today">
+		<div>
+			<h2>Как жить сейчас?</h2>
+			<img src="pictures/today.jpg" alt="">
+			<style>
+				.slide.cover.shout.today h2 { width: 50%; position: absolute; left: 50%; top: 40%; }
+			</style>
+		</div>
+	</section>
+	
+	<section class="slide">
+		<div>
+			<h2></h2>
+			<figure>
+				<blockquote>На протяжении всей жизни во мне работали поэт в инженере, инженер в поэте, и оба в архитекторе.</blockquote><br />
+				<figcaption>Фрэнк Ллойд Райт</figcaption>
+			</figure>
+		</div>
+	</section>
+
+	<section class="slide">
+		<div>
+			<h2>Архитектура (BEM, OOCSS, SMACSS и пр.).</h2>
+			<p>Соглашение о функциональном назначении селекторов, их структуре и способе именования.</p>
+			<ul>
+				<li class="">Создание автономных блоков.</li>
+				<li class="">Повторное использование элементов.</li>
+				<li class="">Разделение уровней представления.</li>
+				<li class="">Описательные селекторы.</li>
+			</ul>
+			<p class="">Обзорная статья <a href="http://habrahabr.ru/post/256109/">&laquo;Способы организации CSS-кода&raquo;</a>.</p>
+		</div>
+	</section>
+	
+	<section class="slide">
+		<div>
+			<h2>Недостатки архитектурного подхода</h2>
+			<ul>
+				<li class="">Изоляция через придумывание уникальных имен.</li>
+				<li class="">Сложность автоматической проверки изолированности стилей.</li>
+				<li class="">Ненадежные механизмы кросс-проектной интеграции кода.</li>
+			</ul>
+		</div>
+	</section>
+	
+	<section class="slide cover shout abstraction">
+		<div>
+			<h2>Любая проблема в компьютерах может быть решена путем добавления еще одного слоя абстракции.</h2>
+			<img src="pictures/abstraction.jpg" alt="">
+			<style>
+				.slide.cover.shout.abstraction h2 {
+					font-size: 80px;
+					width: 50%;
+					text-align: left;
+					margin-left: 5%;
+					}
+			</style>
+		</div>
+	</section>
+	
+	<section class="slide">
+		<div>
+			<h2>Абстракции (SASS/LESS/Stylus/PostCSS)</h2>
+			<p>Передача управления стилями на сторону алгоритмических языков.</p>
+			<ul>
+				<li class="">Разделение кода на транспиллируемый (dev) и исполняемый (prod).</li>
+				<li class="">Увеличение точек отказа.</li>
+				<li class="">Дополнительные усилия по координации работы команды.</li>
+			</ul>
+		</div>
+	</section>
+	
+<!-- 	<section class="slide">
+		<div>
+			<h2></h2>
+			<figure>
+				<blockquote>С большой силой приходит большая ответственность.</blockquote><br />
+				<figcaption>Дядя Бен</figcaption>
+			</figure>
+		</div>
+	</section> -->
+	
+	<section class="slide cover shout inline">
+		<div>
+			<img src="pictures/inline-css.jpg" alt="" />
+			<h2>Inline CSS? <br /> Ой, все!</h2>
+			<style>
+				.slide.cover.shout.inline h2 { width: 50%; position: absolute; left: 50%; top: 50%; }
+			</style>
+		</div>
+	</section>
+	
+	<section class="slide cover shout">
+		<div>
+			<h2>CSS Modules</h2>
+			<img src="pictures/modules.jpg" alt="">
+		</div>
+	</section>
+	
+	<section class="slide">
+		<div>
+			<h2></h2>
+			<figure>
+				<blockquote>Команда разработчиков CSS Modules считает, что может решительно преодолеть эту проблему - оставить все что мы любим в CSS, опираясь на те решения, которые создало "Style-in-JS"-сообщество. Хотя мы свято верим в свой подход и убеждены в достоинствах CSS, мы в большом долгу перед теми людьми, которые открывают новые горизонты в другом направлении. Спасибо, друзья!</blockquote><br />
+				<figcaption>Глен Маддерн, автор CSS Modules</figcaption>
+			</figure>
+		</div>
+	</section>
+
+	
+	<section class="slide cover shout faith">
+		<div>
+			<h2>Для тех, кто верит в CSS!</h2>
+			<img src="pictures/faith.jpg" alt="">
+			<style>
+				.slide.cover.shout.faith h2 { width: 50%; position: absolute; left: 0; top: 50%; }
+			</style>
+		</div>
+	</section>
+	
+	<section class="slide">
+		<div>
+			<h2>CSS Modules</h2>
+			<p class="">Нацелены на две основные задачи:</p>
+			<ul>
+				<li class="">настоящая изоляция; <span class="">😜</span></li>
+				<li class="">удобное повторное использование. <span class="">😝</span></li>
+			</ul>
+		</div>
+	</section>
+	
+	<section class="slide cover shout modules">
+		<div>
+			<img src="pictures/modules-more.jpg" alt="">
+			<h2>Локализация стилей</h2>
+			<style>
+				.slide.cover.shout.modules h2 { width: 50%; position: absolute; left: 0; top: 50%; font-size: 100px; }
+			</style>
+		</div>
+	</section>
+	
+	<section class="slide">
+		<div>
+			<h2>Локализация стилей</h2>
+			<ul>
+				<li class="">Каждый компонент хранится в отдельном файле.</li>
+				<li class="">Каждый файл компилируется обособленно.</li>
+				<li class="">Каждый класс рассматривается, как локальная переменная.</li>
+				<li class="">Можно использовать простые имена классов.</li>
+			</ul>
+		</div>
+	</section>
+
+	
+	<section class="slide">
+		<div>
+			<h2>Кнопки в БЭМ</h2>
+			<pre>
+				<code>/* components/submit-button.css */</code>
+				<code>.Button { /* все стили по умолчанию */ }</code>
+				<code>.Button_disabled { /* переопределение для disabled */ }</code>
+				<code>.Button_error { /* переопределение для error */ }</code>
+				<code>.Button_in-progress { /* переопределение для in progress */ }</code>
+			</pre>
+			<pre>
+				<code>&lt;button class="Button Button--in-progress"&gt;</code>
+				<code>	In progress...</code>
+				<code>&lt;/button&gt;</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide">
+		<div>
+			<h2>Кнопки в БЭМ</h2>
+			<pre>
+				<code>/* components/submit-button.css */</code>
+				<code><mark>.Button</mark> { /* все стили по умолчанию */ }</code>
+				<code>.Button_disabled { /* переопределение для disabled */ }</code>
+				<code>.Button_error { /* переопределение для error */ }</code>
+				<code>.Button_in-progress { /* переопределение для in progress */ }</code>
+			</pre>
+			<pre>
+				<code>&lt;button class="Button Button--in-progress"&gt;</code>
+				<code>	In progress...</code>
+				<code>&lt;/button&gt;</code>
+			</pre>
+		</div>
+	</section>
+	
+	<section class="slide">
+		<div>
+			<h2>Кнопки в БЭМ</h2>
+			<pre>
+				<code>/* components/submit-button.css */</code>
+				<code>.Button { /* все стили по умолчанию */ }</code>
+				<code><mark>.Button_disabled</mark> { /* переопределение для disabled */ }</code>
+				<code><mark>.Button_error</mark> { /* переопределение для error */ }</code>
+				<code><mark>.Button_in-progress</mark> { /* переопределение для in progress */ }</code>
+			</pre>
+			<pre>
+				<code>&lt;button class="Button Button--in-progress"&gt;</code>
+				<code>	In progress...</code>
+				<code>&lt;/button&gt;</code>
+			</pre>
+		</div>
+	</section>
+	
+	
+	<section class="slide">
+		<div>
+			<h2>Кнопки в БЭМ</h2>
+			<pre>
+				<code>/* components/submit-button.css */</code>
+				<code>.Button { /* все стили по умолчанию */ }</code>
+				<code>.Button_disabled { /* переопределение для disabled */ }</code>
+				<code>.Button_error { /* переопределение для error */ }</code>
+				<code>.Button_in-progress { /* переопределение для in progress */ }</code>
+			</pre>
+			<pre>
+				<code>&lt;button class="<mark>Button Button--in-progress</mark>"&gt;</code>
+				<code>	In progress...</code>
+				<code>&lt;/button&gt;</code>
+			</pre>
+		</div>
+	</section>
+	
+	<section class="slide">
+		<div>
+			<h2>Кнопки в CSS Modules</h2>
+			<pre>
+				<code>/* components/submit-button.css */</code>
+				<code><mark>.normal</mark> { /* все стили по умолчанию */ }</code>
+				<code><mark>.disabled</mark> { /* все стили для disabled */ }</code>
+				<code><mark>.error</mark> { /* все стили для error */ }</code>
+				<code><mark>.inProgress</mark> { /* все стили для in progress */ }</code>
+			</pre>
+		</div>
+	</section>
+	
+	<section class="slide">
+		<div>
+			<h2>Компиляция компонента</h2>
+			<p>Подключение через <code>import</code> или <code>require</code> на этапе компиляции.</p>
+			<p>JS и CSS коммуницируют в формате <a href="http://glenmaddern.com/articles/interoperable-css">ICSS (Interoperable CSS)</a>.</p>
+			<pre>
+				<code>/* components/submit-button.js */</code>
+				<code><mark>import</mark> styles from './submit-button.css';</code>
+				<code> </code>
+				<code>buttonElem.outerHTML = </code>
+				<code>`&lt;button class=${<mark>styles.normal</mark>}&gt;Submit&lt;/button&gt;`</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide">
+		<div>
+			<h2>Компиляция компонента</h2>
+			<pre>
+				<code>&lt;button class="components_submit_button__normal__abc5436"&gt;</code>
+				<code>	Submit</code>
+				<code>&lt;/button&gt;</code>
+			</pre>
+		</div>
+	</section>
+	
+	<section class="slide">
+		<div>
+			<h2>Компиляция компонента</h2>
+			<pre>
+				<code>&lt;button class="<mark>components</mark>_submit_button__normal__abc5436"&gt;</code>
+				<code>	Submit</code>
+				<code>&lt;/button&gt;</code>
+			</pre>
+		</div>
+	</section>
+	
+	<section class="slide">
+		<div>
+			<h2>Компиляция компонента</h2>
+			<pre>
+				<code>&lt;button class="components_<mark>submit_button</mark>__normal__abc5436"&gt;</code>
+				<code>	Submit</code>
+				<code>&lt;/button&gt;</code>
+			</pre>
+		</div>
+	</section>
+	
+	<section class="slide">
+		<div>
+			<h2>Компиляция компонента</h2>
+			<pre>
+				<code>&lt;button class="components_submit_button__<mark>normal</mark>__abc5436"&gt;</code>
+				<code>	Submit</code>
+				<code>&lt;/button&gt;</code>
+			</pre>
+		</div>
+	</section>
+	
+	<section class="slide">
+		<div>
+			<h2>Компиляция компонента</h2>
+			<pre>
+				<code>&lt;button class="components_submit_button__normal__<mark>abc5436</mark>"&gt;</code>
+				<code>	Submit</code>
+				<code>&lt;/button&gt;</code>
+			</pre>
+		</div>
+	</section>
+	
+	<section class="slide">
+		<div>
+			<h2>Особенность применения стилей через JS</h2>
+			<pre>
+				<code>/* Больше не делаем так */</code>
+				<code>`class=${[styles.normal, styles['in-progress']].join(" ")}`</code>
+				<code> </code>
+				<code>/* Используем одиночный класс */ </code>
+<!-- 				<code>`class=${styles['in-progress']}` </code>
+				<code> </code>
+				<code>/* Используем camelCase */</code> -->
+				<code>`class=${styles.inProgress}`</code>
+			</pre>
+		</div>
+	</section>
+	
+	<section class="slide">
+		<div>
+			<h2>Особенность применения стилей через JS</h2>
+			<pre>
+				<code>/* Больше не делаем так */</code>
+				<code>`class=${<mark>[styles.normal, styles['in-progress']].join(" ")</mark>}`</code>
+				<code> </code>
+				<code>/* Используем одиночный класс */ </code>
+<!-- 				<code>`class=${styles['in-progress']}` </code>
+				<code> </code>
+				<code>/* Используем camelCase */</code> -->
+				<code>`class=${styles.inProgress}`</code>
+			</pre>
+		</div>
+	</section>
+	
+<!-- 	<section class="slide">
+		<div>
+			<h2>Особенность применения стилей через JS</h2>
+			<pre>
+				<code>/* Больше не делаем так */</code>
+				<code>`class=${[styles.normal, styles['in-progress']].join(" ")}`</code>
+				<code> </code>
+				<code>/* Используем одиночный класс */ </code>
+				<code>`class=${<mark>styles['in-progress']</mark>}` </code>
+				<code> </code>
+				<code>/* Используем camelCase */</code>
+				<code>`class=${styles.inProgress}`</code>
+			</pre>
+		</div>
+	</section> -->
+	
+	<section class="slide">
+		<div>
+			<h2>Особенность применения стилей через JS</h2>
+			<pre>
+				<code>/* Больше не делаем так */</code>
+				<code>`class=${[styles.normal, styles['in-progress']].join(" ")}`</code>
+				<code> </code>
+				<code>/* Используем одиночный класс */ </code>
+<!-- 				<code>`class=${styles['in-progress']}` </code>
+				<code> </code>
+				<code>/* Используем camelCase */</code> -->
+				<code>`class=${<mark>styles.inProgress</mark>}`</code>
+			</pre>
+		</div>
+	</section>
+	
+	<section class="slide cover shout modules">
+		<div>
+			<img src="pictures/modules-more.jpg" alt="">
+			<h2>Композиция стилей</h2>
+			<style>
+				.slide.cover.shout.modules h2 { width: 50%; position: absolute; left: 0; top: 50%; font-size: 100px; }
+			</style>
+		</div>
+	</section>
+	
+	<section class="slide">
+		<div>
+			<h2>Композиция стилей BEM vs CSS Modules</h2>
+			<pre>
+				<code>/* BEM Style */</code>
+				<code>innerHTML = `&lt;button class="Button Button--in-progress"&gt;`</code>
+				<code> </code>
+				<code>/* CSS Modules */</code>
+				<code>innerHTML = `&lt;button class="${styles.inProgress}"&gt;`</code>
+			</pre>
+		</div>
+	</section>
+	
+	<section class="slide">
+		<div>
+			<h2>Композиция стилей BEM vs CSS Modules</h2>
+			<pre>
+				<code>/* BEM Style */</code>
+				<code>innerHTML = `&lt;button class="<mark>Button Button--in-progress</mark>"&gt;`</code>
+				<code> </code>
+				<code>/* CSS Modules */</code>
+				<code>innerHTML = `&lt;button class="${styles.inProgress}"&gt;`</code>
+			</pre>
+		</div>
+	</section>
+	
+	<section class="slide">
+		<div>
+			<h2>Композиция стилей BEM vs CSS Modules</h2>
+			<pre>
+				<code>/* BEM Style */</code>
+				<code>innerHTML = `&lt;button class="Button Button--in-progress"&gt;`</code>
+				<code> </code>
+				<code>/* CSS Modules */</code>
+				<code>innerHTML = `&lt;button class="${<mark>styles.inProgress</mark>}"&gt;`</code>
+			</pre>
+		</div>
+	</section>
+	
+	<section class="slide">
+		<div>
+			<h2>Композиция стилей (исходный CSS)</h2>
+			<pre>
+				<code>.common {</code>
+				<code>	/* все базовые стили */</code>
+				<code>}</code>
+				<code>.normal {</code>
+				<code>	<mark>composes: common;</mark> /* стили для normal */</code>
+				<code>}</code>
+				<code>.error  {</code>
+				<code>	<mark>composes: common;</mark> /* стили для error */</code>
+				<code>}</code>
+			</pre>
+		</div>
+	</section>
+	
+	<section class="slide">
+		<div>
+			<h2>Композиция стилей (исходный CSS)</h2>
+			<pre>
+				<code>.common {</code>
+				<code>	<mark>/* font-sizes, padding, border-radius */</mark></code>
+				<code>}</code>
+				<code>.normal {</code>
+				<code>	composes: common; <mark>/* blue color, light blue background */</mark></code>
+				<code>}</code>
+				<code>.error  {</code>
+				<code>	composes: common; <mark>/* red color, light red background */</mark></code>
+				<code>}</code>
+			</pre>
+		</div>
+	</section>
+	
+	<section class="slide">
+		<div>
+			<h2>Композиция стилей (финальный CSS)</h2>
+			<pre>	
+				<code>.components_submit_button__<mark>common</mark>__abc5436 {</code> 
+				<code>	/* font-sizes, padding, border-radius */</code>
+				<code>}</code>
+				<code>.components_submit_button__<mark>normal</mark>__def6547 {</code>
+				<code>	/* blue color, light blue background */</code>
+				<code>}</code>
+				<code>.components_submit_button__<mark>error</mark>__1638bcd {</code>
+				<code>	/* red color, light red background */</code>
+				<code>}</code>
+			</pre>
+		</div>
+	</section>
+	
+	<section class="slide">
+		<div>
+			<h2>Композиция стилей JS</h2>
+			<p><code>import styles from './submit-button.css';</code> вернет:</p>
+			<pre>
+				<code>styles: {</code>
+				<code>	common: "components_submit_button__common__abc5436",</code>
+				<code>	normal: "components_submit_button__common__abc5436</code>
+				<code>			 components_submit_button__normal__def6547",</code>
+				<code>	error:  "components_submit_button__common__abc5436</code>
+				<code>			 components_submit_button__error__1638bcd"</code>
+				<code>}</code>
+			</pre>
+		</div>
+	</section>
+	
+	<section class="slide">
+		<div>
+			<h2>Композиция стилей JS</h2>
+			<p><code>import styles from './submit-button.css';</code> вернет:</p>
+			<pre>
+				<code>styles: {</code>
+				<code>	<mark>common</mark>: "components_submit_button__<mark>common</mark>__abc5436",</code>
+				<code>	normal: "components_submit_button__common__abc5436</code>
+				<code>			 components_submit_button__normal__def6547",</code>
+				<code>	error:  "components_submit_button__common__abc5436</code>
+				<code>			 components_submit_button__error__1638bcd"</code>
+				<code>}</code>
+			</pre>
+		</div>
+	</section>
+	
+	<section class="slide">
+		<div>
+			<h2>Композиция стилей JS</h2>
+			<p><code>import styles from './submit-button.css';</code> вернет:</p>
+			<pre>
+				<code>styles: {</code>
+				<code>	common: "components_submit_button__common__abc5436",</code>
+				<code>	<mark>normal</mark>: "components_submit_button__<mark>common</mark>__abc5436</code>
+				<code>			 components_submit_button__<mark>normal</mark>__def6547",</code>
+				<code>	error:  "components_submit_button__common__abc5436</code>
+				<code>			 components_submit_button__error__1638bcd"</code>
+				<code>}</code>
+			</pre>
+		</div>
+	</section>
+	
+	<section class="slide">
+		<div>
+			<h2>Композиция стилей JS</h2>
+			<p><code>import styles from './submit-button.css';</code> вернет:</p>
+			<pre>
+				<code>styles: {</code>
+				<code>	common: "components_submit_button__common__abc5436",</code>
+				<code>	normal: "components_submit_button__common__abc5436</code>
+				<code>			 components_submit_button__normal__def6547",</code>
+				<code>	<mark>error</mark>:  "components_submit_button__<mark>common</mark>__abc5436</code>
+				<code>			 components_submit_button__<mark>error</mark>__1638bcd"</code>
+				<code>}</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide">
+		<div>
+			<h2>Композиция стилей HTML</h2>
+			<pre>
+				<code>&lt;button class="components_submit_button__<mark>common</mark>__abc5436</code>
+				<code>			   components_submit_button__<mark>normal</mark>__def6547"&gt;</code>
+				<code>	Submit</code>
+				<code>&lt;/button&gt;</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide cover shout modules">
+		<div>
+			<img src="pictures/modules-more.jpg" alt="">
+			<h2>Обмен между файлами</h2>
+			<style>
+				.slide.cover.shout.modules h2 { width: 50%; position: absolute; left: 0; top: 50%; font-size: 100px; }
+			</style>
+		</div>
+	</section>
+	
+	<section class="slide">
+		<div>
+			<h2>Обмен между файлами в Sass/LESS</h2>
+			<p><code>@import</code>, <code>@mixin</code>, <code>@extend</code> работают в одном глобальном пространстве!</p>
+			<p class="">Cерьезный рефакторинг variables.scss и settings.scss неизбежен с ростом кодовой базы!</p>
+			<p class="">И все равно на выходе будет <a href="https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/_variables.scss">монстр</a> на сотни и тысячи строк.</p>
+		</div>
+	</section>
+	 
+	<section class="slide">
+		<div>
+			<h2>Обмен между файлами в CSS Modules</h2>
+			<p><code>import</code>, <code>require</code>подтягивание зависимостей в JS &rarr;<br />
+				<span class=""><code>composes</code> аналогия в CSS Modules.</span>
+			</p>
+			<p>Исполняются в одном файле в один момент времени &rarr;<br />
+				<span class="">нет возможности замусорить глобальное пространство.</span>
+			</p>
+		</div>
+	</section>
+	</section>
+	
+	<section class="slide">
+		<div>
+			<h2>Обмен между файлами в CSS Modules</h2>
+			<pre>
+				<code>/* colors.css */</code>
+				<code>	.primary {</code>
+				<code>color: #720;</code>
+				<code>}</code>
+				<code>.secondary {</code>
+				<code>	color: #777;</code>
+				<code>}</code>
+				<code>/* прочие вспомогательные стили... */</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide">
+		<div>
+			<h2>Обмен между файлами в CSS Modules</h2>
+			<pre>
+				
+				<code>/* submit-button.css */</code>
+				<code>.common { /* font-sizes, padding, border-radius */ }</code>
+				<code>.normal {</code>
+				<code>	composes: common;</code>
+				<code>	<mark>composes: primary from "../shared/colors.css";</mark></code>
+				<code>}</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide">
+		<div>
+			<h2>Обмен между файлами в CSS Modules</h2>
+			<pre>
+				<code>/* colors.css */</code>
+				<code>.shared_colors__primary__fca929 {</code>
+				<code>	color: #720;</code>
+				<code>}</code>
+				<code>.shared_colors__secondary__acf292 {</code>
+				<code>	color: #777;</code>
+				<code>}</code>
+			</pre>
+		</div>
+	</section>
+	
+	<section class="slide">
+		<div>
+			<h2>Обмен между файлами в CSS Modules</h2>
+			<pre>
+				<code>/* submit-button.css */</code>
+				<code>.components_submit_button__common__abc5436 {</code>
+				<code>	/* font-sizes, padding, border-radius */</code>
+				<code>}</code>
+				<code><mark>.components_submit_button__normal__def6547 { }</mark></code>
+			</pre>
+		</div>
+	</section>
+	
+	<section class="slide">
+		<div>
+			<h2>Обмен между файлами в CSS Modules</h2>
+			<pre>
+				<code>&lt;button class="shared_colors__primary__fca929</code>
+				<code>			   components_submit_button__common__abc5436</code>
+				<code>			   components_submit_button__normal__def6547"&gt;</code>
+				<code>  Submit</code>
+				<code>&lt;/button&gt;</code>
+			</pre>
+		</div>
+	</section>
+	
+	<section class="slide">
+		<div>
+			<h2>Обмен между файлами в CSS Modules</h2>
+			<pre>
+				<code>&lt;button class="<mark>shared_colors__primary__fca929</mark></code>
+				<code>			   components_submit_button__common__abc5436</code>
+				<code>			   components_submit_button__normal__def6547"&gt;</code>
+				<code>  Submit</code>
+				<code>&lt;/button&gt;</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide">
+		<div>
+			<h2>Обмен между файлами в CSS Modules</h2>
+			<pre>
+				<code>&lt;button class="shared_colors__primary__fca929</code>
+				<code>			   <mark>components_submit_button__common__abc5436</mark></code>
+				<code>			   components_submit_button__normal__def6547"&gt;</code>
+				<code>  Submit</code>
+				<code>&lt;/button&gt;</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide">
+		<div>
+			<h2>Обмен между файлами в CSS Modules</h2>
+			<pre>
+				<code>&lt;button class="shared_colors__primary__fca929</code>
+				<code>			   components_submit_button__common__abc5436</code>
+				<code>			   <mark>components_submit_button__normal__def6547"&gt;</mark></code>
+				<code>  Submit</code>
+				<code>&lt;/button&gt;</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide cover shout modules">
+		<div>
+			<img src="pictures/modules-more.jpg" alt="">
+			<h2>Single responsibility modules</h2>
+			<style>
+				.slide.cover.shout.modules h2 { width: 50%; position: absolute; left: 0; top: 50%; font-size: 100px; }
+			</style>
+		</div>
+	</section>
+
+	<section class="slide">
+		<div>
+			<h2>Single responsibility modules</h2>
+			<p>Композиция описывает, чем элемент является, а не то, как он оформлен.</p>
+			<p>Способ связывания структурных сущностей (элементов) и описательных сущностей (стилей).</p>
+		</div>
+	</section>
+	
+	<section class="slide">
+		<div>
+			<h2>Single responsibility modules CSS</h2>
+			<pre>
+				<code>.some_element {</code>
+				<code>	font-size: 1.5rem;</code>
+				<code>	color: rgba(0,0,0,0);</code>
+				<code>	padding: 0.5rem;</code>
+				<code>	box-shadow: 0 0 4px -2px;</code>
+				<code>}</code>
+			</pre>
+		</div>
+	</section>
+	
+	<section class="slide">
+		<div>
+			<h2>Single responsibility modules CSS Modules</h2>
+			<pre>
+				<code>.element {</code>
+				<code>	composes: large from "./typography.css";</code>
+				<code>	composes: dark-text from "./colors.css";</code>
+				<code>	composes: padding-all-medium from "./layout.css";</code>
+				<code>	composes: subtle-shadow from "./effect.css";</code>
+				<code>}</code>
+			</pre>
+		</div>
+	</section>
+	
+	<section class="slide">
+		<div>
+			<h2>Single responsibility modules CSS Modules</h2>
+			<pre>
+				<code>/* сокращенное объявление */</code>
+				<code>.element {</code>
+				<code>	composes: <mark>padding-large margin-small</mark> from "./layout.css";</code>
+				<code>}</code>
+				<code>/* полное объявление */</code>
+				<code>.element {</code>
+				<code>	composes: padding-large from "./layout.css";</code>
+				<code>	composes: margin-small from "./layout.css";</code>
+				<code>}</code>
+			</pre>
+		</div>
+	</section>
+	
+	<section class="slide">
+		<div>
+			<h2>Single responsibility modules CSS Modules</h2>
+			<pre>
+				<code>.article {</code>
+				<code>	composes: flex vertical centered from "./layout.css";</code>
+				<code>}</code>
+				<code>.masthead {</code>
+				<code>	composes: serif bold 48pt centered from "./typography.css";</code>
+				<code>	composes: paragraph-margin-below from "./layout.css";</code>
+				<code>}</code>
+				<!-- <code>.body {</code>
+				<code>	composes: max720 paragraph-margin-below from "layout.css";</code>
+				<code>	composes: sans light paragraph-line-height from "./typography.css";</code>
+				<code>}</code> -->
+			</pre>
+		</div>
+	</section>
+	
+	<section class="slide cover shout">
+		<img src="pictures/taste.jpg" alt="" />
+		<div>
+			<h2>Пробуйте!</h2>
+		</div>
+	</section>
+	
+	<section class="slide">
+		<div>
+			<h2>Пробуйте!</h2>
+			<ul>
+				<li><a href="https://github.com/css-modules/webpack-demo" target="_blank">Webpack</a></li>
+				<li><a href="https://github.com/css-modules/jspm-demo" target="_blank">JSPM</a></li>
+				<li><a href="https://github.com/css-modules/browserify-demo" target="_blank">Browserify</a></li>
+				<li>PostCSS (<a href="https://github.com/css-modules/postcss-modules-values" target="_blank">postcss-modules-values</a>, 
+										<a href="https://github.com/css-modules/postcss-modules-extract-imports" target="_blank">postcss-modules-extract-imports</a>, 
+										<a href="https://github.com/css-modules/postcss-modules-local-by-default" target="_blank">postcss-modules-local-by-default</a>, 
+										<a href="https://github.com/css-modules/postcss-modules-scope" target="_blank">postcss-modules-scope</a>)</li>
+				<li><a href="https://github.com/css-modules/cssm-rails" target="_blank">RoR</a></li>
+				<li><a href="https://github.com/css-modules/css-modules-require-hook" target="_blank">Node.js</a></li>
+			</ul>
+			<p class=""><a href="http://plnkr.co/edit/FbcJpb?p=preview" target="_blank">Песочница</a> на Plunkr.</p>
+		</div>
+	</section>
+	
+	<section class="slide cover">
+		<div>
+			<h2>Спасибо за внимание!</h2>
+			<p class="credits">Павел Ловцевич, LOVATA, 
+				<a href="mailto:p.lovtsevich@lovata.com">p.lovtsevich@lovata.com</a>, 
+				<a href="https://twitter.com/zigzag_mcquack">@zigzag_mcquack</a></p>
+			<img src="pictures/end.jpg" alt="">
+			<style>
+				.credits { position: absolute; bottom: 5%; color: #fff; font-weight: bold; }
+			</style>
+		</div>
+	</section>
+	
+	<p class="badge"><a href="https://github.com/shower/shower">Fork me on Github</a></p>
+
+	<div class="progress"><div></div></div>
+	<script src="shower/shower.min.js"></script>
+</body>
+</html>

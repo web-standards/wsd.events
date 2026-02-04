@@ -1,0 +1,281 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <title>Shower Presentation Engine</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=792, user-scalable=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="stylesheet" href="node_modules/shower-ribbon/styles/screen-d90984e344.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+  <style>
+    .intro {
+      text-align: center;
+    }
+
+    code b {
+      color: #660000;
+    }
+
+    .intro h2 {
+      font-size: 80px;
+    }
+
+    .centered {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: center;
+    }
+
+    .crossed {
+      text-decoration: line-through;
+    }
+
+    .centered h2 {
+      font-size: 80px;
+      text-align: center;
+    }
+
+    .img {
+      text-align: center;
+    }
+
+    .img img {
+      max-width: 600px;
+    }
+  </style>
+</head>
+<body class="list">
+  <header class="caption">
+    <h1>Service Worker как предчуствие</h1>
+    <p>Вячеслав Шебанов</p>
+  </header>
+  <section class="slide"><div>
+    <h2>ServiceWorker как предчуствие</h2>
+    <p>Вячеслав Шебанов</p>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Немного обо мне</h2>
+    <ul>
+      <li>Тех. дир, <a href="http://paperpaper.ru" target="_blank">paperpaper.ru</a></li>
+    </ul>
+  </div></section>
+  <section class="slide centered">
+    <h2>Веб-приложения это круто!</h2>
+  </section>
+  <section class="slide"><div>
+    <h2>Чего-то не хватает?</h2>
+    <ul>
+      <li class="next">Работы без интернета?</li>
+      <li class="next">Push-нотификаций?</li>
+      <li class="next">Обновления данных, пока сайт закрыт?</li>
+      <li class="next crossed">Интеграции с ОС?</li>
+      <li class="next crossed">Скорости на мобильниках?</li>
+    </ul>
+  </div></section>
+  <section class="slide img"><div>
+    <h2>Пример</h2>
+    <img src="pictures/todo.png" alt="" />
+  </div></section>
+  <section class="slide intro"><div>
+    <h2>Service Worker</h2>
+    <img src="pictures/dale.png" />
+  </div></section>
+  <section class="slide"><div>
+    <h2>Возможности?</h2>
+    <ul>
+      <li>Управление кэшем</li>
+      <li class="next">Push-нотификации</li>
+      <li class="next">Фоновые задачи</li>
+    </ul>
+  </div></section>
+  <section class="slide"><div>
+    <pre><code class="sw javascript">
+if ('serviceWorker' in navigator) {
+  navigator.<b>serviceWorker</b>
+    .register('/serviceworker.js')
+    .then(function(registration) {
+      // Регистрация SW прошла успешно
+    }).catch(function(err) {
+      // Не получилось зарегестрировать SW
+    });
+}
+    </code></pre>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Немного о безопасности</h2>
+    <ul>
+      <li>Работает только по HTTPS</li>
+      <li>У каждого SW есть свой scope</li>
+    </ul>
+  </div></section>
+  <section class="slide img"><div>
+    <h2>Жизненный цикл</h2>
+    <img src="pictures/sw-lifecycle.png" width="400px" alt="" />
+  </div></section>
+  <section class="slide"><div>
+    <h2>Установка</h2>
+    <pre><code class="sw javascript">
+<b>self</b>.addEventListener('install', function(event) {
+  <b>event</b>.waitUntil(
+    <b>caches</b>.open(CACHE_NAME)
+      .then(function(cache) {
+        return cache.addAll(urlsToCache);
+      }));
+});
+    </code></pre>
+  </div></section>
+  <section class="slide img"><div>
+    <h2>Пример</h2>
+    <img src="pictures/todo.png" alt="" />
+  </div></section>
+  <section class="slide"><div>
+    <h2>Кэш и оффлайн</h2>
+    <pre><code class="sw javascript">
+<b>self</b>.addEventListener('fetch', function(event) {
+  <b>event</b>.respondWith(
+    <b>caches</b>.match(event.request, {
+      cacheName: CACHE_NAME
+    }));
+});
+    </code></pre>
+  </div></section>
+  <section class="slide img"><div>
+    <h2>Пример</h2>
+    <img src="pictures/todo.png" alt="" />
+  </div></section>
+  <section class="slide centered">
+    <h2>Push-нотификации</h2>
+  </section>
+  <section class="slide cover" style="text-align: center; background: white;">
+    <img src="./pictures/sequence_diagram.png" alt="" style="max-height: 100%; position: static;" />
+  </section>
+  <section class="slide cover" style="text-align: center;">
+    <img src="./pictures/sw.png" alt="" style="width: 100%; height: 100%;"/>
+  </section>
+  <section class="slide"><div>
+    <h2>Push-нотификации</h2>
+    <pre><code class="sw javascript">
+regstate.<b>pushManager</b>.getSubscription()
+  .then(subscription => {
+    if (!subscription) {
+      return regsgate.<b>pushManager</b>
+        .subscribe({userVisibleOnly: true});
+    }
+    return subscription; });
+    </code></pre>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Push-нотификации</h2>
+    <pre><code class="sw javascript">
+subscription = {
+  endpoint: "https://url/subId"
+}
+    </code></pre>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Push-нотификации</h2>
+    <pre><code class="sw javascript">
+<b>self</b>.addEventListener("push", function(ev) {
+  ev.waitUntil(sendNotification()));
+});
+    </code></pre>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Push-нотификации</h2>
+    <pre><code class="sw javascript">
+<b>self</b>.addEventListener('notificationclick',
+  function(event) {
+    event.waitUntil(focusTab());
+  });
+    </code></pre>
+  </div></section>
+  <section class="slide img"><div>
+    <h2>Пример</h2>
+    <div>
+      <a href="http://bit.ly/sw0615">bit.ly/sw0615</a>
+    </div>
+    <img src="pictures/todo.png" alt="" />
+  </div></section>
+  <section class="slide"><div>
+    <h2>Фоновые задачи</h2>
+    <pre><code class="sw javascript">
+navigator.<b>serviceWorker</b>.ready.then(function(registration) {
+  registration.<b>sync</b>.register({
+    tag: 'outbox' // default: ''
+  });
+});
+    </code></pre>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Фоновые задачи</h2>
+    <pre><code class="sw javascript">
+<b>self</b>.addEventListener('sync', function(event) {
+  if (<b>event</b>.registration.tag == 'outbox') {
+    <b>event</b>.waitUntil(sendEverythingInTheOutbox());
+  }
+});
+    </code></pre>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Фоновые задачи</h2>
+    <pre><code class="sw javascript">
+navigator.<b>serviceWorker</b>.ready.then(function(registration) {
+  registration.<b>periodicSync</b>.register({
+    tag: 'get-latest-news',
+    minPeriod: 12 * 60 * 60 * 1000,
+    powerState: 'avoid-draining',
+    networkState: 'avoid-cellular' });
+});
+    </code></pre>
+  </div></section>
+  <section class="slide img"><div>
+    <img src="pictures/labs_temp.png" alt="" />
+  </div></section>
+  <section class="slide img"><div>
+    <h2>Немного про отладку</h2>
+    <img src="pictures/harold.jpg" height="400px" alt="" />
+  </div></section>
+  <section class="slide img"><div>
+    <h2>Немного про отладку</h2>
+    <img src="pictures/internals.png" alt="" />
+  </div></section>
+  <section class="slide img"><div>
+    <h2>Немного про отладку</h2>
+    <img src="pictures/inspect.png" alt="" />
+  </div></section>
+  <section class="slide centered">
+    <h2>Что дальше?</h2>
+  </section>
+  <section class="slide"><div>
+    <h2>Ссылки</h2>
+    <ul>
+      <li><a target="_blank" href="http://jakearchibald.com/2014/offline-cookbook/">The offline cookbook</a></li>
+      <li><a href="https://jakearchibald.github.io/isserviceworkerready/resources.html">Service Worker Resources</a></li>
+      <li><a target="_blank" href="chrome://serviceworker-internals/">chrome://serviceworker-internals/</a> — отладка</li>
+      <li><a target="_blank" href="chrome://inspect/#service-workers">chrome://inspect/#service-workers/</a> — отладка в будущем</li>
+      <li><a target="_blank" href="https://developers.google.com/cloud-messaging/chrome/client">Подробное описание работы Push API в Chrome</a></li>
+      <li><a target="_blank" href="https://github.com/GoogleChrome/samples/tree/gh-pages/push-messaging-and-notifications">Push Messaging and Notification Sample</li>
+      <li><a target="_blank" href="https://github.com/w3c-webmob/ServiceWorkersDemos">ServiceWorkersDemos</a></li>
+      <li><a target="_blank" href="https://github.com/slightlyoff/BackgroundSync/blob/master/explainer.md">Background synchronization explained</a></li>
+    </ul>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Контакты</h2>
+    <ul>
+      <li>Twitter: <a target="_blank" href="https://twitter.com/thought_sync">@thought_sync</a></li>
+      <li>Github: <a target="_blank" href="https://github.com/Termina1">github.com/Termina1</a></li>
+    </ul>
+  </div></section>
+  <!--
+    To hide progress bar from entire presentation
+    just remove “progress” element.
+    -->
+  <div class="progress"><div></div></div>
+  <script src="node_modules/shower-core/shower.min.js"></script>
+  <!-- Copyright © 2014 Yours Truly, Famous Inc. -->
+  <!-- Photos by John Carey, fiftyfootshadows.net -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

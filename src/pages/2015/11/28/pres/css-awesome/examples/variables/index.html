@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <style>
+      :root
+      {
+        --main-color: red;
+        --secondary-color: gray;
+
+        --draft: 'Working Draft';
+
+        --padding: 50px 100px;
+
+        --bad-size: 20;
+
+        --size1: 20px;
+        --size2: 30px;
+      }
+
+      h1
+      {
+        --main-color: green;
+        --size1-plus-size2: calc(var(--size1) + var(--size2));
+      }
+
+      h1
+      {
+        position: relative;
+
+        top: var(--bad-size)px; /* invalid */
+        top: var(--size1-plus-size2); /* valid */
+
+
+        color: var(--main-color, orange); /* fallback arg */
+        padding: var(--padding);
+
+        margin: 0;
+
+      }
+
+      h1::after
+      {
+        display: block;
+
+        color: var(--secondary-color);
+        border-top: 1px solid;
+
+        content: " (" var(--draft) ")";
+      }
+
+      p
+      {
+        font-size: var(--size1-plus-size2);
+      }
+
+      p pre
+      {
+        display: inline;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS Custom Properties for Cascading Variables Module Level 1</h1>
+    <p>
+      This <code>&lt;p&gt;&lt;/p&gt;</code> can't see vars from <code>&lt;h1&gt;&lt;/h1&gt;</code>
+    </p>
+  </body>
+</html>

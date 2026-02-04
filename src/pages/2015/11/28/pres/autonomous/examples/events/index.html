@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    html, body{
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      position: relative;
+      font-family: sans-serif;
+      font-size: 24px;
+      overflow: hidden;
+      }
+
+    .offline-alert{
+      background-color: #c00;
+      color: #fff;
+      position: fixed;
+      top: -120px;
+      left: 0;
+      right: 0;
+      transition: top .4s;
+      min-height: 40px;
+      line-height: 40px;
+      padding: 20px 40px;
+      margin:0;
+      text-align: center;
+      }
+
+    body.offline .offline-alert{
+      top: 0;
+      }
+
+    button[type="submit"]{
+      vertical-align: top;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      padding:0 10px;
+      margin:0;
+      height: 40px;
+      line-height: 40px;
+      background: none;
+      border-style: none;
+      border-radius: 0 5px 5px 0;
+      background-color: #00c;
+      color: #fff;
+      cursor: pointer;
+      }
+    button[type="submit"]:hover{
+      background-color: #00e;
+      }
+    body.offline form{
+      opacity: .25;
+      }
+    form{
+      transform: scale(2.6,2.6);
+      font-size: 0;
+      position:fixed;
+      top: 0;
+      bottom: 0;
+      left:0;
+      right:0;
+      margin: auto;
+      height: 40px;
+      text-align: center;
+      transition: opacity .4s;
+      }
+    input{
+      padding:0 20px;
+      line-height: 38px;
+      height: 38px;
+      margin: 0;
+      outline: none;
+      border-radius: 5px 0 0 5px;
+      border: 1px solid #00c;
+      }
+  </style>
+</head>
+<body>
+  <p class="offline-alert">Интернет поломался. Часть функций времменно недоступна</p>
+  <form action="/" method="post">
+      <input type="email" name="email" placeholder="email@domain.com">
+      <button type="submit">Подписаться</button>
+  </form>
+  <script>
+    if(navigator.onLine){
+        onOnline();
+    }else{
+        onOffline();
+    }
+
+    window.addEventListener('offline', onOffline);
+    window.addEventListener('online', onOnline);
+
+    function onOnline(){
+        document.body.classList.remove('offline');
+        var buttons = document.querySelectorAll('button[type="submit"]')
+            , index = buttons.length
+            , button;
+
+        while(index--){
+            button = buttons[index];
+            if(button.getAttribute('type') == 'submit'){
+                button.removeAttribute('disabled');
+            }
+        }
+    }
+
+    function onOffline(){
+        document.body.classList.add('offline');
+        var buttons = document.querySelectorAll('button[type="submit"]')
+            , index = buttons.length
+            , button;
+
+        while(index--){
+            button = buttons[index];
+            if(button.getAttribute('type') == 'submit'){
+                button.setAttribute('disabled', 'disabled');
+            }
+        }
+    }
+  </script>
+</body>
+</html>

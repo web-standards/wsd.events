@@ -1,0 +1,815 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <title>Интерактивная 3D графика на WebGL</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=792, user-scalable=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <script type="text/javascript" src="js/lib/three.min.js"></script>
+  <script type="text/javascript" src="js/lib/OBJLoader.js"></script>
+  <script type="text/javascript" src="js/lib/TrackballControls.js"></script>
+  <script type="text/javascript" src="js/cube.js"></script>
+  <script type="text/javascript" src="js/player.js"></script>
+  <script type="text/javascript" src="js/point.js"></script>
+  <script type="x-shader/x-vertex" id="vshader">
+    varying vec2 vUv;
+
+    void main() {
+      vUv = uv;
+      vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+      gl_Position = projectionMatrix * mvPosition;
+    }
+  </script>
+  <script type="x-shader/x-fragment" id="fshader">
+    uniform sampler2D u_Sampler;
+    varying vec2 vUv;
+
+    void main() {
+      gl_FragColor = texture2D(u_Sampler, vUv);
+    }
+  </script>
+  <script type="text/javascript" src="js/shader_material.js"></script>
+  <script type="text/javascript" src="js/load.js"></script>
+  <script type="text/javascript" src="js/mode_wireframe.js"></script>
+  <link rel="stylesheet" href="shower/themes/ribbon/styles/screen-d90984e344.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="list">
+  <header class="caption">
+    <h1>Интерактивная 3D графика на WebGL</h1>
+    <p>Василика Климова</p>
+  </header>
+  <section class="slide cover" id="Cover"><div>
+    <h2>Интерактивная<br>3D графика<br>на WebGL</h2>
+    <p>
+      <a href="../index.html" target="_blank">Василика Климова</a>
+      <br>
+      Разработчик интерфейсов
+      <br>
+      Artec Group
+    </p>
+    <div class="right-bottom"><a href="https://twitter.com/Lik04ka" target="_blank">@lik04ka</a></div>
+    <img src="pictures/artec.png" alt="Artec Group">
+  </div></section>
+  <section class="slide"><div>
+    <h2>Содержание</h2>
+    <ul>
+      <li>2D</li>
+      <li class="next">WebGL</li>
+      <li class="next">3D графика</li>
+      <li class="next">Three.js</li>
+      <li class="next">Плеер для просмотра 3D моделей</li>
+      <li class="next">Шейдеры</li>
+    </ul>
+  </div></section>
+  <section class="slide shout top-threejs big-img"><div>
+    <h2>2D</h2>
+    <img src="pictures/flashback.jpg" alt="" class="small-img">
+  </div></section>
+  <section class="slide"><div>
+    <h2>Отличия 2D от 3D</h2>
+    <div class="text-center vertical-middle">
+      <img src="pictures/2d-3d.gif" alt="">
+    </div>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Отличия 2D от 3D</h2>
+    <div class="text-center vertical-middle">
+      <img src="pictures/2d-3d.jpg.png" alt="">
+    </div>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Плоскость или пространство</h2>
+    <div class="text-center">
+      <img src="pictures/xy.gif" alt="">
+      <img src="pictures/xyz.gif" alt="">
+    </div>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Имитация 3D</h2>
+    <iframe src="http://www.ajax-zoom.com/examples/example15_fullscreen.php" scrolling="no" width="100%" height="420px"></iframe>
+    <div class="text-center">
+      <a href="http://www.youspin.co/youspin/demo/360-spin/" target="_blank">youspin.co</a>
+    </div>
+  </div></section>
+  <section class="slide top-threejs big-img"><div>
+    <h2>Инфографика</h2>
+    <img src="pictures/top_info.png" alt="">
+    <a href="http://mrdoob.com/lab/javascript/threejs/css3d/periodictable/" target="_blank">
+      mrdoob.com/lab/javascript/threejs/css3d/periodictable
+    </a>
+  </div></section>
+  <section class="slide shout top-threejs big-img"><div>
+    <img src="pictures/webgl-big.jpg" alt="" class="center-img">
+  </div></section>
+  <section class="slide"><div>
+    <h2>WebGL</h2>
+    <ul>
+      <li>HTML5 <code>&lt;canvas&gt;</code></li>
+      <li>OpenGL ES 2.0</li>
+      <li>GLSL ES 1.1</li>
+      <li>2D/3D</li>
+    </ul>
+    <div id="cube-canvas" width="200px" height="200px"></div>
+    <br>
+    <img src="pictures/khronos.png" alt="">
+    <img src="pictures/opengles.png" alt="" class="opengles">
+    <img src="pictures/webgl.png" alt="" class="webgl-img">
+  </div></section>
+  <section class="slide"><div>
+    <h2>Десктопные браузеры</h2>
+    <div class="text-center">
+      <span class="iewbgl next">IEWebGL</span>
+      <p><img src="pictures/desktop_browser.png" alt=""></p>
+      <p><a href="http://caniuse.com/webgl" target="_blank">caniuse.com/webgl</a></p>
+    </div>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Мобильные браузеры</h2>
+    <div class="text-center">
+      <p><img src="pictures/mobile_browser.png" alt=""></p>
+      <p><img src="pictures/mobile_browser2.png" alt=""></p>
+      <p><a href="http://caniuse.com/webgl" target="_blank">caniuse.com/webgl</a></p>
+    </div>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Проверка поддержки WebGL</h2>
+    <iframe src="http://get.webgl.org/" scrolling="no" width="100%" height="380px"></iframe>
+    <div class="text-center">
+      <a href="http://get.webgl.org/" target="_blank">get.webgl.org</a>
+    </div>
+  </div></section>
+  <section class="slide top-threejs big-img"><div>
+    <h2>Игры</h2>
+    <img src="pictures/games.png" alt="">
+    <a href="http://gooengine.com/pearl-boy" target="_blank">gooengine.com/pearl-boy</a>
+  </div></section>
+  <section class="slide top-threejs big-img"><div>
+    <h2>Навигация</h2>
+    <img src="pictures/bookcase.jpg" alt="">
+    <a href="http://bookcase.chromeexperiments.com" target="_blank">bookcase.chromeexperiments.com</a>
+  </div></section>
+  <section class="slide top-threejs big-img"><div>
+    <h2>Редакторы</h2>
+    <img src="pictures/editors.png" alt="">
+    <a href="http://www.3dtin.com/" target="_blank">3dtin.com</a>
+  </div></section>
+  <section class="slide top-threejs big-img"><div>
+    <h2>Инфографика</h2>
+    <img src="pictures/top_earth.png" alt="">
+    <a href="http://globe.chromeexperiments.com" target="_blank">globe.chromeexperiments.com</a>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Технологии 3D</h2>
+    <div class="text-center">
+      <img src="pictures/tech.png" alt="" width="700">
+    </div>
+    <!--<img src="pictures/directx.png" alt="">
+    <img src="pictures/silverlight.png" alt="">
+    <img src="pictures/vrml.png" alt="">
+    <img src="pictures/flash.png" alt="">
+    <img src="pictures/opengl.png" alt="">
+    <img src="pictures/3dtech.png" alt="">
+    <p>O3D</p>-->
+  </div></section>
+  <section class="slide whats-webgl"><div>
+    <h2>Преимущества WebGL</h2>
+    <div class="text-center">
+      <p>
+        <img src="pictures/opengl.png" alt="" class="opengl">
+        <span>&</span>
+        <img src="pictures/js.png" alt="" class="js">
+      </p>
+      <div>
+        <img src="pictures/candy.gif" alt="" class="love">
+      </div>
+    </div>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Преимущества WebGL</h2>
+    <ul>
+      <li>Открытый стандарт</li>
+      <li>Высокая производительность</li>
+      <li>Автоматическое управление памятью</li>
+      <li>Кроссплатформенность</li>
+    </ul>
+    <img src="pictures/browsers.png" alt="" class="browsers-img">
+  </div></section>
+  <section class="slide"><div>
+    <h2>Отсутствие компиляции</h2>
+    <div class="text-center">
+      <video src="pictures/console.webm" width="70%" height="auto" preload controls muted>
+    </video>
+    </video>
+  </div></section>
+  <section class="slide"><div>
+    <h2>WebGL</h2>
+    <table class="table html">
+      <tr>
+        <td><img src="pictures/html5.png" alt=""></td>
+        <td><span>+</span></td>
+        <td><img src="pictures/js2.png" alt=""></td>
+        <td><span>+</span></td>
+        <td><span>GLSL ES</span></td>
+      </tr>
+    </table>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Программа на WebGL</h2>
+    <div class="text-center">
+      <img src="pictures/point.png" alt="">
+    </div>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Точка</h2>
+    <canvas id="webgl-point" width="800" height="450"></canvas>
+  </div></section>
+  <section class="slide top-threejs big-img shout"><div>
+    <h2>3D графика</h2>
+    <img src="pictures/3d-graphics.png" alt="">
+  </div></section>
+  <section class="slide"><div>
+    <h2>Основные понятия</h2>
+    <table class="table">
+      <tr>
+        <td>
+          <ul>
+            <li>Сцена</li>
+            <li>Свет</li>
+            <li>Камера</li>
+          </ul>
+        </td>
+        <td>
+          <img src="pictures/movie.png" alt="" class="movie">
+        </td>
+      </tr>
+    </table>
+  </div></section>
+  <section class="slide connection"><div>
+    <h2>Взаимосвязь</h2>
+    <div class="text-center">
+      <img src="pictures/connection1.gif" alt="">
+    </div>
+  </div></section>
+  <section class="slide connection"><div>
+    <h2>Взаимосвязь</h2>
+    <div class="text-center">
+      <img src="pictures/connection2.gif" alt="">
+    </div>
+  </div></section>
+  <section class="slide connection"><div>
+    <h2>Взаимосвязь</h2>
+    <div class="text-center">
+      <img src="pictures/connection3.gif" alt="">
+    </div>
+  </div></section>
+  <section class="slide connection"><div>
+    <h2>Взаимосвязь</h2>
+    <div class="text-center">
+      <img src="pictures/connection4.gif" alt="">
+    </div>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Меш</h2>
+    <div class="text-center">
+      <img src="pictures/mesh1.gif" alt="" width="750px">
+    </div>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Меш</h2>
+    <div class="text-center">
+      <img src="pictures/mesh2.gif" alt="" width="750px">
+    </div>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Меш</h2>
+    <div class="text-center">
+      <img src="pictures/mesh3.gif" alt="" width="750px">
+    </div>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Визуализация</h2>
+    <ul class="vertical-middle">
+      <li>Рендер</li>
+      <li>Шейдер</li>
+      <li>Анимация</li>
+    </ul>
+    <img src="pictures/wow.png" alt="" class="wow next">
+  </div></section>
+  <section class="slide shout shaders big-img top-threejs"><div>
+    <a href="http://threejs.org/examples/#webgl_particles_shapes" target="_blank">
+      threejs.org/examples/#webgl_particles_shapes
+    </a>
+    <img src="pictures/top_three.png" alt="">
+  </div></section>
+  <section class="slide"><div>
+    <h2>Three.js</h2>
+    <div class="text-center"><img src="pictures/threejs.png" alt=""></div>
+    <table>
+      <tr>
+        <td>three.min.js</td>
+        <td><span>420 kb</span></td>
+      </tr>
+      <tr>
+        <td>OBJLoader.js</td>
+        <td><span>8 kb</span></td>
+      </tr>
+      <tr>
+        <td>TrackballControls.js</td>
+        <td><span>14 kb</span></td>
+      </tr>
+    </table>        
+    <a href="https://twitter.com/mrdoob" class="left-bottom">@mrdoob</a>
+    <a href="http://threejs.org" class="right-bottom" target="_blank">threejs.org</a>
+  </div></section>
+    <section class="slide"><div>
+    <h2>Экспортируемые форматы</h2>
+    <table class="vertical-middle">
+      <tr>
+        <td class="active">obj</td>
+        <td>ply</td>
+        <td>binary</td>
+      </tr>
+      <tr>
+        <td>babylon</td>
+        <td>stl</td>
+        <td>wrl</td>
+      </tr>
+      <tr>
+        <td>vrm</td>
+        <td>dae (collada)</td>
+        <td>ctm</td>
+      </tr>
+      <tr>
+        <td>utf8</td>
+        <td>svg</td>
+        <td>pvr</td>
+      </tr>
+      <tr>
+        <td>vtk</td>
+        <td>awd</td>
+        <td>pdb</td>
+      </tr>
+    </table>
+  </div></section>
+  <section class="slide input"><div>
+    <h2>Входные данные</h2>
+    <p class="color-orange">object.obj</p>
+    <table class="text-center table">
+      <tr>
+        <td>
+          <span>Список вершин, с координатами (x,y,z)</span>
+          <img src="pictures/obj1.png" alt="">
+        </td>
+        <td>
+          <span>Текстурные координаты (u,v)</span>
+          <img src="pictures/obj2.png" alt="">
+          <span>Определения поверхности(v/vt)</span>
+          <img src="pictures/obj3.png" alt="">
+        </td>
+      </tr>
+    </table>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Входные данные</h2>
+    <table class="text-center table">
+      <tr>
+        <td><h3 class="color-orange">texture.jpg</h3></td>
+        <td><img src="object/couple.png" alt="" class="qr"></td>
+      </tr>
+    </table>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Алгоритм</h2>
+    <div class="text-center">
+      <img src="pictures/alg.png" alt="" height="450">
+    </div>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Выходной результат</h2>
+    <img src="pictures/example.png" alt="">
+  </div></section>
+  <section class="slide"><div>
+    <h2>Сцена</h2>
+    <pre class="vertical-middle">
+      <code>Player.container = document.getElementById("webgl-player");</code>
+      <code>Player.size = {</code>
+      <code>   width: Player.container.offsetWidth,</code>
+      <code>   height: Player.container.offsetHeight</code>
+      <code>};</code>
+      <code>Player.scene = new THREE.<mark>Scene</mark>();</code>
+    </pre>
+  </div></section>
+  <section class="slide cameras"><div>
+    <h2>Типы камер</h2>
+    <div class="text-center">
+      <p>
+      Перспективная проекция
+      - 
+      PerspectiveCamera
+      </p>
+      <img src="pictures/persp_camera.png" alt="">
+      <p>
+      Ортогональная проекция
+      -
+      OrthographicCamera
+      </p>
+      <img src="pictures/orth_camera.png" alt="">
+    </div>
+  </div></section>
+  <section class="slide camera"><div>
+    <h2>Объект Камера</h2>
+    <div class="text-center">
+      <pre>
+        <code>PerspectiveCamera( fov,  aspect,  near,  far )</code>
+      </pre>
+      <img src="pictures/eye.png" alt="" class="next eye">
+      <img src="pictures/camera.png" alt="">
+    </div>
+  </div></section>
+  <section class="slide camera"><div>
+    <h2>Добавление камеры</h2>
+    <pre class="vertical-middle">
+      <code><mark class="comment">// PerspectiveCamera( fov,  aspect,  near,  far )</mark></code>
+      <code>var aspect = Player.size.width / Player.size.height;</code>
+      <code>Player.camera = new THREE.<mark>PerspectiveCamera</mark>(45.0,</code>
+      <code>aspect, 2, 8000);</code>
+      <code>Player.camera.position.z = 300;</code>
+      <code>Player.scene.add(Player.camera);</code>
+    </pre>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Свет, рендер, canvas</h2>
+    <pre class="vertical-middle">
+      <code>var light = new THREE.<mark>AmbientLight</mark>();</code>
+      <code>Player.scene.add(Player.light);</code>
+      <div class="next">
+        <code>Player.renderer = new THREE.<mark>WebGLRenderer</mark>({alpha: true});</code>
+        <code>Player.renderer.setSize(Player.size.width, Player.size.height);</code>
+      </div>
+      <div class="next">
+        <code><mark class="comment">// canvas</mark></code>
+        <code>Player.container.appendChild(Player.renderer.<mark class="important">domElement</mark>);</code>
+      </div>
+    </pre>
+  </div></section>
+  <section class="slide light"><div>
+    <h2>Свет</h2>
+    <table class="table">
+      <tr>
+        <td><img src="pictures/without_light.jpg" alt="" class="couple-img"></td>
+        <td><pre><code><mark class="comment">// Player.scene.add(light)</mark></code></pre></td>
+      </tr>
+      <tr>
+        <td><img src="pictures/add_light.jpg" alt="" class="couple-img"></td>
+        <td><pre><code>Player.scene.add(light)</code></pre></td>
+      </tr>
+    </table>
+  </div></section>
+  <section class="slide"><div>
+    <h2>WebGLRenderer</h2>    
+    <table class="table">
+      <tr>
+        <td><img src="pictures/webgl_alpha_false.jpg" alt="" class="couple-img"></td>
+        <td><pre><code>THREE.WebGLRenderer()</code></pre></td>
+      </tr>
+      <tr>
+        <td><img src="pictures/webgl_alpha_true.jpg" alt="" class="couple-img"></td>
+        <td><pre><code>THREE.WebGLRenderer({<mark class="important">alpha: true</mark>})</code></pre></td>
+      </tr>
+    </table>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Текстура</h2>
+    <pre class="vertical-middle">
+      <code>var textureLoader = new THREE.<mark>TextureLoader</mark>();</code>
+      <code>textureLoader.load("texture.jpg", function(texture) {</code>
+      <code>   Player.texture = texture;</code>
+      <code>   Player.loadModel();</code>
+      <code>});</code>
+    </pre>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Загрузка 3D модели</h2>
+    <pre>
+      <code>loadModel: function() {</code>
+      <code>  var objectLoader = new THREE.<mark>OBJLoader</mark>();</code>
+      <code>  objectLoader.load("object.obj", function(object) {</code>
+      <div class="next">
+        <code>    object.traverse(function(child) {</code>
+        <code>      if (child instanceof THREE.Mesh) {</code>
+        <code>        child.material.<mark class="important">map</mark> = Player.texture; }</code>
+        <code>    });</code>
+      </div>
+      <div class="next">
+        <code>    Player.scene.add(object);</code>
+        <code>  });</code>
+        <code>}</code>
+      </div>
+    </pre>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Отрисовка</h2>
+    <pre class="vertical-middle">
+      <code>Player.animate();</code>
+      <code>animate: function() {</code>
+      <code>   requestAnimationFrame(Player.animate);</code>
+      <code>   Player.renderer.render(Player.scene, Player.camera);</code>
+      <code>}</code>
+    </pre>
+  </div></section>
+   <section class="slide"><div>
+    <h2>Вращение</h2>
+    <pre>
+      <code>Player.controls = new THREE.<mark>TrackballControls</mark>(</code>
+      <code>   Player.camera,</code>
+      <code>   Player.container</code>
+      <code>);</code>
+      <div class="next">
+        <code>Player.animate();</code>
+        <code>animate: function() {</code>
+        <code>   requestAnimationFrame(Player.animate);</code>
+        <code>   Player.controls.<mark class="important">update</mark>();</code>
+        <code>   Player.renderer.render(Player.scene, Player.camera);</code>
+        <code>}</code>
+      </div>
+    </pre>
+  </div></section>
+  <section class="slide"><div>
+    <h2>requestAnimationFrame</h2>
+    <div class="text-center">
+      <img src="pictures/request.png" alt="" width="650">
+    </div>
+    <pre>
+      <code>animate: function() {</code>
+      <code>   <mark>requestAnimationFrame</mark>(Player.animate);</code>
+      <code>   Player.controls.update();</code>
+      <code>   Player.renderer.render(Player.scene, Player.camera);</code>
+      <code>}</code>
+    </pre>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Отмена анимации</h2>
+    <pre class="vertical-middle">
+      <code>requestId = requestAnimationFrame(animate);</code>
+      <code><mark>cancelAnimationFrame</mark>(requestId);</code>
+    </pre>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Модель с текстурой</h2>
+    <div id="webgl-player"><img id="preloader" src="css/load.gif" class="absolute-center"/></div>
+  </div></section>
+  <section class="slide shout shaders big-img"><div>
+    <h2>Шейдеры</h2>
+    <img src="pictures/top_shaders.jpg" alt="">
+  </div></section>
+    <section class="slide"><div>
+    <h2>GLSL</h2>
+    <ul class="vertical-middle">
+      <li>Синтаксис C</li>
+      <li>Типы</li>
+      <li>Задействует GPU</li>
+      <li>Строки</li>
+      <li>Runtime</li>
+    </ul>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Виды шейдеров</h2>
+    <p>
+      <ul>
+        <li>Вершинные шейдеры</li>
+        <li>Фрагментные шейдеры</li>
+      </ul>
+    </p>
+    <div class="text-center">
+      <img src="pictures/shaders.png" alt="">
+    </div>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Растеризация</h2>
+    <div class="text-center">
+      <img src="pictures/raster2.png" alt="">
+      <br>
+      <img src="pictures/raster.png" alt="">
+    </pre>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Типы данных</h2>
+    <ul>
+      <li>bool</li>
+      <li>int</li>
+      <li>float</li>
+      <li>vec2 / vec3 / vec4</li>
+      <li>mat2 / mat3 / mat4</li>
+      <li>sampler2D</li>
+    </ul>
+  </div></section>
+  <section class="slide vars"><div>
+    <h2>Типы классификаторов</h2>  
+    <table>
+      <tr>
+        <th>Описатели/Шейдеры</th>
+        <th>Вершинный</th>
+        <th>Фрагментный</th>
+      </tr>
+      <tr>
+        <th>attribute</th>
+        <td>READ</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <th>uniform</th>
+        <td>READ</td>
+        <td>READ</td>
+      </tr>
+      <tr>
+        <th>varying</th>
+        <td>READ/WRITE</td>
+        <td>READ</td>
+      </tr>
+    </table>
+    <div class="text-center">
+      <img src="pictures/vars.png" alt="">
+    </div>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Запись переменных</h2>
+    <table class="text-center vertical-middle">
+      <tr>
+        <th>&lt;Описатель&gt;</th>
+        <th>&lt;Тип&gt;</th>
+        <th>&lt;НазваниеПеременной&gt;</th>
+      </tr>
+      <tr>
+        <td>varying</td>
+        <td>vec2</td>
+        <td>vUv</td>
+      </tr>
+    </table>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Вершинный шейдер</h2>
+    <pre class="vertical-middle">
+      <code>&lt;script type="x-shader/x-<mark>vertex</mark>" id="shader-vs"&gt;</code>  
+      <code>  varying vec2 vUv;</code>  
+      <code>  void main() {</code>  
+      <code>    vUv = uv;</code>
+      <code>    vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);</code> 
+      <code>    <mark>gl_Position</mark> = projectionMatrix * mvPosition;</code>   
+      <code>  }</code>      
+        <code>&lt;/script&gt;</code>
+      </pre>  
+  </div></section>
+  <section class="slide"><div>
+    <h2>Фрагментный шейдер</h2>
+    <pre class="vertical-middle">
+      <code>&lt;script type="x-shader/x-<mark>fragment</mark>" id="shader-fs"&gt;</code>  
+      <code>  uniform sampler2D u_Sampler;</code>
+      <code>  varying vec2 vUv;</code>  
+      <code>  void main() {</code>  
+      <code>    <mark>gl_FragColor</mark> = texture2D(u_Sampler, vUv);</code>    
+      <code>  }</code>      
+        <code>&lt;/script&gt;</code>
+    </pre>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Материал из шейдера</h2>
+    <pre>
+      <code>var vShader = document.getElementById("vshader").text;</code>
+      <code>var fShader = document.getElementById("fshader").text;</code>
+      <span class="next">
+        <code>child.material = new THREE.<mark>ShaderMaterial</mark>({</code>
+        <code>   uniforms: {</code>
+        <code>      u_Sampler: {type: "t", value: Player.texture}</code>
+        <code>   },</code>
+        <code>   vertexShader: vShader,</code>
+        <code>   fragmentShader: fShader,</code>
+        <code>});</code>
+      </span>
+    </pre>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Модель с текстурой</h2>
+    <div id="webgl-player-shader"><img id="preloader-shader" src="css/load.gif" class="absolute-center"/></div>
+    <pre class="text-center">
+      <code>Player.mesh.rotation.z += 0.01;</code>
+    </pre>
+  </div></section>
+  <section class="slide adv-lib"><div>
+    <h2>Преимущество библиотек</h2>
+    <pre class="center">
+      <code>child.material.<mark class="important">map</mark> = Player.texture;</code>
+    </pre>
+  </div></section>
+  <section class="slide shout wireframe shaders big-img"><div>
+    <h2>Каркасный режим</h2>
+    <img src="pictures/top_wireframe.jpg" alt="">
+  </div></section>
+  <section class="slide"><div>
+    <h2>Создание сферы</h2>
+    <pre class="vertical-middle">
+      <code>geometry = new THREE.<mark>SphereGeometry</mark>(100, 50, 50);</code>
+      <code>material = new THREE.<mark>MeshPhongMaterial</mark>({map: texture});</code>
+      <code>mesh = new THREE.<mark>Mesh</mark>(geometry, material);</code>
+      <code>scene.add(mesh);</code>
+    </pre>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Текстура сферы</h2>
+    <img src="object/earth.jpg" alt="">
+  </div></section>
+  <section class="slide"><div>
+    <h2>Земной шар</h2>
+    <div id="webgl-player-wireframe"><img id="preloader-wireframe" src="css/load.gif" class="absolute-center"/></div>
+    <pre class="text-center">
+      <code id="mode-wireframe">mesh.material.wireframe = false;</code>
+    </pre>
+  </div></section>
+  <section class="slide libs"><div>
+    <h2>WebGL библиотеки</h2>
+    <ul class="vertical-middle">
+      <li>Three.js</li>
+      <li>Babylon.js</li>
+      <li>Turbulenz</li>
+      <li>PhiloGL</li>
+    </ul>
+    <img class="lib-three" src="pictures/three.png" alt="">
+    <img class="lib-babylon" src="pictures/babylon.png" alt="">
+    <img class="lib-turbulenz" src="pictures/turbulenz.png" alt="">
+    <img class="lib-philo" src="pictures/philo.png" alt="">
+  </div></section>
+  <section class="slide"><div>
+    <h2>Полезные ссылки</h2>
+    <ul class="vertical-middle">
+      <li>
+        <a href="http://learningwebgl.com" target="_blank">
+          learningwebgl.com
+        </a>
+      </li>
+      <li>
+        <a href="http://webglacademy.com" target="_blank">
+          webglacademy.com
+        </a>
+      </li>
+      <li>
+        <a href="http://davidscottlyons.com/threejs" target="_blank">
+          davidscottlyons.com/threejs
+        </a>
+      </li>
+      <li>
+        Книга
+        <a href="http://www.ozon.ru/context/detail/id/31239396/" target="_blank">
+          WebGL. Программирование трехмерной графики
+        </a>
+      </li>
+      <li>
+        Никита Северинов 
+        <a href="http://diductio.ru/course/2060/" target="_blank">diductio.ru/course/2060/</a>
+      </li>
+    </ul>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Исходники</h2>
+    <table class="text-center table">
+      <tr>
+        <td><h3>github.com/Likita</h3></td>
+        <td><img src="pictures/qr.gif" alt="" class="qr"></td>
+      </tr>
+    </table>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Демо</h2>
+    <div class="absolute-center big-font">
+      <a href="../webgl/index.html" target="_blank">vasilika.ru</a>
+    </div>
+  </div></section>
+  <section class="slide wecan"><div>
+    <div class="vertical-middle">
+      <h2>Интерактивность</h2>
+      <h2>Геймификация</h2>
+    </div>
+    <img src="pictures/wecan.png" alt="">
+  </div></section>
+  <section class="slide text-center"><div>
+    <h2>Василика Климова</h2>
+    <table class="table-contact table">
+      <tr>
+        <td><img src="pictures/vk.png" alt=""></td>
+        <td><a href="https://vk.com/likita" target="_blank">likita</a></td>
+      </tr>
+      <tr>
+        <td><img src="pictures/fb.png" alt=""></td>
+        <td><a href="https://www.facebook.com/vasilika.klimova" target="_blank">vasilika.klimova</a></td>
+      </tr>
+      <tr>
+        <td><img src="pictures/tw.png" alt=""></td>
+        <td><a href="https://twitter.com/Lik04ka" target="_blank">lik04ka</a></td>
+      </tr>
+    </table>
+    <h1>Спасибо за внимание!</h1>
+  </div></section>
+  <p class="badge"><a href="https://github.com/shower/shower">Fork me on Github</a></p>
+  <div class="progress"><div></div></div>
+  <script src="shower/shower.min.js"></script>
+</body>
+</html>

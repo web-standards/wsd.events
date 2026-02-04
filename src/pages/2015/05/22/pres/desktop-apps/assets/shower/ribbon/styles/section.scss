@@ -1,0 +1,52 @@
+// ------------------------------------------------------------------
+// Section (Slide)
+// ------------------------------------------------------------------
+
+> section {
+
+	position:relative;
+	z-index:1;
+	overflow:hidden;
+	padding:106px 100px 0;
+	width:$width;
+	height:$height;
+	background:#FFF;
+	font-size:25px;
+
+	// Number
+
+	&:after {
+		position:absolute;
+		top:0;
+		right:100px;
+		padding-top:15px;
+		width:50px;
+		height:100px;
+		background:url(../images/ribbon.svg) no-repeat;
+		color:#FFF;
+		counter-increment:slide;
+		content:counter(slide);
+		text-align:center;
+		}
+
+	// Elements
+
+	@import 'section__basic';
+	@import 'section__inline';
+	@import 'section__quote';
+	@import 'section__lists';
+	@import 'section__table';
+	@import 'section__code';
+	@import 'section__double';
+	@import 'section__shout';
+	@import 'section__cover';
+	@import 'section__place';
+	@import 'section__footer';
+
+	// Modifiers
+
+	@import 'section--grid';
+	@import 'section--black';
+	@import 'section--white';
+
+	}

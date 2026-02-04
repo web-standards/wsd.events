@@ -1,0 +1,62 @@
+// ------------------------------------------------------------------
+// Defaults
+// ------------------------------------------------------------------
+// 1. Variables ........ Global layout and color variables
+// 2. Retina ........... Retina detection mixin
+// 3. Underliner ....... Mixin for underlining links with gradient
+// 4. Breakpoints ...... MQ generator based on slides scale factor
+// 5. Offscreen ........ Mixing for hiding things in accessible way
+// ------------------------------------------------------------------
+
+// Variables
+
+$ratio:16/10; // Slide ratio, use 4/3 for 1024 × 768
+$width:1024px; // Default slide width
+$height:$width/$ratio; // Slide height based on ratio
+$gap:100px; // Gap between slides in list mode
+
+$blue:#4B86C2;
+$yellow:#FAFAA2;
+$grey:#585A5E;
+
+// Retina
+
+@mixin retina {
+	@media (-webkit-min-device-pixel-ratio:2), (min-resolution:192dpi) {
+		@content;
+		}
+	}
+
+// Underliner
+
+@mixin underline($color, $width) {
+	background:
+		linear-gradient(
+			to top,
+			$color,
+			$color #{$width}em,
+			transparent #{$width}em,
+			transparent
+		) repeat-x;
+	}
+
+// Breakpoints
+
+@mixin scale-breakpoint($scale) {
+	@include breakpoint(2 * ($width / $scale) + ($gap / $scale) * 3) {
+		@content;
+		}
+	}
+
+// Offscreen
+
+@mixin offscreen {
+	position:absolute;
+	clip:rect(0 0 0 0);
+	overflow:hidden;
+	margin:-1px;
+	padding:0;
+	width:1px;
+	height:1px;
+	border:none;
+	}

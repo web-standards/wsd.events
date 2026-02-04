@@ -1,0 +1,280 @@
+.box,
+.box-css
+{
+    width: 20px;
+    height: 20px;
+    margin: 4px;
+
+    background-color: red;
+}
+
+/* Note: we had to separate the rotation, scale, x-axis, and y-axis animations into different <div> elements (and classes) for CSS Animations in order to achieve independent timing control which is impossible to do any other way. GSAP doesn't require that. */
+
+.box-css
+{
+    background-color: green;
+}
+
+.box,
+.box-css,
+.move-x,
+.move-x-transforms,
+.move-y,
+.rotate,
+.scale
+{
+    position: relative;
+
+    display: inline-block;
+}
+
+.move-x-left
+{
+    animation: move-x-left 10s linear 0s infinite alternate;
+}
+
+.move-x-transforms
+{
+    animation: move-x-transforms 10s linear 0s infinite alternate;
+}
+
+.move-y
+{
+    animation: move-y 10s linear 0s infinite alternate;
+}
+
+.rotate
+{
+    animation: rotate 10s linear 0s infinite alternate;
+}
+
+.scale
+{
+    animation: scale 10s linear 0s infinite alternate;
+}
+
+.move-x-transforms-scale-rotate
+{
+    animation: move-x-transforms-scale-rotate 10s linear 0s infinite alternate;
+}
+
+.top-down
+{
+    animation: top-down 10s linear 0s infinite alternate;
+}
+
+@keyframes color
+{
+    0%
+    {
+        background-color: red;
+    }
+    100%
+    {
+        background-color: blue;
+    }
+}
+
+@keyframes move-x-left
+{
+    0%
+    {
+        left: 0;
+    }
+    100%
+    {
+        left: 500px;
+    }
+}
+
+@keyframes move-x-transforms
+{
+    0%
+    {
+        transform: translate(0, 0);
+    }
+    100%
+    {
+        transform: translate(500px, 0);
+    }
+}
+
+@keyframes move-y
+{
+    0%
+    {
+        top: 0;
+    }
+    100%
+    {
+        top: 200px;
+    }
+}
+
+@keyframes rotate
+{
+    0%,
+    20%
+    {
+        transform: rotate(0deg);
+    }
+    50%,
+    100%
+    {
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes scale
+{
+    0%,
+    50%
+    {
+        transform: scale(1, 1);
+    }
+    100%
+    {
+        transform: scale(2, 2);
+    }
+
+}
+
+@keyframes move-x-transforms-scale-rotate
+{
+    0%
+    {
+        transform: translate(0, 0) rotate(0deg) scale(1, 1);
+    }
+    100%
+    {
+        transform: translate(500px, 0) rotate(180deg) scale(2, 2);
+    }
+}
+
+/** General setup (not animation related): **/
+body
+{
+    margin: 0;
+    padding: 0;
+
+    font-family: Arial;
+    font-weight: 300;
+
+    color: #999;
+    color: #eee;
+    background-color: black;
+}
+
+html,
+body
+{
+    overflow: hidden;
+    height: 100%;
+    font-size: 1.1em;
+}
+
+#fps
+{
+    font-size: 2.8em;
+
+    color: white;
+}
+
+h1
+{
+    margin: 0;
+
+    font-weight: 400;
+
+    color: #ccc;
+}
+
+a,
+a:hover,
+a:visited
+{
+    color: #71b200;
+}
+
+#controls
+{
+    z-index: 1000;
+
+    display: table-row;
+
+    padding: 10px 10px 10px 5px;
+
+    background: linear-gradient(to bottom, #777 0%, #444 100%);
+    background-color: #555;
+}
+
+#controls form li
+{
+    display: table-cell;
+
+    padding: 12px 6px 10px 6px;
+
+    vertical-align: middle;
+
+    text-shadow: 1px 1px 1px #000;
+}
+
+#demo
+{
+    display: table;
+
+    width: 100%;
+    height: 100%;
+}
+
+#start
+{
+    padding: 5px 18px;
+
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 400;
+    margin: 0 0 0 10px;
+    color: black;
+    border: 2px solid black;
+    border-radius: 6px;
+    background: #9af600;
+    background: linear-gradient(to bottom, #9af600 0%, #71b200 100%);
+    text-shadow: none;
+}
+
+#field
+{
+    position: relative;
+    z-index: -100;
+
+    display: table-cell;
+    overflow: hidden;
+
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+
+    border-top: 1px solid #777;
+}
+
+#x-movement-type
+{
+    display: inline-block;
+
+    vertical-align: middle;
+}
+
+#x-movement-type label
+{
+    display: table-row;
+}
+
+#counter
+{
+    display: none;
+}
+
+select {
+    font-size: 1.1em;
+}

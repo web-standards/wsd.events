@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Пример работы offline.js</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="bower_components/offline/themes/offline-theme-chrome.css">
+        <link rel="stylesheet" href="offline-language-russian.css">
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="requests.js"></script>
+        <script src="reconnect.js"></script>
+        <script src="offline.js"></script>
+        <script src="ui.js"></script>
+    </head>
+    <body>
+        <form class="messanger" action="index.html" method="get">
+            <input class="messanger__input" type="text" name="message" placeholder="Сообщение" required="required">
+            <button class="messanger__submit" type="submit">Сказать</button>
+        </form>
+        <script src="bundle.js"></script>
+    </body>
+</html>

@@ -1,0 +1,1280 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <title>БЭМ в дикой природе</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=792, user-scalable=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="stylesheet" href="node_modules/shower-ribbon/styles/screen-d90984e344.css">
+  <!-- Custom Presentation Fonts -->
+  <link rel="stylesheet" href="assets/css/epam-fonts__oswald.css">
+  <link href='http://fonts.googleapis.com/css?family=Marck+Script&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+  <!-- /Custom Presentation Fonts -->
+  <style>
+    /*
+    EPAM COLOR PALETTE:
+
+    PRIMARY COLORS:
+      SHARP BLUE: #39C2D7
+      LIME GREEN: #A3C644
+      GRAPHITE: #464547
+      WHITE: #FFFFFF
+
+    SECONDARY COLORS:
+      Raspberry: #B22746
+      Plum: #8E244D
+      Dark Blue: #1A9CB0
+      Dark Green: #7F993A
+
+      Medium Gray: #666666
+      Gray: #999999
+      Light Gray: #CCCCCC
+
+    EPAM FONTS:
+      Oswald: 300,400,600+italic
+      Trebuchet MS
+    */
+
+    /* Branding */
+    .badge a {
+      background: #8E244D;
+    }
+
+    body {
+      font-family: "Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",'PT Sans',sans-serif;
+    }
+
+    .caption {
+      color: #464547;
+      text-shadow: 0 1px 10px #fff
+    }
+
+    .caption a {
+      color: #1A9CB0;
+      text-shadow: 0 -1px 1px #464547;
+    }
+
+    .caption a:hover {
+      color: #39C2D7;
+    }
+
+    .caption h1 {
+      font: 600 50px/1 'Oswald', 'PT Sans Narrow', sans-serif;
+      color: #39C2D7;
+      text-shadow: 0 1px 1px #464547;
+    }
+
+    .caption a.hashtag {
+      color: #1A9CB0;
+    }
+
+    .caption h3 a.name {
+      color: #A3C644;
+      text-shadow: none;
+    }
+
+    .caption h3 a.work {
+      color: #7F993A;
+      text-shadow: none;
+    }
+
+    .slide h2 {
+      font: 600 50px/1 'Oswald',sans-serif
+    }
+
+    .shout.dark {
+      background: #464547;
+    }
+
+    .shout.dark h2 {
+      color: #FFF;
+    }
+    /* /Branding */
+
+
+    #Cover h2 {
+      margin: 30px 0 0;
+      color: #FFF;
+      text-align: center;
+      font-size: 70px;
+      text-shadow: 0 5px 0 rgba(0, 0, 0, 0.3);
+    }
+
+    #Cover .subheader {
+      position: absolute;
+      bottom: 50px;
+      right: 180px;
+    }
+
+    #Cover pre {
+      color: #FFF;
+      text-shadow: 0 0 20px rgba(0, 0, 0, 1);
+      white-space: pre;
+    }
+
+    #Cover p {
+      margin: 10px 0 0;
+      text-align: center;
+      color: #FFF;
+      font-style: italic;
+      font-size: 30px;
+      line-height: 1.5;
+    }
+
+    #Cover p a {
+      color: #FFF;
+    }
+
+    .slide.shout h2 {
+      line-height: 1.2;
+    }
+
+    .shout p.note {
+      position: absolute;
+      bottom: 20px;
+      right: 10px;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    .slide.-compact >div {
+      padding-top: 20px;
+      height: 620px;
+    }
+
+    .slide h2 {
+      padding-right: 50px;
+    }
+
+    .slide pre {
+      margin-bottom: 20px;
+    }
+
+    .slide pre code {
+      line-height: 1.7;
+    }
+
+    .slide pre code.wrap {
+      white-space: normal;
+    }
+
+    .slide p {
+      margin-bottom: 20px;
+    }
+
+    .slide pre+p,.slide code+p {
+      margin-top: 20px;
+    }
+    .slide p+pre,.slide p+code {
+      margin-top: -10px;
+    }
+
+    .slide blockquote {
+      margin-bottom: 50px;
+    }
+
+    .slide ol,
+    .slide ul {
+      margin-left: 20px;
+      line-height: 1.7;
+    }
+
+    .slide p.note {
+      line-height: 1.5;
+    }
+
+    mark.important {
+      background: #C00;
+      color: #FFF;
+    }
+
+    .slide .custom-numbered-list li:before {
+      content: attr(data-num)'.\00A0';
+    }
+
+    .slide.-shadow.-bright {
+      text-shadow: 2px 2px 0px #fff, 0 0 30px rgba(0, 0, 0, 1);
+    }
+
+    .slide.-shadow.-bright h2 {
+      color: #A3C644;
+      text-shadow: 2px 2px 0px #fff, 0 0 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .slide.-shadow.-bright,
+    .slide.-shadow.-bright kbd,
+    .slide.-shadow.-bright code,
+    .slide.-shadow.-bright samp {
+      color: #B22746;
+    }
+
+    .slide.-shadow.-dark {
+      text-shadow: 1px 1px 0px #fff;
+    }
+
+    .slide.-shadow.-dark h2 {
+      color: #A3C644;
+      text-shadow: 2px 2px 0px #fff, 0 0 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .slide.-shadow.-dark,
+    .slide.-shadow.-dark kbd,
+    .slide.-shadow.-dark code,
+    .slide.-shadow.-dark samp {
+      color: #39C2D7;
+    }
+
+    .slide.-shadow pre code:before {
+      text-shadow: none;
+    }
+
+    .wbr {white-space: nowrap;}
+  </style>
+  <script src="node_modules/jquery-2.1.4.min.js"></script>
+</head>
+
+<body class="list">
+  <header class="caption">
+    <h1>БЭМ в дикой природе</h1>
+    <h2><a class="hashtag" href="https://twitter.com/hashtag/wstdays?f=tweets&src=hash">#wstdays</a>, Kyiv, November 28, 2015</h2>
+    <h3><a class="name" href="http://twitter.com/delaz">Ihor Zenich</a>, <a class="work" href="http://epam.com">EPAM</a></h3>
+  </header>
+
+  <section class="slide cover" id="Cover"><div>
+    <h2>БЭМ в дикой природе</h2>
+    <pre class="subheader">
+      .block__el__el
+      .b-block
+      .block--mod
+      …
+    </pre>
+    <img src="pictures/cover.jpg" alt="">
+    </div>
+  </section>
+
+    <section class="slide cover -shadow -bright">
+<!--
+Здравствуйте! Красивые деревья. Мы с вами поговорим о таких деревьях:
+-->
+      <div>
+        <h2>DOM-дерево</h2>
+        <pre>
+<code>&lt;UL&gt;</code>
+<code>  &lt;LI&gt;</code>
+<code>    &lt;A&gt;</code>
+<code>      &lt;SPAN&gt;&lt;/SPAN&gt;</code>
+<code>    &lt;/A&gt;</code>
+<code>  &lt;/LI&gt;</code>
+<code>&lt;/UL&gt;</code>
+        </pre>
+        <img src="pictures/Tree.png" alt="">
+      </div>
+    </section>
+
+    <section class="slide cover -shadow -dark">
+      <div>
+        <h2>БЭМ-дерево</h2>
+        <pre>
+  <code>&lt;UL class="<mark>menu</mark>"&gt;</code>
+  <code>  &lt;LI class="<mark>menu__item</mark>"&gt;</code>
+  <code>    &lt;A class="<mark>menu__link</mark>"&gt;</code>
+  <code>      &lt;SPAN class="<mark>menu__text</mark>"&gt;&lt;/SPAN&gt;</code>
+  <code>    &lt;/A&gt;</code>
+  <code>  &lt;/LI&gt;</code>
+  <code>&lt;/UL&gt;</code>
+        </pre>
+        <img src="pictures/Tree-BEM.png" alt="">
+      </div>
+    </section>
+
+    <section class="slide cover" id="epam">
+      <div>
+<!--
+Меня зовут Игорь Зенич и я занимаюсь версткой для компании EPAM.
+-->
+        <a href="http://epam.com"><img src="pictures/EPAM-business-card.jpg" alt="EPAM"></a>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div>
+        <h2>В исходниках этой презентации спрятались подсказки!</h2>
+        <p>В комментах html написаны тезисы доклада и комментарии к слайдам требующим пояснений.</p>
+        <p>Презентация: <a href="http://bit.ly/bem-in-the-wild">bit.ly/bem-in-the-wild</a></p>
+      </div>
+    </section>
+
+    <section class="slide shout">
+      <div>
+        <h2><a href="http://bit.ly/bem-in-the-wild">bit.ly/<br>bem-in-the-wild</a></h2>
+      </div>
+    </section>
+
+    <section class="slide cover shout" id="why">
+      <style>
+        #why h2 {
+          position: absolute;
+          top: 130px;
+          left: 20px;
+          text-align: left;
+          font-size: 70px;
+          margin: 0;
+          color: #fff;
+          text-shadow: 0 0 10px rgba(0, 0, 0, .5);
+        }
+      </style>
+      <div>
+        <img src="pictures/why.jpg" alt="Зачем?">
+        <h2>ещё один доклад про БЭМ…</h2>
+<!--
+Сегодня я снова хотел бы поговорить с вами про БЭМ…
+-->
+      </div>
+    </section>
+
+    <section class="slide cover" id="pepelsbey">
+      <style>
+        #pepelsbey h2 {
+          position: absolute;
+          top: 20px;
+          right: 0;
+          font: 60px/1 'Marck Script', cursive;
+          margin: 0;
+          border: 1px solid #000;
+          border-radius: 50%;
+          padding: 50px;
+          background-color: #fff;
+        }
+
+        #pepelsbey h2:before {
+          content: '';
+          position: absolute;
+          top: 200px;
+          right: 300px;
+          width: 50px;
+          height: 50px;
+          border: 1px solid #000;
+          border-radius: 50%;
+          background-color: #fff;
+        }
+
+        #pepelsbey h2:after {
+          content: '';
+          position: absolute;
+          top: 250px;
+          right: 350px;
+          width: 30px;
+          height: 30px;
+          border: 1px solid #000;
+          border-radius: 50%;
+          background-color: #fff;
+        }
+      </style>
+      <div>
+        <h2>
+          Ну сколько<br>
+          уже можно, а?…
+        </h2>
+        <img src="pictures/photos/pepelsbey.jpg" alt="Pepelsbey">
+      </div>
+    </section>
+
+    <section class="slide -compact" id="present">
+      <style>
+        #present iframe {
+          float: left;
+          margin-right: 20px;
+        }
+        #present h3 {
+          margin-bottom: 50px;
+          line-height: normal;
+        }
+        #present h3 small {
+          font-size: 20px;
+          color: #888;
+        }
+      </style>
+      <div>
+        <h2>В прошлом году мы обсуждали ручную вёрстку по БЭМ…</h2>
+<!--
+С прошлого Web Standards Days этот доклад значительно расширился, я выступал с ним ещё на 2х конференциях и буду очень рад если вы найдете время его посмотреть. Даже те, кто видел его в прошлом году, найдут там для себя много нового.
+-->
+        <iframe class="video" width="480" height="270" src="https://www.youtube.com/embed/kBgHdSOj33A?rel=0" frameborder="0" allowfullscreen></iframe>
+        <p>
+          Презентация:<br>
+          <a href="http://bit.ly/bem-css-right">bit.ly/bem-css-right</a><br>
+          Видео доклада: <a href="https://www.youtube.com/watch?v=kBgHdSOj33A">youtube.com/watch?v=kBgHdSOj33A</a>
+        </p>
+        <br clear="all">
+        <p class="note">Презентация содержит больше слайдов и примеров, чем оригинальное видео.</p>
+      </div>
+    </section>
+
+    <section class="slide shout grow">
+      <div>
+        <h2>Что значит <span class="wbr">«по-БЭМ»</span>?</h2>
+      </div>
+    </section>
+
+    <section class="slide">
+     <!--
+Недавно у меня с коллегами возникла проблема: мы отправили друг другу множество писем и только лишь после созвона разобрались о каком БЭМ мы говорим.
+     -->
+      <div>
+        <figure>
+          <blockquote>
+            <p>
+— Мы используем БЭМ, но не FullStack, а #b_ в CSS.<br>
+— Нет, не как в Яндексе.<br>
+— Как?<br>
+— Ну как Гарри Робертс писал…<br>
+— Как именно, он разное писал?<br>
+— Fuck.<br>
+           </p>
+          </blockquote>
+        </figure>
+     </p>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div>
+        <figure>
+          <blockquote>
+            <p>
+Each time we have to understand what exactly BEM we are talking about. Both with customer and internally in the team.
+           </p>
+          </blockquote>
+        </figure>
+<iframe src="embed/twitter-amel_true.html" id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-tweet twitter-tweet-rendered" allowfullscreen="" style="display: block; max-width: 99%; min-width: 220px; padding: 0px; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; margin: 0px auto 20px; border-color: rgb(238, 238, 238) rgb(221, 221, 221) rgb(187, 187, 187); border-width: 1px; border-style: solid; box-shadow: rgba(0, 0, 0, 0.14902) 0px 1px 3px; position: static; visibility: visible; width: 500px;" title="Встроенный твит" height="220"></iframe>
+      </div>
+    </section>
+
+    <section class="slide shout">
+      <div>
+        <h2>Непонятость БЭМ</h2>
+      </div>
+    </section>
+
+    <section class="slide cover" id="fullstackbem" data-timing="10">
+      <style>
+        #fullstackbem iframe {
+          z-index: 1;
+        }
+      </style>
+      <div>
+        <!--
+В рунете под БЭМ обычно понимают Яндекс-реализацию БЭМ — Full Stack BEM.
+Вот даже сейчас предыдущий докладчик произнёс «Выбирать БЭМ? Но где потом найти тех, кто будет его поддерживать и работать с ним». Он уже не работает в Яндексе, но всё равно считает что «настоящий БЭМ — он в Яндексе».
+Или даже если не канонический вариант с BEMJSON и т.д, то всё равно - вот такую красивую магию.
+То, что я вам сейчас показываю - называется Full BEM Stack в HTML, один из промежуточных вариантов между ручным написанием БЭМ и полной генерацией всего.
+Круто, но для большинства непонятно.
+        -->
+        <iframe id="fullstackbem_video" width="100%" height="100%" src="https://www.youtube.com/embed/VKzIFOxkqC4?start=180" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <script>
+        $(window).on('hashchange',function(){
+            var hash = location.hash.slice(1);
+            if (hash == 'fullstackbem') {
+              $("#fullstackbem_video")[0].playbackRate = 2;
+              $("#fullstackbem_video")[0].src += "&autoplay=1";
+            }
+        });
+      </script>
+    </section>
+
+    <section class="slide shout dark">
+<!--
+Проблема в том, что Яндекс придумал крутую методологию, но ему некогда было формулировать и объяснять теорию. Во первых они ещё сами искали верный путь, а во вторых - они решали практические задачи и в своих докладах говорили про то, как они их решают, эти свои задачи, обсуждали свою Яндекс-специфику, которая у большинства не возникнет. В примерах они показывали то, как они сами используют БЭМ, для своих специфических задач. Ну и  развивали они его конечно же для решения своих задач, что логично.
+Слишком сосредоточились на инструментах.
+Первая крайне сырая документация появилась только спустя 4 года.
+-->
+      <div>
+        <h2>Проблема с документацией</h2>
+      </div>
+    </section>
+
+    <section class="slide cover">
+      <div>
+        <!--
+Выглядела она примерно вот так
+   -->
+        <img src="pictures/Owl-1.png" alt="">
+      </div>
+    </section>
+
+    <section class="slide cover">
+      <div>
+<!--
+Люди понимали её примерно так.
+-->
+        <img src="pictures/Owl-2.png" alt="">
+      </div>
+    </section>
+
+    <section class="slide shout dark">
+      <div>
+<!--
+Потом они смотрели примеры кода по БЭМ.
+-->
+        <h2>Яндекс-БЭМ (Full Stack BEM)</h2>
+      </div>
+    </section>
+
+    <section class="slide cover -shadow -bright">
+      <div>
+        <h2>Виталий Харисов</h2>
+        <img src="pictures/photos/harisov.jpg" alt="">
+      </div>
+    </section>
+
+    <section class="slide cover">
+      <div>
+        <h2>Сергей Бережной</h2>
+        <img src="pictures/photos/veged.jpg" alt="">
+      </div>
+    </section>
+
+    <section class="slide">
+      <div>
+        <h2>Пример кода Яндекс-БЭМ</h2>
+        <p>Верстаем надпись «Привет», input и кнопку.</p>
+        <img src="pictures/bem-yandex-design.png" width="710" alt="Надпись, input и кнопка" />
+      </div>
+    </section>
+
+    <section class="slide -compact">
+      <div>
+        <h2>Пример кода Яндекс-БЭМ</h2>
+        <pre>
+<code>({</code>
+<code>  block : 'page',</code>
+<code>  title : 'hello',</code>
+<code>  head : [</code>
+<code>    { elem : 'css', url : 'hello.min.css' }</code>
+<code>  ],</code>
+<code>  scripts : [{ elem : 'js', url : 'hello.min.js' }],</code>
+<code>  mods : { theme : 'islands' },</code>
+<code>  content : [</code>
+<code>    {</code>
+<code>      block : 'hello',</code>
+    </pre>
+      </div>
+    </section>
+
+    <section class="slide -compact">
+      <div>
+        <h2>Верстаем-верстаем, это BEMJSON</h2>
+        <pre>
+<code>content : [</code>
+<code>  {</code>
+<code>    block : 'hello',</code>
+<code>    content : [{</code>
+<code>        elem : 'greeting',</code>
+<code>        content : 'Привет, %пользователь%!'</code>
+<code>      },{</code>
+<code>        block : 'input',</code>
+<code>        mods : {theme : 'islands', size : 'm'},</code>
+<code>        name : 'name',</code>
+<code>        placeholder : 'Имя пользователя'</code>
+<code>      },</code>
+    </pre>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div>
+        <h2>Осталось кнопочку добавить…</h2>
+        <pre>
+<code>      {</code>
+<code>        block : 'button',</code>
+<code>        mods : {theme : 'islands', size : 'm',</code>
+<code>                type : 'submit'},</code>
+<code>        text : 'Нажать'</code>
+<code>      }</code>
+<code>    ]</code>
+<code>  }</code>
+<code>]</code>
+<code>})</code>
+    </pre>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div>
+        <h2>Это ещё не всё.</h2>
+        <p>Тепер надо написать BEMHTML.</p>
+        <pre>
+<code>block('hello')(</code>
+<code>    js()(true),</code>
+<code>    tag()('form')</code>
+<code>);</code>
+    </pre>
+      </div>
+    </section>
+
+    <section class="slide cover -shadow -dark" id="sad">
+      <div>
+<!--
+И чёт приунывали
+-->
+      <style>
+        #sad h2 {
+          position: absolute;
+          top: 400px;
+          right: 50px;
+          margin: 0;
+        }
+      </style>
+        <h2>Кстати CSS и JS тоже надо писать</h2>
+        <img src="pictures/sad.jpg" alt="">
+      </div>
+    </section>
+
+    <section class="slide">
+      <div>
+        <!-- убрать рамку у твита -->
+        <iframe src="embed/twitter-jsunderhood-1.html" id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-tweet twitter-tweet-rendered" allowfullscreen="" style="display: block; max-width: 99%; min-width: 220px; padding: 0px; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; margin: 0px auto 20px; border-color: rgb(238, 238, 238) rgb(221, 221, 221) rgb(187, 187, 187); border-width: 1px; border-style: solid; box-shadow: rgba(0, 0, 0, 0.14902) 0px 1px 3px; position: static; visibility: visible; width: 500px;" title="Встроенный твит" height="220"></iframe>
+        <iframe src="embed/twitter-jsunderhood-2.html" id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-tweet twitter-tweet-rendered" allowfullscreen="" style="display: block; max-width: 99%; min-width: 220px; padding: 0px; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; margin: 20px auto; border-color: rgb(238, 238, 238) rgb(221, 221, 221) rgb(187, 187, 187); border-width: 1px; border-style: solid; box-shadow: rgba(0, 0, 0, 0.14902) 0px 1px 3px; position: static; visibility: visible; width: 500px;" title="Встроенный твит" height="220"></iframe>
+      </div>
+    </section>
+
+    <section class="slide cover" id="mdl">
+      <style>
+        #mdl h2 {
+          position: absolute;
+          top: 50px;
+          left: 20px;
+          text-align: center;
+          font-size: 40px;
+          line-height: 1.2;
+          margin: 0;
+          color: #fff;
+          text-shadow: 0 0 100px rgba(0, 0, 0, 1), 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+      </style>
+      <div>
+        <h2>Даже разработчики Google Material Design не смогли с первого раза правильно написать имена классов по БЭМ :)</h2>
+        <img src="pictures/google-mdl-issues.png" alt="">
+      </div>
+    </section>
+
+    <section class="slide shout dark" id="dialects">
+<!--
+Когда работаешь на автоматизированном заводе, ты уже не представляешь как бы ты сам производил товары вручную.
+Ты не понимаешь что нужно людям и советуешь им свое видение.
+Из-за этого появились вариации
+Люди не пытаются перепистаь БЭМ, а пытаются сделать его удобным для себя.
+-->
+
+      <style>
+        #dialects h2 {
+          position: absolute;
+          top: 200px;
+          right: 0;
+          margin: 0;
+        }
+        #dialects iframe {
+          position: absolute !important;
+          top: 200px;
+          left: 50%;
+          -webkit-transform: translateX(-50%);
+          -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+          margin: 0;
+        }
+      </style>
+      <div>
+        <h2>Диалекты БЭМ</h2>
+        <iframe src="embed/twitter-harisov-dialect.html" id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-tweet twitter-tweet-rendered" allowfullscreen="" style="display: block; max-width: 99%; min-width: 220px; padding: 0px; margin: 100px auto; box-shadow: rgba(0, 0, 0, 0.14902) 0px 1px 3px; position: static; visibility: visible; width: 500px;" title="Встроенный твит" height="190"></iframe>
+      </div>
+    </section>
+
+    <section class="slide shout dark">
+<!--
+Первым был Артем Сапегин
+-->
+      <div>
+        <h2>OPOR</h2>
+      </div>
+    </section>
+
+    <section class="slide cover -shadow -bright">
+      <div>
+        <h2>Артем Сапегин</h2>
+        <img src="pictures/photos/sapegin.jpg" alt="">
+      </div>
+    </section>
+
+    <section class="slide -compact">
+      <div>
+        <h2><a href="http://nano.sapegin.ru/all/opor-methodology">OPOR</a></h2>
+        <p>Известный пример использования методологии БЭМ сторонним разработчиком - Артёмом Сапегиным.</p>
+        <pre>
+<code>.logo {color: saddlebrown;}</code>
+<code>.page_about .logo {color: ghostwhite;}</code>
+<code>social-button i {}</code>
+<code>&lt;div class="social-button"&gt;&lt;i&gt;&lt;/i&gt;&lt;/div&gt;</code>
+<code>.scrollable</code>
+<code>a.fake</code>
+<code>.is-expanded</code>
+<code>.js-select</code>
+<code>.header</code>
+<code>  .header-i</code>
+    </pre>
+      </div>
+    </section>
+
+    <section class="slide shout dark">
+<!--
+В Яндексе тоже были свои вариации
+-->
+      <div>
+        <h2>BEViS</h2>
+      </div>
+    </section>
+
+    <section class="slide cover -shadow -bright">
+      <div>
+        <h2>Вадим Макишвили</h2>
+        <img src="pictures/photos/makishvili.jpg" alt="">
+      </div>
+    </section>
+
+    <section class="slide -compact">
+      <div>
+        <h2><a href="https://github.com/bevis-ui/docs">BEViS</a></h2>
+        <p>Диалект БЭМ, с более строгими правилами для максимальной надежности верстки, придуманный Вадимом Макишвили для Яндекс.Карт.</p>
+        <p>
+          Нет миксов.<br>
+          Нет модификаторов.<br>
+          Есть состояния:
+        </p>
+    <pre>
+<code>&lt;div class="popup _orientation_top"&gt;&lt;/div&gt;</code>
+<code>&lt;button class="button _pressed _focused"&gt;&lt;/div&gt;</code>
+<code>.button._pressed {}</code>
+    </pre>
+      </div>
+    </section>
+
+    <section class="slide shout dark">
+<!--
+Гарри Робертс понял БЭМ по своему.
+-->
+      <div>
+        <h2>BEMIT</h2>
+      </div>
+    </section>
+
+    <section class="slide cover -shadow -bright">
+      <div>
+        <h2>Гарри Робертс и Николас Галлахер</h2>
+        <img src="pictures/photos/harry-nicolas.jpg" alt="">
+      </div>
+    </section>
+
+    <section class="slide">
+      <div>
+        <h2><a href="http://frontender.info/bemit-taking-the-bem-naming-convention-a-step-further/">BEMIT</a>: пространства имен</h2>
+        <p>Продвинутое использование префиксов и суффиксов от Гарри Робертса.
+          Попытка описать взаимосвязь между независимыми блоками с точки зрения SMACSS и OOCSS.</p>
+    <pre>
+<code>&lt;div class="o-media@md  c-user  c-user--premium"&gt;</code>
+<code>  &lt;img src="" class="o-media__img@md  c-user__photo" /&gt;</code>
+<code>  &lt;p class="o-media__body@md  c-user__bio">...&lt;/p&gt;</code>
+<code>&lt;/div&gt;</code>
+    </pre>
+      </div>
+    </section>
+
+    <section class="slide shout dark">
+<!--
+Роман Комаров полу-в-шутку, полу-всерьёз назвал сво   вариант использования БЭМ — БЁМ.
+Это БЭМ где можно писать как угодно :)
+-->
+      <div>
+        <h2>БЁМ</h2>
+      </div>
+    </section>
+
+    <section class="slide cover -shadow -bright">
+      <div>
+        <h2>Роман Комаров</h2>
+        <img src="pictures/photos/ki_zu.jpg" alt="">
+      </div>
+    </section>
+
+    <section class="slide">
+      <div>
+        <h2><a href="https://twitter.com/ki_zu/status/641515643628593152">БЁМ</a>: шутка всерьез</h2>
+        <p>БЭМ в котором можно писать как хочешь. Хоть с элементами элементов.</p>
+        <pre>
+<code>.block__element__subelement</code>
+    </pre>
+    <figure>
+      <blockquote>
+        <p>Теперь я использую БЁМ — это примерно как БЭМ, только вы можете писать его как хотите, а не как укажет партия или церковь. Ура!     </p>
+      </blockquote>
+        <figcaption>Роман Комаров</figcaption>
+    </figure>
+      </div>
+    </section>
+
+    <section class="slide shout dark">
+      <div>
+        <h2>Префиксы</h2>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div>
+        <h2>Префиксы</h2>
+        <table>
+          <tr>
+            <td>
+              <code>b-</code>,<br>
+              <code>l-</code>,<br>
+              <code>g-</code>,<br>
+              <code>i-</code>,<br>
+              <code>h-</code>,<br>
+              <code>m-</code>,<br>
+              <code>c-</code> и <code>js-</code>,
+           </td>
+           <td>
+             <code>qa-</code>,<br>
+             <code>o-</code>,<br>
+             <code>c-</code>(другой&nbsp;:),<br>
+             <code>u-</code>,<br>
+             <code>t-</code>,<br>
+             <code>s-</code>,<br>
+             <code>is-</code>,<br>
+             <code>has-</code>…
+           </td>
+          </tr>
+        </table>
+      </div>
+        <!--
+          Были в раннем БЭМ.
+          Сейчас пропагандируются Гарри Робертсом и используются многими не-Яндекс разработчиками.
+          Используются для создания своего пространства имен и логического разделения блоков.
+
+Яндекс отказался от них потому что им вначале нужно было создать своё пространство имен (т.к изначальный сайт был сверстан студией Лебедева и им нужно было отличать свой код от нового кода по БЭМ). Так они создали пространство имен и когда обнаружили, что весь код написан по БЭМ им префиксы оказались не нужны. Это просто совпало с тем, что пояилась сборка. Целенаправленно Яндекс сейчас не пишет префиксы (разве что они остались на старых проектах).
+Ну вы то живете не в своём замкнутом мире, у вас есть и legacy-код и сторонний код, вам нужно своё пространство имен, чтоб избегать конфликтов.
+-->
+      </section>
+
+    <section class="slide shout dark">
+      <div>
+        <h2>Синтаксис</h2>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div>
+        <h2>Стиль Гарри Робертса</h2>
+        <p>Многим нравится зарубежный формат модификаторов, через <code>--</code>, он читабельней.</p>
+        <code>&lt;a class="block-name__element-name<mark>--state_active</mark>"&gt;</code>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div>
+        <h2>Стиль camelCase</h2>
+        <p>А через camelCase – ещё читабельней!</p>
+        <code>&lt;a class="<mark>blockName__elementName</mark>--state_active"&gt;</code>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div>
+        <h2>Стиль без подчеркиваний</h2>
+        <p>Некоторые идут ещё дальше и заменяют <code>__</code> на <code>-</code>. camelCase единственный гарантирует что вы поймете где блок, а где элемент.</p>
+        <code>&lt;a class="<mark>blockName-elementName</mark>--state_active"&gt;</code>
+      </div>
+    </section>
+
+    <section class="slide shout dark">
+      <div>
+        <h2>Сокращенные модификаторы</h2>
+      </div>
+    </section>
+
+    <section class="slide -compact">
+      <div>
+        <h2>Сокращенные модификаторы</h2>
+        <p>
+          Зарубежом их назвали „<a href="https://viget.com/extend/bem-sass-modifiers">Individual modifiers: a shorter syntax</a>“.
+          У нас перевели как «<a href="http://frontender.info/bem-sass-modifiers/#obosoblennemodifikatorsokrashtennysintaksis">Обособленные модификаторы: сокращенный синтаксис</a>».
+          Яндекс в официальной документации называет их «<a href="https://ru.bem.info/method/naming-convention/#Альтернативные-схемы-именования">Стиль No-namespace</a>».
+        </p>
+        <pre>
+<code>&lt;div class="blockName__elem <mark>-key_value</mark>"&gt;</code>
+<code>.blockName {</code>
+<code>  &__elem {</code>
+<code>    &<mark>.-key_value {</mark></code>
+<code><mark>    }</mark></code>
+<code>  }</code>
+<code>}</code>
+    </pre>
+      </div>
+        <!--
+Модифкаторы без именеми блока родителя - создают проблемы про миксовании, когда сложные миксы и ты не сможешь определить к какому блоку у тебя относится микс. Довод против - что мы связываем их внутри CSS как .block { &.-type_val}
+НО! Теряем миксы 2х блоков с модификаторами (https://github.com/getbem/getbem.com/issues/71).
+
+Правильно писать полные модификаторы и Яндекс так рекомендует настоятельно. Вы тереяете возможность юзать full stack BEM - нельзя будет из js узнать "есть ли модификатор у такого блока"
+-->
+    </section>
+
+    <section class="slide shout dark">
+      <div>
+        <h2>JS-блоки</h2>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div>
+        <h2>JS-блоки</h2>
+        <pre>
+<code>$('<mark>.js-</mark>fancybox').fancybox();</code>
+    </pre>
+        Это миксование css-блока и js-блока на одной dom-ноде.
+        Канонический БЭМ считает, что они не нужны, т.к. js-функционал нет смысла отделять от блока.
+        Гарри Робертс и не-Яндекс разработчики их активно используют и пропагандируют: т.к. разделение позволяет легко копировать css-блок без связанного с ним JS.
+      </div>
+    </section>
+
+    <section class="slide shout dark">
+      <div>
+        <h2>Google MDL</h2>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div>
+        <h2><a href="http://www.getmdl.io/started/">Google MDL</a></h2>
+        <p>Библиотека блоков от Google, css-реализации их Material Design придуманного для Android.</p>
+        <pre>
+<code>&lt;!-- Accent-colored raised button with ripple --&gt;</code>
+<code>&lt;button class="mdl-button mdl-js-button&gt;</code>
+<code>                  mdl-button--raised&gt;</code>
+<code>                  mdl-js-ripple-effect&gt;</code>
+<code>                  mdl-button--accent"&gt;</code>
+<code>  Button</code>
+<code>&lt;/button&gt;</code>
+    </pre>
+      </div>
+    </section>
+
+    <section class="slide cover shout dark">
+      <div>
+        <h2>Госдеп</h2>
+        <img src="pictures/bem-gov.png" alt="">
+      </div>
+    </section>
+
+    <section class="slide">
+      <div>
+        <h2>U.S. Goverment: <a href="https://pages.18f.gov/frontend/css-coding-styleguide/naming/">18F BEM</a></h2>
+        <pre>
+<code>.accordion</code>
+<code>.accordion-item</code>
+<code>.accordion-item-selected</code>
+<code> </code>
+<code>.nav_bar</code>
+<code>.nav_bar-link</code>
+<code>.nav_bar-link-clicked</code>
+    </pre>
+      </div>
+    </section>
+
+    <section class="slide shout dark">
+      <div>
+        <h2>BEML / posthtml-bem / BEMto</h2>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div>
+        <h2>BEML</h2>
+        <p>Препроцессор BEM для HTML через Grunt/Gulp</p>
+        <pre>
+<code>&lt;div block="b-animals"&gt;</code>
+<code>  &lt;div elem="cat" mod="size:big, color:red"&gt;&lt;/div&gt;</code>
+<code>&lt;/div&gt;</code>
+    </pre>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div>
+        <h2>posthtml-bem</h2>
+        <p>Препроцессор BEM для HTML через PostHTML.<br>
+        Синтаксис почти такой же, но с отличиями!</p>
+        <pre>
+<code>&lt;div block="MadTeaParty"&gt;</code>
+<code>  &lt;div elem="march-hare" mods="type:mad">March Hare&lt;/div&gt;</code>
+<code>  &lt;div elem="march-hare" mods="mad">March Hare&lt;/div&gt;</code>
+<code>&lt;/div&gt;</code>
+    </pre>
+        <p class="note">Please use "mods" for the attribute modifiers instead of "mod" and a space as a separator of modifiers instead of a comma.</p>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div>
+        <h2>BEMto</h2>
+        <p>Написание BEM в Jade.</p>
+        <pre>
+<code>+b.block1</code>
+<code>  +e.element1 Foo</code>
+<code>  +b.block2</code>
+<code>    +e('a')(href="#bar").element Bar</code>
+<code>  +e.element2 Baz</code>
+    </pre>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div>
+        <h2>Вы можете создавать свои гайдлайны</h2>
+        <p>БЭМ дает лишь базовый набор правил, конкретную реализацию и синтаксис вы выбираете сами.</p>
+        <ul>
+          <li><a href="http://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/">Harry Roberts</a></li>
+          <li><a href="https://github.com/ideus-team/guidelines/blob/master/frontend/bem.md">iDeus</a></li>
+          <li><a href="http://nano.sapegin.ru/all/opor-methodology">Artem Sapegin</a></li>
+          <li><a href="https://github.com/coderiver/sass">CodeRiver</a> (Yuriy Artyukh, cssing.org.ua)</li>
+          <li><a href="http://azagroup.ru/azabem-css-method/">AzaGroup</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="slide shout">
+      <div>
+        <h2><a href="http://bem.info">bem.info</a></h2>
+      </div>
+    </section>
+
+    <section class="slide shout">
+     <!--
+Люди настолько устали от официальной документаии, что написали не только альтернативные реализации БЭМ,
+но даже неофициальный сайт про официальную методологию.
+Это не страшно.
+     -->
+      <div>
+        <h2><a href="http://getbem.com">getbem.com</a></h2>
+      </div>
+    </section>
+
+    <section class="slide shout">
+      <div>
+        <h2>Это всё БЭМ</h2>
+      </div>
+    </section>
+
+    <section class="slide shout">
+      <div>
+        <h2>Методология и реализации</h2>
+      </div>
+<!--
+Есть методология, а есть реализации.
+-->
+    </section>
+
+    <section class="slide">
+      <div>
+        <h2>Реализации БЭМ:</h2>
+        <ul>
+          <li><a href="http://nano.sapegin.ru/all/opor-methodology">OPOR</a></li>
+          <li><a href="https://github.com/bevis-ui/docs">BEViS</a></li>
+          <li><a href="http://frontender.info/bemit-taking-the-bem-naming-convention-a-step-further/">BEMIT</a></li>
+          <li><a href="https://twitter.com/ki_zu/status/641515643628593152">БЁМ</a></li>
+          <li><a href="https://pages.18f.gov/frontend/css-coding-styleguide/naming/">18F BEM</a></li>
+          <li><a href="http://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/">Harry Roberts BEM</a></li>
+          <li><a href="https://github.com/ideus-team/guidelines/blob/master/frontend/bem.md">iDeus BEM</a></li>
+          <li><a href="https://github.com/coderiver/sass">Coderiver BEM</a></li>
+          <li><a href="http://azagroup.ru/azabem-css-method/">AzaBEM</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="slide shout dark">
+      <div>
+        <h2>BEM is like Agile</h2>
+      </div>
+<!--
+Не бойтесь придумывать своё!
+БЭМ на самом деле не требует даже классов вида  .block__element
+-->
+    </section>
+
+    <section class="slide cover -shadow -bright">
+<!--
+Авторы других методологий отказались от них в пользу БЭМ
+-->
+      <div>
+        <h2>Роберт Харитонов</h2>
+        <img src="pictures/photos/operatino.jpg" alt="">
+      </div>
+    </section>
+
+<section class="slide"><div>
+  <h2><a href="https://operatino.github.io/MCSS/">MCSS</a> → BEM</h2>
+    <figure>
+      <blockquote>
+        <p>Как автор MCSS, рекоммендую теперь уже использовать именно БЭМ. С тех пор он стал менее строгим, и более понятным.
+MCSS может пригодится только на очень большом, монолитном проекте.</p>
+      </blockquote>
+        <figcaption>Роберт Харитонов</figcaption>
+    </figure>
+</div></section>
+
+     <section class="slide cover -shadow -bright">
+      <div>
+        <h2>Джонатан Снук</h2>
+        <img src="pictures/photos/jonathan-snook.jpg" alt="">
+      </div>
+    </section>
+
+<section class="slide"><div>
+  <h2><a href="https://smacss.com/">SMACSS</a> → BEM</h2>
+    <figure>
+      <blockquote>
+        <p>Most common misspelling is “SMACCS”.<br>I should just rename it to BEM.</p>
+      </blockquote>
+        <figcaption>Jonathan Snook</figcaption>
+    </figure>
+</div></section>
+
+    <section class="slide shout">
+<!--
+Задайте вопросы и делитесь опытом на официальном форуме БЭМ
+-->
+      <div>
+        <h2><a href="https://ru.bem.info/forum/">ru.bem.info/<br>forum/</a></h2>
+      </div>
+    </section>
+
+    <section class="slide shout">
+<!--
+И в канале #bem наших Вебстандартов, у нас можно спрашивать не стесняясь.
+-->
+      <div>
+        <h2><a href="https://web-standards.slack.com/messages/bem/">Slack WSD<br>/bem</a></h2>
+      </div>
+    </section>
+
+    <section class="slide shout grow">
+      <div>
+        <h2>Пробуйте!</h2>
+      </div>
+<!--
+Не бойтесь придумывать своё!
+-->
+    </section>
+
+    <section class="slide shout dark">
+      <div>
+        <h2>%Company% BEM</h2>
+      </div>
+<!--
+Нам не хватает имен. BEM workflow в отличие от Git workflow ещё не написан. У вас есть шансы сделать название вашей реализации нарицательной.
+-->
+    </section>
+
+    <section class="slide -compact">
+      <div>
+        <h2>Читать дальше</h2>
+        <ul>
+          <li><a href="http://www.sitepoint.com/working-bem-scale-advice-top-developers">Cоветы от ведущих БЭМ-разработчиков: ошибки и best practices</a></li>
+          <li><a href="http://getbem.com/">BEM Quick Start Guide</a> — БЭМ: UnOfficial Team</li>
+          <li><a href="https://ru.bem.info/blog/doc-release-1/">Мажорный релиз новой документации</a> — БЭМ: Яндекс Team</li>
+          <li><a href="https://ru.bem.info/blog/bem-as-bootstrap/">Full BEM Stack в HTML</a> — Владимир Гриненко</li>
+          <li><a href="https://dl.dropboxusercontent.com/u/66873654/%D0%91%D0%AD%D0%9C%D0%BE%D1%81%D0%B8%D0%BF%D0%B5%D0%B4.pdf">Классификация ошибок BEM CSS</a> (со стр. 50) — Александр Корецкий <a href="http://twitter.com/n2j7">@n2j7</a></li>
+          <li><a href="http://www.getmdl.io/started/">Material Design Lite CSS</a> — Google</li>
+          <li><a href="https://ru.bem.info/faq/#Зачем-использовать-i-bemjs-если-можно-писать-на-jquery">i-bem.js</a></li>
+          <li><a href="http://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/">варианты использования префиксов от Гарри Робертса</a></li>
+          <li><a href="http://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/">BEMIT</a> — Harry Roberts</li>
+          <li><a href="https://github.com/bevis-ui/docs">BEViS: документация</a> и <a href="http://bevis-ui.github.io/bevis-and-bt-speech/">доклад</a> — Вадим Макишвили</li>
+          <li><a href="https://ru.bem.info/method/history/">История БЭМ</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="slide -compact">
+      <div>
+        <h2>…и дальше</h2>
+        <ul>
+          <li><a href="https://ru.bem.info/forum/-43/">что такое блок</a>, <a href="https://ru.bem.info/forum/-47/">префикс <code>b-</code></a> и <a href="https://ru.bem.info/forum/-46/">что такое независимый блок</a></li>
+          <li><a href="https://ru.bem.info/forum/-51/">контекстные блоки (темы)</a> (раздел «Внутри контекстного блока»)</li>
+          <li><a href="https://ru.bem.info/forum/-49/">layout-блоки</a> и <a href="https://ru.bem.info/forum/-48/">холдер-блоки</a></li>
+          <li><a href="https://ru.bem.info/forum/656/">как позиционировать БЭМ-блоки относительно друг друга</a></li>
+          <li><a href="http://bem.github.io/bem-method/html/all.ru.html">абстрактные блоки</a> (раздел „i-, от include“) и их реализация в Sass через <a href="https://github.com/FrontenderMagazine/bem-sass-modifiers/issues/1#issuecomment-69157993">%extend-only-selector+extend</a> или лучше через <a href="https://github.com/FrontenderMagazine/bem-sass-modifiers/issues/1#issuecomment-144463259">mixin+include</a></li>
+          <li><a href="https://ru.bem.info/forum/-51/">уровни переопределения</a> (раздел «Модификация файлами») и <a href="https://ru.bem.info/forum/-52/">структура блоков на файловой системе</a></li>
+          <li><a href="https://ru.bem.info/forum/-50/">глобальные модификаторы</a></li>
+          <li><a href="http://nicolasgallagher.com/about-html-semantics-front-end-architecture/">Откуда взялся зарубежный синтаксис модификаторов и js-классы</a> — Nicolas Gallagher</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="slide" id="ThankYou">
+      <style>
+        #ThankYou h3 {
+          margin-bottom: 50px;
+          line-height: normal;
+        }
+        #ThankYou h3 small {
+          font-size: 20px;
+          color: #888;
+        }
+      </style>
+      <div>
+        <h2>Спасибо!</h2>
+        <img src="assets/img/epam-logo--primary.svg" alt="EPAM logo" style="float: right; width: 400px" />
+        <h3>
+          Igor Zenich<br>
+          <small>EPAM</small>
+        </h3>
+        <ul>
+          <li><a href="http://delka.name">delka.name</a></li>
+          <li><a href="http://twitter.com/delaz">twitter.com/delaz</a></li>
+          <li><a href="mailto:igor@delka.name">igor@delka.name</a></li>
+        </ul>
+        <p>Презентация: <a href="http://bit.ly/bem-in-the-wild">bit.ly/bem-in-the-wild</a></p>
+      </div>
+    </section>
+
+    <p class="badge"><a href="https://github.com/shower/shower">Powered by Shower</a></p>
+    <!--
+    To hide progress bar from entire presentation
+    just remove “progress” element.
+    -->
+    <div class="progress">
+      <div></div>
+    </div>
+    <script src="node_modules/shower-core/shower.min.js"></script>
+    <!-- Copyright © 2014 Yours Truly, Famous Inc. -->
+    <!-- Photos by John Carey, fiftyfootshadows.net -->
+
+    <script>
+      (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+          (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+          m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+      ga('create', 'UA-6535082-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+</body>
+
+</html>

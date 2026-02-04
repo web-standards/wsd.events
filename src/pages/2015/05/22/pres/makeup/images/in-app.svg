@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1280px" height="800px" viewBox="0 0 1280 800" enable-background="new 0 0 1280 800" xml:space="preserve">
+<path fill="#9EC73D" d="M858.9,305.4H694.5c-3.8,0-7-3.1-7-7v-62c0-3.8,3.2-7,7-7h164.4c3.8,0,7,3.2,7,7v62
+	C865.9,302.2,862.8,305.4,858.9,305.4z"/>
+<rect x="690.1" y="251.2" fill="none" width="174.1" height="56.3"/>
+<text transform="matrix(1 0 0 1 715.626 280.8975)" font-family="'SuisseIntl-Condensed'" font-size="40.9731">Makeup</text>
+<path fill="#9EC73D" d="M651.5,305.4H410.2c-3.9,0-7-3.1-7-7v-62c0-3.8,3.1-7,7-7h241.2c3.9,0,7,3.2,7,7v62
+	C658.5,302.2,655.3,305.4,651.5,305.4z"/>
+<rect x="403.2" y="251.2" fill="none" width="253.5" height="56.3"/>
+<text transform="matrix(1 0 0 1 427.8423 280.8975)" font-family="'SuisseIntl-Condensed'" font-size="40.9731">Приложение</text>
+<path fill="#0068C8" d="M548,561.5H229.9c-3.8,0-7-3.1-7-7v-62c0-3.9,3.2-7,7-7H548c3.8,0,7,3.1,7,7v62
+	C555,558.3,551.8,561.5,548,561.5z"/>
+<path fill="#0068C8" d="M1039.2,561.5H874.8c-3.8,0-7-3.1-7-7v-62c0-3.9,3.2-7,7-7h164.4c3.8,0,7,3.1,7,7v62
+	C1046.2,558.3,1043.1,561.5,1039.2,561.5z"/>
+<rect x="870.4" y="507.3" fill="none" width="174.1" height="56.3"/>
+<text transform="matrix(1 0 0 1 895.9493 536.9796)" fill="#FFFFFF" font-family="'SuisseIntl-Condensed'" font-size="40.9731">Makeup</text>
+<rect x="222.9" y="507.3" fill="none" width="330.3" height="56.3"/>
+<text transform="matrix(1 0 0 1 249.3818 536.9796)" fill="#FFFFFF" font-family="'SuisseIntl-Condensed'" font-size="40.9731">Исходные файлы</text>
+<path fill="#0068C8" d="M831.8,561.5H590.6c-3.9,0-7-3.1-7-7v-62c0-3.9,3.1-7,7-7h241.2c3.9,0,7,3.1,7,7v62
+	C838.8,558.3,835.6,561.5,831.8,561.5z"/>
+<rect x="583.6" y="507.3" fill="none" width="253.5" height="56.3"/>
+<text transform="matrix(1 0 0 1 603.5146 536.9796)" fill="#FFFFFF" font-family="'SuisseIntl-Condensed'" font-size="40.9731">Зависимости</text>
+<path fill="#0068C8" d="M1036.7,433.4H232.1c-3.8,0-7-3.1-7-7v-62c0-3.9,3.2-7,7-7h804.6c3.8,0,7,3.1,7,7v62
+	C1043.7,430.3,1040.5,433.4,1036.7,433.4z"/>
+<rect x="225.1" y="379.2" fill="none" width="816.9" height="56.3"/>
+<text transform="matrix(1 0 0 1 535.6641 408.9385)" fill="#FFFFFF" font-family="'SuisseIntl-Condensed'" font-size="40.9731">Gulp-сборка</text>
+<g>
+	<g>
+		<line fill="none" stroke="#0068C8" stroke-width="2" stroke-miterlimit="10" x1="389" y1="484" x2="389" y2="453"/>
+		<g>
+			<polygon fill="#0068C8" points="395.3,457 389.5,435.3 383.7,457 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<path fill="none" stroke="#808080" stroke-width="2" stroke-miterlimit="10" stroke-dasharray="3.9937,3.9937" d="M1051.5,572.6
+		H580.2c-3.8,0-7-3.2-7-7v-85.9c0-3.8,3.2-7,7-7h471.3c3.8,0,7,3.2,7,7v85.9C1058.5,569.4,1055.3,572.6,1051.5,572.6z"/>
+</g>
+<g>
+	<g>
+		<line fill="none" stroke="#9EC73D" stroke-width="2" stroke-miterlimit="10" x1="533" y1="356" x2="533" y2="325"/>
+		<g>
+			<polygon fill="#9EC73D" points="538.7,329 532.9,307.3 527.1,329 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<line fill="none" stroke="#9EC73D" stroke-width="2" stroke-miterlimit="10" x1="779" y1="356" x2="779" y2="325"/>
+		<g>
+			<polygon fill="#9EC73D" points="784.5,329 778.7,307.3 772.9,329 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<line fill="none" stroke="#0068C8" stroke-width="2" stroke-miterlimit="10" x1="712" y1="484" x2="712" y2="453"/>
+		<g>
+			<polygon fill="#0068C8" points="718,457 712.1,435.3 706.3,457 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<line fill="none" stroke="#0068C8" stroke-width="2" stroke-miterlimit="10" x1="955" y1="484" x2="955" y2="453"/>
+		<g>
+			<polygon fill="#0068C8" points="961.2,457 955.4,435.3 949.6,457 			"/>
+		</g>
+	</g>
+</g>
+</svg>

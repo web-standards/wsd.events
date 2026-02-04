@@ -1,0 +1,29 @@
+/// Covering mixin for popup
+@mixin coverer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+}
+
+.mypopup1 {
+  color: #fff;
+  @include coverer
+}
+
+/* ==== */
+
+
+.mypopup2 {
+  color: #060;
+  @include coverer
+}
+
+/* ==== */
+
+.mypopup3 {
+  color: #f00;
+  @include coverer
+}

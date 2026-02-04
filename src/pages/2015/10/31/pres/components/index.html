@@ -1,0 +1,822 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Кросс-проектные компоненты</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/serif.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<!-- <link rel="stylesheet" href="lib/css/zenburn.css"> -->
+		<link rel="stylesheet" href="lib/css/light.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<style>
+			.bg h3 {
+				display: inline-block;
+				padding: 5px 10px;
+			}
+
+			.bg_white h3 {
+				background: rgba(0, 0, 0, 0.37);
+		    color: #FFF;
+		    box-shadow: 0px 0px 88px 36px rgba(0, 0, 0, 0.40);
+			}
+		</style>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+
+				<section>
+					<h2>Кросс-проектные компоненты</h2>
+					<p>
+						<small><a href="mailto:a.mezin@corp.mail.ru">Артём Мезин</a> / <a href="http://twitter.com/iketari">@iketari</a> / <a href="https://e.mail.ru">Почта Mail.Ru</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h3>Задачи, которым никто не удивится</h3>
+					<ol>
+						<li>Сокращение времени разработки</li>
+						<li>Структурирование и упрощение кода</li>
+						<li>Уменьшение порога вхождения в проект</li>
+					</ol>
+				</section>
+
+				<section>
+					<section>
+						<h3>Задачи, характерные для больших компаний</h3>
+						<ol>
+							<li>Унификация дизайна продуктов компании</li>
+							<li>Синхронизация работы нескольких команд</li>
+							<li>Многократное реиспользование кода</li>
+						</ol>
+					</section>
+				</section>
+
+
+				<section>
+					<section>
+						<p>
+							<strong>Проблема: разработка интерфейса ведется независимыми командами, котырые зачастую работают над схожими задачами.</strong>
+							<br><br>
+							<q>Только в Почте сущетсвует 4 группы, которые выполняют задачи нескольких продуктовых менеджеров.</q>
+						</p>
+					</section>
+					<section data-background="img/mail.png" data-background-size="100%">
+						<h2>Почта</h2>
+					</section>
+
+					<section data-background="img/cloud.png" data-background-size="100%">
+						<h2>Облако</h2>
+					</section>
+				</section>
+
+				<section>
+					Задача: научиться разрабатывать интерфейс с единой кодовой базой.
+				</section>
+
+				<section>
+
+					<section>
+						<h3>Варианты решения</h3>
+						<span>Отдельная библиотека UI компонент и команда разработчиков</span>
+						<img src="img/workflows/library.png" class="noborder" alt="">
+					</section>
+					<section>
+						<h3>Варианты решения</h3>
+						<span>Одинаковый дизайн. Графические гайдлайны.</span>
+						<img src="img/workflows/guidlines.png" class="noborder" alt="">
+					</section>
+
+<!-- 					<section>
+						<h3>Варианты решения</h3>
+						<ol>
+							<li class="fragment">
+								<span>Отдельная библиотека UI компонент и команда разработчиков</span>
+								<br>
+								<q class="fragment">Поставьте таск! Я занят!</q>
+							</li>
+							<li class="fragment">
+								<span>Одинаковый дизайн. Графические гайдлайны.</span>
+								<br>
+							</li>
+						</ol>
+					</section> -->
+
+					<section>
+						<h3>Что будет</h3>
+						<div class="image-list">
+							<div class="image-list__item">
+								<img src="img/b-thumb.png" class="image-list__img noborder" alt="b-thumb">
+								<span class="image-list__label">b-thumb</span>
+							</div>
+							<q>vs</q>
+							<div class="image-list__item">
+								<img src="img/b-thumb2.png" class="image-list__img noborder" alt="b-thumb">
+								<span class="image-list__label">b-thumb2</span>
+							</div>
+						</div>
+					</section>
+
+				</section>
+
+				<section>
+					<h3>Наш выбор</h3>
+					<h4>Отдельная библиотека, которую разрабатывают все команды, в процессе работы над своими задачами</h4>
+					<img src="img/workflows/library_pkg.png" class="noborder" alt="">
+				</section>
+
+				<section>
+					<section>
+						<h3>Что нужно, чтобы такую библиотеку было удобно использовать?</h3>
+					</section>
+
+					<section>
+						<h3>Просто...</h3>
+						<ol>
+							<li class="">Подключить к новому проекту</li>
+							<li class="fragment">Разрабатывать</li>
+							<li class="fragment"><i>Отдать</i> в тестирование</li>
+							<li class="fragment">Протестировать <i>самим</i></li>
+							<li class="fragment">Вписать в <span style="color:#2E8B57;">штатный</span> релиз-цикл</li>
+							<li class="fragment">Вписать в <span style="color:red">экстренный</span> релиз-цикл</li>
+							<li class="fragment">Включиться в работу</li>
+						</ol>
+					</section>
+				</section>
+				<!--
+					<section>
+						<h3>Просто...</h3>
+						<ul class="ticked-list">
+							<li class="ticked">... подключить к новому проекту</li>
+							<li class="awaiting">... разрабатывать</li>
+							<li class="">... <i>отдать</i> в тестирование</li>
+							<li class="">... протестировать <i>самим</i></li>
+							<li class="">... вписать в <span style="color:blue">штатный</span> релиз-цикл</li>
+							<li class="">... вписать в <span style="color:red">экстренный</span> релиз-цикл</li>
+							<li class="">... включиться в работу</li>
+						</ul>
+					</section>
+				-->
+
+<!--
+				<section>
+					<section>
+						<h3>Принципы устройства <i>Toolkit</i> </h3>
+					</section>
+					<section>
+						<h3>Независимые блоки</h3>
+						<img src="img/blocks.png" alt="BEM">
+					</section>
+					<section>
+						<h3>Небольшой JS фреймворк для описания логики</h3>
+						<img src="img/fest2.png" style="height:10em" alt="b-toolkit.js">
+					</section>
+					<section>
+						<h3>Шаблонизатор - Fest</h3>
+<pre>
+<code class="xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;fest:template xmlns:fest=&quot;http://fest.mail.ru&quot;&gt;
+	&lt;fest:set name=&quot;fest-promo&quot;&gt;
+		&lt;i data-bem=&quot;fest-promo&quot;&gt;
+		...
+		https://github.com/mailru/fest
+		...
+		&lt;/i&gt;
+	&lt;/fest:set&gt;
+&lt;/fest:template&gt;
+</code>
+</pre>
+					</section>
+					<section>
+						<h3>Сборка - ENB (HTML+CSS) + RequireJS (JS)</h3>
+						<img src="img/bem.png" alt="ENB">
+					</section>
+					<section>
+						<h3>Разработка ведется без ущерба для продуктовых задач</h3>
+						<img  src="img/product.png" style="max-height:9em" alt="Product">
+					</section>
+				</section>
+-->
+				<section>
+					<section>
+						<h3>Как сложно подключить библиотеку к проекту?</h3>
+						<img src="img/git.png" alt="git" class="noborder fragment">
+					</section>
+					<section>
+						<h3>git submodule</h3>
+						<ol>
+							<li>Очень сложно контролировать версию</li>
+							<li>А как мержить?</li>
+							<li>Нельзя построить дерево зависимостей</li>
+						</ol>
+					</section>
+					<section>
+						<h3>git subtree</h3>
+						<!-- <img src="img/subtree.png" style="max-height:12em" alt="git subtree"> -->
+						<ol>
+							<li>Испорченный git log</li>
+							<li>Очень медленно</li>
+							<li>Нельзя построить дерево зависимостей</li>
+						</ol>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3>А как просто?</h3>
+						<img src="img/npmlove.png" alt="" class="noborder fragment">
+					</section>
+
+					<section>
+						<h3>Пакеты</h3>
+						<h4 class="fragment">
+							<q>toolkit@0.15.2</q>
+						</h4>
+					</section>
+
+					<section>
+						<h3>И что?</h3>
+						<ol class="fragment">
+							<li>Удобный контроль версий</li>
+							<li>Независимая разработка</li>
+							<li>Слабая связь с проектом</li>
+							<li>Обилие пакетных менеджеров</li>
+						</ol>
+					</section>
+
+					<section>
+						<h3>Просто...</h3>
+						<ul class="ticked-list">
+							<li class="ticked">Подключить к новому проекту</li>
+							<li class="awaiting">Разрабатывать</li>
+							<li class="awaiting"><i>Отдать</i> в тестирование</li>
+							<li class="awaiting">Протестировать <i>самим</i></li>
+							<li class="awaiting">Вписать в <span style="color:#2E8B57">штатный</span> релиз-цикл</li>
+							<li class="awaiting">Вписать в <span style="color:red">экстренный</span> релиз-цикл</li>
+							<li class="awaiting">Включиться в работу</li>
+						</ul>
+					</section>
+
+				</section>
+
+				<section>
+					<section>
+						<h3>Как просто разрабатывать с пакетами?</h3>
+					</section>
+					<section>
+						<h3>Нужна фича из версии 0.14.0</h3>
+						<pre class="noborder rel">
+<code class="json abs fragment current-visible">
+//package.json
+
+"jam": {
+	"dependencies": {
+
+
+
+	}
+}
+</code>
+<code class="json abs fragment current-visible">
+//package.json
+
+"jam": {
+	"dependencies": {
+		"toolkit": "0.14.0",
+		"callstackjs": "0.4.2",
+		"features": "0.1.0"
+	}
+}
+</code>
+						</pre>
+					</section>
+					<section>
+						<h3>Нужны доработки</h3>
+						<pre class="noborder">
+						<code class="bash">
+ll data/packages
+...
+5 18:27 callstackjs
+9 11:20 toolkit -> ../../../packages/toolkit/
+5 18:27 features
+...
+						</code>
+						</pre>
+					</section>
+					<section>
+						<h3>Доработали! Что потом?</h3>
+						<!-- <img src="img/gitworkflow.png" alt="gitworkflow" class="fragment noborder"> -->
+						<h4 class="fragment">git commit</h4>
+						<h4 class="fragment">git push</h4>
+					</section>
+
+					<section>
+						<h3>Выкатываем!</h3>
+						<pre class="noborder">
+<code>
+"dependencies": {
+  "toolkit": "git+ssh://git@gitmrg.ru:toolkit.git#mail-367"
+}
+</code>
+						</pre>
+					</section>
+
+					<section>
+						<h3>Радуемся результату на тестовом стенде</h3>
+						<img src="img/mail.png" class="noborder" alt="mail">
+					</section>
+					<section>
+						<h3><q>Мерж-реквест</q> в основную ветку пакета</h3>
+						<img src="img/mergerequest.png" class="noborder" alt="mail">
+					</section>
+
+					<section>
+						<h3>Просто...</h3>
+						<ul class="ticked-list">
+							<li class="ticked">Подключить к новому проекту</li>
+							<li class="ticked">Разрабатывать</li>
+							<li class="ticked"><i>Отдать</i> в тестирование</li>
+							<li class="awaiting">Протестировать <i>самим</i></li>
+							<li class="awaiting">Вписать в <span style="color:#2E8B57">штатный</span> релиз-цикл</li>
+							<li class="awaiting">Вписать в <span style="color:red">экстренный</span> релиз-цикл</li>
+							<li class="awaiting">Включиться в работу</li>
+						</ul>
+					</section>
+				</section>
+
+ <!--
+				<section>
+					<section>
+						<h3>Работа с пакетами</h3>
+					</section>
+					<section>
+						<h3>С точки зрения проекта</h3>
+						<pre>
+						<code class="json">
+//package.json
+...
+"jam": {
+	"packageDir": "data/packages",
+	"baseUrl": "data",
+	"dependencies": {
+		"toolkit": "0.14.0",
+		"callstackjs": "0.4.2",
+		"features": "0.1.0"
+	}
+}
+...
+						</code>
+						</pre>
+					</section>
+					<section>
+						<h4>С точки зрения разработчика, работающего над фичёй в toolkit</h4>
+						<pre>
+						<code class="bash">
+ll data/packages
+...
+drwxrwxr-x  a.mezin  4096 Окт  5 18:27 callstackjs
+lrwxrwxrwx  a.mezin    26 Окт  9 11:20 toolkit -> ../../../packages/toolkit/
+drwxrwxr-x  a.mezin  4096 Окт  5 18:27 features
+...
+						</code>
+						</pre>
+					</section>
+					<section>
+						<h4>С точки зрения релиз-инженера проекта</h4>
+						<pre>
+						<code class="json">
+...
+"jam": {
+	"packageDir": "data/packages",
+	"baseUrl": "data",
+	"dependencies": {
+		"toolkit": "git+ssh://git@gitlab.corp.mail.ru:mail/toolkit.git#mail-36759",
+		"callstackjs": "0.4.2",
+		"features": "0.1.0"
+	}
+}
+...
+						</code>
+						</pre>
+					</section>
+					<section>
+						<h4>С точки зрения владельца пакета</h4>
+						<pre>
+						<code class="bash">
+ll ../packages/toolkit/
+-rw-rw-r--  1 a.mezin a.mezin  3385 Окт  5 17:52 CHANGELOG.md
+drwxrwxr-x  8 a.mezin a.mezin  4096 Окт  9 19:18 .git
+-rw-rw-r--  1 a.mezin a.mezin   163 Сен 11 11:46 .gitignore
+-rw-rw-r--  1 a.mezin a.mezin  1627 Сен 23 14:48 Gruntfile.js
+-rw-rw-r--  1 a.mezin a.mezin   109 Июл 25 19:32 .jamrc
+-rw-rw-r--  1 a.mezin a.mezin  2303 Окт  5 17:52 karma.conf.js
+-rw-rw-r--  1 a.mezin a.mezin    76 Сен 11 11:46 .npmrc
+-rw-rw-r--  1 a.mezin a.mezin  1490 Окт  5 17:52 package.json
+drwxrwxr-x  7 a.mezin a.mezin  4096 Сен 28 12:39 packages
+-rw-rw-r--  1 a.mezin a.mezin  4493 Сен 11 11:46 README.md
+drwxrwxr-x  4 a.mezin a.mezin  4096 Сен 23 14:48 test
+-rw-rw-r--  1 a.mezin a.mezin 18355 Сен 28 13:27 test-results.xml
+drwxrwxr-x  2 a.mezin a.mezin  4096 Сен 29 12:14 b-avatar
+drwxrwxr-x  2 a.mezin a.mezin  4096 Сен 11 11:46 b-captcha
+drwxrwxr-x  7 a.mezin a.mezin  4096 Сен 23 14:48 b-checkbox
+drwxrwxr-x  2 a.mezin a.mezin  4096 Окт  5 17:52 b-contact-label
+drwxrwxr-x  2 a.mezin a.mezin  4096 Окт  5 17:52 b-contact-utils
+drwxrwxr-x  3 a.mezin a.mezin  4096 Сен 11 11:46 b-controls
+drwxrwxr-x  2 a.mezin a.mezin  4096 Сен 11 11:46 b-controls-group
+drwxrwxr-x 15 a.mezin a.mezin  4096 Окт  5 17:52 b-dropdown
+drwxrwxr-x  3 a.mezin a.mezin  4096 Окт  5 17:52 b-email
+drwxrwxr-x  2 a.mezin a.mezin  4096 Окт  5 17:52 b-email-providers
+drwxrwxr-x  4 a.mezin a.mezin  4096 Сен 11 11:46 b-filename
+drwxrwxr-x  2 a.mezin a.mezin  4096 Сен 11 11:46 b-filterable
+drwxrwxr-x  8 a.mezin a.mezin  4096 Сен 23 14:48 b-form
+drwxrwxr-x  6 a.mezin a.mezin  4096 Сен 11 11:46 b-grid
+drwxrwxr-x  7 a.mezin a.mezin  4096 Окт  5 17:52 b-input
+drwxrwxr-x  3 a.mezin a.mezin  4096 Окт  5 17:52 b-layer
+drwxrwxr-x  2 a.mezin a.mezin  4096 Окт  5 17:52 b-link
+drwxrwxr-x  6 a.mezin a.mezin  4096 Сен 23 14:48 b-list
+drwxrwxr-x  2 a.mezin a.mezin  4096 Сен 11 11:46 b-media
+drwxrwxr-x  9 a.mezin a.mezin  4096 Окт  5 17:52 b-panel
+drwxrwxr-x  4 a.mezin a.mezin  4096 Сен 23 14:48 b-phone
+drwxrwxr-x  7 a.mezin a.mezin  4096 Сен 29 12:14 b-radiogroup
+drwxrwxr-x  2 a.mezin a.mezin  4096 Сен 11 11:46 b-segment-input
+drwxrwxr-x  5 a.mezin a.mezin  4096 Окт  5 17:52 b-select
+drwxrwxr-x  7 a.mezin a.mezin  4096 Сен 29 12:14 b-slider
+drwxrwxr-x  2 a.mezin a.mezin  4096 Апр 29 13:26 b-spinner
+drwxrwxr-x  3 a.mezin a.mezin  4096 Сен 29 12:14 b-textarea
+drwxrwxr-x 17 a.mezin a.mezin  4096 Сен 23 14:48 b-thumb
+drwxrwxr-x 20 a.mezin a.mezin  4096 Сен 29 12:14 b-thumb-2
+drwxrwxr-x 21 a.mezin a.mezin  4096 Сен 23 14:48 btn
+drwxrwxr-x 10 a.mezin a.mezin  4096 Авг 18 14:10 b-toolbar
+drwxrwxr-x  2 a.mezin a.mezin  4096 Сен 29 12:14 b-toolkit
+drwxrwxr-x  7 a.mezin a.mezin  4096 Окт  9 11:33 b-tooltip
+drwxrwxr-x  2 a.mezin a.mezin  4096 Сен 11 11:46 b-userpic
+drwxrwxr-x  2 a.mezin a.mezin  4096 Июл 29 17:23 class-attribute
+drwxrwxr-x 16 a.mezin a.mezin  4096 Сен 29 12:14 ico
+						</code>
+						</pre>
+					</section>
+				</section>
+-->
+
+				<section>
+					<section>
+						<h3>Распространение библиотеки</h3>
+					</section>
+					<section>
+						<h3>Пакетные менеджеры</h3>
+						<ul>
+							<li>NPM (<a href="https://www.npmjs.com/">https://www.npmjs.com/</a>)</li>
+							<li>Bower (<a href="http://bower.io/">http://bower.io/</a>)</li>
+							<li>Jam (<a href="https://github.com/mailru/jam">https://github.com/mailru/jam</a>)</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Ключевые требования</h3>
+						<ul>
+							<li class="fragment">Плоское дерево зависимостей</li>
+							<li class="fragment">Установка пакета из GIT</li>
+							<li class="fragment">Поддержка package.json</li>
+							<li class="fragment">Интеграция с Require.js</li>
+							<li class="fragment">Отсутствие "тяжелого" бекенда</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Выбрали jam, как переходное решение к npm</h3>
+					</section>
+
+					<section>
+						<h3>Просто...</h3>
+						<ul class="ticked-list">
+							<li class="ticked">Подключить к новому проекту</li>
+							<li class="ticked">Разрабатывать</li>
+							<li class="ticked"><i>Отдать</i> в тестирование</li>
+							<li class="awaiting">Протестировать <i>самим</i></li>
+							<li class="awaiting">Вписать в <span style="color:#2E8B57;">штатный</span> релиз-цикл</li>
+							<li class="awaiting">Вписать в <span style="color:red">экстренный</span> релиз-цикл</li>
+							<li class="ticked">Включиться в работу</li>
+						</ul>
+					</section>
+				</section>
+
+<!--
+				<section>
+					<section>
+						<h3>Попробуем разработать блок</h3>
+					</section>
+					<section>
+						<h3>Локальная версия. git clone</h3>
+						<pre>
+							<code class="bash">
+~  $ cd packages
+~/packages  $ git clone git@gitlab.corp.mail.ru:mail/toolkit.git
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h3>jam install и ln -s</h3>
+						<pre>
+							<code class="bash">
+~  $ cd e.mail.ru/data/packages
+~/e.mail.ru/data/packages  $ jam install
+~/e.mail.ru/data/packages  $ rm -rf toolkit
+~/e.mail.ru/data/packages  $ ln -s ../../../packages/toolkit
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h3>Вносим изменения</h3>
+						<pre>
+							<code class="bash">
+~/packages/toolkit  $ vim b-sticky/b-sticky.js
+~/packages/toolkit  $ git commit -m 'Some changes'
+~/packages/toolkit  $ git push origin mail-XXXYYY
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h3>Зачем нужна поддержка git пакетному менеджеру?</h3>
+						<h4>package.json</h4>
+						<pre>
+							<code class="bash">
+"jam": {
+	"packageDir": "data/packages",
+	"baseUrl": "data",
+	"dependencies": {
+		"ajs": "0.14.0",
+		"callstackjs": "0.4.2",
+		"toolkit": "git+ssh://git@gitlab.corp.mail.ru:mail/toolkit.git#mail-XXXYYY",
+		"viewer": "0.0.16"
+	}
+}
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h3>Радуемся результату на тестовом стейдже</h3>
+						<img src="img/mail.png" alt="mail">
+					</section>
+					<section>
+						<h3>Делаем мерж реквест в основную ветку пакета</h3>
+						<img src="img/mergerequest.png" alt="mail">
+					</section>
+				</section>
+-->
+
+				<section>
+					<section>
+						<h3>Как договориться<br/>с релиз-инженером?</h3>
+						<img src="img/gitlab.png" style="max-height: 11em; border: none; box-shadow: none;" alt="gitlab">
+					</section>
+					<section>
+						<h3>Наиболее простой способ</h3>
+						<h4>Изменения осуществялются в рамках библиотеки</h4>
+						<img src="img/workflows/simple_workflow3.png" class="noborder" alt="">
+					</section>
+					<section>
+						<h3>Немного усложним</h3>
+						<h4>Изменения осуществялются в рамках задачи проекта</h4>
+					</section>
+					<section data-background="img/workflows/project_self2.png" data-background-size="100%">
+					</section>
+					<section data-background="img/workflows/project_pkg2.png" data-background-size="100%">
+					</section>
+					<section data-background="img/workflows/project_pkg_publish2.png" data-background-size="100%">
+					</section>
+					<section data-background="img/workflows/project_full.png" data-background-size="100%"></section>
+
+					<section>
+						<h3>Важно согласовать версию и ревизию</h3>
+						<img src="img/workflows/consistent.png" class="noborder" alt="">
+					</section>
+
+					<section>
+						<h3>Nightmare</h3>
+						<h4>Хотфиксим проект</h4>
+						<img src="img/hotfix_workflow.png" class="noborder" alt="">
+					</section>
+
+					<section>
+						<h3>Просто...</h3>
+						<ul class="ticked-list">
+							<li class="ticked">Подключить к новому проекту</li>
+							<li class="ticked">Разрабатывать</li>
+							<li class="ticked"><i>Отдать</i> в тестирование</li>
+							<li class="awaiting">Протестировать <i>самим</i></li>
+							<li class="ticked">Вписать в <span style="color:#2E8B57;">штатный</span> релиз-цикл</li>
+							<li class="ticked">Вписать в <span style="color:red">экстренный</span> релиз-цикл</li>
+							<li class="ticked">Включиться в работу</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3>Немного о версионировании</h3>
+					</section>
+					<section>
+						<h3>Мы используем <strong>semver</strong></h3>
+						<p>(<a href="http://semver.org/lang/ru/">semver.org</a>)</p>
+						<p>
+							<span class="fragment">МАЖОРНАЯ.</span>
+							<span class="fragment">МИНОРНАЯ.</span>
+							<span class="fragment">ПАТЧ</span>
+						</p>
+						<p class="fragment"><smal>0.14.17</smal></p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3>Публикация пакетов</h3>
+					</section>
+					<section>
+						<h3>Backend</h3>
+						<p>(<a href="http://couchdb.apache.org/">CouchDB</a>)</p>
+						<img src="img/couch.png" class="noborder" alt="couchdb">
+					</section>
+					<section>
+						<h3>Действия владельца пакета</h3>
+						<pre>
+							<code class="bash">
+~/packages/toolkit  $ jam publish
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h3>И это все?</h3>
+						<p class="fragment">На самом деле нет</p>
+						<pre class="fragment">
+							<code class="bash">
+~/packages/toolkit  $ git commit -am '0.14.17'
+~/packages/toolkit  $ git tag 0.14.17
+							</code>
+						</pre>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3>Автоматизация рутины</h3>
+					</section>
+					<section>
+						<h3>Тестирование</h3>
+						<img class="noborder" src="img/jasmine.svg" alt="">
+						<p>Karma + Jasmine</p>
+					</section>
+					<section>
+						<h3>Непрерывная интеграция</h3>
+						<p>Bamboo</p>
+						<img src="img/bamboo.png" alt="bamboo">
+					</section>
+					<section>
+						<h3>Публикация</h3>
+						<h4>grunt-contrib-bump</h4>
+						<h4>grunt-jam-publisher</h4>
+						<img src="img/grunt.png" style="height:8em;" class="noborder" alt="grunt">
+					</section>
+
+					<section>
+						<h3>Просто...</h3>
+						<ul class="ticked-list">
+							<li class="ticked">Подключить к новому проекту</li>
+							<li class="ticked">Разрабатывать</li>
+							<li class="ticked"><i>Отдать</i> в тестирование</li>
+							<li class="ticked">Протестировать <i>самим</i></li>
+							<li class="ticked">Вписать в <span style="color:#2E8B57;">штатный</span> релиз-цикл</li>
+							<li class="ticked">Вписать в <span style="color:red">экстренный</span> релиз-цикл</li>
+							<li class="ticked">Включиться в работу</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3>Преимущества такого подхода к разработке</h3>
+					</section>
+					<section>
+						<h3>Размер не имеет значения</h3>
+						<q>Пакеты позволили сделать общими как большие библиотеки, так и некоторые частные решения</q>
+					</section>
+
+					<section>
+						<h3>Слабая связанность и переносимость кода</h3>
+						<q>Независимая разработка и использование в разных проектах обязывает к строгому разграничеию зон ответственности</q>
+					</section>
+
+					<section>
+						<h3>Личная ответственность разработчика</h3>
+						<q>У каждого пакета должен быть свой владелец, на котором лежит ответственность за развитие своего участка</q>
+					</section>
+
+				</section>
+
+
+				<section>
+					<h3>Благодарности</h3>
+					<div class="greetings">
+						<div class="greetings__person">
+							<img src="img/guys/burlak.jpg" class="greetings__img noborder" alt="">
+							<br/>
+							<span class="greetings__label">Илья Бурлак</span>
+							<br/>
+							<a class="greetings__mail" href="mailto:i.burlak@corp.mail.ru">i.burlak@corp.mail.ru</a>
+						</div>
+
+						<div class="greetings__person">
+							<img src="img/guys/galtsev.jpg" class="greetings__img noborder" alt="">
+							<br/>
+							<span class="greetings__label">Антон Гальцев</span>
+							<br/>
+							<a class="greetings__mail" href="mailto:a.galtsev@corp.mail.ru">a.galtsev@corp.mail.ru</a>
+						</div>
+
+						<div class="greetings__person">
+							<img src="img/guys/kamardin.jpg" class="greetings__img noborder" alt="">
+							<br/>
+							<span class="greetings__label">Сергей Камардин</span>
+							<br/>
+							<a class="greetings__mail" href="mailto:s.kamardin@corp.mail.ru">s.kamardin@corp.mail.ru</a>
+						</div>
+					</div>
+				</section>
+
+
+				<section>
+					<h3>Спасибо за внимание!</h3>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				width: 800,
+				height: 600,
+
+				minScale: 0.5,
+				maxScale: 1.5,
+
+				margin: 0,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

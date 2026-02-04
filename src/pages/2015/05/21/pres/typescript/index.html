@@ -1,0 +1,754 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+	<title>TypeScript: особенности разработки - Frontendconf 2015</title>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=792, user-scalable=no"/>
+	<meta http-equiv="x-ua-compatible" content="ie=edge"/>
+	<meta name="author" content="Alexander Majorov"/>
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen-d90984e344.css"/>
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/uds.css"/>
+	<style>
+		#myContacts {
+			background:#fff url(assets/finish.jpg) 85% no-repeat;
+		}
+
+	</style>
+	<link rel="stylesheet" href="bower_components/highlightjs/styles/monokai.css"/>
+</head>
+<body class="list">
+<header class="caption"><h1>TypeScript: особенности разработки</h1><p>Frontendconf 2015</p></header>
+<section class="slide cover _cover">
+	<div>
+		<h2>TypeScript</h2>
+		<p>особенности разработки</p>
+		<img src="assets/bg1.jpg" alt="." style="height: 150%"/>
+	</div>
+</section>
+
+<section class="slide cover" style="background: #fff">
+	<div>
+		<h2>Эволюция JS</h2>
+		<img src="assets/coffeeman.jpg" alt="." style="width: 100%"/>
+	</div>
+</section>
+<section class="slide">
+	<div>
+		<img src="assets/js.png" alt="." style="float: right; height: 25%"/>
+		<h2>JS compilers</h2>
+		<p>Список всевозможных трансляторов и диалектов: <a href="https://goo.gl/EAabNP" target="_blank">goo.gl/EAabNP</a> (340+)</p>
+		<ul>
+			<li>CoffeeScript family: 12</li>
+			<li>CoffeeScript friends (philosophically related): 25</li>
+			<li>Static typing: 16 (TypeScript, Dart, Typecast.js, AtScript, ...)</li>
+			<li>X-language compilers: Java, Ruby, Python, PHP, Erlang, Perl, Lua, Scala, C#, F#, Lisp, Scheme, OCaml, Haskell, Smalltalk, C/C++, Go, ...</li>
+		</ul>
+	</div>
+</section>
+<section class="slide cover" style="background: #fff">
+	<div>
+		<img src="assets/evo.jpg" alt="." style="width: 90%" />
+	</div>
+</section>
+<section class="slide">
+	<div>
+		<h2>Достоинства CoffeeScript</h2>
+		<ul>
+			<li class="next">Классы</li>
+			<li class="next">Стрелочные функции, сохранение контекста (=&gt;, -&gt;)</li>
+			<li class="next">Безопасные сравнения === меньше ошибок</li>
+			<li class="next">Краткость</li>
+			<li class="next">... и много чего другого</li>
+		</ul>
+	</div>
+</section>
+<section class="slide">
+	<div>
+		<h2>Почему не CoffeeScript?</h2>
+		<ul>
+			<li class="next">Это другой язык</li>
+			<li class="next">Краткость не всегда сестра таланта. Иногда брат Морзе</li>
+			<li class="next">Приходится уметь работать с 2мя языками</li>
+			<li class="next">Если вдруг прекратится поддержка, что делать?</li>
+			<li class="next">Есть проблемы с поиском разработчиков</li>
+		</ul>
+	</div>
+</section>
+
+<section class="slide cover _cover" id="jedi">
+	<div>
+		<h2>TypeScript</h2>
+		<p>Светлое будущее ES6+ уже вчера</p>
+		<img src="assets/jeditool.jpg" alt=".">
+	</div>
+</section>
+
+<section class="slide">
+	<div>
+		<h2>Достоинства TypeScript</h2>
+		<ul>
+			<li class="next">TS - это и есть ES6+</li>
+			<li class="next">Режимы транспилирования: ES3, ES5, ES6</li>
+			<li class="next">Поддержка модулей: Commonjs, AMD</li>
+			<li class="next">Class, public, private, protected, static...</li>
+			<li class="next" title="быстрее линтеров, удобнее, больше возможностей">Статическая типизация</li>
+			<li class="next">Дополнительно: Interface, Enum, tuple, ...</li>
+		</ul>
+	</div>
+</section>
+
+<section class="slide cover _cover" id="myth">
+	<div>
+		<h2>Мифы о TypeScript</h2>
+		<img src="assets/s3.jpg" alt="." style="width: 100%"/>
+	</div>
+</section>
+<section class="slide">
+	<div>
+		<h2>Мифы о TypeScript</h2>
+		<ol>
+			<li>Это другой язык, как и CoffeeScript</li>
+			<li>Закрытый исходный код</li>
+			<li>Разрабатывать можно только в VisualStudio</li>
+			<li>Корректно работает только с Windows</li>
+			<li>Генерит лишний код</li>
+			<li>Медленный</li>
+		</ol>
+	</div>
+</section>
+<section class="slide">
+	<div>
+		<h2 class="notyet">Это другой язык, как и CoffeeScript</h2>
+		<pre class="hl typescript">
+
+let say =  (def:string):string  => `TypeScript is ${def}!`;
+say('pretty amazing')
+		</pre>
+		<!-- Нет, это не какой-то диалект. Это ES.Next синтаксис. Изучая TS вы инвестируете в свои знания будущего стандарта. -->
+	</div>
+</section>
+<section class="slide" id="opensource">
+	<div>
+		<img src="assets/opensource.png" alt="."/>
+		<h2 class="notyet">Закрытый исходный код</h2>
+		<p>Исходники по адресу: <br/>
+			<a href="https://github.com/Microsoft/TypeScript/">https://github.com/Microsoft/TypeScript/</a>
+		</p>
+
+	</div>
+</section>
+<section class="slide">
+	<div>
+		<h2 class="notyet">Разрабатывать можно только в Visual Studio</h2>
+		<h3>IDE supports</h3>
+		<ul>
+			<li>&#9733; WebStorm, PhpStorm, ...</li>
+			<li class="next">&#9734; Sublime Text (2,3)</li>
+			<li class="next" title="brackets">Atom (<a href="https://atom.io/">atom.io</a>)</li>
+			<li class="next">TypeEcs for Eclips (<a href="http://typecsdev.com/">typecsdev.com</a>)</li>
+			<li class="next">MS Visual Studi&#9786;</li>
+		</ul>
+	</div>
+</section>
+<section class="slide">
+	<div>
+		<h2 class="notyet">Корректно работает только с Windows</h2>
+		<pre class="p">
+			<code><mark>npm</mark> install -g typescript</code>
+			<code><mark>tsc</mark> my_application.ts</code>
+		</pre>
+	</div>
+</section>
+<section class="slide">
+	<div>
+		<h2 class="notyet">Генерит лишний код</h2>
+		<pre class="hl typescript">var say =  (def:string):string  => `TypeScript is ${def}!`;
+say('pretty amazing');</pre>
+	</div>
+</section>
+<section class="slide">
+	<div>
+		<h2 class="notyet">Генерит лишний код</h2>
+		<pre class="hl typescript">var say =  (def:string):string  => `TypeScript is ${def}!`;
+say('pretty amazing');</pre>
+		<h3>Результат:</h3>
+		<pre class="hl typescript">var say = function (def) { return ("TypeScript is " + def + "!"); };
+say('pretty amazing');</pre>
+	</div>
+</section>
+<section class="slide">
+	<div>
+		<h3>Тот же результат на CoffeeScript</h3>
+<pre class="hl typescript">(function() {
+    var say;
+    say = (function(_this) {
+        return function(def) {
+            return "TypeScript is " + def + "!";
+        };
+  	})(this);
+    say('pretty amazing');
+}).call(this);</pre>
+	</div>
+</section>
+<section class="slide">
+	<div style="margin-left: -8%;width: 92%">
+		<h3>TypeScript vs CoffeeScript. Результат компиляции</h3>
+		<div style="float: left;width: 49%"><pre class="hl typescript">var gvstr;
+var _this = this; // Babel делает так же
+var say = function (def) {
+
+    return _this.gvstr = "T..." + def + "!"
+};
+
+say('pretty amazing');
+
+</pre></div>
+		<div style="float: right;width: 49%"><pre class="hl typescript">(function() {
+    var say;
+    say = (function(_this) {
+        return function(def) {
+            return "T..." + def + "!";
+            };
+    })(this);
+    say('pretty amazing');
+}).call(this);</pre></div>
+	</div>
+</section>
+<section class="slide">
+	<div>
+		<h2 class="notyet">Генерит лишний код</h2>
+		<pre class="hl cpp">enum Color { Red, Green, Blue }
+var color :Color = Color.Green;</pre>
+	</div>
+</section>
+<section class="slide">
+	<div>
+		<h2 class="notyet">Генерит лишний код</h2>
+<pre class="hl typescript">var Color;
+(function (Color) {
+    Color[Color["Red"]  = 0] = "Red";
+    Color[Color["Green"]= 1] = "Green";
+    Color[Color["Blue"] = 2] = "Blue";
+})(Color || (Color = {}));
+
+var color = 1;</pre>
+	</div>
+</section>
+<section class="slide">
+	<div>
+		<h2 class="notyet">Генерит лишний код</h2>
+<pre class="hl cpp">const enum Color { Red, Green, Blue }
+var color :Color = Color.Green;
+</pre>
+		<h3>Результат:</h3>
+		<pre class="hl javascript">var c = 1;</pre>
+		<!-- хорошая альтернатива для реализации констант,
+		 	так как в результирующем коде не будет доступа к enum объекту -->
+	</div>
+</section><section class="slide cover _cover" id="realuse">
+	<div>
+		<h2>Реальная практика использования <br/> TypeScript</h2>
+		<img src="assets/realuse.jpg" alt="."/>
+	</div>
+</section>
+<section class="slide">
+	<div>
+		<h2>Способы подключения</h2>
+		<ul>
+			<li>FileWatchers in IDE</li>
+			<li>TypeScript Compiler in IDE</li>
+			<li>tsc, grunt, gulp, ...</li>
+		</ul>
+	</div>
+</section>
+<section class="slide">
+	<div style="margin-top: -5%;">
+		<h2>TypeScript Compiler</h2>
+		<p style="font-size: 70%;margin:0 0 1% 0">File &rarr; Settings &rarr; Language & Frameworks &rarr; TypeScript &rarr; Enable TypeScript Compiler</p>
+		<img src="assets/tscjetbr.png" alt="." style="width: 100%"/>
+	</div>
+</section>
+<!--section class="slide cover _cover">
+	<div>
+		<h2>Проблемы</h2>
+		<img src="assets/trouble.jpg" alt="." style="height: 100%; float: right">
+	</div>
+</--section>
+<section class="slide">
+	<div>
+		<h2>Проблема с символами окончания строк (CRLF/LF) в скомпилированных файлах</h2>
+	</div>
+</section>
+<section-- class="slide">
+	<div>
+		<h2>Установка CRLF/LF</h2>
+		<ul>
+			<li>Найти файл typescriptServices.js</li>
+			<li>Открыть файл на изменение и найти строку newLine: _os.EOL,</li>
+			<li>Вместо _os.EOL нужно написать "\n" (соответствует LF)</li>
+		</ul>
+		<p style="font-size: 70%">Почему так сложно? Я хочу указывать символ окончания строки через параметры.
+			Эту проблему уже решают и, возможно, скоро добавят флаг options.newLine. Детали по ссылке:
+			https://github.com/Microsoft/TypeScript/pull/2921</p>
+	</div>
+</section-->
+<section class="slide cover _cover">
+	<div>
+		<h2>Управляющие <br/> комментарии</h2>
+		<img src="assets/controlcomment.jpg" alt="." style="width: 100%"/>
+	</div>
+</section>
+<section class="slide">
+	<div>
+		<h2>&nbsp;</h2>
+		<h2>&nbsp;</h2>
+		<h2>/// &lt;reference path="file-name.d.ts" /&gt;</h2>
+		<!--p>Указывает компилятору где задекларирован используемый код. Применяется, если нужно подключить описание типов.</-->
+	</div>
+</section>
+<section class="slide">
+	<div>
+		<h2>/// &lt;amd-module name="myName" /&gt;</h2>
+		<!--Задает имя для текущего модуля AMD.-->
+		<pre class="hl typescript">/// &lt;amd-module name="lib/md5" /&gt;
+function md5() { ... }
+export = md5;</pre>
+		<p></p>
+		<pre class="hl typescript">define("lib/md5", ["require", "exports"], function (require, exports) {
+        function md5() { ... }
+            return md5;
+});</pre>
+	</div>
+</section>
+<section class="slide">
+	<div>
+		<h2>&nbsp;</h2>
+		<h2>/// &lt;amd-dependency path="dir/file" /&gt;</h2>
+		<!--p>При использовании AMD применяется для указания зависимости.
+			Зависимость добавляется и подключается, но не создается переменная для использования.
+			Результат:</p-->
+		<pre class="hl typescript">/// &lt;amd-dependency path="lib/global" /&gt;</pre>
+		<p></p>
+		<pre class="hl typescript">define(["require", "exports", "lib/global"], function (require, exports) { ... });</pre>
+	</div>
+</section>
+<section class="slide">
+	<div>
+		<h2 style="white-space: nowrap;margin-left: -3%">///&lt;amd-dependency path="file" name="var"/&gt;</h2>
+		<!--Указывает зависимость и прокидывает аргумент.-->
+		<pre class="hl actionscript">/// &lt;amd-dependency path="legacy/base/view" name="View" /&gt;
+View.someDo();
+</pre>
+		<p></p>
+		<pre class="hl typescript">define(["require", "exports", "legacy/base/view"],
+    function (require, exports, View) {
+        View.someDo();
+    }
+);</pre>
+	</div>
+</section>
+<section class="slide">
+	<div>
+		<h2>&lt;amd-dependency path="..." name="..." /&gt;</h2>
+		<pre class="hl actionscript">/// &lt;reference path="legacy/base/view.d.ts" /&gt;
+/// &lt;amd-dependency path="legacy/base/view" name="View" /&gt;
+</pre>
+		<p><br/>Эквивалентно записи:</p>
+		<pre class="hl typescript">/// &lt;reference path="legacy/base/view.d.ts" /&gt;
+import View = require("legacy/base/view");
+</pre>
+	</div>
+</section>
+<section class="slide">
+	<div>
+		<h2>/// &lt;reference no-default-lib="true" /&gt;</h2>
+		<h3>0_o</h3>
+		<!--Указывает зависимость и прокидывает аргумент.
+		Не подключать дефолтный lib.d.ts.
+			Эта строчка в сам lib.d.ts, что бы не было рекурсивного парсинга.
+			Если добавить эту директиву в файл, то пропадет описание множества интерфейсов, что не позволит нормально работать.
+			При указании версии ES6 через аргумент --target, будет подключен алтернативный дефолтный файл: lib.es6.d.ts-->
+	</div>
+</section>
+<section class="slide cover" style="background: #fff">
+	<div>
+		<div style="float: right">
+			<h2>Подключение <br/> существующего <br/> <s>legacy</s> кода</h2>
+		</div>
+		<img src="assets/r2d2-usb.jpg" alt="." style="height: 100%"/>
+	</div>
+</section>
+
+<section class="slide">
+	<div>
+		<h2>Пример подключения *.js в *.ts</h2>
+		<ul>
+			<li>newApp.ts</li>
+			<li>lib/crypt.js</li>
+		</ul>
+	</div>
+</section>
+<section class="slide">
+	<div>
+		<h3>lib/crypt.js</h3>
+		<pre class="hl typescript">define(function () {
+    function md5() { /* ... */ }
+    function uid() { /* ... */ }
+    return {
+        md5: md5,
+        uid: uid
+    }
+});</pre>
+	</div>
+</section>
+<section class="slide">
+	<div>
+		<h3>newApp.ts</h3>
+		<pre class="hl actionscript memo">class AppController {
+    private _uid: string;
+    constructor() { ... }
+    setUid(): string {
+        return this._uid = crypt.uid(); // crypt в legacy
+    }
+    init(): void { ... }
+    run(): void { ... }
+    static exec(ctrl: AppController): void { ... }
+}
+
+export = AppController;</pre>
+	</div>
+</section>
+<section class="slide">
+	<div>
+		<h3>newApp.ts</h3>
+		<pre class="hl actionscript memo">/// &lt;amd-dependency path="lib/crypt" /&gt;
+class AppController {
+    setUid(): string {}
+}</pre>
+		<p></p>
+		<pre class="hl actionscript memo">define(["require", "exports", "lib/crypt"], function (require, exports) {
+var AppController = (function () {
+        function AppController() {}
+        AppController.prototype.setUid = function () { this._uid = crypt.uid() };
+        return AppController;
+    })();
+    return AppController;
+});
+</pre>
+	</div>
+</section>
+<section class="slide">
+	<div>
+		<h3>newApp.ts</h3>
+		<pre class="hl actionscript memo">/// &lt;amd-dependency path="lib/crypt" /&gt;
+declare var require:any;
+var crypt = require("lib/crypt");
+class AppController { ... }</pre>
+		<p></p>
+		<pre class="hl actionscript memo">define(["require", "exports", "lib/crypt"], function (require, exports) {
+var crypt = require("lib/crypt");
+var AppController = (function () {
+        function AppController() {}
+        AppController.prototype.setUid = function () { this._uid = crypt.uid() };
+        return AppController;
+    })();
+    return AppController;
+});</pre>
+	</div>
+</section>
+<section class="slide">
+	<div>
+		<h3lib/>crypt.d.ts</h3>
+		<pre class="hl typescript">declare module "lib/crypt" {
+    export function md5() :string;
+    export function uid() :string;
+}</pre>
+	</div>
+</section>
+<section class="slide">
+	<div>
+		<h3>newApp.ts</h3>
+		<pre class="hl actionscript memo">/// &lt;require path="lib/crypt.d.ts" /&gt;
+import crypt = require("lib/crypt");
+
+class AppController { ... }</pre>
+		<p></p>
+		<pre class="hl actionscript memo">define(["require", "exports", "lib/crypt"], function (require, exports, crypt) {
+    var AppController = (function () {
+        function AppController() {}
+        AppController.prototype.setUid = function () { this._uid = crypt.uid() };
+        return AppController;
+    })();
+    return AppController;
+});
+</pre>
+	</div>
+</section>
+<section class="slide shout" style="background: #fff url(assets/react.png) center no-repeat">
+	<div>
+		<h2 style="margin-top:-2%">TypeScript <br/>+<br/> React</h2>
+	</div>
+</section>
+<section class="slide">
+	<div>
+		<h2>TypeScript ничего не знает про JSX</h2>
+		<pre class="hl typescript">render: function() {
+    return &lt;div className="train"&gt;
+        &lt;div className="title"&gt;{this.state.title}&lt;/div&gt;
+        &lt;/div&gt;
+}</pre>
+	</div>
+</section>
+<section class="slide">
+	<div>
+		<h2>TypeScript умеет жить с React</h2>
+		<pre class="hl typescript">render: function() {
+    return React.jsx(
+            "&lt;div className="train"&gt;
+                &lt;div className="title"&gt;{this.state.title}&lt;/div&gt;
+            &lt;/div&gt;"
+        )
+}</pre>
+	</div>
+</section>
+<section class="slide shout" style="background: #222222">
+	<div>
+		<img src="assets/s7.png" alt="." style="width: 100%;margin-top: 16%;"/>
+	</div>
+</section>
+<section class="slide">
+	<div>
+		<h2>React Templates</h2>
+		<ul>
+			<li>npm install react-templates -g</li>
+		</ul>
+		<ul>
+			<li>npm install grunt-react-templates --save-dev</li>
+			<li>WebStorm plugin: http://plugins.jetbrains.com/plugin/7648</li>
+		</ul>
+		<p>Документация: <a href="http://wix.github.io/react-templates/">wix.github.io/react-templates</a></p>
+	</div>
+</section>
+<section class="slide">
+	<div>
+		<h2>Пример работы TS c RT(JSX)</h2>
+		<h3>Структура компонента</h3>
+		<p>.../page/train/seats/carMap/carMap/</p>
+		<ul>
+			<li>carMapItem
+				<ul>
+					<li>carMapItem.rt</li>
+					<li>carMapItem.rt.js</li>
+					<li>carMapItem.js / carMapItem.ts</li>
+				</ul>
+			</li>
+			<li>modelFactory.ts</li>
+		</ul>
+	</div>
+</section>
+<section class="slide">
+	<div class="memo">
+		<h3>carMapItem.rt</h3>
+<pre class="hl html compact">&lt;rt-require dependency="bemp/blocks/popup/component" as="Popup"/&gt;
+&lt;rt-require dependency="bemp/blocks/train/seats/carMap/legend/component" as="Legend"/&gt;
+&lt;div class="car_wrapper"&gt;
+    &lt;Ereg isAvailable={this.props...} schemeHeight={this...} className="..."&gt;
+    &lt;/Ereg&gt;{this.props.children}&lt;div class="..." rt-if="..."&gt;
+        &lt;Popup
+            innerHtml={this.props.errorMessage}
+            active="{!this.state.popupHiddenByClick}"
+            onClose={this.onPopupClosed}&gt;&lt;/Popup&gt;
+    &lt;/div&gt;
+    &lt;Legend rt-if="this.props.showLegend" className="..."/&gt;
+&lt;/div&gt;</pre>
+	</div>
+</section>
+<section class="slide">
+	<div class="memo">
+		<h3>carMapItem.rt.js</h3>
+<pre class="hl javascript compact">define([
+    'react/addons', 'lodash', 'bemp/blocks/popup/component', ...
+], function (React, _, Popup, ...) {
+    'use strict';
+    return function () {
+        return React.createElement('div', {...}, React.createElement(Ereg, {
+            'isAvailable': this.props.isEregAvailable, ...
+        }),
+        this.props.errorMessage
+            ? React.createElement('div', {...}, React.createElement(Popup, {
+                    'innerHtml': this.props.errorMessage,
+                    'onClose': this.onPopupClosed
+                }))
+            : null,
+	    ...
+    };
+});
+</pre>
+	</div>
+</section>
+<section class="slide">
+	<div class="memo">
+		<h3>carMapItem.js</h3>
+<pre class="hl javascript memo">define(['react', './carMapItem.rt', ...], function (React, template, ...) {
+    return React.createClass({
+        displayName: 'carMapItem',
+        getDefaultProps: function () {
+            return { ... }
+        },
+        checkErrorMessage: function (props) { ... },
+        getInitialState: function () {
+            return { ... }
+        },
+        onPopupClosed: function () {
+            this.setState({ ... })
+        },
+        render: template
+    });
+});
+</pre>
+	</div>
+</section>
+<section class="slide">
+	<div class="memo">
+		<h3>carMapItem.ts</h3>
+<pre class="hl actionscript memo">import React = require("react");
+import template = require("./carMapItem.rt");
+
+class carMapItem extends React.Component {
+        public displayName:string = 'carMapItem',
+        static defaultProps = {
+            ...
+            onErrorShow: () => void 0
+        }
+        getInitialState() { return { ... } }
+        onPopupClosed() { this.setState({ ... }) }
+        render() { return template }
+}
+
+export = carMapItem;
+</pre>
+	</div>
+</section>
+
+<section class="slide cover _cover">
+	<div>
+		<h2>TypeScript <br/>или <br/> Facebook Flow?</h2>
+		<img src="assets/ts_vs_flow.jpg" alt="." style="height: 150%"/>
+	</div>
+</section>
+<section class="slide cover _cover">
+	<div>
+		<h2>TypeScript <br/>или <br/> Babeljs?</h2>
+		<img src="assets/ts_vs_babel.jpg" alt="." style="height: 100%"/>
+	</div>
+</section>
+<section class="slide">
+	<div>
+		<h2>TypeScript vs Babel</h2>
+		<ul>
+			<li>TypeScript — это Babel + Flow</li>
+			<li>Babel — это TypeScript без проверки типов</li>
+		</ul>
+		<img src="assets/ts_babel_flow.png" alt="." style="width: 100%;"/>
+	</div>
+</section>
+<section class="slide">
+	<div style="margin-top: 4%;">
+		<img src="assets/flow.png" alt="." style="float: right; height: 25%;margin-top: 4%;"/>
+		<h2>Выбираем Flow если ...</h2>
+		<ul>
+			<li class="next">... хочется JSX</li>
+			<li class="next">... хочется Babel JS, но не хочется MS TS</li>
+		</ul>
+	</div>
+</section>
+<section class="slide">
+	<div>
+		<h2>Что нравится в Flow</h2>
+		<ul>
+			<li class="next">Режимы типизации</li>
+			<li class="next">Проверка типов без указания</li>
+			<li class="next">Возможность явно указать типы как в TypeScript</li>
+			<li class="next">Нативная поддержка JSX</li>
+		</ul>
+	</div>
+</section>
+<section class="slide">
+	<div>
+		<h2>Что не нравится в Flow</h2>
+		<ul>
+			<li class="next">Официально поддерживаются платформы: Mac, Linux, <s>Windows</s></li>
+			<li class="next">Распространяется в виде бинарника</li>
+			<li class="next">Нет (не было) хорошей поддержки в IDE</li>
+		</ul>
+	</div>
+</section>
+<section class="slide cover _cover">
+	<div>
+		<h2>Почему <br/> нам <br/> нравится <br/> TypeScript</h2>
+		<img src="assets/darth-vader-cat.jpg" alt="." style="width: 100%"/>
+	</div>
+</section>
+<section class="slide">
+	<div>
+		<h2>Почему нам нравится TypeScript</h2>
+		<ul>
+			<li class="next">Пишем на ES6+</li>
+			<li class="next">Типизация защищает от опечаток и ошибок</li>
+			<li class="next">Возможность описывать интерфейсы</li>
+			<li class="next">Инструменты для реализации ООП</li>
+			<li class="next">Бекендеры понимают наш код!</li>
+			<li class="next">Возможность управлять AMD</li>
+			<li class="next">Активное развитие и поддержка от MS. Уже доступен TS 1.5 beta</li>
+		</ul>
+	</div>
+</section>
+<section class="slide">
+	<div>
+		<h2>TypeScript обрастает инструментами</h2>
+		<ul>
+			<li>Definition manager http://definitelytyped.org/tsd/</li>
+			<li>Doc generator http://typedoc.io/</li>
+			<li>Различные плагины для IDE, grunt, gulp, ...</li>
+		</ul>
+	</div>
+</section>
+<section class="slide">
+	<div>
+		<h2>TypeScript завтра</h2>
+		<ul>
+			<li>ES6 module support, decorators, computed properties, for..of</li>
+			<li>AMD-dependency optional names</li>
+			<li>Настройка поведением через конфиг tsconfig.json</li>
+			<li>Angular 2.0</li>
+		</ul>
+	</div>
+</section>
+
+<section class="slide shout grow"><div><h2>Вопросы?</h2></div></section>
+<section class="slide" id="myContacts">
+	<div>
+		<h2>TypeScript <br/> Особенности разработки</h2>
+		<p><strong>Александр Майоров</strong>, <a href="http://tutu.ru">Tutu.ru</a></p>
+		<ul>
+			<li><a href="mailto:mayorov@tutu.ru">mayorov@tutu.ru</a></li>
+			<li><a href="http://majorov.su">majorov.su</a></li>
+		</ul>
+		<p>Презентация: <a href="http://frontendconf.majorov.su/">frontendconf.majorov.su</a></p>
+	</div>
+</section>
+
+<p class="badge"><a href="http://alexander.majorov.su/">Александр Майоров</a></p>
+<div class="progress"><div></div></div>
+<script src="shower/shower.min.js"></script>
+<script src="bower_components/highlightjs/highlight.pack.js"></script>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$('pre.hl').each(function(i, block) {
+			hljs.highlightBlock(block);
+		});
+	});
+</script>
+<!-- Copyright ©2015, Alexander Majorov — majorov.su -->
+</body></html>

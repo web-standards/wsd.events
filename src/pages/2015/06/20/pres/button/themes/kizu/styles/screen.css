@@ -1,0 +1,20 @@
+@import url("../../bright/styles/screen.css");
+
+
+.slide.shout h2 {
+    left: 96px;
+    right: 96px;
+    width: auto;
+    text-align: center;
+    line-height: 1.2;
+    }
+
+h2 .inner,
+h3 .inner {
+    display: inline-block;
+    white-space: nowrap;
+    -webkit-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    transform-origin: 0 0;
+    }
