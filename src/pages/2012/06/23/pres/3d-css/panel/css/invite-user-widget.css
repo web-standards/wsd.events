@@ -1,0 +1,63 @@
+.invite-user-widget{
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	width:100%;
+	border-bottom:1px solid #c2c2c2;
+	padding:20px 20px 35px;
+	font:bold 18px/25px "Helvetica Neue",Helvetica,Arial,sans-serif;
+	color:#333;
+	background-color:#fff;
+	background-color:rgba(255,255,255,.95);
+	z-index:1100;
+	text-align:center;
+
+	display:none;
+	}
+	.invite-user-widget .user-list-wrapper{
+		background: url('../img/ajax-loader.gif?i') 50% 50% no-repeat;
+		}
+	.invite-user-widget .cancel{
+		white-space:nowrap;
+		display:inline-block;
+		padding:5px 15px;
+
+		-webkit-border-radius:5px;
+		border-radius:5px;
+
+		background-color: #d7190f;
+		background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#de2017), to(#d01208));
+		background: -webkit-linear-gradient(top, #de2017, #d01208);
+		background: -moz-linear-gradient(top, #de2017, #d01208);
+		background: -ms-linear-gradient(top, #de2017, #d01208);
+		background: -o-linear-gradient(top, #de2017, #d01208);
+		background: linear-gradient(top, #de2017, #d01208);
+
+		-webkit-box-shadow: inset 0 2px 0 0 #e2382f, 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+		box-shadow: inset 0 2px 0 0 #e2382f, 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+		color:#fff;
+
+		font:bold 16px/25px "Helvetica Neue",Helvetica,Arial,sans-serif;
+		position:relative;
+		}
+	.invite-user-widget .user{
+		position: relative;
+		overflow:hidden;
+		zoom:1;
+		padding:0 10px;
+		display:block;
+		}
+		.invite-user-widget .user .avatar{
+			display:inline-block;
+			vertical-align:middle;
+			margin:0 10px 0 0;
+			border-bottom:1px solid #b0b0b0;
+			width:30px;
+			height:30px;
+			}
+		.invite-user-widget .user .name{
+			vertical-align:middle;
+			color:#999;
+			margin:0;
+			}

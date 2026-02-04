@@ -1,0 +1,42 @@
+.pause{
+  background: #000 url("../spoiler/pause.png") 50% 50% no-repeat;
+  color:#fff;
+  }
+  .pause:after{
+    color:#fff;
+    text-shadow:none;
+    padding-right:35px;
+    }
+  .pause hgroup{
+    background: #000;
+    position: absolute;
+    width:320px;
+    height:320px;
+    left:40px;
+    bottom:50px;
+    border-radius:200px;
+    line-height:320px;
+    }
+    .pause hgroup:after{
+      content:".";
+      overflow:hidden;
+      position: absolute;
+      bottom:100%;
+      left:50%;
+      border-color:transparent transparent #000;
+      border-width:0 32px 100px;
+      border-style:solid;
+      height:0;
+      width:0;
+      line-height:0;
+      font-size:0;
+      text-indent:-9999px;
+      margin:0 0 -4px -32px;
+      -webkit-filter:blur(0px);
+      }
+    .pause hgroup h1{
+      padding:20px;
+      vertical-align:middle;
+      font: 28px/32px 'PT Sans Caption',sans-serif;
+      display:inline-block;
+      }

@@ -1,0 +1,53 @@
+.exchange-rate-widget{
+  margin:0 0 15px;
+  border-top:4px solid #b7b7b7;
+  background-color:#FFF;
+  padding:0 10px 10px;
+  font: 13px/28px 'PT Sans',Arial,sans-serif;
+  position:relative;
+  zoom:1;
+  }
+  .exchange-rate-widget .title{
+    font: bold 18px/24px 'PT Sans',Arial,sans-serif;
+    padding: 12px 0 13px;
+    position: relative;
+    z-index: 2;
+    background-color:#fff;
+    margin:0 0 -1px;
+    }
+    .exchange-rate-widget .title a{
+      color:#000;
+      }
+  .exchange-rate-widget ul.rates li{
+    overflow:hidden;
+    border-top:1px dotted #b7b7b7;
+    padding:10px 0;
+    }
+    .exchange-rate-widget ul.rates li.top .currecy{
+      font-weight:bold;
+      }
+    .exchange-rate-widget ul.rates li .rate{
+      float:right;
+      margin:0 10px 0 0;
+      width:90px;
+      font: bold 24px/28px 'PT Sans Caption',Arial,sans-serif;
+      }
+    .exchange-rate-widget ul.rates li.gold .rate{
+      font: bold 18px/28px 'PT Sans Caption',Arial,sans-serif;
+      }
+    .exchange-rate-widget ul.rates li .graphic{
+      zoom:1;
+      position:relative;
+      float:right;
+      display:block;
+      }
+    .exchange-rate-widget ul.rates li.gold .currecy{
+      font: normal 11px/14px 'PT Sans Caption',Arial,sans-serif;
+      }
+    .exchange-rate-widget ul.rates li .currecy{
+      float:left;
+      }
+      .exchange-rate-widget ul.rates li .currecy b{
+        display:block;
+        font: normal 11px/14px 'PT Sans Caption',Arial,sans-serif;
+        }

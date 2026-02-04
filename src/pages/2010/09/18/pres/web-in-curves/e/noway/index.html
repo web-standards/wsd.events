@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html lang="ru-RU">
+<head>
+	<title>Заяц Несудьбы</title>
+	<meta charset="UTF-8">
+	<style>
+		* {
+			padding:0;
+			margin:0;
+			}
+		IMG {
+			position:absolute;
+			top:0;
+			left:0;
+			width:100%;
+			height:100%;
+			}
+	</style>
+	<script>
+		function init() {
+			var image = document.querySelector( 'image' ),
+				audio = document.querySelector( 'audio' ),
+				loop;
+			image.onmouseover = function() {
+				audio.volume = 1;
+				audio.currentTime = 0;
+				audio.play();
+				clearInterval( loop );
+			}
+			image.onmouseout = function() {
+				loop = setInterval( fadeout, 200 );
+			}
+			function fadeout() {
+				audio.volume -= 0.2;
+				if( audio.volume.toFixed(1) == 0.0 ) {
+					clearInterval( loop );
+					audio.pause();
+				}
+			}
+		}
+		window.onload = init;
+	</script>
+</head>
+<body>
+	<img src="noway.svg">
+	<audio loop src="noway.ogg"></audio>
+</body>
+</html>

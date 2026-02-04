@@ -1,0 +1,109 @@
+header{
+	height:80px;
+	border-top:1px solid #a7a7a1;
+	border-bottom:1px solid #e0e0da;
+	background: #bdbeb7 url("../assets/header-bg.png") repeat;
+	text-shadow:0 1px 0 rgba(255,255,255,.25);
+	position: relative;
+	z-index:10;
+	min-width:960px;
+	}
+	header .wrapper{
+		width:960px;
+		margin:0 auto;
+		position: relative;
+		zoom:1;
+		overflow:hidden;
+		}
+		header .logotype{
+			background: url("../assets/logotype.png") 50% 50% no-repeat;
+			width:189px;
+			height:34px;
+			float:left;
+			overflow:hidden;
+			text-indent:-9000px;
+			margin:20px 109px 0 0;
+			}
+		header .statistic{
+			float:left;
+			height:30px;
+			padding:25px 0;
+			}
+			header .statistic .projects{
+				color:#545450;
+				font:normal 16px/28px Arial, "Helvetica Neue", Helvetica, sans-serif;
+				border:1px solid #999;
+				border-radius:15px;
+				padding:0 10px;
+				display:inline-block;
+				height:28px;
+				}
+			header .statistic .unresolved{
+				min-width:20px;
+				height:30px;
+				float:left;
+				text-align:center;
+				border-radius:15px;
+				padding:0 10px;
+				margin:0 20px 0 0;
+				white-space:nowrap;
+
+				background: #eb2323;
+				background: -moz-linear-gradient(top, #f42d2d 0%, #d81010 100%);
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f42d2d), color-stop(100%,#d81010));
+				background: -webkit-linear-gradient(top, #f42d2d 0%,#d81010 100%); 
+				background: -o-linear-gradient(top, #f42d2d 0%,#d81010 100%);
+				background: -ms-linear-gradient(top, #f42d2d 0%,#d81010 100%);
+				background: linear-gradient(top, #f42d2d 0%,#d81010 100%);
+
+				box-shadow:0 1px 0 0 rgba(0,0,0,.1);
+
+				font:normal 16px/30px Arial, "Helvetica Neue", Helvetica, sans-serif;
+				text-shadow:0 1px 0 rgba(0,0,0,.1);
+
+				color:#fff;
+				}
+		header .profile{
+			float:right;
+			white-space:nowrap;
+			font-size:0;
+			line-height:0;
+			padding:25px 0;
+			height:30px;
+			}
+			header .profile .name{
+				color:#545450;
+				font:14px/30px Arial, "Helvetica Neue", Helvetica, sans-serif;
+				display:inline-block;
+				padding:0 0 0 20px;
+				margin:0 10px 0 0;
+				background: url("../assets/person-ico.png") 0 50% no-repeat;
+				}
+				*+html header .profile .name{
+					display:inline;
+					zoom:1;
+					}
+			header .profile nav{
+				display:inline-block;
+				font:12px/30px Arial, "Helvetica Neue", Helvetica, sans-serif;
+				position: relative;
+				}
+				*+html header .profile nav{
+							zoom:1;
+							display:inline;
+							}
+				header .profile nav a{
+					color:#545450;
+					margin:0 0 0 20px;
+					padding:0 0 0 20px;
+					}
+					header .profile nav a.subscription{
+						font:14px/30px Arial, "Helvetica Neue", Helvetica, sans-serif;
+						background: url("../assets/subscription-ico.png") 0 40% no-repeat;
+						}
+					header .profile nav a.sign-out{
+						background: url("../assets/sign-out-ico.png") 0 40% no-repeat;
+						}
+					header .profile nav a.help{
+						background: url("../assets/help-ico.png") 0 40% no-repeat;
+						}

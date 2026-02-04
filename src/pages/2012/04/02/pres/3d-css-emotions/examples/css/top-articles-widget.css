@@ -1,0 +1,46 @@
+.top-articles-widget{
+  margin:0 0 15px;
+  
+  }
+  .top-articles-widget article{
+    margin:0 0 15px;
+    }
+    .top-articles-widget article .author{
+      background-color:#000;
+      position:relative;
+      zoom:1;
+      padding:0 10px;
+      color:#fff;
+      font:italic 13px/27px 'PT Sans',Arial,sans-serif;
+      }
+    .top-articles-widget article figure{
+      position:relative;
+      }
+      .top-articles-widget article figure img{
+        display:block;
+        width:100%;
+        }
+      .top-articles-widget article figure figcaption{
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        color:#fff;
+        font:bold 14px/18px 'PT Sans Caption',Arial,sans-serif;
+        padding:3px 0 10px;
+        background-color:rgba(0,0,0,0.6);
+        color:#fff;
+        font:bold 14px/18px 'PT Sans Caption',Arial,sans-serif;
+        }
+        *+html .top-articles-widget article figure figcaption{
+          background:url("../img/dot.png") 0 0 repeat;
+          }
+        .top-articles-widget article figure figcaption .title{
+          padding:0 10px;
+          }
+        * html .top-articles-widget article figure figcaption{
+          filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src='img/dot.png', sizingMethod='scale');
+          cursor:pointer;
+          }
+        
+        

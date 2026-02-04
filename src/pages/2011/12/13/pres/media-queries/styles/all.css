@@ -1,0 +1,314 @@
+/* Global rules: reset */
+@import url('reset.css');
+
+/* Global rules for all media types */
+@media all {
+	/* Common settings */
+	span {
+		white-space: nowrap;
+		}
+	abbr {
+		border-bottom: dotted .1em;
+		}
+	code {
+		font-family: Consolas, monospace;
+		}
+	strong {
+		font-weight: bold;
+		}
+	em, mark, time {
+		font-style: italic;
+		}
+
+	/* General content styling */
+	.general {
+		line-height: 1.5em;
+		}
+	.general h1, .general h2, .general h3, .general h4 {
+		margin: 1.5em 0 .5em;
+		font-weight: bold;
+		}
+	.general h1:first-child, .general h2:first-child, .general h3:first-child, .general h4:first-child {
+		margin-top: 0;
+		}
+	.general h1 {
+		font-size: 1.8em;
+		}
+	.general h2 {
+		font-size: 1.6em;
+		}
+	.general h3 {
+		font-size: 1.4em;
+		}
+	.general h4 {
+		font-size: 1.2em;
+		}
+	.general p {
+		margin-bottom: 1em;
+		}
+	.general ul, .general ol {
+		margin-left: 1.5em;
+		}
+	.general ul {
+		list-style-type: disc;
+		}
+	.general ol {
+		list-style-type: decimal;
+		}
+	.general ul li, .general ol li {
+		margin-bottom: 1em;
+		}
+	.general li > ul, .general li > ol {
+		margin-top: 1em;
+		}
+	.general pre {
+		margin-bottom: 1em;
+		white-space: normal;
+		}
+	.general pre code {
+		display: block;
+		white-space: pre-wrap;
+		}
+	.general table {
+		margin-bottom: 1em;
+		}
+	.general th {
+		font-weight: bold;
+		}
+	.general th, .general td {
+		padding: .25em .5em;
+		text-align: left;
+		vertical-align: top;
+		}
+	.general figure {
+		margin-bottom: 1em;
+		}
+
+	/* The first and the last slides content styling */
+	.lecture-title abbr, .lecture-subtitle abbr, .thanks abbr {
+		border: none;
+		}
+	.author-name {
+		font-style: italic;
+		}
+	.author-contacts li {
+		display: inline;
+		}
+	.author-contacts li:before {
+		content: '| ';
+		}
+	.author-contacts li:first-child:before {
+		content: '';
+		}
+	}
+
+/* Rules for the 'screen' and 'projection' media types */
+@media screen, projection {
+	/* Common settings */
+	html, body {
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		}
+	body {
+		color: #000;
+		background-color: #666;
+		background-image: -moz-linear-gradient(#333, #999);
+		background-image: -webkit-linear-gradient(#333, #999);
+		background-image: -o-linear-gradient(#333, #999);
+		background-image: linear-gradient(#333, #999);
+		font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+		font-size: 24px;
+		}
+	a, a:link, a:visited {
+		color: #900;
+		text-decoration: underline;
+		}
+	a:hover {
+		text-decoration: none;
+		}
+	a:active {
+		color: #f93;
+		}
+
+	/* The whole page */
+	.wrapper {
+		position: relative;
+		top: 3%;
+		width: 96%;
+		height: 94%;
+		min-height: 94%;
+		max-height: 94%;
+		overflow: hidden;
+		margin: auto;
+		border-radius: 30px;
+		box-shadow: rgba(0, 0, 0, .5) 0 0 10px 10px;
+		background: #fff;
+		}
+
+	/* Slide container */
+	.slide {
+		height: 6666px;
+		}
+
+	/* General content styling */
+	.general {
+		padding: 30px 30px 0;
+		}
+	.general h1, .general h2, .general h3, .general h4 {
+		color: #999;
+		}
+	.general code {
+		padding: 0 .3em;
+		background: #f0f0f0;
+		border-radius: .3em;
+		}
+	.general pre {
+		padding: 30px;
+		border: solid 2px #ccc;
+		border-radius: 30px;
+		background-image: -moz-linear-gradient(#fff 75%, #f0f0f0 100%);
+		background-image: -webkit-linear-gradient(#fff 75%, #f0f0f0 100%);
+		background-image: -o-linear-gradient(#fff 75%, #f0f0f0 100%);
+		background-image: linear-gradient(#fff 75%, #f0f0f0 100%);
+		}
+	.general pre code {
+		padding: 0;
+		background: none;
+		}
+	.general table {
+		font-size: .8em;
+		}
+	.general table, .general th, .general td {
+		border: solid 2px #ccc;
+		}
+	.general th {
+		background: #f0f0f0;
+		}
+	.general th code {
+		background: #ccc;
+		}
+
+	/* The first and the last slides content styling */
+	.title-page, .thanks-page {
+		padding: 30px;
+		text-align: center;
+		}
+	.lecture-title {
+		margin-top: .5em;
+		font-weight: bold;
+		font-size: 4em;
+		line-height: 1em;
+		color: #999;
+		text-shadow: 1px 1px 0 #333;
+		}
+	.lecture-subtitle {
+		margin-top: .25em;
+		font-size: 2.5em;
+		line-height: 1em;
+		}
+	.thanks {
+		margin-top: 1em;
+		font-weight: bold;
+		font-size: 3em;
+		line-height: 1em;
+		color: #999;
+		text-shadow: 1px 1px 0 #333;
+		}
+	.about-author {
+		margin-top: 2em;
+		font-size: 1.5em;
+		line-height: 1.5em;
+		}
+
+	/* Some special styles */
+	.accent {
+		font-weight: bold;
+		color: #f60;
+		}
+	.context {
+		color: #ccc;
+		}
+
+	/* Slide number */
+	#slide-number {
+		position: fixed;
+		top: 0;
+		right: 0;
+		padding: 15px 30px;
+		border-radius: 0 0 0 30px;
+		box-shadow: rgba(0, 0, 0, .2) 0 0 5px 5px;
+		color: #fff;
+		background: #900;
+		}
+	}
+
+/* Rules for the 'print' media type */
+@media print {
+	/* Unprintable blocks */
+	.thanks-page, #slide-number {
+		display: none;
+		}
+
+	/* Common settings */
+	body {
+		color: #000;
+		font-family: "Times New Roman", Times, serif;
+		font-size: 12pt;
+		}
+	h1, h2, h3, h4 {
+		font-family: Arial, Helvetica, sans-serif;
+		}
+	a, a:link, a:visited {
+		color: #000;
+		text-decoration: underline;
+		}
+	img {
+		max-width: 100%;
+		}
+
+	/* Slide container */
+	.slide {
+		margin-bottom: 5em;
+		padding-top: 1em;
+		border-top: solid 1pt #000;
+		}
+	.slide:first-child {
+		border: none;
+		}
+
+	/* General content styling */
+	.general pre {
+		padding: 1em;
+		border: solid 1pt #000;
+		border-radius: 1em;
+		}
+	.general table, .general th, .general td {
+		border: solid 1pt #000;
+		}
+
+	/* The first slide content styling */
+	.title-page {
+		line-height: 1.5em;
+		}
+	.lecture-title {
+		font-weight: bold;
+		font-size: 3em;
+		line-height: 1em;
+		}
+	.lecture-subtitle {
+		margin-top: .5em;
+		font-size: 2em;
+		line-height: 1em;
+		}
+	.about-author {
+		margin-top: 2em;
+		font-size: 1.5em;
+		line-height: 1.5em;
+		}
+
+	/* Some special styles */
+	.accent {
+		font-weight: bold;
+		}
+	}

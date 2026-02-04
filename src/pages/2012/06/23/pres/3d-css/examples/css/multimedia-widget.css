@@ -1,0 +1,27 @@
+.multimedia-widget{
+  background-color:#353535;
+  min-height:20px;
+  font:normal 13px/18px 'PT Sans',Arial,sans-serif;
+  vertical-align:bottom;
+  }
+  .multimedia-widget header{
+    padding:10px 15px 0 10px;
+    margin:0 0 15px 0;
+    background-color:#353535;
+    color:#fff;
+    }
+    .multimedia-widget header .title{
+      font:bold 24px/29px 'PT Sans Caption',Arial,sans-serif;
+      }
+    .multimedia-widget header .author{
+      display:inline;
+      font:normal 12px/18px 'PT Sans',Arial,sans-serif;
+      }
+    .multimedia-widget header .time-information{
+      display:inline;
+      font:normal 12px/18px 'PT Sans',Arial,sans-serif;
+      color:#777;
+      }
+      .multimedia-widget header .time-information time{
+        display:inline;
+        }

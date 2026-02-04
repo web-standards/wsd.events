@@ -1,0 +1,316 @@
+.projects-widget{
+	background: #c0c1ba url("../assets/project-bg.png") repeat;
+	padding:0 0 30px;
+	display:none;
+	min-width:960px;
+	}
+	.projects-widget .add-project-form{
+		display:none;
+		width:960px;
+		margin:30px auto 0;
+		text-shadow:0 1px 0 rgba(255,255,255,.25);
+		font:16px/40px Arial, "Helvetica Neue", Helvetica, sans-serif;
+		}
+	.projects-widget .submit{
+		float:left;
+		border-style:none;
+		background: none;
+		overflow:visible;
+		padding:0;
+		margin:0;
+		}
+		.projects-widget .submit span{
+			font:16px/40px Arial, "Helvetica Neue", Helvetica, sans-serif;
+			color:#545450;
+			text-shadow:0 1px 0 rgba(255,255,255,.25);
+			padding:0 0 0 20px;
+			background: url("../assets/submit.png") 0 50% no-repeat;
+			}
+	.projects-widget .cancel{
+		color:#545450;
+		text-decoration:none;
+		margin:0 0 0 20px;
+		float:left;
+		}
+	.projects-widget .add-project-form input{
+		background-color: none;
+		background-color: rgba(84,84,80,.05);
+		float:left;
+		margin:0 20px 0 0;
+		border:1px solid #868684;
+		padding:11px 10px 7px;
+		font:18px/20px Arial, "Helvetica Neue", Helvetica, sans-serif;
+		height:20px;
+		text-shadow:0 1px 0 rgba(255,255,255,.25);
+		color:#545450;
+		}
+		.projects-widget .add-project-form input::-webkit-input-placeholder,
+		.projects-widget .add-project-form input:-ms-input-placeholder,
+		.projects-widget .add-project-form input:-moz-placeholder{
+			color:#545450;
+			}
+	.projects-widget .subscription{
+		background-color: #999;
+		border-bottom:1px solid #898989;
+		white-space:nowrap;
+		}
+		.projects-widget .subscription .wrapper{
+			height:49px;
+			}
+		.projects-widget .subscription .title{
+			display:inline;
+			font:16px/49px Arial, "Helvetica Neue", Helvetica, sans-serif;
+			color:#333;
+			}
+			.projects-widget .subscription .title b{
+				font:italic 16px/49px Georgia, sans-serif;
+				}
+		.projects-widget .subscription .change-subscription-plan{
+			display:inline-block;
+			background: #53534f;
+			background: -moz-linear-gradient(top,  #53534f 0%, #2f2f2c 100%);
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#53534f), color-stop(100%,#2f2f2c));
+			background: -webkit-linear-gradient(top,  #53534f 0%,#2f2f2c 100%);
+			background: -o-linear-gradient(top,  #53534f 0%,#2f2f2c 100%);
+			background: -ms-linear-gradient(top,  #53534f 0%,#2f2f2c 100%);
+			background: linear-gradient(top,  #53534f 0%,#2f2f2c 100%);
+			height:20px;
+			border-radius:10px;
+			color:#ccc;
+			font:12px/20px Arial, "Helvetica Neue", Helvetica, sans-serif;
+			margin:0 10px;
+			padding:0 10px;
+			box-shadow:0 1px 0 0 rgba(0,0,0,.1);
+			}
+	.projects-widget .wrapper{
+		width:960px;
+		margin:0 auto;
+		font-size:0;
+		line-height:0;
+		text-shadow:0 1px 0 rgba(255,255,255,.25);
+		}
+		.projects-widget .to-do-metr{
+			margin:10px 0 0 10px;
+			color:#666;
+			display:inline-block;
+			font:italic 14px/30px Georgia, sans-serif;
+			position: relative;
+			float:right;
+			}
+			*+html .projects-widget .to-do-metr{
+				display:inline;
+				zoom:1;
+				}
+			.projects-widget .to-do-metr .progressbar{
+				width:98px;
+				border:1px solid #545450;
+				background-color: #545450;
+				height:3px;
+				border-radius:2px;
+				display:inline-block;
+				position: relative;
+				font-size:0;
+				line-height:0;
+				margin:0 10px 0 0;
+				top:-3px;
+				}
+				*+html .projects-widget .to-do-metr .progressbar{
+					zoom:1;
+					display:inline;
+					}
+				.projects-widget .to-do-metr .progressbar .done{
+					background-color: #FFF;
+					border-radius:2px;
+					height:3px;
+					font-size:0;
+					line-height:0;
+					overflow:hidden;
+					display:block;
+					}
+			.projects-widget .to-do-metr b{
+				color:#333;
+				font:16px/30px Arial, "Helvetica Neue", Helvetica, sans-serif;
+				}
+		.projects-widget .add-project{
+			vertical-align:bottom;
+			display:inline-block;
+			text-shadow:none;
+			
+			width:120px;
+			height:30px;
+			margin:0 20px 0 0;
+			border-radius:15px;
+			
+			background: #53534f;
+			background: -moz-linear-gradient(top,  #53534f 0%, #2f2f2c 100%);
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#53534f), color-stop(100%,#2f2f2c));
+			background: -webkit-linear-gradient(top,  #53534f 0%,#2f2f2c 100%);
+			background: -o-linear-gradient(top,  #53534f 0%,#2f2f2c 100%);
+			background: -ms-linear-gradient(top,  #53534f 0%,#2f2f2c 100%);
+			background: linear-gradient(top,  #53534f 0%,#2f2f2c 100%);
+
+			
+			color:#ccc;
+			
+			text-decoration:none;
+			position: relative;
+			box-shadow:0 1px 0 0 rgba(0,0,0,.1);
+
+			opacity:1;
+			-webkit-translate:opacity .4s ease;
+			-moz-translate:opacity .4s ease;
+			-ms-translate:opacity .4s ease;
+			-o-translate:opacity .4s ease;
+			translate:opacity .4s ease;
+			cursor:pointer;
+
+			}
+			.projects-widget .add-project.active{
+				opacity:.5;
+				cursor:default;
+				}
+			.projects-widget .add-project b{
+				text-align:center;
+				padding:0 0 0 20px;
+				height:30px;
+				display:block;
+				font:16px/30px Arial, "Helvetica Neue", Helvetica, sans-serif;
+				background: url("../assets/add-project-ico.png") 9px 50% no-repeat;
+				}
+			*+html .projects-widget .add-project{
+				display:inline;
+				margin:0 19px 0 0;
+				zoom:1;
+				}
+			*+html .projects-widget .add-project b{
+				display:inline;
+				zoom:1;
+				}
+			.projects-widget .add-project:hover{
+				background-color: #adadab;
+				background-color: rgba(82,82,79,.13);
+				border-color:#8a8a87;
+				}
+		.projects-widget .project-list{
+			vertical-align:bottom;
+			display:inline-block;
+			position: relative;
+			width:820px;
+			font:12px/14px Arial, "Helvetica Neue", Helvetica, sans-serif;
+			color:#545450;
+			}
+			*+html .projects-widget .project-list{
+				display:inline;
+				zoom:1;
+				}
+			.projects-widget .line{
+				zoom:1;
+				position: relative;
+				}
+				.projects-widget .line:after{
+					content:".";
+					text-indent:-9000px;
+					overflow:hidden;
+					display:block;
+					clear:both;
+					font-size:0;
+					line-height:0;
+					height:0;
+					}
+				.projects-widget article{
+					padding:10px;
+					float:left;
+					margin:20px 0 0 20px;
+					width:238px;
+					height:58px;
+					border:1px solid #a4a4a1;
+					background-color: #b4b4b3;
+					background-color: rgba(82,82,79,.07);
+					position: relative;
+					}
+					.projects-widget article:first-child{
+						margin:20px 0 0;
+						}
+						*+html .projects-widget article{
+							jscript: expression(function(t) {
+					        	if(typeof t.p == "undefined"){
+				  					if(t.previousSibling==null){
+										t.runtimeStyle.marginLeft = "0";
+										}
+				  					t.p = 1;
+						          	}
+								}(this));
+							}         
+					.projects-widget article:hover{
+						background-color: #adadab;
+						background-color: rgba(82,82,79,.13);
+						border-color:#8a8a87;
+						}
+					.projects-widget article .new{
+						position: absolute;
+						top:-7px;
+						right:-7px;
+						height:30px;
+						min-width:20px;
+						text-align:center;
+						border-radius:15px;
+						padding:0 5px;
+						white-space:nowrap;
+
+						background: #eb2323;
+						background: -moz-linear-gradient(top, #f42d2d 0%, #d81010 100%);
+						background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f42d2d), color-stop(100%,#d81010));
+						background: -webkit-linear-gradient(top, #f42d2d 0%,#d81010 100%); 
+						background: -o-linear-gradient(top, #f42d2d 0%,#d81010 100%);
+						background: -ms-linear-gradient(top, #f42d2d 0%,#d81010 100%);
+						background: linear-gradient(top, #f42d2d 0%,#d81010 100%);
+
+						box-shadow:0 1px 0 0 rgba(0,0,0,.1);
+
+						font:18px/30px Arial, "Helvetica Neue", Helvetica, sans-serif;
+						text-shadow:0 1px 0 rgba(0,0,0,.1);
+
+						color:#fff;
+						}
+					.projects-widget article .errors{
+						font:12px/14px Arial, "Helvetica Neue", Helvetica, sans-serif;
+						}
+					.projects-widget article .users{
+						position: absolute;
+						bottom:10px;
+						left:10px;
+						font:12px/14px Arial, "Helvetica Neue", Helvetica, sans-serif;
+						padding:0 0 0 20px;
+						background: url("../assets/peoples-ico.png") 0 40% no-repeat;
+						}
+					.projects-widget article .title{
+						width:238px;
+						overflow:hidden;
+						position: relative;
+						zoom:1;
+						font:18px/22px Arial, "Helvetica Neue", Helvetica, sans-serif;
+						white-space:nowrap;
+						-o-text-overflow:ellipsis;
+						text-overflow:ellipsis;
+						}
+					.projects-widget article nav{
+						display:none;
+						position: absolute;
+						right:10px;
+						bottom:10px;
+						}
+						.projects-widget article:hover nav{
+							display:block;
+							}
+						.projects-widget article nav a{
+							font:12px/14px Arial, "Helvetica Neue", Helvetica, sans-serif;
+							margin:0 0 0 20px;
+							padding:0 0 0 16px;
+							color:#545450;
+							}
+							.projects-widget article nav a.go-to-project{
+								background: url("../assets/url-ico.png") 0 50% no-repeat;
+								}
+							.projects-widget article nav a.edit{
+								background: url("../assets/edit-ico.png") 0 50% no-repeat;
+								}

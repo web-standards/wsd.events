@@ -1,0 +1,96 @@
+@import url(reset.css);
+@import url(fonts.css);
+
+BODY {
+	padding:3em 5em;
+	border-left:1em solid #C00;
+	background:#FFF;
+	font:15px/1.7 'Myriad Pro','Trebuchet MS',sans-serif;
+	}
+A {
+	color:#C00;
+	text-decoration:none;
+	}
+
+/* Slide
+---------------------------------------- */
+.slide {
+	margin:0 0 3em;
+	width:45em;
+	}
+	.slide .title {
+		padding:0;
+		margin:0 0 1em;
+		letter-spacing:-1px;
+		font:1.8em/1 Cuprum,sans-serif;
+		color:#777;
+		}
+.slide:before {
+	position:absolute;
+	margin:3.6em 0 0 -3em;
+	counter-increment:paging;
+	content:counter(paging,decimal-leading-zero);
+	color:#CCC;
+	}
+
+/* Content
+---------------------------------------- */
+.slide .content {
+	}
+	.slide .content P {
+		margin:0 0 1.7em;
+		}
+	.slide .content STRONG {
+		font-weight:bold;
+		}
+	.slide .content EM {
+		font-style:italic;
+		}
+
+/* Lists */
+.slide .content OL,
+.slide .content UL {
+	margin:0 0 1.7em;
+	counter-reset:list;
+	}
+	.slide .content OL .inactive,
+	.slide .content UL .inactive {
+		color:#BBB;
+		}
+	.slide .content OL LI:before {
+		width:2em;
+		color:#BBB;
+		text-align:right;
+		counter-increment:list;
+		content:counter(list)'\002E\00A0\00A0';
+		}
+	.slide .content UL LI {
+		}
+	.slide .content UL LI:before {
+		color:#BBB;
+		content:'\2022\00A0\00A0';
+		}
+
+/* Code */
+.slide .content PRE {
+	margin:-.2em 0 1.7em;
+	counter-reset:code;
+	font-family:Consolas,monospace;
+	}
+	.slide .content PRE CODE:before {
+		color:#CCC;
+		counter-increment:code;
+		content:counter(code,decimal-leading-zero)'.\00A0';
+		}
+	.slide .content PRE .inactive {
+		color:#BBB;
+		}
+	.slide .content PRE EM {
+		font-style:normal;
+		color:#C00;
+		}
+
+/* Image */
+.slide .background {
+	width:48em;
+	}

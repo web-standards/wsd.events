@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html lang="ru-RU">
+<head>
+	<meta charset="windows-1251">
+	<title>Local Storage API | Web Standards Days</title>
+	<link rel="stylesheet" href="css/styles.css" media="projection,screen" />
+	<script type="text/javascript" src="js/webstorage.js"></script>
+</head>
+<body>
+	<section class="diary_wrapper">
+
+		<h1>Мой Дневничок</h1>
+		<a class="say" href="#/say/">Расказать</a>
+		<form method="post" action="#/add_post/" class="diary_post_form closed">
+			<fieldset>
+				<label for="message">Дорогой дневничок, </label>
+				<textarea name="message" id="message" cols="50" rows="10"></textarea>
+				<button class="post_message" type="submit">Вот!</button>
+
+				<button class="cancel">А впрочем, нет, это &mdash; <span>секрет</span>!</button>
+			</fieldset>
+		</form>
+		<section class="diary_entrys"></section>
+	</section>
+</body>
+</html>

@@ -1,0 +1,522 @@
+<!DOCTYPE HTML>
+<html lang="ru-RU">
+<head>
+	<title>Всё, что вы делаете в Vim неправильно</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=1274, user-scalable=no">
+	<link rel="stylesheet" href="themes/mirror/styles/style.css">
+	<link rel="stylesheet" href="css/vimi.css">
+</head>
+<body class="list">
+
+	<header class="caption">
+		<h1>Всё,&nbsp;что&nbsp;вы&nbsp;делаете&nbsp;в&nbsp;Vim неправильно</h1>
+		<p class="author"><a href="https://twitter.com/miripiruni">Вячеслав Олиянчук</a>, <span>Я</span>ндекс</p>
+	</header>
+
+	<div class="slide bg" title="Настроечная таблица" id="ueit"><div>
+			<section>
+				<img src="pictures/ueit.jpg">
+			</section>
+	</div></div>
+
+	<div class="slide" title="Представлюсь" id="about-me"><div>
+			<section>
+				<header>
+					<h2>Вячеслав Олиянчук</h2>
+				</header>
+				<p>
+					<ul>
+						<li><a href="https://twitter.com/miripiruni">twitter.com/miripiruni</a>
+							<li>Разработчик интерфейсов</li>
+							<li>Пишу XSL, JS, CSS и письма</li>
+						</ul>
+					</p>
+				</section>
+		</div></div>
+
+	<div class="slide" title="Cover" id="Cover"><div>
+			<section>
+				<header>
+					<h2>Всё, что вы делаете в Vim неправильно</h2>
+				</header>
+				<p class="author"><a href="https://twitter.com/miripiruni">miripriuni</a>@WebStandardsDays</p>
+			</section>
+	</div></div>
+
+	<div class="slide shout" title="Pathogen" id="Pathogen"><div>
+			<section>
+				<header>
+					<h2>1. Плагины через Pathogen</h2>
+				</header>
+			</section>
+	</div></div>
+
+	<div class="slide shout" title="Vundle" id="Vundle"><div>
+			<section>
+				<header>
+					<h2 class="good"><a href="http://github.com/gmarik/vundle">github.com/gmarik/vundle</a></h2>
+				</header>
+			</section>
+	</div></div>
+
+	<div class="slide" title="Vundle-vimrc" id="Vundle-vimrc"><div>
+			<section>
+				<header>
+					<h2 class="good"><a href="http://github.com/gmarik/vundle">github.com/gmarik/vundle</a></h2>
+				</header>
+				<div>
+					<b>.vimrc:</b>
+				</div>
+				<pre>
+					<code>set runtimepath+=~/vimi/.vim/bundle/vundle/</code>
+					<code>call vundle#rc()</code>
+					<code>Bundle 'git://github.com/miripiruni/vimi-snippets.git'</code>
+					<code>Bundle 'gmarik/vundle'</code>
+					<code>Bundle 'FuzzyFinder'</code>
+				</pre>
+			</section>
+	</div></div>
+
+	<div class="slide" title="Vundle-commands" id="Vundle-commands"><div>
+			<section>
+				<header>
+					<h2 class="good"><a href="http://github.com/gmarik/vundle">github.com/gmarik/vundle</a></h2>
+				</header>
+				<ul>
+					<li>
+						<kbd>:BundleInstall</kbd>
+					</li>
+					<li>
+						<kbd>:BundleSearch</kbd>
+					</li>
+					<li>
+						<kbd>:BundleClean</kbd>
+					</li>
+				</ul>
+			</section>
+	</div></div>
+
+	<div class="slide" title="Vundle-minuses" id="Vundle-minuses"><div>
+			<section>
+				<header>
+					<h2 class="good"><a href="http://github.com/gmarik/vundle">github.com/gmarik/vundle</a></h2>
+				</header>
+				<ul>
+					<li>Нельзя зафиксировать ревизию подключаемого модуля</li>
+					<li>Не отслеживаются зависимости</li>
+				</ul>
+			</section>
+	</div></div>
+
+	<div class="slide bg" title="Плагины" id="plugins"><div>
+			<section>
+				<img src="pictures/vundle-plugins.png" alt="" />
+			</section>
+	</div></div>
+
+	<div class="slide shout" title="grep" id="grep"><div>
+			<section>
+				<header>
+					<h2>2. grep</h2>
+				</header>
+			</section>
+	</div></div>
+
+	<div class="slide shout" title="betterthangrep" id="betterthangrep"><div>
+			<section>
+				<header>
+					<h2 class="good"><a href="http://betterthangrep.com">BetterThanGrep.com</a></h2>
+				</header>
+			</section>
+	</div></div>
+
+	<div class="slide" title="ack" id="ack"><div>
+			<section>
+				<header>
+					<h2>Используйте Ack</h2>
+				</header>
+				<p>
+					<b>
+						<a class="good" href="http://betterthangrep.com/">betterthangrep.com</a> и
+						<a class="good" href="http://github.com/mileszs/ack.vim">github.com/mileszs/ack.vim</a>
+					</b>
+				</p>
+				<ul>
+					<li>Улучшенный вывод</li>
+					<li>Улучшенная строка запроса</li>
+					<li>Рекурсивный по умолчанию</li>
+					<li>Ищет гораздо быстрее</li>
+					<li>По умолчанию не ищет там, где не нужно искать</li>
+				</ul>
+			</section>
+	</div></div>
+
+	<div class="slide" title="ack скриншот" id="ack-screenshot"><div>
+			<section>
+				<pre class="no-line-numbers">
+					<code><b>$ grep -n todo</b></code>
+					<code>common.js:421: refactoring todo:</code>
+					<code>common.js:469: TODO: the call to toJSON here to ...</code>
+					<code>common.js:602: TODO: handle duplicate strings!</code>
+					<code>application.js:145: //TODO: (LATER) if multiple ...</code>
+					<code> </code>
+					<code><b>$ ack todo</b></code>
+					<code>common.js:</code>
+					<code>    421: refactoring <mark>todo</mark>:</code>
+					<code>    469: <mark>TODO</mark>: the call to toJSON here to turn ...</code>
+					<code>    602: <mark>TODO</mark>: handle duplicate strings!</code>
+					<code>application.js:</code>
+					<code>    145: //<mark>TODO</mark>: (LATER) if multiple fixups go ...</code>
+				</pre>
+			</section>
+	</div></div>
+
+	<div class="slide bg" title="ack vim plugin" id="ack-vim-plugin"><div>
+			<section>
+				<img src="pictures/ack-vim-plugin.png" alt="">
+			</section>
+	</div></div>
+
+	<div class="slide shout" title="ack alias" id="ack-alias"><div>
+			<section>
+				<header><h2 class="good">alias grep='ack'</h2></header>
+			</section>
+	</div></div>
+
+	<div class="slide shout" title="Snipmate" id="Snipmate"><div>
+			<section>
+				<header>
+					<h2>3. Сниппеты в Snipmate</h2>
+				</header>
+			</section>
+	</div></div>
+
+	<div class="slide shout" title="UltiSnips" id="UltiSnips"><div>
+			<section>
+				<header>
+					<h2 class="good"><a href="https://github.com/rygwdn/ultisnips">github.com/rygwdn/UltiSnips</a></h2>
+				</header>
+			</section>
+	</div></div>
+
+	<div class="slide" title="Плейсхолдеры" id="placeholders"><div>
+			<section>
+				<header>
+					<h2>Плейсхолдеры и табстопы</h2>
+				</header>
+				<pre class="code">
+					<code>snippet a</code>
+					<code>&lt;a href="$1"<span>${2: class="<span>${3:link}</span>"}</span>></code>
+					<code>    <span>$0</span></code>
+					<code>&lt;/a></code>
+					<code>endsnippet</code>
+				</pre>
+			</section>
+	</div></div>
+
+	<div class="slide" title="Регулярки" id="regexp"><div>
+			<section>
+				<header>
+					<h2>Регулярные выражения</h2>
+				</header>
+				<pre>
+					<code>snippet title "Titelize in the Transformation"</code>
+					<code>${1:a text} ${1/\w+\s*/\u$0/}</code>
+					<code>endsnippet</code>
+				</pre>
+				<p>Пишем: <code>title&lt;tab>this is a title</code></p>
+				<p>Результат: <code>this is a title This Is A Title</code></p>
+			</section>
+	</div></div>
+
+	<div class="slide" title="Конвертор" id="convertor"><div>
+			<section>
+				<header>
+					<h2>Конвертор сниппетов из TextMate</h2>
+				</header>
+			</section>
+	</div></div>
+
+	<div class="slide shout" title="MacVim" id="MacVim"><div>
+			<section>
+				<header>
+					<h2>4. Монтирование папок</h2>
+				</header>
+			</section>
+	</div></div>
+
+	<div class="slide bg" title="Окружение" id="environment"><div>
+			<section>
+				<img src="pictures/environment.jpg">
+			</section>
+	</div></div>
+
+	<div class="slide" title="Screen" id="Screen"><div>
+			<section>
+				<header>
+					<h2>Screen</h2>
+				</header>
+				<pre class="code">
+					<code>if [ <span>$SHLVL</span> == 1 ]; then</code>
+					<code>  screen -RR -D</code>
+					<code>fi</code>
+				</pre>
+			</section>
+	</div></div>
+
+	<div class="slide shout" title="Поиск" id="search"><div>
+			<section>
+				<header>
+					<h2>5. Поиск через <kbd>/</kbd> и <kbd>?</kbd></h2>
+				</header>
+			</section>
+	</div></div>
+
+	<div class="slide shout" title="Звездочка" id="asteriskos"><div>
+			<section>
+				<header>
+					<h2 class="good"><b>Не забывайте, что есть <kbd>*</kbd> и <kbd>#</kbd></b></h2>
+				</header>
+			</section>
+	</div></div>
+
+	<div class="slide shout" title="Visual mode" id="visual-mode"><div>
+			<section>
+				<header>
+					<h2>6. Выделение текста</h2>
+				</header>
+			</section>
+	</div></div>
+
+	<div class="slide shout" title="для чего?" id="for-what"><div>
+			<section>
+				<header>
+					<h2>6. Выделение текста</h2>
+					<p style="position:absolute; top:65%;left:40%">...для чего?</p>
+				</header>
+			</section>
+	</div></div>
+
+	<div class="slide bg" title="Режимы" id="modes"><div>
+			<section>
+				<img src="pictures/modes.png" alt="">
+			</section>
+	</div></div>
+
+	<div class="slide shout" title="text-objects" id="text-objects"><div>
+			<section>
+				<header>
+					<h2 class="good">:h text-objects</h2>
+				</header>
+			</section>
+	</div></div>
+
+	<div class="slide bg" title="ci" id="ci-gif"><div>
+			<section>
+				<header>
+					<h2>Замена текста</h2>
+				</header>
+				<img src="pictures/text-objects.gif" alt="">
+			</section>
+	</div></div>
+
+	<div class="slide" title="Текстовые объекты" id="operations"><div>
+			<section>
+				<header>
+					<h2>Операции с текстовыми объектами</h2>
+				</header>
+				<p><kbd>действие</kbd> <kbd>область</kbd> <kbd>объект</kbd></p>
+				<table style="width:100%">
+					<tr>
+						<td>
+							Действия:<br>
+							<kbd>c</kbd> заменить<br>
+							<kbd>y</kbd> скопировать<br>
+							<kbd>d</kbd> удалить<br>
+						</td>
+						<td>
+							Области:<br>
+							<kbd>i</kbd> внутри объекта<br>
+							<kbd>а</kbd> включая объект<br>
+						</td>
+						<td>
+							Объекты:<br>
+							<kbd>w</kbd> слово<br>
+							<kbd>t</kbd> тег<br>
+							<kbd>}</kbd> абзац<br>
+							<kbd>"</kbd> текст в кавычках<br>
+							...
+						</td>
+					</tr>
+				</table>
+			</section>
+	</div></div>
+
+	<div class="slide bg" title="Слова" id="words"><div>
+			<section>
+				<header>
+					<h2>Слова</h2>
+				</header>
+				<img src="pictures/words.gif" alt="">
+			</section>
+	</div></div>
+
+	<div class="slide shout" title="Лишние передвижения курсора" id="cursor"><div>
+			<section>
+				<header>
+					<h2>7. Лишние движения курсора</h2>
+				</header>
+			</section>
+	</div></div>
+
+	<div class="slide" title="ACI" id="ACI"><div>
+			<section>
+				<header>
+					<h2 class="good">Быстрый способ начать писать ;)</h2>
+				</header>
+				<b>Используйте:</b>
+				<ul>
+					<li>для текущей строки — <kbd>A</kbd> <kbd>C</kbd> <kbd>I</kbd></li>
+					<li>волшебное — <kbd>gi</kbd></li>
+					<li>для определенных точек — фичу <kbd>:marks</kbd></li>
+				</ul>
+			</section>
+	</div></div>
+
+	<div class="slide shout" title="tab" id="tab"><div>
+			<section>
+				<header>
+					<h2>8. GUI табы/вкладки</h2>
+				</header>
+			</section>
+	</div></div>
+
+	<div class="slide" title="spit-buffer-tab" id="spit-buffer-tab"><div>
+			<section>
+				<header>
+					<h2>Используйте смесь сплитов и&nbsp;буферов</h2>
+				</header>
+				<p>
+					<b>Домашнее чтение:</b>
+				</p>
+				<ul>
+					<li><kbd>:h ls</kbd></li>
+					<li><kbd>:h sp</kbd> <kbd>:h vsp</kbd></li>
+					<li><kbd>:h CTRL_W</kbd></li>
+					<li><kbd>:h bufdo</kbd></li>
+				</ul>
+			</section>
+	</div></div>
+
+	<div class="slide shout" title="Стрелочки" id="arrows"><div>
+			<section>
+				<header>
+					<h2>9. Клавиши стрелок</h2>
+				</header>
+			</section>
+	</div></div>
+
+	<div class="slide" title="Nightmare mode" id="Nightmare-mode"><div>
+			<section>
+				<header>
+					<h2>Nightmare mode</h2>
+				</header>
+				<pre>
+					<code>noremap &lt;Up> &lt;NOP></code>
+					<code>noremap &lt;Down> &lt;NOP></code>
+					<code>noremap &lt;Left> &lt;NOP></code>
+					<code>noremap &lt;Right> &lt;NOP></code>
+				</pre>
+			</section>
+	</div></div>
+
+	<div class="slide shout" title="Esc" id="Esc"><div>
+			<section>
+				<header>
+					<h2>10. Привычка нажимать на Esc</h2>
+				</header>
+			</section>
+	</div></div>
+
+	<div class="slide shout" title="Ctrl-[" id="Ctrl-c"><div>
+			<section>
+				<header>
+					<h2 class="good">Используйте <kbd>Ctrl [</kbd><br>или <kbd>Ctrl C</kbd></h2>
+				</header>
+			</section>
+	</div></div>
+
+	<div class="slide" title="История" id="history"><div>
+			<section>
+			</section>
+	</div></div>
+
+	<div class="slide bg" title="Привычки" id="habbits"><div>
+			<section>
+				<img src="pictures/sitges.jpg" alt="" />
+				<!-- © http://www.flickr.com/photos/work2survive/489777436/sizes/o/in/photostream/ -->
+			</section>
+	</div></div>
+
+	<div class="slide" title="Blank" id="Blank"><div>
+			<section>
+			</section>
+	</div></div>
+
+	<div class="slide shout" title="Github" id="Github"><div>
+			<section>
+				<header>
+					<h2>
+						<img class="github-octocat" src="pictures/github.gif" width="100" height="100" alt="github"
+						><a class="good" href="http://github.com/miripiruni/vimi" target="_blank">/miripiruni/vimi</a>
+					</h2>
+				</header>
+			</section>
+	</div></div>
+
+	<div class="slide" title="vimi" id="vimi"><div>
+			<section>
+				<header>
+					<h2 class="good">
+						<img class="github-octocat" src="pictures/github.gif" width="75" height="75" alt="github"
+						><a class="good" href="http://github.com/miripiruni/vimi">/miripiruni/vimi</a>
+					</h2>
+				</header>
+				<ol>
+					<li>Дотошно откомментированный .vimrc</li>
+					<li>Набор полезных vim-фич</li>
+					<li>Предустановленные плагины для веб-разработки</li>
+					<li>Удобные шорткаты</li>
+					<li>Круглосуточный support ;-)</li>
+				</ol>
+			</section>
+	</div></div>
+
+	<div class="slide" title="Спасибо!" id="tnx"><div>
+			<section>
+				<header>
+					<h2>Спасибо за внимание!</h2>
+				</header>
+				<table class="links">
+					<tr>
+						<th>Читайте и пробуйте:</th>
+						<td><a href="http://github.com/miripiruni/vimi">github.com/miripiruni/vimi</a></td>
+					</tr>
+					<tr>
+						<th>Спрашивайте, не кусаюсь:</th>
+						<td><a href="https://twitter.com/miripiruni/">twitter.com/miripiruni</a></td>
+					</tr>
+					<tr>
+						<th>Смотрите презентацию:</th>
+						<td><a href="http://miripiruni.org/vim-in-yandex/">miripiruni.org/vimi/</a></td>
+					</tr>
+				</table>
+				<p class="author">Вячеслав Олиянчук, <span>Я</span>ндекс</p>
+			</section>
+	</div></div>
+
+	<div class="progress"><div></div></div>
+	<script src="scripts/script-adfea3dfb6.js"></script>
+</body>
+</html>

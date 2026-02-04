@@ -1,0 +1,31 @@
+.press-reliase-widget{
+  background-color:#fff;
+  margin:0 0 15px 0;
+  padding:0 10px;
+  border-top:4px solid #a4a380;
+  }
+  .press-reliase-widget .title{
+    font:bold 18px/20px 'PT Sans',Arial,sans-serif;
+    padding:12px 0 13px;
+    background-color:#fff;
+    position:relative;
+    z-index:2;
+    }
+    .press-reliase-widget .title a{
+      color:#000;
+      }
+  .press-reliase-widget article{
+    position:relative;
+    z-index:1;
+    top:-1px;
+    padding:10px 0;
+    border-top:1px dotted #b7b7b7;
+    }
+    .press-reliase-widget article .sub-title{
+      font:bold 16px/18px 'PT Sans',Arial,sans-serif;
+      }
+    .press-reliase-widget article .abstract{
+      color:#000;
+      font:italic 13px/15px 'PT Sans',Arial,sans-serif;
+      padding:10px 20px 0;
+      }

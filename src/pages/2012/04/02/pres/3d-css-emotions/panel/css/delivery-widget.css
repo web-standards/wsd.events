@@ -1,0 +1,82 @@
+.delivery-widget{
+  margin:-40px 2px 20px;
+  background:url("../img/stripes.png") 50% 0 no-repeat;
+  padding:110px 0 0;
+  zoom:1;
+  position: relative;
+
+  }
+  .delivery-widget .title{
+    width:320px;
+    margin:0 auto 40px;
+    color:#dd1309;
+    font:bold 18px/25px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    }
+  .delivery-widget .illustration{
+    margin:0 auto 20px;
+    width:238px;
+    height:178px;
+    border:1px solid #405d94;
+    background-color:#FFF;
+    line-height:178px;
+    }
+    .delivery-widget .illustration img{
+      vertical-align:bottom;
+      line-height:178px;
+      }
+  .delivery-widget .delivery-form{
+    
+    }
+    .delivery-widget .delivery-form fieldset{
+      border-top:1px solid #cfd6e4;
+      text-align:left;
+      }
+      .delivery-widget .delivery-form fieldset input{
+        background-color:#f7f7f7;
+        border:1px solid #bfbfbf;
+        -webkit-border-radius:3px;
+        border-radius:3px;
+        font:bold 14px/16px "Helvetica Neue",Helvetica,Arial,sans-serif;
+        color:#999;
+        height:14px;
+        padding:7px 5px 7px 5px;
+        width:318px;
+        margin:5px 0 5px 170px;
+
+        -webkit-box-shadow:inset 0 2px 0 0 #dedede;
+        -moz-box-shadow:inset 0 2px 0 0 #dedede;
+        -o-box-shadow:inset 0 2px 0 0 #dedede;
+        box-shadow:inset 0 2px 0 0 #dedede;
+        }
+      .delivery-widget .delivery-form fieldset .line{
+        position:relative;
+        }
+      .delivery-widget .delivery-form fieldset label{
+        clear:left;
+        width:110px;
+        text-align:right;
+        color:#666;
+        padding:0 30px;
+        display:block;
+        position:absolute;
+        font:bold 14px/40px "Helvetica Neue",Helvetica,Arial,sans-serif;
+        }
+      .delivery-widget .delivery-form fieldset .title{
+        text-align:center;
+        font:bold 18px/25px "Helvetica Neue",Helvetica,Arial,sans-serif;
+        color:#333;
+        margin:40px 0 0;
+        width:auto;
+        }
+      .delivery-widget .delivery-form fieldset p{
+        color:#999;
+        font:bold 14px/25px "Helvetica Neue",Helvetica,Arial,sans-serif;
+        margin:0 0 20px;
+        text-align:center;
+        }
+    .delivery-widget .delivery-form fieldset.submit{
+      text-align:center;
+      border-style:none;
+      padding-top:5px;
+      margin-top:40px;
+      }

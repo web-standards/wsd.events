@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+
+<html lang="ru-RU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>CSS-селекторы. Вопросы производительности</title>
+<link rel="stylesheet" href="_styles/all.css">
+<!--[if lt IE 9]><script src="_scripts/html5.js"></script><![endif]-->
+</head>
+
+<body>
+<div class="wrapper">
+
+<article class="slide intro" id="1">
+<hgroup>
+<h1 class="lecture-title"><abbr title="Cascading Style Sheets" lang="en-US">CSS</abbr>-селекторы</h1>
+<h2 class="lecture-subtitle">Вопросы производительности</h2>
+</hgroup>
+<footer class="about-author vcard">
+<p class="author-name fn n"><span class="first-name">Артемий</span> <span class="last-name">Ломов</span></p>
+<ul class="author-contacts">
+<li><a href="http://lomov.ru/" class="url">http://lomov.ru/</a></li>
+<li><a href="mailto:artemy@lomov.ru" class="email">artemy@lomov.ru</a></li>
+</ul>
+</footer>
+</article>
+
+<article class="slide general" id="2">
+<h3>Спецификации</h3>
+<ul>
+<li><a href="http://www.w3.org/TR/REC-CSS1-961217"><abbr title="Cascading Style Sheets Level&#160;1" lang="en-US">CSS1</abbr></a></li>
+<li><a href="http://www.w3.org/TR/1998/REC-CSS2-19980512/"><abbr title="Cascading Style Sheets Level&#160;2" lang="en-US">CSS2</abbr></a> и&#160;долгожданная рекомендация <a href="http://www.w3.org/TR/CSS21/"><abbr title="Cascading Style Sheets Level&#160;2 Revision&#160;1" lang="en-US">CSS2.1</abbr></a></li>
+<li><a href="http://www.w3.org/TR/css3-selectors/" lang="en-US">Selectors Level&#160;3</a></li>
+<li><a href="http://www.w3.org/TR/selectors4/" lang="en-US">Selectors Level&#160;4</a></li>
+</ul>
+</article>
+
+<article class="slide topic-intro" id="3">
+<h2 class="topic-title">Особенности обработки веб-страниц</h2>
+</article>
+
+<article class="slide general bulky" id="4">
+<h3>Как браузер обрабатывает загружаемую страницу?</h3>
+<ul>
+<li>Отображение веб-страниц осуществляется <em class="accent">в&#160;потоковом режиме</em></li>
+<li>Стилевые правила применяются к&#160;каждому элементу <em class="accent">сразу&#160;же</em> после его создания внутри <abbr title="Document Object Model" lang="en-US">DOM</abbr></li>
+<li>Вот <a href="../examples/reflow-repaint/!!!-readme.html">наглядная демонстрация</a> загрузки страницы в&#160;искусственно замедленном режиме</li>
+</ul>
+</article>
+
+<article class="slide general bulky" id="5">
+<h3>Основания для пересчета и&#160;возможной перерисовки</h3>
+<ul>
+<li>Первичное отображение документа</li>
+<li>Изменение размеров</li>
+<li>Изменения внутри <abbr title="Document Object Model" lang="en-US">DOM</abbr></li>
+<li>Изменение стилей</li>
+<li>Срабатывание по&#160;таймеру</li>
+</ul>
+</article>
+
+<article class="slide general super-extra-bulky" id="6">
+<h3>Отрисовка страницы при первоначальной загрузке</h3>
+<pre>
+<code>&lt;body&gt;</code>
+<code>	&lt;div id="page"&gt;</code>
+<code>		&lt;header id="intro"&gt;</code>
+<code>			&lt;h1&gt;…&lt;/h1&gt;</code>
+<code>			&lt;p&gt;…&lt;/p&gt;</code>
+<code>		&lt;/header&gt;</code>
+<code>		…</code>
+<code>	&lt;/div&gt;</code>
+<code>&lt;/body&gt;</code>
+</pre>
+</article>
+
+<article class="slide general super-extra-bulky" id="7">
+<h3>Вначале нет ничего, кроме «пустого» элемента <code>&lt;body&gt;</code></h3>
+<pre>
+<code class="accent">&lt;body&gt;</code>
+<code class="context">	&lt;div id="page"&gt;</code>
+<code class="context">		&lt;header id="intro"&gt;</code>
+<code class="context">			&lt;h1&gt;…&lt;/h1&gt;</code>
+<code class="context">			&lt;p&gt;…&lt;/p&gt;</code>
+<code class="context">		&lt;/header&gt;</code>
+<code class="context">		…</code>
+<code class="context">	&lt;/div&gt;</code>
+<code class="accent">&lt;/body&gt;</code>
+</pre>
+</article>
+
+<article class="slide general super-extra-bulky" id="8">
+<h3>Затем появляется «пустой» элемент <code>&lt;div&gt;</code></h3>
+<pre>
+<code>&lt;body&gt;</code>
+<code class="accent">	&lt;div id="page"&gt;</code>
+<code class="context">		&lt;header id="intro"&gt;</code>
+<code class="context">			&lt;h1&gt;…&lt;/h1&gt;</code>
+<code class="context">			&lt;p&gt;…&lt;/p&gt;</code>
+<code class="context">		&lt;/header&gt;</code>
+<code class="context">		…</code>
+<code class="accent">	&lt;/div&gt;</code>
+<code>&lt;/body&gt;</code>
+</pre>
+</article>
+
+<article class="slide general super-extra-bulky" id="9">
+<h3>После этого&#160;— «пустой» элемент <code>&lt;header&gt;</code></h3>
+<pre>
+<code>&lt;body&gt;</code>
+<code>	&lt;div id="page"&gt;</code>
+<code class="accent">		&lt;header id="intro"&gt;</code>
+<code class="context">			&lt;h1&gt;…&lt;/h1&gt;</code>
+<code class="context">			&lt;p&gt;…&lt;/p&gt;</code>
+<code class="accent">		&lt;/header&gt;</code>
+<code class="context">		…</code>
+<code>	&lt;/div&gt;</code>
+<code>&lt;/body&gt;</code>
+</pre>
+</article>
+
+<article class="slide general super-extra-bulky" id="10">
+<h3>Получили контент элемента <code>&lt;h1&gt;</code>, перерисовали требуемое</h3>
+<pre>
+<code>&lt;body&gt;</code>
+<code>	&lt;div id="page"&gt;</code>
+<code>		&lt;header id="intro"&gt;</code>
+<code class="accent">			&lt;h1&gt;…&lt;/h1&gt;</code>
+<code class="context">			&lt;p&gt;…&lt;/p&gt;</code>
+<code>		&lt;/header&gt;</code>
+<code class="context">		…</code>
+<code>	&lt;/div&gt;</code>
+<code>&lt;/body&gt;</code>
+</pre>
+</article>
+
+<article class="slide general super-extra-bulky" id="11">
+<h3>Получили контент элемента <code>&lt;p&gt;</code>, вновь перерисовали требуемое</h3>
+<pre>
+<code>&lt;body&gt;</code>
+<code>	&lt;div id="page"&gt;</code>
+<code>		&lt;header id="intro"&gt;</code>
+<code>			&lt;h1&gt;…&lt;/h1&gt;</code>
+<code class="accent">			&lt;p&gt;…&lt;/p&gt;</code>
+<code>		&lt;/header&gt;</code>
+<code class="context">		…</code>
+<code>	&lt;/div&gt;</code>
+<code>&lt;/body&gt;</code>
+</pre>
+</article>
+
+<article class="slide general" id="12">
+<h3>Как анализируются <abbr title="Cascading Style Sheets" lang="en-US">CSS</abbr>-селекторы?</h3>
+<pre>
+<code>.content ul li <span class="context">{…}</span></code>
+</pre>
+<p>Обычно <em class="accent">справа налево!</em></p>
+<p style="text-align: right; font-size: 6em; line-height: 1;"><span lang="ar" dir="rtl">القاعدة</span></p>
+</article>
+
+<article class="slide general" id="13">
+<h3>Является&#160;ли текущий элемент пунктом списка?</h3>
+<pre>
+<code><span class="context">.content ul</span> <span class="accent">li</span> <span class="context">{…}</span></code>
+</pre>
+</article>
+
+<article class="slide general" id="14">
+<h3>Если&#160;да, следуем вверх по&#160;<abbr title="Document Object Model" lang="en-US">DOM</abbr>, ищем элемент <code>&lt;ul&gt;</code></h3>
+<pre>
+<code><span class="context">.content</span> <span class="accent">ul</span> li <span class="context">{…}</span></code>
+</pre>
+</article>
+
+<article class="slide general" id="15">
+<h3>Нашли? Отлично! Следуем еще выше в&#160;поисках элемента с&#160;классом <code>content</code></h3>
+<pre>
+<code><span class="accent">.content</span> ul li <span class="context">{…}</span></code>
+</pre>
+</article>
+
+<article class="slide topic-intro" id="16">
+<h2 class="topic-title">Быстрые и&#160;медленные</h2>
+</article>
+
+<article class="slide general" id="17">
+<h3>Эффективность простых селекторов</h3>
+<p><em class="accent">Самые быстрые</em>&#160;— такие&#160;селекторы, которые требуют <em class="accent">меньшего количества проверок</em>:</p>
+<pre>
+<code><span class="accent">#intro</span> <span class="context">{…}</span></code>
+<code><span class="accent">.content</span> <span class="context">{…}</span></code>
+</pre>
+</article>
+
+<article class="slide general bulky" id="18">
+<h3>Более медленные простые селекторы</h3>
+<p>В&#160;порядке <em class="accent">снижения</em> производительности, обусловленного <em class="accent">возрастанием количества</em> или <em class="accent">усложнением</em> проверок:</p>
+<pre>
+<code><span class="accent">div</span> <span class="context">{…}</span></code>
+<code><span class="accent">*</span> <span class="context">{…}</span></code>
+<code><span class="accent">[title]</span> <span class="context">{…}</span></code>
+<code><span class="accent">:hover</span> <span class="context">{…}</span></code>
+</pre>
+</article>
+
+<article class="slide general bulky" id="19">
+<h3>Комбинированные селекторы</h3>
+<p>В&#160;порядке <em class="accent">снижения</em> производительности, обусловленного <em class="accent">возрастанием количества</em> проверок:</p>
+<pre>
+<code><span class="accent">h1 + p</span> <span class="context">{…}</span></code>
+<code><span class="accent">ul > li</span> <span class="context">{…}</span></code>
+<code><span class="accent">pre code</span> <span class="context">{…}</span></code>
+</pre>
+</article>
+
+<article class="slide general bulky" id="20">
+<h3>Внешность обманчива</h3>
+<pre>
+<code>#intro <span class="accent">*</span> <span class="context">{…}</span></code>
+</pre>
+<figure><img src="_images/slowpoke.png" alt="Slowpoke is&#160;too&#160;slow" width="271" height="267"></figure>
+</article>
+
+<article class="slide general" id="21">
+<h3>Избыточность не&#160;нужна!</h3>
+<pre>
+<code>header#intro <span class="context">{…}</span></code>
+</pre>
+<div class="arrow"></div>
+<pre>
+<code><span class="accent">#intro</span> <span class="context">{…}</span></code>
+</pre>
+<p>Это <em>почти</em> полностью справедливо и&#160;для селекторов по&#160;классу</p>
+</article>
+
+<article class="slide general" id="22">
+<h3>Еще один примерчик устранения избыточности</h3>
+<pre>
+<code>body ul.navigation li a <span class="context">{…}</span></code>
+</pre>
+<div class="arrow"></div>
+<pre>
+<code><span class="accent">.navigation a</span> <span class="context">{…}</span></code>
+</pre>
+</article>
+
+<article class="slide general bulky" id="23">
+<h3>Общие рекомендации</h3>
+<ul>
+<li>Не&#160;используйте <code>*</code> справа</li>
+<li>Делайте селекторы максимально специфичными</li>
+<li>Устраняйте избыточные уточнения</li>
+<li>Вместо комбинированных селекторов используйте селекторы по&#160;классу</li>
+</ul>
+<p><abbr title="смотрите">См.</abbr>&#160;<a href="https://developers.google.com/speed/docs/best-practices/rendering#UseEfficientCSSSelectors">Google Page Speed</a></p>
+</article>
+
+<article class="slide general extra-bulky" id="24">
+<h3>Впрочем, чувство меры не&#160;помешает</h3>
+<p><a href="https://developers.google.com/speed/docs/best-practices/rendering#UseEfficientCSSSelectors" lang="en-US">Google Page Speed</a> рекомендует:</p>
+<pre>
+<code>ul li <span class="context">{color: blue;}</span></code>
+<code>ol li <span class="context">{color: red;}</span></code>
+</pre>
+<div class="arrow"></div>
+<pre>
+<code><span class="accent">.unordered-list-item</span> <span class="context">{color: blue;}</span></code>
+<code><span class="accent">.ordered-list-item</span> <span class="context">{color: red;}</span></code>
+</pre>
+<p>Семантика?.. Объем <abbr title="HyperText Markup Language" lang="en-US">HTML</abbr>-кода?..</p>
+</article>
+
+<article class="slide topic-intro" id="25">
+<h2 class="topic-title">Занятные истории</h2>
+</article>
+
+<article class="slide general" id="26">
+<h3>И&#160;последние станут первыми?</h3>
+<p>Странное, казалось&#160;бы, дело:</p>
+<ul>
+<li><code>E:first-child</code>&#160;— определен в&#160;<abbr title="Cascading Style Sheets Level&#160;2" lang="en-US">CSS2</abbr></li>
+<li><code>E:last-child</code>&#160;— описан только в&#160;<abbr title="Cascading Style Sheets Level&#160;3" lang="en-US">CSS3</abbr> и&#160;реализован в&#160;браузерах намного позже</li>
+</ul>
+<p>Второй при <em class="accent">честной</em> реализации требует больше ресурсов</p>
+</article>
+
+<article class="slide general" id="27">
+<h3><code>E:last-child</code> не&#160;везде реализован по-честному</h3>
+<p>Можно сравнить <a href="../examples/reflow-repaint/!!!-readme.html">отрисовку меню навигации в&#160;замедленном режиме</a> в&#160;различных браузерах</p>
+<ul>
+<li><em class="accent">Честные</em> реализации: <span lang="en-US">Firefox</span>, <abbr title="Internet Explorer" lang="en-US">IE</abbr></li>
+<li><em class="accent">Не&#160;вполне честные</em>: <span lang="en-US">Chrome</span>, <span lang="en-US">Safari</span>, <span lang="en-US">Opera</span></li>
+</ul>
+</article>
+
+<article class="slide general extra-bulky" id="28">
+<h3>Все&#160;лучшее&#160;— детям?</h3>
+<p>Давно и&#160;успешно реализованы:</p>
+<ul>
+<li><code>div p</code>&#160;— селектор потомка</li>
+<li><code>div &gt; p</code>&#160;— селектор дочернего элемента, то&#160;есть прямого потомка</li>
+</ul>
+<p>Рассчитывать&#160;ли нам на&#160;<em class="accent">селектор предка</em> или селектор родителя?</p>
+<ul>
+<li><code>div:has(p)</code>&#160;— существует в&#160;<a href="http://jquery.com/" lang="en-US">jQuery</a></li>
+</ul>
+</article>
+
+<article class="slide general extra-bulky" id="29">
+<h3>Как это могло&#160;бы реализоваться в&#160;<abbr title="Cascading Style Sheets" lang="en-US">CSS</abbr>? Код разметки</h3>
+<pre>
+<code>&lt;section class="content"&gt;</code>
+<code>	&lt;h1&gt;Заголовок&lt;/h1&gt;</code>
+<code>	&lt;p&gt;Текст первого абзаца.&lt;/p&gt;</code>
+<code>	…</code>
+<code>	&lt;p&gt;Текст еще какого-то абзаца с&#160;<span class="accent">&lt;code&gt;фрагментом кода&lt;/code&gt;</span>.&lt;/p&gt;</code>
+<code>	…</code>
+<code>&lt;/section&gt;</code>
+</pre>
+</article>
+
+<article class="slide general" id="30">
+<h3>Как это могло&#160;бы реализоваться в&#160;<abbr title="Cascading Style Sheets" lang="en-US">CSS</abbr>? Код таблицы стилей</h3>
+<pre>
+<code>.content<span class="accent">:has(code)</span> {</code>
+<code>	line-height: 1.5;</code>
+<code> }</code>
+</pre>
+</article>
+
+<article class="slide general" id="31">
+<h3>Условия установления применимости правила</h3>
+<ul>
+<li>Обнаружен первый вложенный элемент <code>&lt;code&gt;</code></li>
+<li>Полностью загружены все элементы, находящиеся внутри <code>&lt;section&gt;</code></li>
+</ul>
+</article>
+
+<article class="slide general" id="32">
+<h3>Дополнительные проблемы</h3>
+<ul>
+<li>Как только встретится <code>&lt;code&gt;</code>, потребуется перерисовать <code>&lt;section&gt;</code></li>
+<li>Применение правила затрагивает наследуемые свойства <span class="accent">&#8658;</span> производится перерасчет и&#160;перерисовка каждого потомка элемента <code>&lt;section&gt;</code></li>
+</ul>
+</article>
+
+<article class="slide general" id="33">
+<h3>Целевые объекты селектора</h3>
+<p>По&#160;умолчанию <a href="http://dev.w3.org/csswg/selectors4/#subject" lang="en-US">subjects</a> определяются крайней справа частью селектора:</p>
+<pre>
+<code>.content pre <span class="accent">code</span> <span class="context">{…}</span></code>
+</pre>
+</article>
+
+<article class="slide general bulky" id="34">
+<h3>Принудительное переопределение целевых объектов в&#160;<abbr title="Cascading Style Sheets Level&#160;4" lang="en-US">CSS4</abbr></h3>
+<pre>
+<code>ol &gt; <span class="accent">li:only-child</span> <span class="context">{…}</span></code>
+</pre>
+<div class="arrow"></div>
+<pre>
+<code><span class="accent">ol!</span> &gt; li:only-child <span class="context">{…}</span></code>
+</pre>
+<p>Одна и&#160;та&#160;же структура <abbr title="Document Object Model" lang="en-US">DOM</abbr>-дерева, <em>но</em>&#160;различные целевые объекты</p>
+</article>
+
+<article class="slide topic-intro" id="35">
+<h2 class="topic-title">С&#160;цифрами на&#160;руках</h2>
+</article>
+
+<article class="slide general extra-bulky" id="36">
+<h3>Как выяснить порядок различий?</h3>
+<ul>
+<li>Сгенерируем несколько документов</li>
+<li>Структура документов&#160;— <em class="accent">«как в&#160;жизни»</em></li>
+<li>Разметка&#160;— одна, внешний вид&#160;— один, наборы селекторов&#160;— разные</li>
+<li>Объем каждого файла&#160;— чуть более <em class="accent">300&#160;килобайт</em></li>
+<li>Каждый документ содержит <em class="accent">3000</em>&#160;элементов <code>&lt;p&gt;</code></li>
+<li>Каждая таблица стилей включает <em class="accent">300</em>&#160;<abbr title="Cascading Style Sheets" lang="en-US">CSS</abbr>-правил</li>
+</ul>
+</article>
+
+<article class="slide general super-extra-bulky" id="37">
+<h3>Устройство тестовых файлов</h3>
+<pre class="super-extra-bulky">
+<code>&lt;div id="d1" class="d1"&gt;</code>
+<code>	&lt;section id="s1" class="s1"&gt;</code>
+<code>		&lt;article id="a1" class="a1"&gt;</code>
+<code>			<span class="accent">&lt;p id="p1" class="p1"&gt;&lt;span&gt;Текст</span> <span class="accent">абзаца 1.&lt;/span&gt;&lt;/p&gt;</span></code>
+<code>			<span class="context">… еще 9</span></code>
+<code>		&lt;/article&gt;</code>
+<code>		<span class="context">… еще 9</span></code>
+<code>	&lt;/section&gt;</code>
+<code>	<span class="context">… еще 5</span></code>
+<code>&lt;/div&gt;</code>
+<code><span class="context">… еще 4</span></code>
+</pre>
+</article>
+
+<article class="slide general super-extra-bulky" id="38">
+<h3>Методика измерения</h3>
+<p>Перед таблицей стилей, внутри <code>&lt;head&gt;…&lt;/head&gt;</code>:</p>
+<pre>
+<code>var <span class="accent">$startTime</span> = (new Date()).getTime();</code>
+</pre>
+<p>Перед закрывающим тегом <code>&lt;/body&gt;</code>:</p>
+<pre>
+<code>window.<span class="accent">onload</span> = function() {</code>
+<code>	var <span class="accent">$processDuration</span> = (new Date()).getTime() - <span class="accent">$startTime</span>;</code>
+<code>}</code>
+</pre>
+</article>
+
+<article class="slide general extra-bulky" id="39">
+<h3>Более тонкий инструмент&#160;— профайлеры</h3>
+<ul>
+<li>Позволяют <em class="accent">детально протоколировать</em> все события, связанные с&#160;обработкой кода разметки и&#160;таблиц стилей, с&#160;применением селекторов, с&#160;перерасчетом и&#160;перерисовкой элементов страницы</li>
+<li>Существуют для <a href="http://my.opera.com/dragonfly/blog/style-profiler-preview/" lang="en-US">Opera</a> (недавно интегрирован в&#160;<a href="http://my.opera.com/dragonfly/blog/experimental-build-with-integrated-style-profiler-preview/">экспериментальную сборку <span lang="en-US">Dragonfly</span></a>) и&#160;для <a href="https://bugs.webkit.org/show_bug.cgi?id=74004" lang="en-US">Webkit</a></li>
+<li>Интересно <em class="accent">сопоставить результаты</em> наших тестов с&#160;тем, что фиксируется профайлерами</li>
+</ul>
+</article>
+
+<article class="slide general bulky" id="40">
+<h3>Обыденные случаи</h3>
+<table>
+<col style="width: 10%;">
+<col style="width: 50%;">
+<col span="2" style="width: 20%;">
+<tr>
+<th>№</th>
+<th>Вид теста</th>
+<th>Время загрузки</th>
+<th>Время обработки <abbr title="Cascading Style Sheets" lang="en-US">CSS</abbr></th>
+</tr>
+<tr>
+<td><a href="../examples/tests/00.html">00</a></td>
+<td class="accent">Без стилей</td>
+<td class="accent">100%</td>
+<td class="accent">100%</td>
+</tr>
+<tr>
+<td><a href="../examples/tests/01.html">01</a></td>
+<td><code>#foo</code></td>
+<td>108%</td>
+<td>116%</td>
+</tr>
+<tr>
+<td><a href="../examples/tests/02.html">02</a></td>
+<td><code>.foo</code></td>
+<td>108%</td>
+<td>121%</td>
+</tr>
+<tr>
+<td><a href="../examples/tests/03.html">03</a></td>
+<td><code>.foo &gt; span</code></td>
+<td>129%</td>
+<td>641%</td>
+</tr>
+<tr>
+<td><a href="../examples/tests/04.html">04</a></td>
+<td><code>.foo span</code></td>
+<td>133%</td>
+<td>655%</td>
+</tr>
+<tr>
+<td><a href="../examples/tests/05.html">05</a></td>
+<td><code>.foo *</code></td>
+<td>164%</td>
+<td>1081%</td>
+</tr>
+</table>
+</article>
+
+<article class="slide general bulky" id="41">
+<h3>Красивости <abbr title="Cascading Style Sheets Level&#160;3" lang="en-US">CSS3</abbr></h3>
+<table>
+<col style="width: 10%;">
+<col style="width: 50%;">
+<col span="2" style="width: 20%;">
+<tr>
+<th>№</th>
+<th>Вид теста</th>
+<th>Время загрузки</th>
+<th>Время обработки <abbr title="Cascading Style Sheets" lang="en-US">CSS</abbr></th>
+</tr>
+<tr>
+<td><a href="../examples/tests/06.html">06</a></td>
+<td><code>.bar p:last-child</code></td>
+<td>116%</td>
+<td>541%</td>
+</tr>
+<tr>
+<td><a href="../examples/tests/07.html">07</a></td>
+<td><code>.bar p:nth-child(-11n+10)</code></td>
+<td>118%</td>
+<td>602%</td>
+</tr>
+<tr>
+<td><a href="../examples/tests/08.html">08</a></td>
+<td><code>.bar p:nth-of-type(-11n+10)</code></td>
+<td>117%</td>
+<td>546%</td>
+</tr>
+</table>
+</article>
+
+<article class="slide general" id="42">
+<h3>Из&#160;серии «За&#160;гранью добра…»</h3>
+<table>
+<col style="width: 10%;">
+<col style="width: 70%;">
+<col style="width: 20%;">
+<tr>
+<th>№</th>
+<th>Вид теста</th>
+<th>Время загрузки</th>
+</tr>
+<tr>
+<td><a href="../examples/tests/09.html">09</a></td>
+<td><code>body.page div section article[class*="number"] :last-child *</code></td>
+<td>238%</td>
+</tr>
+<tr>
+<td><a href="../examples/tests/10.html">10</a></td>
+<td><code>* * * [class*="number"] :last-child *</code></td>
+<td>307%</td>
+</tr>
+</table>
+</article>
+
+<article class="slide general super-extra-bulky" id="43">
+<h3>Поведение избранных тестов в&#160;разных браузерах</h3>
+<table>
+<col style="width: 10%;">
+<col style="width: 30%;">
+<col style="width: 15%;">
+<col style="width: 15%;">
+<col style="width: 15%;">
+<col style="width: 15%;">
+<tr>
+<th>№</th>
+<th>Вид теста</th>
+<th lang="en-US">Opera&#160;12</th>
+<th lang="en-US"><abbr title="Firefox">FF</abbr>&#160;12</th>
+<th lang="en-US"><abbr title="Firefox">FF</abbr>&#160;13</th>
+<th lang="en-US">Chrome&#160;19</th>
+</tr>
+<tr>
+<td><a href="../examples/tests/00.html">00</a></td>
+<td class="accent">Без стилей</td>
+<td class="accent">100%</td>
+<td class="accent">100%</td>
+<td class="accent">100%</td>
+<td class="accent">100%</td>
+</tr>
+<tr>
+<td><a href="../examples/tests/01.html">01</a></td>
+<td><code>#foo</code></td>
+<td>108%</td>
+<td>109%</td>
+<td>107%</td>
+<td>104%</td>
+</tr>
+<tr>
+<td><a href="../examples/tests/02.html">02</a></td>
+<td><code>.foo</code></td>
+<td>108%</td>
+<td>111%</td>
+<td>109%</td>
+<td>102%</td>
+</tr>
+<tr>
+<td><a href="../examples/tests/05.html">05</a></td>
+<td><code>.foo *</code></td>
+<td>164%</td>
+<td>271%</td>
+<td>116%</td>
+<td>112%</td>
+</tr>
+<tr>
+<td><a href="../examples/tests/09.html">09</a></td>
+<td><code>body.page div section article[class*="number"] :last-child *</code></td>
+<td>238%</td>
+<td>489%</td>
+<td>446%</td>
+<td>897%</td>
+</tr>
+<tr>
+<td><a href="../examples/tests/10.html">10</a></td>
+<td><code>* * * [class*="number"] :last-child *</code></td>
+<td>307%</td>
+<td>662%</td>
+<td>593%</td>
+<td>1135%</td>
+</tr>
+</table>
+</article>
+
+<article class="slide topic-intro" id="44">
+<h2 class="topic-title">Краткие выводы</h2>
+</article>
+
+<article class="slide general" id="45">
+<h3>С&#160;одной стороны…</h3>
+<ul>
+<li>«Хорошие» селекторы: <em class="accent">почти незаметный вклад</em> в&#160;«торможение» даже при изрядном количестве правил</li>
+<li>«Плохие» селекторы: способны <em class="accent">замедлить обработку таблицы стилей в&#160;разы</em></li>
+<li>Одно правило с&#160;«плохим» селектором порой <em class="accent">сто&#769;ит сотни правил</em> с&#160;«хорошими»</li>
+</ul>
+</article>
+
+<article class="slide general bulky" id="46">
+<h3>С&#160;другой стороны…</h3>
+<ul>
+<li>Максимально достижимая экономия в&#160;реальной практике&#160;— <em class="accent">десятки миллисекунд</em></li>
+<li>Бескомпромиссная погоня за&#160;производительностью может <em class="accent">повредить здравому смыслу</em></li>
+<li>Не&#160;надо совсем отказываться от&#160;ресурсоемких селекторов&#160;— нужно просто использовать&#160;их <em class="accent">благоразумно</em></li>
+</ul>
+</article>
+
+<article class="slide topic-intro" id="47">
+<h2 class="topic-title">Пара частностей</h2>
+</article>
+
+<article class="slide general" id="48">
+<h3>Идентификаторы или классы?</h3>
+<ul>
+<li>Одинаковая производительность</li>
+<li>У&#160;селектора по&#160;классу меньшая специфичность</li>
+<li><code>id</code> уникален</li>
+</ul>
+<p>Что именно использовать? <em class="accent">Решайте сами</em> в&#160;зависимости от&#160;задачи!</p>
+</article>
+
+<article class="slide general" id="49">
+<h3>Вполне нормальная практика</h3>
+<pre>
+<code><span class="accent">.content h1</span> {</code>
+<code>	…</code>
+<code>	}</code>
+<code><span class="accent">.content p</span> {</code>
+<code>	…</code>
+<code>	}</code>
+</pre>
+</article>
+
+<article class="slide general extra-bulky" id="50">
+<h3>Ссылки</h3>
+<ul>
+<li><a href="http://web-standards.ru/articles/parent-selector/">«Почему у&#160;нас нет селектора по&#160;родителю»</a> (Джонатан Снук)</li>
+<li><a href="http://speedupyourwebsite.ru/books/speed-up-your-website/">«Разгони свой сайт»</a> и&#160;<a href="http://speedupyourwebsite.ru/books/reactive-websites/">«Реактивные веб-сайты»</a> (Николай Мациевский)</li>
+<li><a href="http://stevesouders.com/efws/" lang="en-US">“Even Faster Web Sites”</a> (<span lang="en-US">Steve Souders</span>)
+<li><a href="https://developer.mozilla.org/en/Writing_Efficient_CSS/" lang="en-US">“Writing Efficient <abbr title="Cascading Style Sheets" lang="en-US">CSS</abbr>”</a> (<span lang="en-US">David Hyatt</span>)
+<li><a href="http://csswizardry.com/2011/09/writing-efficient-css-selectors/" lang="en-US">“Writing Efficient <abbr title="Cascading Style Sheets">CSS</abbr> Selectors”</a> (<span lang="en-US">Harry Roberts</span>)
+</ul>
+</article>
+
+<article class="slide thanks" id="51">
+<h2 class="thanks-title" lang="en-US">Спасибо за&#160;внимание!</h2>
+<footer class="about-author vcard">
+<p class="author-name fn n"><span class="first-name">Артемий</span> <span class="last-name">Ломов</span></p>
+<ul class="author-contacts">
+<li><a href="http://lomov.ru/" class="url">http://lomov.ru/</a></li>
+<li><a href="mailto:artemy@lomov.ru" class="email">artemy@lomov.ru</a></li>
+</ul>
+</footer>
+</article>
+
+</div>
+<div id="slide-number"></div>
+<script src="_scripts/switcher.js"></script>
+</body>
+
+</html>

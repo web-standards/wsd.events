@@ -1,0 +1,285 @@
+.game-lightbox-widget{
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	width:100%;
+	border-bottom:1px solid #c2c2c2;
+	padding:0 20px 35px;
+	font:bold 18px/25px "Helvetica Neue",Helvetica,Arial,sans-serif;
+	color:#333;
+	background-color:#fff;
+	background-color:rgba(255,255,255,.95);
+	z-index:1000;
+	text-align:center;
+
+	visibility:hidden;
+	}
+	.game-lightbox-widget figure{
+		margin:20px 20px 0 0;
+		display:inline-block;
+		zoom:1;
+		position:relative;
+		vertical-align:top;
+		
+		}
+		.game-lightbox-widget figure img{
+			margin-left:-10px;
+			display:block;
+			}
+		.game-lightbox-widget figure i{
+			font:bold normal 24px/24px "Helvetica Neue",Helvetica,Arial,sans-serif;
+			color:#dd1309;
+			display:block;
+			margin:0 0 20px;
+			}
+		.game-lightbox-widget figure small{
+			display:block;
+			font:bold 14px/18px "Helvetica Neue",Helvetica,Arial,sans-serif;
+			color:#666;
+			}
+		.game-lightbox-widget figure b{
+			display:inline-block;
+			font:bold 32px/37px "Helvetica Neue",Helvetica,Arial,sans-serif;
+			}
+			.game-lightbox-widget figure b.points{
+				padding-right:10px;
+				background: url("../img/messages-ico.png") 100% 5px no-repeat;
+				}
+	.game-lightbox-widget .leaderboard{
+		display:inline-block;
+		zoom:1;
+		position:relative;
+		text-align:left;
+		width:300px;
+		vertical-align:top;
+		margin:20px 0 30px;
+		}
+		.game-lightbox-widget .leaderboard nav{
+			float:right;
+			margin: 20px 0;
+			visibility:hidden;
+			}
+			.game-lightbox-widget .leaderboard nav a{
+				white-space:nowrap;
+
+				-webkit-border-radius:5px;
+				border-radius:5px;
+
+				font:bold 12px/25px "Helvetica Neue",Helvetica,Arial,sans-serif;
+				color:#666;
+				background-color:#435e91;
+				padding:0 10px;
+
+				border:1px solid #c1c1c1;
+
+				background-color:#dcdcdc;
+
+				-webkit-box-shadow:inset 0 2px 0 0 #f4f4f4, 0 1px 2px 0 rgba(0,0,0,.25);
+				box-shadow:inset 0 2px 0 0 #f4f4f4, 0 1px 2px 0 rgba(0,0,0,.25);
+
+				width:2px;
+				height:22px;
+				overflow:hidden;
+				text-indent:-9000px;
+				float:left;
+				margin:-2px 0 0 5px;
+			}
+			.game-lightbox-widget .leaderboard nav .prev{
+				background:#dcdcdc url("../img/arrow-left.gif") 50% 50% no-repeat;
+				background: url("../img/arrow-left.gif") 50% 50% no-repeat,-webkit-gradient(linear, 0% 0%, 0% 100%, from(#e8e8e8), to(#d2d2d2));
+				background: url("../img/arrow-left.gif") 50% 50% no-repeat,-webkit-linear-gradient(top, #e8e8e8, #d2d2d2);
+				background: url("../img/arrow-left.gif") 50% 50% no-repeat,-moz-linear-gradient(top, #e8e8e8, #d2d2d2);
+				background: url("../img/arrow-left.gif") 50% 50% no-repeat,-ms-linear-gradient(top, #e8e8e8, #d2d2d2);
+				background: url("../img/arrow-left.gif") 50% 50% no-repeat,-o-linear-gradient(top, #e8e8e8, #d2d2d2);
+				background: url("../img/arrow-left.gif") 50% 50% no-repeat,linear-gradient(top, #e8e8e8, #d2d2d2);
+				}
+			.game-lightbox-widget .leaderboard nav .next{
+				background:#dcdcdc url("../img/arrow-right.gif") 50% 50% no-repeat;
+				background: url("../img/arrow-right.gif") 50% 50% no-repeat,-webkit-gradient(linear, 0% 0%, 0% 100%, from(#e8e8e8), to(#d2d2d2));
+				background: url("../img/arrow-right.gif") 50% 50% no-repeat,-webkit-linear-gradient(top, #e8e8e8, #d2d2d2);
+				background: url("../img/arrow-right.gif") 50% 50% no-repeat,-moz-linear-gradient(top, #e8e8e8, #d2d2d2);
+				background: url("../img/arrow-right.gif") 50% 50% no-repeat,-ms-linear-gradient(top, #e8e8e8, #d2d2d2);
+				background: url("../img/arrow-right.gif") 50% 50% no-repeat,-o-linear-gradient(top, #e8e8e8, #d2d2d2);
+				background: url("../img/arrow-right.gif") 50% 50% no-repeat,linear-gradient(top, #e8e8e8, #d2d2d2);
+				}
+			.game-lightbox-widget .leaderboard nav .date{
+				float:left;
+				color:#666;
+				margin:0 10px 0 0;
+				font:bold 14px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
+				}
+		.game-lightbox-widget .leaderboard .title{
+			color:#dd1309;
+			font:bold 18px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
+			float:left;
+			margin: 20px 0;
+			}
+		.game-lightbox-widget .leaderboard .friend-list-widget .user-list{
+			height:320px;
+			clear:both;
+			margin-bottom:0;
+			}
+			.game-lightbox-widget .leaderboard .friend-list-widget{
+				margin-bottom:0;
+				}
+		.game-lightbox-widget .leaderboard .friend-list-widget .user-list ul{
+			
+			}
+			.game-lightbox-widget .leaderboard .friend-list-widget .user-list ul li{
+				margin-left:1px;
+				}
+				.game-lightbox-widget .leaderboard .friend-list-widget .user-list ul li:first-child{
+					border-bottom:1px solid #dbdbdb;
+					padding-bottom:8px;
+					}
+					.game-lightbox-widget .leaderboard .friend-list-widget .user-list ul li:first-child strong{
+						margin-top:7px;
+						font:bold 11px/13px "Helvetica Neue",Helvetica,Arial,sans-serif;
+						color:#666;
+						}
+						.game-lightbox-widget .leaderboard .friend-list-widget .user-list ul li:first-child strong .prize{
+							color:#333;
+							display:inline-block;
+							background:url("../img/messages-ico.png") 0 50% no-repeat;
+							padding:0 0 0 10px;
+							}
+						.game-lightbox-widget .leaderboard .friend-list-widget .user-list ul li:first-child strong .time-left{
+							color:#333;
+							}
+					.game-lightbox-widget .leaderboard .friend-list-widget .user-list ul li:first-child .user{
+						}
+						.game-lightbox-widget .leaderboard .friend-list-widget .user-list ul li:first-child .user .name{
+							font:bold 16px/18px "Helvetica Neue",Helvetica,Arial,sans-serif;
+							color:#dd1309;
+							}
+						.game-lightbox-widget .leaderboard .friend-list-widget .user-list ul li:first-child .user .avatar{
+							width:50px;
+							height:50px;
+							}
+					.game-lightbox-widget .leaderboard .friend-list-widget .user-list ul li:first-child .points{
+						font:bold 14px/16px "Helvetica Neue",Helvetica,Arial,sans-serif;
+						}
+					.game-lightbox-widget .leaderboard .friend-list-widget .user-list ul li:first-child .place{
+						color:#dd1309;
+						font:bold 18px/50px "Helvetica Neue",Helvetica,Arial,sans-serif;
+						}
+				.game-lightbox-widget .leaderboard .friend-list-widget .user-list ul li .points{
+					float:right;
+					color:#333;
+					font:bold 12px/14px "Helvetica Neue",Helvetica,Arial,sans-serif;
+					text-align:right;
+					padding:1px 15px 1px 0;
+					background:url("../img/points-ico.png") 100% 50% no-repeat;
+					}
+				.game-lightbox-widget .leaderboard .friend-list-widget .user-list ul li .place{
+					float:left;
+					width:30px;
+					height:32px;
+					text-align:center;
+					color:#666;
+					font:bold 14px/30px "Helvetica Neue",Helvetica,Arial,sans-serif;
+					}
+				.game-lightbox-widget .leaderboard .friend-list-widget .user-list ul li .user{
+					}
+					.game-lightbox-widget .leaderboard .friend-list-widget .user-list ul li .user .name{
+						color:#333;
+						margin-bottom:14px;
+						}
+					.game-lightbox-widget .leaderboard .friend-list-widget .user-list ul li .user .adr{
+						font-size:11px;
+						}
+		.game-lightbox-widget .leaderboard .profile{
+			height:30px;
+			padding:9px;
+			background-color: #f5f5f5;
+			background-color:rgba(102,102,102,.05);
+			border: 1px solid #dcdcdc;
+			position:relative;
+			display: block;
+			color:#333;
+			font-size:0;
+			line-height:0;
+
+			-webkit-border-radius:3px;
+			-moz-border-radius:3px;
+			-ms-border-radius:3px;
+			-o-border-radius:3px;
+			border-radius:3px;
+			}
+			.game-lightbox-widget .leaderboard .profile:after{
+				content:".";
+				display: block;
+				height:0;
+				line-height:0;
+				font-size:0;
+				text-indent:-9000px;
+				overflow: hidden;
+				clear: both;
+				}
+			.game-lightbox-widget .leaderboard .profile .place{
+				float:left;
+				font:bold 14px/30px "Helvetica Neue",Helvetica,Arial,sans-serif;
+				margin:0 10px 0 0;
+				color:#333;
+				}
+			.game-lightbox-widget .leaderboard .profile img{
+			    width:30px;
+			    height:30px;
+				float:left;
+				margin: 0 10px 0 0;
+				}
+				body .game-lightbox-widget .leaderboard .unreaded img{
+					margin:-1px 9px 0 -1px;
+					border:1px solid #dd1309;
+					}
+		.game-lightbox-widget .leaderboard .profile .name{
+			font:bold 14px/16px "Helvetica Neue",Helvetica,Arial,sans-serif;
+			white-space:nowrap;
+			vertical-align:top;
+			}
+		.game-lightbox-widget .leaderboard .profile .you{
+			display:block;
+			font:bold 11px/14px "Helvetica Neue",Helvetica,Arial,sans-serif;
+			color:#999;
+			vertical-align:top;
+			}
+		.game-lightbox-widget .leaderboard .profile .messages{
+			font:bold 12px/16px "Helvetica Neue",Helvetica,Arial,sans-serif;
+			float:right;
+			height:16px;
+			background:url("../img/messages-ico.png") 100% 50% no-repeat;
+			padding: 0 10px 0 0;
+			}
+			body .game-lightbox-widget .leaderboard .unreaded .messages{
+				color:#dd1309;
+				background-image: url("../img/unread-messages-ico.png");
+				}
+	.game-lightbox-widget .statistic{
+		clear: both;
+		width:547px;
+		margin:0 auto 30px;
+		border: 1px solid #bebebe;
+		text-align: left;
+		padding:15px;
+		font:bold 16px/30px "Helvetica Neue",Helvetica,Arial,sans-serif;
+		color:#666;
+		overflow:hidden;
+		zoom:1;
+		position: relative;
+		-webkit-border-radius:3px;
+		-moz-border-radius:3px;
+		-ms-border-radius:3px;
+		-o-border-radius:3px;
+		border-radius:3px;
+		}
+		.game-lightbox-widget .statistic .points{
+			float:right;
+			color:#333;
+			text-align:right;
+			padding:0 17px;
+			background: url("../img/messages-ico.png") 100% 50% no-repeat;
+			}
+		.game-lightbox-widget .statistic a{
+			color:#dd1309;
+			}

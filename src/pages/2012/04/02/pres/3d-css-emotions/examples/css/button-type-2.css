@@ -1,0 +1,18 @@
+.button-type-2{
+  background:url("../img/button-bg.png") 0 0 repeat-x;
+  height:24px;
+  font: normal 13px/24px 'PT Sans',Arial,sans-serif;
+  color:#fff;
+  padding:0 10px;
+  border-left:1px solid #333333;
+  border-right:1px solid #333333;
+  display:inline-block;
+  }
+  * html .button-type-2{
+    display:inline;
+    zoom:1;
+    }
+  *+html .button-type-2{
+    display:inline;
+    zoom:1;
+    }

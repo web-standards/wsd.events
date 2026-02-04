@@ -1,0 +1,30 @@
+footer{
+	position: absolute;
+	width:960px;
+	left:50%;
+	bottom:0;
+	margin:0 0 0 -480px;
+	padding:10px 0 15px;
+	height:25px;
+	color:#545450;
+	text-shadow:0 1px 0 rgba(255,255,255,.5);
+	font:12px/25px Arial, "Helvetica Neue", Helvetica, sans-serif;
+	}
+	footer .copyright{
+		float:left;
+		}
+	footer nav{
+		float:right;
+		width:700px;
+		}
+		footer nav a{
+			text-decoration:none;
+			color:#545450;
+			float:left;
+			margin:0 20px 0 0;
+			}
+		footer nav a.rss{
+			float:right;
+			background: url("../assets/rss-ico.png") 0 45% no-repeat;
+			padding:0 0 0 20px;
+			}

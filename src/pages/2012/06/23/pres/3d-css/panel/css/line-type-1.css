@@ -1,0 +1,13 @@
+.line-type-1{
+  margin:40px 20px;
+  border-top:1px solid #f6c4c1;
+  position:relative;
+  height:0;
+  }
+  .line-type-1 span{
+    display:inline-block;
+    position:relative;
+    top:-20px;
+    background-color:#FFF;
+    padding:0 10px;
+    }

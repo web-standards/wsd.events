@@ -1,0 +1,13 @@
+.no-errors-widget{
+	text-align:center;
+	margin:65px 0 0;
+	}
+	.no-errors-widget .title{
+		font:italic 36px/36px Georgia, sans-serif;
+		color:#545450;
+		margin:25px 0 0;
+		}
+	.no-errors-widget p{
+		font:italic 24px/30px Georgia, sans-serif;
+		color:#999;
+		}

@@ -1,0 +1,28 @@
+#cover h1 {
+    font-size: 3em;
+    line-height: 1;
+    margin-bottom: 1em;
+}
+
+h1 {
+    font-size: 2em;
+
+}
+
+.small {
+    font-size: 0.8em;
+    color: #999;
+}
+
+.footnote {
+    position: absolute;
+    bottom: 2em;
+}
+
+ul li {
+    text-indent: -1em;
+}
+
+ul li::before {
+    content:"—";
+}

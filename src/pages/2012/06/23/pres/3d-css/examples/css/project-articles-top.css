@@ -1,0 +1,126 @@
+.project-articles-top{
+  position:relative;
+  margin:0 0 15px;
+  background-color:#FFF;
+  border-top:4px solid #b5b5b5;
+  padding:0 10px;
+  }
+  .project-articles-top .show-more{
+    font:italic 13px/33px 'PT Sans',Arial,sans-serif;
+    }
+  .project-articles-top .title{
+    font: bold 18px/20px 'PT Sans',Arial,sans-serif;
+    padding: 12px 0 13px;
+    background-color: white;
+    position: relative;
+    z-index: 2;
+    }
+    .project-articles-top .title a{
+      color:#000;
+      }
+  .project-articles-top article{
+    padding:10px 0 0;
+    position:relative;
+    border-bottom:1px dotted #b7b7b7;
+    }
+    .project-articles-top article time{
+      font:11px/15px 'PT Sans',Arial,sans-serif;
+      color:#777;
+      }
+    * html .project-articles-top article{
+      zoom:1;
+      }
+    *+html .project-articles-top article{
+      zoom:1;
+      }
+    .project-articles-top article:after{
+      content:".";
+      display:block;
+      height:0;
+      font-size:0;
+      line-height:0;
+      overflow:hidden;
+      clear:both;
+      text-indent:-9000px;
+      }
+    .project-articles-top article .type{
+      margin-top:5px;
+      font:italic 13px/18px 'PT Sans',Arial,sans-serif;
+      color:#000;
+      }
+    .project-articles-top article .author{
+      margin:0;
+      padding:0;
+      color:#000;
+      font:italic 13px/15px 'PT Sans',Arial,sans-serif;
+      overflow:hidden;
+      }
+    .project-articles-top article.top .abstract{
+      font:bold 14px/18px 'PT Sans Caption',Arial,sans-serif;
+      }
+    .project-articles-top article .abstract{
+      margin:0 0 10px;
+      color:#0056a4;
+      font:13px/15px 'PT Sans',Arial,sans-serif;
+      overflow:hidden;
+      }
+      .lang-ru .project-articles-top .updated .abstract:after{
+        content:"обновлено";
+        }
+      .lang-uk .project-articles-top .updated .abstract:after{
+        content:"оновлено";
+        }
+      .project-articles-top .updated .abstract .updated-ie-after-fix,
+      .project-articles-top .updated .abstract:after{
+        color:#fff;
+        background-color:#b7b7b7;
+        font:normal 11px/15px 'PT Sans',Arial,sans-serif;
+        padding:0 3px;
+        margin:0 0 0 5px;
+        text-transform:uppercase;
+        }
+        * html .lang-ru .project-articles-top .updated .abstract{
+          zoom: expression(function(t){
+              t.runtimeStyle.zoom = 1;
+              var after = document.createElement('span');
+              after.className = 'updated-ie-after-fix';
+              after.appendChild(document.createTextNode("обновлено"));
+              t.appendChild(after);
+            }(this));
+          }
+        *+html .lang-ru .project-articles-top .updated .abstract{
+          zoom: expression(function(t){
+              t.runtimeStyle.zoom = 1;
+              var after = document.createElement('span');
+              after.className = 'updated-ie-after-fix';
+              after.appendChild(document.createTextNode("обновлено"));
+              t.appendChild(after);
+            }(this));
+          }
+        * html .lang-uk .project-articles-top .updated .abstract{
+          zoom: expression(function(t){
+              t.runtimeStyle.zoom = 1;
+              var after = document.createElement('span');
+              after.className = 'updated-ie-after-fix';
+              after.appendChild(document.createTextNode("оновлено"));
+              t.appendChild(after);
+            }(this));
+          }
+        *+html .lang-uk .project-articles-top .updated .abstract{
+          zoom: expression(function(t){
+              t.runtimeStyle.zoom = 1;
+              var after = document.createElement('span');
+              after.className = 'updated-ie-after-fix';
+              after.appendChild(document.createTextNode("оновлено"));
+              t.appendChild(after);
+            }(this));
+          }
+    .project-articles-top article .illustration{
+      position:relative;
+      left:-10px;
+      width:96px;
+      height:67px;
+      margin:0 0 10px;
+      float:left;
+      background:url("../img/shadow.png") 0 0 no-repeat;
+      }

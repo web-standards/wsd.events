@@ -1,0 +1,580 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<title>CSS3: будущее механизмов раскладки</title>
+	<link href="inc/s/reset.css" rel="stylesheet">
+	<link href="inc/s/common.css" rel="stylesheet">
+	<link href="inc/s/slides.css" rel="stylesheet">
+	<link href="inc/PTSansWeb/ptsans.css" rel="stylesheet">
+
+	<script src="inc/j/slides.js"></script>
+</head>
+<body>
+<article id="cover" class="slide">
+	<header>
+		<h1>CSS3: будущее механизмов раскладки</h1>
+	</header>
+	<article>
+
+	</article>
+	<footer>
+		<address>
+			<p><a class="miripiruni" href="http://miripiruni.org/">Вячеслав Олиянчук</a>,</p>
+			<p><a class="wsd" href="http://webstandardsdays.ru/">Web Standards Days</a></p>
+		</address>
+	</footer>
+</article>
+<article id="layout" class="slide">
+	<header>
+		<h2>Раскладка</h2>
+	</header>
+	<article>
+		<img src="inc/i/layout.gif" alt="Раскладка" height="470">
+	</article>
+	<footer>
+		<p>Визуальная композиция содержимого страницы</p>
+	</footer>
+</article>
+<article id="today" class="slide">
+	<header>
+		<h2>Чем мы пользуемся сегодня?</h2>
+	</header>
+	<article>
+
+	</article>
+	<footer>
+
+	</footer>
+</article>
+<article id="table" class="slide">
+	<header>
+		<h2>table</h2>
+	</header>
+	<article>
+
+	</article>
+	<footer>
+		<a href="http://www.flickr.com/photos/markdouglas/3409535272/sizes/l/">©</a>
+
+	</footer>
+</article>
+<article id="float" class="slide">
+	<header>
+		<h2>Мейнстрим: float</h2>
+	</header>
+	<article>
+		<ol>
+			<li class="minus">Создан не для раскладки</li>
+			<li class="minus">Неочевидный способ</li>
+			<li class="minus">Недостаточно развит</li>
+		</ol>
+	</article>
+	<footer>
+
+	</footer>
+</article>
+<article id="float-example-clear" class="slide">
+	<header>
+		<h2>Сумасшествие</h2>
+	</header>
+	<article>
+		<div class="wrap">
+			<img class="prof" src="inc/i/prof_farnsworth.jpg" alt="">
+			<p class="text">
+				<!--The Professor is a senile, amoral, deranged, and unpredictable old man.-->
+				Профессор престарелый, аморальный, сумасшедший и непредсказуемый старик.
+			</p>
+		</div>
+	</article>
+	<footer>
+
+	</footer>
+</article>
+<article id="float-example-grid" class="slide">
+	<header>
+		<h2>float:middle?</h2>
+	</header>
+	<article>
+		<div class="wrap">
+			<img class="maryana" src="inc/i/maryana.jpg" alt="">
+			<p>Относительно основания Барселоны существуют две различные легенды. Первая приписывает основание города герою греческих мифов Гераклу за&nbsp;400 лет до&nbsp;основания Рима, а&nbsp;затем в&nbsp;<nobr>3-ем</nobr> столетии до&nbsp;н.&nbsp;э. город был отстроен карфагенянином Гамилькаром Баркой, отцом Ганнибала, который назвал город Барсино в&nbsp;честь своей семьи. Вторая легенда приписывает основание города непосредственно Гамилькару Барке. В&nbsp;133&nbsp;г. до&nbsp;н.&nbsp;э. иберийский город Лайе был завоёван римлянами во&nbsp;главе с&nbsp;Луцием Корнелием Сципионом. Около 15&nbsp;года до&nbsp;н.&nbsp;э. римляне сделали из&nbsp;города укрепление, центр которого располагался на&nbsp;горе Табер, небольшом холме возле современной городской мэрии (Pla&ccedil;a de&nbsp;Sant Jaume). При римлянах город именовался Colonia Faventia Julia Augusta Pia Barcino, значение его было небольшим по&nbsp;сравнению с&nbsp;соседним Тарраконом (Tarraco, современная Таррагона). Однако его богатство и&nbsp;значимость со&nbsp;временем росли благодаря удобному расположению и&nbsp;прекрасной гавани. Город чеканил собственные монеты, часть которых со&nbsp;времен Гальбы сохранилась. Останки древних укреплений можно и&nbsp;сегодня видеть в&nbsp;городе, а&nbsp;типичная римская планировка до&nbsp;сих пор заметна на&nbsp;карте исторического центра города, т.&nbsp;н. Готического Квартала (Barri G&ograve;tic). Так, на&nbsp;улице Парадис около экскурсионного центра Каталонии видны римские колонны.</p>
+			<p>Город разрастался в&nbsp;пределах крепостной стены до&nbsp;завоевания франками в&nbsp;IV&nbsp;веке. К&nbsp;этому времени Барсино оттесняет Тарракон на&nbsp;второй план.</p>
+			<p>В&nbsp;начале&nbsp;V века город завоевали вестготы. Король Атаульф на&nbsp;короткий срок перенёс сюда свою столицу. В&nbsp;начале VIII века город завоевали арабы (мавры). Барселона начала приходить в&nbsp;упадок. В&nbsp;801 году сын Карла Великого, Людовик Благочестивый отбил город у&nbsp;эмира и&nbsp;сделал Барселону столицей Испанской марки, буферной зоной под управления графа Барселоны. Большую роль сыграл маркграф Вильфред Волосатый, фактический основатель независимой Каталонии. <a href="http://ru.wikipedia.org/wiki/Барселона">Барселона</a> всё ещё оставалась христианским форпостом, когда в&nbsp;985 году её&nbsp;разграбил аль-Мансур (см. Взятие Барселоны (985)). Это нападение дало повод графу Барселоны Боррелю II&nbsp;освободиться от&nbsp;власти Каролингов.</p>
+		</div>
+	</article>
+	<footer>
+		<!--Только float:left и float:right-->
+	</footer>
+</article>
+<article id="position" class="slide">
+	<header>
+		<h2>position</h2>
+	</header>
+	<article>
+
+	</article>
+	<footer>
+		<a href="http://www.flickr.com/photos/ronai/4395057924/sizes/l/">©</a>
+	</footer>
+</article>
+<article id="css-frameworks" class="slide">
+	<header>
+		<h2>CSS frameworks</h2>
+	</header>
+	<article>
+
+	</article>
+	<footer>
+		<a href="http://www.flickr.com/photos/carlosar2000/4650876190/sizes/o/">©</a>
+	</footer>
+</article>
+<article id="no-case" class="slide milestone">
+	<header>
+		<h2>Специального механизма нет</h2>
+	</header>
+	<article>
+
+	</article>
+	<footer>
+		 «Как же я жил все эти годы?» ©
+	</footer>
+</article>
+<article id="wants" class="slide">
+	<header>
+		<h2>Требования к новому механизму</h2>
+	</header>
+	<article>
+		<ol>
+			<li>Пока, table!</li>
+			<li>Пока, #wrap!</li>
+			<li>Привет, <a href="http://www.w3.org/TR/css3-mediaqueries/">mediaqueries</a>!</li>
+		</ol>
+	</article>
+	<footer>
+
+	</footer>
+</article>
+<article id="three-spec" class="slide">
+	<header>
+
+	</header>
+	<article class="spec-animation">
+		<div class="wrap">
+			<div class="wrap2">
+				<div class="grid">
+					<strong>Grid</strong>
+					<span>Microsoft</span>
+				</div>
+				<div class="flexbox">
+					<strong>Flexbox</strong>
+					<span>Mozilla</span>
+				</div>
+				<div class="layout">
+					<strong>Template</strong>
+					<span>W3C</span>
+				</div>
+			</div>
+		</div>
+	</article>
+	<footer>
+
+	</footer>
+</article>
+<article id="grid-welcome" class="slide milestone">
+	<header>
+		<h2>Grid Positioning Module</h2>
+	</header>
+	<article>
+		<p>Подход основанный на строках и колонках</p>
+	</article>
+	<footer>
+		<p><a href="http://www.w3.org/TR/css3-grid/">w3.org/TR/css3-grid/</a></p>
+	</footer>
+</article>
+<article id="grid-implicit-explicit" class="slide">
+	<header>
+		<h2>Сетка</h2>
+	</header>
+	<article>
+		<ul>
+			<li>Природная — table и <a href="http://www.w3.org/TR/css3-multicol/">multicolumn</a></li>
+			<li>Неявная — образуется <em>в результате</em> расположения содержимого страницы</li>
+			<li>Явная — задается непосредственно <em>при&nbsp;проектировке</em> раскладки</li>
+		</ul>
+	</article>
+	<footer>
+
+	</footer>
+</article>
+<article id="grid-new-prop" class="slide">
+	<header>
+		<h2>Новые свойства</h2>
+	</header>
+	<article>
+		<pre>
+			<code>div{</code>
+			<code>  <span class="lblue">grid-columns</span>:<span class="zoom">* (<span class="lblue">20</span><span class="green">px</span> *)[<span class="lblue">5</span>];</span></code>
+			<code>  <span class="lblue">grid-rows</span>:*;</code>
+			<code>  }</code>
+		</pre>
+	</article>
+	<footer>
+		* — <a href="http://ru.wikipedia.org/wiki/Астериск">астериск</a>.
+	</footer>
+</article>
+<article id="grid-s" class="slide">
+	<header>
+		<h2>Синтаксис</h2>
+	</header>
+	<article>
+	</article>
+	<footer>
+		<p><code><span class="lblue">grid-columns</span>: * (<span class="lblue">20</span><span class="green">px</span> *)[<span class="lblue">5</span>];</code></p>
+	</footer>
+</article>
+<article id="grid-gr-unit" class="slide">
+	<header>
+		<h2>Новая единица измерения</h2>
+	</header>
+	<article>
+		<p class="gr"><code>1gr</code></p>
+	</article>
+	<footer>
+		<p class="alex"><span>©</span> Alex Mogilevsky</p>
+	</footer>
+</article>
+<article id="grid-float-offset" class="slide">
+	<header>
+		<h2>float-offset</h2>
+	</header>
+	<article>
+	</article>
+	<footer>
+		<!--code><span class="lblue">float-offset</span>: <span class="lblue">4</span><span class="green">gr</span> <span class="lblue">1</span><span class="green">gr</span>;</code-->
+		<!--code>float-offset: 4gr 1gr;</code-->
+	</footer>
+</article>
+<article id="grid-summary" class="slide">
+	<header>
+		<h2>Оценка</h2>
+	</header>
+	<article>
+		<ul>
+			<li class="plus">Создание явной сетки</li>
+			<li class="plus">Единица <code>gr</code></li>
+			<li class="minus">Сложность в использовании</li>
+		</ul>
+	</article>
+	<footer>
+		<p>Имплементации нет. Пощупать нельзя :–(</p>
+	</footer>
+</article>
+<article id="flex-welcome" class="slide milestone">
+	<header>
+		<h2>Flexible Box Layout Module</h2>
+	</header>
+	<article>
+		<p>Создание сетки с помощью гибких блоков</p>
+	</article>
+	<footer>
+		<p><a href="http://www.w3.org/TR/css3-flexbox/">w3.org/TR/css3-flexbox/</a></p>
+	</footer>
+</article>
+<article id="flex-howto" class="slide">
+	<header>
+		<h2>Основной принцип</h2>
+	</header>
+	<article>
+		<pre>
+			<code class="dblue">&lt;div <span class="lblue">class</span>="<span class="green">parent</span>"></code>
+			<code>  <span class="dblue">&lt;div <span class="lblue">class</span>="<span class="green">box</span>"></span>box 1<span class="dblue">&lt;/div></span> </code>
+			<code>  <span class="dblue">&lt;div <span class="lblue">class</span>="<span class="green">box</span>"></span>box 2<span class="dblue">&lt;/div></span></code>
+			<code class="dblue">&lt;/div></code>
+			<code> </code>
+			<code><span class="dblue">.parent .box</span>{ </code>
+			<code>  <span class="lblue">display</span>:<span class="green">box</span>;</code>
+			<code>  <span class="lblue">box-orient</span>:<span class="green">horizontal</span>;</code>
+			<code>  <span class="lblue">box-flex</span>:<span class="lblue">1</span>;</code>
+			<code>  }</code>
+		</pre>
+	</article>
+	<footer>
+
+	</footer>
+</article>
+<article id="flex-example-horizontal" class="slide">
+	<header>
+		<h2>Пример box-orient:horizontal</h2>
+	</header>
+	<article>
+		<div class="content">
+			<div class="one">box-flex: 2;</div>
+			<div>box-flex: 1;</div>
+			<div>box-flex: 1;</div>
+		</div>
+		<div class="content">
+			<div class="one ten">box-flex: 10;</div>
+			<div>box-flex: 1;</div>
+			<div>box-flex: 1;</div>
+		</div>
+		<div class="content">
+			<div class="one min-width">&rarr;</div>
+			<div>Если не задать <code>width</code>, то она будет зависеть от&nbsp;содержимого</div>
+			<div style="min-width:1em;">&larr;</div>
+		</div>
+	</article>
+	<footer>
+
+	</footer>
+</article>
+<article id="flex-example-vertical" class="slide">
+	<header>
+		<h2>Пример box-orient:vertical</h2>
+	</header>
+	<article>
+		 <div class="content">
+			<div class="one">
+				box-flex: 2;
+			</div>
+			<div class="two">
+				box-flex: 1;
+			</div>
+			<div class="three">
+				box-flex: 1;
+			</div>
+		</div>
+	</article>
+	<footer>
+	</footer>
+</article>
+
+<article id="flex-example-pack" class="slide">
+	<header>
+		<h2>Пример box-pack</h2>
+	</header>
+	<article>
+		<div class="h box">
+			<div class="h box start">start</div>
+			<div class="h box center">center</div>
+			<div class="h box end">end</div>
+		</div>
+		<div class="v box">
+			<div class="v box start" style="height:120px">start</div>
+			<div class="v box center" style="height:120px">center</div>
+			<div class="v box end" style="height:120px">end</div>
+		</div>
+	</article>
+	<footer>
+	</footer>
+</article>
+<article id="flex-new-prop" class="slide">
+	<header>
+		<h2>Новые свойства</h2>
+	</header>
+	<article>
+		<ul>
+			<li>box-align</li>
+			<li>box-direction</li>
+			<li>box-flex</li>
+			<li>box-flex-group</li>
+			<li>box-lines</li>
+			<li>box-ordinal-group</li>
+			<li>box-orient</li>
+			<li>box-pack</li>
+		</ul>
+		</div>
+	</article>
+	<footer>
+		#
+	</footer>
+</article>
+<article id="flex-summary" class="slide">
+	<header>
+		<h2>Оценка</h2>
+	</header>
+	<article>
+		<ul>
+			<li class="plus">Просто использовать</li>
+			<li class="plus">Независимость от порядка HTML</li>
+			<li class="plus">Браузер считает, вы — отдыхаете</li>
+			<li class="minus">Неявная сетка</li>
+		</ul>
+	</article>
+	<footer>
+		<p>Уже работает в Safari, Chrome и Firefox с вендорными префиксами</p>
+	</footer>
+</article>
+<article id="template-welcome" class="slide milestone">
+	<header>
+		<h2>Template Layout Module</h2>
+	</header>
+	<article>
+		<p>Создание раскладки по шаблону</p>
+	</article>
+	<footer>
+		<p><a href="http://www.w3.org/TR/css3-layout/">w3.org/TR/css3-layout/</a></p>
+	</footer>
+</article>
+
+<article id="template-howto" class="slide">
+	<header>
+		<h2>Создание шаблона</h2>
+	</header>
+	<article>
+		<p class="diagram"><img src="inc/i/template-diagram.png" alt=""></p>
+		<table width="100%">
+		<tr>
+		<td width="30%">
+			<pre>
+				<code><span class="dblue">body</span>{</code>
+				<code>  <span class="lblue">display</span>:</code>
+				<code>    "<span class="dblue">aaa</span>"</code>
+				<code>    "<span class="dblue">bcd</span>"</code>
+				<code>  }</code>
+			</pre>
+		</td>
+		<td width="20%"></td>
+		<td>
+			<pre>
+				<code><span class="dblue">header</span>  {<span class="lblue">position</span>:<span class="dblue">a</span>}</code>
+				<code><span class="dblue">nav</span>     {<span class="lblue">position</span>:<span class="dblue">b</span>}</code>
+				<code><span class="dblue">article</span> {<span class="lblue">position</span>:<span class="dblue">c</span>}</code>
+				<code><span class="dblue">aside</span>   {<span class="lblue">position</span>:<span class="dblue">d</span>}</code>
+			</pre>
+		</td>
+		</tr>
+		</table>
+	</article>
+	<footer>
+
+	</footer>
+</article>
+<article id="template-slot-types" class="slide">
+	<header>
+		<h2>Именование слотов</h2>
+	</header>
+	<article>
+		<p><code>.</code> <code>a</code> <code>@</code></p>
+	</article>
+	<footer>
+
+	</footer>
+</article>
+<article id="template-slot-pseudoelement" class="slide">
+	<header>
+		<h2>Новый псевдоэлемент</h2>
+	</header>
+	<article>
+		<pre>
+			<code><span class="dblue">::slot(<span class="green">a</span>)</span>{</code>
+			<code>  <span class="lblue">color</span>:<span class="dblue">#333</span>;</code>
+			<code>  <span class="lblue">background</span>:<span class="dblue">url(<span class="green">/i/bg.png</span>)</span>;</code>
+			<code>  }</code>
+		</pre>
+	</article>
+	<footer>
+		<p>Стилизация слота <em>вне зависимости</em> от содержимого</p>
+	</footer>
+</article>
+<article id="template-example" class="slide">
+	<header>
+		<h2>Пример шаблона</h2>
+	</header>
+	<article>
+		<pre>
+			<code>body{</code>
+			<code>  <span class="dblue">display</span>:</code>
+			<code>    "<span class="lblue">.hhhh.</span>" /<span class="lblue">5</span><span class="green">em</span></code>
+			<code>    "<span class="lblue">.nccs.</span>"</code>
+			<code>    "<span class="lblue">.ffff.</span>" /<span class="lblue">3</span><span class="green">em</span></code>
+			<code>    <span class="lblue">* 200</span><span class="green">px</span> minmax(<span class="lblue">500</span><span class="green">px</span>,<span class="lblue">800</span><span class="green">px</span>) <span class="lblue">* 12</span><span class="green">em</span> <span class="lblue">*</span>;</code>
+			<code>  }</code>
+		</pre>
+	</article>
+	<footer>
+
+	</footer>
+</article>
+<article id="template-summary" class="slide">
+	<header>
+		<h2>Оценка</h2>
+	</header>
+	<article>
+		<ul>
+			<li class="plus">Нет экстраразметки<i></i></li>
+			<li class="plus">Явная сетка</li>
+			<li class="plus">Просто использовать</li>
+			<li class="plus">Независимость от HTML кода</li>
+			<li class="plus">Колонки одинаковой высоты</li>
+			<li class="plus">minmax(1px, 2px)</li>
+			<li class="minus">Сложности в реализации (?)</li>
+			<li class="minus">Конфликты свойств <!--span style="color:#aaa">(например: <code>position</code>)</span--></li>
+		</ul>
+	</article>
+	<footer>
+		<p>Попробовать: <a href="http://bit.ly/SJ2WK">bit.ly/SJ2WK</a> (<a href="http://code.google.com/p/css-template-layout/">code.google.com/p/css-template-layout/</a>)</p>
+	</footer>
+</article>
+<article id="why" class="slide">
+	<header>
+		<h2>Почему так долго возятся с черновиками?</h2>
+	</header>
+	<article>
+		<ul>
+			<li>Придумывается с нуля</li>
+			<li>Необходимо продумать связи с&nbsp;другими модулями</li>
+			<li>Graceful degradation</li>
+			<li>Низкий приоритет layout в потоке задач CSS WG</li>
+		</ul>
+	</article>
+	<footer>
+
+	</footer>
+</article>
+<article id="what" class="slide">
+	<header>
+		<h2>Аргументы</h2>
+	</header>
+	<article>
+		<ul>
+			<li>Последовательнось в HTML не проблема</li>
+			<li>По-прежнему можно использовать <code>float</code> и&nbsp;<code>position</code> с сеткой</li>
+			<li>Комбинации модулей</li>
+			<li>mediaqueries для альтернативных раскладок</li>
+		</ul>
+	</article>
+	<footer>
+		<p>Единый механизм для создания раскладок изменит веб.</p>
+	</footer>
+</article>
+<article id="qa" class="slide">
+	<header>
+		<h2>Спасибо за внимание! Вопросы?</h2>
+	</header>
+	<article>
+		<ul>
+			<li><a href="http://www.w3.org/TR/css3-grid/">w3.org/TR/css3-grid/</a></li>
+			<li><a href="http://www.w3.org/TR/css3-flexbox/">w3.org/TR/css3-flexbox/</a></li>
+			<li><a href="http://www.w3.org/TR/css3-layout/">w3.org/TR/css3-layout/</a></li>
+			<li><a href="http://code.google.com/p/css-template-layout/">code.google.com/p/css-template-layout/</a></li>
+			<li><a href="http://www.w3.org/TR/css3-multicol/">w3.org/TR/css3-multicol/</a></li>
+			<li><a href="http://www.w3.org/TR/css3-mediaqueries/">w3.org/TR/css3-mediaqueries/</a></li>
+
+		</ul>
+	</article>
+	<footer class="vcard">
+		<p class="fn"><span class="first-name">Вячеслав</span> <span class="given-name">Олиянчук</span>,</p>
+		<p>@<a class="url" rel="external" href="https://twitter.com/miripiruni">miripiruni</a></p>
+	</footer>
+</article>
+</body>
+</html><!--
+http://docs.jquery.com/UI/Draggable
+
+http://www.flickr.com/photos/24561236@N05/2327627708/sizes/l/
+http://www.flickr.com/photos/kamomebird/3503805678/sizes/o/
+http://www.flickr.com/photos/syazajia/4609034818/sizes/o/
+http://www.flickr.com/photos/carlosar2000/3692430130/
+http://www.flickr.com/photos/storvandre/3479605179/sizes/l/
+-->

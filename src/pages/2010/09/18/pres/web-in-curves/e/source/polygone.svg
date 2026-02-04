@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+	<polygon points = "197,197 430,100 660,198 758,430 662,663 429,760 197,663 100,432" fill = "#FAFAA2" stroke = "black" stroke-width = "50"/>
+	<polyline points="200,400 300,300 400,400" fill="none" stroke="#000" stroke-width="50"/>
+	<polyline points="450,400 550,300 650,400" fill="none" stroke="#000" stroke-width="50"/>
+	<line x1="230" y1="570" x2="640" y2="490" stroke="#000" stroke-width="50"/>
+</svg>

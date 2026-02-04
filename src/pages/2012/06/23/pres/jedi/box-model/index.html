@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Блочная модель документа</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div class="container">
+    <h1>Блочная модель элемента</h1>
+    <hr/>
+    <div class="row">
+        <section class="span8">
+            <div class="lab-grid">
+                <div class="lab-parent">
+                    <div class="lab-child">
+                        <div class="lab-content"></div>
+                    </div>
+                </div>
+            </div>
+            <hr/>
+            <h2>Вычисленные значения</h2>
+            <div class="row">
+                <article class="span3">
+                    <h3>Контейнер</h3>
+                    <div class="container-prop">
+
+                    </div>
+                </article>
+
+
+                <article class="span3">
+                    <h3>Объект</h3>
+                    <div class="obj-prop">
+
+                    </div>
+                </article>
+            </div>
+        </section>
+        <aside class="span3 offset1">
+            <h3>Управление</h3>
+
+            <div class="js-controls">
+                <p class="control-w">width: <input type="text" name="" id="width"/>
+                    <select class="units" name="" id="w_units">
+                        <option value="px">px</option>
+                        <option value="%">%</option>
+                        <option value="em">em</option>
+                        <option value="ex">ex</option>
+                    </select>
+                </p>
+                <p class="control-h">height: <input type="text" name="" id="height"/>
+                    <select class="units" name="" id="h_units">
+                        <option value="px">px</option>
+                        <option value="%">%</option>
+                        <option value="em">em</option>
+                        <option value="ex">ex</option>
+                    </select>
+                </p>
+                <p class="control-m">margin: <input type="text" name="" id="margin"/>
+                    <select class="units" name="" id="m_units">
+                        <option value="px">px</option>
+                        <option value="%">%</option>
+                        <option value="em">em</option>
+                        <option value="ex">ex</option>
+                    </select>
+                </p>
+                <p class="control-p">padding: <input type="text" name="" id="padding"/>
+                    <select class="units" name="" id="p_units">
+                        <option value="px">px</option>
+                        <option value="%">%</option>
+                        <option value="em">em</option>
+                        <option value="ex">ex</option>
+                    </select>
+                </p>
+                <p><input type="submit" value="Пересчитать" class="control-go" /></p>
+            </div>
+        </aside>
+    </div>
+</div>
+<script type="text/javascript" src="../jquery.js"></script>
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>

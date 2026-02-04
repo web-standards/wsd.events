@@ -1,0 +1,40 @@
+body.fullScreenMode{
+  background-color:#000;
+  }
+  body.fullScreenMode .slides{
+    position:fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    overflow:hidden;
+    }
+  body.fullScreenMode section article{
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin:0;
+    opacity:0;
+    -webkit-box-shadow:none;
+    -moz-box-shadow:none;
+    -ms-box-shadow:none;
+    -o-box-shadow:none;
+    box-shadow:none;
+    
+    -webkit-transform-origin:0 0;
+    -moz-transform-origin:0 0;
+    -ie-transform-origin:0 0;
+    -o-transform-origin:0 0;
+    transform-origin:0 0;
+    }
+    body.fullScreenMode section article.selected{
+      opacity:1;
+      z-index:8;
+      }
+    body.fullScreenMode section article:focus{
+      opacity:1;
+      z-index:10;
+      }
+    body.fullScreenMode section article:last-of-type{
+      margin-bottom:0;
+      }

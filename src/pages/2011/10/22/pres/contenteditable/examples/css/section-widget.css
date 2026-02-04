@@ -1,0 +1,68 @@
+.section-widget{
+  font:bold 18px/22px "PT Sans Caption",Arial,sans-serif;
+  position:relative;
+  z-index:2;
+  padding-top:24px;
+  }
+  * html .section-widget{
+    zoom:1;
+    }
+  *+html .section-widget{
+    zoom:1;
+    }
+  .section-widget:after{
+    content:".";
+    height:0;
+    line-height:0;
+    font-size:0;
+    text-indent:-9000px;
+    clear:both;
+    overflow:hidden;
+    display:block;
+    }
+  .section-widget li{
+    float:left;
+    margin:0 45px 0 0;
+    position:relative;
+    }
+    * html .section-widget li.selected{
+      zoom: expression(function(t){
+          t.runtimeStyle.zoom = 1;
+          var after = document.createElement('span');
+          after.className = 'section-tail-ie-after-fix';
+          t.appendChild(after);
+        }(this));
+      }
+    *+html .section-widget li.selected{
+      zoom: expression(function(t){
+          t.runtimeStyle.zoom = 1;
+          var after = document.createElement('span');
+          after.className = 'section-tail-ie-after-fix';
+          t.appendChild(after);
+        }(this));
+      }
+    .section-widget li .section-tail-ie-after-fix,
+    .section-widget li.selected:after{
+      content:".";
+      display:block;
+      text-indent:-9000px;
+      overflow:hidden;
+      background:url("../img/section-selected.png") 0 0 no-repeat;
+      width:16px;
+      height:7px;
+      font-size:0;
+      line-height:0;
+      position:absolute;
+      bottom:-7px;
+      left:20px;
+      }
+      * html .section-widget li .section-tail-ie-after-fix{
+        background:none;
+        filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src='img/section-selected.png', sizingMethod='image');
+        }
+    .section-widget li a{
+      padding:0 0 7px 0;
+      display:block;
+      color:#000;
+      text-decoration:none;
+      }

@@ -1,0 +1,201 @@
+.only-for-print{
+  position:absolute;
+  top:-9000px;
+  left:-9000px;
+  color:#000!important;
+  }
+
+html body .source,
+html body .article-widget figure figcaption .source,
+html body .article-widget .article-text blockquote cite,
+html body .article-widget header .time-information{
+  color:#000!important;
+  }
+  
+html body .article-widget figure figcaption{
+  padding:6px 0;
+  }
+
+html body .only-for-print{
+  position:static;
+  top:auto;
+  left:auto;
+  }
+  
+html body  .article-url{
+  margin:45px 0 10px;
+  }
+
+html body footer .copyright .logotype{
+  background:url("../img/footer-logotype-print.png") 0 0 no-repeat;
+  }
+
+html body{
+  background:none;
+  }
+
+html body .horizontal-wrapper{
+  float:none!important;
+  height:auto!important;
+  min-height:0!important;
+  width:auto;
+  }
+  
+html body .horizontal-wrapper .article-widget .article-text figure a.lightbox .lightbox-ie-after-fix,
+html body .horizontal-wrapper .article-widget .article-text figure a.lightbox:after{
+  background:none;
+  }
+  
+html body .article-widget figure{
+  margin-right:0;
+  }
+html body .article-widget .article-text figure{
+  margin:0 0 0 0;
+  }
+
+html body .column-8-wide,
+html body .column-4,
+html body .column-8,
+html body .column-2,  
+html body .column-6,
+html body .column-12{
+  width:auto;
+  margin:0 auto;
+  }
+
+
+html body header .wrapper .logotype{
+  display:none;
+  }
+
+html body a{
+  color:#000;
+  }
+
+
+html body header .wrapper{
+  width:649px;
+  min-height:0;
+  }
+  
+html body .article-widget header{
+  padding:0;
+  }
+
+html body footer{
+  width:649px;
+  }
+  html body .policy p,
+  html body .policy{
+    width:649px;
+    font:normal 10px/12px 'PT Sans Caption',Arial,sans-serif;
+    color:#000;
+    }
+
+html body .article-widget .article-text figure figcaption{
+  margin:0;
+  }
+
+html body .site{
+  width:649px;
+  margin:0 auto;
+  }
+  html body .site .article-widget{
+    width:649px;
+    margin:0;
+    padding:0 0 0 0;
+    }
+    html body .site .article-widget .article-end{
+      display:none;
+      }
+      html body .site .article-widget .article-text .source{
+        display:none;
+        }
+        
+html body section.content{
+  background:none;
+  }
+
+html body .footnote-widget,
+html body .navigation-widget,
+html body .language,
+html body .znaki-fm,
+html body aside,
+html body .brief-search-widget,
+html body .section-widget,
+html body .subsection-widget,
+html body .counter-widget,
+html body .news-by-tag-widget,
+html body .news-widget,
+html body .news-brief-widget,
+html body .press-reliase-widget,
+html body .web-conference-widget,
+html body .top-article-comment-widget,
+html body .gallery-widget,
+html body .advertisement-widget,
+html body .facebook-box-short-widget,
+html body .author-widget,
+html body .article-tab-widget,
+html body .blockquote-widget,
+html body .related-widget,
+html body .show-more,
+html body .comment-form-widget,
+html body .advertisement-links-widget,
+html body .tag-widget,
+html body .social-widget,
+html body .accordion-widget,
+html body .last-news-widget,
+html body .related-media-widget,
+html body .multimedia-author-widget{
+  display:none!important;
+  }
+
+.print-logotype{
+  padding:9px 0 9px 179px;
+  font:normal 24px/24px 'PT Sans Caption',Arial,sans-serif;
+  position:relative;
+  }
+  .print-logotype img{
+    position:absolute;
+    top:0;
+    left:0;
+    }
+    
+    
+html body .slide-show-widget .slide-previews .slide-wrapper{
+  border-style:none;
+  background:none;
+  padding:9px 0;
+  }
+html body .slide-show-widget .slide-previews .slide-wrapper li{
+  opacity:1;
+  }
+html body .slide-show-widget .slide-previews{
+  border-style:none;
+  background:none;
+  }
+    
+html body footer{
+  width:649px;
+  background:none;
+  border-top:4px solid #000;
+  padding-top:0;
+  }
+  html body footer .copyright .logotype{
+    background:none;
+    }
+    html body footer .copyright .logotype img{
+      display:block;
+      }
+  html body .policy{
+    border-top:1px solid #000;
+    top:-20px;
+    padding-top:20px;
+    position:relative;
+    }
+  html body .policy p,
+  html body .policy{
+    width:649px;
+    font:normal 10px/12px 'PT Sans Caption',Arial,sans-serif;
+    color:#000;
+    }

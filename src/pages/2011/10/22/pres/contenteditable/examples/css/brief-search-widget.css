@@ -1,0 +1,148 @@
+.newspaper .brief-search-widget{
+  
+  -webkit-animation-name:brief-search-widget-newspaper; 
+  -moz-animation-name:brief-search-widget-newspaper;
+  -o-animation-name:brief-search-widget-newspaper;
+  animation-name:brief-search-widget-newspaper;
+  
+  -webkit-animation-duration:5s;
+  -moz-animation-duration:5s;
+  -o-animation-duration:5s;
+  animation-duration:5s;
+  
+  -webkit-animation-iteration-count:1;
+  -moz-animation-iteration-count:1;
+  -o-animation-iteration-count:1;
+  animation-iteration-count:1;
+    
+  }
+
+.brief-search-widget{
+  display:block;
+  position:absolute;
+  right:4px;
+  top:57px;
+  z-index:5;
+  float:left;
+  }
+  .brief-search-widget fieldset{
+    float:left;
+    }
+  .brief-search-widget input{
+    height:29px;
+    width:140px;
+    padding:0 5px;
+    line-height:29px\0/;
+    position:relative;
+    border-style:none;
+    outline:none;
+    background:#e8e8e8 url("../img/search-ico.png") 100% 50% no-repeat;
+    -webkit-box-shadow:inset 1px 1px 4px 0 rgba(0,0,0,0.4);
+    -moz-box-shadow:inset 1px 1px 4px 0 rgba(0,0,0,0.4);
+    -o-box-shadow:inset 1px 1px 4px 0 rgba(0,0,0,0.4);
+    box-shadow:inset 1px 1px 4px 0 rgba(0,0,0,0.4);
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    }
+    * html .brief-search-widget input{
+      line-height:29px;
+      background-color:#fff;
+      width:212px;
+      }
+    *+html .brief-search-widget input{
+      line-height:29px;
+      background-color:#fff;
+      width:212px;
+      }
+    .brief-search-widget input:focus{
+      width:212px;
+      background-position: 100% 50%;
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+      background-color:#fff;
+      }
+  .brief-search-widget label{
+    display:none;
+    }
+  .brief-search-widget button{
+    display:none;
+    }
+    
+    @keyframes brief-search-widget-newspaper{
+      from {
+        top:-2000px;
+        opacity:0;
+      }
+      80%{
+        top:57px;
+        opacity:0;
+      }
+      to {
+        top:57px;
+        opacity:1;
+      }
+    }
+
+    @-moz-keyframes brief-search-widget-newspaper{
+      from {
+        top:-2000px;
+        opacity:0;
+      }
+      80%{
+        top:57px;
+        opacity:0;
+      }
+      to {
+        top:57px;
+        opacity:1;
+      }
+    }
+
+    @-webkit-keyframes brief-search-widget-newspaper{
+      from {
+        top:-2000px;
+        opacity:0;
+      }
+      80%{
+        top:57px;
+        opacity:0;
+      }
+      to {
+        top:57px;
+        opacity:1;
+      }
+    }
+
+    @-ms-keyframes brief-search-widget-newspaper{
+      from {
+        top:-2000px;
+        opacity:0;
+      }
+      80%{
+        top:57px;
+        opacity:0;
+      }
+      to {
+        top:57px;
+        opacity:1;
+      }
+    }
+    
+    @-o-keyframes brief-search-widget-newspaper{
+      from {
+        top:-2000px;
+        opacity:0;
+      }
+      80%{
+        top:57px;
+        opacity:0;
+      }
+      to {
+        top:57px;
+        opacity:1;
+      }
+    }

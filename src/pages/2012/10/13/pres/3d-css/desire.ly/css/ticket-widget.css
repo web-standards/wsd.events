@@ -1,0 +1,454 @@
+.ticket-widget{
+	width:462px;
+	height:81px;
+	min-height:81px;
+	margin:10px 0;
+	position: relative;
+	zoom:1;
+
+	-webkit-transition:height 1.3s ease, opacity .5s ease;
+	-moz-transition:height 1.3s ease, opacity .5s ease;
+	-ms-transition:height 1.3s ease, opacity .5s ease;
+	-o-transition:height 1.3s ease, opacity .5s ease;
+	transition:height 1.3s ease, opacity .5s ease;
+
+	overflow:visible;
+	outline:none;
+	}
+	.ticket-widget.open{
+		z-index:100;
+		height:160px;
+
+		-webkit-transition:height .5s ease, opacity .5s ease;
+		-moz-transition:height .5s ease, opacity .5s ease;
+		-ms-transition:height .5s ease, opacity .5s ease;
+		-o-transition:height .5s ease, opacity .5s ease;
+		transition:height .5s ease, opacity .5s ease;
+		}
+	.ticket-widget .front{
+		width:462px;
+		height:81px;
+		background: url("../img/ticket-bg.png") 0 0 no-repeat;
+		position: relative;
+		z-index:10;
+		}
+		.ticket-widget.new .front{
+			background-image: url("../img/ticket-bg-new.png");
+			}
+		.ticket-widget.open .front{
+			height:80px;
+			}
+		.ticket-widget .front .details{
+			padding:0 0 0 155px;
+			width:288px;
+			z-index:10;
+			position: absolute;
+			line-height:80px;
+			max-height:80px;
+			overflow:hidden;
+
+			-webkit-transition:max-height .5s ease;
+			-moz-transition:max-height .5s ease;
+			-ms-transition:max-height .5s ease;
+			-o-transition:max-height .5s ease;
+			transition:max-height .5s ease;
+			}
+			.ticket-widget.open .front .details{
+				max-height:110px;
+
+				-webkit-transition:max-height .5s .2s ease;
+				-moz-transition:max-height .5s .2s ease;
+				-ms-transition:max-height .5s .2s ease;
+				-o-transition:max-height .5s .2s ease;
+				transition:max-height .5s .2s ease;
+				}
+				*+html .ticket-widget .front .details{
+					jscript: expression(function(t) {
+						if(typeof t.p == "undefined"){
+							t.runtimeStyle.zoom = 1;
+							var before = document.createElement('span');
+							before.className = 'middle-fix-for-ie';
+							t.insertBefore(before,t.childNodes[0]);
+							t.p = 1;
+							}
+						}(this));
+					}
+				.ticket-widget .middle-fix-for-ie{
+					zoom:1;
+					display:inline;
+					position: relative;
+					vertical-align:middle;
+					
+					height:80px;
+					width:0;
+					font-size:0;
+					line-height:0;
+					
+					}
+			.ticket-widget .front .details .wrapper{
+				vertical-align:middle;
+				line-height:0;
+				display:inline-block;
+				}
+				*+html .ticket-widget .front .details .wrapper{
+					display:inline;
+					zoom:1;
+					position: relative;
+					overflow:hidden;
+					}
+				.ticket-widget .front .details .wrapper .title{
+					max-width:288px;
+					overflow:hidden;
+					display:inline-block;
+					vertical-align:top;
+					text-transform:none;
+					text-overflow:ellipsis;
+					white-space:nowrap;
+					color:#363636;
+					font:normal 18px/24px 'Marmelad', Arial, "Helvetica Neue", Helvetica, sans-serif;
+					}
+					*+html .ticket-widget .front .details .wrapper .title{
+						display:inline;
+						zoom:1;
+						margin:0 5px 0 0;
+						}
+				.ticket-widget .front .details .wrapper .url{
+					display:inline-block;
+					vertical-align:top;
+					white-space:nowrap;
+					font:normal 12px/24px 'Marmelad', Arial, "Helvetica Neue", Helvetica, sans-serif;
+					}
+					*+html .ticket-widget .front .details .wrapper .url{
+						display:inline;
+						zoom:1;
+						}
+				.ticket-widget .front .details .wrapper .abstract{
+					color:#636363;
+					font:normal 12px/15px 'Marmelad', Arial, "Helvetica Neue", Helvetica, sans-serif;
+					position: relative;
+					display:block;
+					width:288px;
+					}
+
+		.ticket-widget .front .pic{
+			position: absolute;
+			top:0;
+			left:0;
+			line-height:0;
+			font-size:0;
+			margin:0 20px 0 0;
+			width:135px;
+			height:80px;
+			overflow:hidden;
+			line-height:80px;
+			text-align:center;
+			}
+			.ticket-widget .front .pic img{
+				display:inline-block;
+				vertical-align:middle;
+				max-width:135px;
+				max-height:80px;
+				overflow:hidden;
+				line-height:0;
+				font-size:0;
+				}
+	.csstransforms.no-csstransforms3d .ticket-widget .back-wrapper{
+		height:80px;
+		width:460px;
+		overflow:hidden;
+		position: relative;
+		-webkit-transform-origin:230px 0;
+		-moz-transform-origin:230px 0;
+		-ms-transform-origin:230px 0;
+		-o-transform-origin:230px 0;
+		transform-origin:230px 0;
+
+		-webkit-transform:scaleY(0);
+		-moz-transform:scaleY(0);
+		-ms-transform:scaleY(0);
+		-o-transform:scaleY(0);
+		transform:scaleY(0);
+
+		-webkit-transition:-webkit-transform .5s ease;
+		-moz-transition:-moz-transform .5s ease;
+		-ms-transition:-ms-transform .5s ease;
+		-o-transition:-o-transform .5s ease;
+		transition:transform .5s ease;
+		}
+		.csstransforms.no-csstransforms3d .ticket-widget.open .back-wrapper{
+			-webkit-transition:-webkit-transform .5s .1s ease;
+			-moz-transition:-moz-transform .5s .1s ease;
+			-ms-transition:-ms-transform .5s .1s ease;
+			-o-transition:-o-transform .5s .1s ease;
+			transition:transform .5s .1s ease;
+			}
+		.csstransforms.no-csstransforms3d .ticket-widget .back-wrapper .back{
+			}
+		.csstransforms.no-csstransforms3d .ticket-widget.open .back-wrapper{
+			-webkit-transform:scaleY(1);
+			-moz-transform:scaleY(1);
+			-ms-transform:scaleY(1);
+			-o-transform:none;
+			transform:scaleY(1);
+			}
+	.no-csstransforms.no-csstransforms3d .ticket-widget .back-wrapper{
+		height:0;
+		width:460px;
+		overflow:hidden;
+		position: relative;
+		-webkit-transition:height .5s ease;
+		-moz-transition:height .5s ease;
+		-ms-transition:height .5s ease;
+		-o-transition:height .5s ease;
+		transition:height .5s ease;
+		}
+		.no-csstransforms.no-csstransforms3d .ticket-widget.open .back-wrapper{
+			-webkit-transition:height .5s .1s ease;
+			-moz-transition:height .5s .1s ease;
+			-ms-transition:height .5s .1s ease;
+			-o-transition:height .5s .1s ease;
+			transition:height .5s .1s ease;
+			}
+		.no-csstransforms.no-csstransforms3d .ticket-widget .back-wrapper .back{
+			position: absolute;
+			bottom:0;
+			left:0;
+			}
+		.no-csstransforms.no-csstransforms3d .ticket-widget.open .back-wrapper{
+			height:80px;
+			}
+	.csstransforms3d .ticket-widget .back-wrapper{
+		height:0;
+		width:460px;
+		-webkit-transform-style:preserve-3d;
+		-webkit-perspective-origin:230px 0;
+		-webkit-perspective:500px;
+
+		-moz-transform-style:preserve-3d;
+		-moz-perspective-origin:230px 0;
+		-moz-perspective:500px;
+
+		-ms-transform-style:preserve-3d;
+		-ms-perspective-origin:230px 0;
+		-ms-perspective:500px;
+
+		-o-transform-style:preserve-3d;
+		-o-perspective-origin:230px 0;
+		-o-perspective:500px;
+
+		transform-style:preserve-3d;
+		perspective-origin:230px 0;
+		perspective:500px;
+		}
+		.animation-enabled .ticket-widget .back{
+			-webkit-transition:-webkit-transform 1s ease, box-shadow .5s .2s ease-out;
+			-moz-transition:-moz-transform 1s ease, box-shadow .5s .2s ease-out;
+			-ms-transition:-ms-transform 1s ease, box-shadow .5s .2s ease-out;
+			-o-transition:-o-transform 1s ease, box-shadow .5s .2s ease-out;
+			transition:transform 1s ease, box-shadow .5s .2s ease-out;
+			}
+		.ticket-widget .back{
+			background: url("../img/ticket-bottom.png") 0 0 no-repeat;
+			width: 460px;
+			height: 80px;
+			white-space:nowrap;
+			z-index:5;
+		 	}
+		.csstransforms3d .ticket-widget .back{
+			z-index:5;
+			position: absolute;
+			left:0;
+			top:0;
+			-webkit-transform-origin:230px 0;
+			-webkit-transform:rotateX(-90deg);
+
+			-moz-transform-origin:230px 0;
+			-moz-transform:rotateX(-90deg);
+
+			-ms-transform-origin:230px 0;
+			-ms-transform:rotateX(-90deg);
+
+			-o-transform-origin:230px 0;
+			-o-transform:rotateX(-90deg);
+
+			transform-origin:230px 0;
+			transform:rotateX(-90deg);
+
+			box-shadow:inset 0 80px 0 0 rgba(0,0,0,0.3);
+			border-top-right-radius:6px;
+			}
+			.ticket-widget.new .back{
+				background-image: url("../img/ticket-bottom-new.png");
+				}
+			.csstransforms3d .ticket-widget.open .back{
+				-webkit-transition:-webkit-transform 1s ease, box-shadow .5s ease-out;
+				-webkit-transform:rotateX(0deg);
+
+				-moz-transition:-moz-transform 1s ease, box-shadow .5s ease-out;
+				-moz-transform:rotateX(0deg);
+
+				-ms-transition:-ms-transform 1s ease, box-shadow .5s ease-out;
+				-ms-transform:rotateX(0deg);
+
+				-o-transition:-o-transform 1s ease, box-shadow .5s ease-out;
+				-o-transform:rotateX(0deg);
+
+				transition:transform 1s ease, box-shadow .5s ease-out;
+				transform:rotateX(0deg);
+
+				box-shadow:inset 0 80px 0 0 rgba(0,0,0,0);
+				}
+			.ticket-widget .back .occasion{
+				position: absolute;
+				bottom:18px;
+				left:155px;
+				font:normal 14px/18px 'Marmelad', Arial, "Helvetica Neue", Helvetica, sans-serif;
+				}
+			.ticket-widget .back .social{
+				position: absolute;
+				bottom:15px;
+				right:18px;
+				}
+				.ticket-widget .back .social .fb-like{
+					top:-4px;
+					position: relative;
+					z-index:1000;
+					}
+			.ticket-widget .back .price{
+				position: absolute;
+				bottom:0;
+				left:0;
+				clear:left;
+				float:left;
+				padding:18px;
+				width:99px;
+				font:normal 12px/14px 'Marmelad', Arial, "Helvetica Neue", Helvetica, sans-serif;
+				}
+				.ticket-widget .price strong{
+					font:normal 24px/24px 'Marmelad', Arial, "Helvetica Neue", Helvetica, sans-serif;
+					display:block;
+					}
+	.ticket-widget nav{
+		position: absolute;
+		left:461px;
+		height:80px;
+		width:23px;
+		top:0;
+		z-index:115;
+		background: url("../img/ticket-reserved.png") 12px 50% no-repeat;
+		}
+		.ticket-widget:hover nav{
+			width:121px;
+			}
+		.ticket-widget:hover nav a{
+			margin:0 0 0 40px;
+			position: relative;
+			z-index:17;
+			}
+		.ticket-widget nav a{
+			-webkit-transition:opacity .3s ease,color .3s ease;
+			-moz-transition:opacity .3s ease,color .3s ease;
+			-ms-transition:opacity .3s ease,color .3s ease;
+			-o-transition:opacity .3s ease,color .3s ease;
+			transition:opacity .3s ease,color .3s ease;
+
+			white-space:nowrap;
+			float:left;
+			clear:left;
+			color:#aeadab;
+			margin:0 0 0 -9000px;
+			padding:0 0 0 17px;
+			font:normal 12px/20px 'Marmelad', Arial, "Helvetica Neue", Helvetica, sans-serif;
+			}
+			.ticket-widget nav a:hover{
+				color:#363636;
+				}
+			.ticket-widget nav .edit{
+				background: url("../img/edit-ico.png") 0 50% no-repeat;
+				}
+			.ticket-widget nav .complete{
+				background: url("../img/complete-ico.png") 0 50% no-repeat;
+				}
+			.ticket-widget nav .remove{
+				background: url("../img/remove-ico.png") 0 50% no-repeat;
+				}
+			.ticket-widget nav .copy{
+				background: url("../img/copy-ico.png") 0 50% no-repeat;
+				}
+		.ticket-widget nav a.give-up{
+			display:block;
+			padding:0;
+			margin:0;
+			position: absolute;
+			left:0;
+			top:0;
+			width:80px;
+			height:81px;
+			}
+			.ticket-widget:nth-child(4n) nav a.give-up b{
+				-webkit-transform:rotate(24deg);
+				-moz-transform:rotate(24deg);
+				-ms-transform:rotate(24deg);
+				-o-transform:rotate(24deg);
+				transform:rotate(24deg);
+				}
+			.ticket-widget:nth-child(4n+1) nav a.give-up b{
+				-webkit-transform:rotate(-22deg);
+				-moz-transform:rotate(-22deg);
+				-ms-transform:rotate(-22deg);
+				-o-transform:rotate(-22deg);
+				transform:rotate(-22deg);
+				
+				}
+			.ticket-widget:nth-child(4n+2) nav a.give-up b{
+				-webkit-transform:rotate(70deg);
+				-moz-transform:rotate(70deg);
+				-ms-transform:rotate(70deg);
+				-o-transform:rotate(70deg);
+				transform:rotate(70deg);
+				}
+			.ticket-widget nav a.give-up b{
+				position: absolute;
+				font-size:0;
+				line-height:0;
+				
+				display:block;
+				width:35px;
+				height:81px;
+				background: url("../img/give-up.png") 0 0 no-repeat;
+				
+				-webkit-transition:left .3s ease, -webkit-transform .3s ease;
+				-moz-transition:left .3s ease, -moz-transform .3s ease;
+				-ms-transition:left .3s ease, -ms-transform .3s ease;
+				-o-transition:left .3s ease, -o-transform .3s ease;
+				transition:left .3s ease, transform .3s ease;
+
+				left:30px;
+				}
+				.ticket-widget.new nav a.give-up b{
+					background-image: url("../img/give-up-new.png");
+					}
+				.ticket-widget nav a.give-up:hover b{
+					left:0;
+					-webkit-transform:rotate(0);
+					-moz-transform:rotate(0);
+					-ms-transform:rotate(0);
+					-o-transform:none;
+					transform:none;
+					}
+		.ticket-widget nav a.reserve{
+			z-index:6;
+			display:block;
+			padding:0;
+			margin:0;
+			text-indent:-9000px;
+			position: absolute;
+			left:0;
+			top:0;
+			width:35px;
+			height:81px;
+			background: url("../img/reserve.png") 0 0 no-repeat;
+			}
+			.ticket-widget.new nav a.reserve{
+				background-image: url("../img/reserve-new.png");
+				}

@@ -1,0 +1,1335 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Презентация</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+		}
+		body,html{
+			height:100%;
+			position:relative;
+			font:normal 16px/18px Verdana,sans-serif;
+			overflow:hidden;
+		}
+		.page{
+			background-color:#fff;
+			outline:none;
+			height:0;
+			opacity:0;
+			overflow:hidden;
+			-webkit-transition:opacity .5s ease-in;
+			-moz-transition:opacity .5s ease-in;
+			position:absolute;
+			top:0;
+			left:0;
+		}
+		.page:focus,
+		.page.focused{
+			opacity:1;
+			height:100%;
+			width:100%;
+		}
+		
+		@font-face {
+			font-family: 'LemonChickenRegular';
+			src: url('assets/LEMONCHI-webfont.eot');
+			src: local('LemonChickenRegular'), url('assets/LEMONCHI-webfont.woff') format('woff'), url('assets/LEMONCHI-webfont.ttf') format('truetype'), url('assets/LEMONCHI-webfont.svg#webfont') format('svg')
+		}
+		
+		.page_1 hgroup{
+			display:block;
+			position:absolute;
+			top:50%;
+			left:0;
+			margin-top:-110px;
+			width:100%;
+			height:210px;
+		}
+		.page_1 h1{
+			text-align:center;
+			font: 160px/170px 'LemonChickenRegular', Verdana, sans-serif;
+		}
+		.page_1 h2{
+			text-align:center;
+			font: 32px/40px Verdana, sans-serif;
+		}
+		.page_1 p{
+			margin:10px 0 0;
+			text-align:center;
+		}
+		
+		.page_2 p{
+			background:url("assets/ass.png") 25% 100% no-repeat,url("assets/happy.png") 75% 100% no-repeat;
+			width:100%;
+			height:410px;
+			position:absolute;
+			top:50%;
+			left:0;
+			margin-top:-205px;
+			text-align:center;
+			font: 160px/410px 'LemonChickenRegular', Verdana, sans-serif;
+		}
+		
+		.page_3>div,.page_4>div,.page_5>div{
+			padding:75px 250px;
+		}
+		.page_3 h2,.page_4 h2,.page_5 h2{
+			font:32px/40px Verdana,sans-serif;
+		}
+		.page_3 h3,.page_4 h3,.page_5 h3{
+			font:24px/30px Verdana,sans-serif;
+			padding:50px 0 0;
+			width:100%;
+		}
+		.page_3 hgroup h3,.page_4 hgroup h3,.page_5 hgroup h3{
+			padding:0;
+		}
+		
+		.page_3 ul,.page_4 ul,.page_5 ul{
+			color:#f90;
+			list-style:none;
+		}
+		
+		.page_3 li,.page_4 li,.page_5 li{
+			padding:5px;
+			display:inline;
+			font:32px/40px Verdana,sans-serif;
+		}
+		
+		.page_3 li:after,.page_4 li:after,.page_5 li:after{
+			content:",";
+			color:#000;
+		}
+		
+		.page_3 li:last-child:after,.page_4 li:last-child:after,.page_5 li:last-child:after{
+			content:"";	
+		}
+		.page_6 h2{
+			padding:75px 250px 70px;
+			font:32px/40px Verdana,sans-serif;
+		}
+		.page_6 div{
+			padding:0 280px;
+		}
+		.page_8{
+			background:url("assets/bear.png") 40% 75% no-repeat;
+		}
+		.page_8	h2{
+			background-color:#f0f0f0;
+			position:absolute;
+			left:50%;
+			top:50%;
+			margin-top:-300px;
+			margin-left:-70px;
+			height:150px;
+			width:400px;
+			font:normal 18px/150px Verdana,serif;
+			color:#333;
+			text-align:center;
+			-moz-border-radius:10px;
+			-webkit-border-radius:10px;
+			border-radius:10px;
+		}
+
+		.page_8	h2:before{
+			content:"\00a0";
+			display:block;
+			position:absolute;
+			bottom:-70px;
+			left:0px;
+			width:0;
+			height:0;
+			border-width:0;
+			border-left-width:65px; 
+			border-bottom-width:70px;
+			border-style:solid;
+			border-color:transparent #f0f0f0;
+		}
+			
+		.page_8	h2:after{
+			content:"\00a0";
+			display:block;
+			position:absolute;
+			bottom:-70px;
+			left:0px;
+			width:0;
+			height:0;
+			border-width:0;
+			border-left-width:40px; 
+			border-bottom-width:70px;
+			border-style:solid;
+			border-color:transparent #fff;
+		}
+			
+			.page_9{
+				display: -webkit-box;
+				-webkit-box-orient: horizontal;
+				-webkit-box-align: stretch;
+				
+				display: -moz-box;
+				-moz-box-orient: horizontal;
+				-moz-box-align: stretch;
+			
+				display: box;
+				box-orient: horizontal;
+				box-align: stretch;
+			}
+			.page_9 code{
+				white-space:pre;
+				display:block;
+				margin:0 0 0 50px;
+				padding:175px 20px;
+				-moz-box-flex: 1;
+				-webkit-box-flex: 1;
+				
+			}
+			.page_9 .layout{
+				padding:175px 20px;
+				width:fit-content;
+				width:-moz-fit-content;
+				width:-webkit-border-image;
+				-moz-box-flex: 0;
+				-webkit-box-flex: 0;
+			}
+			
+			.page_9 h2{
+				padding:50px 0;
+				text-align:center;
+				width:100%;
+				font:32px/40px Verdana,sans-serif;
+				position:absolute;
+			}
+			
+			.page_9 section{
+				display:block;
+				height:100px;
+				line-height:100px;
+				text-align:center;
+				background-color:#f99;
+				padding:0 20px;
+				width:300px;
+			}
+			.page_9 p{
+				height:50px;
+				line-height:50px;
+				text-align:center;
+				background-color:#99f;
+				padding:0 20px;
+				
+			}
+			.page_9 aside{
+				display:block;
+				height:100px;
+				text-align:center;
+				line-height:100px;
+				background-color:#9f9;
+				padding:0 20px;
+			}
+			.page_10 h2{
+				padding:75px 200px 0;
+				font:32px/40px Verdana,sans-serif;
+			}
+			.page_10 code{
+				padding:25px 200px;
+				white-space:pre;
+				display:block;
+			}
+			.page_11 h2,.page_7 h2{
+				padding:75px 250px 0;
+				font:32px/40px Verdana,sans-serif;
+			}
+			.page_11 ul,.page_7 ul{
+				padding:25px 250px;
+				color:#f90;
+				font:32px/40px Verdana,sans-serif;
+				list-style:none;
+			}
+			
+			.page_11 li,.page_7 li{
+				display:inline;	
+			}
+			
+			.page_11 li:after,.page_7 li:after{
+				content:",";
+				color:#000;
+			}
+			
+			.page_11 li:last-child:after,.page_7 li:last-child:after{
+				content:"";
+			}
+			.page_12 h2{
+				padding:75px 200px 0;
+				font:32px/40px Verdana,sans-serif;
+			}
+			.page_12{
+				background:url("assets/input.png") 200px 160px no-repeat;
+			}
+			
+			.page_12 form{
+				padding-left:500px;
+			}
+			
+			.page_12 fieldset{
+				padding:50px;
+				border:none;
+			}
+			.page_12 div{
+				clear:both;
+				padding:10px 0;
+			}
+			.page_12 label{
+				margin:0 10px 0 0;
+				text-align:right;
+				width:200px;
+				float:left;
+			}
+			.page_12 label:first-letter{
+				text-transform:uppercase;
+			}
+			
+			.page_12 h2{
+				padding:75px 200px 0;
+				font:32px/40px Verdana,sans-serif;
+			}
+			.page_13{
+				background:url("assets/datalist.png") 200px 150px no-repeat;
+			}
+			
+			.page_13 form{
+				padding-left:500px;
+			}
+			
+			.page_13 fieldset{
+				padding:50px;
+				border:none;
+			}
+			.page_13 div{
+				clear:both;
+				padding:10px 0;
+			}
+			.page_13 label{
+				margin:0 10px 0 0;
+				text-align:right;
+				width:200px;
+				float:left;
+			}
+			.page_13 label:first-letter{
+				text-transform:uppercase;
+			}
+			
+			.page_13 h2{
+				padding:75px 200px 0;
+				font:32px/40px Verdana,sans-serif;
+			}
+			
+			.page_13 code{
+				white-space:pre;
+				display:block;
+				padding:25px 200px 0;
+			}
+			
+			.page_14 h2{
+				padding:75px 200px 0;
+				font:32px/40px Verdana,sans-serif;
+			}
+			
+			.page_14 code{
+				white-space:pre;
+				display:block;
+				padding:75px 200px 0;
+				font:normal 16px/18px Verdana,sans-serif;
+			}
+			.page_15,.page_21,.page_33{
+				background:url("assets/questions.png") 37% 70% no-repeat;
+			}
+			
+		.page_15 h2,.page_21 h2,.page_33 h2{
+				background-color:#f0f0f0;
+				position:absolute;
+				left:50%;
+				top:50%;
+				margin-top:-300px;
+				margin-left:-70px;
+				height:150px;
+				width:400px;
+				font:normal 32px/150px Verdana,serif;
+				color:#333;
+				text-align:center;
+				-moz-border-radius:10px;
+				-webkit-border-radius:10px;
+				border-radius:10px;
+			}
+			
+		.page_25 h3{
+				background-color:#f0f0f0;
+				position:absolute;
+				left:50%;
+				top:50%;
+				margin-top:-300px;
+				margin-left:-70px;
+				height:150px;
+				width:400px;
+				font:normal 18px/150px Verdana,serif;
+				color:#333;
+				text-align:center;
+				-moz-border-radius:10px;
+				-webkit-border-radius:10px;
+				border-radius:10px;
+			}
+			
+			
+		.page_20 h2{
+			padding:75px 0 0 200px;
+			font:normal 32px/40px Verdana,serif;
+		}
+		
+		.page_20 code{
+			padding:50px 0 0 200px;
+			white-space:pre;
+			display:block;
+		}
+		
+		.page_20 img{
+			position:absolute;
+			top:150px;
+			right:50px;
+		}
+		
+		.page_19 h2{
+			padding:75px 0 0 200px;
+			font:normal 32px/40px Verdana,serif;
+		}
+		
+		.page_19 code{
+			padding:25px 0 0 200px;
+			white-space:pre;
+			display:block;
+		}
+		
+		.page_19 div{
+				padding:25px 20px;
+				-moz-column-count:3;
+				-moz-column-rule:1px solid #ccc;
+				-moz-column-gap:30px;
+				
+				-webkit-column-count:3;
+				-webkit-column-gap:30px;
+				-webkit-column-rule:1px solid #ccc;
+		}
+		
+		.page_18 h2{
+			padding:50px 0 0 200px;
+			font:normal 32px/40px Verdana,serif;
+		}
+		
+		.page_18 code{
+			padding:25px 0 0 200px;
+			white-space:pre;
+			display:block;
+		}
+		
+		.page_18 .flex{
+				margin-top:20px;
+				display: -webkit-box;
+				-webkit-box-orient: horizontal;
+				-webkit-box-align: stretch;
+				
+				display: -moz-box;
+				-moz-box-orient: horizontal;
+				-moz-box-align: stretch;
+			
+				display: box;
+				box-orient: horizontal;
+				box-align: stretch;
+				width:100%;
+		}
+		
+		.page_18 .flex>div{
+			-moz-box-flex: 1;
+			-webkit-box-flex: 1;
+			background-color:#99f;
+			padding:90px;
+			display:block;
+		}
+		.page_18 .flex>div+div{
+			-moz-box-flex: 1;
+			-webkit-box-flex: 0;
+			background-color:#9f9;
+			display:block;
+		}
+		.page_18 .flex>div+div+div{
+			-moz-box-flex: 1;
+			-webkit-box-flex: 1;
+			background-color:#f99;
+			display:block;
+		}
+
+		.page_17 h2{
+			padding:75px 0 0 200px;
+			font:normal 32px/40px Verdana,serif;
+		}
+		
+		.page_17 code{
+			padding:50px 0 0 200px;
+			white-space:pre;
+			display:block;
+		}
+		
+		.page_17 img{
+			position:absolute;
+			top:160px;
+			right:300px;
+		}
+			
+		
+		.page_16 h2{
+			padding:75px 0 0 200px;
+			font:normal 32px/40px Verdana,serif;
+		}
+		
+		.page_16 ul{
+			padding:25px 0 0 200px;
+			display:block;
+			list-style:none;
+			font:24px/30px Verdana,sans-serif;
+		}
+		
+		.page_16 li{
+			padding:5px 0;
+		}
+		
+		.page_22 h2{
+			padding:75px 0 0 200px;
+			font:normal 32px/40px Verdana,serif;
+		}
+		
+		.page_22 ul{
+			padding:25px 0 0 200px;
+			display:block;
+			list-style:none;
+			font:24px/30px Verdana,sans-serif;
+		}
+		
+		.page_22 li{
+			padding:5px 0;
+		}
+
+		.page_32 h2{
+			padding:75px 0 0 200px;
+			font:normal 32px/40px Verdana,serif;
+		}
+		
+		.page_32 code{
+			padding:50px 0 0 200px;
+			white-space:pre;
+			display:block;
+		}
+				
+		.page_32 .plane{
+			width:256px;
+			height:256px;
+			display:block;
+			position:absolute;
+			background:url("assets/plane.png") 0 0 no-repeat;
+			-webkit-animation: fly 3s infinite linear;
+		}
+		
+	    @-webkit-keyframes fly {
+	      from { -webkit-transform: translate(200px,400px); }
+	      to   { -webkit-transform: translate(1100px,-600px); }
+	    }
+		
+		.page_31 h2{
+			padding:75px 0 0 200px;
+			font:normal 32px/40px Verdana,serif;
+		}
+		
+		.page_31 code{
+			padding:50px 0 0 200px;
+			white-space:pre;
+			display:block;
+		}
+		
+		.page_31 .rabbit_1{
+			-o-transform: rotate(-40deg);
+			-moz-transform: rotate(-40deg);
+			-webkit-transform: rotate(-40deg);
+			position:absolute;
+			top:10%;
+			right:-10px;
+			background:url("assets/questions.png") 0 0 no-repeat;
+			width:158px;
+			height:432px;
+		}
+		
+		.page_31 .rabbit_2{
+			position:absolute;
+			bottom:-70px;
+			left:50%;
+			margin-left:-70px;
+			background:url("assets/happy.png") 50% 0 no-repeat;
+			width:158px;
+			height:432px;			
+      		-webkit-transform: rotateY(0deg);
+    		-webkit-animation: spinY 4s infinite linear;
+		}
+		
+	    @-webkit-keyframes spinY {
+	      from { -webkit-transform: rotateY(0); }
+	      to   { -webkit-transform: rotateY(-360deg); }
+	    }
+	    
+	    @-webkit-keyframes spinZ {
+	      from { -webkit-transform: rotateZ(0); }
+	      to   { -webkit-transform: rotateZ(-360deg); }
+	    }
+
+		
+		.page_31 .rabbit_3{
+			-o-transform: rotate(50deg);
+			-moz-transform: rotate(50deg);
+			-webkit-transform: rotate(50deg);
+			position:absolute;
+			top:45%;
+			left:-10px;
+			background:url("assets/questions.png") 0 0 no-repeat;
+			width:158px;
+			height:432px;
+		}
+		
+		
+		.page_30 h2{
+			padding:75px 0 0 200px;
+			font:normal 32px/40px Verdana,serif;
+		}
+		
+		.page_30 code{
+			padding:50px 0 0 200px;
+			white-space:pre;
+			display:block;
+		}
+		
+		.page_28 h2{
+			background-color:#f0f0f0;
+			-moz-border-radius:10px;
+			-webkit-border-radius:10px;
+			border-radius:10px;
+			font:bold 75px/150px Verdana,serif;
+			position:absolute;
+			top:50%;
+			left:50%;
+			color:#fff;
+			text-align:center;
+			margin-top:-250px;
+			margin-left:-300px;
+			width:600px;
+			height:150px;
+			overflow:hidden;
+			text-shadow:1px 1px 0 #999,
+			-5px -25px 20px #e0e0e0;
+			box-shadow:0 0 20px #400;
+			-webkit-box-shadow: 0 0 40px #999;
+			-moz-box-shadow: 0 0 40px #999;
+		}
+		
+		.page_28 code{
+			padding:300px 0 0 330px;
+			white-space:pre;
+			display:block;
+		}
+		
+		.page_27 .button_block{
+			width:fit-content;
+			width:-moz-fit-content;
+			width:-webkit-border-image;
+			border-width:5px 12px;
+			float:left;
+			clear:both;
+			padding:10px;
+			-webkit-border-image: url("assets/toolButton.png") 0 12 0 12 stretch stretch;
+			-moz-border-image: url("assets/toolButton.png") 0 12 0 12 stretch stretch;
+			border-image: url("assets/toolButton.png") 0 12 0 12 stretch stretch;
+		}
+
+		.page_27 h2{
+			padding:75px 0 0 200px;
+			font:normal 32px/40px Verdana,serif;
+		}
+		
+		.page_27 div{
+			padding:50px 0 0 200px;
+		}
+		
+		.page_27 img{
+			float:left;
+			clear:both;
+		}
+		
+		.page_27 code{
+			clear:both;
+			white-space:pre;
+			display:block;
+			padding-top:50px;	
+		}
+
+		.page_15 h2:before,.page_21 h2:before,.page_33 h2:before,.page_25 h3:before{
+				content:"\00a0";
+				display:block;
+				position:absolute;
+				bottom:-70px;
+				left:0px;
+				width:0;
+				height:0;
+				border-width:0;
+				border-left-width:65px; 
+				border-bottom-width:70px;
+				border-style:solid;
+				border-color:transparent #f0f0f0;
+			}
+			
+		.page_15 h2:after, .page_21 h2:after, .page_33 h2:after, .page_25 h3:after{
+				content:"\00a0";
+				display:block;
+				position:absolute;
+				bottom:-70px;
+				left:0px;
+				width:0;
+				height:0;
+				border-width:0;
+				border-left-width:40px; 
+				border-bottom-width:70px;
+				border-style:solid;
+				border-color:transparent #fff;
+			}
+			
+			.page_23 h2{
+				padding:25px 200px 0;
+				text-align:center;
+				font:40px/60px Verdana,sans-serif;
+			}
+			
+			.page_23 div h1{
+				text-align:center;
+				font: 160px/170px 'LemonChickenRegular', Arial, sans-serif;
+			}
+			.page_23 h2{
+				text-align:center;
+				font: 44px/60px 'LemonChickenRegular', Arial, sans-serif;
+				white-space:nowrap;
+			}
+			.page_23 ul{
+				list-style:none;
+				margin:auto;
+				padding-top:30px;
+			}
+			.page_23 li{
+				font: 16px/18px 'LemonChickenRegular', Arial, sans-serif;
+			}
+			
+			.page_23 code{
+				padding-top:50px;
+				white-space:pre;
+				display:block;
+			}
+			
+			.page_23 div{
+				padding:50px 200px;
+			}
+			
+			.page_24 div{
+				padding:50px 0 0 200px;
+			}
+			.page_24 h2{
+				padding:75px 0 0 200px;
+				font:32px/40px Verdana,sans-serif;
+			}
+			
+			.page_25{
+				background:url("assets/questions.png") 37% 70% no-repeat;
+			}			
+			
+			.page_25 h2{
+				padding:20% 0 0 50%;
+			}
+			
+			.page_25 code{
+				white-space:pre;
+				display:block;
+				padding:25px 0 0 50%;
+			}
+			
+			
+			.page_26{
+				background:url("assets/ass.png") 65% 50% no-repeat,url("assets/happy.png") 85% 50% no-repeat;
+			}
+			
+			.page_26 h2{
+				padding:75px 200px;
+			}
+			
+			.page_26 code{
+				white-space:pre;
+				display:block;
+				padding:0 200px;
+			}
+			
+			.page_29{
+				background:url("assets/bg.jpg") 50% 50% no-repeat;
+			}
+			
+			.page_29 h1{
+				position:absolute;
+				top:30px;
+				left:0;
+				width:100%;
+				font:bold 50px/60px Verdana,serif;
+				text-align:center;
+				color:rgba(255,255,255,0.75);
+				text-shadow:#fff 0 0 50px;
+			}
+			.page_29 div{
+				width:300px;
+				height:200px;
+				position:absolute;
+				top:50%;
+				left:50%;
+				font:bold 35px/200px Verdana,sans-serif;
+				text-align:center;
+				color:#fff;
+			}
+			.page_29 div span{
+				background-color:#500;
+				padding:10px;
+			}	
+			
+			.page_29 .rgba{
+				background-color:rgba(255,255,255,0.75);
+				margin:-200px 0 0 5px;
+			}
+			.page_29 .opacity{
+				background-color:#fff;
+				opacity:0.75;
+				margin:-200px 0 0 -305px;
+			}
+			.page_29 code{
+				white-space:pre;
+				display:block;
+				position:absolute;
+				top:50%;
+				left:50%;
+				width:570px;
+				height:160px;
+				background-color:#fff;
+				margin:20px 0 0 -305px;
+				padding:20px;
+			}
+			
+			.page_34{
+				background:url("assets/bird.png")	80% 50% no-repeat;
+			}
+			
+			.page_34 h2{
+				padding:75px 200px 0;
+				font:32px/40px Verdana,sans-serif;
+			}
+			
+			.page_34 ul{
+				display:block;
+				padding:25px 200px 0;
+				list-style:none;
+				font:24px/30px Verdana,sans-serif;
+			}
+			.page_34 span{
+				display:inline-block;
+				margin-right:10px;
+				width:120px;
+			}
+	</style>
+</head>
+<body>
+	<div class="page_1 page" tabindex="2" id="page_1">
+		<hgroup>
+			<h1>HTML5</h1>
+			<h2>Эволюция веб-стандартов</h2>
+			<p>Нажмите Tab, чтобы продолжить</p>
+		</hgroup>
+	</div>
+	<div class="page_2 page" tabindex="2">
+		<p>&rarr;</p>
+	</div>
+	<div class="page_3 page" tabindex="3">
+		<div>
+			<hgroup>
+				<h2>Удаленные элементы</h2>
+				<h3>Не несущие семантики</h3>
+			</hgroup>
+			<ul>
+				<li>basefont</li>
+				<li>big</li>
+				<li>center</li>
+				<li>font</li>
+				<li>s</li>
+				<li>strike</li>
+				<li>tt</li>
+				<li>u</li>
+			</ul>
+			<h3>Негативно влияющие на удобство работы с документом</h3>
+			<ul>
+				<li>frame</li>
+				<li>frameset</li>
+				<li>noframes</li>
+			</ul>
+			<h3>Не используемые</h3>
+			<ul>
+				<li>acronym</li>
+				<li>applet</li>
+				<li>isindex</li>
+				<li>dir</li>
+			</ul>
+		</div>
+	</div>
+	<div class="page_6 page" tabindex="6">
+		<h2>Изменен принцип работы с якорями</h2>
+		<div><pre>
+01.	&lt;a href="#" target="_top"&gt;
+02.		&lt;h1 class="logotype" target="_blank"&gt;W3C Стандарты&lt;/h1&gt;
+03.		&lt;p&gt;Нажмите, что бы светлое будущее открылось в новом окне.&lt;/p&gt;
+04.	&lt;/a&gt;		
+		</pre></div>
+	</div>
+	<div class="page_7 page" tabindex="7">
+		<div>
+			<h2>Новые элементы</h2>
+			<ul>
+				<li>section</li>
+				<li>article</li>
+				<li>time</li>
+				<li>aside</li>
+				<li>hgroup</li>
+				<li>header</li>
+				<li>footer</li>
+				<li>nav</li>
+				<li>figure</li>
+				<li>figсaption</li>
+			</ul>
+		</div>
+	</div>
+	<div class="page_8 page" tabindex="8">
+		<h2>А давайте сверстаем страничку!</h2>
+	</div>
+	<div class="page_9 page" tabindex="9">
+		<h2>Структура данных</h2>
+		<div class="layout">
+			<section>Cекция сайта</section>
+			<p>...</p>
+			<section>Cекция сайта</section>
+			<aside>Реклама</aside>
+		</div>
+		<code>
+01.	&lt;!DOCTYPE HTML&gt;
+02.	&lt;html lang="ru"&gt;
+03.		&lt;head&gt;
+04.			&lt;meta charset="UTF-8"&gt;
+05.			&lt;title&gt;HTML 5 layout&lt;/title&gt;
+06.		&lt;/head&gt;
+07.		&lt;body&gt;
+08.			&lt;section&gt;
+09.				&lt;!--Содержимое основной секции сайта--&gt;
+10.			&lt;/section&gt;
+11.			&lt;section&gt;
+12.				&lt;!--Содержимое дополнительной секции сайта--&gt;
+13.			&lt;/section&gt;
+14.			&lt;aside&gt;
+15.				&lt;!--Реклама--&gt;
+16.			&lt;/aside&gt;
+17.		&lt;/body&gt;
+18.	&lt;/html&gt;
+		</code>
+	</div>
+	<div class="page_10 page" tabindex="10">
+		<h2>Внутренности section</h2>
+		<code>
+01.	&lt;section class="comments"&gt;
+02.		&lt;header&gt;
+03.			&lt;h1&gt;HTML5&lt;/h1&gt;
+04.			&lt;nav&gt;
+05.				&lt;ol&gt;
+06.					&lt;li&gt;&lt;a href="uri1"&gt;Пункт 1&lt;/a&gt;&lt;/li&gt;
+07.					&lt;li&gt;&lt;a href="uri2"&gt;Пункт 2&lt;/a&gt;&lt;/li&gt;
+08.				&lt;/ol&gt;
+09.			&lt;/nav&gt;
+10.		&lt;/header&gt;
+11.		&lt;article&gt;
+12.			&lt;time pubdate datetime="2010-03-20"&gt;22.03.2010&lt;/time&gt;
+13.			&lt;p>Мы добавили тесты.&lt;/p&gt;
+14.		&lt;/article&gt;
+15.		&lt;article&gt;
+16.			&lt;time pubdate datetime="2010-03-22"&gt;20.03.2010&lt;/time&gt;
+17.			&lt;p&gt;Мы приняли решение о внедрении TDD&lt;/p&gt;
+18.		&lt;/article&gt;
+19.		&lt;footer&gt;
+20.			&lt;p class="copyright"&gt;&amp;copy; Web Saints&lt;/p&gt;
+21.		&lt;/footer&gt;
+22.	&lt;/section&gt;
+		</code>
+	</div>
+	<div class="page_11 page" tabindex="11">
+		<h2>Новые типы input</h2>
+		<ul>
+			<li>range</li>
+			<li>number</li>
+			<li>datetime-local</li>
+			<li>time</li>
+			<li>week</li>
+			<li>month</li>
+			<li>date</li>
+			<li>datetime</li>
+			<li>email</li>
+			<li>url</li>
+			<li>tel</li>
+			<li>search</li>
+		</ul>
+	</div>
+	<div class="page_12 page" tabindex="12">
+		<h2>Отображение новых типов input в Opera и Safari</h2>
+		<form action="" method="post">
+			<fieldset>
+				<div>
+					<label for="range">range:</label>
+					<input min="-100" id="range" name="range" max="100" value="0" step="10" type="range"/>
+				</div>
+				<div>
+					<label for="number">number:</label>
+					<input min="-100" id="number" name="number" max="100" value="0" step="10" type="number"/>
+				</div>
+				<div>
+					<label for="datetime-local">datetime-local:</label>
+					<input id="datetime-local" name="datetime-local" type="datetime-local"/>
+				</div>
+				<div>
+					<label for="time">time:</label>
+					<input id="time" name="time" type="time"/>
+				</div>
+				<div>
+					<label for="week">week:</label>
+					<input id="week" name="week" type="week"/>
+				</div>
+				<div>
+					<label for="month">month:</label>
+					<input id="month" name="month" type="month"/>
+				</div>
+				<div>
+					<label for="date">date:</label>
+					<input id="date" name="date" type="date"/>
+				</div>
+				<div>
+					<label for="datetime">datetime:</label>
+					<input id="datetime" name="datetime" type="datetime"/>
+				</div>
+				<div>
+					<label for="email">email:</label>
+					<input id="email" name="email" type="email"/>
+				</div>
+				<div>
+					<label for="url">week:</label>
+					<input id="url" name="url" type="url"/>
+				</div>
+				<div>
+					<label for="tel">tel:</label>
+					<input id="tel" name="tel" type="tel"/>
+				</div>
+				<div>
+					<label for="search">search:</label>
+					<input id="search" name="search" type="search"/>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+	<div class="page_13 page" tabindex="13">
+		<h2>Отображение input с DataList в Opera и Safari</h2>
+		<form action="" method="post">
+			<fieldset>
+				<label for="datalist">datalist:</label>
+				<input type="url" name="datalist" id="datalist" list="urls">
+				<datalist id="urls">
+					<option label="comment 1" value="http://www.cite1.com">
+					<option label="comment 2" value="http://www.cite2.com">
+				</datalist>
+			</fieldset>
+		</form>
+		<code>
+01.	&lt;form action="" method="post"&gt;
+02.		&lt;fieldset&gt;
+03.			&lt;label for="datalist"&gt;datalist:&lt;/label&gt;
+04.			&lt;input type="url" name="datalist" list="urls"&gt;
+05.			&lt;datalist id="urls"&gt;
+06.				&lt;option label="comment 1" value="http://www.cite1.com"&gt;
+07.				&lt;option label="comment 2" value="http://www.cite2.com"&gt;
+08.			&lt;/datalist&gt;
+09.		&lt;/fieldset&gt;
+10.	&lt;/form&gt;
+		</code>
+	</div>
+	<div class="page_14 page" tabindex="14">
+		<h2>А как заставить работать HTML 5 в старых IE?</h2>
+		<code>
+01. &lt;!--[if IE]&gt;
+02.		&lt;script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"&gt;&lt;/script&gt;
+03. &lt;![endif]--&gt;
+
+01. &lt;!--[if IE]&gt;
+02. 	&lt;script type="text/javascript"&gt;
+03.			document.createElement('header');
+04.			document.createElement('nav');
+05.			document.createElement('section');
+06.			document.createElement('article');
+07.			document.createElement('aside');
+08.			document.createElement('footer');
+09.			document.createElement('time');
+10.	&lt;/script&gt;
+11. &lt;![endif]--&gt;
+		</code>
+	</div>
+	<div class="page_15 page" tabindex="15">
+		<h2>Вопросы?</h2>
+	</div>
+	<div class="page_16 page" tabindex="16">
+		<h2>Структура документа</h2>
+		<ul>
+			<li>Template Layout Module</li>
+			<li>Flexible Box Layout Module</li>
+			<li>Multi-column Layout Module</li>
+			<li>Grid Positioning Module</li>
+		</ul>
+	</div>
+	<div class="page_17 page" tabindex="17">
+		<h2>Template Layout Module</h2>
+		<code>
+.container{display: "a.b"
+		    "..." /1em
+		    "c.d"
+		    * 1em *
+}
+.block_1 { position: a; }
+.block_2 { position: b; }
+.block_3 { position: c; }
+.block_4 { position: d; }
+		
+&lt;div class="container"&gt;
+	&lt;div class="block_1"&gt;A&lt;/div&gt;
+	&lt;div class="block_2"&gt;B&lt;/div&gt;
+	&lt;div class="block_3"&gt;C&lt;/div&gt;
+	&lt;div class="block_4"&gt;D&lt;/div&gt;
+&lt;/div&gt;
+	</code>
+		<img src="assets/example.png" alt="как" />
+	</div>
+	<div class="page_18 page" tabindex="18">
+		<h2>Flexible Box Layout Module</h2>
+		<code>
+		.flex{
+				display: box;
+				box-orient: horizontal;
+				box-align: stretch;
+				width:100%;
+		}
+		
+		.flex>div{
+			box-flex: 1;
+		}
+		.flex>div+div{
+			box-flex: 0;
+		}
+		.flex>div+div+div{
+			box-flex: 1;
+		}</code>
+		<div class="flex">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+		</div>
+	</div>
+	<div class="page_19 page" tabindex="19">
+		<h2>Multi-column Layout Module</h2>
+		<code>-moz-column-count:3;
+-moz-column-rule:1px solid #ccc;
+-moz-column-gap:30px;
+
+-webkit-column-count:3;
+-webkit-column-gap:30px;
+-webkit-column-rule:1px solid #ccc;</code>
+		<div>
+			<p>По неизвестной причине телекран в комнате был установлен не так, как принято. Он помещался не в торцовой стене, откуда мог бы обозревать всю комнату, а в длинной, напротив окна. Сбоку от него была неглубокая ниша, предназначенная, вероятно, для книжных полок, – там и сидел сейчас Уинстон. Сев в ней поглубже, он оказывался недосягаемым для телекрана, вернее, невидимым. Подслушивать его, конечно, могли, но наблюдать, пока он сидел там, – нет. Эта несколько необычная планировка комнаты, возможно, и натолкнула его на мысль заняться тем, чем он намерен был сейчас заняться.</p>
+			<p>Но кроме того, натолкнула книга в мраморном переплете. Книга была удивительно красива. Гладкая кремовая бумага чуть пожелтела от старости – такой бумаги не выпускали уже лет сорок, а то и больше. Уинстон подозревал, что книга еще древнее. Он приметил ее на витрине старьевщика в трущобном районе (где именно, он уже забыл) и загорелся желанием купить. Членам партии не полагалось ходить в обыкновенные магазины (это называлось «приобретать товары на свободном рынке»), но запретом часто пренебрегали: множество вещей, таких, как шнурки и бритвенные лезвия, раздобыть иным способом было невозможно. Уинстон быстро оглянулся по сторонам, нырнул в лавку и купил книгу за два доллара пятьдесят. Зачем – он сам еще не знал. Он воровато принес ее домой в портфеле. Даже пустая, она компрометировала владельца.</p>
+			<p>Намеревался же он теперь – начать дневник. Это не было противозаконным поступком (противозаконного вообще ничего не существовало, поскольку не существовало больше самих законов), но если дневник обнаружат, Уинстона ожидает смерть или, в лучшем случае, двадцать пять лет каторжного лагеря. Уинстон вставил в ручку перо и облизнул, чтобы снять смазку. Ручка была архаическим инструментом, ими даже расписывались редко, и Уинстон раздобыл свою тайком и не без труда: эта красивая кремовая бумага, казалось ему, заслуживает того, чтобы по ней писали настоящими чернилами, а не корябали чернильным карандашом. Вообще-то он не привык писать рукой. Кроме самых коротких заметок, он все диктовал в речепис, но тут диктовка, понятно, не годилась. Он обмакнул перо и замешкался. У него схватило живот. Коснуться пером бумаги – бесповоротный шаг. Мелкими корявыми буквами он вывел:</p>
+		</div>
+	</div>
+	<div class="page_20 page" tabindex="20">
+		<h2>Grid Positioning Module</h2>
+		<code>
+.body{
+	columns:3;
+	column-gap:0.5in;
+}
+.img{float:page top right; width:3gr;}
+		</code>
+		<img src="assets/figure1.jpg" alt="картинко" />
+	</div>
+	<div class="page_21 page" tabindex="21">
+		<h2>Вопросы?</h2>
+	</div>
+	<div class="page_22 page" tabindex="22">
+		<h2>CSS3</h2>
+		<ul>
+			<li>Подключаемые шрифты</li>
+			<li>Закругленные углы</li>
+			<li>Множественный фон</li>
+			<li>Изображения в границе</li>
+			<li>Тени</li>
+			<li>RGBA</li>
+			<li>Транслции</li>
+			<li>2D/3D Трансформации</li>
+			<li>Анимация</li>
+		</ul>
+	</div>
+	<div class="page_23 page" tabindex="23">
+		<h2>Подключаемые шрифты</h2>
+		<div>
+			<header>
+				<hgroup>
+					<h1>html 5</h1>
+					<h2>font-face working</h2>
+				</hgroup>
+			</header>
+			<code>@font-face {
+ font-family: 'LemonChickenRegular';
+ src: url('LEMONCHI-webfont.eot');
+ src: local('LemonChickenRegular'), url('LEMONCHI-webfont.woff') format('woff'), 
+ url('LEMONCHI-webfont.ttf') format('truetype'), 
+ url('LEMONCHI-webfont.svg#webfont') format('svg')
+}
+
+h1{
+	text-align:center;
+	font: 160px/170px 'LemonChickenRegular', Arial, sans-serif;
+}</code>
+		</div>
+	</div>
+	<div class="page_24 page" tabindex="24">
+		<h2>Ссылки на ресурсы со шрифтами</h2>
+		<div>
+			<ul>
+				<li>http://www.fontsquirrel.com/</li>
+				<li>http://typekit.com/</li>
+				<li>http://www.typotheque.com/fonts/cyrillic</li>
+				<li>http://kernest.com/</li>
+				<li>http://lyncis.info/post/274 &mdash; 16 cyrillic fonts</li>
+			</ul>
+		</div>
+	</div>
+	<div class="page_25 page" tabindex="25">
+		<h2>Закругленные углы</h2>
+		<h3>Как по вашему сделано это облако?</h3>
+		<code>-moz-border-radius:10px;
+-webkit-border-radius:10px;
+border-radius:10px;</code>
+	</div>
+	<div class="page_26 page" tabindex="26">
+		<h2>Множественный фон</h2>
+		<code>background:url("ass.png") 25% 100% no-repeat,
+url("happy.png") 75% 100% no-repeat;</code>
+	</div>
+	<div class="page_27 page" tabindex="27">
+		<h2>Изображение в границе</h2>
+		<div>
+			<img src="assets/toolButton.png" alt="Кнопочечка" />
+			<div class="button_block">
+				Тебе ведь не терпится меня нажать?
+			</div>
+			<div class="button_block">
+				Ну нажми же.
+			</div>
+			<code>border-width: 0 5 0 5;
+	-webkit-border-image: url(toolButton.png) 0 5 0 5 stretch stretch;
+	-moz-border-image: url(toolButton.png) 0 5 0 5 stretch stretch;
+	border-image: url(toolButton.png) 0 5 0 5 stretch stretch;</code>
+		</div>
+	</div>
+	<div class="page_28 page" tabindex="28">
+		<h2>Тени</h2>
+		<code>text-shadow:1px 1px 0 #999,
+-5px -25px 20px #e0e0e0;
+box-shadow:0 0 20px #400;
+-webkit-box-shadow: 0 0 40px #999;
+-moz-box-shadow: 0 0 40px #999;</code>
+	</div>
+	<div class="page_29 page" tabindex="29">
+		<h1>Цвет в формате RGBA</h1>
+		<div class="rgba"><span>Это RGBA</span></div>
+		<div class="opacity"><span>Это opacity</span></div>
+		<code>background-color:rgba(255,255,255,.75);
+opacity:.75</code>
+	</div>
+	<div class="page_30 page" tabindex="30">
+		<h2>Трансляции</h2>
+		<code>
+		.page{
+			background-color:#fff;
+			outline:none;
+			height:0;
+			opacity:0;
+			overflow:hidden;
+			-webkit-transition:opacity .5s ease-in;
+			-moz-transition:opacity .5s ease-in;
+		}
+		.page:focus{
+			opacity:1;
+			height:100%;
+			width:100%;
+		}</code>
+	</div>
+	<div class="page_31 page" tabindex="31">
+		<h2>2D/3D Трансформации</h2>
+		<code>-o-transform: rotate(-30deg);
+-webkit-transform: rotate(-30deg);
+-webkit-transform: rotateY(30deg);</code>
+		<div class="rabbit_1"></div>
+		<div class="rabbit_2"></div>
+		<div class="rabbit_3"></div>
+	</div>
+	<div class="page_32 page" tabindex="32">
+		<h2>Анимация</h2>
+		<code>
+		.plane{
+			background:url("plane.png") 0 0 no-repeat;
+			-webkit-animation: fly 3s infinite linear;
+		}
+		
+		@-webkit-keyframes fly {
+			from { -webkit-transform: translate(200px,400px); }
+			to   { -webkit-transform: translate(900px,-400px); }
+		}</code>
+		<div class="plane"></div>
+	</div>
+	<div class="page_33 page" tabindex="33">
+		<h2>Вопросы?</h2>
+	</div>
+	<div class="page_34 page" tabindex="34">
+		<h2>Контакты</h2>
+		<ul>
+			<li>Антон Немцев</li>
+			<li>Silent Imp</li>
+			<li><span>twitter:</span> http://www.twitter.com/SilentImp</li>
+			<li><span>e-mail:</span> raven@nightfolk.net</li>
+			<li><span>e-mail:</span> ravenb@mail.ru</li>
+			<li><span>skype:</span> ravencry</li>
+		</ul>
+	</div>
+	<script>
+		document.getElementById('page_1').focus();
+	</script>
+</body>
+</html>

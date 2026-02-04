@@ -1,0 +1,49 @@
+.gift-widget{
+  margin:20px;
+  text-align:left;
+  padding:60px 0 0;
+  position:relative;
+  zoom:1;
+  }
+  .gift-widget nav{
+    width:100%;
+    clear:both;
+    text-align:center;
+  }
+  .gift-widget nav a.back{
+    position: absolute;
+    top:0;
+    left:20px;
+    }
+  .gift-widget .abstract{
+    position:relative;
+    overflow:hidden;
+    font:bold 12px/18px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    margin:0 0 20px;
+    color:#666;
+    }
+  .gift-widget .title{
+    color:#333;
+    font:bold 18px/25px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    margin:0 0 20px;
+    }
+  .gift-widget .price{
+    float:left;
+    clear:left;
+    width:240px;
+    margin:0 19px 20px;
+    text-align:center;
+    color:#dd1309;
+    font:bold 24px/24px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    }
+  .gift-widget .illustration{
+    float:left;
+    width:240px;
+    margin:0 19px 20px;
+    border-bottom:2px solid #e5e5e5;
+    text-align:center;
+    vertical-align:bottom;
+    }
+    .gift-widget .illustration img{
+      vertical-align:bottom;
+      }

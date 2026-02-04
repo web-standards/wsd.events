@@ -1,0 +1,28 @@
+.pause-popup{
+	width:331px;
+	height:194px;
+	background: url("../img/name.png") 50% 50% no-repeat;
+	position: absolute;
+	top:50%;
+	left:50%;
+	margin:-97px 0 0 -166px;
+	z-index:100;
+
+	display:none;
+
+	-webkit-transform: translateZ(150px);
+	-moz-transform: translateZ(150px);
+	-ms-transform: translateZ(150px);
+	-o-transform: translateZ(150px);
+	transform: translateZ(150px);
+
+	text-align:center;
+	}
+	.pause-popup h2{
+		
+		font:64px/194px 'Conv_loved_by_the_king', cursive;
+		top:10px;
+		text-shadow:0 0 10px #323840;
+		z-index:40;
+		position: relative;
+		}

@@ -1,0 +1,29 @@
+.photo-story-widget{
+	padding:0 0 0 0;
+	margin:0 15px 10px 0;
+	position:relative;
+	}
+	.photo-story-widget figure{
+		position:relative;
+		margin:0 0 20px 0;
+		overflow:hidden;
+		border-bottom: 1px dotted #B7B7B7;
+		}
+		.photo-story-widget figure figcaption{
+			display: block;
+			overflow: hidden;
+			width: 629px;
+			padding: 18px 10px;
+			font:normal 13px/18px 'PT Sans',Arial,sans-serif;
+			color: #fff;
+			}
+		.photo-story-widget figure img{
+			display:block;
+			}
+		.photo-story-widget figure figcaption .source {
+			font:normal 12px/15px 'PT Sans',Arial,sans-serif;
+			color: #777;
+			}
+			.photo-story-widget figure figcaption .source a{
+			  color:#777;
+		    }

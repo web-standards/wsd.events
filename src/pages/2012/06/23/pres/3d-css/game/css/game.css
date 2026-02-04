@@ -1,0 +1,278 @@
+.preloader-images{
+	position: fixed;
+	top:-10000px;
+	left:-10000px;
+	}
+
+.data-panel{
+	padding:20px 0 0;
+	display:none;
+	}
+	.data-panel .pause{
+		position: absolute;
+		right:55%;
+		bottom:20px;
+		background: url("../img/pause.png") 50% no-repeat;
+		width:128px;
+		height:128px;
+		overflow:hidden;
+		text-indent:-9000px;
+		cursor:pointer;
+		
+		filter: alpha(opacity=50);
+		-ms-filter: "alpha(opacity=50)";
+		opacity:.5;
+		}
+	.data-panel .quit{
+		position: absolute;
+		left:55%;
+		bottom:20px;
+		cursor:pointer;
+
+		background: url("../img/quit.png") 0 50% no-repeat;
+		
+		color:#fff;
+		font:48px/128px 'Conv_loved_by_the_king', cursive;
+		width:128px;
+		height:128px;
+		overflow:hidden;
+		text-indent:-9000px;
+		}
+	.data-panel .timer{
+		position: absolute;
+		right:55%;
+		top:20px;
+
+		padding:0 148px 0 0;
+		background: url("../img/clock.png") 100% 50% no-repeat;
+		
+		text-align:left;
+
+		color:#fff;
+		font:48px/128px 'Conv_loved_by_the_king', cursive;
+		width:128px;
+		height:128px;
+		white-space:nowrap;
+		}
+		.data-panel .timer b{
+			display:inline-block;
+			width:50px;
+			text-align:right;
+
+			}
+	.data-panel .scores{
+		position: absolute;
+		left:55%;
+		top:20px;
+
+		text-align:left;
+
+		padding:0 0 0 148px;
+		background: url("../img/glasses.png") 0 50% no-repeat;
+		
+		color:#fff;
+		font:48px/128px 'Conv_loved_by_the_king', cursive;
+		width:128px;
+		height:128px;
+		}
+
+.game-field{
+
+	display:none;
+
+	width:440px;
+	height:440px;
+
+	position: absolute;
+	left:50%;
+	top:50%;
+
+	margin:-220px 0 0 -220px;
+
+	-webkit-transform-style:preserve-3d;
+    -moz-transform-style:preserve-3d;
+    -o-transform-style:preserve-3d;
+    transform-style:preserve-3d;
+
+	-webkit-perspective-origin:50% 50%;
+	-moz-perspective-origin:50% 50%;
+	-o-perspective-origin:50% 50%;
+	perspective-origin:50% 50%;
+
+	-webkit-perspective:900px;
+	-moz-perspective:900px;
+	-o-perspective:900px;
+	perspective:900px;
+
+	}
+	body .game-field .removedFromClosed{
+		-webkit-transform:rotateY(0) translateZ(-200px);
+		-moz-transform:rotateY(0) translateZ(-200px);
+		-ms-transform:rotateY(0) translateZ(-200px);
+		-o-transform:rotateY(0) translateZ(-200px);
+		transform:rotateY(0) translateZ(-200px);
+		opacity:0;
+		}
+	body .game-field .removed{
+		-webkit-transform:rotateY(180deg) translateZ(200px);
+		-moz-transform:rotateY(180deg) translateZ(200px);
+		-ms-transform:rotateY(180deg) translateZ(200px);
+		-o-transform:rotateY(180deg) translateZ(200px);
+		transform:rotateY(180deg) translateZ(200px);
+		opacity:0;
+		}
+	body .game-field .open{
+		-webkit-transform:rotateY(0);
+		-moz-transform:rotateY(0);
+		-ms-transform:rotateY(0);
+		-o-transform:rotateY(0);
+		transform:rotateY(0);
+		}
+	html.no-csstransforms3d body .game-field .open:after{
+		visibility:hidden;
+		}
+	.game-field .card{
+		cursor:pointer;
+		position: relative;
+		width:100px;
+		height:100px;
+		float:left;
+
+		
+		margin:0 10px 10px 0;
+
+		-webkit-transform-style:preserve-3d;
+	    -moz-transform-style:preserve-3d;
+	    -o-transform-style:preserve-3d;
+	    transform-style:preserve-3d;
+
+		-webkit-perspective-origin:50% 50%;
+		-moz-perspective-origin:50% 50%;
+		-o-perspective-origin:50% 50%;
+		perspective-origin:50% 50%;
+
+		-webkit-perspective:900px;
+		-moz-perspective:900px;
+		-o-perspective:900px;
+		perspective:900px;
+
+		-webkit-transform:rotateY(180deg);
+		-moz-transform:rotateY(180deg);
+		-ms-transform:rotateY(180deg);
+		-o-transform:rotateY(180deg);
+		transform:rotateY(180deg);
+
+		-webkit-transition: -webkit-transform .5s ease-out,  opacity .5s ease-out;
+		-moz-transition: -moz-transform .5s ease-out,  opacity .5s ease-out;
+		-ms-transition: -ms-transform .5s ease-out,  opacity .5s ease-out;
+		-o-transition: -o-transform .5s ease-out,  opacity .5s ease-out;
+		transition: transform .5s ease-out,  opacity .5s ease-out;
+		
+		}
+		.game-field .card:before{
+			content:".";
+			display:block;
+			font-size:0;
+			line-height:0;
+			text-indent:-9000px;
+			overflow:hidden;
+			width:100px;
+			height:100px;
+			position: absolute;
+			top:0;
+			left:0;
+
+			-webkit-border-radius:5px;
+			-moz-border-radius:5px;
+			-ms-border-radius:5px;
+			-o-border-radius:5px;
+			border-radius:5px;
+
+			-webkit-transform:translateZ(2px);
+			-moz-transform:translateZ(2px);
+			-ms-transform:translateZ(2px);
+			-o-transform:translateZ(2px);
+			transform:translateZ(2px);
+
+			-webkit-box-shadow:inset 0 0 30px 0 #323840;
+			-moz-box-shadow:inset 0 0 30px 0 #323840;
+			-ms-box-shadow:inset 0 0 30px 0 #323840;
+			-o-box-shadow:inset 0 0 30px 0 #323840;
+			box-shadow:inset 0 0 30px 0 #323840;
+
+			}
+		.game-field .card:after{
+			content:".";
+			display:block;
+			position: absolute;
+			top:0;
+			left:0;
+			font-size:0;
+			line-height:0;
+			text-indent:-9000px;
+			overflow:hidden;
+			width:100px;
+			height:100px;
+
+			-webkit-border-radius:5px;
+			-moz-border-radius:5px;
+			-ms-border-radius:5px;
+			-o-border-radius:5px;
+			border-radius:5px;
+
+			-webkit-transform:translateZ(-2px) rotateY(180deg);
+			-moz-transform:translateZ(-2px) rotateY(180deg);
+			-ms-transform:translateZ(-2px) rotateY(180deg);
+			-o-transform:translateZ(-2px) rotateY(180deg);
+			-transform:translateZ(-2px) rotateY(180deg);
+
+			-webkit-box-shadow:inset 0 0 30px 0 #323840;
+			-moz-box-shadow:inset 0 0 30px 0 #323840;
+			-ms-box-shadow:inset 0 0 30px 0 #323840;
+			-o-box-shadow:inset 0 0 30px 0 #323840;
+			box-shadow:inset 0 0 30px 0 #323840;
+
+			background:url("../img/back.png") 50% 50% no-repeat;
+			background-size:100%;
+			}
+		.game-field .type-1:before{
+			background-size:70%,100%;
+			background:url("../img/type-1.png") 50% 50% no-repeat,url("../img/paper.png") 0 0 no-repeat;
+			}
+		.game-field .type-2:before{
+			background-size:70%,100%;
+			background:url("../img/type-2.png") 50% 50% no-repeat,url("../img/paper.png") 0 0 no-repeat;
+			}
+		.game-field .card.type-3:before{
+			background-size:70%,100%;
+			background:url("../img/type-3.png") 50% 50% no-repeat,url("../img/paper.png") 0 0 no-repeat;
+			}
+		.game-field .card.type-4:before{
+			background-size:70%,100%;
+			background:url("../img/type-4.png") 50% 50% no-repeat,url("../img/paper.png") 0 0 no-repeat;
+			}
+		.game-field .card.type-5:before{
+			background-size:70%,100%;
+			background:url("../img/type-5.png") 50% 50% no-repeat,url("../img/paper.png") 0 0 no-repeat;
+			}
+		.game-field .card.type-6:before{
+			background-size:70%,100%;
+			background:url("../img/type-6.png") 50% 50% no-repeat,url("../img/paper.png") 0 0 no-repeat;
+			}
+		.game-field .card.type-7:before{
+			background-size:70%,100%;
+			background:url("../img/type-7.png") 50% 50% no-repeat,url("../img/paper.png") 0 0 no-repeat;
+			}
+		.game-field .card.type-8:before{
+			background-size:70%,100%;
+			background:url("../img/type-8.png") 50% 50% no-repeat,url("../img/paper.png") 0 0 no-repeat;
+			}
+		.game-field .card.back:before{
+			background-size:70%,100%;
+			background:url("../img/type-8.png") 50% 50% no-repeat,url("../img/paper.png") 0 0 no-repeat;
+			}
+
+
+
+
+	

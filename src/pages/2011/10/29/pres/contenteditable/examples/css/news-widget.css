@@ -1,0 +1,117 @@
+.magazine .news-widget{
+  border-top:4px solid #b5b5b5;
+  background:#fff url("../img/news-bg.png") 0 0 repeat-x;
+  }
+
+.news-widget{
+  background-color:#FFF;
+  border-top:4px solid #ee1848;
+  margin:0 0 15px 0;
+  min-height:20px;
+  padding:0 10px 10px;
+  position:relative;
+  }
+  .news-widget .show-more{
+    font:italic 13px/15px 'PT Sans',Arial,sans-serif;
+    }
+  .news-widget article{
+    font:normal 13px/15px 'PT Sans',Arial,sans-serif;
+    padding:0 0 10px 0;
+    margin:0 0 10px 0;
+    border-bottom:1px dotted #b7b7b7;
+    }
+  .news-widget article time{
+    display:inline;
+    color:#777;
+    font:normal 11px/15px 'PT Sans',Arial,sans-serif;
+    }
+  .lang-ru .news-widget article.updated .abstract:after{
+    content:"обновлено";
+    }
+  .lang-uk .news-widget article.updated .abstract:after{
+    content:"оновлено";
+    }
+  .news-widget article.updated .abstract .updated-ie-after-fix,
+  .news-widget article.updated .abstract:after{
+    color:#fff;
+    background-color:#b7b7b7;
+    font:normal 11px/15px 'PT Sans',Arial,sans-serif;
+    padding:0 3px;
+    text-transform:uppercase;
+    }
+    * html .lang-ru .news-widget article.updated .abstract{
+      zoom: expression(function(t){
+          t.runtimeStyle.zoom = 1;
+          var after = document.createElement('span');
+          after.className = 'updated-ie-after-fix';
+          after.appendChild(document.createTextNode("обновлено"));
+          t.appendChild(after);
+        }(this));
+      }
+    *+html .lang-ru .news-widget article.updated .abstract{
+      zoom: expression(function(t){
+          t.runtimeStyle.zoom = 1;
+          var after = document.createElement('span');
+          after.className = 'updated-ie-after-fix';
+          after.appendChild(document.createTextNode("обновлено"));
+          t.appendChild(after);
+        }(this));
+      }
+    * html .lang-uk .news-widget article.updated .abstract{
+      zoom: expression(function(t){
+          t.runtimeStyle.zoom = 1;
+          var after = document.createElement('span');
+          after.className = 'updated-ie-after-fix';
+          after.appendChild(document.createTextNode("оновлено"));
+          t.appendChild(after);
+        }(this));
+      }
+    *+html .lang-uk .news-widget article.updated .abstract{
+      zoom: expression(function(t){
+          t.runtimeStyle.zoom = 1;
+          var after = document.createElement('span');
+          after.className = 'updated-ie-after-fix';
+          after.appendChild(document.createTextNode("оновлено"));
+          t.appendChild(after);
+        }(this));
+      }
+  .news-widget article.exclusive .abstract{
+    text-indent:20px;
+    background:url("../img/zn.png") 0 0 no-repeat;
+    }
+  .news-widget article.advertisement .abstract{
+    text-indent:20px;
+    background:url("../img/adv.png") 0 0 no-repeat;
+    }
+  .news-widget article.press-release .abstract{
+    text-indent:20px;
+    background:url("../img/pr.png") 0 0 no-repeat;
+    }
+  .news-widget article.important .abstract{
+    font-weight:bold;
+    }
+  .news-widget article p{
+    display:inline;
+    }
+  .news-widget a{
+    display:block;
+    text-decoration:none;
+    color:#0056a4;
+    }
+  .news-widget .rss{
+    width:12px;
+    height:12px;
+    text-indent:-9000px;
+    overflow:hidden;
+    display:block;
+    position:absolute;
+    right:11px;
+    top:17px;
+    background:url("../img/rss.png") 0 0 no-repeat;
+    }
+  .news-widget .title{
+    font:bold 18px/45px 'PT Sans',Arial,sans-serif;
+    }
+    .news-widget .title a{
+      color:#000;
+      }

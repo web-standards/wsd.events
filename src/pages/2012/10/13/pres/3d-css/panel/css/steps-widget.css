@@ -1,0 +1,128 @@
+.steps-widget{
+  text-align:left;
+  margin:20px 0;
+  background:url("../assets/steps.png") 0 0 repeat-x;
+  height:79px;
+  border-style:solid;
+  border-color:#aeaeae transparent #e0e0e0;
+  border-width:1px 0;
+  overflow:visible;
+  zoom:1;
+  position:relative;
+  padding:0 0 0 20px;
+  }
+  * html .steps-widget{
+    height:79px;
+    }
+  .steps-widget .step{
+    float:left;
+    overflow:hidden;
+    height:79px;
+    }
+    .steps-widget .step:before{
+      content:".";
+      width:110px;
+      height:79px;
+      display:block;
+      background:url("../assets/step-arrow.png") 50% 50% no-repeat;
+      float:left;
+      font-size:0;
+      line-height:0;
+      overflow:hidden;
+      text-indent:-9000px;
+      }
+      .steps-widget .step .before-bg-fix-for-ie{
+        width:110px;
+        height:79px;
+        display:block;
+        background:url("../assets/step-arrow.png") 50% 50% no-repeat;
+        float:left;
+        font-size:0;
+        line-height:0;
+        overflow:hidden;
+        text-indent:-9000px;
+        }
+      * html .steps-widget .step{
+  			jscript: expression(function(t) {
+              if(typeof t.p =="undefined"){
+                if(t.previousSibling!=null){                
+      						var helper = document.createElement('span');
+      						helper.className = "before-bg-fix-for-ie";
+      						t.insertBefore(helper,t.childNodes[0]);
+                  t.p = 1;
+                }
+            }
+          }(this));
+        }
+      *+html .steps-widget .step{
+  			jscript: expression(function(t) {
+              if(typeof t.p =="undefined"){
+                if(t.previousSibling!=null){                
+      						var helper = document.createElement('span');
+      						helper.className = "before-bg-fix-for-ie";
+      						t.insertBefore(helper,t.childNodes[0]);
+                  t.p = 1;
+                }
+            }
+          }(this));
+        }
+      .steps-widget .step:first-child:before{
+        display:none;
+        }
+    .steps-widget .step .abstract{
+      float:left;
+      overflow:hidden;
+      padding:20px 0 0;
+      }
+    .steps-widget .step .number{
+      float:left;
+      text-align:center;
+      margin:20px 20px 19px 0;
+      width:40px;
+      height:40px;
+      font:bold 18px/40px "Helvetica Neue",Helvetica,Arial,sans-serif;
+      color:#fff;
+      background-color:#c4c3c3;
+      background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e0dddd), to(#bcbcbc));
+      background: -webkit-linear-gradient(top, #e0dddd, #bcbcbc);
+      background: -moz-linear-gradient(top, #e0dddd, #bcbcbc);
+      background: -ms-linear-gradient(top, #e0dddd, #bcbcbc);
+      background: -o-linear-gradient(top, #e0dddd, #bcbcbc);
+      background: linear-gradient(top, #e0dddd, #bcbcbc);
+      
+      text-shadow:0 1px 0 rgba(0,0,0,.25);
+      border-radius:20px;
+      }
+    .steps-widget .step .title{
+      white-space:nowrap;
+      font:bold 18px/24px "Helvetica Neue",Helvetica,Arial,sans-serif;
+      color:#666;
+      }
+    .steps-widget .step .description{
+      white-space:nowrap;
+      font:bold 14px/16px "Helvetica Neue",Helvetica,Arial,sans-serif;
+      color:#999;
+      }
+    .steps-widget .selected{
+      
+      }
+      .steps-widget .selected .number{
+        background-color:#3c578a;
+        background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#446196), to(#3c5483));
+        background: -webkit-linear-gradient(top, #446196, #3c5483);
+        background: -moz-linear-gradient(top, #446196, #3c5483);
+        background: -ms-linear-gradient(top, #446196, #3c5483);
+        background: -o-linear-gradient(top, #446196, #3c5483);
+        background: linear-gradient(top, #446196, #3c5483);
+        
+        -webkit-box-shadow:0 2px 0 0 rgba(0,0,0,.25);
+        -moz-box-shadow:0 2px 0 0 rgba(0,0,0,.25);
+        -o-box-shadow:0 2px 0 0 rgba(0,0,0,.25);
+        box-shadow:0 2px 0 0 rgba(0,0,0,.25);
+        }
+      .steps-widget .selected .title{
+        color:#405d94;
+        }
+      .steps-widget .selected .description{
+        color:#666;
+        }

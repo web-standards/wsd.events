@@ -1,0 +1,25 @@
+.magazine-message-widget{
+  background-color:#252525;
+  margin:0 0 15px;
+  padding:0 10px 5px;
+  color:#c2c2c2;
+  font:12px/16px 'PT Sans',Arial,sans-serif;
+  }
+  .magazine-message-widget .title{
+    color:#fff;
+    font:bold 13px/40px 'PT Sans Caption',Arial,sans-serif;
+    margin:0 0 5px;
+    }
+  .magazine-message-widget .controls{
+    color:#fff;
+    margin:10px 0 0;
+    }
+    .magazine-message-widget .controls li{
+      border-top:1px dotted #fff;
+      position:relative;
+      zoom:1;
+      }
+      .magazine-message-widget .controls li a{
+        color:#fff;
+        font:bold 13px/30px 'PT Sans Caption',Arial,sans-serif;
+        }

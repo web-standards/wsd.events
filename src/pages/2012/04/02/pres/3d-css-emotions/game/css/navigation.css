@@ -1,0 +1,88 @@
+.perspective-3d nav{
+	text-align:center;
+	position:absolute;
+	
+	width:350px;
+	height:504px;
+	margin:-252px 0 0 -175px;
+	position: absolute;
+	top:50%;
+	left:50%;
+
+	font: 128px/168px 'Conv_loved_by_the_king', cursive;
+
+	-webkit-transform: scale(.5);
+	-moz-transform: scale(.5);
+	-ms-transform: scale(.5);
+	-o-transform: scale(.5);
+	transform: scale(.5);
+	white-space:nowrap;
+
+	-webkit-transform-style:preserve-3d;
+	-moz-transform-style:preserve-3d;
+	-ms-transform-style:preserve-3d;
+	-o-transform-style:preserve-3d;
+	transform-style:preserve-3d;
+
+	-webkit-perspective:900px;
+	-moz-perspective:900px;
+	-ms-perspective:900px;
+	-o-perspective:900px;
+	perspective:900px;
+	}
+.flat nav{		
+	text-align:center;
+	position:absolute;
+	
+	width:175px;
+	height:252px;
+	margin:-126px 0 0 -67px;
+	position: absolute;
+	top:50%;
+	left:50%;
+	
+	
+	font:64px/84px 'Conv_loved_by_the_king', cursive;
+
+	}
+	nav a{
+		text-transform:uppercase;
+		display:block;
+		margin:0 auto;
+		color:#fff;
+		text-decoration:none;
+		text-shadow:0 0 20px rgba(255,255,255,.4);
+		-webkit-transition:all .25s ease-out;
+		-moz-transition:all .25s ease-out;
+		-ms-transition:all .25s ease-out;
+		-o-transition:all .25s ease-out;
+		transition:all .25s ease-out;
+		}
+		nav a:hover{
+			text-shadow:0 0 30px rgba(255,255,255,1);	
+			}
+		.flat nav a:hover{
+			text-shadow:0 0 15px rgba(255,255,255,1);	
+			}
+		nav .change-name{
+			min-width:400px;
+			height:120px;
+			text-align:center;
+			background: url("../img/cloud.png") 50% no-repeat;
+
+			display:none;
+			position: absolute;
+			bottom:110%;
+			left:100%;
+			font:64px/100px 'Conv_loved_by_the_king', cursive;
+
+			-webkit-transform:translateZ(30px);
+			-moz-transform:translateZ(30px);
+			-ms-transform:translateZ(30px);
+			-o-transform:translateZ(30px);
+			transform:translateZ(30px);
+
+			}
+	nav a.scores{
+		display:none;
+		}

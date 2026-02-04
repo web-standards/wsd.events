@@ -1,0 +1,109 @@
+.previous-orders-widget{
+	position: relative;
+	text-align:left;
+	}
+	.previous-orders-widget article{
+		-webkit-border-radius:3px;
+		-moz-border-radius:3px;
+		-ms-border-radius:3px;
+		-o-border-radius:3px;
+		border-radius:3px;
+		border:1px solid #bfbfbf;
+		background: url('../img/delivering-ico.png') 13px 10px no-repeat;
+		margin:0 0 10px;
+		}
+		.previous-orders-widget article.delivered{
+			background: url('../img/delivered.png') 9px 14px no-repeat;
+			}
+			.previous-orders-widget article.delivered .items-list{
+				display:block;
+				}
+			.previous-orders-widget article.delivered .order-details{
+				color:#999;
+				}
+				.previous-orders-widget article.delivered .order-details .price{
+					color:#333;
+					}
+		.previous-orders-widget article .order-details{
+			padding:0 10px 0 40px;
+			position:relative;
+			overflow:hidden;
+			zoom:1;
+			line-height:38px;
+			color:#333;
+			}
+			.previous-orders-widget article .order-details time{
+				float:left;
+				width:145px;
+				font:bold 14px/38px "Helvetica Neue",Helvetica,Arial,sans-serif;
+				}
+			.previous-orders-widget article .order-details .destination{
+				float:left;
+				width:275px;
+				font:bold 12px/38px "Helvetica Neue",Helvetica,Arial,sans-serif;
+				}
+				.previous-orders-widget article .order-details .destination a{
+					color:#405d94;
+					}
+			.previous-orders-widget article .order-details .count{
+				float:left;
+				color:#999;
+				font:bold 12px/38px "Helvetica Neue",Helvetica,Arial,sans-serif;
+				}
+			.previous-orders-widget article .order-details .price{
+				float:right;
+				color:#df2218;
+				font:bold 14px/38px "Helvetica Neue",Helvetica,Arial,sans-serif;
+				}
+		.previous-orders-widget article .items-list{
+			display:none;
+			}
+			.previous-orders-widget article .items-list .item{
+				border-top:1px solid #e4e4e4;
+				margin:0 1px;
+				padding:20px 10px 20px 14px;
+				position:relative;
+				zoom:1;
+				overflow:hidden;
+				display:block;
+				}
+				.previous-orders-widget article .items-list .item .illustration{
+					width:60px;
+					height:45px;
+					border-bottom:1px solid #d9d9d9;
+					margin:0 10px 0 0;
+					float:left;
+					}
+				.previous-orders-widget article .items-list .item .price{
+					float:right;
+					color:#dd1309;
+					font:bold 12px/16px "Helvetica Neue",Helvetica,Arial,sans-serif;
+					}
+				.previous-orders-widget article .items-list .item .title{
+					color:#666;
+					font:bold 12px/16px "Helvetica Neue",Helvetica,Arial,sans-serif;
+					}
+				.previous-orders-widget article .items-list .item .details{
+					width:490px;
+					color:#999;
+					font:bold 12px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
+					}
+	.previous-orders-widget .empty{
+		padding:150px 0;
+		text-align:center;
+		}
+		.previous-orders-widget .empty .title{
+			font:bold 36px/36px "Helvetica Neue",Helvetica,Arial,sans-serif;
+			color:#999;
+			}
+		.previous-orders-widget .empty p{
+			font:bold 18px/25px "Helvetica Neue",Helvetica,Arial,sans-serif;
+			color:#333
+			}
+			.previous-orders-widget .empty p a{
+				color:#dd1309;
+				text-decoration:underline;
+				}
+				.previous-orders-widget .empty p a:hover{
+					text-decoration:none;
+					}

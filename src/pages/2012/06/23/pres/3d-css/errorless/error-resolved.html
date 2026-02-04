@@ -1,0 +1,273 @@
+<!DOCTYPE HTML>
+	<html lang="en-US">
+	<head>
+		<meta charset="UTF-8">
+		<title>Froggler</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="stylesheet" href="css/common.css">
+		<script src="js/modernizr.min.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/ZeroClipboard.js"></script>
+
+		<script src="js/frogglerController.js"></script>
+		<script src="js/projectListController.js"></script>
+		<script src="js/projectController.js"></script>
+		<script src="js/ticketController.js"></script>
+		<script src="js/errorController.js"></script>
+	</head>
+	<body>
+		<section class="projects-widget">
+			<div class="subscription">
+				<div class="wrapper">
+					<h2 class="title">
+						Your subscription plan is <b>Small</b>
+					</h2>
+					<a href="#" class="change-subscription-plan">Change</a>
+					<p class="to-do-metr">
+						<span class="progressbar"><b class="done" style="width:40%"></b></span>
+						<b class="current">4</b> of <b class="all">10</b>
+					</p>
+				</div>
+			</div>
+			<div class="wrapper">
+				<a href="#" class="add-project"><b>Add project</b></a>
+				<section class="project-list">
+					<div class="line">
+						<article>
+							<h2 class="title">Giftofoni</h2>
+							<p class="errors"><b>23 247</b> Errors</p>
+							<p class="users">987</p>
+							<p class="new">4 000</p>
+							<nav>
+								<a href="#" class="go-to-project">Go to project</a>
+								<a href="#" class="edit">Edit</a>
+							</nav>
+						</article>
+					</div>
+					<div class="line">
+						<article>
+							<h2 class="title">Anonymous project</h2>
+							<p class="errors"><b>12</b> Errors</p>
+							<p class="users">3</p>
+							<nav>
+								<a href="#" class="go-to-project">Go to project</a>
+								<a href="#" class="edit">Edit</a>
+							</nav>
+						</article>
+						<article>
+							<h2 class="title">Froggler</h2>
+							<p class="errors"><b>247</b> Errors</p>
+							<p class="users">4</p>
+							<p class="new">5</p>
+							<nav>
+								<a href="#" class="go-to-project">Go to project</a>
+								<a href="#" class="edit">Edit</a>
+							</nav>
+						</article>
+						<article>
+							<h2 class="title">Some Long Name Project That</h2>
+							<p class="errors"><b>159</b> Errors</p>
+							<p class="users">Only me</p>
+							<p class="new">4</p>
+							<nav>
+								<a href="#" class="go-to-project">Go to project</a>
+								<a href="#" class="edit">Edit</a>
+							</nav>
+						</article>
+					</div>
+				</section>
+			</div>
+			<form action="/add/project/" method="post" class="add-project-form">
+				<fieldset>
+					<input type="text" name="name" value="" placeholder="Project name" required="required">
+					<input type="text" name="description" value="" placeholder="Description" required="required">
+					<button type="submit" class="submit"><span>Add project</span></button>
+					<a href="#" class="cancel">Cancel</a>
+				</fieldset>
+			</form>
+		</section>
+		<header>
+			<div class="wrapper">
+				<a href="#">
+					<h1 class="logotype">Froggler</h1>
+				</a>
+				<div class="profile">
+					<a href="#" class="name">Krakozеabra</a>
+					<nav>
+						<a href="#" class="subscription">Small</a>
+						<a href="#" class="sign-out">Sign out</a>
+						<a href="#" class="help">Help</a>
+					</nav>
+				</div>
+				<div class="statistic">
+					<a href="#" class="unresolved"><b>34</b> unresolved errors</a>
+					<a href="#" class="projects"><b>4</b> projects</a>
+				</div>
+			</div>
+		</header>
+		<section class="content-wrapper">
+			<section class="project-details-widget">
+				<section class="details">
+					<h2 class="title">Giftofoni</h2>
+					<p class="code">
+						2071547e33353913ee4c277f
+						<a href="#" id="copy-project-code" class="copy" data-code="2071547e33353913ee4c277f">Cкопировать в буффер обмена</a>
+					</p>
+					<menu type="toolbar">
+						<li><a class="edit" href="#"><b>Edit project</b></a></li>
+					</menu>
+				</section>
+				<section class="user-list">
+					<p class="user-count">8 users</p>
+					<div class="users">
+						<a href="#" class="user remove-user">
+							<p class="name">Krakozabra</p>
+							<p class="email">diezigne@gmail.com</p>
+						</a>
+						<a href="#" class="user remove-user">
+							<p class="name">Oolah</p>
+							<p class="email">mya@gmail.com</p>
+						</a>
+						<a href="#" class="user remove-user">
+							<p class="name">Mt_T</p>
+							<p class="email">mr_Twithlongemailaddress@gmail.com</p>
+						</a>
+						<a href="#" class="user remove-user">
+							<p class="name">Whiteman</p>
+							<p class="email">whiteman@gmail.com</p>
+						</a>
+						<a href="#" class="user-invited cancel-invite">
+							<p>Sent</p>
+							<p class="email">whiteman@gmail.com</p>
+						</a>
+					</div>
+					<p class="add-user">
+						<a href="#">Write email to add user</a>
+					</p>
+				</section>
+			</section>
+			<section class="error-widget resolved">
+				<menu type="toolbar" class="error-toolbar">
+					<li><a href="#" class="back"><b>Back to project</b></a></li>
+				</menu>
+				<h2 class="title">UserClient: Browser Cache Overload</h2>
+				<p class="alike">&times;14</p>
+				<table class="details-list">
+					<tbody>
+					<tr>
+						<td class="title">File</td>
+						<td>RAILS_ROOT/app/models/admin/user.rb#45</td>
+					</tr>
+					<tr>
+						<td class="title">Method</td>
+						<td>initialize_with_params_lol</td>
+					</tr>
+					<tr>
+						<td class="title">Class</td>
+						<td>SuperPpuperNullPointerException</td>
+					</tr>
+					<tr>
+						<td class="title">Platform</td>
+						<td>iOS5</td>
+					</tr>
+					<tr>
+						<td class="title">Language</td>
+						<td>Ruby</td>
+					</tr>
+					<tr>
+						<td class="title">Remote IP</td>
+						<td>127.0.0.1</td>
+					</tr>
+					<tr>
+						<td class="title">URL</td>
+						<td><a href="https://www.google.ru/webhp?sourceid=chrome-instant&amp;ie=UTF-8&amp;ion=1#sclient=psy-ab&amp;hl=ru&amp;newwindow=1&amp;site=webhp&amp;q=CS6%20PSD%20corrupted&amp;oq=&amp;aq=&amp;aqi=&amp;aql=&amp;gs_nf=&amp;gs_l=&amp;pbx=1&amp;fp=760a6e53a677a1ed&amp;ion=1&amp;bav=on.2,or.r_gc.r_pw.,cf.osb&amp;biw=1811&amp;bih=1107">https://www.google.ru/webhp?sourceid=chrome-instant&amp;ie=UTF-8&amp;ion=1#sclient=psy-ab&amp;hl=ru&amp;newwindow=1&amp;site=webhp&amp;q=CS6%20PSD%20corrupted&amp;oq=&amp;aq=&amp;aqi=&amp;aql=&amp;gs_nf=&amp;gs_l=&amp;pbx=1&amp;fp=760a6e53a677a1ed&amp;ion=1&amp;bav=on.2,or.r_gc.r_pw.,cf.osb&amp;biw=1811&amp;bih=1107</a></td>
+					</tr>
+				</table>
+				<section class="tabspace">
+					<nav class="tabs">
+						<a href="#backtrace" class="selected">Backtrace</a>
+						<a href="#params">Params</a>
+						<a href="#headers">Headers</a>
+						<a href="#session">Session</a>
+						<a href="#environment">Environment Variables</a>
+					</nav>
+					<section class="tab selected" id="backtrace">ActionController::RoutingError (No route matches [GET] "/robots.txt"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  railties (3.2.3) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  unicorn (4.2.0) lib/unicorn/http_server.rb:530:in `process_client'
+  unicorn (4.2.0) lib/unicorn/http_server.rb:604:in `worker_loop'
+  unicorn (4.2.0) lib/unicorn/http_server.rb:487:in `spawn_missing_workers'
+  unicorn (4.2.0) lib/unicorn/http_server.rb:137:in `start'
+  unicorn (4.2.0) bin/unicorn:121:in `&lt;top (required)&gt;'
+  /usr/local/bin/unicorn:19:in `load'
+  /usr/local/bin/unicorn:19:in `&lt;main&gt;'
+					</section>
+					<section class="tab" id="params">
+						Parameter (from Ancient Greek παρά also “para” meaning “beside, subsidiary” and μέτρον also “metron” meaning “measure”) can be interpreted in mathematics, logic, linguistics, environmental science[1] and other disciplines.
+In its common meaning, the term is used to identify a characteristic, a feature, a measurable factor that can help in defining a particular system. It is an important element to take into consideration for the evaluation or for the comprehension of an event, a project or any situation.
+					</section>
+					<section class="tab" id="headers">
+A cheetah's head
+In anatomy, the head of an animal is the rostral part (from anatomical position) that usually comprises the brain, eyes, ears, nose and mouth (all of which aid in various sensory functions, such as sight, hearing, smell, and taste). Some very simple animals may not have a head, but many bilaterally symmetric forms do. Heads develop in animals by an evolutionary trend known as cephalization. In bilaterally symmetrical animals, nerve tissues concentrate at the anterior region, forming structures responsible for information processing. Through biological evolution, sense organs and feeding structures also concentrate into the anterior region, which collectively form the head.
+					</section>
+					<section class="tab" id="session">
+						In computer science, in particular networking, a session is a semi-permanent interactive information interchange, also known as a dialogue, a conversation or a meeting, between two or more communicating devices, or between a computer and user (see Login session). A session is set up or established at a certain point in time, and turn down at a later point in time. An established communication session may involve more than one message in each direction. A session is typically, but not always, stateful, meaning that at least one of the communicating parts needs to save information about the session history in order to be able to communicate, as opposed to stateless communication, where the communication consists of independent requests with responses.
+An established session is the basic requirement to perform a connection-oriented communication. A session also is the basic step to transmit in connectionless communication modes. However any unidirectional transmission does not define a session[1].
+Communication sessions may be implemented as part of protocols and services at the application layer, at the session layer or at the transport layer in the OSI model.
+					</section>
+					<section class="tab" id="environment">
+						In graphical computing, a desktop environment (DE) commonly refers to a particular implementation of graphical user interface (GUI) derived from the desktop metaphor that is seen on most modern personal computers.[1] These GUIs help the user in easily accessing, configuring, and modifying many important and frequently accessed specific operating system (OS) features. The GUI usually does not afford access to all the many features found in an OS. Instead, the traditional command-line interface (CLI) is still used when full control over the OS is required in such cases.
+A desktop environment typically consists of icons, windows, toolbars, folders, wallpapers and desktop widgets (see Elements of graphical user interfaces and WIMP).[2]
+A GUI might also provide drag and drop functionality and other features that make the desktop metaphor more complete. A desktop environment aims to be an intuitive way for the user to interact with the computer using concepts which are similar to those used when interacting with the physical world, such as buttons and windows.
+While the term desktop environment originally described a style of user interfaces following the desktop metaphor, it has also come to describe the programs that realize the metaphor itself.[3] This usage has been popularized by the Common Desktop Environment and the K Desktop Environment.
+					</section>
+				</section>
+				<section class="alike-list">
+					<p class="count"><b>&times;15</b></p>
+					<div class="errors-list">
+						<article>
+							<h3 class="title">linode_app_name_1</h2>
+							<time pubdate datetime="2012-04-12T12:30Z">2 hours ago</time>
+						</article>
+						<article>
+							<h3 class="title">linode_app_name_2</h2>
+							<time pubdate datetime="2012-04-12T06:30Z">6 hours ago</time>
+						</article>
+						<article>
+							<h3 class="title">linode_app_name_3</h2>
+							<time pubdate datetime="2012-04-30T23:44Z">30.04.2012, 23:44</time>
+						</article>
+					</div>
+					<a href="#" class="more">More <b>12</b> Similar Errors</a>
+				</section>
+			</section>
+			</section>
+		</section>
+		<footer>
+			<p class="copyright">Froggler &copy; 2012</p>
+			<nav>
+				<a href="#">Blog</a>
+				<a href="#">API Overview</a>
+				<a href="#">Status site</a>
+				<a href="#">Terms of Service</a>
+				<a href="#">Privacy Policy</a>
+				<a href="#" class="rss">Subsribe via RSS</a>
+			</nav>
+		</footer>
+	</body>
+</html>

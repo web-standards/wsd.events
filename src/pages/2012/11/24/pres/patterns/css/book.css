@@ -1,0 +1,56 @@
+body .book{
+  background: #fff url("../spoiler/book.png");
+  }
+  body .book.addy{
+    background: #fff url("../spoiler/book-2.png");
+    }
+  body .book.gof{
+    background: #fff url("../spoiler/gof.png");
+    }
+  body .book .details{
+    padding:20px 0 0 400px;
+    }
+    body .book .details h2+h1{
+      margin-top:-10px;
+      }
+    body .book .details h1{
+      text-transform:none;
+      margin:0;
+      font: 48px/56px 'PT Sans Caption',sans-serif;
+      }
+    body .book .details h2{
+      font: 36px/42px 'PT Sans Caption',sans-serif;
+      text-transform:none;
+      color:#000;
+      margin:0 0 10px;
+      }
+    body .book .details .author{
+      font: italic 24px/32px 'PT Sans',sans-serif;
+      margin:0 0 40px;
+      }
+    body .book .details .isbn{
+      display:inline-block;
+      position: relative;
+      font: 32px/48px 'PT Sans',sans-serif;
+      white-space:nowrap;
+      }
+      body .book .details .isbn b{
+        position: absolute;
+        left:100%;
+        padding:0 0 0 10px;
+        font: 16px/24px 'PT Sans',sans-serif;
+        } 
+        body .book .details .isbn b.lang{
+          top:2px;
+          }
+        body .book .details .isbn b.type{
+          bottom:5px;
+          }
+    body .book .details .shop{
+      font: 24px/32px 'PT Sans',sans-serif;
+      white-space:nowrap;
+      }
+    body .book .details .online{
+      font: 24px/32px 'PT Sans',sans-serif;
+      white-space:nowrap;
+      }

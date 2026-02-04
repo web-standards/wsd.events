@@ -1,0 +1,67 @@
+.column-6 .social-widget{
+  margin:0 0 15px;
+  padding:0;
+  }
+.social-widget{
+  padding:0 15px 0 10px;
+  vertical-align:top;
+  margin-bottom:15px;
+  }
+  .social-widget .print-preview{
+    float:right;
+    padding:0;
+    font-size:0;
+    line-height:0;
+    height: 21px;
+    width: 22px;
+    position:relative;
+    overflow:hidden;
+    display:block;
+    }
+  .social-widget .entry{
+    vertical-align:top;
+    display:inline-block;
+    height:30px;
+    overflow:visible;
+    }
+    * html .social-widget .entry{
+      display:inline;
+      zoom:1;
+      }
+    *+html .social-widget .entry{
+      display:inline;
+      zoom:1;
+      }
+    * html .social-widget .print-preview{
+      zoom: expression(function(t){
+          t.runtimeStyle.zoom = 1;
+          var after = document.createElement('span');
+          after.className = 'print-preview-ie-after-fix';
+          t.appendChild(after);
+        }(this));
+      }
+    *+html .social-widget .print-preview{
+      zoom: expression(function(t){
+          t.runtimeStyle.zoom = 1;
+          var after = document.createElement('span');
+          after.className = 'print-preview-ie-after-fix';
+          t.appendChild(after);
+        }(this));
+      }
+    .social-widget .print-preview .print-preview-ie-after-fix,
+    .social-widget .print-preview:after{
+      content: ".";
+      text-indent: -9000px;
+      padding:0;
+      font-size:0;
+      line-height:0;
+      overflow: hidden;
+      display: block;
+      position:absolute;
+      height: 21px;
+      width: 22px;
+      top: 0;
+      left: 50%;
+      margin:0 0 0 -11px;
+      background: url("../img/printerIco.gif") 50% 50% no-repeat;
+      }

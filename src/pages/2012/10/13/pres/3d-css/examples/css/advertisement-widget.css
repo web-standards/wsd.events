@@ -1,0 +1,35 @@
+header aside.advertisement-widget{
+  margin:0 auto;
+  }
+
+.banner-300{
+  width:300px;
+  }
+  
+.banner-317{
+  width:317px;
+  }
+
+.banner-485{
+  width:485px;
+  }
+
+.banner-981{
+  width:981px;
+  }
+  
+.advertisement-widget{
+  margin:0 auto 15px;
+  position:relative;
+  zoom:1;
+  }
+  .advertisement-widget a{
+    display:block;
+    }
+  .advertisement-widget img{
+    display:block;
+    }
+  .advertisement-widget .title{
+    font:normal 10px/11px 'PT Sans',Arial,sans-serif;
+    color:#999;
+    }

@@ -1,0 +1,27 @@
+.spam-permission-widget{
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  width:100%;
+  border-bottom:1px solid #c2c2c2;
+  padding:0 20px 35px;
+  font:bold 18px/25px "Helvetica Neue",Helvetica,Arial,sans-serif;
+  color:#333;
+  background-color:#fff;
+  background-color:rgba(255,255,255,.95);
+  }
+  .spam-permission-widget h1{
+    color:#dd1309;
+    font:bold 36px/36px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    margin:30px 0 0;
+    }
+  .spam-permission-widget strong{
+    margin:10px 0 0;
+    color:#dd1309;
+    display:block;
+    font:bold 20px/50px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    }
+  .spam-permission-widget .yes{
+    margin:10px 0 30px;
+    }

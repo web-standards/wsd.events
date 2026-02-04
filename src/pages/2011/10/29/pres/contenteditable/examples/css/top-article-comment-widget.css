@@ -1,0 +1,148 @@
+.top-article-comment-widget{
+  position:relative;
+  background-color:#e2e2e2;
+  border-top:4px solid #b3b3b3;
+  margin:0 0 15px 0;
+  }
+  .top-article-comment-widget:after{
+    content:".";
+    text-indent:-9000px;
+    overflow:hidden;
+    height:0;
+    line-height:0;
+    font-size:0;
+    clear:both;
+    display:block;
+    }
+  * html .top-article-comment-widget{
+    zoom:1;
+    }
+  *+html .top-article-comment-widget{
+    zoom:1;
+    }
+  .top-article-comment-widget a{
+    display:block;
+    }
+  body .top-article-comment-widget figure{
+    float:left;
+    display:block;
+    margin-top:-4px;
+    border-top:4px solid #000;
+    position:relative;
+    }
+  .top-article-comment-widget figcaption{
+    position:absolute;
+    width:100%;
+    top:0;
+    left:0;
+    padding:15px 0;
+    font: 18px/20px 'PT Sans',Arial,sans-serif;
+    color:#fff;
+    background:url("../img/grad.png") 0 100% repeat-x;
+    }
+    * html .top-article-comment-widget figcaption{
+      background:none;
+      cursor:pointer;
+      filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src='img/grad.png', sizingMethod='scale');
+      }
+    .top-article-comment-widget figcaption span{
+      display:block;
+      padding:0 20px;
+      }
+  .top-article-comment-widget .illustration{
+    display:block;
+    position:relative;
+    }
+  .top-article-comment-widget .information{
+    position:relative;
+    float:right;
+    }
+    .top-article-comment-widget .information .show-more{
+      font:italic 13px/18px 'PT Sans',Arial,sans-serif;
+      }
+    .top-article-comment-widget .information .link-2-sphere{
+      text-transform:uppercase;
+      display:block;
+      margin:10px 0 0;
+      padding:10px 0;
+      border-top:1px dotted #b7b7b7;
+      overflow:hidden;
+      color:#000;
+      }
+      .top-article-comment-widget .information .link-2-sphere .count{
+        color:#0056a4;
+        }
+    .top-article-comment-widget .information .comment{
+      background-color:#FFF;
+      margin:10px 0;
+      position:relative;
+      display:block;
+      left:-10px;
+      padding:10px;
+      -webkit-box-shadow:0 0 10px 0 rgba(0,0,0,0.3);
+      -moz-box-shadow:0 0 10px 0 rgba(0,0,0,0.3);
+      -o-box-shadow:0 0 10px 0 rgba(0,0,0,0.3);
+      box-shadow:0 0 10px 0 rgba(0,0,0,0.3);
+      }
+      * html .top-article-comment-widget .information .comment{
+        zoom:1;
+        }
+      *+html .top-article-comment-widget .information .comment{
+        zoom:1;
+        }
+      .top-article-comment-widget .information .comment:after{
+        display:block;
+        border-width:18px 0 0 18px;
+        border-color:#fff transparent transparent transparent;
+        border-style:solid;
+        content:".";
+        text-indent:-9000px;
+        height:0;
+        width:0;
+        font-size:0;
+        line-height:0;
+        overflow:hidden;
+        position:absolute;
+        top:20px;
+        right:100%;
+        display:block;
+        z-index:6;
+        }
+      .top-article-comment-widget .information .comment .avatar{
+        float:left;
+        margin:0 10px 15px 0;
+        }
+      .top-article-comment-widget .information .comment .job{
+        font: 12px/18px 'PT Sans',Arial,sans-serif;
+        color:#777;
+        }
+      .top-article-comment-widget .information .comment .name{
+        font: italic 13px/18px 'PT Sans',Arial,sans-serif;
+        color:#000;
+        }
+      .top-article-comment-widget .information .comment blockquote{
+        clear:both;
+        color:#000;
+        margin:15px 0 0;
+        font: 13px/15px 'PT Sans',Arial,sans-serif;
+        }
+        .top-article-comment-widget .information .comment blockquote strong,
+        .top-article-comment-widget .information .comment blockquote b{
+          font-weight:bold;
+          }
+        .top-article-comment-widget .information .comment blockquote i{
+          font-style:italic;
+          }
+        .top-article-comment-widget .information .comment blockquote:after{
+          content:".";
+          text-indent:-9000px;
+          width:19px;
+          height:14px;
+          display:block;
+          float:right;
+          overflow:hidden;
+          background:url("../img/quote.png") 0 0 no-repeat;
+          }
+        * html .top-article-comment-widget .information .comment blockquote{
+          
+          }

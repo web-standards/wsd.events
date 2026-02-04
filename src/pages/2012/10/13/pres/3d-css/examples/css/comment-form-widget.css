@@ -1,0 +1,42 @@
+.comment-form-widget{
+  background-color:#e2e2e2;
+  border-top:1px dotted #b7b7b7;
+  padding:0 10px 10px;
+  zoom:1;
+  }
+  .comment-form-widget fieldset{
+    }
+  .comment-form-widget .show-more{
+    font:italic 13px/55px 'PT Sans',Arial,sans-serif;
+    }
+  .comment-form-widget label{
+    font:bold 18px/55px 'PT Sans Caption',Arial,sans-serif;
+    margin:0 15px 0 0;
+    
+    }
+  .comment-form-widget button{
+    border-style:none;
+    padding:0;
+    margin:0;
+    display:inline;
+    overflow:visible;
+    background:none;
+    position:static;
+    }
+    body .comment-form-widget button span{
+      position:static;
+      }
+  .comment-form-widget textarea{
+    width:634px;
+    padding:5px;
+    border-style:none;
+    outline:none;
+    resize:none;
+    height:120px;
+    display:block;
+    margin:0 0 10px 0;
+    -webkit-box-shadow:inset 1px 1px 4px 0 rgba(0,0,0,0.4);
+    -moz-box-shadow:inset 1px 1px 4px 0 rgba(0,0,0,0.4);
+    -o-box-shadow:inset 1px 1px 4px 0 rgba(0,0,0,0.4);
+    box-shadow:inset 1px 1px 4px 0 rgba(0,0,0,0.4);
+    }

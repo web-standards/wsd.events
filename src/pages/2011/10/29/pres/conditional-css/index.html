@@ -1,0 +1,921 @@
+<!DOCTYPE HTML>
+<html lang="ru-RU">
+<head>
+	<title>Shower</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=1274, user-scalable=no">
+	<link rel="stylesheet" href="themes/ribbon/styles/style.css">
+	<style>
+		#cover H2 {
+			color:#FFF;
+			text-align:center;
+			font-size:70px;
+			}
+		#cover IMG {
+
+		}
+
+		.b-scroll-wrapper {
+			overflow: hidden;
+		}
+		.b-scroll {
+			-moz-animation-duration: 30s;
+			-moz-animation-name: scroll;
+			-moz-animation-iteration-count: infinite;
+			-moz-animation-timing-function: linear;
+		}
+		.b-scroll p {
+			height: 50px;
+			white-space: nowrap;
+		}
+
+		@-moz-keyframes scroll {
+			from {
+				marin-left: 0;
+			}
+		to {
+				margin-left: -3330px;
+			}
+		}
+
+	</style>
+</head>
+<body class="list">
+	<header class="caption">
+		<h1>Шаблон презентации Shower</h1>
+		<p>Вадим Макеев, Opera Software</p>
+	</header>
+	<div class="slide bg" id="cover">
+		<div>
+			<section>
+				<header>
+					<!-- <h2>Мухи отдельно, котлеты отдельно.<br>Conditional Comments, Conditional CSS, Modernizr, CSS Conditional Rules</h2> -->
+				</header>
+				<img src="pictures/cover.jpg" alt="">
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-02">
+		<div>
+			<section>
+				<header>
+					<h2>Conditional Comments</h2>
+				</header>
+				<p><a href="http://msdn.microsoft.com/en-us/library/ms537512%28v=vs.85%29.aspx" target="_blank">http://msdn.microsoft.com/en-us/library/ms537512%28v=vs.85%29.aspx</a></p>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-03">
+		<div>
+			<section>
+				<header>
+					<h2>Conditional Comments</h2>
+				</header>
+				<p>Технология Microsoft предназначенная для управления загрузкой ресурсов HTML/CSS/JS.</p>
+				<p>Расширенное использование HTML-комментариев, добавлением дополнительного синтаксиса и логики.</p>
+				<p>Первое внедрение — IE 5.5. Последнее — IE9. </p>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-04">
+		<div>
+			<section>
+				<header>
+					<h2>Conditional Comments</h2>
+				</header>
+				<p>Условное состояние формируется на основе Expression внутри HTML-комментария: оператор, функция, значение &laquo;и/или&raquo;.</p>
+				<p>Expression является индикатором необходимости интерпретации или игнорирования содержимого блока комментария.</p>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-05">
+		<div>
+			<section>
+				<header>
+					<h2>Conditional Comments</h2>
+				</header>
+				<p>Деление браузеров на типы:</p>
+				<ul>
+					<li>«uplevel» — не поддерживающие CC (IE5.5, IE6, IE7, IE8, IE9);</li>
+					<li>«downlevel» — не поддерживающие CC (Opera, Chrome, Firefox, Safari <strong>IE10</strong>).</li>
+				</ul>
+				<p></p>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-06">
+		<div>
+			<section>
+				<header>
+					<h2>Conditional Comments</h2>
+				</header>
+				<p>Виды Conditional Comments:</p>
+				<ul>
+					<li>«downlevel-revealed» — интерпретируются «downlevel» браузерами;<br>
+						<code>&lt;![if expression]&gt; HTML &lt;![endif]&gt;</code>
+					</li>
+					<li>«downlevel-hidden» — игнорируются «downlevel» браузерами.<br>
+						<code>&lt;!--[if expression]&gt; HTML &lt;![endif]--&gt;</code>
+					</li>
+					<li>HTML-комментарий<br>
+						<code>&lt;!-- Comment content  --&gt;</code>
+					</li>
+				</ul>
+				<p></p>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-07">
+		<div>
+			<section>
+				<header>
+					<h2>Conditional Comments</h2>
+				</header>
+				<p>Функции:</p>
+				<ul>
+					<li>IE — <code>[if IE]</code> — Строка является функцией, сообщающей версию Internet Explorer, используемую для просмотра документа.</li>
+					<li>value — <code>[if IE 7]</code> — Целое число или число с плавающей точкой сообщающее версию браузера. Возвращается логическое значение «true», если номер версии соответствует версии браузера.</li>
+				</ul>
+				<p></p>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-08">
+		<div>
+			<section>
+				<header>
+					<h2>Conditional Comments</h2>
+				</header>
+				<p>Функции:</p>
+				<ul>
+					<li>WindowsEdition — <code>[if WindowsEdition]</code> — <!-- Internet Explorer 8 для Windows 7.  -->Строка является функцией, сообщающей редакцию Windows используюмую для просмотра документа.</li>
+					<li>value — <code>[if WindowsEdition 1]</code> — <!-- Internet Explorer 8 для Windows 7.  -->Строка является функцией, сообщающей редакцию Windows используюмую для просмотра документа.</li>
+				</ul>
+				<p></p>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-09">
+		<div>
+			<section>
+				<header>
+					<h2>Conditional Comments</h2>
+				</header>
+				<p>Функции:</p>
+				<ul>
+					<li>true — <code>[if true]</code> — Всегда вычисляется как «true».</li>
+					<li>false — <code>[if false]</code> — Всегда вычисляется как «false».</li>
+				</ul>
+				<p></p>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-10">
+		<div>
+			<section>
+				<header>
+					<h2>Conditional Comments</h2>
+				</header>
+				<p>Операторы:</p>
+				<ul>
+					<li>! — <code>[if !IE]</code> — Оператор «не». Размещается непосредственно перед функцией, оператором или subexpression для изменения логического значения экспрешена на обратное.</li>
+					<li>lt — <code>[if lt IE 5.5]</code> — Оператор «меньше, чем». Возвращает «true», если первый аргумент меньше второго.</li>
+					<li>lte — <code>[if lte IE 6]</code> — Оператор «меньше, чем или равен». Возвращает «true», если первый аргумент меньше или равен второму.</li>
+				</ul>
+				<p></p>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-11">
+		<div>
+			<section>
+				<header>
+					<h2>Conditional Comments</h2>
+				</header>
+				<p>Операторы:</p>
+				<ul>
+					<li>gt — <code>[if gt IE 5]</code> — Оператор «больше, чем». Возвращает «true», если первый аргумент больше второго.</li>
+					<li>gte — <code>[if gte IE 7]</code> — Оператор «больше, чем или равен». Возвращает «true», если первый аргумент больше или равен второму.</li>
+					<li>( ) — <code>[if !(IE 7)]</code> — Операторы «subexpression». Используется в сочетании с логическими операторами для создания более сложных expressions.</li>
+				</ul>
+				<p></p>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-12">
+		<div>
+			<section>
+				<header>
+					<h2>Conditional Comments</h2>
+				</header>
+				<p>Операторы:</p>
+				<ul>
+					<li>&amp; — <code>[if (gt IE 5)&amp; (lt IE 7)]</code> — Оператор «и». Возвращает «true», если все subexpressions вернули «true».</li>
+					<li>| — <code>[if (IE 6)|(IE 7)]</code> — Оператор «или». Возвращает «true», если любой из subexpressions возвращает «true».</li>
+				</ul>
+				<p></p>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-13">
+		<div>
+			<section>
+				<header>
+					<h2>Conditional Comments</h2>
+				</header>
+				<p>Ресурсы для IE.</p>
+				<pre>
+					<code>&lt;!--[if IE]&gt;<mark>HTML</mark>&lt;![endif]--&gt;</code>
+				</pre>
+				<p>Ресурсы для альтернативных браузеров.</p>
+				<pre>
+					<code>&lt;!--[if !IE]&gt;<mark>HTML</mark>&lt;![endif]--&gt;</code>
+				</pre>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-14">
+		<div>
+			<section>
+				<header>
+					<h2>Conditional Comments</h2>
+				</header>
+				<p>Ресурсы для IE версии ниже 9.</p>
+				<pre>
+					<code>&lt;!--[if lt IE 9]&gt;<mark>HTML</mark>&lt;![endif]--&gt;</code>
+				</pre>
+				<p>Ресурсы для IE9 и ниже.</p>
+				<pre>
+					<code>&lt;!--[if lte IE 9]&gt;<mark>HTML</mark>&lt;![endif]--&gt;</code>
+				</pre>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-15">
+		<div>
+			<section>
+				<header>
+					<h2>Conditional Comments</h2>
+				</header>
+				<p>Ресурсы для IE версии выше 8.</p>
+				<pre>
+					<code>&lt;!--[if gt IE 8]&gt;<mark>HTML</mark>&lt;![endif]--&gt;</code>
+				</pre>
+				<p>Ресурсы для IE8 и выше.</p>
+				<pre>
+					<code>&lt;!--[if gte IE 8]&gt;<mark>HTML</mark>&lt;![endif]--&gt;</code>
+				</pre>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-16">
+		<div>
+			<section>
+				<header>
+					<h2>Conditional Comments</h2>
+				</header>
+				<p>Ресурсы для IE5.5 и выше, но ниже IE7.</p>
+				<pre>
+					<code>&lt;!--[if (gte IE 5.5)&amp;(lt IE 7)]&gt;<mark>HTML</mark>&lt;![endif]--&gt;</code>
+				</pre>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-17">
+		<div>
+			<section>
+				<header>
+					<h2>Conditional-CSS</h2>
+				</header>
+				<p><a href="http://www.conditional-css.com" target="_blank">conditional-css.com</a></p>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-18">
+		<div>
+			<section>
+				<header>
+					<h2>Conditional-CSS</h2>
+				</header>
+				<p>OpenSource компилятор предназначенный для генерации специфического CSS на основе эталонного в контексте результатов идентификации UA.</p>
+				<p>Разграничение специфического CSS, как для отдельных браузеров, так и для групп браузеров.</p>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-19">
+		<div>
+			<section>
+				<header>
+					<h2>Conditional-CSS</h2>
+				</header>
+				<p>Базовая оптимизация производительности путем объединения в один файл всех CSS связанных между собой операторов <code>@import</code>.</p>
+				<p>Возможность условного управления импортами стилей из внешних файлов.</p>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-20">
+		<div>
+			<section>
+				<header>
+					<h2>Conditional-CSS</h2>
+				</header>
+				<p>В основе принцип Conditional Comments, расширенный на широкий круг браузеров и перенесенный на бэкэнд. Существует несколько реализаций компилятора:</p>
+				<ul>
+					<li>Простая в установке <strong>PHP 4/5</strong> реализация. Практически любая платформа.</li>
+					<li>IIS ориентированная <strong>C#</strong> реализация. Работает на платформе .NET 2.0 под Windows, Mono и некоторых других. (ASHX, CGI).</li>
+					<li>Экстремально быстрая <strong>C</strong> реализация. Работает практически на любой *nix платформе. (CGI)</li>
+				</ul>
+				<p><a href="http://www.conditional-css.com/usage#installation" target="_blank">conditional-css.com/usage#installation</a></p>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-21">
+		<div>
+			<section>
+				<header>
+					<h2>Conditional-CSS</h2>
+				</header>
+				<p>Определяет UA используемого браузера и с помощью двух переменных в GET-запросе передает сведения компилятору:</p>
+				<ul>
+					<li>b – имя браузера;</li>
+					<li>v – версия браузера.</li>
+				</ul>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-22">
+		<div>
+			<section>
+				<header>
+					<h2>Conditional-CSS</h2>
+				</header>
+				<p>Динамическая генерация уникальных CSS не подходит для высоконагруженных сайтов.</p>
+				<p>Возможность приема аргументов командной строки с указанием браузера и его версии (опционально) с целью последующей генерации статических файлов.</p>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-23">
+		<div>
+			<section>
+				<header>
+					<h2>Conditional-CSS</h2>
+				</header>
+				<p>Сценарий создания CSS файлов для IE 6, 7 и не-IE браузеров на примере PHP-реализации:</p>
+				<pre>
+					<code>#!/bin/sh</code>
+					<code>php -q c-css.php -b IE -v 7 source.css > ie7.css</code>
+					<code>php -q c-css.php -b IE -v 6 source.css > ie6.css</code>
+					<code>php -q c-css.php source.css > nonie.css</code>
+				</pre>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-24">
+		<div>
+			<section>
+				<header>
+					<h2>Conditional-CSS</h2>
+				</header>
+				<p>Любой селектор или блок могут быть экранированы префиксом условного оператора четырех основных типов:</p>
+				<ul>
+					<li>[if {!} browser]</li>
+					<li>[if {!} browser version]</li>
+					<li>[if {!} condition browser version]</li>
+					<li>[if {!} browser group]</li>
+				</ul>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-25">
+		<div>
+			<section>
+				<header>
+					<h2>Conditional-CSS</h2>
+				</header>
+				<p>Функция <code>browser</code> адресует CSS определенному браузеру:</p>
+					<ul>
+						<li>IE - Internet Explorer</li>
+						<li>Gecko - Gecko based browsers (Firefox, Camino etc)</li>
+						<li>Webkit - Webkit based browsers (Safari, Chrome, Shiira etc)</li>
+						<li>SafMob - Mobile Safari (iPhone / iPod Touch)</li>
+						<li>Opera - Opera's browser</li>
+						<li>IEMac - Internet Explorer for the Mac</li>
+						<li>Konq – Konqueror</li>
+						<li>IEmob - IE mobile</li>
+						<li>PSP - Playstation Portable</li>
+						<li>NetF - Net Front</li>
+					</ul>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-26">
+		<div>
+			<section>
+				<header>
+					<h2>Conditional-CSS</h2>
+				</header>
+				<p>Оператор <code>!</code> - указывает на отрицание утверждения.</p>
+				<p>Оператор <code>version</code> - указывает на версию браузера.</p>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-27">
+		<div>
+			<section>
+				<header>
+					<h2>Conditional-CSS</h2>
+				</header>
+				<p>Оператор <code>condition</code> - арифметический оператор:</p>
+				<ul>
+					<li>lt – меньше чем</li>
+					<li>lte – меньше чем или равен</li>
+					<li>eq - равен</li>
+					<li>gte – больше чем или равен</li>
+					<li>gt – больше чем</li>
+				</ul>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-28">
+		<div>
+			<section>
+				<header>
+					<h2>Conditional-CSS</h2>
+				</header>
+				<p>Функция <code>browser group</code> - указывает на группу браузеров, согласно уровню поддержки CSS:</p>
+				<ul>
+					<li>cssA – класс браузеров с максимальной поддержкой</li>
+					<li>cssС – основная поддержка с базовыми правилами</li>
+					<li>cssX - браузеры, блокирующие рендеринг<!-- CSS blocked from the browser, instead relying on HTML rendering --></li>
+					<li>cssU – неподдерживаемы браузеры, получающие CSS, аналогичный группе cssC</li>
+				</ul>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-29">
+		<div>
+			<section>
+				<header>
+					<h2>Conditional-CSS</h2>
+				</header>
+				<p>Группы браузеров распределены по поколениям на основе практики поддержки браузеров в компании U4EA Technologies.</p>
+				<p>С полным списком браузеров можно ознакомиться на специальной странице.</p>
+				<p><a href="http://conditional-css.com/u4ea_support" target="_blank">http://conditional-css.com/u4ea_support</a></p>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-30">
+		<div>
+			<section>
+				<header>
+					<h2>Conditional-CSS</h2>
+				</header>
+				<p>Условие может распространяться на весь селектор:</p>
+				<pre>
+					<code>[if IE] .box {</code>
+					<code>	width: 500px;</code>
+					<code>	padding: 100px 0;</code>
+					<code>}</code>
+				</pre>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-31">
+		<div>
+			<section>
+				<header>
+					<h2>Conditional-CSS</h2>
+				</header>
+				<p>Также и на его отдельные части:</p>
+				<pre>
+					<code>.some-block {</code>
+					<code>	display: inline-block;</code>
+					<code>	[if lte Gecko 1.8] display: -moz-inline-stack;</code>
+					<code>	[if lte Konq 3.1] float: left;</code>
+					<code>	height: 30px;</code>
+					<code>	[if IE 5.0] margin-top: -1px;</code>
+					<code>	text-decoration: none;</code>
+					<code>	outline: none;</code>
+					<code>	[if IE] text-decoration: expression(hideFocus='true');</code>
+				</pre>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-32">
+		<div>
+			<section>
+				<header>
+					<h2>Conditional-CSS</h2>
+				</header>
+				<p>Подключение в основной CSS внешний файл стилей, предназначенный для Mobile Safari и файл, предназначенный для всех остальных браузеров:</p>
+				<pre>
+					<code>[if SafMob] @import(''iphone.css'');</code>
+					<code>[if ! SafMob] @import(''non-iphone.css'');</code>
+				</pre>
+			</section>
+		</div>
+	</div>
+<div class="slide" id="slide-33">
+		<div>
+			<section>
+				<header>
+					<h2>Modernizr</h2>
+				</header>
+				<p><a href="http://modernizr.com/" target="_blank">modernizr.com</a></p>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-34">
+		<div>
+			<section>
+				<header>
+					<h2>Modernizr</h2>
+				</header>
+				<p>OpenSource Javascript-библиотека, предназначенная для обнаружения нативной реализации в браузере веб-стандартов.</p>
+				<p>HTML5, CSS3, Geolocation API, SVG, SMIL, Touch events... Всего 44 позиции.</p>
+				<p>Расширяемость за счет подключаемых плагинов.</p>
+				<p>Результат определения — создание логического объекта Javascript и предопределенного класса для элемента <code>&lt;html&gt;</code>.</p>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-35">
+		<div>
+			<section>
+				<header>
+					<h2>Modernizr</h2>
+				</header>
+				<p>Modernizr &ne; polyfill</p>
+				<p>«Polyfill» – это Javascript-прослойка, добавляющая поддержку стандартных API для устаревших браузеров.</p>
+				<p><strong>Исключение!</strong> Modernizr 1.7+ создает объекты в DOM-дереве документа, соответствующие структурным элементам HTML5 для возможности последующей работы с ними браузеров IE6-8 (html5shiv).</p>
+				<p></p>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-36">
+		<div>
+			<section>
+				<header>
+					<h2>Modernizr</h2>
+				</header>
+				<p>Детальная настройка библиотеки путем выбора подключаемых модулей, отвечающих за определение того или функционала браузера, наличие которого необходимо документу.</p>
+				<p>Подключение в блоке <code style="white-space: nowrap;">&lt;head&gt;...&lt;/head&gt;</code> для безопасного использование с другими библиотеками и после <code style="white-space: nowrap;">&lt;link type="text/css" href="style.css" /&gt;</code> для предупреждения «вспышки» интерфейса после применения стилей, привязанных к динамическим классам.</p>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-37">
+		<div>
+			<section>
+				<header>
+					<h2>Modernizr</h2>
+				</header>
+				<p>Определение поддержки необходимого функционала браузером вместо определения User Agent’а через вычисление значения <code>navigator.userAgent</code> является более надежным способом определения возможностей frontend’а приложения, т.к. UA легко может быть изменен.</p>
+				<p>Cоздание элемента с назначением ему конкретных инструкций. Браузеры, которые сумеют их интерпретировать, вернут что-то осмысленное, все прочие вернут <code>undefined</code> или вообще ничего.</p>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-38">
+		<div>
+			<section>
+				<header>
+					<h2>Modernizr</h2>
+				</header>
+				<p>Грамотная работа в тандеме со сторонними библиотеками, обеспечивающими поддержку того или иного функционала, нативная реализация которого отсутствует в браузере. Как упоминалось выше, такие библиотеки называются «polyfills». Доступно более 170 библиотек в более чем 40-ка категориях.</p>
+				<div class="b-scroll-wrapper">
+					<div class="b-scroll">
+						<p>SVG, Canvas, Web Storage (LocalStorage and SessionStorage), HTML5 Sectioning Elements, Video, Web SQL Database, Web Forms, Accessibility / ARIA, Web Workers, Web Sockets, Geo-Location, Application Cache, Browser State Management, EventSource, Animated PNG (APNG), Ruby, HTML5 Details and Summary, HTML5 Output, Progress, Menu, Command, Keygen elements, Dataset property, File API / Drag and Drop, Base64 (window.atob and window.btoa), Device Access, WebGL, MathML, (Web) Audio (Data) API, classList, Cross-Document/Domain Messaging (postMessage), Cross-Origin Resource Sharing (CORS), DOM, DOM Range and Selection, DOM Parsing and Serialization, ECMAScript 5, CSS3 Selectors, CSS3 Transforms, CSS3 Styles, CSS3 Media Queries, Microdata API, XBL, Link prefetch/prerender, Flash Javascript runtime, Illustrator export to Canvas, Visibility, Hyphenation.</p>
+					</div>
+				</div>
+				<!-- <p><a href="https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-browser-Polyfills" target="_blank">https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-browser-Polyfills</a></p> -->
+				<p><a href="http://goo.gl/8yTAn" target="_blank">http://goo.gl/8yTAn</a></p>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-39">
+		<div>
+			<section>
+				<header>
+					<h2>Modernizr</h2>
+				</header>
+				<p><strong>Неграмотное и неуместное применение полифиллов способно существенно снизить производительность документа!</strong></p>
+				<p>Здравый смысл и прямые руки путь к успеху.</p>
+				<p>Cтоит не забывать о возможности применения принципа «graceful degradation».</p>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-40">
+		<div>
+			<section>
+				<header>
+					<h2>Modernizr</h2>
+				</header>
+				<p>Безопасная разработка без потери работоспособности с выходом очередной версии браузера с нативной реализацией благодаря полной эмуляции работы стандартного API браузера.</p>
+				<p><strong>«WebSocket Polyfill»</strong> создаст глобальный объект <code>window.WebSocket</code> с теми же свойствами и методами, свойственными нативной реализации подобного функционала.</p>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-41">
+		<div>
+			<section>
+				<header>
+					<h2>Modernizr</h2>
+				</header>
+				<p><strong>Modernizr.load</strong> — асинхронный условный загрузчик ресурсов (CSS, JS).</p>
+				<p>Разработан как отдельное приложение <strong>yepnope.js</strong> специально для работы с Modernizr.</p>
+				<p>Опциональное подключение ресурсов на основе результатов тестов.</p>
+				<p>Множество способов оптимизации для получения максимальной производительности для каждого конкретного случая.</p>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-42">
+		<div>
+			<section>
+				<header>
+					<h2>Modernizr</h2>
+				</header>
+				<p>Определение наличия поддержки геолокации и последующая загрузка необходимого сценария в зависимости от результатов проверки. Экономия трафика и увеличение производительности.</p>
+				<pre>
+					<code>Modernizr.load({</code>
+					<code>	test: Modernizr.geolocation,</code>
+					<code>	yep : 'geo.js',</code>
+					<code>	nope: 'geo-polyfill.js'</code>
+					<code>});</code>
+				</pre>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-43">
+		<div>
+			<section>
+				<header>
+					<h2>Modernizr</h2>
+				</header>
+				<p>Контроль загрузки необходимых ресурсов и с переключением на резервные. HTML5 Boilerplate вариант:</p>
+				<pre>
+					<code>&lt;script
+src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.js"&gt;
+&lt;/script&gt;</code>
+					<code>&lt;script>window.jQuery || document.write
+('&lt;script src="js/libs/jquery-1.6.1.min.js"&gt;&lt;/script&gt;')
+&lt;/script&gt;</code>
+				</pre>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-44">
+		<div>
+			<section>
+				<header>
+					<h2>Modernizr</h2>
+				</header>
+				<!-- <p>Modernizr.load вариант:</p> -->
+				<pre>
+					<code>Modernizr.load([</code>
+					<code>	{</code>
+					<code>		load: '//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.js',</code>
+					<code>		complete: function () {</code>
+					<code>			if ( !window.jQuery ) {</code>
+					<code>				Modernizr.load('js/libs/jquery-1.6.1.min.js');</code>
+					<code>			}</code>
+					<code>		}</code>
+					<code>	},</code>
+					<code>	{</code>
+					<code>		load: 'needs-jQuery.js'</code>
+					<code>	}</code>
+					<code>]);</code>
+					<code></code>
+					<code></code>
+				</pre>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-45">
+		<div>
+			<section>
+				<header>
+					<h2>Modernizr</h2>
+				</header>
+				<p>Сценарий выполняет загрузку ресурсов последовательно, а не параллельно, что сказывается на производительности.</p>
+				<p><strong>Используйте этот метод только для загрузки резервных ресурсов!</strong></p>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-46">
+		<div>
+			<section>
+				<header>
+					<h2>Modernizr</h2>
+				</header>
+				<p>Нет необходимого вам функционала? Нужны собственные префиксы и фильтры? Не проблема, можно написать свой плагин! Можно пойти дальше и изменить шаги процесса загрузки и даже ее логику.</p>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-47">
+		<div>
+			<section>
+				<header>
+					<h2>Modernizr</h2>
+				</header>
+				<p>Документация тестов снабжена примерами кода. Круг применения тестов многообразен и ограничен лишь воображением.</p>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-48">
+		<div>
+			<section>
+				<header>
+					<h2>Modernizr</h2>
+				</header>
+				<p>Поддержка настольных браузеров:</p>
+				<ul>
+					<li>IE6+</li>
+					<li>Firefox 3.5+</li>
+					<li>Firefox 3.5+</li>
+					<li>Opera 9.6+</li>
+					<li>Safari 2+</li>
+					<li>Chrome</li>
+				</ul>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-49">
+		<div>
+			<section>
+				<header>
+					<h2>Modernizr</h2>
+				</header>
+				<p>Поддержка мобильных браузеров:</p>
+				<ul>
+					<li>Safari</li>
+					<li>Android</li>
+					<li>Opera Mobile</li>
+					<li>Firefox Mobile</li>
+				</ul>
+				<p>На подходе поддержка Blackberry 6+.</p>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-50">
+		<div>
+			<section>
+				<header>
+					<h2>CSS Conditional Rules Module Level 3</h2>
+				</header>
+				<p><a href="http://www.w3.org/TR/css3-conditional" target="_blank">http://www.w3.org/TR/css3-conditional</a></p>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-51">
+		<div>
+			<section>
+				<header>
+					<h2>CSS Conditional Rules Module Level 3</h2>
+				</header>
+				<p>Функционал для условной обработки стилевых правил в зависимости от возможностей браузеров.</p>
+				<p><code>@supports</code> проверяет поддержку браузером пары свойство:значение.</p>
+				<p>Существующий механизм для «graceful degradation» выражен в игнорировании неподдерживаемых свойств или значений свойств.</p>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-52">
+		<div>
+			<section>
+				<header>
+					<h2>CSS Conditional Rules Module Level 3</h2>
+				</header>
+				<p>Проверка пар свойство:значение, их сочетаний, разобщений или отрицаний.</p>
+				<ul>
+					<li>сочетание (and), необходимо для возможности проверки множественных функций</li>
+					<li>разобщение (or), необходимо при наличии альтернативны, например, в виде проприетарных свойств с префиксами</li>
+					<li>наличие отрицания, необходимое для возможности разделения CSS с новейшими функциями и резервных CSS с упрощенными</li>
+				</ul>
+			</section>
+		</div>
+	</div>
+<!-- 	<div class="slide" id="slide-53">
+		<div>
+			<section>
+				<header>
+					<h2>CSS Conditional Rules Module Level 3</h2>
+				</header>
+				<p></p>
+			</section>
+		</div>
+	</div>
+ -->	<div class="slide" id="slide-54">
+		<div>
+			<section>
+				<header>
+					<h2>CSS Conditional Rules Module Level 3</h2>
+				</header>
+				<p>Применение CSS в случае наличия поддержки «display: flexbox»:</p>
+				<pre>
+					<code>@supportss ( display: flexbox ) {</code>
+					<code>	body, #navigation, #content { display: flexbox; }</code>
+					<code>	#navigation { background: blue; color: white; }</code>
+					<code>	#article { background: white; color: black; }</code>
+					<code>}</code>
+				</pre>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-55">
+		<div>
+			<section>
+				<header>
+					<h2>CSS Conditional Rules Module Level 3</h2>
+				</header
+				<p>Применение CSS в случае отсутствия поддержки «display: flexbox»:</p>
+				<pre>
+					<code>@supports not ( display: flexbox ) {</code>
+					<code>	body { width: 100%; height: 100%; background: white; color: black; }</code>
+					<code>	#navigation { width: 25%; }</code>
+					<code>	#article { width: 75%; }</code>
+					<code>}</code>
+				</pre>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-56">
+		<div>
+			<section>
+				<header>
+					<h2>CSS Conditional Rules Module Level 3</h2>
+				</header>
+				<p>Применение CSS в случае наличия поддержки «box-shadow», включая проприетарные реализации:</p>
+				<pre>
+					<code>@supports ( box-shadow: 2px 2px 2px black ) or</code>
+					<code>( -moz-box-shadow: 2px 2px 2px black ) or</code>
+					<code>( -webkit-box-shadow: 2px 2px 2px black ) or</code>
+					<code>( -o-box-shadow: 2px 2px 2px black ) {</code>
+					<code>	.outline {</code>
+					<code>		color: white;</code>
+					<code>		box-shadow: 2px 2px 2px black;</code>
+					<code>		-moz-box-shadow: 2px 2px 2px black;</code>
+					<code>		-webkit-box-shadow: 2px 2px 2px black;</code>
+					<code>		-o-box-shadow: 2px 2px 2px black;</code>
+					<code>	}</code>
+					<code>}</code>
+				</pre>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-57">
+		<div>
+			<section>
+				<header>
+					<h2>CSS Conditional Rules Module Level 3</h2>
+				</header>
+				<p>При совместном применении операторов «and», «or» и «not» условные группы должны быть заключены в отдельные скобки.</p>
+				<pre>
+					<code>@supports <mark>(</mark>(transition-property: color) or</code>
+					<code>(animation-name: foo)<mark>)</mark> and</code>
+					<code>(transform: rotate(10deg)) {</code>
+					<code>  // ...</code>
+					<code>}</code>
+				</pre>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-58">
+		<div>
+			<section>
+				<header>
+					<h2>CSS Conditional Rules Module Level 3</h2>
+				</header>
+				<p>Функция считается поддерживаемой, если она реализует данное значение данного свойства.</p>
+				<p>Обратная совместимость определяет правила обработки недействительных свойств и значений — отсутствие либо наличие частичной имплементации спецификации приводит к недействительности правила.</p>
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-59">
+		<div>
+			<section>
+				<header>
+					<h2>CSS Conditional Rules Module Level 3</h2>
+				</header>
+				<p>Обратная совместимость позволяет разработчикам использовать резервные упрощенные правила в рамках возможностей браузера, управляя весом правил посредством порядка в каскаде либо с помощью оператора <code>@supports</code>.</p>
+	<!-- 			<p>Обратная совместимость позволяет разработчикам использовать резервные упрощенные правила в рамках возможностей браузера управляя весом правил посредством порядка в каскаде либо с помощью оператора <code>@supports</code>.</p> -->
+			</section>
+		</div>
+	</div>
+	<div class="slide" id="slide-60">
+		<div>
+			<section>
+				<header>
+					<h2>Спасибо за внимание! Вопросы?</h2>
+				</header>
+				<p>Павел Ловцевич, LOVATA Group</p>
+				<ul>
+					<li><a href="http://lovtsevich.com">lovtsevich.com</a> | <a href="http://lovata.com">lovata.com</a></li>
+					<li><a href="https://twitter.com/zigzag_mcquack">twitter.com/zigzag_mcquack</a></li>
+					<li><a href="mailto:pavel@lovtsevich.com">pavel@lovtsevich.com</a></li>
+					<li><a href="mailto:pavel-lovtsevich@web-standards.ru">pavel-lovtsevich@web-standards.ru</a></li>
+				</ul>
+			</section>
+		</div>
+	</div>
+	<div class="progress"><div></div></div>
+	<script src="scripts/script-adfea3dfb6.js"></script>
+	<!-- Copyright © 2010–2011 Вадим Макеев, http://pepelsbey.net/ -->
+</body>
+</html>

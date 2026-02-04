@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+	<html lang="en-US">
+	<head>
+		<meta charset="UTF-8">
+		<title>Froggler</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="stylesheet" href="css/common.css">
+		<script src="js/modernizr.min.js"></script>
+		<script src="js/jquery.min.js"></script>
+
+		<script src="js/frogglerController.js"></script>
+		<script src="js/projectListController.js"></script>
+		<script src="js/projectController.js"></script>
+		<script src="js/ticketController.js"></script>
+		<script src="js/errorController.js"></script>
+	</head>
+	<body>
+		<header>
+			<div class="wrapper">
+				<a href="#">
+					<h1 class="logotype">Froggler</h1>
+				</a>
+			</div>
+		</header>
+		<section class="content-wrapper">
+			<section class="invited-widget">
+				<img src="assets/invited.png" alt="Signed out">
+				<dl class="invite-details">
+					<dt>You have been invited by</dt>
+					<dd>Krakozabra</dd>
+					<dt>Via email address</dt>
+					<dd>anonymous@localteam.net</dd>
+				</dl>
+				<h2 class="title">Hello, anonymous.</h2>
+				<p>Fill the form, please.</p>
+				<form action="/register" method="post">
+					<fieldset>
+						<div class="line">
+							<label for="register-name">Username</label>
+							<input required="required" type="text" value="" name="name" id="register-name">
+						</div>
+						<div class="short-line">
+							<label for="register-password">Password</label>
+							<input required="required" type="password" value="" name="password" id="register-password">
+						</div>
+						<div class="short-line">
+							<label for="password-confirmation">Confirm password</label>
+							<input required="required" type="password" value="" name="confirmation" id="password-confirmation">
+						</div>
+					</fieldset>
+					<fieldset class="submit">
+						<button class="save"><span>Save changes</span></button>
+					</fieldset>
+				</form>
+			</section>
+		</section>
+		<footer>
+			<p class="copyright">Errorless &copy; 2012</p>
+			<nav>
+				<a href="#">Blog</a>
+				<a href="#">API Overview</a>
+				<a href="#">Status site</a>
+				<a href="#">Terms of Service</a>
+				<a href="#">Privacy Policy</a>
+				<a href="#" class="rss">Subsribe via RSS</a>
+			</nav>
+		</footer>
+	</body>
+</html>

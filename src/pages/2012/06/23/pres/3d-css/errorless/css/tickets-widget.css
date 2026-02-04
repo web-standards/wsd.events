@@ -1,0 +1,131 @@
+.tickets-widget{
+	width:700px;
+	position: relative;
+	display:inline-block;
+	}
+	body .resolved .tickets-widget .more{
+		background-color:#d6d6d5;
+		box-shadow:inset 2px 0 0 0 #d6d6d5, inset -2px 0 0 0 #d6d6d5, 0 1px 3px 0 rgba(0,0,0,.25);;
+		}
+	.tickets-widget .more{
+			position: relative;
+			z-index:1;
+			display:block;
+			height:39px;
+			overflow:hidden;
+			background:#eeeeed url("../assets/more-bg.png") 0 50% repeat-x;
+			text-align:center;
+			font:14px/39px Arial, "Helvetica Neue", Helvetica, sans-serif;
+			color:#545450;
+			box-shadow:inset 2px 0 0 0 #eeeeed, inset -2px 0 0 0 #eeeeed, 0 1px 3px 0 rgba(0,0,0,.25);;
+			}
+			.tickets-widget .more span{
+				background: url("../assets/open-ico.gif") 0 50% no-repeat;
+				padding:0 0 0 20px;
+				}
+	.tickets-widget .ticket{
+		white-space:nowrap;
+		word-wrap:break-word;
+		color:#333;
+		height:49px;
+		background-color: #FFF;
+		box-shadow:inset 0 20px 0 0 rgba(0,0,0,0), inset 0 -3px 0 0 rgba(135,136,132,.05), 0 1px 3px 0 rgba(0,0,0,.25);
+		border-bottom:1px solid #d4d4d2;
+		padding:0 0 0 50px;
+		font:14px/49px Arial, "Helvetica Neue", Helvetica, sans-serif;
+
+		position: relative;
+		zoom:1;
+		overflow:hidden;
+		white-space:nowrap;
+		}
+		body .resolved .tickets-widget .ticket{
+			background-color:#e5e5e4;
+			}
+			body .resolved .tickets-widget .ticket .wrapper .inner-wrapper .where{
+				background-color:#e5e5e4;
+				}
+		.tickets-widget .ticket.frontend{
+			background:#FFF url("../assets/front-end-ico.png") 15px 50% no-repeat;
+			}
+		.tickets-widget .ticket.backend{
+			background:#FFF url("../assets/back-end-ico.png") 13px 50% no-repeat;
+			}
+		.tickets-widget .ticket .additional{
+			margin:0 0 0 10px;
+			float:right;
+			}
+			.tickets-widget .ticket .additional .when{
+				font:12px/49px Arial, "Helvetica Neue", Helvetica, sans-serif;
+				color:#333;
+				padding:0 10px 0 0;
+				}
+				.tickets-widget .ticket .additional .similar~.when{
+					padding:0;
+					}
+			.tickets-widget .ticket .additional .similar{
+				float:right;
+				min-width:52px;
+				text-align:right;
+				background: url("../assets/alike-bg.png") 100% 0 repeat-y;
+				}
+				.tickets-widget .ticket .additional .similar strong{
+					background-color: #545450;
+					color:#fff;
+					font:14px/20px Arial, "Helvetica Neue", Helvetica, sans-serif;
+					margin:14px 0 15px;
+					border-radius:10px;
+					padding:0 5px;
+					margin:0 10px 0;
+					min-width:22px;
+					text-align:center;
+					display:inline-block;
+					}
+					*+html .tickets-widget .ticket .additional .similar strong{
+						display:inline;
+						zoom:1;
+						position: relative;
+						}
+		.tickets-widget .ticket .wrapper{
+			display: block;
+			overflow: hidden;
+			}
+			.tickets-widget .ticket .wrapper .inner-wrapper{
+				display: inline-block;
+				max-width: 100%;
+				vertical-align: top;
+				white-space: nowrap;
+				}
+				.tickets-widget .ticket .wrapper .inner-wrapper .where{
+					position: relative;
+					z-index: 1;
+					float: right;
+					padding-left: 4px;
+					color: #999;
+					background-color:#fff;
+					box-shadow: inset 0 -3px 0 0 rgba(135,136,132,.05);
+					}
+				.tickets-widget .ticket .wrapper .inner-wrapper .what{
+					overflow: hidden;
+    				display: block;
+    				padding:0 0 0 30px;
+    				word-wrap:break-word;
+    				white-space: nowrap;
+    				-ms-text-overflow: ellipsis;
+					-o-text-overflow: ellipsis;
+					text-overflow: ellipsis;
+					}
+					.tickets-widget .ticket.low .what{
+						background: url("../assets/low-priority.gif") 0 50% no-repeat;
+						}
+					.tickets-widget .ticket.normal .what{
+						background: url("../assets/normal-priority.gif") 0 50% no-repeat;
+						}
+					.tickets-widget .ticket.high .what{
+						background: url("../assets/high-priority.gif") 0 50% no-repeat;
+						}
+			@-moz-document url-prefix() {
+				.tickets-widget .ticket .wrapper .inner-wrapper .what{
+					display: inline;
+					}
+				}

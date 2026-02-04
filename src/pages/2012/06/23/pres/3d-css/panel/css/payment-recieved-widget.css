@@ -1,0 +1,73 @@
+.payment-recieved-widget{
+  position:relative;
+  margin:0 0 20px;
+  }
+  .payment-recieved-widget .controls{
+    }
+    .payment-recieved-widget .controls a{
+      margin:0 10px;
+      }
+  .payment-recieved-widget .delivery{
+    text-align:left;
+    color:#999;
+    margin:40px 0;
+    padding:0 20px 0 90px;
+    background:url("../assets/delivery-ico.png") 40px 50% no-repeat;
+    min-height:30px;
+    font:bold 14px/18px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    }
+    .payment-recieved-widget .delivery b{
+      color:#333;
+      }
+  .payment-recieved-widget .get-informed{
+    text-align:left;
+    margin:40px 0;
+    padding:0 20px 0 90px;
+    background:url("../assets/inform-ico.png") 40px 50% no-repeat;
+    min-height:30px;
+    font:bold 14px/18px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color:#999;
+    }
+    .payment-recieved-widget .get-informed b{
+      color:#333;
+      }
+  .payment-recieved-widget .title{
+    width:320px;
+    margin:0 auto 20px;
+    text-align:center;
+    font:bold 18px/24px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color:#333;
+    }
+  .payment-recieved-widget .sub-title{
+    font:bold 14px/24px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color:#666;  
+    }
+  .payment-recieved-widget .price{
+    font:bold 24px/24px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color:#dd1309;
+    }
+  .payment-recieved-widget .illustration{
+    width:240px;
+    margin:0 auto 20px;
+    border-bottom:2px solid #e5e5e5;
+    vertical-align:bottom;
+    }
+    .payment-recieved-widget .illustration img{
+      vertical-align:bottom;
+      }
+  .payment-recieved-widget .line-type-1{
+     margin:44px auto 105px;
+    }
+    .payment-recieved-widget .line-type-1 .title{
+      width:auto;
+      color:#dd1309;
+      font:bold 36px/36px "Helvetica Neue",Helvetica,Arial,sans-serif;
+      background-color:#FFF;
+      padding:0 10px;
+      margin:-24px 0 0;
+      display:inline-block;
+      }
+    .payment-recieved-widget .line-type-1 .subtitle{
+      color:#333;
+      font:bold 18px/25px "Helvetica Neue",Helvetica,Arial,sans-serif;
+      }

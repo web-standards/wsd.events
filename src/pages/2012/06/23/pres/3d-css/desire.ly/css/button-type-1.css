@@ -1,0 +1,60 @@
+button.button-type-1{
+	background: none;
+	padding:0;
+	margin:0;
+	border-style:none;
+	overflow:visible;
+	}
+	body button.button-type-1[disabled] span{
+		cursor:default;
+		background: #d6e343 url("../img/button-bg.png") 0 0 repeat-x;
+		box-shadow:inset 0 -10px 20px 0 rgba(200,200,200,.5);
+		}
+	button.button-type-1 span{
+		height:45px;
+		display:block;
+		width:286px;
+		border:1px solid #dbdad7;
+		box-shadow:0 1px 0 0 #fff;
+		border-radius:3px;
+		font:18px/45px 'Marmelad', Arial, "Helvetica Neue", Helvetica, sans-serif;
+		text-align:center;
+		text-shadow:0 1px 0 #fff;
+		color:#3b5050;
+		background: #d6e343 url("../img/button-bg.png") 0 0 repeat-x;
+		box-shadow:inset 0 -10px 20px 0 rgba(200,200,200,.5);
+		}
+		button.button-type-1:hover span,
+		button.button-type-1 span:hover{
+			background-position:0 -45px;
+			box-shadow:inset 0 -10px 20px 0 rgba(179,203,9,.5);
+			}
+a.button-type-1{
+	height:45px;
+	display:inline-block;
+	width:286px;
+	border:1px solid #dbdad7;
+	box-shadow:0 1px 0 0 #fff;
+	border-radius:3px;
+	font:18px/45px 'Marmelad', Arial, "Helvetica Neue", Helvetica, sans-serif;
+	text-align:center;
+	text-shadow:0 1px 0 #fff;
+	color:#3b5050;
+	background: #d6e343 url("../img/button-bg.png") 0 0 repeat-x;
+	box-shadow:inset 0 -10px 20px 0 rgba(200,200,200,.5);
+	position: relative;
+	}
+	*+html a.button-type-1{
+		zoom:1;
+		display:inline;
+		}
+	body a.button-type-1[disabled]:hover,
+	body a.button-type-1[disabled]{
+		cursor:default;
+		background: #d6e343 url("../img/button-bg.png") 0 0 repeat-x;
+		box-shadow:inset 0 -10px 20px 0 rgba(200,200,200,.5);
+		}
+	a.button-type-1:hover{
+		background-position:0 -45px;
+		box-shadow:inset 0 -10px 20px 0 rgba(179,203,9,.5);
+		}

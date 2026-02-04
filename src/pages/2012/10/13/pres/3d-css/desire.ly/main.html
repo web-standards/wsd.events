@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1" >
+	<title>Desirely</title>
+
+	<link href='http://fonts.googleapis.com/css?family=Marmelad&amp;subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Berkshire+Swash&amp;subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/common.css">
+
+	<script src="js/modernizr.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.pjax.js"></script>
+
+	<script src="js/js-webshim/extras/modernizr-custom.js"></script>
+	<script src="js/js-webshim/polyfiller.js"></script>
+
+	<script src="js/polyfilController.js"></script>
+	<script src="js/messageController.js"></script>
+	<script src="js/ticketController.js"></script>
+	<script src="js/authController.js"></script>
+</head>
+<body>
+	<div id="fb-root"></div>
+	<header>
+		<a href="#">
+			<h1 class="logotype">Desirely</h1>
+		</a>
+		<nav>
+			<span><a href="#">about</a></span>
+			<span><a href="#">faq</a></span>
+			<span><a href="#">terms</a></span>
+			<span><a href="#">privacy</a></span>
+			<span><a href="#twitter" class="tw">twitter</a></span>
+			<span><a href="#facebook" class="fb">facebook</a></span>
+			<a href="#" class="login">login</a>
+		</nav>
+	</header>
+	<section class="content-wrapper">
+		<form action="/register/" method="post" class="register-widget">
+			<h2 class="title">Let’s make a list</h2>
+			<fieldset class="login-using-fb">
+				<img src="spoiler/fb-login.png" alt="Login with facebook">
+			</fieldset>
+			<p class="or"><b>Or</b></p>
+			<fieldset class="register">
+				<h3 class="title">Register</h3>
+				<div class="line">
+					<input 
+						class="input-type-1" 
+						value="" 
+						required="required" 
+						placeholder="email" 
+						type="email" 
+						name="email">
+				</div>
+				<div class="line">
+					<input 
+						type="password" 
+						class="input-type-1" 
+						name="password" 
+						placeholder="password" 
+						required="required"
+						value="">
+				</div>
+				<button type="submit" class="submit button-type-1"><span><b>Proceed to the wishlist</b></span></button>
+			</fieldset>
+		</form>
+		<section class="about-widget">
+			<h2 class="title">Wishlists? We’ve just made them awesome!</h2>
+			<p>All you ever wanted, all you ever needed is here in your arms.</p>
+		</section>
+		<section class="steps-widget">
+			<div class="step-1">
+				<h3 class="title">login</h3>
+				<p>Login using <b>Facebook,</b> <b>Twitter</b> or by entering your email and password.</p>
+			</div>
+			<div class="step-2">
+				<h3 class="title">wish<br> &amp; desire</h3>
+				<p>Add the objects of desire. <b>The links and previews would be attached automatically</b> if available. You can change them anytime you want.</p>
+			</div>
+			<div class="step-3">
+				<h3 class="title">share</h3>
+				<p><b>Send your wishlist to to all the friends</b> using Facebook, Twitter or email. Control those who can reserve gifts.</p>
+			</div>
+		</section>
+	</section>
+	<footer>
+		<p class="copyright">
+			&copy; 2012 <span class="logotype">Desirely</span>
+		</p>
+		<nav>
+			<span><a href="#">about</a></span>
+			<span><a href="#">faq</a></span>
+			<span><a href="#">terms</a></span>
+			<span><a href="#">privacy</a></span>
+			<span><a href="#twitter" class="tw">twitter</a></span>
+			<span><a href="#facebook" class="fb">facebook</a></span>
+		</nav>
+	</footer>
+
+	<!--Login-->
+	<div class="lightbox"></div>
+	<form action="/login/" method="post" class="wish-form-widet login-form">
+		<fieldset>
+			<input required="required" placeholder="email" type="email" name="email" class="email input-type-1">
+			<input required="required" placeholder="password" type="password" name="password" class="password input-type-1">
+		</fieldset>
+		<fieldset class="remember-and-recover">
+			<input checked="checked" type="checkbox" name="remember" id="login-remember"><label for="login-remember">remember me!</label>
+			<a href="#" class="forgot">I forgot my password</a>
+		</fieldset>
+		<fieldset>
+			<a href="#" class="button-type-1 cancel">Cancel</a>
+			<button type="submit" class="button-type-1 login"><span>Login</span></button>
+		</fieldset>
+	</form>
+	<!--Recover-->
+	<form action="/login/" method="post" class="wish-form-widet recover-form">
+		<fieldset>
+			<input required="required" placeholder="email" type="email" name="email" class="email input-type-1">
+		</fieldset>
+		<fieldset>
+			<a href="#" class="button-type-1 cancel">Cancel</a>
+			<button type="submit" class="button-type-1 recover"><span>Recover</span></button>
+		</fieldset>
+	</form>
+	<!--Message-->
+	<div class="message-widget">
+		<a href="#" class="button-type-1 ok">Ok</a>
+		<p>Check out email with new password and activation instructions</p>
+	</div>
+	<!--Twitter-->
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="http://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	<!--Facebook-->
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "http://connect.facebook.net/en_US/all.js#xfbml=1";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+</body>
+</html>

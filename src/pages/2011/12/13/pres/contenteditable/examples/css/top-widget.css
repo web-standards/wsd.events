@@ -1,0 +1,90 @@
+.top-widget{
+  padding:0 10px 10px;
+  }
+  .top-widget li{
+    overflow:hidden;
+    position:relative;
+    zoom:1;
+    font:normal 13px/14px 'PT Sans',Arial,sans-serif;
+    margin:0 0 12px;
+    padding:0 0 6px;
+    }
+    .top-widget li a{
+      display:block;
+      }
+    .top-widget li .count:before{
+      content:".";
+      text-indent:-9000px;
+      display:block;
+      height:0;
+      width:0;
+      line-height:0;
+      font-size:0;
+      overflow:hidden;
+      border-width:7px 5px 0;
+      border-color:#e2e2e2 transparent transparent;
+      border-style:solid;
+      position:absolute;
+      top:100%;
+      left:50%;
+      margin:0 0 0 -4px;
+      }
+    .top-widget li .count:after{
+      content:".";
+      text-indent:-9000px;
+      display:block;
+      height:0;
+      width:0;
+      line-height:0;
+      font-size:0;
+      overflow:hidden;
+      border-width:7px 5px 0;
+      border-color:#fff transparent transparent;
+      border-style:solid;
+      position:absolute;
+      top:100%;
+      left:50%;
+      margin:-2px 0 0 -4px;
+      }
+    .top-widget li.top-1 .count:after{
+      border-color:#e3e989 transparent transparent;
+      }
+    .top-widget li.top-2 .count:after{
+      border-color:#ecf0af transparent transparent;
+      }
+    .top-widget li.top-3 .count:after{
+      border-color:#f3f6cd transparent transparent;
+      }
+    .top-widget li.top-4 .count:after{
+      border-color:#f8fae2 transparent transparent;
+      }
+    .top-widget li.top-5 .count:after{
+      border-color:#fff transparent transparent;
+      }
+    .top-widget .top-1 .count{
+      background-color:#e3e989;
+      }
+    .top-widget .top-2 .count{
+      background-color:#ecf0af;
+      }
+    .top-widget .top-3 .count{
+      background-color:#f3f6cd;
+      }
+    .top-widget .top-4 .count{
+      background-color:#f8fae2;
+      }
+    .top-widget .top-5 .count{
+      background-color:#fff;
+      }
+    .top-widget .count{
+      float:left;
+      margin:0 10px 0 0;
+      width:50px;
+      text-align:center;
+      color:#000;
+      height:26px;
+      position:relative;
+      zoom:1;
+      font:bold 18px/26px 'PT Sans Caption',Arial,sans-serif;
+      border:1px solid #e2e2e2;
+      }

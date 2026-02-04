@@ -1,0 +1,74 @@
+.wether-widget{
+  background-color:#FFF;
+  border-top:4px solid #b7b7b7;
+  margin:0 0 15px;
+  padding:0 10px 10px;
+  overflow:hidden;
+  position:relative;
+  zoom:1;
+  }
+  .wether-widget .day{
+    overflow:hidden;
+    margin:20px 0 20px;
+    position:relative;
+    z-index:2;
+    zoom:1;
+    }
+    .wether-widget .day .temperature{
+      color:#000;
+      float:left;
+      font: bold 36px/36px 'PT Sans Caption',Arial,sans-serif;
+      }
+    .wether-widget .presure{
+      width:90px;
+      float:right;
+      clear:right;
+      font: normal 12px/18px 'PT Sans',Arial,sans-serif;
+      }
+    .wether-widget .humidity{
+      width:90px;
+      float:right;
+      clear:right;
+      font: normal 12px/18px 'PT Sans',Arial,sans-serif;
+      }
+  .wether-widget .night{
+    overflow:hidden;
+    position:relative;
+    z-index:2;
+    zoom:1;
+    }
+    .wether-widget .night .sunset{
+      width:90px;
+      float:right;
+      clear:right;
+      font: normal 12px/15px 'PT Sans',Arial,sans-serif;
+      }
+    .wether-widget .night .sunrise{
+      width:90px;
+      float:right;
+      clear:right;
+      font: normal 12px/15px 'PT Sans',Arial,sans-serif;
+      }
+    .wether-widget .night .temperature{
+      color:#72808a;
+      float:left;
+      font: bold 30px/30px 'PT Sans Caption',Arial,sans-serif;
+      }
+  .wether-widget .illustration{
+    float:left;
+    zoom:1;
+    position:relative;
+    margin:-20px 0 0 -10px;
+    }
+  .wether-widget .title{
+    font: bold 18px/20px 'PT Sans',Arial,sans-serif;
+    padding: 12px 0 13px;
+    position: relative;
+    z-index: 2;
+    }
+    .wether-widget .title b{
+      font: bold 16px/20px 'PT Sans',Arial,sans-serif;
+      }
+    .wether-widget .title a{
+      color:#000;
+      }

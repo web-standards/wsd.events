@@ -1,0 +1,119 @@
+.wish-list-widget{
+	float:left;
+	width:590px;
+	margin:0 15px 0 0;
+	min-height:1px;
+	padding:15px 0 0;
+	}
+	.wish-list-widget .wishes{
+		}
+		.wish-list-widget .wishes .do-not-match{
+			opacity:0.5;
+			display:none\9;
+			}
+	.wish-list-widget .details{
+
+	}
+	*+html body .content-wrapper .wish-list-widget label.occasion-filter{
+		position: relative;
+		top:0px;
+		}
+	.wish-list-widget .details .author{
+		display:inline-block;
+		vertical-align:bottom;
+		margin:0 15px 0 0;
+		position: relative;
+		color:#3b5050;
+		}
+		*+html .wish-list-widget .details .author{
+			zoom:1;
+			display:inline;
+			}
+	.wish-list-widget .details .select-type-1{
+		width:144px;
+		top:-4px;
+		}
+	.wish-list-widget .details .social{
+		display:inline-block;
+		vertical-align:bottom;
+		color:#3b5050;
+		font:normal 12px/14px 'Marmelad', Arial, "Helvetica Neue", Helvetica, sans-serif;
+		margin:0 0 0 15px;
+		position: relative;
+		top:-10px;
+		}
+		*+html .wish-list-widget .details .social{
+			zoom:1;
+			display:inline;
+			top:-5px;
+			}
+		.wish-list-widget .details .social .tw{
+			width:22px;
+			height:20px;
+			display:inline-block;
+			background: url("../img/twitter-ico.png") 0 0 no-repeat;
+			text-indent:-9000px;
+			overflow:hidden;
+			top:5px;
+			position: relative;
+			}
+		.wish-list-widget .details .social .fb{
+			width:21px;
+			height:20px;
+			display:inline-block;
+			background: url("../img/facebook-ico.png") 0 0 no-repeat;
+			text-indent:-9000px;
+			overflow:hidden;
+			top:2px;
+			position: relative;
+			}
+		.wish-list-widget .details .social .link{
+			width:16px;
+			height:20px;
+			display:inline-block;
+			background: url("../img/link-ico.png") 0 0 no-repeat;
+			text-indent:-9000px;
+			overflow:hidden;
+			top:4px;
+			position: relative;
+			}
+	.wish-list-widget .add-wish-link+.add-wish-link{
+		display:none;
+		}
+	.wish-list-widget .add-wish-link{
+		z-index:130;
+		position: absolute;
+		margin:-10px 0 0 0;
+		left:0;
+		height:10px;
+		width:593px;
+		background: url("../img/add-bg.png") 0 50% repeat-x;
+		opacity:0;
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+		filter: alpha(opacity=0);
+		}
+		.wish-list-widget .add-wish-link:hover{
+			opacity:1;
+			-ms-filter: none;
+			filter: none;
+			}
+		.wish-list-widget .add-wish-link b{
+			text-indent:-9000px;
+			overflow:hidden;
+			line-height:0;
+			font-size:0;
+			cursor:pointer;
+			width:98px;
+			height:25px;
+			position: absolute;
+			left:495px;
+			top:-7px;
+			background: url("../img/add-wish.png") 0 0 no-repeat;
+			}
+	.wish-list-widget .author{
+		margin-top:15px;
+		font:48px/48px 'Berkshire Swash', Georgia, cursive;
+		}
+		.wish-list-widget .author b{
+			display:block;
+			}

@@ -1,0 +1,404 @@
+.znaki-fm-widget{
+  border-top: 4px solid #000;
+  background-color: #fff;
+  -webkit-box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.4);
+  -o-box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.4);
+  box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+  min-height: 200px;
+  width: 649px;
+  margin-bottom: 12px;
+  text-align: left;
+	}
+  * html .znaki-fm-widget{
+    zoom: 1;
+    height: 200;
+    width: 649px;
+  	}
+  .znaki-fm-widget .size-150{
+    width: 150px!important;
+  	}
+  .znaki-fm-widget .size-150 img{
+    height: 146px!important;
+  	}
+  .znaki-fm-widget .size-200{
+    width: 200px!important;
+  	}
+  .znaki-fm-widget .size-200 img{
+    height: 146px!important;
+  	}
+  .znaki-fm-widget .size-230{
+    width: 230px!important;
+  	}
+  .znaki-fm-widget .size-230 img{
+    height: 146px!important;
+  	}
+  .znaki-fm-widget .size-240{
+    width: 240px!important;
+  	}
+  .znaki-fm-widget .size-240 img{
+    height: 146px!important;
+  	}
+  .znaki-fm-widget .size-310{
+    width: 310px!important;
+  	}
+  .znaki-fm-widget .size-310 img{
+    height: 146px!important;
+  	}
+  .znaki-fm-widget .size-470{
+    width: 470px!important;
+  	}
+  .znaki-fm-widget .size-470 img{
+    height: 146px!important;
+  	}
+  .znaki-fm-widget .size-480{
+    width: 480px!important;
+  	}
+  .znaki-fm-widget .size-480 img{
+    height: 146px!important;
+  	}
+  .znaki-fm-widget .znaki-fm-logotype{
+    display: block;
+    width: 62px;
+    height: 62px;
+    overflow: hidden;
+    text-indent: -9000px;
+    background: url("../img/znaki-fm-logotype.png") 0 0 no-repeat;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    z-index: 10000;
+  	}
+  .znaki-fm-widget .znaki-fm-widget-scroller-navigation{
+    position: absolute;
+    right: 9px;
+    top: 0;
+    height: 29px;
+    overflow: hidden;
+    color: #777;
+    font: italic 13px/29px Georgia, serif;
+    white-space: nowrap;
+    text-align: center;
+    width: 50px;
+  	}
+    .znaki-fm-widget .znaki-fm-widget-scroller-navigation .forward{
+      position:absolute;
+      right:0;
+      top:0;
+      width: 11px;
+      height: 29px;
+      background: url("../img/forwardarrow.gif") 50% 50% no-repeat;
+      overflow: hidden;
+      text-indent: -9000px;
+      display: block;
+      margin: 0 0 0 30px;
+    	}
+    .znaki-fm-widget .znaki-fm-widget-scroller-navigation .backward{
+      position:absolute;
+      left:0;
+      top:0;
+      width: 11px;
+      height: 29px;
+      background: url("../img/backwardarrow.gif") 50% 50% no-repeat;
+      overflow: hidden;
+      text-indent: -9000px;
+      display: block;
+    	}
+  .znaki-fm-widget .znaki-fm-widget-scroller{
+    padding: 0;
+    width: 9000px;
+    position: relative;
+    left: 0;
+  	}
+    .znaki-fm-widget .znaki-fm-widget-scroller article{
+      float: left;
+      display: inline;
+      margin: 0 0 0 10px;
+      overflow: hidden;
+      position: relative;
+      border-bottom: 10px solid #fff;
+    	}
+    .znaki-fm-widget .znaki-fm-widget-scroller article.brief{
+      width: 235px;
+    	}
+    .znaki-fm-widget .znaki-fm-widget-scroller article.music{
+      width: 150px;
+    	}
+    .znaki-fm-widget .znaki-fm-widget-scroller article.reviews{
+      width: 150px;
+    	}
+    .znaki-fm-widget .znaki-fm-widget-scroller article.technology{
+      width: 230px;
+    	}
+    .znaki-fm-widget .znaki-fm-widget-scroller article.arts{
+      width: 230px;
+    	}
+    .znaki-fm-widget .znaki-fm-widget-scroller article.books{
+      width: 230px;
+    	}
+    .znaki-fm-widget .znaki-fm-widget-scroller article.cinema{
+      width: 230px;
+    	}
+      .znaki-fm-widget .znaki-fm-widget-scroller article a{
+        text-decoration: none;
+        color: #000;
+        display: block;
+      	}
+      .znaki-fm-widget .znaki-fm-widget-scroller article .illustration{
+        display: block;
+      	}
+      .znaki-fm-widget .znaki-fm-widget-scroller article .label{
+        position: absolute;
+        left: 0;
+        top: 127px;
+        background-image: url("../img/label.png");
+        background-repeat: no-repeat;
+        display: block;
+        overflow: hidden;
+        text-indent: -9000px;
+        height: 13px;
+        z-index: 9000;
+      	}
+  .znaki-fm-widget .label-popular{
+    background-image: url("../img/label.png");
+    background-repeat: no-repeat;
+    display: block;
+    overflow: hidden;
+    text-indent: -9000px;
+    height: 13px;
+    z-index: 9000;
+    padding: 0;
+    width: 112px;
+    background-position: -112px -42px;
+  	}
+  .znaki-fm-widget .label-vision{
+    background-image: url("../img/label.png");
+    background-repeat: no-repeat;
+    display: block;
+    overflow: hidden;
+    text-indent: -9000px;
+    height: 13px;
+    z-index: 9000;
+    padding: 0;
+    width: 38px;
+    background-position: -156px -28px;
+  	}
+  .znaki-fm-widget .label-performers{
+    background-image: url("../img/label.png");
+    background-repeat: no-repeat;
+    display: block;
+    overflow: hidden;
+    text-indent: -9000px;
+    height: 13px;
+    z-index: 9000;
+    padding: 0;
+    width: 155px;
+    background-position: 0px -28px;
+  	}
+  .znaki-fm-widget .label-related{
+    background-image: url("../img/label.png");
+    background-repeat: no-repeat;
+    display: block;
+    overflow: hidden;
+    text-indent: -9000px;
+    height: 13px;
+    z-index: 9000;
+    padding: 0;
+    width: 119px;
+    background-position: -62px -14px;
+  	}
+  .znaki-fm-widget .label-review{
+    background-image: url("../img/label.png");
+    background-repeat: no-repeat;
+    display: block;
+    overflow: hidden;
+    text-indent: -9000px;
+    height: 13px;
+    z-index: 9000;
+    padding: 0;
+    width: 38px;
+    background-position: 0px -14px;
+  	}
+  .znaki-fm-widget .label-info{
+    background-image: url("../img/label.png");
+    background-repeat: no-repeat;
+    display: block;
+    overflow: hidden;
+    text-indent: -9000px;
+    height: 13px;
+    z-index: 9000;
+    padding: 0;
+    width: 38px;
+    background-position: -104px 0px;
+  	}
+  .znaki-fm-widget .label-columns{
+    background-image: url("../img/label.png");
+    background-repeat: no-repeat;
+    display: block;
+    overflow: hidden;
+    text-indent: -9000px;
+    height: 13px;
+    z-index: 9000;
+    padding: 0;
+    width: 56px;
+    background-position: -47px 0px;
+  	}
+  .znaki-fm-widget .label-news{
+    background-image: url("../img/label.png");
+    background-repeat: no-repeat;
+    display: block;
+    overflow: hidden;
+    text-indent: -9000px;
+    height: 13px;
+    z-index: 9000;
+    padding: 0;
+    width: 54px;
+    background-position: -143px 0px;
+  	}
+  .znaki-fm-widget .label-overviews{
+    background-image: url("../img/label.png");
+    background-repeat: no-repeat;
+    display: block;
+    overflow: hidden;
+    text-indent: -9000px;
+    height: 13px;
+    z-index: 9000;
+    padding: 0;
+    width: 50px;
+    background-position: -113px -42px;
+  	}
+  .znaki-fm-widget .label-poster{
+    background-image: url("../img/label.png");
+    background-repeat: no-repeat;
+    display: block;
+    overflow: hidden;
+    text-indent: -9000px;
+    height: 13px;
+    z-index: 9000;
+    padding: 0;
+    width: 46px;
+    background-position: 0 0;
+  	}
+  .znaki-fm-widget .label-technology{
+    padding: 0;
+    background-image: url("../img/label.png");
+    background-repeat: no-repeat;
+    display: block;
+    overflow: hidden;
+    text-indent: -9000px;
+    height: 13px;
+    z-index: 9000;
+    padding: 0;
+    width: 72px;
+    background-position: -51px -56px;
+  	}
+  .znaki-fm-widget .label-cinema{
+    padding: 0;
+    background-image: url("../img/label.png");
+    background-repeat: no-repeat;
+    display: block;
+    overflow: hidden;
+    text-indent: -9000px;
+    height: 13px;
+    z-index: 9000;
+    padding: 0;
+    width: 36px;
+    background-position: 0 -70px;
+  	}
+  .znaki-fm-widget .label-books{
+    padding: 0;
+    background-image: url("../img/label.png");
+    background-repeat: no-repeat;
+    display: block;
+    overflow: hidden;
+    text-indent: -9000px;
+    height: 13px;
+    z-index: 9000;
+    padding: 0;
+    width: 42px;
+    background-position: -37px -70px;
+  	}
+  .znaki-fm-widget .label-arts{
+    padding: 0;
+    background-image: url("../img/label.png");
+    background-repeat: no-repeat;
+    display: block;
+    overflow: hidden;
+    text-indent: -9000px;
+    height: 13px;
+    z-index: 9000;
+    padding: 0;
+    width: 66px;
+    background-position: -124px -56px;
+  	}
+  .znaki-fm-widget .label-music{
+    padding: 0;
+    background-image: url("../img/label.png");
+    background-repeat: no-repeat;
+    display: block;
+    overflow: hidden;
+    text-indent: -9000px;
+    height: 13px;
+    z-index: 9000;
+    padding: 0;
+    width: 51px;
+    background-position: 0 -56px;
+  	}
+  .znaki-fm-widget .label-review{
+    padding: 0;
+    background-image: url("../img/label.png");
+    background-repeat: no-repeat;
+    display: block;
+    overflow: hidden;
+    text-indent: -9000px;
+    height: 13px;
+    z-index: 9000;
+    padding: 0;
+    width: 50px;
+    background-position: -113px -42px;
+  	}
+    .znaki-fm-widget .znaki-fm-widget-scroller article .title{
+      text-align: left;
+      display: block;
+      color: #d11e00;
+      font: 16px/18px Georgia, serif;
+      margin: 5px 0;
+    	}
+    .znaki-fm-widget .znaki-fm-widget-scroller article .big-title{
+      text-align: left;
+      display: block;
+      color: #d11e00;
+      font: 18px/20px Georgia, serif;
+      margin: 5px 0;
+    	}
+    .znaki-fm-widget .znaki-fm-widget-scroller article .abstract{
+      text-align: left;
+      display: block;
+      color: #000;
+      font: 12px/14px Tahoma, sans-serif;
+      margin: 0 0 10px 0;
+    	}
+  .znaki-fm-widget .znaki-fm-widget-navigation{
+    padding: 0 125px 0 100px;
+    height: 29px;
+    background-color: #363636;
+    overflow: hidden;
+    position: relative;
+    list-style: none;
+  	}
+    .znaki-fm-widget .znaki-fm-widget-navigation li{
+      float: left;
+      color: #ccc;
+      font: italic 16px/29px Georgia, serif;
+      margin: 0 20px 0 0;
+    	}
+      .znaki-fm-widget .znaki-fm-widget-navigation li a{
+        text-decoration: none;
+        color: #ccc;
+        font: italic 16px/29px Georgia, serif;
+      	}
+        .znaki-fm-widget .znaki-fm-widget-navigation li a:hover{
+          color: #fff;
+        	}

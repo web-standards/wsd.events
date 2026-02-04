@@ -1,0 +1,98 @@
+html,body{
+  position:relative;
+  overflow:hidden;
+  width:100%;
+  height:100%;
+  font:12px/14px 'Open Sans', sans-serif;
+  background:#fff;
+  }
+  a{
+    color:#000;
+    text-decoration:none;
+    }
+
+.scene{
+  position:absolute;
+  top:50%;
+  left:50%;
+  margin:-25px 0 0 -25px;
+  width:50px;
+  height:50px;
+  
+  -webkit-transform-style:preserve-3d;
+  -webkit-transform:scale(0.75);
+  
+  -webkit-perspective:1500;
+  -webkit-perspective-origin:50% 50%;
+  }
+  
+.coords{
+  position:absolute;
+  top:50%;
+  left:50%;
+  margin:-25px 0 0 -25px;
+  width:50px;
+  height:50px;
+  -webkit-transform:translateZ(1px);
+  -webkit-transform-style:preserve-3d;
+  }
+  .coords .x-axis{
+    position:absolute;
+    top:0;
+    left:0;
+    width:50px;
+    height:50px;
+    border-color:#f00 transparent transparent #0f0;
+    border-style:solid;
+    border-width:1px 0 0 1px;
+    background:rgba(0,255,0,0.05);
+    }
+    .coords .x-axis:after{
+      position:absolute;
+      left:48px;
+      content:"X";
+      }
+  .coords .y-axis{
+    position:absolute;
+    top:0;
+    left:0;
+    width:50px;
+    height:50px;
+    background:rgba(0,0,255,0.05);
+    -webkit-transform:rotateY(-90deg);
+    -webkit-transform-origin:0 0 0;
+    }
+    .coords .y-axis:after{
+      position:absolute;
+      top:48px;
+      content:"Y";
+      }
+  .coords .z-axis{
+    position:absolute;
+    top:0;
+    left:0;
+    width:50px;
+    height:50px;
+    border-color:#00f;
+    border-style:solid;
+    border-width:0 0 0 1px;
+    background:rgba(255,0,0,0.05);
+    -webkit-transform:rotateX(90deg);
+    -webkit-transform-origin:0 0 0;
+    }
+    .coords .z-axis:after{
+      position:absolute;
+      top:48px;
+      content:"Z";
+      
+      }
+
+#grass-1{
+  -webkit-transform: translateX(501px);
+  }
+#grass-2{
+  -webkit-transform: translateY(101px);
+  }
+#grass-3{
+  -webkit-transform: translateZ(-101px);
+  }

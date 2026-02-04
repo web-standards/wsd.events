@@ -1,0 +1,435 @@
+/*
+    Mirror theme for Shower
+    Copyright © 2011 Vyacheslav Oliyanchuk, http://miripiruni.org/
+    Licensed under MIT license: https://github.com/pepelsbey/shower/wiki/License
+*/
+
+@import url(fonts.css);
+@import url(reset.css);
+
+BODY {
+    font:25px/1.8 'PT Sans', sans-serif;
+    counter-reset:paging;
+    }
+
+/* Slide
+---------------------------------------- */
+.list .slide:before {
+    counter-increment:paging;
+    content:counter(paging, decimal) ". " attr(title);
+    }
+.slide SECTION {
+    padding:80px 120px 0;
+    width:784px;
+    height:560px;
+    background:#FFF;
+    color:#000;
+    }
+
+/* Header */
+.slide HEADER {
+    margin:0 0 58px;
+    color:#666;
+    font:bold 40px/1.13 'PT Sans', sans-serif;
+    }
+    .slide HEADER H2 {
+        display:-moz-inline-box;
+        display:inline-block;
+        box-shadow:1px 1px 2px rgba(0,0,0,0.07);
+        margin-left:-0.5em;
+        padding:.25em .5em;
+        color:#000!important;
+        letter-spacing:1px;
+        font-family:'PT Sans',sans-serif!important;
+        background:#f4be02;
+        background:-moz-linear-gradient(top, #ffe97f 0%, #f4be02 100%);
+        background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffe97f), color-stop(100%,#f4be02));
+        background:-webkit-linear-gradient(top, #ffe97f 0%,#f4be02 100%);
+        background:-o-linear-gradient(top, #ffe97f 0%,#f4be02 100%);
+        background:-ms-linear-gradient(top, #ffe97f 0%,#f4be02 100%);
+        background:linear-gradient(top, #ffe97f 0%,#f4be02 100%);
+        filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffe97f', endColorstr='#f4be02',GradientType=0 );
+        }
+    .shout HEADER H2 {
+        padding:0;
+        box-shadow:none;
+        background:transparent;
+        background-image:none!important;
+        font-size:60px!important;
+        color:red!important;
+        }
+
+#Cover HEADER H2 {
+    position:relative;
+    max-width:67%;
+    margin-top:-2em;
+    margin-left:0;
+    padding:5em 30px 1em;
+    text-align:left!important;
+    font-size:40px!important;
+    line-height:1.333;
+    }
+
+/* Elements */
+.slide P {
+    margin:0 0 1em;
+    }
+.slide P.note {
+    color:#888;
+    }
+.slide A {
+    border-bottom:0.1em solid;
+    color:#0174A7;
+    color:#1A3DC1;
+    text-decoration:none;
+    }
+.slide A[target=_blank] {
+    margin-right:22px;
+    }
+.slide A[target=_blank]:after {
+    position:absolute;
+    margin-left:7px;
+    font-family:'Target Blank';
+    content:'\005E';
+    }
+.slide B,
+.slide STRONG {
+    font-weight:bold;
+    }
+.slide I,
+.slide EM {
+    font-style:italic;
+    }
+.slide KBD,
+.slide CODE {
+    padding:3px 8px;
+    -webkit-border-radius:2px;
+    -moz-border-radius:2px;
+    border-radius:2px;
+    background:#eee;
+    border:1px solid #ddd;
+    -webkit-tab-size:4;
+    -moz-tab-size:4;
+    -o-tab-size:4;
+    tab-size:4;
+    font-family:Consolas, 'Droid Sans Mono', monospace;
+    }
+
+HEADER KBD,
+HEADER CODE,
+PRE KBD,
+PRE CODE {
+    background:none !important;
+    outline:none !important;
+    border:none !important;
+    }
+
+/* Quote */
+.slide BLOCKQUOTE {
+    font-style:italic;
+    }
+.slide BLOCKQUOTE:before {
+    position:absolute;
+    margin:-15px 0 0 -80px;
+    color:#CCC;
+    font:200px/1 'PT Sans', sans-serif;
+    content:'\201C'; /* ldquo */
+    }
+.slide BLOCKQUOTE:after {
+    margin:-45px 0 45px;
+    display:block;
+    color:#444;
+    font-weight:bold;
+    content:attr(cite);
+    }
+
+/* Lists */
+.slide OL,
+.slide UL {
+    margin:0 0 45px;
+    counter-reset:list;
+    }
+    .slide UL UL,
+    .slide OL UL,
+    .slide OL OL,
+    .slide UL OL {
+        margin:0 0 0 38px;
+        }
+    .slide OL > LI:before,
+    .slide UL > LI:before {
+        position:absolute;
+        margin-left:-110px;
+        width:100px;
+        text-align:right;
+        }
+    .slide UL > LI:before {
+        display:block;
+        content:'';
+        line-height:1.1;
+        width:0.35em;
+        height:0.35em;
+        margin-left:-0.8em;
+        margin-top:0.75em;
+        background:#909090;
+        }
+    .slide OL > LI:before {
+        counter-increment:list;
+        content:counter(list)'.';
+        }
+
+/* Code */
+.slide PRE {
+    margin:0 0 45px;
+    counter-reset:code;
+    white-space:normal;
+    font-family:Consolas,monospace;
+    }
+    .slide PRE.no-line-numbers {
+        line-height:1.333;
+        }
+    .slide PRE CODE {
+        display:block;
+        padding:0;
+        background:none;
+        white-space:pre;
+        }
+    .slide PRE CODE:before {
+        position:absolute;
+        margin:0 0 0 -120px;
+        width:110px;
+        color:#BBB;
+        text-align:right;
+        counter-increment:code;
+        content:counter(code, decimal-leading-zero)'.';
+        }
+    .slide PRE.no-line-numbers CODE:before {
+        content:'';
+        }
+    .slide MARK {
+        background:#88ff76;
+        }
+    .slide PRE MARK {
+        padding:3px 8px;
+        -webkit-border-radius:3px;
+        -moz-border-radius:3px;
+        border-radius:3px;
+        }
+    .slide PRE MARK {
+        color:#000;
+        font-style:normal;
+        }
+    .slide PRE MARK.important {
+        background:#C00;
+        color:#FFF;
+        font-weight:normal;
+        }
+
+/* Background */
+.slide.bg SECTION {
+    background:transparent;
+    }
+    .slide.bg SECTION:before {
+        display:none;
+        }
+.slide.bg IMG {
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:-1;
+    width:100%;
+    }
+
+/* Shout */
+.slide.shout SECTION:before {
+    display:none;
+    }
+.slide.shout H2 {
+    position:absolute;
+    top:50%;
+    left:0;
+    width:100%;
+    text-align:center;
+    line-height:1;
+    font-size:150px;
+    -webkit-transform:translateY(-50%);
+    -moz-transform:translateY(-50%);
+    -ms-transform:translateY(-50%);
+    -o-transform:translateY(-50%);
+    transform:translateY(-50%);
+    }
+    .slide.shout H2 A[target=_blank] {
+        margin:0;
+        }
+        .slide.shout H2 A[target=_blank]:after {
+            content:'';
+            }
+
+/* Middle */
+.middle {
+    position:absolute;
+    top:50%;
+    left:50%;
+    -webkit-transform:translate(-50%, -50%);
+    -moz-transform:translate(-50%, -50%);
+    -ms-transform:translate(-50%, -50%);
+    -o-transform:translate(-50%, -50%);
+    transform:translate(-50%, -50%);
+    }
+
+/* List
+---------------------------------------- */
+.list {
+    float:left;
+    padding:40px 0 80px 100px;
+    background:#fff;
+    }
+
+/* Caption */
+.list .caption {
+    color:#000;
+    margin:-50px 0 0 -100px;
+    padding:50px 0 10px 100px;
+    background:#eee;
+    }
+    .list .caption H1 {
+        font:bold 50px/1 'PT Sans', sans-serif;
+        }
+    .list .caption P {
+        position:relative;
+        margin-top:0.75em;
+        font-size:20px;
+        }
+    .list .caption .author a:hover{
+        border:0 !important;
+        }
+
+/* Slide */
+.list .slide {
+    position:relative;
+    float:left;
+    margin:0 50px 0 0;
+    padding:80px 0 0;
+    }
+
+    .list .slide:before {
+        color:#3C3D40;
+        line-height:1;
+        font-size:18px;
+        }
+    .list .slide:target:before {
+        color:#4B86C2;
+        }
+    .list .slide > DIV {
+        position:relative;
+        overflow:hidden;
+        width:256px;
+        height:160px;
+        box-shadow:0 3px 6px #888;
+        border-radius:1px;
+        background:rgba(0, 0, 0, 0.3);
+        }
+    .list .slide > DIV:hover {
+        cursor:pointer;
+        cursor:hand;
+        }
+    .list .slide:target > DIV {
+        }
+    .list .slide SECTION {
+        -webkit-transform-origin:0 0;
+        -webkit-transform:scale(0.25);
+        -moz-transform-origin:0 0;
+        -moz-transform:scale(0.25);
+        -ms-transform-origin:0 0;
+        -ms-transform:scale(0.25);
+        -o-transform-origin:0 0;
+        -o-transform:scale(0.25);
+        transform-origin:0 0;
+        transform:scale(0.25);
+        }
+        .list .slide SECTION:after {
+            position:absolute;
+            top:0;
+            right:0;
+            bottom:0;
+            left:0;
+            content:'';
+            }
+
+/* Full
+---------------------------------------- */
+.full {
+    position:absolute;
+    top:50%;
+    left:50%;
+    overflow:hidden;
+    margin:-320px 0 0 -512px;
+    width:1024px;
+    height:640px;
+    background:#000;
+    }
+    .full .caption {
+        display:none;
+        }
+    .full .slide {
+        position:absolute;
+        visibility:hidden;
+        }
+        .full .slide:target {
+            visibility:visible;
+            }
+        .full .slide:after {
+            position:absolute;
+            bottom:85px;
+            left:120px;
+            color:#BBB;
+            line-height:1;
+            }
+        .full .slide SECTION {
+            -webkit-transform:scale(1);
+            -moz-transform:scale(1);
+            -ms-transform:scale(1);
+            -o-transform:scale(1);
+            transform:scale(1);
+            }
+        .full .slide.bg {
+            z-index:1;
+            }
+            .full .slide.bg:after,
+            .full .slide.shout:after {
+                content:'';
+                }
+
+/* Inner Navigation */
+.full .inner > * {
+    opacity:0;
+    -webkit-transition:opacity 0.5s linear;
+    -moz-transition:opacity 0.5s linear;
+    -ms-transition:opacity 0.5s linear;
+    -o-transition:opacity 0.5s linear;
+    transition:opacity 0.5s linear;
+    }
+.full .inner > .active {
+    opacity:1;
+    }
+
+/* Progress */
+.full .progress {
+    position:absolute;
+    right:0;
+    bottom:0;
+    left:0;
+    }
+    .full .progress DIV {
+        width:0;
+        height:6px;
+        border-radius:1px;
+        background:rgba(177, 177, 177, 0.4);
+        -webkit-transition:width 0.2s linear;
+        -moz-transition:width 0.2s linear;
+        -ms-transition:width 0.2s linear;
+        -o-transition:width 0.2s linear;
+        transition:width 0.2s linear;
+        }
+.full .progress-off {
+    z-index:1;
+    }

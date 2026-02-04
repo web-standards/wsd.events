@@ -1,0 +1,62 @@
+.select-type-1{
+	display:inline-block;
+	vertical-align:bottom;
+	position: relative;
+	height:26px;
+	background: url("../img/select-bg.png") 0 0 repeat-x;
+	border:1px solid #dbdad7;
+	border-radius:3px;
+
+	-moz-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	box-sizing:border-box;
+
+	white-space:nowrap;
+	}
+	*+html .select-type-1{
+		display:inline;
+		zoom:1;
+		}
+	.select-type-1 select{
+		cursor:pointer;
+		
+		z-index: 100;
+		-webkit-opacity: 0;
+		-moz-opacity: 0;
+		-o-opacity: 0;
+		opacity: 0;
+		-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+		filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+
+		height: 26px;
+		line-height: 26px;
+
+		position: absolute;
+		top: 0;
+		left: 0;
+		width:100%;
+		outline: none;
+		-webkit-appearance: none;
+		-moz-box-sizing:border-box;
+		-o-box-sizing:border-box;
+		box-sizing:border-box;
+		}
+	.select-type-1 .front{
+		display: inline-block;
+		position: absolute;
+		top:0;
+		right:0;
+		left:0;
+		height: 26px;
+		color:#3b5050;
+		font:normal 13px/26px 'Marmelad', Arial, "Helvetica Neue", Helvetica, sans-serif;
+		z-index: 1;
+		padding:0 30px 0 5px;
+		overflow:hidden;
+		text-overflow:ellipsis;
+		-moz-box-sizing:border-box;
+		-o-box-sizing:border-box;
+		box-sizing:border-box;
+		
+		background: url("../img/select-drop-down.png") 100% 3px no-repeat;
+		}

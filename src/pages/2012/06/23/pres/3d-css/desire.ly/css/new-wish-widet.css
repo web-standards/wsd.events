@@ -1,0 +1,75 @@
+.new-wish-widet{
+	display:none;
+
+	position:fixed;
+	top:50%;
+	left:50%;
+	margin:-155px 0 0 -248px;
+	padding:18px;
+	width:451px;
+	min-height:277px;
+	zoom:1;
+	box-shadow:0 0 100px 0 rgba(0,0,0,.3), 1px 1px 0 0 rgba(0,0,0,.12);
+	background: #fff url("../img/form-bg.png") 100% 0 repeat-y;
+	z-index:100;
+
+	border-top-right-radius:5px;
+	border-bottom-right-radius:5px;
+	}
+	.new-wish-widet:after{
+		content:".";
+		display:block;
+		text-indent:-9000px;
+		font-size:0;
+		line-height:0;
+		height:0;
+		overflow:hidden;
+		clear:both;
+		}
+	.new-wish-widet .abstract{
+		float:right;
+		width:290px;
+		}
+		.new-wish-widet .link-your-wish{
+			height:15px;
+			padding:5px 10px;
+			font:13px/15px 'Marmelad', Arial, "Helvetica Neue", Helvetica, sans-serif;
+			}
+		.new-wish-widet .name-your-wish{
+			height:22px;
+			padding:7px 10px 6px;
+			font:18px/22px 'Marmelad', Arial, "Helvetica Neue", Helvetica, sans-serif;
+			}
+		.new-wish-widet .abstract select{
+			margin:0 0 10px;
+			width:285px;
+			}
+		.new-wish-widet .abstract textarea{
+			height:95px;
+			width:268px;
+			resize:none;
+			margin:0 0 10px;
+			}
+		.new-wish-widet .abstract input{
+			width:268px;
+			margin:0 0 10px;
+			}
+	.new-wish-widet .file-upload{
+		float:left;
+		width:134px;
+		margin:0 0 10px;
+		height:72px;
+		}
+	.new-wish-widet .price{
+		float:left;
+		width:134px;
+		margin:0 0 10px;
+		}
+		.new-wish-widet .price input{
+			width:80px;
+			margin:0 0 0 10px;
+			}
+		.new-wish-widet .price label{
+			color:#000;
+			font:24px/37px 'Marmelad', Arial, "Helvetica Neue", Helvetica, sans-serif;
+			}

@@ -1,0 +1,21 @@
+.wild{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  }
+  .wild .example{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    float:left;
+    width:50%;
+    height:50%:
+    }
+    .wild .example img{
+      display:block;
+      height:256px;
+      width:256px;
+      margin:auto;
+      }

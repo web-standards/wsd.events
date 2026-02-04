@@ -1,0 +1,84 @@
+.news-brief-widget{
+  background-color:#fff;
+  margin:0 0 15px 0;
+  border-top:4px solid #000;
+  }
+  .news-brief-widget .author{
+    padding:0 10px;
+    color:#000;
+    font:italic 13px/18px 'PT Sans',Arial,sans-serif;
+    margin:-3px 0 -7px;
+    }
+  .news-brief-widget .magazine-articles{
+    position:relative;
+    }
+    .news-brief-widget .magazine-articles article{
+      margin:0 10px 0;
+      padding:10px 0 0;
+      position:relative;
+      border-top:1px dotted #b7b7b7;
+      }
+      * html .news-brief-widget .magazine-articles article{
+        zoom:1;
+        }
+      *+html .news-brief-widget .magazine-articles article{
+        zoom:1;
+        }
+      .news-brief-widget .magazine-articles article:after{
+        content:".";
+        display:block;
+        height:0;
+        font-size:0;
+        line-height:0;
+        overflow:hidden;
+        clear:both;
+        text-indent:-9000px;
+        }
+      .news-brief-widget .magazine-articles article .author{
+        margin:0;
+        padding:0;
+        color:#000;
+        font:italic 13px/18px 'PT Sans',Arial,sans-serif;
+        overflow:hidden;
+        }
+      .news-brief-widget .magazine-articles article .abstract{
+        margin:0 0 10px;
+        color:#0056a4;
+        font:14px/18px 'PT Sans',Arial,sans-serif;
+        overflow:hidden;
+        }
+      .news-brief-widget .magazine-articles article .illustration{
+        position:relative;
+        left:-10px;
+        width:96px;
+        height:67px;
+        margin:0 0 10px;
+        float:left;
+        background:url("../img/shadow.png") 0 0 no-repeat;
+        }
+  .news-brief-widget .link-2-sphere{
+    background-color:#e2e2e2;
+    border-top:1px dotted #b7b7b7;
+    display:block;
+    text-transform:uppercase;
+    padding:10px;
+    color:#000;
+    zoom:1;
+    position:relative;
+    }
+    .news-brief-widget .link-2-sphere .count{
+      color:#0056a4;
+      }
+  .news-brief-widget .title{
+    margin:15px 10px;
+    font:18px/20px 'PT Sans',Arial,sans-serif;
+    }
+  .news-brief-widget .abstract{
+    margin:15px 10px 15px;
+    color:#000;
+    font:13px/15px 'PT Sans',Arial,sans-serif;
+    }
+  .news-brief-widget .illustration{
+    display:block;
+    margin:0 0 15px 0;
+    }

@@ -1,0 +1,57 @@
+button.button-type-4{
+  display:inline-block;
+  overflow:visible;
+  margin:0;
+  padding:0;
+  border-style:none;
+  background:none;
+  white-space:nowrap;
+  }
+  * html button.button-type-4{
+    display:inline;
+    zoom:1;
+    }
+  *+html button.button-type-4{
+    display:inline;
+    zoom:1;
+    }
+  a.button-type-4,
+  button.button-type-4 span{
+    white-space:nowrap;
+    display:inline-block;
+    padding:0 10px;
+
+    -webkit-border-radius:5px;
+    border-radius:5px;
+
+    background-color:#435e91;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4b6699), to(#3c588a));
+    background: -webkit-linear-gradient(top, #4b6699, #3c588a);
+    background: -moz-linear-gradient(top, #4b6699, #3c588a);
+    background: -ms-linear-gradient(top, #4b6699, #3c588a);
+    background: -o-linear-gradient(top, #4b6699, #3c588a);
+    background: linear-gradient(top, #4b6699, #3c588a);
+    
+    -webkit-box-shadow:inset 0 2px 0 0 #5d76a3, 0 1px 2px 0 rgba(0,0,0,.25);
+    box-shadow:inset 0 2px 0 0 #5d76a3, 0 1px 2px 0 rgba(0,0,0,.25);
+    color:#fff;
+    
+    font:bold 12px/27px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    position:relative;
+    }
+    * html button.button-type-4 span{
+      display:inline;
+      zoom:1;
+      }
+    *+html button.button-type-4 span{
+      display:inline;
+      zoom:1;
+      }
+    * html a.button-type-4{
+      display:inline;
+      zoom:1;
+      }
+    *+html a.button-type-4{
+      display:inline;
+      zoom:1;
+      }

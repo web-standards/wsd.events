@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Игра</title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+	<link rel="stylesheet" href="css/common.css" />
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.keyboard.js"></script>
+	<script src="js/json2.min.js"></script>
+	<script src="js/modernizr.min.js"></script>
+	<script src="js/amplify.core.min.js"></script>
+	<script src="js/amplify.request.min.js"></script>
+	<script src="js/amplify.store.min.js"></script>
+	<script src="js/jquery.queryloader2.js"></script>
+	<script src="js/gameController.js"></script>
+
+</head>
+<body>
+<section class="scale">
+	<section class="space">
+		<section class="screen game-screen">
+			<div class="pause-popup">
+				<h2>Pause</h2>
+			</div>
+			<div class="game-over">
+				<h2>Game Over</h2>
+				<p>Your score: <b class="finalScore">0</b></p>
+				<p class="ok">OK</p>
+			</div>
+			<div class="name-popup">
+				<div class="inner-wrapper">
+					<label for="name">Your name:</label>
+					<input type="text" name="name" autocomplete="off" id="name" value="">
+					<p class="ok">Ok</p>
+				</div>
+			</div>
+			<section class="data-panel">
+				<p class="scores">0</p>
+				<p class="timer"><b>00</b>:00</p>
+				<p class="pause">pause</p>
+				<p class="quit">quit</p>
+			</section>
+			<div class="turn-wrapper">
+				<section class="game-field">
+				</section>
+			</div>
+		</section>
+		<section class="screen navigation-screen">
+			<div class="turn-wrapper">
+				<nav class="navigation element">
+					<a href="#" class="new-game">Game</a>
+					<a href="#" class="change-name">I am not <b>Gogi</b>!</a>
+					<a href="#" class="rules">Rules</a>
+					<a href="#" class="scores">Scores</a>
+				</nav>
+				<img src="img/star-1.png" class="artifact-1" alt="Звездочка">
+				<img src="img/star-1.png" class="artifact-2" alt="Звездочка">
+				<img src="img/pepper-1.png" class="artifact-3" alt="Звездочка">
+			</div>
+		</section>
+		<section class="screen score-screen">
+			<div class="turn-wrapper">
+				<section class="score element">
+					<h1>Scores</h1>
+					<table></table>
+					<a href="#" class="back"><span></span></a>
+				</section>
+				<img src="img/star-1.png" class="artifact-4" alt="Звездочка">
+				<img src="img/win.png" class="artifact-5" alt="Звездочка">
+				<img src="img/star-1.png" class="artifact-6" alt="Звездочка">
+			</div>
+		</section>
+		<section class="screen rules-screen">
+			<div class="turn-wrapper">
+				<section class="rules">
+					<p><img src="img/rules.png" alt="найди похожие!"> In the game field with size 4x4 blocks placed 16 pictures of 8 types. You have to find a match for each picture as fast as possible.</p>
+
+					<a href="#" class="back"><span></span></a>
+				</section>
+				<img src="img/star-1.png" class="artifact-7" alt="Звездочка">
+				<img src="img/pepper-3.png" class="artifact-8" alt="Звездочка">
+				<img src="img/pepper-2.png" class="artifact-9" alt="Звездочка">
+			</div>
+		</section>
+	</section>
+</section>
+<div class="darkbox"></div>
+<div class="preloader-images">
+	<img src="img/type-1.png" alt="для прелоадера">
+	<img src="img/type-2.png" alt="для прелоадера">
+	<img src="img/type-3.png" alt="для прелоадера">
+	<img src="img/type-4.png" alt="для прелоадера">
+	<img src="img/type-5.png" alt="для прелоадера">
+	<img src="img/type-6.png" alt="для прелоадера">
+	<img src="img/type-7.png" alt="для прелоадера">
+	<img src="img/type-8.png" alt="для прелоадера">
+	<img src="img/back.png" alt="для прелоадера">
+	<img src="img/paper.png" alt="для прелоадера">
+</div>
+</body>
+</html>

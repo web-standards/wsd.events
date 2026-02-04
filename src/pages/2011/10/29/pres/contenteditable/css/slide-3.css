@@ -1,0 +1,26 @@
+.spec-part{
+  margin:0 0 0 100px;
+  position:relative;
+  }
+  .spec-part.add-part{
+    background:#eee;
+    padding:10px;
+    margin:10px 0 0 90px;
+    color:#444;
+    }
+  .spec-part .additional{
+    color:#f00;
+    position:absolute;
+    top:0;
+    right:100%;
+    margin:0 10px 0 0;
+    font-size:1.2em;
+    white-space:nowrap;
+    }
+  .spec-part .date{
+    position:absolute;
+    top:0;
+    right:100%;
+    margin:0 20px 0 0;
+    white-space:nowrap;
+    }

@@ -1,0 +1,40 @@
+.tag-widget{
+  border-top:4px solid #000;
+  padding:0 10px;
+  margin:0 0 15px;
+  }
+  .tag-widget ul{
+    font:normal 13px/18px 'PT Sans',Arial,sans-serif;
+    }
+    .tag-widget ul li{
+      display:inline;
+      margin:5px 20px 5px 0;
+      padding:0 0 0 10px;
+      background:url("../img/bullet.png") 0 6px no-repeat;
+      }
+    .column-2 .tag-widget ul li{
+      display:block;
+      margin:5px 0;
+      padding:0 0 0 10px;
+      background:url("../img/bullet.png") 0 6px no-repeat;
+      }
+  .tag-widget .title{
+    padding:10px 0;
+    background-color:#fff;
+    font:bold 18px/22px 'PT Sans Caption',Arial,sans-serif;
+    position:relative;
+    z-index:4;
+    }
+    
+
+.multimedia-widget .tag-widget{
+	background:#fff url("../img/text-wrapper-bg.png") 0 1px repeat-x;
+	display:block;
+	overflow:hidden;
+	padding:31px 10px 25px;
+	margin:0;
+	border:none;
+	}
+	.multimedia-widget .tag-widget .title{
+    background:none;
+    }

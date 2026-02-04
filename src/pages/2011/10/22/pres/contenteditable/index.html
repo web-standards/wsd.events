@@ -1,0 +1,249 @@
+<!DOCTYPE HTML>
+<html lang="ru-RU">
+<head>
+	<meta charset="UTF-8">
+	<title>Слайдcтер</title>
+	<!--[if lt IE 9]>
+	<script src="js/html5.js"></script>
+	<![endif]-->
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.js"></script>
+	<script type="text/javascript" src="js/jquery.easing.js"></script>
+	<script type="text/javascript" src="js/jquery.hotkeys.js"></script>
+	<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+	<script type="text/javascript" src="js/modernizr.js"></script>
+	<script type="text/javascript" src="js/slidsterController.js"></script>
+	<script type="text/javascript" src="js/slide-1.js"></script>
+	<link rel="stylesheet" media="all" href="css/common.css" />
+</head>
+<body>
+	<section class="slides">
+
+		<article tabindex="1" class="slide-1 center"><div class="wrapper">
+			<hgroup>
+				<h1>Редактирование <mark>HTML</mark> в браузере.</h1>
+				<h2>Как должно быть, как есть, и зачем это вообще нужно.</h2>
+			</hgroup>
+		</div></article>
+		
+		<article tabindex="2" class="slide-2 center"><div class="wrapper">
+			<ul>
+				<li>
+					<span class="date">1990</span>
+					<span>WorldWideWeb <i>file:</i></span>
+				</li>
+				<li>
+					<span class="date">2000</span>
+					<span>Trident (Internet Explorer 5.5)</span>
+				</li>
+				<li>
+					<span class="date">2003</span>
+					<span>Gecko 1.3 (Mozilla 1.3) <i>designMode</i></span>
+				</li>
+				<li>
+					<span class="date">2005</span>
+					<span>WebKit 312 (Safari 1.3)</span>
+				</li>
+				<li>
+					<span class="date">2006</span>
+					<span>Presto 2.0 (Opera 9)</span>
+				</li>
+				<li>
+					<span class="date">2007</span>
+					<span>Gecko 1.9.2 (Fire Fox 3.a6+) <i>contentEditable</i></span>
+				</li>
+			</ul>
+		</div></article>
+
+		<article tabindex="3" class="slide-3 center"><div class="wrapper">
+			
+			<div class="spec-part">
+				<span class="date">2008</span> 
+				<p>HTML5 Editing API <i>свойства, методы</i></p>
+			</div>
+			<div class="spec-part">
+				<span class="date">2011</span> 
+				<p>HTML Editing API <i>поведение</i></p>
+			</div>
+			<div class="spec-part add-part">
+				<span class="additional">+</span>
+				<p>Clipboard API and events</p>
+				<p>UndoManager and DOM Transaction</p>
+				<p>Selections</p>
+				<p>Range</p>
+				<p>SpellCheck API</p>
+			</div>
+			
+		</div></article>
+		
+		<!--Немного про спецификации-->
+		
+		<article tabindex="4" class="slide-4 center"><div class="wrapper">
+			
+			<div class="engine">Оригинал</div><pre>Возвышаюсь, падая ниц,<span class="character">↵</span>
+Вижу все, закрывая глаза,<span class="character">↵</span>
+<span class="character">↵</span>
+Все равно я люблю эту жизнь,<span class="character">↵</span>
+ее страшные чудеса<span class="character">↵</span>
+<span class="character">↵</span>
+<span class="character">↵</span></pre>
+	
+		</div></article>
+		<article tabindex="5" class="slide-5 center"><div class="wrapper">
+	
+			<div class="engine">WebKit</div>Возвышаюсь, падая ниц,<span class="character">&lt;div&gt;</span>Вижу все, закрывая глаза,<span class="character">&lt;/div&gt;</span><span class="character">&lt;div&gt;</span><span class="character">&lt;br&gt;</span><span class="character">&lt;/div&gt;</span><span class="character">&lt;div&gt;</span>Все равно я люблю эту жизнь,&nbsp;<span class="character">&lt;/div&gt;</span><span class="character">&lt;div&gt;</span>ее страшные чудеса<span class="character">&lt;/div&gt;</span><span class="character">&lt;div&gt;</span><span class="character">&lt;br&gt;</span><span class="character">&lt;/div&gt;</span><span class="character">&lt;div&gt;</span><span class="character">&lt;br&gt;</span><span class="character">&lt;/div&gt;</span>
+
+		</div></article>
+		<article tabindex="6" class="slide-6 center"><div class="wrapper">
+
+
+			<div class="engine">Gecko</div>Возвышаюсь, падая ниц,<span class="character">&lt;br&gt;</span>Вижу все, закрывая глаза,<span class="character">&lt;br&gt;</span><span class="character">&lt;br&gt;</span>Все равно я люблю эту жизнь, <span class="character">&lt;br&gt;</span>ее страшные чудеса<span class="character">&lt;br&gt;</span><span class="character">&lt;br&gt;</span><span class="character">&lt;br&gt;</span>
+
+		</div></article>
+		<article tabindex="7" class="slide-7 center"><div class="wrapper">
+
+
+			<div class="engine">Presto</div><span class="character">&lt;p&gt;</span>Возвышаюсь, падая ниц,<span class="character">&lt;/p&gt;</span><span class="character">&lt;p&gt;</span>Вижу все, закрывая глаза,<span class="character">&lt;/p&gt;</span><span class="character">&lt;p&gt;</span><span class="character">&lt;br&gt;</span><span class="character">&lt;/p&gt;</span><span class="character">&lt;p&gt;</span>Все равно я люблю эту жизнь, <span class="character">&lt;/p&gt;</span><span class="character">&lt;p&gt;</span>ее страшные чудеса<span class="character">&lt;/p&gt;</span><span class="character">&lt;p&gt;</span><span class="character">&lt;br&gt;</span><span class="character">&lt;/p&gt;</span><span class="character">&lt;p&gt;</span><span class="character">&lt;br&gt;</span><span class="character">&lt;/p&gt;</span><span class="character">&lt;p&gt;</span><span class="character">&lt;br&gt;</span><span class="character">&lt;/p&gt;</span>
+	
+		</div></article>
+		<article tabindex="8" class="slide-8 center"><div class="wrapper">
+
+
+			<div class="engine">Trident</div><span class="character">&lt;P&gt;</span>Возвышаюсь, падая ниц, <span class="character">&lt;/P&gt;</span> <span class="character">&lt;P&gt;</span>Вижу все, закрывая глаза,<span class="character">&lt;/P&gt;</span> <span class="character">&lt;P&gt;</span><mark>&amp;nbsp;</mark><span class="character">&lt;/P&gt;</span> <span class="character">&lt;P&gt;</span>Все равно я люблю эту жизнь,<span class="character">&lt;/P&gt;</span> <span class="character">&lt;P&gt;</span>ее страшные чудеса<span class="character">&lt;/P&gt;</span> <span class="character">&lt;P&gt;</span><mark>&amp;nbsp;</mark><span class="character">&lt;/P&gt;</span> <span class="character">&lt;P&gt;</span><mark>&amp;nbsp;</mark><span class="character">&lt;/P&gt;</span> <span class="character">&lt;P&gt;</span><mark>&amp;nbsp;</mark><span class="character">&lt;/P&gt;</span>
+		</div>
+		
+		</div></article>
+	
+		<!--Сделать скриптом простой редактор и что бы единообразно все показал-->
+
+		<article tabindex="9" class="slide-9 center"><div class="wrapper">
+		
+			<a href="http://dvcs.w3.org/hg/editing/raw-file/tip/
+			implementation.js">http://dvcs.w3.org/hg/editing/raw-file/tip/
+			implementation.js</a>
+		
+		</div></article>
+		
+		<article tabindex="10" class="slide-10 center"><div class="wrapper">
+		
+			<h1>Стили внутри WYSIWYG не должны отличаться от стилей сайта</h1>
+		
+		</div></article>
+		
+		<article tabindex="11" class="slide-11 center"><div class="wrapper">
+		
+			<img src="spoiler/omg.jpg" alt="Редактировани как есть" />
+		
+		</div></article>
+		
+		<article tabindex="12" class="slide-12 center"><div class="wrapper">
+		
+			<img src="spoiler/omg-view.jpg" alt="Страница сайта" />
+		
+		</div></article>
+		
+		<article tabindex="13" class="slide-13 center"><div class="wrapper">
+		
+			<img src="spoiler/omg-ok.jpg" alt="Редактирование сайта как должно быть" />
+		
+		</div></article>
+
+		<article tabindex="14" class="slide-14 center"><div class="wrapper">
+		
+			<h1>WYSIWYG в общем случае не должен формировать представления</h1>
+		
+		</div></article>
+		
+		<article tabindex="15" class="slide-15 center"><div class="wrapper">		
+			<img src="spoiler/wtf.jpg" alt="Что может быть, если дать в руки редактора стили" />	
+		</div></article>
+
+		<article tabindex="16" class="slide-16 center"><div class="wrapper">
+		
+			<h1>WYSIWYG должен быть написан или кастомизирован под конкретный проект</h1>
+		
+		</div></article>
+		
+		<article tabindex="17" class="slide-17 center"><div class="wrapper">
+		
+			<img src="spoiler/custom.jpg" alt="Специфические элементы" />
+		
+		</div></article>
+	
+		<article tabindex="18" class="slide-18 center"><div class="wrapper">
+		
+			<h1>Редактирование материалов непосредственно на страницах сайта</h1>
+		
+		</div></article>
+		
+		<article tabindex="19" class="slide-19 center"><div class="wrapper">
+		
+			<img src="spoiler/horror-1.png" alt="Специфические элементы" />
+		
+		</div></article>
+		<article tabindex="20" class="slide-20 center"><div class="wrapper">
+		
+			<img src="spoiler/horror-2.png" alt="Специфические элементы" />
+		
+		</div></article>
+		<article tabindex="21" class="slide-21 center"><div class="wrapper">
+		
+			<img src="spoiler/horror-4.png" alt="Специфические элементы" />
+		
+		</div></article>
+		<article tabindex="22" class="slide-22 center"><div class="wrapper">
+		
+			<img src="spoiler/horror-5.png" alt="Специфические элементы" />
+		
+		</div></article>
+		
+		<article tabindex="23" class="slide-23 center cat"><div class="wrapper">
+		
+		
+		</div></article>
+		
+		<article tabindex="24" class="slide-24 center"><div class="wrapper">
+	
+			<img src="spoiler/editor.jpg" alt="Специфические элементы" />
+			
+		</div></article>
+		
+		<article tabindex="25" class="slide-25 center x2"><div class="wrapper">
+		
+			<strong><b>✕</b>2?</strong>
+			
+		</div></article>
+		
+		<article tabindex="26" class="slide-26 center"><div class="wrapper">
+		
+			<h1>Панель аминистрирования интегрированная с пользовательской частью или ограниченный функционал редактирования</h1>
+			
+		</div></article>
+		
+		<article tabindex="27" class="slide-27 center"><div class="wrapper">
+		
+			<h1><a href="examples/article-edit.html">Например, можно сделать так</a></h1>
+			
+		</div></article>
+		
+		<article tabindex="28" class="slide-28 center"><div class="wrapper">
+		
+			<h1>Давайте немного подумаем вместе!</h1>
+			
+		</div></article>
+		
+		<article tabindex="29" class="slide-29 center contacts"><div class="wrapper">
+		
+			<p><b>Докладчик:</b> Антон Немцев</p>
+			<p><b>Skype:</b> ravencry</p>
+			<p><b>Email:</b> thesilentimp@gmail.com</p>
+			<p><b>Twitter:</b> silentimp</p>
+			
+		</div></article>
+		
+		<!--Добавить еще пример … а то будет реклама Алохи :) -->
+
+	</section>
+	<div class="progress"><div><div></div></div></div>
+</body>
+</html>

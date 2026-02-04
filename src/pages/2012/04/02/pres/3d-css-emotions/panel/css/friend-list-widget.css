@@ -1,0 +1,178 @@
+.friend-list-widget{
+  text-align:left;
+  width:300px;
+  margin:10px auto;
+  position:relative; 
+  overflow:hidden;
+  }
+  .friend-list-widget .user-list-scroll{
+    position:absolute;
+    top:0px;
+    right:2px;
+    bottom:0px;
+    width:12px;
+    overflow:visible;
+    cursor:pointer;
+    }
+    .friend-list-widget .user-list-scroll:after{
+      position:absolute;
+      top:0;
+      bottom:0;
+      right:0;
+      width:3px;
+      content:".";
+      text-indent:-9000px;
+      overflow:hidden;
+      z-index:1;
+      font-size:0;
+      line-height:0;
+      overflow:hidden;
+      
+      background-color:none;
+      }
+    .friend-list-widget .user-list-scroll:hover:after{
+      background-color:#e7e7e7;
+      }
+    .friend-list-widget .user-list-scroll .user-list-scroll-handle{
+      width:9px;
+      min-height:10px;
+      height:50px;
+      border:solid #3a5999;
+      border-width:0 3px 0 0;
+      cursor:pointer;
+      position:relative;
+      top:0;
+      left:0;
+      z-index:2;
+      }
+  .friend-list-widget .skip-line{
+    position:relative;
+    zoom:1;
+    color:#666;
+    font:normal 12px/16px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    }
+    .friend-list-widget .skip-line:after{
+      content:".";
+      height:0;
+      font-size:0;
+      line-height:0;
+      overflow:hidden;
+      text-indent:-9000px;
+      display:block;
+      clear:both;
+      }
+    .friend-list-widget .skip-line .skip{
+      float:left;
+      margin:2px 10px 0 0;
+      }
+  .friend-list-widget .submit-line{
+    text-align:center;
+    margin:0 0 25px;
+    color:#333;
+    font:bold 16px/25px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    }
+    .friend-list-widget .submit-line .invite{
+      margin:0 0 10px;
+      }
+  .friend-list-widget .select-all{
+    padding:10px;
+    border: solid #dfdfdf;
+    border-width:1px 1px 0;
+    background-color:#FFF;
+    
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    -o-border-radius:3px;
+    border-radius:3px;
+    }
+    .friend-list-widget .select-all label{
+      color:#999;
+      font:bold 14px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
+      }
+  .friend-list-widget .user-list{
+    position:relative;
+    margin:0 0 25px;
+    
+    height:242px;
+    overflow:hidden;
+    
+    background-color:#f7f7f7;
+    border:1px solid #bfbfbf;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    -o-border-radius:3px;
+    border-radius:3px;
+    
+    -webkit-box-shadow:inset 0 2px 0 0 #dedede,inset 0 -2px 0 0 #dedede;
+    box-shadow:inset 0 2px 0 0 #dedede,inset 0 -2px 0 0 #dedede;
+    }
+    .friend-list-widget .user-list .filter{
+      font:bold 12px/14px "Helvetica Neue",Helvetica,Arial,sans-serif;
+      color:#333;
+      border: solid #dbdbdb;
+      border-width:0 0 1px;
+      padding:7px 10px;
+      width:276px;
+      margin: 2px 1px;
+      background:none;
+      }
+    .friend-list-widget .user-list .user-list-wrapper{
+      height:204px;
+      overflow:hidden;      
+      position:relative;
+      }
+    .friend-list-widget .user-list ul{
+      display:block;
+      position:relative;
+      top:0;
+      left:0;
+      margin:0 10px 0 0;
+      overflow:hidden;
+      }
+      .friend-list-widget .user-list ul li{
+        overflow:hidden;
+        position:relative;
+        zoom:1;
+        line-height:15px;
+        margin:9px 0;
+        display:block;
+        }
+        .friend-list-widget .user-list ul li input{
+          float:left;
+          margin:9px;
+          }
+        .friend-list-widget .user-list ul li label{
+          overflow:hidden;
+          display:block;
+          font:bold 12px/16px "Helvetica Neue",Helvetica,Arial,sans-serif;
+          }
+          .friend-list-widget .user-list ul li label.checked .name{
+            color:#405c94;
+            }
+          .friend-list-widget .user-list ul li input:checked+label .name{
+            color:#405c94;
+            }
+          .friend-list-widget .user-list ul li .name{
+            display:block;
+            color:#666;
+            font:bold 12px/16px "Helvetica Neue",Helvetica,Arial,sans-serif;
+            }
+          .friend-list-widget .user-list ul li .adr{
+            display:block;
+            color:#999;
+            font:bold 12px/16px "Helvetica Neue",Helvetica,Arial,sans-serif;
+            }
+        .friend-list-widget .user-list ul li .avatar{
+          float:left;
+          display:block;
+          margin:0 10px 0 0;
+          border-bottom:2px solid #dfdfdf;
+          width:30px;
+          height:30px;
+          }
+          
+.loading{
+  background-image:url("/assets/img/ajax-loader.gif");
+  background-position:50% 50%;
+  background-repeat:no-repeat;
+  }

@@ -1,0 +1,75 @@
+/* Common */
+.author {
+    position:absolute;
+    bottom:3%;
+    font-family:'PT Sans Narrow', sans-serif;
+    }
+    #Cover .author {
+        padding-left:30px;
+        }
+    .caption .author {
+        padding-left:0;
+        }
+    .author SPAN {
+        color:red;
+        }
+    .author A {
+        border:0;
+        color:#000;
+        }
+    .author A:hover {
+        border-bottom:0.1em solid;
+        color:#0174A7;
+        }
+
+.github-octocat {
+    position:relative;
+    top:10px;
+    left:-10px;
+    vertical-align:bottom;
+    }
+
+.slide .good,
+.slide.shout .good,
+.slide .good a {
+    background:none;
+    box-shadow:none;
+    color:green;
+    line-height:1.5;
+    }
+
+.slide .code {
+    color:#333;
+    }
+    .slide .code span {
+        color:#70952d;
+        }
+        .slide .code span span {
+            color:#bd9630;
+            }
+
+
+/* Slides */
+#Cover {
+    background-color:#fff;
+    }
+
+#Github H2 {
+    margin-top:-0.5em;
+    }
+
+#vimi H2 {
+    margin-top:-0.55em;
+    margin-left:-0.9em;
+    padding-left:0;
+    background:transparent;
+    box-shadow:none;
+    }
+
+.links {
+    margin-bottom:1em;
+    }
+    .links th {
+        padding-right:1em;
+        text-align:left;
+        }

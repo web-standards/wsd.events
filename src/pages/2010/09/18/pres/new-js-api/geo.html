@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Реквием фреймворкам | Web Standards Days</title>
+	<link media="projection,screen" rel="stylesheet" href="css/styles.css" /></title>
+</head>
+<body>
+	
+<section id="slide_1" class="slide">	
+<h1>Geolocation API Specification</h1>
+<code>
+var location = window.navigator.geolocation;
+var options = {
+	enableHighAccuracy: true,
+	timeout: 60000,
+	maximumAge: 600000
+}
+this.position = location.getCurrentPosition(this.locationSuccess.bind(this),this.locationFail.bind(this),options);
+</code>
+<a href="http://www.w3.org/TR/2010/CR-geolocation-API-20100907/">http://www.w3.org/TR/2010/CR-geolocation-API-20100907/</a>
+</section>
+	
+	
+</body>
+</html>

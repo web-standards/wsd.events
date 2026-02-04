@@ -1,0 +1,408 @@
+/*_*/
+/* Reset */ HTML,BODY,DIV,SPAN,OBJECT,IFRAME,H1,H2,H3,H4,H5,H6,P,BLOCKQUOTE,PRE,ABBR,ADDRESS,CITE,CODE,DEL,DFN,EM,IMG,INS,KBD,Q,SAMP,SMALL,STRONG,SUB,SUP,VAR,B,I,DL,DT,DD,OL,UL,LI,FIELDSET,FORM,LABEL,LEGEND,TABLE,CAPTION,TBODY,TFOOT,THEAD,TR,TH,TD,ARTICLE,ASIDE,DIALOG,FIGURE,FOOTER,HEADER,HGROUP,MENU,NAV,SECTION,TIME,MARK,AUDIO,VIDEO{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;}ARTICLE,ASIDE,DIALOG,FIGURE,FOOTER,HEADER,HGROUP,NAV,SECTION{display:block;}BLOCKQUOTE,Q{quotes:none;}BLOCKQUOTE:before,BLOCKQUOTE:after,Q:before,Q:after{content:'';content:none;}INS{text-decoration:none;}DEL{text-decoration:line-through;}ABBR[title],DFN[title]{border-bottom:1px dotted;cursor:help;}TABLE{border-collapse:collapse;border-spacing:0;}HR{display:none;}INPUT,SELECT{vertical-align:middle;}
+
+HTML {
+	overflow-y:scroll;
+	}
+
+BODY {
+	font:100%/1.375 "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color:#333;
+	background:#FFF;
+	}
+/* Typography
+---------------------------------------- */
+DL,
+BLOCKQUOTE,
+HR,
+CODE,
+TABLE,
+P {
+	margin:0 0 1.375em;
+	}
+
+/* Links */
+A.t:link,
+A.t:visited {
+	padding:0.07em 0; /* fixing links in line-height gt 1.25 */
+	}
+A:link,
+.b-pseudo-link {
+	color:#0C56FF;
+	}
+A:visited {
+	color:#5C8EFF;
+	}
+	A:link:hover,
+	A:link:active,
+	A:visited:hover,
+	A:visited:active,
+	.b-pseudo-link:hover {
+		color:#F00 !important;
+		}
+
+.b-pseudo-link {
+	border-bottom:1px dotted;
+	cursor:pointer;
+	}
+
+/* Contacts' icons */
+.url[rel=me]:link,
+.url[rel=me]:visited,
+.url[href^="jabber:"]:link,
+.url[href^="jabber:"]:visited {
+	padding-left:.15em;
+	white-space:nowrap;
+	}
+.url[rel=me]:before,
+.url[href^="jabber:"]:before {
+	content:"";
+	display:inline-block;
+	width:16px;
+	height:16px;
+	padding:0 .2em 1px 0;
+	margin:-3px .0 -1px;
+	vertical-align:middle;
+	background-color:#FFF;
+	background-image:url(../i/contacts.png);
+	background-repeat:no-repeat;
+	}
+	.url[href*="feedburner.com"]:before {
+		background-position:0 0;
+		}
+	.url[href^="jabber:"]:before {
+		background-position:0 -18px;
+		}
+	.url[href*="livejournal.com"]:before {
+		background-position:0 -35px;
+		}
+	.url[href*="ya.ru"]:before {
+		background-position:0 -52px;
+		padding-right:0;
+		}
+	.url[href*="moikrug.ru"]:before {
+		background-position:0 -69px;
+		}
+	.url[href*="lastfm.ru"]:before {
+		background-position:0 -86px;
+		}
+	.url[href*="habrahabr.ru"]:before {
+		background-position:0 -103px;
+		}
+	.url[href*="twitter.com"]:before {
+		background-position:0 -120px;
+		padding-right:0;
+		}
+
+/* Headers (16/22 grid) */
+H1,
+H2,
+H3,
+H4,
+H5,
+H6 {
+	margin-left:-0.05454em	!important;
+
+	font-weight:normal;
+	}
+H1 {
+	padding:.2em 0;
+
+	font: italic 3.4375em/1.2em Georgia, serif;
+	}
+H2 {
+	margin:0 0 .55em;
+	font-size:2.5em;
+	line-height:1.1em;
+	}
+H3 {
+	margin:0 0 .6875em;
+	font-size:2em;
+	line-height:1.375em;
+	}
+H4,
+H5,
+H6 {
+	margin:0 0 1.1em;
+	font-size:1.25em;
+	line-height:1.1em;
+	}
+
+/* For iOS fine zooming */
+LI,
+P {
+	padding-left: 1.5em;
+	margin-left: -1.5em;
+	}
+
+UL {
+	margin-bottom:1.375em;
+	list-style:none;
+	}
+LI UL {
+	padding-left:1.375em;
+	}
+	/* here i use child selector 'cause in IE i'll use expression anyway */
+	UL>LI::before,
+	.ul-li-before {
+		content:"— ";
+		position:relative;
+		float:left;
+		width:1.5em;
+		padding-right:.5em;
+		margin-left:-2em;
+		text-align:right;
+		}
+OL {
+	margin-bottom:1.375em;
+	list-style:none;
+	counter-reset:list_item;
+	}
+LI OL {
+	padding-left:1.375em;
+	}
+	OL>LI::before,
+	.ol-li-before {
+		position:relative;
+		content:counter(list_item) ".";
+		counter-increment:list_item;
+		float:left;
+		width:2.6em;
+		padding-right:.4em;
+		margin-left:-3em;
+		text-align:right;
+		font-family:Georgia, serif;
+		}
+
+DD {
+	padding-left:1.375em;
+	}
+
+/* Inline elements */
+SUP,
+SUB {
+	position:relative;
+	vertical-align:baseline;
+	font-size:.8em;
+	line-height:1;
+	}
+SUP {
+	bottom:1.4ex;
+	}
+SUB {
+	top:.5ex;
+	}
+
+/* Extra typography elements */
+.wbr {
+	display:-moz-inline-stack;
+	display:inline-block;
+	}
+.thinsp {
+	margin-right:.2em;
+	}
+.accessibility {
+	position:absolute;
+	width:0;
+	height:0;
+	visibility:hidden;
+	}
+/* Layout
+---------------------------------------- */
+BODY {
+	padding:0 2.75em;
+	min-width:30em;
+	}
+	.l-section {
+		width:37em;
+		max-width:100%;
+		margin:0 auto;
+		}
+
+/* Blocks
+---------------------------------------- */
+.b-section-link:link,
+.b-section-link:visited {
+	position: relative;
+	
+	display: inline-block;
+	
+	padding:0;
+	text-decoration:none;
+	color:#333;
+	}
+	.b-section-link:after {
+		content:"→";
+		position:absolute;
+		padding:0 0 0 .2em;
+		font:100%/1 Arial, sans-serif;
+		text-decoration:none;
+		color:#0C56FF;
+		}
+	.b-section-link_back:after {
+		content:"";
+		}
+	.b-section-link_back:before {
+		content:"←";
+		position:absolute;
+		right:100%;
+		padding:.5em .2em 0 0;
+		font:60%/1 Arial, sans-serif;
+		text-decoration:none;
+		color:#0C56FF;
+		}
+	.b-section-link:hover:after,
+	.b-section-link_back:hover:before {
+		color:#F00;
+		}
+
+.b-footer-text {
+	margin-bottom:1.5714285em;
+	font-size:.875em;
+	line-height:1.5714285em;
+	}
+.b-copy,
+SMALL {
+	font-size:.875em;
+	line-height:1.5714285714em;
+	color:#808080;
+	color:rgba(0,0,0,.5);
+	}	
+
+/* Helper (with js to popup) */
+.b-helper {
+	position:absolute;
+	bottom:auto;
+	margin:-.4ex 0 0;
+	}
+	
+/* Preformatted code */
+CODE {
+	color:#060;
+	}
+
+PRE {
+	display:block;
+	width:100%;
+	max-width:100%;
+	margin:0 0 1.375em;
+	overflow:auto;
+	overflow-y:hidden;
+	white-space:pre;
+	color:#060;
+	}
+
+code,
+kbd,
+pre,
+samp,
+var {
+	font: 0.9333em/1.2em Consolas, 'Lucida Console', 'DejaVu Sans Mono', Monaco, 'Courier New', Courier, monospace;
+	}
+CODE PRE,
+PRE CODE {
+	font-size: 1em;
+	}
+
+
+/* Inset for examples */
+.b-section-inset {
+	margin:0 0 1.375em;
+	}
+	.b-section-inset-in {
+		position: absolute;
+		left: 0;
+		right: 0;
+
+		padding: 0.5em;
+
+		}
+.b-section-inset_dark .b-section-inset-in {
+    background: #A0A0A0;
+	background:
+		-webkit-gradient(
+			linear, left top, left bottom,
+			color-stop(0%,rgba(0,0,0,0.4)),
+			color-stop(100%,rgba(0,0,0,0.2))
+			),
+		-webkit-gradient(
+			linear, left bottom,right top,
+			color-stop(0%,rgba(0,0,0,0.2)),
+			color-stop(100%,rgba(0,0,0,0.1))
+			)
+		;
+	-webkit-box-shadow: inset 0 1px 0 rgba(0,0,0,0.3),
+						inset 0 -1px 0 rgba(0,0,0,0.3);
+	}
+
+.b-posts {
+	}
+
+.b-post {
+	position: relative;
+
+	margin: 0 0 1.375em;
+	}
+.b-post:after {
+	content: "";
+	display: block;
+	height: 0;
+	clear: both;
+	}
+
+	.b-post-title {
+		margin:0 0 0;
+		font-size:1.25em;
+		line-height:1.1em;
+		}
+	.b-post-time {
+		float: left;
+		width: 3em;
+		margin: 0.5em 0 -0.3em -3.5em;
+		
+		text-align: center;
+		font-size: .75em;
+
+		color:rgba(0,0,0,.5);
+		}
+		.b-post-time-y {
+			display: block;
+			}
+		
+	
+.b-figure {
+	position: relative;
+	left: -1px;
+
+	padding: .3em !important;
+	margin: 0 0 0 -.3em;
+	border: 1px solid rgba(0,0,0,.2);
+	
+	background: rgba(0,0,0,0.1);
+	
+	-webkit-border-radius: 3px;
+	   -moz-border-radius: 3px;
+	        border-radius: 3px;
+	}
+.b-figure_outer {
+	position: static;
+
+	float: right;
+
+	margin: 2px -8em .5em 1em;
+	}
+
+BLOCKQUOTE {
+	display: inline-block;
+	
+	padding: 1.1em 2em 0;
+	margin-left: -2em;
+
+	vertical-align: top;
+	
+	-webkit-border-radius: .5em;
+	   -moz-border-radius: .5em;
+	        border-radius: .5em;
+
+	background: rgba(0,10,20,.075);
+	}

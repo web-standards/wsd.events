@@ -1,0 +1,579 @@
+<!DOCTYPE HTML>
+<html lang="ru-RU">
+<head>
+	<title>Веб в кривых. Второе рождение SVG</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="s/screen.css" media="screen">
+	<link rel="stylesheet" href="s/projection.css" media="projection">
+	<script src="j/jquery.js"></script>
+	<script src="j/script.js"></script>
+	<style>
+		@media projection {
+			.slide.cover {
+				background:#000 url(i/afternoon.jpg) 50% 0 no-repeat;
+				}
+				.slide.cover H1 {
+					color:#FFF;
+					text-shadow:0 3px 10px #000;
+					}
+			#Primitives H2 {
+				font-size:6em;
+				}
+			#Hypnotoad H2 {
+				font-size:6em;
+				}
+			}
+	</style>
+</head>
+<body>
+	<div class="shower">
+		<section class="slide cover" id="Cover">
+			<article>
+				<h1>Веб в кривых.<br>
+					Второе рождение SVG</h1>
+			</article>
+		</section>
+		<section class="slide" id="Preamble">
+			<article>
+				<h2>Веб в кривых.<br>
+					Второе рождение SVG</h2>
+				<p>Вадим Макеев, Opera Software</p>
+			</article>
+		</section>
+		<section class="slide shout" id="History">
+			<article>
+				<h2>История</h2>
+			</article>
+		</section>
+		<section class="slide" id="Appearance">
+			<article>
+				<h2>Появление</h2>
+				<ul>
+					<li>Adobe, IBM, Netscape, Sun → <strong><a href="http://en.wikipedia.org/wiki/PGML" target="_blank">PGML</a> ?</strong></li>
+					<li>Microsoft, Macromedia, HP → <strong><a href="http://en.wikipedia.org/wiki/VML" target="_blank">VML</a> ?</strong></li>
+					<li>…</li>
+					<li>W3C → <strong><a href="http://en.wikipedia.org/wiki/SVG" target="_blank">SVG</a> !</strong></li>
+				</ul>
+				<p class="note">
+					<strong>SVG</strong> — <strong>S</strong>calable <strong>V</strong>ector <strong>G</strong>raphics<br>
+					Масштабируемая Векторная Графика
+				</p>
+			</article>
+		</section>
+		<section class="slide" id="Progress">
+			<article>
+				<h2>Развитие</h2>
+				<ul>
+					<li>SVG 0.0 → 1998 г.</li>
+					<li>SVG 1.0 → 2001 г.</li>
+					<li>SVG 1.1 → 2003 г.</li>
+					<li>SVG 1.2 → ∞</li>
+					<li>SVG 2.0 → когда-нибудь…</li>
+				</ul>
+				<p class="note">Застой с SVG 1.2 преодолён, весь упор на выпуск версии 2.0</p>
+			</article>
+		</section>
+		<section class="slide" id="Profiles">
+			<article>
+				<h2>Профили</h2>
+				<ul>
+					<li>SVG Tiny → для мобильников</li>
+					<li>SVG Basic → для смартфонов</li>
+				</ul>
+				<p class="note">Профили появились в SVG 1.1</p>
+			</article>
+		</section>
+		<section class="slide" id="Features">
+			<article>
+				<h2>Особенности</h2>
+				<ul>
+					<li><strong>Векторный,</strong> а не растровый → бесконечно масштабируется</li>
+					<li><strong>Текстовый,</strong> а не бинарный → доступен, индексируется *</li>
+					<li><strong>Хитрый,</strong> а не как <em>GIF</em> → стили, скрипты, анимация, фильтры</li>
+				</ul>
+				<p class="note">31 августа <a href="http://googlewebmastercentral.blogspot.com/2010/08/google-now-indexes-svg.html" target="_blank">Google заявил</a> о начале индексации <strong>SVG</strong></p>
+			</article>
+		</section>
+		<section class="slide back" id="SmileVector">
+			<img src="p/smile-vector.png" alt="Смайл">
+		</section>
+		<section class="slide back" id="SmileBitmap">
+			<img src="p/smile-bitmap.png" alt="Смайл">
+		</section>
+		<section class="slide shout" id="Primitives">
+			<article>
+				<h2>Примитивы</h2>
+			</article>
+		</section>
+		<section class="slide" id="Template">
+			<article>
+				<h2>Шаблон</h2>
+				<pre>
+					<code><em>&lt;?xml version="1.0" encoding="utf-8"?&gt;</em></code>
+					<code>&lt;svg version="1.1"</code>
+					<code>     <em>xmlns</em>="http://www.w3.org/2000/svg"</code>
+					<code>     <em>xmlns</em>:xlink="http://www.w3.org/1999/xlink"&gt;</code>
+					<code>    …</code>
+					<code>&lt;/svg&gt;</code>
+				</pre>
+			</article>
+		</section>
+		<section class="slide" id="Rectangle">
+			<article>
+				<h2>Прямоугольник</h2>
+				<pre>
+					<code><em>&lt;rect</em></code>
+					<code>    x="100" y="100"</code>
+					<code>    <em>width="550" height="550"</em></code>
+					<code>    fill="#FAFAA2" stroke="#000" stroke-width="50"</code>
+					<code><em>/&gt;</em></code>
+				</pre>
+				<p class="note"><a href="e/source/rectangle.svg" target="_blank">Исходный файл</a></p>
+			</article>
+		</section>
+		<section class="slide back" id="RectangleImage">
+			<img src="p/shape-rectangle.png" alt="Прямоугольник">
+		</section>
+		<section class="slide" id="RectangleRounded">
+			<article>
+				<h2>Прямоугольник</h2>
+				<pre>
+					<code><em>&lt;rect</em></code>
+					<code>    x="100" y="100"</code>
+					<code>    width="550" height="550" <em>rx="120" ry="120"</em></code>
+					<code>    fill="#FAFAA2" stroke="#000" stroke-width="50"</code>
+					<code><em>/&gt;</em></code>
+				</pre>
+				<p class="note"><a href="e/source/rectangle-rounded.svg" target="_blank">Исходный файл</a></p>
+			</article>
+		</section>
+		<section class="slide back" id="RectangleRoundedImage">
+			<img src="p/shape-rectangle-rounded.png" alt="Прямоугольник">
+		</section>
+		<section class="slide" id="Circle">
+			<article>
+				<h2>Круг</h2>
+				<pre>
+					<code><em>&lt;circle</em></code>
+					<code>    cx="100" cy="100"</code>
+					<code>    <em>r="275"</em></code>
+					<code>    fill="#FAFAA2" stroke="#000" stroke-width="50"</code>
+					<code><em>/&gt;</em></code>
+				</pre>
+				<p class="note"><a href="e/source/circle.svg" target="_blank">Исходный файл</a></p>
+			</article>
+		</section>
+		<section class="slide back" id="CircleleImage">
+			<img src="p/shape-circle.png" alt="Круг">
+		</section>
+		<section class="slide" id="Line">
+			<article>
+				<h2>Линия</h2>
+				<pre>
+					<code><em>&lt;line</em></code>
+					<code>    <em>x1</em>="230" <em>y1</em>="570"</code>
+					<code>    <em>x2</em>="640" <em>y2</em>="490"</code>
+					<code>    stroke="#000" stroke-width="50"</code>
+					<code><em>/&gt;</em></code>
+				</pre>
+				<p class="note"><a href="e/source/polygone.svg" target="_blank">Исходный файл</a></p>
+			</article>
+		</section>
+		<section class="slide" id="Polyline">
+			<article>
+				<h2>Ломаная</h2>
+				<pre>
+					<code><em>&lt;polyline</em></code>
+					<code>    points="<em>200,400</em> <em>300,300</em> <em>400,400</em>"</code>
+					<code>    fill="<em>none</em>"</code>
+					<code>    stroke="#000" stroke-width="50"</code>
+					<code><em>/&gt;</em></code>
+				</pre>
+				<p class="note"><a href="e/source/polygone.svg" target="_blank">Исходный файл</a></p>
+			</article>
+		</section>
+		<section class="slide" id="Polygon">
+			<article>
+				<h2>Полигон</h2>
+				<pre>
+					<code><em>&lt;polygon</em></code>
+					<code>    points="<em>197,197</em> <em>430,100</em> <em>660,198</em> <em>758,430</em></code>
+					<code>            <em>662,663</em> <em>429,760</em> <em>197,663</em> <em>100,432</em>"</code>
+					<code>    fill="#FAFAA2" stroke="#000" stroke-width="50"</code>
+					<code><em>/&gt;</em></code>
+				</pre>
+				<p class="note"><a href="e/source/polygone.svg" target="_blank">Исходный файл</a></p>
+			</article>
+		</section>
+		<section class="slide back" id="LineImage">
+			<img src="p/shape-lines.png" alt="Линия">
+		</section>
+		<section class="slide" id="Paths">
+			<article>
+				<h2>Кривые</h2>
+				<pre>
+					<code><em>&lt;path</em> fill="<em>#E11F21</em>" d="M51.423,68.398c0-15.592,</code>
+					<code>    0,14.807,17.41,14.807,33.001,c0,14.447-1.5,</code>
+					<code>    51.423,82.842,51.423,68.398 M30,69.266,</code>
+					<code>    2.519-32.819,14.829-32.819c12.307c,</code>
+					<code>    c21.754,0,36.249-18.806,36.249-39,</code>
+					<code>    452c0-23.206-14.923-38.669-36…"</code>
+					<code><em>/&gt;</em></code>
+				</pre>
+			</article>
+		</section>
+		<section class="slide" id="GradientApply">
+			<article>
+				<h2>Градиенты</h2>
+				<pre>
+					<code><em>&lt;circle</em> cx="375" cy="375" r="275"</code>
+					<code>    fill="url(<strong>#linear</strong>)"</code>
+					<code>    stroke="#000" stroke-width="50"</code>
+					<code><em>/&gt;</em></code>
+				</pre>
+				<p class="note">Исходные файлы: <a href="e/source/gradient-linear.svg" target="_blank">линейный</a> и <a href="e/source/gradient-radial.svg" target="_blank">радиальный</a></p>
+			</article>
+		</section>
+		<section class="slide" id="GradientLinear">
+			<article>
+				<h2>Градиенты</h2>
+				<pre>
+					<code><em>&lt;linearGradient</em> id="<strong>linear</strong>"</code>
+					<code>    <em>x1="20%" y1="20%"</em> <em>x2="80%" y2="80%"</em>&gt;</code>
+					<code>    &lt;stop stop-color="<em>#FAFAA2</em>" offset="10%"/&gt;</code>
+					<code>    &lt;stop stop-color="<em>#000</em>" offset="50%"/&gt;</code>
+					<code>    &lt;stop stop-color="<em>#C00</em>" offset="90%"/&gt;</code>
+					<code><em>&lt;/linearGradient&gt;</em></code>
+				</pre>
+			</article>
+		</section>
+		<section class="slide back" id="GradientLinearImage">
+			<img src="p/gradient-linear.png" alt="Градиент">
+		</section>
+		<section class="slide" id="GradientRadial">
+			<article>
+				<h2>Градиенты</h2>
+				<pre>
+					<code><em>&lt;radialGradient</em> id="<strong>radial</strong>"</code>
+					<code>    <em>cx="20%" cy="20%"</em>&gt;</code>
+					<code>    &lt;stop stop-color="<em>#000</em>" offset="30%"/&gt;</code>
+					<code>    &lt;stop stop-color="<em>#FAFAA2</em>" offset="70%"/&gt;</code>
+					<code>    &lt;stop stop-color="<em>#C00</em>" offset="100%"/&gt;</code>
+					<code><em>&lt;/radialGradient&gt;</em></code>
+				</pre>
+			</article>
+		</section>
+		<section class="slide back" id="GradientRadialImage">
+			<img src="p/gradient-radial.png" alt="Градиент">
+		</section>
+		<section class="slide shout" id="Animation">
+			<article>
+				<h2>Анимация</h2>
+			</article>
+		</section>
+		<section class="slide" id="AnimationDesc">
+			<article>
+				<h2>Анимация</h2>
+				<p>SMIL → <em>Synchronized Multimedia Integration Language *</em></p>
+				<ul>
+					<li><a href="http://www.w3.org/TR/REC-smil/" target="_blank">SMIL 1.0</a> → 1998 г.</li>
+					<li><a href="http://www.w3.org/TR/SMIL2/" target="_blank">SMIL 2.1</a> → 2005 г.</li>
+					<li><a href="http://www.w3.org/TR/SMIL3/" target="_blank">SMIL 3.0</a> → 2008 г.</li>
+				</ul>
+				<p class="note">Произносится как «смайл»</p>
+			</article>
+		</section>
+		<section class="slide shout" id="Hypnotoad">
+			<article>
+				<h2>
+					<a href="e/hypnotoad/index.htm" target="_blank">Гипножаба!</a>
+				</h2>
+			</article>
+		</section>
+		<section class="slide" id="EyesSVG">
+			<article>
+				<h2>Жабьи глазки</h2>
+				<pre>
+					<code>&lt;circle r="<em>22</em>" class="<em>ball</em>"/&gt;</code>
+					<code>&lt;circle r="<em>16</em>" class="<em>glow</em>"/&gt;</code>
+					<code>&lt;circle r="<em>12</em>" class="<em>hole</em>"/&gt;</code>
+				</pre>
+				<p class="note">Структура жабьего глаза: яблоко, радужка, зрачок</p>
+			</article>
+		</section>
+		<section class="slide" id="EyesCSS">
+			<article>
+				<h2>Жабьи глазки</h2>
+				<pre>
+					<code><em>.ball</em> { fill:#a89503; stroke:#000; stroke-width:2 }</code>
+					<code><em>.glow</em> { fill:#FF0; <strong>filter:url(#blur)</strong> }</code>
+					<code><em>.hole</em> { fill:#000; stroke:#C00; stroke-width:4 }</code>
+				</pre>
+				<pre>
+					<code>&lt;filter id="<em>blur</em>"&gt;</code>
+					<code>    <em>&lt;feGaussianBlur</em> in="SourceGraphic" stdDeviation="2"/&gt;</code>
+					<code>&lt;/filter&gt;</code>
+				</pre>
+			</article>
+		</section>
+		<section class="slide" id="EyesGroup">
+			<article>
+				<h2>Жабьи глазки</h2>
+				<pre>
+					<code>&lt;g transform="<em>scale( 1, 0.2 )</em>"&gt;</code>
+					<code>    &lt;circle class="<em>glow</em>"/&gt;</code>
+					<code>    &lt;circle class="<em>hole</em>"/&gt;</code>
+					<code>    &lt;animateTransform id="<em>left1</em> <strong>…</strong> "/&gt;</code>
+					<code>    &lt;animateTransform id="<em>left2</em> <strong>…</strong> "/&gt;</code>
+					<code>&lt;/g&gt;</code>
+				</pre>
+			</article>
+		</section>
+		<section class="slide" id="EyesAnimation1">
+			<article>
+				<h2>Жабьи глазки</h2>
+				<pre>
+					<code><em>&lt;animateTransform</em></code>
+					<code>    id="<em>left1</em>" attributeName="transform"</code>
+					<code>    begin="<strong>0;left2.end</strong>" type="scale"</code>
+					<code>    to="<em>1, 1</em>" dur="<em>0.5s</em>" fill="<em>freeze</em>"</code>
+					<code><em>/&gt;</em></code>
+				</pre>
+				<p class="note">Первый шаг анимации левого глаза</p>
+			</article>
+		</section>
+		<section class="slide" id="EyesAnimation2">
+			<article>
+				<h2>Жабьи глазки</h2>
+				<pre>
+					<code><em>&lt;animateTransform</em></code>
+					<code>    id="<em>left2</em>" attributeName="transform"</code>
+					<code>    begin="<strong>left1.end</strong>" type="scale"</code>
+					<code>    to="<em>1, 0.2</em>" dur="<em>0.5s</em>"</code>
+					<code><em>/&gt;</em></code>
+				</pre>
+				<p class="note">Второй шаг анимации левого глаза</p>
+			</article>
+		</section>
+		<section class="slide shout" id="Filters">
+			<article>
+				<h2>Фильтры</h2>
+			</article>
+		</section>
+		<section class="slide" id="FiltersSVG">
+			<article>
+				<h2>Фильтры</h2>
+				<pre>
+					<code><em>&lt;filter</em> id="<strong>softfocus</strong>"&gt;</code>
+					<code>    &lt;feGaussianBlur/&gt;</code>
+					<code>    &lt;feComposite/&gt;</code>
+					<code>    &lt;feBlend/&gt;</code>
+					<code>    &lt;feBlend/&gt;</code>
+					<code>    &lt;feComposite/&gt;</code>
+					<code><em>&lt;/filter&gt;</em></code>
+				</pre>
+			</article>
+		</section>
+		<section class="slide" id="FiltersCSS">
+			<article>
+				<h2>Фильтры</h2>
+				<pre>
+					<code><em>#video</em> {</code>
+					<code>    filter:url(<strong>#softfocus</strong>)</code>
+					<code>    }</code>
+				</pre>
+				<p><a href="e/video-filters/index.svg" target="_blank">SVG-фильтры + &lt;video&gt;</a></p>
+			</article>
+		</section>
+		<section class="slide" id="NowayHTML">
+			<article>
+				<h2>Заяц Несудьбы™</h2>
+				<pre>
+					<code>&lt;img src="<em>noway.svg</em>"&gt;</code>
+					<code>&lt;audio loop src="<em>noway.ogg</em>"&gt;&lt;/audio&gt;</code>
+				</pre>
+				<p><a href="e/noway/index.htm" target="_blank">Диавольский заяц</a></p>
+			</article>
+		</section>
+		<section class="slide" id="NowaySVG">
+			<article>
+				<h2>Заяц Несудьбы™</h2>
+				<pre>
+					<code><em>&lt;path</em></code>
+					<code>   fill="<em>#000</em>" fill-opacity="<em>0.4</em>"</code>
+					<code>   d="M553.199,164.241c6.957,2.722,13.914,5.445…</code>
+					<code>   <em>onclick</em>="this.style.filter='<strong>url(#blur)</strong>'"</code>
+					<code><em>/&gt;</em></code>
+				</pre>
+			</article>
+		</section>
+		<section class="slide" id="NowayFilter">
+			<article>
+				<h2>Заяц Несудьбы™</h2>
+				<pre>
+					<code>&lt;filter id="<em>blur</em>"&gt;</code>
+					<code>    <em>&lt;feGaussianBlur</em></code>
+					<code>        in="SourceGraphic" stdDeviation="<strong>15</strong>"</code>
+					<code>    <em>/&gt;</em></code>
+					<code>&lt;/filter&gt;</code>
+				</pre>
+				<p><a href="e/noway/shadow.svg" target="_blank">Исчезающий заяц</a></p>
+			</article>
+		</section>
+		<section class="slide shout" id="Neighbours">
+			<article>
+				<h2>Соседи</h2>
+			</article>
+		</section>
+		<section class="slide" id="Scripts">
+			<article>
+				<h2>Скрипты</h2>
+				<ul>
+					<li>Поддержка SMIL оставляет желать лучшего</li>
+					<li>SVG — имеет ту же DOM</li>
+					<li>Старый добрый JavaScript спешит на помощь…</li>
+				</ul>
+				<p><a href="e/inbox-attack/index.svg" target="_blank">Inbox Attack</a></p>
+			</article>
+		</section>
+		<section class="slide" id="MediaQueries">
+			<article>
+				<h2>Медиа-выражения</h2>
+				<ul>
+					<li>Новая технология в ответ на требования времени</li>
+					<li>Широко поддерживается, легко эмулируется</li>
+					<li>Блестяще интегрируется с SVG…</li>
+				</ul>
+				<p><a href="e/media-queries-vector/index.htm" target="_blank">Универсальный логотип</a></p>
+			</article>
+		</section>
+		<section class="slide" id="UniversalSVG">
+			<article>
+				<h2>Универсальный логотип</h2>
+				<pre>
+					<code>&lt;img src="<em>logo.svg</em>" alt="Opera"&gt;</code>
+					<code>&lt;input type="<strong>range</strong>" value="<em>1000</em>"&gt;</code>
+					<code>    min="<em>100</em>" max="<em>1000</em>"&gt;</code>
+				</pre>
+				<pre>
+					<code>&lt;g id="<em>icon</em>"&gt;</code>
+					<code>&lt;g id="<em>long</em>"&gt;</code>
+					<code>&lt;g id="<em>short</em>"&gt;</code>
+				</pre>
+			</article>
+		</section>
+		<section class="slide" id="UniversalCSS">
+			<article>
+				<h2>Универсальный логотип</h2>
+				<pre>
+					<code>@media screen and (<em>max-width:</em><strong>800px</strong>) {</code>
+					<code>    <em>#long</em>  { display:none }</code>
+					<code>    <em>#short</em> { display:inline }</code>
+					<code>    }</code>
+					<code>@media screen and (<em>max-width:</em><strong>500px</strong>) {</code>
+					<code>    <em>#short</em> { display:none }</code>
+					<code>}</code>
+				</pre>
+			</article>
+		</section>
+		<section class="slide" id="SuperIcon">
+			<article>
+				<h2>Супер-иконка</h2>
+				<ul>
+					<li>Растровые иконки пока неизбежны</li>
+					<li>Скучные дубовые форматы</li>
+					<li>Элегатное решение…</li>
+				</ul>
+				<p><a href="e/media-queries-bitmap/index.htm" target="_blank">Супер-иконка</a></p>
+			</article>
+		</section>
+		<section class="slide back" id="SuperIconImage">
+			<img src="p/super-icon.png" alt="Иконка">
+		</section>
+		<section class="slide" id="SuperIconHTML">
+			<article>
+				<h2>Супер-иконка: HTML</h2>
+				<pre>
+					<code>&lt;img src="<em>logo.svg</em>" width="512" height="512"&gt;</code>
+					<code>&lt;img src="<em>logo.svg</em>" width="256" height="256"&gt;</code>
+					<code>&lt;img src="<em>logo.svg</em>" width="128" height="128"&gt;</code>
+					<code>&lt;img src="<em>logo.svg</em>" width="32"  height="32"&gt;</code>
+					<code>&lt;img src="<em>logo.svg</em>" width="16"  height="16"&gt;</code>
+				</pre>
+				<p class="note">Одна и та же картинка разных размеров</p>
+			</article>
+		</section>
+		<section class="slide" id="SuperIconSVG">
+			<article>
+				<h2>Супер-иконка: SVG</h2>
+				<pre>
+					<code>&lt;image id="<em>icon-16</em>"  xlink:href="data:image/png…</code>
+					<code>&lt;image id="<em>icon-32</em>"  xlink:href="data:image/png…</code>
+					<code>&lt;image id="<em>icon-128</em>" xlink:href="data:image/png…</code>
+					<code>&lt;image id="<em>icon-256</em>" xlink:href="data:image/png…</code>
+					<code>&lt;image id="<em>icon-512</em>" xlink:href="data:image/png…</code>
+				</pre>
+				<p class="note">Растровые иконки в base64</p>
+			</article>
+		</section>
+		<section class="slide" id="SuperIconCSS">
+			<article>
+				<h2>Супер-иконка: CSS</h2>
+				<pre>
+					<code>#icon-16, #icon-32, #icon-128, #icon-256, #icon-512 {</code>
+					<code>    <em>display:none;</em></code>
+					<code>    }</code>
+					<code>@media screen and (<strong>width:16px</strong>) {</code>
+					<code>    #icon-16 { <em>display:inline</em> }</code>
+					<code>    }</code>
+				</pre>
+			</article>
+		</section>
+		<section class="slide" id="SuperIconResult">
+			<article>
+				<h2>Супер-иконка</h2>
+				<p>Графика в <strong>base64</strong> увеличивается в весе, однако…</p>
+				<ul>
+					<li>Вес пяти отдельных растровых иконок → 221 КБ</li>
+					<li>Вес файла <strong>icon.svgz</strong> → 213 КБ</li>
+				</ul>
+				<p class="note">PROFIT!</p>
+			</article>
+		</section>
+		<section class="slide shout" id="Browsers">
+			<article>
+				<h2>Браузеры</h2>
+			</article>
+		</section>
+		<section class="slide" id="BrowsersDesc">
+			<article>
+				<h2>Браузеры</h2>
+				<ul>
+					<li><strong>Firefox, Webkit →</strong> почти уверенная поддержка SVG 1.1</li>
+					<li><strong>IE9 →</strong> полный игнор SMIL и фильтров</li>
+					<li><strong>Opera →</strong> SVG Tiny 1.2, лидер в поддержке фильтров</li>
+				</ul>
+				<p class="note"><a href="http://www.w3.org/Graphics/SVG/WG/wiki/Test_Suite_Overview" target="_blank">Набор тестов на поддержку SVG от W3C</a></p>
+			</article>
+		</section>
+		<section class="slide back" id="SupportIE9">
+			<img src="p/support-ie9.png" alt="IE9">
+		</section>
+		<section class="slide back" id="SupportOpera">
+			<img src="p/support-opera.png" alt="Opera">
+		</section>
+		<section class="slide last" id="ThankYou">
+			<article>
+				<h2>Веб в кривых. Второе рождение SVG</h2>
+				<p>Вадим Макеев, Opera Software</p>
+				<ul>
+					<li><a href="http://pepelsbey.net">pepelsbey.net</a></li>
+					<li><a href="https://twitter.com/pepelsbey">twitter.com/pepelsbey</a></li>
+					<li><a href="mailto:pepelsbey@opera.com">pepelsbey@opera.com</a></li>
+				</ul>
+				<p>Презентация: <a href="http://pepelsbey.net/pres/web-in-curves/">pepelsbey.net/pres/web-in-curves/</a></p>
+			</article>
+		</section>
+	</div>
+</body>
+</html>

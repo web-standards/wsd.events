@@ -1,0 +1,21 @@
+.leader-widget{
+  margin:0 0 15px 0;
+  border-top:4px solid #000;
+  background-color:#FFF;
+  font:13px/18px 'PT Sans',Arial,sans-serif;
+  }
+  .leader-widget img,
+  .leader-widget a{
+    display:block;
+    }
+  .leader-widget .abstract{
+    padding:0 15px 15px;
+    }
+  .leader-widget .author{
+    margin:15px 15px 0;
+    font:italic 13px/18px 'PT Sans',Arial,sans-serif;
+    }
+  .leader-widget .title{
+    margin:0 15px 12px;
+    font:bold 18px/24px 'PT Sans Caption',Arial,sans-serif;
+    }

@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Реквием фреймворкам | Web Standards Days</title>
+	<link media="projection,screen" rel="stylesheet" href="css/styles.css" /></title>
+</head>
+<body>
+	
+<section id="slide_1" class="slide">	
+<h1>Web Workers</h1>
+<code>
+Скрипт
+
+top.worker = new Worker('js/worker.js');
+top.worker.onmessage = function (event) {
+	/*ответ в event.data*/
+	top.worker.terminate();
+}
+top.worker.postMessage({key1: 'value1', key2: 'value2'});
+
+
+Worker
+
+onmessage = function (event) {
+	var rsa = new RSAKey();
+	rsa.generate(parseInt(event.data.bits),event.data.dr_value);
+	postMessage('done');
+};
+</code>
+<a href="http://www.w3.org/TR/2009/WD-workers-20091222/">http://www.w3.org/TR/2009/WD-workers-20091222/</a>
+
+</section>
+	
+	
+</body>
+</html>

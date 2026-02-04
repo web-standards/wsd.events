@@ -1,0 +1,85 @@
+.recepient-and-message-widget{
+	border-bottom:1px solid #f1f1f1;
+	padding:20px 19px;
+	position: relative;
+	zoom:1;
+	text-align:left;
+	}
+	.recepient-and-message-widget:after{
+		content:".";
+		display:block;
+		clear:both;
+		position: relative;
+		line-height:0;
+		font-size:0;
+		height:0;
+		overflow:hidden;
+		text-indent:-9000px;
+		}
+	.recepient-and-message-widget .recepient{
+		float:left;
+		}
+		.recepient-and-message-widget .recepient .title{
+			color:#333;
+			height:14px;
+			margin:0 0 5px;
+			font:bold 12px/14px "Helvetica Neue",Helvetica,Arial,sans-serif;
+			}
+		.recepient-and-message-widget .recepient a{
+			width:158px;
+			height:38px;
+
+			display:block;
+			border:1px solid #bfbfbf;
+			background-color:#f7f7f7;
+			border-radius:3px;
+			margin:5px 0 0;
+			padding:5px 10px;
+
+			-webkit-box-shadow:inset 0 2px 0 0 #dedede;
+			-moz-box-shadow:inset 0 2px 0 0 #dedede;
+			-ms-box-shadow:inset 0 2px 0 0 #dedede;
+			-o-box-shadow:inset 0 2px 0 0 #dedede;
+			box-shadow:inset 0 2px 0 0 #dedede;
+
+			color:#3a5999;
+			font:bold 12px/15px "Helvetica Neue",Helvetica,Arial,sans-serif;
+			}
+			.recepient-and-message-widget .recepient a span{
+				margin-top:3px;
+				display:block;
+				}
+			.recepient-and-message-widget .recepient a img{
+				float:left;
+				margin:4px 9px 0 0;
+				}
+	.recepient-and-message-widget .message{
+		float:right;
+		margin:0 0 0 20px;
+		}
+		.recepient-and-message-widget .message label{
+			color:#333;
+			height:14px;
+			margin:0 0 5px;
+			display:block;
+			font:bold 12px/14px "Helvetica Neue",Helvetica,Arial,sans-serif;
+			}
+		.recepient-and-message-widget .message textarea{
+			display:block;
+			border:1px solid #bfbfbf;
+			background-color:#f7f7f7;
+			margin:5px 0 0;
+			width:377px;
+			height:38px;
+
+			border-radius:3px;
+			resize:none;
+
+			padding:5px 10px;
+
+			-webkit-box-shadow:inset 0 2px 0 0 #dedede;
+			-moz-box-shadow:inset 0 2px 0 0 #dedede;
+			-ms-box-shadow:inset 0 2px 0 0 #dedede;
+			-o-box-shadow:inset 0 2px 0 0 #dedede;
+			box-shadow:inset 0 2px 0 0 #dedede;
+			}

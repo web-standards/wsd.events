@@ -1,0 +1,504 @@
+<!DOCTYPE HTML>
+<html lang="ru-RU">
+<head>
+	<title>CSS-менеджемент. Три года спустя</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="s/screen.css" media="screen">
+	<link rel="stylesheet" href="s/projection.css" media="projection">
+	<script type="text/javascript" src="j/jquery.js"></script>
+	<script type="text/javascript" src="j/script.js"></script>
+	<style type="text/css">
+		@media projection {
+			}
+	</style>
+</head>
+<body>
+	<div class="shower">
+		<section class="slide cover" id="Cover">
+			<article>
+				<h1>CSS-менеджемент. Три года спустя</h1>
+				<p>Вадим Макеев, Opera</p>
+			</article>
+		</section>
+		<section class="slide" id="Preamble">
+			<article>
+				<h2>CSS-менеджемент. Три года спустя</h2>
+			</article>
+		</section>
+		<section class="slide" id="Modules">
+			<article>
+				<h2>Модульность</h2>
+				<ul>
+					<li><strong>fonts.css</strong> — шрифты *</li>
+					<li><strong>colors.css</strong> — цвета *</li>
+					<li><strong>forms.css</strong> — функциональность</li>
+					<li><strong>catalog.css</strong> — структура</li>
+					<li><strong>paging.css</strong> — компонент</li>
+				</ul>
+				<p class="note">* Не рекомендуются.</p>
+			</article>
+		</section>
+		<section class="slide" id="Linking">
+			<article>
+				<h2>Подключение</h2>
+			</article>
+		</section>
+		<section class="slide" id="RightInHead">
+			<article>
+				<h2>Прямо в голове</h2>
+				<pre>
+					<code><em>&lt;style&gt;</em></code>
+					<code>    BODY { color:whatever; }</code>
+					<code><em>&lt;/style&gt;</em></code>
+				</pre>
+				<p class="note">Не рекомендуется, кроме особых случаев.</p>
+			</article>
+		</section>
+		<section class="slide" id="TrickyImport">
+			<article>
+				<h2>Хитромудрый импорт</h2>
+				<pre>
+					<code><em>&lt;style&gt;</em></code>
+					<code>    @import url(style.css);</code>
+					<code><em>&lt;/style&gt;</em></code>
+				</pre>
+				<p class="note">Не рекомендуется, кроме внутреннего подключения.</p>
+			</article>
+		</section>
+		<section class="slide" id="DirectLink">
+			<article>
+				<h2>Прямое подключение</h2>
+				<pre>
+					<code><em>&lt;head&gt;</em></code>
+					<code>    &lt;link rel="stylesheet" href="style.css"&gt;</code>
+					<code><em>&lt;/head&gt;</em></code>
+				</pre>
+				<p class="note">Оптимальный вариант для подключения к документу.</p>
+			</article>
+		</section>
+		<section class="slide" id="MediaRules">
+			<article>
+				<h2>Медиа-правила</h2>
+			</article>
+		</section>
+		<section class="slide" id="MediaLinking">
+			<article>
+				<h2>Подключение</h2>
+				<pre>
+					<code>&lt;link href="style.css" media="<em>all</em>"&gt;</code>
+					<code>&lt;link href="style.css" media="<em>screen</em>"&gt;</code>
+					<code>&lt;link href="style.css" media="<em>projection</em>"&gt;</code>
+					<code>&lt;link href="style.css" media="<em>handheld</em>"&gt;</code>
+					<code>&lt;link href="style.css" media="<em>print</em>"&gt;</code>
+				</pre>
+				<p class="note">Подключение файлов, в зависимости от медиа-типа.</p>
+			</article>
+		</section>
+		<section class="slide" id="MediaImporting">
+			<article>
+				<h2>Импорт</h2>
+				<pre>
+					<code>@import url(style.css) <em>all</em>;</code>
+					<code>@import url(style.css) <em>screen</em>;</code>
+					<code>@import url(style.css) <em>projection</em>;</code>
+					<code>@import url(style.css) <em>handheld</em>;</code>
+					<code>@import url(style.css) <em>print</em>;</code>
+				</pre>
+				<p class="note">Импорт файлов, в зависимости от медиа-типа.</p>
+			</article>
+		</section>
+		<section class="slide" id="MediaQueries">
+			<article>
+				<h2>Медиа-выражения</h2>
+				<pre>
+					<code>@media  handheld,</code>
+					<code>        <em>screen</em> <strong>and</strong> ( <em>max-width:480px</em> ),</code>
+					<code>        screen and ( max-device-width:480px ) {</code>
+					<code>    BODY {</code>
+					<code>        font-size:1.3em;</code>
+					<code>        }</code>
+					<code>}</code>
+				</pre>
+			</article>
+		</section>
+		<section class="slide" id="CondComms">
+			<article>
+				<h2>Условные комментарии</h2>
+				<pre>
+					<code><em>&lt;!--[if IE]&gt;</em></code>
+					<code>    &lt;font&gt;А здесь можно похулиганить…&lt;/font&gt;</code>
+					<code><em>&lt;![endif]--&gt;</em></code>
+				</pre>
+			</article>
+		</section>
+		<section class="slide" id="SuperFeatures">
+			<article>
+				<h2>Супер-возможности</h2>
+				<pre>
+					<code>&lt;!--[<em>if lt IE 7</em>]&gt;&lt;![endif]--&gt;</code>
+					<code>&lt;!--[<em>if gte IE 6</em>]&gt;&lt;![endif]--&gt;</code>
+					<code>&lt;!--[<em>if lte IE 8</em>]&gt;&lt;![endif]--&gt;</code>
+				</pre>
+				<p>…вплоть до безумия:</p>
+				<pre>
+					<code>( <em>gte IE 5.5</em> ) <strong>&amp;</strong> ( <em>lt IE 7</em> ) <strong>|</strong> ( <em>gt IE 9</em> )</code>
+				</pre>
+			</article>
+		</section>
+		<section class="slide" id="StraightLink">
+			<article>
+				<h2>Подключение в лоб</h2>
+				<pre>
+					<code>&lt;!--[<em>if IE 6</em>]&gt;&lt;link href="<em>ie6</em>.css…</code>
+					<code>&lt;!--[<em>if IE 7</em>]&gt;&lt;link href="<em>ie7</em>.css…</code>
+					<code>&lt;!--[<em>if IE 8</em>]&gt;&lt;link href="<em>ie8</em>.css…</code>
+				</pre>
+				<p class="note">Отдельный файл стилей для каждой версии.</p>
+			</article>
+		</section>
+		<section class="slide" id="TrickyComb">
+			<article>
+				<h2>Хитрая комбинация</h2>
+			</article>
+		</section>
+		<section class="slide" id="NoIE">
+			<article>
+				<h2>Только не IE</h2>
+				<pre>
+					<code><em>&lt;!--[if !IE]&gt;&lt;!--&gt;</em></code>
+					<code>    &lt;link rel="stylesheet" href="<em>main.css</em>"&gt;</code>
+					<code><em>&lt;!--&lt;![endif]--&gt;</em></code>
+				</pre>
+				<p class="note">Файлы стилей без хаков для всех, кроме IE.</p>
+			</article>
+		</section>
+		<section class="slide" id="NoIEagain">
+			<article>
+				<h2>Только не IE</h2>
+				<pre>
+					<code><em>&lt;!--[if !IE]&gt;</em><strong>&lt;!--&gt;</strong></code>
+					<code>    &lt;link rel="stylesheet" href="<em>main.css</em>"&gt;</code>
+					<code><strong>&lt;!--</strong><em>&lt;![endif]--&gt;</em></code>
+				</pre>
+				<p class="note">Не забываем закрыть комментарии.</p>
+			</article>
+		</section>
+		<section class="slide" id="IEonly">
+			<article>
+				<h2>Только IE</h2>
+				<pre>
+					<code><em>&lt;!--[if IE]&gt;</em></code>
+					<code>    &lt;link rel="stylesheet" href="<em>main+ie.css</em>"&gt;</code>
+					<code><em>&lt;![endif]--&gt;</em></code>
+				</pre>
+				<p class="note">Сшитые файлы стилей и хаки, только для IE.</p>
+			</article>
+		</section>
+		<section class="slide" id="Filtering">
+			<article>
+				<h2>Фильтрация внутри файла</h2>
+			</article>
+		</section>
+		<section class="slide" id="BoxModelHack">
+			<article>
+				<h2>Box Model Hack</h2>
+				<pre>
+					<code>#box { </code>
+					<code>    width:400px; </code>
+					<code>    <em>voice-family: "\"}\"";</em> </code>
+					<code>    voice-family:inherit;</code>
+					<code>    width:300px;</code>
+					<code>    }</code>
+				</pre>
+			</article>
+		</section>
+		<section class="slide" id="ActualFilters">
+			<article>
+				<h2>Актуальные фильтры</h2>
+				<pre>
+					<code><em>* HTML E</em> {</code>
+					<code>    color:whatever; <strong>IE6</strong></code>
+					<code>    }</code>
+					<code><em>*+HTML E</em> {</code>
+					<code>    color:nomatter; <strong>IE7</strong></code>
+					<code>    }</code>
+				</pre>
+			</article>
+		</section>
+		<section class="slide" id="Architecture">
+			<article>
+				<h2>Архитектура файла</h2>
+			</article>
+		</section>
+		<section class="slide" id="Comments">
+			<article>
+				<h2>Скелет комментариев</h2>
+				<pre>
+					<code>/* <em>Element</em></code>
+					<code>---------------------------------------- */</code>
+					<code>#one {</code>
+					<code>    color:whatever;</code>
+					<code>    }</code>
+				</pre>
+			</article>
+		</section>
+		<section class="slide" id="SubComments">
+			<article>
+				<h2>Скелет комментариев</h2>
+				<pre>
+					<code>/* <em>Sub Element</em> */</code>
+					<code>#two {</code>
+					<code>    color:nomatter;</code>
+					<code>    }</code>
+				</pre>
+			</article>
+		</section>
+		<section class="slide" id="CommentsTree">
+			<article>
+				<h2>Скелет комментариев</h2>
+				<pre>
+					<code>/* <em>Element</em></code>
+					<code>---------------------------------------- */</code>
+					<code>/* <em>Sub Elements</em> */</code>
+					<code>&nbsp;</code>
+					<code>/* <em>Element</em></code>
+					<code>---------------------------------------- */</code>
+					<code>/* <em>Sub Elements</em> */</code>
+				</pre>
+			</article>
+		</section>
+		<section class="slide" id="SpecialBlocks">
+			<article>
+				<h2>Специальные блоки</h2>
+				<pre>
+					<code><em>@import</em> url( style.css )</code>
+					<code><em>@media</em> print { BODY { font-size:12pt } }</code>
+					<code><em>@font-face</em> { font-family:'Comic Sans' }</code>
+					<code><em>@page</em> { margin-top:3cm }</code>
+				</pre>
+			</article>
+		</section>
+		<section class="slide" id="GlobalDefaults">
+			<article>
+				<h2>Глобальные умолчания</h2>
+			</article>
+		</section>
+		<section class="slide" id="BasicDefaults">
+			<article>
+				<h2>Базовые вещи</h2>
+				<pre>
+					<code>BODY {</code>
+					<code>    background:#FFF;</code>
+					<code>    color:#000;</code>
+					<code>    }</code>
+					<code>IMG {</code>
+					<code>    <em>border:none;</em></code>
+					<code>    }</code>
+				</pre>
+			</article>
+		</section>
+		<section class="slide" id="Eraser">
+			<article>
+				<h2>Ластик</h2>
+				<pre>
+					<code>* {</code>
+					<code>    padding:0;</code>
+					<code>    margin:0;</code>
+					<code>    }</code>
+				</pre>
+				<p class="note">Проблемы с производительностью и формами</p>
+			</article>
+		</section>
+		<section class="slide" id="ResetCSS">
+			<article>
+				<h2>Reset.css</h2>
+				<pre>
+					<code>HTML, BODY, DIV, SPAN, APPLET, OBJECT, IFRAME,</code>
+					<code>H3, H4, H5, H6, P, BLOCKQUOTE, PRE, A, ABBR,</code>
+					<code>ADDRESS, BIG, CITE, CODE, DEL, DFN, EM, FONT,</code>
+					<code>LABEL, LEGEND, TABLE, CAPTION, TBODY, … {</code>
+					<code>    <em>margin:0;</em></code>
+					<code>    <em>padding:0;</em></code>
+					<code>    }</code>
+				</pre>
+			</article>
+		</section>
+		<section class="slide" id="TreeLike">
+			<article>
+				<h2>Древовидность</h2>
+			</article>
+		</section>
+		<section class="slide" id="FlatTypical">
+			<article>
+				<h2>Типичный код</h2>
+				<pre>
+					<code><em>#box</em> {</code>
+					<code>    color:whatever;</code>
+					<code>    }</code>
+					<code><em>#box A</em> {</code>
+					<code>    color:nomatter;</code>
+					<code>    }</code>
+				</pre>
+			</article>
+		</section>
+		<section class="slide" id="TreeUseful">
+			<article>
+				<h2>Удобный код</h2>
+				<pre>
+					<code><em>#box</em> {</code>
+					<code>    color:whatever;</code>
+					<code>    }</code>
+					<code>    <em>#box A</em> {</code>
+					<code>        color:nomatter;</code>
+					<code>        }</code>
+				</pre>
+			</article>
+		</section>
+		<section class="slide back" id="Tree-1">
+			<img src="p/tree.1.png" alt="">
+		</section>
+		<section class="slide back" id="Tree-2">
+			<img src="p/tree.2.png" alt="">
+		</section>
+		<section class="slide back" id="Tree-3">
+			<img src="p/tree.3.png" alt="">
+		</section>
+		<section class="slide back" id="Tree-4">
+			<img src="p/tree.4.png" alt="">
+		</section>
+		<section class="slide back" id="Tree-5">
+			<img src="p/tree.5.png" alt="">
+		</section>
+		<section class="slide back" id="Tree-6">
+			<img src="p/tree.6.png" alt="">
+		</section>
+		<section class="slide back" id="Tree-7">
+			<img src="p/tree.7.jpg" alt="">
+		</section>
+		<section class="slide" id="BoxShape">
+			<article>
+				<h2>Форма блока</h2>
+			</article>
+		</section>
+		<section class="slide" id="BoxTypical">
+			<article>
+				<h2>Типичный блок</h2>
+				<pre>
+					<code><em>#one</em> {</code>
+					<code>    color: whatever;</code>
+					<code>}</code>
+					<code><em>#two</em> {</code>
+					<code>    color: nomatter;</code>
+					<code>}</code>
+				</pre>
+			</article>
+		</section>
+		<section class="slide" id="BoxUseful">
+			<article>
+				<h2>Удобный блок</h2>
+				<pre>
+					<code><em>#one</em> {</code>
+					<code>    color:whatever;</code>
+					<code>    }</code>
+					<code><em>#two</em> {</code>
+					<code>    color:nomatter;</code>
+					<code>    }</code>
+				</pre>
+			</article>
+		</section>
+		<section class="slide back" id="Box-1">
+			<img src="p/box.1.png" alt="">
+		</section>
+		<section class="slide back" id="Box-2">
+			<img src="p/box.2.png" alt="">
+		</section>
+		<section class="slide back" id="Box-3">
+			<img src="p/box.3.png" alt="">
+		</section>
+		<section class="slide back" id="Box-4">
+			<img src="p/box.4.png" alt="">
+		</section>
+		<section class="slide back" id="Box-5">
+			<img src="p/box.5.png" alt="">
+		</section>
+		<section class="slide back" id="Box-6">
+			<img src="p/box.6.png" alt="">
+		</section>
+		<section class="slide back" id="Box-7">
+			<img src="p/box.7.png" alt="">
+		</section>
+		<section class="slide back" id="Box-8">
+			<img src="p/box.8.png" alt="">
+		</section>
+		<section class="slide back" id="Box-9">
+			<img src="p/box.9.png" alt="">
+		</section>
+		<section class="slide" id="AllInOrder">
+			<article>
+				<h2>Всё в порядке</h2>
+			</article>
+		</section>
+		<section class="slide back" id="Random">
+			<img src="p/random.png" alt="">
+		</section>
+		<section class="slide back" id="Sorted">
+			<img src="p/sorted.png" alt="">
+		</section>
+		<section class="slide" id="SortingOne">
+			<article>
+				<h2>Сортировка свойств</h2>
+				<ol>
+					<li>Позиционирование</li>
+					<li>Поведение и свойства блока</li>
+					<li>Размерность блока</li>
+					<li>Цветовое оформление</li>
+				</ol>
+				<p class="note">Подробный список свойств на странице проекта <a href="http://code.google.com/p/zen-coding/wiki/ZenCSSPropertiesRu">Zen Coding</a>.</p>
+			</article>
+		</section>
+		<section class="slide" id="SortingTwo">
+			<article>
+				<h2>Сортировка свойств</h2>
+				<ol>
+					<li>Специальные типы содержимого</li>
+					<li>Текст</li>
+					<li>Визуальные свойства</li>
+					<li>Печать</li>
+				</ol>
+				<p class="note">Подробный список свойств на странице проекта <a href="http://code.google.com/p/zen-coding/wiki/ZenCSSPropertiesRu">Zen Coding</a>.</p>
+			</article>
+		</section>
+		<section class="slide" id="SortingExample">
+			<article>
+				<h2>Пример кода</h2>
+				<pre>
+					<code>#box {</code>
+					<code>    position:absolute;</code>
+					<code>    top:10px;</code>
+					<code>    background:#FFF;</code>
+					<code>    color:#000;</code>
+					<code>    font-size:10px;</code>
+					<code>    }</code>
+				</pre>
+			</article>
+		</section>
+		<section class="slide" id="CSScomb">
+			<article>
+				<h2>Попробовать прямо сейчас</h2>
+				<p><a href="http://csscomb.ru/">CSScomb.ru</a></p>
+			</article>
+		</section>
+		<section class="slide" id="ThankYou">
+			<article>
+				<h2>CSS-менеджемент. Три года спустя</h2>
+				<p>Вадим Макеев, Opera</p>
+				<ul>
+					<li><a href="http://pepelsbey.net">pepelsbey.net</a></li>
+					<li><a href="https://twitter.com/pepelsbey">twitter.com/pepelsbey</a></li>
+					<li><a href="mailto:pepelsbey@opera.com">pepelsbey@opera.com</a></li>
+				</ul>
+			</article>
+		</section>
+	</div>
+</body>
+</html>

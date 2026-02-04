@@ -1,0 +1,32 @@
+.profile-widget{
+	float:left;
+	width:590px;
+	margin:0 15px 0 0;
+	min-height:1px;	
+	padding:15px 0 0;
+	}
+	.profile-widget .title{
+		color: #3b5050;
+		font: 48px/48px 'Berkshire Swash', Georgia, cursive;
+		display: inline-block;
+		vertical-align: bottom;
+		margin: 0 15px 39px 0;
+		position: relative;
+		}
+		.profile-widget .title b{
+			display:block;
+			}
+		.profile-widget .currency{
+			width:300px;
+			}
+		.profile-widget input{
+			width:278px;
+			color: #3b5050;
+			}
+		.profile-widget button span{
+			width:298px;
+			}
+		.profile-widget .line{
+			margin:0 0 10px;
+			position: relative;
+			}

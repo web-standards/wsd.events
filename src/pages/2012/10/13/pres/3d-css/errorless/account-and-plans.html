@@ -1,0 +1,204 @@
+<!DOCTYPE HTML>
+	<html lang="en-US">
+	<head>
+		<meta charset="UTF-8">
+		<title>Froggler</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="stylesheet" href="css/common.css">
+		<script src="js/modernizr.min.js"></script>
+		<script src="js/jquery.min.js"></script>
+		
+		<script src="js/frogglerController.js"></script>
+		<script src="js/projectListController.js"></script>
+		<script src="js/projectController.js"></script>
+		<script src="js/ticketController.js"></script>
+	</head>
+	<body>
+		<section class="projects-widget">
+			<div class="subscription">
+				<div class="wrapper">
+					<h2 class="title">
+						Your subscription plan is <b>Small</b>
+					</h2>
+					<a href="#" class="change-subscription-plan">Change</a>
+					<p class="to-do-metr">
+						<span class="progressbar"><b class="done" style="width:40%"></b></span>
+						<b class="current">4</b> of <b class="all">10</b>
+					</p>
+				</div>
+			</div>
+			<div class="wrapper">
+				<a href="#" class="add-project"><b>Add project</b></a>
+				<section class="project-list">
+					<div class="line">
+						<article>
+							<h2 class="title">Giftofoni</h2>
+							<p class="errors"><b>23 247</b> Errors</p>
+							<p class="users">987</p>
+							<p class="new">4 000</p>
+							<nav>
+								<a href="#" class="go-to-project">Go to project</a>
+								<a href="#" class="edit">Edit</a>
+							</nav>
+						</article>
+					</div>
+					<div class="line">
+						<article>
+							<h2 class="title">Anonymous project</h2>
+							<p class="errors"><b>12</b> Errors</p>
+							<p class="users">3</p>
+							<nav>
+								<a href="#" class="go-to-project">Go to project</a>
+								<a href="#" class="edit">Edit</a>
+							</nav>
+						</article>
+						<article>
+							<h2 class="title">Froggler</h2>
+							<p class="errors"><b>247</b> Errors</p>
+							<p class="users">4</p>
+							<p class="new">5</p>
+							<nav>
+								<a href="#" class="go-to-project">Go to project</a>
+								<a href="#" class="edit">Edit</a>
+							</nav>
+						</article>
+						<article>
+							<h2 class="title">Some Long Name Project That</h2>
+							<p class="errors"><b>159</b> Errors</p>
+							<p class="users">Only me</p>
+							<p class="new">4</p>
+							<nav>
+								<a href="#" class="go-to-project">Go to project</a>
+								<a href="#" class="edit">Edit</a>
+							</nav>
+						</article>
+					</div>
+				</section>
+			</div>
+			<form action="/add/project/" method="post" class="add-project-form">
+				<fieldset>
+					<input type="text" name="name" value="" placeholder="Project name" required="required">
+					<input type="text" name="description" value="" placeholder="Description" required="required">
+					<button type="submit" class="submit"><span>Add project</span></button>
+					<a href="#" class="cancel">Cancel</a>
+				</fieldset>
+			</form>
+		</section>
+		<header>
+			<div class="wrapper">
+				<a href="#">
+					<h1 class="logotype">Froggler</h1>
+				</a>
+				<div class="profile">
+					<a href="#" class="name">Krakozеabra</a>
+					<nav>
+						<a href="#" class="subscription">Small</a>
+						<a href="#" class="sign-out">Sign out</a>
+						<a href="#" class="help">Help</a>
+					</nav>
+				</div>
+				<div class="statistic">
+					<a href="#" class="unresolved"><b>34</b> unresolved errors</a>
+					<a href="#" class="projects"><b>4</b> projects</a>
+				</div>
+			</div>
+		</header>
+		<form action="/save/" method="post" class="personal-data-widget">
+			<fieldset>
+				<h2 class="title">Personal information</h2>
+				<div class="line">
+					<label for="profile-name">Name</label>
+					<input type="text" value="" name="name" id="profile-name">
+				</div>
+				<div class="line">
+					<label for="profile-email">Email address</label>
+					<input required="required" type="email" value="" name="email" id="profile-email">
+				</div>
+				<div class="short-line">
+					<label for="profile-password">Password</label>
+					<input type="password" value="" name="password" id="profile-password">
+				</div>
+				<div class="short-line">
+					<label for="confirm-password">Confirm password</label>
+					<input type="password" value="" name="password" id="confirm-password">	
+				</div>
+			</fieldset>
+			<fieldset>
+				<h2 class="title">Payment information</h2>
+				<div class="line">
+					<label for="profile-card-name">Name on card</label>
+					<a href="#" class="help">?</a>
+					<input type="text" value="" name="card-name" id="profile-card-name">
+				</div>
+				<div class="line">
+					<label for="profile-card-number">Credit card number</label>
+					<a href="#" class="help">?</a>
+					<input type="text" value="" name="card-number" id="profile-card-number">
+				</div>
+				<div class="short-line">
+					<label for="profile-exp-date">Expiration date</label>
+					<a href="#" class="help">?</a>
+					<input type="text" value="" name="exp-date" id="profile-exp-date">
+				</div>
+				<div class="short-line">
+					<label for="profile-ccv2">CCV2</label>
+					<a href="#" class="help">?</a>
+					<input type="text" value="" name="exp-ccv2" id="profile-ccv2">
+				</div>
+			</fieldset>
+			<fieldset class="submit">
+				<button type="submit" class="save"><span>Save changes</span></button>
+			</fieldset>
+		</form>
+		<section class="subscriptions-widget">
+			<h2 class="title">
+				You have <strong>45 days</strong> left 
+				<b>on your unlimited free trial.</b>
+			</h2>
+			<article class="one">
+				<img src="assets/one.png" alt="One">
+				<h3 class="title">One</h3>
+				<p class="projects">3 projects</p>
+				<p class="users">Unlimited users</p>
+				<!--<p class="current">Your plan</p>-->
+				<a href="#" class="select">Choose this plan</a>
+			</article>
+			<article class="small">
+				<img src="assets/small.png" alt="Small">
+				<h3 class="title">Small</h3>
+				<p class="projects">10 projects</p>
+				<p class="users">Unlimited users</p>
+				<p class="price">$<b>10</b>/month</p>
+				<a href="#" class="select">Choose this plan</a>
+			</article>
+			<article class="big">
+				<img src="assets/big.png" alt="Big">
+				<h3 class="title">Big</h3>
+				<p class="projects">50 projects</p>
+				<p class="users">Unlimited users</p>
+				<p class="price">$<b>30</b>/month</p>
+				<!--<a href="#" class="select">Choose this plan</a>-->
+				<p class="current">Your plan</p>
+			</article>
+			<article class="pro">
+				<img src="assets/pro.png" alt="Pro">
+				<h3 class="title">Pro</h3>
+				<p class="projects">Unlimited projects</p>
+				<p class="users">Unlimited users</p>
+				<p class="price">$<b>75</b>/month</p>
+				<a href="#" class="select">Choose this plan</a>
+			</article>
+		</section>
+		<footer>
+			<p class="copyright">Froggler &copy; 2012</p>
+			<nav>
+				<a href="#">Blog</a>
+				<a href="#">API Overview</a>
+				<a href="#">Status site</a>
+				<a href="#">Terms of Service</a>
+				<a href="#">Privacy Policy</a>
+				<a href="#" class="rss">Subsribe via RSS</a>
+			</nav>
+		</footer>
+	</body>
+</html>

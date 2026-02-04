@@ -1,0 +1,80 @@
+header{
+	background: url("../img/header-bg.png") 0 0 repeat-x;
+	height:33px;
+	overflow:hidden;
+	position: relative;
+	color:#fff;
+	text-shadow:0 -1px 0 #000;
+	}
+	header .logotype{
+		z-index:2;
+		position: absolute;
+		left:50%;
+		top:4px;
+		margin:0 0 0 160px;
+		width:74px;
+		height:23px;
+		text-indent:-9000px;
+		overflow:hidden;
+		background: url("../img/header-logotype.png") 50% 0 no-repeat;
+		}
+	header nav{
+		position: absolute;
+		z-index:1;
+		left:50%;
+		margin:0 0 0 -450px;
+		width:900px;
+		top:0;
+		overflow:hidden;
+		}
+		header nav span{
+			position: relative;
+			left:-30px;
+			padding:0 0 0 30px;
+			background: url("../img/header-dot.png") 10px 50% no-repeat;
+			float:left;
+			}
+		header nav a{
+			color:#dbdad7;
+			font:18px/30px 'Marmelad', Arial, "Helvetica Neue", Helvetica, sans-serif;
+			}
+			header nav a.login{
+				width:45px;
+				background: none;
+				margin:0;
+				position: absolute;
+				top:0;
+				left:855px;
+				float:none;
+				text-align:right;
+				text-indent:0;
+				padding:0;
+				}
+			header nav a.logout{
+				width:55px;
+				background: none;
+				margin:0;
+				position: absolute;
+				top:0;
+				left:845px;
+				float:none;
+				text-align:right;
+				text-indent:0;
+				padding:0;
+				}
+			.multiplebgs header nav a.tw{
+				width:22px;
+				overflow:hidden;
+				float:left;
+				text-indent:-9000px;
+				position: relative;
+				background: url("../img/header-tw.png") 0 50% no-repeat;
+				}
+			.multiplebgs header nav a.fb{
+				float:left;
+				width:16px;
+				overflow:hidden;
+				text-indent:-9000px;
+				position: relative;
+				background: url("../img/header-fb.png") 0 50% no-repeat;
+				}

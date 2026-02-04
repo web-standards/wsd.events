@@ -1,0 +1,66 @@
+
+=i - item
+=tx - text
+=it - input text
+=is - input submit
+=itx - textarea
+=ir - input radio
+=ic- input checkbox
+=ico - icon
+=t - title
+=f - footer
+=h - header
+=с - card
+=cl - clear
+=col - column
+=cnt - content
+=img - image
+=a - link
+=ac  - action
+=usr - user
+=e - error
+
+
+<header class="toolbar">
+    <a href="/" class="toolbar_logo"></div>
+    <nav class="toolbar_dropdown">
+        <ul class="toolbar_dropdown_ul">
+            <li class="toolbar_dropdown_li"></li>
+            <li class="toolbar_dropdown_li toolbar_dropdown_li__active"></li>
+        </ul>
+    </nav>
+</header>
+
+<menu class="umenu">
+    <li class="umenu_i"></li>
+    <li class="umenu_i umenu_i__active"></li>
+    <li class="umenu_i umenu_i__special"></li>
+</menu>
+
+/* Toolbar
+---------------------------------------------------------------------------------- */
+
+.toolbar {
+    height: 48px; /* for ie6-7 */
+    background: #cf6700 url(/res/i/toolbar/toolbar_x.png) repeat-x; /* color - last gradient pixel color */
+}
+
+.toolbar_logo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 190px;
+    height: 48px; /* for ie6 */
+}
+
+/* Toolbar dropdown menu
+-------------------------------------------------- */
+.toolbar_dropdown {...}
+
+	.ie8 .toolbar_dropdown {...}
+
+.toolbar_dropdown .u-menu {...}
+/* /Toolbar dropdown menu */
+
+/* /Toolbar
+---------------------------------------------------------------------------------- */

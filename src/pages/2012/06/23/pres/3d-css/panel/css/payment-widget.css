@@ -1,0 +1,138 @@
+.payment-widget{
+  margin:20px 0;
+  text-align:left;
+  padding:60px 0 0;
+  position:relative;
+  zoom:1;
+  }
+  .payment-widget nav{
+    width:100%;
+    clear:both;
+    margin:40px 0 0;
+    text-align:center;
+  }
+  .payment-widget nav a.back{
+    position: absolute;
+    top:0;
+    left:0px;
+    }
+  .payment-widget .abstract{
+    position:relative;
+    overflow:hidden;
+    font:bold 12px/18px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    margin:0 0 20px;
+    color:#666;
+    width:336px;
+    }
+    .payment-widget .abstract h4.sub-title{
+    	margin:20px 0 0;
+    	color:#666;
+    	font:bold 12px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    	}
+    .payment-widget .abstract h5.sub-title{
+    	margin:20px 0 0;
+    	color:#999;
+    	font:bold 12px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
+		}
+	.payment-widget input[type='radio']:checked+label{
+		color:#333;
+		}
+		.payment-widget input[type='radio']:checked+label b{
+			color:#405d94;
+			}
+	.payment-widget input[type='text']{
+		display:block;
+		margin:10px 0 0;
+		border:1px solid #bfbfbf;
+		-webkit-border-radius:3px;
+		-moz-border-radius:3px;
+		-ms-border-radius:3px;
+		-o-border-radius:3px;
+		border-radius:3px;
+
+		color:#999;
+
+		width:316px;
+
+		font:bold 14px/16px "Helvetica Neue",Helvetica,Arial,sans-serif;
+
+		padding:6px;
+
+		height:16px;
+
+		-webkit-box-shadow:inset 0 2px 0 0 rgba(0,0,0,.1);
+    	box-shadow:inset 0 2px 0 0 rgba(0,0,0,.1);
+		}
+	.payment-widget .abstract label{
+		color:#999;
+		margin:0 5px 0 0;
+		white-space:nowrap;
+		font:bold 14px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
+		}
+    .payment-widget .abstract .price-line{
+    	font:bold 24px/24px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    	color:#405d93;
+    	text-align:left;
+    	border-bottom:1px solid #d9d9d9;
+    	padding:0 0 10px;
+    	margin:0 0 20px;
+    	position: relative;
+    	}
+    	.payment-widget .abstract .price-line:after{
+    		content:".";
+    		display:block;
+    		position: absolute;
+    		bottom:-1px;
+    		left:50%;
+    		margin:0 0 0 -7px;
+    		background: url("../img/tail.gif") 0 0 no-repeat;
+    		width:13px;
+    		height:8px;
+    		overflow:hidden;
+    		text-indent:-9000px;
+    		}
+    	.payment-widget .abstract .price-line .delivery{
+			font:bold 18px/24px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    		color:#405d93;
+    		}
+    		.payment-widget .abstract .price-line .delivery span{
+    			font:bold 14px/24px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    			color:#666;
+    			}
+    .payment-widget .abstract .title{
+    	padding:0;
+    	margin:0 0 10px;
+    	background: none;
+    	}
+  .payment-widget .title{
+    color:#333;
+    font:bold 18px/25px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    margin:0 0 20px;
+    background: url("../img/card.png") 0 50% no-repeat;
+    padding:0 0 0 40px;
+    }
+  .payment-widget .price{
+    float:left;
+    clear:left;
+    width:240px;
+    margin:0 19px 20px 0;
+    text-align:center;
+    color:#666;
+    font:bold 14px/24px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    }
+    .payment-widget .price b{
+		color:#405d93;
+		display:block;
+    	font:bold 24px/24px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    	}
+  .payment-widget .illustration{
+    float:left;
+    width:240px;
+    margin:0 19px 20px 0;
+    border-bottom:2px solid #e5e5e5;
+    text-align:center;
+    vertical-align:bottom;
+    }
+    .payment-widget .illustration img{
+      vertical-align:bottom;
+      }

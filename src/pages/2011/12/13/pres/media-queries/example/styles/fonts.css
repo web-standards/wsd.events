@@ -1,0 +1,135 @@
+@font-face {
+	font-family: 'PT Sans'; 
+	src: local('PT Sans'),
+		url('../fonts/pts55f_w.woff') format('woff'),
+		url('../fonts/pts55f_w.ttf') format('truetype'),
+		url('../fonts/pts55f_w.svg#PTSans-Regular') format('svg');
+	}
+@font-face {
+	font-family: 'PT Sans'; 
+	font-style: italic;
+	src: local('PT Sans Italic'),
+		url('../fonts/pts56f_w.woff') format('woff'),
+		url('../fonts/pts56f_w.ttf') format('truetype'),
+		url('../fonts/pts56f_w.svg#PTSans-Italic') format('svg');
+	}
+@font-face {
+	font-family: 'PT Sans';
+	font-style: normal;
+	font-weight: bold; 
+	src: local('PT Sans Bold'),
+		url('../fonts/pts75f_w.woff') format('woff'),
+		url('../fonts/pts75f_w.ttf') format('truetype'),
+		url('../fonts/pts75f_w.svg#PTSans-Bold') format('svg');
+	}
+@font-face {
+	font-family: 'PT Sans';
+	font-style: italic;
+	font-weight: bold; 
+	src: local('PT Sans Bold Italic'),
+		url('../fonts/pts76f_w.woff') format('woff'),
+		url('../fonts/pts76f_w.ttf') format('truetype'),
+		url('../fonts/pts76f_w.svg#PTSans-BoldItalic') format('svg');
+	}
+@font-face {
+	font-family: 'PT Sans Caption'; 
+	src: local('PT Sans Caption'),
+		url('../fonts/ptc55f_w.woff') format('woff'),
+		url('../fonts/ptc55f_w.ttf') format('truetype'),
+		url('../fonts/ptc55f_w.svg#PTSans-Caption') format('svg');
+	}
+@font-face {
+	font-family: 'PT Sans Caption';
+	font-weight: bold; 
+	src: local('PT Sans Caption Bold'),
+		url('../fonts/ptc75f_w.woff') format('woff'),
+		url('../fonts/ptc75f_w.ttf') format('truetype'),
+		url('../fonts/ptc75f_w.svg#PTSans-CaptionBold') format('svg');
+	}
+@font-face {
+	font-family: 'PT Sans Narrow';
+	src: local('PT Sans Narrow'),
+		url('../fonts/ptn57f_w.woff') format('woff'),
+		url('../fonts/ptn57f_w.ttf') format('truetype'),
+		url('../fonts/ptn57f_w.svg#PTSans-Narrow') format('svg');
+	}
+@font-face {
+	font-family: 'PT Sans Narrow';
+	font-weight: bold; 
+	src: local('PT Sans Narrow Bold'),
+		url('../fonts/ptn77f_w.woff') format('woff'),
+		url('../fonts/ptn77f_w.ttf') format('truetype'),
+		url('../fonts/ptn77f_w.svg#PTSans-NarrowBold') format('svg');
+	}
+@font-face {
+	font-family: 'PT Serif'; 
+	src: local('PT Serif'),
+		url('../fonts/ptf55f_w.woff') format('woff'),
+		url('../fonts/ptf55f_w.ttf') format('truetype'),
+		url('../fonts/ptf55f_w.svg#PTSerif-Regular') format('svg');
+	}
+@font-face {
+	font-family: 'PT Serif'; 
+	font-style: italic;
+	src: local('PT Serif Italic'),
+		url('../fonts/ptf56f_w.woff') format('woff'),
+		url('../fonts/ptf56f_w.ttf') format('truetype'),
+		url('../fonts/ptf56f_w.svg#PTSerif-Italic') format('svg');
+	}
+@font-face {
+	font-family: 'PT Serif';
+	font-style: normal;
+	font-weight: bold; 
+	src: local('PT Serif Bold'),
+		url('../fonts/ptf75f_w.woff') format('woff'),
+		url('../fonts/ptf75f_w.ttf') format('truetype'),
+		url('../fonts/ptf75f_w.svg#PTSerif-Bold') format('svg');
+	}
+@font-face {
+	font-family: 'PT Serif';
+	font-style: italic;
+	font-weight: bold; 
+	src: local('PT Serif Bold Italic'),
+		url('../fonts/ptf76f_w.woff') format('woff'),
+		url('../fonts/ptf76f_w.ttf') format('truetype'),
+		url('../fonts/ptf76f_w.svg#PTSerif-BoldItalic') format('svg');
+	}
+@font-face {
+	font-family: 'PT Serif Caption'; 
+	src: local('PT Serif Caption'),
+		url('../fonts/ptz55f_w.woff') format('woff'),
+		url('../fonts/ptz55f_w.ttf') format('truetype'),
+		url('../fonts/ptz55f_w.svg#PTSerif-Caption') format('svg');
+	}
+@font-face {
+	font-family: 'PT Serif Caption';
+	font-style: italic; 
+	src: local('PT Serif Caption Italic'),
+		url('../fonts/ptz56f_w.woff') format('woff'),
+		url('../fonts/ptz56f_w.ttf') format('truetype'),
+		url('../fonts/ptz56f_w.svg#PTSerif-CaptionItalic') format('svg');
+	}
+@font-face {
+	font-family: 'Consolas';
+	src: local('Consolas'),
+		url('../fonts/consolas.ttf') format('truetype');
+	}
+@font-face {
+	font-family: 'Consolas';
+	font-weight: bold;
+	src: local('Consolas'),
+		url('../fonts/consolas_b.ttf') format('truetype');
+	}
+@font-face {
+	font-family: 'Consolas';
+	font-style: italic;
+	src: local('Consolas'),
+		url('../fonts/consolas_i.ttf') format('truetype');
+	}
+@font-face {
+	font-family: 'Consolas';
+	font-weight: bold;
+	font-style: italic;
+	src: local('Consolas'),
+		url('../fonts/consolas_bi.ttf') format('truetype');
+	}

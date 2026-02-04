@@ -1,0 +1,79 @@
+.secton-leader-widget{
+  border-top:4px solid #000;
+  background-color:#FFF;
+  margin:0 0 15px 0;
+  padding:0 0 13px;
+  position:relative;
+  }
+  .secton-leader-widget:after{
+    content:".";
+    display:block;
+    clear:both;
+    text-indent:-9000px;
+    height:0;
+    line-height:0;
+    font-size:0;
+    overflow:hidden;
+    }
+  * html .secton-leader-widget{
+    zoom:1;
+    }
+  *+html .secton-leader-widget{
+    zoom:1;
+    }
+  .secton-leader-widget .information{
+    padding:0 0 33px 0;
+    overflow:hidden;
+    }
+    .secton-leader-widget .information .title{
+      margin:15px 15px 15px 0;
+      font:18px/24px 'PT Sans',Arial,sans-serif;
+      }
+    .secton-leader-widget .information .abstract{
+      color:#000;
+      margin:0 15px 0 0;
+      font:13px/15px 'PT Sans',Arial,sans-serif;
+      }
+  body .secton-leader-widget div.exclusive .title{
+    text-indent:20px;
+    background:url("../img/zn.png") 0 4px no-repeat;
+    }
+  body .secton-leader-widget div.advertisement .title{
+    text-indent:20px;
+    background:url("../img/adv.png") 0 4px no-repeat;
+    }
+  body .secton-leader-widget div.press-release .title{
+    text-indent:20px;
+    background:url("../img/pr.png") 0 4px no-repeat;
+    }
+  body .secton-leader-widget div.important .title{
+    font-weight:bold;
+    }
+  .secton-leader-widget .illustration{
+    float:left;
+    margin:0 15px 0 0;
+    position:relative;
+    width:317px;
+    z-index:2;
+    }
+  .secton-leader-widget .link-2-sphere{
+    border-top:1px dotted #b7b7b7;
+    position:absolute;
+    
+    padding:0 15px 0 332px;
+    
+    bottom:0;
+    left:0;
+    width:302px;
+    background-color:#e2e2e2;
+    display:block;
+    
+    font:11px/28px 'PT Sans',Arial,sans-serif;
+    text-transform:uppercase;
+    z-index:1;
+    
+    color:#000;
+    }
+    .secton-leader-widget .link-2-sphere .count{
+      color:#0056a4;
+      }

@@ -1,0 +1,74 @@
+.news-by-tag-widget{
+  background-color:#fff;
+  border-top:4px solid #b5b5b5;
+  padding:0 10px 10px;
+  margin:0 0 15px 0;
+  position:relative;
+  }
+  .news-by-tag-widget .show-more{
+    font:italic 13px/15px 'PT Sans',Arial,sans-serif;
+    }
+  .news-by-tag-widget .title+article{
+    font:bold 13px/15px 'PT Sans',Arial,sans-serif;
+    }
+  .news-by-tag-widget article{
+    font:normal 13px/15px 'PT Sans',Arial,sans-serif;
+    padding:0 0 10px 0;
+    margin:0 0 10px 0;
+    border-bottom:1px dotted #b7b7b7;
+    }
+    * html .news-by-tag-widget article{
+      font-weight:expression(function(t) {
+				if(t.previousSibling.tagName=="H2"){
+					t.runtimeStyle.fontWeight = "bold";
+					}
+				}(this));
+      }
+    .news-by-tag-widget article time{
+      display:inline;
+      color:#777;
+      font:normal 11px/15px 'PT Sans',Arial,sans-serif;
+      }
+    .news-by-tag-widget article.exclusive .abstract{
+      text-indent:20px;
+      background:url("../img/zn.png") 0 0 no-repeat;
+      }
+    .news-by-tag-widget article.advertisement .abstract{
+      text-indent:20px;
+      background:url("../img/adv.png") 0 0 no-repeat;
+      }
+    .news-by-tag-widget article.press-release .abstract{
+      text-indent:20px;
+      background:url("../img/pr.png") 0 0 no-repeat;
+      }
+    .news-by-tag-widget article.important .abstract{
+      font-weight:bold;
+      }
+    .news-by-tag-widget article p{
+      display:inline;
+      }
+    .news-by-tag-widget article .illustration{
+      display:block;
+      margin:0 0 10px 0;
+      }
+  .news-by-tag-widget a{
+    text-decoration:none;
+    color:#0056a4;
+    }
+  .news-by-tag-widget .rss{
+    width:12px;
+    height:12px;
+    text-indent:-9000px;
+    overflow:hidden;
+    display:block;
+    position:absolute;
+    right:11px;
+    top:17px;
+    background:url("../img/rss.png") 0 0 no-repeat;
+    }
+  .news-by-tag-widget .title{
+    font:bold 18px/45px 'PT Sans',Arial,sans-serif;
+    }
+    .news-by-tag-widget .title a{
+      color:#000;
+      }

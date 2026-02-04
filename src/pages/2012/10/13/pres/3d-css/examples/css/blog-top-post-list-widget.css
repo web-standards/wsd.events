@@ -1,0 +1,86 @@
+.blog-top-post-list-widget{
+  background-color:#e2e2e2;
+  padding:15px 0 0;
+  }
+  .blog-top-post-list-widget article{
+    width:317px;
+    margin:0 0 15px 0;
+    display:inline-block;
+    vertical-align:top;
+    }
+    .blog-top-post-list-widget article:first-child{
+      margin-right:15px;
+      }
+    * html .blog-top-post-list-widget article{
+      display:inline;
+      zoom:1;
+      margin:expression(function(t) {
+  					if(t.previousSibling==null){
+  						t.runtimeStyle.margin = "0 0 15px 15px";
+  						}else{
+						  t.runtimeStyle.margin = "0 0 15px 0";
+  						}
+  					}(this));
+      }
+    * html .blog-top-post-list-widget article{
+      display:inline;
+      zoom:1;
+      }
+    .blog-top-post-list-widget article .comment-list{
+      margin:-20px 25px -15px 15px;
+      position:relative;
+      z-index:2;
+      }
+      .blog-top-post-list-widget article .comment-list li{
+        margin:0 0 15px;
+        background:url("../img/comment-bg.gif") 0 0 no-repeat;
+        padding:10px;
+        text-indent:20px;
+        
+        position:relative;
+        zoom:1;
+        
+        -webkit-box-shadow:0 10px 10px 0 rgba(0,0,0,0.15);
+        -moz-box-shadow:0 10px 10px 0 rgba(0,0,0,0.15);
+        -o-box-shadow:0 10px 10px 0 rgba(0,0,0,0.15);
+        box-shadow:0 10px 10px 0 rgba(0,0,0,0.15);
+        
+        font:normal 13px/15px 'PT Sans',Arial,sans-serif;
+        }
+        .blog-top-post-list-widget article .comment-list li .where{
+          font:normal 11px/15px 'PT Sans',Arial,sans-serif;
+          text-transform:uppercase;
+          color:#000;
+          }
+    .blog-top-post-list-widget article .author{
+      margin:0 0 0 15px;
+      background-color:#000;
+      color:#fff;
+      padding:0 10px;
+      font:italic 13px/24px 'PT Sans',Arial,sans-serif;
+      }
+    .blog-top-post-list-widget article time{
+      font:normal 11px/24px 'PT Sans',Arial,sans-serif;
+      color:#777;
+      }
+    .blog-top-post-list-widget article figure{
+      position:relative;
+      overflow:hidden;
+      }
+      .blog-top-post-list-widget article figcaption{
+        position:absolute;
+        top:0;
+        left:15px;
+        width:282px;
+        padding:0 10px 10px;
+        background-color:rgba(0,0,0,0.6);
+        color:#fff;
+        font:bold 14px/18px 'PT Sans Caption',Arial,sans-serif;
+        }
+        * html .blog-top-post-list-widget article figcaption{
+          filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src='img/dot.png', sizingMethod='scale');
+          cursor:pointer;
+          }
+      .blog-top-post-list-widget article figure img{
+
+        }

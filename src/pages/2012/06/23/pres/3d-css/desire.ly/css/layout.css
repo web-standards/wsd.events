@@ -1,0 +1,52 @@
+html{
+	height:100%;
+	}
+
+body{
+	position: relative;
+	min-width:960px;
+	min-height:100%;
+	color:#363636;
+	font-family: 'Marmelad', Arial, "Helvetica Neue", Helvetica, sans-serif;
+	background: #f9f8f5 url("../img/bg.png") 50% 50% repeat;
+	}
+	.content-wrapper{
+		position: relative;
+		zoom:1;
+		padding:0 0 100px;
+		margin:0 auto;
+		width:900px;
+		}
+		.content-wrapper:after{
+			content:".";
+			display:block;
+			text-indent:-9000px;
+			font-size:0;
+			line-height:0;
+			height:0;
+			overflow:hidden;
+			clear:both;
+			}
+.lightbox{
+	display:none;
+	position: fixed;
+	left:0;
+	right:0;
+	bottom:0;
+	top:0;
+	background: transparent url("../img/half.png") repeat;
+	background: rgba(0,0,0,.05);
+	z-index:11000;
+	}
+
+
+html body input.form-ui-invalid,
+html body select.form-ui-invalid,
+html body textarea.form-ui-invalid {
+	border-color: #d00;
+	}
+html body input.form-ui-valid,
+html body select.form-ui-valid,
+html body textarea.form-ui-valid {
+	border-color: #0b0;
+	}

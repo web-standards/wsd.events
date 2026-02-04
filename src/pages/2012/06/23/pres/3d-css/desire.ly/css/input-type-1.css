@@ -1,0 +1,10 @@
+.input-type-1{
+	border:1px solid #dbdad7;
+	background-color: #FFF;
+	border-radius:3px;
+	box-shadow:inset 0 1px 5px 0 rgba(0,0,0,.1), 0 1px 0 0 #fff;
+	color:#aeadab;
+	font:13px/15px 'Marmelad', Arial, "Helvetica Neue", Helvetica, sans-serif;
+	height:15px;
+	padding:10px;
+	}

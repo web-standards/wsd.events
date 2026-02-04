@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewport-fill="#000">
+	<defs>
+		<filter
+			x="0"
+			y="0"
+			width="1"
+			height="1"
+			color-interpolation-filters="sRGB"
+			id="softfocus">
+				<feGaussianBlur
+					result="result3"
+					stdDeviation="5"
+					id="feGaussianBlur3894"/>
+				<feComposite
+					in2="result3"
+					operator="arithmetic"
+					k1="0.5"
+					k2="0"
+					k3="0.5"
+					k4="0"
+					in="result3"
+					result="result1"
+					id="feComposite3896"/>
+				<feBlend
+					in2="result1"
+					mode="screen"
+					in="SourceGraphic"
+					result="result5"
+					id="feBlend3898"/>
+				<feBlend
+					in2="result5"
+					mode="darken"
+					in="result5"
+					result="result6"
+					id="feBlend3900"/>
+				<feComposite
+					in2="SourceGraphic"
+					operator="in"
+					id="feComposite3902"/>
+		</filter>
+		<filter
+			x="0"
+			y="0"
+			width="1"
+			height="1"
+			color-interpolation-filters="sRGB"
+			id="moonarize">
+			<feColorMatrix
+			result="fbSourceGraphic"
+			values="180"
+			type="hueRotate"
+			id="feColorMatrix4675"/>
+				<feColorMatrix
+					result="result3"
+					values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0 "
+					in="fbSourceGraphic"
+					id="feColorMatrix4677"/>
+				<feBlend
+					in2="result3"
+					mode="lighten"
+					in="fbSourceGraphic"
+					result="result2"
+					id="feBlend4679"/>
+				<feBlend
+					in2="result2"
+					mode="multiply"
+					in="result2"
+					result="result1"
+					id="feBlend4681"/>
+				<feComposite
+					in2="SourceGraphic"
+					operator="in"
+					id="feComposite4683"/>
+		</filter>
+		<filter id="displacement" color-interpolation-filters="linearRGB" primitiveUnits="userSpaceOnUse">
+			<feImage x="50%" y="50%" xlink:href="#displacement-map" result="displacement-map"/>
+			<feDisplacementMap in="SourceGraphic" in2="displacement-map" scale="50" xChannelSelector="R" yChannelSelector="G" result="dist"/>
+		</filter>
+		<image id="displacement-map" xlink:href="displacement.png" width="1200" height="1200" x="-500" y="-500">
+			<animateTransform attributeName="transform" type="rotate" begin="0s" values="0;360" dur="10s" repeatCount="indefinite"/>
+		</image>
+		<script>
+			var video = document.getElementById('video'),
+				filters = [ 'moonarize', 'softfocus', 'displacement' ],
+				start = 0;
+			function setFilter(el) {
+				el.style.filter = 'url(#' + filters[ start++ ] + ')';
+				start = ( start == filters.length ) ? 0 : start;
+			}
+		</script>
+	</defs>
+	<video id="video" x="50%" y="50%" xlink:href="video.ogv" type="video/ogg" transformBehavior="pinned" onclick="setFilter(this)"/>
+</svg>

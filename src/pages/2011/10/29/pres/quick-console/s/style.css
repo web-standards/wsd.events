@@ -1,0 +1,122 @@
+HTML,
+BODY {
+	height: 100%;
+	font-family: "Droid Sans", sans-serif;
+	color: #333;
+	}
+BODY {
+	margin: 0;
+	background: url(../../musfus.com/static/i/bg-win.gif);
+	}
+NAV {
+	padding: 0 .5em;
+	margin: -1.5em 0 0;
+	-webkit-transition: margin 0.5s ease;
+	-moz-transition: margin 0.5s ease;
+	transition: margin 0.5s ease;
+	}
+NAV UL {
+	margin: 0;
+	padding:  0;
+	display: table;
+	width: 100%;
+	}
+NAV LI {
+	display: table-cell;
+	text-align: center;
+	padding: .1em .1em .3em;
+	vertical-align: middle;
+	border-right: 1px solid #C7C7C7;
+	}
+NAV LI.visited {
+	opacity: .3;
+	}
+NAV LI:last-child {
+	border-right: none;
+	}
+NAV A,
+NAV A:visited {
+	font-size: .8em;
+	color: #339;
+	}
+NAV A:hover {
+	text-decoration: none;
+	}
+
+ARTICLE {
+	position: absolute;
+	top: 8%;
+	left: 5%;
+	right: 5%;
+	bottom: 8%;
+	border-radius: 2em;
+	background-color: #FFF;
+	box-shadow: 0 5px 5px #999;
+	display: none;
+	padding: 2em;
+	z-index: 2;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+	}
+ARTICLE:first-child {
+	z-index: 1;
+	}
+ARTICLE:target,
+ARTICLE:first-child {
+	display: block;
+	}
+H1,
+H2,
+H3,
+H4,
+H4,
+H5,
+H6 {
+	font-family: "Droid Serif", serif;
+	color: #111;
+	margin: 0;
+	}
+H1 {
+	font-size: 2em;
+	line-height: 2.2em;
+	}
+H2 {
+	font-size: 1.8em;
+	line-height: 2em;
+	}
+ARTICLE UL {
+	margin: 0;
+	}
+ARTICLE P,
+ARTICLE LI {
+	font-size: 1.4em;
+	line-height: 1.6em;
+	}
+
+/* TRANSITION */
+BODY:hover NAV {
+	margin: 0;
+	}
+BODY:hover ARTICLE {
+	top: 12%;
+	}
+
+/* GRADIENT */
+NAV {
+	background: #CFCFCF;
+	background: -moz-linear-gradient(top, #CFCFCF 0%, #B0B0B0 68%, #A7A7A7 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#CFCFCF), color-stop(68%,#B0B0B0), color-stop(100%,#A7A7A7));
+	background: -webkit-linear-gradient(top, #CFCFCF 0%,#B0B0B0 68%,#A7A7A7 100%);
+	background: -o-linear-gradient(top, #CFCFCF 0%,#B0B0B0 68%,#A7A7A7 100%);
+	background: -ms-linear-gradient(top, #CFCFCF 0%,#B0B0B0 68%,#A7A7A7 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#CFCFCF', endColorstr='#A7A7A7',GradientType=0 );
+	background: linear-gradient(top, #CFCFCF 0%,#B0B0B0 68%,#A7A7A7 100%);
+	}
+ARTICLE {
+    background:-webkit-repeating-linear-gradient(135deg, #FFF, #FFF 50px, #EEE 50px, #EEE 100px);
+    background:-moz-repeating-linear-gradient(135deg, #FFF, #FFF 50px, #FCFCFC 50px, #FCFCFC 100px);
+    background:-ms-repeating-linear-gradient();
+    background:-o-repeating-linear-gradient();
+    background:repeating-linear-gradient();
+	}

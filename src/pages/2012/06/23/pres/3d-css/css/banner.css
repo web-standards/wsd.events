@@ -1,0 +1,139 @@
+/* Banner
+---------------------------------------- */
+.banner {
+	text-transform:none;
+	line-height: normal;
+	font-size: 16px;
+	position:relative;
+	overflow:hidden;
+	display:inline-block;
+
+	width:190px;
+	height:80px;
+	border:5px solid #FFF;
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	border-radius:10px;
+	text-align:center;
+	text-decoration:none;
+	font-family:Arial, sans-serif;
+	}
+	.banner-frame {
+		position:absolute;
+		display:block;
+		width:190px;
+		}
+	.banner-frame-first {
+		-webkit-transition:all 0.5s ease-out;
+		-moz-transition:all 0.5s ease-out;
+		-o-transition:all 0.5s ease-out;
+		}
+	.banner-frame-second {
+		-webkit-transition:all 1s ease-out;
+		-moz-transition:all 1s ease-out;
+		-o-transition:all 1s ease-out;
+		}
+		.banner:after{
+			display:none;
+			}
+
+/* Hover */
+.banner:hover {
+	word-spacing:0; /* special thanks to IE */
+	}
+	.banner:hover .banner-frame-first {
+		left:-200px;
+		opacity:0;
+		}
+	.banner .banner-frame-second {
+		top:6px;
+		left:400px;
+		opacity:0;
+		}
+	.banner:hover .banner-frame-second {
+		left:0;
+		opacity:1;
+		}
+
+/* Learn
+---------------------------------------- */
+.banner-learn {
+	background:#D40000;
+	-webkit-box-shadow:0 0 5px #888;
+	-webkit-box-shadow:
+		inset 0 -20px 30px rgba( 0, 0, 0, 0.2 ),
+		0 0 5px #888;
+	-moz-box-shadow:
+		0 0 5px #888,
+		inset 0 -20px 30px rgba( 0, 0, 0, 0.2 );
+	box-shadow:
+		0 0 5px #888,
+		inset 0 -20px 30px rgba( 0, 0, 0, 0.2 );
+	color:#FFF;
+	text-shadow:0 1px 5px rgba( 0, 0, 0, 0.5 );
+	}
+
+/* First */
+.banner-learn .banner-frame-first .banner-row-first {
+	display:block;
+	padding:16px 0 5px;
+	font-size:15px;
+	}
+.banner-learn .banner-frame-first .banner-row-second {
+	display:block;
+	font-size:23px;
+	}
+	.banner-learn .banner-frame-first .banner-row-second SMALL {
+		font-size:15px;
+		}
+
+/* Second */
+.banner-learn .banner-frame-second .banner-row-first {
+	display:block;
+	padding:11px 0 3px;
+	font-size:13px;
+	}
+.banner-learn .banner-frame-second .banner-row-second {
+	display:block;
+	font-size:27px;
+	}
+
+/* Extensions
+---------------------------------------- */
+.banner-extensions {
+	background:#974DAF;
+	-webkit-box-shadow:0 0 5px #888;
+	-webkit-box-shadow:
+		inset 0 -20px 30px rgba( 0, 0, 0, 0.2 ),
+		0 0 5px #888;
+	-moz-box-shadow:
+		0 0 5px #888,
+		inset 0 -20px 30px rgba( 0, 0, 0, 0.2 );
+	box-shadow:
+		0 0 5px #888,
+		inset 0 -20px 30px rgba( 0, 0, 0, 0.2 );
+	color:#FFF;
+	text-shadow:0 1px 5px rgba( 0, 0, 0, 0.5 );
+	}
+
+/* First */
+.banner-extensions .banner-frame-first .banner-row-first {
+	display:block;
+	padding:20px 0 4px;
+	font-size:13px;
+	}
+.banner-extensions .banner-frame-first .banner-row-second {
+	display:block;
+	font-size:20px;
+	}
+
+/* Second */
+.banner-extensions .banner-frame-second .banner-row-first {
+	display:block;
+	padding:11px 0 3px;
+	font-size:13px;
+	}
+.banner-extensions .banner-frame-second .banner-row-second {
+	display:block;
+	font-size:27px;
+	}

@@ -1,0 +1,8 @@
+.title-1{
+  color:#fff;
+  background-color: #123f7e; 
+  }
+  .title-1:after{
+    color:#fff;
+    text-shadow:none;
+    }

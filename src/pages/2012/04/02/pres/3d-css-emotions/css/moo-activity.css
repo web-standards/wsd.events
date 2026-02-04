@@ -1,0 +1,548 @@
+@-webkit-keyframes 'turnaround-part-1'{
+	from{
+		-webkit-transform: translateZ(-600px) rotateX(50deg) rotate(90deg);
+	}
+	to{
+		-webkit-transform: translateZ(-600px) rotateX(50deg) rotate(0deg);
+	}
+}
+
+@-webkit-keyframes 'turnaround-part-2'{
+	from{
+		-webkit-transform: translateZ(-600px) rotateX(50deg) rotate(0deg);
+	}
+	to{
+		-webkit-transform: translateZ(-600px) rotateX(50deg) rotate(-90deg);
+	}
+}
+
+@-webkit-keyframes 'see-me'{
+	0%{
+		text-shadow:0 0 30px rgba(255,255,255,0);
+	}
+	100%{
+		text-shadow:0 0 0 rgba(255,255,255,1);	
+	}
+	}
+
+
+@-webkit-keyframes 'see-me-2'{
+	0%{
+		text-shadow:0 0 0 rgba(255,255,255,1);
+	}
+	100%{
+		text-shadow:0 0 30px rgba(255,255,255,0);	
+	}
+	}
+
+
+@-moz-keyframes turnaround-part-1{
+	from{
+		-moz-transform: translateZ(-600px) rotateX(50deg) rotate(90deg);
+	}
+	to{
+		-moz-transform: translateZ(-600px) rotateX(50deg) rotate(0deg);
+	}
+}
+
+@-moz-keyframes turnaround-part-2{
+	from{
+		-moz-transform: translateZ(-600px) rotateX(50deg) rotate(0deg);
+	}
+	to{
+		-moz-transform: translateZ(-600px) rotateX(50deg) rotate(-90deg);
+	}
+}
+
+@-moz-keyframes see-me{
+	0%{
+		text-shadow:0 0 30px rgba(255,255,255,0);
+	}
+	100%{
+		text-shadow:0 0 0 rgba(255,255,255,1);	
+	}
+	}
+
+
+@-moz-keyframes see-me-2{
+	0%{
+		text-shadow:0 0 0 rgba(255,255,255,1);
+	}
+	100%{
+		text-shadow:0 0 30px rgba(255,255,255,0);	
+	}
+	}
+
+.moo-activity-hidden{
+	visibility:hidden;
+	width:460px;
+	height:259px;
+	display:block;
+	position: absolute;
+	top:50%;
+	left:50%;
+	margin:-125px 0 0 -230px;
+	}
+
+body .moo-activity{
+	visibility:visible;
+	width:460px;
+	height:259px;
+	display:block;
+	position: absolute;
+	top:50%;
+	left:50%;
+	margin:-125px 0 0 -230px;
+
+	color:#fff;
+	
+	text-transform:uppercase;
+	text-align:center;
+
+	text-decoration:none;
+	overflow:hidden;
+
+	z-index:1000;
+	zoom:1;
+
+	line-height:0;
+	font-size:0;
+	
+	box-shadow:0 0 50px 0 rgba(0,0,0,.5);
+	}
+	.no-csstransforms3d .moo-activity .inner-wrapper,
+	.no-csstransforms3d .moo-activity .outer-wrapper{
+		width:460px;
+		height:259px;
+		display:block;
+		}
+	.csstransforms3d.cssanimations .moo-activity .outer-wrapper{
+		z-index:1002;
+		position: relative;
+		zoom:1;
+		width:460px;
+		height:259px;
+		display:block;
+		position: absolute;
+		top:50%;
+		left:50%;
+		margin:-125px 0 0 -230px;
+
+		-webkit-transform-style:preserve-3d;
+	    -moz-transform-style:preserve-3d;
+	    -o-transform-style:preserve-3d;
+	    transform-style:preserve-3d;
+
+		-webkit-perspective-origin:50% 50%;
+		-moz-perspective-origin:50% 50%;
+		-o-perspective-origin:50% 50%;
+		perspective-origin:50% 50%;
+
+		-webkit-perspective:900px;
+		-moz-perspective:900px;
+		-o-perspective:900px;
+		perspective:900px;
+		}
+	.csstransforms3d.cssanimations .moo-activity .inner-wrapper{
+		-webkit-transform-style:preserve-3d;
+		-moz-transform-style:preserve-3d;
+		-o-transform-style:preserve-3d;
+		transform-style:preserve-3d;
+
+		-webkit-perspective-origin:50% 50%;
+		-moz-perspective-origin:50% 50%;
+		-o-perspective-origin:50% 50%;
+		perspective-origin:50% 50%;
+
+		-webkit-perspective:900px;
+		-moz-perspective:900px;
+		-o-perspective:900px;
+		perspective:900px;
+		
+		position:absolute;
+		top:0;
+		left:0;
+
+		width:460px;
+		height:259px;
+
+		-webkit-animation:'turnaround-part-1' 6s ease-out 0s 1 normal, 'turnaround-part-2' 2s ease-in-out 13s 1 normal; 
+		-webkit-animation-fill-mode: forwards;
+		-webkit-transform-origin:50% 50%;
+
+		-moz-animation: turnaround-part-1 6s ease-out 0s 1 normal, turnaround-part-2 2s ease-in-out 13s 1 normal;
+		-moz-animation-fill-mode: forwards;
+		-moz-transform-origin:50% 50%;
+		}
+	.csstransforms3d.cssanimations .moo-activity .bg{
+		position:absolute;
+		top:50%;
+		left:50%;
+		width:1340px;
+		height:1340px;
+		margin:-670px 0 0 -670px;
+		display:block;
+		background: url("../img/dirt2.jpg") 50% no-repeat;
+		}
+	.moo-activity .bg{
+		position:absolute;
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		display:block;
+		background: url("../img/dirt.jpg") 50% 0 no-repeat;
+		}
+	.moo-activity .slogan-1{
+		
+		-webkit-transition:all .5s ease;
+		-moz-transition:all .5s ease;
+		-ms-transition:all .5s ease;
+		-o-transition:all .5s ease;
+		transition:all .5s ease;
+
+		width:270px;
+		height:160px;
+		position: absolute;
+		top:50%;
+		left:50%;
+		margin:-160px 0 0 -135px;
+		font:24px/32px 'AbelRegular', sans-serif;
+		white-space:nowrap;
+
+		}
+		.no-csstransforms3d  .moo-activity .slogan-1{
+			z-index:1;
+			margin-top:-80px;
+			}
+			.no-csstransforms3d  .moo-activity:hover .slogan-1{
+				z-index:1;
+				margin-top:-80px;
+				opacity:0
+				}
+		.csstransforms3d.cssanimations .moo-activity .slogan-1{
+			-webkit-transform-origin:50% 100%;
+			-webkit-transform:rotateX(-90deg) translateZ(20px) scale(.55);
+
+			-moz-transform-origin:50% 100%;
+			-moz-transform:rotateX(-90deg) translateZ(20px) scale(.55);
+
+			width:540px;
+			height:320px;
+			margin:-320px 0 0 -270px;
+			font:48px/48px 'AbelRegular', sans-serif;
+			}
+		.csstransforms3d.cssanimations .moo-activity .slogan-1 p:first-child{
+			color:transparent;
+			text-shadow:0 0 0 rgba(255,255,255,1);
+
+			-webkit-animation:'see-me' 8s ease 0s 1 normal, 'see-me-2' 2s ease 13s 1 normal; 
+			-webkit-animation-fill-mode: forwards;
+
+			-moz-animation:see-me 8s ease 0s 1 normal, see-me-2 2s ease 13s 1 normal; 
+			-moz-animation-fill-mode: forwards;
+			}
+			.csstransforms3d.cssanimations .moo-activity .slogan-1 p:last-child{
+				color:transparent;
+				text-shadow:0 0 0 rgba(255,255,255,0);
+				-webkit-animation:'see-me' 1s ease 8s 1 normal, 'see-me-2' 2s ease 13s 1 normal; 
+				-webkit-animation-fill-mode: forwards;
+
+				-moz-animation:see-me 1s ease 8s 1 normal, see-me-2 2s ease 13s 1 normal; 
+				-moz-animation-fill-mode: forwards;
+				}
+	.moo-activity .slogan-2{
+		
+		font:48px/48px 'AbelRegular', sans-serif;
+		width:141px;
+		height:120px;
+		position: absolute;
+		top:50%;
+		left:50%;
+		margin:-60px 0 0 -70px;
+
+		}
+		.moo-activity .slogan-2 strong{
+			font:72px/72px 'AbelRegular', sans-serif;
+			display:block;
+			}
+		.csstransforms3d.cssanimations .moo-activity .slogan-2{
+			color:transparent;
+			text-shadow:0 0 0 rgba(255,255,255,0);
+			width:540px;
+			height:240px;
+			margin:-240px 0 0 -270px;
+			font:120px/120px 'AbelRegular', sans-serif;
+			-webkit-transform-origin:50% 100%;
+			-webkit-transform:rotateX(-90deg) translateY(-40px) rotateY(-90deg) scale(.55);
+
+			-moz-transform-origin:50% 100%;
+			-moz-transform:rotateX(-90deg) translateY(-40px) rotateY(-90deg) scale(.55);
+
+			-webkit-animation:'see-me' 2s linear 13s 1 normal;
+			-webkit-animation-fill-mode: forwards;
+
+			-moz-animation:see-me 2s linear 13s 1 normal;
+			-moz-animation-fill-mode: forwards;
+			}
+			.csstransforms3d.cssanimations .moo-activity .slogan-2 strong{
+				font:170px/170px 'AbelRegular', sans-serif;
+				}
+		.no-csstransforms3d  .moo-activity .slogan-2{
+			z-index:1;
+			margin-top:-80px;
+			color:#fff;
+			opacity:0;
+			-webkit-transition:all .5s ease;
+			-moz-transition:all .5s ease;
+			-ms-transition:all .5s ease;
+			-o-transition:all .5s ease;
+			transition:all .5s ease;
+			}
+			.no-csstransforms3d  .moo-activity:hover .slogan-2{
+				z-index:1;
+				margin-top:-80px;
+				opacity:1;
+				}
+
+
+
+
+
+
+
+.moo-activity-hidden-ware{
+	visibility:hidden;
+	width:460px;
+	height:259px;
+	display:block;
+	position: absolute;
+	top:50%;
+	left:50%;
+	margin:-125px 0 0 -230px;
+	}
+
+body .moo-activity-ware{
+	visibility:visible;
+	width:460px;
+	height:259px;
+	display:block;
+	position: absolute;
+	top:50%;
+	left:50%;
+	margin:-125px 0 0 -230px;
+
+	color:#fff;
+	
+	text-transform:uppercase;
+	text-align:center;
+
+	text-decoration:none;
+	overflow:visible;
+
+	z-index:1000;
+	zoom:1;
+
+	line-height:0;
+	font-size:0;
+
+	border:1px solid #f00;
+	}
+	.no-csstransforms3d .moo-activity-ware .inner-wrapper,
+	.no-csstransforms3d .moo-activity-ware .outer-wrapper{
+		width:460px;
+		height:259px;
+		display:block;
+		}
+	.csstransforms3d.cssanimations .moo-activity-ware .outer-wrapper{
+		z-index:1002;
+		position: relative;
+		zoom:1;
+		width:460px;
+		height:259px;
+		display:block;
+		position: absolute;
+		top:50%;
+		left:50%;
+		margin:-125px 0 0 -230px;
+
+		-webkit-transform-style:preserve-3d;
+	    -moz-transform-style:preserve-3d;
+	    -o-transform-style:preserve-3d;
+	    transform-style:preserve-3d;
+
+		-webkit-perspective-origin:50% 50%;
+		-moz-perspective-origin:50% 50%;
+		-o-perspective-origin:50% 50%;
+		perspective-origin:50% 50%;
+
+		-webkit-perspective:900px;
+		-moz-perspective:900px;
+		-o-perspective:900px;
+		perspective:900px;
+		}
+	.csstransforms3d.cssanimations .moo-activity-ware .inner-wrapper{
+		-webkit-transform-style:preserve-3d;
+		-moz-transform-style:preserve-3d;
+		-o-transform-style:preserve-3d;
+		transform-style:preserve-3d;
+
+		-webkit-perspective-origin:50% 50%;
+		-moz-perspective-origin:50% 50%;
+		-o-perspective-origin:50% 50%;
+		perspective-origin:50% 50%;
+
+		-webkit-perspective:900px;
+		-moz-perspective:900px;
+		-o-perspective:900px;
+		perspective:900px;
+		
+		position:absolute;
+		top:0;
+		left:0;
+
+		width:460px;
+		height:259px;
+
+		-webkit-animation:'turnaround-part-1' 6s ease-out 0s 1 normal, 'turnaround-part-2' 2s ease-in-out 13s 1 normal; 
+		-webkit-animation-fill-mode: forwards;
+		-webkit-transform-origin:50% 50%;
+
+		-moz-animation: turnaround-part-1 6s ease-out 0s 1 normal, turnaround-part-2 2s ease-in-out 13s 1 normal;
+		-moz-animation-fill-mode: forwards;
+		-moz-transform-origin:50% 50%;
+
+		
+		border:1px solid #f00;
+		}
+	.csstransforms3d.cssanimations .moo-activity-ware .bg{
+		position:absolute;
+		top:50%;
+		left:50%;
+		width:1340px;
+		height:1340px;
+		margin:-670px 0 0 -670px;
+		display:block;
+		
+		background-color: rgba(0,90,0,.1);
+		border:1px solid #0f0;
+		}
+	.moo-activity-ware .bg{
+		position:absolute;
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		display:block;
+		background-color: rgba(0,90,0,.1);
+		border:1px solid #0f0;
+		}
+	.moo-activity-ware .slogan-1{
+		
+		width:270px;
+		height:160px;
+		position: absolute;
+		top:50%;
+		left:50%;
+		margin:-160px 0 0 -135px;
+		font:24px/32px 'AbelRegular', sans-serif;
+		white-space:nowrap;
+
+		background-color: rgba(0,0,255,.5);
+		border:1px solid #00f;
+
+		}
+		.no-csstransforms3d  .moo-activity-ware .slogan-1{
+			z-index:1;
+			margin-top:-80px;
+			}
+			.no-csstransforms3d  .moo-activity-ware:hover .slogan-1{
+				z-index:1;
+				margin-top:-80px;
+				opacity:0
+				}
+		.csstransforms3d.cssanimations .moo-activity-ware .slogan-1{
+			-webkit-transform-origin:50% 100%;
+			-webkit-transform:rotateX(-90deg) translateZ(20px) scale(.55);
+
+			-moz-transform-origin:50% 100%;
+			-moz-transform:rotateX(-90deg) translateZ(20px) scale(.55);
+
+			width:540px;
+			height:320px;
+			margin:-320px 0 0 -270px;
+			font:48px/48px 'AbelRegular', sans-serif;
+
+			background-color: rgba(0,0,255,.1);
+			border-color:#00f;
+			}
+		.csstransforms3d.cssanimations .moo-activity-ware .slogan-1 p:first-child{
+			color:transparent;
+			text-shadow:0 0 0 rgba(255,255,255,1);
+
+			-webkit-animation:'see-me' 8s ease 0s 1 normal, 'see-me-2' 2s ease 13s 1 normal; 
+			-webkit-animation-fill-mode: forwards;
+
+			-moz-animation:see-me 8s ease 0s 1 normal, see-me-2 2s ease 13s 1 normal; 
+			-moz-animation-fill-mode: forwards;
+			}
+			.csstransforms3d.cssanimations .moo-activity-ware .slogan-1 p:last-child{
+				color:transparent;
+				text-shadow:0 0 0 rgba(255,255,255,0);
+				-webkit-animation:'see-me' 1s ease 8s 1 normal, 'see-me-2' 2s ease 13s 1 normal; 
+				-webkit-animation-fill-mode: forwards;
+
+				-moz-animation:see-me 1s ease 8s 1 normal, see-me-2 2s ease 13s 1 normal; 
+				-moz-animation-fill-mode: forwards;
+				}
+	.moo-activity-ware .slogan-2{
+		
+		font:48px/48px 'AbelRegular', sans-serif;
+		width:141px;
+		height:120px;
+		position: absolute;
+		top:50%;
+		left:50%;
+		margin:-60px 0 0 -70px;
+
+
+		background-color: rgba(255,0,255,.1);
+		border:1px solid #f0f;
+		}
+		.moo-activity-ware .slogan-2 strong{
+			font:72px/72px 'AbelRegular', sans-serif;
+			display:block;
+			}
+		.csstransforms3d.cssanimations .moo-activity-ware .slogan-2{
+			color:transparent;
+			text-shadow:0 0 0 rgba(255,255,255,0);
+			width:540px;
+			height:240px;
+			margin:-240px 0 0 -270px;
+			font:120px/120px 'AbelRegular', sans-serif;
+			-webkit-transform-origin:50% 100%;
+			-webkit-transform:rotateX(-90deg) translateY(-40px) rotateY(-90deg) scale(.55);
+
+			-moz-transform-origin:50% 100%;
+			-moz-transform:rotateX(-90deg) translateY(-40px) rotateY(-90deg) scale(.55);
+
+			-webkit-animation:'see-me' 2s linear 13s 1 normal;
+			-webkit-animation-fill-mode: forwards;
+
+			-moz-animation:see-me 2s linear 13s 1 normal;
+			-moz-animation-fill-mode: forwards;
+			}
+			.csstransforms3d.cssanimations .moo-activity .slogan-2 strong{
+				font:170px/170px 'AbelRegular', sans-serif;
+				}
+		.no-csstransforms3d  .moo-activity-ware .slogan-2{
+			z-index:1;
+			margin-top:-80px;
+			color:#fff;
+			opacity:0;
+			}
+			.no-csstransforms3d  .moo-activity-ware:hover .slogan-2{
+				z-index:1;
+				margin-top:-80px;
+				opacity:1;
+				}

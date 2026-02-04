@@ -1,0 +1,58 @@
+.advertisement-links-widget{
+  margin:0 0 0;
+  position:relative;
+  top:15px;
+  zoom:1;
+  }
+  .advertisement-links-widget .advertisement-group{
+    margin:0 0 0 7px;
+    top:-4px;
+    left:4px;
+    position:relative;
+    display:inline;
+    zoom:1;
+    float:left;
+    background-color:#e2e2e2;
+    border:4px solid #e2e2e2;
+    }
+  .advertisement-links-widget aside{
+    float:left;
+    min-height:100px;
+    background-color:#FFF;
+    margin:0 0 0 15px;
+    display:inline;
+    zoom:1;
+    }
+    .advertisement-links-widget aside a{
+      display:block;
+      overflow:hidden;
+      padding:10px;
+      width:214px;
+      }
+    .advertisement-links-widget aside .illustration{
+      float:left;
+      margin:0 10px 0 0;
+      }
+    .advertisement-links-widget aside .abstract{
+      overflow:hidden;
+      font:12px/16px 'PT Sans',Arial,sans-serif;
+      }
+    .advertisement-links-widget aside:first-child{
+      margin:0;
+      }
+    * html .advertisement-links-widget aside{
+      zoom:1;
+      margin-left:expression(function(t) {
+  					if(t.previousSibling==null){
+  						t.runtimeStyle.marginLeft = "0";
+  						}
+  					}(this));
+          }
+    *+html .advertisement-links-widget aside{
+      zoom:1;
+      margin-left:expression(function(t) {
+  					if(t.previousSibling==null){
+  						t.runtimeStyle.marginLeft = "0";
+  						}
+  					}(this));
+          }

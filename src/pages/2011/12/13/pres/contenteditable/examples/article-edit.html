@@ -1,0 +1,760 @@
+<!DOCTYPE HTML>
+<html lang="ru-RU" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+  <meta charset="UTF-8">
+  <title>Статья | ZN.UA</title>
+
+  <!--[if lt IE 9]>
+  <script src="../js/html5.js"></script>
+  <![endif]-->
+
+  <!--Стили-->
+  <link rel="stylesheet" href="css/common.css" media="screen,projection,print" />
+  <link rel="stylesheet" href="css/print.css" media="print" />
+
+  <!--JQuery-->
+  <script type="text/javascript" src="../js/jquery.js"></script>
+
+  <!--Определение наличия css свойств-->
+  <script type="text/javascript" src="js/modernizr.js"></script>
+
+  <!--После того как в IE загрузятся все элементы и сдвинут другие элементы страницу надо перерисовать-->
+  <!--[if lt IE 8]>
+  <script src="js/ie-refresh.js"></script>
+  <![endif]-->
+
+  <!--Меню контроллера-->
+  <script type="text/javascript" src="js/menuController.js"></script>
+  <!--Позиционирование тегов-->
+  <script type="text/javascript" src="js/tagsController.js"></script>
+  <!--Аккордион-->
+  <script type="text/javascript" src="js/accordionController.js"></script>
+
+ 	<script type="text/javascript">
+		(function (global) {
+
+			function adminController() {
+				$(".editor-navigation .iAmEditor").click($.proxy(this.editMode,this));
+				$(".editor-navigation .iAmUser").click($.proxy(this.userMode,this));
+
+				$(".text-editor .bold").click($.proxy(this.makeBold,this));
+				$(".text-editor .italic").click($.proxy(this.makeItalic,this));
+				$(".text-editor li.save").click($.proxy(this.userMode,this));
+				$(".may-not-be-edited").attr("contenteditable","false");
+			}
+
+			adminController.prototype.save = function(event) {
+				event.preventDefault();
+
+			}
+
+			adminController.prototype.makeBold = function(event) {
+				event.preventDefault();
+
+			}
+
+			adminController.prototype.makeItalic = function(event) {
+				event.preventDefault();
+
+			}
+
+			adminController.prototype.userMode = function(event) {
+				event.preventDefault();
+				$("body").removeClass("editor-mode");
+				$(".editor-navigation .iAmEditor").show();
+				$(".editor-navigation .iAmUser").hide();
+				$(".may-be-edited").attr("contenteditable","false");
+				$(".text-editor").hide();
+			};
+
+			adminController.prototype.editMode = function(event) {
+				event.preventDefault();
+				$("body").addClass("editor-mode");
+				$(".editor-navigation .iAmEditor").hide();
+				$(".editor-navigation .iAmUser").show();
+				$(".may-be-edited").attr("contenteditable","true");
+				$(".text-editor").show();
+			};
+
+			function onDOMReady(){
+				global.adminController = new adminController();
+			}
+
+			$(document).ready(onDOMReady);
+
+		})(this);
+	</script>
+
+	<style type="text/css">
+		*{
+			outline:none;
+			}
+		.text-editor{
+			display:none;
+			position:fixed;
+			top:100px;
+			right:20px;
+			z-index:1000;
+			background-image: linear-gradient(bottom, rgb(212,212,212) 6%, rgb(240,240,240) 53%);
+			background-image: -o-linear-gradient(bottom, rgb(212,212,212) 6%, rgb(240,240,240) 53%);
+			background-image: -moz-linear-gradient(bottom, rgb(212,212,212) 6%, rgb(240,240,240) 53%);
+			background-image: -webkit-linear-gradient(bottom, rgb(212,212,212) 6%, rgb(240,240,240) 53%);
+			background-image: -ms-linear-gradient(bottom, rgb(212,212,212) 6%, rgb(240,240,240) 53%);
+
+			background-image: -webkit-gradient(
+				linear,
+				left bottom,
+				left top,
+				color-stop(0.06, rgb(212,212,212)),
+				color-stop(0.53, rgb(240,240,240))
+			);
+
+			background-color:#aaa;
+			padding:10px 0 10px 10px;
+			box-shadow:0 0 15px 0 rgba(0,0,0,0.4);
+			border-radius:5px;
+			}
+
+		.text-editor li{
+			float:left;
+			display:block;
+			width:20px;
+			height:20px;
+			margin:0 10px 0 0;
+			text-align:center;
+			line-height:20px;
+			text-shadow:1px 1px 0 #fff;
+			font-size:16px;
+			border:1px solid #bbb;
+			border-radius:5px;
+			box-shadow:inset 0 1px 0 0 #fff;
+			cursor:pointer;
+			opacity:0.5;
+			}
+			.text-editor li:hover{
+				opacity:1;
+				}
+			.text-editor li.italic{
+				font-style:italic;
+				}
+			.text-editor li.quote{
+				background:url("../spoiler/quote.png") 50% 50% no-repeat;
+				background-size:20px 20px;
+				}
+			.text-editor li.img{
+				background:url("../spoiler/img.png") 50% 50% no-repeat;
+				}
+			.text-editor li.save{
+				background:url("../spoiler/save.png") 50% 50% no-repeat;
+				}
+		.editor-navigation{
+			display:block;
+			position:fixed;
+			top:20px;
+			right:20px;
+			z-index:1000;
+			background-image: linear-gradient(bottom, rgb(212,212,212) 6%, rgb(240,240,240) 53%);
+			background-image: -o-linear-gradient(bottom, rgb(212,212,212) 6%, rgb(240,240,240) 53%);
+			background-image: -moz-linear-gradient(bottom, rgb(212,212,212) 6%, rgb(240,240,240) 53%);
+			background-image: -webkit-linear-gradient(bottom, rgb(212,212,212) 6%, rgb(240,240,240) 53%);
+			background-image: -ms-linear-gradient(bottom, rgb(212,212,212) 6%, rgb(240,240,240) 53%);
+
+			background-image: -webkit-gradient(
+				linear,
+				left bottom,
+				left top,
+				color-stop(0.06, rgb(212,212,212)),
+				color-stop(0.53, rgb(240,240,240))
+			);
+
+			background-color:#aaa;
+			padding:20px 0 20px 20px;
+			box-shadow:0 0 15px 0 rgba(0,0,0,0.4);
+			border-radius:5px;
+			}
+			.editor-navigation li{
+				display:block;
+				float:left;
+				line-height:20px;
+				}
+			.editor-navigation .iAmUser{
+				display:none;
+				}
+				.editor-navigation li a{
+					color:#000;
+					text-shadow:1px 1px 0 #fff;
+					text-transform:uppercase;
+					margin:0 20px 0 0;
+					display:block;
+					opacity:0.5;
+					-webkit-transition:all .15s ease-in;
+					}
+					.editor-navigation li a:hover{
+						opacity:1;
+						}
+
+		.add-block{
+			overflow:hidden;
+			height:0;
+			margin:20px 0;
+			padding:0;
+			line-height:40px;
+			border:0 dotted #fff;
+			display:block;
+			text-align:center;
+			text-transform:uppercase;
+			font-size:24px;
+			color:#000;
+			background-color:#caffda;
+			-webkit-transition:all .25s ease-in;
+			}
+
+		.editor-mode .tag-widget li a:after{
+			content:" ✕";
+			color:#f00;
+			}
+
+		.editor-mode .article-widget .article-text figure,
+		.editor-mode .article-widget .article-text blockquote,
+		.editor-mode .footnote-widget{
+			position:relative;
+			-webkit-transition:all .25s ease-in;
+			cursor:pointer;
+			}
+			.editor-mode .article-widget .article-text figure:hover:after,
+			.editor-mode .article-widget .article-text blockquote:hover:after,
+			.editor-mode .footnote-widget:hover:after{
+				opacity:1;
+				-webkit-transition:all .25s ease-in;
+				}
+			.editor-mode .article-widget .article-text figure:after,
+			.editor-mode .article-widget .article-text blockquote:after,
+			.editor-mode .footnote-widget:after{
+				-webkit-transition:all .25s ease-in;
+				position:absolute;
+				content:"✕";
+				text-indent:-9000px;
+				text-align:center;
+				display:block;
+				opacity:0.4;
+				top:0;
+				bottom:0;
+				left:0;
+				right:0;
+				background:rgba(255,255,255,0.8) url("../spoiler/delete.png") 50% 50% no-repeat;
+				}
+
+		.editor-mode .may-be-edited{
+			background-color:#d3d7e6;
+			}
+		.editor-mode .may-not-be-edited{
+			background-color:#FFF;
+			}
+		.editor-mode .add-block{
+			height:auto;
+			margin:20px 0;
+			padding:10px;
+			line-height:20px;
+			border:1px dotted #000;
+			display:block;
+			text-align:center;
+			text-transform:uppercase;
+			font-size:18px;
+			color:#000;
+			background-color:rgba(0,255,0,0.05);
+			-webkit-transition:all .25s ease-in;
+			}
+			.editor-mode .add-block:hover{
+				background-color:rgba(0,255,0,0.2);
+				}
+			.editor-mode .add-block:before{
+				content:"+ ";
+				}
+	</style>
+
+</head>
+<body class="online lang-ru">
+  <div id="fb-root"></div>
+  <section class="site">
+    <header>
+      <aside class="advertisement-widget">
+        <a href="#">
+        <img src="spoiler/banner1.jpg" alt="Баннер 981x111" />
+        </a>
+      </aside>
+      <div class="wrapper">
+        <div class="only-for-print print-logotype">
+          <img src="img/logotype-print.png" alt="Логотип" />
+          Зеркало недели.<br/>
+          Украина
+        </div>
+        <a href="http://zn.ua/">
+          <h1 class="logotype">ZN.UA</h1>
+        </a>
+        <ul class="language">
+          <li class="selected">По-русски</li>
+          <li><a href="#">Українською</a></li>
+        </ul>
+        <a href="http://znaki.fm/" class="znaki-fm">znaki.fm</a>
+        <nav>
+          <div class="nav-wrapper">
+            <ul class="section-widget">
+              <li class="selected"><a href="#">Новости</a></li>
+              <li><a href="#">Газета</a></li>
+              <li><a href="#">Журнал</a></li>
+              <li><a href="#">Сфера</a></li>
+            </ul>
+            <ul class="subsection-widget">
+              <li><a href="#">Политика</a></li>
+              <li><a href="#">Экономика</a></li>
+              <li><a href="#">Культура</a></li>
+              <li><a href="#">Cоциум</a></li>
+              <li><a href="#">Наука</a></li>
+              <li><a href="#">Технологии</a></li>
+              <li><a href="#">Здоровье</a></li>
+              <li><a href="#">Спорт</a></li><li><a href="#">Политика</a></li>
+              <li><a href="#">Экономика</a></li>
+              <li><a href="#">Культура</a></li>
+              <li><a href="#">Cоциум</a></li>
+              <li><a href="#">Наука</a></li>
+              <li><a href="#">Технологии</a></li>
+              <li><a href="#">Здоровье</a></li>
+              <li><a href="#">Спорт</a></li><li><a href="#">Политика</a></li>
+              <li><a href="#">Экономика</a></li>
+              <li><a href="#">Культура</a></li>
+              <li><a href="#">Cоциум</a></li>
+              <li><a href="#">Наука</a></li>
+              <li><a href="#">Технологии</a></li>
+              <li><a href="#">Здоровье</a></li>
+              <li><a href="#">Спорт</a></li><li><a href="#">Политика</a></li>
+              <li><a href="#">Экономика</a></li>
+              <li><a href="#">Культура</a></li>
+              <li><a href="#">Cоциум</a></li>
+              <li><a href="#">Наука</a></li>
+              <li><a href="#">Технологии</a></li>
+              <li><a href="#">Здоровье</a></li>
+              <li><a href="#">Спорт</a></li>
+            </ul>
+          </div>
+        </nav>
+        <form action="/search/" method="GET" class="brief-search-widget">
+          <fieldset>
+            <label for="brief-search-widget-keyword">Ключевые слова:</label>
+            <input type="text" name="keyword" id="brief-search-widget-keyword" />
+            <button>Искать</button>
+          </fieldset>
+        </form>
+      </div>
+      <script type="text/javascript">
+        window.menuController.init();
+      </script>
+    </header>
+    <section class="content">
+      <!--Основной контент сайта start-->
+
+      <div class="vertical-wrapper column-12">
+        <div class="horizontal-wrapper column-8-wide">
+
+          <ul class="article-tab-widget">
+            <li><span class="selected">Статья</span></li>
+            <li><a href="#">Комментарии <b class="count">50</b></a></li>
+            <li class="multimedia"><a href="#">Мультимедиа</a></li>
+          </ul>
+
+          <section class="article-widget">
+            <header>
+              <h2 class="title may-be-edited">Критичные режимы Украинской ГТС</h2>
+              <p class="author may-be-edited">Джереми Кларксон</p>
+              <p class="time-information"><time pubdate datetime="2010-03-15T15:29">15.03.2010, 15:29</time>, обновлено 16:10</p>
+            </header>
+
+
+            <figure>
+              <img src="spoiler/article-top.jpg" alt="заглавное изображение" />
+              <figcaption class="may-be-edited">Вентиль газотранспортной системы почему-то указывает на восток.  <b class="source">Источник 1, <a href="#" class="source">Источник 2 (ссылка)</a></b></figcaption>
+            </figure>
+
+            <div class="vertical-wrapper">
+              <div class="horizontal-wrapper column-2">
+
+                <blockquote class="blockquote-widget may-be-edited">
+                  <p>«Добрыня плюнул на Россию и в Милане чинит газ.
+                  Алеша, даром, что Попович, продал весь иконостас.»</p>
+
+                  <b class="author">Борис Гребенщиков</b>
+                  <cite>«Древнерусская тоска»</cite>
+                </blockquote>
+
+				<a href="#" class="add-block">Цитата</a>
+
+                <aside class="related-widget">
+                  <h2 class="title">По теме</h2>
+
+                  <article class="press-release">
+                    <a href="#" class="abstract">
+                      <p>Патриарх Кирилл будет посещать Украину ежегодно</p>
+                      <time pubdate datetime="1996-01-01">14:22</time>
+                    </a>
+                  </article>
+                  <article>
+                    <a href="#" class="abstract">
+                      <p>Госпредпринимательства инициирует запрет на интерактивные азартные игры</p>
+                      <time pubdate datetime="1996-01-01">14:22</time>
+                    </a>
+                  </article>
+                  <article>
+                    <a href="#" class="abstract">
+                      <p>В СМИ попали тысячи секретных документов о войне в Афганистане</p>
+                      <time pubdate datetime="1996-01-01">14:22</time>
+                    </a>
+                  </article>
+                  <article class="advertisement">
+                    <a href="#" class="abstract">
+                      <p>Синод Русской церкви рассматривает проблему церковного раскола в Украине</p>
+                      <time pubdate datetime="1996-01-01">14:22</time>
+                    </a>
+                  </article>
+                  <article class="important">
+                    <a href="#" class="abstract">
+                      <p>Госкомпредпринимательства предлагает передавать лицензии по наследству</p>
+                      <time pubdate datetime="1996-01-01">14:22</time>
+                    </a>
+                  </article>
+                  <article class="exclusive">
+                    <a href="#" class="abstract">
+                      <p>СМИ: Правительство готовится к продаже нецелевых земель Минобороны</p>
+                      <time pubdate datetime="1996-01-01">14:22</time>
+                    </a>
+                  </article>
+
+                </aside>
+
+              </div>
+              <div class="horizontal-wrapper column-6">
+
+                <div class="article-text may-be-edited">
+                  <p>У летнего газового кризиса в российско-белорусских отношениях есть важный индикатор — перекрытие газовой заслонки перестало быть исключительно новогодним явлением. </p>
+
+                  <p>«<a href="#">Газпром</a>» формирует у своих потребителей условный рефлекс к готовности в любое время ограничить, а то и вообще прекратить поставки газа. Изучает реакцию и противодействие вероятных противников в кризисных ситуациях. Тщательно мониторит и анализирует поведение и алгоритмы действий Европейской комиссии. <u>По сути</u>, отрабатывает и отшлифовывает программу «газовых войн». Российский монополист готовится к времени «Ч» — доминированию на газовом рынке Европы, несмотря на кардинальные изменения, происходящие на мировом газовом рынке.</p>
+
+                  <figure class="column-3 may-not-be-edited">
+                    <img src="spoiler/illustration.jpg" alt="Иллюстрация" />
+                    <figcaption>Как газ попадает из недр Земли в конфорку европейца</figcaption>
+                  </figure>
+
+                  <p>Расширение ниши <a href="#">сланцевого газа</a> в <strong>Северной Америке</strong> вызывает эффект домино через сжиженный газ на рынке Евросоюза, где доля трубопроводных поставок из России сокращается. Вероятно, что нынешнее десятилетие станет периодом трансформации трубопроводных газовых потоков на <b>линии Восток—Запад</b>, сформировавшихся с 70-х годов прошлого века. Для Украины
+                  как транзитной страны важно
+                  почувствовать тенденции, сделать
+                  выводы и принять меры по сохранению
+                  транзитного статуса или его
+                  трансформации. Позитивным является
+                  тот факт, что руководство правительства
+                  наконец осознало: <s>сохранение</s>
+                  транзитных объемов зависит не только
+                  и не столько от «Газпрома», а прежде
+                  всего от готовности потребителей в
+                  Европе покупать газ именно у
+                  российского монополиста. «На длительный период, скажем, на десять лет, Европа должна дать гарантии России, что будет покупать у нее газ, а Россия должна дать <del>гарантии</del> нам, что будет перекачивать эти объемы газа по нашей газотранспортной системе, а не строить обходные транспортные пути», — заявил <a href="#">Н.Азаров</a> 16 июня.</p>
+
+
+                  <h3 class="title">Глубина процессов</h3>
+                  <p>Но есть ли понимание глубины процессов, <i>происходящих на газовом рынке Европы</i>, есть ли осознание вызовов и угроз, которые несет безоглядная ориентация на «Газпром» как эксклюзивного партнера? Особенно на фоне последнего российско-белорусского газового спора и активного желания РФ продолжать реализацию «Южного потока» вопреки готовности украинской стороны к максимальной уступчивости «Газпрому».</p>
+
+                  <blockquote class="column-3 may-not-be-edited">
+                    <p>Россия должна дать гарантии нам, что не будет строить обходные транспортные пути</p>
+                    <cite>Премьер-министр Украины</cite>
+                    <span class="source">Николай Азаров</span>
+                  </blockquote>
+
+                  <p>Следует обратить внимание, что реализация Россией обоих «потоков» приведет к увеличению профицитности экспортной трубопроводной инфраструктуры, ее избыточности и затратности, что порождает сомнения в достаточной экономической обоснованности проектов. Это содержит потенциальную угрозу для рынков, прежде всего тех, которые
+                  не имеют диверсификации источников
+                  получения энергоресурсов.</p>
+
+                  <p>Следует обратить внимание, что реализация Россией обоих «потоков» приведет к увеличению профицитности экспортной трубопроводной инфраструктуры, ее избыточности и затратности, что порождает сомнения в достаточной экономической обоснованности проектов. Это содержит потенциальную угрозу для рынков, прежде всего тех, которые
+                  не имеют диверсификации источников
+                  получения энергоресурсов.</p>
+
+                  <p>Следует обратить внимание, что реализация Россией обоих «потоков» приведет к увеличению профицитности экспортной трубопроводной инфраструктуры, ее избыточности и затратности, что порождает сомнения в достаточной экономической обоснованности проектов. Это содержит потенциальную угрозу для рынков, прежде всего тех, которые
+                  не имеют диверсификации источников
+                  получения энергоресурсов.</p>
+
+                  <p>Следует обратить внимание, что реализация Россией обоих «потоков» приведет к увеличению профицитности экспортной трубопроводной инфраструктуры, ее избыточности и затратности, что порождает сомнения в достаточной экономической обоснованности проектов. Это содержит потенциальную угрозу для рынков, прежде всего тех, которые
+                  не имеют диверсификации источников
+                  получения энергоресурсов.</p>
+
+                  <p>Наличие инфраструктуры с избыточным
+                  профицитом мощности означает
+                  возможность манипуляций. По данным
+                  Международного энергетического
+                  агентства (МЭА), в мире наблюдается
+                  тенденция к росту избытка мощностей инфраструктуры транспортировки газа. Если в докризисном 2007 году избыток составлял 12%, то прогноз на 2015-й — 27%. Можно прийти к выводу, что в значительной мере этот профицит создается в РФ. Для чего? Попробуем разобраться глубже.</p>
+
+                  <p>До сегодняшнего дня макропонимание угроз, связанных с манипулированием энергоресурсными потоками, было у ликвидированных недавно исследовательских центров СНБО Украины — Института проблем национальной безопасности и Национального института проблем международной безопасности. А о технических и технологических аспектах критичных режимов работы ГТС Украины, которые неизбежно возникнут при этом, согласны говорить лишь немногочисленные газовики из тех, кто сохранил профессиональную честь и достоинство, не променяв их на «фирташки». Для нынешней власти в Украине, олицетворяющей сплав хватательно-грабительских инстинктов, невежества и пресмыкательства перед «Газпромом», более актуален и приоритетен, конечно же, вопрос. <img src="img/article-end.png" alt="Конец статьи" class="article-end" /> <span class="source">Источник: Reuters, <a href="#">BBS</a></span>
+                  </p>
+
+                  <p class="only-for-print article-url">Адрес материала: http://www.zn.ua/newspaper/articles/020203</p>
+                </div>
+
+                <div class="social-widget">
+                  <div class="entry">
+                    <a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="zn_ua" data-lang="ru">Твитнуть</a>
+                  </div>
+                  <div class="entry">
+                  </div>
+                  <div class="entry">
+                    <g:plusone></g:plusone>
+                  </div>
+                  <div class="entry">
+                    <fb:like href="http://zn.ua/" send="true" width="480" show_faces="true" action="like" font="arial"></fb:like>
+                  </div>
+                </div>
+
+                <aside class="advertisement-widget banner-485">
+                  <h2 class="title">Реклама</h2>
+                  <a href="#">
+                    <img src="spoiler/banner3.jpg" alt="Баннер" />
+                  </a>
+                </aside>
+
+                <div class="tag-widget">
+                  <h2 class="title">Тэги</h2>
+                  <ul>
+                    <li><a href="#">Украина</a></li>
+                    <li><a href="#">Россия</a></li>
+                    <li><a href="#">Газовый конфликт</a></li>
+                    <li><a href="#">Пикачу</a></li>
+                  </ul>
+					<a href="#" class="add-block">Тэг</a>
+                </div>
+                <script type="text/javascript"><!--
+                  window.tagsController.init();
+                --></script>
+
+                <article class="footnote-widget">
+                  <img src="spoiler/illustration3.jpg" class="illustration" alt="иллюстрация" />
+                  <div class="abstract">
+                    <h3 class="title">ОАО «Газпром»</h3> — одна из крупнейших энергетических компаний в мире. Основными направлениями ее деятельности являются геологоразведка, добыча, транспортировка, хранение, переработка и реализация углеводородов, а также производство и сбыт электрической и тепловой энергии.
+                  </div>
+                </article>
+
+                <article class="footnote-widget">
+                  <a href="#"><img src="spoiler/illustration2.jpg" class="illustration" alt="иллюстрация" /></a>
+                  <div class="abstract">
+                    <hgroup>
+                      <h3 class="title">Николай Азаров</h3>
+                      <h4 class="subtitle">Премьер-министр Украины, глава Партии регионов</h4>
+                    </hgroup>
+
+                    <p>Родился в Калуге (Россия). В 1971 году окончил Московский госуниверситет им.М.Ломоносова по специальности "геолог-геофизик". Доктор геолого-минералогических наук (1986), профессор (1991), член-корреспондент НАН Украины (1997). </p>
+                    <a href="#" class="show-more">Читать дальше в «Энциклопедии»</a>
+                  </div>
+                </article>
+
+				<a href="#" class="add-block">Связанный материал</a>
+
+              </div>
+            </div>
+
+            <form action="/comment/" method="post" class="comment-form-widget">
+              <fieldset>
+                <label for="comment-form-widget-message">Комментировать</label>
+                <a href="#" class="show-more">Читать комментарии</a>
+                <textarea name="message" id="comment-form-widget-message" cols="30" rows="10"></textarea>
+                <button><span class="button-type-1">Отправить</span></button>
+              </fieldset>
+            </form>
+
+          </section>
+
+        </div>
+        <div class="horizontal-wrapper column-4-short">
+
+          <aside class="advertisement-widget banner-300 top-element">
+            <h2 class="title">Реклама</h2>
+            <a href="#">
+              <img src="spoiler/banner2.jpg" alt="Баннер" />
+            </a>
+          </aside>
+
+          <div class="accordion-widget">
+            <h2 class="title"><a href="#">Последнее</a></h2>
+            <div class="last-news-widget container">
+              <article class="press-release">
+                <a href="#" class="abstract">
+                  <p>Патриарх Кирилл будет посещать Украину ежегодно</p>
+                  <time pubdate datetime="1996-01-01">14:22</time>
+                </a>
+              </article>
+              <article>
+                <a href="#" class="abstract">
+                  <p>Госпредпринимательства инициирует запрет на интерактивные азартные игры</p>
+                  <time pubdate datetime="1996-01-01">14:22</time>
+                </a>
+              </article>
+              <article>
+                <a href="#" class="abstract">
+                  <p>В СМИ попали тысячи секретных документов о войне в Афганистане</p>
+                  <time pubdate datetime="1996-01-01">14:22</time>
+                </a>
+              </article>
+              <article class="advertisement">
+                <a href="#" class="abstract">
+                  <p>Синод Русской церкви рассматривает проблему церковного раскола в Украине</p>
+                  <time pubdate datetime="1996-01-01">14:22</time>
+                </a>
+              </article>
+              <article class="important">
+                <a href="#" class="abstract">
+                  <p>Госкомпредпринимательства предлагает передавать лицензии по наследству</p>
+                  <time pubdate datetime="1996-01-01">14:22</time>
+                </a>
+              </article>
+              <article class="exclusive">
+                <a href="#" class="abstract">
+                  <p>СМИ: Правительство готовится к продаже нецелевых земель Минобороны</p>
+                  <time pubdate datetime="1996-01-01">14:22</time>
+                </a>
+              </article>
+              <a href="#" class="show-more">Все новости</a>
+            </div>
+            <h2 class="title"><a href="#">Рекомендуемое</a></h2>
+            <div class="container">
+
+            </div>
+          </div>
+          <script type="text/javascript">
+            window.accordionController.init();
+          </script>
+
+          <div class="author-widget">
+            <div class="information">
+              <a href="#"><img src="spoiler/author.jpg" alt="Автор" /><p>автор <span class="name">Джереми</span><span class="surname">Кларксон</span></p></a>
+              <a href="#" class="facebook"></a>
+              <a href="#" class="twitter"></a>
+            </div>
+            <div class="abstract">
+              <p>Английский телеведущий и журналист, специализирующийся на автомобильной тематике. Широко известен как ведущий шоу Top Gear. Автор еженедельных колонок для газет Sunday Times и Sun.</p>
+              <p>Английский телеведущий и журналист, специализирующийся на автомобильной тематике. Широко известен как ведущий шоу Top Gear. Автор еженедельных колонок для газет Sunday Times и Sun.</p>
+            </div>
+            <article class="press-release">
+              <a href="#" class="abstract">
+                <p>Патриарх Кирилл будет посещать Украину ежегодно</p>
+                <time pubdate datetime="1996-01-01">14:22</time>
+              </a>
+            </article>
+            <article>
+              <a href="#" class="abstract">
+                <p>Госпредпринимательства инициирует запрет на интерактивные азартные игры</p>
+                <time pubdate datetime="1996-01-01">14:22</time>
+              </a>
+            </article>
+            <article>
+              <a href="#" class="abstract">
+                <p>В СМИ попали тысячи секретных документов о войне в Афганистане</p>
+                <time pubdate datetime="1996-01-01">14:22</time>
+              </a>
+            </article>
+            <article class="advertisement">
+              <a href="#" class="abstract">
+                <p>Синод Русской церкви рассматривает проблему церковного раскола в Украине</p>
+                <time pubdate datetime="1996-01-01">14:22</time>
+              </a>
+            </article>
+            <article class="important">
+              <a href="#" class="abstract">
+                <p>Госкомпредпринимательства предлагает передавать лицензии по наследству</p>
+                <time pubdate datetime="1996-01-01">14:22</time>
+              </a>
+            </article>
+            <article class="exclusive">
+              <a href="#" class="abstract">
+                <p>СМИ: Правительство готовится к продаже нецелевых земель Минобороны</p>
+                <time pubdate datetime="1996-01-01">14:22</time>
+              </a>
+            </article>
+
+            <a href="#" class="show-more">Все материалы Джереми Кларксона</a>
+
+          </div>
+
+
+
+        </div>
+      </div>
+
+      <!--Основной контент сайта end-->
+    </section>
+
+    <div class="column-12 vertical-wrapper">
+      <section class="advertisement-links-widget">
+        <aside>
+          <a href="#">
+            <img src="spoiler/adv1.jpg" alt="иллюстрация" class="illustration" />
+            <div class="abstract">
+              <p>Незабываемая Прага 80 евро Экскурсии в Прагу. Доступные цены</p>
+            </div>
+          </a>
+        </aside>
+        <aside>
+          <a href="#">
+            <img src="spoiler/adv2.jpg" alt="иллюстрация" class="illustration" />
+            <div class="abstract">
+              <p>Мобильные новинки 2010 года</p>
+            </div>
+          </a>
+        </aside>
+        <div class="advertisement-group">
+          <aside>
+            <a href="#">
+              <img src="spoiler/adv3.jpg" alt="иллюстрация" class="illustration" />
+              <div class="abstract">
+                <p>Панды разбираются в еде лучше людей</p>
+              </div>
+            </a>
+          </aside>
+          <aside>
+            <a href="#">
+              <img src="spoiler/adv4.jpg" alt="иллюстрация" class="illustration" />
+              <div class="abstract">
+                <p>Это не гол, это шедевр! (видео)</p>
+              </div>
+            </a>
+          </aside>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <p class="copyright">
+        <b>&copy; 2010</b> <a href="http://zn.ua/" class="logotype"><img src="img/footer-logotype-print.png" alt="zn.ua" /></a> <span><b class="only-for-print">«Зеркало недели. Украина».&nbsp;</b>Все права защищены.</span>
+      </p>
+      <ul class="navigation-widget">
+        <li><a href="#">Редакция</a></li>
+        <li><a href="#">Отдел рекламы</a></li>
+        <li><a href="#">Контактная информация</a></li>
+      </ul>
+      <div class="counter-widget">
+        <a href="#"><img src="spoiler/button.jpg" alt="Счетчик 1" /></a>
+        <a href="#"><img src="spoiler/button2.jpg" alt="Счетчик 2" /></a>
+      </div>
+      <div class="policy">
+        <p>Использование материалов ZN.UA разрешается при условии ссылки (для интернет-изданий — гиперссылки) на ZN.UA.</p>
+        <p>Все материалы, размещенные на этом сайте со ссылкой на агентство «Интерфакс-Украина», не подлежат последующему воспроизведению и/или распространению в любой форме, кроме как с письменного разрешения агентства «Интерфакс-Украина».</p>
+      </div>
+    </footer>
+
+  </section>
+  <ul class="editor-navigation">
+	<li><a href="../index.html#27" class="back">&larr; Вернуться к слайдам</a></li>
+  	<li><a href="#" class="iAmEditor">Я редактор!</a></li>
+	<li><a href="#" class="iAmUser">Я пользователь!</a></li>
+  </ul>
+  <ul class="text-editor">
+  	<li class="bold">b</li>
+  	<li class="italic">i</li>
+	<li class="quote"></li>
+	<li class="img"></li>
+	<li class="save"></li>
+  </ul>
+</body>
+</html>

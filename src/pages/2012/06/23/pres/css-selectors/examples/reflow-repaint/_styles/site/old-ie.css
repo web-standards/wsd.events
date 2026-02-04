@@ -1,0 +1,53 @@
+/* The layout
+======================================== */
+
+/* The intro (the header) of the page
+---------------------------------------- */
+
+.intro {
+	background: #fff url('../../_images/design/intro-old-ie.png') 20px 76px scroll no-repeat;
+	}
+	.intro-title, .intro-supported {
+		position: static;
+		height: auto;
+		overflow: visible;
+		margin-left: 20px;
+		text-indent: 0;
+		}
+	.intro-title {
+		margin-top: 20px;
+		margin-bottom: .5em;
+		}
+
+
+
+/* Specific content blocks
+======================================== */
+
+/* The listed entry
+---------------------------------------- */
+.listed-entry {
+	zoom: 1;
+	}
+
+/* The listed announce
+---------------------------------------- */
+.listed-announce-header {
+	border-right: solid 1px #e6e6e6;
+	background: #f5f5f5;
+	}
+
+
+
+/* Specific service blocks (navigation menus, footers, etc.)
+======================================== */
+
+/* The main menu (the site navigation) and the year list
+---------------------------------------- */
+
+.menu a:hover, .yearlist a:hover {
+	background-color: #fff5cc;
+	}
+.menu-current, .menu-selected, .yearlist-current, .yearlist-selected {
+	background-color: #ccc;
+	}

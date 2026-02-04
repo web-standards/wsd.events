@@ -1,0 +1,354 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<title>Opera Show</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="s/screen.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="s/projection.css" media="projection">
+	<script type="text/javascript" src="j/jquery.js"></script>
+	<script type="text/javascript" src="j/script.js"></script>
+	<style type="text/css">
+		@media projection {
+			}
+	</style>
+</head>
+<body>
+	<section class="slide cover" id="Null">
+		<div class="content content-empty"></div>
+	</section>
+	<section class="slide cover" id="Welcome">
+		<div class="content">
+			<header class="title">
+				<h1>Веб-шрифты vs. Шрифты для веба</h1>
+			</header>
+			<p>Вадим Макеев, Opera</p>
+		</div>
+	</section>
+	<section class="slide" id="BorderRadius">
+		<div class="content content-empty">
+			<header class="title">
+				<h2>Будет</h2>
+			</header>
+		</div>
+		<img src="p/br.png" alt="" class="background">
+	</section>
+	<section class="slide" id="Fonts4Web">
+		<div class="content">
+			<header class="title">
+				<h2>Шрифты для веба</h2>
+			</header>
+			<ul>
+				<li>Первый, второй и Вердана</li>
+				<li>Самый главный вклад IE</li>
+				<li>Который никто не понял</li>
+			</ul>
+		</div>
+	</section>
+	<section class="slide" id="FirstAndSecond">
+		<div class="content">
+			<header class="title">
+				<h2>Первый, второй и Вердана</h2>
+			</header>
+			<ol>
+				<li>Times New Roman</li>
+				<li>Arial</li>
+				<li>Courier</li>
+				<li>Comic Sans MS</li>
+			</ol>
+		</div>
+	</section>
+	<section class="slide" id="mainIEcontrib-1">
+		<div class="content">
+			<header class="title">
+				<h2>Самый главный вклад IE</h2>
+			</header>
+<pre><code>@font-face {</code>
+<code>  font-family:'MyFont';</code>
+<code>  src:url('http://example.com/myfont.TTF')</code>
+<code>  format('truetype');</code>
+<code>  }</code></pre>
+			<p>CSS 2, рекомендация W3C. 1998 год</p>
+		</div>
+	</section>
+	<section class="slide" id="mainIEcontrib-2">
+		<div class="content">
+			<header class="title">
+				<h2>Самый главный вклад IE</h2>
+			</header>
+<pre><code>@font-face {</code>
+<code>  font-family:'MyFont';</code>
+<code>  src:url('http://example.com/myfont.EOT');</code>
+<code>  …</code>
+<code>  }</code></pre>
+			<p>IE 4, реализация Microsoft. 1997 год</p>
+		</div>
+	</section>
+	<section class="slide" id="WTFitWas">
+		<div class="content">
+			<header class="title">
+				<h2>Который никто не понял</h2>
+			</header>
+			<ul>
+				<li>Microsoft — WEFT. Web Embedding Fonts Tool?</li>
+				<li>Mozilla — никакого EOT, лицензия в HTTP-заголовках</li>
+				<li>Webkit — никаких лицензий, обычное внедрение</li>
+				<li>Opera — есть лучшие способы, чем поддерживать проприетарщину</li>
+				<li>W3C — а идите вы все нафиг…</li>
+			</ul>
+		</div>
+	</section>
+	<section class="slide" id="Crutches">
+		<div class="content">
+			<header class="title">
+				<h2>Трости, костыли и коляски</h2>
+			</header>
+			<ul>
+				<li>От документов к арт-объектам</li>
+				<li>Внезапно! Спрос</li>
+				<li>Толк в извращениях</li>
+			</ul>
+		</div>
+	</section>
+	<section class="slide" id="Doc2Art">
+		<div class="content">
+			<header class="title">
+				<h2>От документов к арт-объектам</h2>
+			</header>
+			<ul>
+				<li>Академический стиль</li>
+				<li>Промо-сайты</li>
+				<li>Космический дизайн</li>
+			</ul>
+		</div>
+	</section>
+	<section class="slide" id="SuddelnyDemand">
+		<div class="content">
+			<header class="title">
+				<h2>Внезапно! Спрос</h2>
+			</header>
+			<ul>
+				<li>Дизайнеры взрослеют</li>
+				<li>Разработчики привыкают к хорошему</li>
+				<li>Веб-дизайн всё-таки существует</li>
+			</ul>
+		</div>
+	</section>
+	<section class="slide" id="Perversions">
+		<div class="content">
+			<header class="title">
+				<h2>Толк в извращениях</h2>
+			</header>
+			<p>sIFR — Scalable Inman Flash Replacement. 2004 год</p>
+		</div>
+	</section>
+	<section class="slide" id="sIFRokay">
+		<div class="content content-empty">
+			<header class="title">
+				<h2>Толк в извращениях</h2>
+			</header>
+		</div>
+		<img src="p/sf-okay.png" alt="" class="background">
+	</section>
+	<section class="slide" id="sIFRflash">
+		<div class="content content-empty">
+			<header class="title">
+				<h2>Толк в извращениях</h2>
+			</header>
+		</div>
+		<img src="p/sf-flash.png" alt="" class="background">
+	</section>
+	<section class="slide" id="JsPerversions">
+		<div class="content">
+			<header class="title">
+				<h2>Толк в извращениях</h2>
+			</header>
+			<ul>
+				<li>Typekit</li>
+				<li>Cufon</li>
+				<li>Typotheque</li>
+			</ul>
+			<p>JS + SVG + VML. 2008–09 года</p>
+		</div>
+	</section>
+	<section class="slide" id="TypekitMain">
+		<div class="content content-empty">
+			<header class="title">
+				<h2>Толк в извращениях</h2>
+			</header>
+		</div>
+		<img src="p/tk-main.png" alt="" class="background">
+	</section>
+	<section class="slide" id="TypekitLib">
+		<div class="content content-empty">
+			<header class="title">
+				<h2>Толк в извращениях</h2>
+			</header>
+		</div>
+		<img src="p/tk-lib.png" alt="" class="background">
+	</section>
+	<section class="slide" id="TypekitFull">
+		<div class="content content-empty">
+			<header class="title">
+				<h2>Толк в извращениях</h2>
+			</header>
+		</div>
+		<img src="p/tk-full.png" alt="" class="background">
+	</section>
+	<section class="slide" id="Typotheque">
+		<div class="content content-empty">
+			<header class="title">
+				<h2>Толк в извращениях</h2>
+			</header>
+		</div>
+		<img src="p/ty-main.png" alt="" class="background">
+	</section>
+	<section class="slide" id="Remembering">
+		<div class="content">
+			<header class="title">
+				<h2>Вспоминая о будущем</h2>
+			</header>
+			<ul>
+				<li>Общая готовность</li>
+				<li>Самые главные проблемы</li>
+			</ul>
+		</div>
+	</section>
+	<section class="slide" id="ReadySteadyGo">
+		<div class="content">
+			<header class="title">
+				<h2>Общая готовность</h2>
+			</header>
+			<ul>
+				<li>IE</li>
+				<li>Webkit</li>
+				<li>Firefox</li>
+				<li>Opera</li>
+			</ul>
+		</div>
+	</section>
+	<section class="slide" id="TheMainProblem">
+		<div class="content">
+			<header class="title">
+				<h2>Самые главные проблемы</h2>
+			</header>
+			<ul>
+				<li>Деньги</li>
+				<li>Кириллица</li>
+				<li>Вес</li>
+			</ul>
+		</div>
+	</section>
+	<section class="slide" id="WebFonts">
+		<div class="content">
+			<header class="title">
+				<h2>Веб-шрифты</h2>
+			</header>
+			<ul>
+				<li>Сдуваем пыль со спецификации</li>
+				<li>Когда всем хорошо</li>
+				<li>Есть куда двигаться</li>
+			</ul>
+		</div>
+	</section>
+	<section class="slide" id="RenewSpec">
+		<div class="content">
+			<header class="title">
+				<h2>Сдуваем пыль со спецификации</h2>
+			</header>
+			<ul>
+				<li>local('MyFont')</li>
+				<li>format('opentype')</li>
+			</ul>
+		</div>
+	</section>
+	<section class="slide" id="EveryonesHappy">
+		<div class="content">
+			<header class="title">
+				<h2>Когда всем хорошо</h2>
+			</header>
+<pre><code>@font-face {</code>
+<code>  font-family:'MyFont';</code>
+<code>  src:url('MyFont.EOT');</code>
+<code>  src:local('MyFont'), local('MyFontFoo'),</code>
+<code>  url('MyFont.OTF') format('opentype');</code>
+<code>  }</code></pre>
+		</div>
+	</section>
+	<section class="slide" id="FSquirrelMain">
+		<div class="content content-empty">
+			<header class="title">
+				<h2>Когда всем хорошо</h2>
+			</header>
+		</div>
+		<img src="p/fs-main.png" alt="" class="background">
+	</section>
+	<section class="slide" id="FSquirrelGener">
+		<div class="content content-empty">
+			<header class="title">
+				<h2>Когда всем хорошо</h2>
+			</header>
+		</div>
+		<img src="p/fs-gener.png" alt="" class="background">
+	</section>
+	<section class="slide" id="WayToMove">
+		<div class="content">
+			<header class="title">
+				<h2>Есть куда двигаться</h2>
+			</header>
+			<ul>
+				<li>WOFF — Web Open Font Format</li>
+				<li>Проблемы рендеринга</li>
+				<li>Производительность</li>
+			</ul>
+		</div>
+	</section>
+	<section class="slide" id="Render-1">
+		<div class="content content-empty">
+			<header class="title">
+				<h2>Есть куда двигаться</h2>
+			</header>
+		</div>
+		<img src="p/sn-easy.png" alt="" class="background">
+	</section>
+	<section class="slide" id="Render-2">
+		<div class="content content-empty">
+			<header class="title">
+				<h2>Есть куда двигаться</h2>
+			</header>
+		</div>
+		<img src="p/sn-good.png" alt="" class="background">
+	</section>
+	<section class="slide" id="Render-3">
+		<div class="content content-empty">
+			<header class="title">
+				<h2>Есть куда двигаться</h2>
+			</header>
+		</div>
+		<img src="p/sn-baad.png" alt="" class="background">
+	</section>
+	<section class="slide" id="Render-4">
+		<div class="content content-empty">
+			<header class="title">
+				<h2>Есть куда двигаться</h2>
+			</header>
+		</div>
+		<img src="p/sn-molz.png" alt="" class="background">
+	</section>
+	<section class="slide" id="ThankYou">
+		<div class="content">
+			<header class="title">
+				<h2>Веб-шрифты vs. Шрифты для веба</h2>
+			</header>
+			<p>Вадим Макеев, Opera</p>
+			<ul>
+				<li><a href="mailto:pepelsbey@opera.com">pepelsbey@opera.com</a></li>
+				<li><a href="http://dev.opera.com">dev.opera.com</a></li>
+				<li><a href="http://my.opera.com">pepelsbey.net</a></li>
+			</ul>
+		</div>
+	</section>
+	<footer>
+		<a href="mailto:pepelsbey@opera.com">Вадим Макеев</a> © 2009
+	</footer>
+</body>
+</html>

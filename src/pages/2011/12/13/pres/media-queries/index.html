@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+
+<html lang="ru-RU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="device-width">
+<title>CSS3 Media Queries. Легкость перевоплощений</title>
+<link rel="stylesheet" href="styles/all.css">
+<!--[if lt IE 9]><script src="scripts/html5.js"></script><![endif]-->
+</head>
+
+<body>
+<div class="wrapper">
+
+<article class="slide title-page" id="1">
+<hgroup>
+<h1 class="lecture-title" lang="en-US"><abbr title="Cascading Style Sheets Level&#160;3" lang="en-US">CSS3</abbr> Media Queries</h1>
+<h2 class="lecture-subtitle">Легкость перевоплощений</h2>
+</hgroup>
+<footer class="about-author vcard">
+<p class="author-name fn n"><span class="first-name">Артемий</span> <span class="last-name">Ломов</span></p>
+<ul class="author-contacts">
+<li><a href="http://lomov.ru/" class="url">http://lomov.ru/</a></li>
+<li><a href="mailto:artemy@lomov.ru" class="email">artemy@lomov.ru</a></li>
+</ul>
+</footer>
+</article>
+
+<article class="slide general" id="2">
+<h2>Давным-давно…</h2>
+<p>…разработчики поступали примерно так:</p>
+<ul>
+<li><a href="http://lenta.ru/articles/2011/09/28/url/">http://lenta.ru/articles/2011/09/28/url/</a></li>
+<li><a href="http://lenta.ru/articles/2011/09/28/url/_Printed.htm">http://lenta.ru/articles/2011/09/28/url/_Printed.htm</a></li>
+<li><a href="http://pda.lenta.ru/articles/2011/09/28/url/">http://pda.lenta.ru/articles/2011/09/28/url/</a></li>
+<li><a href="http://old.lenta.ru/articles/2011/09/28/url/">http://old.lenta.ru/articles/2011/09/28/url/</a></li>
+</ul>
+</article>
+
+<article class="slide general" id="3">
+<h2>Обычная версия страницы</h2>
+<figure><img src="images/lenta-normal.png" alt="Lenta.Ru, обычная версия"></figure>
+</article>
+
+<article class="slide general" id="4">
+<h2>Версия для печати</h2>
+<figure><img src="images/lenta-print.png" alt="Lenta.Ru, версия для печати"></figure>
+</article>
+
+<article class="slide general" id="5">
+<h2>Версия для мобильных устройств</h2>
+<figure><img src="images/lenta-pda.png" alt="Lenta.Ru, версия для мобильных устройств"></figure>
+</article>
+
+<article class="slide general" id="6">
+<h2>Между тем…</h2>
+<p>…еще в&#160;<a href="http://www.w3.org/TR/html4/"><abbr title="HyperText Markup Language" lang="en-US">HTML</abbr>&#160;4.01</a> и&#160;<a href="http://www.w3.org/TR/1998/REC-CSS2-19980512/"><abbr title="Cascading Style Sheets Level&#160;2" lang="en-US">CSS2</abbr></a> были предусмотрены механизмы для создания аппаратно-зависимых стилей. Дело было в&#160;конце <span>1990-х</span>.</p>
+</article>
+
+<article class="slide general" id="7">
+<h2>Атрибут <code>media</code> в&#160;<abbr title="HyperText Markup Language" lang="en-US">HTML</abbr></h2>
+<pre>
+<code>&lt;link rel="stylesheet" href="reset.css" <span class="accent">media="all"</span>&gt;</code>
+<code>&lt;link rel="stylesheet" href="screen.css" <span class="accent">media="screen, projection"</span>&gt;</code>
+<code>&lt;link rel="stylesheet" href="print.css" <span class="accent">media="print"</span>&gt;</code>
+</pre>
+</article>
+
+<article class="slide general" id="8">
+<h2>Правило <code>@media</code> в&#160;<abbr title="Cascading Style Sheets" lang="en-US">CSS</abbr></h2>
+<pre>
+<code><span class="accent">@media screen, projection</span> {</code>
+<code>	body {</code>
+<code>		font-face: Arial, Helvetica, sans-serif;</code>
+<code>		}</code>
+<code>	}</code>
+<code><span class="accent">@media print</span> {</code>
+<code>	body {</code>
+<code>		font-face: Times, "Times New Roman", serif;</code>
+<code>		}</code>
+<code>	#menu {</code>
+<code>		display: none;</code>
+<code>		}</code>
+<code>	}</code>
+</pre>
+</article>
+
+<article class="slide general" id="9">
+<h2>Указание типа среды в&#160;директиве <code>@import</code></h2>
+<pre>
+<code>@import url('screen.css') <span class="accent">screen, projection</span>;</code>
+<code>@import url('print.css') <span class="accent">print</span>;</code>
+</pre>
+</article>
+
+<article class="slide general" id="10">
+<h2>Правила применяются <em>прозрачно</em> для пользователя</h2>
+<p>Иными словами, никаких дополнительных действий от&#160;пользователя не&#160;требуется, а&#160;<abbr title="Uniform Resource Locator" lang="en-US">URL</abbr> страницы не&#160;меняется. Конечно, кнопочки при желании можно сделать, но&#160;такое решение не&#160;имеет ничего общего с&#160;наследием темного прошлого:</p>
+<figure><img src="images/w3c.png" alt="Переключатель на&#160;сайте W3C"></figure>
+</article>
+
+<article class="slide general" id="11">
+<h2>Типы сред в&#160;<a href="http://www.w3.org/TR/CSS21/"><abbr title="Cascading Style Sheets Level&#160;2 Revision&#160;1" lang="en-US">CSS2.1</abbr></a></h2>
+<table lang="en-US">
+<tr>
+<th>Media Types</th>
+<th colspan="4">Media Groups</th>
+</tr>
+<tr>
+<th></th>
+<th>continuous/paged</th>
+<th>visual/audio/speech/tactile</th>
+<th>grid/bitmap</th>
+<th>interactive/static</th>
+</tr>
+<tr>
+<th><code>braille</code></th>
+<td>continuous</td>
+<td>tactile</td>
+<td>grid</td>
+<td>both</td>
+</tr>
+<tr>
+<th><code>embossed</code></th>
+<td>paged</td>
+<td>tactile</td>
+<td>grid</td>
+<td>static</td>
+</tr>
+<tr>
+<th><code>handheld</code></th>
+<td>both</td>
+<td>visual, audio, speech</td>
+<td>both</td>
+<td>both</td>
+</tr>
+<tr>
+<th><code>print</code></th>
+<td>paged</td>
+<td>visual</td>
+<td>bitmap</td>
+<td>static</td>
+</tr>
+<tr>
+<th><code>projection</code></th>
+<td>paged</td>
+<td>visual</td>
+<td>bitmap</td>
+<td>interactive</td>
+</tr>
+<tr>
+<th><code>screen</code></th>
+<td>continuous</td>
+<td>visual, audio</td>
+<td>bitmap</td>
+<td>both</td>
+</tr>
+<tr>
+<th><code>speech</code></th>
+<td>continuous</td>
+<td>speech</td>
+<td><abbr title="Not Applicable">N/A</abbr></td>
+<td>both</td>
+</tr>
+<tr>
+<th><code>tty</code></th>
+<td>continuous</td>
+<td>visual</td>
+<td>grid</td>
+<td>both</td>
+</tr>
+<tr>
+<th><code>tv</code></th>
+<td>both</td>
+<td>visual, audio</td>
+<td>bitmap</td>
+<td>both</td>
+</tr>
+</table>
+</article>
+
+<article class="slide general" id="12">
+<h2>Расширение привычного синтаксиса</h2>
+<p><a href="http://www.w3.org/TR/CSS21/media.html">Было</a>:</p>
+<pre>
+<code>@media <span class="accent">screen</span> {…}</code>
+</pre>
+<p><a href="http://www.w3.org/TR/css3-mediaqueries/">Стало</a>:</p>
+<pre>
+<code>@media <span class="accent">screen and (min-width: 640px)</span> {…}</code>
+</pre>
+</article>
+
+<article class="slide general" id="13">
+<h2>Построение выражений, часть&#160;1</h2>
+<pre>
+<code><span class="context">@media</span> all <span class="accent">and (color)</span> <span class="context">{…}</span></code>
+</pre>
+<pre>
+<code><span class="context">@media</span> <span class="accent">(color)</span> <span class="context">{…}</span></code>
+</pre>
+<pre>
+<code><span class="context">@</span><span class="accent">media {</span><span class="context">…}</span></code>
+</pre>
+<pre>
+<code><span class="context">@media</span> screen and (<span class="accent">max</span>-width: 640px) <span class="context">{…}</span></code>
+</pre>
+</article>
+
+<article class="slide general" id="14">
+<h2>Построение выражений, часть&#160;2</h2>
+<pre>
+<code><span class="context">@media</span> screen <span class="accent">and</span> (min-width: 640px) <span class="accent">and</span> (max-width: 1280px) <span class="context">{…}</span></code>
+</pre>
+<pre>
+<code><span class="context">@media</span> <span class="accent">handheld, screen and</span> (max-width: 640px) <span class="context">{…}</span></code>
+</pre>
+<pre>
+<code><span class="context">@media</span> <span class="accent">not</span> screen and (color) <span class="context">{…}</span></code>
+</pre>
+<pre>
+<code><span class="context">@media</span> <span class="accent">only</span> screen and (color) <span class="context">{…}</span></code>
+</pre>
+</article>
+
+<article class="slide general" id="15">
+<h2>Размеры, ориентация, соотношение сторон</h2>
+<table>
+<tr>
+<th lang="en-US">Media Features</th>
+<th lang="en-US">Media Types</th>
+<th>Допускаются префиксы <code>min</code> и&#160;<code>max</code></th>
+<th>Возможные значения</th>
+</tr>
+<tr>
+<td><code>width</code>, <code>height</code></td>
+<td lang="en-US">visual, tactile</td>
+<td>Да</td>
+<td><a href="http://www.w3.org/TR/CSS21/syndata.html#values" lang="en-US">&lt;length&gt;</a>, например: <code>1024px</code>, <code>20em</code>; отражает ширину/высоту <a href="http://www.w3.org/TR/CSS21/visuren.html#viewport" lang="en-US">viewport</a> или <a href="http://www.w3.org/TR/CSS21/page.html#page-box" lang="en-US">page&#160;box</a></td>
+</tr>
+<tr>
+<td><code>device-width</code>, <code>device-height</code></td>
+<td lang="en-US">visual, tactile</td>
+<td>Да</td>
+<td><a href="http://www.w3.org/TR/CSS21/syndata.html#values" lang="en-US">&lt;length&gt;</a>, например: <code>1024px</code>, <code>20em</code>; отражает ширину/высоту экрана или листа</td>
+</tr>
+<tr>
+<td><code>orientation</code></td>
+<td lang="en-US">bitmap</td>
+<td>Нет</td>
+<td><code>portrait</code> или <code>landscape</code></td>
+</tr>
+<tr>
+<td><code>aspect-ratio</code>, <code>device-aspect-ratio</code></td>
+<td lang="en-US">bitmap</td>
+<td>Да</td>
+<td><a href="http://www.w3.org/TR/css3-mediaqueries/#values" lang="en-US">&lt;ratio&gt;</a>, например: <code>16/9</code> или <code>1280/720</code></td>
+</tr>
+</table>
+</article>
+
+<article class="slide general" id="16">
+<h2>Ширина и&#160;высота</h2>
+<figure><img src="images/width-height.png" alt="width, height, device-width, device-height"></figure>
+</article>
+
+<article class="slide general" id="17">
+<h2>Цветность</h2>
+<table>
+<tr>
+<th lang="en-US">Media Features</th>
+<th lang="en-US">Media Types</th>
+<th>Допускаются префиксы <code>min</code> и&#160;<code>max</code></th>
+<th>Возможные значения</th>
+</tr>
+<tr>
+<td><code>color</code></td>
+<td lang="en-US">visual</td>
+<td>Да</td>
+<td>неотрицательное <a href="http://www.w3.org/TR/CSS21/syndata.html#values" lang="en-US">&lt;integer&gt;</a>, например: <code>8</code>; отражает количество бит на&#160;компоненту представления цвета (в&#160;случае неравномерного распределения соответствует наименьшему числу); <code>0</code>&#160;— устройство не&#160;является цветным</td>
+</tr>
+<tr>
+<td><code>color-index</code></td>
+<td lang="en-US">visual</td>
+<td>Да</td>
+<td>неотрицательное <a href="http://www.w3.org/TR/CSS21/syndata.html#values" lang="en-US">&lt;integer&gt;</a>, например: <code>16</code>; отражает количество цветов в&#160;фиксированной палитре</td>
+</tr>
+<tr>
+<td><code>monochrome</code></td>
+<td lang="en-US">visual</td>
+<td>Да</td>
+<td>неотрицательное <a href="http://www.w3.org/TR/CSS21/syndata.html#values" lang="en-US">&lt;integer&gt;</a>, например: <code>8</code>; отражает количество бит на&#160;пиксель; <code>0</code>&#160;— устройство не&#160;является монохромным</td>
+</tr>
+</table>
+</article>
+
+<article class="slide general" id="18">
+<h2>Разрешение, развертка, растр</h2>
+<table>
+<tr>
+<th lang="en-US">Media Features</th>
+<th lang="en-US">Media Types</th>
+<th>Допускаются префиксы <code>min</code> и&#160;<code>max</code></th>
+<th>Возможные значения</th>
+</tr>
+<tr>
+<td><code>resolution</code></td>
+<td lang="en-US">bitmap</td>
+<td>Да</td>
+<td><a href="http://www.w3.org/TR/css3-mediaqueries/#values" lang="en-US">&lt;resolution&gt;</a>, например: <code>300dpi</code> или <code>118dpcm</code></td>
+</tr>
+<tr>
+<td><code>scan</code></td>
+<td><code>tv</code></td>
+<td>Нет</td>
+<td><code>progressive</code> или <code>interlaced</code></td>
+</tr>
+<tr>
+<td><code>grid</code></td>
+<td lang="en-US">visual, tactile</td>
+<td>Нет</td>
+<td><code>0</code> или <code>1</code></td>
+</tr>
+</table>
+</article>
+
+<article class="slide general" id="19">
+<h2>Текстовый режим</h2>
+<figure><img src="images/lynx.png" alt="Lynx"></figure>
+</article>
+
+<article class="slide general" id="20">
+<h2>Практический пример</h2>
+<p><span lang="en-US">Media Queries</span> <a href="example/index.htm">можно использовать уже сегодня</a>.</p>
+</article>
+
+<article class="slide general" id="21">
+<h2>Связанные спецификации, часть&#160;1</h2>
+<p>Перечислим спецификации <abbr title="Cascading Style Sheets" lang="en-US">CSS</abbr>, имеющие отношение к&#160;теме доклада.</p>
+<h3>Фундамент</h3>
+<ul lang="en-US">
+<li><a href="http://www.w3.org/TR/CSS21/"><abbr title="Cascading Style Sheets Level&#160;2 Revision&#160;1">CSS2.1</abbr></a></li>
+</ul>
+<h3>Модули, непосредственно связанные с&#160;описанием представления для различных сред и&#160;устройств</h3>
+<ul lang="en-US">
+<li><a href="http://www.w3.org/TR/css-device-adapt/">Device Adaptation</a></li>
+<li><a href="http://www.w3.org/TR/css3-page/">Paged Media</a></li>
+<li><a href="http://www.w3.org/TR/css3-speech/">Speech</a></li>
+<li><a href="http://www.w3.org/TR/css3-reader/">‘Reader’ Media Type</a></li>
+<li><a href="http://www.w3.org/TR/css3-preslev/">Presentation Levels</a></li>
+</ul>
+</article>
+
+<article class="slide general" id="22">
+<h2>Связанные спецификации, часть&#160;2</h2>
+<p>Перечислим спецификации <abbr title="Cascading Style Sheets" lang="en-US">CSS</abbr>, имеющие отношение к&#160;теме доклада.</p>
+<h3>Модули, описывающие новые механизмы создания <span lang="en-US">layout</span></h3>
+<ul>
+<li><a href="http://www.w3.org/TR/css3-grid/">Grid Positioning</a></li>
+<li><a href="http://www.w3.org/TR/css3-flexbox/">Flexible Box Layout</a></li>
+<li><a href="http://www.w3.org/TR/css3-layout/">Template Layout Module</a></li>
+<li><a href="http://www.w3.org/TR/css3-multicol/">Multi-column Layout</a></li>
+<li><a href="http://www.w3.org/TR/css3-regions/">Regions</a></li>
+</ul>
+</article>
+
+<article class="slide general" id="23">
+<h2>Связанные спецификации, часть&#160;3</h2>
+<p>Перечислим спецификации <abbr title="Cascading Style Sheets" lang="en-US">CSS</abbr>, имеющие отношение к&#160;теме доклада.</p>
+<h3>Модули, более интересные разработчикам устройств и&#160;браузеров, нежели веб-разработчикам</h3>
+<ul lang="en-US">
+<li><a href="http://www.w3.org/TR/cssom/"><abbr title="Cascading Style Sheets Object Model">CSSOM</abbr></a></li>
+<li><a href="http://www.w3.org/TR/cssom-view/"><abbr title="Cascading Style Sheets Object Model">CSSOM</abbr> View</a></li>
+<li><a href="http://www.w3.org/TR/css-mobile/">Mobile Profile</a></li>
+<li><a href="http://www.w3.org/TR/css-print/">Print Profile</a></li>
+<li><a href="http://www.w3.org/TR/css-tv"><abbr title="Television">TV</abbr>&#160;Profile&#160;1.0</a></li>
+</ul>
+</article>
+
+<article class="slide general" id="24">
+<h2 lang="en-US">WebHiTech</h2>
+<p>Принимаем заявки на&#160;конкурс технологического совершенства сайтов русскоязычного сегмента Сети до&#160;<time datetime="2011-11-03">3&#160;ноября</time> включительно: <a href="http://webhitech.ru/">webhitech.ru</a>.</p>
+<figure><img src="images/wht.png" alt="WebHiTech"></figure>
+</article>
+
+<article class="slide thanks-page" id="25">
+<h2 class="thanks" lang="en-US">Спасибо за&#160;внимание!</h2>
+<footer class="about-author vcard">
+<p class="author-name fn n"><span class="first-name">Артемий</span> <span class="last-name">Ломов</span></p>
+<ul class="author-contacts">
+<li><a href="http://lomov.ru/" class="url">http://lomov.ru/</a></li>
+<li><a href="mailto:artemy@lomov.ru" class="email">artemy@lomov.ru</a></li>
+</ul>
+</footer>
+</article>
+
+</div>
+<div id="slide-number"></div>
+<script src="scripts/switcher.js"></script>
+</body>
+
+</html>

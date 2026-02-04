@@ -1,0 +1,94 @@
+.related-media-widget{
+	position:relative;
+	display:block;
+	zoom:1;
+	padding:0 0 30px 10px;
+	overflow:hidden;
+	vertical-align:top;
+	clear:both;
+	}
+	.related-media-widget:after{
+		content:".";
+		font-size:0;
+		height:0;
+		overflow:hidden;
+		line-height:0;
+		clear:both;
+		display:block;
+		text-indent:-9000px;
+		}
+	.related-media-widget .title{
+		color:#fff;
+		margin:0 0 10px 0;
+		font:bold 18px/20px 'PTSans',Tahoma,sans-serif;
+		}
+		.related-media-widget figure{
+		  margin:0 0 10px 0;
+			display:inline-block;
+			vertical-align:top;
+			width:151px;
+			padding-right:12px;
+			font:normal 12px/15px 'PTSans',Tahoma,sans-serif;
+			}
+			* html .related-media-widget figure{
+			  zoom:1;
+			  display:inline;
+		    }
+			*+html .related-media-widget figure{
+			  zoom:1;
+			  display:inline;
+		    }
+			.related-media-widget figure a{
+				position:relative;
+				display:block;
+				text-decoration:none;
+				color:#e2e2e2;
+				}
+				* html .related-media-widget figure a{
+						zoom:expression(function(t) {
+										t.runtimeStyle.zoom = 1;
+										var after = document.createElement('span');
+										after.className = 'play-me-fix-for-ie';
+										t.appendChild(after);
+									}(this));
+					}
+				*+html .related-media-widget figure a{
+						zoom:expression(function(t) {
+										t.runtimeStyle.zoom = 1;
+										var after = document.createElement('span');
+										after.className = 'play-me-fix-for-ie';
+										t.appendChild(after);
+									}(this));
+					}
+			.related-media-widget figure.lightbox a .play-me-fix-for-ie,
+			.related-media-widget figure.lightbox a:after{
+				content:".";
+				display:block;
+				width:51px;
+				height:51px;
+				text-indent:-9000px;
+				overflow:hidden;
+				font-size:0;
+				line-height:0;
+				background: url("../img/play-show.png") 0 0 no-repeat;
+				position:absolute;
+				top:25px;
+				left:50%;
+				margin-left:-26px;
+				}
+				* html .related-media-widget figure.lightbox a .play-me-fix-for-ie{
+					background:none;
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src='img/play-show.png', sizingMethod='image');
+					cursor:pointer;
+					}
+			.related-media-widget figure img{
+				width:151px;
+				height:100px;
+				overflow:hidden;
+				display:block;
+				margin-bottom:10px;
+				-webkit-box-shadow:0 0 20px 4px #222;
+				-moz-box-shadow:0 0 20px 4px #222;
+				-o-box-shadow:0 0 20px 4px #222;
+				box-shadow:0 0 20px 4px #222;
+				}

@@ -1,0 +1,62 @@
+.day-in-images-widget{
+  margin:0 0 15px;
+  border-top:4px solid #b7b7b7;
+  background-color:#FFF;
+  padding:0;
+  overflow:hidden;
+  position:relative;
+  }
+  .day-in-images-widget img.size-1{
+    width:105px;
+    height:70px;
+    }
+  .day-in-images-widget img.size-2{
+    width:211px;
+    height:141px;
+    }
+  .day-in-images-widget img.size-3{
+    width:317px;
+    height:211px;
+    }
+  .day-in-images-widget img{
+    display:block;
+    float:left;
+    }
+  .day-in-images-widget a{
+    float:left;
+    display:block;
+    margin:1px 0 0 1px;
+    overflow:hidden;
+    }
+    .day-in-images-widget a:first-child{
+      margin-left:0;
+      }
+    * html .day-in-images-widget a{
+      zoom:1;
+      margin-left:expression(function(t) {
+  					if(t.previousSibling==null){
+  						t.runtimeStyle.marginLeft = "0";
+  						}
+  					}(this));
+          }
+    *+html .day-in-images-widget a{
+      zoom:1;
+      margin-left:expression(function(t) {
+  					if(t.previousSibling==null){
+  						t.runtimeStyle.marginLeft = "0";
+  						}
+  					}(this));
+          }
+  .day-in-images-widget .line{
+    overflow:hidden;
+    clear:both;
+    }
+  .day-in-images-widget .title{
+    font: bold 18px/49px 'PT Sans',Arial,sans-serif;
+    padding: 0 10px;
+    position: relative;
+    zoom:1;
+    }
+    .day-in-images-widget .title a{
+      color:#000;
+      }

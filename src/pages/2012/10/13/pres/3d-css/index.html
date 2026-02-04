@@ -1,0 +1,1105 @@
+<!DOCTYPE HTML>
+<html lang="ru-RU">
+<head>
+	<meta charset="UTF-8">
+	<title>На грани возможного: 3D, 2D, анимация и эмоции в веб c помощью CSS</title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<script src="js/jquery.easing.js"></script>
+	<script src="js/jquery.hotkeys.js"></script>
+	<script src="js/jquery.mousewheel.js"></script>
+	<script src="js/modernizr.js"></script>
+
+	<script src="js/sphere.js"></script>
+	<script src="js/moo.js"></script>
+	<script src="js/moo-ware.js"></script>
+
+	<script src="js/slidsterController.js"></script>
+
+
+	<link rel="stylesheet" media="all" href="css/common.css" />
+
+	<style type="text/css">
+		.vcard{
+			text-transform:none;
+			}
+			.vard-container{
+
+				}
+			.vcard img{
+				float:left;
+				width:350px;
+				margin:-20px 0 0 60px;
+				}
+
+		.slide-1{
+			text-align:center;
+			}
+			.slide-1 h2{
+				text-transform:uppercase;
+				font:bold 22px/48px 'PT Sans Caption',sans-serif;
+				}
+			.slide-1 h1{
+				text-transform:uppercase;
+				font:bold 48px/48px 'PT Sans Caption',sans-serif;
+				}
+		.slide-2{
+			text-transform:uppercase;
+			}
+		.slide-3{
+			background-size:100% auto;
+			color:#fff;
+			background: url("spoiler/budda.png") 50% 50% no-repeat;
+			}
+			.slide-3 h1{
+				color:#000;
+				background-color: #FFF;
+				font:bold 24px/180px 'PT Sans Caption',sans-serif;
+				width:180px;
+				height:180px;
+				margin:0 auto;
+				position:relative;
+				top:60px;
+				left:7px;
+				border-radius:50%;
+				text-transform:uppercase;
+				}
+				.slide-3 h1:after{
+					content:".";
+					display:block;
+					text-indent:-9000px;
+					height:0;
+					width:0;
+					overflow:hidden;
+					border:solid;
+					border-width:0 20px 40px;
+					border-color:transparent transparent #fff;
+					position: absolute;
+					bottom:175px;
+					left:50%;
+					margin-left:-20px;
+					}
+			.slide-4{
+				background: url("spoiler/maslow.png") 50% 50% no-repeat;
+				}
+			.slide-5{
+				background: url("spoiler/maslow-software-half.png") 50% 50% no-repeat;
+				}
+			.slide-6{
+				background: url("spoiler/maslow-software.png") 50% 50% no-repeat;
+				}
+			.slide-7 .wrapper,
+			.slide-8 .wrapper,
+			.slide-9 .wrapper,
+			.slide-10 .wrapper{
+				padding:40px 0;
+			}
+			.slide-7{
+				background: url("spoiler/tool.jpg") 50% no-repeat;
+				background-size:800px 100%;
+				text-transform:uppercase;
+				color:#fff;
+				text-transform:uppercase;
+				text-shadow:1px 1px 0 rgba(0,0,0,.25);
+				}
+				.slide-7 h1{
+					background-color: rgba(0,0,0,.25);
+					}
+			.slide-8{
+				background: url("spoiler/whaler.jpg") 50% no-repeat;
+				background-size:800px 100%;
+				text-transform:uppercase;
+				color:#fff;
+				text-transform:uppercase;
+				text-shadow:1px 1px 0 rgba(0,0,0,.25);
+				}
+				.slide-8 h1{
+					background-color: rgba(0,0,0,.25);
+					}
+			.slide-9{
+				background: url("spoiler/pose.jpg") 50% no-repeat;
+				background-size:800px 100%;
+				text-transform:uppercase;
+				color:#fff;
+				text-transform:uppercase;
+				text-shadow:1px 1px 0 rgba(0,0,0,.25);
+				}
+				.slide-9 h1{
+					background-color: rgba(0,0,0,.25);
+					}
+			.slide-edge{
+				background: url("spoiler/edge-x.png") 50% no-repeat;
+				background-size:800px 100%;
+				text-transform:uppercase;
+				color:#fff;
+				text-transform:uppercase;
+				text-shadow:1px 1px 0 rgba(0,0,0,.25);
+				}
+				.slide-edge h1{
+					background-color: rgba(0,0,0,.25);
+					}
+			.slide-10{
+				background: url("spoiler/cool.png") 50% no-repeat;
+				background-size:800px 100%;
+				color:#fff;
+				text-transform:uppercase;
+				text-shadow:1px 1px 0 rgba(0,0,0,.25);
+				}
+				.slide-10 h1{
+					background-color: rgba(0,0,0,.25);
+					}
+			.slide-11{
+				background: url("spoiler/screens.png") 50% no-repeat;
+				background-size:800px auto;
+				color:#fff;
+				text-transform:uppercase;
+				text-shadow:1px 1px 0 rgba(0,0,0,.25);
+				}
+				.slide-11 h1{
+					background-color: rgba(0,0,0,.25);
+					}
+			.slide-12{
+				background: url("spoiler/real.png") 50% no-repeat;
+				background-size:800px 100%;
+				color:#fff;
+				text-transform:uppercase;
+				text-shadow:1px 1px 0 rgba(0,0,0,.25);
+				}
+				.slide-12 h1{
+					background-color: rgba(0,0,0,.25);
+					}
+			.slide-13{
+				background: url("spoiler/maskot.png") 50% no-repeat;
+				background-size: auto 80%;
+				color:#fff;
+				text-transform:uppercase;
+				text-shadow:1px 1px 0 rgba(0,0,0,.25);
+				}
+				.slide-13 h1{
+					background-color: rgba(0,0,0,.25);
+					}
+
+			.slide-14{
+				text-transform:uppercase;
+				text-align:center;
+				}
+				.slide-14 hgroup{
+					text-align:left;
+					display:inline-block;
+					}
+
+			.slide-15{
+				text-transform:uppercase;
+				text-align:center;
+				}
+
+			.slide-21{
+				background: url("spoiler/gey-twins.jpg") 50% no-repeat;
+				background-size: auto 90%;
+				color:#fff;
+				text-transform:uppercase;
+				text-shadow:1px 1px 0 rgba(0,0,0,.25);
+				}
+				.slide-21 h1{
+					background-color: rgba(0,0,0,.25);
+					}
+
+			.slide-22{
+				background: url("spoiler/bored.png") 50% no-repeat;
+				background-size: 100% 100%;
+				color:#fff;
+				text-transform:uppercase;
+				text-shadow:1px 1px 0 rgba(0,0,0,.25);
+				}
+				.slide-22 h1{
+					background-color: rgba(0,0,0,.25);
+					}
+
+			.slide-23{
+				background: url("spoiler/html4food.jpg") 50% no-repeat;
+				background-size: 100% 100%;
+				color:#fff;
+				text-transform:uppercase;
+				text-shadow:1px 1px 0 rgba(0,0,0,.25);
+				}
+				.slide-23 h1{
+					background-color: rgba(0,0,0,.25);
+					}
+
+			.slide-24{
+				background: url("spoiler/html5.jpg") 50% no-repeat;
+				background-size: 100% 100%;
+				color:#fff;
+				text-transform:uppercase;
+				text-shadow:1px 1px 0 rgba(0,0,0,.25);
+				}
+				.slide-24 h1{
+					background-color: rgba(0,0,0,.25);
+					}
+
+			.slide-25{
+				background: url("spoiler/edge.png") 50% no-repeat;
+				background-size: 100% 100%;
+				color:#fff;
+				text-transform:uppercase;
+				text-shadow:1px 1px 0 rgba(0,0,0,.25);
+				}
+				.slide-25 h1{
+					background-color: rgba(0,0,0,.25);
+					}
+
+			.slide-28{
+				background: url("spoiler/sx-1.jpg") 50% no-repeat;
+				background-size: auto;
+				color:#fff;
+				}
+			.slide-29{
+				background: url("spoiler/sx-2.jpg") 50% no-repeat;
+				background-size: auto;
+				color:#fff;
+				}
+			.slide-30{
+				background: url("spoiler/sx-3.jpg") 50% no-repeat;
+				background-size: auto;
+				color:#fff;
+				}
+			.slide-31{
+				background: url("spoiler/sx-4.jpg") 50% no-repeat;
+				background-size: auto;
+				color:#fff;
+				}
+			.slide-32{
+				background: url("spoiler/sx-5.jpg") 50% no-repeat;
+				background-size: auto;
+				color:#fff;
+				}
+			.slide-33{
+				background: url("spoiler/sx-6.jpg") 50% no-repeat;
+				background-size: auto;
+				color:#fff;
+				}
+			.slide-34{
+				background: url("spoiler/sx-7.jpg") 50% no-repeat;
+				background-size: auto;
+				color:#fff;
+				}
+			.slide-35{
+				background: url("spoiler/sx-8.jpg") 50% no-repeat;
+				background-size: 60% auto;
+				color:#fff;
+				}
+			.slide-code h1{
+				font-size:42px;
+				line-height:48px;
+				width:680px;
+				margin:0 auto;
+				text-align:left;
+				}
+			.slide-37 h2{
+				text-align:left;
+				width:680px;
+				margin:20px auto 0;
+
+				font-size:36px;
+				line-height:42px;
+				}
+			.slide-38 h2,
+			.slide-39 h2{
+				text-align:left;
+				}
+
+			.slide-53{
+				background: url("spoiler/coolgeys.png") 50% no-repeat;
+				background-size: 100%;
+				color:#fff;
+				text-transform:uppercase;
+				text-shadow:1px 1px 0 rgba(0,0,0,.25);
+				}
+				.slide-53 h1{
+					background-color: rgba(0,0,0,.25);
+					}
+
+			.key1{
+				background: url("spoiler/key1.png") 50% no-repeat;
+				background-size: 100%;
+				color:#fff;
+				text-transform:uppercase;
+				text-shadow:1px 1px 0 rgba(0,0,0,.25);
+				}
+				.key1 h1{
+					background-color: rgba(0,0,0,.25);
+					}
+
+			.key2{
+				background: url("spoiler/key2.png") 50% no-repeat;
+				background-size: 100%;
+				color:#fff;
+				text-transform:uppercase;
+				text-shadow:1px 1px 0 rgba(0,0,0,.25);
+				}
+				.key2 h1{
+					background-color: rgba(0,0,0,.25);
+					}
+
+			.key3{
+				background: url("spoiler/key3.png") 50% no-repeat;
+				background-size: 100%;
+				color:#fff;
+				text-transform:uppercase;
+				text-shadow:1px 1px 0 rgba(0,0,0,.25);
+				}
+				.key3 h1{
+					background-color: rgba(0,0,0,.25);
+					}
+
+
+			.b1{
+				background: url("spoiler/bicycle.png") 50% no-repeat;
+				background-size: 100% 100%;
+				color:#fff;
+				text-transform:uppercase;
+				text-shadow:1px 1px 0 rgba(0,0,0,.25);
+				}
+				.b1 h1{
+					background-color: rgba(0,0,0,.25);
+					}
+
+			.b2{
+				background: url("spoiler/bicycle-2.png") 50% no-repeat;
+				background-size: 100% 100%;
+				color:#fff;
+				text-transform:uppercase;
+				text-shadow:1px 1px 0 rgba(0,0,0,.25);
+				}
+				.b2 h1{
+					background-color: rgba(0,0,0,.25);
+					}
+
+			.facepalm{
+				background: url("spoiler/facepalm.jpg") 50% no-repeat;
+				
+				color:#fff;
+				text-transform:uppercase;
+				text-shadow:1px 1px 0 rgba(0,0,0,.25);
+				}
+				.facepalm h1{
+					background-color: rgba(0,0,0,.25);
+					}
+
+			code{
+				text-align:left;
+				display:inline-block;
+				white-space:nowrap;
+				font: 18px/20px monospace;
+				white-space:pre;
+				color:#333;
+				width:680px;
+				text-transform:none;
+				}
+				code b{
+					color:#598e57;
+					}
+				code s{
+					color:#6dacff;
+					text-decoration:none;
+					}
+				code i{
+					color:#f2d14d;
+					}
+				
+
+			.degradation{
+
+				}
+				.degradation h1{
+					margin-bottom:20px;
+					}
+				.degradation p:after{
+					content:"↓";
+					position: absolute;
+					top:60px;
+					left:0;
+					width:300px;
+					text-align:center;
+					color:#fff;
+					display:block;
+					line-height:0;
+					z-index:1000;
+					}
+				.degradation .t3D{
+					position: relative;
+					background-color: #1ab916;
+					line-height:60px;
+					color:#fff;
+					width:300px;
+					margin:0 auto 1px;
+					}
+				.degradation .transitions{
+					position: relative;
+					background-color: #d00;
+					line-height:60px;
+					color:#fff;
+					width:300px;
+					margin:0 auto 1px;
+					}
+				.degradation .scripts{
+					position: relative;
+					background-color: #f60;
+					line-height:60px;
+					color:#fff;
+					width:300px;
+					margin:0 auto 1px;
+					}
+				.degradation .static{
+					position: relative;
+					background-color: #d00;
+					line-height:60px;
+					color:#fff;
+					width:300px;
+					margin:0 auto 1px;
+					}
+					.degradation .static:after{
+						display:none;
+						}
+
+			.slide-banner-degradation{
+
+				}
+				.slide-banner-degradation .html5{
+					position: relative;
+					background-color: #1ab916;
+					line-height:80px;
+					color:#fff;
+					width:300px;
+					margin:0 auto 1px;
+					}
+				.slide-banner-degradation .flash{
+					position: relative;
+					background-color: #d00;
+					line-height:80px;
+					color:#fff;
+					width:300px;
+					margin:0 auto 1px;
+					}
+					.slide-banner-degradation .html5:after,
+					.slide-banner-degradation .flash:after{
+						content:"↓";
+						position: absolute;
+						top:80px;
+						left:0;
+						width:300px;
+						text-align:center;
+						color:#fff;
+						display:block;
+						line-height:0;
+						z-index:1000;
+						}
+				.slide-banner-degradation .img{
+					background-color: #f60;
+					line-height:80px;
+					color:#fff;
+					width:300px;
+					margin:0 auto;
+					}
+
+		.wrapper-link{
+			display:block;
+			text-decoration:none;
+			}
+			.wrapper-link:after{
+				display:none;
+				}
+
+		a{
+			text-align:left;
+			text-transform:none;
+			}
+
+			.slide-54 img{
+				width:442px;
+			}
+
+	</style>
+</head>
+<body>
+	<section class="slides">
+
+		<article tabindex="1" class="slide-1 center "><div class="wrapper">
+			<hgroup>
+				<h1>На грани возможного</h1>
+				<h2>3D, 2D, анимация и эмоции в веб c помощью CSS</h2>
+			</hgroup>
+		</div></article>
+		
+		
+		<article tabindex="2" class="slide-2 center center-text"><div class="wrapper">
+		
+			<div id="sphere" class="contact">
+				<div class="rotator">
+					<div class="container"></div>
+				</div>
+			</div>
+
+			<h1>CSS умеет 3D,<br> анимацию<br> и вообще…</h1>
+			
+		</div></article>
+
+		<article tabindex="3" class="slide-3 center center-text"><div class="wrapper">
+		
+			<h1>Но зачем?</h1>
+			
+		</div></article>
+		
+		<article tabindex="4" class="slide-4"><div class="wrapper">
+			<!--Маслоу-->
+		</div></article>
+
+		<article tabindex="5" class="slide-5"><div class="wrapper">
+			<!--Не полное Маслоу для софта-->
+		</div></article>
+
+		<article tabindex="6" class="slide-6"><div class="wrapper">
+			<!--Маслоу для софта-->
+		</div></article>
+
+		<article tabindex="7" class="slide-7 center center-text"><div class="wrapper">
+			<h1>Функциональность</h1>
+		</div></article>
+
+		<article tabindex="8" class="slide-8 center center-text"><div class="wrapper">
+			<h1>Надежность</h1>
+		</div></article>
+
+		<article tabindex="9" class="slide-9 center center-text"><div class="wrapper">
+			<h1>Удобство</h1>
+		</div></article>
+
+		<article tabindex="10" class="slide-10 center center-text"><div class="wrapper">
+			<h1>Офигенность</h1>
+		</div></article>
+
+		<article tabindex="11" class="slide-11 center center-text"><div class="wrapper">
+			<h1>Индивидуальность</h1>
+			<!--Пример изменения интерфейса бейскемпа-->
+		</div></article>
+
+		<article tabindex="12" class="slide-12 center  center-text"><div class="wrapper">
+			<h1>Физика</h1>
+			<!--Физические-->
+		</div></article>
+
+		<article tabindex="13" class="slide-13 center  center-text"><div class="wrapper">
+			<h1>FUN</h1>
+			<!--Физические-->
+		</div></article>
+
+		<article tabindex="14" class="slide-14 center"><div class="wrapper">
+			<hgroup>
+			<h1>Баннеры</h1>
+			<h1>Сайты</h1>
+			<h1>Промо-игры</h1>
+			</hgroup>
+		</div></article>
+
+		<article tabindex="15" class="slide-15 center  center-text"><div class="wrapper">
+			<h1>Баннеры</h1>
+		</div></article>
+
+		<article tabindex="16" class="slide-16 center  center-text"><div class="wrapper">
+			<a href="http://moo.com/" class="moo-activity-hidden">
+				<section class="outer-wrapper">
+					<section class="inner-wrapper">
+						<section class="slogan-1">
+							<p>
+							One year ago,<br>
+							moo decided to create<br>
+							the finest business cards<br>
+							on the web.
+							</p>
+							<p>they're here.</p>
+						</section>
+						<section class="slogan-2">
+							<p><strong>LUXE</strong> by moo</p>
+						</section>
+						<p class="bg"></p>
+					</section>
+				</section>
+			</a>
+		</div></article>
+
+		<article tabindex="17" class="slide-17 center  center-text"><div class="wrapper">
+
+			<a href="http://dev.opera.com/" class="banner banner-learn">
+				<span class="banner-frame banner-frame-first">
+					<span class="banner-row-first">Learn</span>
+					<span class="banner-row-second">HTML5 <small>&amp;</small> CSS3</span>
+				</span>
+				<span class="banner-frame banner-frame-second">
+					<span class="banner-row-first">and much more on</span>
+					<span class="banner-row-second">Dev.Opera</span>
+				</span>
+			</a>
+			<a href="http://dev.opera.com/" class="banner banner-extensions">
+				<span class="banner-frame banner-frame-first">
+					<span class="banner-row-first">Get Started With</span>
+					<span class="banner-row-second">Opera Extensions</span>
+				</span>
+				<span class="banner-frame banner-frame-second">
+					<span class="banner-row-first">articles &amp; examples on</span>
+					<span class="banner-row-second">Dev.Opera</span>
+				</span>
+			</a>
+
+		</div></article>
+
+		<article tabindex="18" class="slide-18 center  center-text"><div class="wrapper">
+
+			<img src="spoiler/banner-1.png" alt="Баннер">
+			<a href="banners-1.html">HTML5 или Flash?</a>
+
+		</div></article>
+		<article tabindex="19" class="slide-19 center  center-text"><div class="wrapper">
+
+			<img src="spoiler/banner-2.png" alt="Баннер">
+			<a href="banners-2.html">HTML5 или Flash?</a>
+
+		</div></article>
+		<article tabindex="20" class="slide-20 center  center-text"><div class="wrapper">
+			
+			<img src="spoiler/banner-3.png" alt="Баннер">
+			<a href="banners-3.html">HTML5 или Flash?</a>
+
+		</div></article>
+
+		<article tabindex="21" class="slide-21 center slide-add center-text"><div class="wrapper">
+			<h1>гомогенность</h1>
+		</div></article>
+
+		<article tabindex="22" class="slide-22 center slide-add  center-text"><div class="wrapper">
+			<h1>Скорость загрузки</h1>
+		</div></article>
+
+		<article tabindex="23" class="slide-23 center slide-add center-text"><div class="wrapper">
+			<h1>Стоимость</h1>
+		</div></article>
+
+		<article tabindex="24" class="slide-24 center slide-add center-text"><div class="wrapper">
+			<h1>WEB API</h1>
+		</div></article>
+
+		<article tabindex="25" class="slide-25 center slide-add center-text"><div class="wrapper">
+			<h1>Теперь — банановый</h1>
+		</div></article>
+
+		<article tabindex="26" class="slide-26 slide-banner-degradation center  center-text"><div class="wrapper">
+			<p class="flash">
+				FLASH
+			</p>
+			<p class="img">
+				Изображение
+			</p>
+		</div></article>
+
+		<article tabindex="27" class="slide-banner-degradation center center-text"><div class="wrapper">
+			<p class="flash">
+				FLASH
+			</p>
+			<p class="html5">
+				HTML5
+			</p>
+			<p class="img">
+				Изображение
+			</p>
+		</div></article>
+
+		<article tabindex="28" class="key1 center  center-text"><div class="wrapper">
+			<h1>Ключевые моменты</h1>
+		</div></article>
+
+		<article tabindex="29" class="slide-27-a center  center-text"><div class="wrapper">
+
+	<code>
+&lt;<b>a</b> <i>href</i>="<s>http://moo.com/</s>" <i>class</i>="<s>moo-activity</s>"&gt;
+&lt;<b>section</b> <i>class</i>="<s>outer-wrapper</s>"&gt;
+	&lt;<b>section</b> <i>class</i>="<s>inner-wrapper</s>"&gt;
+		&lt;<b>section</b> <i>class</i>="<s>slogan-1</s>"&gt;
+			&lt;<b>p</b>&gt;One year ago,&lt;<b>br</b>&gt;
+			moo decided to create&lt;<b>br</b>&gt;
+			the finest business cards&lt;</b>br</b>&gt;
+			on the web.&lt;<b>/p</b>&gt;
+			&lt;<b>p</b>&gt;they're here.&lt;<b>/p</b>&gt;
+		&lt;<b>/section</b>&gt;
+		&lt;<b>section</b> <i>class</i>="<s>slogan-2</s>"&gt;
+			&lt;<b>p</b>&gt;&lt;<b>strong</b>&gt;LUXE&lt;<b>/strong</b>&gt; by moo&lt;<b>/p</b>&gt;
+		&lt;<b>/section</b>&gt;
+		&lt;<b>p</b> <i>class</i>="<s>bg</s>"&gt;&lt;<b>/p</b>&gt;
+	&lt;<b>/section</b>&gt;
+&lt;<b>/section</b>&gt;&lt;<b>/a</b>&gt;</code>
+		
+		</div></article>
+
+		<article tabindex="30" class="slide-28 center  center-text"><div class="wrapper">
+			<!--Структура баннера 1-->
+		</div></article>
+		<article tabindex="31" class="slide-29 center  center-text"><div class="wrapper">
+			<!--Структура баннера 2-->
+		</div></article>
+		<article tabindex="32" class="slide-30 center  center-text"><div class="wrapper">
+			<!--Структура баннера 3-->
+		</div></article>
+		<article tabindex="33" class="slide-31 center  center-text"><div class="wrapper">
+			<!--Структура баннера 4-->
+		</div></article>
+		<article tabindex="34" class="slide-32 center  center-text"><div class="wrapper">
+			<!--Структура баннера 5-->
+		</div></article>
+		<article tabindex="35" class="slide-33 center  center-text"><div class="wrapper">
+			<!--Структура баннера 6-->
+		</div></article>
+		<article tabindex="36" class="slide-34 center  center-text"><div class="wrapper">
+			<!--Структура баннера 7-->
+		</div></article>
+
+		<article tabindex="37" class="slide-35 center  center-text"><div class="wrapper">
+			<!--Перспектива-->
+		</div></article>
+
+		<article tabindex="38" class="slide-36 center  center-text"><div class="wrapper">
+			<a href="http://moo.com/" class="moo-activity-hidden-ware">
+				<section class="outer-wrapper">
+					<section class="inner-wrapper">
+						<section class="slogan-1">
+							<p>
+							One year ago,<br>
+							moo decided to create<br>
+							the finest business cards<br>
+							on the web.
+							</p>
+							<p>they're here.</p>
+						</section>
+						<section class="slogan-2">
+							<p><strong>LUXE</strong> by moo</p>
+						</section>
+						<p class="bg"></p>
+					</section>
+				</section>
+			</a>
+		</div></article>
+
+		<article tabindex="39" class="slide-37 slide-code center  center-text"><div class="wrapper">
+			<h1>Эффект размытия текста</h1>
+			<h2>размыто</h2>
+<code><b>color</b>:transparent;
+<b>text-shadow</b>:0 0 30px rgba(255,255,255,0);</code>
+			<h2>четко</h2>
+<code><b>color</b>:transparent;
+<b>text-shadow</b>:0 0 0 rgba(255,255,255,1);</code>
+		</div></article>
+
+		<article tabindex="40" class="slide-38 slide-code center  center-text"><div class="wrapper">
+			<h1>Перспектива</h1>
+<code>
+<b>perspective-origin</b>: 50%;
+<b>perspective</b>: 900px;
+<b>backface-visibility</b>: visible;
+</code><a href="http://www.w3.org/TR/css3-3d-transforms/">http://www.w3.org/TR/css3-3d-transforms/</a>
+		</div></article>
+
+		<article tabindex="41" class="slide-39 center slide-code  center-text"><div class="wrapper">
+			<h1>Трансформации</h1>
+<code><b>transform</b>: 
+	translate,
+	scale,
+	rotate,
+	skew,
+	perspective,
+	matrix;
+<b>transform-origin</b>: 50%;
+<b>transform-style</b>: preserve-3d;</code>
+<a href="http://www.w3.org/TR/css3-2d-transforms/">http://www.w3.org/TR/css3-2d-transforms/</a>
+<a href="http://www.w3.org/TR/css3-3d-transforms/">http://www.w3.org/TR/css3-3d-transforms/</a>
+		</div></article>
+
+		<article tabindex="42" class="slide-40 slide-code center  center-text"><div class="wrapper">
+			<h1>Анимация поворота</h1>
+<code>
+<s>@keyframes 'turnaround-part-1'</s>{
+	from{
+		<b>transform</b>: 
+			translateZ(-600px) 
+			rotateX(50deg) 
+			rotate(90deg);
+	}
+	to{
+		<b>transform</b>: 
+			translateZ(-600px) 
+			rotateX(50deg) 
+			rotate(0deg);
+	}
+}
+</code>
+		</div></article>
+
+		<article tabindex="43" class="slide-41 slide-code center center-text"><div class="wrapper">
+			<h1>Анимация появления текста</h1>
+<code>
+<s>@keyframes 'see-me'</s>{
+	0%{
+		<b>text-shadow</b>:0 0 30px rgba(255,255,255,0);
+	}
+	100%{
+		<b>text-shadow</b>:0 0 0 rgba(255,255,255,1);	
+	}
+}</code>
+		</div></article>
+
+
+		<article tabindex="44" class="slide-42 slide-code center center-text"><div class="wrapper">
+			<h1>Применение анимации к элементу</h1>
+<code>
+<b>animation-name</b>:'see-me';
+<b>animation-duration</b>: 1s;
+<b>animation-timing-function</b>: ease;
+<b>animation-delay</b>: 8s;
+<b>animation-iteration-count</b>: 1;
+<b>animation-direction</b>: normal;
+<b>animation-fill-mode</b>: forwards;
+</code><a href="http://dev.w3.org/csswg/css3-animations/">http://dev.w3.org/csswg/css3-animations/</a>
+		</div></article>
+
+
+		<article tabindex="45" class="slide-43 slide-code center  center-text"><div class="wrapper">
+			<h1>Плавная смена состояний</h1>
+<code>
+<b>transition-property</b>: all;
+<b>transition-duration</b>: .3s;
+<b>transition-timing-function</b>: ease-in;
+<b>transition-delay</b>: .1s;
+</code><a href="http://www.w3.org/TR/css3-transitions/">http://www.w3.org/TR/css3-transitions/</a>
+		</div></article>
+
+		<article tabindex="46" class="slide-44 center  center-text"><div class="wrapper">
+			<h1>Вопросы</h1>
+		</div></article>
+
+
+		<article tabindex="47" class="slide-45 center  center-text"><div class="wrapper">
+			<h1>Сайты</h1>
+		</div></article>
+
+		<article tabindex="48" class="slide-46 center  center-text"><div class="wrapper">
+			<a href="beercamp.html" class="wrapper-link"><img src="spoiler/2012.beercamp.com.png" alt="Сайт"></a>
+		</div></article>
+
+		<article tabindex="49" class="slide-47 center  center-text"><div class="wrapper">
+			<a href="http://acko.net/" class="wrapper-link"><img src="spoiler/acko.net.png" alt="Сайт"></a>
+		</div></article>
+
+		<article tabindex="50" class="slide-48 center  center-text"><div class="wrapper">
+			<a href="http://bartaz.github.com/impress.js/" class="wrapper-link"><img src="spoiler/impress.js.png" alt="Сайт"></a>
+		</div></article>
+
+		<article tabindex="51" class="slide-48 center  center-text"><div class="wrapper">
+			<a href="http://lab.hakim.se/meny/" class="wrapper-link"><img src="spoiler/lab.hakim.se.png" alt="Сайт"></a>
+		</div></article>
+
+		<article tabindex="52" class="slide-48 center  center-text"><div class="wrapper">
+			<a href="http://oridomi.com/" class="wrapper-link"><img src="spoiler/oridomi.com.png" alt="Сайт"></a>
+		</div></article>
+
+		<article tabindex="53" class="slide-49 center  center-text"><div class="wrapper">
+			<a href="christianheilmann.com.html" class="wrapper-link"><img src="spoiler/christianheilmann.com.png" alt="Сайт"></a>
+		</div></article>
+
+		<article tabindex="54" class="slide-50 center  center-text"><div class="wrapper">
+			<a href="http://wannafun.ru/" class="wrapper-link"><img src="spoiler/wannafun.ru.png" alt="Сайт"></a>
+		</div></article>
+
+		<article tabindex="55" class="slide-51 center  center-text"><div class="wrapper">
+			<a href="http://stuffandnonsense.co.uk/content/demo/cannybill/21-10-2009/pricing.html" class="wrapper-link"><img src="spoiler/stuffandnonsense.co.uk.png" alt="Сайт"></a>
+		</div></article>
+
+		<article tabindex="56" class="slide-52 center  center-text"><div class="wrapper">
+			<a href="http://panic.com/transmit/" class="wrapper-link"><img src="spoiler/panic.com.png" alt="Сайт"></a>
+		</div></article>
+
+		<article tabindex="57" class="slide-edge center  center-text"><div class="wrapper">
+			<h1>edge</h1>
+		</div></article>
+
+		<article tabindex="58" class="slide-54  center  center-text"><div class="wrapper">
+			<a href="errorless/mainpage+projects.html" class="wrapper-link"><img src="spoiler/errorless.png" alt="Сайт"></a>
+		</div></article>
+
+		<article tabindex="59" class="slide-54 center  center-text"><div class="wrapper">
+			<a href="desire.ly/friends-wishes.html" class="wrapper-link"><img src="spoiler/desirely.png" alt="Сайт"></a>
+		</div></article>
+
+		<article tabindex="60" class="slide-54 center  center-text"><div class="wrapper">
+			<a href="http://tympanus.net/Tutorials/3DHoverEffects/index2.html" class="wrapper-link"><img src="spoiler/hover.png" alt="Сайт"></a>
+		</div></article>
+
+		<article tabindex="61" class="slide-54 center  center-text"><div class="wrapper">
+			<a href="panel/catalog.html" class="wrapper-link"><img src="spoiler/giftofoni.png" alt="Сайт"></a>
+		</div></article>
+
+		<article tabindex="62" class="key2 center center-text"><div class="wrapper">
+			<h1>Ключевые моменты</h1>
+		</div></article>
+
+		<article tabindex="63" class="slide-55 center slide-code center-text"><div class="wrapper">
+			
+<code>
+&lt;<b>a</b> <i>href</i>="<s>#</s>"&gt;
+	&lt;<b>div</b> <i>class</i>="<s>window</s>"&gt;
+		&lt;<b>img</b> <i>src</i>="<s>spoiler/good-2.jpg</s>" 
+			<i>alt</i>="<s>Товар</s>" 
+			<i>class</i>="<s>illustration</s>"&gt;
+		&lt;<b>p</b> <i>class</i>="<s>price</s>"&gt;69 TL&lt;<b>/p</b>&gt;
+	&lt;<b>/div</b>&gt;
+	&lt;<b>h2</b> <i>class</i>="<s>title</s>">…&lt;<b>/h2</b>&gt;
+&lt;/<b>a</b>&gt;
+</code>
+
+		</div></article>
+
+
+		<article tabindex="64" class="slide-55 center slide-code center-text"><div class="wrapper">
+			<h1>Поворот по наведению</h1>
+<code>
+<s>.catalog-widget .line article .price</s>{
+	<b>transform</b>:translateZ(-1px) rotateY(180deg);
+}
+<s>.catalog-widget .line article:hover .window</s>{
+	<b>transform</b>: rotateY(180deg);
+	<b>transition</b>: all .4s ease-out;
+}
+</code>
+		</div></article>
+
+		<article tabindex="65" class="slide-55 center center-text"><div class="wrapper">
+			<h1>Вопросы</h1>
+		</div></article>
+
+
+		<article tabindex="66" class="slide-55 center center-text"><div class="wrapper">
+			<h1>Промо-игры</h1>
+		</div></article>
+
+		<article tabindex="67" class="slide-51 center  center-text"><div class="wrapper">
+			<a href="game-1/index.html" class="wrapper-link"><img src="spoiler/game-1.png" alt="Сайт"></a>
+		</div></article>
+
+		<article tabindex="68" class="slide-51 center  center-text"><div class="wrapper">
+			<a href="http://www.clicktorelease.com/code/css3dclouds/" class="wrapper-link"><img src="spoiler/clicktorelease.com.png" alt="Сайт"></a>
+		</div></article>
+
+		<article tabindex="69" class="slide-51 center  center-text"><div class="wrapper">
+			<a href="dirt.html" class="wrapper-link"><img src="spoiler/dirt.png" alt="Сайт"></a>
+		</div></article>
+
+		<article tabindex="70" class="slide-51 center  center-text"><div class="wrapper">
+			<a href="game/game.html" class="wrapper-link"><img src="spoiler/game.png" alt="Сайт"></a>
+		</div></article>
+
+		<article tabindex="71" class="key3 center center-text"><div class="wrapper">
+			<h1>Ключевые моменты</h1>
+		</div></article>
+
+
+		<article tabindex="72" class="slide-55 center slide-code center-text"><div class="wrapper">
+<code>
+&lt;<b>section</b> <i>class</i>="<s>screen navigation-screen</s>"&gt;
+&lt;<b>div</b> <i>class</i>="<s>turn-wrapper</s>"&gt;
+	&lt;<b>nav</b> <i>class</i>="<s>navigation element</s>"&gt;
+		&lt;<b>a</b> <i>href</i>="<s>#</s>" <i>class</i>="<s>new-game</s>"&gt;Game&lt;<b>/a</b>&gt;
+		&lt;<b>a</b> <i>href</i>="<s>#</s>" <i>class</i>="<s>rules</s>"&gt;Rules&lt;<b>/a</b>&gt;
+		&lt;<b>a</b> <i>href</i>="<s>#</s>" <i>class</i>="<s>scores</s>"&gt;Scores&lt;<b>/a</b>&gt;
+	&lt;<b>/nav</b>&gt;
+	&lt;<b>img</b> <i>src</i>="<s>img/star-1.png</s>" <i>class</i>="<s>artifact-1</s>" 
+	<i>alt</i>="<s>Звездочка</s>"&gt;
+	&lt;<b>img</b> <i>src</i>="<s>img/star-1.png</s>" <i>class</i>="<s>artifact-2</s>" 
+	<i>alt</i>="<s>Звездочка</s>"&gt;
+	&lt;<b>img</b> <i>src</i>="<s>img/pepper-1.png</s>" <i>class</i>="<s>artifact-3</s>" 
+	<i>alt</i>="<s>Звездочка</s>"&gt;
+&lt;<b>/div</b>&gt;&lt;<b>/section</b>&gt;
+</code>
+		</div></article>
+
+		<article tabindex="73" class="slide-55 center slide-code center-text"><div class="wrapper">
+			<h1>Позиционируем артефакты</h1>
+<code>
+<b>transform</b>: translateZ(150px) scale(.5);
+</code>
+		</div></article>
+
+		<article tabindex="74" class="slide-55 center slide-code center-text"><div class="wrapper">
+			<h1>Вызываем кинетоз</h1>
+
+<code>
+gameController.prototype.changeOrigin = function(event){
+<pre style='color:#000000;background:#ffffff;'>
+    <span style='color:#800000; font-weight:bold; '>var</span> x <span style='color:#808030; '>=</span> event<span style='color:#808030; '>.</span>pageX<span style='color:#800080; '>;</span>
+    <span style='color:#800000; font-weight:bold; '>var</span> y <span style='color:#808030; '>=</span> event<span style='color:#808030; '>.</span>pageY<span style='color:#800080; '>;</span>
+    <span style='color:#800000; font-weight:bold; '>var</span> size <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>this</span><span style='color:#808030; '>.</span>viewport<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    <span style='color:#800000; font-weight:bold; '>var</span> origin <span style='color:#808030; '>=</span> <span style='color:#800080; '>{</span>
+        x<span style='color:#800080; '>:</span><span style='color:#797997; '>Math</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>round</span><span style='color:#808030; '>(</span><span style='color:#808030; '>(</span>x<span style='color:#808030; '>/</span>size<span style='color:#808030; '>.</span>width<span style='color:#808030; '>)</span><span style='color:#808030; '>*</span><span style='color:#008c00; '>60</span><span style='color:#808030; '>)</span><span style='color:#808030; '>,</span>
+        y<span style='color:#800080; '>:</span><span style='color:#797997; '>Math</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>round</span><span style='color:#808030; '>(</span><span style='color:#808030; '>(</span>y<span style='color:#808030; '>/</span>size<span style='color:#808030; '>.</span>height<span style='color:#808030; '>)</span><span style='color:#808030; '>*</span><span style='color:#008c00; '>60</span><span style='color:#808030; '>)</span><span style='color:#800080; '>}</span>
+    <span style='color:#800000; font-weight:bold; '>var</span> currentScreen <span style='color:#808030; '>=</span> $<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>.navigation-screen</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    $<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>.turn-wrapper</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span>currentScreen<span style='color:#808030; '>)</span><span style='color:#808030; '>[</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>]</span>
+    <span style='color:#808030; '>.</span>style<span style='color:#808030; '>[</span>Modernizr<span style='color:#808030; '>.</span>prefixed<span style='color:#808030; '>(</span><span style='color:#0000e6; '>'transform'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>]</span> <span style='color:#808030; '>=</span> 
+    <span style='color:#0000e6; '>'rotateY('</span><span style='color:#808030; '>+</span><span style='color:#808030; '>(</span>origin<span style='color:#808030; '>.</span>x<span style='color:#808030; '>-</span><span style='color:#008c00; '>30</span><span style='color:#808030; '>)</span><span style='color:#808030; '>+</span><span style='color:#0000e6; '>'deg) '</span><span style='color:#808030; '>+</span>
+    <span style='color:#0000e6; '>'rotateX('</span><span style='color:#808030; '>+</span><span style='color:#808030; '>(</span><span style='color:#808030; '>-</span><span style='color:#808030; '>(</span>origin<span style='color:#808030; '>.</span>y<span style='color:#808030; '>-</span><span style='color:#008c00; '>30</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#808030; '>+</span><span style='color:#0000e6; '>'deg)'</span><span style='color:#800080; '>;</span>
+</pre>
+};
+</code>
+<code>
+</code>
+		</div></article>
+		<article tabindex="75" class="degradation center center-text contacts"><div class="wrapper">
+
+			<h1>Мягкая деградация</h1>
+			<p class="t3D">3D и анимация</p>
+			<p class="transitions">Транзишены</p>
+			<p class="scripts">Скриптинг</p>
+			<p class="static">Статика</p>
+
+		</div></article>
+
+		<article tabindex="76" class="center facepalm center-text contacts"><div class="wrapper">
+			<h1>Фильтры</h1>
+		</div></article>
+
+		<article tabindex="77" class="center b1 center-text contacts"><div class="wrapper">
+			<h1>Экспериментируйте</h1>
+		</div></article>
+
+		<article tabindex="78" class="center b2 center-text contacts"><div class="wrapper">
+			<h1>Это того стоит</h1>
+		</div></article>
+
+		<article tabindex="79" class="vcard center contacts"><div class="wrapper">
+			
+			<div class="vard-container">
+				<img src="spoiler/vcard.svg" alt="vcard">
+				<p>Антон Немцев</p>
+				<p>anton@websaints.net</p>
+				<p>@silentimp</p>
+				<p><b>skype:</b> ravencry</p>
+				<p>Cкачать</p>
+				<p style="text-align:center;"><a href="http://goo.gl/XE26h">http://goo.gl/XE26h</a></p>
+				<p>Посмотреть</p>
+				<p style="text-align:center;"><a href="http://goo.gl/MycNz">http://goo.gl/MycNz</a></p>
+			</div>
+			
+		</div></article>
+
+
+	</section>
+	<div class="progress"><div><div></div></div></div>
+	<div class="lightbox"></div>
+</body>
+</html>

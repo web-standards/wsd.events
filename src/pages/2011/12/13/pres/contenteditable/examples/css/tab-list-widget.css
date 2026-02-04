@@ -1,0 +1,92 @@
+.tab-list-widget{
+  width:649px;
+  position:relative;
+  background-color:#b7b7b7;
+  height:36px;
+  padding-top:4px;
+  }
+  .tab-list-widget .outer-wrapper{
+    background-color:#d8d8d8;
+    width:649px;
+    height:36px;
+    }
+    .tab-list-widget .outer-wrapper .backward{
+      float:left;
+      display:block;
+      width:30px;
+      height:36px;
+      background:url("../img/tab-back.gif") 0 -36px no-repeat;
+      overflow:hidden;
+      text-indent:-9000px;
+      }
+    .tab-list-widget .outer-wrapper .forward{
+      float:left;
+      display:block;
+      width:30px;
+      height:36px;
+      background:url("../img/tab-back.gif") 0 0 no-repeat;
+      overflow:hidden;
+      text-indent:-9000px;
+      }
+  .tab-list-widget .wrapper{
+    width:589px;
+    white-space:nowrap;
+    overflow:hidden;
+    position:relative;
+    height:40px;
+    float:left;
+    top:-4px;
+    }
+    .tab-list-widget .inner-wrapper{
+      height:36px;
+      width:2000px;
+      white-space:nowrap;
+      position:relative;
+      top:0;
+      left:0;
+      padding:4px 0 0 0;
+      display:block;
+      overflow:hidden;
+      vertical-align:bottom;
+      }
+      .tab-list-widget .inner-wrapper li{
+        display:inline-block;
+        vertical-align:bottom;
+        height:36px;
+        position:relative;
+        top:-4px;
+        background-color:#d8d8d8;
+        z-index:1;
+        left:1px;
+        font:normal 13px/36px 'PT Sans Caption',Arial,sans-serif;
+        }
+        *+html .tab-list-widget .inner-wrapper li{
+          display:inline;
+          zoom:1;
+          }
+        * html .tab-list-widget .inner-wrapper li{
+          display:inline;
+          zoom:1;
+          }
+        .tab-list-widget .inner-wrapper li.selected{
+          position:relative;
+          top:-4px;
+          margin-left:-1px;
+          z-index:2;
+          border-top:4px solid #000;
+          background:#e2e2e2;
+          }
+          .tab-list-widget .inner-wrapper li.selected a{ 
+            border-style:none;
+            }
+        .tab-list-widget .inner-wrapper li a{
+          font:normal 13px/28px 'PT Sans Caption',Arial,sans-serif;
+          color:#000;
+          padding:0 15px;
+          height:28px;
+          margin:4px 0 0;
+          border-right:1px solid #b7b7b7;
+          display:block;
+          float:left;
+          height:28px;
+          }

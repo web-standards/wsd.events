@@ -1,0 +1,18 @@
+.about-widget{
+	margin:55px 0 0;
+	position: relative;
+	padding:0 0 190px;
+	background: url("../img/tickets.png") 0 100% no-repeat;
+	}
+	.about-widget .title{
+		color:#3b5050;
+		font:60px/72px 'Berkshire Swash', Georgia, cursive;
+		text-shadow:0 1px 0 #fff;
+		width:550px;
+		overflow:hidden;
+		}
+	.about-widget p{
+		width:440px;
+		font: 24px/32px 'Marmelad', Arial, "Helvetica Neue", Helvetica, sans-serif;
+		overflow:hidden;
+		}

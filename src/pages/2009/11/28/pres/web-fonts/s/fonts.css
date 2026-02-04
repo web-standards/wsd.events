@@ -1,0 +1,12 @@
+@font-face {
+	font-family:'Myriad Pro';
+	src:url(../f/MyriadPro.otf) format('opentype');
+	}
+@font-face {
+	font-family:Cuprum;
+	src:url(../f/Cuprum.otf) format('opentype');
+	}
+@font-face {
+	font-family:Consolas;
+	src:url(../f/Consolas.ttf) format('truetype');
+	}

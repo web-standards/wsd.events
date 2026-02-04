@@ -1,0 +1,251 @@
+<!DOCTYPE HTML>
+<html lang="ru-RU">
+<head>
+	<title>Быстрая разработка. Краткий обзор средств для работы с кодом из консоли</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=1274, user-scalable=no">
+	<link rel="stylesheet" href="themes/matrix/styles/style.css">
+</head>
+<body class="list">
+	<header class="caption">
+	<h1>&gt; Краткий обзор средств для работы с кодом из консоли<blink>_</blink></h1>
+		<p>Червонный Максим</p>
+	</header>
+	<div class="slide bg" id="neo"><div>
+		<section>
+			<header>
+				<h2>Краткий обзор средств для работы с кодом из консоли<blink>_</blink></h2>
+			</header>
+			<img src="i/neo.jpg" style="opacity:0.4;" />
+		</section>
+	</div></div>
+	<div class="slide" id="why-comfort"><div>
+		<section>
+			<header>
+				<h2>Почему важно знать консольные команды</h2>
+			</header>
+			<p>часто код удобнее редактировать непосредтвенно на удаленном сервере, чем скачивать его локально или монтировать удаленную FS</p>
+		</section>
+	</div></div>
+	<div class="slide" id="why-functionality"><div>
+		<section>
+			<header>
+				<h2>Почему важно знать консольные команды</h2>
+			</header>
+			<ul>
+				<li>быстрота</li>
+				<li>мобильность (vim и bash есть везде и бесплатно)</li>
+				<li>ЧСВ, эстетичность (зеленые буковки на черном фоне!)</li>
+			</ul>
+		</section>
+	</div></div>
+	<div class="slide" id="interfaces"><div>
+		<section>
+			<header>
+				<h2>Интерфейсы</h2>
+			</header>
+			<ul>
+				<li>
+					удивительные
+					<p>(GUI, Google Wave, WoflramAlfa, Cuil, &lt;select&gt;)</p>
+				</li>
+				<li>
+					удобные
+					<p>(Google Search, терминал)</p>
+				</li>
+			</ul>
+		</section>
+	</div></div>
+	<div class="slide bg" id="context-menu"><div>
+		<section>
+			<header>
+				<h2>Контекстные меню, тысячи их</h2>
+			</header>
+			<img src="i/context-menu-hell.png" />
+		</section>
+	</div></div>
+	<div class="slide bg" id="fuu"><div>
+		<section>
+			<img src="i/fuu.png" />
+		</section>
+	</div></div>
+	<div class="slide" id="intuitive-interface"><div>
+		<section>
+			<header>
+				<h2>Интуитивный интерфейс</h2>
+			</header>
+			<p>set encoding=UTF-8</p>
+		</section>
+	</div></div>
+	<div class="slide bg" id="fuckyeah"><div>
+		<section>
+			<img src="i/fuckyeah.png" />
+		</section>
+	</div></div>
+	<div class="slide bg" id="terminal"><div>
+		<section>
+			<img src="i/8.png" />
+		</section>
+	</div></div>
+	<div class="slide" id="vcs-more-than-sync-tool"><div>
+		<section>
+			<header>
+				<h2>Системы контроля версий</h2>
+			</header>
+			<p>VCS не просто система для синхронизации кода</p>
+		</section>
+	</div></div>
+	<div class="slide" id="vcs-revert"><div>
+		<section>
+			<header>
+				<h2>Как вернуть изменения (changeset) определенной ревизии</h2>
+			</header>
+			<ul>
+				<li>svn diff -r362:363 filename | less</li>
+				<li>svn merge -r362:363 filename</li>
+				<li>git diff e76d3c43d84e05..48b2c7207ed2be</li>
+				<li>git reset e76d3c43d84e05</li>
+			</ul>
+		</section>
+	</div></div>
+	<div class="slide" id="vcs-annotate"><div>
+		<section>
+			<header>
+				<h2>Как найти виноватого</h2>
+			</header>
+			<ul>
+				<li>svn blame</li>
+				<li>git blame</li>
+			</ul>
+		</section>
+	</div></div>
+	<div class="slide" id="vcs-conflict"><div>
+		<section>
+			<header>
+				<h2>Как разруливать конфликты</h2>
+			</header>
+<pre>
+<<<<<<< HEAD:helloworld.js<br/>
+ololo = function() {<br/>
+=======<br/>
+function ololo() {<br/>
+>>>>>>> 77976da35a11db4580b80ae27e8d65caf5208086:helloworld.js
+</pre>
+		</section>
+	</div></div>
+	<div class="slide" id="vcs-resolve"><div>
+		<section>
+			<header>
+				<h2>Как разруливать конфликты</h2>
+			</header>
+			<p>svn resolve --accept working</p>
+		</section>
+	</div></div>
+	<div class="slide" id="find-and-replace"><div>
+		<section>
+			<header>
+				<h2>Поиск и замена</h2>
+			</header>
+			<p>find, grep, пайпы, регулярные выражения</p>
+		</section>
+	</div></div>
+	<div class="slide" id="find-files"><div>
+		<section>
+			<header>
+				<h2>Поиск файлов</h2>
+			</header>
+			<ul>
+				<li>find . -name '*.html'</li>
+				<li>find . -name '*.html' | less</li>
+				<li>find . -name '*.html' | grep 'index'</li>
+				<li>find . -name '*.orig' -exec rm {} \;</li>
+			</ul>
+		</section>
+	</div></div>
+	<div class="slide" id="find-in-files"><div>
+		<section>
+			<header>
+				<h2>Поиск в файлах</h2>
+			</header>
+			<p>grep -r 'v2.08' .</p>
+		</section>
+	</div></div>
+	<div class="slide" id="find-and-replace-in-files"><div>
+		<section>
+			<header>
+				<h2>Замена в файлах</h2>
+			</header>
+			<ul>
+				<li>grep -r 'v2.08' . | xargs sed -i "s/v2.08/v2.09/g"</li>
+				<li>find . -name "*.html" -print | xargs sed -i 's/&lt;div id="sidebar"&gt;/&lt;aside&gt;/g'</li>
+			</ul>
+		</section>
+	</div></div>
+	<div class="slide" id="find-and-replace-on-windows"><div>
+		<section>
+			<header>
+				<h2>Far</h2>
+			</header>
+			<p>Find and Replace plugin</p>
+		</section>
+	</div></div>
+	<div class="slide" id="imagemagick"><div>
+		<section>
+			<header>
+				<h2>Imagemagick</h2>
+			</header>
+			<p></p>
+			<ul>
+				<li>convert</li>
+				<li>
+					mogrify
+					<ul>
+						<li>mogrify -resize 100x *.jpg</li>
+					</ul>
+				</li>
+				<li>
+					montage
+					<ul>
+						<li>montage -mode Concatenate *-icon.png sprite.png</li>
+					</ul>
+				</li>
+			</ul>
+		</section>
+	</div></div>
+	<div class="slide" id="tolerance"><div>
+		<section>
+			<header>
+				<h2>Толерантная разработка</h2>
+			</header>
+			<p></p>
+			<ul>
+				<li>ln -s bin/upgrading/s2/layers s2</li>
+				<li>ln reps/ma-kul-script/core/index.pl ~/bin/run-script</li>
+				<li>git svn</li>
+				<li>hg git</li>
+			</ul>
+		</section>
+	</div></div>
+	<div class="slide" id="links"><div>
+		<section>
+			<header>
+				<h2>Ссылки</h2>
+			</header>
+			<ul>
+				<li><a href="http://www.developers.org.ua/lenta/articles/mercurial-step-by-step-dvcs-intro/">http://www.developers.org.ua/lenta/articles/mercurial-step-by-step-dvcs-intro/</a></li>
+				<li><a href="http://githowto.com">http://githowto.com</a></li>
+				<li><a href="http://kkovacs.eu/cool-but-obscure-unix-tools">http://kkovacs.eu/cool-but-obscure-unix-tools</a></li>
+				<li><a href="http://www.imagemagick.org/Usage/montage/">http://www.imagemagick.org/Usage/montage/</a></li>
+				<li><a href="http://plugring.farmanager.com/plugin.php?pid=229">http://plugring.farmanager.com/plugin.php?pid=229</a></li>
+			</ul>
+		</section>
+	</div></div>
+	<!--
+		Для того, чтобы убрать индикатор прогресса
+		из презентации, просто удалите элемент «progress».
+		-->
+	<div class="progress"><div></div></div>
+	<script src="scripts/script-adfea3dfb6.js"></script>
+	<!-- Copyright © 2010–2011 Вадим Макеев, http://pepelsbey.net/ -->
+</body>
+</html>

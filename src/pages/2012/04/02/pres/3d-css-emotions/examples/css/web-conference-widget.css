@@ -1,0 +1,42 @@
+.web-conference-widget{
+  background-color:#fff;
+  margin:0 0 15px 0;
+  padding:0 10px 10px;
+  border-top:4px solid #0bb24e;
+  }
+  .web-conference-widget .title{
+    font:bold 18px/20px 'PT Sans',Arial,sans-serif;
+    margin:12px 0 3px;
+    }
+    .web-conference-widget .title a{
+      color:#000;
+      }
+  .web-conference-widget .show-more{
+    font:italic 13px/18px 'PT Sans',Arial,sans-serif;
+    }
+  .web-conference-widget article{
+    margin:10px 0;
+    border-bottom:1px dotted #b7b7b7;
+    padding:0 0 10px;
+    }
+    .web-conference-widget article .avatar{
+      float:left;
+      margin:0 18px 0 0;
+      }
+    .web-conference-widget article .information{
+      overflow:hidden;
+      font:12px/18px 'PT Sans',Arial,sans-serif;
+      }
+    .web-conference-widget article time{
+      font:13px/18px 'PT Sans',Arial,sans-serif;
+      color:#777;
+      }
+    .web-conference-widget article .title{
+      margin:0;
+      font:bold 14px/18px 'PT Sans',Arial,sans-serif;
+      color:#0056a4;
+      }
+    .web-conference-widget article p{
+      font:12px/18px 'PT Sans',Arial,sans-serif;
+      color:#000;
+      }

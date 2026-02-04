@@ -1,0 +1,448 @@
+#BUFlash {
+    margin: 0 0 12px;
+}
+
+#BUcontainer {
+    font-family: Arial, "MS Trebuchet", sans-serif;
+    line-height: normal;
+}
+
+#BUcontainer {
+    background-image: url('../spoiler/background.jpg');
+    border: 1px solid black;
+    height: 90px;
+    margin: 0 0 10px;
+    overflow:hidden;
+    position: relative;
+    width: 726px;
+}
+
+#BUcontainer p {
+    margin: 0;
+}
+
+#BUcar {
+    position: absolute;
+    left:290px;
+    top:5px;
+
+    -webkit-animation-name: BUcarMove;
+    -webkit-animation-duration: 20s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-out;
+}
+
+#BUcarBody {
+    position: absolute;
+}
+
+
+#BUbackTire, #BUfrontTire {
+	position: absolute;
+    top:40px;
+	height: 28px;
+	width:29px;
+	
+	-webkit-animation-name: BUrotation;
+    -webkit-animation-duration: 20s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-out;
+}
+
+#BUfrontTire {
+    left:24px;
+}
+
+#BUbackTire {
+    left:142px;
+}
+
+@-webkit-keyframes BUrotation {
+    0% {-webkit-transform: rotate(0deg);}
+    10% {-webkit-transform: rotate(0deg);}
+    17% {-webkit-transform: rotate(-1800deg);}
+    100% {-webkit-transform: rotate(-1800deg);}
+}
+
+@-webkit-keyframes BUcarMove {
+    0% {-webkit-transform: translateX(440px);}
+    10% {-webkit-transform: translateX(440px);}
+    17% {-webkit-transform:translateX(0px);}
+    100% {-webkit-transform:translateX(0px);}
+}
+
+#BUtext1 {
+
+    height: 50px;
+    opacity:0;
+	filter: alpha(opacity = 0);
+    overflow:hidden;
+    position: absolute;
+    top: 18px;
+    left: 25px;
+    width: 0px;
+
+    -webkit-animation-name: BUtext1Transition;
+    -webkit-animation-duration: 20s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+}
+
+#BUtext1Container {
+	
+	color:#222;
+    font-family: Futura, Arial, "MS Trebuchet", sans-serif !important;
+    font-size: 20px;
+	
+    -webkit-animation-name: BUbackA;
+    -webkit-animation-duration: 1.5s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-delay:2s;
+
+    background-image: -webkit-gradient(
+        linear,
+        right bottom,
+        left top,
+        color-stop(0.45, #6E6F6F),
+        color-stop(0.5, rgb(178,212,212)),
+        color-stop(0.55, #6E6F6F)
+    );
+
+    background-position: left top;
+    -webkit-background-clip: text;
+    -webkit-background-size: 250px 400px;
+    -webkit-text-fill-color: transparent;
+    height:50px;
+    position: absolute;
+    width:250px;
+}
+
+#BUtext2 {
+    -webkit-animation-name: BUtext2Transition;
+    -webkit-animation-duration: 20s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+
+    
+    height: 50px;
+    opacity: 0;
+	filter: alpha(opacity = 0);
+    overflow:hidden;
+    position: absolute;
+    top: 20px;
+    right: 463px;    
+    width: 250px;
+}
+
+#BUtext2Container {
+	
+	color:#6E6F6F;
+    font-family: Futura, Arial, "MS Trebuchet", sans-serif !important;
+    font-size: 19px;
+	
+    -webkit-animation-name: BUback2A;
+    -webkit-animation-duration: 1.5s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-delay:6s;
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        right top,
+        color-stop(0.45, #6E6F6F),
+        color-stop(0.5, rgb(178,212,212)),
+        color-stop(0.55, #6E6F6F)
+    );
+    -webkit-background-clip: text;
+    -webkit-background-size: 250px 400px;
+    background-position: left top;
+    -webkit-text-fill-color: transparent;
+  
+    height:50px;
+    position: absolute;
+    right:0px;
+    width:250px;
+}
+
+
+@-webkit-keyframes BUtext1Transition {
+    0% {   
+		width: 250px;
+        opacity: 0;
+	}
+    5% {   
+		width: 250px;
+        opacity: 0;
+	}
+    7% {   
+		width: 250px;
+        opacity: 1;
+	}
+    20% {  
+		width: 250px;
+        opacity: 1;
+	}
+    25% {  
+		width: 0px;
+        opacity: 1;
+	}
+    100% { 
+		width: 0px;
+        opacity: 0;
+	}
+}
+
+@-webkit-keyframes BUtext2Transition {
+    0% {
+        width: 0;
+        opacity: 1;
+    }
+    21% {
+        width: 0;
+        opacity: 1;
+    }
+    26% {
+        width: 250px;
+        opacity: 1;
+    }
+    35% {
+        width: 250px;
+        opacity: 1;
+    }
+    38% {
+        width: 250px;
+        opacity: 0;
+    }
+    100% {
+        width: 250px;
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes BUbackA {
+    0% {background-position: left bottom;}
+    100% {background-position: left top;}
+}
+
+@-webkit-keyframes BUback2A {
+    0% {background-position: left top;}
+    100% {background-position: left bottom;}
+}
+
+
+/*Quotes*/
+
+.BUquote {
+	background-color:#424242;
+    background-image:-webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, rgb(97,97,97)),
+        color-stop(1, rgb(66,66,66))
+    );
+    background-image:-moz-linear-gradient(
+       -90deg,
+        rgb(97,97,97),
+        rgb(66,66,66)
+    );
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+    color:white;
+    font-size: 10px;
+    height:60px;
+    position:absolute;
+    top:12px;
+    left:20px;
+    width:255px;
+}
+
+.BUauthor {
+    color:#50B3D0;
+}
+
+#BUquote1 {
+    -webkit-animation-name: BUroundflip;
+    -webkit-animation-duration: 4.5s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay:7.8s;
+	opacity:0;
+	filter: alpha(opacity = 0);
+}
+
+#BUquote1 p {
+    padding: 14px 0 0 12px;
+}
+
+#BUquote2 {
+    -webkit-animation-name: BUroundflip;
+    -webkit-animation-duration: 4.5s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay:12.3s;
+	opacity:0;
+	filter: alpha(opacity = 0);
+}
+
+#BUquote2 p {
+    padding: 19px 0 0 42px;
+}
+
+#BUquote3 {
+    -webkit-animation-name: BUroundflip;
+    -webkit-animation-duration: 4.5s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay:16.8s;
+	opacity:0;
+	filter: alpha(opacity = 0);
+}
+
+#BUquote3 p {
+    padding: 14px 0 0 25px;
+}
+
+#BUquote4 {
+    -webkit-animation-name: BUroundflip2;
+    -webkit-animation-duration: 22.1s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+    /*-webkit-animation-delay:21.3s;*/
+
+}
+
+#BUquote4 p {
+    padding: 18px 0 0 16px;
+}
+
+@-webkit-keyframes BUroundflip {
+    0% {
+       -webkit-transform:rotateX(90deg);
+       opacity: 1;
+    }
+    17% {
+       -webkit-transform:rotateX(0deg);
+       opacity: 1;
+    }
+    83% {
+       -webkit-transform:rotateX(0deg);
+       opacity: 1;
+    }
+    100% {
+       -webkit-transform:rotateX(90deg);
+       opacity: 1;
+    }
+}
+
+@-webkit-keyframes BUroundflip2 {
+    0% {-webkit-transform:rotateX(90deg);opacity: 0;}
+	93.3% {-webkit-transform:rotateX(90deg);opacity: 0;}
+	93.4% {-webkit-transform:rotateX(90deg);opacity: 1;}
+    100% {-webkit-transform:rotateX(0deg);opacity: 1;}
+}
+
+/*LOGO*/
+
+#BUlogo {
+    -webkit-animation-name: BUlogoA;
+    -webkit-animation-duration: 20s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+    position:absolute;
+    top:22px;
+    left:509px;
+}
+
+@-webkit-keyframes BUlogoA {
+    0% {
+       opacity:0;
+    }
+    39% {
+        opacity:0;
+    }
+    42% {
+        opacity:1;
+    }
+    100% {
+        opacity:1;
+    }
+}
+
+
+/* BAR */
+
+#BUbottombar {
+    -webkit-animation-name: BUdrawerA;
+    -webkit-animation-duration: 8.6s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+    -webkit-transition-property: -webkit-transform;
+    -webkit-transition-duration: 0.3s;
+
+    font-family: Futura, Arial, "MS Trebuchet", sans-serif !important;
+    font-weight: 200;
+    position:absolute;
+    top:60px;
+    left:0px;
+}
+
+#BUbardrawer {
+    position:absolute;
+}
+
+#BUbutton {
+    background-color:#4ABDEA;
+    -webkit-border-radius: 3px;
+    -moz-border-radius:    3px;
+    border-radius:         3px;
+    border: 1px solid;
+    border-color: #96d2e9 #4482a3 #4482a3 #96d2e9;
+    height:18px;
+    position: absolute;
+    top: 7px;
+    left:516px;
+    width: 195px;
+}
+#BUbutton p {
+    color:white;
+    font-size: 12px;
+    margin:3px 0 0 24px;
+}
+
+@-webkit-keyframes BUdrawerA {
+    0% {
+        opacity:0;
+    }
+    92% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+
+}
+
+#BUcontainer:hover #BUbottombar {
+    -webkit-transform: translate(0,-10px);
+}
+
+#BUcontainer:hover #BUbottombar #BUbutton {
+    background-color: #474849;
+    border: 1px solid;
+    border-color: #818386 #232424 #232424 #818386;
+}
+
+
+
+html,body{
+    height:100%;
+    width:100%;
+    }
+
+#buick-ad-container{
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin:-103px 0 0 -364px;
+    }

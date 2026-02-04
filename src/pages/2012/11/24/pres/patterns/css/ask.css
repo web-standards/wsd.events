@@ -1,0 +1,45 @@
+body .ask{
+  background: #fff url("../spoiler/askme.png") 80px 80% no-repeat;
+  }
+  .ask hgroup{
+    color:#fff;
+    position: absolute;
+    right:80px;
+    top:80px;
+    width:400px;
+    height:400px;
+    display:block;
+    border-radius:200px;
+    vertical-align:middle;
+    line-height:400px;
+    z-index:3;
+    background: #000;
+    }
+    .ask hgroup:after{
+      content:".";
+      position: absolute;
+      top:160px;
+      left:-40px;
+      height:0;
+      width:0;
+      overflow:hidden;
+      font-size:0;
+      line-height:0;
+      text-indent:-9999px;
+      border-style:solid;
+      border-width:80px 20px 0;
+      border-color: #000 transparent transparent;
+      margin:-2px 0 0 0;
+      -webkit-transform: rotate(90deg);
+      z-index:-1;
+      display:block;
+      }
+    .ask hgroup h1{
+      z-index:3;
+      vertical-align:middle;
+      display:inline-block; 
+      font: 42px/48px 'PT Sans Caption',sans-serif;
+      }
+      .ask hgroup h1 b{
+        font: 160px/160px 'PT Sans Caption',sans-serif; 
+        }

@@ -1,0 +1,40 @@
+.engine{
+  color:#f00;
+  margin:36px 0 18px;
+  font: 40px/48px 'PT Sans Caption',sans-serif;
+  }
+  
+.character{
+  color:#f00;
+  }
+  
+.cat{
+  background:url("../spoiler/cat.jpg");
+  background-size:100% 100%;
+  }
+  
+.x2{
+  background:url("../spoiler/x2.jpg");
+  background-size:100% 100%;
+  }
+  
+.contacts b{
+  color:#f00;
+  width:200px;
+  display:inline-block;
+  text-align:right;
+  margin:0 20px 0 0;
+  }
+  
+  strong{
+    text-align:center;
+    display:block;
+    font: 200px/360px 'PT Sans Caption',sans-serif;
+    }
+    strong b{
+      font-size:100px;
+      }
+      
+.slide-27{
+  background:#fff url("../spoiler/fish.jpg") 50% 100% no-repeat;
+  }

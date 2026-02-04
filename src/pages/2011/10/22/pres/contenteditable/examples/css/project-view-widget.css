@@ -1,0 +1,82 @@
+.project-view-widget{
+  margin:0 0 15px;
+  border-top:4px solid #b5b5b5;
+  background-color:#e2e2e2;
+  font: 13px/18px 'PT Sans',Arial,sans-serif;
+  position:relative;
+  }
+  .project-view-widget .page-list{
+    position:absolute;
+    right:15px;
+    top:18px;
+    }
+    .project-view-widget .page-list li{
+      float:left;
+      width:11px;
+      height:11px;
+      margin:0 0 0 5px;
+      background:url("../img/circle.png") 0 0 no-repeat;
+      }
+      .project-view-widget .page-list li.past{
+        background-image:url("../img/circle-past.png");
+        }
+      .project-view-widget .page-list li a{
+        display:block;
+        width:11px;
+        height:11px;
+        text-indent:-9000px;
+        overflow:hidden;
+        }
+  .project-view-widget .wrapper{
+    height:218px;
+    position:relative;
+    overflow:hidden;
+    zoom:1;
+    width:100%;
+    
+    -webkit-box-shadow:0 0 10px 0 rgba(0,0,0,0.4);
+    -moz-box-shadow:0 0 10px 0 rgba(0,0,0,0.4);
+    -o-box-shadow:0 0 10px 0 rgba(0,0,0,0.4);
+    box-shadow:0 0 10px 0 rgba(0,0,0,0.4);
+    }
+    .project-view-widget .wrapper .inner-wrapper{
+      width:2000px;
+      position:relative;
+      left:0;
+      }
+      .project-view-widget .wrapper .inner-wrapper figure{
+        float:left;
+        position:relative;
+        }
+        .project-view-widget .wrapper .inner-wrapper figure figcaption{
+          position:absolute;
+          top:10px;
+          left:10px;
+          width:267px;
+          background:url("../img/project.png") 0 100% repeat-x;
+          color:#fff;
+          font: 18px/24px 'PT Sans Caption',Arial,sans-serif;
+          padding:12px 15px;
+          }
+          * html .project-view-widget .wrapper .inner-wrapper figure figcaption{
+            background:none;
+  					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src='img/project.png', sizingMethod='scale');
+  					cursor:pointer;
+  				  }
+        .project-view-widget .wrapper .inner-wrapper figure img{
+          display:block;
+          width:297px;
+          height:198px;
+          border:10px solid #fff;
+          }
+  .project-view-widget .show-more{
+    font:italic 13px/34px 'PT Sans',Arial,sans-serif;
+    margin:0 15px;
+    }
+  .project-view-widget .title{
+    padding:12px 15px;
+    font:bold 18px/24px 'PT Sans Caption',Arial,sans-serif;
+    }
+    .project-view-widget .title a{
+      color:#000;
+      }

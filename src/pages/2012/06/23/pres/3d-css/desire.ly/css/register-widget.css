@@ -1,0 +1,61 @@
+.register-widget{
+	width:288px;
+	float:right;
+	overflow:hidden;
+	background-color: #edece9;
+	margin:0 -18px 0 0;
+	padding:10px;
+	box-shadow:inset 0 1px 3px 0 rgba(0,0,0,.2);
+	position: relative;
+	z-index:3;
+	}
+	section~.register-widget{
+		margin:55px -18px 0 0;
+		}
+	.register-widget .title{
+		color:#3b5050;
+		font:36px/42px 'Berkshire Swash', Georgia, cursive;
+		text-shadow:0 1px 0 #fff;
+		}
+	.register-widget .login-using-fb{
+		padding:10px 0;
+		text-align:center;
+		}
+	.register-widget .or{
+		text-transform:lowercase;
+		text-align:center;
+		border-bottom:1px solid #fff;
+		border-top:1px solid #dbdad7;
+		height:0;
+		margin:10px 0;
+		overflow:visible;
+		}
+		.register-widget .or b{
+			background-color: #edece9;
+			padding:0 4px;
+			position: relative;
+			top:-12px;
+			color:#aeadab;
+			font:18px/18px 'Marmelad', Arial, "Helvetica Neue", Helvetica, sans-serif;
+			}
+	.register-widget .register{
+		
+		}
+		.register-widget .register .title{
+			font:18px/18px 'Marmelad', Arial, "Helvetica Neue", Helvetica, sans-serif;
+			color:#363636;
+			text-shadow:none;
+			}
+		.register-widget .register .line{
+			margin:10px 0 0;
+			}
+		.register-widget .register .submit{
+			margin:10px 0 0;
+			}
+			.register-widget .register .submit b{
+				padding:0 20px 0 0;
+				background: url("../img/go-ico.gif") 100% 56% no-repeat;
+				}
+		.register-widget .register input{
+			width:266px;
+			}

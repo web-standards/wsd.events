@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<title>Grunt.js: система сборки для фронтенд-разработчиков — Артём Сапегин</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=1274, user-scalable=no">
+	<meta name="generator" content="https://github.com/sapegin/grunt-shower-markdown">
+	<link rel="stylesheet" href="themes/ribbon/styles/screen-d90984e344.css">
+	<link rel="stylesheet" href="themes/ribbon/styles/print.css" media="print">
+	
+		<link rel="stylesheet" href="src/styles.css?1353728434000">
+	
+</head>
+<body class="list">
+	<header class="caption">
+		<h1>Grunt: система сборки для фронтенд-разработчиков</h1>
+<p><a href="http://sapegin.ru">Артём Сапегин</a> (<a href="https://twitter.com/sapegin">@sapegin</a>, <a href="mailto:artem@sapegin.ru">artem@sapegin.ru</a>)
+
+
+</p>
+
+	</header>
+	
+	
+	<section class="slide shout cover" id="Cover"><div>
+		<h2>Grunt</h2>
+<h3>Система сборки для фронтенд-разработчиков</h3>
+<p>Web Standards Days, 24 ноября 2012 г., Москва
+
+</p>
+<img src="pictures/grunt.png" alt="Grunt">
+
+
+
+
+	</div></section>
+	
+	<section class="slide " id="About"><div>
+		<h2>Артём Сапегин</h2>
+<ul>
+<li>JavaScript-программист в Badoo.</li>
+<li>Использую Grunt с начала года.</li>
+<li>Во всех проектах.</li>
+<li>Пишу плагины для Grunt.</li>
+</ul>
+<img src="pictures/me.jpg" alt="Артём Сапегин">
+
+
+
+
+	</div></section>
+	
+	<section class="slide " ><div>
+		<h2>Системы сборки</h2>
+<p>Автоматизируют подготовку проекта к боевому окружению:
+
+</p>
+<ul>
+<li>cклеивают и минифицируют файлы;</li>
+<li>запускают препроцессоры и компиляторы;</li>
+<li>оптимизируют изображения;</li>
+<li>и т. д.</li>
+</ul>
+
+	</div></section>
+	
+	<section class="slide shout" ><div>
+		<h2>Зачем нам это нужно?</h2>
+
+	</div></section>
+	
+	<section class="slide cover" id="Programmers"><div>
+		<h2>Пусть серверные программисты во всём разбираются!</h2>
+<img src="pictures/programmer.jpg" alt="">
+
+
+
+
+	</div></section>
+	
+	<section class="slide " ><div>
+		<h2>Зачем нам это нужно?</h2>
+<p>Сборка JS, CSS, картинок и прочего фронтенда — забота технолога.
+
+
+</p>
+
+	</div></section>
+	
+	<section class="slide shout" ><div>
+		<h2>Почему Grunt?</h2>
+
+	</div></section>
+	
+	<section class="slide smallcode" ><div>
+		<h2>Ant</h2>
+<pre><code class="language-xml">&lt;project name=&quot;Grunt vs. Ant&quot; default=&quot;min&quot; basedir=&quot;.&quot;&gt;</code>
+<code>    &lt;property name=&quot;JS&quot; value=&quot;src/*.js&quot; /&gt;</code>
+<code>    &lt;property name=&quot;BUILD&quot; value=&quot;build/scripts.js&quot; /&gt;</code>
+<code>    &lt;property name=&quot;BUILD_MIN&quot; value=&quot;build/scripts.min.js&quot; /&gt;</code>
+<code>    &lt;<mark>target name=&quot;concatenate&quot;</mark> description=&quot;Concatenate JavaScript files&quot;&gt;</code>
+<code>        &lt;echo message=&quot;Concatenation...&quot;/&gt;</code>
+<code>        &lt;<mark>concat</mark> destfile=&quot;${BUILD}&quot;&gt;</code>
+<code>            &lt;fileset dir=&quot;.&quot; includes=&quot;${JS}&quot;/&gt;</code>
+<code>        &lt;/concat&gt;</code>
+<code>    &lt;/target&gt;</code>
+<code>    &lt;<mark>target name=&quot;min&quot;</mark> depends=&quot;concatenate&quot; description=&quot;Minify JS...&quot;&gt;</code>
+<code>        &lt;echo message=&quot;Minification...&quot;/&gt;</code>
+<code>        &lt;<mark>exec executable=&quot;uglifyjs&quot;</mark>&gt;</code>
+<code>            &lt;arg line=&quot;-o ${BUILD_MIN} ${BUILD}&quot;/&gt;</code>
+<code>        &lt;/exec&gt;</code>
+<code>    &lt;/target&gt;</code>
+<code>&lt;/project&gt;</code></pre>
+
+	</div></section>
+	
+	<section class="slide " ><div>
+		<h2>Ant</h2>
+<ul>
+<li>XML.</li>
+<li>Развесистый.</li>
+<li>Есть встроенные задачи.</li>
+<li>Но их очень мало для фронтенда.</li>
+</ul>
+
+	</div></section>
+	
+	<section class="slide smallcode" ><div>
+		<h2>Make</h2>
+<pre><code class="language-makefile">JS = src/*.js</code>
+<code>BUILD = ./build/scripts.js</code>
+<code>BUILD_MIN = ./build/scripts.min.js</code>
+<code>&shy;</code>
+<code><mark>all</mark>: min</code>
+<code>&shy;</code>
+<code><mark>concat</mark>:</code>
+<code>    mkdir -p `dirname $(BUILD)`</code>
+<code>    cat $(JS) &gt; $(BUILD)</code>
+<code>&shy;</code>
+<code><mark>min</mark>: concat</code>
+<code>    uglifyjs -o $(BUILD_MIN) $(BUILD)</code></pre>
+
+	</div></section>
+	
+	<section class="slide " ><div>
+		<h2>Make</h2>
+<ul>
+<li>Краткий.</li>
+<li>Нужно уметь писать shell-скрипты.</li>
+<li>Нужно уметь пользоваться утилитами Unix.</li>
+<li>Сложность быстро растёт.</li>
+</ul>
+
+	</div></section>
+	
+	<section class="slide smallcode" ><div>
+		<h2>Grunt</h2>
+<pre><code class="language-javascript">module.exports = function(grunt) {</code>
+<code>    grunt.initConfig({</code>
+<code>        <mark>concat</mark>: {</code>
+<code>            main: {</code>
+<code>                src: &#39;src/*.js&#39;,</code>
+<code>                dest: &#39;build/scripts.js&#39;</code>
+<code>            }</code>
+<code>        },</code>
+<code>        <mark>min</mark>: {</code>
+<code>            main: {</code>
+<code>                src: &#39;&lt;%= concat.main.dest %&gt;&#39;,</code>
+<code>                dest: &#39;build/scripts.min.js&#39;</code>
+<code>            }</code>
+<code>        }</code>
+<code>    });</code>
+<code>    grunt.registerTask(&#39;<mark>default</mark>&#39;, &#39;concat min&#39;);</code>
+<code>};</code></pre>
+
+	</div></section>
+	
+	<section class="slide " ><div>
+		<h2>Grunt</h2>
+<ul>
+<li>Привычный язык: JS/Node.</li>
+<li>Конфигурация отделена от реализациии.</li>
+<li>Множество готовых задач.</li>
+<li>Заточен на фронтенд.</li>
+<li>Легко расширяется.</li>
+</ul>
+
+	</div></section>
+	
+	<section class="slide " ><div>
+		<h2>Встроенные задачи</h2>
+<ul>
+<li><strong>concat</strong> — склеивание файлов;</li>
+<li class="next"><strong>min</strong> — минификация JS (UglifyJS);</li>
+<li class="next"><strong>lint</strong> — проверка JS (JSHint);</li>
+<li class="next"><strong>qunit</strong> — запуск тестов (QUnit);</li>
+<li class="next"><strong>watch</strong> — отслеживание изменений в файлах;</li>
+<li class="next"><strong>server</strong> — простой веб-сервер для статики;</li>
+<li class="next"><strong>init</strong> — инициализация проектов по шаблонам.</li>
+</ul>
+
+	</div></section>
+	
+	<section class="slide " ><div>
+		<h2>Дополнительные задачи (плагины)</h2>
+<ul>
+<li>CSS-препроцессоры (SASS, LESS, Stylus).</li>
+<li class="next">Тестовые фреймворки (Mocha, Jasmin, CasperJS).</li>
+<li class="next">Оптимизация изображений.</li>
+<li class="next">Создание архивов.</li>
+<li class="next">И более 230 плагинов на <a href="http://gruntjs.com/">gruntjs.com</a>.</li>
+</ul>
+
+	</div></section>
+	
+	<section class="slide " ><div>
+		<h2>Мои плагины</h2>
+<ul>
+<li><a href="https://github.com/sapegin/grunt-stylus">stylus</a>.</li>
+<li class="next"><a href="https://github.com/sapegin/grunt-shower-markdown">shower-markdown</a>.</li>
+<li class="next"><a href="https://github.com/sapegin/grunt-imgo">imgo</a>.</li>
+<li class="next"><a href="https://github.com/sapegin/grunt-fingerprint">fingerprint</a>.</li>
+<li class="next"><a href="https://github.com/sapegin/grunt-sweet">sweet</a>.</li>
+</ul>
+<ul>
+<li class="next"><a href="https://github.com/sapegin/SublimeGruntWatch">SublimeGruntWatch</a> (очень альфа).</li>
+</ul>
+
+	</div></section>
+	
+	<section class="slide cover" ><div>
+		<h2>Кто использует</h2>
+<img src="pictures/logotypes.png" alt="">
+
+
+
+
+	</div></section>
+	
+	<section class="slide " ><div>
+		<h2>Установка</h2>
+<p>Сначала <a href="http://nodejs.org/">Node.js</a>, потом:
+
+</p>
+<pre><code>$ npm install grunt -g</code></pre>
+
+	</div></section>
+	
+	<section class="slide " ><div>
+		<h2>Gruntfile: grunt.js</h2>
+<pre><code class="language-javascript">module.exports = function(grunt) {</code>
+<code>    grunt.initConfig({</code>
+<code>        /* ... */</code>
+<code>    });</code>
+<code>};</code></pre>
+
+	</div></section>
+	
+	<section class="slide " ><div>
+		<h2>Задачи</h2>
+<pre><code class="language-javascript">module.exports = function(grunt) {</code>
+<code>    grunt.initConfig({</code>
+<code>        <mark>concat: {</mark></code>
+<code>        <mark>}</mark></code>
+<code>    });</code>
+<code>    grunt.registerTask(&#39;<mark>default</mark>&#39;, &#39;concat&#39;);</code>
+<code>};</code></pre>
+
+	</div></section>
+	
+	<section class="slide " ><div>
+		<h2>Подзадачи (multi task)</h2>
+<pre><code class="language-javascript">concat: {</code>
+<code>    <mark>main: {</mark></code>
+<code>    <mark>}</mark>,</code>
+<code>    <mark>second: {</mark></code>
+<code>    <mark>}</mark></code>
+<code>}</code></pre>
+
+	</div></section>
+	
+	<section class="slide " ><div>
+		<h2>Параметры задачи</h2>
+<pre><code class="language-javascript">concat: {</code>
+<code>    main: {</code>
+<code>        <mark>src: &#39;js/*.js&#39;,</mark></code>
+<code>        <mark>dest: &#39;build/scripts.js&#39;</mark></code>
+<code>    }</code>
+<code>}</code></pre>
+
+	</div></section>
+	
+	<section class="slide " ><div>
+		<h2>Списки файлов</h2>
+<pre><code class="language-javascript">&#39;js/main.js&#39;</code>
+<code>[ &#39;js/utils.js&#39;, &#39;js/main.js&#39; ]</code>
+<code>[ &#39;js/libs/*.js&#39;, &#39;js/mylibs/**/*.js&#39; ]</code></pre>
+<p><code>*</code> — любые символы.<br><code>/**/</code> — папка любой вложенности.
+
+
+</p>
+
+	</div></section>
+	
+	<section class="slide " ><div>
+		<h2>Шаблоны</h2>
+<p>Шаблонизатор из <a href="http://underscorejs.org/#template">Underscore</a>.
+
+</p>
+<pre><code>&lt;%= concat.main.dest %&gt;</code>
+<code>&lt;%= grunt.template.today(&quot;m-d-yyyy&quot;) %&gt;</code></pre>
+
+	</div></section>
+	
+	<section class="slide " ><div>
+		<h2>Шаблоны</h2>
+<pre><code class="language-javascript"><mark>concat</mark>: { <mark>main</mark>: {</code>
+<code>    src: [ &#39;js/utils.js&#39;, &#39;js/main.js&#39; ],</code>
+<code>    <mark>dest</mark>: &#39;build/scripts.js&#39;</code>
+<code>}},</code>
+<code>min: { main: {</code>
+<code>    src: &#39;<mark>&lt;%= <mark class="important">concat.main.dest</mark> %&gt;</mark>&#39;,</code>
+<code>    dst: &#39;build.<mark>&lt;%= grunt.template.today(&quot;m-d-yyyy&quot;) %&gt;</mark>.js&#39;</code>
+<code>}}</code></pre>
+
+	</div></section>
+	
+	<section class="slide " ><div>
+		<h2>Банеры</h2>
+<pre><code class="language-javascript">meta: {</code>
+<code>    <mark>banner: &#39;/* © Ivan Pupkin */&#39;</mark></code>
+<code>},</code>
+<code>min: { main: {</code>
+<code>    src: [ &#39;<mark>&lt;banner&gt;</mark>&#39;, &#39;build/build.js&#39; ], ...</code>
+<code>}}</code></pre>
+
+	</div></section>
+	
+	<section class="slide " ><div>
+		<h2>Подключение плагинов</h2>
+<pre><code>$ npm install grunt-stylus</code></pre>
+
+	</div></section>
+	
+	<section class="slide " ><div>
+		<h2>Подключение плагинов</h2>
+<pre><code class="language-javascript">module.exports = function(grunt) {</code>
+<code>    grunt.initConfig({</code>
+<code>        <mark>stylus</mark>: { ... }</code>
+<code>    });</code>
+<code>    <mark>grunt.loadNpmTasks(&#39;grunt-stylus&#39;);</mark></code>
+<code>    grunt.registerTask(&#39;default&#39;, &#39;<mark>stylus</mark>&#39;);</code>
+<code>};</code></pre>
+
+	</div></section>
+	
+	<section class="slide " ><div>
+		<h2>Запуск</h2>
+<pre><code>$ grunt</code>
+<code>$ grunt concat</code>
+<code>$ grunt concat:main</code>
+<code>&shy;</code>
+<code>$ grunt --debug</code>
+<code>&shy;</code>
+<code>$ grunt.cmd  # Windows :-)</code></pre>
+
+	</div></section>
+	
+	<section class="slide nonumber" ><div>
+		<h2>Конфигурации</h2>
+<pre><code class="language-javascript">    concat: { main: { ... dest: &#39;<mark>build/scripts.js</mark>&#39; }},</code>
+<code>    min: { main: { src: &#39;<mark>&lt;%= concat.main.dest %&gt;</mark>&#39;,</code>
+<code>                   dest: &#39;<mark>&lt;%= concat.main.dest %&gt;</mark>&#39; }}</code>
+<code>    ...</code>
+<code>    grunt.registerTask(&#39;<mark>default</mark>&#39;, &#39;concat min&#39;);</code>
+<code>    grunt.registerTask(&#39;<mark>debug</mark>&#39;, &#39;concat&#39;);</code></pre>
+<p><code>$ grunt</code> или <code>$ grunt debug --debug</code>
+
+</p>
+
+	</div></section>
+	
+	<section class="slide " ><div>
+		<h2>Собственные задачи</h2>
+<p>Будем запускать из Гранта <a href="https://github.com/imgo/imgo">imgo</a> —<br>консольный оптимизатор веб-графики.
+
+</p>
+<p>См. также <a href="https://github.com/sapegin/grunt-imgo">grunt-imgo</a>, <a href="https://github.com/jharding/grunt-exec">grunt-exec</a>.
+
+
+
+</p>
+
+	</div></section>
+	
+	<section class="slide " ><div>
+		<h2>Конфиг</h2>
+<pre><code class="language-javascript">imgo: {</code>
+<code>    images: {</code>
+<code>        files: &#39;images/**&#39;</code>
+<code>    }</code>
+<code>}</code></pre>
+
+	</div></section>
+	
+	<section class="slide " ><div>
+		<h2>Задача</h2>
+<pre><code class="language-javascript">grunt.registerMultiTask(&#39;imgo&#39;, &#39;…&#39;, function() {</code>
+<code>    // <mark>this.data.files</mark> ===</code>
+<code>    //   <mark>&lt;%= imgo.images.files %&gt;</mark></code>
+<code>});</code></pre>
+
+	</div></section>
+	
+	<section class="slide " ><div>
+		<h2>Цикл по исходным файлам</h2>
+<pre><code class="language-javascript">var done = this.async();</code>
+<code>var files = grunt.file.expandFiles(this.data.files);</code>
+<code>grunt.utils.async.forEach(files,</code>
+<code>    function(file, next) {</code>
+<code>        // <mark>Обрабатываем каждый файл</mark></code>
+<code>    }</code>
+<code>, done);</code></pre>
+
+	</div></section>
+	
+	<section class="slide " ><div>
+		<h2>Обработка файла</h2>
+<pre><code class="language-javascript">function(file, next) {</code>
+<code>    grunt.utils.spawn({</code>
+<code>        cmd: &#39;imgo&#39;,</code>
+<code>        args: [file]</code>
+<code>    }, next);</code>
+<code>}</code></pre>
+
+	</div></section>
+	
+	<section class="slide " ><div>
+		<h2>Использование</h2>
+<pre><code class="language-javascript">module.exports = function(grunt) {</code>
+<code>    grunt.initConfig({</code>
+<code>        imgo: {...}</code>
+<code>    });</code>
+<code>    grunt.registerMultiTask(&#39;imgo&#39;, ...);</code>
+<code>    grunt.registerTask(&#39;default&#39;, &#39;imgo&#39;);</code>
+<code>};</code></pre>
+
+	</div></section>
+	
+	<section class="slide " ><div>
+		<h2>grunt watch</h2>
+<pre><code class="language-javascript">concat: { main: {</code>
+<code>    src: [ &#39;js/utils.js&#39;, &#39;js/main.js&#39; ],</code>
+<code>    dest: &#39;build/scripts.js&#39; }},</code>
+<code><mark>watch</mark>: { concat: {</code>
+<code>    files: &#39;<mark>&lt;%= concat.main.src %&gt;</mark>&#39;,</code>
+<code>    tasks: &#39;<mark>concat</mark>&#39; }}</code></pre>
+
+	</div></section>
+	
+	<section class="slide " ><div>
+		<h2>grunt server</h2>
+<pre><code class="language-javascript">server: {</code>
+<code>    port: 8000,</code>
+<code>    base: &#39;.&#39;</code>
+<code>}</code></pre>
+<p><code>$ grunt server watch</code> → <a href="http://localhost:8000/">http://localhost:8000/</a>
+
+
+</p>
+
+	</div></section>
+	
+	<section class="slide " ><div>
+		<h2>grunt init</h2>
+<p>Упрощает инициализацию проектов и отдельных файлов (scaffolding).
+
+</p>
+<ul>
+<li>Создание файлов и структуры папок.</li>
+<li>Шаблоны.</li>
+<li>Таблица переименования файлов.</li>
+<li>Вопросы пользователю.</li>
+<li>gruntfile, jquery, node + <a href="https://github.com/sapegin/squirrelstrap">всё, что придумаете</a>.</li>
+</ul>
+
+	</div></section>
+	
+	<section class="slide treeout" ><div>
+		<h2>grunt init</h2>
+<pre><code>$ grunt init:node</code>
+<code>...</code>
+<code>$ tree</code>
+<code>.</code>
+<code>├── LICENSE-MIT</code>
+<code>├── README.md</code>
+<code>├── grunt.js</code>
+<code>├── lib</code>
+<code>│   └── grunt-init-node-sample.js</code>
+<code>├── package.json</code>
+<code>└── test</code>
+<code>    └── grunt-init-node-sample_test.js</code></pre>
+
+	</div></section>
+	
+	<section class="slide shout" ><div>
+		<h2>Реальный мир</h2>
+
+	</div></section>
+	
+	<section class="slide smallestcode" ><div>
+		<pre><code class="language-javascript">...</code>
+<code>&lt;script type=&quot;text/javascript&quot; src=&quot;/Content/js/lib/modernizr.js&quot;&gt;&lt;/script&gt;       </code>
+<code>&lt;script type=&quot;text/javascript&quot; src=&quot;/Content/js/lib/jquery.js&quot;&gt;&lt;/script&gt;</code>
+<code>&lt;script type=&quot;text/javascript&quot; src=&quot;/Content/js/lib/json.js&quot;&gt;&lt;/script&gt;</code>
+<code>&lt;script type=&quot;text/javascript&quot; src=&quot;/Content/js/lib/jquery.selectBox.js&quot;&gt;&lt;/script&gt;</code>
+<code>&lt;script type=&quot;text/javascript&quot; src=&quot;/Content/js/lib/jquery.fader.js&quot;&gt;&lt;/script&gt;</code>
+<code>&lt;script type=&quot;text/javascript&quot; src=&quot;/Content/js/lib/jquery.jscrollpane.js&quot;&gt;&lt;/script&gt;</code>
+<code>&lt;script type=&quot;text/javascript&quot; src=&quot;/Content/js/util.js&quot;&gt;&lt;/script&gt;</code>
+<code>&lt;script type=&quot;text/javascript&quot; src=&quot;/Content/js/articul/tools.js&quot;&gt;&lt;/script&gt; </code>
+<code>&lt;script type=&quot;text/javascript&quot; src=&quot;/Content/js/articul/nav-primary.js&quot;&gt;&lt;/script&gt;</code>
+<code>&lt;script type=&quot;text/javascript&quot; src=&quot;/Content/js/articul/gallerysis.js&quot;&gt;&lt;/script&gt;</code>
+<code>&lt;script type=&quot;text/javascript&quot; src=&quot;/Content/js/storejs/store_json2.min.js&quot;&gt;&lt;/script&gt; </code>
+<code>&lt;script type=&quot;text/javascript&quot; src=&quot;/Content/js/swfobject/swfobject.js&quot;&gt;&lt;/script&gt;    </code>
+<code>&lt;script type=&quot;text/javascript&quot; src=&quot;/Content/js/form.js&quot;&gt;&lt;/script&gt;</code>
+<code>&lt;script type=&quot;text/javascript&quot; src=&quot;/Content/js/articul/widgets/widgets.js&quot;&gt;&lt;/script&gt;</code>
+<code>&lt;script type=&quot;text/javascript&quot; src=&quot;/Content/js/articul/accessibility.js&quot;&gt;&lt;/script&gt;</code>
+<code>&lt;script type=&quot;text/javascript&quot; src=&quot;/Content/js/adriver/adriver.core.2.js&quot;&gt;&lt;/script&gt;</code>
+<code>&lt;script type=&quot;text/javascript&quot; src=&#39;/Content/js/accessibility_sensitive.js&#39;&gt;&lt;/script&gt;</code>
+<code>&lt;script type=&quot;text/javascript&quot; src=&quot;/Content/js/articul/announce.js&quot; &gt;&lt;/script&gt;</code>
+<code>&lt;script type=&quot;text/javascript&quot; src=&quot;/Content/js/lib/countdown.js&quot; &gt;&lt;/script&gt;</code>
+<code>&lt;script type=&quot;text/javascript&quot; src=&quot;/bitrix/components2/Articul.Sochi.Components/VideoBlockHomepageComponent/templates/.default/videoblock.js&quot; &gt;&lt;/script&gt;</code>
+<code>&lt;script type=&quot;text/javascript&quot; src=&quot;/Content/js/util.js&quot; &gt;&lt;/script&gt;</code>
+<code>&lt;script type=&quot;text/javascript&quot; src=&quot;/bitrix/components2/Articul.Sochi.Components/QuoteBlockHomepageComponent/templates/.default/script.js&quot; &gt;&lt;/script&gt;</code>
+<code>&lt;script type=&quot;text/javascript&quot; src=&quot;/bitrix/components2/Articul.Sochi.Objects/MapHomepageComponent/templates/.default/script.js&quot; &gt;&lt;/script&gt;</code>
+<code>&lt;script type=&quot;text/javascript&quot; src=&quot;/Content/js/lib/hammer.js&quot; &gt;&lt;/script&gt;</code>
+<code>&lt;script type=&quot;text/javascript&quot; src=&quot;/Content/js/lib/jquery.specialevent.hammer.js&quot; &gt;&lt;/script&gt;</code>
+<code>&lt;script type=&quot;text/javascript&quot; src=&quot;/Content/js/articul/event-scroller.js&quot; &gt;&lt;/script&gt;</code>
+<code>&lt;script type=&quot;text/javascript&quot; src=&quot;/Content/js/lib/jquery.jscrollpane.js&quot; &gt;&lt;/script&gt;</code>
+<code>&lt;script type=&quot;text/javascript&quot; src=&quot;/Content/js/lib/jquery.mousewheel.js&quot; &gt;&lt;/script&gt;</code>
+<code>&lt;script type=&quot;text/javascript&quot; src=&quot;/bitrix/components2/Articul.Sochi.Twitter/TweetListComponent/templates/.default/script.js&quot; &gt;&lt;/script&gt;</code>
+<code>&lt;script type=&quot;text/javascript&quot; src=&quot;/Content/js/articul/blogs.js&quot; &gt;&lt;/script&gt;</code>
+<code>&lt;script type=&quot;text/javascript&quot; src=&quot;/Content/js/image-centered.js&quot; &gt;&lt;/script&gt;</code>
+<code>&lt;script type=&quot;text/javascript&quot; src=&quot;/Content/js/articul/storage.js&quot; &gt;&lt;/script&gt;</code>
+<code>&lt;script type=&quot;text/javascript&quot; src=&quot;/Content/js/articul/polls.js&quot; &gt;&lt;/script&gt;</code>
+<code>&lt;script type=&quot;text/javascript&quot; src=&quot;/bitrix/components2/Articul.Sochi.Components/InterestingBlockHomepageComponent/templates/.default/script.js&quot; &gt;&lt;/script&gt;</code>
+<code>...</code></pre>
+
+	</div></section>
+	
+	<section class="slide " ><div>
+		<p>Главная страница реального проекта.
+
+</p>
+<ul>
+<li>39 JS-файлов</li>
+<li>5 CSS-файлов</li>
+</ul>
+
+	</div></section>
+	
+	<section class="slide cover" id="Suffering"><div>
+		<h2>Не надо так!</h2>
+<img src="pictures/pussinboots.jpg" alt="">
+
+
+
+
+	</div></section>
+	
+	<section class="slide shout" ><div>
+		<h2>Grunt поможет</h2>
+
+	</div></section>
+	
+	<section class="slide nonumber" ><div>
+		<h2>JavaScript: concat</h2>
+<pre><code class="language-javascript">concat: { main: {</code>
+<code>        src: [</code>
+<code>            &#39;Content/js/lib/modernizr.js&#39;,</code>
+<code>            &#39;Content/js/lib/jquery.js&#39;,</code>
+<code>            &#39;Content/js/articul/**/*.js&#39;, ...</code>
+<code>        ],</code>
+<code>        dest: &#39;build/scripts.js&#39;</code>
+<code>} }</code></pre>
+
+	</div></section>
+	
+	<section class="slide " ><div>
+		<h2>JavaScript: min</h2>
+<pre><code class="language-javascript">min: {</code>
+<code>    main: {</code>
+<code>        src: [ &#39;<mark>&lt;%= concat.main.dest %&gt;</mark>&#39; ],</code>
+<code>        dest: &#39;build/scripts.min.js&#39;</code>
+<code>    }</code>
+<code>}</code></pre>
+
+	</div></section>
+	
+	<section class="slide " ><div>
+		<h2>CSS</h2>
+<pre><code class="language-javascript">concat: { main: {</code>
+<code>        src: [</code>
+<code>            &#39;Content/css/main.css&#39;,</code>
+<code>            &#39;Content/css/articul/pit.css&#39;, ...</code>
+<code>        ],</code>
+<code>        dest: &#39;build/styles.css&#39;</code>
+<code>} }</code></pre>
+
+	</div></section>
+	
+	<section class="slide " ><div>
+		<h2>HTML</h2>
+<pre><code class="language-html">...</code>
+<code>&lt;link rel=&quot;stylesheet&quot; href=&quot;/build/styles.css&quot;&gt;</code>
+<code>&lt;script src=&quot;/build/scripts.js&quot;&gt;&lt;/script&gt;</code>
+<code>...</code></pre>
+
+	</div></section>
+	
+	<section class="slide cover" id="Happiness"><div>
+		<div class="guy" id="guy_frontenddev">Технолог</div>
+<div class="guy" id="guy_user">Пользователь</div>
+<div class="guy" id="guy_backenddev">Серверный программист</div>
+<div class="guy" id="guy_designer">Дизайнер</div>
+<div class="guy" id="guy_client">Заказчик</div>
+
+<img src="pictures/happiness.jpg" alt="">
+
+
+
+
+	</div></section>
+	
+	<section class="slide " ><div>
+		<ul>
+<li><a href="https://twitter.com/sapegin">@sapegin</a></li>
+<li><a href="http://sapegin.ru">sapegin.ru</a></li>
+<li><a href="mailto:artem@sapegin.ru">artem@sapegin.ru</a></li>
+</ul>
+<p>Презентация: <a href="http://sapegin.ru/pres/grunt/">sapegin.ru/pres/grunt</a><br>
+Примеры: <a href="https://github.com/sapegin/grunt-talk-examples">github.com/sapegin/grunt-talk-examples</a></p>
+
+	</div></section>
+	
+	
+	<div class="progress"><div></div></div>
+	<script src="scripts/script-adfea3dfb6.js"></script>
+
+	
+		<script src="highlight/highlight.pack.js?315518400000"></script>
+	
+		<script src="src/script.js?1353325563000"></script>
+	
+
+	<!-- Shower: © 2010–2012 Vadim Makeev — pepelsbey.net -->
+</body>
+</html>

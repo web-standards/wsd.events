@@ -1,0 +1,42 @@
+.recommended-tags-widget{
+  float:left;
+  position:relative;
+  text-align:left;
+  }
+  .recommended-tags-widget .title{
+    font:bold 12px/14px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color:#000;
+    }
+  .recommended-tags-widget p{
+
+    padding:0 10px;
+
+    margin:15px 0 0;
+
+    border:1px solid #bfbfbf;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    -ms-border-radius:5px;
+    -o-border-radius:5px;
+    border-radius:5px;
+
+    height:32px;
+
+    -webkit-box-shadow:0 2px 0 0 #e5e5e5;
+    -moz-box-shadow:0 2px 0 0 #e5e5e5;
+    -ms-box-shadow:0 2px 0 0 #e5e5e5;
+    -o-box-shadow:0 2px 0 0 #e5e5e5;
+    box-shadow:0 2px 0 0 #e5e5e5;
+    }
+    .recommended-tags-widget p a{
+      color:#999;
+      font:bold 12px/32px "Helvetica Neue",Helvetica,Arial,sans-serif;
+      }
+    .recommended-tags-widget p .current{
+      color:#333;
+      font:bold 18px/32px "Helvetica Neue",Helvetica,Arial,sans-serif;
+      }
+      .recommended-tags-widget p strong.recommended{
+        padding:0 0 0 25px;
+        background:url("../assets/recommended-ico.png") 0 50% no-repeat;
+        }

@@ -1,0 +1,731 @@
+/* Global common settings for all the elements by default
+======================================== */
+
+body {
+	color: #000;
+	background: #ccc;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	}
+span {
+	white-space: nowrap;
+	}
+abbr {
+	border-bottom: dotted 1px;
+	cursor: help;
+	}
+a abbr {
+	cursor: pointer;
+	}
+code {
+	font-family: Consolas, monospace;
+	}
+strong, b {
+	font-weight: bold;
+	}
+em, mark, i {
+	font-style: italic;
+	}
+sub, sup {
+	font-size: .7em;
+	}
+sub {
+	vertical-align: sub;
+	}
+sup {
+	vertical-align: super;
+	}
+a, a:link {
+	color: #900;
+	text-decoration: underline;
+	}
+a:visited {
+	color: #cc8f52;
+	}
+a:hover {
+	text-decoration: none;
+	}
+a:active {
+	color: #f93;
+	}
+
+
+
+/* The layout
+======================================== */
+
+/* The whole page
+---------------------------------------- */
+.page-wrapper {
+	width: 90%;
+	min-width: 960px;
+	max-width: 1300px;
+	margin: 20px auto;
+	border-radius: 20px;
+	box-shadow: rgba(0, 0, 0, .2) 0 0 9px 3px;
+	}
+
+/* The intro (the header) of the page
+---------------------------------------- */
+.intro {
+	position: relative;
+	width: 100%;
+	height: 108px;
+	overflow: hidden;
+	border-radius: 20px 20px 0 0;
+	background-color: #600;
+	background:
+		url('../../_images/design/intro-left.png') left top scroll no-repeat,
+		url('../../_images/design/intro-right.png') right bottom scroll no-repeat,
+		url('../../_images/design/intro-machine.png') 398px 68px scroll no-repeat,
+		url('../../_images/design/intro-gradient.png') left top scroll repeat-x;
+	white-space: nowrap;
+	}
+	.intro-title, .intro-supported {
+		position: absolute;
+		overflow: hidden;
+		text-indent: -9999px;
+		}
+		.intro-title a, .intro-supported a {
+			display: block;
+			width: 100%;
+			height: 100%;
+			}
+	.intro-title {
+		top: 14px;
+		left: 20px;
+		width: 338px;
+		height: 87px;
+		background:
+			url('../../_images/design/intro-webhitech-logo.png') left top scroll no-repeat,
+			url('../../_images/design/intro-technologies.png') right bottom scroll no-repeat;
+		}
+	.intro-supported {
+		top: 10px;
+		right: 20px;
+		width: 108px;
+		height: 83px;
+		background:
+			url('../../_images/design/intro-supported.png') right top scroll no-repeat,
+			url('../../_images/design/intro-ru-center-logo.png') right bottom scroll no-repeat;
+		}
+
+/* The main multicolumn layout
+---------------------------------------- */
+.main-layout-wrapper {
+	padding: 20px;
+	background: #fff;
+	}
+	.main-layout-wrapper:after {
+		visibility: hidden;
+		display: block;
+		height: 0;
+		clear: both;
+		font-size: 0;
+		content: "\00a0";
+		}
+	.main-layout {
+		float: left;
+		width: 100%;
+		}
+		.main-content {
+			margin-left: 238px;
+			margin-bottom: 20px;
+			padding: 0 0 0 20px;
+			}
+		.index-page .main-content {
+			margin-right: 238px;
+			padding: 0 20px;
+			}
+		.contest-activity {
+			float: left;
+			width: 238px;
+			margin: 0 0 20px -238px;
+			}
+		.sidebar {
+			float: left;
+			width: 238px;
+			margin-left: -100%;
+			}
+
+
+
+/* Specific service blocks (navigation menus, footers, etc.)
+======================================== */
+
+/* The main menu (the site navigation) and the year list
+---------------------------------------- */
+.main-menu, .yearlist {
+	margin-bottom: 20px;
+	border-radius: 10px;
+	box-shadow: rgba(0, 0, 0, .2) 0 0 3px 1px;
+	}
+	.menu-title {
+		padding: 5px 20px;
+		border-radius: 10px 10px 0 0;
+		color: #fff;
+		background-color: #600;
+		background-image: -webkit-linear-gradient(#900, #600);
+		background-image:    -moz-linear-gradient(#900, #600);
+		background-image:      -o-linear-gradient(#900, #600);
+		background-image:         linear-gradient(#900, #600);
+		font-weight: bold;
+		}
+	.main-menu li, .yearlist ul {
+		border: solid #999;
+		border-width: 0 1px 1px 1px;
+		background-color: #f8f8f8;
+		background-image: -webkit-linear-gradient(#fff, #e6e6e6);
+		background-image:    -moz-linear-gradient(#fff, #e6e6e6);
+		background-image:      -o-linear-gradient(#fff, #e6e6e6);
+		background-image:         linear-gradient(#fff, #e6e6e6);
+		}
+		.main-menu a, .menu-current {
+			display: block;
+			padding: 5px 20px;
+			}
+			.main-menu a,
+			.main-menu a:link,
+			.main-menu a:visited,
+			.main-menu a:hover,
+			.main-menu a:active,
+			.yearlist a,
+			.yearlist a:link,
+			.yearlist a:visited,
+			.yearlist a:hover,
+			.yearlist a:active {
+				color: #000;
+				text-decoration: none;
+				-webkit-transition: background-color .3s linear;
+				   -moz-transition: background-color .3s linear;
+				     -o-transition: background-color .3s linear;
+				        transition: background-color .3s linear;
+				}
+			.main-menu a:hover, .yearlist a:hover {
+				background-color: rgba(255, 204, 0, .2);
+				}
+		.main-menu ul li:last-child,
+		.main-menu ul li:last-child a,
+		.main-menu ul li:last-child .menu-current,
+		.yearlist ul:last-child {
+			border-radius: 0 0 10px 10px;
+			}
+		.menu-current, .menu-selected {
+			background-color: rgba(0, 0, 0, .2);
+			}
+		.menu-current {
+			color: #fff;
+			}
+			.menu-selected:hover {
+				background-image: none;
+				}
+	.yearlist ul {
+		text-align: center;
+		padding: 5px 20px;
+		}
+		.yearlist li {
+			display: inline;
+			}
+		.yearlist a, .yearlist-current {
+			padding: 0 5px;
+			border-radius: 5px;
+			}
+		.yearlist-current, .yearlist-selected {
+			background-color: rgba(0, 0, 0, .2);
+			}
+		.yearlist-current {
+			color: #fff;
+			}
+
+/* The search form and share buttons
+---------------------------------------- */
+.search {
+	clear: both;
+	padding: 3px 20px 0;
+	border: solid 1px #999;
+	border-radius: 10px;
+	box-shadow: rgba(0, 0, 0, .2) 0 0 3px 1px;
+	background-color: #f0f0f0;
+	background-image: -webkit-linear-gradient(#fff, #e6e6e6);
+	background-image:    -moz-linear-gradient(#fff, #e6e6e6);
+	background-image:      -o-linear-gradient(#fff, #e6e6e6);
+	background-image:         linear-gradient(#fff, #e6e6e6);
+	text-align: center;
+	}
+	.search li, .search form {
+		display: inline;
+		}
+	.search form {
+		margin-right: 1em;
+		}
+
+/* The list of partners
+---------------------------------------- */
+.partners {
+	clear: both;
+	border-top: solid 1px #999;
+	background-color: #f0f0f0;
+	background-image: -webkit-linear-gradient(#fff 60%, #e6e6e6 100%);
+	background-image:    -moz-linear-gradient(#fff 60%, #e6e6e6 100%);
+	background-image:      -o-linear-gradient(#fff 60%, #e6e6e6 100%);
+	background-image:         linear-gradient(#fff 60%, #e6e6e6 100%);
+	}
+	.partners-title {
+		width: 45%;
+		margin: 0 20px 0;
+		padding: 5px 20px;
+		border-radius: 0 0 10px 10px;
+		box-shadow: rgba(0, 0, 0, .2) 0 0 3px 1px;
+		color: #fff;
+		background-color: #666;
+		background-image: -webkit-linear-gradient(#999, #666);
+		background-image:    -moz-linear-gradient(#999, #666);
+		background-image:      -o-linear-gradient(#999, #666);
+		background-image:         linear-gradient(#999, #666);
+		font-weight: bold;
+		}
+	.partners ul {
+		padding: 20px 20px 0;
+		text-align: center;
+		}
+		.partners li {
+			display: inline-block;
+			width: 150px;
+			height: 80px;
+			margin: 0 10px 20px;
+			padding: 10px;
+			border: solid #f0f0f0 1px;
+			border-radius: 10px;
+			background: #fff;
+			}
+			.partners img {
+				width: 120px;
+				height: 50px;
+				}
+			.partners figcaption {
+				color: #666;
+				font-size: .7em;
+				text-transform: lowercase;
+				}
+
+/* The footer of the page with the information about the project
+---------------------------------------- */
+.about-project {
+	clear: both;
+	padding: 20px;
+	border-top: solid 1px #999;
+	border-radius: 0 0 20px 20px;
+	background-color: #f0f0f0;
+	background-image: -webkit-linear-gradient(#fff, #e6e6e6);
+	background-image:    -moz-linear-gradient(#fff, #e6e6e6);
+	background-image:      -o-linear-gradient(#fff, #e6e6e6);
+	background-image:         linear-gradient(#fff, #e6e6e6);
+	font-size: .8em;
+	line-height: 1.25;
+	}
+	.about-project a,
+	.about-project a:link,
+	.about-project a:visited,
+	.about-project a:hover,
+	.about-project a:active {
+		color: #000;
+		text-decoration: underline;
+		}
+
+
+
+/* Specific content blocks
+======================================== */
+
+/* The detached entry
+---------------------------------------- */
+.detached-entry {
+	margin-top: 1.25em;
+	padding-top: 1em;
+	border-top: dotted 1px #999;
+	}
+
+/* The listed entry
+---------------------------------------- */
+.listed-entry {
+	clear: both;
+	margin-bottom: -.75em;
+	}
+	.listed-entry:after {
+		visibility: hidden;
+		display: block;
+		height: 0;
+		clear: both;
+		font-size: 0;
+		content: "\00a0";
+		}
+	.listed-entry-details {
+		clear: both;
+		font-size: .8em;
+		line-height: 1.5;
+		}
+		.listed-entry-details ul {
+			margin-left: 1.5em;
+			}
+		.listed-entry-details ul {
+			list-style-type: disc;
+			}
+
+/* The listed announce
+---------------------------------------- */
+.listed-announce {
+	margin-bottom: 20px;
+	padding: 0 20px 20px;
+	border: solid 1px #999;
+	border-radius: 10px;
+	box-shadow: rgba(0, 0, 0, .2) 0 0 3px 1px;
+	background-image: -webkit-linear-gradient(#fff 80%, #f0f0f0 100%);
+	background-image:    -moz-linear-gradient(#fff 80%, #f0f0f0 100%);
+	background-image:      -o-linear-gradient(#fff 80%, #f0f0f0 100%);
+	background-image:         linear-gradient(#fff 80%, #f0f0f0 100%);
+	}
+	.listed-announce-header {
+		padding: 0 20px 2px 2px;
+		margin-bottom: 1em;
+		border-bottom: solid 1px #e6e6e6;
+		border-radius: 0 0 10px 0;
+		background-image: -webkit-radial-gradient(bottom right, farthest-side, #e6e6e6, #fff);
+		background-image:    -moz-radial-gradient(bottom right, farthest-side, #e6e6e6, #fff);
+		background-image:      -o-radial-gradient(bottom right, farthest-side, #e6e6e6, #fff);
+		background-image:         radial-gradient(bottom right, farthest-side, #e6e6e6, #fff);
+		}
+		.listed-announce-title {
+			display: inline-block;
+			margin-top: .8em;
+			font-weight: bold;
+			font-size: 1.25em;
+			}
+			.listed-announce-title a,
+			.listed-announce-title a:link,
+			.listed-announce-title a:visited {
+				color: #666;
+				text-decoration: none;
+				-webkit-transition: color .3s linear;
+				   -moz-transition: color .3s linear;
+				     -o-transition: color .3s linear;
+				        transition: color .3s linear;
+				}
+			.listed-announce-title a:hover,
+			.listed-announce-title a:active {
+				color: #000;
+				}
+
+/* The section that describes the current status of the contest activity
+---------------------------------------- */
+.contest-activity-title, .contest-activity-subtitle {
+	color: #666;
+	font-weight: bold;
+	}
+.contest-activity-title {
+	margin-top: -.25em;
+	font-size: 1.5em;
+	}
+.contest-activity-subtitle {
+	margin-top: .5em;
+	margin-bottom: .5em;
+	padding-top: .5em;
+	border-top: dotted 1px #999;
+	font-size: 1.25em;
+	}
+
+
+
+/* Some special inline or block-level elements (used to mark content)
+======================================== */
+
+/* The heading that contains a category title (used in listed announces, etc.)
+---------------------------------------- */
+.category-title {
+	width: 45%;
+	padding: 5px 20px;
+	border-radius: 0 0 10px 10px;
+	box-shadow: rgba(0, 0, 0, .2) 0 0 3px 1px;
+	color: #fff;
+	background-color: #600;
+	background-image: -webkit-linear-gradient(#900, #600);
+	background-image:    -moz-linear-gradient(#900, #600);
+	background-image:      -o-linear-gradient(#900, #600);
+	background-image:         linear-gradient(#900, #600);
+	font-weight: bold;
+	}
+	.category-title a,
+	.category-title a:link,
+	.category-title a:visited,
+	.category-title a:hover,
+	.category-title a:active {
+		color: #fff;
+		text-decoration: none;
+		} 
+
+/* The heading that contains a HTTP error code
+---------------------------------------- */
+.http-error {
+	margin-top: -.25em;
+	color: #900;
+	font-size: 10em;
+	font-weight: bold;
+	}
+
+/* The numbered headings */
+body {
+	counter-reset: chapter;
+	}
+.numbered {
+	position: relative;
+	padding-left: 1.75em;
+	}
+.numbered:before {
+	position: absolute;
+	margin-left: -1.75em;
+	counter-increment: chapter;
+	content: counter(chapter, decimal) '. ';
+	}
+
+/* The hyperlink with RSS button after it
+---------------------------------------- */
+.rss {
+	padding-right: 17px;
+	background: url('../../_images/design/rss.png') right center scroll no-repeat;
+	}
+
+/* The paragraph that contains an author name
+---------------------------------------- */
+.author {
+	margin-top: -.25em;
+	font-size: 1.25em;
+	font-style: italic;
+	}
+
+/* The paragraph that contains a very-very important message
+---------------------------------------- */
+.very-important {
+	margin-bottom: .25em;
+	font-size: 3em;
+	}
+
+/* The paragraph that contains a page publication date
+---------------------------------------- */
+.page-pubdate {
+	font-size: .8em;
+	font-style: italic;
+	text-align: right;
+	}
+
+/* The element that contains an entry publication date
+---------------------------------------- */
+.entry-pubdate {
+	display: inline-block;
+	margin-left: 1em;
+	font-size: .7em;
+	}
+	.entry-pubdate:before {
+		content: '// ';
+		}
+
+
+
+/* The figures
+======================================== */
+
+/* The figure that used as thumbnail in news, in listed announces, etc.
+---------------------------------------- */
+.thumbnail {
+	float: left;
+	margin: 5px 10px 10px 0;
+	border: solid 1px #999;
+	}
+	.thumbnail, .thumbnail img {
+		width: 100px;
+		height: 100px;
+		}
+
+/* The figure that contains a screenshot of a site that is a member of the contest
+---------------------------------------- */
+.screenshot img {
+	width: 236px;
+	height: 134px;
+	border: solid 1px #999;
+	}
+.screenshot figcaption {
+	margin-top: -.25em;
+	color: #666;
+	font-size: .8em;
+	font-style: italic;
+	text-align: right;
+	line-height: 1.25;
+	}
+.screenshot a,
+.screenshot a:link,
+.screenshot a:visited,
+.screenshot a:hover,
+.screenshot a:active {
+	color: #666;
+	text-decoration: none;
+	}
+
+/* The figure that contains a photography
+---------------------------------------- */
+.photo {
+	width: 602px;
+	margin-bottom: 1.5em;
+	}
+	.photo img {
+		border: solid 1px #999;
+		}
+	.photo figcaption {
+		margin-top: -.25em;
+		font-style: italic;
+		text-align: right;
+		line-height: 1.25;
+		}
+
+/* The figure that contains a portrait of an author, a jury member, etc.
+---------------------------------------- */
+.face {
+	float: left;
+	clear: left;
+	margin: 5px 10px 10px 0;
+	border: solid 1px #999;
+	}
+	.face, .face img {
+		width: 100px;
+		height: 125px;
+		}
+
+
+
+/* General content styling rules
+======================================== */
+
+/* Most often used elements of semantic markup
+---------------------------------------- */
+.general-content {
+	line-height: 1.5;
+	}
+	.general-content p {
+		margin-bottom: 1em;
+		}
+	.general-content ul, .general-content ol {
+		margin-left: 1.5em;
+		}
+	.general-content ul {
+		list-style-type: disc;
+		}
+	.general-content ol {
+		list-style-type: decimal;
+		}
+		.general-content li, .general-content li {
+			margin-bottom: 1em;
+			}
+			.general-content li > ul, .general-content li > ol {
+				margin-top: 1em;
+				}
+	.general-content code {
+		padding: 0 .25em;
+		background-color: #f0f0f0;
+		border-radius: .25em;
+		}
+	.general-content pre {
+		margin-bottom: 1em;
+		padding: 20px 20px 20px 3em;
+		border: solid 1px #999;
+		border-radius: 10px;
+		background-image: -webkit-linear-gradient(#fff 80%, #f0f0f0 100%);
+		background-image:    -moz-linear-gradient(#fff 80%, #f0f0f0 100%);
+		background-image:      -o-linear-gradient(#fff 80%, #f0f0f0 100%);
+		background-image:         linear-gradient(#fff 80%, #f0f0f0 100%);
+		white-space: normal;
+		counter-reset: code;
+		}
+		.general-content pre code {
+			position: relative;
+			display: block;
+			background: none;
+			white-space: pre-wrap;
+			}
+			.general-content pre code:before {
+				position: absolute;
+				margin-left: -2em;
+				color: #999;
+				counter-increment: code;
+				content: counter(code, decimal-leading-zero) ' ';
+				}
+			.general-content pre code:after {
+				content: '\000a';
+				}
+			.general-content pre code:nth-child(odd) {
+				background: rgba(204, 204, 204, .1);
+				}
+			.general-content pre code:only-child {
+				margin-left: -2em;
+				background: none;
+				}
+				.general-content pre code:only-child:before {
+					content: '';
+					}
+	.general-content table {
+		margin-bottom: 1em;
+		}
+	.general-content table, .general-content th, .general-content td {
+		border: solid 1px #999;
+		}
+		.general-content th {
+			background: #f0f0f0;
+			font-weight: bold;
+			}
+		.general-content th, .general-content td {
+			padding: 0 1em;
+			vertical-align: top;
+			text-align: left;
+			}
+			.general-content th code {
+				background: #ccc;
+				}
+	.general-content figure {
+		margin-bottom: 1em;
+		}
+
+/* Headings
+---------------------------------------- */
+.general-headings h1,
+.general-headings h2,
+.general-headings h3,
+.general-headings h4,
+.general-headings h5,
+.general-headings h6 {
+	margin-top: 1.5em;
+	margin-bottom: .5em;
+	color: #666;
+	font-weight: bold;
+	}
+	.general-headings h1:first-child,
+	.general-headings h2:first-child,
+	.general-headings h3:first-child,
+	.general-headings h4:first-child,
+	.general-headings h5:first-child,
+	.general-headings h6:first-child {
+		margin-top: -.25em;
+		}
+.general-headings h1 {
+	font-size: 1.75em;
+	}
+.general-headings h2 {
+	font-size: 1.5em;
+	}
+.general-headings h3 {
+	font-size: 1.25em;
+	}
+.general-headings h4 {
+	font-size: 1em;
+	}
+.general-headings h5 {
+	font-size: .8em;
+	}
+.general-headings h6 {
+	font-size: .7em;
+	}

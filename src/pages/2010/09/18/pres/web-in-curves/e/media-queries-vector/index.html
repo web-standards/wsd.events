@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html lang="ru-RU">
+<head>
+	<title>SVG + Media Queries. Вектор</title>
+	<meta charset="UTF-8">
+	<style type="text/css">
+		* {
+			padding:0;
+			margin:0;
+			}
+		ARTICLE {
+			position:absolute;
+			top:50%;
+			left:50%;
+			margin:-250px 0 0 -500px;
+			width:1000px;
+			height:333px;
+			}
+			FIGURE {
+				display:block;
+				height:333px;
+				}
+				IMG {
+					width:1000px;
+					}
+			INPUT {
+				display:block;
+				width:1000px;
+				height:50px;
+				}
+	</style>
+	<script type="text/javascript">
+		function init() {
+			var range = document.querySelector('input'),
+				image = document.querySelector('img');
+			range.onchange = function() {
+				image.style.width = this.value + 'px';
+			}
+		}
+		window.onload = init;
+	</script>
+</head>
+<body>
+	<article>
+		<figure>
+			<img src="logo.svg" alt="Opera Software">
+		</figure>
+		<input type="range" min="100" max="1000" value="1000">
+	</article>
+</body>
+</html>

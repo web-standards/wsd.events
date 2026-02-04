@@ -1,0 +1,555 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+	<title>Жми сюда!</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=1234, user-scalable=no">
+	<link rel="stylesheet" href="themes/ribbon/styles/style.css">
+	<style>
+		#Cover h2 {
+			position:absolute;
+			top:335px;
+			left:485px;
+			color:#FFF;
+			text-shadow:
+				0 0 20px #FFF;
+			font-size:60px;
+			}
+		#Cover p {
+			display:none;
+			}
+		#PseudoLinks h2 a,
+		#PseudoLink h2 a {
+			border-bottom-style:dotted;
+			}
+		#Buttons button,
+		#Button button {
+			padding:0 100px;
+			border-radius:200px;
+			border:none;
+			background:#0174A7;
+			color:#FFF;
+			font:inherit;
+			line-height:1.7;
+			}
+		#Quote blockquote {
+			font-size:50px;
+			}
+		#InsaneLinks blockquote {
+			font-size:50px;
+			}
+		#TheresNoLink h2 {
+			font-size:120px;
+			}
+		#LinksFinal h2,
+		#PseudoLinksFinal h2,
+		#ButtonsFinal h2 {
+			font-size:100px;
+			}
+	</style>
+</head>
+<body class="list">
+	<header class="caption">
+		<h1>Жми сюда!</h1>
+		<p><a href="http://pepelsbey.net/">Вадим Макеев</a>, <a href="http://www.opera.com/">Opera Software</a></p>
+	</header>
+	<div class="slide cover" id="Cover"><div>
+		<section>
+			<header>
+				<h2>Жми сюда!</h2>
+			</header>
+			<p>Кнопка, ссылка, псевдоссылка? Как правильно выбрать, сверстать и не наделать глупостей.</p>
+			<img src="pictures/cover.jpg" alt="">
+			<!-- Фотография włodi: flickr.com/photos/wlodi/3085157011/ -->
+		</section>
+	</div></div>
+	<div class="slide cover" id="CodingDept"><div>
+		<section>
+			<img src="pictures/coding-dept.jpg" alt="">
+		</section>
+	</div></div>
+	<div class="slide shout" id="Links"><div>
+		<section>
+			<header>
+				<h2><a href="#PseudoLinks">Ссылки</a></h2>
+			</header>
+		</section>
+	</div></div>
+	<div class="slide shout" id="PseudoLinks"><div>
+		<section>
+			<header>
+				<h2><a href="#Button">Псевдоссылки</a></h2>
+			</header>
+		</section>
+	</div></div>
+	<div class="slide shout" id="Buttons"><div>
+		<section>
+			<header>
+				<h2><button>Кнопки</button></h2>
+			</header>
+		</section>
+	</div></div>
+	<div class="slide cover" id="Captain"><div>
+		<section>
+			<img src="pictures/captain.jpg" alt="">
+		</section>
+	</div></div>
+	<div class="slide shout" id="Link"><div>
+		<section>
+			<header>
+				<h2><a href="">Ссылка</a></h2>
+			</header>
+		</section>
+	</div></div>
+	<div class="slide" id="LinkDesc"><div>
+		<section>
+			<header>
+				<h2>Ссылка</h2>
+			</header>
+			<pre>
+				<code>&lt;a href="<mark>http://…</mark>"&gt;Ссылка&lt;/a&gt;</code>
+			</pre>
+			<ul>
+				<li>Основа гипертекста, лучший друг поисковика</li>
+				<li>Переход между документами самым явным образом</li>
+				<li>Привычна и удобна, как ничто другое</li>
+			</ul>
+			<p class="note">Главное — адрес</p>
+		</section>
+	</div></div>
+	<div class="slide" id="LogicalLink"><div>
+		<section>
+			<header>
+				<h2>Логическая ссылка</h2>
+			</header>
+			<pre>
+				<code>&lt;ul&gt;</code>
+				<code>    &lt;li&gt;&lt;a href="/"&gt;Главная&lt;/a&gt;&lt;/li&gt;</code>
+				<code>    &lt;li&gt;<mark>&lt;a&gt;</mark>Каталог<mark>&lt;/a&gt;</mark>&lt;/li&gt;</code>
+				<code>    &lt;li&gt;&lt;a href="/about/"&gt;О компании&lt;/a&gt;&lt;/li&gt;</code>
+				<code>&lt;/ul&gt;</code>
+			</pre>
+			<p class="note">Чисто логическая ссылка, без адреса</p>
+		</section>
+	</div></div>
+	<div class="slide" id="LinkNot"><div>
+		<section>
+			<header>
+				<h2>Не ссылка</h2>
+			</header>
+			<p>Если у ссылки нет адреса, внутреннего, внешнего или логического, то это не ссылка, т.е. не <code>&lt;a href=""&gt;</code> и даже не <code>&lt;a&gt;</code></p>
+			<p class="note">Ведь пользователь может…</p>
+		</section>
+	</div></div>
+	<div class="slide" id="LinkUser"><div>
+		<section>
+			<header>
+				<h2>Пользователь может</h2>
+			</header>
+			<ul>
+				<li>Кликнуть <strong>с модификатором</strong> и открыть в фоновой вкладке</li>
+				<li><strong>Перетянуть</strong> на панель закладок или на рабочий стол</li>
+				<li>Кликнуть <strong>правой кнопкой</strong> и скопировать адрес</li>
+				<li><strong>Взаимодействовать</strong> с помощью расширений и программ</li>
+			</ul>
+			<p class="note">Когда ссылка — ссылка</p>
+		</section>
+	</div></div>
+	<div class="slide shout" id="PseudoLink"><div>
+		<section>
+			<header>
+				<h2><a href="#Button">Псевдоссылка</a></h2>
+			</header>
+		</section>
+	</div></div>
+	<div class="slide" id="PseudoLinkDesc"><div>
+		<section>
+			<header>
+				<h2>Псевдоссылка</h2>
+			</header>
+			<pre>
+				<code>&lt;a href="<mark>#anchor</mark>"&gt;Псевдоссылка&lt;/a&gt;</code>
+			</pre>
+			<ul>
+				<li>Некоторое действие <strong>на той же</strong> странице</li>
+				<li>Якоря, подстановка текста в формы, открытие выпадушки</li>
+				<li>Стала де-факто <strong>стандартом</strong> для этого круга действий</li>
+			</ul>
+			<p class="note">Но это не обязательно ссылка…</p>
+		</section>
+	</div></div>
+	<div class="slide" id="PseudoNotLink"><div>
+		<section>
+			<header>
+				<h2>Псевдонессылка</h2>
+			</header>
+			<pre>
+				<code><mark>&lt;span</mark> class="<mark>pseudo-link</mark>"&gt;Псевдонессылка&lt;/span&gt;</code>
+			</pre>
+			<ul>
+				<li>Если у псевдоссылки <strong>нет адреса,</strong> внутреннего или внешнего</li>
+				<li>Становится очень похожей на кнопку, но тише и проще</li>
+			</ul>
+			<p class="note">Существует договорённость…</p>
+		</section>
+	</div></div>
+	<div class="slide" id="PseudoDotted"><div>
+		<section>
+			<header>
+				<h2>Тоненьким пунктиром</h2>
+			</header>
+			<pre>
+				<code>.pseudo-link {</code>
+				<code>    border-bottom:<mark>1px dotted</mark>;</code>
+				<code>    }</code>
+			</pre>
+			<ul>
+				<li>Стиль <code>dotted</code> выглядит чище, чем <code>dashed</code></li>
+				<li>Цвет можно не указывать, он наследуется от текста</li>
+				<li>Можно рисовать пунктир картинкой и даже градиентом</li>
+			</ul>
+		</section>
+	</div></div>
+	<div class="slide shout" id="Button"><div>
+		<section>
+			<header>
+				<h2><button>Кнопка</button></h2>
+			</header>
+		</section>
+	</div></div>
+	<div class="slide" id="ButtonDesc"><div>
+		<section>
+			<header>
+				<h2>Кнопка</h2>
+			</header>
+			<pre>
+				<code><mark>&lt;input</mark> type="<mark>submit</mark>" value="Кнопка"&gt;</code>
+				<code><mark>&lt;input</mark> type="<mark>button</mark>" value="Кнопка"&gt;</code>
+				<code><mark>&lt;input</mark> type="<mark>image</mark>" src="…"&gt;</code>
+			</pre>
+			<ul>
+				<li>Действия, связанные с отправкой данных, некоторым процессом</li>
+				<li>Самый привычный системный элемент: <strong>ДА или НЕТ?!</strong></li>
+				<li>Делать лапу <code>cursor:pointer</code> совсем не нужно</li>
+			</ul>
+		</section>
+	</div></div>
+	<div class="slide shout" id="Quote"><div>
+		<section>
+			<blockquote class="middle">
+				<p>The <b>button</b> element represents <b>a button</b>.<br>The element is <b>a button</b>.</p>
+			</blockquote>
+		</section>
+	</div></div>
+	<div class="slide" id="ButtonButton"><div>
+		<section>
+			<header>
+				<h2>Кнопка «Кнопка»</h2>
+			</header>
+			<pre>
+				<code><mark>&lt;button</mark> type="<mark>button</mark>"&gt;Кнопка&lt;/button&gt;</code>
+				<code><mark>&lt;button</mark> type="<mark>submit</mark>"&gt;Кнопка&lt;/button&gt;</code>
+				<code><mark>&lt;button</mark> type="<mark>reset</mark>"&gt;Кнопка&lt;/button&gt;</code>
+			</pre>
+			<p class="note">Универсальный элемент для использования вне форм</p>
+		</section>
+	</div></div>
+	<div class="slide cover" id="Mighty"><div>
+		<section>
+			<img src="pictures/mighty.jpg" alt="">
+		</section>
+	</div></div>
+	<div class="slide shout" id="JavaScript"><div>
+		<section>
+			<header>
+				<h2>JavaScript</h2>
+			</header>
+		</section>
+	</div></div>
+	<div class="slide shout" id="InsaneLinks"><div>
+		<section>
+			<blockquote class="middle">
+				<p>Сделай-ка мне, чтобы по ссылке так <b>дыщ!</b> и выплывало…</p>
+			</blockquote>
+		</section>
+	</div></div>
+	<div class="slide cover" id="BAM"><div>
+		<section>
+			<img src="pictures/bam.jpg" alt="">
+		</section>
+	</div></div>
+	<div class="slide" id="InsaneLinks-1"><div>
+		<section>
+			<header>
+				<h2>Безумные ссылки</h2>
+			</header>
+			<pre>
+				<code>&lt;a href="<mark>#</mark>" onclick="<mark>fire()</mark>"&gt;</code>
+				<code>    <b>Бах!</b></code>
+				<code>&lt;/a&gt;</code>
+			</pre>
+			<p>Берём, значит, ссылку и вешаем обработчик</p>
+		</section>
+	</div></div>
+	<div class="slide" id="InsaneLinks-2"><div>
+		<section>
+			<header>
+				<h2>Безумные ссылки</h2>
+			</header>
+			<pre>
+				<code>&lt;a href="<mark>javascript:fire()</mark>"&gt;</code>
+				<code>    <b>Бдум!</b></code>
+				<code>&lt;/a&gt;</code>
+			</pre>
+			<p>Можно задействовать пустой атрибут</p>
+		</section>
+	</div></div>
+	<div class="slide" id="InsaneLinks-3"><div>
+		<section>
+			<header>
+				<h2>Безумные ссылки</h2>
+			</header>
+			<pre>
+				<code>&lt;a href="<mark>javascript:void(0)</mark>" onclick="<mark>fire()</mark>"&gt;</code>
+				<code>    <b>Ды-дыщ!</b></code>
+				<code>&lt;/a&gt;</code>
+			</pre>
+			<p>Или даже всё сразу!</p>
+		</section>
+	</div></div>
+	<div class="slide shout" id="TheresNoLink"><div>
+		<section>
+			<header>
+				<h2>Но ссылки-то нет!</h2>
+			</header>
+		</section>
+	</div></div>
+	<div class="slide cover" id="HeadShot"><div>
+		<section>
+			<img src="pictures/head-shot.jpg" alt="">
+		</section>
+	</div></div>
+	<div class="slide shout" id="Blank"><div>
+		<section>
+
+		</section>
+	</div></div>
+	<div class="slide cover" id="Serious"><div>
+		<section>
+			<img src="pictures/serious.png" alt="">
+		</section>
+	</div></div>
+	<div class="slide" id="MoarYandex"><div>
+		<section>
+			<header>
+				<h2>Яндекс «Ещё»</h2>
+			</header>
+			<pre>
+				<code><mark>&lt;span</mark> class="b-link b-link_pseudo_yes i-bem"</code>
+				<code>      <mark>onclick</mark>="return {"b-link":{}}"&gt;</code>
+				<code>    &lt;span class="b-link__inner"&gt;<mark>ещё</mark>&lt;/span&gt;</code>
+				<code><mark>&lt;/span&gt;</mark></code>
+			</pre>
+			<p class="note">С виду правильно, но есть настоящая ссылка «<a href="http://www.yandex.ru/all">Все сервисы</a>»</p>
+		</section>
+	</div></div>
+	<div class="slide" id="MoarGoogle"><div>
+		<section>
+			<header>
+				<h2>Google «Ещё»</h2>
+			</header>
+			<pre>
+				<code><mark>&lt;a</mark> href="<mark>http://www.google.ru/intl/ru/options/</mark>"</code>
+				<code>   onclick="gbar.tg(event,this)" <mark>aria-haspopup</mark>="true"&gt;</code>
+				<code>    &lt;span id="gbztms1"&gt;<mark>Ещё</mark>&lt;/span&gt;</code>
+				<code><mark>&lt;/a&gt;</mark></code>
+			</pre>
+			<p class="note">Всё очень правильно, есть даже ARIA для выпадушки</p>
+		</section>
+	</div></div>
+	<div class="slide" id="MoarFacebook"><div>
+		<section>
+			<header>
+				<h2>Facebook «Ещё»</h2>
+			</header>
+			<pre>
+				<code><mark>&lt;a</mark> class="rhcFooterSelectorButton"</code>
+				<code>   <mark>href="#"</mark> aria-haspopup="true" aria-expanded="false"</code>
+				<code>   aria-owns="u5urfy_47" aria-controls="js_5"&gt;</code>
+				<code>   <mark>Ещё</mark>&lt;i class="img sp_4yc81c sx_3f849e"&gt;&lt;/i&gt;</code>
+				<code><mark>&lt;/a&gt;</mark></code>
+			</pre>
+			<p class="note">Решётка, то есть, простите, диез…</p>
+		</section>
+	</div></div>
+	<div class="slide" id="MoarMailRu"><div>
+		<section>
+			<header>
+				<h2>Mail.Ru «Ещё»</h2>
+			</header>
+			<pre>
+				<code><mark>&lt;a</mark> href="<mark class="important">javascript:void(0);</mark>" class="mlr-psd_lnk"&gt;</code>
+				<code>    <mark>&lt;u</mark> id="mailru-webagent"&gt;<mark>Показать все поля</mark>&lt;/u&gt;</code>
+				<code>    <mark>&lt;i</mark> class="mr_arrow"&gt;<mark>&lt;b&gt;</mark>&lt;/b&gt;&lt;/i&gt;</code>
+				<code><mark>&lt;/a&gt;</mark></code>
+			</pre>
+			<p class="note">Void!</p>
+		</section>
+	</div></div>
+	<div class="slide" id="ReloadYandex"><div>
+		<section>
+			<header>
+				<h2>Я.Почта «Обновить»</h2>
+			</header>
+			<pre>
+				<code><mark>&lt;a</mark> data-action="mailbox.check"&gt;</code>
+				<code>    &lt;img class="b-ico b-ico_check-mail" src="…"&gt;</code>
+				<code>    &lt;span class="b-toolbar__item__label"&gt;<mark>Проверить</mark>&lt;/span&gt;</code>
+				<code>    &lt;span class="b-toolbar__item__selected …</code>
+				<code><mark>&lt;/a&gt;</mark></code>
+			</pre>
+			<p class="note">Сссылка-нессылка</p>
+		</section>
+	</div></div>
+	<div class="slide" id="ReloadGmail"><div>
+		<section>
+			<header>
+				<h2>Gmail «Обновить»</h2>
+			</header>
+			<pre>
+				<code><mark>&lt;div</mark> class="T-I J-J5-Ji nu T-I-ax7 L3" role="button"</code>
+				<code>     tabindex="0" style="<mark>-webkit-user-select:none</mark>"</code>
+				<code>     aria-label="Refresh" data-tooltip="Refresh"&gt;</code>
+				<code>    &lt;div class="asa"&gt;</code>
+				<code>        &lt;span class="J-J5-Ji ask"&gt;<mark>&amp;nbsp;</mark>&lt;/span&gt;</code>
+				<code>    &lt;/div&gt;</code>
+				<code><mark>&lt;/div&gt;</mark></code>
+			</pre>
+		</section>
+	</div></div>
+	<div class="slide" id="SendYandex"><div>
+		<section>
+			<header>
+				<h2>Я.Почта «Отправить»</h2>
+			</header>
+			<pre>
+				<code><mark>&lt;input</mark> type="<mark>submit</mark>"</code>
+				<code>       class="b-mail-button__button" tabindex="10"&gt;</code>
+			</pre>
+			<p class="note">Всё хорошо</p>
+		</section>
+	</div></div>
+	<div class="slide" id="SendMailRu"><div>
+		<section>
+			<header>
+				<h2>Mail.Ru «Отправить»</h2>
+			</header>
+			<pre>
+				<code><mark>&lt;a</mark> class="button-a js-send" tabindex="1"</code>
+				<code>   <mark>href="#"</mark> role="submit" title="Ctrl+Enter"</code>
+				<code>   id="mailru-webagent-gen-35"&gt;</code>
+				<code>   <mark>Отправить</mark></code>
+				<code><mark>&lt;/a&gt;</mark></code>
+			</pre>
+			<p class="note">Дали в руки якоря…</p>
+		</section>
+	</div></div>
+	<div class="slide" id="SendGmail"><div>
+		<section>
+			<header>
+				<h2>Gmail «Отправить»</h2>
+			</header>
+			<pre>
+				<code><mark>&lt;div</mark> id=":ga" class="T-I J-J5-Ji Bq nS T-I-KE L3"</code>
+				<code>     <mark>role="button"</mark> tabindex="2"</code>
+				<code>     style="-webkit-user-select:none"&gt;</code>
+				<code>    &lt;b style="-webkit-user-select:none"&gt;<mark>Send</mark>&lt;/b&gt;</code>
+				<code><mark>&lt;/div&gt;</mark></code>
+			</pre>
+			<p class="note">Грубо и прямо</p>
+		</section>
+	</div></div>
+	<div class="slide" id="VK"><div>
+		<section>
+			<header>
+				<h2>ВКонтакте</h2>
+			</header>
+			<pre>
+				<code><mark>&lt;button</mark> id="send_post"</code>
+				<code>     onclick="wall.sendPost()"&gt;<mark>Отправить</mark>&lt;/button&gt;</code>
+				<code><mark>&lt;span</mark> class="post_like_link fl_l"</code>
+				<code>     id="like_link4483_747"&gt;<mark>Мне нравится</mark>&lt;/span&gt;</code>
+			</pre>
+			<pre>
+				<code><mark>&lt;a</mark> class="fl_r pv_close_link"</code>
+				<code>     onclick="Photoview.hide(0)"&gt;<mark>Закрыть</mark>&lt;/a&gt;</code>
+			</pre>
+		</section>
+	</div></div>
+	<div class="slide" id="Twitter"><div>
+		<section>
+			<header>
+				<h2>Twitter</h2>
+			</header>
+			<pre>
+				<code><mark>&lt;a href="#"</mark> class="tweet-button btn"&gt;<mark>Твитнуть</mark>&lt;/a&gt;</code>
+			</pre>
+			<pre>
+				<code><mark>&lt;a href="#"</mark> class="with-icn js-toggle-rt"&gt;</code>
+				<code>    &lt;span class="undo-retweet" title="Отменить ретвит"&gt;</code>
+				<code>        <mark>Ретвиты</mark>&lt;/span&gt;</code>
+				<code>    &lt;span class="retweet" title="Ретвитнуть"&gt;</code>
+				<code>        <mark>Ретвитнуть</mark>&lt;/span&gt;&lt;/b&gt;<mark>&lt;/a&gt;</mark></code>
+			</pre>
+		</section>
+	</div></div>
+	<div class="slide cover" id="NoWay"><div>
+		<section>
+			<img src="pictures/no-way.jpg" alt="">
+		</section>
+	</div></div>
+	<div class="slide shout" id="LinksFinal"><div>
+		<section>
+			<header>
+				<h2>Ссылки — для перехода по адресам между страницами</h2>
+			</header>
+		</section>
+	</div></div>
+	<div class="slide shout" id="PseudoLinksFinal"><div>
+		<section>
+			<header>
+				<h2>Псевдоссылки — для локальных передвижений или изменений</h2>
+			</header>
+		</section>
+	</div></div>
+	<div class="slide shout" id="ButtonsFinal"><div>
+		<section>
+			<header>
+				<h2>Кнопки — для передачи данных, процессов и диалогов</h2>
+			</header>
+		</section>
+	</div></div>
+	<div class="slide cover" id="Right"><div>
+		<section>
+			<img src="pictures/right.jpg" alt="">
+		</section>
+	</div></div>
+	<div class="slide" id="ThankYou"><div>
+		<section>
+			<header>
+				<h2>Жми сюда!</h2>
+			</header>
+			<p>Вадим Макеев, Opera Software</p>
+			<ul>
+				<li><a href="http://pepelsbey.net">pepelsbey.net</a></li>
+				<li><a href="https://twitter.com/pepelsbey">@pepelsbey</a> и <a href="https://twitter.com/odevrel_ru">@ODevRel_ru</a></li>
+				<li><a href="mailto:pepelsbey@opera.com">pepelsbey@opera.com</a></li>
+			</ul>
+			<p>Презентация: <a href="http://pepelsbey.net/pres/push-it/">pepelsbey.net/pres/push-it</a></p>
+		</section>
+	</div></div>
+	<!-- Комиксы из коллекции Джима Баркера: flickr.com/photos/jim_and_kerry/sets/72157621465558216/ -->
+	<div class="progress"><div></div></div>
+	<script src="scripts/script-adfea3dfb6.js"></script>
+</body>
+</html>

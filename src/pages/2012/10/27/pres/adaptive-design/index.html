@@ -1,0 +1,524 @@
+<!DOCTYPE HTML>
+<html lang="ru-RU">
+<head>
+	<title>Адаптивный веб-дизайн</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=1234, user-scalable=no">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="list">
+	<header class="caption">
+		<h1>Адаптивный веб-дизайн</h1>
+		
+	</header>
+	
+	<div class="slide bg" id="hello"><div>
+		<section>
+			<header>
+				<h2>Адаптивный веб-дизайн</h2>
+				<h3>Что? Где? Когда?</h3>
+			</header>
+			<img src="img/hello.jpg" alt="">
+		</section>
+	</div></div>
+	
+	<div class="slide bg" id="adaptation"><div>
+		<section>
+			<header>
+				<h2>Адаптация &mdash;</h2><h3>естественный эволюционный процесс</h3>
+			</header>
+			<img src="img/chameleon.jpg" alt="">
+		</section>
+	</div></div>
+	
+	<div class="slide bg" id="book"><div>
+		<section>
+			<img src="img/book.jpg" alt="">
+		</section>
+	</div></div>
+	
+	<div class="slide bg" id="book2"><div>
+		<section>
+			<img src="img/book2.jpg" alt="">
+		</section>
+	</div></div>
+	
+	<div class="slide shout" id="vs"><div>
+		<section>
+			<header>
+				<h2>Адаптивный<span>или</span>отзывчивый?</h2>
+			</header>
+		</section>
+	</div></div>
+	
+	<div class="slide bg" id="magazine"><div>
+		<section>
+			<header>
+				<h2>Вёрстка? Вёрстка!</h2>
+			</header>
+			<img src="img/magazine.jpg" alt="">
+		</section>
+	</div></div>
+	
+	<div class="slide bg" id="sizes"><div>
+		<section>
+			<img src="img/sizes.jpg" alt="">
+		</section>
+	</div></div>
+	
+	<div class="slide" id="smartphone"><div>
+		<section>
+			<header>
+				<h2>Смартфон и фичафон</h2>
+			</header>
+			<img src="img/phones.jpg">
+		</section>
+	</div></div>
+	
+	<div class="slide stat" id="stat1"><div>
+		<section>
+			<header>
+				<h2>Мобильный телефон vs компьютер</h2>
+			</header>
+			<img src="img/stat1.png" alt="">
+		</section>
+	</div></div>
+	<div class="slide stat" id="stat2"><div>
+		<section>
+			<header>
+				<h2>Телефон для выхода в Интернет</h2>
+			</header>
+			<img src="img/stat2.png" alt="">
+		</section>
+	</div></div>
+	<div class="slide stat" id="stat3"><div>
+		<section>
+			<header>
+				<h2>Место пользования и способ доступа</h2>
+			</header>
+			<img src="img/stat3.png" alt="">
+		</section>
+	</div></div>
+	<div class="slide stat" id="stat4"><div>
+		<section>
+			<header>
+				<h2>Для чего выходят в мобильный Интернет</h2>
+			</header>
+			<img src="img/stat4.png" alt="">
+		</section>
+	</div></div>
+	<div class="slide stat" id="stat5"><div>
+		<section>
+			<header>
+				<h2>Браузер или приложение</h2>
+			</header>
+			<img src="img/stat5.png" alt="">
+		</section>
+	</div></div>
+	
+	<div class="slide" id="question"><div>
+		<section>
+			<header>
+				<h2>Не стоит прогибаться под изменчивый мир?..</h2>
+			</header>
+			<img src="img/flexible.jpg">
+		</section>
+	</div></div>
+	
+	
+	<div class="slide" id="rwd"><div>
+		<section>
+			<header>
+				<h2>Основные принципы адаптивного веб-дизайна</h2>
+			</header>
+			<ol>
+				<li><b>Fluid Grids</b> &mdash; подвижные («резиновые») сетки</li>
+				<li><b>Flexible Images</b> &mdash; гибкие изображения</li>
+				<li><b>Media Queries</b> &mdash; медиавыражения</li>
+			</ol>
+		</section>
+	</div></div>
+	
+	<div class="slide shout" id="rule1"><div>
+		<section>
+			<header>
+				<h2>Fluid Grids</h2>
+			</header>
+		</section>
+	</div></div>
+	
+	
+	<div class="slide site" id="layout-static"><div>
+		<section>
+			<header>
+				<h2>Пример макета</h2>
+			</header>
+			<div class="example-wrapper">
+				<div class="example-main">
+					<span>#main</span>
+					<div class="example-arrow"><span>760px</span></div>
+				</div>
+				<div class="example-sidebar">
+					<span>#sidebar</span>
+					<div class="example-arrow"><span>220px</span></div>
+				</div>
+				<div class="example-arrow"><span>980px</span></div>
+			</div>
+		</section>
+	</div></div>
+	
+	<div class="slide" id="layout-css"><div>
+		<section>
+			<div class="col">
+				<div class="img-wrap"><img src="img/fuckyea.png" alt=""></div>
+				<pre>
+					<code>#main {</code>
+					<code>  float:left;</code>
+					<code>  width:<mark>760px</mark>;</code>
+					<code>  }</code>
+				</pre>
+			</div>
+			<div class="col col-r">
+				<pre>
+					<code>#wrapper {</code>
+					<code>  width:980px;</code>
+					<code>  margin:0 auto;</code>
+					<code>  }</code>
+				</pre>
+				<pre>
+					<code>#sidebar {</code>
+					<code>  float:right;</code>
+					<code>  width:<mark>220px</mark>;</code>
+					<code>  }</code>
+				</pre>
+			</div>
+		</section>
+	</div></div>
+	
+	<div class="slide" id="formula"><div>
+		<section>
+			<header>
+				<h2>Формула Итана Маркотта</h2>
+			</header>
+			<pre>
+				<code>target / context = result</code>
+			</pre>
+		</section>
+	</div></div>
+	
+	<div class="slide" id="formula-result"><div>
+		<section>
+			<pre>
+				<code>#main {</code>
+				<code>  float:left;</code>
+				<code>  width:  <mark>77.551%</mark>;    <mark class="comment">/* 760px / 980px = 0.77551 */</mark></code>
+				<code>  }</code>
+
+				<code>#sidebar {</code>
+				<code>  float:right;</code>
+				<code>  width:  <mark>22.449%</mark>;    <mark class="comment">/* 220px / 980px = 0.22449 */</mark></code>
+				<code>  }</code>
+			</pre>
+		</section>
+	</div></div>
+	
+	<div class="slide" id="formula-result2"><div>
+		<section>
+			<pre>
+				<code>#wrapper {</code>
+				<code>  width: <mark>100%</mark>;</code>
+				<code>  <mark>max-width</mark>:980px;</code>
+				<code>  margin:0 auto;</code>
+				<code>  }</code>
+			</pre>
+		</section>
+	</div></div>
+	
+	<div class="slide site" id="layout-fluid"><div>
+		<section>
+			<header>
+				<h2>Подвижная сетка</h2>
+			</header>
+			<div class="example-wrapper">
+				<div class="example-main">
+					<div class="example-arrow"><span>77.551%</span></div>
+				</div>
+				<div class="example-sidebar">
+					<div class="example-arrow"><span>22.449%</span></div>
+				</div>
+			</div>
+		</section>
+	</div></div>
+	
+	<div class="slide" id="viewport"><div>
+		<section>
+			<header>
+				<h2>Вьюпорт</h2>
+			</header>
+			<pre>
+				<code>&lt;meta name="viewport" content="<mark>width=device-width</mark>;</code>
+				<code>initial-scale=1.0"&gt;</code>
+			</pre>
+		</section>
+	</div></div>
+	
+	<div class="slide shout" id="rule2"><div>
+		<section>
+			<header>
+				<h2>Flexible Images</h2>
+			</header>
+		</section>
+	</div></div>
+	
+	<div class="slide site" id="image-static"><div>
+		<section>
+			<header>
+				<h2>Картинка фиксированного размера</h2>
+			</header>
+			<div class="example-wrapper">
+				<div class="example-main">
+					
+				</div>
+				<div class="example-sidebar">
+					<img src="img/photo.jpg">
+				</div>
+			</div>
+		</section>
+	</div></div>
+	
+	<div class="slide" id="image-css"><div>
+		<section>
+			<pre>
+				<code>.flexible-image {</code>
+				<code>  <mark>max-width</mark>:100%;</code>
+				<code>  }</code>
+				<code> </code>
+				<code><mark class="comment">/* Для Internet Explorer 7 */</mark></code>
+				<code>.ie .flexible-image {</code>
+				<code>  width:100%;</code>
+				<code>  height:auto;</code>
+				<code>  }</code>
+			</pre>
+		</section>
+	</div></div>
+	
+	<div class="slide site" id="image-flexible"><div>
+		<section>
+			<header>
+				<h2>Гибкая картинка</h2>
+			</header>
+			<div class="example-wrapper">
+				<div class="example-main">
+					
+				</div>
+				<div class="example-sidebar">
+					<img src="img/photo.jpg">
+				</div>
+			</div>
+		</section>
+	</div></div>
+	
+	<div class="slide shout" id="rule3"><div>
+		<section>
+			<header>
+				<h2>Media Queries</h2>
+			</header>
+		</section>
+	</div></div>
+	
+	<div class="slide site" id="unreadable"><div>
+		<section>
+			<header>
+				<h2>Пример макета</h2>
+			</header>
+			<div class="example-wrapper">
+				<div class="example-main">
+					<p>Бытует масса легенд о том, что среди синеоких тайских кошек-красавиц больше всего ценились при дворцах те, что имели многочисленные крючки и изломы на хвостах. Якобы на них тайские принцессы нанизывали свои кольца, снятые на время купания. Современные кошки Таиланда, как и тайские кошки России, изобилуют укороченными, искривленными или закрученными хвостами. Исторически являясь носителями генов дефектов хвостов, тайские кошки стали прародителями новой российской породы куцехвостых кошек &mdash; тайского бобтейла.</p>
+				</div>
+				<div class="example-sidebar">
+					<img src="img/photo2.jpg">
+				</div>
+			</div>
+		</section>
+	</div></div>
+	
+	<div class="slide" id="media-css"><div>
+		<section>
+			<pre>
+				<code>@media screen and (<mark>max-width:320px</mark>) {</code>
+				<code>  #main, #sidebar {</code>
+				<code>    float:none;</code>
+				<code>    width:100%;</code>
+				<code>    }</code>
+				<code>  }</code>
+			</pre>
+		</section>
+	</div></div>
+	
+	<div class="slide site" id="unreadable-fixed"><div>
+		<section>
+			<header>
+				<h2>Результат использования медиавыражения</h2>
+			</header>
+			<div class="example-wrapper">
+				<div class="example-main">
+					<p>Бытует масса легенд о том, что среди синеоких тайских кошек-красавиц больше всего ценились при дворцах те, что имели многочисленные крючки и изломы на хвостах. Якобы на них тайские принцессы нанизывали свои кольца, снятые на время купания. Современные кошки Таиланда, как и тайские кошки России, изобилуют укороченными, искривленными или закрученными хвостами. Исторически являясь носителями генов дефектов хвостов, тайские кошки стали прародителями новой российской породы куцехвостых кошек &mdash; тайского бобтейла.</p>
+				</div>
+				<div class="example-sidebar">
+					<img src="img/photo2.jpg">
+				</div>
+			</div>
+		</section>
+	</div></div>
+	
+	<div class="slide" id="width"><div>
+		<section>
+			<header>
+				<h2>Контрольные точки</h2>
+			</header>
+			<ul>
+				<li>320 и менее пикселей</li>
+				<li>320 - 480 пикселей</li>
+				<li>480 - 768 пикселей</li>
+				<li>768 - 980 пикселей</li>
+				<li>980 - 1200 пикселей</li>
+				<li>1200 и более пикселей</li>
+			</ul>
+		</section>
+	</div></div>
+	
+	<div class="slide" id="media-css2"><div>
+		<section>
+			<pre>
+				<code>@media screen and (max-width:480px) {</code>
+				<code>  .image {</code>
+				<code>    <mark>display:none;</mark></code>
+				<code>    }</code>
+				<code>  }</code>
+			</pre>
+		</section>
+	</div></div>
+	
+	<div class="slide" id="designer"><div>
+		<section>
+			<header>
+				<h2>Примерная реакция дизайнера</h2>
+			</header>
+			<img src="img/designer.jpg">
+		</section>
+	</div></div>
+	
+	<div class="slide site-example" id="example-design1"><div>
+		<section>
+			<img src="img/example1.png">
+		</section>
+	</div></div>
+	
+	<div class="slide site-example" id="example-grid-blocks1"><div>
+		<section>
+			<img src="img/example1-grid-blocks.png">
+		</section>
+	</div></div>
+	
+	<div class="slide site-example" id="example-blocks1"><div>
+		<section>
+			<img src="img/example1-blocks.png">
+		</section>
+	</div></div>
+	
+	<div class="slide site-example" id="example-design2"><div>
+		<section>
+			<img src="img/example2.png">
+		</section>
+	</div></div>
+	
+	<div class="slide site-example" id="example-blocks2"><div>
+		<section>
+			<img src="img/example2-blocks.png">
+		</section>
+	</div></div>
+	
+	<div class="slide site-example" id="example-design3"><div>
+		<section>
+			<img src="img/example3.png">
+		</section>
+	</div></div>
+	
+	<div class="slide site-example" id="example-blocks3"><div>
+		<section>
+			<img src="img/example3-blocks.png">
+		</section>
+	</div></div>
+	
+	<div class="slide site-example" id="example-design4"><div>
+		<section>
+			<img src="img/example4.png">
+		</section>
+	</div></div>
+	
+	<div class="slide site-example" id="example-design5"><div>
+		<section>
+			<img src="img/example5.png">
+		</section>
+	</div></div>
+	
+	<div class="slide" id="links"><div>
+		<section>
+			<header>
+				<h2>Ссылки в копилку</h2>
+			</header>
+			<ul>
+			<li>Коллекция сайтов с Responsive Web Design <br><a href="http://mediaqueri.es" target="_blank">http://mediaqueri.es</a></li>
+			<li>Удобный букмарклет <br><a href="http://lab.maltewassermann.com/viewport-resizer/" target="_blank">http://lab.maltewassermann.com/viewport-resizer/</a></li>
+			<li>Та самая статья <br><a href="http://www.alistapart.com/articles/responsive-web-design/" target="_blank">http://www.alistapart.com/articles/responsive-web-design/</a></li>
+			</ul>
+		</section>
+	</div></div>
+	
+	<div class="slide shout" id="mf"><div>
+		<section>
+			<header>
+				<h2>Mobile First</h2>
+			</header>
+		</section>
+	</div></div>
+	
+	<div class="slide" id="mf-slogan"><div>
+		<section>
+			<header>
+				<h2>Отсекаем все лишнее</h2>
+			</header>
+			<img src="img/plastic.jpg" alt="">
+		</section>
+	</div></div>
+	
+	<div class="slide" id="mf-rules"><div>
+		<section>
+			<header>
+				<h2>Полезные правила Mobile First</h2>
+			</header>
+			<ul>
+				<li>использование спрайтов</li>
+				<li>минимизация CSS и JavaScript файлов</li>
+				<li>ограничение использования тяжелых JavaScript библиотек</li>
+				<li>ограничение использования CSS-сеток</li>
+				<li>HTTP-заголовки для сохранения нужных файлов в кэш</li>
+				<li>использование CSS3 для теней и закругленных углов</li>
+			</ul>
+		</section>
+	</div></div>
+	
+	<div class="slide shout" id="thank"><div>
+		<section>
+			<header>
+				<h2>Спасибо!</h2>
+			</header>
+			<!--<p>Анна Селезнёва, CreativePeople</p>-->
+		</section>
+	</div></div>
+	
+	
+	<div class="progress"><div></div></div>
+	<script src="js/script.js"></script>
+</body>
+</html>

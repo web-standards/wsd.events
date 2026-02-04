@@ -1,0 +1,62 @@
+.your-details-widget{
+	width:290px;
+	float:left;
+	position: relative;
+	padding:0 0 0 5px;
+	}
+	.your-details-widget .title{
+		margin-top:55px;
+		color:#3b5050;
+		text-transform:lowercase;
+		font:48px/60px 'Berkshire Swash', Georgia, cursive;
+		}
+	.your-details-widget .details-list{
+		zoom:1;
+		position: relative;
+		overflow:hidden;
+		background: url("../img/add-ico.png") 100% 84px no-repeat;
+		}
+		.your-details-widget .details-list li{
+			height:35px;
+			display:block;
+			white-space:nowrap;
+			-webkit-text-overflow: ellipsis;
+			-moz-text-overflow: ellipsis;
+			-ms-text-overflow: ellipsis;
+			-o-text-overflow: ellipsis;
+			text-overflow: ellipsis;
+			position: relative;
+			top:-2px;
+			padding-top:2px;
+			line-height:35px;
+			overflow:hidden;
+			zoom:1;
+			background: url("../img/separator.png") 0 0 repeat-x;
+			font:normal 18px/35px 'Marmelad', Arial, "Helvetica Neue", Helvetica, sans-serif;
+			text-shadow:0 1px 0 #fff;
+			}
+			*+html .your-details-widget .details-list li{
+				height:30px;
+				}
+		.your-details-widget .wishlist span{
+			background: url("../img/ticket-ico.png") 100% 50% no-repeat;
+			}
+		.your-details-widget .to-fulfil span{
+			background: url("../img/gift-ico.png") 100% 50% no-repeat;
+			}
+		.your-details-widget a{
+			float:left;
+			max-width:136px;
+			overflow:hidden;
+			}
+		.your-details-widget span{
+			color:#aeadab;
+			width:154px;
+			float:right;
+			}
+		.your-details-widget .current{
+			float:left;
+			max-width:136px;
+			color:#3b5050;
+			overflow:hidden;
+			}

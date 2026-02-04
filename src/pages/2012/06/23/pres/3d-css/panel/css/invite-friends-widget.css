@@ -1,0 +1,13 @@
+.invite-friends-widget{
+  width: 380px;
+  margin:0 auto;
+  }
+  .invite-friends-widget h1{
+    color:#405c94;
+    font:bold 36px/42px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    margin:30px 0 20px;
+    }
+  .invite-friends-widget h2{
+    font:bold 18px/25px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    margin:20px 0 30px
+    }

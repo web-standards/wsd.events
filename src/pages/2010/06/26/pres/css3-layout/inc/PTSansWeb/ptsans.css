@@ -1,0 +1,18 @@
+/* http://fonts.ru/public/ */
+
+@font-face{
+	font-family:'PT Sans';
+	src:url('pts55f.eot');
+	src:local('PT Sans'),
+		url('pts55f.woff') format('woff'),
+		url('pts55f.ttf') format('truetype');
+	}
+@font-face{
+	font-family:'PT Sans';
+	src:url('pts75f.eot');
+	font-style:normal;
+	font-weight:bold;
+	src:local('PT Sans Bold'),
+		url('pts75f.woff') format('woff'),
+		url('pts75f.ttf') format('truetype');
+	}

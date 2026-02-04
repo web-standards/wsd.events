@@ -1,0 +1,295 @@
+div.container1 {
+    position: absolute;
+    left:0;
+}
+
+div.container2 {
+    position: absolute;
+    right:0;
+}
+
+#HEFlash {
+    margin: 0 0 12px;
+}
+
+#HEadContainer {
+    background-color: #FFD200;
+    border: 1px solid #999;
+    height:248px;
+    margin: 0 0 10px;
+    overflow:hidden;
+    position:relative;
+    width:300px;
+}
+
+#HEadContainer * {
+    font-family: Arial, "MS Trebuchet", sans-serif;
+    line-height: normal;
+    margin:0;
+    position:absolute;
+    padding:0;
+}
+
+#HEwhiteBox {
+    background-color:white;
+    height:55px;
+    top: 195px;
+    width:300px;
+}
+
+#HEwbText {
+    color: #2f4f76;
+    font-size: 11px;
+    top:8px;
+    left:12px;
+    width:120px;
+}
+
+#HEwbLogo {
+    left:135px;
+    top:4px;
+}
+
+#HEcar {
+    -webkit-animation-name: HEbounceA;
+    -webkit-animation-duration: 10s;
+    -webkit-animation-iteration-count: 1;
+    bottom: 0;
+    left:0;
+    height:130px;
+    -webkit-transform-origin: center bottom;
+    width:161px;
+}
+
+
+#HEcarSlider {
+    -webkit-animation-name: HEslideA;
+    -webkit-animation-duration: 10s;
+    -webkit-animation-iteration-count: 1;
+    bottom: 54px;
+    left:200px;
+    height:130px;
+    width:161px;
+}
+
+#HEcar img {
+    top:auto !important;
+    bottom:-1px;
+}
+
+#HEadContainer:hover #HEcar img {
+    -webkit-animation-name: HEcarRumble;
+    -webkit-animation-duration: .3s;
+    -webkit-animation-iteration-count: infinite;
+    position: relative;
+    display:block;
+    margin-top:0;
+}
+
+@-webkit-keyframes HEcarRumble {
+    0% {
+        margin-top:0;
+    }
+    50% {
+        margin-top:-2px;
+    }
+    100% {
+        margin-top:0;
+    }
+}
+
+
+@-webkit-keyframes HEbounceA {
+    0% {-webkit-transform: scale(0.2);}
+    3% {-webkit-transform: scale(0.53);}
+    4.5% {-webkit-transform: scale(0.38);}
+    5.5% {-webkit-transform: scale(0.46);}
+    6% {-webkit-transform: scale(0.44);}
+
+    25% {-webkit-transform: scale(0.44);}
+    28% {-webkit-transform: scale(1.2);}
+    29.5% {-webkit-transform: scale(0.9);}
+    30.5% {-webkit-transform: scale(1.05);}
+    31.0% {-webkit-transform: scale(1);}
+
+    100% {-webkit-transform: scale(1) translateX(0);}
+}
+
+@-webkit-keyframes HEslideA {
+    0% {-webkit-transform:translateX(-130px);}
+    55% {-webkit-transform:translateX(-130px);}
+    66% {-webkit-transform:translateX(0);}
+    100% {-webkit-transform:translateX(0);}
+}
+
+/*Main Text*/
+#HEtext * {
+    color: black;
+    font-size: 17px;
+    width:250px;
+}
+
+#HEtext1,#HEtext2 {
+    top:20px;
+    left:20px;
+    opacity:0;
+	filter: alpha(opacity = 0);
+}
+
+#HEtext1 p {	
+	font-size:20px;
+}
+
+#HEtext2 p {
+	font-size:20px;
+}
+
+#HEtext3 p {
+	font-size:18px;
+}
+
+#HEtext1 {
+    -webkit-animation-name: HEtext1;
+    -webkit-animation-duration: 10s;
+    -webkit-animation-iteration-count: 1;
+}
+
+#HEtext2 {
+    -webkit-animation-name: HEtext2;
+    -webkit-animation-duration: 10s;
+    -webkit-animation-iteration-count: 1;
+}
+
+#HEtext3 {
+    -webkit-animation-name: HEtext3;
+    -webkit-animation-duration: 10s;
+    -webkit-animation-iteration-count: 1;
+    top:24px;
+    left:20px;
+}
+
+#HEtext3b {
+    top:48px;
+}
+
+#HEbutton {
+    background-color:#338dad;
+    -webkit-border-radius: 2px;
+    -moz-border-radius:    2px;
+    border-radius:         2px;
+    height:22px;
+    top:103px;
+    width:95px;
+}
+
+#HEbuttonslide {
+    -webkit-animation-name: HEbuttonslide;
+    -webkit-animation-duration: 10s;
+    -webkit-animation-iteration-count: 1;
+}
+
+#HEbutton p {
+    color:white;
+    font-size: 14px;
+    padding:3px 0 0 10px;
+    -webkit-transition-property: color;
+    -webkit-transition-duration: 0.2s;
+}
+
+#HEbutton img {
+    height:13px;
+    top:5px;
+    left:78px;
+    width:12px;
+}
+
+#HEbutton #HEnextY {
+    opacity:0;
+    -webkit-transition-property: opacity;
+    -webkit-transition-duration: 0.2s;
+}
+
+#HEbutton:hover p {
+    color:#FFD200;
+}
+
+#HEbutton:hover #HEnextY {
+    opacity:1;
+}
+
+#HEbutton:hover {
+    background: -webkit-gradient(
+        linear,
+        left top,
+        right 50,
+        color-stop(0.45, #1D5365),
+        color-stop(0.5, #338dad),
+        color-stop(0.55, #1D5365)
+    );
+    -webkit-background-size: 300px 22px;
+    background-position: left top;
+    -webkit-animation-name: HEback2A;
+    -webkit-animation-duration: 0.3s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function:linear;
+}
+
+@-webkit-keyframes HEback2A {
+    0% {background-position: right top;}
+    100% {background-position: left top;}
+}
+
+@-webkit-keyframes HEtext1 {
+    0% {opacity:0;}
+    6% {opacity:0;}
+    8% {opacity:1;}
+    24% {opacity:1;}
+    28% {opacity:0;}
+    100% {opacity:0;}
+}
+
+@-webkit-keyframes HEtext2 {
+    0% {opacity:0;}
+    30.5% {opacity:0;}
+    32.5% {opacity:1;}
+    52% {opacity:1;}
+    55% {opacity:0;}
+    100% {opacity:0;}
+}
+
+@-webkit-keyframes HEtext2 {
+    0% {opacity:0;}
+    30.5% {opacity:0;}
+    32.5% {opacity:1;}
+    52% {opacity:1;}
+    55% {opacity:0;}
+    100% {opacity:0;}
+}
+
+@-webkit-keyframes HEtext3 {
+    0% {opacity:0;}
+    60% {opacity:0;}
+    63% {opacity:1;}
+    100% {opacity:1;}
+}
+
+@-webkit-keyframes HEbuttonslide {
+    0% {-webkit-transform:translateX(-100px);}
+    60% {-webkit-transform:translateX(-100px);}
+    62.8% {-webkit-transform:translateX(10px);}
+    63% {-webkit-transform:translateX(0);}
+    100% {-webkit-transform:translateX(0);}
+}
+
+html,body{
+    height:100%;
+    width:100%;
+    }
+
+#hertz-ad-container{
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin:-130px 0 0 -320px;
+    width:640px;
+    }

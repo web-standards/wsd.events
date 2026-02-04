@@ -1,0 +1,590 @@
+html,body{
+	width:100%;
+	height:100%;
+	overflow:hidden;
+	position: relative;
+	}
+
+@-webkit-keyframes 'open-close' {
+	0%{
+		-webkit-transform:rotateY(180deg);
+	}
+	100%{
+		-webkit-transform:rotateY(0deg);
+	}
+}
+
+@-webkit-keyframes 'show-for-a-moment' {
+	0% {
+		-webkit-transform:rotateY(180deg);
+	}
+	10% {
+		-webkit-transform:rotateY(0deg);
+	}
+	90% {
+		-webkit-transform:rotateY(0deg);
+	}
+	100% {
+		-webkit-transform:rotateY(180deg);
+	}
+}
+
+.data-panel{
+	position: fixed;
+	top:0;
+	left:20px;
+	right:20px;
+	height:40px;
+	padding:0 20px;
+	background-color: rgba(0,0,0,0.25);
+	border-bottom-right-radius:10px;
+	border-bottom-left-radius:10px;
+	}
+	.data-panel .timer{
+		float:left;
+		margin:0 20px 0 0;
+		padding:0 0 0 40px;
+		background: url("../img/clock.png") 0 50% no-repeat;
+		background-size: 32px;
+		color:#fff;
+		font:20px/40px 'Loved by the King', cursive;
+		}
+	.data-panel .scores{
+		float:left;
+		margin:0 20px 0 0;
+		padding:0 0 0 40px;
+		background: url("../img/glasses.png") 0 50% no-repeat;
+		background-size:32px ;
+		color:#fff;
+		font:20px/40px 'Loved by the King', cursive;
+		}
+
+
+.game-field{
+	width:440px;
+	height:440px;
+
+	position: absolute;
+	left:50%;
+	top:50%;
+
+	margin:-220px 0 0 -220px;
+
+	-webkit-transform-style:preserve-3d;
+    -moz-transform-style:preserve-3d;
+    -o-transform-style:preserve-3d;
+    transform-style:preserve-3d;
+
+	-webkit-perspective-origin:50% 50%;
+	-moz-perspective-origin:50% 50%;
+	-o-perspective-origin:50% 50%;
+	perspective-origin:50% 50%;
+
+	-webkit-perspective:900px;
+	-moz-perspective:900px;
+	-o-perspective:900px;
+	perspective:900px;
+
+	/*-webkit-transition:all .3s linear;*/
+
+	}
+	body .game-field .removedFromClosed{
+		-webkit-transform:rotateY(0) translateZ(-200px);
+		-moz-transform:rotateY(0) translateZ(-200px);
+		-ms-transform:rotateY(0) translateZ(-200px);
+		-o-transform:rotateY(0) translateZ(-200px);
+		transform:rotateY(0) translateZ(-200px);
+		opacity:0;
+		}
+	body .game-field .removed{
+		-webkit-transform:rotateY(180deg) translateZ(200px);
+		-moz-transform:rotateY(180deg) translateZ(200px);
+		-ms-transform:rotateY(180deg) translateZ(200px);
+		-o-transform:rotateY(180deg) translateZ(200px);
+		transform:rotateY(180deg) translateZ(200px);
+		opacity:0;
+		}
+	body .game-field .open{
+		-webkit-transform:rotateY(0);
+		-moz-transform:rotateY(0);
+		-ms-transform:rotateY(0);
+		-o-transform:rotateY(0);
+		transform:rotateY(0);
+		}
+	.game-field .card{
+		cursor:pointer;
+		position: relative;
+		width:100px;
+		height:100px;
+		float:left;
+
+		
+		margin:0 10px 10px 0;
+
+		-webkit-transform-style:preserve-3d;
+	    -moz-transform-style:preserve-3d;
+	    -o-transform-style:preserve-3d;
+	    transform-style:preserve-3d;
+
+		-webkit-perspective-origin:50% 50%;
+		-moz-perspective-origin:50% 50%;
+		-o-perspective-origin:50% 50%;
+		perspective-origin:50% 50%;
+
+		-webkit-perspective:900px;
+		-moz-perspective:900px;
+		-o-perspective:900px;
+		perspective:900px;
+
+		-webkit-transform:rotateY(180deg) translateZ(0);
+		-moz-transform:rotateY(180deg) translateZ(0);
+		-ms-transform:rotateY(180deg) translateZ(0);
+		-o-transform:rotateY(180deg) translateZ(0);
+		transform:rotateY(180deg) translateZ(0);
+
+		-webkit-transition:all .5s ease-out;
+		-moz-transition:all .5s ease-out;
+		-ms-transition:all .5s ease-out;
+		-o-transition:all .5s ease-out;
+		transition:all .5s ease-out;
+		
+		/*	
+		-webkit-animation:'show-for-a-moment' 5s 1s ease-out both;
+		*/
+		}
+		.game-field .card:before{
+			content:".";
+			display:block;
+			font-size:0;
+			line-height:0;
+			text-indent:-9000px;
+			overflow:hidden;
+			width:100px;
+			height:100px;
+			position: absolute;
+			top:0;
+			left:0;
+
+			-webkit-border-radius:5px;
+			-moz-border-radius:5px;
+			-ms-border-radius:5px;
+			-o-border-radius:5px;
+			border-radius:5px;
+
+			-webkit-transform:translateZ(1px);
+			-moz-transform:translateZ(1px);
+			-ms-transform:translateZ(1px);
+			-o-transform:translateZ(1px);
+			transform:translateZ(1px);
+
+
+			-webkit-box-shadow:inset 0 0 30px 0 #323840;
+			-moz-box-shadow:inset 0 0 30px 0 #323840;
+			-ms-box-shadow:inset 0 0 30px 0 #323840;
+			-o-box-shadow:inset 0 0 30px 0 #323840;
+			box-shadow:inset 0 0 30px 0 #323840;
+
+			}
+		.game-field .card:after{
+			content:".";
+			display:block;
+			position: absolute;
+			top:0;
+			left:0;
+			font-size:0;
+			line-height:0;
+			text-indent:-9000px;
+			overflow:hidden;
+			width:100px;
+			height:100px;
+
+			-webkit-border-radius:5px;
+			-moz-border-radius:5px;
+			-ms-border-radius:5px;
+			-o-border-radius:5px;
+			border-radius:5px;
+
+			-webkit-transform:translateZ(0px) rotateY(180deg);
+			-moz-transform:translateZ(0px) rotateY(180deg);
+			-ms-transform:translateZ(0px) rotateY(180deg);
+			-o-transform:translateZ(0px) rotateY(180deg);
+			-transform:translateZ(0px) rotateY(180deg);
+
+			-webkit-box-shadow:inset 0 0 30px 0 #323840;
+			-moz-box-shadow:inset 0 0 30px 0 #323840;
+			-ms-box-shadow:inset 0 0 30px 0 #323840;
+			-o-box-shadow:inset 0 0 30px 0 #323840;
+			box-shadow:inset 0 0 30px 0 #323840;
+
+			background:url("../img/back.png") 50% 50% no-repeat;
+			background-size:100%;
+			}
+		.game-field .type-1:before{
+			background-size:70%,100%;
+			background:url("../img/type-1.png") 50% 50% no-repeat,url("../img/paper.png") 0 0 no-repeat;
+			}
+		.game-field .type-2:before{
+			background-size:70%,100%;
+			background:url("../img/type-2.png") 50% 50% no-repeat,url("../img/paper.png") 0 0 no-repeat;
+			}
+		.game-field .card.type-3:before{
+			background-size:70%,100%;
+			background:url("../img/type-3.png") 50% 50% no-repeat,url("../img/paper.png") 0 0 no-repeat;
+			}
+		.game-field .card.type-4:before{
+			background-size:70%,100%;
+			background:url("../img/type-4.png") 50% 50% no-repeat,url("../img/paper.png") 0 0 no-repeat;
+			}
+		.game-field .card.type-5:before{
+			background-size:70%,100%;
+			background:url("../img/type-5.png") 50% 50% no-repeat,url("../img/paper.png") 0 0 no-repeat;
+			}
+		.game-field .card.type-6:before{
+			background-size:70%,100%;
+			background:url("../img/type-6.png") 50% 50% no-repeat,url("../img/paper.png") 0 0 no-repeat;
+			}
+		.game-field .card.type-7:before{
+			background-size:70%,100%;
+			background:url("../img/type-7.png") 50% 50% no-repeat,url("../img/paper.png") 0 0 no-repeat;
+			}
+		.game-field .card.type-8:before{
+			background-size:70%,100%;
+			background:url("../img/type-8.png") 50% 50% no-repeat,url("../img/paper.png") 0 0 no-repeat;
+			}
+		.game-field .card.back:before{
+			background-size:70%,100%;
+			background:url("../img/type-8.png") 50% 50% no-repeat,url("../img/paper.png") 0 0 no-repeat;
+			}
+
+.page{
+
+	-webkit-transition:all .75s ease-out;
+	-moz-transition:all .75s ease-out;
+	-ms-transition:all .75s ease-out;
+	-o-transition:all .75s ease-out;
+	transition:all .75s ease-out;
+	
+	position: absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+
+	-webkit-transform-style:preserve-3d;
+    -moz-transform-style:preserve-3d;
+    -o-transform-style:preserve-3d;
+    transform-style:preserve-3d;
+
+	-webkit-perspective-origin:50% 50%;
+	-moz-perspective-origin:50% 50%;
+	-o-perspective-origin:50% 50%;
+	perspective-origin:50% 50%;
+
+	-webkit-perspective:900px;
+	-moz-perspective:900px;
+	-o-perspective:900px;
+	perspective:900px;
+
+	-webkit-transform:translateZ(0) translateY(0) scale(1);
+	-moz-transform:translateZ(0) scale(0.25);
+	-ms-transform:translateZ(0) scale(0.25);
+	-o-transform:translateZ(0) scale(0.25);
+	transform:translateZ(0) scale(0.25);
+	}
+
+body{
+	-webkit-transform-style:preserve-3d;
+    -moz-transform-style:preserve-3d;
+    -o-transform-style:preserve-3d;
+    transform-style:preserve-3d;
+
+	-webkit-perspective-origin:50% 50%;
+	-moz-perspective-origin:50% 50%;
+	-o-perspective-origin:50% 50%;
+	perspective-origin:50% 50%;
+
+	-webkit-perspective:900px;
+	-moz-perspective:900px;
+	-o-perspective:900px;
+	perspective:900px;
+	
+	font-family: 'Loved by the King', cursive;
+	-webkit-transform:translateZ(0);
+	background-color:#323840;
+	background-image: 
+    -webkit-repeating-radial-gradient(50% 50%, circle contain, 
+    	#3C4450 0%, #3C4450 3%,
+    	transparent 3%, transparent 7%,
+    	#3C4450 7%, #3C4450 12%,
+    	transparent 12%, transparent 18%,
+    	#3C4450 18%, #3C4450 25%,
+    	transparent 25%, transparent 33%,
+    	#3C4450 33%, #3C4450 42%,
+    	transparent 42%, transparent 52%,
+    	#3C4450 52%, #3C4450 63%,
+    	transparent 63%, transparent 75%,
+    	#3C4450 75%, #3C4450 88%,
+    	transparent 88%, transparent 102%,
+    	#3C4450 102%, #3C4450 117%,
+    	transparent 117%, transparent 133%,
+    	#3C4450 133%, #3C4450 150%,
+    	transparent 150%, transparent 167%,
+    	#3C4450 167%, #3C4450 185%,
+    	transparent 185%, transparent 204%,
+    	#3C4450 204%, #3C4450 224%,
+    	transparent 224%, transparent 245%,
+    	#3C4450 245%, #3C4450 267%,
+    	transparent 267%, transparent 290%,
+    	#3C4450 290%, #3C4450 314%,
+    	transparent 314%, transparent 339%,
+    	#3C4450 339%, #3C4450 365%,
+    	transparent 365%, transparent 392%
+    	); 
+
+	background-image: 
+    -moz-repeating-radial-gradient(50% 50%, circle contain, 
+    	#3C4450 0%, #3C4450 3%,
+    	transparent 3%, transparent 7%,
+    	#3C4450 7%, #3C4450 12%,
+    	transparent 12%, transparent 18%,
+    	#3C4450 18%, #3C4450 25%,
+    	transparent 25%, transparent 33%,
+    	#3C4450 33%, #3C4450 42%,
+    	transparent 42%, transparent 52%,
+    	#3C4450 52%, #3C4450 63%,
+    	transparent 63%, transparent 75%,
+    	#3C4450 75%, #3C4450 88%,
+    	transparent 88%, transparent 102%,
+    	#3C4450 102%, #3C4450 117%,
+    	transparent 117%, transparent 133%,
+    	#3C4450 133%, #3C4450 150%,
+    	transparent 150%, transparent 167%,
+    	#3C4450 167%, #3C4450 185%,
+    	transparent 185%, transparent 204%,
+    	#3C4450 204%, #3C4450 224%,
+    	transparent 224%, transparent 245%,
+    	#3C4450 245%, #3C4450 267%,
+    	transparent 267%, transparent 290%,
+    	#3C4450 290%, #3C4450 314%,
+    	transparent 314%, transparent 339%,
+    	#3C4450 339%, #3C4450 365%,
+    	transparent 365%, transparent 392%
+    	); 
+
+	background-image: 
+    -ms-repeating-radial-gradient(50% 50%, circle contain, 
+    	#3C4450 0%, #3C4450 3%,
+    	transparent 3%, transparent 7%,
+    	#3C4450 7%, #3C4450 12%,
+    	transparent 12%, transparent 18%,
+    	#3C4450 18%, #3C4450 25%,
+    	transparent 25%, transparent 33%,
+    	#3C4450 33%, #3C4450 42%,
+    	transparent 42%, transparent 52%,
+    	#3C4450 52%, #3C4450 63%,
+    	transparent 63%, transparent 75%,
+    	#3C4450 75%, #3C4450 88%,
+    	transparent 88%, transparent 102%,
+    	#3C4450 102%, #3C4450 117%,
+    	transparent 117%, transparent 133%,
+    	#3C4450 133%, #3C4450 150%,
+    	transparent 150%, transparent 167%,
+    	#3C4450 167%, #3C4450 185%,
+    	transparent 185%, transparent 204%,
+    	#3C4450 204%, #3C4450 224%,
+    	transparent 224%, transparent 245%,
+    	#3C4450 245%, #3C4450 267%,
+    	transparent 267%, transparent 290%,
+    	#3C4450 290%, #3C4450 314%,
+    	transparent 314%, transparent 339%,
+    	#3C4450 339%, #3C4450 365%,
+    	transparent 365%, transparent 392%
+    	); 
+
+	background-image: 
+    -o-repeating-radial-gradient(50% 50%, circle contain, 
+    	#3C4450 0%, #3C4450 3%,
+    	transparent 3%, transparent 7%,
+    	#3C4450 7%, #3C4450 12%,
+    	transparent 12%, transparent 18%,
+    	#3C4450 18%, #3C4450 25%,
+    	transparent 25%, transparent 33%,
+    	#3C4450 33%, #3C4450 42%,
+    	transparent 42%, transparent 52%,
+    	#3C4450 52%, #3C4450 63%,
+    	transparent 63%, transparent 75%,
+    	#3C4450 75%, #3C4450 88%,
+    	transparent 88%, transparent 102%,
+    	#3C4450 102%, #3C4450 117%,
+    	transparent 117%, transparent 133%,
+    	#3C4450 133%, #3C4450 150%,
+    	transparent 150%, transparent 167%,
+    	#3C4450 167%, #3C4450 185%,
+    	transparent 185%, transparent 204%,
+    	#3C4450 204%, #3C4450 224%,
+    	transparent 224%, transparent 245%,
+    	#3C4450 245%, #3C4450 267%,
+    	transparent 267%, transparent 290%,
+    	#3C4450 290%, #3C4450 314%,
+    	transparent 314%, transparent 339%,
+    	#3C4450 339%, #3C4450 365%,
+    	transparent 365%, transparent 392%
+    	); 
+
+	background-image: 
+    repeating-radial-gradient(50% 50%, circle contain, 
+    	#3C4450 0%, #3C4450 3%,
+    	transparent 3%, transparent 7%,
+    	#3C4450 7%, #3C4450 12%,
+    	transparent 12%, transparent 18%,
+    	#3C4450 18%, #3C4450 25%,
+    	transparent 25%, transparent 33%,
+    	#3C4450 33%, #3C4450 42%,
+    	transparent 42%, transparent 52%,
+    	#3C4450 52%, #3C4450 63%,
+    	transparent 63%, transparent 75%,
+    	#3C4450 75%, #3C4450 88%,
+    	transparent 88%, transparent 102%,
+    	#3C4450 102%, #3C4450 117%,
+    	transparent 117%, transparent 133%,
+    	#3C4450 133%, #3C4450 150%,
+    	transparent 150%, transparent 167%,
+    	#3C4450 167%, #3C4450 185%,
+    	transparent 185%, transparent 204%,
+    	#3C4450 204%, #3C4450 224%,
+    	transparent 224%, transparent 245%,
+    	#3C4450 245%, #3C4450 267%,
+    	transparent 267%, transparent 290%,
+    	#3C4450 290%, #3C4450 314%,
+    	transparent 314%, transparent 339%,
+    	#3C4450 339%, #3C4450 365%,
+    	transparent 365%, transparent 392%
+    	); 
+	}
+	.score{
+		color:#fff;
+		width:1000px;
+		height:768px;
+		text-align:center;		
+		
+		font:48px/64px 'Loved by the King', cursive;
+		z-index:1000;
+		position: absolute;
+		top:50%;
+		left:50%;
+
+		margin:-384px 0 0 -500px;
+
+		-webkit-transform: scale(.5) rotate(-90deg) translateY(-350%);
+		-moz-transform: scale(.5);
+		-ms-transform: scale(.5);
+		-o-transform: scale(.5);
+		transform: scale(.5);
+
+		}
+		* html .score{
+			zoom:0.5;
+			}
+		*+html .score{
+			zoom:0.5;
+			}
+		.score .back{
+			z-index:1100;
+			color:#fff;
+			text-decoration:none;
+			position:absolute;
+			bottom:-140px;
+			left:50%;
+			margin:0 0 0 -60px;
+
+			color:#137e16;
+			color:#fff;
+
+			-webkit-perspective:900px;
+			-moz-perspective:900px;
+			-o-perspective:900px;
+			perspective:900px;
+
+			-webkit-transform-style:preserve-3d;
+			-moz-transform-style:preserve-3d;
+			-o-transform-style:preserve-3d;
+			transform-style:preserve-3d;
+			}
+			.score .back span{
+				display: block;
+				width:120px;
+				height:120px;
+				
+				background:url("../img/arrow-unhover.png") 0 0 no-repeat;
+
+				-webkit-transform-style:preserve-3d;
+				-moz-transform-style:preserve-3d;
+				-o-transform-style:preserve-3d;
+				transform-style:preserve-3d;
+
+				-webkit-transition:all .25s ease-out;
+				-moz-transition:all .25s ease-out;
+				-ms-transition:all .25s ease-out;
+				-o-transition:all .25s ease-out;
+				transition:all .25s ease-out;
+				}
+			.score .back:hover span{
+				-webkit-transform: scale(1.3) rotate(180deg);
+				-moz-transform: scale(1.3) rotate(180deg);
+				-ms-transform: scale(1.3) rotate(180deg);
+				-o-transform:scale(1.3) rotate(180deg);
+				transform: scale(1.3) rotate(180deg);
+
+				cursor:pointer;
+				}
+		.score h1{
+			text-shadow:0 0 30px rgba(255,255,255,.7);
+			font:96px/128px 'Loved by the King', cursive;
+			}
+		.score table{
+			border-spacing:0;
+			border-collapse:collapse;
+			text-shadow:0 0 20px rgba(255,255,255,.4);
+			text-align:left;
+			display:inline-block;
+			list-style:decimal;
+			}
+			.score table td{
+				list-style:decimal;
+				white-space:nowrap;
+				color:#fff;
+				padding:0 0 0 30px;
+				}
+	nav{
+		width:400px;
+		height:520px;
+		text-align:center;
+		padding:96px;
+		position:absolute;
+		top:50%;
+		left:50%;
+		margin:-356px 0 0 -296px;
+		font:128px/168px 'Loved by the King', cursive;
+		z-index:1000;
+
+		-webkit-transform: scale(.5) translateY(-350%);
+		-moz-transform: scale(.5);
+		-ms-transform: scale(.5);
+		-o-transform: scale(.5);
+		transform: scale(.5);
+		}
+		nav a{
+			text-transform:uppercase;
+			display:block;
+			color:#fff;
+			text-decoration:none;
+			text-shadow:0 0 20px rgba(255,255,255,.4);
+			-webkit-transition:all .25s ease-out;
+			-moz-transition:all .25s ease-out;
+			-ms-transition:all .25s ease-out;
+			-o-transition:all .25s ease-out;
+			transition:all .25s ease-out;
+			}
+			nav a:hover{
+				text-shadow:0 0 30px rgba(255,255,255,1);	
+				}

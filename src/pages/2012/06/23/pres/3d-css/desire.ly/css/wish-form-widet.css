@@ -1,0 +1,219 @@
+body .loading{
+	background: url("../img/loader.gif") 50% 50% no-repeat;
+	}
+
+body .recover-form{
+	width:302px;
+	margin-left:-169px;
+	}
+	body .recover-form input{
+		width:280px;
+		margin:0 0 10px;
+		}
+	body .recover-form .cancel{
+		margin:0 18px 0 0;
+		width:140px;
+		padding:0;
+		float:left;
+		}
+	body .recover-form .recover span{
+		width:140px;
+		padding:0;
+		float:left;
+		}
+
+body .login-form{
+	width:302px;
+	margin-left:-169px;
+	}
+	body .login-form .title{
+		color: #3B5050;
+		font: 36px/42px 'Berkshire Swash', Georgia, cursive;
+		text-shadow: 0 1px 0 white;
+		margin:0 0 10px;
+		}
+	body .login-form input{
+		width:280px;
+		margin:0 0 10px;
+		}
+	body .login-form .remember-and-recover{
+		font-size:12px;
+		line-height:18px;
+		margin:0 0 10px;
+		}
+		body .login-form .remember-and-recover a{
+			float:right;
+			}
+		body .login-form .remember-and-recover label{
+			float:left;
+			}
+		body .login-form .remember-and-recover input{
+			float:left;
+			display:inline;	
+			width:auto;
+			margin:0 10px 0 0;
+			}
+	body .login-form label{
+		display:inline;
+		}
+	body .login-form .cancel{
+		margin:0 18px 0 0;
+		width:140px;
+		padding:0;
+		float:left;
+		}
+	body .login-form .login span{
+		width:140px;
+		padding:0;
+		float:left;
+		}
+
+.wish-form-widet{
+	display:none;
+
+	position:fixed;
+	top:50%;
+	left:50%;
+	margin:-155px 0 0 -248px;
+	padding:18px;
+	width:451px;
+	zoom:1;
+	box-shadow:0 0 100px 0 rgba(0,0,0,.3), 1px 1px 0 0 rgba(0,0,0,.12);
+	background: #fff url("../img/form-bg.png") 100% 0 repeat-y;
+	z-index:12000;
+
+	border-top-right-radius:5px;
+	border-bottom-right-radius:5px;
+	}
+	.wish-form-widet .add,
+	.wish-form-widet .save{
+		float:right;
+		}
+	.wish-form-widet .cancel{
+		float:left;
+		}
+	.wish-form-widet .add span,
+	.wish-form-widet .save span{
+		width:135px;
+		}
+	.wish-form-widet .cancel span{
+		width:135px;
+		}
+	.wish-form-widet button b{
+		background: url("../img/add-ico.gif") 0 50% no-repeat;
+		padding:0 0 0 20px;
+		}
+	.wish-form-widet:after{
+		content:".";
+		display:block;
+		text-indent:-9000px;
+		font-size:0;
+		line-height:0;
+		height:0;
+		overflow:hidden;
+		clear:both;
+		}
+	.wish-form-widet .abstract{
+		float:right;
+		width:290px;
+		}
+		.wish-form-widet .link-your-wish{
+			height:15px;
+			padding:5px 10px;
+			font:13px/15px 'Marmelad', Arial, "Helvetica Neue", Helvetica, sans-serif;
+			}
+		.wish-form-widet .name-your-wish{
+			height:22px;
+			padding:7px 10px 6px;
+			font:18px/22px 'Marmelad', Arial, "Helvetica Neue", Helvetica, sans-serif;
+			}
+		.wish-form-widet .abstract .select-type-1{
+			margin:0 0 10px;
+			width:100%;
+			}
+		.wish-form-widet .abstract .select-type-1{
+			background: none;
+			box-shadow:inset 0 1px 5px 0 rgba(0,0,0,.1), 0 1px 0 0 #fff;
+			}
+			.wish-form-widet .abstract select{
+				margin:0 0 10px;
+				width:290px;
+				}
+		.wish-form-widet .abstract textarea{
+			height:82px;
+			width:270px;
+			resize:none;
+			margin:0 0 10px;
+			}
+		.wish-form-widet .abstract input{
+			width:270px;
+			margin:0 0 10px;
+			}
+	.wish-form-widet .file-upload{
+		float:left;
+		width:134px;
+		margin:0 0 10px;
+		height:74px;
+		position: relative;
+		text-align:center;
+		line-height:74px;
+		overflow:hidden;
+		zoom:1;
+		}
+		.wish-form-widet .file-upload input{
+			position: absolute;
+			left:9000px;
+			}
+		.wish-form-widet .file-upload label{
+			position: absolute;
+			top:0;
+			left:0;
+			z-index:10;
+			width:128px;
+			height:68px;
+			display:block;
+			color:#0080bc;
+			font:12px/68px 'Marmelad', Arial, "Helvetica Neue", Helvetica, sans-serif;
+			text-align:center;
+			border:3px solid #ddd;
+			border-radius:12px;
+			cursor:pointer;
+			}
+			.wish-form-widet .file-upload label:hover b{
+				border-color:transparent;
+				}
+			.wish-form-widet .file-upload label b{
+				background-color: #FFF;
+				background-color: rgba(255,255,255,.7);
+				line-height:14px;
+				border-bottom:1px dotted #0080bc;
+				box-shadow:0 0 0 3px rgba(255,255,255,.7);
+				}
+	.wish-form-widet .price{
+		float:left;
+		width:134px;
+		margin:0 0 10px;
+		position: relative;
+		}
+		*+html .wish-form-widet .price{
+			top:5px;
+			}
+		.wish-form-widet .price input{
+			-moz-box-sizing:border-box;
+			-o-box-sizing:border-box;
+			box-sizing:border-box;
+			width:100px;
+			height:37px;
+			padding:5px 5px;
+			position: relative;
+			margin:0 0 0 10px;
+			font:22px/25px 'Marmelad', Arial, "Helvetica Neue", Helvetica, sans-serif;
+			}
+			*+html .wish-form-widet .price input{
+				width:90px;
+				height:25px;
+				}
+		.wish-form-widet .price label{
+			color:#000;
+			font:24px/37px 'Marmelad', Arial, "Helvetica Neue", Helvetica, sans-serif;
+			}

@@ -1,0 +1,67 @@
+.accordion-widget{
+  background-color:#fff;
+  border-top:4px solid #b7b7b7;
+  margin:0 0 15px 0;
+  position:relative;
+  overflow:hidden;
+  zoom:1;
+  }
+  .accordion-widget .container{
+    zoom:1;
+    overflow:hidden;
+    position:relative;
+    }
+  .accordion-widget .global-title{
+    font: bold 18px/20px 'PT Sans',Arial,sans-serif;
+    padding: 12px 10px 13px;
+    position: relative;
+    z-index:5;
+    color:#000;
+    background-color:#FFF;
+    margin:0 0 -20px;
+    }
+    .accordion-widget .global-title a{
+      color:#000;
+      }
+  .accordion-widget .title{
+    padding:14px 0;
+    margin:0 10px;
+    background-color:#fff;
+    font:bold 14px/22px 'PT Sans Caption',Arial,sans-serif;
+    position:relative;
+    z-index:4;
+    border-top:2px solid #b7b7b7;
+    }
+    .accordion-widget .title a{
+      zoom:1;
+      position:relative;
+      padding:0 15px 0 0;
+      background:url("../img/accordion_title_bg.gif") 100% 50% no-repeat;
+      }
+      .accordion-widget .title a.opened{
+        cursor:default;
+        color:#000;
+        }
+    .accordion-widget .title:first-child{
+      border-style:none;
+      }
+    * html .accordion-widget .title{
+      zoom:1;
+      border-style:expression(function(t) {
+  					if(t.previousSibling==null){
+  						  t.runtimeStyle.borderStyle = "none";
+  						}else{
+  						  t.runtimeStyle.borderStyle = "solid";
+  						}
+  					}(this));
+          }
+    *+html .accordion-widget .title{
+      zoom:1;
+      border-style:expression(function(t) {
+  					if(t.previousSibling==null){
+  						  t.runtimeStyle.borderStyle = "none";
+  						}else{
+  						  t.runtimeStyle.borderStyle = "solid";
+  						}
+  					}(this));
+          }

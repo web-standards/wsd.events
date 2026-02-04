@@ -1,0 +1,53 @@
+.related-widget{
+  border-top:4px solid #000;
+  padding:0 10px;
+  margin:0 0 4px;
+  font: 12px/14px 'PT Sans',Arial,sans-serif;
+  }
+  .related-widget article{
+    border-top:1px dotted #b7b7b7;
+    position:relative;
+    top:-11px;
+    padding:10px 0;
+    display:block;
+    z-index:3;
+    width:131px;
+    overflow:hidden;
+    zoom:1;
+    }
+    .related-widget article .abstract{
+      display:block;
+      }
+      .related-widget article .abstract p{
+        display:inline;
+        }
+      .related-widget article.exclusive .abstract{
+        text-indent:20px;
+        background:url("../img/zn.png") 0 0 no-repeat;
+        }
+      .related-widget article.advertisement .abstract{
+        text-indent:20px;
+        background:url("../img/adv.png") 0 0 no-repeat;
+        }
+      .related-widget article.press-release .abstract{
+        text-indent:20px;
+        background:url("../img/pr.png") 0 0 no-repeat;
+        }
+      .related-widget article.important .abstract{
+        font-weight:bold;
+        display:inline;
+        }
+      .related-widget article time{
+        display:inline;
+        color:#777;
+        }
+      .related-widget article a{
+
+        }
+  .related-widget .title{
+    padding:14px 0;
+    background-color:#fff;
+    font:bold 18px/22px 'PT Sans Caption',Arial,sans-serif;
+    position:relative;
+    z-index:4;
+    }

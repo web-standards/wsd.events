@@ -1,0 +1,618 @@
+<!DOCTYPE HTML>
+<html lang="ru-RU">
+<head>
+	<title>Прокрустовы окна — Пепелсбей.net</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=1234, user-scalable=no">
+	<link rel="stylesheet" href="themes/ribbon/styles/style.css">
+	<style>
+		#Cover H2 {
+			position:absolute;
+			bottom:130px;
+			left:0;
+			width:100%;
+			background:-webkit-repeating-linear-gradient(-45deg, rgba(255, 222, 59, 0.7) 0, rgba(255, 222, 59, 0.7) 5%, rgba(0, 0, 0, 0.7) 5%, rgba(0, 0, 0, 0.7) 10%);
+			background:-moz-repeating-linear-gradient(-45deg, rgba(255, 222, 59, 0.7) 0, rgba(255, 222, 59, 0.7) 5%, rgba(0, 0, 0, 0.7) 5%, rgba(0, 0, 0, 0.7) 10%);
+			background:-ms-repeating-linear-gradient(-45deg, rgba(255, 222, 59, 0.7) 0, rgba(255, 222, 59, 0.7) 5%, rgba(0, 0, 0, 0.7) 5%, rgba(0, 0, 0, 0.7) 10%);
+			background:-o-repeating-linear-gradient(-45deg, rgba(255, 222, 59, 0.7) 0, rgba(255, 222, 59, 0.7) 5%, rgba(0, 0, 0, 0.7) 5%, rgba(0, 0, 0, 0.7) 10%);
+			background:repeating-linear-gradient(
+				-45deg,
+				rgba(255, 222, 59, 0.7) 0,
+				rgba(255, 222, 59, 0.7) 5%,
+				rgba(0, 0, 0, 0.7) 5%,
+				rgba(0, 0, 0, 0.7) 10%
+				);
+			color:#FFF;
+			text-shadow:0 3px 10px rgba(0, 0, 0, 0.5);
+			text-align:center;
+			line-height:1.7;
+			font-size:50px;
+			}
+		#Tablet H2 SPAN,
+		#Smart H2 SPAN,
+		#Feature H2 SPAN {
+			float:right;
+			}
+		#IE6 H2 {
+			color:#2BA9EB;
+			}
+		#BenderAss H2 {
+			position:absolute;
+			top:390px;
+			left:675px;
+			}
+		#Nexus404 H2,
+		#iPhone404 H2,
+		#iPad404 H2 {
+			color:#FFF;
+			}
+		#Fry H2 {
+			margin-top:10px;
+			color:#FFF;
+			font-size:65px;
+			}
+		#Plain H2,
+		#PlainZoom H2,
+		#PlainFixed H2 {
+			color:#FFF;
+			}
+		#Pixels H2 {
+			padding-left:320px;
+			text-align:left;
+			font-size:100px;
+			}
+		#Amy H2 {
+			position:absolute;
+			top:320px;
+			left:690px;
+			color:#000;
+			font-size:65px;
+			}
+		#EverybodyLies H2 {
+			color:#FFF;
+			}
+		#MobileFirst H2 {
+			font-size:100px;
+			}
+		#Testing H2 {
+			color:#FFF;
+			text-shadow:0 3px 10px rgba(0, 0, 0, 0.5);
+			font-size:80px;
+			}
+		#OperaTools H2 {
+			font-size:80px;
+			}
+		#AndroidSDK H2 {
+			color:#A5C939;
+			}
+		#XCode H2 {
+			color:#4C92F9;
+			}
+		#Devices H2 {
+			color:#FFF;
+			text-align:center;
+			font-size:70px;
+			}
+		#ViewportChooser H2 {
+			font-size:100px;
+			}
+		#FBI H2,
+		#DPI H2 {
+			font-size:300px;
+			}
+		#ThankYou SECTION {
+			background:#FFF url(pictures/hypnotoad.jpg) 122% 50% no-repeat;
+			}
+	</style>
+</head>
+<body class="list">
+	<header class="caption">
+		<h1>Прокрустовы окна</h1>
+		<p>Вадим Макеев, Opera Software</p>
+	</header>
+	<div class="slide bg" id="Cover"><div>
+		<section>
+			<header>
+				<h2>Прокрустовы окна</h2>
+			</header>
+			<img src="pictures/procrustes.jpg" alt="Прокрустовы окна">
+		</section>
+	</div></div>
+	<div class="slide shout" id="Problem"><div>
+		<section>
+			<header>
+				<h2>Проблема</h2>
+			</header>
+		</section>
+	</div></div>
+	<div class="slide bg" id="Client"><div>
+		<section>
+			<header>
+				<h2>Хочу мобильный сайт</h2>
+			</header>
+			<img src="pictures/client.jpg" alt="Клиент">
+		</section>
+	</div></div>
+	<div class="slide bg" id="Feature"><div>
+		<section>
+			<header>
+				<h2>Мабiлка <span>240 × 320</span></h2>
+			</header>
+			<p></p>
+			<img src="pictures/device-feature.jpg" alt="Мабiлка">
+		</section>
+	</div></div>
+	<div class="slide bg" id="Smart"><div>
+		<section>
+			<header>
+				<h2>Смартфон <span>480 × 800</span></h2>
+			</header>
+			<img src="pictures/device-smart.jpg" alt="Смартфон">
+		</section>
+	</div></div>
+	<div class="slide bg" id="Tablet"><div>
+		<section>
+			<header>
+				<h2>Планшет <span>1280 × 800</span></h2>
+			</header>
+			<img src="pictures/device-tablet.jpg" alt="Планшет">
+		</section>
+	</div></div>
+	<div class="slide bg" id="iPhone"><div>
+		<section>
+			<img src="pictures/iphone.jpg" alt="iPhone">
+		</section>
+	</div></div>
+	<div class="slide bg" id="IE6"><div>
+		<section>
+			<header>
+				<h2>IE6, помните?</h2>
+			</header>
+			<img src="pictures/ie6.png" alt="IE6">
+		</section>
+	</div></div>
+	<div class="slide bg" id="BenderAss"><div>
+		<section>
+			<header>
+				<h2>Выньте iPhone<br> из задницы</h2>
+			</header>
+			<img src="pictures/bender.png" alt="Бендер">
+		</section>
+	</div></div>
+	<div class="slide" id="iPhoneAss"><div>
+		<section>
+			<header>
+				<h2>Выньте iPhone из задницы</h2>
+			</header>
+			<blockquote>
+				<p>Меня тошнит от извращенцев, по сути просто Apple-зависимых идиотов, называющих себя «мобильными веб-разработчиками», у которых iPhone застрял в заднице настолько глубоко, что их мозг погибает без кислорода — <b>Питер Поль Кох (PPK)</b></p>
+			</blockquote>
+			<p><a href="http://www.quirksmode.org/blog/archives/2010/02/the_iphone_obse.html" target="_blank">The iPhone Obsession</a> и <a href="http://www.quirksmode.org/blog/archives/2009/10/there_is_no_web.html" target="_blank">There is no WebKit on Mobile</a></p>
+		</section>
+	</div></div>
+	<div class="slide bg" id="Desktop404"><div>
+		<section>
+			<img src="pictures/404-desktop.jpg" alt="Десктоп">
+		</section>
+	</div></div>
+	<div class="slide bg" id="Nexus404"><div>
+		<section>
+			<header>
+				<h2>Nexus</h2>
+			</header>
+			<img src="pictures/404-nexus.jpg" alt="Nexus">
+		</section>
+	</div></div>
+	<div class="slide bg" id="iPhone404"><div>
+		<section>
+			<header>
+				<h2>iPhone</h2>
+			</header>
+			<img src="pictures/404-iphone.jpg" alt="iPhone">
+		</section>
+	</div></div>
+	<div class="slide bg" id="iPad404"><div>
+		<section>
+			<header>
+				<h2>iPad</h2>
+			</header>
+			<img src="pictures/404-ipad.jpg" alt="iPad">
+		</section>
+	</div></div>
+	<div class="slide bg" id="Fry"><div>
+		<section>
+			<header>
+				<h2>Хм-м…</h2>
+			</header>
+			<img src="pictures/fry.png" alt="Фрай">
+		</section>
+	</div></div>
+	<div class="slide shout" id="Viewport"><div>
+		<section>
+			<header>
+				<h2>Вьюпорт</h2>
+			</header>
+		</section>
+	</div></div>
+	<div class="slide" id="ViewportTypes"><div>
+		<section>
+			<header>
+				<h2>Вьюпорт</h2>
+			</header>
+			<pre>
+				<code>&lt;meta name="viewport" content="<mark>width=320</mark>"&gt;</code>
+			</pre>
+			<p class="note">Придумали в Apple</p>
+			<pre>
+				<code>@viewport { <mark>width:320px</mark> }</code>
+			</pre>
+			<p class="note">Переосмыслили в Opera, см. <a href="http://dev.w3.org/csswg/css-device-adapt/" target="_blank">CSS Device Adaptation</a></p>
+		</section>
+	</div></div>
+	<div class="slide bg" id="Viewports"><div>
+		<section>
+			<img src="pictures/viewports.jpg" alt="Вьюпорты">
+		</section>
+	</div></div>
+	<div class="slide bg" id="Widths"><div>
+		<section>
+			<img src="pictures/widths.jpg" alt="Ширины">
+		</section>
+	</div></div>
+	<div class="slide bg" id="Plain"><div>
+		<section>
+			<header>
+				<h2>Просто так</h2>
+			</header>
+			<img src="pictures/plain.jpg" alt="Текст">
+		</section>
+	</div></div>
+	<div class="slide" id="DefaultViewports"><div>
+		<section>
+			<header>
+				<h2>Вьюпорт по умолчанию</h2>
+			</header>
+			<ul>
+				<li><strong>980px —</strong> Mobile Safari</li>
+				<li><strong>850px —</strong> Opera</li>
+				<li><strong>800px —</strong> Android WebKit</li>
+				<li><strong>974px —</strong> Internet Explorer</li>
+			</ul>
+			<p class="note">Symbian WebKit, Samsung WebKit, BlackBerry…</p>
+		</section>
+	</div></div>
+	<div class="slide bg" id="PlainZoom"><div>
+		<section>
+			<header>
+				<h2>Приближаем</h2>
+			</header>
+			<img src="pictures/plain-zoom.jpg" alt="Приближаем">
+		</section>
+	</div></div>
+	<div class="slide" id="NewViewport"><div>
+		<section>
+			<header>
+				<h2>Новый вьюпорт</h2>
+			</header>
+			<pre>
+				<code>&lt;meta name="viewport" content="<mark>width=320</mark>"&gt;</code>
+			</pre>
+			<pre>
+				<code>@viewport {</code>
+				<code>    <mark>width:320px</mark></code>
+				<code>    }</code>
+			</pre>
+		</section>
+	</div></div>
+	<div class="slide bg" id="PlainFixed"><div>
+		<section>
+			<header>
+				<h2>Фиксируем</h2>
+			</header>
+			<img src="pictures/plain-fixed.jpg" alt="Текст ограничен">
+		</section>
+	</div></div>
+	<div class="slide shout" id="ViewportChooser"><div>
+		<section>
+			<header>
+				<h2>Выбиратор вьюпорта</h2>
+			</header>
+		</section>
+	</div></div>
+	<div class="slide" id="RelativeViewport"><div>
+		<section>
+			<header>
+				<h2>Относительный вьюпорт</h2>
+			</header>
+			<pre>
+				<code>&lt;meta name="viewport" content="<mark>width=device-width</mark>"&gt;</code>
+			</pre>
+			<ul>
+				<li>Для адаптирующихся, универсальных резиновых сайтов</li>
+				<li>Для строго мобильных версий</li>
+				<li>Значение — выставляется самим девайсом</li>
+			</ul>
+		</section>
+	</div></div>
+	<div class="slide" id="FixedViewport"><div>
+		<section>
+			<header>
+				<h2>Фиксированный вьюпорт</h2>
+			</header>
+			<pre>
+				<code>&lt;meta name="viewport" content="<mark>width=1024</mark>"&gt;</code>
+			</pre>
+			<ul>
+				<li>Для обычных фиксированных десктопных сайтов</li>
+				<li>Значение — минимальная ширина для просмотра вашего сайта</li>
+				<li>Рекомендуется всем</li>
+			</ul>
+			<p><strong>Добавье вьюпорт сегодня!</strong> Я проверю…</p>
+		</section>
+	</div></div>
+	<div class="slide" id="ViewportBased"><div>
+		<section>
+			<header>
+				<h2>Опираемся на вьюпорт</h2>
+			</header>
+			<pre>
+				<code>&lt;meta name="viewport" content="width=<mark>320</mark>"&gt;</code>
+			</pre>
+			<pre>
+				<code>@media screen and (device-width:<mark class="important">320px</mark>) {</code>
+				<code>    <mark>Ага, мобилка!</mark></code>
+				<code>    }</code>
+			</pre>
+		</section>
+	</div></div>
+	<div class="slide" id="DeviceWidth"><div>
+		<section>
+			<header>
+				<h2>Ширина устройства</h2>
+			</header>
+			<pre>
+				<code>&lt;meta name="viewport" content="width=<mark>device-width</mark>"&gt;</code>
+			</pre>
+			<pre>
+				<code>@media screen and (max-width:<mark class="important">360px</mark>) {</code>
+				<code>    <mark>Поймали Nokia 5800!</mark></code>
+				<code>    }</code>
+			</pre>
+		</section>
+	</div></div>
+	<div class="slide bg" id="HowToPleaseAll"><div>
+		<section>
+			<header>
+				<h2>Как угодить всем?</h2>
+			</header>
+			<img src="pictures/tiny-huge.jpg" alt="Маобилка и планшет">
+		</section>
+	</div></div>
+	<div class="slide bg" id="InsertSmartphone"><div>
+		<section>
+			<header>
+				<h2>Вставить смартфон!</h2>
+			</header>
+			<img src="pictures/tiny-smart-huge.jpg" alt="Мобилка, смартфон и планшет">
+		</section>
+	</div></div>
+	<div class="slide" id="ManyViewport"><div>
+		<section>
+			<header>
+				<h2>Вьюпортики и вьюпортища</h2>
+			</header>
+			<ul>
+				<li><strong>Крочешные:</strong> 84, 96, 101, 128, 130, 132</li>
+				<li><strong>Маленькие:</strong> 160, 176</li>
+				<li><strong>Средние:</strong> 208, 220, 240</li>
+				<li><strong>Большие:</strong> 320, 360, 480+</li>
+				<li><strong>Десктоп:</strong> 800+</li>
+			</ul>
+		</section>
+	</div></div>
+	<div class="slide bg" id="Adaptation"><div>
+		<section>
+			<img src="pictures/adaptation.png" alt="Адаптация">
+		</section>
+	</div></div>
+	<div class="slide shout" id="FBI"><div>
+		<section>
+			<header>
+				<h2>FBI</h2>
+			</header>
+		</section>
+	</div></div>
+	<div class="slide shout" id="DPI"><div>
+		<section>
+			<header>
+				<h2>DPI</h2>
+			</header>
+		</section>
+	</div></div>
+	<div class="slide bg" id="iPhoneFinder"><div>
+		<section>
+			<img src="pictures/iphone-finder.png" alt="iPhone vs. Finder">
+		</section>
+	</div></div>
+	<div class="slide bg" id="ScreenFinder"><div>
+		<section>
+			<img src="pictures/screen-finder.png" alt="Screen vs. Finder">
+		</section>
+	</div></div>
+	<div class="slide shout" id="Pixels"><div>
+		<section>
+			<header>
+				<h2>Пикселы?<br> Пикселы!<br> Пикселы…</h2>
+			</header>
+		</section>
+	</div></div>
+	<div class="slide bg" id="PixelsPorn"><div>
+		<section>
+			<img src="pictures/pixels.png" alt="Пикселы">
+		</section>
+	</div></div>
+	<div class="slide bg" id="Amy"><div>
+		<section>
+			<header>
+				<h2>Э-э-э…</h2>
+			</header>
+			<img src="pictures/amy.png" alt="Эми">
+		</section>
+	</div></div>
+	<div class="slide shout" id="Fun"><div>
+		<section>
+			<header>
+				<h2>Фан!</h2>
+			</header>
+		</section>
+	</div></div>
+	<div class="slide bg" id="EverybodyLies"><div>
+		<section>
+			<header>
+				<h2>Никому нелья верить!</h2>
+			</header>
+			<img src="pictures/house.jpg" alt="Everybody Lies!">
+		</section>
+	</div></div>
+	<div class="slide" id="DeviceDPI"><div>
+		<section>
+			<header>
+				<h2>Device DPI</h2>
+			</header>
+			<ul>
+				<li>Ширина экрана HTC Desire — <strong>480px</strong></li>
+				<li>Итоговый <code>device-width</code> — <strong>300px</strong></li>
+			</ul>
+			<p>Всё из-за настройки <strong>Zoom:</strong> 480px ÷ 160% = 300px</p>
+			<pre>
+				<code>&lt;meta name="viewport" content="<mark>target-densitydpi=device-dpi</mark>"&gt;</code>
+			</pre>
+		</section>
+	</div></div>
+	<div class="slide bg" id="Portrait"><div>
+		<section>
+			<img src="pictures/portrait.jpg" alt="Portrait">
+		</section>
+	</div></div>
+	<div class="slide bg" id="Landscape"><div>
+		<section>
+			<img src="pictures/landscape.jpg" alt="Landscape">
+		</section>
+	</div></div>
+	<div class="slide" id="DevicesLies"><div>
+		<section>
+			<header>
+				<h2>От девайса к девайсу…</h2>
+			</header>
+			<ul>
+				<li>Значение <code>device-width</code> для iPad всегда <strong>768px,</strong><br> как его ни поворачивай</li>
+				<li>Значение <code>device-width</code> для Galaxy Tab <strong>600px</strong> <em>или</em> <strong>1024px,</strong><br> в зависимости от ориентации</li>
+				<li>При открытой клавиатуре Galaxy Tab <strong>всегда в ландшафтной ориентации,</strong> <em>как его ни…</em> ну, вы поняли</li>
+			</ul>
+		</section>
+	</div></div>
+	<div class="slide bg" id="Testing"><div>
+		<section>
+			<header>
+				<h2>Тестирование</h2>
+			</header>
+			<img src="pictures/testing.jpg" alt="Тестирование">
+		</section>
+	</div></div>
+	<div class="slide bg" id="Statistic"><div>
+		<section>
+			<img src="pictures/stat.png" alt="Статистика">
+		</section>
+	</div></div>
+	<div class="slide bg" id="OperaMobile"><div>
+		<section>
+			<header>
+				<h2>Opera Mobile</h2>
+			</header>
+			<img src="pictures/tools-mobile.jpg" alt="Opera Mobile Emulator">
+		</section>
+	</div></div>
+	<div class="slide bg" id="OperaMini"><div>
+		<section>
+			<header>
+				<h2>Opera Mini</h2>
+			</header>
+			<img src="pictures/tools-mini.png" alt="Opera Mini">
+		</section>
+	</div></div>
+	<div class="slide bg" id="OperaMiniOld"><div>
+		<section>
+			<header>
+				<h2>Opera Mini</h2>
+			</header>
+			<img src="pictures/tools-mini-old.png" alt="Opera Mini">
+		</section>
+	</div></div>
+	<div class="slide shout" id="MicroEmulator"><div>
+		<section>
+			<header>
+				<h2><a href="http://www.microemu.org/">microemu.org</a></h2>
+			</header>
+		</section>
+	</div></div>
+	<div class="slide shout" id="OperaTools"><div>
+		<section>
+			<header>
+				<h2><a href="http://www.opera.com/developer/tools/">opera.com/developer/tools</a></h2>
+			</header>
+		</section>
+	</div></div>
+	<div class="slide" id="AndroidSDK"><div>
+		<section>
+			<header>
+				<h2>Android SDK</h2>
+			</header>
+			<img src="pictures/sdk.png" alt="Android SDK" class="middle">
+		</section>
+	</div></div>
+	<div class="slide" id="XCode"><div>
+		<section>
+			<header>
+				<h2>XCode</h2>
+			</header>
+			<img src="pictures/xcode.jpg" alt="XCode" class="middle">
+		</section>
+	</div></div>
+	<div class="slide bg" id="Devices"><div>
+		<section>
+			<header>
+				<h2>Сто килограммов девайсов</h2>
+			</header>
+			<img src="pictures/devices.jpg" alt="Девайсы">
+		</section>
+	</div></div>
+	<div class="slide" id="Links"><div>
+		<section>
+			<header>
+				<h2>Читать дальше</h2>
+			</header>
+			<ul>
+				<li><a href="http://www.quirksmode.org/" target="_blank">QuirksMode</a></li>
+				<li><a href="http://developer.android.com/reference/android/webkit/WebView.html" target="_blank">Спецификация WebView для Android</a></li>
+				<li><a href="http://people.opera.com/patrickl/experiments/viewport/" target="_blank">Набор тестов для понимания вьюпорта</a></li>
+			</ul>
+		</section>
+	</div></div>
+	<div class="slide" id="ThankYou"><div>
+		<section>
+			<header>
+				<h2>Прокрустовы окна</h2>
+			</header>
+			<p>Вадим Макеев, Opera Software</p>
+			<ul>
+				<li><a href="http://pepelsbey.net">pepelsbey.net</a></li>
+				<li><a href="https://twitter.com/pepelsbey">@pepelsbey</a> и <a href="https://twitter.com/odevrel_ru">@ODevRel_ru</a></li>
+				<li><a href="mailto:pepelsbey@opera.com">pepelsbey@opera.com</a></li>
+			</ul>
+			<p>Презентация: <a href="http://pepelsbey.net/pres/procrustes/">pepelsbey.net/pres/procrustes</a></p>
+		</section>
+	</div></div>
+	<div class="progress"><div></div></div>
+	<script src="scripts/script-adfea3dfb6.js"></script>
+</body>
+</html>

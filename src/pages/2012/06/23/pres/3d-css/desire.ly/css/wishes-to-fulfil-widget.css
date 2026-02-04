@@ -1,0 +1,20 @@
+.wishes-to-fulfil-widget{
+	float:left;
+	width:590px;
+	margin:0 15px 0 0;
+	min-height:1px;
+	}
+	.wishes-to-fulfil-widget>.title{
+		margin-top:55px;
+		color:#3b5050;
+		text-transform:lowercase;
+		font:48px/60px 'Berkshire Swash', Georgia, cursive;
+		margin-bottom:10px;
+		}
+	.wishes-to-fulfil-widget section{
+		margin-bottom:40px;
+		}
+		.wishes-to-fulfil-widget .author{
+			color:#3b5050;
+			font:normal 24px/32px 'Marmelad', Arial, "Helvetica Neue", Helvetica, sans-serif;
+			}

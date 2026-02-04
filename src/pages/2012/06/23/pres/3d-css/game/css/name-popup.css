@@ -1,0 +1,50 @@
+.name-popup{
+	display:none;
+	width:331px;
+	height:194px;
+	background: url("../img/name.png") 50% 50% no-repeat;
+	position: absolute;
+	top:50%;
+	left:50%;
+	margin:-97px 0 0 -166px;
+	z-index:100;
+	}
+	.name-popup label{
+		position: absolute;
+		left:70px;
+		top:70px;
+		font:24px/36px 'Conv_loved_by_the_king', cursive;
+		}
+	.name-popup input{
+		border-top-left-radius:5px;
+		border-bottom-left-radius:5px;
+		color:#323840;
+		outline:none;
+		position: absolute;
+		top:110px;
+		left:70px;
+		width:148px;
+		height:18px;
+		letter-spacing:1px;
+		padding:10px 10px;
+		font:16px/18px 'Conv_loved_by_the_king', cursive;
+		border:1px solid #bdafa3;
+		border-width:1px 0 1px 1px;
+		}
+	.name-popup .ok{
+		z-index:1000;
+		border-top-right-radius:5px;
+		border-bottom-right-radius:5px;
+		width:40px;
+		height:38px;
+		border:1px solid #bdafa3;
+		border-width:1px 1px 1px 0;
+		cursor:pointer;
+		position: absolute;
+		display:block;
+		text-align:center;
+		left:239px;
+		top:110px;
+		font:16px/38px 'Conv_loved_by_the_king', cursive;
+		background-color: #FFF;
+		}

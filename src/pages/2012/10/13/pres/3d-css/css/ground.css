@@ -1,0 +1,499 @@
+.block.grass{
+  background:url("../img/grass.png") 50% 50% repeat;
+  }
+
+.block.dirt{
+  background:url("../img/dirt.png") 50% 50% repeat;
+  }
+
+.block.grass.road-y{
+  background:url("../img/road-y.png") 50% 50% repeat-y,url("../img/grass.png") 50% 50% repeat;
+  }
+.block.grass.road-x{
+  background:url("../img/road-x.png") 50% 50% repeat-x,url("../img/grass.png") 50% 50% repeat;
+  }
+  
+.block.grass.road-y.end-bottom.end-right.end-left.end-top{
+  background:url("../img/road-y.png") 50% 50% repeat-y,url("../img/end-right.png") 100% 50% repeat-y,url("../img/end-left.png") 0 50% repeat-y,url("../img/end-top.png") 50% 0 repeat-x,url("../img/end-bottom.png") 50% 100% repeat-x,url("../img/grass.png") 50% 50% repeat;
+  }
+
+.block.grass.road-x.end-bottom.end-right.end-left.end-top{
+  background:url("../img/road-x.png") 50% 50% repeat-x,url("../img/end-right.png") 100% 50% repeat-y,url("../img/end-left.png") 0 50% repeat-y,url("../img/end-top.png") 50% 0 repeat-x,url("../img/end-bottom.png") 50% 100% repeat-x,url("../img/grass.png") 50% 50% repeat;
+  }
+  
+.block.grass.grass-end-top{
+  background:url("../img/end-top.png") 50% 0 repeat-x,url("../img/grass.png") 50% 50% repeat;
+  }
+.block.grass.grass-end-bottom{
+  background:url("../img/end-bottom.png") 50% 100% repeat-x,url("../img/grass.png") 50% 50% repeat;
+  }
+.block.grass.grass-end-left{
+  background:url("../img/end-left.png") 0 50% repeat-y,url("../img/grass.png") 50% 50% repeat;
+  }
+.block.grass.grass-end-right{
+  background:url("../img/end-right.png") 100% 50% repeat-y,url("../img/grass.png") 50% 50% repeat;
+  }
+.block.grass.grass-end-right.grass-end-top{
+  background:url("../img/end-top.png") 50% 0 repeat-x,url("../img/end-right.png") 100% 50% repeat-y,url("../img/grass.png") 50% 50% repeat;
+  }
+.block.grass.grass-end-right.grass-end-bottom{
+  background:url("../img/end-bottom.png") 50% 100% repeat-x,url("../img/end-right.png") 100% 50% repeat-y,url("../img/grass.png") 50% 50% repeat;
+  }
+.block.grass.grass-end-right.grass-end-left{
+  background:url("../img/end-left.png") 0 50% repeat-y,url("../img/end-right.png") 100% 50% repeat-y,url("../img/grass.png") 50% 50% repeat;
+  }
+.block.grass.grass-end-left.grass-end-top{
+  background:url("../img/end-left.png") 0 50% repeat-y,url("../img/end-top.png") 50% 0 repeat-x,url("../img/grass.png") 50% 50% repeat;
+  }
+.block.grass.grass-end-left.grass-end-bottom{
+  background:url("../img/end-left.png") 0 50% repeat-y,url("../img/end-bottom.png") 50% 100% repeat-x,url("../img/grass.png") 50% 50% repeat;
+  }
+.block.grass.grass-end-top.grass-end-bottom{
+  background:url("../img/end-top.png") 50% 0 repeat-x,url("../img/end-bottom.png") 50% 100% repeat-x,url("../img/grass.png") 50% 50% repeat;
+  }
+.block.grass.grass-end-top.grass-end-bottom.grass-end-left{
+  background:url("../img/end-left.png") 0 50% repeat-y,url("../img/end-top.png") 50% 0 repeat-x,url("../img/end-bottom.png") 50% 100% repeat-x,url("../img/grass.png") 50% 50% repeat;
+  }
+.block.grass.grass-end-right.grass-end-bottom.grass-end-left{
+  background:url("../img/end-left.png") 0 50% repeat-y,url("../img/end-right.png") 100% 50% repeat-y,url("../img/end-bottom.png") 50% 100% repeat-x,url("../img/grass.png") 50% 50% repeat;
+  }
+.block.grass.grass-end-right.grass-end-bottom.grass-end-top{
+  background:url("../img/end-top.png") 50% 0 repeat-x,url("../img/end-right.png") 100% 50% repeat-y,url("../img/end-bottom.png") 50% 100% repeat-x,url("../img/grass.png") 50% 50% repeat;
+  }
+.block.grass.grass-end-right.grass-end-left.grass-end-top{
+  background:url("../img/end-top.png") 50% 0 repeat-x,url("../img/end-right.png") 100% 50% repeat-y,url("../img/end-left.png") 0 50% repeat-y,url("../img/grass.png") 50% 50% repeat;
+  }
+.block.grass.grass-end-right.grass-end-left.grass-end-top.grass-end-bottom{
+  background:url("../img/end-bottom.png") 50% 100% repeat-x,url("../img/end-top.png") 50% 0 repeat-x,url("../img/end-right.png") 100% 50% repeat-y,url("../img/end-left.png") 0 50% repeat-y,url("../img/grass.png") 50% 50% repeat;
+  }
+.block.grass.grass-end-right.grass-end-left.grass-end-top.grass-end-bottom.road-y{
+  background:url("../img/road-y.png") 50% 50% repeat-y,url("../img/end-bottom.png") 50% 100% repeat-x,url("../img/end-top.png") 50% 0 repeat-x,url("../img/end-right.png") 100% 50% repeat-y,url("../img/end-left.png") 0 50% repeat-y,url("../img/grass.png") 50% 50% repeat;
+  }
+.block.grass.grass-end-right.grass-end-left.grass-end-top.grass-end-bottom.road-x{
+  background:url("../img/road-x.png") 50% 50% repeat-x,url("../img/end-bottom.png") 50% 100% repeat-x,url("../img/end-top.png") 50% 0 repeat-x,url("../img/end-right.png") 100% 50% repeat-y,url("../img/end-left.png") 0 50% repeat-y,url("../img/grass.png") 50% 50% repeat;
+  }
+.block.grass.grass-end-right.grass-end-left.grass-end-top.grass-end-bottom.road-x.road-y{
+  background:url("../img/road-y.png") 50% 50% repeat-y,url("../img/road-x.png") 50% 50% repeat-x,url("../img/end-bottom.png") 50% 100% repeat-x,url("../img/end-top.png") 50% 0 repeat-x,url("../img/end-right.png") 100% 50% repeat-y,url("../img/end-left.png") 0 50% repeat-y,url("../img/grass.png") 50% 50% repeat;
+  }
+  
+.block.grass.grass-end-left.road-y{
+  background:url("../img/road-y.png") 50% 50% repeat-y,url("../img/end-left.png") 0 50% repeat-y,url("../img/grass.png") 50% 50% repeat;
+  }
+.block.grass.grass-end-left.road-x{
+  background:url("../img/road-x.png") 50% 50% repeat-x,url("../img/end-left.png") 0 50% repeat-y,url("../img/grass.png") 50% 50% repeat;
+  }
+
+.block.grass.grass-end-right.road-y{
+  background:url("../img/road-y.png") 50% 50% repeat-y,url("../img/end-right.png") 100% 50% repeat-y,url("../img/grass.png") 50% 50% repeat;
+  }
+.block.grass.grass-end-right.road-x{
+  background:url("../img/road-x.png") 50% 50% repeat-x,url("../img/end-right.png") 100% 50% repeat-y,url("../img/grass.png") 50% 50% repeat;
+  }
+  
+.block.grass.grass-end-top.road-y{
+  background:url("../img/road-y.png") 50% 50% repeat-y,url("../img/end-top.png") 50% 0 repeat-x,url("../img/grass.png") 50% 50% repeat;
+  }
+.block.grass.grass-end-top.road-x{
+  background:url("../img/road-x.png") 50% 50% repeat-x,url("../img/end-top.png") 50% 0 repeat-x,url("../img/grass.png") 50% 50% repeat;
+  }
+
+.block.grass.grass-end-bottom.road-y{
+  background:url("../img/road-y.png") 50% 50% repeat-y,url("../img/end-bottom.png") 50% 100% repeat-x,url("../img/grass.png") 50% 50% repeat;
+  }
+.block.grass.grass-end-bottom.road-x{
+  background:url("../img/road-x.png") 50% 50% repeat-x,url("../img/end-bottom.png") 50% 100% repeat-x,url("../img/grass.png") 50% 50% repeat;
+  }
+  
+.block.grass.grass-end-right.grass-end-left.road-y{
+  background:url("../img/road-y.png") 50% 50% repeat-y,url("../img/end-left.png") 0 50% repeat-y,url("../img/end-right.png") 100% 50% repeat-y,url("../img/grass.png") 50% 50% repeat;
+  }
+.block.grass.grass-end-right.grass-end-left.road-x{
+  background:url("../img/road-x.png") 50% 50% repeat-x,url("../img/end-left.png") 0 50% repeat-y,url("../img/end-right.png") 100% 50% repeat-y,url("../img/grass.png") 50% 50% repeat;
+  }
+
+.block.grass.grass-end-top.grass-end-left.road-y{
+  background:url("../img/road-y.png") 50% 50% repeat-y,url("../img/end-left.png") 0 50% repeat-y,url("../img/end-top.png") 50% 0 repeat-x,url("../img/grass.png") 50% 50% repeat;
+  }
+.block.grass.grass-end-top.grass-end-left.road-x{
+  background:url("../img/road-x.png") 50% 50% repeat-x,url("../img/end-left.png") 0 50% repeat-y,url("../img/end-top.png") 50% 0 repeat-x,url("../img/grass.png") 50% 50% repeat;
+  }
+
+.block.grass.grass-end-bottom.grass-end-left.road-y{
+  background:url("../img/road-y.png") 50% 50% repeat-y,url("../img/end-left.png") 0 50% repeat-y,url("../img/end-bottom.png") 50% 100% repeat-x,url("../img/grass.png") 50% 50% repeat;
+  }
+.block.grass.grass-end-bottom.grass-end-left.road-x{
+  background:url("../img/road-x.png") 50% 50% repeat-x,url("../img/end-left.png") 0 50% repeat-y,url("../img/end-bottom.png") 50% 100% repeat-x,url("../img/grass.png") 50% 50% repeat;
+  }
+
+.block.grass.grass-end-bottom.grass-end-right.road-y{
+  background:url("../img/road-y.png") 50% 50% repeat-y,url("../img/end-right.png") 100% 50% repeat-y,url("../img/end-bottom.png") 50% 100% repeat-x,url("../img/grass.png") 50% 50% repeat;
+  }
+.block.grass.grass-end-bottom.grass-end-right.road-x{
+  background:url("../img/road-x.png") 50% 50% repeat-x,url("../img/end-right.png") 100% 50% repeat-y,url("../img/end-bottom.png") 50% 100% repeat-x,url("../img/grass.png") 50% 50% repeat;
+  }
+
+.block.grass.grass-end-top.grass-end-right.road-y{
+  background:url("../img/road-y.png") 50% 50% repeat-y,url("../img/end-right.png") 100% 50% repeat-y,url("../img/end-top.png") 50% 0 repeat-x,url("../img/grass.png") 50% 50% repeat;
+  }
+.block.grass.grass-end-top.grass-end-right.road-x{
+  background:url("../img/road-x.png") 50% 50% repeat-x,url("../img/end-right.png") 100% 50% repeat-y,url("../img/end-top.png") 50% 0 repeat-x,url("../img/grass.png") 50% 50% repeat;
+  }
+
+.block.grass.grass-end-top.grass-end-bottom.road-y{
+  background:url("../img/road-y.png") 50% 50% repeat-y,url("../img/end-bottom.png") 50% 100% repeat-x,url("../img/end-top.png") 50% 0 repeat-x,url("../img/grass.png") 50% 50% repeat;
+  }
+.block.grass.grass-end-top.grass-end-bottom.road-x{
+  background:url("../img/road-x.png") 50% 50% repeat-x,url("../img/end-bottom.png") 50% 100% repeat-x,url("../img/end-top.png") 50% 0 repeat-x,url("../img/grass.png") 50% 50% repeat;
+  }
+
+.block.grass.grass-end-left.grass-end-right.grass-end-bottom.road-x{
+  background:url("../img/road-x.png") 50% 50% repeat-x,url("../img/end-bottom.png") 50% 100% repeat-x,url("../img/end-left.png") 0 50% repeat-y,url("../img/end-right.png") 100% 50% repeat-y,url("../img/grass.png") 50% 50% repeat;
+  }
+.block.grass.grass-end-left.grass-end-right.grass-end-bottom.road-y{
+  background:url("../img/road-y.png") 50% 50% repeat-y,url("../img/end-bottom.png") 50% 100% repeat-x,url("../img/end-left.png") 0 50% repeat-y,url("../img/end-right.png") 100% 50% repeat-y,url("../img/grass.png") 50% 50% repeat;
+  }
+
+.block.grass.grass-end-left.grass-end-right.grass-end-top.road-x{
+  background:url("../img/road-x.png") 50% 50% repeat-x,url("../img/end-top.png") 50% 0 repeat-x,url("../img/end-left.png") 0 50% repeat-y,url("../img/end-right.png") 100% 50% repeat-y,url("../img/grass.png") 50% 50% repeat;
+  }
+.block.grass.grass-end-left.grass-end-right.grass-end-top.road-y{
+  background:url("../img/road-y.png") 50% 50% repeat-y,url("../img/end-top.png") 50% 0 repeat-x,url("../img/end-left.png") 0 50% repeat-y,url("../img/end-right.png") 100% 50% repeat-y,url("../img/grass.png") 50% 50% repeat;
+  }
+  
+.block.grass.grass-end-bottom.grass-end-right.grass-end-top.road-x{
+  background:url("../img/road-x.png") 50% 50% repeat-x,url("../img/end-top.png") 50% 0 repeat-x,url("../img/end-bottom.png") 50% 100% repeat-x,url("../img/end-right.png") 100% 50% repeat-y,url("../img/grass.png") 50% 50% repeat;
+  }
+.block.grass.grass-end-bottom.grass-end-right.grass-end-top.road-y{
+  background:url("../img/road-y.png") 50% 50% repeat-y,url("../img/end-top.png") 50% 0 repeat-x,url("../img/end-bottom.png") 50% 100% repeat-x,url("../img/end-right.png") 100% 50% repeat-y,url("../img/grass.png") 50% 50% repeat;
+  }
+
+.block.grass.road-x.road-y{
+  background:url("../img/road-x.png") 50% 50% repeat-x,url("../img/road-y.png") 50% 50% repeat-y,url("../img/grass.png") 50% 50% repeat;
+  }
+  
+.block.grass.road-x.road-y.end-left{
+  background:url("../img/end-left.png") 0 50% repeat-y,url("../img/road-x.png") 50% 50% repeat-x,url("../img/road-y.png") 50% 50% repeat-y,url("../img/grass.png") 50% 50% repeat;
+  }
+  
+.block.grass.road-x.road-y.end-top{
+  background:url("../img/road-x.png") 50% 50% repeat-x,url("../img/end-top.png") 50% 0 repeat-x,url("../img/road-y.png") 50% 50% repeat-y,url("../img/grass.png") 50% 50% repeat;
+  }
+  
+.block.grass.road-x.road-y.end-right{
+  background:url("../img/end-right.png") 100% 50% repeat-y,url("../img/road-x.png") 50% 50% repeat-x,url("../img/road-y.png") 50% 50% repeat-y,url("../img/grass.png") 50% 50% repeat;
+  }
+
+.block.grass.road-x.road-y.end-bottom{
+  background:url("../img/road-x.png") 50% 50% repeat-x,url("../img/end-bottom.png") 50% 100% repeat-x,url("../img/road-y.png") 50% 50% repeat-y,url("../img/grass.png") 50% 50% repeat;
+  }
+  
+.block.grass.road-x.road-y.end-bottom.end-right{
+  background:url("../img/end-right.png") 100% 50% repeat-y,url("../img/road-x.png") 50% 50% repeat-x,url("../img/end-bottom.png") 50% 100% repeat-x,url("../img/road-y.png") 50% 50% repeat-y,url("../img/grass.png") 50% 50% repeat;
+  }
+  
+.block.grass.road-x.road-y.end-left.end-bottom{
+  background:url("../img/end-left.png") 0 50% repeat-y,url("../img/road-x.png") 50% 50% repeat-x,url("../img/end-bottom.png") 50% 100% repeat-x,url("../img/road-y.png") 50% 50% repeat-y,url("../img/grass.png") 50% 50% repeat;
+  }
+  
+.block.grass.road-x.road-y.end-top.end-bottom{
+  background:url("../img/end-top.png") 50% 0 repeat-x,url("../img/road-x.png") 50% 50% repeat-x,url("../img/end-bottom.png") 50% 100% repeat-x,url("../img/road-y.png") 50% 50% repeat-y,url("../img/grass.png") 50% 50% repeat;
+  }
+  
+.block.grass.road-x.road-y.end-top.end-left{
+  background:url("../img/end-left.png") 0 50% repeat-y,url("../img/road-x.png") 50% 50% repeat-x,url("../img/end-top.png") 50% 0 repeat-x,url("../img/road-y.png") 50% 50% repeat-y,url("../img/grass.png") 50% 50% repeat;
+  }
+  
+.block.grass.road-x.road-y.end-top.end-right{
+  background:url("../img/end-right.png") 100% 50% repeat-y,url("../img/road-x.png") 50% 50% repeat-x,url("../img/end-top.png") 50% 0 repeat-x,url("../img/road-y.png") 50% 50% repeat-y,url("../img/grass.png") 50% 50% repeat;
+  }
+ 
+.block.grass.road-x.road-y.end-right.end-left{
+  background:url("../img/end-left.png") 0 50% repeat-y,url("../img/end-right.png") 100% 50% repeat-y,url("../img/road-x.png") 50% 50% repeat-x,url("../img/road-y.png") 50% 50% repeat-y,url("../img/grass.png") 50% 50% repeat;
+  }
+  
+.block.grass.road-x.road-y.end-right.end-left.end-top{
+  background:url("../img/end-top.png") 50% 0 repeat-x,url("../img/end-left.png") 0 50% repeat-y,url("../img/end-right.png") 100% 50% repeat-y,url("../img/road-x.png") 50% 50% repeat-x,url("../img/road-y.png") 50% 50% repeat-y,url("../img/grass.png") 50% 50% repeat;
+  }
+  
+.block.grass.road-x.road-y.end-right.end-bottom.end-top{
+  background:url("../img/end-top.png") 50% 0 repeat-x,url("../img/end-bottom.png") 50% 100% repeat-x,url("../img/end-right.png") 100% 50% repeat-y,url("../img/road-x.png") 50% 50% repeat-x,url("../img/road-y.png") 50% 50% repeat-y,url("../img/grass.png") 50% 50% repeat;
+  }
+  
+.block.grass.road-x.road-y.end-right.end-bottom.end-left{
+  background:url("../img/end-left.png") 0 50% repeat-y,url("../img/end-bottom.png") 50% 100% repeat-x,url("../img/end-right.png") 100% 50% repeat-y,url("../img/road-x.png") 50% 50% repeat-x,url("../img/road-y.png") 50% 50% repeat-y,url("../img/grass.png") 50% 50% repeat;
+  }
+
+.block.grass.road-x.road-y.end-top.end-bottom.end-left{
+  background:url("../img/end-left.png") 0 50% repeat-y,url("../img/end-bottom.png") 50% 100% repeat-x,url("../img/end-top.png") 50% 0 repeat-x,url("../img/road-x.png") 50% 50% repeat-x,url("../img/road-y.png") 50% 50% repeat-y,url("../img/grass.png") 50% 50% repeat;
+  }
+
+
+.block.grass.road-x.road-y.end-top.end-bottom.end-left.end-right{
+  background:url("../img/end-right.png") 100% 50% repeat-y,url("../img/end-left.png") 0 50% repeat-y,url("../img/end-bottom.png") 50% 100% repeat-x,url("../img/end-top.png") 50% 0 repeat-x,url("../img/road-x.png") 50% 50% repeat-x,url("../img/road-y.png") 50% 50% repeat-y,url("../img/grass.png") 50% 50% repeat;
+  }
+
+.block.grass.end-top.end-bottom.end-left.end-right{
+  background:url("../img/end-right.png") 100% 50% repeat-y,url("../img/end-left.png") 0 50% repeat-y,url("../img/end-bottom.png") 50% 100% repeat-x,url("../img/end-top.png") 50% 0 repeat-x,url("../img/grass.png") 50% 50% repeat;
+  }
+
+.block.grass.turn-bottom-left{
+  background:url("../img/road-turn-bl.png") 50% 50% no-repeat,url("../img/grass.png") 50% 50% repeat;
+  }
+  .block.grass.turn-bottom-left .turn-road:before{
+    left:0;
+    top:0;
+    bottom:0;
+    right:50%;
+    background:url("../img/road-x.png") 50% 50% repeat-x;
+    -webkit-transform: translateX(-250px);
+    }
+  .block.grass.turn-bottom-left .turn-road:after{
+    left:0;
+    top:50%;
+    bottom:0;
+    right:0;
+    background: url("../img/road-y.png") 50% 50% repeat-y;
+    -webkit-transform: translateY(250px);
+    }
+  .block.grass.turn-bottom-left.end-left{
+    background:url("../img/road-turn-bl.png") 50% 50% no-repeat,url("../img/end-left.png") 0 50% repeat-y, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-bottom-left.end-top{
+    background:url("../img/road-turn-bl.png") 50% 50% no-repeat,url("../img/end-top.png") 50% 0 repeat-x, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-bottom-left.end-right{
+    background:url("../img/road-turn-bl.png") 50% 50% no-repeat,url("../img/end-right.png") 100% 50% repeat-y, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-bottom-left.end-bottom{
+    background:url("../img/road-turn-bl.png") 50% 50% no-repeat,url("../img/end-bottom.png") 50% 100% repeat-x, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-bottom-left.end-bottom.end-left{
+    background:url("../img/road-turn-bl.png") 50% 50% no-repeat,url("../img/end-left.png") 0 50% repeat-y,url("../img/end-bottom.png") 50% 100% repeat-x, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-bottom-left.end-bottom.end-top{
+    background:url("../img/road-turn-bl.png") 50% 50% no-repeat,url("../img/end-top.png") 50% 0 repeat-x,url("../img/end-bottom.png") 50% 100% repeat-x, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-bottom-left.end-bottom.end-right{
+    background:url("../img/road-turn-bl.png") 50% 50% no-repeat,url("../img/end-right.png") 100% 50% repeat-y,url("../img/end-bottom.png") 50% 100% repeat-x, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-bottom-left.end-left.end-right{
+    background:url("../img/road-turn-bl.png") 50% 50% no-repeat,url("../img/end-right.png") 100% 50% repeat-y,url("../img/end-left.png") 0 50% repeat-y, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-bottom-left.end-left.end-top{
+    background:url("../img/road-turn-bl.png") 50% 50% no-repeat,url("../img/end-top.png") 50% 0 repeat-x,url("../img/end-left.png") 0 50% repeat-y, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-bottom-left.end-right.end-top{
+    background:url("../img/road-turn-bl.png") 50% 50% no-repeat,url("../img/end-top.png") 50% 0 repeat-x,url("../img/end-right.png") 100% 50% repeat-y, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-bottom-left.end-bottom.end-left.end-top{
+    background:url("../img/road-turn-bl.png") 50% 50% no-repeat,url("../img/end-bottom.png") 50% 100% repeat-x,url("../img/end-top.png") 50% 0 repeat-x,url("../img/end-left.png") 0 50% repeat-y, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-bottom-left.end-right.end-left.end-top{
+    background:url("../img/road-turn-bl.png") 50% 50% no-repeat,url("../img/end-right.png") 100% 50% repeat-y,url("../img/end-top.png") 50% 0 repeat-x,url("../img/end-left.png") 0 50% repeat-y, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-bottom-left.end-right.end-bottom.end-top{
+    background:url("../img/road-turn-bl.png") 50% 50% no-repeat,url("../img/end-right.png") 100% 50% repeat-y,url("../img/end-top.png") 50% 0 repeat-x,url("../img/end-bottom.png") 50% 100% repeat-x, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-bottom-left.end-right.end-bottom.end-left{
+    background:url("../img/road-turn-bl.png") 50% 50% no-repeat,url("../img/end-right.png") 100% 50% repeat-y,url("../img/end-left.png") 0 50% repeat-y,url("../img/end-bottom.png") 50% 100% repeat-x, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-bottom-left.end-right.end-bottom.end-left.end-top{
+    background:url("../img/road-turn-bl.png") 50% 50% no-repeat,url("../img/end-right.png") 100% 50% repeat-y,url("../img/end-left.png") 0 50% repeat-y,url("../img/end-top.png") 50% 0 repeat-x,url("../img/end-bottom.png") 50% 100% repeat-x, url("../img/grass.png") 50% 50% repeat;
+    }
+
+
+.block.grass.turn-top-left{
+  background:url("../img/road-turn-tl.png") 50% 50% no-repeat,url("../img/grass.png") 50% 50% repeat;
+  }
+  .block.grass.turn-top-left .turn-road:before{
+    left:0;
+    top:0;
+    bottom:0;
+    right:50%;
+    background:url("../img/road-x.png") 50% 50% repeat-x;
+    -webkit-transform: translateX(-250px);
+    }
+  .block.grass.turn-top-left .turn-road:after{
+    left:0;
+    bottom:50%;
+    top:0;
+    right:0;
+    background: url("../img/road-y.png") 50% 50% repeat-y;
+    -webkit-transform: translateY(-250px);
+    }
+  .block.grass.turn-top-left.end-left{
+    background:url("../img/road-turn-tl.png") 50% 50% no-repeat,url("../img/end-left.png") 0 50% repeat-y, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-top-left.end-top{
+    background:url("../img/road-turn-tl.png") 50% 50% no-repeat,url("../img/end-top.png") 50% 0 repeat-x, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-top-left.end-right{
+    background:url("../img/road-turn-tl.png") 50% 50% no-repeat,url("../img/end-right.png") 100% 50% repeat-y, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-top-left.end-bottom{
+    background:url("../img/road-turn-tl.png") 50% 50% no-repeat,url("../img/end-bottom.png") 50% 100% repeat-x, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-top-left.end-bottom.end-left{
+    background:url("../img/road-turn-tl.png") 50% 50% no-repeat,url("../img/end-left.png") 0 50% repeat-y,url("../img/end-bottom.png") 50% 100% repeat-x, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-top-left.end-bottom.end-top{
+    background:url("../img/road-turn-tl.png") 50% 50% no-repeat,url("../img/end-top.png") 50% 0 repeat-x,url("../img/end-bottom.png") 50% 100% repeat-x, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-top-left.end-bottom.end-right{
+    background:url("../img/road-turn-tl.png") 50% 50% no-repeat,url("../img/end-right.png") 100% 50% repeat-y,url("../img/end-bottom.png") 50% 100% repeat-x, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-top-left.end-left.end-right{
+    background:url("../img/road-turn-tl.png") 50% 50% no-repeat,url("../img/end-right.png") 100% 50% repeat-y,url("../img/end-left.png") 0 50% repeat-y, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-top-left.end-left.end-top{
+    background:url("../img/road-turn-tl.png") 50% 50% no-repeat,url("../img/end-top.png") 50% 0 repeat-x,url("../img/end-left.png") 0 50% repeat-y, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-top-left.end-right.end-top{
+    background:url("../img/road-turn-tl.png") 50% 50% no-repeat,url("../img/end-top.png") 50% 0 repeat-x,url("../img/end-right.png") 100% 50% repeat-y, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-top-left.end-bottom.end-left.end-top{
+    background:url("../img/road-turn-tl.png") 50% 50% no-repeat,url("../img/end-bottom.png") 50% 100% repeat-x,url("../img/end-top.png") 50% 0 repeat-x,url("../img/end-left.png") 0 50% repeat-y, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-top-left.end-right.end-left.end-top{
+    background:url("../img/road-turn-tl.png") 50% 50% no-repeat,url("../img/end-right.png") 100% 50% repeat-y,url("../img/end-top.png") 50% 0 repeat-x,url("../img/end-left.png") 0 50% repeat-y, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-top-left.end-right.end-bottom.end-top{
+    background:url("../img/road-turn-tl.png") 50% 50% no-repeat,url("../img/end-right.png") 100% 50% repeat-y,url("../img/end-top.png") 50% 0 repeat-x,url("../img/end-bottom.png") 50% 100% repeat-x, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-top-left.end-right.end-bottom.end-left{
+    background:url("../img/road-turn-tl.png") 50% 50% no-repeat,url("../img/end-right.png") 100% 50% repeat-y,url("../img/end-left.png") 0 50% repeat-y,url("../img/end-bottom.png") 50% 100% repeat-x, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-top-left.end-right.end-bottom.end-left.end-top{
+    background:url("../img/road-turn-tl.png") 50% 50% no-repeat,url("../img/end-right.png") 100% 50% repeat-y,url("../img/end-left.png") 0 50% repeat-y,url("../img/end-top.png") 50% 0 repeat-x,url("../img/end-bottom.png") 50% 100% repeat-x, url("../img/grass.png") 50% 50% repeat;
+    }
+
+.block.grass.turn-top-right{
+  background:url("../img/road-turn-tr.png") 50% 50% no-repeat,url("../img/grass.png") 50% 50% repeat;
+  }
+  .block.grass.turn-top-right .turn-road:before{
+    right:0;
+    top:0;
+    bottom:0;
+    left:50%;
+    background:url("../img/road-x.png") 50% 50% repeat-x;
+    -webkit-transform: translateX(250px);
+    }
+  .block.grass.turn-top-right .turn-road:after{
+    left:0;
+    bottom:50%;
+    top:0;
+    right:0;
+    background: url("../img/road-y.png") 50% 50% repeat-y;
+    -webkit-transform: translateY(-250px);
+    }
+  .block.grass.turn-top-right.end-left{
+    background:url("../img/road-turn-tr.png") 50% 50% no-repeat,url("../img/end-left.png") 0 50% repeat-y, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-top-right.end-top{
+    background:url("../img/road-turn-tr.png") 50% 50% no-repeat,url("../img/end-top.png") 50% 0 repeat-x, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-top-right.end-right{
+    background:url("../img/road-turn-tr.png") 50% 50% no-repeat,url("../img/end-right.png") 100% 50% repeat-y, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-top-right.end-bottom{
+    background:url("../img/road-turn-tr.png") 50% 50% no-repeat,url("../img/end-bottom.png") 50% 100% repeat-x, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-top-right.end-bottom.end-left{
+    background:url("../img/road-turn-tr.png") 50% 50% no-repeat,url("../img/end-left.png") 0 50% repeat-y,url("../img/end-bottom.png") 50% 100% repeat-x, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-top-right.end-bottom.end-top{
+    background:url("../img/road-turn-tr.png") 50% 50% no-repeat,url("../img/end-top.png") 50% 0 repeat-x,url("../img/end-bottom.png") 50% 100% repeat-x, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-top-right.end-bottom.end-right{
+    background:url("../img/road-turn-tr.png") 50% 50% no-repeat,url("../img/end-right.png") 100% 50% repeat-y,url("../img/end-bottom.png") 50% 100% repeat-x, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-top-right.end-left.end-right{
+    background:url("../img/road-turn-tr.png") 50% 50% no-repeat,url("../img/end-right.png") 100% 50% repeat-y,url("../img/end-left.png") 0 50% repeat-y, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-top-right.end-left.end-top{
+    background:url("../img/road-turn-tr.png") 50% 50% no-repeat,url("../img/end-top.png") 50% 0 repeat-x,url("../img/end-left.png") 0 50% repeat-y, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-top-right.end-right.end-top{
+    background:url("../img/road-turn-tr.png") 50% 50% no-repeat,url("../img/end-top.png") 50% 0 repeat-x,url("../img/end-right.png") 100% 50% repeat-y, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-top-right.end-bottom.end-left.end-top{
+    background:url("../img/road-turn-tr.png") 50% 50% no-repeat,url("../img/end-bottom.png") 50% 100% repeat-x,url("../img/end-top.png") 50% 0 repeat-x,url("../img/end-left.png") 0 50% repeat-y, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-top-right.end-right.end-left.end-top{
+    background:url("../img/road-turn-tr.png") 50% 50% no-repeat,url("../img/end-right.png") 100% 50% repeat-y,url("../img/end-top.png") 50% 0 repeat-x,url("../img/end-left.png") 0 50% repeat-y, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-top-right.end-right.end-bottom.end-top{
+    background:url("../img/road-turn-tr.png") 50% 50% no-repeat,url("../img/end-right.png") 100% 50% repeat-y,url("../img/end-top.png") 50% 0 repeat-x,url("../img/end-bottom.png") 50% 100% repeat-x, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-top-right.end-right.end-bottom.end-left{
+    background:url("../img/road-turn-tr.png") 50% 50% no-repeat,url("../img/end-right.png") 100% 50% repeat-y,url("../img/end-left.png") 0 50% repeat-y,url("../img/end-bottom.png") 50% 100% repeat-x, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-top-right.end-right.end-bottom.end-left.end-top{
+    background:url("../img/road-turn-tr.png") 50% 50% no-repeat,url("../img/end-right.png") 100% 50% repeat-y,url("../img/end-left.png") 0 50% repeat-y,url("../img/end-top.png") 50% 0 repeat-x,url("../img/end-bottom.png") 50% 100% repeat-x, url("../img/grass.png") 50% 50% repeat;
+    }
+
+
+.block.grass.turn-bottom-right{
+  background:url("../img/road-turn-br.png") 50% 50% no-repeat,url("../img/grass.png") 50% 50% repeat;
+  }
+  .block.grass.turn-bottom-right .turn-road:before{
+    right:0;
+    top:0;
+    bottom:0;
+    left:50%;
+    background:url("../img/road-x.png") 50% 50% repeat-x;
+    -webkit-transform: translateX(250px);
+    }
+  .block.grass.turn-bottom-right .turn-road:after{
+    left:0;
+    top:50%;
+    bottom:0;
+    right:0;
+    background: url("../img/road-y.png") 50% 50% repeat-y;
+    -webkit-transform: translateY(250px);
+    }
+  .block.grass.turn-bottom-right.end-left{
+    background:url("../img/road-turn-br.png") 50% 50% no-repeat,url("../img/end-left.png") 0 50% repeat-y, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-bottom-right.end-top{
+    background:url("../img/road-turn-br.png") 50% 50% no-repeat,url("../img/end-top.png") 50% 0 repeat-x, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-bottom-right.end-right{
+    background:url("../img/road-turn-br.png") 50% 50% no-repeat,url("../img/end-right.png") 100% 50% repeat-y, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-bottom-right.end-bottom{
+    background:url("../img/road-turn-br.png") 50% 50% no-repeat,url("../img/end-bottom.png") 50% 100% repeat-x, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-bottom-right.end-bottom.end-left{
+    background:url("../img/road-turn-br.png") 50% 50% no-repeat,url("../img/end-left.png") 0 50% repeat-y,url("../img/end-bottom.png") 50% 100% repeat-x, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-bottom-right.end-bottom.end-top{
+    background:url("../img/road-turn-br.png") 50% 50% no-repeat,url("../img/end-top.png") 50% 0 repeat-x,url("../img/end-bottom.png") 50% 100% repeat-x, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-bottom-right.end-bottom.end-right{
+    background:url("../img/road-turn-br.png") 50% 50% no-repeat,url("../img/end-right.png") 100% 50% repeat-y,url("../img/end-bottom.png") 50% 100% repeat-x, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-bottom-right.end-left.end-right{
+    background:url("../img/road-turn-br.png") 50% 50% no-repeat,url("../img/end-right.png") 100% 50% repeat-y,url("../img/end-left.png") 0 50% repeat-y, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-bottom-right.end-left.end-top{
+    background:url("../img/road-turn-br.png") 50% 50% no-repeat,url("../img/end-top.png") 50% 0 repeat-x,url("../img/end-left.png") 0 50% repeat-y, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-bottom-right.end-right.end-top{
+    background:url("../img/road-turn-br.png") 50% 50% no-repeat,url("../img/end-top.png") 50% 0 repeat-x,url("../img/end-right.png") 100% 50% repeat-y, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-bottom-right.end-bottom.end-left.end-top{
+    background:url("../img/road-turn-br.png") 50% 50% no-repeat,url("../img/end-bottom.png") 50% 100% repeat-x,url("../img/end-top.png") 50% 0 repeat-x,url("../img/end-left.png") 0 50% repeat-y, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-bottom-right.end-right.end-left.end-top{
+    background:url("../img/road-turn-br.png") 50% 50% no-repeat,url("../img/end-right.png") 100% 50% repeat-y,url("../img/end-top.png") 50% 0 repeat-x,url("../img/end-left.png") 0 50% repeat-y, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-bottom-right.end-right.end-bottom.end-top{
+    background:url("../img/road-turn-br.png") 50% 50% no-repeat,url("../img/end-right.png") 100% 50% repeat-y,url("../img/end-top.png") 50% 0 repeat-x,url("../img/end-bottom.png") 50% 100% repeat-x, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-bottom-right.end-right.end-bottom.end-left{
+    background:url("../img/road-turn-br.png") 50% 50% no-repeat,url("../img/end-right.png") 100% 50% repeat-y,url("../img/end-left.png") 0 50% repeat-y,url("../img/end-bottom.png") 50% 100% repeat-x, url("../img/grass.png") 50% 50% repeat;
+    }
+  .block.grass.turn-bottom-right.end-right.end-bottom.end-left.end-top{
+    background:url("../img/road-turn-br.png") 50% 50% no-repeat,url("../img/end-right.png") 100% 50% repeat-y,url("../img/end-left.png") 0 50% repeat-y,url("../img/end-top.png") 50% 0 repeat-x,url("../img/end-bottom.png") 50% 100% repeat-x, url("../img/grass.png") 50% 50% repeat;
+    }

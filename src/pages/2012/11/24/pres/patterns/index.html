@@ -1,0 +1,603 @@
+<!DOCTYPE HTML>
+<html lang="ru-RU">
+<head>
+  <meta charset="UTF-8">
+  <title>Паттерны JavaScript</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+  <script src="js/jquery.js"></script>
+  <script src="js/modernizr.js"></script>
+  <script src="js/slidsterController.js"></script>
+  <script src="js/prism.js"></script>
+
+  <link rel="stylesheet" media="all" href="css/common.css" />
+
+</head>
+<body>
+  <section class="slides">
+
+    <article class="center-text attansion"><div class="wrapper">
+      <hgroup>
+        <h1>Картинка привлечения внимания!</h1>
+      </hgroup>
+    </div></article>
+
+    <article class="center-text center slide-0"><div class="wrapper">
+      
+        <h1>Паттерны JavaScript</h1>
+        <h2>Простые решения стандартных задач</h2>
+      
+    </div></article>
+
+    <article class="center center-text slide-1"><div class="wrapper">
+      <hgroup>
+        <h1>Зовите меня <b>КЭП</b></h1>
+      </hgroup>
+    </div></article>
+
+    <article class="center center-text title-1"><div class="wrapper">
+        <h1>Что такое паттерн?</h1>
+    </div></article>
+
+    <article tabindex class="center center-text "><div class="wrapper">
+      <ol>
+        <li>Выверенное решение</li>
+        <li>Легко используются повторно</li>
+        <li>Формируют структуру</li>
+      </ol>
+    </div></article>
+
+    <article class="center center-text title-1"><div class="wrapper">
+        <h1>В JS паттерны<br> не прижились?</h1>
+    </div></article>
+
+    <article tabindex class="center center-text"><div class="wrapper">
+      <h1>Почему?</h1>
+      <ol>
+        <li>У меня простые задачи, зачем усложнять?</li>
+        <li>Мы ищем оптимальное решение для каждой задачи</li>
+        <li>ООП в JS и паттерны дают более ресурсоемкие решения</li>
+      </ol>
+    </div></article>
+
+    <article class="center center-text"><div class="wrapper">
+      <h1>Ну почему же?</h1>
+      <ol start="4">
+        <li>За паттерны надо наказывать!<br> Для начинающих это «взрыв мозга», а опытным — не нужно.</li>
+        <li>Мы позволяем нашим разработчикам самим решать: использовать или не использовать паттерны</li>
+        <li>Паттерны? Какие паттерны?</li>
+      </ol>
+    </div></article>
+
+    <article class="center center-text cut-bullshit"><div class="wrapper">
+        
+    </div></article>
+
+    <article class="center center-text title-1"><div class="wrapper">
+        <h1>Ну и зачем мне использовать паттерны?</h1>
+    </div></article>
+
+    <article class="center center-text"><div class="wrapper">
+      <ol>
+        <li>Проверены множеством людей, что может уберечь от ошибок</li>
+        <li>Не требуют дополнительного времени на написание велосипеда</li>
+        <li>Формируют четкую и узнаваемую структуру кода</li>
+      </ol>
+    </div></article>
+
+    <article class="center center-text"><div class="wrapper">
+      <ol start="4">
+        <li>Обеспечивают предсказуемость кода</li>
+        <li>Упрощают поддержку и расширяемость кода</li>
+        <li>Упрощают подключение новых людей к проекту</li>
+      </ol>
+    </div></article>
+
+    <article class="center center-text title-1"><div class="wrapper">
+        <h1>А почему вы,<br> да-да, вот вы,<br> не используете паттерны?</h1>
+    </div></article>
+
+    <article class="center center-text pause"><div class="wrapper">
+      <hgroup>
+        <h1>Те, кто решил<br> не использовать паттерны могут выпить кофе и вздремнуть</h1>
+      </hgroup>
+    </div></article>
+
+    <article class="center center-text title-3"><div class="wrapper">
+        <h1>Базовые понятия</h1>
+    </div></article>
+
+    <article><div class="wrapper">
+        <h1>Типы данных:</h1>
+        <ol>
+          <li>Number</li>
+          <li>String</li>
+          <li>Boolean</li>
+          <li>null</li>
+          <li>undefined</li>
+          <li>Object</li>
+        </ol>
+    </div></article>
+
+    <article><div class="wrapper">
+        <h1>Функции:</h1>
+        <ol>
+          <li>Декларативные
+<pre><code class="language-javascript">function foo(){}</code></pre>
+          </li>
+          <li>Выражения
+<pre><code class="language-javascript">var foo = function(){};</code></pre>
+          </li>
+          <li>Созданные конструктором function
+<pre><code class="language-javascript">var foo = new Function();</code></pre>
+          </li>
+        </ol>
+    </div></article>
+
+    <article><div class="wrapper">
+        <h1>Функции могут быть:</h1>
+        <ol>
+          <li>Самовызывающимися
+<pre><code class="language-javascript">(function (){})();</code></pre>
+          </li>
+          <li>Конструкторами
+<pre><code class="language-javascript">function Constructor(){}
+var newObj = new Constructor;</code></pre>
+          </li>
+        </ol>
+    </div></article>
+
+    <article class="center"><div class="wrapper">
+        <h1>Конструктор</h1>
+        <p>Все объекты порождаются конструкторами</p>
+    </div></article>
+
+    <article class="center"><div class="wrapper ">
+        <h1>Прототипы</h1>
+        <ol>
+          <li>Объект, служащий прообразом для других объектов.</li>
+          <li>Есть у всех объектов.</li>
+          <li>Прототипом может быть либо объект, либо null.</li>
+        </ol>
+    </div></article>
+
+    <article class="center"><div class="wrapper">
+<pre><code class="language-javascript">function Constructor(){
+  this.firstMethod = function(){};
+}
+Constructor.prototype.secondMethod = function(){};
+var newObj = new Constructor;</code></pre>
+    </div></article>
+
+    <article class="center"><div class="wrapper">
+      <h1>Ссылки для изучения</h1>
+      <ol class="link-list">
+        <li>ECMA-262 серия статей <a href="http://goo.gl/5ymVJ">http://goo.gl/5ymVJ</a></li>
+        <li>ECMA-262 спецификация <a href="http://goo.gl/H2bBe">http://goo.gl/H2bBe</a></li>
+        <li>ECMA-357 спецификация <a href="http://goo.gl/CmHX2">http://goo.gl/CmHX2</a></li>
+        <li>Wikipedia <a href="http://goo.gl/Oyljc">http://goo.gl/Oyljc</a></li>
+      </ol>
+    </div></article>
+
+    <article class="center center-text title-1"><div class="wrapper">
+        <h1>Паттерны<br> (Наконец-то)</h1>
+    </div></article>
+
+    <article class="center center-text title-2"><div class="wrapper">
+        <h1>Модуль</h1>
+    </div></article>
+
+    <article><div class="wrapper">
+        <h1>Задачи:</h1>
+        <ol>
+          <li>Инкапсуляция</li>
+          <li>Создание четкой структуры из подключаемых модулей</li>
+          <li>Прекратить засорять глобальный контекст</li>
+        </ol>
+    </div></article>
+
+    <article class="center"><div class="wrapper">
+<pre><code class="large language-javascript">(function(){
+/*Наш код*/
+})();</code></pre>
+    </div></article>    
+
+
+    <article class="center"><div class="wrapper">
+<pre><code class=" language-javascript">(function(
+  global, 
+  window, 
+  document, 
+  undefined){
+  function Module(){
+    /*Наш код*/
+    console.log(global); //window
+    console.log(window); //window
+    console.log(document); //#document
+    console.log(undefined); //undefined
+  }
+  global.ourModule = new Module;
+})(this, window, window.document);</code></pre>
+    </div></article>
+
+    <article class="center"><div class="wrapper">
+<pre><code class="language-javascript">(function(global){
+  function Module(){
+    var privateVar = 0;
+    return {
+      getPrivateVar: function(){
+        return privateVar;
+      }
+    }
+  }
+  global.ourModule = new Module;
+})(this);</code></pre>
+    </div></article>
+
+    <article class="center"><div class="wrapper">
+<pre><code class="language-javascript">console.log(typeof window.ourModule.privateVar); 
+  //undefined
+console.log(typeof window.ourModule.getPrivateVar); 
+  //function
+console.log(window.ourModule.getPrivateVar()); 
+  //0
+</code></pre>
+    </div></article>
+
+    <article class="center"><div class="wrapper">
+      <h1>Ссылки для изучения</h1>
+      <ol class="link-list">
+        <li>JavaScript Module Pattern: In-Depth <a href="http://goo.gl/RsTgc">http://goo.gl/cL9P8</a></li>
+        <li>Learning JavaScript Design Patterns <a href="http://goo.gl/cL9P8">http://goo.gl/cL9P8</a></li>
+        <li>Show love to the module pattern <a href="http://goo.gl/0fLpb">http://goo.gl/0fLpb</a></li>
+        <li>Again with the module pattern – reveal something to the world <a href="http://goo.gl/WkWnE">http://goo.gl/WkWnE</a></li>
+      </ol>
+    </div></article>
+
+    <article class="center center-text wild"><div class="wrapper">
+        <section class="example">
+          <img src="spoiler/logotype/modernizr.png" alt="Логотип">
+        </section>
+        <section class="example">
+          <img src="spoiler/logotype/apple.png" alt="Логотип">
+        </section>
+    </div></article>
+
+    <article class="center center-text title-2"><div class="wrapper">
+        <h1>Одиночка</h1>
+    </div></article>
+
+    <article><div class="wrapper">
+        <h1>Задачи:</h1>
+        <ol>
+          <li>Ограничить количество экземпляров класса одним</li>
+          <li>При повторном вызове конструктора возвращать ссылку на созданный ранее экземпляр класса</li>
+        </ol>
+    </div></article>
+
+    <article class="center center-text but"><div class="wrapper">
+      <hgroup>
+        <h1>Но в JS нет классов…</h1>
+      </hgroup>
+    </div></article>
+
+    <article class="center"><div class="wrapper">
+<pre><code class="large language-javascript">var a = {};
+var b = {};
+console.log(a==b); //false
+console.log(a===b); //false
+</code></pre>
+    </div></article>
+
+    <article class="center center-text title-1"><div class="wrapper">
+        <h1>Применим синглтон<br> к модулю</h1>
+    </div></article>
+    
+    <article class="center"><div class="wrapper">
+<pre><code class=" middle language-javascript">(function(global){
+  function Singleton(){
+    /*Наш код*/
+  }
+  firstSingleton = new Singleton;
+  secondSingleton = new Singleton;
+})(this);</code></pre>
+    </div></article>
+
+    <article class="center"><div class="wrapper">
+<pre><code class=" language-javascript">console.log(firstSingleton===secondSingleton); //false</code></pre>
+    </div></article>
+
+    <article><div class="wrapper">
+        <h1>Где сохранить ссылку на экземпляр класса?</h1>
+        <ol>
+          <li>В статическом свойстве</li>
+          <li>В замыкании</li>
+        </ol>
+    </div></article>
+
+    <article class="center"><div class="wrapper">
+<pre><code class=" language-javascript">(function(global){
+  function Singleton(){
+    var instance = this;
+    Singleton = function () {
+      return instance;
+    }
+  }
+  firstSingleton = new Singleton;
+  secondSingleton = new Singleton;
+})(this);</code></pre>
+    </div></article>
+
+    <article class="center"><div class="wrapper">
+<pre><code class=" language-javascript">console.log(firstSingleton===secondSingleton); //true</code></pre>
+    </div></article>
+
+    <article class="center"><div class="wrapper">
+<pre><code class="language-javascript">(function(global){
+  function Singleton(){
+    var instance = this;
+    Singleton = function () {
+      return instance;
+    }
+  }
+  firstSingleton = new Singleton;
+  Singleton.prototype.newProperty = true;
+  secondSingleton = new Singleton;
+})(this);</code></pre>
+    </div></article>
+
+    <article class="center"><div class="wrapper">
+<pre><code class="language-javascript">console.log(firstSingleton===secondSingleton); //true
+console.log(firstSingleton.newProperty); //undefined
+console.log(secondSingleton.newProperty); //undefined</code></pre>
+    </div></article>
+
+    <article class="center"><div class="wrapper">
+<pre><code class="language-javascript">(function(global){
+  function Singleton(){
+    var instance = this,
+        prototype = Singleton.prototype;
+    Singleton = function () {
+      return instance;
+    }
+    Singleton.prototype = prototype;
+    Singleton.constructor = Singleton;
+    instance.constructor = Singleton;
+    return instance;
+  }
+  firstSingleton = new Singleton;
+  Singleton.prototype.newProperty = true;
+  secondSingleton = new Singleton;
+})(this);</code></pre>
+    </div></article>
+
+    <article class="center"><div class="wrapper">
+<pre><code class="language-javascript">console.log(firstSingleton===secondSingleton); //true
+console.log(firstSingleton.newProperty); //true
+console.log(secondSingleton.newProperty); //true</code></pre>
+    </div></article>
+
+    <article class="center"><div class="wrapper">
+      <h1>Ссылки для изучения</h1>
+      <ol class="link-list">
+        <li>Wikipedia <a href="http://goo.gl/YgEuL">http://goo.gl/YgEuL</a></li>
+        <li>Learning JavaScript Design Patterns <a href="http://goo.gl/VbLvM">http://goo.gl/VbLvM</a></li>
+        <li>JavaScript Design Patterns: Singleton <a href="http://goo.gl/3ICcd">http://goo.gl/3ICcd</a></li>
+      </ol>
+    </div></article>
+
+    <article class="center center-text wild"><div class="wrapper">
+        <section class="example">
+          <img src="spoiler/logotype/lj.png" alt="Логотип">
+        </section>
+        <section class="example">
+          <img src="spoiler/logotype/cc.png" alt="Логотип">
+        </section>
+    </div></article>
+
+    <article class="center center-text title-2"><div class="wrapper">
+        <h1>Наблюдатель</h1>
+    </div></article>
+
+    <article><div class="wrapper">
+        <h1>Задачи:</h1>
+        <p>При изменении состояния одного из объектов оповещать об этом «подписанные» на это событие объекты</p>
+    </div></article>
+
+    <article class="center"><div class="wrapper">
+<pre><code class="large language-javascript">(function(global){
+  function Observable(){}
+  function Observer(){}
+})(this);</code></pre>
+    </div></article>
+
+    <article class="center"><div class="wrapper">
+<pre><code class="language-javascript">function Observer(){}
+Observer.prototype.tweet = function(data){};</code></pre>
+    </div></article>
+
+    <article class="center"><div class="wrapper">
+<pre><code class="small language-javascript">function Observable(url){
+  this.subscribers = {};
+  this.dataUrl = url;
+}
+Observable.prototype.subscribe = function(event, observer, callback){};
+Observable.prototype.unsubscribe = function(event, observer){};
+Observable.prototype.publish = function(data, event){};
+Observable.prototype.load = function(){};
+Observable.prototype.loaded = function(data){};
+</code></pre>
+    </div></article>
+
+    <article class="center"><div class="wrapper">
+<pre><code class="language-javascript">Observable.prototype.load = function(){
+  $.ajax({
+    url: this.dataUrl,
+    success: $.proxy(this.loaded,this)
+  });
+};</code></pre>
+    </div></article>
+
+    <article class="center"><div class="wrapper">
+<pre><code class="language-javascript">Observable.prototype.loaded = function(data){
+  this.publish(data,'dataLoaded')
+};</code></pre>
+    </div></article>
+
+    <article class="center"><div class="wrapper">
+<pre class="small"><code class="small language-javascript">Observable.prototype.subscribe = function(event, callback){
+  if(this.subscribers.hasOwnProperty(event)){
+    var index = this.subscribers[event].length;
+    while(index--){
+      if(this.subscribers[event][index] == callback){
+        return false;
+      }
+    }
+    this.subscribers[event].push(callback);
+  }else{
+    this.subscribers[event]=[callback]
+  }
+  return true;
+};</code></pre>
+    </div></article>
+
+    <article class="center"><div class="wrapper">
+<pre><code class="small language-javascript">Observable.prototype.unsubscribe = function(event, callback){
+  if(this.subscribers.hasOwnProperty(event)){
+    var index = this.subscribers[event].length;
+    while(index--){
+      if(this.subscribers[event][index] == callback){
+        this.subscribers[event].splice(index,1);
+        return true;
+      }
+    }
+  }
+  return false;
+};</code></pre>
+    </div></article>
+
+    <article class="center"><div class="wrapper">
+<pre><code class="small language-javascript">Observable.prototype.publish = function(data, event){
+  if(this.subscribers.hasOwnProperty(event)){
+    var index = this.subscribers[event].length;
+    while(index--){
+      this.subscribers[event][index](data);
+    }
+    return true;
+  }
+  return false;
+};</code></pre>
+    </div></article>
+
+
+    <article class="center"><div class="wrapper">
+<pre><code class="small language-javascript">global.observer = new Observer;
+global.observable = new Observable('http://test.com/data/');
+global.observable.subscribe('dataLoaded', global.observer.tweet);
+global.observable.load();</code></pre>
+    </div></article>
+
+    <article class="center"><div class="wrapper">
+      <h1>Ссылки для изучения</h1>
+      <ol class="link-list">
+        <li>Wikipedia <a href="http://goo.gl/yWznH">http://goo.gl/yWznH</a></li>
+        <li>Learning JavaScript Design Patterns <a href="http://goo.gl/VbLvM">http://goo.gl/VbLvM</a></li>
+        <li>JavaScript Design Patterns: Observer <a href="http://goo.gl/vt0Ob">http://goo.gl/vt0Ob</a></li>
+        <li>Understanding the Publish/Subscribe Pattern for Greater JavaScript Scalability <a href="http://goo.gl/oH2Mg">http://goo.gl/oH2Mg</a></li>
+      </ol>
+    </div></article>
+
+    <article class="center center-text wild"><div class="wrapper">
+        <section class="example">
+          <img src="spoiler/logotype/lj.png" alt="Логотип">
+        </section>
+        <section class="example">
+          <img src="spoiler/logotype/gt.png" alt="Логотип">
+        </section>
+    </div></article>
+
+    <article class="center center-text title-1"><div class="wrapper">
+        <h1>Паттерны JavaScript решают множество задач. Что дальше?</h1>
+    </div></article>
+
+    <article class=" book"><div class="wrapper">
+      <div class="details">
+        <h1>JavaScript</h1>
+        <h2>Шаблоны</h2>
+        <p class="author">Стоян Стефанов</p>
+        <p class="isbn">ISBN 978-5-93286-208-7<b class="lang">русский</b><b class="type">бумажная</b></p>
+        <p class="isbn">ISBN 978-0-596-80675-0<b class="lang">английский</b><b class="type">бумажная</b></p>
+        <p class="isbn">ISBN 978-0-596-80677-4<b class="lang">английский</b><b class="type">электронная</b></p>
+        <p class="shop">Market.ya.ru: <a href="http://goo.gl/bXuSk">http://goo.gl/bXuSk</a></p>
+        <p class="shop">Amazon.com: <a href="http://goo.gl/FI5Eg">http://goo.gl/FI5Eg</a></p>
+      </div>
+    </div></article>
+
+    <article class="addy book"><div class="wrapper">
+      <div class="details">
+        <h2>Learning</h2>
+        <h1>JavaScript</h1>
+        <h2>Design Patterns</h2>
+        <p class="author">Addy Osmani</p>
+        <p class="isbn">ISBN 978-1-4493-3181-8<b class="lang">английский</b><b class="type">бумажная</b></p>
+        <p class="isbn">ISBN 978-1-4493-3486-4<b class="lang">английский</b><b class="type">электронная</b></p>
+        <p class="shop">Litres.ru <a href="http://goo.gl/4E1De">http://goo.gl/4E1De</a></p>
+        <p class="shop">Amazon.com: <a href="http://goo.gl/gVH6X">http://goo.gl/gVH6X</a></p>
+        <p class="online">Читать OnLine:
+          <a href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/">http://goo.gl/wEKPU</a>
+        </p>
+      </div>
+    </div></article>
+
+    <article class="gof book"><div class="wrapper">
+      <div class="details">
+        <h1>Design Patterns:</h1>
+        <h2>Elements of Reusable Object-Oriented Software</h2>
+        <p class="author">Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides</p>
+        <p class="isbn">ISBN 978-0-201-63361-0<b class="lang">английский</b><b class="type">бумажная</b></p>
+        <p class="isbn">ISBN 978-5-469-01136-1<b class="lang">русский</b><b class="type">бумажная</b></p>
+        <p class="shop">Market.ya.ru: <a href="http://goo.gl/G1du7">http://goo.gl/G1du7</a></p>
+        <p class="shop">Amazon.com: <a href="http://goo.gl/PUKLB">http://goo.gl/PUKLB</a></p>
+        <p class="online">Читать OnLine:
+          <a href="http://c2.com/cgi/wiki?DesignPatternsBook">http://goo.gl/lfRgk</a>
+        </p>
+      </div>
+    </div></article>
+
+    <article class="center center-text mcbess"><div class="wrapper">
+      <hgroup class="first-phrase">
+        <h1>Иллюстрации бессовестно одолжены у McBess</h1>
+      </hgroup>
+      <hgroup class="second-phrase">
+        <h2>Вы можете<br> найти еще на <a href="http://http://www.mcbess.com/">mcbess.com</a></h2>
+      </hgroup>
+    </div></article>
+
+    <article class="center center-text ask"><div class="wrapper">
+      <hgroup>
+        <h1>Немедленно<br> спросите меня<br> о чем-нибудь</h1>
+      </hgroup>
+    </div></article>
+
+    <article class="vcard center contacts"><div class="wrapper">
+      
+      <div class="vard-container">
+        <img src="spoiler/vcard.svg" alt="vcard">
+        <p>Антон Немцев</p>
+        <p>anton@websaints.net</p>
+        <p>@silentimp</p>
+        <p><b>skype:</b> ravencry</p>
+      </div>
+      <div class="links">
+        <p>Скачать презентацию <a href="http://goo.gl/iUxZX">http://goo.gl/iUxZX</a></p>
+        <p>Смотреть online <a href="http://goo.gl/ixnK1">http://goo.gl/ixnK1</a></p>
+      </div>
+    </div></article>
+
+
+  </section>
+  <div class="progress"><div><div></div></div></div>
+  <div class="lightbox"></div>
+</body>
+</html>

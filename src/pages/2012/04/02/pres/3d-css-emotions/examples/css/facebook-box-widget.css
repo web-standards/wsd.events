@@ -1,0 +1,9 @@
+.facebook-box-widget{
+  background-color:#fff;
+  margin:0 0 15px 0;
+  min-height:268px;
+  border-top:#325a9f 4px solid;
+  }
+  * html .facebook-box-widget{
+    height:268px;
+    }

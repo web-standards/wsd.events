@@ -1,0 +1,28 @@
+html{
+	height:100%;
+	}
+	body{
+		font:12px/14px Arial, "Helvetica Neue", Helvetica, sans-serif;
+		color:#545450;
+		min-width:960px;
+		min-height:100%;
+		position: relative;
+		background: #d2d3cb url("../assets/bg.png") repeat;
+		}
+		.content-wrapper{
+			width:960px;
+			margin:0 auto;
+			padding:0 0 80px;
+			position: relative;
+			zoom:1;
+			}
+			.content-wrapper:after{
+				content:".";
+				display:block;
+				font-size:0;
+				line-height:0;
+				height:0;
+				clear:both;
+				overflow:hidden;
+				text-indent:90000px;
+				}

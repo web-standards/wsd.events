@@ -1,0 +1,79 @@
+.hot-topic-widget{
+  background:url("../img/hot-topic.png") 0 0 repeat-x;
+  height:50px;
+  margin:-30px 0 15px 0;
+  position:relative;
+  color:#000;
+  z-index:1000;
+  zoom:1;
+  font:18px/50px 'PT Sans Caption',Arial,sans-serif;
+  }
+  .hot-topic-widget .controls{
+    position:absolute;
+    right:15px;
+    top:18px;
+    }
+    .hot-topic-widget .controls li{
+      float:left;
+      height:18px;
+      width:19px;
+      margin:0 0 0 2px;
+      }
+      .hot-topic-widget .controls li.play a{
+        background-position:0 0;
+        }
+      .hot-topic-widget .controls li.pause a{
+        background-position:0 -18px;
+        }
+      .hot-topic-widget .controls li a{
+        display:block;
+        height:18px;
+        width:19px;
+        overflow:hidden;
+        text-indent:-9000px;
+        background:url("../img/controls-sprite.png") 0 0 no-repeat;
+        opacity:0.5;
+        -webkit-transition:opacity 0.2s ease-in;
+  			-moz-transition:opacity 0.2s ease-in;
+  			-o-transition:opacity 0.2s ease-in;
+  			transition:opacity 0.2s ease-in;
+        }
+        .hot-topic-widget .controls li a:hover{
+          opacity:1;
+          -webkit-transition:opacity 0.2s ease-in;
+    			-moz-transition:opacity 0.2s ease-in;
+    			-o-transition:opacity 0.2s ease-in;
+    			transition:opacity 0.2s ease-in;
+          }
+  .hot-topic-widget .wrapper{
+    overflow:hidden;
+    height:50px;
+    zoom:1;
+    position:relative;
+    width:576px;
+    }
+    .hot-topic-widget .inner-wrapper{
+      width:20000px;
+      position:relative;
+      left:0;
+      }
+      .hot-topic-widget .inner-wrapper li{
+        float:left;
+        width:561px;
+        padding:0 0 0 15px;
+        margin:0 83px 0 0;
+        overflow:hidden;
+        -webkit-text-overflow:ellipsis;
+        -moz-text-overflow:ellipsis;
+        -o-text-overflow:ellipsis;
+        text-overflow:ellipsis;
+        }
+  .hot-topic-widget a{
+    color:#000;
+    text-decoration:underline;
+    white-space:nowrap;
+    
+    }
+    .hot-topic-widget a:hover{
+      text-decoration:none;
+      }

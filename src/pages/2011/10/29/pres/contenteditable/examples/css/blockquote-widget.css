@@ -1,0 +1,16 @@
+.blockquote-widget{
+  padding:0 10px;
+  margin:0 0 40px;
+  font:normal 13px/18px 'PT Sans',Arial,sans-serif;
+  overflow:hidden;
+  }
+  .blockquote-widget p{
+    font:italic 13px/18px 'PT Sans',Arial,sans-serif;
+    margin:0 0 20px 0;
+    }
+  .blockquote-widget .author{
+    display:block;
+    }
+  .blockquote-widget cite{
+    display:block;
+    }

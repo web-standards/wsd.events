@@ -1,0 +1,818 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+	<title>-Пре-фиксы. Зачем и как правильно</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=1234, user-scalable=no">
+	<link rel="stylesheet" href="themes/ribbon/styles/style.css">
+	<style>
+		.caption H1, #ThankYou H2 {
+			text-indent:-0.3em;
+			}
+		#Cover H2 {
+			position:absolute;
+			top:140px;
+			right:0;
+			left:180px;
+			color:#FFF;
+			text-shadow:10px 0 20px rgba(0, 0, 0, 0.5);
+			font-size:110px;
+			}
+			#Cover H2 SPAN {
+				display:block;
+				text-indent:35px;
+				font-size:52px;
+				}
+		#Chair H2,
+		#ChairO H2,
+		#ChairMs H2,
+		#ChairMoz H2,
+		#ChairWebkit H2 {
+			font-size:90px;
+			}
+		#PyramidFalse SECTION,
+		#WrongPyramid SECTION {
+			background:#FFF url(pictures/pyramid-false.svg) 92% 100% no-repeat;
+			}
+		#PyramidTrue SECTION {
+			background:#FFF url(pictures/pyramid-true.svg) 50% 0 no-repeat;
+			}
+		#LastAgain H2 {
+			font-size:90px;
+			}
+			#LastAgain H2 STRONG {
+				color:#0174A7;
+				}
+		#Seriously SECTION {
+			background:#000;
+			}
+		#Seriously H2 {
+			color:#FFF;
+			}
+		#PrefixFree SECTION {
+			background:#FFF url(pictures/prefix-free.png) 795px 370px no-repeat;
+			}
+		#Preprocess SECTION {
+			background:
+				url(pictures/sass.png) 738px 211px no-repeat,
+				url(pictures/less.png) 545px 348px no-repeat,
+				url(pictures/compass.png) 548px 439px no-repeat,
+				#FFF;
+			}
+		#Tomato IMG {
+			margin-top:40px;
+			width:500px;
+			}
+		#Nose H2 {
+			margin-top:100px;
+			font-size:70px;
+			color:#B94D2F;
+			}
+		#CamelRule H2 {
+			font-size:220px;
+			}
+			#CamelRule H2 SPAN {
+				margin-left:0.1em;
+				color:#0174A7;
+				font-family:'Arial Unicode MS', sans-serif;
+				}
+		#CAPS H2 {
+			font-size:120px;
+			}
+			#CAPS H2 SPAN {
+				color:#0174A7;
+				}
+		#Nuclear H2 {
+			margin-top:160px;
+			text-shadow:
+				0 3px 0 #000,
+				0 0 50px rgba(255, 255, 255, 0.7);
+			font-size:120px;
+			color:#e84747;
+			}
+		#WAT H2,
+		#WATold H2 {
+			font-size:90px;
+			}
+			#WAT H2 INS,
+			#WAT H2 DEL {
+				position:relative;
+				text-decoration:none;
+				}
+				#WAT H2 INS:after,
+				#WAT H2 DEL:after {
+					font-size:0.5em;
+					-webkit-transform-origin:0 100%;
+					-moz-transform-origin:0 100%;
+					-ms-transform-origin:0 100%;
+					-o-transform-origin:0 100%;
+					transform-origin:0 100%;
+					-webkit-transform:rotate(-20deg);
+					-moz-transform:rotate(-20deg);
+					-ms-transform:rotate(-20deg);
+					-o-transform:rotate(-20deg);
+					transform:rotate(-20deg);
+					}
+			#WAT H2 INS {
+				}
+				#WAT H2 INS:after {
+					position:absolute;
+					top:-0.4em;
+					left:30%;
+					color:#4C7BB1;
+					content:'* уже';
+					}
+			#WAT H2 DEL {
+				position:relative;
+				text-decoration:none;
+				}
+				#WAT H2 DEL:before {
+					position:absolute;
+					top:0.6em;
+					right:-0.1em;
+					left:-0.1em;
+					height:0.1em;
+					background:#C00;
+					content:'';
+					}
+				#WAT H2 DEL:after {
+					position:absolute;
+					top:-0.4em;
+					left:40%;
+					color:#C00;
+					content:'передумали';
+					}
+		#WhatElse h2 {
+			font-size:120px;
+			}
+	</style>
+</head>
+<body class="list">
+	<header class="caption">
+		<h1>-Пре-фиксы. Зачем и как правильно</h1>
+		<p><a href="http://pepelsbey.net/">Вадим Макеев</a>, <a href="http://www.opera.com/">Opera Software</a></p>
+	</header>
+	<div class="slide cover" id="Cover"><div>
+		<section>
+			<header>
+				<h2>-Пре-фиксы. <span>3ачем и как правильно</span></h2>
+			</header>
+			<img src="pictures/cover.jpg" alt="">
+		</section>
+	</div></div>
+	<div class="slide cover" id="Chair"><div>
+		<section>
+			<header>
+				<h2>стул</h2>
+			</header>
+			<img src="pictures/chair.svg" alt="">
+		</section>
+	</div></div>
+	<div class="slide cover" id="ChairO"><div>
+		<section>
+			<header>
+				<h2>-o-стул</h2>
+			</header>
+			<img src="pictures/chair-o.svg" alt="">
+		</section>
+	</div></div>
+	<div class="slide cover" id="ChairMs"><div>
+		<section>
+			<header>
+				<h2>-ms-стул</h2>
+			</header>
+			<img src="pictures/chair-ms.svg" alt="">
+		</section>
+	</div></div>
+	<div class="slide cover" id="ChairMoz"><div>
+		<section>
+			<header>
+				<h2>-moz-стул</h2>
+			</header>
+			<img src="pictures/chair-moz.svg" alt="">
+		</section>
+	</div></div>
+	<div class="slide cover" id="ChairWebkit"><div>
+		<section>
+			<header>
+				<h2>-webkit-стул</h2>
+			</header>
+			<img src="pictures/chair-webkit.svg" alt="">
+		</section>
+	</div></div>
+	<div class="slide" id="VendorPrefixes"><div>
+		<section>
+			<header>
+				<h2>Браузерные префиксы</h2>
+			</header>
+			<ul>
+				<li>Выглядят как <code>-vendor-property</code> или даже <code>_vendor-property</code></li>
+				<li>Как для свойств, так и для значений: <code>-moz-inline-block</code></li>
+				<li>На самом деле, <a href="http://www.w3.org/TR/CSS21/syndata.html#vendor-keywords">родом из CSS 2.1</a> и их <a href="http://alrra.github.com/little-helpers/vendor-prefixes/">очень много разных</a></li>
+				<li>Не только засоряют ваш код…</li>
+			</ul>
+			<p class="note"><b>Vendor Prefixes</b> (англ.) лучше всего переводить как «браузерные префиксы», а не <em>вендорные</em></p>
+		</section>
+	</div></div>
+	<div class="slide" id="WhereFromWebkit"><div>
+		<section>
+			<header>
+				<h2>Откуда берутся префиксы</h2>
+			</header>
+			<pre>
+				<code>E {</code>
+				<code>    <mark>-webkit-lol-cat</mark>:<mark class="important">=^__^=</mark>;</code>
+				<code>    }</code>
+			</pre>
+		</section>
+	</div></div>
+	<div class="slide" id="WhereFromMoz"><div>
+		<section>
+			<header>
+				<h2>Откуда берутся префиксы</h2>
+			</header>
+			<pre>
+				<code>E {</code>
+				<code>    <mark>-webkit-lol-cat</mark>:<mark class="important">=^__^=</mark>;</code>
+				<code>       <mark>-moz-lol-cat</mark>:<mark class="important">=°__°=</mark>;</code>
+				<code>    }</code>
+			</pre>
+		</section>
+	</div></div>
+	<div class="slide" id="WhereFromO"><div>
+		<section>
+			<header>
+				<h2>Откуда берутся префиксы</h2>
+			</header>
+			<pre>
+				<code>E {</code>
+				<code>    <mark>-webkit-lol-cat</mark>:<mark class="important">=^__^=</mark>;</code>
+				<code>       <mark>-moz-lol-cat</mark>:<mark class="important">=°__°=</mark>;</code>
+				<code>         <mark>-o-lol-cat</mark>:<mark class="important">=o__0=</mark>;</code>
+				<code>    }</code>
+			</pre>
+		</section>
+	</div></div>
+	<div class="slide" id="WhereFrom"><div>
+		<section>
+			<header>
+				<h2>Откуда берутся префиксы</h2>
+			</header>
+			<pre>
+				<code>E {</code>
+				<code>    <mark>-webkit-lol-cat</mark>:<mark class="important">=^__^=</mark>;</code>
+				<code>       <mark>-moz-lol-cat</mark>:<mark class="important">=°__°=</mark>;</code>
+				<code>         <mark>-o-lol-cat</mark>:<mark class="important">=o__0=</mark>;</code>
+				<code>            <mark>lol-cat</mark>:<mark class="important">smile</mark>;</code>
+				<code>    }</code>
+			</pre>
+		</section>
+	</div></div>
+	<div class="slide" id="PyramidFalse"><div>
+		<section>
+			<header>
+				<h2>Пирамида</h2>
+			</header>
+			<pre>
+				<code>E {</code>
+				<code>            <mark>box-shadow</mark>:0 0 10px #000;</code>
+				<code>       <mark>-moz-box-shadow</mark>:0 0 10px #000;</code>
+				<code>    <mark>-webkit-box-shadow</mark>:0 0 10px #000;</code>
+				<code>    }</code>
+			</pre>
+			<p class="note">Неправильно</p>
+		</section>
+	</div></div>
+	<div class="slide" id="PyramidTrue"><div>
+		<section>
+			<header>
+				<h2>Пирамида</h2>
+			</header>
+			<pre>
+				<code>E {</code>
+				<code>    <mark>-webkit-box-shadow</mark>:0 0 10px #000;</code>
+				<code>       <mark>-moz-box-shadow</mark>:0 0 10px #000;</code>
+				<code>            <mark>box-shadow</mark>:0 0 10px #000;</code>
+				<code>    }</code>
+			</pre>
+			<p class="note">Правильно</p>
+		</section>
+	</div></div>
+	<div class="slide" id="Last"><div>
+		<section>
+			<header>
+				<h2>Самое главное правило</h2>
+			</header>
+			<pre>
+				<code>E {</code>
+				<code>            <mark>lol-cat</mark>:<mark class="important">smile</mark>;</code>
+				<code>         <mark>-o-lol-cat</mark>:<mark class="important">=o__0=</mark>;</code>
+				<code>       <mark>-moz-lol-cat</mark>:<mark class="important">=°__°=</mark>;</code>
+				<code>    <mark>-webkit-lol-cat</mark>:<mark class="important">=^__^=</mark>;</code>
+				<code>    }</code>
+			</pre>
+		</section>
+	</div></div>
+	<div class="slide shout" id="LastAgain"><div>
+		<section>
+			<header>
+				<h2>
+					Свойство без префикса<br>
+					пишется <strong>последним</strong>
+				</h2>
+			</header>
+		</section>
+	</div></div>
+	<div class="slide shout" id="Seriously"><div>
+		<section>
+			<header>
+				<h2>Я серьёзно</h2>
+			</header>
+		</section>
+	</div></div>
+	<div class="slide shout" id="SoWhat"><div>
+		<section>
+			<header>
+				<h2>А то что?</h2>
+			</header>
+		</section>
+	</div></div>
+	<div class="slide" id="BoxShadow"><div>
+		<section>
+			<header>
+				<h2>Webkit и box-shadow</h2>
+			</header>
+			<pre>
+				<code>E {</code>
+				<code>    <mark>-webkit-box-shadow</mark>:0 0 400px 200px #000;</code>
+				<code>            <mark>box-shadow</mark>:0 0 400px 200px #000;</code>
+				<code>    }</code>
+			</pre>
+		</section>
+	</div></div>
+	<div class="slide cover" id="BoxShadowRight"><div>
+		<section>
+			<header>
+				<h2>Хорошая тень</h2>
+			</header>
+			<img src="pictures/box-shadow.png" alt="">
+		</section>
+	</div></div>
+	<div class="slide" id="BoxShadowReversed"><div>
+		<section>
+			<header>
+				<h2>Webkit и box-shadow</h2>
+			</header>
+			<pre>
+				<code>E {</code>
+				<code>            <mark>box-shadow</mark>:0 0 400px 200px #000;</code>
+				<code>    <mark>-webkit-box-shadow</mark>:0 0 400px 200px #000;</code>
+				<code>    }</code>
+			</pre>
+		</section>
+	</div></div>
+	<div class="slide cover" id="BoxShadowWrong"><div>
+		<section>
+			<header>
+				<h2>Плохая тень</h2>
+			</header>
+			<img src="pictures/box-shadow-webkit.png" alt="">
+		</section>
+	</div></div>
+	<div class="slide cover" id="BoxShadowRightAgain"><div>
+		<section>
+			<header>
+				<h2>Хорошая тень</h2>
+			</header>
+			<img src="pictures/box-shadow.png" alt="">
+		</section>
+	</div></div>
+	<div class="slide shout" id="Sugar"><div>
+		<section>
+			<header>
+				<h2>Сахарок</h2>
+			</header>
+		</section>
+	</div></div>
+	<div class="slide" id="PrefixFree"><div>
+		<section>
+			<header>
+				<h2>Prefix Free</h2>
+			</header>
+			<ul>
+				<li>Расставляет префиксы автоматически, для каждого браузера</li>
+				<li>Всего 2 КБ в сжатом виде, но…</li>
+			</ul>
+			<ul>
+				<li>Не работает со сложным CSS, зависит от JavaScript</li>
+				<li>Нагружает и так непростую отрисовку CSS3-прелестей</li>
+			</ul>
+			<p><a href="http://leaverou.github.com/prefixfree/">Prefix Free на Github</a></p>
+		</section>
+	</div></div>
+	<div class="slide" id="Preprocess"><div>
+		<section>
+			<header>
+				<h2>Препроцессоры</h2>
+			</header>
+			<ul>
+				<li><a href="http://sass-lang.com/">Sass</a> + <a href="http://compass-style.org/">Compass</a> — Ruby</li>
+				<li><a href="http://lesscss.org/">Less</a> — JavaScript, Node.js</li>
+				<li><a href="http://learnboost.github.com/stylus/">Stylus</a> — JavaScript, Node.js *</li>
+			</ul>
+			<p class="note">Главная проблема — глупость…</p>
+		</section>
+	</div></div>
+	<div class="slide shout" id="Tomato"><div>
+		<section>
+			<img src="pictures/tomato.svg" alt="" class="middle">
+			<!-- Tomato by chrisdesign.wordpress.com -->
+		</section>
+	</div></div>
+	<div class="slide" id="Compass"><div>
+		<section>
+			<header>
+				<h2>Compass</h2>
+			</header>
+			<pre>
+				<code><mark>E</mark> {</code>
+				<code>    @include border-radius(<mark>10px</mark>)</code>
+				<code>}</code>
+			</pre>
+			<pre>
+				<code><mark>E</mark></code>
+				<code>    +border-radius(<mark>10px</mark>)</code>
+			</pre>
+		</section>
+	</div></div>
+	<div class="slide" id="CompassFail"><div>
+		<section>
+			<header>
+				<h2>Compass. Провал</h2>
+			</header>
+			<pre>
+				<code><mark>-moz</mark>-border-radius:10px;</code>
+				<code><mark>-webkit</mark>-border-radius:10px;</code>
+				<code><mark class="important">-o</mark>-border-radius:10px;</code>
+				<code><mark class="important">-ms</mark>-border-radius:10px;</code>
+				<code><mark>-khtml</mark>-border-radius:10px;</code>
+			</pre>
+			<p class="note">Как Modernizr <a href="https://github.com/Modernizr/Modernizr/issues/454">отказался</a> от <code>-khtml-свойств</code></p>
+		</section>
+	</div></div>
+	<div class="slide" id="CompassFailMore"><div>
+		<section>
+			<header>
+				<h2>Compass. Провал</h2>
+			</header>
+			<ul>
+				<li>Забытый префикс <code>-ms</code> для свойств <code>transform</code> и <code>transition</code></li>
+				<li>У свойства <code>box-shadow</code> толпа несуществующих префиксов</li>
+				<li>Ненужный префикс <code>-o</code> для группы свойств <code>column</code> </li>
+				<li>У свойства <code>background-size</code> ненужный префикс <code>-o</code></li>
+				<li>Гадит невалидным <code>filter:progid:DXImage…</code> для <code>opacity</code></li>
+			</ul>
+			<p class="note">Найдено за 15 минут изучения <a href="http://compass-style.org/examples/compass/css3/">примеров</a></p>
+		</section>
+	</div></div>
+	<div class="slide" id="Less"><div>
+		<section>
+			<header>
+				<h2>Less</h2>
+			</header>
+			<pre>
+				<code>.box-shadow(<mark class="important">2px, 5px</mark>);</code>
+			</pre>
+			<pre>
+				<code>.box-shadow (@x: 0, @y: 0, @blur: 1px, @color: #000) {</code>
+				<code>    <mark>box-shadow</mark>: @arguments;</code>
+				<code>    <mark>-moz-box-shadow</mark>: @arguments;</code>
+				<code>    <mark>-webkit-box-shadow</mark>: @arguments;</code>
+				<code>}</code>
+			</pre>
+		</section>
+	</div></div>
+	<div class="slide" id="LessFail"><div>
+		<section>
+			<header>
+				<h2>Less. Провал</h2>
+			</header>
+			<pre>
+				<code><mark>box-shadow</mark>: 2px 5px 1px #000;</code>
+				<code><mark>-moz-box-shadow</mark>: 2px 5px 1px #000;</code>
+				<code><mark>-webkit-box-shadow</mark>: 2px 5px 1px #000;</code>
+			</pre>
+			<p class="note">Неправильный порядок в примерах на сайте</p>
+		</section>
+	</div></div>
+	<div class="slide" id="Stylus"><div>
+		<section>
+			<header>
+				<h2>Stylus</h2>
+			</header>
+			<pre>
+				<code><mark>fonts</mark> = Helvetica, Arial, sans-serif</code>
+				<code>BODY {</code>
+				<code>    padding:50px;</code>
+				<code>    font:12px <mark>fonts</mark>;</code>
+				<code>}</code>
+			</pre>
+			<p class="note">Самый гибкий из существующих</p>
+		</section>
+	</div></div>
+	<div class="slide" id="StylusFail"><div>
+		<section>
+			<header>
+				<h2>Stylus. Провал</h2>
+			</header>
+			<pre>
+				<code>E {</code>
+				<code><mark>➝</mark> box-shadow:sexy;</code>
+				<code><mark>➝</mark> }</code>
+			</pre>
+			<p class="note">Ты не должен этого хотеть!</p>
+		</section>
+	</div></div>
+	<div class="slide cover" id="Nose"><div>
+		<section>
+			<header>
+				<h2>
+					И эти люди<br>
+					запрещают мне<br>
+					ковырять в носу?
+				</h2>
+			</header>
+			<img src="pictures/nose.jpg" alt="">
+		</section>
+	</div></div>
+	<div class="slide shout" id="CamelCasing"><div>
+		<section>
+			<header>
+				<h2>Верблюдизация</h2>
+			</header>
+		</section>
+	</div></div>
+	<div class="slide" id="CamelSimple"><div>
+		<section>
+			<header>
+				<h2>Верблюдизация</h2>
+			</header>
+			<pre>
+				<code>E { <mark>background-attachment</mark>:fixed }</code>
+			</pre>
+			<pre>
+				<code>E.style.<mark>backgroundAttachment</mark>='fixed'</code>
+			</pre>
+			<p class="note"><a href="http://ru.wikipedia.org/wiki/CamelCase">Lower Camel Case</a> — первая в слове прописная, кроме самой первой</p>
+		</section>
+	</div></div>
+	<div class="slide" id="CamelPrefix"><div>
+		<section>
+			<header>
+				<h2>Верблюдизация</h2>
+			</header>
+			<pre>
+				<code>E { <mark class="important">-o</mark><mark>-transition-timing-function</mark>:ease }</code>
+			</pre>
+			<pre>
+				<code>E.style.<mark class="important">o</mark><mark>TransitionTimingFunction</mark>='ease'</code>
+			</pre>
+			<p class="note">Тот же <b>Lower Camel Case</b>, ура!</p>
+		</section>
+	</div></div>
+	<div class="slide" id="CamelStack"><div>
+		<section>
+			<header>
+				<h2>Батарея</h2>
+			</header>
+			<pre>
+				<code>E.style.<mark>webkit</mark>TransitionTimingFunction = ease;</code>
+				<code>E.style.<mark>moz</mark>TransitionTimingFunction = ease;</code>
+				<code>E.style.<mark>ms</mark>TransitionTimingFunction = ease;</code>
+				<code>E.style.<mark>o</mark>TransitionTimingFunction = ease;</code>
+				<code>E.style.transitionTimingFunction = ease;</code>
+			</pre>
+		</section>
+	</div></div>
+	<div class="slide" id="CamelLower"><div>
+		<section>
+			<header>
+				<h2>Строчными</h2>
+			</header>
+			<pre>
+				<code>E.style.<mark>webkit</mark>TransitionTimingFunction = ease;</code>
+				<code>E.style.<mark class="important">moz</mark>TransitionTimingFunction = ease;</code>
+				<code>E.style.<mark>ms</mark>TransitionTimingFunction = ease;</code>
+				<code>E.style.<mark class="important">o</mark>TransitionTimingFunction = ease;</code>
+				<code>E.style.transitionTimingFunction = ease;</code>
+			</pre>
+			<p class="note">Так, постойте…</p>
+		</section>
+	</div></div>
+	<div class="slide" id="CamelUpper"><div>
+		<section>
+			<header>
+				<h2>Прописными</h2>
+			</header>
+			<pre>
+				<code>E.style.<mark>Webkit</mark>TransitionTimingFunction = ease;</code>
+				<code>E.style.<mark>Moz</mark>TransitionTimingFunction = ease;</code>
+				<code>E.style.<mark class="important">Ms</mark>TransitionTimingFunction = ease;</code>
+				<code>E.style.<mark>O</mark>TransitionTimingFunction = ease;</code>
+				<code>E.style.transitionTimingFunction = ease;</code>
+			</pre>
+			<p class="note"><a href="http://www.w3.org/TR/2000/REC-DOM-Level-2-Style-20001113/css.html#CSS-CSS2Properties">Читаем спецификацию…</a></p>
+		</section>
+	</div></div>
+	<div class="slide shout" id="CamelRule"><div>
+		<section>
+			<header>
+				<h2>-x <span>☛</span> X</h2>
+			</header>
+		</section>
+	</div></div>
+	<div class="slide" id="CircusCase"><div>
+		<section>
+			<header>
+				<h2>Цирк с конями</h2>
+			</header>
+			<ul>
+				<li><b>Mozilla и Opera —</b> понимают только префиксы с первой прописной</li>
+				<li><b>Microsoft —</b> понимает только префиксы с первой строчной</li>
+				<li><b>Webkit —</b> всё равно в каком регистре записан префикс</li>
+			</ul>
+			<p class="note">Webkit предусмотрел защиту от дурака, но…</p>
+		</section>
+	</div></div>
+	<div class="slide shout" id="CAPS"><div>
+		<section>
+			<header>
+				<h2><span>GET</span>ELEMENT<span>BY</span>ID<span>?</span></h2>
+			</header>
+		</section>
+	</div></div>
+	<div class="slide cover shout" id="Nuclear"><div>
+		<section>
+			<header>
+				<h2>Грядёт страшное</h2>
+			</header>
+			<img src="pictures/nuclear.jpg" alt="">
+		</section>
+	</div></div>
+	<div class="slide shout" id="WATold"><div>
+		<section>
+			<header>
+				<h2>Opera, Mozilla и Microsoft<br> планируют поддержать<br> -webkit-свойства</h2>
+			</header>
+		</section>
+	</div></div>
+	<div class="slide shout" id="WAT"><div>
+		<section>
+			<header>
+				<h2><ins>Opera</ins>, Mozilla и <del>Microsoft</del><br> планируют поддержать<br> -webkit-свойства</h2>
+			</header>
+		</section>
+	</div></div>
+	<div class="slide" id="UsedProperties"><div>
+		<section>
+			<header>
+				<h2>Используемые свойства</h2>
+			</header>
+			<ol>
+				<li><code>-webkit-box-shadow</code> 798 шт.</li>
+				<li><code>-moz-border-radius</code> 783 шт.</li>
+				<li><code>-webkit-border-radius</code> 741 шт.</li>
+				<li><code>-moz-box-shadow</code> 638 шт.</li>
+				<li><code>-moz-opacity</code> 107 шт.</li>
+			</ol>
+			<p class="note">По результатам анализа сайтов из <a href="http://alexa.com/topsites">Alexa Top 100</a></p>
+		</section>
+	</div></div>
+	<div class="slide cover" id="PieChart"><div>
+		<section>
+			<svg xmlns="http://www.w3.org/2000/svg" width="1024px" height="640px" viewBox="0 0 1024 640">
+				<rect x="0" y="0" width="1024" height="640" fill="#FFF"/>
+				<path d="m260.24 295.91c-2.657 27.816-1.177 51.717 4.89 78.989l246.92-54.932-251.81-24.06z" fill="#95C11F"/>
+				<path d="m265.14 374.9c6.068 27.274 14.861 49.551 29.062 73.613l217.85-128.54-246.91 54.93z" fill="#4C7BB1"/>
+				<path d="m294.2 448.51c51.114 86.628 142.17 132.94 242.29 123.22 139.05-13.494 240.83-137.15 227.34-276.2l-251.77 24.435-217.86 128.55z" fill="#FFDB28"/>
+				<path d="m260.24 295.91l251.8 24.057 251.77-24.435c-11.87-122.37-105.32-215.69-227.71-227.38-139.06-13.287-262.57 88.68-275.86 227.75z" fill="#E84E0F"/>
+				<text font-size="70" font-weight="bold" font-family="'PT Sans', sans-serif" transform="translate(396 235.02)" fill="#FFFFFF">-webkit</text>
+				<text font-size="70" font-weight="bold" font-family="'PT Sans', sans-serif" transform="translate(462 458.87)">-moz</text>
+				<text font-size="60" font-weight="bold" font-family="'PT Sans', sans-serif" transform="translate(129.86 347.95)">-ms</text>
+				<text font-size="60" font-weight="bold" font-family="'PT Sans', sans-serif" transform="translate(190.98 435.63)">-o</text>
+			</svg>
+		</section>
+	</div></div>
+	<div class="slide cover" id="WebsBefore"><div>
+		<section>
+			<img src="pictures/webs-before.jpg" alt="">
+		</section>
+	</div></div>
+	<div class="slide cover" id="WebsAfter"><div>
+		<section>
+			<img src="pictures/webs-after.jpg" alt="">
+		</section>
+	</div></div>
+	<div class="slide" id="Truth"><div>
+		<section>
+			<header>
+				<h2>Opera, Mozilla и Microsoft…</h2>
+			</header>
+			<ul>
+				<li>Не впервой: UA браузеров и <code>document.all</code></li>
+				<li>Будет поддержан <em>ограниченный список</em> <code>-webkit-свойств</code></li>
+				<li>Свойства будут применены при отсустствии узнаваемых префиксов</li>
+				<li>Каскад и специфичность будут учтены привычным образом</li>
+				<li>Сайты, сделанные <em>для айфона</em> заработают</li>
+			</ul>
+			<p>Казалось бы, <em>эпик вин,</em> но… тревожно, братцы</p>
+		</section>
+	</div></div>
+	<div class="slide shout" id="WhatElse"><div>
+		<section>
+			<header>
+				<h2>Может случиться и такое…</h2>
+			</header>
+		</section>
+	</div></div>
+	<div class="slide" id="WrongRule"><div>
+		<section>
+			<header>
+				<h2>Ошибка в реализации</h2>
+			</header>
+			<pre>
+				<code>E {</code>
+				<code>    <mark>lol-cat</mark>:<mark class="important">smile</mark>;</code>
+				<code>    }</code>
+			</pre>
+		</section>
+	</div></div>
+	<div class="slide" id="FixedRule"><div>
+		<section>
+			<header>
+				<h2>Исправляется префиксом</h2>
+			</header>
+			<pre>
+				<code>E {</code>
+				<code>    <mark>lol-cat</mark>:<mark class="important">smile</mark>;</code>
+				<code>    <mark>-prefix-lol-cat</mark>:<mark class="important">smile</mark>;</code>
+				<code>    }</code>
+			</pre>
+			<p class="note">Что вдребезги ломает текущий подход</p>
+		</section>
+	</div></div>
+	<div class="slide" id="WrongPyramid"><div>
+		<section>
+			<header>
+				<h2>Исправляется префиксом</h2>
+			</header>
+			<pre>
+				<code>E {</code>
+				<code>    <mark>lol-cat</mark>:<mark class="important">smile</mark>;</code>
+				<code>    <mark>-prefix-lol-cat</mark>:<mark class="important">smile</mark>;</code>
+				<code>    }</code>
+			</pre>
+			<p class="note">Что вдребезги ломает текущий подход</p>
+		</section>
+	</div></div>
+	<div class="slide shout" id="Fun"><div>
+		<section>
+			<header>
+				<h2>Фан!</h2>
+			</header>
+		</section>
+	</div></div>
+	<div class="slide" id="ReadMore"><div>
+		<section>
+			<header>
+				<h2>Читать дальше</h2>
+			</header>
+			<ul>
+				<li><a href="http://web-standards.ru/articles/prefix-or-posthack/">Префикс или постхак</a></li>
+				<li><a href="http://coding.smashingmagazine.com/2011/10/12/prefixfree-break-free-from-css-prefix-hell/">Prefix Free. Break free from CSS prefix hell</a></li>
+				<li><a href="http://hsivonen.iki.fi/vendor-prefixes/">Vendor Prefixes Are Hurting the Web</a></li>
+				<li><a href="http://www.glazman.org/weblog/dotclear/index.php?post/2011/11/16/CSS-vendor-prefixes-an-answer-to-Henri-Sivonen">CSS vendor prefixes, an answer to Henri Sivonen</a></li>
+				<li><a href="http://www.glazman.org/weblog/dotclear/index.php?post/2011/11/05/CSS-vendor-prefixes-again">CSS vendor prefixes, again…</a></li>
+				<li><a href="http://infrequently.org/2011/11/vendor-prefixes-are-a-rousing-success/">Vendor Prefixes Are A Rousing Success</a></li>
+				<li><a href="https://wiki.mozilla.org/Platform/Layout/CSS_Compatibility">Mozilla: CSS Compatibility</a></li>
+			</ul>
+		</section>
+	</div></div>
+	<div class="slide" id="ThankYou"><div>
+		<section>
+			<header>
+				<h2>-Пре-фиксы. Зачем и как правильно</h2>
+			</header>
+			<p>Вадим Макеев, Opera Software</p>
+			<ul>
+				<li><a href="http://pepelsbey.net">pepelsbey.net</a></li>
+				<li><a href="https://twitter.com/pepelsbey">@pepelsbey</a> и <a href="https://twitter.com/odevrel_ru">@ODevRel_ru</a></li>
+				<li><a href="mailto:pepelsbey@opera.com">pepelsbey@opera.com</a></li>
+			</ul>
+			<p>Презентация: <a href="http://pepelsbey.net/pres/pre-fixes/">pepelsbey.net/pres/pre-fixes</a></p>
+		</section>
+	</div></div>
+	<div class="progress"><div></div></div>
+	<script src="scripts/script-adfea3dfb6.js"></script>
+</body>
+</html>

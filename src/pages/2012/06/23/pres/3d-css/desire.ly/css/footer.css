@@ -1,0 +1,68 @@
+footer{
+	position: absolute;
+	bottom:0;
+	left:0;
+	right:0;
+	width:100%;
+	background: #edece9 url("../img/footer-bg.png") 50% 0 repeat-x;
+	height:86px;
+	border-bottom:1px solid #e7e6e4;
+	line-height:86px;
+	overflow:hidden;
+	}
+	footer nav{
+		position: absolute;
+		z-index:2;
+		left:50%;
+		margin:0 0 0 -450px;
+		top:0;
+		overflow:hidden;
+		}
+		footer nav span{
+			float:left;
+			background: url("../img/dot.png") 10px 50% no-repeat;
+			padding:0 0 0 30px;
+			position: relative;
+			left:-30px;
+			}
+		footer nav a{
+			color:#0080bc;
+			font:18px/86px 'Marmelad', Arial, "Helvetica Neue", Helvetica, sans-serif;
+			}
+			footer nav a.tw{
+				float:left;
+				width:22px;
+				overflow:hidden;
+				text-indent:-9000px;
+				position: relative;
+				background: url("../img/footer-tw.png") 0 50% no-repeat;
+				}
+			footer nav a.fb{
+				width:16px;
+				float:left;
+				overflow:hidden;
+				text-indent:-9000px;
+				position: relative;
+				background: url("../img/footer-fb.png") 0 50% no-repeat;
+				}
+	footer .copyright{
+		position: absolute;
+		top:0;
+		left:50%;
+		color:#aeadab;
+		font:12px/86px Arial, "Helvetica Neue", Helvetica, sans-serif;
+		text-shadow:0 1px 0 #fff;
+		width:450px;
+		text-align:right;
+		z-index:1;
+		}
+		footer .copyright .logotype{
+			background: url("../img/footer-logotype.png") 0 48% no-repeat;
+			width:74px;
+			height:86px;
+			overflow:hidden;
+			text-indent:9000px;
+			display:block;
+			float:right;
+			margin:0 154px 0 18px;
+			}

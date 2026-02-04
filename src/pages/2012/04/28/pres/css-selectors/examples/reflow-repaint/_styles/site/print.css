@@ -1,0 +1,459 @@
+/* Global common settings for all the elements by default
+======================================== */
+
+body {
+	color: #000;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 12pt;
+	}
+span {
+	white-space: nowrap;
+	}
+h1, h2, h3, h4, h5, h6 {
+	font-family: Arial, Helvetica, sans-serif;
+	}
+abbr {
+	border-bottom: dotted 1pt;
+	}
+code {
+	font-family: 'Courier New', monospace;
+	}
+strong, b {
+	font-weight: bold;
+	}
+em, mark, i {
+	font-style: italic;
+	}
+sub, sup {
+	font-size: .7em;
+	}
+sub {
+	vertical-align: sub;
+	}
+sup {
+	vertical-align: super;
+	}
+a, a:link, a:visited {
+	color: #000;
+	text-decoration: underline;
+	}
+
+
+
+/* The layout
+======================================== */
+
+/* The intro (the header) of the page
+---------------------------------------- */
+.intro {
+	margin-bottom: 1em;
+	padding-bottom: 1em;
+	border-bottom: solid 1pt #000;
+	font-family: Arial, Helvetica, sans-serif;
+	}
+	.intro-title {
+		margin-bottom: .5em;
+		font-size: 1.75em;
+		font-weight: bold;
+		}
+		.intro-title a, .intro-supported a {
+			text-decoration: none;
+			}
+
+/* The main multicolumn layout
+---------------------------------------- */
+.sidebar {
+	display: none;
+	}
+
+
+
+/* Specific service blocks (navigation menus, footers, etc.)
+======================================== */
+
+/* The search form and share buttons
+---------------------------------------- */
+.search {
+	display: none;
+	}
+
+/* The list of partners
+---------------------------------------- */
+.partners {
+	clear: both;
+	margin-top: 1em;
+	border-top: solid 1pt #000;
+	}
+	.partners-title {
+		width: 45%;
+		margin: 0 1em 0;
+		padding: .25em 1em;
+		border: solid #000;
+		border-width: 0 1pt 1pt 1pt;
+		border-radius: 0 0 .5em .5em;
+		font-weight: bold;
+		}
+	.partners ul {
+		padding: 1em 1em 0;
+		text-align: center;
+		}
+		.partners li {
+			display: inline-block;
+			margin: 0 .5em .5em;
+			}
+			.partners img {
+				width: 120px;
+				height: 50px;
+				}
+			.partners figcaption {
+				font-size: .6em;
+				text-transform: lowercase;
+				}
+
+/* The footer of the page with the information about the project
+---------------------------------------- */
+.about-project {
+	clear: both;
+	padding-top: 1em;
+	border-top: solid 1pt #000;
+	font-size: .8em;
+	line-height: 1.25;
+	}
+
+
+
+/* Specific content blocks
+======================================== */
+
+/* The detached entry
+---------------------------------------- */
+.detached-entry {
+	margin-top: 1.25em;
+	padding-top: 1em;
+	border-top: dotted 1pt #000;
+	}
+
+/* The listed entry
+---------------------------------------- */
+.listed-entry {
+	clear: both;
+	margin-bottom: -.75em;
+	}
+	.listed-entry:after {
+		visibility: hidden;
+		display: block;
+		height: 0;
+		clear: both;
+		font-size: 0;
+		content: "\00a0";
+		}
+	.listed-entry-details {
+		clear: both;
+		font-size: .8em;
+		line-height: 1.5;
+		}
+		.listed-entry-details ul {
+			margin-left: 1.5em;
+			}
+		.listed-entry-details ul {
+			list-style-type: disc;
+			}
+
+/* The listed announce
+---------------------------------------- */
+.listed-announce {
+	margin-bottom: 1em;
+	padding: 0 1em 1em;
+	border: solid 1pt #000;
+	border-radius: .5em;
+	}
+	.listed-announce-header {
+		padding: 0 1em .25em .25em;
+		margin-bottom: 1em;
+		border: solid #000;
+		border-width: 0 1pt 1pt 0;
+		border-radius: 0 0 .5em 0;
+		}
+		.listed-announce-title {
+			display: inline-block;
+			margin-top: .8em;
+			font-weight: bold;
+			font-size: 1.25em;
+			}
+			.listed-announce-title a,
+			.listed-announce-title a:link,
+			.listed-announce-title a:visited {
+				text-decoration: none;
+				}
+
+/* The section that describes the current status of the contest activity
+---------------------------------------- */
+
+.contest-activity-title, .contest-activity-subtitle {
+	font-weight: bold;
+	}
+.contest-activity-title {
+	margin-top: -.25em;
+	font-size: 1.5em;
+	}
+.contest-activity-subtitle {
+	margin-top: .5em;
+	margin-bottom: .5em;
+	padding-top: .5em;
+	border-top: dotted 1pt #000;
+	font-size: 1.25em;
+	}
+
+
+
+/* Some special inline or block-level elements (used to mark content)
+======================================== */
+
+/* The heading that contains a category title (used in listed announces, etc.)
+---------------------------------------- */
+.category-title {
+	width: 45%;
+	padding: .25em 1em;
+	border: solid #000;
+	border-width: 0 1pt 1pt 1pt;
+	border-radius: 0 0 .5em .5em;
+	font-weight: bold;
+	}
+	.category-title a,
+	.category-title a:link,
+	.category-title a:visited {
+		text-decoration: none;
+		} 
+
+/* The heading that contains a HTTP error code
+---------------------------------------- */
+.http-error {
+	margin-top: -.25em;
+	font-size: 10em;
+	font-weight: bold;
+	}
+
+/* The numbered headings */
+body {
+	counter-reset: chapter;
+	}
+.numbered {
+	position: relative;
+	padding-left: 1.75em;
+	}
+.numbered:before {
+	position: absolute;
+	margin-left: -1.75em;
+	counter-increment: chapter;
+	content: counter(chapter, decimal) '. ';
+	}
+
+/* The paragraph that contains an author name
+---------------------------------------- */
+.author {
+	margin-top: -.25em;
+	font-size: 1.25em;
+	font-style: italic;
+	}
+
+/* The paragraph that contains a very-very important message
+---------------------------------------- */
+.very-important {
+	margin-bottom: .25em;
+	font-size: 3em;
+	}
+
+/* The paragraph that contains a page publication date
+---------------------------------------- */
+.page-pubdate {
+	font-size: .8em;
+	font-style: italic;
+	text-align: right;
+	}
+
+/* The element that contains an entry publication date
+---------------------------------------- */
+.entry-pubdate {
+	display: inline-block;
+	margin-left: 1em;
+	font-size: .7em;
+	}
+	.entry-pubdate:before {
+		content: '// ';
+		}
+
+
+
+/* The figures
+======================================== */
+
+/* The figure that used as thumbnail in news, in listed announces, etc.
+---------------------------------------- */
+.thumbnail {
+	float: left;
+	margin: .25em .5em .5em 0;
+	border: solid 1pt #000;
+	}
+	.thumbnail, .thumbnail img {
+		width: 100px;
+		height: 100px;
+		}
+
+/* The figure that contains a screenshot of a site that is a member of the contest
+---------------------------------------- */
+.screenshot img {
+	width: 236px;
+	height: 134px;
+	border: solid 1pt #000;
+	}
+.screenshot figcaption {
+	margin-top: -.25em;
+	font-size: .8em;
+	font-style: italic;
+	line-height: 1.25;
+	}
+.screenshot a,
+.screenshot a:link,
+.screenshot a:visited {
+	text-decoration: none;
+	}
+
+/* The figure that contains a photography
+---------------------------------------- */
+.photo {
+	margin-bottom: 1.5em;
+	}
+	.photo img {
+		border: solid 1pt #000;
+		}
+	.photo figcaption {
+		margin-top: -.25em;
+		font-style: italic;
+		line-height: 1.25;
+		}
+
+/* The figure that contains a portrait of an author, a jury member, etc.
+---------------------------------------- */
+.face {
+	float: left;
+	clear: left;
+	margin: .25em .5em .5em 0;
+	border: solid 1pt #000;
+	}
+	.face, .face img {
+		width: 100px;
+		height: 125px;
+		}
+
+
+
+/* General content styling rules
+======================================== */
+
+/* Most often used elements of semantic markup
+---------------------------------------- */
+.general-content {
+	line-height: 1.5;
+	}
+	.general-content p {
+		margin-bottom: 1em;
+		}
+	.general-content ul, .general-content ol {
+		margin-left: 1.5em;
+		}
+	.general-content ul {
+		list-style-type: disc;
+		}
+	.general-content ol {
+		list-style-type: decimal;
+		}
+		.general-content li, .general-content li {
+			margin-bottom: 1em;
+			}
+			.general-content li > ul, .general-content li > ol {
+				margin-top: 1em;
+				}
+	.general-content pre {
+		margin-bottom: 1em;
+		padding: 1em 1em 1em 3em;
+		border: solid 1pt #000;
+		border-radius: .5em;
+		white-space: normal;
+		counter-reset: code;
+		}
+		.general-content pre code {
+			position: relative;
+			display: block;
+			white-space: pre-wrap;
+			}
+			.general-content pre code:before {
+				position: absolute;
+				margin-left: -2em;
+				counter-increment: code;
+				content: counter(code, decimal-leading-zero) ' ';
+				}
+			.general-content pre code:after {
+				content: '\000a';
+				}
+			.general-content pre code:only-child {
+				margin-left: -2em;
+				}
+				.general-content pre code:only-child:before {
+					content: '';
+					}
+	.general-content table {
+		margin-bottom: 1em;
+		}
+	.general-content table, .general-content th, .general-content td {
+		border: solid 1pt #000;
+		}
+		.general-content th {
+			font-weight: bold;
+			}
+		.general-content th, .general-content td {
+			padding: 0 1em;
+			vertical-align: top;
+			text-align: left;
+			}
+	.general-content figure {
+		margin-bottom: 1em;
+		}
+
+/* Headings
+---------------------------------------- */
+.general-headings h1,
+.general-headings h2,
+.general-headings h3,
+.general-headings h4,
+.general-headings h5,
+.general-headings h6 {
+	margin-top: 1.5em;
+	margin-bottom: .5em;
+	font-weight: bold;
+	}
+	.general-headings h1:first-child,
+	.general-headings h2:first-child,
+	.general-headings h3:first-child,
+	.general-headings h4:first-child,
+	.general-headings h5:first-child,
+	.general-headings h6:first-child {
+		margin-top: -.25em;
+		}
+.general-headings h1 {
+	font-size: 1.75em;
+	}
+.general-headings h2 {
+	font-size: 1.5em;
+	}
+.general-headings h3 {
+	font-size: 1.25em;
+	}
+.general-headings h4 {
+	font-size: 1em;
+	}
+.general-headings h5 {
+	font-size: .8em;
+	}
+.general-headings h6 {
+	font-size: .7em;
+	}

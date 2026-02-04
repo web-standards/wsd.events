@@ -1,0 +1,769 @@
+<!DOCTYPE HTML>
+<html lang="ru-RU">
+<head>
+	<title>Расширение функционала jQuery</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=1274, user-scalable=no">
+	<link rel="stylesheet" href="shower-mine/themes/ribbon/styles/screen-d90984e344.css">
+	<link rel="stylesheet" href="shower-mine/themes/ribbon/styles/print.css" media="print">
+	<!--
+		Для оформления отдельный слайдов, используйте
+		ID слайда для доступа к необходимым элементам
+		-->
+	<style>
+		.twocol {
+			overflow: hidden;
+		}
+
+		.twocol > div {
+			float: left;
+			width: 50%;
+		}
+
+		.twocol > div:last-child {
+			width: 40%;
+			margin-left: 10%;
+		}
+
+		.densed-code pre code {
+			line-height: 35px;
+		}
+
+		.densed-header header {
+			margin-bottom: 15px;
+		}
+
+		.shout p {
+			position: absolute;
+			bottom: 10%;
+			left: 0;
+			width: 100%;
+			text-align: center;
+			font-size: 1.3em;
+		}
+
+		#Cover, #Cover section {
+			background-color: #fff;
+		}
+
+		#Cover h2 {
+			text-align:center;
+			font-size:70px;
+			}
+
+		#Cover p {
+			text-align: right;
+			margin-top: 100px;
+			font-weight: normal;
+		}
+
+		#FitToWidth h2,
+		#FitToHeight h2 {
+			color:#FFF;
+			text-align:center;
+			}
+
+		.slide {
+			background: #FFFFFF !important
+		}
+
+		.next:not(.last-active) mark {
+			background: none !important;
+		}
+
+		.showme { display: none !important; }
+		.next.active .showme { display: initial !important; }
+	</style>
+</head>
+<body class="list" data-skippreview="1">
+	<section class="slide cover" id="Cover"><div>
+
+			<header>
+				<h2>Способы расширения функционала jQuery</h2>
+				<p>С примерами на Coffeescript</p>
+				<p><a href="http://dpetroff.ru/slides/jquery_extension/">dpetroff.ru/slides/jquery_extension</a></p>
+			</header>
+
+	</div></section>
+
+	<section class="slide" id="intro_why_coffeescript1" data-innergoback="1"><div>
+
+			<header>
+				<h2>Зачем Coffeecript? <a href="http://coffeescript.org/">coffeescript.org</a></h2>
+			</header>
+			<ul>
+				<li>Элегантный, лаконичный код</li>
+				<li>Много синтаксического сахара(классы, выражения)</li>
+				<li>Опциональные скобки, блоки на основе индентации</li>
+				<li>Транслируется в читаемый код</li>
+			</ul>
+			<pre>
+				<div class="next"><code><mark>(a) -&gt; a * a # function(a){ return a * a; } // omg!</mark></code></div>
+				<div class="next"><code><mark>@ # this</mark></code></div>
+			</pre>
+
+	</div></section>
+
+	<section class="slide densed-code" id="intro_why_coffeescript2" data-innergoback="1"><div>
+
+			<header>
+				<h2>Зачем Coffeecript? Синтаксис</h2>
+			</header>
+			<pre>
+				<code class="next"><mark>class Javascript extends Language</mark></code>
+				<code class="next">constructor: (<mark>@dialect='ecma'</mark>) -&gt;</code>
+				<code>getKeywords: (which='used') -&gt;</code>
+				<code>	keywords =</code>
+				<div class="next">
+				<code>		used: <mark>[ 'var', 'const', 'in', 'for' ]</mark></code>
+				<code>		unused: <mark>['class', 'export', 'import' ]</mark></code>
+				</div>
+				<code class="next">	<mark>keywords[which] || null</mark></code>
+				<code>echo: () -&gt;</code>
+				<code class="next">	<mark>words = @getKeywords 'unused'</mark></mark></code>
+				<code class="next">	<mark>console.log "#{word}" for word in words</mark></code>
+			</pre>
+
+	</div></section>
+
+	<section class="slide densed-code" id="intro_why_coffeescript26_1"><div>
+
+			<header>
+				<h2>Зачем Coffeecript? Синтаксис</h2>
+			</header>
+			<pre>
+				<code>var Javascript,</code>
+				<code>  __hasProp = {}.hasOwnProperty,</code>
+				<code>  __extends = function(child, parent) { for (var key in parent) {</code>
+				<code>  if (__hasProp.call(parent, key)) child[key] = parent[key]; }</code>
+				<code>  function ctor() { this.constructor = child; }</code>
+				<code>  ctor.prototype = parent.prototype; child.prototype = new ctor(); </code>
+				<code>  child.__super__ = parent.prototype; return child; };</code>
+				<code>Javascript = (function(_super) {</code>
+				<code>  __extends(Javascript, _super);</code>
+				</pre>
+
+		</div></section>
+
+		<section class="slide densed-code" id="intro_why_coffeescript26_2"><div>
+
+				<header>
+					<h2>Зачем Coffeecript? Синтаксис</h2>
+				</header>
+				<pre>
+				<code>  function Javascript(dialect) {</code>
+				<code>    this.dialect = dialect != null ? dialect : 'ecma';</code>
+				<code>  }</code>
+				<code>  Javascript.prototype.getKeywords = function(which) {</code>
+				<code>    var keywords;</code>
+				<code>    if (which == null) {</code>
+				<code>      which = 'used';</code>
+				<code>    }</code>
+				</pre>
+
+		</div></section>
+
+		<section class="slide densed-code" id="intro_why_coffeescript26_3"><div>
+
+				<header>
+					<h2>Зачем Coffeecript? Синтаксис</h2>
+				</header>
+				<pre>
+				<code>    keywords = {</code>
+				<code>      used: ['var', 'const', 'in', 'for'],</code>
+				<code>      unused: ['class', 'export', 'import']</code>
+				<code>    };</code>
+				<code>    return keywords[which] || null;</code>
+				<code>  };</code>
+				<code>  Javascript.prototype.echo = function() {</code>
+				<code>    var word, _i, _len, _ref, _results;</code>
+				</pre>
+
+		</div></section>
+
+		<section class="slide densed-code" id="intro_why_coffeescript26_4"><div>
+
+				<header>
+					<h2>Зачем Coffeecript? Синтаксис</h2>
+				</header>
+				<pre>
+				<code>    _ref = getKeywords('unused');</code>
+				<code>    _results = [];</code>
+				<code>    for (_i = 0, _len = _ref.length; _i < _len; _i++) {</code>
+				<code>      word = _ref[_i];</code>
+				<code>      _results.push(console.log("" + word + " is reserved"));</code>
+				<code>    }</code>
+				<code>    return _results;</code>
+				<code>  };</code>
+				<code>  return Javascript;</code>
+				<code>})(Language);</code>
+			</pre>
+
+</div></section>
+
+	<section class="slide" id="intro_why_jquery"><div>
+
+			<header>
+				<h2>Что классного в jQuery?</h2>
+			</header>
+			<ul class="next">
+				<li>Классный chaining API</li>
+				<li>Отличные возможности для расширения<span class="showme"> &#x2713;</span></li>
+				<li>Не менее отличные функции общего назначения<span class="showme"> &#x2713;</span></li>
+				<li>Самая популярная библиотека на сегодня</li>
+			</ul>
+
+	</div></section>
+
+	<section class="slide" id="why_not_velosiped"><div>
+
+			<header>
+				<h2>Зачем расширять jQuery?</h2>
+			</header>
+			<ul>
+				<li>Выше шанс для повторного использования кода</li>
+				<li>Тесная интеграция с базовым функциями jQuery</li>
+				<li>Большая база готовых решений</li>
+				<li>Лучшая организация кода</li>
+			</ul>
+
+	</div></section>
+
+	<section class="slide" id="options"><div>
+
+			<header>
+				<h2>Как будем расширять?</h2>
+			</header>
+			<ul>
+				<li>Плагинами</li>
+				<li>Не плагинами</li>
+			</ul>
+			<p>jQuery - сборник плагинов</p>
+
+	</div></section>
+
+	<section class="slide shout" id="fn_begin"><div>
+
+			<header>
+				<h2>jQuery.fn</h2>
+			</header>
+
+	</div></section>
+
+	<section class="slide" id="fn1" data-innergoback="1"><div>
+
+			<header>
+				<h2>jQuery.fn</h2>
+			</header>
+			<pre>
+				<code class="next"><mark>$.fn.myPlugin</mark> = (options) -&gt;</code>
+				<code class="next"><mark>@ # &lt;- this </mark></code>
+				<code>options # &lt;- object </code>
+				<div  class="next">
+				<code><mark>defaultOptions = {}</mark></code>
+				<code>@.each -&gt; # коллекцию возвращаем</code>
+				<code>	<mark>options = $.extend {}, defaultOptions, options</mark></code>
+				</div>
+				<code>	# do stuff</code>
+			</pre>
+
+	</div></section>
+
+	<section class="slide" id="fn3"><div>
+
+			<header>
+				<h2>jQuery.fn. Состояние</h2>
+			</header>
+			<p>Хорошо бы иметь такое API:</p>
+			<pre>
+				<code># создали виджет</code>
+				<code>$('#selector').mywidget({opt: ions})</code>
+				<code># дергаем метод</code>
+				<code>$('#selector').mywidget( 'show', 'message')</code>
+			</pre>
+
+	</div></section>
+
+	<section class="slide" id="fn4" data-innergoback="1"><div>
+
+			<header>
+				<h2>jQuery.fn. Реализация</h2>
+			</header>
+			<pre class="next">
+				<code>$.fn.myPlugin = (options, args..) -&gt;</code>
+				<code>	<mark>class MyPlugin</mark></code>
+				<code>		<mark>constructor: (@element, @options) -&gt;</mark></code>
+				<code>		oneMethod: () -&gt;</code>
+				<code>		anotherOne: (props) -&gt;</code>
+				<code>	defaultOptions = {}</code>
+			</pre>
+
+	</div></section>
+
+	<section class="slide densed-code" id="fn5" data-innergoback="1"><div>
+
+			<header>
+				<h2>jQuery.fn. Реализация</h2>
+			</header>
+			<pre>
+				<code>	@.each -&gt;</code>
+				<code>		obj = @data 'myplugin'</code>
+				<code>		unless obj</code>
+				<code>			options = $.extend {}, defaultOptions, options</code>
+				<div class="next">
+				<code>			<mark>obj = new MyPlugin @, options</mark></code>
+				<code>			<mark>@data 'myplugin', obj</mark></code>
+				</div>
+				<code>		else</code>
+				<code>			method = options</code>
+				<div class="next">
+				<code>			<mark>obj[method].apply obj, args if method</mark></code>
+				</div>
+			</pre>
+
+	</div></section>
+
+	<section class="slide" id="fn_end"><div>
+
+			<header>
+				<h2>jQuery.fn. Выводы</h2>
+			</header>
+			<ul>
+				<li>Можно реализовать видимость методов</li>
+				<li>Мы изобрели jQuery UI Widget Factory</li>
+				<li>В jQuery UI 1.9 можно делать виджеты без привязки к нодам</li>
+				<li>Удобнее представлять отдельные сущности - виджеты, неудобно представлять все остальное - сетевое взаимодействие и пр.</li>
+			</ul>
+
+	</div></section>
+
+	<section class="slide" id="fn_end_final"><div>
+
+			<header>
+				<h2>jQuery.fn. Признаки хорошего плагина</h2>
+			</header>
+			<ul>
+				<li>Работает с коллекциями из нескольких элементов</li>
+				<li>Отдельные параметры для каждого элемента коллекции</li>
+				<li>Позволяет с собой общаться</li>
+				<li>Использует правильное API jQuery для нужных целей.</li>
+				<li>Лежит в свободном доступе на github.com или подобном портале</li>
+			</ul>
+
+	</div></section>
+
+	<section class="slide shout" id="fn_end_os"><div>
+
+			<header>
+				<h2>Opensource - это хорошо!</h2>
+			</header>
+
+	</div></section>
+
+	<section class="slide" id="hooks_start"><div>
+
+			<header>
+				<h2>jQuery API</h2>
+			</header>
+			<p>Где бы хотелось расширить методы jQuery?</p>
+			<ul>
+				<li>$.fn.css</li>
+				<li>$.fn.on</li>
+				<li>$.ajax</li>
+				<li>Sizzle</li>
+			</ul>
+
+	</div></section>
+
+	<section class="slide shout" id="hooks_css_intro"><div>
+
+			<header>
+				<h2>$.fn.css</h2>
+			</header>
+			<p><a href="https://github.com/jquery/jquery/blob/master/src/css.js">src/css.js</a></p>
+
+	</div></section>
+
+	<section class="slide" id="hooks_css_why"><div>
+
+			<header>
+				<h2>$.fn.css. Зачем расширять</h2>
+			</header>
+			<ul>
+				<li>Реализуем неподдерживаемые свойства</li>
+				<li>Костыли для некроссброузерных свойств</li>
+				<li>Собственные свойства (а вдруг!)</li>
+				<li>Отладка</li>
+			</ul>
+
+	</div></section>
+
+	<section class="slide densed-code" id="hooks_css_start" data-innergoback="1"><div>
+
+			<header>
+				<h2>$.fn.css</h2>
+			</header>
+			<pre>
+				<code>jQuery.cssHooks.cats =</code>
+				<code>	get: (elem, computed, extra) -&gt;</code>
+				<code>		'300 ms'</code>
+				<code>	set: (elem, value) -&gt;</code>
+				<code>		# do something to cats</code>
+				<code class="next"><mark>jQuery.cssProps.cats = 'mscats' # алиас</mark></code>
+				<code class="next"><mark>jQuery.cssNumber.cats = true # хотим работать с числом</mark></code>
+			</pre>
+
+	</div></section>
+
+	<section class="slide" id="hooks_css_end"><div>
+
+			<header>
+				<h2>$.fn.css</h2>
+			</header>
+			<ul>
+				<li>+ get/set, но jQuery.attrHooks лучше!</li>
+				<li>- Гадим в общее пространство</li>
+				<li>- Кустарное свойство может конфликтовать с будущими стандартами</li>
+				<li>- За поддержку подобных стилей при загрузке надо бороться</li>
+			</ul>
+
+	</div></section>
+
+	<section class="slide" id="hooks_animate_end" data-innergoback="1"><div>
+
+			<header>
+				<h2>$.fn.animate</h2>
+			</header>
+			<pre>
+				<code># алиас для длительности</code>
+				<code class="next"><mark>jQuery.extend jQuery.fx.speeds, { uberfast: 100 }</mark></code>
+				<code># функция для анимирования</code>
+				<code class="next"><mark>jQuery.easing.bumble</mark> =</code>
+				<code>		(percent, current, start, stop, duration) -&gt;</code>
+				<code>			percent * (10 - percent * 9)</code>
+			</pre>
+
+	</div></section>
+
+	<section class="slide" id="hooks_animate_end2"><div>
+
+			<header>
+				<h2>$.fn.animate</h2>
+			</header>
+			<p>Уже не нужно, но еще можно!</p>
+			<pre>
+				<code>jQuery.fx.cats = (tween) -&gt;</code>
+				<code>		jQuery.style(tween.elem, tween.prop,</code>
+				<code>					tween.now + tween.unit)</code>
+			</pre>
+
+	</div></section>
+
+	<section class="slide shout" id="hooks_on_intro"><div>
+
+			<header>
+				<h2>$.fn.on</h2>
+			</header>
+			<p><a href="https://github.com/jquery/jquery/blob/master/src/event.js">src/event.js</a></p>
+
+	</div></section>
+
+	<section class="slide" id="hooks_on_why"><div>
+
+			<header>
+				<h2>$.fn.on. Зачем это?</h2>
+			</header>
+			<ul>
+				<li>Событие должно быть событием</li>
+				<li>Callbacks sucks</li>
+				<li>Широкие возможности для отладки</li>
+			</ul>
+			<ul>
+				<li>Реализация новых событий DOM-элементов (devicerotate)</li>
+				<li>Любые сообщения от вашего виджета</li>
+				<li>Шина для получений информации извне (например, longpolling)</li>
+			</ul>
+
+	</div></section>
+
+	<section class="slide" id="hooks_on_api1" data-innergoback="1"><div>
+
+			<header>
+				<h2>$.fn.on. API. Part1</h2>
+			</header>
+			<pre>
+				<code>jQuery.event.special.custom = # @ == elem</code>
+				<code>	noBubble: true</code>
+				<div class="next">
+				<code class="showme">	# самый первый/самый последний обработчик</code>
+				<code>	<mark>setup: (data, ns, eventHanle) -&gt;</mark></code>
+				<code>	<mark>teardown: (ns, eventHandle) -&gt;</mark></code>
+				</div>
+				<div class="next">
+				<code class="showme">	# очередной обработчик</code>
+				<code>	<mark>add: (handleObj) -&gt; #handleObj.handle</mark></code>
+				<code>	<mark>remove: (handleObj) -&gt;</mark></code>
+				</div>
+			</pre>
+
+	</div></section>
+
+	<section class="slide" id="hooks_on_api2"><div>
+
+			<header>
+				<h2>$.fn.on. API. Part2</h2>
+			</header>
+			<pre>
+				<code>jQuery.event.special.custom = # @ == elem</code>
+				<code>	trigger: (data) -&gt;</code>
+				<code>	handle: (event) -&gt;</code>
+				<code>	_default: (data) -&gt;</code>
+				<code>	preDispatch: (event) -&gt;</code>
+				<code>	postDispatch: (event) -&gt;</code>
+			</pre>
+
+	</div></section>
+
+	<section class="slide densed-code" id="hooks_on_example"><div>
+
+			<header>
+				<h2>$.fn.on. Пример</h2>
+			</header>
+			<pre>
+				<code>jQuery.event.special.beforeunload =</code>
+				<code>	setup: ( data, namespaces, eventHandle )</code>
+				<code>		if jQuery.isWindow( this )</code>
+				<code>			this.onbeforeunload = eventHandle</code>
+				<code>	teardown: ( namespaces, eventHandle ) -&gt;</code>
+				<code>		if this.onbeforeunload == eventHandle</code>
+				<code>			@onbeforeunload = null</code>
+			</pre>
+
+	</div></section>
+
+	<section class="slide densed-code" id="hooks_on_example_special"><div>
+
+			<header>
+				<h2>$.fn.on. Пример сложного свойства</h2>
+			</header>
+			<pre>
+				<code>jQuery.event.special.empty =</code>
+				<code>	setup: ( data, namespaces, eventHandle ) -&gt;</code>
+				<code>		jQuery.data(elem = @, data = {})</code>
+				<code>		data.timer = setInterval(=&gt;</code>
+				<code>			if elem.innerHTML.length == 0</code>
+				<code>				data.triggered || $(@).trigger 'empty'</code>
+				<code>				data.triggered = true</code>
+				<code>			else if data.triggered</code>
+				<code>				data.triggered = false</code>
+				<code>		, 100)</code>
+			</pre>
+
+	</div></section>
+
+	<section class="slide" id="hooks_on_example_special2"><div>
+
+			<header>
+				<h2>$.fn.on. Пример сложного свойства</h2>
+			</header>
+			<pre>
+				<code>	teardown: ( namespaces, eventHandle ) -&gt;</code>
+				<code>		clearInterval jQuery.data(@, 'empty_event').timer</code>
+			</pre>
+
+	</div></section>
+
+	<section class="slide shout" id="hooks_ajax_intro"><div>
+
+			<header>
+				<h2>$.ajax</h2>
+			</header>
+			<p><a href="https://github.com/jquery/jquery/blob/master/src/ajax.js">src/ajax.js</a></p>
+
+	</div></section>
+
+	<section class="slide" id="hooks_ajax_why"><div>
+
+			<header>
+				<h2>$.ajax. Профит?</h2>
+			</header>
+			<ul>
+				<li>Реализация протоколов внутри jQuery (json-rpc)</li>
+				<li>Прозрачная реализация кеширования</li>
+				<li>Логи</li>
+			</ul>
+
+	</div></section>
+
+	<section class="slide densed-code" id="hooks_ajax_types" data-innergoback="1"><div>
+
+			<header>
+				<h2>$.ajax. Свои типы</h2>
+			</header>
+			<pre>
+				<code>jQuery.ajaxSetup</code>
+				<div class="next">
+				<code>	<mark>accepts:</mark></code>
+				<code>		<mark>script: "text/javascript, application/javascript"</mark></code>
+				</div>
+				<div class="next">
+				<code>	<mark>contents:</mark></code>
+				<code>		<mark>script: /javascript|ecmascript/</mark></code>
+				</div>
+				<div class="next">
+				<code>	<mark>converters:</mark></code>
+				<code>		<mark>"text script": ( text ) -&gt;</mark></code>
+				<code>			<mark>jQuery.globalEval text </mark></code>
+				</div>
+			</pre>
+
+	</div></section>
+
+	<section class="slide" id="hooks_ajax_types2"><div>
+
+			<header>
+				<h2>$.ajax. Свои типы</h2>
+			</header>
+			<pre>
+				<code>jQuery.ajaxPrefilter "script", (s, origs, jqXHR) -&gt;</code>
+				<code>	#prepare stuff</code>
+				<code>	"anothertype"</code>
+			</pre>
+
+	</div></section>
+
+	<section class="slide densed-code" id="hooks_ajax_transports"><div>
+
+			<header>
+				<h2>$.ajax. Свои транспорты</h2>
+			</header>
+			<pre>
+				<code>jQuery.ajaxTransport "transport", (s) -&gt;</code>
+				<code>	if condition</code>
+				<code>		# return transport</code>
+				<code>		send: (headers, callback) -&gt;</code>
+				<code>			#do stuff</code>
+				<code>		abort: () -&gt;</code>
+				<code>			#omg, abort</code>
+				<code>	else</code>
+				<code>		#return fallback transport optionaly</code>
+			</pre>
+
+	</div></section>
+
+	<section class="slide shout" id="hooks_sizzle_intro"><div>
+
+			<header>
+				<h2>Sizzle</h2>
+			</header>
+			<p><a href="https://github.com/jquery/jquery/blob/master/src/sizzle">src/sizzle</a></p>
+
+	</div></section>
+
+	<section class="slide" id="hooks_sizzle_api_why"><div>
+
+			<header>
+				<h2>Sizzle, jQuery API</h2>
+			</header>
+			<ul>
+				<li>Модификация существующего поведения</li>
+				<li>Свои селекторы для облегчения сложных выборок</li>
+			</ul>
+			<p>Пример: поиск незагруженных картинок</p>
+
+	</div></section>
+
+	<section class="slide densed-code" id="hooks_sizzle_api"><div>
+
+			<header>
+				<h2>Sizzle, jQuery API</h2>
+			</header>
+			<ul>
+				<li>Явно экспортирован только jQuery.expr</li>
+				<li>jQuery.find === Sizzle, все методы доступны</li>
+			</ul>
+			<pre>
+				<code>jQuery.expr[':'].mailto = (node, index, props, nodes) -&gt;</code>
+				<code>	if node.href && node.href.match /^mailto:/</code>
+				<code>		unless props[3]</code>
+				<code>			true</code>
+				<code>		else</code>
+				<code>			node.href.replace(/^.*@/, '') == props[3]</code>
+			</pre>
+
+	</div></section>
+
+	<section class="slide" id="hooks_prefinish"><div>
+
+			<header>
+				<h2>Бонус</h2>
+			</header>
+			<p>Для использования функционала jQuery не обязательно использовать коллекции</p>
+			<ul>
+				<li>jQuery.css / jQuery.style</li>
+				<li>jQuery.data</li>
+				<li>jQuery.prop/jQuery.data</li>
+				<li>jQuery.trigger</li>
+			</ul>
+
+	</div></section>
+
+	<section class="slide" id="hooks_prefinish2"><div>
+
+			<header>
+				<h2>Еще функции jQuery</h2>
+			</header>
+			<p>param, Callbacks, Deffered, camelCase, contains, each, extend, inArray, isArray, grep, isEmptyObject, isFuction, isNumeric, isPlainObject, isWindow, isXmlDoc, makeArray, map, merge, noop, now, parseJSON, proxy, queue, trim, unique
+
+	</div></section>
+
+	<section class="slide" id="jquery_future"><div>
+
+			<header>
+				<h2>Немного про будущее. 2013</h2>
+			</header>
+			<ul>
+				<li>1.9 - модуляризация jQuery, deprecated-методы и объекты ($.browser) выносятся из ядра</li>
+				<li>2.0 - IE специфичный код удаляется из jQuery</li>
+				<li>1.9 и 2.0 будут поддерживаться одновременно!</li>
+			</ul>
+
+	</div></section>
+
+	<section class="slide" id="hooks_finish"><div>
+
+			<header>
+				<h2>Итоги</h2>
+			</header>
+			<ul>
+				<li>jQuery rocks!</li>
+				<li>Незачем городить заводы, когда можно поставить одну деталь</li>
+				<li>Кто читает код, тот молодец</li>
+			</ul>
+
+	</div></section>
+
+	<section class="slide" id="contacts"><div>
+
+			<header>
+				<h2>Дмитрий Петров, Skype</h2>
+			</header>
+			<ul>
+				<li><a href="http://dpetroff.ru">dpetroff.ru</a></li>
+				<li><a href="https://github.com/can3p">github.com/can3p</a></li>
+				<li><a href="https://twitter.com/can3p">twitter.com/can3p</a></li>
+				<li><a href="mailto:dpetroff@gmail.com">dpetroff@gmail.com</a></li>
+			</ul>
+			<p><a href="http://dpetroff.ru/slides/jquery_extension/">http://dpetroff.ru/slides/jquery_extension/</a></p>
+
+	</div></section>
+	<!--
+		Для того, чтобы убрать индикатор прогресса
+		из презентации, просто удалите элемент «progress».
+		-->
+	<div class="progress"><div></div></div>
+	<!--<script src="shower-mine/scripts/jquery.js"></script>-->
+	<!--<script src="scripts/examples.js"></script>-->
+	<script src="shower-mine/scripts/script-adfea3dfb6.js"></script>
+</body>
+</html>

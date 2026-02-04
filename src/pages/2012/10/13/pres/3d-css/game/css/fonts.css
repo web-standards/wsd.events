@@ -1,0 +1,8 @@
+@font-face {
+	font-family: 'Conv_loved_by_the_king';
+	src: url('../fonts/loved_by_the_king.eot');
+	src: local('☺'), url('../fonts/loved_by_the_king.woff') format('woff'), url('../fonts/loved_by_the_king.ttf') format('truetype'), url('../fonts/loved_by_the_king.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+

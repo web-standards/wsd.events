@@ -1,0 +1,53 @@
+@font_face {font_family: 'PT Sans'; 
+	src: url('../font/pts55f_w.eot'); 
+	src: local('PT Sans'), url('../font/PTS55F_W.woff') format('woff'),url('../font/PTS55F_W.ttf') format('truetype'), url('../font/PTS55F_W.svg#PTSans_Regular') format('svg');}
+
+@font_face {font_family: 'PT Sans'; 
+	font_style: italic;
+	src: url('../font/pts56f_w.eot'); 
+	src: local('PT Sans Italic'), url('../font/PTS56F_W.woff') format('woff'),url('../font/PTS56F_W.ttf') format('truetype'), url('../font/PTS56F_W.svg#PTSans_Italic') format('svg');}
+
+@font_face {font_family: 'PT Sans';
+	src: url('../font/pts75f_w.eot');
+	font_style: normal;
+	font_weight: bold; 
+	src: local('PT Sans Bold'), url('../font/PTS75F_W.woff') format('woff'),url('../font/PTS75F_W.ttf') format('truetype'), url('../font/PTS75F_W.svg#PTSans_Bold') format('svg');}
+
+@font_face {font_family: 'PT Sans';
+	font_style: italic;
+	font_weight: bold; 
+	src: url('../font/pts76f_w.eot'); 
+	src: local('PT Sans Bold Italic'), url('../font/PTS76F_W.woff') format('woff'),url('../font/PTS76F_W.ttf') format('truetype'), url('../font/PTS76F_W.svg#PTSans_BoldItalic') format('svg');}
+
+@font_face {font_family: 'PT Sans Caption'; 
+	src: url('../font/ptc55f_w.eot');
+	src: local('PT Sans Caption'), url('../font/PTC55F_W.woff') format('woff'),url('../font/PTC55F_W.ttf') format('truetype'), url('../font/PTC55F_W.svg#PTSans_Caption') format('svg');}
+
+@font_face {font_family: 'PT Sans Caption';
+	font_weight: bold; 
+	src: url('../font/ptc75f_w.eot');
+	src: local('PT Sans Caption Bold'), url('../font/PTC75F_W.woff') format('woff'),url('../font/PTC75F_W.ttf') format('truetype'), url('../font/PTC75F_W.svg#PTSans_CaptionBold') format('svg');}
+
+@font_face {font_family: 'PT Sans Narrow';
+	src: url('../font/ptn57f_w.eot');
+	src: local('PT Sans Narrow'), url('../font/PTN57F_W.woff') format('woff'),url('../font/PTN57F_W.ttf') format('truetype'), url('../font/PTN57F_W.svg#PTSans_Narrow') format('svg');}
+
+@font_face {font_family: 'PT Sans Narrow';
+	font_weight: bold; 
+	src: url('../font/ptn77f_w.eot');
+	src: local('PT Sans Narrow Bold'), url('../font/PTN77F_W.woff') format('woff'),url('../font/PTN77F_W.ttf') format('truetype'), url('../font/PTN77F_W.svg#PTSans_NarrowBold') format('svg');}
+
+@font-face {
+    font-family: 'AbelRegular';
+    src: url('../font/abel-regular-webfont.eot');
+    src: url('../font/abel-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/abel-regular-webfont.woff') format('woff'),
+         url('../font/abel-regular-webfont.ttf') format('truetype'),
+         url('../font/abel-regular-webfont.svg#AbelRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+                    
+

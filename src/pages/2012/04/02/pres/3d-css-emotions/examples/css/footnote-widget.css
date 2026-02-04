@@ -1,0 +1,34 @@
+.footnote-widget{
+  border-top:1px dotted #b7b7b7;
+  padding:15px 0 0;
+  margin:0 0 15px 0;
+  overflow:hidden;
+  }
+  .footnote-widget .show-more{
+    font:italic 13px/18px 'PT Sans',Arial,sans-serif;
+    }
+  .footnote-widget .abstract{
+    overflow:hidden;
+    }
+  .footnote-widget .title{
+    display:inline;
+    font:bold 24px/26px 'PT Sans Caption',Arial,sans-serif;
+    }
+  .footnote-widget hgroup{
+    padding:0;
+    }
+  .footnote-widget hgroup .title{
+    display:block;
+    margin:0 0 10px 0;
+    }
+  .footnote-widget hgroup .subtitle{
+    font:normal 13px/18px 'PT Sans',Arial,sans-serif;
+    margin:0 0 20px 0;
+    }
+  .footnote-widget .illustration{
+    float:right;
+    margin:0 0 0 15px;
+    }
+    .footnote-widget .illustration img{
+      display:block;
+      }

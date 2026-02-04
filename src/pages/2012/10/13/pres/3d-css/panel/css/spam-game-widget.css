@@ -1,0 +1,68 @@
+.spam-game-widget{
+  text-align:center;
+  color:#333;
+  margin:0 0 20px;
+  font:bold 18px/25px "Helvetica Neue",Helvetica,Arial,sans-serif;
+  background: url("../assets/phones-bg.png") 50% 0 no-repeat;
+  background-color:#fff;
+  background-color:rgba(255,255,255,.95);
+  overflow:hidden;
+  border-bottom:1px solid #c2c2c2;
+  position: absolute;
+  top:0;
+  left:0;
+  right:0;
+  }
+  .spam-game-widget .skip{
+    margin:20px 0 45px;
+    }
+  .spam-game-widget .send{
+    margin:30px 0 5px;
+    }
+  .spam-game-widget .catalog{
+    margin:20px 0 40px;
+    }
+  .spam-game-widget h2{
+    margin:14px 0 0;
+    color:#dd1309;
+    font:bold 36px/36px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    }
+  .spam-game-widget h3{
+    font:bold 18px/25px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    margin:0 0 14px;
+    }
+  .spam-game-widget mark{
+    font:bold 14px/16px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color:#dd1309;
+    background:none;
+    }
+    .spam-game-widget mark a{
+      color:#dd1309;
+      }
+  .spam-game-widget p strong{
+    display:block;
+    font:bold 32px/32px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    }
+  .spam-game-widget .logotype{
+    width:200px;
+    height:179px;
+    display:block;
+    margin:0 auto;
+    overflow:hidden;
+    text-indent:-9000px;
+    background:url("../assets/fb-logotype.png") 50% 50% no-repeat;
+    }
+  .spam-game-widget .illustration{
+    border:1px solid #bfbfbf;
+    }
+  .spam-game-widget .unsubscribe{
+    color:#999;
+    font:bold 12px/16px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    }
+    .spam-game-widget .unsubscribe a{
+      color:#999;
+      text-decoration:underline;
+      }
+      .spam-game-widget .unsubscribe a:hover{
+        text-decoration:none;
+        }

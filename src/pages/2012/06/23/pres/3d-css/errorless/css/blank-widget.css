@@ -1,0 +1,81 @@
+.blank-widget{
+	width:700px;
+	float:left;
+	overflow:hidden;
+	}
+	.blank-widget .title{
+		text-align:center;
+		font:italic 36px/145px Georgia, sans-serif;
+		}
+	.blank-widget .set-up-list{
+		text-align:right;
+		}
+		.blank-widget .set-up-list li{
+			display:inline;
+			margin:0 20px 0 0; 
+			font:12px/50px Arial, "Helvetica Neue", Helvetica, sans-serif;
+			}
+			.blank-widget .set-up-list li.selected{
+				float:left;
+				font:18px/50px Arial, "Helvetica Neue", Helvetica, sans-serif;
+				padding:0 0 0 20px;
+				}
+	.blank-widget .set-up{
+		border:1px solid #b6b6b6;
+		}
+	.blank-widget .set-up-details.selected{
+		display:block;
+		}
+	.blank-widget .set-up-details{
+		border-top:1px solid #b6b6b6;
+		padding:0 20px 10px;
+		clear: both;
+		display:none;
+		}
+		.blank-widget .set-up-details .title{
+			padding:0;
+			float:none;
+			font:18px/50px Arial, "Helvetica Neue", Helvetica, sans-serif;
+			text-align:left;
+			}
+		.blank-widget .set-up-details li{
+			position: relative;
+			zoom:1;
+			margin:0 0 20px;
+			padding:0 0 0 30px;
+			font:14px/20px Arial, "Helvetica Neue", Helvetica, sans-serif;
+			}
+			.blank-widget .set-up-details li:after{
+				content:".";
+				display:block;
+				font-size:0;
+				line-height:0;
+				height:0;
+				clear:both;
+				overflow:hidden;
+				text-indent:90000px;
+				}
+			.blank-widget .set-up-details li code{
+				background-color:#fff;
+				display:block;
+				padding:10px;
+				margin:10px 0 0;
+				white-space:pre;
+				white-space:pre-line;
+				word-break:break-all;
+				font:12px/20px Monaco, Arial, "Helvetica Neue", Helvetica, sans-serif;
+				}
+			.blank-widget .set-up-details li .step{
+				position: absolute;
+				left:0;
+				top:0;
+				background-color: #535353;
+				color:#fff;
+				height:20px;
+				width:20px;
+				overflow:hidden;
+				text-align:center;
+				font:bold 12px/20px Arial, "Helvetica Neue", Helvetica, sans-serif;
+				border-radius:10px;
+				margin:0 10px 0 0;
+				}

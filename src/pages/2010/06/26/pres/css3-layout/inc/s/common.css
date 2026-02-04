@@ -1,0 +1,245 @@
+/**
+ * Author: Viacheslav Oliyanchuk (http://miripiruni.org)
+ * Date: Jun 20, 2010
+ * Time: 2:09:10 AM
+ */
+html,
+body{
+	height:100%;
+	}
+
+body{
+	font: 36px/1.5 'PT Sans', Arial;
+	}
+
+td{
+	vertical-align:top;
+	}
+
+/* links (begin) */
+    a{
+		text-decoration:none;
+		border-bottom:1px solid;
+		background:rgba(255,255,255,0.7);
+		-webkit-transition:all .5s linear;
+		-moz-transition:all .5s linear;
+		-o-transition:all .5s linear;
+		transition:all .5s linear;
+    	}
+	a:visited,
+	a:visited:hover{
+		color:blue;
+		}
+	a:hover{
+		color:red!important;
+		border-bottom:1px solid red;
+		}
+	footer a{
+		color:gray;
+		}
+/* links (end) */
+
+
+/* slide layout (begin) */
+	.slide{
+		position:relative;
+		z-index:1;
+		display:none;
+		width:100%;
+		height:100%;
+		-webkit-box-orient:vertical;
+		-moz-box-orient:vertical;
+		box-orient:vertical;
+		background:#fff;
+		}
+	.slide:target{
+		display:-webkit-box;
+		display:   -moz-box;
+		display:		box;
+		}
+		.slide header,
+		.slide article,
+		.slide footer{
+			display:-webkit-box;
+			display:   -moz-box;
+			display:		box;
+			-webkit-box-flex:1;
+			-moz-box-flex:1;
+			box-flex:1;
+			-webkit-box-orient:vertical;
+			-moz-box-orient:vertical;
+			box-orient:vertical;
+			padding:0 9% 0 12%;
+			}
+		.slide header,
+		.slide footer{
+			-webkit-box-pack:end;
+	   		-moz-box-pack:end;
+			box-pack:end;
+			padding-bottom:1%;
+			}
+		.slide article{
+			height:50%;
+			padding-top:1%;
+			}
+		.slide footer{
+			height:3%;
+			padding-bottom:5%;
+			color:gray;
+			font-size:85%;
+			}
+		.milestone article{
+			height:30%;
+			}
+/* slide layout (end) */
+
+
+/* slide headers (begin) */
+    .slide h1,
+	.slide h2{
+		display:inline;
+		padding:0 .5em;
+		margin-left:-0.5em;
+		background:rgba(255,255,0,0.85);
+		font-weight:bold;
+		letter-spacing:1px;
+		}
+
+	.milestone h2{
+		font-size:2em;
+		}
+/* slide headers (end) */
+
+
+/* slide markup (begin) */
+    .slide ul{
+		list-style:disc;
+    	}
+/* slide markup (end) */
+
+
+/* navigation (begin) */
+	#nav{
+		position:absolute;
+		z-index:0;
+		display:block;
+		background: rgba(0, 153, 153, 0.5);
+		-webkit-transition:all .3s linear;
+		   -moz-transition:all .3s linear;
+		     -o-transition:all .3s linear;
+		   	    transition:all .3s linear;
+		}
+	#nav:target{
+		position:absolute;
+		z-index:2;
+		}
+		#toc{
+			float:left;
+			display:block;
+			width:100%;
+		}
+			#toc li{
+				display:block;
+				float:left;
+				margin-left:10px;
+				}
+		#toc a{
+			padding:4px 10px 6px;
+			text-decoration:none;
+			border:0;
+			font-size:14px;
+			color:#000;
+			-webkit-border-radius:20px;
+			 -khtml-border-radius:20px;
+			   -moz-border-radius:20px;
+					border-radius:20px;
+			}
+		#toc a:hover{
+			background:rgba(255,255,255,1);
+			color:red;
+			}
+		#toc a:active,
+		#toc a:focus{
+			background:rgba(0,0,0,0.3);
+			color:#000;
+			-webkit-box-shadow:0 1px 2px #555 inset;
+			   -moz-box-shadow:0 1px 2px #555 inset;
+				    box-shadow:0 1px 2px #555 inset;
+		}
+/* navigation (end) */
+
+
+/* plus and minus (begin) */
+    .plus:before{
+		content:'+ ';
+		font-weight:bold;
+		color:green;
+    	}
+	.minus:before{
+		content:'− ';
+		font-weight:bold;
+		color:red;
+    	}
+/* plus and minus (end) */
+
+
+/* zoom (begin) */
+    .zoom{
+		position:absolute;
+		-webkit-transition:all .5s linear;
+		   -moz-transition:all .5s linear;
+		     -o-transition:all .5s linear;
+		   	    transition:all .5s linear;
+    	}
+	.zoom:hover{
+		position:absolute;
+		margin-top:-0.25em;
+		font-size:2em;
+		background:#fff;
+		-webkit-box-shadow: 8px 8px 20px #333;
+		-moz-box-shadow: 8px 8px 20px #333;
+		box-shadow: 8px 8px 20px #333;
+		background:-moz-linear-gradient(top, #fff, #eee);
+		background:-webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #eee));
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff', endColorstr='#eee');
+    	}
+/* zoom (end) */
+
+
+/* code colors (begin) */
+.dblue{
+	color:#000080;
+	}
+.green{
+	color:#008000;
+	}
+.lblue{
+	color:#00f;
+	}
+/* code colors (end) */
+
+
+/* code (begin) */
+.slide article pre{
+	counter-reset:code;
+	white-space:normal;
+	padding-left:1.5em;
+	}
+	.slide article pre code{
+		display:block;
+		margin:0 0 0.1em;
+		padding:0 0 0 .5em;
+		white-space:pre;
+		font-family:Consolas,monospace;
+		background:#f5f5f5;
+		}
+	.slide article pre code:before {
+		position:absolute;
+		margin:0 0 0 -2.7em;
+		width:2em;
+		color:#BBB;
+		text-align:right;
+		counter-increment:code;
+		content:counter(code,decimal-leading-zero)'.';
+		}
+/* code (end) */

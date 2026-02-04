@@ -1,0 +1,247 @@
+#HSFlash {
+    margin: 0 0 12px;
+}
+
+#HShsbc {
+    border: 1px solid black;
+    height: 88px;
+    margin: 0 0 10px;
+    overflow: hidden;
+    position: relative;
+    width: 726px;
+}
+
+#HShsbc * {
+    position: absolute;
+    font-family: Arial, Geneva, sans-serif;
+    line-height: normal;
+}
+
+#HSredBox {
+    -webkit-animation-name: HSredBoxA;
+    -webkit-animation-duration: 15s;
+    -webkit-animation-iteration-count: 1;
+    background-color: red;
+    height: 90px;
+    left: 705px;
+    width: 10px;
+}
+
+#HSfirstText {
+    -webkit-animation-name: HSfirstTextA;
+    -webkit-animation-duration: 15s;
+    -webkit-animation-iteration-count: 1;
+    font-size: 16px;
+    font-weight: bold;
+    left:40px;
+    top: 32px;
+    opacity: 0;
+	filter: alpha(opacity = 0);
+}
+
+#HSsecondText {
+    -webkit-animation-name: HSsecondTextA;
+    -webkit-animation-duration: 15s;
+    -webkit-animation-iteration-count: 1;
+    color: white;
+    font-size: 17px;
+    left: 45px;
+    opacity: 0;
+	filter: alpha(opacity = 0);
+    top: 35px;
+}
+
+#HSimage {
+    -webkit-animation-name: HSimageA;
+    -webkit-animation-duration: 15s;
+    -webkit-animation-iteration-count: 1;
+}
+
+
+#HSwhiteBlock {
+    -webkit-animation-name: HSwhiteBlockA;
+    -webkit-animation-duration: 15s;
+    -webkit-animation-iteration-count: 1;
+    background-color: white;
+    height: 90px;
+    left:710px;
+    width: 200px;
+}
+
+#HStriangle {
+    -webkit-animation-name: HStriangleA;
+    -webkit-animation-duration: 15s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678,sizingMethod='auto expand');
+	
+    background-color: white;
+    height:20px;
+    top:44px;
+    left:711px;
+    width:20px;
+}
+
+#HSthirdText {
+    -webkit-animation-name: HSthirdTextA;
+    -webkit-animation-duration: 15s;
+    -webkit-animation-iteration-count: 1;
+    color:#8A8A8A;
+    font-size: 17px;
+    top: 35px;
+    left:295px;
+    width: 150px;
+}
+    #HSthirdText:hover span{
+        margin-left:5px;
+        }
+
+#HSthirdText span {
+    color:red;
+    margin-left:0;
+    -webkit-transition-property: all;
+    -webkit-transition-duration: 0.3s;
+}
+
+
+
+@-webkit-keyframes HSredBoxA {
+    0% {
+        -webkit-transform: translate(-680px,-90px);
+    }
+    2% {
+        -webkit-transform: translate(-680px,-40px);
+    }
+    26.7% {
+        -webkit-transform: translate(-680px,-40px);
+    }
+    29.7% {
+        -webkit-transform: translate(-680px,0px);
+    }
+    37.7% {
+        -webkit-transform: translate(-360px,0px) scale(80);
+    }
+    73% {
+        -webkit-transform: translate(-360px,0px) scale(80);
+    }
+    76% {
+        -webkit-transform: translate(-200px,0px) scale(1);
+    }
+    80% {
+        -webkit-transform: translate(0px,0px) scale(1);
+    }
+    100% {
+        -webkit-transform: translate(0px,0px) scale(1);
+    }
+}
+
+/*First Text Animation*/
+@-webkit-keyframes HSfirstTextA {
+    0% {
+        -webkit-transform: translate(40px,0px);
+        opacity: 0;
+    }
+    2% {
+        -webkit-transform: translate(0px,0px);
+        opacity: 1;
+    }
+    25.7% {
+        opacity: 1;
+    }
+    26.7% {
+        opacity:0;
+    }
+    100% {
+        opacity:0;
+    }
+}
+
+/*Second Text Animation*/
+@-webkit-keyframes HSsecondTextA {
+    0% {opacity:0;}
+    38% {opacity:0;}
+    41% {
+        opacity:1;
+    }
+    70% {
+        opacity:1;
+    }
+    73% {opacity:0;}
+    100% {opacity:0;}
+}
+
+/*Image*/
+@-webkit-keyframes HSimageA {
+    0% {
+        opacity:0;
+    }
+    70% {
+        opacity:0;
+    }
+    73% {
+        opacity:1;
+    }
+    100% {opacity:1;}
+}
+
+
+/*whiteBox*/
+@-webkit-keyframes HSwhiteBlockA {
+    0% {
+        -webkit-transform: translate(-200px,0px);
+    }
+    76% {
+        -webkit-transform: translate(-200px,0px);
+    }
+    80% {
+        -webkit-transform: translate(0px,0px);
+    }
+    100% {}
+}
+
+/*triangleA*/
+@-webkit-keyframes HStriangleA {
+    0% {
+        opacity: 0;
+    }
+    75% {
+        opacity: 0;
+    }
+    76% {
+        opacity: 1;
+    }
+    100% {opacity:1;}
+}
+
+/*thirdTextA*/
+@-webkit-keyframes HSthirdTextA {
+    0% {
+        opacity: 0;
+    }
+    80% {
+        opacity: 0;
+        -webkit-transform: translate(15px,0px);
+    }
+    83% {
+        opacity: 1;
+        -webkit-transform: translate(0px,0px);
+    }
+    100% {opacity: 1;}
+}
+
+
+
+
+html,body{
+    height:100%;
+    width:100%;
+    }
+
+#hsbc-ad-container{
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin:-103px 0 0 -364px;
+    }
+

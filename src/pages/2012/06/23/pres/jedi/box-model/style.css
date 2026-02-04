@@ -1,0 +1,21 @@
+@import url(bootstrap.css);
+
+.lab-grid {
+    min-height: 400px;
+    padding: 50px;
+    background-image: url(img/grid.png);
+}
+.lab-parent {
+    border: solid 10px;
+}
+.lab-child {
+    font-size: 10px;
+    height: 200px;
+    margin: 40px;
+    padding: 20px;
+    border: solid 10px #adadad;
+}
+.lab-content {
+    background-image: url(img/diagonal.png);
+    height: 100%;
+}

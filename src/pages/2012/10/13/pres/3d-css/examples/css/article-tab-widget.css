@@ -1,0 +1,108 @@
+.article-tab-widget{
+  overflow:hidden;
+  zoom:1;
+  position:relative;
+  }
+  .article-tab-widget li{
+    float:left;
+    height:46px;
+    margin:0 4px 0 0;
+    white-space:nowrap;
+    }
+    .article-tab-widget li.multimedia .selected{
+      display:inline-block;
+      text-align:center;
+      padding:0 15px;
+      font:normal 13px/35px 'PT Sans',Arial,sans-serif;
+      color:#fff;
+      background-color:#353535;
+      border-top:4px solid #000;
+      height:42px;
+      }
+      * html .article-tab-widget li.multimedia .selected{
+        display:inline;
+        zoom:1;
+        }
+      *+html .article-tab-widget li.multimedia .selected{
+        display:inline;
+        zoom:1;
+        }
+    .article-tab-widget li .selected{
+      display:inline-block;
+      text-align:center;
+      padding:0 15px;
+      font:normal 13px/35px 'PT Sans',Arial,sans-serif;
+      color:#000;
+      background-color:#FFF;
+      border-top:4px solid #009ada;
+      height:42px;
+      }
+      * html .article-tab-widget li .selected{
+        display:inline;
+        zoom:1;
+        }
+      *+html .article-tab-widget li .selected{
+        display:inline;
+        zoom:1;
+        }
+    .article-tab-widget li a{
+      border-top:4px solid #b4b4b4;
+      display:block;
+      float:left;
+      text-align:center;
+      height:35px;
+      background-color:#d6d6d6;
+      padding:0 15px;
+      font:normal 13px/35px 'PT Sans',Arial,sans-serif;
+      color:#000;
+      }
+      * html .article-tab-widget li a{
+        display:inline;
+        zoom:1;
+        }
+      *+html .article-tab-widget li a{
+        display:inline;
+        zoom:1;
+        }
+      .article-tab-widget li .count{
+        font:normal 13px/16px 'PT Sans',Arial,sans-serif;
+        background-color:#e2e2e2;
+        border:1px solid #fff;
+        padding:0 4px;
+        margin:0 0 0 4px;
+        position:relative;
+        }
+        .article-tab-widget li .count:after{
+          content:".";
+          text-indent:-9000px;
+          overflow:hidden;
+          display:block;
+          width:0;
+          height:0;
+          line-height:0;
+          font-size:0;
+          border-width:5px 5px 0;
+          border-style: solid solid none;
+          border-color:#e2e2e2 transparent transparent;
+          position:absolute;
+          top:100%;
+          left:50%;
+          margin:-1px 0 0 -5px;
+          }
+        .article-tab-widget li .count:before{
+          content:".";
+          text-indent:-9000px;
+          overflow:hidden;
+          display:block;
+          width:0;
+          height:0;
+          line-height:0;
+          font-size:0;
+          border-width:5px 5px 0;
+          border-style: solid solid none;
+          border-color:#fff transparent transparent;
+          position:absolute;
+          top:100%;
+          left:50%;
+          margin:0 0 0 -5px;
+          }

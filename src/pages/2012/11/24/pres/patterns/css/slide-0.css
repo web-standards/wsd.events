@@ -1,0 +1,17 @@
+body .slide-0{
+  color:#fff;
+  background-color: #123f7e; 
+  }
+  body .slide-0:after{
+    color:#fff;
+    text-shadow:none;
+    }
+    body .slide-0 .wrapper h1{
+      margin:0;
+      }
+    body .slide-0 .wrapper h2{
+      margin:0;
+      color:#fff;
+      font: 33px/38px 'PT Sans Caption',sans-serif;
+      text-transform:none;
+      }

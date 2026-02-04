@@ -1,0 +1,145 @@
+/*normal browsers*/
+	.csstransforms3d .paperfold-widget{
+		-webkit-transform-style:preserve-3d;
+		-moz-transform-style:preserve-3d;
+		-o-transform-style:preserve-3d;
+		transform-style:preserve-3d;
+
+		-webkit-perspective-origin:50% 0;
+		-moz-perspective-origin:50% 0;
+		-o-perspective-origin:50% 0;
+		perspective-origin:50% 0;
+
+		-webkit-perspective:900px;
+		-moz-perspective:900px;
+		-o-perspective:900px;
+		perspective:900px;
+
+		}
+		.csstransforms3d body .paperfold-widget{
+			height:0;
+			}
+		.csstransforms3d body .paperfold-widget.have-more.closed{
+			height:39px;
+			}
+		.csstransforms3d body .paperfold-widget.closed{
+			height:0px;
+			}
+		.csstransforms3d .paperfold-widget .more{
+			z-index:1000;
+			position: relative;
+			}
+		.csstransforms3d .paperfold-widget .more,
+		.csstransforms3d .paperfold-widget .fold-even,
+		.csstransforms3d .paperfold-widget .fold-odd{
+
+			-webkit-transform-style:preserve-3d;
+			-moz-transform-style:preserve-3d;
+			-o-transform-style:preserve-3d;
+			transform-style:preserve-3d;
+
+			-webkit-transform-origin:50% 0;
+			-moz-transform-origin:50% 0;
+			-ms-transform-origin:50% 0;
+			-o-transform-origin:50% 0;
+			transform-origin:50% 0;
+
+			-webkit-transition: -webkit-transform .6s ease;
+			-moz-transition: -moz-transform .6s ease;
+			-ms-transition: -ms-transform .6s ease;
+			-o-transition: -o-transform .6s ease;
+			transition: transform .6s ease;
+
+
+			-webkit-transform:rotateX(0deg);
+			-moz-transform:rotateX(0deg);
+			-ms-transform:rotateX(0deg);
+			-o-transform:rotateX(0deg);
+			transform:rotateX(0deg);
+			}
+			.csstransforms3d body .paperfold-widget.closed>.fold-odd{
+				-webkit-transform:rotateX(-90deg);
+				-moz-transform:rotateX(-90deg);
+				-ms-transform:rotateX(-90deg);
+				-o-transform:rotateX(-90deg);
+				transform:rotateX(-90deg);
+				}
+			.csstransforms3d .paperfold-widget.closed .fold-odd{
+				-webkit-transform:rotateX(-180deg);
+				-moz-transform:rotateX(-180deg);
+				-ms-transform:rotateX(-180deg);
+				-o-transform:rotateX(-180deg);
+				transform:rotateX(-180deg);
+				}
+			.csstransforms3d .paperfold-widget.closed .fold-even{
+				-webkit-transform:rotateX(180deg);
+				-moz-transform:rotateX(180deg);
+				-ms-transform:rotateX(180deg);
+				-o-transform:rotateX(180deg);
+				transform:rotateX(180deg);
+				}
+			.csstransforms3d .paperfold-widget.closed .fold-odd>.more{
+				-webkit-transform:rotateX(90deg);
+				-moz-transform:rotateX(90deg);
+				-ms-transform:rotateX(90deg);
+				-o-transform:rotateX(90deg);
+				transform:rotateX(90deg);
+				}
+			.csstransforms3d .paperfold-widget.closed .fold-even>.more{
+				-webkit-transform:rotateX(-90deg);
+				-moz-transform:rotateX(-90deg);
+				-ms-transform:rotateX(-90deg);
+				-o-transform:rotateX(-90deg);
+				transform:rotateX(-90deg);
+				}
+			.csstransforms3d .paperfold-widget .ticket{
+				-webkit-transform:translateZ(0);
+				-moz-transform:translateZ(0);
+				-ms-transform:translateZ(0);
+				-o-transform:translateZ(0);
+				transform:translateZ(0);
+
+				-webkit-transition: box-shadow .3s .5s ease;
+				-moz-transition: box-shadow .3s .5s ease;
+				-ms-transition: box-shadow .3s .5s ease;
+				-o-transition: box-shadow .3s .5s ease;
+				transition: box-shadow .3s .5s ease;
+				
+				box-shadow:inset 0 20px 0 0 rgba(0,0,0,0), inset 0 -3px 0 0 rgba(135,136,132,.05), 0 1px 3px 0 rgba(0,0,0,.25);
+				}
+			.csstransforms3d .paperfold-widget.closed .ticket{
+				-webkit-transition: box-shadow .2s 0s ease;
+				-moz-transition: box-shadow .2s 0s ease;
+				-ms-transition: box-shadow .2s 0s ease;
+				-o-transition: box-shadow .2s 0s ease;
+				transition: box-shadow .2s 0s ease;
+				
+				box-shadow:inset 0 20px 0 0 rgba(0,0,0,0), inset 0 -3px 0 0 rgba(135,136,132,.05), 0 1px 0 0 rgba(0,0,0,0);
+				}
+
+
+/*IE*/
+	.no-csstransitions .paperfold-widget{
+		display:none;
+		}
+/*Opera*/
+	.no-csstransforms3d.csstransitions .paperfold-widget{
+		display:none;
+		}/*
+		.no-csstransforms3d.csstransitions .paperfold-widget.have-more.closed{
+			height:39px;
+			}
+		.no-csstransforms3d.csstransitions .paperfold-widget.closed{
+			height:0px;
+			}
+		.no-csstransforms3d.csstransitions .paperfold-widget.closed .fold-odd,
+		.no-csstransforms3d.csstransitions .paperfold-widget.closed .fold-even{
+			-o-transform:scaleY(0);
+			}
+		.no-csstransforms3d.csstransitions .paperfold-widget .fold-odd,
+		.no-csstransforms3d.csstransitions .paperfold-widget .fold-even{
+			-o-transform-origin:50% 0;
+			-o-transition:-o-transform .4s ease;
+			-o-transform:scaleY(1);
+			top:0;
+			}*/

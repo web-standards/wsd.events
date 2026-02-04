@@ -1,0 +1,92 @@
+.perspective-3d section.rules{
+	
+	color:#fff;
+	font:48px/64px 'Conv_loved_by_the_king', cursive;
+
+	width:800px;
+	position: absolute;
+	left:50%;
+	top:50%;
+	margin:-200px 0 0 -400px;
+
+	-webkit-transform: scale(.7) rotate(90deg);
+	-moz-transform: scale(.7) rotate(90deg);
+	-ms-transform: scale(.7) rotate(90deg);
+	-o-transform: scale(.7) rotate(90deg);
+	transform: scale(.7) rotate(90deg);
+	}
+.flat section.rules{
+	color:#fff;
+	font:72px/90px 'Conv_loved_by_the_king', cursive;
+
+	width:800px;
+	position: absolute;
+	left:50%;
+	top:50%;
+	margin:-250px 0 0 -400px;
+
+	-o-transform: scale(.7);
+	}
+	section.rules img{
+		float:left;
+		display:block;
+		margin:30px 40px 10px 0;
+		}
+	section.rules p{
+		overflow:hidden;
+		position: relative;
+		zoom:1;
+		margin:0 0 20px;
+		}
+	section.rules .back{
+			
+			z-index:10;
+			position:relative;
+			color:#fff;
+			text-decoration:none;
+			
+			width:120px;
+			height:120px;
+			display:block;
+
+			margin:0 auto;
+
+			color:#137e16;
+			color:#fff;
+
+			-webkit-perspective:900px;
+			-moz-perspective:900px;
+			-o-perspective:900px;
+			perspective:900px;
+
+			-webkit-transform-style:preserve-3d;
+			-moz-transform-style:preserve-3d;
+			-o-transform-style:preserve-3d;
+			transform-style:preserve-3d;
+			}
+			section.rules .back span{
+				display: block;
+				width:120px;
+				height:120px;
+				
+				background:url("../img/arrow-unhover.png") 0 0 no-repeat;
+
+				-webkit-transform-style:preserve-3d;
+				-moz-transform-style:preserve-3d;
+				-o-transform-style:preserve-3d;
+				transform-style:preserve-3d;
+
+				-webkit-transition:all .25s ease-out;
+				-moz-transition:all .25s ease-out;
+				-ms-transition:all .25s ease-out;
+				-o-transition:all .25s ease-out;
+				transition:all .25s ease-out;
+				}
+			section.rules .back:hover span{
+				-webkit-transform: scale(1.3) rotate(180deg);
+				-moz-transform: scale(1.3) rotate(180deg);
+				-ms-transform: scale(1.3) rotate(180deg);
+				-o-transform:scale(1.3) rotate(180deg);
+				transform: scale(1.3) rotate(180deg);
+				cursor:pointer;
+				}

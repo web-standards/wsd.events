@@ -1,0 +1,2988 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<title>Twitter</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="utf-8" />
+
+
+
+	<link rel="dns-prefetch" href="http://a0.twimg.com"/>
+
+	<link rel="dns-prefetch" href="http://a1.twimg.com"/>
+
+	<link rel="dns-prefetch" href="http://a2.twimg.com"/>
+
+	<link rel="dns-prefetch" href="http://a3.twimg.com"/>
+
+	<link rel="dns-prefetch" href="http://api.twitter.com"/>
+
+
+<script type="text/javascript" charset="utf-8">
+
+
+	document.domain = 'twitter.com';
+
+	// this will be copied to twttr.appStartTime once our JS has started up
+	document.startTime = new Date().getTime();
+	var twttr = {};
+	twttr.versionName = 'phoenix';
+	twttr.didPingKeynote = false;
+	twttr.keynoteTTFTPing = function() {
+		if (!twttr.didPingKeynote && window.location.href.indexOf('keynoteTest') > 0) {
+			var image = document.createElement('img');
+			image.src = '/images/keynote.gif';
+			twttr.didPingKeynote = true;
+		}
+	}
+
+	if (!window.console) {
+		(function() {
+			var names = ["log", "debug", "info", "warn", "error", "assert", "dir", "dirxml",
+			"group", "groupEnd", "time", "timeEnd", "count", "trace", "profile", "profileEnd"];
+			window.console = {};
+			for (var i = 0; i < names.length; ++i) {
+				window.console[names[i]] = function() {};
+			}
+		}());
+	}
+</script>
+
+
+
+<script type="text/javascript">(function(){window.setTimeout=window.setTimeout;window.setInterval=window.setInterval;window.WATCH=function(label,block){if(typeof block==="undefined"){block=label;label=undefined}if(typeof label==="string"){WATCH._didExecute[label]=true}WATCH._attempt(this,block)};WATCH._didExecute={};WATCH._reportCount=0;WATCH._reportLimit=25;WATCH._reportInterval=60*1000;WATCH._active=false;WATCH.activate=function(setting){if(typeof setting==="undefined"){setting=true}WATCH._active=setting;extend(WATCH,WATCH._active?WATCH.actives:WATCH.inactives)};WATCH.actives={};WATCH.inactives={};var extend=function(destination,source){for(var key in source){destination[key]=source[key]}};var noop=function(){};WATCH._attempt=function(that,block){if(arguments.length<2){block=that;that=window}if(WATCH._active){try{block.apply(that)}catch(error){WATCH._triggerError(error)}}else{block.apply(that)}};WATCH.inactives.end=noop;WATCH.actives.end=function(label){if(typeof label==="undefined"){throw new Error("WATCH.end() requires a label")}if(WATCH._didExecute[label]){WATCH._didExecute[label]=false}else{if(WATCH._active){WATCH._triggerError(new Error('WATCH.end("'+label+'") called without successful call to WATCH("'+label+'", fn(){...}) - a SyntaxError probably just happened'))}}WATCH._didExecute[label]=false};WATCH.inactives.callback=function(that,callback){return typeof callback==="undefined"?that:callback};WATCH.actives.callback=function(that,callback){if(arguments.length===1){callback=that;that=this}if(typeof callback==="string"){callback=(function(stringVersion){return function(){eval(stringVersion)}}(callback))}var watchedCallback=function(){var that=this,args=arguments,result;WATCH._attempt(function(){result=callback.apply(that,args)});return result};watchedCallback.isWatched=true;return watchedCallback};WATCH._onErrorCallbacks={};WATCH.inactives._addOnError=noop;WATCH.actives._addOnError=function(callback){var unique=WATCH._unique();WATCH._onErrorCallbacks[unique]=callback;return unique};WATCH.inactives._removeOnError=noop;WATCH.actives._removeOnError=function(id){delete WATCH._onErrorCallbacks[id]};WATCH._lastUnique=-1;WATCH._unique=function(){return ++WATCH._lastUnique};WATCH.inactives.jQuery=noop;WATCH.actives.jQuery=function(){WATCH._originalJQueryEventAdd=WATCH._originalJQueryEventAdd||jQuery.event.add;jQuery.event.add=function(){var newArgs=Array.prototype.slice.call(arguments);if(typeof newArgs[2]==="function"){newArgs[2]=WATCH.callback(newArgs[2])}else{if(newArgs&&typeof newArgs[2]==="object"&&newArgs[2].handler){newArgs[2].handler=WATCH.callback(newArgs[2].handler)}}return WATCH._originalJQueryEventAdd.apply(this,newArgs)};WATCH._originalJQueryAjax=WATCH._originalJQueryAjax||jQuery.ajax;jQuery.ajax=function(options){jQuery.each(["complete","error","success"],function(which,key){if(!options[key]){return }options[key]=WATCH.callback(options[key])});return WATCH._originalJQueryAjax.apply(this,arguments)}};WATCH.inactives.undoJQuery=noop;WATCH.actives.undoJQuery=function(){jQuery.event.add=WATCH._originalJQueryEventAdd;jQuery.ajax=WATCH._originalJQueryAjax};WATCH._previousErrors={};var escapeDoubleQuotes=function(string){return string.toString().replace('"','\\"')};var stringifyLite=function(object){var result="{",hasProperty=false;for(var key in object){if(typeof object[key]==="undefined"||object[key]===null){continue}result+=(hasProperty?',"':'"')+escapeDoubleQuotes(key)+'":"'+escapeDoubleQuotes(object[key])+'"';hasProperty=true}return result+"}"};WATCH._scribeError=function(report){if(WATCH._previousErrors[report.error]&&(new Date())-WATCH._previousErrors[report.error]<WATCH._reportInterval){return false}if(WATCH.reportLimit<=WATCH.reportCount){return }WATCH.reportCount++;if(!document.location.hostname.match(/(^(www|api)\.)?twitter\.com$/)){return }WATCH._previousErrors[report.error]=new Date();report.product_name="webclient";report.type="js_error";report.url=window.location.href;report.event_name="test";var isProduction=document.location.hostname.match(/(^(www|api|staging\d+.local)\.)twitter\.com$/)!=null;var scribeHost=isProduction?"scribe.twitter.com":window.location.host;var scribeUrl=(window.location.protocol.match(/s\:$/)?"https":"http")+"://"+scribeHost;scribeUrl+=isProduction?"/":"/scribe";scribeUrl+="?category=client_watch_error&log="+encodeURIComponent(stringifyLite(report))+"&ts="+(new Date()).getTime();(new Image()).src=scribeUrl};WATCH._triggerError=function(error){var reraise=true;var report={error:error};for(var key in WATCH._onErrorCallbacks){try{if(WATCH._onErrorCallbacks[key](report)===false){reraise=false}}catch(callbackError){report.callbackFailure=true}}WATCH._scribeError(report);if(reraise){throw error}};WATCH.inactives.natives=noop;WATCH.actives.natives=function(){window.setInterval=WATCH._watchedSetInterval;window.setTimeout=WATCH._watchedSetTimeout};WATCH.inactives.undoNatives=noop;WATCH.actives.undoNatives=function(){window.setInterval=WATCH._originalSetInterval;window.setTimeout=WATCH._originalSetTimeout};WATCH._originalSetInterval=window.setInterval;WATCH._originalSetTimeout=window.setTimeout;WATCH._watchedSetInterval=function(callback,timeout){var setInterval=WATCH._originalSetInterval;return setInterval(WATCH.callback(callback),timeout)};WATCH._watchedSetTimeout=function(callback,timeout){var setTimeout=WATCH._originalSetTimeout;return setTimeout(WATCH.callback(callback),timeout)};WATCH.activate(false)}());</script>
+<script type="text/javascript">
+
+</script>
+
+
+
+	<script>
+function bust () {
+	document.write = "";
+	window.top.location = window.self.location;
+	setTimeout(function() {
+		document.body.innerHTML = '';
+		}, 0);
+	window.self.onload = function(evt) {
+		document.body.innerHTML = '';
+	};
+}
+if (window.top !== window.self) { // are you trying to put self in an iframe?
+	try {
+		if (window.top.location.host) { // this is illegal to access unless you share a non-spoofable document domain
+			// fun times
+		} else {
+			bust(); // chrome executes this
+		}
+	} catch (ex) {
+		bust(); // everyone executes this
+	}
+}
+</script>
+
+
+
+
+
+
+	<link href="/phoenix/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+
+<base href="https://twitter.com" />
+
+
+
+
+
+
+
+					<link rel="stylesheet" href="http://a2.twimg.com/a/1319042409/phoenix/css/phoenix_core.bundle.css" type="text/css" media="screen" />
+
+
+
+
+
+
+				<link rel="canonical" href="/" />
+
+
+
+
+
+
+
+
+
+
+						<style id="user-style-golovnev">
+	body.user-style-golovnev {
+
+			background-position: left 40px;
+			background-attachment: fixed;
+
+				background-repeat: no-repeat;
+
+
+
+			background-color: #352726;
+
+
+			color: #3E4415;
+
+	}
+
+	body.user-style-golovnev a,
+	body.user-style-golovnev ul.stream-tabs li,
+	body.user-style-golovnev .component .promo strong,
+	body.user-style-golovnev .message-thread-preview:hover .message-count,
+	body.user-style-golovnev .list-membership-container li.create-a-list {
+
+			color: #D02B55;
+
+	}
+
+	body.user-style-golovnev .stream-item:hover .tweet-screen-name,
+	body.user-style-golovnev .stream-item:hover .tweet-timestamp,
+	body.user-style-golovnev .stream-item:hover .tweet-geo-text,
+	body.user-style-golovnev .stream-item:hover .user-profile-link,
+	body.user-style-golovnev span.user-stat-link,
+	body.user-style-golovnev a.title-link:hover,
+	body.user-style-golovnev a.user-stats-count:hover span.user-stats-stat,
+	body.user-style-golovnev .dashboard .user-small-list-item:hover a.user-screen-name,
+	body.user-style-golovnev .dashboard .user-small-list-item:hover .user-meta a,
+	body.user-style-golovnev .user-detailed-list-item:hover a.user-screen-name,
+	body.user-style-golovnev .tweet-activity:hover a.latest-tweet-timestamp,
+	body.user-style-golovnev .stream-item:hover a.icon-link,
+	body.user-style-golovnev .stream-item:hover a.icon-link b,
+	body.user-style-golovnev .stream-item:hover .tweet-feedback,
+	body.user-style-golovnev .dashboard ul.trends li a:hover span.icon-link,
+	body.user-style-golovnev .dashboard-activity-item-sentence .dashboard-activity-item-entity,
+	body.user-style-golovnev .dashboard-activity-item-sentence .dashboard-activity-item-entity .user,
+	body.user-style-golovnev .dashboard-activity-item-sentence .dashboard-activity-item-count,
+	body.user-style-golovnev .dashboard-activity-item-link:hover .dashboard-activity-item-sentence,
+	body.user-style-golovnev .dashboard-activity-item-link:hover .dashboard-activity-item-sentence span.user,
+	body.user-style-golovnev .onebox-user-screen-name:hover  {
+
+			color: #D02B55 !important;
+
+	}
+
+	body.user-style-golovnev .expanding-stream-item:hover .tweet-screen-name {
+		color: #333 !important;
+	}
+	body.user-style-golovnev .expanding-stream-item:hover .tweet-timestamp {
+		color: #999 !important;
+	}
+
+	body.user-style-golovnev .hovered-stream-item,
+	body.user-style-golovnev .stream-item:hover,
+	body.user-style-golovnev #new-tweets-bar,
+	body.user-style-golovnev #new-tweets-bar:active {
+
+			background-color: rgba(208,43,85,0.1);
+
+
+			border-color: rgba(208,43,85,0.15);
+
+	}
+
+	body.user-style-golovnev .expanding-stream-item:hover {
+		border-top-color: transparent;
+		border-bottom-color: #EBEBEB;
+	}
+
+	body.user-style-golovnev #new-tweets-bar:hover {
+
+			background-color: rgba(208,43,85,0.2);
+
+
+			border-color: rgba(208,43,85,0.25);
+
+	}
+
+	body.user-style-golovnev .dashboard .user-small-list-item .user-screen-name,
+	body.user-style-golovnev .profile-screenname,
+	body.user-style-golovnev .title-link,
+	body.user-style-golovnev div.latest-tweet .latest-tweet-timestamp,
+	body.user-style-golovnev div.truncated-tweet .latest-tweet-timestamp,
+	body.user-style-golovnev a.user-stats-count span.user-stats-stat,
+	body.user-style-golovnev .welcome-steps li .active a strong,
+	body.user-style-golovnev .dashboard-activity-item-sentence span.user {
+
+			color: #3E4415;
+
+	}
+
+	body.user-style-golovnev .dashboard .user-small-list-item .user-full-name,
+	body.user-style-golovnev span.trend-location,
+	body.user-style-golovnev .your-activity h3,
+	body.user-style-golovnev .trends-inner h3,
+	body.user-style-golovnev .dashboard .user-rec-inner h3,
+	body.user-style-golovnev .latest-tweet,
+	body.user-style-golovnev .truncated-tweet,
+	body.user-style-golovnev .latest-tweet a.latest-tweet-timestamp,
+	body.user-style-golovnev .truncated-tweet a.latest-tweet-timestamp,
+	body.user-style-golovnev .dashboard .user-small-list-item .user-meta,
+	body.user-style-golovnev .dashboard .user-small-list-item .user-meta a,
+	body.user-style-golovnev .social-context div,
+	body.user-style-golovnev .dashboard .dot,
+	body.user-style-golovnev .component .promo,
+	body.user-style-golovnev .component .promo a.definition,
+	body.user-style-golovnev .dashboard .user-small-list-item .dismiss,
+	body.user-style-golovnev .dashboard .user-small-list-item .ellip,
+	body.user-style-golovnev .facets-media-not-displayed .not-displayed-text,
+	body.user-style-golovnev .dashboard .copyright,
+	body.user-style-golovnev .dashboard .user-small-list-item a.icon-link,
+	body.user-style-golovnev .dashboard ul.trends li a span.icon-link,
+	body.user-style-golovnev .dashboard-activity-item-link,
+	body.user-style-golovnev .dashboard-activity-item-sentence {
+
+			color: rgba(62,68,21,0.6);
+
+	}
+
+	body.user-style-golovnev #page-container,
+	body.user-style-golovnev .user-sidebar-color,
+	body.user-style-golovnev .expando-container .dashboard {
+
+			/* IE7/8 */
+			background: #99CC33;
+
+
+			/* Modern browsers */
+			background: rgba(153,204,51,0.9);
+
+
+			/* IE6 */
+			_background-color: #99CC33;
+
+	}
+
+	body.user-style-golovnev .activity:hover .stream-item-activity-network .activity-supplement .activity-item-tweet .activity-item-tweet-content,
+	body.user-style-golovnev .hovered-stream-item .stream-item-activity-network .activity-supplement .activity-item-tweet .activity-item-tweet-content,
+	body.user-style-golovnev .dashboard .stream-item-activity-network .activity-supplement .activity-item-tweet .activity-item-tweet-content  {
+
+			border-color: rgba(208,43,85,0.15) !important;
+
+	}
+
+	body.user-style-golovnev .expanding-stream-item:hover a.twitter-atreply:hover,
+	body.user-style-golovnev .expanding-stream-item.open a.twitter-atreply,
+	body.user-style-golovnev .expanding-stream-item:hover a.twitter-hashtag:hover,
+	body.user-style-golovnev .expanding-stream-item.open a.twitter-hashtag,
+	body.user-style-golovnev .expanding-stream-item:hover a.twitter-timeline-link:hover,
+	body.user-style-golovnev .expanding-stream-item.open a.twitter-timeline-link {
+
+			color: #D02B55 !important;
+
+	}
+
+	.profile-style-golovnev a {
+
+		color: #D02B55 !important;
+
+}
+
+a:hover .geo-pin, body.user-style-golovnev .stream-item:hover .geo-pin {
+	background-color: #D02B55;
+}
+</style>
+
+					<style id="user-style-golovnev-bg-img">
+	body.user-style-golovnev {
+
+
+				background-image: url(http://a1.twimg.com/images/themes/theme5/bg.gif);
+
+
+	}
+</style>
+
+				<script>(function(){var A=document.getElementsByTagName("html")[0];var B=(window.location.hash.replace(/#![\/]?/,"")!=="");if(B){A.className+=" remove-prerendered-content"}else{A.className+=" use-prerendered-content"}})();</script>
+
+
+
+
+		<script>var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-30775-6"]);_gaq.push(["_trackPageview"],["_setDomainName","twitter.com"]);(function(){var B=document.createElement("script");B.type="text/javascript";B.async=true;B.src=("https:"==document.location.protocol?"https://ssl":"http://www")+".google-analytics.com/ga.js";var A=document.getElementsByTagName("script")[0];A.parentNode.insertBefore(B,A)}());twttr.trackPageView=function(A){var B=["_trackPageview"];if(A){B.push(A)}_gaq.push(B)};</script>
+	</head>
+
+
+	<body class=" user-style-golovnev    logged-in  ">
+		<div id="doc">
+			<div id="top-stuff" class="js-topbar">
+				<div id="banners" class="js-banners" style="clear:both;">
+
+						<noscript><div class="banner-outer">
+	<div class="banner">
+		<div class="banner-inside noscript-warning">
+			<h5>Twitter.com makes heavy use of JavaScript.</h5>
+			<span class="warning">If you cannot enable it in your browser's preferences, you may have a better experience on our <a href="http://m.twitter.com">mobile site</a>.</span>
+		</div>
+	</div>
+</div>
+</noscript>
+
+
+				</div>
+				<div id="top-bar-outer">
+					<div id="top-bar-bg"></div>
+					<div id="top-bar">
+						<div class="top-bar-inside">
+							<div class="static-links">
+	<div id="logo">
+		<a href="/">Twitter</a>
+	</div>
+	<form id="search-form" class="js-search-form" action="/search" method="GET">
+		<span class="glass js-search-action"><i></i></span>
+		<input value="" placeholder="Search" name="q" id="search-query" type="text" />
+	</form>
+	<div id="global-nav">
+		<ul id="global-actions">
+
+				<li id="global-nav-home" data-global-action="home"><a href="/">Home</a></li>
+				<li id="global-nav-profile" data-global-action="profile"><a href="/#!/golovnev">Profile</a></li>
+				<li id="global-nav-messages" data-global-action="messages"><a href="/#!/messages">Messages</a></li>
+				<li id="global-nav-who_to_follow" data-global-action="who_to_follow"><a href="/#!/who_to_follow">Who To Follow</a></li>
+
+		</ul>
+	</div>
+	<div id="sections"></div>
+</div>
+<div class="active-links">
+
+		<a id="new-tweet" class="js-global-new-tweet" title="New Tweet">
+			<span>New Tweet</span>
+		</a><span class="vr">
+		</span><span id="session" class="loggedin js-session">
+			<a class="profile-links" href="#">
+				<img src="http://a1.twimg.com/profile_images/1478223054/andrey_golovnev_small_normal.jpg" />
+			</a>
+			<span id="screen-name">
+				golovnev
+			</span>&nbsp;<span id="screen-name-dropdown">&nbsp;</span>
+			<div class="dropdown">
+				<ul class="user-dropdown">
+
+
+
+
+
+
+			<li><a href="/settings/account">Settings</a></li>
+
+
+
+
+		<li><a href="//support.twitter.com">Help</a></li>
+
+
+
+		<li>
+			<form id="signout-form" class="signout-form" action="/logout" method="POST">
+				<a class="signout-button js-signout-button" href="#">Sign out</a>
+				<input type='hidden' value='' name='authenticity_token' class='authenticity_token' />
+			</form>
+		</li>
+
+
+
+
+
+</ul>
+
+			</div>
+		</span>
+
+
+</div>
+
+						</div>
+					</div>
+					<div id="message-drawer"></div>
+				</div>
+			</div>
+
+
+			<div id="page-outer" >
+
+
+				<div id="page-container" class="home-container">
+					<div id="page-node-home">
+
+
+								<div class="main-content">
+
+		<div class="page-header home-header">
+			<div id="main-tweet-box">
+				<form method="post" action="/status/update">
+	<div class="tweet-box condensed">
+		<div class="tweet-box-title">
+			<h2>WhatÕs happening?</h2>
+		</div>
+		<div class="text-area">
+			<div class="text-area-editor twttr-editor">
+				<textarea class="twitter-anywhere-tweet-box-editor" name="status" style="width: 482px; height: 36px;"></textarea>
+			</div>
+		</div>
+	</div>
+</form>
+			</div>
+			<ul class="stream-tabs">
+				<li class="stream-tab stream-tab-home active">
+					<a class="tab-text" title='All you follow' href="/">Timeline</a>
+				</li>
+
+
+
+
+					<li class="stream-tab stream-tab-mentions ">
+						<a class="tab-text" title='Mentions' href="/#!/mentions">@Mentions</a>
+					</li>
+					<li class="stream-tab stream-tab-retweets dropdown-link ">
+						<a class="tab-text" href="#">Retweets<i></i></a>
+					</li>
+
+
+				<li class="stream-tab stream-tab-searches dropdown-link ">
+					<a class="tab-text" href="#">Searches<i></i></a>
+				</li>
+
+				<li class="stream-tab stream-tab-lists dropdown-link ">
+					<a class="tab-text" href="#">Lists<i></i></a>
+				</li>
+
+			</ul>
+		</div>
+
+		<div class="stream-manager js-stream-manager-container" id="home-stream-manager">
+
+		<div class="stream-title"></div>
+		<div class="stream-container">
+			<div class="stream home-stream">
+
+				<div class="stream-items"><div class='js-stream-item stream-item' data-item-id="126918239279259649" data-item-type="tweet" id="stream-item-tweet-126918239279259649">
+
+
+
+
+<div class="more">&raquo;</div>
+<div class="stream-item-content tweet js-actionable-tweet js-stream-tweet stream-tweet  "
+	data-is-reply-to="false"
+	data-tweet-id="126918239279259649"
+
+	data-item-id="126918239279259649"
+
+
+
+	data-screen-name="koffboy"
+	data-user-id="58908838"
+
+
+	data-status="{&quot;in_reply_to_user_id&quot;:null,&quot;created_at&quot;:&quot;Thu Oct 20 07:10:40 +0000 2011&quot;,&quot;retweet_count&quot;:11,&quot;in_reply_to_status_id&quot;:null,&quot;favorited&quot;:false,&quot;in_reply_to_screen_name&quot;:null,&quot;truncated&quot;:false,&quot;user&quot;:{&quot;profile_background_color&quot;:&quot;C0DEED&quot;,&quot;protected&quot;:false,&quot;is_translator&quot;:false,&quot;profile_background_tile&quot;:false,&quot;profile_background_image_url_https&quot;:&quot;https:\/\/si0.twimg.com\/images\/themes\/theme1\/bg.png&quot;,&quot;created_at&quot;:&quot;Tue Jul 21 20:23:31 +0000 2009&quot;,&quot;screen_name&quot;:&quot;koffboy&quot;,&quot;name&quot;:&quot;\u0410\u043d\u0434\u0440\u0435\u0439&quot;,&quot;default_profile&quot;:true,&quot;follow_request_sent&quot;:false,&quot;following&quot;:true,&quot;friends_count&quot;:4631,&quot;profile_sidebar_fill_color&quot;:&quot;DDEEF6&quot;,&quot;notifications&quot;:false,&quot;utc_offset&quot;:7200,&quot;description&quot;:&quot;\u0421\u0442\u0443\u0434\u0435\u043d\u0442, \u0431\u043b\u043e\u0433\u0435\u0440, \u0442\u0432\u0438\u0442\u0442\u0435\u0440\u044f\u043d\u0438\u043d.\r\ne-mail: koffboy@gmail.com &quot;,&quot;show_all_inline_media&quot;:true,&quot;contributors_enabled&quot;:false,&quot;verified&quot;:false,&quot;profile_sidebar_border_color&quot;:&quot;C0DEED&quot;,&quot;profile_image_url_https&quot;:&quot;https:\/\/si0.twimg.com\/profile_images\/1093219692\/1280215248_43_normal.jpg&quot;,&quot;profile_image_url&quot;:&quot;http:\/\/a2.twimg.com\/profile_images\/1093219692\/1280215248_43_normal.jpg&quot;,&quot;listed_count&quot;:1276,&quot;profile_use_background_image&quot;:true,&quot;time_zone&quot;:&quot;Minsk&quot;,&quot;location&quot;:&quot;Moscow, Minsk.&quot;,&quot;profile_text_color&quot;:&quot;333333&quot;,&quot;lang&quot;:&quot;en&quot;,&quot;statuses_count&quot;:7028,&quot;geo_enabled&quot;:true,&quot;profile_background_image_url&quot;:&quot;http:\/\/a0.twimg.com\/images\/themes\/theme1\/bg.png&quot;,&quot;favourites_count&quot;:855,&quot;url&quot;:&quot;http:\/\/www.koffboy.com&quot;,&quot;id_str&quot;:&quot;58908838&quot;,&quot;profile_link_color&quot;:&quot;0084B4&quot;,&quot;followers_count&quot;:40703,&quot;id&quot;:58908838,&quot;default_profile_image&quot;:false},&quot;retweeted&quot;:false,&quot;in_reply_to_status_id_str&quot;:null,&quot;entities&quot;:{&quot;urls&quot;:[],&quot;hashtags&quot;:[],&quot;user_mentions&quot;:[]},&quot;source&quot;:&quot;web&quot;,&quot;in_reply_to_user_id_str&quot;:null,&quot;id_str&quot;:&quot;126918239279259649&quot;,&quot;place&quot;:null,&quot;geo&quot;:null,&quot;id&quot;:126918239279259649,&quot;contributors&quot;:null,&quot;coordinates&quot;:null,&quot;text&quot;:&quot;\u041b\u0435\u043d\u044c \u0432\u043e\u0437\u043d\u0438\u043a\u0430\u0435\u0442 \u0432 \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u0435 \u043d\u0435\u0445\u0432\u0430\u0442\u043a\u0438 \u0432 \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u043c\u0435 \u043f\u0438\u0437\u0434\u044e\u043b\u0435\u0439.&quot;}">
+
+
+
+	<div class="tweet-dogear"></div>
+	<div class="tweet-image">
+
+<img height="48" width="48" src='http://a2.twimg.com/profile_images/1093219692/1280215248_43_normal.jpg' alt='€íäðåé' class='user-profile-link' data-user-id='58908838'/>
+
+
+	</div>
+	<div class="tweet-content">
+		<div class="tweet-row">
+
+
+
+<span class='tweet-user-name'>
+	<a class='tweet-screen-name user-profile-link' data-user-id='58908838' href='/#!/koffboy' title='€íäðåé'>koffboy</a>
+	<span class='tweet-full-name'>€íäðåé</span>
+
+</span>
+
+
+			<div class="tweet-corner">
+				<div class='tweet-meta'>
+	<span class='icons'>
+
+
+
+
+
+
+
+
+		<div class="extra-icons">
+
+
+				<span class="inlinemedia-icons js-icon-container"></span>
+
+
+
+		</div>
+	</span>
+</div>
+
+
+			</div>
+		</div>
+		<div class="tweet-row">
+			<div class="tweet-text js-tweet-text">‹åíü âîçíèêàåò â ðåçóëüòàòå íåõâàòêè â îðãàíèçìå ïèçäþëåé.</div>
+
+		</div>
+
+			<div class="tweet-row">
+				<a href="/#!/koffboy/status/126918239279259649" class="tweet-timestamp js-permalink" title=""><span class="_timestamp" data-time="Thu Oct 20 07:10:40 +0000 2011" data-long-form="true"></span></a>
+				<span class="tweet-actions js-actions" data-tweet-id="126918239279259649">
+
+		<span class="tweet-action action-favorite">
+
+				<a href="#" class="favorite-action js-toggle-fav" title="Favorite"><span><i></i><b>Favorite</b></span></a>
+
+
+
+		</span>
+
+
+
+				<span class="tweet-action action-retweet">
+					<a href="#" class="retweet-action js-toggle-rt" title="Retweet"><span><i></i><b>Retweet</b></span></a>
+
+				</span>
+
+
+
+
+		<a href="#" class="reply-action js-action-reply" data-screen-name="koffboy" title="Reply"><span><i></i><b>Reply</b></span></a>
+
+
+
+
+</span>
+
+
+
+			</div>
+
+
+
+
+
+
+	</div>
+</div>
+
+
+
+
+
+
+
+</div>
+<div class='js-stream-item stream-item' data-item-id="126918191027990528" data-item-type="tweet" id="stream-item-tweet-126918191027990528">
+
+
+
+
+<div class="more">&raquo;</div>
+<div class="stream-item-content tweet js-actionable-tweet js-stream-tweet stream-tweet  "
+	data-is-reply-to="false"
+	data-tweet-id="126918191027990528"
+
+	data-item-id="126918191027990528"
+
+
+
+	data-screen-name="robertnyman"
+	data-user-id="8414132"
+
+
+	data-status="{&quot;in_reply_to_user_id&quot;:null,&quot;created_at&quot;:&quot;Thu Oct 20 07:10:29 +0000 2011&quot;,&quot;retweet_count&quot;:2,&quot;in_reply_to_status_id&quot;:null,&quot;favorited&quot;:false,&quot;in_reply_to_screen_name&quot;:null,&quot;truncated&quot;:false,&quot;user&quot;:{&quot;profile_background_color&quot;:&quot;C6E2EE&quot;,&quot;protected&quot;:false,&quot;is_translator&quot;:false,&quot;default_profile&quot;:false,&quot;profile_background_tile&quot;:false,&quot;profile_background_image_url_https&quot;:&quot;https:\/\/si0.twimg.com\/images\/themes\/theme2\/bg.gif&quot;,&quot;created_at&quot;:&quot;Fri Aug 24 21:42:06 +0000 2007&quot;,&quot;screen_name&quot;:&quot;robertnyman&quot;,&quot;name&quot;:&quot;Robert Nyman&quot;,&quot;follow_request_sent&quot;:false,&quot;following&quot;:true,&quot;friends_count&quot;:42,&quot;profile_sidebar_fill_color&quot;:&quot;DAECF4&quot;,&quot;notifications&quot;:false,&quot;utc_offset&quot;:3600,&quot;description&quot;:&quot;Technical Evangelist for Mozilla who gives talks and blogs about HTML5, CSS, JavaScript and the Open Web. Opinions are (mostly) mine. :-)&quot;,&quot;show_all_inline_media&quot;:false,&quot;contributors_enabled&quot;:false,&quot;verified&quot;:false,&quot;profile_sidebar_border_color&quot;:&quot;C6E2EE&quot;,&quot;profile_image_url_https&quot;:&quot;https:\/\/si0.twimg.com\/profile_images\/1365729789\/me_normal.jpg&quot;,&quot;profile_image_url&quot;:&quot;http:\/\/a1.twimg.com\/profile_images\/1365729789\/me_normal.jpg&quot;,&quot;listed_count&quot;:492,&quot;profile_use_background_image&quot;:true,&quot;time_zone&quot;:&quot;Stockholm&quot;,&quot;location&quot;:&quot;Stockholm&quot;,&quot;profile_text_color&quot;:&quot;663B12&quot;,&quot;lang&quot;:&quot;en&quot;,&quot;statuses_count&quot;:16212,&quot;geo_enabled&quot;:false,&quot;profile_background_image_url&quot;:&quot;http:\/\/a1.twimg.com\/images\/themes\/theme2\/bg.gif&quot;,&quot;favourites_count&quot;:29,&quot;url&quot;:&quot;http:\/\/robertnyman.com&quot;,&quot;id_str&quot;:&quot;8414132&quot;,&quot;profile_link_color&quot;:&quot;1F98C7&quot;,&quot;followers_count&quot;:4477,&quot;id&quot;:8414132,&quot;default_profile_image&quot;:false},&quot;retweeted&quot;:false,&quot;possibly_sensitive&quot;:false,&quot;in_reply_to_status_id_str&quot;:null,&quot;entities&quot;:{&quot;urls&quot;:[{&quot;indices&quot;:[50,70],&quot;url&quot;:&quot;http:\/\/t.co\/1eYM5gIJ&quot;,&quot;display_url&quot;:&quot;mattsurabian.com\/duckhunt\/&quot;,&quot;expanded_url&quot;:&quot;http:\/\/mattsurabian.com\/duckhunt\/&quot;}],&quot;hashtags&quot;:[],&quot;user_mentions&quot;:[]},&quot;source&quot;:&quot;\u003Ca href=\&quot;http:\/\/itunes.apple.com\/us\/app\/twitter\/id409789998?mt=12\&quot; rel=\&quot;nofollow\&quot;\u003ETwitter for Mac\u003C\/a\u003E&quot;,&quot;in_reply_to_user_id_str&quot;:null,&quot;id_str&quot;:&quot;126918191027990528&quot;,&quot;place&quot;:null,&quot;geo&quot;:null,&quot;id&quot;:126918191027990528,&quot;contributors&quot;:null,&quot;coordinates&quot;:null,&quot;text&quot;:&quot;Nintendo&#39;s ol&#39; Duck Hunt via HTML5 + JavaScript - http:\/\/t.co\/1eYM5gIJ&quot;}">
+
+
+
+	<div class="tweet-dogear"></div>
+	<div class="tweet-image">
+
+<img height="48" width="48" src='http://a1.twimg.com/profile_images/1365729789/me_normal.jpg' alt='Robert Nyman' class='user-profile-link' data-user-id='8414132'/>
+
+
+	</div>
+	<div class="tweet-content">
+		<div class="tweet-row">
+
+
+
+<span class='tweet-user-name'>
+	<a class='tweet-screen-name user-profile-link' data-user-id='8414132' href='/#!/robertnyman' title='Robert Nyman'>robertnyman</a>
+	<span class='tweet-full-name'>Robert Nyman</span>
+
+</span>
+
+
+			<div class="tweet-corner">
+				<div class='tweet-meta'>
+	<span class='icons'>
+
+
+
+
+
+
+
+
+		<div class="extra-icons">
+
+
+				<span class="inlinemedia-icons js-icon-container"></span>
+
+
+
+		</div>
+	</span>
+</div>
+
+
+			</div>
+		</div>
+		<div class="tweet-row">
+			<div class="tweet-text js-tweet-text">Nintendo's ol' Duck Hunt via HTML5 + JavaScript - <a  data-expanded-url="http://mattsurabian.com/duckhunt/"  class="twitter-timeline-link"href="http://t.co/1eYM5gIJ" rel="nofollow" class="twitter-timeline-link">mattsurabian.com/duckhunt/</a></div>
+
+		</div>
+
+			<div class="tweet-row">
+				<a href="/#!/robertnyman/status/126918191027990528" class="tweet-timestamp js-permalink" title=""><span class="_timestamp" data-time="Thu Oct 20 07:10:29 +0000 2011" data-long-form="true"></span></a>
+				<span class="tweet-actions js-actions" data-tweet-id="126918191027990528">
+
+		<span class="tweet-action action-favorite">
+
+				<a href="#" class="favorite-action js-toggle-fav" title="Favorite"><span><i></i><b>Favorite</b></span></a>
+
+
+
+		</span>
+
+
+
+				<span class="tweet-action action-retweet">
+					<a href="#" class="retweet-action js-toggle-rt" title="Retweet"><span><i></i><b>Retweet</b></span></a>
+
+				</span>
+
+
+
+
+		<a href="#" class="reply-action js-action-reply" data-screen-name="robertnyman" title="Reply"><span><i></i><b>Reply</b></span></a>
+
+
+
+
+</span>
+
+
+
+			</div>
+
+
+
+
+
+
+	</div>
+</div>
+
+
+
+
+
+
+
+</div>
+<div class='js-stream-item stream-item' data-item-id="126917992314437632" data-item-type="tweet" id="stream-item-tweet-126917992314437632">
+
+
+
+
+<div class="more">&raquo;</div>
+<div class="stream-item-content tweet js-actionable-tweet js-stream-tweet stream-tweet  "
+	data-is-reply-to="false"
+	data-tweet-id="126917992314437632"
+
+	data-item-id="126917992314437632"
+
+
+
+	data-screen-name="MacRadar"
+	data-user-id="19036497"
+
+
+	data-status="{&quot;in_reply_to_user_id&quot;:null,&quot;created_at&quot;:&quot;Thu Oct 20 07:09:42 +0000 2011&quot;,&quot;retweet_count&quot;:0,&quot;in_reply_to_status_id&quot;:null,&quot;favorited&quot;:false,&quot;in_reply_to_screen_name&quot;:null,&quot;truncated&quot;:false,&quot;user&quot;:{&quot;profile_background_color&quot;:&quot;eeeeee&quot;,&quot;protected&quot;:false,&quot;is_translator&quot;:false,&quot;profile_background_tile&quot;:true,&quot;profile_background_image_url_https&quot;:&quot;https:\/\/si0.twimg.com\/profile_background_images\/10413126\/stripes3.png&quot;,&quot;created_at&quot;:&quot;Thu Jan 15 20:08:46 +0000 2009&quot;,&quot;screen_name&quot;:&quot;MacRadar&quot;,&quot;name&quot;:&quot;MacRadar&quot;,&quot;follow_request_sent&quot;:false,&quot;following&quot;:true,&quot;friends_count&quot;:33,&quot;profile_sidebar_fill_color&quot;:&quot;F3F3F3&quot;,&quot;notifications&quot;:false,&quot;utc_offset&quot;:10800,&quot;description&quot;:&quot;\u041e\u0444\u0438\u0446\u0438\u0430\u043b\u044c\u043d\u044b\u0439 \u0442\u0432\u0438\u0442\u0442\u0435\u0440-\u043a\u0430\u043d\u0430\u043b \u0431\u043b\u043e\u0433\u0430 MacRadar. \u041d\u043e\u0432\u043e\u0441\u0442\u0438 Apple \u0438 \u043f\u043e\u043b\u0435\u0437\u043d\u044b\u0435 \u0441\u043e\u0432\u0435\u0442\u044b \u0432 140 \u0437\u043d\u0430\u043a\u0430\u0445. \u0412\u0435\u0434\u0443\u0449\u0438\u0439 \u2014 @yashnikov&quot;,&quot;show_all_inline_media&quot;:false,&quot;contributors_enabled&quot;:false,&quot;verified&quot;:false,&quot;profile_sidebar_border_color&quot;:&quot;c4c4c4&quot;,&quot;profile_image_url_https&quot;:&quot;https:\/\/si0.twimg.com\/profile_images\/186314357\/mr_80_normal.gif&quot;,&quot;profile_image_url&quot;:&quot;http:\/\/a2.twimg.com\/profile_images\/186314357\/mr_80_normal.gif&quot;,&quot;listed_count&quot;:217,&quot;profile_use_background_image&quot;:false,&quot;time_zone&quot;:&quot;Moscow&quot;,&quot;location&quot;:&quot;&quot;,&quot;profile_text_color&quot;:&quot;333333&quot;,&quot;lang&quot;:&quot;en&quot;,&quot;statuses_count&quot;:5294,&quot;geo_enabled&quot;:false,&quot;profile_background_image_url&quot;:&quot;http:\/\/a0.twimg.com\/profile_background_images\/10413126\/stripes3.png&quot;,&quot;favourites_count&quot;:4,&quot;url&quot;:&quot;http:\/\/macradar.ru&quot;,&quot;id_str&quot;:&quot;19036497&quot;,&quot;profile_link_color&quot;:&quot;6c67f4&quot;,&quot;followers_count&quot;:2736,&quot;id&quot;:19036497,&quot;default_profile_image&quot;:false,&quot;default_profile&quot;:false},&quot;retweeted&quot;:false,&quot;possibly_sensitive&quot;:false,&quot;in_reply_to_status_id_str&quot;:null,&quot;entities&quot;:{&quot;urls&quot;:[{&quot;indices&quot;:[63,83],&quot;url&quot;:&quot;http:\/\/t.co\/jmosxPsq&quot;,&quot;display_url&quot;:&quot;pit.dirty.ru\/dirty\/1\/2011\/1\u2026&quot;,&quot;expanded_url&quot;:&quot;http:\/\/pit.dirty.ru\/dirty\/1\/2011\/10\/20\/34755-013624-0d8c59d489ff13c7bb51fabf56672cd7.gif&quot;}],&quot;hashtags&quot;:[],&quot;user_mentions&quot;:[{&quot;name&quot;:&quot;Alex Ponomar&quot;,&quot;screen_name&quot;:&quot;ponomar&quot;,&quot;indices&quot;:[11,19],&quot;id_str&quot;:&quot;9561362&quot;,&quot;id&quot;:9561362}]},&quot;source&quot;:&quot;\u003Ca href=\&quot;http:\/\/itunes.apple.com\/us\/app\/twitter\/id409789998?mt=12\&quot; rel=\&quot;nofollow\&quot;\u003ETwitter for Mac\u003C\/a\u003E&quot;,&quot;in_reply_to_user_id_str&quot;:null,&quot;id_str&quot;:&quot;126917992314437632&quot;,&quot;place&quot;:null,&quot;geo&quot;:null,&quot;id&quot;:126917992314437632,&quot;contributors&quot;:null,&quot;coordinates&quot;:null,&quot;text&quot;:&quot;\u041e\u0442\u043b\u0438\u0447\u043d\u043e RT @ponomar: \u041a\u043e\u0441\u0442\u044e\u043c \u043d\u0430 Halloween \u0434\u043b\u044f \u043f\u043e\u043a\u043b\u043e\u043d\u043d\u0438\u043a\u043e\u0432 Pixar http:\/\/t.co\/jmosxPsq&quot;}">
+
+
+
+	<div class="tweet-dogear"></div>
+	<div class="tweet-image">
+
+<img height="48" width="48" src='http://a2.twimg.com/profile_images/186314357/mr_80_normal.gif' alt='MacRadar' class='user-profile-link' data-user-id='19036497'/>
+
+
+	</div>
+	<div class="tweet-content">
+		<div class="tweet-row">
+
+
+
+<span class='tweet-user-name'>
+	<a class='tweet-screen-name user-profile-link' data-user-id='19036497' href='/#!/MacRadar' title='MacRadar'>MacRadar</a>
+	<span class='tweet-full-name'>MacRadar</span>
+
+</span>
+
+
+			<div class="tweet-corner">
+				<div class='tweet-meta'>
+	<span class='icons'>
+
+
+
+
+
+
+
+
+		<div class="extra-icons">
+
+
+				<span class="inlinemedia-icons js-icon-container"></span>
+
+
+
+		</div>
+	</span>
+</div>
+
+
+			</div>
+		</div>
+		<div class="tweet-row">
+			<div class="tweet-text js-tweet-text">Žòëè÷íî RT @<a class="tweet-url twitter-atreply" href="/#!/ponomar" rel="nofollow">ponomar</a>: Šîñòþì íà Halloween äëß ïîêëîííèêîâ Pixar <a  data-expanded-url="http://pit.dirty.ru/dirty/1/2011/10/20/34755-013624-0d8c59d489ff13c7bb51fabf56672cd7.gif"  class="twitter-timeline-link"href="http://t.co/jmosxPsq" rel="nofollow" class="twitter-timeline-link">pit.dirty.ru/dirty/1/2011/1É</a></div>
+
+		</div>
+
+			<div class="tweet-row">
+				<a href="/#!/MacRadar/status/126917992314437632" class="tweet-timestamp js-permalink" title=""><span class="_timestamp" data-time="Thu Oct 20 07:09:42 +0000 2011" data-long-form="true"></span></a>
+				<span class="tweet-actions js-actions" data-tweet-id="126917992314437632">
+
+		<span class="tweet-action action-favorite">
+
+				<a href="#" class="favorite-action js-toggle-fav" title="Favorite"><span><i></i><b>Favorite</b></span></a>
+
+
+
+		</span>
+
+
+
+				<span class="tweet-action action-retweet">
+					<a href="#" class="retweet-action js-toggle-rt" title="Retweet"><span><i></i><b>Retweet</b></span></a>
+
+				</span>
+
+
+
+
+		<a href="#" class="reply-action js-action-reply" data-screen-name="MacRadar" title="Reply"><span><i></i><b>Reply</b></span></a>
+
+
+
+
+</span>
+
+
+
+			</div>
+
+
+
+
+
+
+	</div>
+</div>
+
+
+
+
+
+
+
+</div>
+<div class='js-stream-item stream-item' data-item-id="126917125964181505" data-item-type="tweet" id="stream-item-tweet-126917125964181505">
+
+
+
+
+<div class="more">&raquo;</div>
+<div class="stream-item-content tweet js-actionable-tweet js-stream-tweet stream-tweet  "
+	data-is-reply-to="true"
+	data-tweet-id="126917125964181505"
+
+	data-item-id="126917125964181505"
+
+
+
+	data-screen-name="robertnyman"
+	data-user-id="8414132"
+
+
+	data-status="{&quot;in_reply_to_user_id&quot;:532923,&quot;created_at&quot;:&quot;Thu Oct 20 07:06:15 +0000 2011&quot;,&quot;retweet_count&quot;:0,&quot;in_reply_to_status_id&quot;:126917059941646336,&quot;favorited&quot;:false,&quot;in_reply_to_screen_name&quot;:&quot;mathias&quot;,&quot;truncated&quot;:false,&quot;user&quot;:{&quot;profile_background_color&quot;:&quot;C6E2EE&quot;,&quot;protected&quot;:false,&quot;is_translator&quot;:false,&quot;profile_background_tile&quot;:false,&quot;profile_background_image_url_https&quot;:&quot;https:\/\/si0.twimg.com\/images\/themes\/theme2\/bg.gif&quot;,&quot;created_at&quot;:&quot;Fri Aug 24 21:42:06 +0000 2007&quot;,&quot;screen_name&quot;:&quot;robertnyman&quot;,&quot;name&quot;:&quot;Robert Nyman&quot;,&quot;default_profile&quot;:false,&quot;follow_request_sent&quot;:false,&quot;following&quot;:true,&quot;friends_count&quot;:42,&quot;profile_sidebar_fill_color&quot;:&quot;DAECF4&quot;,&quot;notifications&quot;:false,&quot;utc_offset&quot;:3600,&quot;description&quot;:&quot;Technical Evangelist for Mozilla who gives talks and blogs about HTML5, CSS, JavaScript and the Open Web. Opinions are (mostly) mine. :-)&quot;,&quot;show_all_inline_media&quot;:false,&quot;contributors_enabled&quot;:false,&quot;verified&quot;:false,&quot;profile_sidebar_border_color&quot;:&quot;C6E2EE&quot;,&quot;profile_image_url_https&quot;:&quot;https:\/\/si0.twimg.com\/profile_images\/1365729789\/me_normal.jpg&quot;,&quot;profile_image_url&quot;:&quot;http:\/\/a1.twimg.com\/profile_images\/1365729789\/me_normal.jpg&quot;,&quot;listed_count&quot;:492,&quot;profile_use_background_image&quot;:true,&quot;time_zone&quot;:&quot;Stockholm&quot;,&quot;location&quot;:&quot;Stockholm&quot;,&quot;profile_text_color&quot;:&quot;663B12&quot;,&quot;lang&quot;:&quot;en&quot;,&quot;statuses_count&quot;:16206,&quot;geo_enabled&quot;:false,&quot;profile_background_image_url&quot;:&quot;http:\/\/a1.twimg.com\/images\/themes\/theme2\/bg.gif&quot;,&quot;favourites_count&quot;:29,&quot;url&quot;:&quot;http:\/\/robertnyman.com&quot;,&quot;id_str&quot;:&quot;8414132&quot;,&quot;profile_link_color&quot;:&quot;1F98C7&quot;,&quot;followers_count&quot;:4477,&quot;id&quot;:8414132,&quot;default_profile_image&quot;:false},&quot;retweeted&quot;:false,&quot;in_reply_to_status_id_str&quot;:&quot;126917059941646336&quot;,&quot;entities&quot;:{&quot;urls&quot;:[],&quot;hashtags&quot;:[],&quot;user_mentions&quot;:[{&quot;name&quot;:&quot;Mathias Bynens \ue00d&quot;,&quot;screen_name&quot;:&quot;mathias&quot;,&quot;indices&quot;:[0,8],&quot;id_str&quot;:&quot;532923&quot;,&quot;id&quot;:532923}]},&quot;source&quot;:&quot;\u003Ca href=\&quot;http:\/\/itunes.apple.com\/us\/app\/twitter\/id409789998?mt=12\&quot; rel=\&quot;nofollow\&quot;\u003ETwitter for Mac\u003C\/a\u003E&quot;,&quot;in_reply_to_user_id_str&quot;:&quot;532923&quot;,&quot;id_str&quot;:&quot;126917125964181505&quot;,&quot;place&quot;:null,&quot;geo&quot;:null,&quot;id&quot;:126917125964181505,&quot;contributors&quot;:null,&quot;coordinates&quot;:null,&quot;text&quot;:&quot;@mathias As if that would be an option&quot;}">
+
+
+
+	<div class="tweet-dogear"></div>
+	<div class="tweet-image">
+
+<img height="48" width="48" src='http://a1.twimg.com/profile_images/1365729789/me_normal.jpg' alt='Robert Nyman' class='user-profile-link' data-user-id='8414132'/>
+
+
+	</div>
+	<div class="tweet-content">
+		<div class="tweet-row">
+
+
+
+<span class='tweet-user-name'>
+	<a class='tweet-screen-name user-profile-link' data-user-id='8414132' href='/#!/robertnyman' title='Robert Nyman'>robertnyman</a>
+	<span class='tweet-full-name'>Robert Nyman</span>
+
+</span>
+
+
+			<div class="tweet-corner">
+				<div class='tweet-meta'>
+	<span class='icons'>
+
+
+
+
+
+
+
+
+		<div class="extra-icons">
+
+
+					<span class='reply-icon icon js-reply-notice'>@</span>
+
+				<span class="inlinemedia-icons js-icon-container"></span>
+
+
+
+		</div>
+	</span>
+</div>
+
+
+			</div>
+		</div>
+		<div class="tweet-row">
+			<div class="tweet-text js-tweet-text">@<a class="tweet-url twitter-atreply" href="/#!/mathias" rel="nofollow">mathias</a> As if that would be an option</div>
+
+		</div>
+
+			<div class="tweet-row">
+				<a href="/#!/robertnyman/status/126917125964181505" class="tweet-timestamp js-permalink" title=""><span class="_timestamp" data-time="Thu Oct 20 07:06:15 +0000 2011" data-long-form="true"></span></a>
+				<span class="tweet-actions js-actions" data-tweet-id="126917125964181505">
+
+		<span class="tweet-action action-favorite">
+
+				<a href="#" class="favorite-action js-toggle-fav" title="Favorite"><span><i></i><b>Favorite</b></span></a>
+
+
+
+		</span>
+
+
+
+				<span class="tweet-action action-retweet">
+					<a href="#" class="retweet-action js-toggle-rt" title="Retweet"><span><i></i><b>Retweet</b></span></a>
+
+				</span>
+
+
+
+
+		<a href="#" class="reply-action js-action-reply" data-screen-name="robertnyman" title="Reply"><span><i></i><b>Reply</b></span></a>
+
+
+
+
+</span>
+
+
+
+			</div>
+
+
+
+
+
+
+	</div>
+</div>
+
+
+
+
+
+
+
+</div>
+<div class='js-stream-item stream-item' data-item-id="126917059941646336" data-item-type="tweet" id="stream-item-tweet-126917059941646336">
+
+
+
+
+<div class="more">&raquo;</div>
+<div class="stream-item-content tweet js-actionable-tweet js-stream-tweet stream-tweet  "
+	data-is-reply-to="true"
+	data-tweet-id="126917059941646336"
+
+	data-item-id="126917059941646336"
+
+
+
+	data-screen-name="mathias"
+	data-user-id="532923"
+
+
+	data-status="{&quot;in_reply_to_user_id&quot;:8414132,&quot;created_at&quot;:&quot;Thu Oct 20 07:05:59 +0000 2011&quot;,&quot;retweet_count&quot;:0,&quot;in_reply_to_status_id&quot;:126916930543173632,&quot;favorited&quot;:false,&quot;in_reply_to_screen_name&quot;:&quot;robertnyman&quot;,&quot;truncated&quot;:false,&quot;user&quot;:{&quot;profile_background_color&quot;:&quot;131516&quot;,&quot;protected&quot;:false,&quot;is_translator&quot;:false,&quot;profile_background_tile&quot;:true,&quot;profile_background_image_url_https&quot;:&quot;https:\/\/si0.twimg.com\/images\/themes\/theme14\/bg.gif&quot;,&quot;created_at&quot;:&quot;Thu Jan 04 11:37:32 +0000 2007&quot;,&quot;screen_name&quot;:&quot;mathias&quot;,&quot;name&quot;:&quot;Mathias Bynens \ue00d&quot;,&quot;follow_request_sent&quot;:false,&quot;following&quot;:true,&quot;friends_count&quot;:268,&quot;profile_sidebar_fill_color&quot;:&quot;efefef&quot;,&quot;notifications&quot;:false,&quot;utc_offset&quot;:3600,&quot;description&quot;:&quot;Front-end web developer. I like bytes.&quot;,&quot;show_all_inline_media&quot;:false,&quot;contributors_enabled&quot;:false,&quot;verified&quot;:false,&quot;profile_sidebar_border_color&quot;:&quot;eeeeee&quot;,&quot;profile_image_url_https&quot;:&quot;https:\/\/si0.twimg.com\/profile_images\/1255767431\/kung-fu_normal.jpg&quot;,&quot;profile_image_url&quot;:&quot;http:\/\/a0.twimg.com\/profile_images\/1255767431\/kung-fu_normal.jpg&quot;,&quot;listed_count&quot;:383,&quot;profile_use_background_image&quot;:true,&quot;time_zone&quot;:&quot;Brussels&quot;,&quot;location&quot;:&quot;Belgium&quot;,&quot;default_profile&quot;:false,&quot;profile_text_color&quot;:&quot;333333&quot;,&quot;lang&quot;:&quot;en&quot;,&quot;statuses_count&quot;:10192,&quot;geo_enabled&quot;:true,&quot;profile_background_image_url&quot;:&quot;http:\/\/a1.twimg.com\/images\/themes\/theme14\/bg.gif&quot;,&quot;favourites_count&quot;:1535,&quot;url&quot;:&quot;http:\/\/mths.be\/&quot;,&quot;id_str&quot;:&quot;532923&quot;,&quot;profile_link_color&quot;:&quot;009999&quot;,&quot;followers_count&quot;:4332,&quot;id&quot;:532923,&quot;default_profile_image&quot;:false},&quot;retweeted&quot;:false,&quot;in_reply_to_status_id_str&quot;:&quot;126916930543173632&quot;,&quot;entities&quot;:{&quot;urls&quot;:[],&quot;hashtags&quot;:[],&quot;user_mentions&quot;:[{&quot;name&quot;:&quot;Robert Nyman&quot;,&quot;screen_name&quot;:&quot;robertnyman&quot;,&quot;indices&quot;:[0,12],&quot;id_str&quot;:&quot;8414132&quot;,&quot;id&quot;:8414132}]},&quot;source&quot;:&quot;\u003Ca href=\&quot;http:\/\/itunes.apple.com\/us\/app\/twitter\/id409789998?mt=12\&quot; rel=\&quot;nofollow\&quot;\u003ETwitter for Mac\u003C\/a\u003E&quot;,&quot;in_reply_to_user_id_str&quot;:&quot;8414132&quot;,&quot;id_str&quot;:&quot;126917059941646336&quot;,&quot;place&quot;:null,&quot;geo&quot;:null,&quot;id&quot;:126917059941646336,&quot;contributors&quot;:null,&quot;coordinates&quot;:null,&quot;text&quot;:&quot;@robertnyman Don\u2019t try IE6. Seriously.&quot;}">
+
+
+
+	<div class="tweet-dogear"></div>
+	<div class="tweet-image">
+
+<img height="48" width="48" src='http://a0.twimg.com/profile_images/1255767431/kung-fu_normal.jpg' alt='Mathias Bynens ?' class='user-profile-link' data-user-id='532923'/>
+
+
+	</div>
+	<div class="tweet-content">
+		<div class="tweet-row">
+
+
+
+<span class='tweet-user-name'>
+	<a class='tweet-screen-name user-profile-link' data-user-id='532923' href='/#!/mathias' title='Mathias Bynens ?'>mathias</a>
+	<span class='tweet-full-name'>Mathias Bynens ?</span>
+
+</span>
+
+
+			<div class="tweet-corner">
+				<div class='tweet-meta'>
+	<span class='icons'>
+
+
+
+
+
+
+
+
+		<div class="extra-icons">
+
+
+					<span class='reply-icon icon js-reply-notice'>@</span>
+
+				<span class="inlinemedia-icons js-icon-container"></span>
+
+
+
+		</div>
+	</span>
+</div>
+
+
+			</div>
+		</div>
+		<div class="tweet-row">
+			<div class="tweet-text js-tweet-text">@<a class="tweet-url twitter-atreply" href="/#!/robertnyman" rel="nofollow">robertnyman</a> DonÕt try IE6. Seriously.</div>
+
+		</div>
+
+			<div class="tweet-row">
+				<a href="/#!/mathias/status/126917059941646336" class="tweet-timestamp js-permalink" title=""><span class="_timestamp" data-time="Thu Oct 20 07:05:59 +0000 2011" data-long-form="true"></span></a>
+				<span class="tweet-actions js-actions" data-tweet-id="126917059941646336">
+
+		<span class="tweet-action action-favorite">
+
+				<a href="#" class="favorite-action js-toggle-fav" title="Favorite"><span><i></i><b>Favorite</b></span></a>
+
+
+
+		</span>
+
+
+
+				<span class="tweet-action action-retweet">
+					<a href="#" class="retweet-action js-toggle-rt" title="Retweet"><span><i></i><b>Retweet</b></span></a>
+
+				</span>
+
+
+
+
+		<a href="#" class="reply-action js-action-reply" data-screen-name="mathias" title="Reply"><span><i></i><b>Reply</b></span></a>
+
+
+
+
+</span>
+
+
+
+			</div>
+
+
+
+
+
+
+	</div>
+</div>
+
+
+
+
+
+
+
+</div>
+<div class='js-stream-item stream-item' data-item-id="126916930543173632" data-item-type="tweet" id="stream-item-tweet-126916930543173632">
+
+
+
+
+<div class="more">&raquo;</div>
+<div class="stream-item-content tweet js-actionable-tweet js-stream-tweet stream-tweet  "
+	data-is-reply-to="true"
+	data-tweet-id="126916930543173632"
+
+	data-item-id="126916930543173632"
+
+
+
+	data-screen-name="robertnyman"
+	data-user-id="8414132"
+
+
+	data-status="{&quot;in_reply_to_user_id&quot;:532923,&quot;created_at&quot;:&quot;Thu Oct 20 07:05:28 +0000 2011&quot;,&quot;retweet_count&quot;:0,&quot;in_reply_to_status_id&quot;:126916810170826752,&quot;favorited&quot;:false,&quot;in_reply_to_screen_name&quot;:&quot;mathias&quot;,&quot;truncated&quot;:false,&quot;user&quot;:{&quot;profile_background_color&quot;:&quot;C6E2EE&quot;,&quot;protected&quot;:false,&quot;is_translator&quot;:false,&quot;profile_background_tile&quot;:false,&quot;profile_background_image_url_https&quot;:&quot;https:\/\/si0.twimg.com\/images\/themes\/theme2\/bg.gif&quot;,&quot;created_at&quot;:&quot;Fri Aug 24 21:42:06 +0000 2007&quot;,&quot;screen_name&quot;:&quot;robertnyman&quot;,&quot;name&quot;:&quot;Robert Nyman&quot;,&quot;follow_request_sent&quot;:false,&quot;following&quot;:true,&quot;friends_count&quot;:42,&quot;profile_sidebar_fill_color&quot;:&quot;DAECF4&quot;,&quot;default_profile&quot;:false,&quot;notifications&quot;:false,&quot;utc_offset&quot;:3600,&quot;description&quot;:&quot;Technical Evangelist for Mozilla who gives talks and blogs about HTML5, CSS, JavaScript and the Open Web. Opinions are (mostly) mine. :-)&quot;,&quot;show_all_inline_media&quot;:false,&quot;contributors_enabled&quot;:false,&quot;verified&quot;:false,&quot;profile_sidebar_border_color&quot;:&quot;C6E2EE&quot;,&quot;profile_image_url_https&quot;:&quot;https:\/\/si0.twimg.com\/profile_images\/1365729789\/me_normal.jpg&quot;,&quot;profile_image_url&quot;:&quot;http:\/\/a1.twimg.com\/profile_images\/1365729789\/me_normal.jpg&quot;,&quot;listed_count&quot;:492,&quot;profile_use_background_image&quot;:true,&quot;time_zone&quot;:&quot;Stockholm&quot;,&quot;location&quot;:&quot;Stockholm&quot;,&quot;profile_text_color&quot;:&quot;663B12&quot;,&quot;lang&quot;:&quot;en&quot;,&quot;statuses_count&quot;:16205,&quot;geo_enabled&quot;:false,&quot;profile_background_image_url&quot;:&quot;http:\/\/a1.twimg.com\/images\/themes\/theme2\/bg.gif&quot;,&quot;favourites_count&quot;:29,&quot;url&quot;:&quot;http:\/\/robertnyman.com&quot;,&quot;id_str&quot;:&quot;8414132&quot;,&quot;profile_link_color&quot;:&quot;1F98C7&quot;,&quot;followers_count&quot;:4477,&quot;id&quot;:8414132,&quot;default_profile_image&quot;:false},&quot;retweeted&quot;:false,&quot;in_reply_to_status_id_str&quot;:&quot;126916810170826752&quot;,&quot;entities&quot;:{&quot;urls&quot;:[],&quot;hashtags&quot;:[],&quot;user_mentions&quot;:[{&quot;name&quot;:&quot;Mathias Bynens \ue00d&quot;,&quot;screen_name&quot;:&quot;mathias&quot;,&quot;indices&quot;:[0,8],&quot;id_str&quot;:&quot;532923&quot;,&quot;id&quot;:532923}]},&quot;source&quot;:&quot;\u003Ca href=\&quot;http:\/\/itunes.apple.com\/us\/app\/twitter\/id409789998?mt=12\&quot; rel=\&quot;nofollow\&quot;\u003ETwitter for Mac\u003C\/a\u003E&quot;,&quot;in_reply_to_user_id_str&quot;:&quot;532923&quot;,&quot;id_str&quot;:&quot;126916930543173632&quot;,&quot;place&quot;:null,&quot;geo&quot;:null,&quot;id&quot;:126916930543173632,&quot;contributors&quot;:null,&quot;coordinates&quot;:null,&quot;text&quot;:&quot;@mathias Yes, I was curious to see how it would differ :-)&quot;}">
+
+
+
+	<div class="tweet-dogear"></div>
+	<div class="tweet-image">
+
+<img height="48" width="48" src='http://a1.twimg.com/profile_images/1365729789/me_normal.jpg' alt='Robert Nyman' class='user-profile-link' data-user-id='8414132'/>
+
+
+	</div>
+	<div class="tweet-content">
+		<div class="tweet-row">
+
+
+
+<span class='tweet-user-name'>
+	<a class='tweet-screen-name user-profile-link' data-user-id='8414132' href='/#!/robertnyman' title='Robert Nyman'>robertnyman</a>
+	<span class='tweet-full-name'>Robert Nyman</span>
+
+</span>
+
+
+			<div class="tweet-corner">
+				<div class='tweet-meta'>
+	<span class='icons'>
+
+
+
+
+
+
+
+
+		<div class="extra-icons">
+
+
+					<span class='reply-icon icon js-reply-notice'>@</span>
+
+				<span class="inlinemedia-icons js-icon-container"></span>
+
+
+
+		</div>
+	</span>
+</div>
+
+
+			</div>
+		</div>
+		<div class="tweet-row">
+			<div class="tweet-text js-tweet-text">@<a class="tweet-url twitter-atreply" href="/#!/mathias" rel="nofollow">mathias</a> Yes, I was curious to see how it would differ :-)</div>
+
+		</div>
+
+			<div class="tweet-row">
+				<a href="/#!/robertnyman/status/126916930543173632" class="tweet-timestamp js-permalink" title=""><span class="_timestamp" data-time="Thu Oct 20 07:05:28 +0000 2011" data-long-form="true"></span></a>
+				<span class="tweet-actions js-actions" data-tweet-id="126916930543173632">
+
+		<span class="tweet-action action-favorite">
+
+				<a href="#" class="favorite-action js-toggle-fav" title="Favorite"><span><i></i><b>Favorite</b></span></a>
+
+
+
+		</span>
+
+
+
+				<span class="tweet-action action-retweet">
+					<a href="#" class="retweet-action js-toggle-rt" title="Retweet"><span><i></i><b>Retweet</b></span></a>
+
+				</span>
+
+
+
+
+		<a href="#" class="reply-action js-action-reply" data-screen-name="robertnyman" title="Reply"><span><i></i><b>Reply</b></span></a>
+
+
+
+
+</span>
+
+
+
+			</div>
+
+
+
+
+
+
+	</div>
+</div>
+
+
+
+
+
+
+
+</div>
+<div class='js-stream-item stream-item' data-item-id="126916810170826752" data-item-type="tweet" id="stream-item-tweet-126916810170826752">
+
+
+
+
+<div class="more">&raquo;</div>
+<div class="stream-item-content tweet js-actionable-tweet js-stream-tweet stream-tweet  "
+	data-is-reply-to="true"
+	data-tweet-id="126916810170826752"
+
+	data-item-id="126916810170826752"
+
+
+
+	data-screen-name="mathias"
+	data-user-id="532923"
+
+
+	data-status="{&quot;in_reply_to_user_id&quot;:8414132,&quot;created_at&quot;:&quot;Thu Oct 20 07:05:00 +0000 2011&quot;,&quot;retweet_count&quot;:0,&quot;in_reply_to_status_id&quot;:126916643875078144,&quot;favorited&quot;:false,&quot;in_reply_to_screen_name&quot;:&quot;robertnyman&quot;,&quot;truncated&quot;:false,&quot;user&quot;:{&quot;profile_background_color&quot;:&quot;131516&quot;,&quot;protected&quot;:false,&quot;is_translator&quot;:false,&quot;default_profile&quot;:false,&quot;profile_background_tile&quot;:true,&quot;profile_background_image_url_https&quot;:&quot;https:\/\/si0.twimg.com\/images\/themes\/theme14\/bg.gif&quot;,&quot;created_at&quot;:&quot;Thu Jan 04 11:37:32 +0000 2007&quot;,&quot;screen_name&quot;:&quot;mathias&quot;,&quot;name&quot;:&quot;Mathias Bynens \ue00d&quot;,&quot;follow_request_sent&quot;:false,&quot;following&quot;:true,&quot;friends_count&quot;:268,&quot;profile_sidebar_fill_color&quot;:&quot;efefef&quot;,&quot;notifications&quot;:false,&quot;utc_offset&quot;:3600,&quot;description&quot;:&quot;Front-end web developer. I like bytes.&quot;,&quot;show_all_inline_media&quot;:false,&quot;contributors_enabled&quot;:false,&quot;verified&quot;:false,&quot;profile_sidebar_border_color&quot;:&quot;eeeeee&quot;,&quot;profile_image_url_https&quot;:&quot;https:\/\/si0.twimg.com\/profile_images\/1255767431\/kung-fu_normal.jpg&quot;,&quot;profile_image_url&quot;:&quot;http:\/\/a0.twimg.com\/profile_images\/1255767431\/kung-fu_normal.jpg&quot;,&quot;listed_count&quot;:383,&quot;profile_use_background_image&quot;:true,&quot;time_zone&quot;:&quot;Brussels&quot;,&quot;location&quot;:&quot;Belgium&quot;,&quot;profile_text_color&quot;:&quot;333333&quot;,&quot;lang&quot;:&quot;en&quot;,&quot;statuses_count&quot;:10191,&quot;geo_enabled&quot;:true,&quot;profile_background_image_url&quot;:&quot;http:\/\/a1.twimg.com\/images\/themes\/theme14\/bg.gif&quot;,&quot;favourites_count&quot;:1535,&quot;url&quot;:&quot;http:\/\/mths.be\/&quot;,&quot;id_str&quot;:&quot;532923&quot;,&quot;profile_link_color&quot;:&quot;009999&quot;,&quot;followers_count&quot;:4332,&quot;id&quot;:532923,&quot;default_profile_image&quot;:false},&quot;retweeted&quot;:false,&quot;in_reply_to_status_id_str&quot;:&quot;126916643875078144&quot;,&quot;entities&quot;:{&quot;urls&quot;:[],&quot;hashtags&quot;:[],&quot;user_mentions&quot;:[{&quot;name&quot;:&quot;Robert Nyman&quot;,&quot;screen_name&quot;:&quot;robertnyman&quot;,&quot;indices&quot;:[0,12],&quot;id_str&quot;:&quot;8414132&quot;,&quot;id&quot;:8414132},{&quot;name&quot;:&quot;Krijn Hoetmer&quot;,&quot;screen_name&quot;:&quot;krijnhoetmer&quot;,&quot;indices&quot;:[13,26],&quot;id_str&quot;:&quot;6994152&quot;,&quot;id&quot;:6994152}]},&quot;source&quot;:&quot;\u003Ca href=\&quot;http:\/\/itunes.apple.com\/us\/app\/twitter\/id409789998?mt=12\&quot; rel=\&quot;nofollow\&quot;\u003ETwitter for Mac\u003C\/a\u003E&quot;,&quot;in_reply_to_user_id_str&quot;:&quot;8414132&quot;,&quot;id_str&quot;:&quot;126916810170826752&quot;,&quot;place&quot;:null,&quot;geo&quot;:null,&quot;id&quot;:126916810170826752,&quot;contributors&quot;:null,&quot;coordinates&quot;:null,&quot;text&quot;:&quot;@robertnyman @krijnhoetmer You actually opened it more than once? :&#39;D&quot;}">
+
+
+
+	<div class="tweet-dogear"></div>
+	<div class="tweet-image">
+
+<img height="48" width="48" src='http://a0.twimg.com/profile_images/1255767431/kung-fu_normal.jpg' alt='Mathias Bynens ?' class='user-profile-link' data-user-id='532923'/>
+
+
+	</div>
+	<div class="tweet-content">
+		<div class="tweet-row">
+
+
+
+<span class='tweet-user-name'>
+	<a class='tweet-screen-name user-profile-link' data-user-id='532923' href='/#!/mathias' title='Mathias Bynens ?'>mathias</a>
+	<span class='tweet-full-name'>Mathias Bynens ?</span>
+
+</span>
+
+
+			<div class="tweet-corner">
+				<div class='tweet-meta'>
+	<span class='icons'>
+
+
+
+
+
+
+
+
+		<div class="extra-icons">
+
+
+					<span class='reply-icon icon js-reply-notice'>@</span>
+
+				<span class="inlinemedia-icons js-icon-container"></span>
+
+
+
+		</div>
+	</span>
+</div>
+
+
+			</div>
+		</div>
+		<div class="tweet-row">
+			<div class="tweet-text js-tweet-text">@<a class="tweet-url twitter-atreply" href="/#!/robertnyman" rel="nofollow">robertnyman</a> @<a class="tweet-url twitter-atreply" href="/#!/krijnhoetmer" rel="nofollow">krijnhoetmer</a> You actually opened it more than once? :'D</div>
+
+		</div>
+
+			<div class="tweet-row">
+				<a href="/#!/mathias/status/126916810170826752" class="tweet-timestamp js-permalink" title=""><span class="_timestamp" data-time="Thu Oct 20 07:05:00 +0000 2011" data-long-form="true"></span></a>
+				<span class="tweet-actions js-actions" data-tweet-id="126916810170826752">
+
+		<span class="tweet-action action-favorite">
+
+				<a href="#" class="favorite-action js-toggle-fav" title="Favorite"><span><i></i><b>Favorite</b></span></a>
+
+
+
+		</span>
+
+
+
+				<span class="tweet-action action-retweet">
+					<a href="#" class="retweet-action js-toggle-rt" title="Retweet"><span><i></i><b>Retweet</b></span></a>
+
+				</span>
+
+
+
+
+		<a href="#" class="reply-action js-action-reply" data-screen-name="mathias" title="Reply"><span><i></i><b>Reply</b></span></a>
+
+
+
+
+</span>
+
+
+
+			</div>
+
+
+
+
+
+
+	</div>
+</div>
+
+
+
+
+
+
+
+</div>
+<div class='js-stream-item stream-item' data-item-id="126916801610252290" data-item-type="tweet" id="stream-item-tweet-126916801610252290">
+
+
+
+
+<div class="more">&raquo;</div>
+<div class="stream-item-content tweet js-actionable-tweet js-stream-tweet stream-tweet  "
+	data-is-reply-to="true"
+	data-tweet-id="126916801610252290"
+
+	data-item-id="126916801610252290"
+
+
+
+	data-screen-name="robertnyman"
+	data-user-id="8414132"
+
+
+	data-status="{&quot;in_reply_to_user_id&quot;:532923,&quot;created_at&quot;:&quot;Thu Oct 20 07:04:58 +0000 2011&quot;,&quot;retweet_count&quot;:0,&quot;in_reply_to_status_id&quot;:126916673134538752,&quot;favorited&quot;:false,&quot;in_reply_to_screen_name&quot;:&quot;mathias&quot;,&quot;truncated&quot;:false,&quot;user&quot;:{&quot;profile_background_color&quot;:&quot;C6E2EE&quot;,&quot;protected&quot;:false,&quot;is_translator&quot;:false,&quot;profile_background_tile&quot;:false,&quot;profile_background_image_url_https&quot;:&quot;https:\/\/si0.twimg.com\/images\/themes\/theme2\/bg.gif&quot;,&quot;created_at&quot;:&quot;Fri Aug 24 21:42:06 +0000 2007&quot;,&quot;screen_name&quot;:&quot;robertnyman&quot;,&quot;name&quot;:&quot;Robert Nyman&quot;,&quot;follow_request_sent&quot;:false,&quot;following&quot;:true,&quot;friends_count&quot;:42,&quot;profile_sidebar_fill_color&quot;:&quot;DAECF4&quot;,&quot;notifications&quot;:false,&quot;utc_offset&quot;:3600,&quot;description&quot;:&quot;Technical Evangelist for Mozilla who gives talks and blogs about HTML5, CSS, JavaScript and the Open Web. Opinions are (mostly) mine. :-)&quot;,&quot;show_all_inline_media&quot;:false,&quot;contributors_enabled&quot;:false,&quot;verified&quot;:false,&quot;profile_sidebar_border_color&quot;:&quot;C6E2EE&quot;,&quot;profile_image_url_https&quot;:&quot;https:\/\/si0.twimg.com\/profile_images\/1365729789\/me_normal.jpg&quot;,&quot;profile_image_url&quot;:&quot;http:\/\/a1.twimg.com\/profile_images\/1365729789\/me_normal.jpg&quot;,&quot;listed_count&quot;:492,&quot;profile_use_background_image&quot;:true,&quot;time_zone&quot;:&quot;Stockholm&quot;,&quot;location&quot;:&quot;Stockholm&quot;,&quot;profile_text_color&quot;:&quot;663B12&quot;,&quot;default_profile&quot;:false,&quot;lang&quot;:&quot;en&quot;,&quot;statuses_count&quot;:16206,&quot;geo_enabled&quot;:false,&quot;profile_background_image_url&quot;:&quot;http:\/\/a1.twimg.com\/images\/themes\/theme2\/bg.gif&quot;,&quot;favourites_count&quot;:29,&quot;url&quot;:&quot;http:\/\/robertnyman.com&quot;,&quot;id_str&quot;:&quot;8414132&quot;,&quot;profile_link_color&quot;:&quot;1F98C7&quot;,&quot;followers_count&quot;:4477,&quot;id&quot;:8414132,&quot;default_profile_image&quot;:false},&quot;retweeted&quot;:false,&quot;in_reply_to_status_id_str&quot;:&quot;126916673134538752&quot;,&quot;entities&quot;:{&quot;urls&quot;:[],&quot;hashtags&quot;:[],&quot;user_mentions&quot;:[{&quot;name&quot;:&quot;Mathias Bynens \ue00d&quot;,&quot;screen_name&quot;:&quot;mathias&quot;,&quot;indices&quot;:[0,8],&quot;id_str&quot;:&quot;532923&quot;,&quot;id&quot;:532923}]},&quot;source&quot;:&quot;\u003Ca href=\&quot;http:\/\/itunes.apple.com\/us\/app\/twitter\/id409789998?mt=12\&quot; rel=\&quot;nofollow\&quot;\u003ETwitter for Mac\u003C\/a\u003E&quot;,&quot;in_reply_to_user_id_str&quot;:&quot;532923&quot;,&quot;id_str&quot;:&quot;126916801610252290&quot;,&quot;place&quot;:null,&quot;geo&quot;:null,&quot;id&quot;:126916801610252290,&quot;contributors&quot;:null,&quot;coordinates&quot;:null,&quot;text&quot;:&quot;@mathias Life in Belgium must be really boring&quot;}">
+
+
+
+	<div class="tweet-dogear"></div>
+	<div class="tweet-image">
+
+<img height="48" width="48" src='http://a1.twimg.com/profile_images/1365729789/me_normal.jpg' alt='Robert Nyman' class='user-profile-link' data-user-id='8414132'/>
+
+
+	</div>
+	<div class="tweet-content">
+		<div class="tweet-row">
+
+
+
+<span class='tweet-user-name'>
+	<a class='tweet-screen-name user-profile-link' data-user-id='8414132' href='/#!/robertnyman' title='Robert Nyman'>robertnyman</a>
+	<span class='tweet-full-name'>Robert Nyman</span>
+
+</span>
+
+
+			<div class="tweet-corner">
+				<div class='tweet-meta'>
+	<span class='icons'>
+
+
+
+
+
+
+
+
+		<div class="extra-icons">
+
+
+					<span class='reply-icon icon js-reply-notice'>@</span>
+
+				<span class="inlinemedia-icons js-icon-container"></span>
+
+
+
+		</div>
+	</span>
+</div>
+
+
+			</div>
+		</div>
+		<div class="tweet-row">
+			<div class="tweet-text js-tweet-text">@<a class="tweet-url twitter-atreply" href="/#!/mathias" rel="nofollow">mathias</a> Life in Belgium must be really boring</div>
+
+		</div>
+
+			<div class="tweet-row">
+				<a href="/#!/robertnyman/status/126916801610252290" class="tweet-timestamp js-permalink" title=""><span class="_timestamp" data-time="Thu Oct 20 07:04:58 +0000 2011" data-long-form="true"></span></a>
+				<span class="tweet-actions js-actions" data-tweet-id="126916801610252290">
+
+		<span class="tweet-action action-favorite">
+
+				<a href="#" class="favorite-action js-toggle-fav" title="Favorite"><span><i></i><b>Favorite</b></span></a>
+
+
+
+		</span>
+
+
+
+				<span class="tweet-action action-retweet">
+					<a href="#" class="retweet-action js-toggle-rt" title="Retweet"><span><i></i><b>Retweet</b></span></a>
+
+				</span>
+
+
+
+
+		<a href="#" class="reply-action js-action-reply" data-screen-name="robertnyman" title="Reply"><span><i></i><b>Reply</b></span></a>
+
+
+
+
+</span>
+
+
+
+			</div>
+
+
+
+
+
+
+	</div>
+</div>
+
+
+
+
+
+
+
+</div>
+<div class='js-stream-item stream-item' data-item-id="126916673134538752" data-item-type="tweet" id="stream-item-tweet-126916673134538752">
+
+
+
+
+<div class="more">&raquo;</div>
+<div class="stream-item-content tweet js-actionable-tweet js-stream-tweet stream-tweet  "
+	data-is-reply-to="true"
+	data-tweet-id="126916673134538752"
+
+	data-item-id="126916673134538752"
+
+
+
+	data-screen-name="mathias"
+	data-user-id="532923"
+
+
+	data-status="{&quot;in_reply_to_user_id&quot;:8414132,&quot;created_at&quot;:&quot;Thu Oct 20 07:04:27 +0000 2011&quot;,&quot;retweet_count&quot;:0,&quot;in_reply_to_status_id&quot;:126916449083211776,&quot;favorited&quot;:false,&quot;in_reply_to_screen_name&quot;:&quot;robertnyman&quot;,&quot;truncated&quot;:false,&quot;user&quot;:{&quot;profile_background_color&quot;:&quot;131516&quot;,&quot;protected&quot;:false,&quot;is_translator&quot;:false,&quot;profile_background_tile&quot;:true,&quot;profile_background_image_url_https&quot;:&quot;https:\/\/si0.twimg.com\/images\/themes\/theme14\/bg.gif&quot;,&quot;created_at&quot;:&quot;Thu Jan 04 11:37:32 +0000 2007&quot;,&quot;screen_name&quot;:&quot;mathias&quot;,&quot;name&quot;:&quot;Mathias Bynens \ue00d&quot;,&quot;follow_request_sent&quot;:false,&quot;following&quot;:true,&quot;friends_count&quot;:268,&quot;profile_sidebar_fill_color&quot;:&quot;efefef&quot;,&quot;notifications&quot;:false,&quot;utc_offset&quot;:3600,&quot;description&quot;:&quot;Front-end web developer. I like bytes.&quot;,&quot;show_all_inline_media&quot;:false,&quot;contributors_enabled&quot;:false,&quot;verified&quot;:false,&quot;profile_sidebar_border_color&quot;:&quot;eeeeee&quot;,&quot;profile_image_url_https&quot;:&quot;https:\/\/si0.twimg.com\/profile_images\/1255767431\/kung-fu_normal.jpg&quot;,&quot;profile_image_url&quot;:&quot;http:\/\/a0.twimg.com\/profile_images\/1255767431\/kung-fu_normal.jpg&quot;,&quot;listed_count&quot;:383,&quot;profile_use_background_image&quot;:true,&quot;time_zone&quot;:&quot;Brussels&quot;,&quot;location&quot;:&quot;Belgium&quot;,&quot;default_profile&quot;:false,&quot;profile_text_color&quot;:&quot;333333&quot;,&quot;lang&quot;:&quot;en&quot;,&quot;statuses_count&quot;:10191,&quot;geo_enabled&quot;:true,&quot;profile_background_image_url&quot;:&quot;http:\/\/a1.twimg.com\/images\/themes\/theme14\/bg.gif&quot;,&quot;favourites_count&quot;:1535,&quot;url&quot;:&quot;http:\/\/mths.be\/&quot;,&quot;id_str&quot;:&quot;532923&quot;,&quot;profile_link_color&quot;:&quot;009999&quot;,&quot;followers_count&quot;:4332,&quot;id&quot;:532923,&quot;default_profile_image&quot;:false},&quot;retweeted&quot;:false,&quot;in_reply_to_status_id_str&quot;:&quot;126916449083211776&quot;,&quot;entities&quot;:{&quot;urls&quot;:[],&quot;hashtags&quot;:[],&quot;user_mentions&quot;:[{&quot;name&quot;:&quot;Robert Nyman&quot;,&quot;screen_name&quot;:&quot;robertnyman&quot;,&quot;indices&quot;:[0,12],&quot;id_str&quot;:&quot;8414132&quot;,&quot;id&quot;:8414132}]},&quot;source&quot;:&quot;\u003Ca href=\&quot;http:\/\/itunes.apple.com\/us\/app\/twitter\/id409789998?mt=12\&quot; rel=\&quot;nofollow\&quot;\u003ETwitter for Mac\u003C\/a\u003E&quot;,&quot;in_reply_to_user_id_str&quot;:&quot;8414132&quot;,&quot;id_str&quot;:&quot;126916673134538752&quot;,&quot;place&quot;:null,&quot;geo&quot;:null,&quot;id&quot;:126916673134538752,&quot;contributors&quot;:null,&quot;coordinates&quot;:null,&quot;text&quot;:&quot;@robertnyman AEHUHEIAHEIAHEIAUEHIAUEHIAUEHAIEHAIUHEIAUEHIAUHEIUHAIEUHAIEUAHIEAUHIEUHAIEUHIUAEHAIUHEIAUEHAIEHIAUEHAIUEHAIUEHAIUHEIAUHEAIUHEAU&quot;}">
+
+
+
+	<div class="tweet-dogear"></div>
+	<div class="tweet-image">
+
+<img height="48" width="48" src='http://a0.twimg.com/profile_images/1255767431/kung-fu_normal.jpg' alt='Mathias Bynens ?' class='user-profile-link' data-user-id='532923'/>
+
+
+	</div>
+	<div class="tweet-content">
+		<div class="tweet-row">
+
+
+
+<span class='tweet-user-name'>
+	<a class='tweet-screen-name user-profile-link' data-user-id='532923' href='/#!/mathias' title='Mathias Bynens ?'>mathias</a>
+	<span class='tweet-full-name'>Mathias Bynens ?</span>
+
+</span>
+
+
+			<div class="tweet-corner">
+				<div class='tweet-meta'>
+	<span class='icons'>
+
+
+
+
+
+
+
+
+		<div class="extra-icons">
+
+
+					<span class='reply-icon icon js-reply-notice'>@</span>
+
+				<span class="inlinemedia-icons js-icon-container"></span>
+
+
+
+		</div>
+	</span>
+</div>
+
+
+			</div>
+		</div>
+		<div class="tweet-row">
+			<div class="tweet-text js-tweet-text">@<a class="tweet-url twitter-atreply" href="/#!/robertnyman" rel="nofollow">robertnyman</a> AEHUHEIAHEIAHEIAUEHIAUEHIAUEHAIEHAIUHEIAUEHIAUHEIUHAIEUHAIEUAHIEAUHIEUHAIEUHIUAEHAIUHEIAUEHAIEHIAUEHAIUEHAIUEHAIUHEIAUHEAIUHEAU</div>
+
+		</div>
+
+			<div class="tweet-row">
+				<a href="/#!/mathias/status/126916673134538752" class="tweet-timestamp js-permalink" title=""><span class="_timestamp" data-time="Thu Oct 20 07:04:27 +0000 2011" data-long-form="true"></span></a>
+				<span class="tweet-actions js-actions" data-tweet-id="126916673134538752">
+
+		<span class="tweet-action action-favorite">
+
+				<a href="#" class="favorite-action js-toggle-fav" title="Favorite"><span><i></i><b>Favorite</b></span></a>
+
+
+
+		</span>
+
+
+
+				<span class="tweet-action action-retweet">
+					<a href="#" class="retweet-action js-toggle-rt" title="Retweet"><span><i></i><b>Retweet</b></span></a>
+
+				</span>
+
+
+
+
+		<a href="#" class="reply-action js-action-reply" data-screen-name="mathias" title="Reply"><span><i></i><b>Reply</b></span></a>
+
+
+
+
+</span>
+
+
+
+			</div>
+
+
+
+
+
+
+	</div>
+</div>
+
+
+
+
+
+
+
+</div>
+<div class='js-stream-item stream-item' data-item-id="126916643875078144" data-item-type="tweet" id="stream-item-tweet-126916643875078144">
+
+
+
+
+<div class="more">&raquo;</div>
+<div class="stream-item-content tweet js-actionable-tweet js-stream-tweet stream-tweet  "
+	data-is-reply-to="true"
+	data-tweet-id="126916643875078144"
+
+	data-item-id="126916643875078144"
+
+
+
+	data-screen-name="robertnyman"
+	data-user-id="8414132"
+
+
+	data-status="{&quot;in_reply_to_user_id&quot;:532923,&quot;created_at&quot;:&quot;Thu Oct 20 07:04:20 +0000 2011&quot;,&quot;retweet_count&quot;:0,&quot;in_reply_to_status_id&quot;:126916427205709824,&quot;favorited&quot;:false,&quot;in_reply_to_screen_name&quot;:&quot;mathias&quot;,&quot;truncated&quot;:false,&quot;user&quot;:{&quot;profile_background_color&quot;:&quot;C6E2EE&quot;,&quot;protected&quot;:false,&quot;is_translator&quot;:false,&quot;profile_background_tile&quot;:false,&quot;profile_background_image_url_https&quot;:&quot;https:\/\/si0.twimg.com\/images\/themes\/theme2\/bg.gif&quot;,&quot;created_at&quot;:&quot;Fri Aug 24 21:42:06 +0000 2007&quot;,&quot;screen_name&quot;:&quot;robertnyman&quot;,&quot;name&quot;:&quot;Robert Nyman&quot;,&quot;default_profile&quot;:false,&quot;follow_request_sent&quot;:false,&quot;following&quot;:true,&quot;friends_count&quot;:42,&quot;profile_sidebar_fill_color&quot;:&quot;DAECF4&quot;,&quot;notifications&quot;:false,&quot;utc_offset&quot;:3600,&quot;description&quot;:&quot;Technical Evangelist for Mozilla who gives talks and blogs about HTML5, CSS, JavaScript and the Open Web. Opinions are (mostly) mine. :-)&quot;,&quot;show_all_inline_media&quot;:false,&quot;contributors_enabled&quot;:false,&quot;verified&quot;:false,&quot;profile_sidebar_border_color&quot;:&quot;C6E2EE&quot;,&quot;profile_image_url_https&quot;:&quot;https:\/\/si0.twimg.com\/profile_images\/1365729789\/me_normal.jpg&quot;,&quot;profile_image_url&quot;:&quot;http:\/\/a1.twimg.com\/profile_images\/1365729789\/me_normal.jpg&quot;,&quot;listed_count&quot;:492,&quot;profile_use_background_image&quot;:true,&quot;time_zone&quot;:&quot;Stockholm&quot;,&quot;location&quot;:&quot;Stockholm&quot;,&quot;profile_text_color&quot;:&quot;663B12&quot;,&quot;lang&quot;:&quot;en&quot;,&quot;statuses_count&quot;:16203,&quot;geo_enabled&quot;:false,&quot;profile_background_image_url&quot;:&quot;http:\/\/a1.twimg.com\/images\/themes\/theme2\/bg.gif&quot;,&quot;favourites_count&quot;:29,&quot;url&quot;:&quot;http:\/\/robertnyman.com&quot;,&quot;id_str&quot;:&quot;8414132&quot;,&quot;profile_link_color&quot;:&quot;1F98C7&quot;,&quot;followers_count&quot;:4477,&quot;id&quot;:8414132,&quot;default_profile_image&quot;:false},&quot;retweeted&quot;:false,&quot;in_reply_to_status_id_str&quot;:&quot;126916427205709824&quot;,&quot;entities&quot;:{&quot;urls&quot;:[],&quot;hashtags&quot;:[],&quot;user_mentions&quot;:[{&quot;name&quot;:&quot;Mathias Bynens \ue00d&quot;,&quot;screen_name&quot;:&quot;mathias&quot;,&quot;indices&quot;:[0,8],&quot;id_str&quot;:&quot;532923&quot;,&quot;id&quot;:532923},{&quot;name&quot;:&quot;Krijn Hoetmer&quot;,&quot;screen_name&quot;:&quot;krijnhoetmer&quot;,&quot;indices&quot;:[9,22],&quot;id_str&quot;:&quot;6994152&quot;,&quot;id&quot;:6994152}]},&quot;source&quot;:&quot;\u003Ca href=\&quot;http:\/\/itunes.apple.com\/us\/app\/twitter\/id409789998?mt=12\&quot; rel=\&quot;nofollow\&quot;\u003ETwitter for Mac\u003C\/a\u003E&quot;,&quot;in_reply_to_user_id_str&quot;:&quot;532923&quot;,&quot;id_str&quot;:&quot;126916643875078144&quot;,&quot;place&quot;:null,&quot;geo&quot;:null,&quot;id&quot;:126916643875078144,&quot;contributors&quot;:null,&quot;coordinates&quot;:null,&quot;text&quot;:&quot;@mathias @krijnhoetmer Interesting to watch how different web browsers handled that&quot;}">
+
+
+
+	<div class="tweet-dogear"></div>
+	<div class="tweet-image">
+
+<img height="48" width="48" src='http://a1.twimg.com/profile_images/1365729789/me_normal.jpg' alt='Robert Nyman' class='user-profile-link' data-user-id='8414132'/>
+
+
+	</div>
+	<div class="tweet-content">
+		<div class="tweet-row">
+
+
+
+<span class='tweet-user-name'>
+	<a class='tweet-screen-name user-profile-link' data-user-id='8414132' href='/#!/robertnyman' title='Robert Nyman'>robertnyman</a>
+	<span class='tweet-full-name'>Robert Nyman</span>
+
+</span>
+
+
+			<div class="tweet-corner">
+				<div class='tweet-meta'>
+	<span class='icons'>
+
+
+
+
+
+
+
+
+		<div class="extra-icons">
+
+
+					<span class='reply-icon icon js-reply-notice'>@</span>
+
+				<span class="inlinemedia-icons js-icon-container"></span>
+
+
+
+		</div>
+	</span>
+</div>
+
+
+			</div>
+		</div>
+		<div class="tweet-row">
+			<div class="tweet-text js-tweet-text">@<a class="tweet-url twitter-atreply" href="/#!/mathias" rel="nofollow">mathias</a> @<a class="tweet-url twitter-atreply" href="/#!/krijnhoetmer" rel="nofollow">krijnhoetmer</a> Interesting to watch how different web browsers handled that</div>
+
+		</div>
+
+			<div class="tweet-row">
+				<a href="/#!/robertnyman/status/126916643875078144" class="tweet-timestamp js-permalink" title=""><span class="_timestamp" data-time="Thu Oct 20 07:04:20 +0000 2011" data-long-form="true"></span></a>
+				<span class="tweet-actions js-actions" data-tweet-id="126916643875078144">
+
+		<span class="tweet-action action-favorite">
+
+				<a href="#" class="favorite-action js-toggle-fav" title="Favorite"><span><i></i><b>Favorite</b></span></a>
+
+
+
+		</span>
+
+
+
+				<span class="tweet-action action-retweet">
+					<a href="#" class="retweet-action js-toggle-rt" title="Retweet"><span><i></i><b>Retweet</b></span></a>
+
+				</span>
+
+
+
+
+		<a href="#" class="reply-action js-action-reply" data-screen-name="robertnyman" title="Reply"><span><i></i><b>Reply</b></span></a>
+
+
+
+
+</span>
+
+
+
+			</div>
+
+
+
+
+
+
+	</div>
+</div>
+
+
+
+
+
+
+
+</div>
+<div class='js-stream-item stream-item' data-item-id="126916449083211776" data-item-type="tweet" id="stream-item-tweet-126916449083211776">
+
+
+
+
+<div class="more">&raquo;</div>
+<div class="stream-item-content tweet js-actionable-tweet js-stream-tweet stream-tweet  "
+	data-is-reply-to="true"
+	data-tweet-id="126916449083211776"
+
+	data-item-id="126916449083211776"
+
+
+
+	data-screen-name="robertnyman"
+	data-user-id="8414132"
+
+
+	data-status="{&quot;in_reply_to_user_id&quot;:532923,&quot;created_at&quot;:&quot;Thu Oct 20 07:03:34 +0000 2011&quot;,&quot;retweet_count&quot;:0,&quot;in_reply_to_status_id&quot;:126915934937026560,&quot;favorited&quot;:false,&quot;in_reply_to_screen_name&quot;:&quot;mathias&quot;,&quot;truncated&quot;:false,&quot;user&quot;:{&quot;profile_background_color&quot;:&quot;C6E2EE&quot;,&quot;protected&quot;:false,&quot;is_translator&quot;:false,&quot;profile_background_tile&quot;:false,&quot;profile_background_image_url_https&quot;:&quot;https:\/\/si0.twimg.com\/images\/themes\/theme2\/bg.gif&quot;,&quot;created_at&quot;:&quot;Fri Aug 24 21:42:06 +0000 2007&quot;,&quot;screen_name&quot;:&quot;robertnyman&quot;,&quot;name&quot;:&quot;Robert Nyman&quot;,&quot;follow_request_sent&quot;:false,&quot;following&quot;:true,&quot;friends_count&quot;:42,&quot;profile_sidebar_fill_color&quot;:&quot;DAECF4&quot;,&quot;notifications&quot;:false,&quot;utc_offset&quot;:3600,&quot;description&quot;:&quot;Technical Evangelist for Mozilla who gives talks and blogs about HTML5, CSS, JavaScript and the Open Web. Opinions are (mostly) mine. :-)&quot;,&quot;show_all_inline_media&quot;:false,&quot;contributors_enabled&quot;:false,&quot;verified&quot;:false,&quot;profile_sidebar_border_color&quot;:&quot;C6E2EE&quot;,&quot;profile_image_url_https&quot;:&quot;https:\/\/si0.twimg.com\/profile_images\/1365729789\/me_normal.jpg&quot;,&quot;profile_image_url&quot;:&quot;http:\/\/a1.twimg.com\/profile_images\/1365729789\/me_normal.jpg&quot;,&quot;listed_count&quot;:492,&quot;profile_use_background_image&quot;:true,&quot;time_zone&quot;:&quot;Stockholm&quot;,&quot;location&quot;:&quot;Stockholm&quot;,&quot;profile_text_color&quot;:&quot;663B12&quot;,&quot;lang&quot;:&quot;en&quot;,&quot;statuses_count&quot;:16204,&quot;geo_enabled&quot;:false,&quot;profile_background_image_url&quot;:&quot;http:\/\/a1.twimg.com\/images\/themes\/theme2\/bg.gif&quot;,&quot;favourites_count&quot;:29,&quot;url&quot;:&quot;http:\/\/robertnyman.com&quot;,&quot;id_str&quot;:&quot;8414132&quot;,&quot;default_profile&quot;:false,&quot;profile_link_color&quot;:&quot;1F98C7&quot;,&quot;followers_count&quot;:4477,&quot;id&quot;:8414132,&quot;default_profile_image&quot;:false},&quot;retweeted&quot;:false,&quot;in_reply_to_status_id_str&quot;:&quot;126915934937026560&quot;,&quot;entities&quot;:{&quot;urls&quot;:[],&quot;hashtags&quot;:[],&quot;user_mentions&quot;:[{&quot;name&quot;:&quot;Mathias Bynens \ue00d&quot;,&quot;screen_name&quot;:&quot;mathias&quot;,&quot;indices&quot;:[0,8],&quot;id_str&quot;:&quot;532923&quot;,&quot;id&quot;:532923}]},&quot;source&quot;:&quot;\u003Ca href=\&quot;http:\/\/itunes.apple.com\/us\/app\/twitter\/id409789998?mt=12\&quot; rel=\&quot;nofollow\&quot;\u003ETwitter for Mac\u003C\/a\u003E&quot;,&quot;in_reply_to_user_id_str&quot;:&quot;532923&quot;,&quot;id_str&quot;:&quot;126916449083211776&quot;,&quot;place&quot;:null,&quot;geo&quot;:null,&quot;id&quot;:126916449083211776,&quot;contributors&quot;:null,&quot;coordinates&quot;:null,&quot;text&quot;:&quot;@mathias What the hell did you just send me? ARGH!&quot;}">
+
+
+
+	<div class="tweet-dogear"></div>
+	<div class="tweet-image">
+
+<img height="48" width="48" src='http://a1.twimg.com/profile_images/1365729789/me_normal.jpg' alt='Robert Nyman' class='user-profile-link' data-user-id='8414132'/>
+
+
+	</div>
+	<div class="tweet-content">
+		<div class="tweet-row">
+
+
+
+<span class='tweet-user-name'>
+	<a class='tweet-screen-name user-profile-link' data-user-id='8414132' href='/#!/robertnyman' title='Robert Nyman'>robertnyman</a>
+	<span class='tweet-full-name'>Robert Nyman</span>
+
+</span>
+
+
+			<div class="tweet-corner">
+				<div class='tweet-meta'>
+	<span class='icons'>
+
+
+
+
+
+
+
+
+		<div class="extra-icons">
+
+
+					<span class='reply-icon icon js-reply-notice'>@</span>
+
+				<span class="inlinemedia-icons js-icon-container"></span>
+
+
+
+		</div>
+	</span>
+</div>
+
+
+			</div>
+		</div>
+		<div class="tweet-row">
+			<div class="tweet-text js-tweet-text">@<a class="tweet-url twitter-atreply" href="/#!/mathias" rel="nofollow">mathias</a> What the hell did you just send me? ARGH!</div>
+
+		</div>
+
+			<div class="tweet-row">
+				<a href="/#!/robertnyman/status/126916449083211776" class="tweet-timestamp js-permalink" title=""><span class="_timestamp" data-time="Thu Oct 20 07:03:34 +0000 2011" data-long-form="true"></span></a>
+				<span class="tweet-actions js-actions" data-tweet-id="126916449083211776">
+
+		<span class="tweet-action action-favorite">
+
+				<a href="#" class="favorite-action js-toggle-fav" title="Favorite"><span><i></i><b>Favorite</b></span></a>
+
+
+
+		</span>
+
+
+
+				<span class="tweet-action action-retweet">
+					<a href="#" class="retweet-action js-toggle-rt" title="Retweet"><span><i></i><b>Retweet</b></span></a>
+
+				</span>
+
+
+
+
+		<a href="#" class="reply-action js-action-reply" data-screen-name="robertnyman" title="Reply"><span><i></i><b>Reply</b></span></a>
+
+
+
+
+</span>
+
+
+
+			</div>
+
+
+
+
+
+
+	</div>
+</div>
+
+
+
+
+
+
+
+</div>
+<div class='js-stream-item stream-item' data-item-id="126916341386067968" data-item-type="tweet" id="stream-item-tweet-126916341386067968">
+
+
+
+
+<div class="more">&raquo;</div>
+<div class="stream-item-content tweet js-actionable-tweet js-stream-tweet stream-tweet  "
+	data-is-reply-to="false"
+	data-tweet-id="126916341386067968"
+
+	data-item-id="126916341386067968"
+
+
+
+	data-screen-name="Forder1989"
+	data-user-id="164281511"
+
+
+	data-status="{&quot;in_reply_to_user_id&quot;:null,&quot;created_at&quot;:&quot;Thu Oct 20 07:03:08 +0000 2011&quot;,&quot;retweet_count&quot;:0,&quot;in_reply_to_status_id&quot;:null,&quot;favorited&quot;:false,&quot;in_reply_to_screen_name&quot;:null,&quot;truncated&quot;:false,&quot;user&quot;:{&quot;profile_background_color&quot;:&quot;a4b45d&quot;,&quot;protected&quot;:false,&quot;is_translator&quot;:false,&quot;default_profile&quot;:false,&quot;profile_background_tile&quot;:false,&quot;profile_background_image_url_https&quot;:&quot;https:\/\/si0.twimg.com\/profile_background_images\/157923043\/x060a5365b035ba36d4d4424d0568eb9.jpg&quot;,&quot;created_at&quot;:&quot;Thu Jul 08 13:53:16 +0000 2010&quot;,&quot;screen_name&quot;:&quot;Forder1989&quot;,&quot;name&quot;:&quot;Alex Petrinich&quot;,&quot;follow_request_sent&quot;:false,&quot;following&quot;:true,&quot;friends_count&quot;:60,&quot;profile_sidebar_fill_color&quot;:&quot;cedbd7&quot;,&quot;notifications&quot;:false,&quot;utc_offset&quot;:7200,&quot;description&quot;:&quot;men&quot;,&quot;show_all_inline_media&quot;:false,&quot;contributors_enabled&quot;:false,&quot;verified&quot;:false,&quot;profile_sidebar_border_color&quot;:&quot;a4b45d&quot;,&quot;profile_image_url_https&quot;:&quot;https:\/\/si0.twimg.com\/profile_images\/1137789962\/____normal.png&quot;,&quot;profile_image_url&quot;:&quot;http:\/\/a0.twimg.com\/profile_images\/1137789962\/____normal.png&quot;,&quot;listed_count&quot;:5,&quot;profile_use_background_image&quot;:true,&quot;time_zone&quot;:&quot;Minsk&quot;,&quot;location&quot;:&quot;Belarus&quot;,&quot;profile_text_color&quot;:&quot;635026&quot;,&quot;lang&quot;:&quot;en&quot;,&quot;statuses_count&quot;:1041,&quot;geo_enabled&quot;:true,&quot;profile_background_image_url&quot;:&quot;http:\/\/a0.twimg.com\/profile_background_images\/157923043\/x060a5365b035ba36d4d4424d0568eb9.jpg&quot;,&quot;favourites_count&quot;:12,&quot;url&quot;:null,&quot;id_str&quot;:&quot;164281511&quot;,&quot;profile_link_color&quot;:&quot;8c9c43&quot;,&quot;followers_count&quot;:60,&quot;id&quot;:164281511,&quot;default_profile_image&quot;:false},&quot;retweeted&quot;:false,&quot;possibly_sensitive&quot;:false,&quot;in_reply_to_status_id_str&quot;:null,&quot;entities&quot;:{&quot;urls&quot;:[{&quot;indices&quot;:[15,35],&quot;url&quot;:&quot;http:\/\/t.co\/u0Na5Ypj&quot;,&quot;display_url&quot;:&quot;bit.ly\/pVTU5y&quot;,&quot;expanded_url&quot;:&quot;http:\/\/bit.ly\/pVTU5y&quot;}],&quot;hashtags&quot;:[],&quot;user_mentions&quot;:[]},&quot;source&quot;:&quot;\u003Ca href=\&quot;http:\/\/www.snaptu.com\&quot; rel=\&quot;nofollow\&quot;\u003ESnaptu\u003C\/a\u003E&quot;,&quot;in_reply_to_user_id_str&quot;:null,&quot;id_str&quot;:&quot;126916341386067968&quot;,&quot;place&quot;:null,&quot;geo&quot;:null,&quot;id&quot;:126916341386067968,&quot;contributors&quot;:null,&quot;coordinates&quot;:null,&quot;text&quot;:&quot;\u0426\u0438\u0442\u0430\u0442\u0430 #413841 http:\/\/t.co\/u0Na5Ypj&quot;}">
+
+
+
+	<div class="tweet-dogear"></div>
+	<div class="tweet-image">
+
+<img height="48" width="48" src='http://a0.twimg.com/profile_images/1137789962/____normal.png' alt='Alex Petrinich' class='user-profile-link' data-user-id='164281511'/>
+
+
+	</div>
+	<div class="tweet-content">
+		<div class="tweet-row">
+
+
+
+<span class='tweet-user-name'>
+	<a class='tweet-screen-name user-profile-link' data-user-id='164281511' href='/#!/Forder1989' title='Alex Petrinich'>Forder1989</a>
+	<span class='tweet-full-name'>Alex Petrinich</span>
+
+</span>
+
+
+			<div class="tweet-corner">
+				<div class='tweet-meta'>
+	<span class='icons'>
+
+
+
+
+
+
+
+
+		<div class="extra-icons">
+
+
+				<span class="inlinemedia-icons js-icon-container"></span>
+
+
+
+		</div>
+	</span>
+</div>
+
+
+			</div>
+		</div>
+		<div class="tweet-row">
+			<div class="tweet-text js-tweet-text">–èòàòà #413841 <a  data-expanded-url="http://bit.ly/pVTU5y"  class="twitter-timeline-link"href="http://t.co/u0Na5Ypj" rel="nofollow" class="twitter-timeline-link">bit.ly/pVTU5y</a></div>
+
+		</div>
+
+			<div class="tweet-row">
+				<a href="/#!/Forder1989/status/126916341386067968" class="tweet-timestamp js-permalink" title=""><span class="_timestamp" data-time="Thu Oct 20 07:03:08 +0000 2011" data-long-form="true"></span></a>
+				<span class="tweet-actions js-actions" data-tweet-id="126916341386067968">
+
+		<span class="tweet-action action-favorite">
+
+				<a href="#" class="favorite-action js-toggle-fav" title="Favorite"><span><i></i><b>Favorite</b></span></a>
+
+
+
+		</span>
+
+
+
+				<span class="tweet-action action-retweet">
+					<a href="#" class="retweet-action js-toggle-rt" title="Retweet"><span><i></i><b>Retweet</b></span></a>
+
+				</span>
+
+
+
+
+		<a href="#" class="reply-action js-action-reply" data-screen-name="Forder1989" title="Reply"><span><i></i><b>Reply</b></span></a>
+
+
+
+
+</span>
+
+
+
+			</div>
+
+
+
+
+
+
+	</div>
+</div>
+
+
+
+
+
+
+
+</div>
+<div class='js-stream-item stream-item' data-item-id="126915934937026560" data-item-type="tweet" id="stream-item-tweet-126915934937026560">
+
+
+
+
+<div class="more">&raquo;</div>
+<div class="stream-item-content tweet js-actionable-tweet js-stream-tweet stream-tweet  "
+	data-is-reply-to="true"
+	data-tweet-id="126915934937026560"
+
+	data-item-id="126915934937026560"
+
+
+
+	data-screen-name="mathias"
+	data-user-id="532923"
+
+
+	data-status="{&quot;in_reply_to_user_id&quot;:8414132,&quot;created_at&quot;:&quot;Thu Oct 20 07:01:31 +0000 2011&quot;,&quot;retweet_count&quot;:0,&quot;in_reply_to_status_id&quot;:126915316423991296,&quot;favorited&quot;:false,&quot;in_reply_to_screen_name&quot;:&quot;robertnyman&quot;,&quot;truncated&quot;:false,&quot;user&quot;:{&quot;profile_background_color&quot;:&quot;131516&quot;,&quot;protected&quot;:false,&quot;is_translator&quot;:false,&quot;profile_background_tile&quot;:true,&quot;profile_background_image_url_https&quot;:&quot;https:\/\/si0.twimg.com\/images\/themes\/theme14\/bg.gif&quot;,&quot;created_at&quot;:&quot;Thu Jan 04 11:37:32 +0000 2007&quot;,&quot;screen_name&quot;:&quot;mathias&quot;,&quot;name&quot;:&quot;Mathias Bynens \ue00d&quot;,&quot;follow_request_sent&quot;:false,&quot;following&quot;:true,&quot;friends_count&quot;:268,&quot;profile_sidebar_fill_color&quot;:&quot;efefef&quot;,&quot;notifications&quot;:false,&quot;utc_offset&quot;:3600,&quot;description&quot;:&quot;Front-end web developer. I like bytes.&quot;,&quot;show_all_inline_media&quot;:false,&quot;contributors_enabled&quot;:false,&quot;verified&quot;:false,&quot;profile_sidebar_border_color&quot;:&quot;eeeeee&quot;,&quot;profile_image_url_https&quot;:&quot;https:\/\/si0.twimg.com\/profile_images\/1255767431\/kung-fu_normal.jpg&quot;,&quot;profile_image_url&quot;:&quot;http:\/\/a0.twimg.com\/profile_images\/1255767431\/kung-fu_normal.jpg&quot;,&quot;listed_count&quot;:383,&quot;profile_use_background_image&quot;:true,&quot;time_zone&quot;:&quot;Brussels&quot;,&quot;location&quot;:&quot;Belgium&quot;,&quot;profile_text_color&quot;:&quot;333333&quot;,&quot;lang&quot;:&quot;en&quot;,&quot;statuses_count&quot;:10192,&quot;geo_enabled&quot;:true,&quot;profile_background_image_url&quot;:&quot;http:\/\/a1.twimg.com\/images\/themes\/theme14\/bg.gif&quot;,&quot;favourites_count&quot;:1535,&quot;url&quot;:&quot;http:\/\/mths.be\/&quot;,&quot;id_str&quot;:&quot;532923&quot;,&quot;profile_link_color&quot;:&quot;009999&quot;,&quot;followers_count&quot;:4332,&quot;id&quot;:532923,&quot;default_profile_image&quot;:false,&quot;default_profile&quot;:false},&quot;retweeted&quot;:false,&quot;possibly_sensitive&quot;:false,&quot;in_reply_to_status_id_str&quot;:&quot;126915316423991296&quot;,&quot;entities&quot;:{&quot;urls&quot;:[{&quot;indices&quot;:[59,79],&quot;url&quot;:&quot;http:\/\/t.co\/ioUc38Yj&quot;,&quot;display_url&quot;:&quot;mths.be\/bdm&quot;,&quot;expanded_url&quot;:&quot;http:\/\/mths.be\/bdm&quot;}],&quot;hashtags&quot;:[],&quot;user_mentions&quot;:[{&quot;name&quot;:&quot;Robert Nyman&quot;,&quot;screen_name&quot;:&quot;robertnyman&quot;,&quot;indices&quot;:[0,12],&quot;id_str&quot;:&quot;8414132&quot;,&quot;id&quot;:8414132}]},&quot;source&quot;:&quot;\u003Ca href=\&quot;http:\/\/itunes.apple.com\/us\/app\/twitter\/id409789998?mt=12\&quot; rel=\&quot;nofollow\&quot;\u003ETwitter for Mac\u003C\/a\u003E&quot;,&quot;in_reply_to_user_id_str&quot;:&quot;8414132&quot;,&quot;id_str&quot;:&quot;126915934937026560&quot;,&quot;place&quot;:null,&quot;geo&quot;:null,&quot;id&quot;:126915934937026560,&quot;contributors&quot;:null,&quot;coordinates&quot;:null,&quot;text&quot;:&quot;@robertnyman INORITE!!1 On that note, interesting article: http:\/\/t.co\/ioUc38Yj\n\n\n\n\n\n*runs*&quot;}">
+
+
+
+	<div class="tweet-dogear"></div>
+	<div class="tweet-image">
+
+<img height="48" width="48" src='http://a0.twimg.com/profile_images/1255767431/kung-fu_normal.jpg' alt='Mathias Bynens ?' class='user-profile-link' data-user-id='532923'/>
+
+
+	</div>
+	<div class="tweet-content">
+		<div class="tweet-row">
+
+
+
+<span class='tweet-user-name'>
+	<a class='tweet-screen-name user-profile-link' data-user-id='532923' href='/#!/mathias' title='Mathias Bynens ?'>mathias</a>
+	<span class='tweet-full-name'>Mathias Bynens ?</span>
+
+</span>
+
+
+			<div class="tweet-corner">
+				<div class='tweet-meta'>
+	<span class='icons'>
+
+
+
+
+
+
+
+
+		<div class="extra-icons">
+
+
+					<span class='reply-icon icon js-reply-notice'>@</span>
+
+				<span class="inlinemedia-icons js-icon-container"></span>
+
+
+
+		</div>
+	</span>
+</div>
+
+
+			</div>
+		</div>
+		<div class="tweet-row">
+			<div class="tweet-text js-tweet-text">@<a class="tweet-url twitter-atreply" href="/#!/robertnyman" rel="nofollow">robertnyman</a> INORITE!!1 On that note, interesting article: <a  data-expanded-url="http://mths.be/bdm"  class="twitter-timeline-link"href="http://t.co/ioUc38Yj" rel="nofollow" class="twitter-timeline-link">mths.be/bdm</a>
+
+
+
+
+
+*runs*</div>
+
+		</div>
+
+			<div class="tweet-row">
+				<a href="/#!/mathias/status/126915934937026560" class="tweet-timestamp js-permalink" title=""><span class="_timestamp" data-time="Thu Oct 20 07:01:31 +0000 2011" data-long-form="true"></span></a>
+				<span class="tweet-actions js-actions" data-tweet-id="126915934937026560">
+
+		<span class="tweet-action action-favorite">
+
+				<a href="#" class="favorite-action js-toggle-fav" title="Favorite"><span><i></i><b>Favorite</b></span></a>
+
+
+
+		</span>
+
+
+
+				<span class="tweet-action action-retweet">
+					<a href="#" class="retweet-action js-toggle-rt" title="Retweet"><span><i></i><b>Retweet</b></span></a>
+
+				</span>
+
+
+
+
+		<a href="#" class="reply-action js-action-reply" data-screen-name="mathias" title="Reply"><span><i></i><b>Reply</b></span></a>
+
+
+
+
+</span>
+
+
+
+			</div>
+
+
+
+
+
+
+	</div>
+</div>
+
+
+
+
+
+
+
+</div>
+<div class='js-stream-item stream-item' data-item-id="126915316423991296" data-item-type="tweet" id="stream-item-tweet-126915316423991296">
+
+
+
+
+<div class="more">&raquo;</div>
+<div class="stream-item-content tweet js-actionable-tweet js-stream-tweet stream-tweet  "
+	data-is-reply-to="true"
+	data-tweet-id="126915316423991296"
+
+	data-item-id="126915316423991296"
+
+
+
+	data-screen-name="robertnyman"
+	data-user-id="8414132"
+
+
+	data-status="{&quot;in_reply_to_user_id&quot;:532923,&quot;created_at&quot;:&quot;Thu Oct 20 06:59:04 +0000 2011&quot;,&quot;retweet_count&quot;:0,&quot;in_reply_to_status_id&quot;:126915172269953024,&quot;favorited&quot;:false,&quot;in_reply_to_screen_name&quot;:&quot;mathias&quot;,&quot;truncated&quot;:false,&quot;user&quot;:{&quot;profile_background_color&quot;:&quot;C6E2EE&quot;,&quot;protected&quot;:false,&quot;is_translator&quot;:false,&quot;profile_background_tile&quot;:false,&quot;profile_background_image_url_https&quot;:&quot;https:\/\/si0.twimg.com\/images\/themes\/theme2\/bg.gif&quot;,&quot;created_at&quot;:&quot;Fri Aug 24 21:42:06 +0000 2007&quot;,&quot;screen_name&quot;:&quot;robertnyman&quot;,&quot;name&quot;:&quot;Robert Nyman&quot;,&quot;follow_request_sent&quot;:false,&quot;following&quot;:true,&quot;friends_count&quot;:42,&quot;profile_sidebar_fill_color&quot;:&quot;DAECF4&quot;,&quot;notifications&quot;:false,&quot;utc_offset&quot;:3600,&quot;description&quot;:&quot;Technical Evangelist for Mozilla who gives talks and blogs about HTML5, CSS, JavaScript and the Open Web. Opinions are (mostly) mine. :-)&quot;,&quot;show_all_inline_media&quot;:false,&quot;contributors_enabled&quot;:false,&quot;verified&quot;:false,&quot;profile_sidebar_border_color&quot;:&quot;C6E2EE&quot;,&quot;profile_image_url_https&quot;:&quot;https:\/\/si0.twimg.com\/profile_images\/1365729789\/me_normal.jpg&quot;,&quot;profile_image_url&quot;:&quot;http:\/\/a1.twimg.com\/profile_images\/1365729789\/me_normal.jpg&quot;,&quot;listed_count&quot;:492,&quot;profile_use_background_image&quot;:true,&quot;time_zone&quot;:&quot;Stockholm&quot;,&quot;location&quot;:&quot;Stockholm&quot;,&quot;profile_text_color&quot;:&quot;663B12&quot;,&quot;default_profile&quot;:false,&quot;lang&quot;:&quot;en&quot;,&quot;statuses_count&quot;:16201,&quot;geo_enabled&quot;:false,&quot;profile_background_image_url&quot;:&quot;http:\/\/a1.twimg.com\/images\/themes\/theme2\/bg.gif&quot;,&quot;favourites_count&quot;:29,&quot;url&quot;:&quot;http:\/\/robertnyman.com&quot;,&quot;id_str&quot;:&quot;8414132&quot;,&quot;profile_link_color&quot;:&quot;1F98C7&quot;,&quot;followers_count&quot;:4477,&quot;id&quot;:8414132,&quot;default_profile_image&quot;:false},&quot;retweeted&quot;:false,&quot;in_reply_to_status_id_str&quot;:&quot;126915172269953024&quot;,&quot;entities&quot;:{&quot;urls&quot;:[],&quot;hashtags&quot;:[],&quot;user_mentions&quot;:[{&quot;name&quot;:&quot;Mathias Bynens \ue00d&quot;,&quot;screen_name&quot;:&quot;mathias&quot;,&quot;indices&quot;:[0,8],&quot;id_str&quot;:&quot;532923&quot;,&quot;id&quot;:532923}]},&quot;source&quot;:&quot;\u003Ca href=\&quot;http:\/\/itunes.apple.com\/us\/app\/twitter\/id409789998?mt=12\&quot; rel=\&quot;nofollow\&quot;\u003ETwitter for Mac\u003C\/a\u003E&quot;,&quot;in_reply_to_user_id_str&quot;:&quot;532923&quot;,&quot;id_str&quot;:&quot;126915316423991296&quot;,&quot;place&quot;:null,&quot;geo&quot;:null,&quot;id&quot;:126915316423991296,&quot;contributors&quot;:null,&quot;coordinates&quot;:null,&quot;text&quot;:&quot;@mathias I&#39;m sure I will - you usually are a good source of information. Usually. :-)&quot;}">
+
+
+
+	<div class="tweet-dogear"></div>
+	<div class="tweet-image">
+
+<img height="48" width="48" src='http://a1.twimg.com/profile_images/1365729789/me_normal.jpg' alt='Robert Nyman' class='user-profile-link' data-user-id='8414132'/>
+
+
+	</div>
+	<div class="tweet-content">
+		<div class="tweet-row">
+
+
+
+<span class='tweet-user-name'>
+	<a class='tweet-screen-name user-profile-link' data-user-id='8414132' href='/#!/robertnyman' title='Robert Nyman'>robertnyman</a>
+	<span class='tweet-full-name'>Robert Nyman</span>
+
+</span>
+
+
+			<div class="tweet-corner">
+				<div class='tweet-meta'>
+	<span class='icons'>
+
+
+
+
+
+
+
+
+		<div class="extra-icons">
+
+
+					<span class='reply-icon icon js-reply-notice'>@</span>
+
+				<span class="inlinemedia-icons js-icon-container"></span>
+
+
+
+		</div>
+	</span>
+</div>
+
+
+			</div>
+		</div>
+		<div class="tweet-row">
+			<div class="tweet-text js-tweet-text">@<a class="tweet-url twitter-atreply" href="/#!/mathias" rel="nofollow">mathias</a> I'm sure I will - you usually are a good source of information. Usually. :-)</div>
+
+		</div>
+
+			<div class="tweet-row">
+				<a href="/#!/robertnyman/status/126915316423991296" class="tweet-timestamp js-permalink" title=""><span class="_timestamp" data-time="Thu Oct 20 06:59:04 +0000 2011" data-long-form="true"></span></a>
+				<span class="tweet-actions js-actions" data-tweet-id="126915316423991296">
+
+		<span class="tweet-action action-favorite">
+
+				<a href="#" class="favorite-action js-toggle-fav" title="Favorite"><span><i></i><b>Favorite</b></span></a>
+
+
+
+		</span>
+
+
+
+				<span class="tweet-action action-retweet">
+					<a href="#" class="retweet-action js-toggle-rt" title="Retweet"><span><i></i><b>Retweet</b></span></a>
+
+				</span>
+
+
+
+
+		<a href="#" class="reply-action js-action-reply" data-screen-name="robertnyman" title="Reply"><span><i></i><b>Reply</b></span></a>
+
+
+
+
+</span>
+
+
+
+			</div>
+
+
+
+
+
+
+	</div>
+</div>
+
+
+
+
+
+
+
+</div>
+<div class='js-stream-item stream-item' data-item-id="126915172269953024" data-item-type="tweet" id="stream-item-tweet-126915172269953024">
+
+
+
+
+<div class="more">&raquo;</div>
+<div class="stream-item-content tweet js-actionable-tweet js-stream-tweet stream-tweet  "
+	data-is-reply-to="true"
+	data-tweet-id="126915172269953024"
+
+	data-item-id="126915172269953024"
+
+
+
+	data-screen-name="mathias"
+	data-user-id="532923"
+
+
+	data-status="{&quot;in_reply_to_user_id&quot;:8414132,&quot;created_at&quot;:&quot;Thu Oct 20 06:58:29 +0000 2011&quot;,&quot;retweet_count&quot;:0,&quot;in_reply_to_status_id&quot;:126915119010693120,&quot;favorited&quot;:false,&quot;in_reply_to_screen_name&quot;:&quot;robertnyman&quot;,&quot;truncated&quot;:false,&quot;user&quot;:{&quot;profile_background_color&quot;:&quot;131516&quot;,&quot;protected&quot;:false,&quot;is_translator&quot;:false,&quot;profile_background_tile&quot;:true,&quot;profile_background_image_url_https&quot;:&quot;https:\/\/si0.twimg.com\/images\/themes\/theme14\/bg.gif&quot;,&quot;created_at&quot;:&quot;Thu Jan 04 11:37:32 +0000 2007&quot;,&quot;screen_name&quot;:&quot;mathias&quot;,&quot;name&quot;:&quot;Mathias Bynens \ue00d&quot;,&quot;default_profile&quot;:false,&quot;follow_request_sent&quot;:false,&quot;following&quot;:true,&quot;friends_count&quot;:268,&quot;profile_sidebar_fill_color&quot;:&quot;efefef&quot;,&quot;notifications&quot;:false,&quot;utc_offset&quot;:3600,&quot;description&quot;:&quot;Front-end web developer. I like bytes.&quot;,&quot;show_all_inline_media&quot;:false,&quot;contributors_enabled&quot;:false,&quot;verified&quot;:false,&quot;profile_sidebar_border_color&quot;:&quot;eeeeee&quot;,&quot;profile_image_url_https&quot;:&quot;https:\/\/si0.twimg.com\/profile_images\/1255767431\/kung-fu_normal.jpg&quot;,&quot;profile_image_url&quot;:&quot;http:\/\/a0.twimg.com\/profile_images\/1255767431\/kung-fu_normal.jpg&quot;,&quot;listed_count&quot;:383,&quot;profile_use_background_image&quot;:true,&quot;time_zone&quot;:&quot;Brussels&quot;,&quot;location&quot;:&quot;Belgium&quot;,&quot;profile_text_color&quot;:&quot;333333&quot;,&quot;lang&quot;:&quot;en&quot;,&quot;statuses_count&quot;:10187,&quot;geo_enabled&quot;:true,&quot;profile_background_image_url&quot;:&quot;http:\/\/a1.twimg.com\/images\/themes\/theme14\/bg.gif&quot;,&quot;favourites_count&quot;:1535,&quot;url&quot;:&quot;http:\/\/mths.be\/&quot;,&quot;id_str&quot;:&quot;532923&quot;,&quot;profile_link_color&quot;:&quot;009999&quot;,&quot;followers_count&quot;:4332,&quot;id&quot;:532923,&quot;default_profile_image&quot;:false},&quot;retweeted&quot;:false,&quot;in_reply_to_status_id_str&quot;:&quot;126915119010693120&quot;,&quot;entities&quot;:{&quot;urls&quot;:[],&quot;hashtags&quot;:[],&quot;user_mentions&quot;:[{&quot;name&quot;:&quot;Robert Nyman&quot;,&quot;screen_name&quot;:&quot;robertnyman&quot;,&quot;indices&quot;:[0,12],&quot;id_str&quot;:&quot;8414132&quot;,&quot;id&quot;:8414132}]},&quot;source&quot;:&quot;\u003Ca href=\&quot;http:\/\/itunes.apple.com\/us\/app\/twitter\/id409789998?mt=12\&quot; rel=\&quot;nofollow\&quot;\u003ETwitter for Mac\u003C\/a\u003E&quot;,&quot;in_reply_to_user_id_str&quot;:&quot;8414132&quot;,&quot;id_str&quot;:&quot;126915172269953024&quot;,&quot;place&quot;:null,&quot;geo&quot;:null,&quot;id&quot;:126915172269953024,&quot;contributors&quot;:null,&quot;coordinates&quot;:null,&quot;text&quot;:&quot;@robertnyman You\u2019ll thank me later ;)&quot;}">
+
+
+
+	<div class="tweet-dogear"></div>
+	<div class="tweet-image">
+
+<img height="48" width="48" src='http://a0.twimg.com/profile_images/1255767431/kung-fu_normal.jpg' alt='Mathias Bynens ?' class='user-profile-link' data-user-id='532923'/>
+
+
+	</div>
+	<div class="tweet-content">
+		<div class="tweet-row">
+
+
+
+<span class='tweet-user-name'>
+	<a class='tweet-screen-name user-profile-link' data-user-id='532923' href='/#!/mathias' title='Mathias Bynens ?'>mathias</a>
+	<span class='tweet-full-name'>Mathias Bynens ?</span>
+
+</span>
+
+
+			<div class="tweet-corner">
+				<div class='tweet-meta'>
+	<span class='icons'>
+
+
+
+
+
+
+
+
+		<div class="extra-icons">
+
+
+					<span class='reply-icon icon js-reply-notice'>@</span>
+
+				<span class="inlinemedia-icons js-icon-container"></span>
+
+
+
+		</div>
+	</span>
+</div>
+
+
+			</div>
+		</div>
+		<div class="tweet-row">
+			<div class="tweet-text js-tweet-text">@<a class="tweet-url twitter-atreply" href="/#!/robertnyman" rel="nofollow">robertnyman</a> YouÕll thank me later ;)</div>
+
+		</div>
+
+			<div class="tweet-row">
+				<a href="/#!/mathias/status/126915172269953024" class="tweet-timestamp js-permalink" title=""><span class="_timestamp" data-time="Thu Oct 20 06:58:29 +0000 2011" data-long-form="true"></span></a>
+				<span class="tweet-actions js-actions" data-tweet-id="126915172269953024">
+
+		<span class="tweet-action action-favorite">
+
+				<a href="#" class="favorite-action js-toggle-fav" title="Favorite"><span><i></i><b>Favorite</b></span></a>
+
+
+
+		</span>
+
+
+
+				<span class="tweet-action action-retweet">
+					<a href="#" class="retweet-action js-toggle-rt" title="Retweet"><span><i></i><b>Retweet</b></span></a>
+
+				</span>
+
+
+
+
+		<a href="#" class="reply-action js-action-reply" data-screen-name="mathias" title="Reply"><span><i></i><b>Reply</b></span></a>
+
+
+
+
+</span>
+
+
+
+			</div>
+
+
+
+
+
+
+	</div>
+</div>
+
+
+
+
+
+
+
+</div>
+<div class='js-stream-item stream-item' data-item-id="126915119010693120" data-item-type="tweet" id="stream-item-tweet-126915119010693120">
+
+
+
+
+<div class="more">&raquo;</div>
+<div class="stream-item-content tweet js-actionable-tweet js-stream-tweet stream-tweet  "
+	data-is-reply-to="true"
+	data-tweet-id="126915119010693120"
+
+	data-item-id="126915119010693120"
+
+
+
+	data-screen-name="robertnyman"
+	data-user-id="8414132"
+
+
+	data-status="{&quot;retweet_count&quot;:0,&quot;favorited&quot;:false,&quot;created_at&quot;:&quot;Thu Oct 20 06:58:17 +0000 2011&quot;,&quot;in_reply_to_screen_name&quot;:&quot;mathias&quot;,&quot;in_reply_to_status_id&quot;:126915025490296832,&quot;retweeted&quot;:false,&quot;truncated&quot;:false,&quot;in_reply_to_status_id_str&quot;:&quot;126915025490296832&quot;,&quot;user&quot;:{&quot;profile_sidebar_fill_color&quot;:&quot;DAECF4&quot;,&quot;protected&quot;:false,&quot;is_translator&quot;:false,&quot;profile_background_image_url_https&quot;:&quot;https:\/\/si0.twimg.com\/images\/themes\/theme2\/bg.gif&quot;,&quot;created_at&quot;:&quot;Fri Aug 24 21:42:06 +0000 2007&quot;,&quot;screen_name&quot;:&quot;robertnyman&quot;,&quot;name&quot;:&quot;Robert Nyman&quot;,&quot;show_all_inline_media&quot;:false,&quot;follow_request_sent&quot;:false,&quot;contributors_enabled&quot;:false,&quot;following&quot;:true,&quot;friends_count&quot;:42,&quot;profile_sidebar_border_color&quot;:&quot;C6E2EE&quot;,&quot;notifications&quot;:false,&quot;utc_offset&quot;:3600,&quot;description&quot;:&quot;Technical Evangelist for Mozilla who gives talks and blogs about HTML5, CSS, JavaScript and the Open Web. Opinions are (mostly) mine. :-)&quot;,&quot;default_profile&quot;:false,&quot;verified&quot;:false,&quot;profile_use_background_image&quot;:true,&quot;time_zone&quot;:&quot;Stockholm&quot;,&quot;profile_image_url_https&quot;:&quot;https:\/\/si0.twimg.com\/profile_images\/1365729789\/me_normal.jpg&quot;,&quot;profile_text_color&quot;:&quot;663B12&quot;,&quot;profile_image_url&quot;:&quot;http:\/\/a1.twimg.com\/profile_images\/1365729789\/me_normal.jpg&quot;,&quot;listed_count&quot;:492,&quot;geo_enabled&quot;:false,&quot;profile_background_image_url&quot;:&quot;http:\/\/a1.twimg.com\/images\/themes\/theme2\/bg.gif&quot;,&quot;favourites_count&quot;:29,&quot;location&quot;:&quot;Stockholm&quot;,&quot;id_str&quot;:&quot;8414132&quot;,&quot;profile_link_color&quot;:&quot;1F98C7&quot;,&quot;lang&quot;:&quot;en&quot;,&quot;statuses_count&quot;:16200,&quot;url&quot;:&quot;http:\/\/robertnyman.com&quot;,&quot;profile_background_color&quot;:&quot;C6E2EE&quot;,&quot;followers_count&quot;:4477,&quot;id&quot;:8414132,&quot;default_profile_image&quot;:false,&quot;profile_background_tile&quot;:false},&quot;in_reply_to_user_id_str&quot;:&quot;532923&quot;,&quot;id_str&quot;:&quot;126915119010693120&quot;,&quot;entities&quot;:{&quot;urls&quot;:[],&quot;hashtags&quot;:[],&quot;user_mentions&quot;:[{&quot;name&quot;:&quot;Mathias Bynens \ue00d&quot;,&quot;screen_name&quot;:&quot;mathias&quot;,&quot;indices&quot;:[0,8],&quot;id_str&quot;:&quot;532923&quot;,&quot;id&quot;:532923}]},&quot;contributors&quot;:null,&quot;source&quot;:&quot;\u003Ca href=\&quot;http:\/\/itunes.apple.com\/us\/app\/twitter\/id409789998?mt=12\&quot; rel=\&quot;nofollow\&quot;\u003ETwitter for Mac\u003C\/a\u003E&quot;,&quot;place&quot;:null,&quot;geo&quot;:null,&quot;in_reply_to_user_id&quot;:532923,&quot;id&quot;:126915119010693120,&quot;coordinates&quot;:null,&quot;text&quot;:&quot;@mathias Mmm. Ok, I believe it when I see it. :-P&quot;}">
+
+
+
+	<div class="tweet-dogear"></div>
+	<div class="tweet-image">
+
+<img height="48" width="48" src='http://a1.twimg.com/profile_images/1365729789/me_normal.jpg' alt='Robert Nyman' class='user-profile-link' data-user-id='8414132'/>
+
+
+	</div>
+	<div class="tweet-content">
+		<div class="tweet-row">
+
+
+
+<span class='tweet-user-name'>
+	<a class='tweet-screen-name user-profile-link' data-user-id='8414132' href='/#!/robertnyman' title='Robert Nyman'>robertnyman</a>
+	<span class='tweet-full-name'>Robert Nyman</span>
+
+</span>
+
+
+			<div class="tweet-corner">
+				<div class='tweet-meta'>
+	<span class='icons'>
+
+
+
+
+
+
+
+
+		<div class="extra-icons">
+
+
+					<span class='reply-icon icon js-reply-notice'>@</span>
+
+				<span class="inlinemedia-icons js-icon-container"></span>
+
+
+
+		</div>
+	</span>
+</div>
+
+
+			</div>
+		</div>
+		<div class="tweet-row">
+			<div class="tweet-text js-tweet-text">@<a class="tweet-url twitter-atreply" href="/#!/mathias" rel="nofollow">mathias</a> Mmm. Ok, I believe it when I see it. :-P</div>
+
+		</div>
+
+			<div class="tweet-row">
+				<a href="/#!/robertnyman/status/126915119010693120" class="tweet-timestamp js-permalink" title=""><span class="_timestamp" data-time="Thu Oct 20 06:58:17 +0000 2011" data-long-form="true"></span></a>
+				<span class="tweet-actions js-actions" data-tweet-id="126915119010693120">
+
+		<span class="tweet-action action-favorite">
+
+				<a href="#" class="favorite-action js-toggle-fav" title="Favorite"><span><i></i><b>Favorite</b></span></a>
+
+
+
+		</span>
+
+
+
+				<span class="tweet-action action-retweet">
+					<a href="#" class="retweet-action js-toggle-rt" title="Retweet"><span><i></i><b>Retweet</b></span></a>
+
+				</span>
+
+
+
+
+		<a href="#" class="reply-action js-action-reply" data-screen-name="robertnyman" title="Reply"><span><i></i><b>Reply</b></span></a>
+
+
+
+
+</span>
+
+
+
+			</div>
+
+
+
+
+
+
+	</div>
+</div>
+
+
+
+
+
+
+
+</div>
+<div class='js-stream-item stream-item' data-item-id="126915025490296832" data-item-type="tweet" id="stream-item-tweet-126915025490296832">
+
+
+
+
+<div class="more">&raquo;</div>
+<div class="stream-item-content tweet js-actionable-tweet js-stream-tweet stream-tweet  "
+	data-is-reply-to="true"
+	data-tweet-id="126915025490296832"
+
+	data-item-id="126915025490296832"
+
+
+
+	data-screen-name="mathias"
+	data-user-id="532923"
+
+
+	data-status="{&quot;in_reply_to_user_id&quot;:8414132,&quot;created_at&quot;:&quot;Thu Oct 20 06:57:54 +0000 2011&quot;,&quot;retweet_count&quot;:0,&quot;in_reply_to_status_id&quot;:126914736112676865,&quot;favorited&quot;:false,&quot;in_reply_to_screen_name&quot;:&quot;robertnyman&quot;,&quot;truncated&quot;:false,&quot;user&quot;:{&quot;profile_background_color&quot;:&quot;131516&quot;,&quot;protected&quot;:false,&quot;is_translator&quot;:false,&quot;profile_background_tile&quot;:true,&quot;profile_background_image_url_https&quot;:&quot;https:\/\/si0.twimg.com\/images\/themes\/theme14\/bg.gif&quot;,&quot;created_at&quot;:&quot;Thu Jan 04 11:37:32 +0000 2007&quot;,&quot;screen_name&quot;:&quot;mathias&quot;,&quot;name&quot;:&quot;Mathias Bynens \ue00d&quot;,&quot;follow_request_sent&quot;:false,&quot;following&quot;:true,&quot;friends_count&quot;:268,&quot;profile_sidebar_fill_color&quot;:&quot;efefef&quot;,&quot;notifications&quot;:false,&quot;utc_offset&quot;:3600,&quot;description&quot;:&quot;Front-end web developer. I like bytes.&quot;,&quot;show_all_inline_media&quot;:false,&quot;contributors_enabled&quot;:false,&quot;verified&quot;:false,&quot;profile_sidebar_border_color&quot;:&quot;eeeeee&quot;,&quot;profile_image_url_https&quot;:&quot;https:\/\/si0.twimg.com\/profile_images\/1255767431\/kung-fu_normal.jpg&quot;,&quot;profile_image_url&quot;:&quot;http:\/\/a0.twimg.com\/profile_images\/1255767431\/kung-fu_normal.jpg&quot;,&quot;listed_count&quot;:383,&quot;profile_use_background_image&quot;:true,&quot;time_zone&quot;:&quot;Brussels&quot;,&quot;location&quot;:&quot;Belgium&quot;,&quot;profile_text_color&quot;:&quot;333333&quot;,&quot;lang&quot;:&quot;en&quot;,&quot;statuses_count&quot;:10192,&quot;geo_enabled&quot;:true,&quot;profile_background_image_url&quot;:&quot;http:\/\/a1.twimg.com\/images\/themes\/theme14\/bg.gif&quot;,&quot;favourites_count&quot;:1535,&quot;url&quot;:&quot;http:\/\/mths.be\/&quot;,&quot;id_str&quot;:&quot;532923&quot;,&quot;profile_link_color&quot;:&quot;009999&quot;,&quot;followers_count&quot;:4332,&quot;id&quot;:532923,&quot;default_profile_image&quot;:false,&quot;default_profile&quot;:false},&quot;retweeted&quot;:false,&quot;in_reply_to_status_id_str&quot;:&quot;126914736112676865&quot;,&quot;entities&quot;:{&quot;urls&quot;:[],&quot;hashtags&quot;:[],&quot;user_mentions&quot;:[{&quot;name&quot;:&quot;Robert Nyman&quot;,&quot;screen_name&quot;:&quot;robertnyman&quot;,&quot;indices&quot;:[0,12],&quot;id_str&quot;:&quot;8414132&quot;,&quot;id&quot;:8414132}]},&quot;source&quot;:&quot;\u003Ca href=\&quot;http:\/\/itunes.apple.com\/us\/app\/twitter\/id409789998?mt=12\&quot; rel=\&quot;nofollow\&quot;\u003ETwitter for Mac\u003C\/a\u003E&quot;,&quot;in_reply_to_user_id_str&quot;:&quot;8414132&quot;,&quot;id_str&quot;:&quot;126915025490296832&quot;,&quot;place&quot;:null,&quot;geo&quot;:null,&quot;id&quot;:126915025490296832,&quot;contributors&quot;:null,&quot;coordinates&quot;:null,&quot;text&quot;:&quot;@robertnyman Again, that\u2019s because you hadn\u2019t linked your account then. Now that you have, from now on it\u2019ll collect all RTs.&quot;}">
+
+
+
+	<div class="tweet-dogear"></div>
+	<div class="tweet-image">
+
+<img height="48" width="48" src='http://a0.twimg.com/profile_images/1255767431/kung-fu_normal.jpg' alt='Mathias Bynens ?' class='user-profile-link' data-user-id='532923'/>
+
+
+	</div>
+	<div class="tweet-content">
+		<div class="tweet-row">
+
+
+
+<span class='tweet-user-name'>
+	<a class='tweet-screen-name user-profile-link' data-user-id='532923' href='/#!/mathias' title='Mathias Bynens ?'>mathias</a>
+	<span class='tweet-full-name'>Mathias Bynens ?</span>
+
+</span>
+
+
+			<div class="tweet-corner">
+				<div class='tweet-meta'>
+	<span class='icons'>
+
+
+
+
+
+
+
+
+		<div class="extra-icons">
+
+
+					<span class='reply-icon icon js-reply-notice'>@</span>
+
+				<span class="inlinemedia-icons js-icon-container"></span>
+
+
+
+		</div>
+	</span>
+</div>
+
+
+			</div>
+		</div>
+		<div class="tweet-row">
+			<div class="tweet-text js-tweet-text">@<a class="tweet-url twitter-atreply" href="/#!/robertnyman" rel="nofollow">robertnyman</a> Again, thatÕs because you hadnÕt linked your account then. Now that you have, from now on itÕll collect all RTs.</div>
+
+		</div>
+
+			<div class="tweet-row">
+				<a href="/#!/mathias/status/126915025490296832" class="tweet-timestamp js-permalink" title=""><span class="_timestamp" data-time="Thu Oct 20 06:57:54 +0000 2011" data-long-form="true"></span></a>
+				<span class="tweet-actions js-actions" data-tweet-id="126915025490296832">
+
+		<span class="tweet-action action-favorite">
+
+				<a href="#" class="favorite-action js-toggle-fav" title="Favorite"><span><i></i><b>Favorite</b></span></a>
+
+
+
+		</span>
+
+
+
+				<span class="tweet-action action-retweet">
+					<a href="#" class="retweet-action js-toggle-rt" title="Retweet"><span><i></i><b>Retweet</b></span></a>
+
+				</span>
+
+
+
+
+		<a href="#" class="reply-action js-action-reply" data-screen-name="mathias" title="Reply"><span><i></i><b>Reply</b></span></a>
+
+
+
+
+</span>
+
+
+
+			</div>
+
+
+
+
+
+
+	</div>
+</div>
+
+
+
+
+
+
+
+</div>
+<div class='js-stream-item stream-item' data-item-id="126914736112676865" data-item-type="tweet" id="stream-item-tweet-126914736112676865">
+
+
+
+
+<div class="more">&raquo;</div>
+<div class="stream-item-content tweet js-actionable-tweet js-stream-tweet stream-tweet  "
+	data-is-reply-to="true"
+	data-tweet-id="126914736112676865"
+
+	data-item-id="126914736112676865"
+
+
+
+	data-screen-name="robertnyman"
+	data-user-id="8414132"
+
+
+	data-status="{&quot;in_reply_to_user_id&quot;:532923,&quot;created_at&quot;:&quot;Thu Oct 20 06:56:45 +0000 2011&quot;,&quot;retweet_count&quot;:0,&quot;in_reply_to_status_id&quot;:126913467528642560,&quot;favorited&quot;:false,&quot;in_reply_to_screen_name&quot;:&quot;mathias&quot;,&quot;truncated&quot;:false,&quot;user&quot;:{&quot;profile_background_color&quot;:&quot;C6E2EE&quot;,&quot;protected&quot;:false,&quot;is_translator&quot;:false,&quot;profile_background_tile&quot;:false,&quot;profile_background_image_url_https&quot;:&quot;https:\/\/si0.twimg.com\/images\/themes\/theme2\/bg.gif&quot;,&quot;created_at&quot;:&quot;Fri Aug 24 21:42:06 +0000 2007&quot;,&quot;screen_name&quot;:&quot;robertnyman&quot;,&quot;name&quot;:&quot;Robert Nyman&quot;,&quot;follow_request_sent&quot;:false,&quot;following&quot;:true,&quot;friends_count&quot;:42,&quot;profile_sidebar_fill_color&quot;:&quot;DAECF4&quot;,&quot;default_profile&quot;:false,&quot;notifications&quot;:false,&quot;utc_offset&quot;:3600,&quot;description&quot;:&quot;Technical Evangelist for Mozilla who gives talks and blogs about HTML5, CSS, JavaScript and the Open Web. Opinions are (mostly) mine. :-)&quot;,&quot;show_all_inline_media&quot;:false,&quot;contributors_enabled&quot;:false,&quot;verified&quot;:false,&quot;profile_sidebar_border_color&quot;:&quot;C6E2EE&quot;,&quot;profile_image_url_https&quot;:&quot;https:\/\/si0.twimg.com\/profile_images\/1365729789\/me_normal.jpg&quot;,&quot;profile_image_url&quot;:&quot;http:\/\/a1.twimg.com\/profile_images\/1365729789\/me_normal.jpg&quot;,&quot;listed_count&quot;:492,&quot;profile_use_background_image&quot;:true,&quot;time_zone&quot;:&quot;Stockholm&quot;,&quot;location&quot;:&quot;Stockholm&quot;,&quot;profile_text_color&quot;:&quot;663B12&quot;,&quot;lang&quot;:&quot;en&quot;,&quot;statuses_count&quot;:16199,&quot;geo_enabled&quot;:false,&quot;profile_background_image_url&quot;:&quot;http:\/\/a1.twimg.com\/images\/themes\/theme2\/bg.gif&quot;,&quot;favourites_count&quot;:29,&quot;url&quot;:&quot;http:\/\/robertnyman.com&quot;,&quot;id_str&quot;:&quot;8414132&quot;,&quot;profile_link_color&quot;:&quot;1F98C7&quot;,&quot;followers_count&quot;:4477,&quot;id&quot;:8414132,&quot;default_profile_image&quot;:false},&quot;retweeted&quot;:false,&quot;in_reply_to_status_id_str&quot;:&quot;126913467528642560&quot;,&quot;entities&quot;:{&quot;urls&quot;:[],&quot;hashtags&quot;:[],&quot;user_mentions&quot;:[{&quot;name&quot;:&quot;Mathias Bynens \ue00d&quot;,&quot;screen_name&quot;:&quot;mathias&quot;,&quot;indices&quot;:[0,8],&quot;id_str&quot;:&quot;532923&quot;,&quot;id&quot;:532923}]},&quot;source&quot;:&quot;\u003Ca href=\&quot;http:\/\/itunes.apple.com\/us\/app\/twitter\/id409789998?mt=12\&quot; rel=\&quot;nofollow\&quot;\u003ETwitter for Mac\u003C\/a\u003E&quot;,&quot;in_reply_to_user_id_str&quot;:&quot;532923&quot;,&quot;id_str&quot;:&quot;126914736112676865&quot;,&quot;place&quot;:null,&quot;geo&quot;:null,&quot;id&quot;:126914736112676865,&quot;contributors&quot;:null,&quot;coordinates&quot;:null,&quot;text&quot;:&quot;@mathias Trying it now. For instance, my tweet about Facebook&#39;s HTML5 Developer Center had about 15 RTs yesterday - favstar shows one\u2026&quot;}">
+
+
+
+	<div class="tweet-dogear"></div>
+	<div class="tweet-image">
+
+<img height="48" width="48" src='http://a1.twimg.com/profile_images/1365729789/me_normal.jpg' alt='Robert Nyman' class='user-profile-link' data-user-id='8414132'/>
+
+
+	</div>
+	<div class="tweet-content">
+		<div class="tweet-row">
+
+
+
+<span class='tweet-user-name'>
+	<a class='tweet-screen-name user-profile-link' data-user-id='8414132' href='/#!/robertnyman' title='Robert Nyman'>robertnyman</a>
+	<span class='tweet-full-name'>Robert Nyman</span>
+
+</span>
+
+
+			<div class="tweet-corner">
+				<div class='tweet-meta'>
+	<span class='icons'>
+
+
+
+
+
+
+
+
+		<div class="extra-icons">
+
+
+					<span class='reply-icon icon js-reply-notice'>@</span>
+
+				<span class="inlinemedia-icons js-icon-container"></span>
+
+
+
+		</div>
+	</span>
+</div>
+
+
+			</div>
+		</div>
+		<div class="tweet-row">
+			<div class="tweet-text js-tweet-text">@<a class="tweet-url twitter-atreply" href="/#!/mathias" rel="nofollow">mathias</a> Trying it now. For instance, my tweet about Facebook's HTML5 Developer Center had about 15 RTs yesterday - favstar shows oneÉ</div>
+
+		</div>
+
+			<div class="tweet-row">
+				<a href="/#!/robertnyman/status/126914736112676865" class="tweet-timestamp js-permalink" title=""><span class="_timestamp" data-time="Thu Oct 20 06:56:45 +0000 2011" data-long-form="true"></span></a>
+				<span class="tweet-actions js-actions" data-tweet-id="126914736112676865">
+
+		<span class="tweet-action action-favorite">
+
+				<a href="#" class="favorite-action js-toggle-fav" title="Favorite"><span><i></i><b>Favorite</b></span></a>
+
+
+
+		</span>
+
+
+
+				<span class="tweet-action action-retweet">
+					<a href="#" class="retweet-action js-toggle-rt" title="Retweet"><span><i></i><b>Retweet</b></span></a>
+
+				</span>
+
+
+
+
+		<a href="#" class="reply-action js-action-reply" data-screen-name="robertnyman" title="Reply"><span><i></i><b>Reply</b></span></a>
+
+
+
+
+</span>
+
+
+
+			</div>
+
+
+
+
+
+
+	</div>
+</div>
+
+
+
+
+
+
+
+</div>
+<div class='js-stream-item stream-item' data-item-id="126914388924964864" data-item-type="tweet" id="stream-item-tweet-126914388924964864">
+
+
+
+
+<div class="more">&raquo;</div>
+<div class="stream-item-content tweet js-actionable-tweet js-stream-tweet stream-tweet  "
+	data-is-reply-to="true"
+	data-tweet-id="126914388924964864"
+
+	data-item-id="126914388924964864"
+
+
+
+	data-screen-name="plusseg"
+	data-user-id="222881524"
+
+
+	data-status="{&quot;in_reply_to_user_id&quot;:153497232,&quot;created_at&quot;:&quot;Thu Oct 20 06:55:22 +0000 2011&quot;,&quot;retweet_count&quot;:0,&quot;in_reply_to_status_id&quot;:126910776920387585,&quot;favorited&quot;:false,&quot;in_reply_to_screen_name&quot;:&quot;Xseniya_T&quot;,&quot;truncated&quot;:false,&quot;user&quot;:{&quot;profile_background_color&quot;:&quot;C0DEED&quot;,&quot;protected&quot;:false,&quot;is_translator&quot;:false,&quot;profile_background_tile&quot;:false,&quot;profile_background_image_url_https&quot;:&quot;https:\/\/si0.twimg.com\/images\/themes\/theme1\/bg.png&quot;,&quot;created_at&quot;:&quot;Sat Dec 04 18:51:44 +0000 2010&quot;,&quot;screen_name&quot;:&quot;plusseg&quot;,&quot;name&quot;:&quot;Dmitry Pliusnin&quot;,&quot;follow_request_sent&quot;:false,&quot;following&quot;:false,&quot;friends_count&quot;:31,&quot;profile_sidebar_fill_color&quot;:&quot;DDEEF6&quot;,&quot;notifications&quot;:false,&quot;utc_offset&quot;:-10800,&quot;description&quot;:&quot;&quot;,&quot;show_all_inline_media&quot;:false,&quot;contributors_enabled&quot;:false,&quot;verified&quot;:false,&quot;profile_sidebar_border_color&quot;:&quot;C0DEED&quot;,&quot;profile_image_url_https&quot;:&quot;https:\/\/si0.twimg.com\/profile_images\/1183979562\/image_normal.jpg&quot;,&quot;default_profile&quot;:true,&quot;profile_image_url&quot;:&quot;http:\/\/a2.twimg.com\/profile_images\/1183979562\/image_normal.jpg&quot;,&quot;listed_count&quot;:1,&quot;profile_use_background_image&quot;:true,&quot;time_zone&quot;:&quot;Greenland&quot;,&quot;location&quot;:&quot;Minsk&quot;,&quot;profile_text_color&quot;:&quot;333333&quot;,&quot;lang&quot;:&quot;ru&quot;,&quot;statuses_count&quot;:554,&quot;geo_enabled&quot;:true,&quot;profile_background_image_url&quot;:&quot;http:\/\/a0.twimg.com\/images\/themes\/theme1\/bg.png&quot;,&quot;favourites_count&quot;:1,&quot;url&quot;:null,&quot;id_str&quot;:&quot;222881524&quot;,&quot;profile_link_color&quot;:&quot;0084B4&quot;,&quot;followers_count&quot;:35,&quot;id&quot;:222881524,&quot;default_profile_image&quot;:false},&quot;retweeted&quot;:false,&quot;in_reply_to_status_id_str&quot;:&quot;126910776920387585&quot;,&quot;entities&quot;:{&quot;urls&quot;:[],&quot;hashtags&quot;:[],&quot;user_mentions&quot;:[{&quot;name&quot;:&quot;Kseniya Tyrsikova&quot;,&quot;screen_name&quot;:&quot;Xseniya_T&quot;,&quot;indices&quot;:[0,10],&quot;id_str&quot;:&quot;153497232&quot;,&quot;id&quot;:153497232}]},&quot;source&quot;:&quot;web&quot;,&quot;in_reply_to_user_id_str&quot;:&quot;153497232&quot;,&quot;id_str&quot;:&quot;126914388924964864&quot;,&quot;place&quot;:null,&quot;geo&quot;:null,&quot;id&quot;:126914388924964864,&quot;contributors&quot;:null,&quot;coordinates&quot;:null,&quot;text&quot;:&quot;@Xseniya_T \u043f\u0435\u0440\u0432\u044b\u0439 \u0442\u0432\u0438\u0442 \u0438 \u0441 \u043e\u0448\u0438\u0431\u043a\u043e\u0439) \u0421\u0434\u0430\u0432\u0430\u0439 \u0442\u0435\u043b\u0435\u0444\u043e\u043d \u043e\u0431\u0440\u0430\u0442\u043d\u043e)))&quot;}">
+
+
+
+	<div class="tweet-dogear"></div>
+	<div class="tweet-image">
+
+<img height="48" width="48" src='http://a2.twimg.com/profile_images/1183979562/image_normal.jpg' alt='Dmitry Pliusnin' class='user-profile-link' data-user-id='222881524'/>
+
+
+	</div>
+	<div class="tweet-content">
+		<div class="tweet-row">
+
+
+
+<span class='tweet-user-name'>
+	<a class='tweet-screen-name user-profile-link' data-user-id='222881524' href='/#!/plusseg' title='Dmitry Pliusnin'>plusseg</a>
+	<span class='tweet-full-name'>Dmitry Pliusnin</span>
+
+</span>
+
+
+			<div class="tweet-corner">
+				<div class='tweet-meta'>
+	<span class='icons'>
+
+
+
+
+
+
+
+
+		<div class="extra-icons">
+
+
+					<span class='reply-icon icon js-reply-notice'>@</span>
+
+				<span class="inlinemedia-icons js-icon-container"></span>
+
+
+
+		</div>
+	</span>
+</div>
+
+
+			</div>
+		</div>
+		<div class="tweet-row">
+			<div class="tweet-text js-tweet-text">@<a class="tweet-url twitter-atreply" href="/#!/Xseniya_T" rel="nofollow">Xseniya_T</a> ïåðâûé òâèò è ñ îøèáêîé) ‘äàâàé òåëåôîí îáðàòíî)))</div>
+
+		</div>
+
+			<div class="tweet-row">
+				<a href="/#!/plusseg/status/126914388924964864" class="tweet-timestamp js-permalink" title=""><span class="_timestamp" data-time="Thu Oct 20 06:55:22 +0000 2011" data-long-form="true"></span></a>
+				<span class="tweet-actions js-actions" data-tweet-id="126914388924964864">
+
+		<span class="tweet-action action-favorite">
+
+				<a href="#" class="favorite-action js-toggle-fav" title="Favorite"><span><i></i><b>Favorite</b></span></a>
+
+
+
+		</span>
+
+
+
+				<span class="tweet-action action-retweet">
+					<a href="#" class="retweet-action js-toggle-rt" title="Retweet"><span><i></i><b>Retweet</b></span></a>
+
+				</span>
+
+
+
+
+		<a href="#" class="reply-action js-action-reply" data-screen-name="plusseg" title="Reply"><span><i></i><b>Reply</b></span></a>
+
+
+
+
+</span>
+
+
+
+			</div>
+
+
+
+
+
+
+	</div>
+</div>
+
+
+
+
+
+
+
+</div>
+<div class='js-stream-item stream-item' data-item-id="126914246507368448" data-item-type="tweet" id="stream-item-tweet-126914246507368448">
+
+
+
+
+<div class="more">&raquo;</div>
+<div class="stream-item-content tweet js-actionable-tweet js-stream-tweet stream-tweet  "
+	data-is-reply-to="false"
+	data-tweet-id="126914246507368448"
+
+	data-item-id="126914246507368448"
+
+
+
+	data-screen-name="tachisis"
+	data-user-id="10595962"
+
+
+	data-status="{&quot;retweet_count&quot;:0,&quot;favorited&quot;:false,&quot;created_at&quot;:&quot;Thu Oct 20 06:54:48 +0000 2011&quot;,&quot;in_reply_to_screen_name&quot;:null,&quot;in_reply_to_status_id&quot;:null,&quot;retweeted&quot;:false,&quot;truncated&quot;:false,&quot;in_reply_to_status_id_str&quot;:null,&quot;user&quot;:{&quot;profile_sidebar_fill_color&quot;:&quot;99CC33&quot;,&quot;protected&quot;:false,&quot;is_translator&quot;:false,&quot;profile_background_image_url_https&quot;:&quot;https:\/\/si0.twimg.com\/images\/themes\/theme5\/bg.gif&quot;,&quot;created_at&quot;:&quot;Mon Nov 26 09:25:35 +0000 2007&quot;,&quot;screen_name&quot;:&quot;tachisis&quot;,&quot;name&quot;:&quot;engel&quot;,&quot;show_all_inline_media&quot;:true,&quot;follow_request_sent&quot;:false,&quot;contributors_enabled&quot;:false,&quot;following&quot;:true,&quot;friends_count&quot;:62,&quot;profile_sidebar_border_color&quot;:&quot;829D5E&quot;,&quot;notifications&quot;:false,&quot;utc_offset&quot;:10800,&quot;description&quot;:&quot;&quot;,&quot;verified&quot;:false,&quot;profile_use_background_image&quot;:true,&quot;time_zone&quot;:&quot;St. Petersburg&quot;,&quot;profile_image_url_https&quot;:&quot;https:\/\/si0.twimg.com\/profile_images\/829708854\/Yoite_in_process_by_shirou_kamui_normal.jpg&quot;,&quot;profile_text_color&quot;:&quot;3E4415&quot;,&quot;profile_image_url&quot;:&quot;http:\/\/a2.twimg.com\/profile_images\/829708854\/Yoite_in_process_by_shirou_kamui_normal.jpg&quot;,&quot;default_profile&quot;:false,&quot;listed_count&quot;:22,&quot;geo_enabled&quot;:false,&quot;profile_background_image_url&quot;:&quot;http:\/\/a1.twimg.com\/images\/themes\/theme5\/bg.gif&quot;,&quot;favourites_count&quot;:1,&quot;location&quot;:&quot;SPb&quot;,&quot;id_str&quot;:&quot;10595962&quot;,&quot;profile_link_color&quot;:&quot;D02B55&quot;,&quot;lang&quot;:&quot;en&quot;,&quot;statuses_count&quot;:3542,&quot;url&quot;:&quot;http:\/\/engelside.net&quot;,&quot;profile_background_color&quot;:&quot;352726&quot;,&quot;followers_count&quot;:362,&quot;id&quot;:10595962,&quot;default_profile_image&quot;:false,&quot;profile_background_tile&quot;:false},&quot;in_reply_to_user_id_str&quot;:null,&quot;id_str&quot;:&quot;126914246507368448&quot;,&quot;entities&quot;:{&quot;urls&quot;:[],&quot;hashtags&quot;:[],&quot;user_mentions&quot;:[]},&quot;contributors&quot;:null,&quot;source&quot;:&quot;\u003Ca href=\&quot;http:\/\/twitter.com\/#!\/download\/iphone\&quot; rel=\&quot;nofollow\&quot;\u003ETwitter for iPhone\u003C\/a\u003E&quot;,&quot;place&quot;:null,&quot;geo&quot;:null,&quot;in_reply_to_user_id&quot;:null,&quot;id&quot;:126914246507368448,&quot;coordinates&quot;:null,&quot;text&quot;:&quot;\u0420\u0430\u0437\u0432\u0435\u0434\u043a\u0430 \u0434\u043e\u043d\u0435\u0441\u043b\u0430, \u0447\u0442\u043e \u043c\u043e\u044e \u0432\u043a\u043e\u043d\u0442\u0430\u0448\u0435\u0447\u043a\u0443 \u0432\u0437\u043b\u043e\u043c\u0430\u043b\u0438. \u0418\u0437\u0432\u0438\u043d\u0438\u0442\u0435 \u043f\u043e\u0441\u0442\u0440\u0430\u0434\u0430\u0432\u0448\u0438\u0435.&quot;}">
+
+
+
+	<div class="tweet-dogear"></div>
+	<div class="tweet-image">
+
+<img height="48" width="48" src='http://a2.twimg.com/profile_images/829708854/Yoite_in_process_by_shirou_kamui_normal.jpg' alt='engel' class='user-profile-link' data-user-id='10595962'/>
+
+
+	</div>
+	<div class="tweet-content">
+		<div class="tweet-row">
+
+
+
+<span class='tweet-user-name'>
+	<a class='tweet-screen-name user-profile-link' data-user-id='10595962' href='/#!/tachisis' title='engel'>tachisis</a>
+	<span class='tweet-full-name'>engel</span>
+
+</span>
+
+
+			<div class="tweet-corner">
+				<div class='tweet-meta'>
+	<span class='icons'>
+
+
+
+
+
+
+
+
+		<div class="extra-icons">
+
+
+				<span class="inlinemedia-icons js-icon-container"></span>
+
+
+
+		</div>
+	</span>
+</div>
+
+
+			</div>
+		</div>
+		<div class="tweet-row">
+			<div class="tweet-text js-tweet-text">àçâåäêà äîíåñëà, ÷òî ìîþ âêîíòàøå÷êó âçëîìàëè. ˆçâèíèòå ïîñòðàäàâøèå.</div>
+
+		</div>
+
+			<div class="tweet-row">
+				<a href="/#!/tachisis/status/126914246507368448" class="tweet-timestamp js-permalink" title=""><span class="_timestamp" data-time="Thu Oct 20 06:54:48 +0000 2011" data-long-form="true"></span></a>
+				<span class="tweet-actions js-actions" data-tweet-id="126914246507368448">
+
+		<span class="tweet-action action-favorite">
+
+				<a href="#" class="favorite-action js-toggle-fav" title="Favorite"><span><i></i><b>Favorite</b></span></a>
+
+
+
+		</span>
+
+
+
+				<span class="tweet-action action-retweet">
+					<a href="#" class="retweet-action js-toggle-rt" title="Retweet"><span><i></i><b>Retweet</b></span></a>
+
+				</span>
+
+
+
+
+		<a href="#" class="reply-action js-action-reply" data-screen-name="tachisis" title="Reply"><span><i></i><b>Reply</b></span></a>
+
+
+
+
+</span>
+
+
+
+			</div>
+
+
+
+
+
+
+	</div>
+</div>
+
+
+
+
+
+
+
+</div>
+</div>
+
+			</div>
+		</div>
+
+</div>
+
+		<script>twttr.tweetsVisibleTime = new Date();if (window.ttft) window.ttft.serverRendered('home');twttr.keynoteTTFTPing();</script>
+
+</div>
+<div class="dashboard">
+
+
+
+
+
+</div>
+
+<div id="details-pane-outer">
+	<div class="details-pane-shell">
+		<div class="details-pane">
+
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+					</div>
+				</div>
+			</div>
+
+
+
+
+			<div id="message-notifications"></div>
+		</div>
+
+		<div id="flash-message-storage" style="display:none"></div>
+		<div id="flash-object-container"></div>
+
+		<div id="off-screen-preload">
+			<div class="content-fe-sprites"></div>
+		</div>
+
+
+
+
+
+<script type="text/javascript">WATCH('loadrunner', function() {
+		(function(context,document){var useInteractive=context.attachEvent&&!context.opera,scripts=document.getElementsByTagName("script"),uuid=0,scriptTag,scriptTemplate=document.createElement("script"),scriptsInProgress={},modulesInProgress={},loadedModule,currentScript,activeScripts={},oldUsing=context.using,oldProvide=context.provide,oldDefine=context.define,oldLoadrunner=context.loadrunner,pausedScripts={};for(var i=0,s;s=scripts[i];i++){if(s.src.match(/loadrunner\.js(\?|#|$)/)){scriptTag=s;break}}function aug(target){for(var i=1,o;o=arguments[i];i++){for(var key in o){target[key]=o[key]}}return target}function makeArray(o){return Array.prototype.slice.call(o)}var isArray=Array.isArray||function(obj){return obj.constructor==Array};function indexOf(arr,thing){for(var i=0,item;item=arr[i];i++){if(thing==item){return i}}return -1}function path(){var parts=makeArray(arguments),normalized=[];for(var i=0,len=parts.length;i<len;i++){if(parts[i].length>0){normalized.push(parts[i].replace(/\/$/,""))}}return normalized.join("/")}function pushObjPath(obj,path,newobj){var names=path.split("/"),cursor=obj;while(names.length>1){var name=names.shift();cursor=cursor[name]=cursor[name]||{}}cursor[names[0]]=newobj}function Dependency(){}Dependency.prototype.then=function(cb){var dep=this;if(!this.started){this.started=true;this.start()}if(this.completed){cb.apply(context,this.results)}else{this.callbacks=this.callbacks||[];this.callbacks.push(cb)}return this};Dependency.prototype.start=function(){};Dependency.prototype.complete=function(){if(!this.completed){this.results=makeArray(arguments);this.completed=true;if(this.callbacks){for(var i=0,cb;cb=this.callbacks[i];i++){cb.apply(context,this.results)}}}};function Script(path,force){if(path){this.id=this.path=this.resolvePath(path)}this.force=!!force}Script.loaded=[];Script.times={};Script.prototype=new Dependency;Script.prototype.resolvePath=function(path){return whichBundle(path)};Script.prototype.start=function(){var me=this,dep,module;if(module=modulesInProgress[this.id]){module.then(function(){me.complete()});return this}if(dep=scriptsInProgress[this.id]){dep.then(function(){me.loaded()})}else{if(!this.force&&indexOf(Script.loaded,this.id)>-1){this.loaded()}else{this.load()}}return this};Script.prototype.createScriptTag=function(){var me=this,paused;scriptsInProgress[this.id]=me;if(paused=pausedScripts[this.path]){me.then(function(){for(var i=0,d;d=paused[i];i++){d.complete.apply(d,arguments)}})}this.times={start:new Date()};var script=scriptTemplate.cloneNode(false);this.scriptId=script.id="LR"+ ++uuid;script.type="text/javascript";script.async=true;script.onerror=function(){throw new Error(me.path+" not loaded")};script.onreadystatechange=script.onload=function(e){e=context.event||e;if(e.type=="load"||indexOf(["loaded","complete"],this.readyState)>-1){this.onreadystatechange=null;me.loaded()}};script.src=this.path;currentScript=this;scripts[0].parentNode.insertBefore(script,scripts[0]);currentScript=null;activeScripts[script.id]=this};Script.prototype.queueScript=function(){pausedScripts[this.path]=pausedScripts[this.path]||[];pausedScripts[this.path].push(this)};Script.prototype.load=function(force){if(using.autoLoad||force){this.createScriptTag()}else{this.queueScript()}return this};Script.prototype.loaded=function(){this.complete()};Script.prototype.complete=function(){if(indexOf(Script.loaded,this.id)==-1){Script.loaded.push(this.id)}if(this.times){Script.times[this.id]=aug(this.times,{end:new Date()})}delete scriptsInProgress[this.id];Dependency.prototype.complete.apply(this,arguments)};function Module(id,body){this.id=id;this.body=body;if(typeof body=="undefined"){this.path=this.resolvePath(id)}}Module.exports={};Module.prototype=new Script;Module.prototype.resolvePath=function(id){return(whichBundle(id)!=id)?whichBundle(id):path(using.path,id+".js")};Module.prototype.start=function(){var exports,module,me=this,oldCurrent;if(this.body){this.execute()}else{if(exports=Module.exports[this.id]){this.exp(exports)}else{if(module=modulesInProgress[this.id]){module.then(function(exports){me.exp(exports)})}else{modulesInProgress[this.id]=this;this.load()}}}};Module.prototype.loaded=function(){var module,exports,me=this;if(!useInteractive){module=loadedModule;loadedModule=null;module.id=module.id||this.id;module.then(function(exports){me.exp(exports)})}else{if(exports=Module.exports[this.id]){this.exp(exports)}else{if(module=modulesInProgress[this.id]){module.then(function(exports){me.exp(exports)})}}}};Module.prototype.complete=function(){delete modulesInProgress[this.id];Script.prototype.complete.apply(this,arguments)};Module.prototype.execute=function(){var me=this;if(typeof this.body=="object"){this.exp(this.body)}else{if(typeof this.body=="function"){this.body.apply(window,[function(exports){me.exp(exports)}])}}};Module.prototype.exp=function(exports){if(this.times){aug(this.times,{eval:new Date()})}this.complete(this.exports=Module.exports[this.id]=exports||{})};function flattenDeps(deps){var flat=[];for(var i=0,d;d=deps[i];i++){if(d instanceof Sequence){flat=flat.concat(flattenDeps(d.deps))}else{if(d instanceof Module){flat.push(d)}}}return flat}function Collection(deps){this.deps=deps;if(this.deps.length==0){this.complete()}}Collection.prototype=new Dependency;Collection.prototype.start=function(){var me=this;function depComplete(){var results=[];for(var i=0,d;d=me.deps[i];i++){if(!d.completed){return }if(d.results.length>0){results=results.concat(d.results)}}me.complete.apply(me,results)}for(var i=0,d;d=this.deps[i];i++){d.then(depComplete)}return this};Collection.prototype.load=function(){for(var i=0,d;d=this.deps[i];i++){if(d.load){d.load(true)}}return this};Collection.prototype.as=function(cb){var me=this;return this.then(function(){var flatDeps=flattenDeps(me.deps),obj={};for(var i=0,d;d=flatDeps[i];i++){pushObjPath(obj,d.id,arguments[i])}cb.apply(this,[obj].concat(makeArray(arguments)))})};function Sequence(deps){this.deps=deps}Sequence.prototype=new Dependency;Sequence.prototype.start=function(){var me=this,nextDep=0,allResults=[];(function next(){var dep=me.deps[nextDep++];if(dep){dep.then(function(results){if(dep.results.length>0){allResults=allResults.concat(dep.results)}next()})}else{me.complete.apply(me,allResults)}}());return this};Sequence.prototype.load=function(){var me=this,nextDep=0;(function next(){var dep=me.deps[nextDep++];if(dep&&dep.load){dep.load(true).then(function(){next()})}}());return this};function interactiveScript(){for(var i in scripts){if(scripts[i].readyState=="interactive"){return activeScripts[scripts[i].id]}}}function defineModule(name,body){var module;if(!name&&useInteractive){module=currentScript||interactiveScript()}if(module){delete activeScripts[module.scriptId];module.body=body;module.execute()}else{loadedModule=module=new Module(name,body);modulesInProgress[module.id]=module}return module}function provide(){var args=makeArray(arguments),name,body;if(typeof args[0]=="string"){name=args.shift()}body=args.shift();return defineModule(name,body)}function amdResolve(id,mod){var from=mod.id||"";var parts=from.split("/");parts.pop();var dir=parts.join("/");return id.replace(/^\./,dir)}function amdMap(args,mod){var mapped=[];function require(id){return Module.exports[amdResolve(id,mod)]}for(var i=0,len=args.length;i<len;i++){if(args[i]=="require"){mapped.push(require);continue}if(args[i]=="exports"){mod.exports=mod.exports||{};mapped.push(mod.exports);continue}mapped.push(require(args[i]))}return mapped}function amdDefine(){var args=makeArray(arguments),dependencies=[],id,factory;if(typeof args[0]=="string"){id=args.shift()}if(isArray(args[0])){dependencies=args.shift()}factory=args.shift();var mod=defineModule(id,function(exports){var mods=[];function executeAMD(){var args=amdMap(makeArray(dependencies),mod),exported;if(typeof factory=="function"){exported=factory.apply(mod,args)}else{exported=factory}if(typeof exported=="undefined"){exported=mod.exports}exports(exported)}for(var i=0,len=dependencies.length;i<len;i++){var d=dependencies[i];if(indexOf(["require","exports"],d)==-1){mods.push(amdResolve(d,mod))}}if(mods.length>0){using.apply(this,mods.concat(executeAMD))}else{executeAMD()}});return mod}amdDefine.amd={};function using(){var deps=makeArray(arguments),callback;if(typeof deps[deps.length-1]=="function"){callback=deps.pop()}var combi=new Collection(mapDependencies(deps));if(callback){combi.then(callback)}return combi}function mapDependencies(deps){var mapped=[];for(var i=0,dep;dep=deps[i];i++){if(typeof dep=="string"){dep=createDependency(dep)}if(isArray(dep)){dep=new Sequence(mapDependencies(dep))}mapped.push(dep)}return mapped}function createDependency(id){var m,dep;for(var i=0,matcher;matcher=using.matchers[i];i++){var regex=matcher[0],factory=matcher[1];if(m=id.match(regex)){return factory(id)}}throw new Error(id+" was not recognised by loader")}var loadrunner=function(f){return f(using,provide,loadrunner,amdDefine)};function noConflict(){context.using=oldUsing;context.provide=oldProvide;context.define=oldDefine;context.loadrunner=oldLoadrunner;return loadrunner}loadrunner.Script=Script;loadrunner.Module=Module;loadrunner.Collection=Collection;loadrunner.Sequence=Sequence;loadrunner.Dependency=Dependency;loadrunner.noConflict=noConflict;context.loadrunner=loadrunner;context.using=using;context.provide=provide;context.define=amdDefine;using.path="";using.autoLoad=true;using.bundles=[];var whichBundleMemo={};function whichBundle(id){if(typeof whichBundleMemo[id]!="undefined"){return whichBundleMemo[id]}for(var manifestId=0;manifestId<using.bundles.length;manifestId++){for(var bundleId in using.bundles[manifestId]){if(bundleId!=id&&indexOf(using.bundles[manifestId][bundleId],id)>-1){whichBundleMemo[id]=bundleId;return bundleId}}}whichBundleMemo[id]=id;return id}using.matchers=[];using.matchers.add=function(regex,factory){this.unshift([regex,factory])};using.matchers.add(/(^script!|\.js$)/,function(path){var script=new Script(path.replace(/^\$/,using.path.replace(/\/$/,"")+"/").replace(/^script!/,""),false);script.id=path;return script});using.matchers.add(/^[a-zA-Z0-9_\-\/]+$/,function(id){return new Module(id)});if(scriptTag){using.path=scriptTag.getAttribute("data-path")||scriptTag.src.split(/loadrunner\.js/)[0]||"";if(main=scriptTag.getAttribute("data-main")){using.apply(context,main.split(/\s*,\s*/)).then(function(){})}}}(this,document));
+		loadrunner(function(D,C,B,E){function A(F){this.id=this.path=F}A.inProgress=[];A.done=[];A.prototype=new B.Dependency;A.prototype.start=function(){var F=this,G;if(G=A.done[this.id]){this.complete(G.result)}else{if(G=A.inProgress[this.id]){G.then(function(){F.complete(G.result)})}else{A.inProgress[this.id]=this;this.load()}}};A.prototype.load=function(){var H,F=this;if(window.XMLHttpRequest){H=new window.XMLHttpRequest()}else{try{H=new window.ActiveXObject("Microsoft.XMLHTTP")}catch(G){return new Error("XHR not found.")}}H.onreadystatechange=function(){if(H.readyState==4){F.result=H.responseText;A.done[F.id]=F;delete A.inProgress[F.id];F.complete(F.result)}};H.open("GET",this.path,true);H.send(null)};D.matchers.add(/^json!/,function(F){return new A(F.substring(5))})});
+		loadrunner(function(D,C,B,E){function A(F){this.id=this.path=F}A.inProgress=[];A.done=[];A.prototype=new B.Dependency;A.prototype.start=function(){var F=this,G;if(G=A.done[this.id]){this.complete(G.result)}else{if(G=A.inProgress[this.id]){G.then(function(){F.complete(G.result)})}else{A.inProgress[this.id]=this;this.load()}}};A.prototype.load=function(){var F=this;D("lib/lazyload",function(G){if($("link[href='"+F.path+"']").length>0){H()}else{G.css(F.path,H)}function H(){A.done[F.id]=F;delete A.inProgress[F.id];F.complete()}})};D.matchers.add(/^css!/,function(F){return new A(F.replace(/^css!/,"").replace(/^\//,(D.cssPath||"").replace(/\/$/,"")+"/"))})});
+		loadrunner(function(F,E,A,G){function B(H,I){for(var J=0,K;K=H[J];J++){if(I==K){return J}}return -1}function D(I){var H;if(I.charAt(0)==">"){I=I.substring(1)}if(H=C.inProgress[I]){H.complete();delete C.inProgress[I]}C.done.push(I)}var C=function(H){this.id=H};C.inProgress=[];C.done=[];C.prototype=new A.Dependency;C.prototype.start=function(){var I,H=this;if(B(C.done,this.id)!=-1){this.complete()}else{if(I=C.inProgress[this.id]){I.then(function(){H.complete()})}else{C.inProgress[this.id]=this}}};F.matchers.add(/^>/,function(H){return new C(H.substring(1))});window.signal=D});
+});</script><script>WATCH.end('loadrunner');</script>
+
+
+
+
+
+
+	<script>WATCH('actionQueue', function() {
+		(function(){var D,C=["click","keydown","keypress","keyup"],A=[];function B(F){if(F.target.tagName.toLowerCase()=="textarea"||(F.target.tagName.toLowerCase()=="input"&&F.target.getAttribute("type")==="text")){return !F.type.match(/^key/)}if(F instanceof MouseEvent&&F.metaKey){return false}if(F.target&&F.target.hostname&&!F.target.hostname.match(/^([^\.]+\.)*twitter.com$/)){return false}return true}function E(F){F=F||window.event;if(!F){return }if(!F.target&&F.srcElement){F.target=F.srcElement}if(!B(F)){return }F.preventDefault=F.stopPropagation=function(){};A.push(F);return false}for(D=0;D<C.length;D++){document.body["on"+C[D]]=E}using(">allCodeLoaded",">setupComplete",">wokeUp",function(){var F,G;for(F=0;F<C.length;F++){document.body["on"+C[F]]=$.noop}for(F=0,G;G=A[F];F++){$(G.target).trigger(G)}signal(">actionQueueEmpty")})})();
+	});</script><script>WATCH.end('actionQueue');</script>
+
+
+
+<script>WATCH('boot', function() {
+	using.cssPath = 'http://a3.twimg.com/a/1319042409/';
+	using.path = 'http://a1.twimg.com/a/1319042409/phoenix/js';
+	using.autoLoad = false;
+
+	// Load bluejs modules from their own modpath, in /bluejs
+	using.matchers.add(/^bluejs/, function(id) {
+		var mod = new loadrunner.Module(id);
+		mod.path = '/' + id + '.js';
+		return mod;
+	});
+
+
+		provide('boot/bootstrap_data', function(exports) {
+			exports({"currentUser":{"memberships_path":"\/golovnev\/lists\/memberships","rgba_tweet_border_color":"rgba(208,43,85,0.15)","linkified_status":"\u0412\u044b\u0448\u043b\u0430 \u0432 \u0441\u0432\u0435\u0442 eBook \"HTML5 and CSS3 for the Real World\" \u003Ca href=\"http:\/\/t.co\/zjwhJiDV\" rel=\"nofollow\"\u003Ehttp:\/\/t.co\/zjwhJiDV\u003C\/a\u003E","rgba_sidebar_color":"rgba(153,204,51,0.9)","user_followers_path":"\/golovnev\/followers","screen_name_from_server":"golovnev","profile_image_url_from_server":"http:\/\/a1.twimg.com\/profile_images\/1478223054\/andrey_golovnev_small_normal.jpg","rgba_newtweets_border_color":"rgba(208,43,85,0.25)","rgba_tweet_background_color":"rgba(208,43,85,0.1)","subscriptions_path":"\/golovnev\/lists\/subscriptions","user_favorites_path":"\/golovnev\/favorites","profile_path":"\/#!\/golovnev","id":17406415,"rgba_newtweets_background_color":"rgba(208,43,85,0.2)","lists_path":"\/golovnev\/lists","rgba_text_color":"rgba(62,68,21,0.6)","user_following_path":"\/golovnev\/following","latest_timestamp":"about 3 hours ago","account_profile_image_path":"\/account\/profile_image\/golovnev","bigger_profile_image_url":"http:\/\/a1.twimg.com\/profile_images\/1478223054\/andrey_golovnev_small.jpg"},"countries":[{"name":"Worldwide","code":"xx"},{"name":"Argentina","code":"ar"},{"name":"Australia","code":"au"},{"name":"Brazil","code":"br"},{"name":"Canada","code":"ca"},{"name":"Denmark","code":"dk"},{"name":"Egypt","code":"eg"},{"name":"France","code":"fr"},{"name":"Germany","code":"de"},{"name":"Greece","code":"gr"},{"name":"India","code":"in"},{"name":"Indonesia","code":"id"},{"name":"Ireland","code":"ie"},{"name":"Israel","code":"il"},{"name":"Italy","code":"it"},{"name":"Japan","code":"jp"},{"name":"Malaysia","code":"my"},{"name":"Mexico","code":"mx"},{"name":"Morocco","code":"ma"},{"name":"Netherlands","code":"nl"},{"name":"New Zealand","code":"nz"},{"name":"Pakistan","code":"pk"},{"name":"Philippines","code":"pi"},{"name":"Poland","code":"pl"},{"name":"Russia","code":"ru"},{"name":"Saudi Arabia","code":"sa"},{"name":"Singapore","code":"sg"},{"name":"South Africa","code":"za"},{"name":"South Korea","code":"kr"},{"name":"Spain","code":"es"},{"name":"Sweden","code":"se"},{"name":"Switzerland","code":"ch"},{"name":"Taiwan","code":"tw"},{"name":"Thailand","code":"th"},{"name":"Turkey","code":"tr"},{"name":"United Kingdom","code":"uk"}],"requestCacheSeedData":[{"options":[{}],"api_request_name":"account\/verify_credentials","json":{"profile_sidebar_fill_color":"99CC33","profile_background_tile":false,"name":"Andrey Golovnev","profile_sidebar_border_color":"829D5E","created_at":"Sat Nov 15 11:22:58 +0000 2008","location":"Minsk","profile_image_url":"http:\/\/a1.twimg.com\/profile_images\/1478223054\/andrey_golovnev_small_normal.jpg","follow_request_sent":false,"is_translator":false,"profile_link_color":"D02B55","id_str":"17406415","default_profile":false,"states":{"pending_email":false,"bouncing_email":["andrey@golovnev.net"],"detached_email":false,"suspended":false,"needs_employee_email_update":false},"url":null,"favourites_count":79,"contributors_enabled":false,"id":17406415,"utc_offset":7200,"profile_image_url_https":"https:\/\/si0.twimg.com\/profile_images\/1478223054\/andrey_golovnev_small_normal.jpg","profile_use_background_image":true,"listed_count":14,"lang":"en","followers_count":206,"profile_text_color":"3E4415","protected":false,"profile_background_image_url_https":"https:\/\/si0.twimg.com\/images\/themes\/theme5\/bg.gif","profile_background_color":"352726","geo_enabled":true,"description":"Front-End Developer","time_zone":"Minsk","verified":false,"notifications":false,"friends_count":118,"default_profile_image":false,"status":{"coordinates":null,"created_at":"Thu Oct 20 03:56:46 +0000 2011","favorited":false,"truncated":false,"id_str":"126869441999929344","entities":{"urls":[{"expanded_url":"http:\/\/www.mightydeals.com\/deal\/sitepoint-html5-and-css3-ebook.html?ref=news","url":"http:\/\/t.co\/zjwhJiDV","indices":[55,75],"display_url":"mightydeals.com\/deal\/sitepoint\u2026"}],"hashtags":[],"user_mentions":[]},"in_reply_to_user_id_str":null,"text":"\u0412\u044b\u0448\u043b\u0430 \u0432 \u0441\u0432\u0435\u0442 eBook \"HTML5 and CSS3 for the Real World\" http:\/\/t.co\/zjwhJiDV","contributors":null,"id":126869441999929344,"retweet_count":0,"in_reply_to_status_id_str":null,"geo":null,"retweeted":false,"in_reply_to_user_id":null,"possibly_sensitive":false,"in_reply_to_screen_name":null,"place":null,"source":"web","in_reply_to_status_id":null},"profile_background_image_url":"http:\/\/a1.twimg.com\/images\/themes\/theme5\/bg.gif","statuses_count":6928,"screen_name":"golovnev","following":false,"show_all_inline_media":true}},{"options":[{}],"api_request_name":"account\/settings","json":{"sleep_time":{"end_time":null,"enabled":false,"start_time":null},"trend_location":[{"name":"Worldwide","placeType":{"name":"Supername","code":19},"woeid":1,"country":"","url":"http:\/\/where.yahooapis.com\/v1\/place\/1","countryCode":null}],"language":"en","always_use_https":false,"discoverable_by_email":true,"protected":false,"geo_enabled":true,"time_zone":{"name":"Minsk","tzinfo_name":"Europe\/Minsk","utc_offset":7200},"show_all_inline_media":true,"screen_name":"golovnev"}}],"showWelcomeBanner":false,"countryCode":"xx","userProperties":{"mobilePhoneDiscoverabilitySet":false,"listsLimit":20,"emailAddress":"andrey.golovnev@gmail.com","emailDiscoverabilitySet":true,"discoverableByMobilePhone":false,"discoverableByEmail":true,"deviceAddress":null,"deviceSetup":false},"postAuthenticityToken":"94f41d77871e5ce45a3e79b62b7036e74720a378","deciderFeatures":{"dashboard_activity_followers":1,"tweet_stream_home_polling":1,"contact_import_stream":1,"people_stream_list_followers":1,"more_lists_component":1,"big_photo_permalink":1,"fake_loggedout_decider":1,"message_stream":1,"in_reply_to_component":1,"phoenix_aol_video":1,"infinite_scroll":1,"profile_combined_api":1,"people_stream_friends":1,"tweet_stream_following_polling":1,"recent_tweets_component":1,"tweet_stream_your_tweets_retweeted_polling":1,"tweet_stream_search":1,"logged_out_people_search":1,"tweet_stream_retweets_by_others_polling":1,"phoenix_facets_videos":1,"geo_show_similar_places":1,"mobile_download_gallery":1,"tweet_stream_retweets_by_others":1,"tweet_stream_user":1,"phoenix_tweetbox_talon":1,"welcome_rec_replace":1,"phoenix_search_relevance_logged_out":1,"phoenix_facets":1,"photo_copy_paste_inception":1,"phoenix_puffin":1,"list_stream_own_lists":1,"flock":1,"tweet_stream_following":1,"promoted_accounts_in_whotofollow_viewall":1,"profile_image_latency":1,"phoenix_search_relevance":1,"email_device_settings":1,"suggestion_categories_streams":1,"activity_dark_read":1,"phoenix_local_meetup":1,"phoenix_local_plancast":1,"tweet_stream_retweets_by_you_polling":1,"tweet_stream_user_polling":1,"welcome_rec_tweets":1,"i18n_new_translation_center":1,"whotofollow_similarities":1,"t1d_tweet_img":1,"phoenix_amazon_details":1,"whotofollow_recommendations":1,"wtf_signup_suggestions":1,"phoenix_autocomplete":1,"local_trends":1,"tweet_streams_polling":1,"t1d_topic_img":1,"geo_allow_set_location_manually":1,"people_stream_followers":1,"phoenix_local_foursquare":1,"phoenix_scribe":1,"tweet_stream_favorites":1,"inline_media_component":1,"profile_tweetbox":1,"people_stream_people_search":1,"phoenix_facets_logged_out":1,"dashboard_activity_following":1,"promptbird_phoenix":1,"tweet_stream_favorites_polling":1,"old_webclient_events":1,"people_streams":1,"phoenix_talon_on_copy":1,"tweet_geo_component":1,"trends_component":1,"use_scribe_post":1,"tweet_stream_mentions":1,"tweet_streams":1,"tweet_stream_search_polling":1,"list_streams":1,"geo_ui":1,"tweet_stream_list":1,"place_tweets_component":1,"phoenix_turkey_flash":1,"whotofollow_random_sample":1,"tweet_stream_retweets_by_you":1,"phoenix_frontpage_rotate_avatars":1,"media_flagging":1,"conversations":1,"place_users_stream":1,"social_context":1,"activity_dashboard":1,"html5Routing":1,"list_stream_memberships":1,"phoenix_user_media_gallery":1,"promo_component":1,"people_stream_follower_requests":1,"advanced_search":1,"phoenix_search_dropdown":1,"phoenix_turkey_permalink":1,"phoenix_local_gowalla":1,"geo_place_creation":1,"contact_import":1,"tweet_stream_mentions_polling":1,"geo_location":1,"phoenix_first_time":1,"welcome_warm_signup":1,"list_stream_subscriptions":1,"mt_tweet_backend_bing":1,"scribe_form_piggyback":1,"place_people_component":1,"phoenix_instagram_and_friends":1,"phoenix_facets_images":1,"people_stream_list_members":1,"geo_more_places":1,"tweet_stream_your_tweets_retweeted":1,"tweet_stream_home":1,"user_shuffler":1,"t1d_tweet_vid":1,"scribe_image_failures":1,"tweet_stream_list_polling":1,"retweeters_component":1,"mobile_download_gallery_logged_out":1,"phoenix_turkey_html5_resize":1,"onebox_user_search":1,"newest_list_members_component":1,"japanese_ad_component":1,"phoenix_sandboxed_ajax":1,"t1d_topic_vid":1,"turkey":1,"ssl_cdn_akamai_fraction":1,"scribe_client_event":1,"details_pane_default_sandbox":1},"twttr":{"languages":[{"css_classes":"western nl","name":"Nederlands","localized_name":"Dutch","code":"nl","current":false,"name_en":"Dutch"},{"css_classes":null,"name":"English","localized_name":"English","code":"en","current":true,"name_en":"English"},{"css_classes":"western fil","name":"Filipino","localized_name":"Filipino","code":"fil","current":false,"name_en":"Filipino"},{"css_classes":"western fr","name":"fran\u00e7ais","localized_name":"French","code":"fr","current":false,"name_en":"French"},{"css_classes":"western de","name":"Deutsch","localized_name":"German","code":"de","current":false,"name_en":"German"},{"css_classes":"asian hi","name":"\u0939\u093f\u0928\u094d\u0926\u0940","localized_name":"Hindi","code":"hi","current":false,"name_en":"Hindi"},{"css_classes":"western id","name":"Bahasa Indonesia","localized_name":"Indonesian","code":"id","current":false,"name_en":"Indonesian"},{"css_classes":"western it","name":"Italiano","localized_name":"Italian","code":"it","current":false,"name_en":"Italian"},{"css_classes":"asian ja","name":"\u65e5\u672c\u8a9e","localized_name":"Japanese","code":"ja","current":false,"name_en":"Japanese"},{"css_classes":"asian ko","name":"\ud55c\uad6d\uc5b4","localized_name":"Korean","code":"ko","current":false,"name_en":"Korean"},{"css_classes":"western msa","name":"Bahasa Melayu","localized_name":"Malay","code":"msa","current":false,"name_en":"Malay"},{"css_classes":"western pt","name":"Portugu\u00eas","localized_name":"Portuguese","code":"pt","current":false,"name_en":"Portuguese"},{"css_classes":"western ru","name":"\u0420\u0443\u0441\u0441\u043a\u0438\u0439","localized_name":"Russian","code":"ru","current":false,"name_en":"Russian"},{"css_classes":"asian zh-cn","name":"\u7b80\u4f53\u4e2d\u6587","localized_name":"Simplified Chinese","code":"zh-cn","current":false,"name_en":"Simplified Chinese"},{"css_classes":"western es","name":"Espa\u00f1ol","localized_name":"Spanish","code":"es","current":false,"name_en":"Spanish"},{"css_classes":"asian zh-tw","name":"\u7e41\u9ad4\u4e2d\u6587","localized_name":"Traditional Chinese","code":"zh-tw","current":false,"name_en":"Traditional Chinese"},{"css_classes":"western tr","name":"T\u00fcrk\u00e7e","localized_name":"Turkish","code":"tr","current":false,"name_en":"Turkish"}],"currentUserScreenName":"golovnev","isPreflight":false,"payload":{"profiling":false,"conditionalTemplates":{}},"cdnBase":{"unversioned":{"http":["http:\/\/a0.twimg.com","http:\/\/a1.twimg.com","http:\/\/a2.twimg.com","http:\/\/a3.twimg.com"],"ssl":["https:\/\/si0.twimg.com"],"ssl_akamai":["https:\/\/twimg0-a.akamaihd.net"]},"versioned":{"http":["http:\/\/a0.twimg.com\/a\/1319042409","http:\/\/a1.twimg.com\/a\/1319042409","http:\/\/a2.twimg.com\/a\/1319042409","http:\/\/a3.twimg.com\/a\/1319042409"],"ssl":["https:\/\/si0.twimg.com\/a\/1319042409"],"ssl_akamai":["https:\/\/twimg0-a.akamaihd.net\/a\/1319042409"]},"bundled":{"http":["http:\/\/a0.twimg.com\/b","http:\/\/a1.twimg.com\/b","http:\/\/a2.twimg.com\/b","http:\/\/a3.twimg.com\/b"],"ssl":["https:\/\/si0.twimg.com\/b"],"ssl_akamai":["https:\/\/twimg0-a.akamaihd.net\/b"]}},"pageLocale":"en","globalConfig":{"short_url_length":20,"max_media_per_upload":1,"characters_reserved_per_media":21,"photo_sizes":{"thumb":{"h":150,"resize":"crop","w":150},"medium":{"h":1200,"resize":"fit","w":600},"small":{"h":480,"resize":"fit","w":340},"large":{"h":2048,"resize":"fit","w":1024}},"photo_size_limit":3145728,"non_username_paths":["about","account","accounts","activity","all","announcements","anywhere","api_rules","api_terms","apirules","apps","auth","badges","blog","business","buttons","contacts","devices","direct_messages","download","downloads","edit_announcements","faq","favorites","find_sources","find_users","followers","following","friend_request","friendrequest","friends","goodies","help","home","im_account","inbox","invitations","invite","jobs","list","login","logout","me","mentions","messages","mockview","newtwitter","notifications","nudge","oauth","phoenix_search","positions","privacy","public_timeline","related_tweets","replies","retweeted_of_mine","retweets","retweets_by_others","rules","saved_searches","search","sent","settings","share","signup","signin","similar_to","statistics","terms","tos","translate","trends","tweetbutton","twttr","update_discoverability","users","welcome","who_to_follow","widgets","zendesk_auth","media_signup","t1_qunit_tests","phoenix_qunit_tests"],"short_url_length_https":21}},"abBuckets":{"remember_me_on_signup_83":{"bucket":"experiment","version":16,"experiment_key":"remember_me_on_signup_83","bucket_names":["control","experiment"]},"activity_ddg_126":{"bucket":"control","version":10,"experiment_key":"activity_ddg_126","bucket_names":null},"activity_up_top_98":{"bucket":"bottom","version":5,"experiment_key":"activity_up_top_98","bucket_names":["control","top","bottom"]}}});
+		});
+
+
+	provide("boot/init",function(C){var A={add:function(J,K){if(!K){K=new Date()}twttr.bootTimings.data.push({name:J,timestamp:K})},data:[],done:function(){twttr.bootTimings.add=twttr.bootTimings.done=$.noop;$.each(loadrunner.Script.times,function(J,K){$.each(K,function(L,M){twttr.bootTimings.data.push({name:["bundle",J,L].join(" "),timestamp:M})})});twttr.Profiler.logDataSet("Boot",twttr.appStartTime,twttr.bootTimings.data);twttr.bootTimings=null}};function G(K){for(var J in K){if(K.hasOwnProperty(J)){twttr[J]=K[J]}}}function H(L){twttr.bootTimings&&twttr.bootTimings.add("bootstrap_data process start");G(L.twttr);signal(">payload");if(L.boomr){using(L.boomr).load().then(function(){delete BOOMR.plugins.RT;BOOMR.init({allow_ssl:true,autorun:false,user_ip:L.remoteIP,BW:{base_url:twttr.hosts.local+"/images/boomerang/"}});using(">setupComplete","util").as(function(M){BOOMR.page_ready();BOOMR.subscribe("before_beacon",function(Q){if(!Q.bw){return }var O=parseInt(Q.bw/1024,10);var P=parseInt((Q.bw_err*100)/Q.bw,10);var N=parseInt((Q.lat_err*100)/Q.lat,10);scribble("measurement",{load_time_ms:Q.t_done,bandwidth_kbytes:O,bandwidth_error_percent:P,latency_ms:Q.lat,latency_error_percent:N,product:"webclient"},"boomerang");if(M.util.params()["boomr"]){twttr.showMessage("Bandwidth: "+M.util.addCommas(O)+" KB/s &plusmn; "+P+"%<br />Latency: "+Q.lat+" ms &plusmn; "+Q.lat_err,true)}})})})}if(L.countryCode){twttr.countryCode=L.countryCode}if(L.countries){twttr.countries=L.countries;if(twttr.countryCode){for(var K=0,J=twttr.countries.length;K<J;K++){if(twttr.countries[K].code==twttr.countryCode){twttr.countries[K].selected=true}}}}if(L.pageLocaleJS){twttr.bootTimings&&twttr.bootTimings.add("i18n fetch start");using(L.pageLocaleJS).load().then(function(){twttr.bootTimings&&twttr.bootTimings.add("i18n fetch finish");signal(">languageData")})}else{signal(">languageData")}using(">defaultViews",twttr.bundleMore,function(){if(L.showWelcomeBanner){(new twttr.views.WelcomeToPhoenixBanner()).render($("#banners"),"append")}if(L.flashNotice){$("#flash-message-storage").html(L.flashNotice).show()}});using(">decider",function(){twttr.decider._updateFeatures(L.deciderFeatures,true)});using(">ab_decider",function(){twttr.abdecider._updateExperiments(L.abBuckets,true)});using(">api_ready",function(){twttr.API.setConfig({postAuthenticityToken:L.postAuthenticityToken});$("input.authenticity_token").val(L.postAuthenticityToken);var P=L.requestCacheSeedData;for(var N=0,M=P.length;N<M;++N){var O=P[N];twttr.API._requestCache.inject(O.api_request_name,O.options,O.json,1)}signal(">request_cache_seeded");if(L.homeTimelineFetchSize){twttr.API.homeTimelineFetchSize=L.homeTimelineFetchSize}});twttr.bootTimings&&twttr.bootTimings.add("bootstrap_data process finish")}function D(){if(twttr.loggedIn){twttr.bootTimings&&twttr.bootTimings.add("initCurrentUser start");using("boot/bootstrap_data",">request_cache_seeded",function(J){twttr.API.User.current({error:function(){window.location.reload(true)},success:function(K){twttr.currentUser=K;for(var L in J.userProperties){twttr.currentUser.sync(L,J.userProperties[L]||false)}twttr.bootTimings&&twttr.bootTimings.add("initCurrentUser finish");signal(">allCurrentUserDataLoaded")}})})}else{signal(">allCurrentUserDataLoaded")}}function F(J){var K=new Date();using(J).load().then(function(){var L=new Date();using("boot/bootstrap_data",function(){twttr.Profiler.logPreviousEvent("twttr.bundles fetched",K,L)})})}function E(O){var K=false;function J(){if(!K){setTimeout(function(){twttr.keynoteTTFTPing();K=true;O()},0)}}function N(){setTimeout(J,0)}var L=document.getElementById("stream-items-id");if(!L){O();return }if(L.clientHeight>0){N();return }function M(){L.onresize=null;N()}L.onresize=M}function I(K){for(var J in K){return false}return true}function B(N){if(!N){return }var K=document.getElementById("slow-load-banner");if(!K){return }var J;function M(){clearTimeout(J);$(K).remove();twttr.app.recalculatePadding()}function L(){K.style.display="block";setTimeout(function(){K.style.height="60px"})}J=setTimeout(L,N);twttr.bundleCore&&using(twttr.bundleCore,M)}C({init:function(K){if(K.renderedOnServer&&K.twttr.loggedIn){var J=document.getElementsByTagName("html")[0];if(J.className.match(/use-prerendered-content/)){document.getElementById("global-nav-home").className+=" active"}else{if(J.className.match(/remove-prerendered-content/)){document.getElementById("page-outer").className=document.getElementById("page-outer").className.replace("flush-to-top","");var M=document.getElementById("page-container");M.className=M.className.replace("home-container","");M.innerHTML="";signal(">wokeUp")}}J.className=J.className.replace("use-prerendered-content","").replace("remove-prerendered-content","")}if(K.disablePhoenix){B(K.loadTimeoutInterval);return }G(K.twttr);twttr.appStartTime=document.startTime;twttr.geo=twttr.geo||{};twttr.session=twttr.session||{};twttr.session.impressionId=twttr.appStartTime+Math.random();twttr.isLocalhost=location.hostname.match(/localhost\.twitter\.com/);twttr.bootTimings=K.profiling?A:null;for(var L=0;L<K.loadrunnerAssets.length;L++){using.bundles.push(K.loadrunnerAssets[L])}if(K.loadrunnerAssets.length==1&&I(K.loadrunnerAssets[0])){using.autoLoad=true}B(K.loadTimeoutInterval);twttr.proto=window.location.protocol.replace(":","");twttr.isSSL=function(){return twttr.proto==="https"};twttr.createIframe=function(O,N){var R=document.createElement("div");R.innerHTML='<iframe tabindex="-1" role="presentation" style="position:absolute;top:-9999px;" src="'+O+'"></iframe>';var P=R.firstChild;var Q=function(){N.apply(P,arguments)};P.addEventListener?P.addEventListener("load",Q,false):P.attachEvent("onload",Q);document.body.insertBefore(P,document.body.firstChild);return P};if(!K.inline_bootstrap_data){provide("boot/bootstrap_data",function(N){var O=[];O.push("json!/account/bootstrap_data"+window.location.search+(window.location.search?"&":"?")+"r="+Math.random());if(typeof JSON==="undefined"){O.push(twttr.bundleCore)}twttr.bootTimings&&twttr.bootTimings.add("bootstrap_data fetch start");using(O,function(Q){twttr.bootTimings&&twttr.bootTimings.add("bootstrap_data fetch finish");var P=JSON.parse(Q);N(P)})})}F(K.assets);using(twttr.bundleCore,function(){twttr.anywhere.remote={};using("bluejs/api",function(N){twttr.API=N;twttr.API.setConfig({cacheObjects:true,includeEntities:true});twttr.extendAPI();signal(">api_ready");using(">request_cache_seeded",function(){D()})})});using(K.setupDependencies,function(){twttr.bootTimings&&twttr.bootTimings.add("setup start");jQuery.ready();twttr.setup();twttr.bootTimings&&twttr.bootTimings.add("setup finish");signal(">setupComplete");var N=function(){using(twttr.bundleMore).load()};if($.browser.msie&&(parseInt($.browser.version,10)<=8)){E(N)}else{N()}});using(twttr.bundleMore,function(){signal(">allCodeLoaded")});using("boot/bootstrap_data",H);twttr.createIframe(K.pReceiverURL,function(){var N=this;using(twttr.bundleCore,function(){twttr.anywhere.remote.server=N;twttr.anywhere.api.util.RemoteRequest.flush()})})}})});
+	using('boot/init', function(boot) {
+		var data = {"profiling":false,"assets":["bundle\/phoenix-core"],"loadrunnerAssets":[{"http:\/\/a0.twimg.com\/b\/1\/bundle\/signup-en-201110190946.js":["bundle\/signup"],"http:\/\/a2.twimg.com\/b\/1\/bundle\/ie6-en-201110190946.js":["bundle\/ie6"],"http:\/\/a3.twimg.com\/b\/1\/bundle\/phoenix-core-en-201110190946.js":["bundle\/phoenix-core"],"http:\/\/a1.twimg.com\/b\/1\/bundle\/phoenix-more-en-201110190946.js":["bundle\/phoenix-more"],"http:\/\/a1.twimg.com\/b\/1\/bundle\/sandbox-en-201110190946.js":["bundle\/sandbox"]}],"pReceiverURL":"http:\/\/api.twitter.com\/receiver.html","disablePhoenix":false,"inline_bootstrap_data":true,"setupDependencies":["\u003EallCurrentUserDataLoaded","\u003Erequest_cache_seeded","bundle\/phoenix-core","\u003ElanguageData"],"renderedOnServer":true,"sandboxes":{"jsonp":"http:\/\/a3.twimg.com\/a\/1319042409\/jsonp_sandbox.html","detailsPaneContent":"http:\/\/a0.twimg.com\/a\/1319042409\/details_pane_content_sandbox.html"},"twttr":{"remoteIP":"86.57.158.146","bundleCore":"bundle\/phoenix-core","requestFullCity":"by,04,minsk","loggedIn":true,"isT1":false,"promptbird":{"cache":{"data":{"email":"andrey.golovnev@gmail.com"},"prompt":{"format":"","prompt_id":"0","template_name":""}}},"bundleMore":"bundle\/phoenix-more","domains":{"local":"twitter.com","upload":"upload.twitter.com","remote":"api.twitter.com"},"hosts":{"local":"http:\/\/twitter.com","upload":"http:\/\/upload.twitter.com","remote":"http:\/\/api.twitter.com"},"placeDataPrefix":"http:\/\/geo.l3.twitter.com\/places\/autocomplete_places-","expando":false}};
+		boot.init(data);
+	});
+});</script><script>WATCH.end('boot');</script>
+
+
+
+<!--[if lte IE 6]>
+	<script>using('bundle/ie6').load();</script>
+<![endif]-->
+
+
+
+	</body>
+
+
+</html>

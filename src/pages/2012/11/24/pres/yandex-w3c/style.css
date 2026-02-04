@@ -1,0 +1,47 @@
+* {margin: 0em; padding: 0em} dd,li {margin-left:1em}
+div.slide {counter-increment: slide}
+.right { float: right; margin-top: 1em; margin-bottom: 1em; margin-left: 1em; max-width:50%; text-align:right }
+
+body {font-family: "Textbook New", Arial, sans-serif; color: #000; background-color: #fff; height: 100%}
+code {font-family: Courier, monospace}
+
+h1 { font-size: 150%; margin-bottom: .5em; font-weight:normal }
+h1.normal { padding: .5em 0em; background: url("lines.png") no-repeat left top / 100% 100% scroll padding-box padding-box; font-weight:bold }
+
+ .centre { text-align:center}
+ .content {position:relative; bottom:.5em}
+
+@media print {
+#icon {position: fixed; top: 0cm; left: 0cm; border: 0px solid }
+body {font-size: 25px }
+}
+
+@media projection {
+:link, :visited { color:#aaf }
+}
+
+@media projection,print {
+ #first {background: url("first.png") no-repeat left top / 100% 100% scroll border-box border-box}
+ .screen, .notes { display:none }
+ h1,h2,h3,ul,dl,p {padding-left:1em}
+ dl, ul {margin:.2em}
+
+ dt { line-height: 130% ; font-size:120% ; font-weight: bold }
+ li { line-height: 140% }
+ .slide { page-break-after:always ; padding: .5em  2em ; height:100% }
+ #last { page-break-after:avoid }
+}
+
+@media screen {
+ .notes { font-style: italic; color: #aaa}
+ .notes:before { content: 'notes: ' }
+ h1:after{ content: " (" counter(slide) ")"}
+}
+
+@media projection and (min-device-height: 450px) { body {font-size:20px} }
+@media projection and (min-device-height: 600px) { body {font-size:30px} }
+@media projection and (min-device-height: 760px) { body {font-size:38px} }
+@media projection and (min-device-height: 800px) { body {font-size:40px} }
+@media projection and (min-device-height: 900px) { body {font-size:45px} }
+@media projection and (min-device-height:1000px) { body {font-size:50px} }
+@media projection and (min-device-height:1200px) { body {font-size:60px} }

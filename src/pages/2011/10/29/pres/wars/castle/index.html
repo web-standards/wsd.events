@@ -1,0 +1,2330 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width" name="viewport" />
+    <title>Castle of Sinister Sorcerers</title>
+    <!--[if !IE]><!-->
+<style>
+/*_*/
+
+/* iOS specific styles
+---------------------------------------*/
+@media (max-device-width: 1024px) {
+    .b-settings_resolution {
+        display: none;
+        }
+    .b-display {
+        top: 0 !important;
+        margin: auto !important;
+        font-size: 1em !important;
+        }
+}
+
+/* Basic styles for non-retina iOS */
+@media (orientation:portrait) and (max-device-width: 1024px) {
+    HTML, BODY {
+        min-width: 40em;
+        min-height: 45em;
+        }
+}
+@media (orientation:landscape) and (max-device-width: 1024px) {
+    HTML, BODY {
+        min-width: 53.8em;
+        min-height: 30em;
+        }
+}
+
+/* Styles for Retina iOS */
+@media (orientation:portrait) and (-webkit-min-device-pixel-ratio:2) {
+    HTML, BODY {
+        min-width: 22.5em;
+        min-height: 25em;
+        }
+}
+@media (orientation:landscape) and (-webkit-min-device-pixel-ratio:2) {
+    HTML, BODY {
+        min-width: 28.6em;
+        min-height: 16em;
+        }
+}
+
+@media (-webkit-min-device-pixel-ratio:2) {
+    .b-display {
+        font-size: .5em !important;
+        }
+}
+
+/* Basic styles
+---------------------------------------*/
+HTML,
+BODY {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+
+    overflow: hidden;
+
+    color: #FFF;
+    background: #888;
+
+    font: 1em/1.5 Calibri, Monaco, monospace;
+    }
+
+/* The display area */
+.b-display {
+    position: relative;
+    top: 50%;
+    z-index: 9;
+
+    width: 40em;
+    height: 30em;
+    margin: -15em auto 0;
+    text-align: center;
+
+    font-size: 1.25em;
+
+    background: #555;
+    overflow: hidden;
+
+    -webkit-transition: all .3s;
+       -moz-transition: all .3s;
+            transition: all .3s;
+    }
+    #resolutionSmall:checked ~ .b-display {
+        font-size: .75em;
+        }
+    #resolutionBig:checked ~ .b-display {
+        font-size: 1.75em;
+        }
+    #languageRussian:checked ~ .b-display .b-lang__en,
+    #languageEnglish:checked ~ .b-display .b-lang__ru {
+        display: none;
+        }
+    #languageRussian:checked ~ .b-display .b-lang:before {
+        content: attr(data-ru);
+        }
+
+/* Settings */
+.b-settings {
+    margin: 0 0 3em;
+    }
+    .b-settings_header {
+        font-size: 1.5em;
+        margin: 1em 0;
+        }
+
+/* Scene swapping styles
+---------------------------------------*/
+/* Removing old bubbles and continues */
+#Entrance > #at_Entrance2:checked + .b-scene-part2 .b-bubble,
+#Hall > #at_Hall2:checked + .b-scene-part2 .b-bubble,
+#Opera > #at_Opera2:checked + .b-scene-part2 .b-bubble,
+#Entrance > #at_Entrance2:checked + .b-scene-part2 .b-continue1,
+#Hall > #at_Hall2:checked + .b-scene-part2 .b-continue1,
+#Opera > #at_Opera2:checked + .b-scene-part2 .b-continue1 {
+    display: none !important;
+    }
+
+/* The styles for the Scene */
+.b-scene {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: inherit;
+
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: opacity .5s;
+       -moz-transition: opacity .5s;
+         -o-transition: opacity .5s;
+            transition: opacity .5s;
+    }
+    /* The overlay with rounded corners */
+    .b-scene:after,
+    .b-scene:before {
+        content: "";
+        position: absolute;
+        z-index: 9001;
+
+        top: -100px;
+        bottom: -100px;
+        left: -100px;
+        right: -100px;
+        border: 100px solid #888;
+        -webkit-border-radius: 50%/10%;
+           -moz-border-radius: 50%/10%;
+                border-radius: 50%;
+
+        -webkit-transform: scale(3,1);
+           -moz-transform: scale(3,1);
+             -o-transform: scale(3,1);
+                transform: scale(3,1);
+        }
+        .b-scene:after {
+            -webkit-transform: scale(1,4);
+               -moz-transform: scale(1,4);
+                 -o-transform: scale(1,4);
+                    transform: scale(1,4);
+            }
+/* Showing the current scene */
+#Prepare,
+#at_Start:checked + #Start,
+#at_Setup:checked + #Setup,
+#at_Entrance:checked + #Entrance,
+#at_Hall:checked + #Hall,
+#at_Opera:checked + #Opera,
+#at_Throne:checked + #Throne,
+.b-scene_debug {
+    opacity: 1 !important;
+    visibility: visible !important;
+    }
+
+/* The Chooser */   
+.b-scene_interactive .b-choose-me {
+    position: relative;
+    z-index: 9002;
+    }
+.b-choose-me {
+    padding: .1em .4em;
+
+    cursor: pointer;
+    text-decoration: none;
+
+    color: #FFF;
+    background: #000;
+    }
+    /* Hovered and selected state for the Chooser */
+    #resolutionSmall:checked ~ .b-display .b-choose-me[for=resolutionSmall],
+    #resolutionMedium:checked ~ .b-display .b-choose-me[for=resolutionMedium],
+    #resolutionBig:checked ~ .b-display .b-choose-me[for=resolutionBig],
+    #languageRussian:checked ~ .b-display .b-choose-me[for=languageRussian],
+    #languageEnglish:checked ~ .b-display .b-choose-me[for=languageEnglish],
+    .b-choose-me:hover {
+        padding: .1em .4em;
+
+        cursor: pointer;
+
+        color: #000;
+        background: #FFF;
+        }
+    /* Insisible control (fixed position to stop triggering scroll to label's target) */
+    .b-choose-me__control {
+        position: absolute !important;
+        position: fixed !important;
+        visibility: hidden !important;
+        left: -100px !important;
+        }
+    .b-choose-me_start {
+        position: relative;
+        top: 2.3em;
+        font-size: 2em;
+        display: inline-block;
+        }
+    .b-start {
+        margin: 3em;
+        }
+
+/* Basic styles for the frame */
+.b-frame {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    }
+/* Continuing */
+.b-continue {
+    position: absolute;
+    z-index: 9999;
+    left: 9999px;
+
+    width: 100%;
+    height: 100%;
+
+    text-align: right;
+    cursor: pointer;
+
+    font-size: 5em;
+    line-height: 6em;
+    text-decoration: none;
+
+    color: #FFF;
+    }
+
+/* The Characters
+---------------------------------------*/
+/* Basic styles for a human */
+.b-human {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 1em;
+    height: 2em;
+
+    border-top: 1em solid #E3B591;
+    border-bottom: 1em solid #302006;
+    background: #9E9E9C;
+    }
+    /* The helm */
+    .b-human:before {
+        content: "";
+
+        position: absolute;
+        top: -1em;
+        left: 0;
+        border: solid #8F9FAE;
+        border-width: .5em 0 0 .5em;
+        width: .5em;
+        height: .5em;
+        }
+    /* The cape */
+    .b-human__cape {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: .5em;
+        height: 2em;
+        background: red;
+        -webkit-transform: rotate(20deg);
+           -moz-transform: rotate(20deg);
+             -o-transform: rotate(20deg);
+                transform: rotate(20deg);
+        -webkit-transform-origin: 0 0;
+           -moz-transform-origin: 0 0;
+             -o-transform-origin: 0 0;
+                transform-origin: 0 0;
+        }
+    /* The hand */
+    .b-human__hand {
+        position: absolute;
+        top: .5em;
+        left: .5em;
+        width: .5em;
+        height: 1.75em;
+        background: #646871;
+        -webkit-transform: rotate(-40deg);
+           -moz-transform: rotate(-40deg);
+             -o-transform: rotate(-40deg);
+                transform: rotate(-40deg);
+        -webkit-transform-origin: 0 0;
+           -moz-transform-origin: 0 0;
+             -o-transform-origin: 0 0;
+                transform-origin: 0 0;
+        -webkit-transition: -webkit-transform .5s, left .5s;
+           -moz-transition:    -moz-transform .5s, left .5s;
+             -o-transition:      -o-transform .5s, left .5s;
+                transition:         transform .5s, left .5s;
+        }
+        /* And the Sword */
+        .b-human__hand:before {
+            content: "";
+            position: absolute;
+            top: 1.5em;
+            left: .5em;
+            width: 2em;
+            height: .25em;
+            background: #FFFFFA;
+            -webkit-transform-origin: 0 0;
+               -moz-transform-origin: 0 0;
+                 -o-transform-origin: 0 0;
+                    transform-origin: 0 0;
+            }
+    /* Sorcerer */
+    /* The sorcerer's helm */
+    .b-human_sorcerer:before {
+        top: -1.5em;
+        left: -.25em;
+        border-width: .75em .75em 0 0;
+        width: .75em;
+        height: .75em;
+        -webkit-transform: rotate(-25deg);
+           -moz-transform: rotate(-25deg);
+             -o-transform: rotate(-25deg);
+                transform: rotate(-25deg);
+        }
+    /* The magic cape */
+    .b-human_sorcerer .b-human__cape {
+        left: .25em;
+        width: .75em;
+        height: 3em;
+        -webkit-transform: rotate(-20deg);
+           -moz-transform: rotate(-20deg);
+             -o-transform: rotate(-20deg);
+                transform: rotate(-20deg);
+        }
+    /* The hand's basic behavior */
+    .b-human_sorcerer .b-human__hand {
+        left: 0;
+        -webkit-transform: rotate(20deg);
+           -moz-transform: rotate(20deg);
+             -o-transform: rotate(20deg);
+                transform: rotate(20deg);
+        }
+    /* The magic wand */
+    .b-human_sorcerer .b-human__hand:before {
+        left: -1.75em;
+        background: #071256;
+        }
+    /* The light at the end of the magic wand */
+    .b-human_sorcerer .b-human__hand:after {
+        content: "";
+        position: absolute;
+        top: 1.35em;
+        left: -1.85em;
+        width: .5em;
+        height: .5em;
+        background: #B4E7FA;
+        -webkit-transform: rotate(45deg);
+           -moz-transform: rotate(45deg);
+             -o-transform: rotate(45deg);
+                transform: rotate(45deg);
+        }
+    /* Firefox */
+    .b-human_firefox {
+        left: 60em;
+        top: 9.75em;
+        background: #EF8300;
+        border-top-color: #F9DFA5;
+        border-bottom-color: #F5F103;
+        -webkit-transition: left 11s;
+           -moz-transition: left 11s;
+             -o-transition: left 11s;
+                transition: left 11s;
+        }
+        .b-human_firefox:before {
+            border-color: #5CABDC;
+            }
+        .b-human_firefox .b-human__cape {
+            background: #D30000;
+            -webkit-transition: -webkit-transform 1s 9s;
+               -moz-transition:    -moz-transform 1s 9s;
+                 -o-transition:      -o-transform 1s 9s;
+                    transition:         transform 1s 9s;
+            }
+        .b-human_firefox .b-human__hand {
+            background: #F45900;
+            -webkit-transition: -webkit-transform .5s 10s, left .5s 10s;
+               -moz-transition:    -moz-transform .5s 10s, left .5s 10s;
+                 -o-transition:      -o-transform .5s 10s, left .5s 10s;
+                    transition:         transform .5s 10s, left .5s 10s;
+            }
+
+/* Basic bubble styles
+---------------------------------------*/
+.b-bubble {
+    position: absolute;
+    font-size: .7em;
+    background: rgba(0,0,0,.3);
+    padding: .25em 1em;
+    max-width: 40%;
+    -webkit-border-radius: .2em;
+       -moz-border-radius: .2em;
+            border-radius: .2em;
+    }
+    /* Move the initial bubbles' position from the viewport  */
+    #at_Entrance:not(:checked) + #Entrance .b-bubble,
+    #at_Hall:not(:checked) + #Hall .b-bubble,
+    #at_Opera:not(:checked) + #Opera .b-bubble,
+    #at_Throne:not(:checked) + #Throne .b-bubble {
+        top: -2000em !important;
+        }
+    .b-bubble__person {
+        position: absolute;
+        right: 100%;
+        bottom: 100%;
+        }
+    /* Positioning for the Hero's speech */
+    .b-bubble_hero {
+        left: -2em;
+        text-align: left;
+        }
+    /* Positioning for the Sorcerer's speech */
+    .b-bubble_sorcerer {
+        right: 1em;
+        text-align: right;
+        }
+
+/* The Start
+---------------------------------------*/
+#Start .b-frame_bg {
+    background: inherit;
+    -webkit-transition: background 7s;
+       -moz-transition: background 7s;
+         -o-transition: background 7s;
+            transition: background 7s;
+    }
+#Start .b-frame_flash {
+    background: transparent;
+    -webkit-transition: background .01s 5s;
+       -moz-transition: background .01s 5s;
+         -o-transition: background .01s 5s;
+            transition: background .01s 5s;
+    }
+#Start .b-frame_flash_dark {
+    -webkit-transition: background .01s 5.1s;
+       -moz-transition: background .01s 5.1s;
+         -o-transition: background .01s 5.1s;
+            transition: background .01s 5.1s;
+    }
+#Start .b-frame_flash2 {
+    -webkit-transition: background .01s 5.2s;
+       -moz-transition: background .01s 5.2s;
+         -o-transition: background .01s 5.2s;
+            transition: background .01s 5.2s;
+    }
+#Start .b-frame_flash_dark2 {
+    -webkit-transition: background .01s 5.3s;
+       -moz-transition: background .01s 5.3s;
+         -o-transition: background .01s 5.3s;
+            transition: background .01s 5.3s;
+    }
+#Start .b-frame_flash3 {
+    -webkit-transition: background .01s 5.8s;
+       -moz-transition: background .01s 5.8s;
+         -o-transition: background .01s 5.8s;
+            transition: background .01s 5.8s;
+    }
+#Start .b-frame_bg2 {
+    background: transparent;
+    -webkit-transition: background .01s 5.9s;
+       -moz-transition: background .01s 5.9s;
+         -o-transition: background .01s 5.9s;
+            transition: background .01s 5.9s;
+    }
+#Start .b-castle {
+    position: absolute;
+    top: 150%;
+    left: 50%;
+
+    width: 10em;
+    height: 15em;
+    border-top: .5em dotted #000000;
+    margin: -14em 0 0 -5em;
+
+    background: #EEE;
+    opacity: 0;
+
+    -webkit-transition: top 8s, opacity 10s 3s;
+       -moz-transition: top 8s, opacity 10s 3s;
+         -o-transition: top 8s, opacity 10s 3s;
+            transition: top 8s, opacity 10s 3s;
+    }
+    #Start .b-castle:before {
+        content: "";
+
+        position: absolute;
+        bottom: 0;
+        left: -10em;
+        right: -10em;
+
+        height: 4em;
+
+        background: #AAA;
+        border-top: .5em dotted #000000;
+        }
+    #Start .b-castle:after {
+        content: "";
+        position: absolute;
+        top: 6em;
+        left: -1em;
+
+        border-left: 6em solid transparent;
+        border-right: 6em solid transparent;
+        border-bottom: 5em solid #AAA;
+        }
+        #Start .b-castle__tower {
+            position: absolute;
+            top: -5em;
+            left: 2em;
+            width: 3em;
+            height: 2em;
+            border-top: 3em solid transparent;
+            border-left: 1.5em solid #CCC;
+            border-right: 1.5em solid #CCC;
+            }
+            #Start .b-castle__tower:before {
+                content: "";
+                top: -2em;
+                left: -5em;
+                right: -5em;
+                position: absolute;
+                border-top: 3em solid transparent;
+                border-left: 1.5em solid #EEE;
+                border-right: 1.5em solid #EEE;
+                height: 3em;
+                }
+            #Start .b-castle__tower:after {
+                content: "";
+                top: 3em;
+                left: -11em;
+                right: -11em;
+                position: absolute;
+                border-left: 1.5em solid #AAA;
+                border-right: 1.5em solid #AAA;
+                border-top: 2em solid transparent;
+                height: 8em;
+                }
+
+#Start .b-logo {
+    position: absolute;
+    top: -4em;
+    left: 0;
+    width: 100%;
+    z-index: 100000;
+    text-align: center;
+    opacity: 0;
+    font-size: 2.2em;
+    font-family: Fantasy;
+    -webkit-transition: top 9s, opacity 9s;
+       -moz-transition: top 9s, opacity 9s;
+         -o-transition: top 9s, opacity 9s;
+            transition: top 9s, opacity 9s;
+    }
+#Start .b-logo__i {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+    overflow: hidden;
+    width: 0;
+    font-size: .8em;
+    white-space: nowrap;
+    -webkit-transition: width .7s 5.75s;
+       -moz-transition: width .7s 5.75s;
+         -o-transition: width .7s 5.75s;
+            transition: width .7s 5.75s;
+    }
+
+/* The animation for the intro
+---------------------------------------*/
+#at_Start:checked + #Start .b-frame_bg {
+    background: #000;
+    }
+/* The lightnings */
+#at_Start:checked + #Start .b-frame_flash {
+    background: #FFF;
+    }
+#at_Start:checked + #Start .b-frame_flash_dark {
+    background: #000;
+    }
+#at_Start:checked + #Start .b-frame_bg2 {
+    background: #000;
+    }
+/* The castle moves from the bottom and become opaque */
+#at_Start:checked + #Start .b-castle {
+    top: 100%;
+    opacity: 1;
+    }
+#at_Start:checked + #Start .b-logo {
+    top: 3em;
+    opacity: 1;
+    }
+
+/* The logo expands from “CSS” to “Castle of Sinister Sorcerers” */
+/* (Somewhat buggy, in some fonts can look bad) */
+#at_Start:checked + #Start .b-logo__i1 {
+    width: 4.4em;
+    word-spacing: .3em;
+    }
+#at_Start:checked + #Start .b-logo__i2 {
+    width: 3.5em;
+    }
+#at_Start:checked + #Start .b-logo__i3 {
+    width: 4em;
+    }
+/* The continue control appears */
+#at_Start:checked + #Start .b-continue {
+    left: 0 !important;
+    -webkit-transition: left 9s;
+       -moz-transition: left 9s;
+         -o-transition: left 9s;
+            transition: left 9s;
+    }
+
+/* The scene with Firefox
+---------------------------------------*/
+#Entrance {
+    background: #000;
+    -webkit-transition: opacity 2s, background 4s;
+       -moz-transition: opacity 2s, background 4s;
+         -o-transition: opacity 2s, background 4s;
+            transition: opacity 2s, background 4s;
+    }
+    #Entrance .b-ground {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 5em;
+        background: #333;
+        border-top: .5em dotted #444;
+        }
+    #Entrance .b-ground:before {
+        content: "";
+
+        position: absolute;
+        bottom: 0;
+        left: 40%;
+        width: 20%;
+        height: 3.5em;
+        background: #30320B;
+        border-bottom: 2em solid #36566F;
+        }
+        #Entrance .b-ground__moat {
+            position: absolute;
+            top: -.5em;
+            left: 40%;
+            width: 9em;
+            height: .5em;
+            margin-left: -.3em;
+            background: #6D3E22;
+            border-right: .5em solid #131309;
+            -webkit-border-radius: 0 .25em .25em 0;
+               -moz-border-radius: 0 .25em .25em 0;
+                    border-radius: 0 .25em .25em 0;
+            -webkit-transition: -webkit-transform .4s, margin .4s;
+               -moz-transition:    -moz-transform .4s, margin .4s;
+                 -o-transition:      -o-transform .4s, margin .4s;
+                    transition:         transform .4s, margin .4s;
+
+            -webkit-transform: rotate(90deg);
+               -moz-transform: rotate(90deg);
+                 -o-transform: rotate(90deg);
+                    transform: rotate(90deg);
+            -webkit-transform-origin: 100% 0;
+               -moz-transform-origin: 100% 0;
+                 -o-transform-origin: 100% 0;
+                    transform-origin: 100% 0;
+            }
+
+    #Entrance .b-wall {
+        position: absolute;
+        right: 0;
+        bottom: 11em;
+        width: 14.5em;
+        height: 5em;
+        background: #666;
+        border-top: .5em solid #777;
+        border-left: .5em solid #777;
+        }
+    #Entrance .b-wall:before {
+        content: "";
+        position: absolute;
+        left: -.5em;
+        top: -1em;
+        width: 14.7em;
+        border-top: 1em dotted #777;
+        }
+    #Entrance .b-wall:after {
+        content: "";
+        position: absolute;
+        left: -.5em;
+        top: 5em;
+        width: 14.5em;
+        height: 5.5em;
+        border-left: .5em solid #555;
+        background: #444;
+        }
+        #Entrance .b-wall__windows {
+            position: absolute;
+            top: 6.5em;
+            left: 4em;
+            z-index: 9;
+            border: solid #475383;
+            border-width: 0 1.5em;
+            width: 6em;
+            height: 1.5em;
+            }
+
+    #Entrance .b-human_hero {
+        content: "";
+        position: absolute;
+        z-index: 10;
+        left: -7em;
+        bottom: 5.45em;
+
+        -webkit-transition: left 4s 1s linear;
+           -moz-transition: left 4s 1s linear;
+             -o-transition: left 4s 1s linear;
+                transition: left 4s 1s linear;
+        }
+    #Entrance .b-frame_mountains {
+        background: #8A86A9 repeat-x;
+        background-position:
+          1em -4em, 1em -4em,
+          6em -5em, 6em -5em,
+          6em -5em, 6em -5em,
+          3em -5em, 3em -5em,
+          21em -5em, 21em -5em;
+        background-size:
+          3em 30em, 3em 30em,
+          5em 30em, 5em 30em,
+          15em 30em, 15em 30em,
+          25em 30em, 25em 30em,
+          70em 30em, 70em 30em;
+        background-image: 
+          -webkit-linear-gradient( 85deg, #30320B  35px, transparent 0),
+          -webkit-linear-gradient( 95deg, #30320B  35px, transparent 0),
+          -webkit-linear-gradient( 83deg, #272914  40px, transparent 0),
+          -webkit-linear-gradient( 97deg, #272914  40px, transparent 0),
+          -webkit-linear-gradient( 65deg, #37456C  90px, transparent 0),
+          -webkit-linear-gradient(115deg, #37456C  90px, transparent 0),
+          -webkit-linear-gradient( 60deg, #475383 120px, transparent 0),
+          -webkit-linear-gradient(120deg, #475383 120px, transparent 0),
+          -webkit-linear-gradient( 55deg, #72769B 200px, transparent 0),
+          -webkit-linear-gradient(125deg, #72769B 200px, transparent 0);
+        background-image: 
+             -moz-linear-gradient( 85deg, #30320B  35px, transparent 0),
+             -moz-linear-gradient( 95deg, #30320B  35px, transparent 0),
+             -moz-linear-gradient( 83deg, #272914  40px, transparent 0),
+             -moz-linear-gradient( 97deg, #272914  40px, transparent 0),
+             -moz-linear-gradient( 65deg, #37456C  90px, transparent 0),
+             -moz-linear-gradient(115deg, #37456C  90px, transparent 0),
+             -moz-linear-gradient( 60deg, #475383 120px, transparent 0),
+             -moz-linear-gradient(120deg, #475383 120px, transparent 0),
+             -moz-linear-gradient( 55deg, #72769B 200px, transparent 0),
+             -moz-linear-gradient(125deg, #72769B 200px, transparent 0);
+        background-image: 
+               -o-linear-gradient( 85deg, #30320B  35px, transparent 0),
+               -o-linear-gradient( 95deg, #30320B  35px, transparent 0),
+               -o-linear-gradient( 83deg, #272914  40px, transparent 0),
+               -o-linear-gradient( 97deg, #272914  40px, transparent 0),
+               -o-linear-gradient( 65deg, #37456C  90px, transparent 0),
+               -o-linear-gradient(115deg, #37456C  90px, transparent 0),
+               -o-linear-gradient( 60deg, #475383 120px, transparent 0),
+               -o-linear-gradient(120deg, #475383 120px, transparent 0),
+               -o-linear-gradient( 55deg, #72769B 200px, transparent 0),
+               -o-linear-gradient(125deg, #72769B 200px, transparent 0);
+        background-image: 
+                  linear-gradient( 85deg, #30320B  35px, transparent 0),
+                  linear-gradient( 95deg, #30320B  35px, transparent 0),
+                  linear-gradient( 83deg, #272914  40px, transparent 0),
+                  linear-gradient( 97deg, #272914  40px, transparent 0),
+                  linear-gradient( 65deg, #37456C  90px, transparent 0),
+                  linear-gradient(115deg, #37456C  90px, transparent 0),
+                  linear-gradient( 60deg, #475383 120px, transparent 0),
+                  linear-gradient(120deg, #475383 120px, transparent 0),
+                  linear-gradient( 55deg, #72769B 200px, transparent 0),
+                  linear-gradient(125deg, #72769B 200px, transparent 0);
+        }
+
+    #Entrance .b-bubble:nth-of-type(1) {
+        -webkit-transition: top 11s;
+           -moz-transition: top 11s;
+             -o-transition: top 11s;
+                transition: top 11s;
+        }
+    #Entrance .b-bubble:nth-of-type(2) {
+        -webkit-transition: top 13s;
+           -moz-transition: top 13s;
+             -o-transition: top 13s;
+                transition: top 13s;
+        }
+    #Entrance .b-bubble:nth-of-type(3) {
+        -webkit-transition: top 13.5s;
+           -moz-transition: top 13.5s;
+             -o-transition: top 13.5s;
+                transition: top 13.5s;
+        }
+    #Entrance .b-bubble:nth-of-type(4) {
+        -webkit-transition: top 15s;
+           -moz-transition: top 15s;
+             -o-transition: top 15s;
+                transition: top 15s;
+        }
+    #Entrance .b-bubble:nth-of-type(5) {
+        -webkit-transition: top 19s;
+           -moz-transition: top 19s;
+             -o-transition: top 19s;
+                transition: top 19s;
+        }
+    #Entrance .b-bubble:nth-of-type(6) {
+        -webkit-transition: top 22s;
+           -moz-transition: top 22s;
+             -o-transition: top 22s;
+                transition: top 22s;
+        }
+
+/* The completeon of the Firefox' scene */
+#at_Entrance:checked + #Entrance {
+    background: #30320B;
+    }
+    #at_Entrance:checked + #Entrance .b-human_hero {
+        left: 9em;
+        }
+    #at_Entrance:checked + #Entrance .b-human_firefox {
+        left: 25.75em;
+        }
+    #at_Entrance:checked + #Entrance .b-human_firefox .b-human__hand {
+        left: .25em;
+        -webkit-transform: rotate(125deg);
+           -moz-transform: rotate(125deg);
+             -o-transform: rotate(125deg);
+                transform: rotate(125deg);
+        }
+    #at_Entrance:checked + #Entrance .b-human_firefox .b-human__cape {
+        -webkit-transform: rotate(-10deg);
+           -moz-transform: rotate(-10deg);
+             -o-transform: rotate(-10deg);
+                transform: rotate(-10deg);
+        }
+    #Entrance > #at_Entrance2:checked + .b-scene-part2 .b-human_firefox .b-human__hand {
+        left: 0;
+        -webkit-transform: rotate(10deg);
+           -moz-transform: rotate(10deg);
+             -o-transform: rotate(10deg);
+                transform: rotate(10deg);
+        }
+
+    #Entrance > #at_Entrance2:checked + .b-scene-part2 .b-bubble {
+        -webkit-transition: top 2s;
+           -moz-transition: top 2s;
+             -o-transition: top 2s;
+                transition: top 2s;
+        }
+
+    #Entrance > #at_Entrance2:checked + .b-scene-part2 .b-bubble { top: 200em; }
+
+    #Entrance > #at_Entrance2:checked + .b-scene-part2 {
+        visibility: visible;
+        }
+
+    #Entrance > #at_Entrance2:checked + .b-scene-part2 .b-human_hero {
+        left: 45em;
+        }
+    #Entrance > #at_Entrance2:checked + .b-scene-part2 .b-human_firefox {
+        left: 75.75em;
+        }
+    #Entrance > #at_Entrance2:checked + .b-scene-part2 .b-ground__moat {
+        -webkit-transform: rotate(0) translate(0, 0);
+           -moz-transform: rotate(0) translate(0, 0);
+             -o-transform: rotate(0) translate(0, 0);
+                transform: rotate(0) translate(0, 0);
+        margin-top: -.5em;
+        }
+    #at_Entrance:checked + #Entrance .b-continue1 {
+        left: 0 !important;
+        -webkit-transition: left 24s;
+           -moz-transition: left 24s;
+             -o-transition: left 24s;
+                transition: left 24s;
+        }
+    #Entrance > #at_Entrance2:checked + .b-scene-part2 .b-continue2 {
+        left: 0 !important;
+        -webkit-transition: left 6s;
+           -moz-transition: left 6s;
+             -o-transition: left 6s;
+                transition: left 6s;
+        }
+
+/* The Hall with Webkit Brothers */
+#Hall .b-frame_bg {
+    font-size: 2.1em;
+    background: #000;
+    /* Somewhat altered and quirked http://leaverou.me/css3patterns/#bricks pattern */
+    background-image:
+      -webkit-linear-gradient(115deg, #191008 .23em, transparent 0),
+      -webkit-linear-gradient(294deg, #191008 .23em, transparent 0),
+      -webkit-linear-gradient(115deg, #191008 .23em, transparent 0),
+      -webkit-linear-gradient(295deg, #191008 .23em, transparent 0);
+    background-image:
+         -moz-linear-gradient(115deg, #191008 .23em, transparent 0),
+         -moz-linear-gradient(294deg, #191008 .23em, transparent 0),
+         -moz-linear-gradient(115deg, #191008 .23em, transparent 0),
+         -moz-linear-gradient(295deg, #191008 .23em, transparent 0);
+    background-image:
+           -o-linear-gradient(115deg, #191008 .23em, transparent 0),
+           -o-linear-gradient(294deg, #191008 .23em, transparent 0),
+           -o-linear-gradient(115deg, #191008 .23em, transparent 0),
+           -o-linear-gradient(295deg, #191008 .23em, transparent 0);
+    background-image:
+              linear-gradient(115deg, #191008 .23em, transparent 0),
+              linear-gradient(294deg, #191008 .23em, transparent 0),
+              linear-gradient(115deg, #191008 .23em, transparent 0),
+              linear-gradient(295deg, #191008 .23em, transparent 0);
+
+    background-size: .58em .58em;
+    background-position: 0 .02em, .04em .34em, .29em .3em, .34em .06em;
+    opacity: 0.7;
+    }
+    #Hall .b-human_hero {
+        bottom: 5em;
+        }
+
+    #Hall .b-human_chrome {
+        left: 2em;
+        top: 4em;
+        }
+    #Hall .b-human_safari {
+        left: 7em;
+        top: 5em;
+        }
+    #Hall .b-floor {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        border-top: 3.5em solid #121917;
+        border-bottom: 2.5em solid #121917;
+        }
+    #Hall .b-stairs {
+        position: absolute;
+        right: 0;
+        bottom: 2em;
+        width: 9em;
+        height: 4.5em;
+        overflow: hidden;
+        }
+        #Hall .b-stairs:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5em;
+            border-left: 4.2em dashed transparent;
+            border-bottom: 4.2em solid #786954;
+            }
+        #Hall .b-stairs:before {
+            content: "";
+            position: absolute;
+            left: -0.9em;
+            top: 1.85em;
+            height: 0.3em;
+            width: 5.9em;
+            background-image:
+              -webkit-linear-gradient( 45deg, #786954 25%, transparent 25%),
+              -webkit-linear-gradient(-45deg, transparent 75%, #786954 75%);
+            background-image:
+                 -moz-linear-gradient( 45deg, #786954 25%, transparent 25%),
+                 -moz-linear-gradient(-45deg, transparent 75%, #786954 75%);
+            background-image:
+                   -o-linear-gradient( 45deg, #786954 25%, transparent 25%),
+                   -o-linear-gradient(-45deg, transparent 75%, #786954 75%);
+            background-image:
+                      linear-gradient( 45deg, #786954 25%, transparent 25%),
+                      linear-gradient(-45deg, transparent 75%, #786954 75%);
+            background-size: .5em .5em;
+            background-position: -0.25em 100%;
+            background-repeat: repeat-x;
+
+            -webkit-transform: rotate(-45deg);
+               -moz-transform: rotate(-45deg);
+                 -o-transform: rotate(-45deg);
+                    transform: rotate(-45deg);
+            }
+    #Hall .b-portal {
+        position: absolute;
+        left: 29em;
+        bottom: 11.5em;
+
+        width: 0;
+        height: 10em;
+        border-right: 10em solid rgba(255,255,0,0);
+        opacity: 0;
+        background: rgba(255,255,0,0.7);
+        -webkit-border-radius: 5em;
+           -moz-border-radius: 5em;
+                border-radius: 5em;
+        -webkit-transform: scale(.2);
+           -moz-transform: scale(.2);
+             -o-transform: scale(.2);
+                transform: scale(.2);
+        -webkit-transition: -webkit-transform .7s 2s, background .7s 2s, left .01s 2s, border .001s 2s, opacity .7s 2s;
+           -moz-transition:    -moz-transform .7s 2s, background .7s 2s, left .01s 2s, border .001s 2s, opacity .7s 2s;
+             -o-transition:      -o-transform .7s 2s, background .7s 2s, left .01s 2s, border .001s 2s, opacity .7s 2s;
+                transition:         transform .7s 2s, background .7s 2s, left .01s 2s, border .001s 2s, opacity .7s 2s;
+        }
+    #Hall .b-human-behavior {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        -webkit-transition: left 3s 2s, bottom .3s 2s, margin-bottom 1.2s 2.1s linear, margin-left 5s linear;
+           -moz-transition: left 3s 2s, bottom .3s 2s, margin-bottom 1.2s 2.1s linear, margin-left 5s linear;
+             -o-transition: left 3s 2s, bottom .3s 2s, margin-bottom 1.2s 2.1s linear, margin-left 5s linear;
+                transition: left 3s 2s, bottom .3s 2s, margin-bottom 1.2s 2.1s linear, margin-left 5s linear;
+        }
+
+    #Hall .b-human_hero {
+        left: -4em;
+        -webkit-transition: left 4s linear, bottom .3s 2.3s;
+           -moz-transition: left 4s linear, bottom .3s 2.3s;
+             -o-transition: left 4s linear, bottom .3s 2.3s;
+                transition: left 4s linear, bottom .3s 2.3s;
+        }
+    #Hall .b-human_hero .b-human__hand {
+        -webkit-transition: -webkit-transform .5s 3s, left .5s 3s;
+           -moz-transition:    -moz-transform .5s 3s, left .5s 3s;
+             -o-transition:      -o-transform .5s 3s, left .5s 3s;
+                transition:         transform .5s 3s, left .5s 3s;
+        }
+    #Hall .b-human_sorcerer .b-human__hand {
+        -webkit-transition: -webkit-transform .5s 4s, left .5s 4s;
+           -moz-transition:    -moz-transform .5s 4s, left .5s 4s;
+             -o-transition:      -o-transform .5s 4s, left .5s 4s;
+                transition:         transform .5s 4s, left .5s 4s;
+        }
+
+    /* Chrome */
+    .b-human_chrome {
+        background: #2689C9;
+        border-top-color: #F9DFA5;
+        border-bottom-color: #E7B400;
+        -webkit-transition: left 11s;
+           -moz-transition: left 11s;
+             -o-transition: left 11s;
+                transition: left 11s;
+        }
+        .b-human_chrome:before {
+            border-color: #FC5750;
+            }
+        .b-human_chrome .b-human__cape {
+            background: #FEDD00;
+            -webkit-transition: -webkit-transform 1s 9s;
+               -moz-transition:    -moz-transform 1s 9s;
+                 -o-transition:      -o-transform 1s 9s;
+                    transition:         transform 1s 9s;
+            }
+        .b-human_chrome .b-human__hand {
+            background: #29CB4D;
+            left: .3em;
+            -webkit-transform: rotate(70deg);
+               -moz-transform: rotate(70deg);
+                 -o-transform: rotate(70deg);
+                    transform: rotate(70deg);
+            }
+            .b-human_chrome .b-human__hand:before {
+                background: #248B4D;
+                }
+    /* Safari */
+    .b-human_safari {
+        background: #2176B6;
+        border-top-color: #FDFEFF;
+        border-bottom-color: #7E8584;
+        -webkit-transition: left 11s;
+           -moz-transition: left 11s;
+             -o-transition: left 11s;
+                transition: left 11s;
+        }
+        .b-human_safari:before {
+            border-color: #94CFE6;
+            }
+        .b-human_safari .b-human__cape {
+            background: #A7B5D5;
+            -webkit-transition: -webkit-transform 1s 9s;
+               -moz-transition:    -moz-transform 1s 9s;
+                 -o-transition:      -o-transform 1s 9s;
+                    transition:         transform 1s 9s;
+            }
+        .b-human_safari .b-human__hand {
+            left: .3em;
+            background: #8ED9EF;
+            }
+        .b-human_safari .b-human__hand:before {
+            background: #CC3D02;
+            }
+    #Hall .b-bullets {
+        position: absolute;
+        bottom: 280em;
+        left: 280em;
+        width: 5em;
+        height: 6em;
+        margin-top: 19em;
+        -webkit-transform: rotate(-180deg);
+           -moz-transform: rotate(-180deg);
+             -o-transform: rotate(-180deg);
+                transform: rotate(-180deg);
+        -webkit-transition: -webkit-transform 2s 4s, left 6.5s, bottom 6.5s, margin 3s 7s;
+           -moz-transition:    -moz-transform 2s 4s, left 6.5s, bottom 6.5s, margin 3s 7s;
+             -o-transition:      -o-transform 2s 4s, left 6.5s, bottom 6.5s, margin 3s 7s;
+                transition:         transform 2s 4s, left 6.5s, bottom 6.5s, margin 3s 7s;
+        }
+        #Hall .b-bullet {
+            position: relative;
+            display: inline-block;
+            font-family: Georgia;
+            -webkit-transition: -webkit-transform 2s 4s, margin .5s 6s;
+               -moz-transition:    -moz-transform 2s 4s, margin .5s 6s;
+                 -o-transition:      -o-transform 2s 4s, margin .5s 6s;
+                    transition:         transform 2s 4s, margin .5s 6s;
+            }
+        #Hall .b-bullet:nth-child(1):before  { content: "" }
+        #Hall .b-bullet:nth-child(2):before  { content: "l" }
+        #Hall .b-bullet:nth-child(3):before  { content: "o" }
+        #Hall .b-bullet:nth-child(4):before  { content: "" }
+        #Hall .b-bullet:nth-child(5):before  { content: "o" }
+        #Hall .b-bullet:nth-child(6):before  { content: "" }
+        #Hall .b-bullet:nth-child(7):before  { content: "G" }
+        #Hall .b-bullet:nth-child(8):before  { content: "" }
+        #Hall .b-bullet:nth-child(9):before  { content: "g" }
+        #Hall .b-bullet:nth-child(10):before { content: "" }
+        #Hall .b-bullet:nth-child(11):before { content: "" }
+        #Hall .b-bullet:nth-child(12):before { content: "e" }
+
+        #Hall .b-bullet:nth-child(3n) {
+            margin-left: 0.4em;
+            }
+        #Hall .b-bullet:nth-child(2n) {
+            -webkit-transform: rotate(45deg);
+               -moz-transform: rotate(45deg);
+                 -o-transform: rotate(45deg);
+                    transform: rotate(45deg);
+            }
+        #Hall .b-bullet:nth-child(3n-2) {
+            top: -.5em;
+            -webkit-transform: rotate(-23deg);
+               -moz-transform: rotate(-23deg);
+                 -o-transform: rotate(-23deg);
+                    transform: rotate(-23deg);
+            }
+        #Hall .b-bullet:nth-child(2n+1) {
+            top: .25em;
+            }
+        #Hall .b-shield {
+            position: absolute;
+            left: 0em;
+            bottom: 3em;
+
+            height: 10em;
+            width: 10em;
+            opacity: 0;
+            -webkit-box-shadow: inset -2em 2em 1em -1em rgba(0,0,255,.8);
+               -moz-box-shadow: inset -2em 2em 1em -1em rgba(0,0,255,.8);
+                 -o-box-shadow: inset -2em 2em 1em -1em rgba(0,0,255,.8);
+                    box-shadow: inset -2em 2em 1em -1em rgba(0,0,255,.8);
+
+            -webkit-border-radius: 10em;
+               -moz-border-radius: 10em;
+                    border-radius: 10em;
+
+            -webkit-transform: translateZ(0);
+               -moz-transform: translateZ(0);
+                 -o-transform: translateZ(0);
+                    transform: translateZ(0);
+
+            -webkit-transition: opacity .3s 5.7s, -webkit-box-shadow .3s 6.3s;
+               -moz-transition: opacity .3s 5.7s,    -moz-box-shadow .3s 6.3s;
+                 -o-transition: opacity .3s 5.7s,      -o-box-shadow .3s 6.3s;
+                    transition: opacity .3s 5.7s,         box-shadow .3s 6.3s;
+            }
+        #Hall .b-bubble:nth-of-type(1) {
+            -webkit-transition: top 8s;
+               -moz-transition: top 8s;
+                 -o-transition: top 8s;
+                    transition: top 8s;
+            }
+        #Hall .b-bubble:nth-of-type(2) {
+            -webkit-transition: top 10s;
+               -moz-transition: top 10s;
+                 -o-transition: top 10s;
+                    transition: top 10s;
+            }
+        #Hall .b-bubble:nth-of-type(3) {
+            -webkit-transition: top 13s;
+               -moz-transition: top 13s;
+                 -o-transition: top 13s;
+                    transition: top 13s;
+            }
+        #Hall .b-bubble:nth-of-type(4) {
+            -webkit-transition: top 15s;
+               -moz-transition: top 15s;
+                 -o-transition: top 15s;
+                    transition: top 15s;
+            }
+        #Hall .b-bubble:nth-of-type(5) {
+            -webkit-transition: top 18s;
+               -moz-transition: top 18s;
+                 -o-transition: top 18s;
+                    transition: top 18s;
+            }
+
+/* The end of the Webkit Brothers */
+#at_Hall:checked + #Hall .b-portal {
+    opacity: 1;
+    background: rgba(255,255,0,0);
+    -webkit-transform: scale(1);
+       -moz-transform: scale(1);
+         -o-transform: scale(1);
+            transform: scale(1);
+    }
+#at_Hall:checked + #Hall .b-human_hero {
+    left: 8em;
+    bottom: 4.5em;
+    }
+#at_Hall:checked + #Hall .b-human-behavior {
+    left: -4em;
+    bottom: .5em;
+    }
+#at_Hall:checked + #Hall .b-human_hero .b-human__hand {
+    -webkit-transform: rotate(-80deg);
+       -moz-transform: rotate(-80deg);
+         -o-transform: rotate(-80deg);
+            transform: rotate(-80deg);
+    }
+#at_Hall:checked + #Hall .b-human_sorcerer .b-human__hand {
+    -webkit-transform: rotate(-380deg);
+       -moz-transform: rotate(-380deg);
+         -o-transform: rotate(-380deg);
+            transform: rotate(-380deg);
+    }
+#at_Hall:checked + #Hall .b-bullets {
+    bottom: 8em;
+    left: 4em;
+    -webkit-transform: rotate(-30deg);
+       -moz-transform: rotate(-30deg);
+         -o-transform: rotate(-30deg);
+            transform: rotate(-30deg);
+    margin-top: 0;
+    }
+#at_Hall:checked + #Hall .b-bullet:nth-child(2n) {
+    -webkit-transform: rotate(-45deg) translate(2em, 1em);
+       -moz-transform: rotate(-45deg) translate(2em, 1em);
+         -o-transform: rotate(-45deg) translate(2em, 1em);
+            transform: rotate(-45deg) translate(2em, 1em);
+    }
+#at_Hall:checked + #Hall .b-bullet:nth-child(3n-2) {
+    -webkit-transform: rotate(230deg);
+       -moz-transform: rotate(230deg);
+         -o-transform: rotate(230deg);
+            transform: rotate(230deg);
+    }
+#at_Hall:checked + #Hall .b-bullet:nth-child(1)  { margin-left: 100em; }
+#at_Hall:checked + #Hall .b-bullet:nth-child(2)  { margin-left: 150em; }
+#at_Hall:checked + #Hall .b-bullet:nth-child(3)  { margin-top:  100em; }
+#at_Hall:checked + #Hall .b-bullet:nth-child(4)  { margin-top: -100em; }
+#at_Hall:checked + #Hall .b-bullet:nth-child(5)  { margin-left:  90em; }
+#at_Hall:checked + #Hall .b-bullet:nth-child(6)  { margin-left: -50em; }
+#at_Hall:checked + #Hall .b-bullet:nth-child(7)  { margin-top:  100em; }
+#at_Hall:checked + #Hall .b-bullet:nth-child(8)  { margin-left: 100em; }
+#at_Hall:checked + #Hall .b-bullet:nth-child(9)  { margin-left:-100em; }
+#at_Hall:checked + #Hall .b-bullet:nth-child(10) { margin-top:  200em; }
+#at_Hall:checked + #Hall .b-bullet:nth-child(11) { margin-left: 100em; }
+#at_Hall:checked + #Hall .b-bullet:nth-child(12) { margin-top:  300em; }
+
+#at_Hall:checked + #Hall .b-shield {
+    opacity: 1;
+    -webkit-box-shadow: inset -2em 2em 1em -1em rgba(0,0,255,0);
+       -moz-box-shadow: inset -2em 2em 1em -1em rgba(0,0,255,0);
+         -o-box-shadow: inset -2em 2em 1em -1em rgba(0,0,255,0);
+            box-shadow: inset -2em 2em 1em -1em rgba(0,0,255,0);
+    }
+
+#at_Hall:checked + #Hall .b-continue1 {
+    left: 0 !important;
+    -webkit-transition: left 20s;
+       -moz-transition: left 20s;
+         -o-transition: left 20s;
+            transition: left 20s;
+    }
+#Hall > #at_Hall2:checked + .b-scene-part2 .b-continue2 {
+    left: 0 !important;
+    -webkit-transition: left 6s;
+       -moz-transition: left 6s;
+         -o-transition: left 6s;
+            transition: left 6s;
+    }
+
+#Hall > #at_Hall2:checked + .b-scene-part2 .b-portal {
+    opacity: 0;
+    border-right: 10em solid rgba(255,255,0,0.7);
+    -webkit-transform: scale(.2);
+       -moz-transform: scale(.2);
+         -o-transform: scale(.2);
+            transform: scale(.2);
+    }
+#Hall > #at_Hall2:checked + .b-scene-part2 .b-human_sorcerer .b-human__hand {
+    -webkit-transition: -webkit-transform 2s, left 2s;
+       -moz-transition:    -moz-transform 2s, left 2s;
+         -o-transition:      -o-transform 2s, left 2s;
+            transition:         transform 2s, left 2s;
+    -webkit-transform: rotate(-250deg);
+       -moz-transform: rotate(-250deg);
+         -o-transform: rotate(-250deg);
+            transform: rotate(-250deg);
+    left: 0.25em;
+    }
+#Hall > #at_Hall2:checked + .b-scene-part2 .b-human-behavior {
+    margin: 0 0 8.5em 38em;
+    }
+
+/* The Opera Room
+---------------------------------------*/
+#Opera {
+    background: #641F00;
+    -webkit-transition: none; /* Safari is buggy if there is an opacity transition -_- */
+    }
+    #Opera .b-frame_bg {
+        border-bottom: 3em solid #9F1C07;
+        }
+        #Opera .b-frame_bg:before {
+            content: "";
+            position: absolute;
+            top: -2em;
+            left: -3em;
+            right: -3em;
+            border-top: 4em solid #FF9B00;
+            height: 12em;
+            -webkit-border-radius: 10em/8em;
+               -moz-border-radius: 10em/8em;
+                    border-radius: 10em/8em;
+            }
+    #Opera .b-curtain:before {
+        content: "";
+        position: absolute;
+        top: 1em;
+        left: 16.75em;
+
+        height: 6em;
+        width: 6em;
+        height: 6em;
+        border: solid #FFCF48;
+        border-width: 0 .25em .25em .25em;
+
+        background: #B30000;
+
+        -webkit-border-radius: 0 0 3em 3em;
+           -moz-border-radius: 0 0 3em 3em;
+                border-radius: 0 0 3em 3em;
+        -webkit-box-shadow: 0 .25em .5em rgba(27,2,0,0.7);
+           -moz-box-shadow: 0 .25em .5em rgba(27,2,0,0.7);
+             -o-box-shadow: 0 .25em .5em rgba(27,2,0,0.7);
+                box-shadow: 0 .25em .5em rgba(27,2,0,0.7);
+        }
+    #Opera .b-curtain:after {
+        content: "";
+        position: absolute;
+        top: 4.5em;
+        left: 19.5em;
+
+        height: 6em;
+        width: 1em;
+        height: 2em;
+
+        background: #FFCF48;
+
+        -webkit-border-radius: 1em/2em;
+           -moz-border-radius: 1em/2em;
+                border-radius: 1em/2em;
+        }
+    #Opera .b-curtain__top {
+        -webkit-transform: translateZ(0);
+        position: absolute;
+        top: -12em;
+        right: -9.5em;
+        width: 30em;
+        height: 20em;
+        border: .25em solid #FFCF48;
+        background: #B30000;
+        -webkit-border-radius: 15em/10em;
+           -moz-border-radius: 15em/10em;
+                border-radius: 15em/10em;
+        -webkit-box-shadow: 0 .5em 1em -0.25em rgba(27,2,0,0.7);
+           -moz-box-shadow: 0 .5em 1em -0.25em rgba(27,2,0,0.7);
+             -o-box-shadow: 0 .5em 1em -0.25em rgba(27,2,0,0.7);
+                box-shadow: 0 .5em 1em -0.25em rgba(27,2,0,0.7);
+        }
+        #Opera .b-curtain__top:first-of-type {
+            right: auto;
+            left: -9.5em;
+            }
+
+    #Opera .b-curtain__top:before {
+        content: "";
+
+        position: absolute;
+        top: 8em;
+        right: 5em;
+        width: 8em;
+        height: 14em;
+
+        border: .25em solid #FFCF48;
+        background: #B30000;
+        -webkit-border-radius: 4em/7em;
+           -moz-border-radius: 4em/7em;
+                border-radius: 4em/7em;
+        -webkit-box-shadow: 0 .25em .5em rgba(27,2,0,0.7);
+           -moz-box-shadow: 0 .25em .5em rgba(27,2,0,0.7);
+             -o-box-shadow: 0 .25em .5em rgba(27,2,0,0.7);
+                box-shadow: 0 .25em .5em rgba(27,2,0,0.7);
+        }
+        #Opera .b-curtain__top:first-of-type:before {
+            right: auto;
+            left: 5em;
+            }
+    #Opera .b-curtain__top:after {
+        content: "";
+
+        position: absolute;
+        top: 8em;
+        right: 6em;
+        width: 12em;
+        height: 10em;
+
+        border: .25em solid #FFCF48;
+        background: #B30000;
+        -webkit-border-radius: 6em/5em;
+           -moz-border-radius: 6em/5em;
+                border-radius: 6em/5em;
+        -webkit-box-shadow: 0 .25em .5em rgba(27,2,0,0.7);
+           -moz-box-shadow: 0 .25em .5em rgba(27,2,0,0.7);
+             -o-box-shadow: 0 .25em .5em rgba(27,2,0,0.7);
+                box-shadow: 0 .25em .5em rgba(27,2,0,0.7);
+        }
+        #Opera .b-curtain__top:first-of-type:after {
+            right: auto;
+            left: 6em;
+            }
+    #Opera .b-curtain__left,
+    #Opera .b-curtain__right {
+        position: relative;
+        z-index: -1;
+        float: left;
+        top: 0;
+        width: 2em;
+
+        height: 26.5em;
+        background: #E90000;
+        border-bottom: .5em solid #D64D00;
+        -webkit-box-shadow: 0 -1em 1em rgba(27,2,0,0.4);
+           -moz-box-shadow: 0 -1em 1em rgba(27,2,0,0.4);
+             -o-box-shadow: 0 -1em 1em rgba(27,2,0,0.4);
+                box-shadow: 0 -1em 1em rgba(27,2,0,0.4);
+
+        -webkit-transition: width 4s 2s, margin 4s 2s, left 4s 2s, left 4s 2s;
+           -moz-transition: width 4s 2s, margin 4s 2s, left 4s 2s, left 4s 2s;
+             -o-transition: width 4s 2s, margin 4s 2s, left 4s 2s, left 4s 2s;
+                transition: width 4s 2s, margin 4s 2s, left 4s 2s, left 4s 2s;
+        }
+    #Opera .b-curtain__left:nth-child(2n),
+    #Opera .b-curtain__right:nth-child(2n) {
+        z-index: -2;
+        }
+    #Opera .b-curtain__left:nth-child(2n-1),
+    #Opera .b-curtain__right:nth-child(2n-1) {
+        width: 2.2em;
+        }
+    #Opera .b-curtain__left:nth-child(3n-4),
+    #Opera .b-curtain__right:nth-child(3n-4) {
+        width: 1.7em;
+        }
+    #Opera .b-curtain__left:nth-child(3n),
+    #Opera .b-curtain__right:nth-child(3n) {
+        z-index: -1;
+        }
+    #Opera .b-curtain__left:nth-child(3n-2),
+    #Opera .b-curtain__right:nth-child(3n-2) {
+        -webkit-box-shadow: 0 -.5em 1.5em rgba(27,2,0,0.4);
+           -moz-box-shadow: 0 -.5em 1.5em rgba(27,2,0,0.4);
+             -o-box-shadow: 0 -.5em 1.5em rgba(27,2,0,0.4);
+                box-shadow: 0 -.5em 1.5em rgba(27,2,0,0.4);
+        }
+    #Opera .b-curtain__left:nth-child(5n-3),
+    #Opera .b-curtain__right:nth-child(5n-3) {
+        -webkit-box-shadow: 0 -1em 1.5em -.25em rgba(27,2,0,0.4);
+           -moz-box-shadow: 0 -1em 1.5em -.25em rgba(27,2,0,0.4);
+             -o-box-shadow: 0 -1em 1.5em -.25em rgba(27,2,0,0.4);
+                box-shadow: 0 -1em 1.5em -.25em rgba(27,2,0,0.4);
+        }
+    #Opera .b-curtain__right {
+        float: right;
+        }
+    #Opera .b-curtain__left:last-of-type {
+        margin-right: -20em;
+        }
+    #Opera .b-curtain__right:last-of-type {
+        margin-left: -20em;
+        }
+
+    #Opera .b-human_hero {
+        border-top: 1em solid #641F00;
+        bottom: 3em;
+        left: -2em;
+        -webkit-transition: left 2s, margin-left 1.2s 7.4s cubic-bezier(.96,0,.46,.56), margin-bottom .4s 8.2s, border .7s, -webkit-transform 4s;
+           -moz-transition: left 2s, margin-left 1.2s 7.4s cubic-bezier(.96,0,.46,.56), margin-bottom .4s 8.2s, border .7s,    -moz-transform 4s;
+             -o-transition: left 2s, margin-left 1.2s 7.4s cubic-bezier(.96,0,.46,.56), margin-bottom .4s 8.2s, border .7s,      -o-transform 4s;
+                transition: left 2s, margin-left 1.2s 7.4s cubic-bezier(.96,0,.46,.56), margin-bottom .4s 8.2s, border .7s,         transform 4s;
+        }
+        #Opera .b-human_hero:before {
+            background: #E3B591;
+            }
+        #Opera .b-human_hero .b-human__hand {
+            -webkit-transition: -webkit-transform .3s 10.5s;
+               -moz-transition:    -moz-transform .3s 10.5s;
+                 -o-transition:      -o-transform .3s 10.5s;
+                    transition:         transform .3s 10.5s;
+            }
+
+    #Opera .b-human_opera {
+        bottom: 3em;
+        left: 33em;
+        z-index: -3;
+        -webkit-transition: left 1s 4s, margin 3s 32s;
+           -moz-transition: left 1s 4s, margin 3s 32s;
+             -o-transition: left 1s 4s, margin 3s 32s;
+                transition: left 1s 4s, margin 3s 32s;
+
+        background: #F90000;
+        }
+    #Opera .b-human_opera:before {
+        border-color: #B10921;
+        }
+    #Opera .b-human_opera:after {
+        content: "";
+        position: absolute;
+        top: .2em;
+        left: -.3em;
+        height: 1.8em;
+        width: .5em;
+        background: inherit;
+
+        -webkit-border-radius: .5em/2em 0 0 0.5em;
+           -moz-border-radius: .5em/2em 0 0 0.5em;
+                border-radius: .5em/2em 0 0 0.5em;
+        -webkit-transform: rotate(10deg);
+           -moz-transform: rotate(10deg);
+             -o-transform: rotate(10deg);
+                transform: rotate(10deg);
+        }
+
+    #Opera .b-human_opera .b-human__hand {
+        z-index: 1;
+        margin-left: -.2em;
+        background: #D60000;
+
+        -webkit-transition: -webkit-transform .3s 5.5s;
+           -moz-transition:    -moz-transform .3s 5.5s;
+             -o-transition:      -o-transform .3s 5.5s;
+                transition:         transform .3s 5.5s;
+        }
+
+    #Opera .b-human_opera .b-human__hand:before,
+    #Opera .b-human_opera .b-human__hand:after {
+        display: none;
+        }
+    #Opera .b-sonic-waves {
+        position: absolute;
+        left: 28em;
+        top: 21em;
+        width: 4em;
+        height: 2em;
+        opacity: 0;
+        z-index: -2;
+
+        -webkit-border-radius: 2em 2em 0 0;
+           -moz-border-radius: 2em 2em 0 0;
+                border-radius: 2em 2em 0 0;
+
+        -webkit-box-shadow: inset 0 .2em .1em rgba(255,255,255,.7);
+           -moz-box-shadow: inset 0 .2em .1em rgba(255,255,255,.7);
+             -o-box-shadow: inset 0 .2em .1em rgba(255,255,255,.7);
+                box-shadow: inset 0 .2em .1em rgba(255,255,255,.7);
+        -webkit-transform: rotate(-30deg);
+           -moz-transform: rotate(-30deg);
+             -o-transform: rotate(-30deg);
+                transform: rotate(-30deg);
+        -webkit-transition: top .7s 6s, left .7s 6s, opacity .2s 5.9s;
+           -moz-transition: top .7s 6s, left .7s 6s, opacity .2s 5.9s;
+             -o-transition: top .7s 6s, left .7s 6s, opacity .2s 5.9s;
+                transition: top .7s 6s, left .7s 6s, opacity .2s 5.9s;
+        }
+    #Opera .b-boulder {
+        position: absolute;
+        left: 13em;
+        top: 0;
+
+        width: 4em;
+        height: 4em;
+        background: #564F63;
+        -webkit-border-radius: 2.2em 1.2em 3em 1.5em;
+           -moz-border-radius: 2.2em 1.2em 3em 1.5em;
+                border-radius: 2.2em 1.2em 3em 1.5em;
+        -webkit-transform: rotate(20deg);
+           -moz-transform: rotate(20deg);
+             -o-transform: rotate(20deg);
+                transform: rotate(20deg);
+        -webkit-box-shadow: inset 4px 5px 0 rgba(0,0,0,0.1);
+           -moz-box-shadow: inset 4px 5px 0 rgba(0,0,0,0.1);
+             -o-box-shadow: inset 4px 5px 0 rgba(0,0,0,0.1);
+                box-shadow: inset 4px 5px 0 rgba(0,0,0,0.1);
+        -webkit-transition: top .5s 7s, -webkit-transform .5s 7s;
+           -moz-transition: top .5s 7s,    -moz-transform .5s 7s;
+             -o-transition: top .5s 7s,      -o-transform .5s 7s;
+                transition: top .5s 7s,         transform .5s 7s;
+        }
+        #Opera .b-boulder:nth-of-type(2) {
+            left: 3em;
+            -webkit-transition: top .5s 7.7s, -webkit-transform .5s 7.7s;
+               -moz-transition: top .5s 7.7s,    -moz-transform .5s 7.7s;
+                 -o-transition: top .5s 7.7s,      -o-transform .5s 7.7s;
+                    transition: top .5s 7.7s,         transform .5s 7.7s;
+            }
+        #Opera .b-boulder:nth-of-type(3) {
+            left: 6em;
+            -webkit-transition: top .5s 8s, -webkit-transform .5s 8s;
+               -moz-transition: top .5s 8s,    -moz-transform .5s 8s;
+                 -o-transition: top .5s 8s,      -o-transform .5s 8s;
+                    transition: top .5s 8s,         transform .5s 8s;
+            }
+        #Opera .b-boulder:nth-of-type(4) {
+            left: 8.5em;
+            -webkit-transition: top .5s 8.4s, -webkit-transform .5s 8.4s;
+               -moz-transition: top .5s 8.4s,    -moz-transform .5s 8.4s;
+                 -o-transition: top .5s 8.4s,      -o-transform .5s 8.4s;
+                    transition: top .5s 8.4s,         transform .5s 8.4s;
+            }
+    #Opera .b-ppsb {
+        position: absolute;
+        left: 50em;
+        top: -2;
+        width: 4em;
+        height: 4em;
+        background: #FFF;
+        -webkit-border-radius: 2.5em;
+           -moz-border-radius: 2.5em;
+                border-radius: 2.5em;
+        -webkit-transform: rotate(-360deg);
+           -moz-transform: rotate(-360deg);
+             -o-transform: rotate(-360deg);
+                transform: rotate(-360deg);
+        -webkit-transition: -webkit-transform 2s 9s, top 2s 9s, left 2s 9s, margin 3s 14.4s;
+           -moz-transition:    -moz-transform 2s 9s, top 2s 9s, left 2s 9s, margin 3s 14.4s;
+             -o-transition:      -o-transform 2s 9s, top 2s 9s, left 2s 9s, margin 3s 14.4s;
+                transition:         transform 2s 9s, top 2s 9s, left 2s 9s, margin 3s 14.4s;
+        }
+        #Opera .b-ppsb:before {
+            content: "";
+            position: absolute;
+            top: .25em;
+            left: .25em;
+            width: 2em;
+            height: 2em;
+            border: .75em solid #402724;
+            border-right-color: #C00;
+            -webkit-border-radius: 2.5em;
+               -moz-border-radius: 2.5em;
+                    border-radius: 2.5em;
+            }
+        #Opera .b-ppsb:after {
+            content: "";
+            position: absolute;
+            top: .9em;
+            left: 2.1em;
+            width: 1.9em;
+            height: 1.9em;
+            border-top: .3em solid #FFF;
+            border-left: .3em solid #FFF;
+            -webkit-transform: rotate(-45deg);
+               -moz-transform: rotate(-45deg);
+                 -o-transform: rotate(-45deg);
+                    transform: rotate(-45deg);
+            }
+        #Opera .b-ppsb__ray {
+            text-align: left;
+            text-indent: 18em;
+            position: absolute;
+            overflow: hidden;
+            left: 2em;
+            top: 1.25em;
+
+            width: 16em;
+
+            color: lime;
+            white-space: pre;
+            -webkit-transform: rotate(180deg);
+               -moz-transform: rotate(170deg);
+                 -o-transform: rotate(170deg);
+                    transform: rotate(170deg);
+            -webkit-transition: text-indent 3s 11s, color 3s 10s;
+               -moz-transition: text-indent 3s 11s, color 3s 10s;
+                 -o-transition: text-indent 3s 11s, color 3s 10s;
+                    transition: text-indent 3s 11s, color 3s 10s;
+            }
+        #Opera .b-ppsb__ray:before {
+            content: "TROLOLOLOLO                      TROLOLOLOLO                    TROLOLOLOLO";
+            }
+
+    #Opera .b-bubble {
+        background: rgba(0,0,0,.7);
+        -webkit-font-smoothing: subpixel-antialiased;
+        }
+
+    #Opera .b-bubble:nth-of-type(1) {
+        -webkit-transition: top 15s;
+           -moz-transition: top 15s;
+             -o-transition: top 15s;
+                transition: top 15s;
+        }
+    #Opera .b-bubble:nth-of-type(2) {
+        -webkit-transition: top 20s;
+           -moz-transition: top 20s;
+             -o-transition: top 20s;
+                transition: top 20s;
+        }
+    #Opera .b-bubble:nth-of-type(3) {
+        -webkit-transition: top 26s;
+           -moz-transition: top 26s;
+             -o-transition: top 26s;
+                transition: top 26s;
+        }
+    #Opera .b-bubble:nth-of-type(4) {
+        -webkit-transition: top 31s;
+           -moz-transition: top 31s;
+             -o-transition: top 31s;
+                transition: top 31s;
+        }
+    #Opera .b-bubble:nth-of-type(5) {
+        -webkit-transition: top 35s;
+           -moz-transition: top 35s;
+             -o-transition: top 35s;
+                transition: top 35s;
+        }
+
+/* The exit from the Opera
+---------------------------------------*/
+#at_Opera:checked + #Opera .b-curtain__left {
+    left: -3em;
+
+    margin-left: -.7em;
+    width: 1.5em;
+    }
+#at_Opera:checked + #Opera .b-curtain__right {
+    right: -3em;
+
+    width: 1.5em;
+    margin-right: -.7em;
+    }
+
+#at_Opera:checked + #Opera .b-human_hero {
+    left: 7em;
+    margin-left: 7em;
+    margin-bottom: 3em;
+    }
+#at_Opera:checked + #Opera .b-human_opera {
+    left: 31em;
+    margin-left: 10em;
+    }
+    #at_Opera:checked + #Opera .b-human_hero .b-human__hand {
+        -webkit-transform: rotate(-100deg);
+           -moz-transform: rotate(-100deg);
+             -o-transform: rotate(-100deg);
+                transform: rotate(-100deg);
+        left: .4em;
+        }
+    #at_Opera:checked + #Opera .b-human_opera .b-human__hand {
+        -webkit-transform: rotate(120deg);
+           -moz-transform: rotate(120deg);
+             -o-transform: rotate(120deg);
+                transform: rotate(120deg);
+        left: .4em;
+        }
+        #at_Opera:checked + #Opera .b-sonic-waves {
+            opacity: 1;
+            left: 9em;
+            top: -4em;
+            }
+#at_Opera:checked + #Opera .b-boulder {
+    top: 23.6em;
+    -webkit-transform: rotate(120deg);
+       -moz-transform: rotate(120deg);
+         -o-transform: rotate(120deg);
+            transform: rotate(120deg);
+    }
+#at_Opera:checked + #Opera .b-boulder:nth-of-type(2) {
+    -webkit-transform: rotate(30deg);
+       -moz-transform: rotate(30deg);
+         -o-transform: rotate(30deg);
+            transform: rotate(30deg);
+    }
+#at_Opera:checked + #Opera .b-boulder:nth-of-type(3) {
+    -webkit-transform: rotate(-70deg);
+       -moz-transform: rotate(-70deg);
+         -o-transform: rotate(-70deg);
+            transform: rotate(-70deg);
+    }
+#at_Opera:checked + #Opera .b-boulder:nth-of-type(4) {
+    -webkit-transform: rotate(90deg);
+       -moz-transform: rotate(90deg);
+         -o-transform: rotate(90deg);
+            transform: rotate(90deg);
+    }
+#at_Opera:checked + #Opera .b-ppsb {
+    -webkit-transform: rotate(145deg);
+       -moz-transform: rotate(145deg);
+         -o-transform: rotate(145deg);
+            transform: rotate(145deg);
+    left: 28em;
+    top: 9em;
+    margin: -16em 0 0 -16em;
+    }
+
+#at_Opera:checked + #Opera .b-ppsb__ray {
+    text-indent: -62em;
+    color: violet;
+    }
+
+#at_Opera:checked + #Opera .b-continue1 {
+    left: 0 !important;
+    -webkit-transition: left 37s;
+       -moz-transition: left 37s;
+         -o-transition: left 37s;
+            transition: left 37s;
+    }
+
+#Opera > #at_Opera2:checked + .b-scene-part2 .b-continue2 {
+    left: 0 !important;
+    -webkit-transition: left 3s;
+       -moz-transition: left 3s;
+         -o-transition: left 3s;
+            transition: left 3s;
+    }
+#Opera > #at_Opera2:checked + .b-scene-part2 .b-human_hero {
+    top: 20em;
+    bottom: auto;
+    z-index: -3;
+
+    border-top-width: 4em;
+    -webkit-transform: translate(30em, 0);
+       -moz-transform: translate(30em, 0);
+         -o-transform: translate(30em, 0);
+            transform: translate(30em, 0);
+    }
+
+/* The Throne Room
+---------------------------------------*/
+#Throne {
+    background: #505A50;
+    opacity: 1; /* Again, Safari bug */
+    border-bottom: 3em solid #474F47;
+    height: auto;
+    bottom: 0;
+    }
+    #Throne .b-frame_bg {
+        background: #505A50;
+        border-bottom: 3em solid #474F47;
+        border-left: 6em Double #474F47;
+
+        -webkit-transition: margin 12s 14s linear;
+           -moz-transition: margin 12s 14s linear;
+             -o-transition: margin 12s 14s linear;
+                transition: margin 12s 14s linear;
+        }
+    #Throne .b-columns {
+        position: absolute;
+        left: 33em;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        margin-left: 1em;
+        border-left: 6em Double #495249;
+        border-right: 6em Double #474F47;
+        }
+
+        #Throne .b-frame_bg:after,
+        #Throne .b-frame_bg:before,
+        #Throne .b-columns:after,
+        #Throne .b-columns:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 2em;
+            bottom: 0;
+            width: 2em;
+            border-left: 6em Double #495249;
+            border-right: 6em Double #474F47;
+            }
+            #Throne .b-columns:after,
+            #Throne .b-frame_bg:after {
+                left: 18em;
+                border-left-color: #424A41;
+                }
+
+    #Throne .b-human_hero {
+        left: -4em;
+        bottom: 0;
+        z-index: 1;
+        -webkit-transition: bottom 2s, left 2s, margin 12s 14s linear;
+           -moz-transition: bottom 2s, left 2s, margin 12s 14s linear;
+             -o-transition: bottom 2s, left 2s, margin 12s 14s linear;
+                transition: bottom 2s, left 2s, margin 12s 14s linear;
+        }
+
+    #Throne .b-human_ie {
+        left: 26.5em;
+        bottom: .5em;
+        z-index: 1;
+
+        background: #0378AB;
+        border-bottom-color: #75DAFB;
+        }
+    #Throne .b-human_ie:before {
+        border-color: #E7F0F7;
+        }
+
+    #Throne .b-human_ie .b-human__cape {
+        background: #EFB117;
+        }
+    #Throne .b-human_ie .b-human__hand {
+        background: #024073;
+        }
+
+    #Throne .b-throne {
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        left: 24em;
+
+        height: 5em;
+        width: 4em;
+        border: solid;
+        border-width: 4em 1em 1em;
+        border-color: transparent #35372F #21231F;
+
+        background: #3E4032;
+        }
+        #Throne .b-throne:before {
+            content: "";
+            position: absolute;
+            top: -6em;
+            left: 0;
+            height: 2em;
+            width: 4em;
+            border-bottom: 2em solid #40463B;
+            -webkit-border-radius: 4em;
+               -moz-border-radius: 4em;
+                    border-radius: 4em;
+            background: #3E4032;
+            }
+    #Throne .b-bubble {
+        z-index: 3;
+        width: 20em;
+        right: auto;
+        -webkit-transform: translateZ(0);
+        }
+
+    #Throne .b-bubble_hero {
+        left: -8em;
+        }
+
+    #Throne .b-bubble_sorcerer {
+        left: 31em;
+        width: auto;
+        right: auto;
+        }
+
+    #Throne .b-bubble:nth-of-type(1) {
+        -webkit-transition: top 3s;
+           -moz-transition: top 3s;
+             -o-transition: top 3s;
+                transition: top 3s;
+        }
+    #Throne .b-bubble:nth-of-type(2) {
+        -webkit-transition: top 10s;
+           -moz-transition: top 10s;
+             -o-transition: top 10s;
+                transition: top 10s;
+        }
+
+/* The exit from the Throne room and the end
+---------------------------------------*/
+#at_Throne:checked + #Throne {
+    opacity: 0;
+    }
+#at_Throne:checked + #Throne .b-frame_bg {
+    margin-left: -39em;
+    }
+#at_Throne:checked + #Throne .b-human_hero {
+    bottom: 2em;
+    left: 4em;
+    margin-left: 40em;
+    }
+#Throne .b-end {
+    position: absolute;
+    top: -10em;
+    -webkit-transition: top 2s 26s;
+       -moz-transition: top 2s 26s;
+         -o-transition: top 2s 26s;
+            transition: top 2s 26s;
+    }
+#at_Throne:checked + #Throne .b-end {
+    top: 7em;
+    }
+
+</style>
+    <!-- <![endif]-->
+</head>
+<body>
+    <!-- It's dangerous to go alone, take this comment for the start! -->
+    <input class="b-choose-me__control" name="language" type="radio" id="languageEnglish" checked="checked" />
+    <input class="b-choose-me__control" name="language" type="radio" id="languageRussian" />
+
+    <input class="b-choose-me__control" name="resolution" type="radio" id="resolutionSmall" />
+    <input class="b-choose-me__control" name="resolution" type="radio" id="resolutionMedium" checked="checked" />
+    <input class="b-choose-me__control" name="resolution" type="radio" id="resolutionBig" />
+
+    <div class="b-display">
+        <div class="b-scene b-scene_interactive" id="Prepare">
+            <p class="b-start">There are a lot of bugs in Opera which I hadn’t time to fix, so it looks better at webkit or firefox.</p>
+            <label class="b-choose-me b-choose-me_start" for="at_Setup">Start</label>
+        </div>
+
+        <input class="b-choose-me__control" type="checkbox" id="at_Setup" />
+        <div class="b-scene b-scene_interactive" id="Setup">
+            <div class="b-settings b-settings_resolution">
+                <h1 class="b-settings_header"><span class="b-lang" data-ru="Выберите разрешение"><span class="b-lang__en">Choose Resolution</span></span></h1>
+                <p><label class="b-choose-me" for="resolutionSmall"><span class="b-lang" data-ru="Маленькое"><span class="b-lang__en">Small</span></span></label></p>
+                <p><label class="b-choose-me" for="resolutionMedium"><span class="b-lang" data-ru="Среднее"><span class="b-lang__en">Medium</span></span></label></p>
+                <p><label class="b-choose-me" for="resolutionBig"><span class="b-lang" data-ru="Большое"><span class="b-lang__en">Big</span></span></label></p>
+            </div>
+            <div class="b-settings b-settings_language">
+                <h1 class="b-settings_header"><span class="b-lang" data-ru="Выберите язык"><span class="b-lang__en">Choose Language</span></span></h1>
+                <p><label class="b-choose-me" for="languageEnglish">English</label></p>
+                <p><label class="b-choose-me" for="languageRussian">Русский</label></p>
+            </div>
+            <p class="b-confirm"><label class="b-choose-me" for="at_Start"><span class="b-lang" data-ru="Продолжить"><span class="b-lang__en">Continue</span></span></label></p>
+        </div>
+
+        <input class="b-choose-me__control" type="checkbox" id="at_Start" />
+        <div class="b-scene" id="Start">
+            <div class="b-frame b-frame_bg"></div>
+            <div class="b-frame b-frame_flash"></div>
+            <div class="b-frame b-frame_flash b-frame_flash_dark"></div>
+            <div class="b-frame b-frame_flash b-frame_flash2"></div>
+            <div class="b-frame b-frame_flash b-frame_flash_dark b-frame_flash_dark2"></div>
+            <div class="b-frame b-frame_flash b-frame_flash3"></div>
+            <div class="b-frame b-frame_bg2"></div>
+            <div class="b-castle">
+                <div class="b-castle__tower"></div>
+            </div>
+            <h1 class="b-logo">
+                C<span class="b-logo__i b-logo__i1">astle of </span>S<span class="b-logo__i b-logo__i2">inister </span>S<span class="b-logo__i b-logo__i3">orcerers</span>
+            </h1>
+            <label for="at_Entrance" class="b-continue">→</label>
+        </div>
+
+        <input class="b-choose-me__control" type="checkbox" id="at_Entrance" />
+        <div class="b-scene" id="Entrance">
+            <input class="b-choose-me__control" type="checkbox" id="at_Entrance2" />
+            <div class="b-scene-part2">
+                <div class="b-frame b-frame_mountains"></div>
+                <div class="b-ground">
+                    <div class="b-ground__moat"></div>
+                </div>
+                <div class="b-human b-human_sorcerer b-human_firefox">
+                    <div class="b-human__cape"></div>
+                    <div class="b-human__hand"></div>
+                </div>
+                <div class="b-wall">
+                    <div class="b-wall__windows"></div>
+                </div>
+
+                <div class="b-human b-human_hero">
+                    <div class="b-human__cape"></div>
+                    <div class="b-human__hand"></div>
+                </div>
+
+                <dialog>
+                  <dt class="b-bubble__person">Firefox</dt>
+                  <dd class="b-bubble b-bubble_sorcerer" style="top:2em"><span class="b-lang" data-ru="Ты не пройдёшь!"><span class="b-lang__en">You shall not pass!</span></span></dd>
+
+                  <dt class="b-bubble__person">Hero</dt>
+                  <dd class="b-bubble b-bubble_hero" style="top:2em">…</dd>
+                  <dd class="b-bubble b-bubble_hero" style="top:5em"><span class="b-lang" data-ru="С чего бы? Я не боюсь тебя, Firefox!"><span class="b-lang__en">Why so? I'm not afraid of you, Firefox.</span></span></dd>
+
+                  <dt class="b-bubble__person">Firefox</dt>
+                  <dd class="b-bubble b-bubble_sorcerer" style="top:5em"><span class="b-lang" data-ru="Но у меня есть магия расширений! Я перегружу твой мозг грязными воспоминаниями и ты не вспомнишь, зачем пришёл!"><span class="b-lang__en">But I have an extension magic! I'll overload your brain with dirty memories and you'll never remember why you're here!</span></span></dd>
+
+                  <dt class="b-bubble__person">Hero</dt>
+                  <dd class="b-bubble b-bubble_hero" style="top:12.5em"><span class="b-lang" data-ru="Хаха! У меня есть Шлем Памяти, он даёт мне 8Гб защиты от твоей мозгосжигающей магии!"><span class="b-lang__en">Haha! I have a helm of memory, it gives me 8gb protection against your brain-burning fire magic!</span></span></dd>
+
+                  <dt class="b-bubble__person">Firefox</dt>
+                  <dd class="b-bubble b-bubble_sorcerer" style="top:12.5em"><span class="b-lang" data-ru="Пичалька. Ну и ладно, когда-нибудь я вернуть с ещё большим числом расширений! И месть моя будет горяча!"><span class="b-lang__en">So sad. Whatever, but I'll be back someday with even more extensions!<br />And the revenge would be hot!</span></span></dd>
+                </dialog>
+
+                <label for="at_Entrance2" class="b-continue b-continue1">→</label>
+                <label for="at_Hall" class="b-continue b-continue2">→</label>
+            </div>
+        </div>
+
+        <input class="b-choose-me__control" type="checkbox" id="at_Hall" />
+        <div class="b-scene" id="Hall">
+            <input class="b-choose-me__control" type="checkbox" id="at_Hall2" />
+            <div class="b-scene-part2">
+                <div class="b-frame b-frame_bg">
+                    <div class="b-stairs"></div>
+                    <div class="b-floor"></div>
+                </div>
+
+                <div class="b-portal">
+                    <div class="b-human b-human_sorcerer b-human_chrome">
+                        <div class="b-human__cape"></div>
+                        <div class="b-human__hand"></div>
+                    </div>
+
+                    <div class="b-human b-human_sorcerer b-human_safari">
+                        <div class="b-human__cape"></div>
+                        <div class="b-human__hand"></div>
+                    </div>
+                </div>
+
+                <div class="b-human-behavior">
+                    <div class="b-human b-human_hero">
+                        <div class="b-human__cape"></div>
+                        <div class="b-human__hand"></div>
+                    </div>
+                </div>
+                <div class="b-shield"></div>
+                <div class="b-bullets">
+                    <div class="b-bullet"></div>
+                    <div class="b-bullet"></div>
+                    <div class="b-bullet"></div>
+                    <div class="b-bullet"></div>
+                    <div class="b-bullet"></div>
+                    <div class="b-bullet"></div>
+                    <div class="b-bullet"></div>
+                    <div class="b-bullet"></div>
+                    <div class="b-bullet"></div>
+                    <div class="b-bullet"></div>
+                    <div class="b-bullet"></div>
+                    <div class="b-bullet"></div>
+                </div>
+
+                <dialog>
+                  <dt class="b-bubble__person">Chrome and Safari</dt>
+                  <dd class="b-bubble b-bubble_sorcerer" style="top:2em;"><span class="b-lang" data-ru="Э? Почему это наша багия вебкитов не сработала?"><span class="b-lang__en">Huh? Why didn't our webkit magic work?</span></span></dd>
+
+                  <dt class="b-bubble__person">Hero</dt>
+                  <dd class="b-bubble b-bubble_hero" style="top:4em;"><span class="b-lang" data-ru="Safari и Chrome, вы думали, что ваши странные баги уничтожат меня?"><span class="b-lang__en">Safari and Chrome, you thought that your strange bugs would destroy me?</span></span></dd>
+
+                  <dt class="b-bubble__person">Chrome and Safari</dt>
+                  <dd class="b-bubble b-bubble_sorcerer" style="top:4.5em;"><span class="b-lang" data-ru="Да, но…"><span class="b-lang__en">Yeah, but…</span></span></dd>
+
+                  <dt class="b-bubble__person">Hero</dt>
+                  <dd class="b-bubble b-bubble_hero" style="top:8em;"><span class="b-lang" data-ru="Я обладаю кольчугой TranslateZ! Я получил её в Пещерах -webkit-transform, она даёт отличную защиту против ваших бажных атак!"><span class="b-lang__en">I have a chainmail of a TranslateZ! I've got it from the Caves of -webkit-transform, it's a great protection against your buggy attacks!</span></span></dd>
+
+                  <dt class="b-bubble__person">Chrome and Safari</dt>
+                  <dd class="b-bubble b-bubble_sorcerer" style="top:8em;"><span class="b-lang" data-ru="Ну, тогда проходи, но рано или поздно наши 3D-трансформации достанут и тебя!"><span class="b-lang__en">Well, go for now, but our 3D transforms would get you sooner or later!</span></span></dd>
+                </dialog>
+
+                <label for="at_Hall2" class="b-continue b-continue1">→</label>
+                <label for="at_Opera" class="b-continue b-continue2">→</label>
+            </div>
+        </div>
+
+        <input class="b-choose-me__control" type="checkbox" id="at_Opera" />
+        <div class="b-scene" id="Opera">
+            <input class="b-choose-me__control" type="checkbox" id="at_Opera2"  />
+            <div class="b-scene-part2">
+                <span class="b-boulder"></span>
+                <span class="b-boulder"></span>
+                <span class="b-boulder"></span>
+                <span class="b-boulder"></span>
+                <div class="b-frame b-curtain">
+                    <i class="b-curtain__left"></i>
+                    <i class="b-curtain__left"></i>
+                    <i class="b-curtain__left"></i>
+                    <i class="b-curtain__left"></i>
+                    <i class="b-curtain__left"></i>
+                    <i class="b-curtain__left"></i>
+                    <i class="b-curtain__left"></i>
+                    <i class="b-curtain__left"></i>
+                    <i class="b-curtain__left"></i>
+                    <i class="b-curtain__left"></i>
+                    <i class="b-curtain__left"></i>
+                    <b class="b-curtain__right"></b>
+                    <b class="b-curtain__right"></b>
+                    <b class="b-curtain__right"></b>
+                    <b class="b-curtain__right"></b>
+                    <b class="b-curtain__right"></b>
+                    <b class="b-curtain__right"></b>
+                    <b class="b-curtain__right"></b>
+                    <b class="b-curtain__right"></b>
+                    <b class="b-curtain__right"></b>
+                    <b class="b-curtain__right"></b>
+                    <b class="b-curtain__right"></b>
+                    <span class="b-curtain__top"></span>
+                    <span class="b-curtain__top"></span>
+                </div>
+                <div class="b-frame b-frame_bg">
+
+                </div>
+
+                <div class="b-human b-human_hero">
+                    <div class="b-human__cape"></div>
+                    <div class="b-human__hand"></div>
+                </div>
+
+                <div class="b-human b-human_sorcerer b-human_opera">
+                    <div class="b-human__cape"></div>
+                    <div class="b-human__hand"></div>
+                </div>
+
+                <div class="b-sonic-waves"></div>
+                <div class="b-ppsb">
+                    <div class="b-ppsb__ray"></div>
+                </div>
+
+                <dialog>
+                  <dt class="b-bubble__person">Opera</dt>
+                  <dd class="b-bubble b-bubble_sorcerer" style="top:4em;"><span class="b-lang" data-ru="Эй, не смешно! Не только баги союзников не сработали, но и моя специально приготовленная магия не остановила тебя!"><span class="b-lang__en">Hey, it's not funny! Not only my fellow sorcerers' bugs didn't work for you, but even my, specially baked bug magic couldn't stop you!</span></span></dd>
+
+                  <dt class="b-bubble__person">Opera</dt>
+                  <dd class="b-bubble b-bubble_sorcerer" style="top:11em;"><span class="b-lang" data-ru="Даже смертельные лучи евангелизма не вышли! Почему? Ну почему??!111"><span class="b-lang__en">And even the death ray of evangelism didn't worked out! Why? Why??777</span></span></dd>
+
+                  <dt class="b-bubble__person">Hero</dt>
+                  <dd class="b-bubble b-bubble_hero" style="top:15em;"><span class="b-lang" data-ru="Вот что происходит когда правильно репортишь баги! Ты медленный, но, к счастью, твоя тёмная магия со временем развеивается."><span class="b-lang__en">That's what you get when we report bugs properly! You're slow, but hopefully your bad magic goes away after while.</span></span></dd>
+
+                  <dt class="b-bubble__person">Opera</dt>
+                  <dd class="b-bubble b-bubble_sorcerer" style="top:15em;"><span class="b-lang" data-ru="Так жаль, что сейчас моя магия не такая как всего несколько лет назад. Но знаешь, может какие-то из ещё не пофикшенных багов доберутся до тебя пока ты будешь спать! Хахаха!"><span class="b-lang__en">It's so sad that my magic is not the same as it was some years ago. But, you know, maybe some of our non-fixed bugs would get you while you would be asleep! Hahaha!</span></span></dd>
+
+                  <dt class="b-bubble__person">Hero</dt>
+                  <dd class="b-bubble b-bubble_hero" style="top:22.5em;"><span class="b-lang" data-ru="Хмм, если ты продолжишь делать всякие назойливые вещи, то всё больше героев вроде гугла или эппла начнут игнорировать тебя. Так что не будь такой занозой."><span class="b-lang__en">Hmm, if you'd do any more nasty things, more heroes like google or apple would just ignore you. So, don't be such a pain.</span></span></dd>
+
+                </dialog>
+
+                <label for="at_Opera2" class="b-continue b-continue1">→</label>
+                <label for="at_Throne" class="b-continue b-continue2">→</label>
+            </div>
+        </div>
+
+        <input class="b-choose-me__control" type="checkbox" id="at_Throne" />
+        <div class="b-scene" id="Throne">
+            <div class="b-frame b-frame_bg">
+                <div class="b-columns"></div>
+                <div class="b-throne"></div>
+                <div class="b-human b-human_sorcerer b-human_ie">
+                    <div class="b-human__cape"></div>
+                    <div class="b-human__hand"></div>
+                </div>
+                <dialog>
+                  <dt class="b-bubble__person">Hero</dt>
+                  <dd class="b-bubble b-bubble_hero" style="top:2em;"><span class="b-lang" data-ru="Я так устал, ИЕ, послушай: У меня есть Ботинки Зума, Накидка Относительного Позиционирования и куча бутыльков Экспрешнов. Так что я даже не вгляну на тебя, и не дам никаких стилей, забудь про красивые интернеты."><span class="b-lang__en">Ah, I'm so tired, IE, so listen to this: I have Boots of Zoom, Cape of Relative Positioning and a lot of Expression Potions. So, I won't even look at you, take this version without styles and forget about the beautiful interwebs.</span></span></dd>
+
+                  <dt class="b-bubble__person">IE</dt>
+                  <dd class="b-bubble b-bubble_sorcerer" style="top:15em;"><span class="b-lang" data-ru="Не-е-е-ет~!"><span class="b-lang__en">No-o-o-o~!…</span></span></dd>
+
+                </dialog>
+            </div>
+
+            <div class="b-human b-human_hero">
+                <div class="b-human__cape"></div>
+                <div class="b-human__hand"></div>
+            </div>
+
+            <div class="b-end">
+                <h1><span class="b-lang" data-ru="Конец!"><span class="b-lang__en">The end!</span></span></h1>
+                <p><span class="b-lang" data-ru="Это незаконченный прототип, жаль, не получилось выкроить больше времени для работы над ним. Ну и ладно."><span class="b-lang__en">This is a unfinished prototype, I wish I'd have more time to work on this. Whatever.</span></span></p>
+                <p>
+                    <span class="b-lang b-scene_interactive">
+                        <span class="b-lang__ru">Изготовил вручную <a class="b-choose-me" href="http://twitter.com/ki_zu">@ki_zu</a></span>
+                        <span class="b-lang__en">Handmade by <a class="b-choose-me" href="http://twitter.com/kizmarh">@kizmarh</a></span>
+                    </span>
+                </p>
+            </div>
+        </div>
+    </div>
+</html>

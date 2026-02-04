@@ -1,0 +1,123 @@
+.invite-fast-widget{
+  color:#333;
+  }
+  .invite-fast-widget h1{
+    margin:40px 0 30px;
+    font:bold 36px/36px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    }
+    .invite-fast-widget h1 strong{
+      display:block;
+      font:bold 24px/24px "Helvetica Neue",Helvetica,Arial,sans-serif;
+      }
+  .invite-fast-widget h2{
+    color:#999;
+    font:bold 16px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    }
+    .invite-fast-widget h2 strong{
+      display:block;
+      font:bold 20px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
+      }
+  .invite-fast-widget .invited{
+    width:300px;
+    margin:30px auto 40px;
+    font:bold 18px/25px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    }
+    .invite-fast-widget .invited .count{
+      display:block;
+      font:bold 36px/36px "Helvetica Neue",Helvetica,Arial,sans-serif;
+      color:#405c94;
+      }
+  .invite-fast-widget .to-fasten-up{
+    padding:0 0 0 20px;
+    background:url("../assets/post-on-wall.gif") 0 2px no-repeat;
+    font:bold 12px/14px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color:#999;
+    float:right;
+    width:135px;
+    text-align:left;
+    margin:0 0 75px;
+    clear:right;
+    }
+  .invite-fast-widget .phone-them{
+    clear:right;
+    padding:0 0 0 20px;
+    background:url("../assets/phone-them.gif") 0 2px no-repeat;
+    font:bold 12px/14px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color:#999;
+    float:right;
+    width:135px;
+    text-align:left;
+    margin:0 0 75px;
+    }
+  .invite-fast-widget .fastest{
+    position:relative;
+    padding:0 0 0 40px;
+    width:260px;
+    margin:0 auto;
+    text-align:left;
+    zoom:1;
+    display:block;
+    color:#333;
+    }
+    .invite-fast-widget .fastest:after{
+      content:".";
+      text-indent:-9000px;
+      clear:both;
+      display:block;
+      height:0;
+      line-height:0;
+      font-size:0;
+      overflow:hidden;
+      }
+    .invite-fast-widget .fastest .best-time{
+      float:right;
+      text-align:right;
+      font:bold 12px/14px "Helvetica Neue",Helvetica,Arial,sans-serif;
+      }
+      .invite-fast-widget .fastest .best-time .time{
+        display:block;
+        font:bold 16px/18px "Helvetica Neue",Helvetica,Arial,sans-serif;
+        color:#405c94;
+        }
+    .invite-fast-widget .fastest .title{
+      font:bold 12px/14px "Helvetica Neue",Helvetica,Arial,sans-serif;
+      color:#333;
+      }
+    .invite-fast-widget .fastest .name{
+      font:bold 16px/18px "Helvetica Neue",Helvetica,Arial,sans-serif;
+      color:#405c94;
+      }
+    .invite-fast-widget .fastest .avatar{
+      position:absolute;
+      left:0;
+      top:0;
+      width:30px;
+      height:30px;
+      }
+  .invite-fast-widget .timer{
+    border:1px solid #cfd6e4;
+    text-align:center;
+    width:298px;
+    margin:20px auto;
+    padding:20px 0;
+    font:bold 18px/25px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color:#333;
+    }
+    .invite-fast-widget .timer .time{
+      color:#405c94;
+      font:bold 36px/36px "Helvetica Neue",Helvetica,Arial,sans-serif;
+      }
+  .invite-fast-widget .about{
+    font:bold 12px/16px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    width:300px;
+    margin:20px auto 20px;
+    text-align:left;
+    }
+    .invite-fast-widget .about .title{
+      margin:0 0 20px;
+      color:#405c94;
+      font:bold 16px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
+      }
+    .invite-fast-widget .about p{
+      margin:0 0 20px;
+      }

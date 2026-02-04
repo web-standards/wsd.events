@@ -1,0 +1,149 @@
+.author-widget{
+  margin:0 0 15px 0;
+  background-color:#fff;
+  overflow:hidden;
+  }
+  .author-widget .show-more{
+    margin:0 10px 20px;
+    padding:10px 0 0;
+    display:block;
+    font:italic 13px/15px 'PT Sans',Arial,sans-serif;
+    border-top:1px dotted #b7b7b7;
+    }
+    .author-widget article{
+      border-top:1px dotted #b7b7b7;
+      position:relative;
+      padding:10px 0;
+      margin:0 10px;
+      display:block;
+      z-index:3;
+      }
+      .author-widget article .abstract{
+        display:block;
+        padding:0;
+        }
+        .author-widget article .abstract p{
+          display:inline;
+          }
+        .author-widget article.exclusive .abstract{
+          text-indent:20px;
+          background:url("../img/zn.png") 0 0 no-repeat;
+          }
+        .author-widget article.advertisement .abstract{
+          text-indent:20px;
+          background:url("../img/adv.png") 0 0 no-repeat;
+          }
+        .author-widget article.press-release .abstract{
+          text-indent:20px;
+          background:url("../img/pr.png") 0 0 no-repeat;
+          }
+        .author-widget article.important .abstract{
+          font-weight:bold;
+          display:inline;
+          }
+        .author-widget article time{
+          display:inline;
+          color:#777;
+          }
+  .author-widget .abstract{
+    padding:10px 10px 0;
+    font:normal 13px/15px 'PT Sans',Arial,sans-serif;
+    }
+    .author-widget .abstract p{
+      margin-bottom:15px;
+      }
+  .author-widget .information{
+    zoom:1;
+    background-color:#e2e2e2;
+    border-bottom:4px solid #000;
+    line-height:0;
+    font-size:0;
+    vertical-align:bottom;
+    }
+    .author-widget .information .twitter{
+      display: inline-block;
+      background: url('../img/buttons.gif') -20px 0 no-repeat;
+      width: 22px;
+      height: 18px;
+      overflow: hidden;
+      text-indent: -9000px;
+      margin: 0 0 5px 10px;
+      position: relative;
+      vertical-align:bottom;
+      }
+      *+html .author-widget .information .twitter{
+        display:inline;
+        zoom:1;
+        }
+      * html .author-widget .information .twitter{
+        display:inline;
+        zoom:1;
+        }
+      .author-widget .information .twitter:hover{
+        background-position:-20px -20px;
+        }
+    .author-widget .information .facebook{
+      display: inline-block;
+      background: url('../img/buttons.gif') 0 0 no-repeat;
+      width: 16px;
+      height: 18px;
+      overflow: hidden;
+      text-indent: -9000px;
+      margin: 0 0 5px 10px;
+      vertical-align:bottom;
+      }
+      *+html .author-widget .information .facebook{
+        display:inline;
+        zoom:1;
+        }
+      * html .author-widget .information .facebook{
+        display:inline;
+        zoom:1;
+        }
+      .author-widget .information .facebook:hover{
+        background-position:0 -20px;
+        }
+    .author-widget .information a{
+      display:inline-block;
+      vertical-align:bottom;
+      color:#000;
+      }
+      *+html .author-widget .information a{
+        display:inline;
+        zoom:1;
+        }
+      * html .author-widget .information a{
+        display:inline;
+        zoom:1;
+        }
+      .author-widget .information a p{
+        display:inline-block;
+        vertical-align:bottom;
+        font:normal 12px/24px 'PT Sans',Arial,sans-serif;
+        margin:0 0 5px 15px;
+        }
+        *+html .author-widget .information a p{
+          display:inline;
+          zoom:1;
+          }
+        * html .author-widget .information a p{
+          display:inline;
+          zoom:1;
+          }
+        .author-widget .information a p .name,
+        .author-widget .information a p .surname{
+          display:block;
+          font:bold 24px/24px 'PT Sans',Arial,sans-serif;
+          }
+      .author-widget .information a img{
+        display:inline-block;
+        vertical-align:bottom;
+        }
+        *+html .author-widget .information a img{
+          display:inline;
+          zoom:1;
+          }
+        * html .author-widget .information a img{
+          display:inline;
+          zoom:1;
+          }

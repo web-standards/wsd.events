@@ -1,0 +1,185 @@
+.article-widget{
+  background-color:#FFF;
+  min-height:20px;
+  font:normal 13px/18px 'PT Sans',Arial,sans-serif;
+  vertical-align:bottom;
+  }
+  .article-widget .article-text{
+    position:relative;
+    font:normal 13px/18px 'PT Sans',Arial,sans-serif;
+    }
+    .article-widget .article-text p:first-child{
+      font:bold 16px/20px 'PT Sans',Arial,sans-serif;
+      }
+    .article-widget .article-text .source{
+      font:italic 13px/18px 'PT Sans',Arial,sans-serif;
+      color:#777;
+      }
+      .article-widget .article-text .source a{
+        color:#777;
+        }
+    .article-widget .article-text del,
+    .article-widget .article-text s{
+      text-decoration:line-through;
+      }
+    .article-widget .article-text u{
+      text-decoration:underline;
+      }
+    .article-widget .article-text i{
+      font-style:italic;
+      }
+    .article-widget .article-text b,
+    .article-widget .article-text strong{
+      font-weight:bold;
+      }
+    .article-widget .article-text blockquote{
+      float:right;
+      margin:15px 0 15px 15px;
+      }
+      .article-widget .article-text blockquote p{
+        font:bold 16px/20px 'PT Sans Caption',Arial,sans-serif;
+        margin:0 0 10px 0;
+        }
+      * html .article-widget .article-text blockquote p{
+        zoom: expression(function(t){
+            t.runtimeStyle.zoom = 1;
+            var after = document.createElement('span');
+            after.className = 'blockquote-ie-after-fix';
+            t.appendChild(after);
+          }(this));
+        }
+      *+html .article-widget .article-text blockquote p{
+        zoom: expression(function(t){
+            t.runtimeStyle.zoom = 1;
+            var after = document.createElement('span');
+            after.className = 'blockquote-ie-after-fix';
+            t.appendChild(after);
+          }(this));
+        }
+        .article-widget .article-text blockquote p .blockquote-ie-after-fix,
+        .article-widget .article-text blockquote p:after{
+          content:".";
+          display:block;
+          float:right;
+          overflow:hidden;
+          text-indent:-9000px;
+          line-height:0;
+          font-size:0;
+          width:53px;
+          height:42px;
+          background:url("../img/blockquote.png") 0 0 no-repeat;
+          }
+      .article-widget .article-text blockquote cite{
+        font:normal 12px/18px 'PT Sans',Arial,sans-serif;
+        color:#777;
+        display:block;
+        }
+      .article-widget .article-text blockquote .source{
+        font:italic 13px/18px 'PT Sans',Arial,sans-serif;
+        color:#000;
+        display:block;
+        }
+    .article-widget .article-text p{
+      margin:0 0 20px 0;
+      }
+      .article-widget .article-text p .article-end{
+        vertical-align:bottom;
+        margin:0 5px;
+        }
+    .article-widget .article-text .title{
+      font:bold 18px/20px 'PT Sans Caption',Arial,sans-serif;
+      }
+    .article-widget .article-text figure{
+      float:right;
+      margin:15px -15px 14px 15px;
+      position:relative;
+      display:inline;
+      }
+      .article-widget .article-text figure a.lightbox{
+        position:relative;
+        display:block;
+        cursor:pointer;
+        }
+        * html .article-widget .article-text figure a.lightbox{
+          zoom: expression(function(t){
+              t.runtimeStyle.zoom = 1;
+              var after = document.createElement('span');
+              after.className = 'lightbox-ie-after-fix';
+              t.appendChild(after);
+            }(this));
+          }
+        *+html .article-widget .article-text figure a.lightbox{
+          zoom: expression(function(t){
+              t.runtimeStyle.zoom = 1;
+              var after = document.createElement('span');
+              after.className = 'lightbox-ie-after-fix';
+              t.appendChild(after);
+            }(this));
+          }
+        .article-widget .article-text figure a.lightbox .lightbox-ie-after-fix,
+        .article-widget .article-text figure a.lightbox:after{
+          content:".";
+          display:block;
+          height:51px;
+          width:51px;
+          position:absolute;
+          top:50%;
+          left:50%;
+          margin:-25px 0 0 -25px;
+          cursor:pointer;
+          overflow:hidden;
+          text-indent:-900px;
+          font-size:0;
+          line-height:0;
+          zoom:1;
+          background:url("../img/play-show.png") 0 0 no-repeat;
+          }
+          * html .article-widget .article-text figure a.lightbox .lightbox-ie-after-fix{
+            background:none;
+            filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src='img/play-show.png', sizingMethod='image');
+            cursor:pointer;
+            }
+      .article-widget .article-text figure img{
+        display:block;
+        width:100%;
+        margin:0 0 10px 0;
+        }
+      .article-widget .article-text figure figcaption{
+        padding:0;
+        clear:both;
+        display:block;
+        margin:0 15px 0 0;
+        border-bottom:1px dotted #b7b7b7;
+        font:normal 12px/18px 'PT Sans',Arial,sans-serif;
+        }
+  .article-widget figure{
+    margin:0 15px 20px 0;
+    }
+    .article-widget figure figcaption{
+      font:normal 12px/18px 'PT Sans',Arial,sans-serif;
+      padding:6px 10px;
+      border-bottom:1px dotted #b7b7b7;
+      color:#000;
+      }
+      .article-widget figure figcaption .source{
+        color:#777;
+        }
+  .article-widget header{
+    padding:10px 15px 0 10px;
+    margin:0 0 15px 0;
+    }
+    .article-widget header .title{
+      font:bold 24px/29px 'PT Sans Caption',Arial,sans-serif;
+      }
+    .article-widget header .author{
+      display:inline;
+      font:normal 12px/18px 'PT Sans',Arial,sans-serif;
+      }
+    .article-widget header .time-information{
+      display:inline;
+      font:normal 12px/18px 'PT Sans',Arial,sans-serif;
+      color:#777;
+      }
+      .article-widget header .time-information time{
+        display:inline;
+        }

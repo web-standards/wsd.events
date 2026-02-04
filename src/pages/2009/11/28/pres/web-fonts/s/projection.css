@@ -1,0 +1,212 @@
+@import url(reset.css);
+@import url(fonts.css);
+
+/* Global
+---------------------------------------- */
+HTML,BODY {
+	height:100%;
+	}
+BODY {
+	background:#000 url(../i/spinner.gif) fixed 50% 50% no-repeat;
+	color:#000;
+	font:15px/1.9 'Myriad Pro',sans-serif;
+	}
+BODY:after {
+	position:fixed;
+	top:0;
+	bottom:0;
+	left:0;
+	width:1em;
+	background:#C00;
+	content:'';
+	}
+A {
+	color:#C00;
+	text-decoration:none;
+	}
+
+/* Ratio
+---------------------------------------- */
+@media projection and (device-aspect-ratio:16/10) {
+	.slide,
+	.detector,
+	.background {
+		width:48em;
+		}
+	.slide,
+	.detector {
+		height:30em;
+		}
+	}
+
+@media projection and (device-aspect-ratio:4/3) {
+	.slide,
+	.detector,
+	.background {
+		width:48em;
+		}
+	.slide,
+	.detector {
+		height:36em;
+		}
+	}
+
+/* Detector
+---------------------------------------- */
+.detector {
+	position:absolute;
+	top:0;
+	left:0;
+	}
+
+/* Slide
+---------------------------------------- */
+.slide {
+	position:relative;
+	visibility:hidden;
+	overflow:hidden;
+	background:#FFF;
+	page-break-after:always;
+	}
+.slide:before {
+	position:absolute;
+	bottom:1.4em;
+	left:5.3em;
+	width:112px;
+	height:46px;
+	background:url(../i/opera.png) no-repeat;
+	content:'';
+	}
+.slide:after {
+	position:absolute;
+	right:3.3em;
+	bottom:1.4em;
+	line-height:1;
+	counter-increment:paging;
+	content:counter(paging,decimal-leading-zero);
+	color:rgba(136,136,136,.5);
+	}
+#done .slide {
+	visibility:visible;
+	}
+
+/* Content */
+.slide .content {
+	position:absolute;
+	top:2.3em;
+	right:3.3em;
+	bottom:4em;
+	left:5.3em;
+	}
+	.slide .content .title {
+		letter-spacing:-1px;
+		margin:0 0 1.3em;
+		color:#888;
+		}
+		.slide .content .title>* {
+			font:1.8em/1.5 Cuprum,sans-serif;
+			}
+	.slide .content P {
+		margin:0 0 1.9em;
+		}
+	.slide .content STRONG {
+		font-weight:bold;
+		}
+	.slide .content EM {
+		font-style:italic;
+		}
+.slide .content-empty {
+	display:none;
+	}
+
+/* Lists */
+.slide .content OL,
+.slide .content UL {
+	margin:0 0 1.9em;
+	counter-reset:list;
+	}
+	.slide .content OL .inactive,
+	.slide .content UL .inactive {
+		color:#BBB;
+		}
+	.slide .content OL LI:before {
+		position:absolute;
+		margin:0 0 0 -2.7em;
+		width:2em;
+		color:#BBB;
+		text-align:right;
+		counter-increment:list;
+		content:counter(list)'\002E';
+		}
+	.slide .content UL LI:before {
+		position:absolute;
+		margin:0 0 0 -.7em;
+		color:#BBB;
+		content:'\2022';
+		line-height:1;
+		font-size:2em;
+		}
+
+/* Code */
+.slide .content PRE {
+	overflow:hidden;
+	margin:0 0 1.9em;
+	-o-text-overflow:ellipsis;
+	text-overflow:ellipsis;
+	font-family:Consolas,monospace;
+	counter-reset:code;
+	}
+	.slide .content PRE CODE {
+		-o-text-overflow:ellipsis;
+		}
+	.slide .content PRE CODE:before {
+		position:absolute;
+		margin-left:-2.5em;
+		width:2em;
+		color:#BBB;
+		text-align:right;
+		counter-increment:code;
+		content:counter(code,decimal-leading-zero)'\002E';
+		}
+	.slide .content PRE .inactive {
+		color:#BBB;
+		}
+	.slide .content PRE EM {
+		color:#C00;
+		font-style:normal;
+		}
+
+/* Cover
+---------------------------------------- */
+.slide.cover {
+	background:#333;
+	color:#FFF;
+	}
+
+/* Content */
+.slide.cover .content {
+	}
+	.slide.cover .content .title {
+		color:#999;
+		}
+
+/* Footer
+---------------------------------------- */
+FOOTER:before {
+	position:fixed;
+	top:0;
+	right:0;
+	width:39px;
+	height:39px;
+	background:url(../i/corners.png) no-repeat;
+	content:'';
+	}
+FOOTER:after {
+	position:fixed;
+	right:0;
+	bottom:0;
+	width:39px;
+	height:39px;
+	background:url(../i/corners.png) 0 -39px no-repeat;
+	content:'';
+	}

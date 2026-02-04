@@ -1,0 +1,102 @@
+.calendar-widget{
+  margin:0 0 15px;
+  background-color:#e2e2e2;
+  border-top:4px solid #b7b7b7;
+  }
+  .calendar-widget .title{
+    font:bold 18px/40px 'PT Sans Caption',Arial,sans-serif;
+    background-color:#e2e2e2;
+    position:relative;
+    z-index:2;
+    zoom:1;
+    padding:0 15px;
+    overflow:hidden;
+    }
+    .calendar-widget .title .date{
+      float:left;
+      }
+    .calendar-widget .title .prev{
+      width:19px;
+      height:18px;
+      top:10px;
+      position:relative;
+      float:left;
+      overflow:hidden;
+      text-indent:-9000px;
+      background:url("../img/date-controls.png") 0 -18px no-repeat;
+      margin:0 10px 0 0;
+      }
+    .calendar-widget .title .next{
+      width:19px;
+      height:18px;
+      top:10px;
+      position:relative;
+      float:left;
+      overflow:hidden;
+      text-indent:-9000px;
+      background:url("../img/date-controls.png") 0 0 no-repeat;
+      margin:0 0 0 10px;
+      }
+  .calendar-widget .days-list{
+    background-color:#e2e2e2;
+    font:13px/40px 'PT Sans',Arial,sans-serif;
+    }
+    .calendar-widget .days-list .week{
+      border-top:1px dotted #b7b7b7;
+      position:relative;
+      top:-1px;
+      z-index:1;
+      }
+      .calendar-widget .days-list .week:after{
+        content:".";
+        display:block;
+        clear:both;
+        text-indent:-9000px;
+        height:0;
+        line-height:0;
+        font-size:0;
+        overflow:hidden;
+        }
+      * html .calendar-widget .days-list .week{
+        zoom:1;
+        }
+      *+html .calendar-widget .days-list .week{
+        zoom:1;
+        }
+      body .calendar-widget .days-list .week .today{
+        background-color:#fff;
+        text-align:center;
+        -webkit-box-shadow:0 0 10px 0 rgba(0,0,0,0.2);
+        -moz-box-shadow:0 0 10px 0 rgba(0,0,0,0.2);
+        -o-box-shadow:0 0 10px 0 rgba(0,0,0,0.2);
+        box-shadow:0 0 10px 0 rgba(0,0,0,0.2);
+        position:relative;
+        left:8px;
+        }
+      .calendar-widget .days-list .week .day{
+        float:left;
+        height:40px;
+        width:44px;
+        text-align:right;
+        }
+        .calendar-widget .days-list .week .day span{
+          color:#b4b4b4;
+          height:40px;
+          width:28px;
+          padding:0 8px;
+          display:block;
+          }
+        .calendar-widget .days-list .week .day b{
+          color:#000;
+          height:40px;
+          width:28px;
+          padding:0 8px;
+          display:block;
+          }
+        .calendar-widget .days-list .week .day a{
+          height:40px;
+          width:28px;
+          padding:0 8px;
+          font-weight:bold;
+          display:block;
+          }

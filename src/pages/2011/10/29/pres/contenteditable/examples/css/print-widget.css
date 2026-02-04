@@ -1,0 +1,197 @@
+.only-for-print{
+  position:absolute;
+  top:-9000px;
+  left:-9000px;
+  color:#000!important;
+  }
+
+html body.print-widget .source,
+html body.print-widget .article-widget figure figcaption .source,
+html body.print-widget .article-widget .article-text blockquote cite,
+html body.print-widget .article-widget header .time-information{
+  color:#000!important;
+  }
+  
+html body.print-widget .article-widget figure figcaption{
+  padding:6px 0;
+  }
+
+html body.print-widget .only-for-print{
+  position:static;
+  top:auto;
+  left:auto;
+  }
+  
+html body.print-widget  .article-url{
+  margin:45px 0 10px;
+  }
+
+html body.print-widget footer .copyright .logotype{
+  background:url("../img/footer-logotype-print.png") 0 0 no-repeat;
+  }
+
+html body.print-widget{
+  background:none;
+  }
+
+html body.print-widget .horizontal-wrapper{
+  float:none!important;
+  height:auto!important;
+  min-height:0!important;
+  width:auto;
+  }
+  
+html body.print-widget .horizontal-wrapper .article-widget .article-text figure a.lightbox .lightbox-ie-after-fix,
+html body.print-widget .horizontal-wrapper .article-widget .article-text figure a.lightbox:after{
+  background:none;
+  }
+  
+html body.print-widget .article-widget figure{
+  margin-right:0;
+  }
+html body.print-widget .article-widget .article-text figure{
+  margin:0 0 0 0;
+  }
+
+html body.print-widget .column-8-wide,
+html body.print-widget .column-4,
+html body.print-widget .column-8,
+html body.print-widget .column-2,  
+html body.print-widget .column-6,
+html body.print-widget .column-12{
+  width:auto;
+  margin:0 auto;
+  }
+
+
+html body.print-widget header .wrapper .logotype{
+  display:none;
+  }
+
+html body.print-widget a{
+  color:#000;
+  }
+  
+html body.print-widget .slide-show-widget .slide-previews .slide-wrapper{
+  border-style:none;
+  background:none;
+  padding:9px 0;
+  }
+html body.print-widget .slide-show-widget .slide-previews .slide-wrapper li{
+  opacity:1;
+  }
+html body.print-widget .slide-show-widget .slide-previews{
+  border-style:none;
+  background:none;
+  }
+
+
+.print-logotype{
+  padding:9px 0 9px 179px;
+  font:normal 24px/24px 'PT Sans Caption',Arial,sans-serif;
+  display:block!important;
+  zoom:1;
+  }
+  .print-logotype img{
+    position:absolute;
+    top:0;
+    left:0;
+    }
+
+html body.print-widget{
+  width:649px;
+  margin:0 auto;
+  }
+  
+html body.print-widget header .wrapper{
+  width:649px;
+  min-height:0;
+  }
+  
+html body.print-widget .article-widget header{
+  padding:0;
+  }
+
+html body.print-widget footer{
+  width:649px;
+  background:none;
+  border-top:4px solid #000;
+  padding-top:0;
+  }
+  html body.print-widget footer .copyright .logotype{
+    background:none;
+    }
+    html body.print-widget footer .copyright .logotype img{
+      display:block;
+      }
+  html body.print-widget .policy{
+    border-top:1px solid #000;
+    top:-20px;
+    padding-top:20px;
+    position:relative;
+    }
+  html body.print-widget .policy p,
+  html body.print-widget .policy{
+    width:649px;
+    font:normal 10px/12px 'PT Sans Caption',Arial,sans-serif;
+    color:#000;
+    }
+
+html body.print-widget .article-widget .article-text figure figcaption{
+  margin:0;
+  }
+
+html body.print-widget .site{
+  width:649px;
+  margin:0 auto;
+  }
+  html body.print-widget .site .article-widget{
+    width:649px;
+    margin:0;
+    padding:0 0 0 0;
+    }
+    html body.print-widget .site .article-widget .article-end{
+      display:none;
+      }
+      html body.print-widget .site .article-widget .article-text .source{
+        display:none;
+        }
+        
+html body.print-widget section.content{
+  background:none;
+  }
+
+html body.print-widget .footnote-widget,
+html body.print-widget .navigation-widget,
+html body.print-widget .language,
+html body.print-widget .znaki-fm,
+html body.print-widget aside,
+html body.print-widget aside img,
+html body.print-widget .brief-search-widget,
+html body.print-widget .section-widget,
+html body.print-widget .subsection-widget,
+html body.print-widget .counter-widget,
+html body.print-widget .news-by-tag-widget,
+html body.print-widget .news-widget,
+html body.print-widget .news-brief-widget,
+html body.print-widget .press-reliase-widget,
+html body.print-widget .web-conference-widget,
+html body.print-widget .top-article-comment-widget,
+html body.print-widget .gallery-widget,
+html body.print-widget .advertisement-widget,
+html body.print-widget .facebook-box-short-widget,
+html body.print-widget .author-widget,
+html body.print-widget .article-tab-widget,
+html body.print-widget .blockquote-widget,
+html body.print-widget .related-widget,
+html body.print-widget .show-more,
+html body.print-widget .comment-form-widget,
+html body.print-widget .advertisement-links-widget,
+html body.print-widget .tag-widget,
+html body.print-widget .social-widget,
+html body.print-widget .accordion-widget,
+html body.print-widget .last-news-widget,
+html body.print-widget .related-media-widget,
+html body.print-widget .multimedia-author-widget{
+  display:none!important;
+  }

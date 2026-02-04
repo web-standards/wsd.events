@@ -1,0 +1,250 @@
+<!DOCTYPE HTML>
+	<html lang="en-US">
+	<head>
+		<meta charset="UTF-8">
+		<title>Froggler</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="stylesheet" href="css/common.css">
+		<script src="js/modernizr.min.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/ZeroClipboard.js"></script>
+
+		<script src="js/blankWidgetController.js"></script>
+		<script src="js/frogglerController.js"></script>
+		<script src="js/projectListController.js"></script>
+		<script src="js/projectController.js"></script>
+		<script src="js/ticketController.js"></script>
+		<script src="js/errorController.js"></script>
+	</head>
+	<body>
+		<section class="projects-widget">
+			<div class="subscription">
+				<div class="wrapper">
+					<h2 class="title">
+						Your subscription plan is <b>Small</b>
+					</h2>
+					<a href="#" class="change-subscription-plan">Change</a>
+					<p class="to-do-metr">
+						<span class="progressbar"><b class="done" style="width:40%"></b></span>
+						<b class="current">4</b> of <b class="all">10</b>
+					</p>
+				</div>
+			</div>
+			<div class="wrapper">
+				<a href="#" class="add-project"><b>Add project</b></a>
+				<section class="project-list">
+					<div class="line">
+						<article>
+							<h2 class="title">Giftofoni</h2>
+							<p class="errors"><b>23 247</b> Errors</p>
+							<p class="users">987</p>
+							<p class="new">4 000</p>
+							<nav>
+								<a href="#" class="go-to-project">Go to project</a>
+								<a href="#" class="edit">Edit</a>
+							</nav>
+						</article>
+					</div>
+					<div class="line">
+						<article>
+							<h2 class="title">Anonymous project</h2>
+							<p class="errors"><b>12</b> Errors</p>
+							<p class="users">3</p>
+							<nav>
+								<a href="#" class="go-to-project">Go to project</a>
+								<a href="#" class="edit">Edit</a>
+							</nav>
+						</article>
+						<article>
+							<h2 class="title">Froggler</h2>
+							<p class="errors"><b>247</b> Errors</p>
+							<p class="users">4</p>
+							<p class="new">5</p>
+							<nav>
+								<a href="#" class="go-to-project">Go to project</a>
+								<a href="#" class="edit">Edit</a>
+							</nav>
+						</article>
+						<article>
+							<h2 class="title">Some Long Name Project That</h2>
+							<p class="errors"><b>159</b> Errors</p>
+							<p class="users">Only me</p>
+							<p class="new">4</p>
+							<nav>
+								<a href="#" class="go-to-project">Go to project</a>
+								<a href="#" class="edit">Edit</a>
+							</nav>
+						</article>
+					</div>
+				</section>
+			</div>
+			<form action="/add/project/" method="post" class="add-project-form">
+				<fieldset>
+					<input type="text" name="name" value="" placeholder="Project name" required="required">
+					<input type="text" name="description" value="" placeholder="Description" required="required">
+					<button type="submit" class="submit"><span>Add project</span></button>
+					<a href="#" class="cancel">Cancel</a>
+				</fieldset>
+			</form>
+		</section>
+		<header>
+			<div class="wrapper">
+				<a href="#">
+					<h1 class="logotype">Froggler</h1>
+				</a>
+				<div class="profile">
+					<a href="#" class="name">Krakozеabra</a>
+					<nav>
+						<a href="#" class="subscription">Small</a>
+						<a href="#" class="sign-out">Sign out</a>
+						<a href="#" class="help">Help</a>
+					</nav>
+				</div>
+				<div class="statistic">
+					<a href="#" class="unresolved"><b>34</b> unresolved errors</a>
+					<a href="#" class="projects"><b>4</b> projects</a>
+				</div>
+			</div>
+		</header>
+		<section class="content-wrapper">
+			<section class="project-details-widget">
+				<section class="details">
+					<h2 class="title">Giftofoni</h2>
+					<p class="code">
+						2071547e33353913ee4c277f
+						<a href="#" id="copy-project-code" class="copy" data-code="2071547e33353913ee4c277f">Cкопировать в буффер обмена</a>
+					</p>
+					<menu type="toolbar">
+						<li><a class="edit" href="#"><b>Edit project</b></a></li>
+					</menu>
+				</section>
+				<section class="user-list">
+					<p class="user-count">8 users</p>
+					<div class="users">
+						<a href="#" class="user remove-user">
+							<p class="name">Krakozabra</p>
+							<p class="email">diezigne@gmail.com</p>
+						</a>
+						<a href="#" class="user remove-user">
+							<p class="name">Oolah</p>
+							<p class="email">mya@gmail.com</p>
+						</a>
+						<a href="#" class="user remove-user">
+							<p class="name">Mt_T</p>
+							<p class="email">mr_Twithlongemailaddress@gmail.com</p>
+						</a>
+						<a href="#" class="user remove-user">
+							<p class="name">Whiteman</p>
+							<p class="email">whiteman@gmail.com</p>
+						</a>
+						<a href="#" class="user-invited cancel-invite">
+							<p>Sent</p>
+							<p class="email">whiteman@gmail.com</p>
+						</a>
+					</div>
+					<p class="add-user">
+						<a href="#">Write email to add user</a>
+					</p>
+				</section>
+			</section>
+			<section class="blank-widget">
+					<h2 class="title">There is no errors yet.</h2>
+					<div class="set-up">
+						<ul class="set-up-list">
+							<li><a href="#javascript">Javascript</a></li>
+							<li><a href="#rails2">Rails 2.x</a></li>
+							<li class="selected"><a href="#rails3">Rails 3.x</a></li>
+							<li><a href="#rack">Rack</a></li>
+							<li><a href="#sinatra">Sinatra</a></li>
+							<li><a href="#ios">iOS</a></li>
+						</ul>
+						<section class="set-up-details" id="javascript">
+							<h3 class="title">Setting up your Javascript app</h3>
+						</section>
+						<section class="set-up-details selected" id="rails3">
+							<h3 class="title">Setting up your Rails 3.x app</h3>
+							<ul class="step-list">
+								<li>
+									<span class="step">1</span>
+									<p>Remove your existing Exception Notifier from your ApplicationController, if present:</p>
+									<code>class ApplicationController < ActionController::Base
+   include ExceptionNotifiable </code>
+								</li>
+								<li>
+									<span class="step">2</span>
+									<p>Remove your existing Exception Notifier from your ApplicationController, if present:</p>
+									<code>class ApplicationController < ActionController::Base
+   include ExceptionNotifiable </code>
+								</li>
+								<li>
+									<span class="step">3</span>
+									<p>Remove your existing Exception Notifier from your ApplicationController, if present:</p>
+									<code>class ApplicationController < ActionController::Base
+   include ExceptionNotifiable </code>
+								</li>
+								<li>
+									<span class="step">4</span>
+									<p>Remove your existing Exception Notifier from your ApplicationController, if present:</p>
+								</li>
+								<li>
+									<span class="step">5</span>
+									<p>Remove your existing Exception Notifier from your ApplicationController, if present:</p>
+								</li>
+							</ul>
+						</section>
+						<section class="set-up-details" id="rails2">
+							<h3 class="title">Setting up your Rails 2.x app</h3>
+							<ul class="step-list">
+								<li>
+									<span class="step">1</span>
+									<p>Remove your existing Exception Notifier from your ApplicationController, if present:</p>
+									<code>class ApplicationController < ActionController::Base
+   include ExceptionNotifiable </code>
+								</li>
+								<li>
+									<span class="step">2</span>
+									<p>Remove your existing Exception Notifier from your ApplicationController, if present:</p>
+									<code>class ApplicationController < ActionController::Base
+   include ExceptionNotifiable </code>
+								</li>
+								<li>
+									<span class="step">3</span>
+									<p>Remove your existing Exception Notifier from your ApplicationController, if present:</p>
+									<code>class ApplicationController < ActionController::Base
+   include ExceptionNotifiable </code>
+								</li>
+								<li>
+									<span class="step">4</span>
+									<p>Remove your existing Exception Notifier from your ApplicationController, if present:</p>
+								</li>
+								<li>
+									<span class="step">5</span>
+									<p>Remove your existing Exception Notifier from your ApplicationController, if present:</p>
+								</li>
+							</ul>
+						</section>
+						<section class="set-up-details" id="rack">
+							<h3 class="title">Setting up your Rack app</h3>
+						</section>
+						<section class="set-up-details" id="sinatra">
+							<h3 class="title">Setting up your Sinatra app</h3>
+						</section>
+						<section class="set-up-details" id="ios">
+							<h3 class="title">Setting up your iOs app</h3>
+						</section>
+					</div>
+				</section>
+		</section>
+		<footer>
+			<p class="copyright">Froggler &copy; 2012</p>
+			<nav>
+				<a href="#">Blog</a>
+				<a href="#">API Overview</a>
+				<a href="#">Status site</a>
+				<a href="#">Terms of Service</a>
+				<a href="#">Privacy Policy</a>
+				<a href="#" class="rss">Subsribe via RSS</a>
+			</nav>
+		</footer>
+	</body>
+</html>

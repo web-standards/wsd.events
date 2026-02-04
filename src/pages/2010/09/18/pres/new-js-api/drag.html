@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Реквием фреймворкам | Web Standards Days</title>
+	<link media="projection,screen" rel="stylesheet" href="css/styles.css" /></title>
+</head>
+<body>
+	
+<section id="slide_1" class="slide">	
+<h1>Drag and drop</h1>
+<code>
+element.addEventListener("dragstart", callback, false);
+element.addEventListener("dragend", callback, false);
+
+placeHolder.addEventListener("dragenter", callback, false);
+placeHolder.addEventListener("dragover", callback, false);
+placeHolder.addEventListener("dragleave", callback, false);
+placeHolder.addEventListener("drop", callback, false);		
+
+event.dataTransfer.setData(key,value);
+event.dataTransfer.getData(key);
+event.dataTransfer.clearData();
+
+event.setDragImage(image,x,y);
+event.addElement(element);
+</code>
+<a href="http://www.w3.org/TR/2010/WD-html5-20100624/dnd.html#dnd">http://www.w3.org/TR/2010/WD-html5-20100624/dnd.html#dnd</a>
+</section>
+	
+	
+</body>
+</html>

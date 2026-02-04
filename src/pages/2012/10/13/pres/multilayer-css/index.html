@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->  <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>Многослойный CSS</title>
+
+	<meta name="description" content="A jQuery library for modern HTML presentations">
+	<meta name="author" content="Caleb Troughton">
+	<meta name="viewport" content="width=1024, user-scalable=no">
+
+	<!-- Core and extension CSS files -->
+	<link rel="stylesheet" href="decsjs/core/deck.core.css">
+	<link rel="stylesheet" href="decsjs/extensions/goto/deck.goto.css">
+	<link rel="stylesheet" href="decsjs/extensions/menu/deck.menu.css">
+	<link rel="stylesheet" href="decsjs/extensions/navigation/deck.navigation.css">
+	<link rel="stylesheet" href="decsjs/extensions/status/deck.status.css">
+	<link rel="stylesheet" href="decsjs/extensions/hash/deck.hash.css">
+	<link rel="stylesheet" href="decsjs/extensions/scale/deck.scale.css">
+
+	<!-- Style theme. More available in /themes/style/ or create your own. -->
+	<link rel="stylesheet" href="decsjs/themes/style/swiss_modified.css">
+
+	<!-- Transition theme. More available in /themes/transition/ or create your own. -->
+	<link rel="stylesheet" href="decsjs/themes/transition/horizontal-slide.css">
+
+	<!-- Custom css -->
+	<link rel="stylesheet" href="decsjs/themes/style/swiss_modified.css">
+
+	<script src="decsjs/modernizr.custom.js"></script>
+</head>
+
+<body class="deck-container">
+
+<!-- Begin slides -->
+<section class="title-slide slide" id="title-slide">
+	<div class="vcenter">
+		<h1 class="title-slide_h1">Многослойный CSS</h1>
+
+		<div class="title-slide_author">
+			<div class="title-slide_author_name">Харитонов Роберт</div>
+			<div class="title-slide_author_inf">
+				<img src="i/ok.png" style="margin-bottom:5px;">
+				Одноклассники.ру
+			</div>
+		</div>
+		<div style="position: relative; bottom: -4em;">презентация - <a href="http://rhr.me/pres/mcss">rhr.me/pres/mcss</a></div>
+	</div>
+</section>
+
+<section class="slide">
+	<h2>Проблемы CSS</h2>
+
+	<div class="text-over-img">
+
+		<pre class="code-highlight" style="white-space: pre; overflow:hidden;"><code>#common_css{display:none}body{background:#fff;color:#000;margin:0;padding:0;direction:ltr;font-family:tahoma,arial,verdana,sans-serif,Lucida Sans;font-size:11px;font-weight:normal}body.font_medium{font-size:12px;font-family:Lucida Grande,Arial,tahoma,verdana,sans-serif}body.nofixed{width:100%;overflow:hidden}body.nofixed #page_wrap{position:relative;height:100%;width:100%;overflow:auto}.fixed{position:fixed}body.nofixed .fixed,body.mobfixed .fixed{position:absolute}body.firefox #page_wrap{position:relative;width:100%;overflow:hidden}.table td{vertical-align:top;text-align:left}.scroll_fix_wrap{text-align:left;direction:ltr}a{color:#2b587a;text-decoration:none;cursor:pointer}a:hover{text-decoration:underline}img{border:0}form{margin:0;padding:0}small{font-size:10px}.font_medium small{font-size:11px}textarea.ashelper{overflow:hidden}#fmenu{position:absolute;right:0;top:0;margin-top:2px;padding:5px 0;background:#FFF}.fmenu_item,.fmenu_cont{overflow:hidden;display:inline-block;*display:inline;*zoom:1}.fmenu_item{font-size:10px;clear:both;margin:4px 1px;line-height:11px;padding:4px;font-weight:bold;color:#45688e;opacity:.5;filter:alpha(opacity=50);-webkit-border-radius:2px;-khtml-border-radius:2px;-moz-border-radius:2px;border-radius:2px;-webkit-transition:opacity 100ms linear;-moz-transition:opacity 100ms linear;-o-transition...</code></pre>
+
+
+		<div class="text-over-img_cnt" style="font-size: 1.8em">
+			<div class="slide">
+				<ul>
+					<li>Дублированный код</li>
+					<li>Запутанная структура</li>
+					<li>Сложность поддержки</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="slide">
+	<h2>В команде</h2>
+
+	<div class="text-over-img">
+
+		<pre class="code-highlight" style="white-space: pre; overflow:hidden;"><code>#common_css{display:none}body{background:#fff;color:#000;margin:0;padding:0;direction:ltr;font-family:tahoma,arial,verdana,sans-serif,Lucida Sans;font-size:11px;font-weight:normal}body.font_medium{font-size:12px;font-family:Lucida Grande,Arial,tahoma,verdana,sans-serif}body.nofixed{width:100%;overflow:hidden}body.nofixed #page_wrap{position:relative;height:100%;width:100%;overflow:auto}.fixed{position:fixed}body.nofixed .fixed,body.mobfixed .fixed{position:absolute}body.firefox #page_wrap{position:relative;width:100%;overflow:hidden}.table td{vertical-align:top;text-align:left}.scroll_fix_wrap{text-align:left;direction:ltr}a{color:#2b587a;text-decoration:none;cursor:pointer}a:hover{text-decoration:underline}img{border:0}form{margin:0;padding:0}small{font-size:10px}.font_medium small{font-size:11px}textarea.ashelper{overflow:hidden}#fmenu{position:absolute;right:0;top:0;margin-top:2px;padding:5px 0;background:#FFF}.fmenu_item,.fmenu_cont{overflow:hidden;display:inline-block;*display:inline;*zoom:1}.fmenu_item{font-size:10px;clear:both;margin:4px 1px;line-height:11px;padding:4px;font-weight:bold;color:#45688e;opacity:.5;filter:alpha(opacity=50);-webkit-border-radius:2px;-khtml-border-radius:2px;-moz-border-radius:2px;border-radius:2px;-webkit-transition:opacity 100ms linear;-moz-transition:opacity 100ms linear;-o-transition...</code></pre>
+
+		<div class="text-over-img_cnt" style="font-size: 1.8em">
+			<div>
+				<ul>
+					<li>Разный стиль кода</li>
+					<li>Разные подходы к организации вёрстки</li>
+					<li>Множество повторных реализаций</li>
+					<li>Трудности рефакторинга</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="slide">
+	<h1>Как с этим бороться?</h1>
+</section>
+
+<section class="slide">
+	<h2>Нужна система!</h2>
+
+	<div class="text-over-img">
+		<img src="i/system.jpg" class="text-over-img_bg">
+
+		<div class="text-over-img_cnt" style="font-size: 1.5em">
+			<div class="slide deck-child-current">
+				<ul>
+					<li>Единый стиль - <a href="http://code.google.com/p/google-styleguide/">Google style guide</a>,
+						<a href="https://github.com/styleguide">Github s.g.</a></li>
+					<li>Ресеты стилей - <a href="http://meyerweb.com/eric/tools/css/reset/">reset.css</a>, <a href="http://necolas.github.com/normalize.css/">normаlize.css</a></li>
+					<li>Фреймворки - <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>, <a href="http://960.gs/">960gs</a></li>
+					<li>CSS препроцессоры - <a href="http://lesscss.org/">Less</a>, <a href="http://sass-lang.com/">Sass</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="slide">
+	<h2>Методологии</h2>
+
+	<div class="text-over-img">
+		<img src="i/system.jpg" class="text-over-img_bg">
+
+		<div class="text-over-img_cnt" style="font-size: 1.5em">
+
+			<div class="">
+				<ul>
+					<li><a href="http://oocss.org/">OOCSS</a></li>
+					<li><a href="http://yuilibrary.com/">Yahoo YUI</a> → <a href="http://smacss.com/">SMACSS</a></li>
+					<li><a href="http://clubs.ya.ru/bem/replies.xml?item_no=43">АНБ</a> → <a href="http://bem.info/">БЭМ</a></li>
+					<li style="margin-top:1em;" class="slide">
+						<div style="color: red; font-size: 1.5em">Многослойный CSS</div>
+						<div style="margin-top:.5em;">Multilayer CSS на <a href="http://operatino.github.com/MCSS/">operatino.github.com/MCSS</a></div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="slide">
+	<h2>Что мы получим?</h2>
+
+	<div class="text-over-img">
+		<img src="i/sort.jpg" class="text-over-img_bg">
+
+		<div class="text-over-img_cnt" style="font-size: 1.5em">
+			<div class="slide deck-child-current">
+				<ul>
+					<li>База стандартов</li>
+					<li>Быстрая разработка</li>
+					<li>Логичная структура</li>
+					<li>Легко воспринимаемый код</li>
+					<li class="slide" style="color: red; font-size:1.5em;">Порядок!</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+</section>
+
+<section class="slide">
+	<h2>Компоновка модулей</h2>
+
+	<img src="i/page2.png" >
+</section>
+
+<section class="slide">
+	<img src="i/reset.png">
+</section>
+
+<section class="slide">
+	<img src="i/base.png">
+</section>
+
+<section class="slide">
+	<img src="i/project.png">
+</section>
+
+<section class="slide">
+	<img src="i/all.png">
+</section>
+
+<section class="slide">
+	<h2>По полочкам</h2>
+
+	<div style="font-size: 1.5em; line-height: 1.5; margin-bottom:.5em;">
+		Стили каждого модуля хранятся в одном месте, включая каскад
+	</div>
+
+	<style type="text/css">
+		.css-comment {
+			color: #B3F35B;
+			}
+	</style>
+
+<pre class="code-highlight"><code><span class="css-comment">/* Toolbar
+--------------------------------------------------------------------- */</span>
+
+<span class="l-2">.toolbar</span> {...}
+	<span class="l-2">.toolbar_logo</span> {...}
+
+<span class="css-comment">/* Toolbar dropdown menu
+-------------------------------------------------- */</span>
+
+<span class="l-2">.toolbar_dropdown</span> {...}
+	<span class="l-k">.ie8</span> <span class="l-2">.toolbar_dropdown</span> {...}
+		 <span class="l-2">.toolbar_dropdown</span> <span class="l-1">.u-menu</span> {...}
+
+<span class="css-comment">/* /Toolbar dropdown menu */</span>
+
+<span class="css-comment">/* /Toolbar
+--------------------------------------------------------------------- */</span></code></pre>
+
+</section>
+
+<section class="slide">
+	<h2>Именование</h2>
+
+	<div style="font-size: 1.5em; line-height: 2; margin-bottom: .5em;">
+		Уникальные названия, на основе модуля<br>
+
+		Названия классов отделяются <span style="color: #3777ae">"_"</span>, а модификаторы <span style="color: #3777ae">"__"</span><br>
+	</div>
+
+<pre class="code-highlight"><code>&lt;header class="<span class="l-2">toolbar</span>"&gt;
+	&lt;a href="/" class="<span class="l-2">toolbar_logo</span>"&gt;Logo&lt;/a&gt;
+	&lt;nav class="<span class="l-2">toolbar_dropdown</span>"&gt;
+		&lt;ul class="<span class="l-2">toolbar_dropdown_ul</span>"&gt;
+			&lt;li class="<span class="l-2">toolbar_dropdown_li</span>"&gt;
+			&lt;li class="<span class="l-2">toolbar_dropdown_li</span> <span class="l-2">toolbar_dropdown_li__active</span>"&gt;
+
+&lt;menu class="<span class="l-1">umenu</span>"&gt;
+	&lt;li class="<span class="l-1">umenu_i</span>"&gt;
+	&lt;li class="<span class="l-1">umenu_i</span> <span class="l-1">umenu_i__active</span>"&gt;
+	&lt;li class="<span class="l-1">umenu_i</span> <span class="l-1">umenu_i__special</span>"&gt;</code></pre>
+
+</section>
+
+<section class="slide">
+	<h2>Словарь сокращений</h2>
+
+<pre class="code-highlight"><code>    <span class="css-comment">i</span> - item
+	<span class="css-comment">tx</span> - text
+	<span class="css-comment">it</span> - input text
+	<span class="css-comment">is</span> - input submit
+	<span class="css-comment">itx</span> - textarea
+	<span class="css-comment">ir</span> - input radio
+	<span class="css-comment">ic</span> - input checkbox
+	<span class="css-comment">ico</span> - icon
+	<span class="css-comment">t</span> - title
+	<span class="css-comment">f</span> - footer
+	<span class="css-comment">h</span> - header
+	<span class="css-comment">с</span> - card
+	<span class="css-comment">cl</span> - clear
+	<span class="css-comment">col</span> - column
+	<span class="css-comment">cnt</span> - content
+	<span class="css-comment">img</span> - image
+	<span class="css-comment">a</span> - link
+	<span class="css-comment">ac</span>  - action
+	<span class="css-comment">usr</span> - user
+	<span class="css-comment">e</span> - error</code></pre>
+
+</section>
+
+<section class="slide" id="s0">
+	<h2>Фундамент</h2>
+
+	<img src="i/reset.png" class="img-under">
+
+	<div class="img-under_txt" style="font-size: 1.5em">
+		Корневые, мало изменяемые стили:
+		<ul>
+			<li>ресеты</li>
+			<li>стили по умолчанию</li>
+			<li>общая конструкция</li>
+		</ul>
+		<br>
+
+		<div style="font-size: .7em">
+			<h3>Основные правила:</h3>
+			<ul>
+				<li>Располагаются в самом начале CSS</li>
+			</ul>
+		</div>
+	</div>
+
+</section>
+
+<section class="slide" id="s-context">
+	<h2>Контекст</h2>
+
+	<div style="font-size: 1.5em">
+		<ul>
+			<li>.ie8 - браузеры</li>
+			<li>.touch - особенности девайса</li>
+			<li>.logined - среда</li>
+			<li>Media queries</li>
+		</ul>
+		<br>
+
+		<div style="font-size: .7em">
+			<h3>Основные правила:</h3>
+			<ul>
+				<li>Располагаются по всему CSS рядом с модифицируемыми классами</li>
+			</ul>
+		</div>
+	</div>
+</section>
+
+<section class="slide" id="s1">
+	<h2>1 слой - Базовый</h2>
+
+	<img src="i/base.png" class="img-under">
+
+	<div class="img-under_txt" style="font-size: 1.5em;">
+		<p>Портальный фреймворк</p>
+
+		<span class="lp-t">например:</span>
+		<ul>
+			<li>формы</li>
+			<li>кнопки</li>
+			<li>блоки навигации <span class="lp-t">и пр.</span></li>
+		</ul>
+	</div>
+</section>
+
+<section class="slide" id="s1-2">
+	<h2>1 слой - Базовый</h2>
+
+	<img src="i/base.png" class="img-under">
+
+	<div class="img-under_txt">
+		<h3>Основные правила:</h3>
+		<ul style="font-size: 1.3em">
+			<li>Абстрактность названий и модификаторов</li>
+			<li>Модифицируются от 2 и 1 слоя <span class="lp-t">каскадом</span</li>
+			<li>Располагаются вверху css</li>
+		</ul>
+
+		<h3>Преимущества:</h3>
+		<ul style="font-size: 1.3em">
+			<li>Переиспользуемость</li>
+			<li>Простая поддержка</li>
+			<li>Быстрая разработка</li>
+		</ul>
+	</div>
+</section>
+
+<section class="slide" id="s2">
+	<h2>2 слой - Проектный</h2>
+
+	<img src="i/project.png" class="img-under">
+
+	<div class="img-under_txt" style="font-size: 1.5em;">
+		<p>Изолированные модули, составные части страницы</p>
+
+		<span class="lp-t">например:</span>
+		<ul>
+			<li>форма регистрации</li>
+			<li>блок логина</li>
+			<li>корзина товаров</li>
+		</ul>
+	</div>
+</section>
+
+<section class="slide" id="s2-2">
+	<h2>2 слой - Проектный</h2>
+
+	<img src="i/project.png" class="img-under">
+
+	<div class="img-under_txt">
+		<h3>Основные правила:</h3>
+		<ul style="font-size: 1.3em">
+			<li>Уникальные названия частей модуля</li>
+			<li>Модифицируются только от 2 слоя</li>
+			<li>Располагаются между стилями 1 и 3 уровня</li>
+		</ul>
+
+		<h3>Преимущества</h3>
+		<ul style="font-size: 1.3em">
+			<li>Изолированность</li>
+			<li>Большой доступ к частям модуля</li>
+		</ul>
+	</div>
+</section>
+
+<section class="slide" id="s3">
+	<h2>3 слой - Косметический</h2>
+
+	<img src="i/all.png" class="img-under">
+
+	<div class="img-under_txt" style="font-size: 1.5em;">
+		<p>Простые, мало влияющие стили</p>
+
+		<span class="lp-t">например:</span>
+		<ul>
+			<li>цвета ссылок</li>
+			<li>низкоуровневый OOCSS <span class="lp-t">(.float-left, .mt-10)</span></li>
+			<li>глобальные модификаторы</li>
+		</ul>
+	</div>
+
+</section>
+
+<section class="slide" id="s3-2">
+	<h2>3 слой - Косметический</h2>
+
+	<img src="i/all.png" class="img-under">
+
+	<div class="img-under_txt">
+		<h3>Основные правила:</h3>
+		<ul style="font-size: 1.3em">
+			<li>Независимость от других слоёв <span class="lp-t">(кроме контекста)</span></li>
+			<li>OOCSS для блоков вне проектов, не больше 3-х классов на блок</li>
+			<li>Высокий приоритет, располагаются в самом низу CSS</li>
+		</ul>
+
+		<h3>Преимущества:</h3>
+		<ul style="font-size: 1.3em">
+			<li>Малое влияние на вёрстку страницы</li>
+			<li>Экономия на кол-ве модулей</li>
+			<li>Простота работы</li>
+		</ul>
+	</div>
+
+</section>
+
+<section class="slide">
+	<h1>Процесс разработки</h1>
+</section>
+
+<section class="slide">
+	<h2>База стандартов</h2>
+
+	<img src="i/file-system.png" class="img-fullheight-wh" style="min-height: 0; height: auto; width:100%;">
+
+</section>
+
+<style type="text/css">
+	.l-1 {color: #e682ab;}
+	.l-2 {color: #73a5cc;}
+	.l-3 {color: #518fbf;}
+	.l-k {color: #F7CB2B;}
+</style>
+
+<section class="slide">
+	<h2>Разработка нового интерфейса</h2>
+
+	<h3 style="margin-bottom:.5em;">Набрасываем каркас <b class="l-1">1 слой</b></h3>
+
+<pre class="code-highlight"><code>&lt;form class="<span class="l-1">form</span>"&gt;
+	&lt;div class="<span class="l-1">info-block</span>"&gt;<span class="text">Заполните поля</span>&lt;/div&gt;
+	&lt;input type="text" class="<span class="l-1">input-text</span>"&gt;
+	&lt;a href="#"&gt;<span class="text">Помощь</span>&lt;/a&gt;
+</code></pre>
+
+	<div class="slide  deck-child-current">
+		<h3 style="margin-bottom:.5em;">Создаём новый проектный модуль <b class="l-2">2 слой</b></h3>
+
+<pre class="code-highlight"><code>&lt;fieldset class="<span class="l-2">new-p-module</span>"&gt;
+	&lt;form class="<span class="l-2">new-p-module_form</span> <span class="l-1">form</span>"&gt;
+		&lt;div class="<span class="l-2">new-p-module_tip</span> <span class="l-1">info-block</span>"&gt;<span class="text">Заполните поля</span>&lt;/div&gt;
+		&lt;input type="text" class="<span class="l-2">new-p-module_input-text</span> <span class="l-1">input-text</span>"&gt;
+		&lt;a href="#"&gt;<span class="text">Помощь</span>&lt;/a&gt;</code></pre>
+
+	</div>
+</section>
+
+
+
+<section class="slide">
+	<h2>Зачем еще один велосипед?</h2>
+
+	<h3>MCSS vs БЭМ</h3>
+
+	<ul  style="font-size: 1.5em;">
+		<li>Нет привязки к инструментам разработки</li>
+		<li>Низкий порог вхождения, подход быстро усваивается</li>
+		<li>Легко внедряется в рабочий проект</li>
+	</ul>
+
+	<br>
+	<div class="slide">
+		<h3>MCSS vs SMACSS</h3>
+
+		<ul style="font-size: 1.5em;">
+			<li>Базовый слой с переиспользуемыми стандартами</li>
+			<li>Продуманная система модификаторов</li>
+			<li>Более независимые модули и блоки</li>
+		</ul>
+	</div>
+</section>
+
+<section class="slide">
+	<h1>Внедрение системы</h1>
+</section>
+
+<section class="slide">
+	<div class="vcenter" style="font-size: 2.5em; line-height: 2;">
+		1. Библиотека снипетов и стандартов<br> <span class="l-1">1 слой</span>
+	</div>
+</section>
+
+<section class="slide">
+	<div class="vcenter" style="font-size: 2.5em; line-height: 2;">
+		2. Новые проекты по системе<br> <span class="l-2">2 слой</span>
+	</div>
+</section>
+
+<section class="slide">
+	<div class="vcenter" style="font-size: 2.5em; line-height: 2;">
+		3. Внутренние семинары<br> и ревью кода
+	</div>
+</section>
+
+<section class="slide">
+	<div class="vcenter" style="font-size: 2.5em; line-height: 2;">
+		4. Постепенный рефакторинг<br> старого кода
+	</div>
+</section>
+
+<section class="slide">
+	<h2>Будущее MCSS</h2>
+
+	<br>
+	<div style="font-size: 1.5em;">
+		<div style="margin-bottom: .5em">
+			Открытая документация <a href="http://operatino.github.com/MCSS/">operatino.github.com/MCSS</a>
+		</div>
+
+		<ul>
+			<li>Примеры использования</li>
+			<li>Модульное развитие</li>
+			<li>Интернационализация</li>
+			<li>Библиотеки</li>
+		</ul>
+
+		<div class="" style="margin-top:2.5em;">
+		   Вопросы и предложения в раздел <a href="https://github.com/operatino/MCSS/issues">Issues</a>.
+		</div>
+	</div>
+</section>
+
+<section class="slide">
+	<h2>За лучший веб</h2>
+
+	<ul style="font-size: 1.5em">
+		<li>Работайте над своими методологиями</li>
+		<li>Разрабатывайте свои инструменты</li>
+		<li>Ищите лучшее подходы к решению ваших задач</li>
+		<li>Делитесь опытом</li>
+	</ul>
+	<br>
+	<br>
+
+	<div class="slide">
+		<span style="font-size: 2.5em; color: #ed812b;">Будем развивать веб вместе!</span>
+	</div>
+</section>
+
+<section class="slide" id="final">
+	<div class="vcenter">
+		<h1 class="title-slide_h1" style="font-size: 3em">Спасибо за внимание!</h1>
+
+		<div class="title-slide_author">
+			<div class="title-slide_author_name">Ваши вопросы?</div>
+			<div class="title-slide_author_inf" style="margin-top: 2em;">
+				<a href="http://rhr.me">rhr.me</a> &nbsp;&nbsp;&nbsp; <a href="https://twitter.com/operatino">@operatino</a> &nbsp;&nbsp;&nbsp; <a href="mailto:robert.haritonov@corp.mail.ru">robert.haritonov@corp.mail.ru</a>
+
+				<div style="margin-top:2em; color: #999;">
+					презентация - <a href="http://rhr.me/pres/mcss">rhr.me/pres/mcss</a>
+
+					<img src="i/qr-code.gif">
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- deck.navigation snippet -->
+<a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+<a href="#" class="deck-next-link" title="Next">&#8594;</a>
+
+<!-- deck.status snippet -->
+<p class="deck-status">
+	<span class="deck-status-current"></span>
+	/
+	<span class="deck-status-total"></span>
+</p>
+
+<!-- deck.goto snippet -->
+<form action="" method="get" class="goto-form">
+	<label for="goto-slide">Go to slide:</label>
+	<input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+	<datalist id="goto-datalist"></datalist>
+	<input type="submit" value="Go">
+</form>
+
+<!-- deck.hash snippet -->
+<a href="" title="Permalink to this slide" class="deck-permalink">#</a>
+
+
+<!-- Grab CDN jQuery, with a protocol relative URL; fall back to local if offline -->
+<script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+<script>window.jQuery || document.write('<script src="decsjs/jquery-1.7.min.js"><\/script>')</script>
+
+<!-- Deck Core and extensions -->
+<script src="decsjs/core/deck.core.js"></script>
+<script src="decsjs/extensions/hash/deck.hash.js"></script>
+<script src="decsjs/extensions/menu/deck.menu.js"></script>
+<script src="decsjs/extensions/goto/deck.goto.js"></script>
+<script src="decsjs/extensions/status/deck.status.js"></script>
+<script src="decsjs/extensions/navigation/deck.navigation.js"></script>
+<script src="decsjs/extensions/scale/deck.scale.js"></script>
+
+<!-- Initialize the deck -->
+<script>
+$(function() {
+	$.deck('.slide');
+});
+</script>
+
+</body>
+</html>

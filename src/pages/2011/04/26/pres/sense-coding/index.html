@@ -1,0 +1,447 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+	<title>Вёрстка со смыслом — Пепелсбей.net</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=1274, user-scalable=no">
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen-d90984e344.css">
+	<style>
+		#Cover header {
+			margin-left:30px;
+			}
+		#Cover h2 {
+			margin:0;
+			color:#FFF;
+			text-shadow:
+				0 0 5px #FFF,
+				0 0 15px #99FF42,
+				0 0 30px #99FF42;
+			font-size:70px;
+			}
+		#Cover p {
+			color:#FFF;
+			text-shadow:
+				0 0 5px #FFF,
+				0 0 15px #99FF42,
+				0 0 30px #99FF42;
+			font-size:35px;
+			}
+		#TagSoup h2 {
+			color:#FFF;
+			}
+		#HTML5 h2 {
+			position:absolute;
+			bottom:120px;
+			padding:0 20px;
+			background:#E34C26;
+			color:#FFF;
+			-webkit-box-shadow:16px 16px 40px rgba(0, 0, 0, 0.3);
+			-moz-box-shadow:16px 16px 40px rgba(0, 0, 0, 0.3);
+			box-shadow:16px 16px 40px rgba(0, 0, 0, 0.3);
+			font-size:75px;
+			}
+		#Chase h2 {
+			color:#FFF;
+			}
+		#ThankYou {
+			background:#FFF url(pictures/yoda.png) 700px 210px no-repeat;
+			}
+	</style>
+</head>
+<body class="list">
+	<header class="caption">
+		<h1>Вёрстка со смыслом</h1>
+		<p><a href="http://pepelsbey.net/">Вадим Макеев</a>, <a href="http://www.opera.com/">Opera Software</a></p>
+	</header>
+	<section class="slide cover" id="Cover"><div>
+		<h2 onclick="var ls = document.querySelector('#lightsabre'); ls.paused ? ls.play() : ls.pause()">Вёрстка со смыслом</h2>
+		<p>Новая семантика HTML5</p>
+		<img src="pictures/qui-gon.jpg" alt="Qui-Gon">
+		<audio loop src="media/lightsabre.ogg" id="lightsabre"></audio>
+	</div></section>
+	<section class="slide cover" id="Semantics"><div>
+		<h2>Семантика</h2>
+		<img src="pictures/semantics.png" alt="Семантика">
+	</div></section>
+	<section class="slide" id="SemanticLevels"><div>
+		<h2>Уровни семантики</h2>
+		<ol>
+			<li>Применение HTML-элементов;</li>
+			<li>Именование элементов;</li>
+			<li>Комбинация именованных элементов.</li>
+		</ol>
+		<p class="note">Подробнее: <a href="http://pepelsbey.net/2008/04/semantic-coding-1/" target="_blank">Семантическая вёрстка</a>, статья в двух частях.</p>
+	</div></section>
+	<section class="slide cover" id="TagSoup"><div>
+		<h2>Суп из тегов</h2>
+		<img src="pictures/tagsoup.jpg" alt="Суп из тегов">
+	</div></section>
+	<section class="slide" id="TagSoupExample"><div>
+		<h2>Суп из тегов</h2>
+		<pre>
+			<code><mark>&lt;td</mark> class="<mark class="important">list</mark>"&gt;</code>
+			<code>    &lt;div class="oh"&gt;&lt;div class="oh2"&gt;</code>
+			<code>    <mark>&lt;table</mark> id="acont_foto"&gt;&lt;tr&gt;</code>
+			<code>        &lt;td&gt;&lt;div class="<mark class="important">item</mark>"&gt;</code>
+			<code>            <mark>&lt;br</mark> class="clear"/&gt;</code>
+			<code>            &lt;div style="text-align:center"&gt;</code>
+			<code>                 <mark>&lt;img</mark> src="<mark class="important">prozrachniy.gif</mark>" border="0"/&gt;</code>
+		</pre>
+	</div></section>
+	<section class="slide" id="DTD"><div>
+		<h2>Антикварный DTD</h2>
+		<pre>
+			<code>&lt;!ENTITY % heading "H1|H2|H3|H4|H5|H6"&gt;</code>
+			<code>&lt;!-- There are six levels of headings from H1</code>
+			<code>    <mark>the most important</mark> to H6 <mark>the least important</mark>. --&gt;</code>
+			<code>&lt;!ELEMENT (%heading;)</code>
+			<code>    -- (%inline;)* -- heading --&gt;</code>
+			<code>&lt;!ATTLIST (%heading;)</code>
+			<code>    %attrs; -- %coreattrs, %i18n, %events --&gt;</code>
+		</pre>
+	</div></section>
+	<section class="slide cover" id="HTML5"><div>
+		<h2>HTML5</h2>
+		<img src="pictures/html5.jpg" alt="HTML5">
+	</div></section>
+	<section class="slide cover" id="FlowBlob"><div>
+		<img src="pictures/flow.png" alt="Поток">
+	</div></section>
+	<section class="slide cover" id="AllBlob"><div>
+		<img src="pictures/flow-details.png" alt="Подробности">
+	</div></section>
+	<section class="slide" id="Flow"><div>
+		<h2>Поточные</h2>
+		<pre>
+			<code>&lt;a&gt; &lt;abbr&gt; &lt;address&gt; &lt;area&gt; &lt;article&gt; &lt;aside&gt;</code>
+			<code>&lt;audio&gt; &lt;b&gt; &lt;bdi&gt; &lt;bdo&gt; &lt;blockquote&gt; &lt;br&gt; &lt;button&gt;</code>
+			<code>&lt;canvas&gt; &lt;cite&gt; &lt;code&gt; &lt;command&gt; &lt;datalist&gt; &lt;del&gt;</code>
+			<code>&lt;details&gt; &lt;dfn&gt; &lt;div&gt; &lt;dl&gt; &lt;em&gt; &lt;embed&gt; &lt;fieldset&gt;</code>
+			<code>&lt;figure&gt; &lt;footer&gt; &lt;form&gt; &lt;h1&gt; &lt;h2&gt; &lt;h3&gt; &lt;h4&gt; <mark class="important">…</mark></code>
+		</pre>
+		<p class="note">Элементы, составляющие поток документа.</p>
+	</div></section>
+	<section class="slide" id="Meta"><div>
+		<h2>Мета</h2>
+		<pre>
+			<code>&lt;base&gt; &lt;command&gt; &lt;link&gt;</code>
+			<code><mark>&lt;meta&gt;</mark> &lt;noscript&gt; &lt;script&gt;</code>
+			<code>&lt;style&gt; &lt;title&gt;</code>
+		</pre>
+		<p class="note">Элементы, говорящие о документе.</p>
+	</div></section>
+	<section class="slide" id="Sectioning"><div>
+		<h2>Структурные</h2>
+		<pre>
+			<code>&lt;article&gt; &lt;aside&gt; &lt;section&gt; <mark>&lt;nav&gt;</mark></code>
+		</pre>
+		<p class="note">Элементы, определяющие структуру документа.</p>
+	</div></section>
+	<section class="slide" id="Heading"><div>
+		<h2>Заголовочные</h2>
+		<pre>
+			<code>&lt;h1&gt; &lt;h2&gt; &lt;h3&gt; &lt;h4&gt; &lt;h5&gt; &lt;h6&gt;</code>
+			<code><mark>&lt;hgroup&gt;</mark></code>
+		</pre>
+		<p class="note">Элементы, озаглавливащие разделы документа.</p>
+	</div></section>
+	<section class="slide" id="Phrasing"><div>
+		<h2>Текстовые</h2>
+		<pre>
+			<code>&lt;a&gt; &lt;abbr&gt; &lt;area&gt; &lt;audio&gt; &lt;b&gt; &lt;bdi&gt; &lt;bdo&gt; <mark>&lt;br&gt;</mark></code>
+			<code>&lt;button&gt; &lt;canvas&gt; &lt;cite&gt; &lt;code&gt; &lt;command&gt; &lt;datalist&gt;</code>
+			<code>&lt;del&gt; &lt;dfn&gt; &lt;em&gt; &lt;embed&gt; <mark>&lt;i&gt;</mark> &lt;iframe&gt; &lt;img&gt; &lt;input&gt;</code>
+			<code>&lt;ins&gt; <mark>&lt;kbd&gt;</mark> &lt;keygen&gt; &lt;label&gt; &lt;map&gt; &lt;mark&gt; &lt;math&gt; &lt;meter&gt;</code>
+			<code>&lt;noscript&gt; &lt;object&gt; &lt;output&gt; &lt;progress&gt; <mark>&lt;q&gt;</mark> &lt;ruby&gt; <mark class="important">…</mark></code>
+		</pre>
+		<p class="note">Элементы, составляющие содержимое документа.</p>
+	</div></section>
+	<section class="slide" id="Embedded"><div>
+		<h2>Встроенные</h2>
+		<pre>
+			<code><mark>&lt;audio&gt;</mark> &lt;canvas&gt; <mark>&lt;img&gt;</mark></code>
+			<code>&lt;iframe&gt; &lt;embed&gt; &lt;math&gt;</code>
+			<code>&lt;object&gt; <mark>&lt;svg&gt;</mark> &lt;video&gt;</code>
+		</pre>
+		<p class="note">Элементы, встраивающие в документ стороннее содержимое.</p>
+	</div></section>
+	<section class="slide" id="Interactive"><div>
+		<h2>Интерактивные</h2>
+		<pre>
+			<code>&lt;a&gt; &lt;audio&gt; &lt;button&gt; <mark>&lt;details&gt;</mark> &lt;embed&gt;</code>
+			<code><mark>&lt;input&gt;</mark> &lt;iframe&gt; &lt;img&gt; &lt;keygen&gt; &lt;label&gt; &lt;menu&gt;</code>
+			<code>&lt;object&gt; &lt;select&gt; &lt;textarea&gt; <mark>&lt;video&gt;</mark></code>
+		</pre>
+		<p class="note">Элементы, предназначенные для взаимодействия с пользователем.</p>
+	</div></section>
+	<section class="slide shout" id="SectioningTitle"><div>
+		<h2>Структурные</h2>
+	</div></section>
+	<section class="slide" id="SectionDesc"><div>
+		<h2>Section</h2>
+		<ol>
+			<li>Структурный элемент <strong>самого высокого</strong> уровня;</li>
+			<li><em>Желательно</em> должен содержать заголовок;</li>
+			<li>Ближе <strong>к структуре</strong>, нежели к главному содержимому;</li>
+			<li>Для иных целей — элемент <code>&lt;div&gt;</code>.</li>
+		</ol>
+	</div></section>
+	<section class="slide" id="ArticleDesc"><div>
+		<h2>Article</h2>
+		<ol>
+			<li><strong>Независимое,</strong> самоценное содержимое;</li>
+			<li>Часто содержит шапку и подвал;</li>
+			<li>Более универсальный, может использовать <strong>на любых уровнях;</strong></li>
+			<li>Запись в блоге, отдельный комментарий, некоторый модуль.</li>
+		</ol>
+	</div></section>
+	<section class="slide" id="AsideDesc"><div>
+		<h2>Aside</h2>
+		<ol>
+			<li><strong>Вторичное</strong> содержимое, имеющее отношение к основному;</li>
+			<li>Как в контексте <code>&lt;article&gt;</code>, так и всего документа;</li>
+			<li><strong>Не только сайдбар,</strong> но и вторичная навигация и реклама.</li>
+		</ol>
+	</div></section>
+	<section class="slide" id="HeaderDesc"><div>
+		<h2>Header</h2>
+		<ol>
+			<li><strong>Универсальная</strong> шапка для содержимого;</li>
+			<li>Как в контексте отдельных блоков, так и <strong>всего документа;</strong></li>
+			<li>Содержит не только заголовки, <strong>но и другие</strong> необходимые элементы;</li>
+			<li><strong>Не только шапка сайта,</strong> но и любые другие.</li>
+		</ol>
+	</div></section>
+	<section class="slide" id="FooterDesc"><div>
+		<h2>Footer</h2>
+		<ol>
+			<li><strong>Подвал,</strong> следующий за основным содержимым блока;</li>
+			<li>Допольнительная <strong>мета-информация</strong> о содержимом;</li>
+			<li>Не только подвал сайта, <strong>но и любой другой;</strong></li>
+			<li><strong>Не обязательно</strong> в самом конце блока.</li>
+		</ol>
+	</div></section>
+	<section class="slide" id="NavDescOne"><div>
+		<h2>Меню</h2>
+		<pre>
+			<code><mark>&lt;nav class="menu"&gt;</mark></code>
+			<code>    &lt;ul&gt;</code>
+			<code>        &lt;li&gt;&lt;a href="#"&gt;<mark class="important">Главная</mark>&lt;/a&gt;&lt;/li&gt;</code>
+			<code>        &lt;li&gt;&lt;a href="#"&gt;<mark class="important">Каталог</mark>&lt;/a&gt;&lt;/li&gt;</code>
+			<code>        &lt;li&gt;&lt;a href="#"&gt;<mark class="important">О компании</mark>&lt;/a&gt;&lt;/li&gt;</code>
+			<code>    &lt;/ul&gt;</code>
+			<code><mark>&lt;/nav&gt;</mark></code>
+		</pre>
+	</div></section>
+	<section class="slide" id="NavDescTwo"><div>
+		<h2>Крошки</h2>
+		<pre>
+			<code><mark>&lt;nav class="pagination"&gt;</mark></code>
+			<code>    &lt;ul&gt;</code>
+			<code>        &lt;li&gt;&lt;a href="#"&gt;<mark class="important">Назад</mark>&lt;/a&gt;&lt;/li&gt;</code>
+			<code>        &lt;li&gt;&lt;a href="#"&gt;<mark class="important">1</mark>&lt;/a&gt;&lt;/li&gt;</code>
+			<code>        &lt;li&gt;&lt;a href="#"&gt;<mark class="important">2</mark>&lt;/a&gt;&lt;/li&gt;</code>
+			<code>    &lt;/ul&gt;</code>
+			<code><mark>&lt;/nav&gt;</mark></code>
+		</pre>
+	</div></section>
+	<section class="slide" id="NavDescThree"><div>
+		<h2>Содержание</h2>
+		<pre>
+			<code><mark>&lt;nav class="table-of-contents"&gt;</mark></code>
+			<code>    &lt;dl&gt;</code>
+			<code>        &lt;dt&gt;<mark class="important">Оглавление</mark>&lt;/dt&gt;     &lt;dd&gt;<mark class="important">стр. 1</mark>&lt;/dd&gt;</code>
+			<code>        &lt;dt&gt;<mark class="important">Глава первая</mark>&lt;/dt&gt;   &lt;dd&gt;<mark class="important">стр. 2</mark>&lt;/dd&gt;</code>
+			<code>        &lt;dt&gt;<mark class="important">Эпилог</mark>&lt;/dt&gt;         &lt;dd&gt;<mark class="important">стр. 3</mark>&lt;/dd&gt;</code>
+			<code>    &lt;/dl&gt;</code>
+			<code><mark>&lt;/nav&gt;</mark></code>
+		</pre>
+	</div></section>
+	<section class="slide shout" id="HeadingTitle"><div>
+		<h2>Заголовочные</h2>
+	</div></section>
+	<section class="slide" id="HeadingDescOne"><div>
+		<h2>Заголовочные</h2>
+		<pre>
+			<code>&lt;article&gt;</code>
+			<code>    <mark>&lt;h1&gt;</mark>Вёрстка со смыслом<mark>&lt;/h1&gt;</mark></code>
+			<code>    <mark>&lt;p&gt;</mark>Вадим Макеев, Opera Software<mark>&lt;/p&gt;</mark></code>
+			<code>&lt;/article&gt;</code>
+		</pre>
+	</div></section>
+	<section class="slide" id="HeadingDescTwo"><div>
+		<h2>Заголовочные</h2>
+		<pre>
+			<code>&lt;article&gt;</code>
+			<code>    <mark>&lt;header&gt;</mark></code>
+			<code>        &lt;h1&gt;Вёрстка со смыслом&lt;/h1&gt;</code>
+			<code>        &lt;p&gt;Вадим Макеев, Opera Software&lt;/p&gt;</code>
+			<code>    <mark>&lt;/header&gt;</mark></code>
+			<code>&lt;/article&gt;</code>
+		</pre>
+	</div></section>
+	<section class="slide" id="HeadingDescThree"><div>
+		<h2>Заголовочные</h2>
+		<pre>
+			<code>&lt;article&gt;</code>
+			<code>    &lt;header&gt;</code>
+			<code>        <mark>&lt;h1&gt;</mark>Вёрстка со смыслом<mark>&lt;/h1&gt;</mark></code>
+			<code>        <mark>&lt;h2&gt;</mark>Новая семантика HTML5<mark>&lt;/h2&gt;</mark></code>
+			<code>        &lt;p&gt;Вадим Макеев, Opera Software&lt;/p&gt;</code>
+			<code>    &lt;/header&gt;</code>
+			<code>&lt;/article&gt;</code>
+		</pre>
+	</div></section>
+	<section class="slide" id="HeadingDescFour"><div>
+		<h2>Заголовочные</h2>
+		<pre>
+			<code>&lt;header&gt;</code>
+			<code>    <mark>&lt;hgroup&gt;</mark></code>
+			<code>        &lt;h1&gt;Вёрстка со смыслом&lt;/h1&gt;</code>
+			<code>        &lt;h2&gt;Новая семантика HTML5&lt;/h2&gt;</code>
+			<code>    <mark>&lt;/hgroup&gt;</mark></code>
+			<code>    &lt;p&gt;Вадим Макеев, Opera Software&lt;/p&gt;</code>
+			<code>&lt;/header&gt;</code>
+		</pre>
+	</div></section>
+	<section class="slide shout" id="PhrasingTitle"><div>
+		<h2>Текстовые</h2>
+	</div></section>
+	<section class="slide cover" id="FigureOne"><div>
+		<img src="pictures/figure.jpg" alt="Figure">
+	</div></section>
+	<section class="slide" id="FigureDescOne"><div>
+		<h2>Figure</h2>
+		<pre>
+			<code><mark>&lt;figure&gt;</mark></code>
+			<code>    &lt;img src="<mark class="important">001.jpg</mark>" alt="Mmm, icicle"&gt;</code>
+			<code><mark>&lt;/figure&gt;</mark></code>
+		</pre>
+		<p class="note">Дополнительное содержимое в текстовом потоке.</p>
+	</div></section>
+	<section class="slide cover" id="FigureTwo"><div>
+		<img src="pictures/figure-closer.jpg" alt="Figure">
+	</div></section>
+	<section class="slide" id="FigureDescTwo"><div>
+		<h2>Figure</h2>
+		<pre>
+			<code>&lt;figure&gt;</code>
+			<code>    &lt;img src="<mark class="important">001.jpg</mark>" alt="Mmm, icicle"&gt;</code>
+			<code>    <mark>&lt;figcaption&gt;</mark></code>
+			<code>        Mmm, icicle… By pepelsbey</code>
+			<code>    <mark>&lt;/figcaption&gt;</mark></code>
+			<code>&lt;/figure&gt;</code>
+		</pre>
+	</div></section>
+	<section class="slide" id="FigureDescThree"><div>
+		<h2>Figure</h2>
+		<pre>
+			<code><mark>&lt;figure&gt;</mark></code>
+			<code>    &lt;img src="<mark class="important">001.jpg</mark>" alt="Mmm, icicle"&gt;</code>
+			<code>    &lt;img src="<mark class="important">002.jpg</mark>" alt="Oh, another one"&gt;</code>
+			<code>    &lt;img src="<mark class="important">003.jpg</mark>" alt="Delicious!"&gt;</code>
+			<code>    <mark>&lt;figcaption&gt;</mark>So many icicles!<mark>&lt;/figcaption&gt;</mark></code>
+			<code><mark>&lt;/figure&gt;</mark></code>
+		</pre>
+	</div></section>
+	<section class="slide" id="FigureDescFour"><div>
+		<h2>Figure</h2>
+		<pre>
+			<code>&lt;figure&gt;</code>
+			<code>    <mark>&lt;blockquote&gt;</mark></code>
+			<code>        &lt;p&gt;Зомби зомби зомби.&lt;/p&gt;</code>
+			<code>    <mark>&lt;/blockquote&gt;</mark></code>
+			<code>    <mark>&lt;figcaption&gt;</mark>Народная мудрость<mark>&lt;/figcaption&gt;</mark></code>
+			<code>&lt;/figure&gt;</code>
+		</pre>
+	</div></section>
+	<section class="slide" id="Italic"><div>
+		<h2>Italic</h2>
+		<blockquote>
+			<p>Элемент <code>&lt;i&gt;</code> представляет собой фрагмент текста с дополнительным выделением или же экспрессивно-эмоциональным сдвигом относительно обычного текста — то, что обычно обозначается курсивом в типографике.</p>
+		</blockquote>
+	</div></section>
+	<section class="slide" id="Bold"><div>
+		<h2>Bold</h2>
+		<blockquote>
+			<p>Элемент <code>&lt;b&gt;</code> представляет собой фрагмент текста, который выделяется из окружающего его контекста, но не передает никакого особого значения и по правилам типографики обычно выделяется полужирным начертанием.</p>
+		</blockquote>
+	</div></section>
+	<section class="slide" id="ItalicAndBold"><div>
+		<h2>Italic и Bold</h2>
+		<p><i class="taxonomy">Nanotyrannus</i> («карликовый тиран») принадлежит к семейству тиранозавров, и, возможно, является юной особью <i class="taxonomy">тиранозавра</i>. Его череп был найден <b>Чарльзом Гилмором</b> в 1942-м году. Гилмор обозначил его как представителя нового вида <i class="taxonomy">Gorgosaurus lancensis</i>.</p>
+	</div></section>
+	<section class="slide" id="ItalicAndBoldCode"><div>
+		<h2>Italic и Bold</h2>
+		<p><code>&lt;i class="taxonomy"&gt;</code>Nanotyrannus<code>&lt;/i&gt;</code> («карликовый тиран») принадлежит к семейству тиранозавров, и, возможно, является юной особью <code>&lt;i class="taxonomy"&gt;</code>тиранозавра<code>&lt;/i&gt;</code>. Его череп был найден <code>&lt;b&gt;</code>Чарльзом Гилмором<code>&lt;/b&gt;</code> в 1942-м году. Гилмор обозначил его как представителя нового вида <code>&lt;i class="taxonomy"&gt;</code>Gorgosaurus lancensis<code>&lt;/i&gt;</code>.</p>
+	</div></section>
+	<section class="slide cover" id="EmphasisOne"><div>
+		<img src="pictures/emphasis-one.png" alt="Быстро!">
+	</div></section>
+	<section class="slide cover" id="EmphasisTwo"><div>
+		<img src="pictures/emphasis-two.png" alt="Доктора!">
+	</div></section>
+	<section class="slide" id="EmphasisCode"><div>
+		<h2>Emphasis</h2>
+		<pre>
+			<code>&lt;p&gt;</code>
+			<code>    <mark>&lt;em&gt;</mark>Быстро<mark>&lt;/em&gt;</mark> позови доктора!</code>
+			<code>    Быстро позови <mark>&lt;em&gt;</mark>доктора!<mark>&lt;/em&gt;</mark></code>
+			<code>&lt;/p&gt;</code>
+		</pre>
+	</div></section>
+	<section class="slide cover" id="Danger"><div>
+		<img src="pictures/danger.png" alt="Граждане!">
+	</div></section>
+	<section class="slide" id="DangerCode"><div>
+		<h2>Strong</h2>
+		<pre>
+			<code>&lt;p&gt;</code>
+			<code>    <mark>&lt;strong&gt;</mark>Граждане!<mark>&lt;/strong&gt;</mark></code>
+			<code>    При В.И. Матвиенко</code>
+			<code>    любая сторона улицы</code>
+			<code>    <mark>&lt;strong&gt;</mark>опасна для жизни!<mark>&lt;/strong&gt;</mark></code>
+			<code>&lt;/p&gt;</code>
+		</pre>
+	</div></section>
+	<section class="slide cover" id="Chase"><div>
+		<h2>Бесконечная погоня</h2>
+		<img src="pictures/chase.jpg" alt="Погоня">
+	</div></section>
+	<section class="slide cover" id="IE"><div>
+		<h2>Internet Explorer</h2>
+		<img src="pictures/ie.jpg" alt="Internet Explorer">
+	</div></section>
+	<section class="slide" id="IECC"><div>
+		<h2>Internet Explorer</h2>
+		<pre>
+			<code><mark>&lt;!--[if lt IE 9]&gt;</mark></code>
+			<code>    &lt;script src="<mark class="important">html5.js</mark>"&gt;&lt;/script&gt;</code>
+			<code><mark>&lt;![endif]--&gt;</mark></code>
+		</pre>
+		<p>Решение: <a href="http://p.ya.ru/media/html5.js">p.ya.ru/media/html5.js</a></p>
+	</div></section>
+	<section class="slide" id="More"><div>
+		<h2>Что дальше?</h2>
+		<ul>
+			<li>Спецификация: <a href="http://www.w3.org/TR/html5/" target="_blank">w3.org/TR/html5</a></li>
+			<li>HTML5 Doctor: <a href="http://html5doctor.com/" target="_blank">html5doctor.com</a></li>
+			<li>Веб-стандарты: <a href="http://web-standards.ru/" target="_blank">web-standards.ru</a></li>
+		</ul>
+	</div></section>
+	<section class="slide" id="ThankYou"><div>
+		<h2>Вёрстка со смыслом</h2>
+		<p>Вадим Макеев, Opera Software</p>
+		<ul>
+			<li><a href="http://pepelsbey.net">pepelsbey.net</a></li>
+			<li><a href="https://twitter.com/pepelsbey">twitter.com/pepelsbey</a></li>
+			<li><a href="mailto:pepelsbey@opera.com">pepelsbey@opera.com</a></li>
+		</ul>
+		<p>Презентация: <a href="http://pepelsbey.net/pres/sense-coding/">pepelsbey.net/pres/sense-coding</a></p>
+	</div></section>
+	<p class="badge"><a href="https://github.com/shower/shower">Powered by Shower</a></p>
+	<div class="progress"><div></div></div>
+	<script src="shower/shower.min.js"></script>
+	<!-- Copyright © 2010–2014 Vadim Makeev — pepelsbey.net -->
+</body>
+</html>

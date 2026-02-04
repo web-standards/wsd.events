@@ -1,0 +1,59 @@
+.widget-control-widget{
+  position:absolute;
+  z-index:10;
+  top:13px;
+  right:10px;
+  }
+  .widget-control-widget li{
+    float:left;
+    margin:0 4px 0 0;
+    }
+  .widget-control-widget .configure{
+    padding:1px;
+    }
+    .widget-control-widget .configure a{
+      width:15px;
+      height:19px;
+      display:block;
+      overflow:hidden;
+      float:left;
+      position:relative;
+      text-indent:-9000px;
+      background:url("../img/configure.gif") 100% 0 no-repeat;
+      }
+      .widget-control-widget .configure a:hover{
+        text-indent:0;
+        margin:-1px -1px 0 0;
+        overflow:visible;
+        width:auto;
+        height:20px;
+        text-transform:uppercase;
+        color:#000;
+        -webkit-text-shadow:0 1px 0 #fff;
+        -moz-text-shadow:0 1px 0 #fff;
+        -o-text-shadow:0 1px 0 #fff;
+        text-shadow:0 1px 0 #fff;
+        font: normal 10px/20px 'PT Sans',Arial,sans-serif;
+        border-color:#efefef #b0b0b0 #828282;
+        border:1px solid;
+        background-position:100% -20px;
+        padding:0 20px 0 5px;
+        }
+        .widget-control-widget .configure a:active{
+          background-position:100% -40px;
+          border-color:#333333 #676767 #dbdbdb;
+          border:1px solid;
+          }
+  .widget-control-widget .remove a{
+    width:15px;
+    height:20px;
+    text-indent:-9000px;
+    overflow:hidden;
+    display:block;
+    float:left;
+    position:relative;
+    background:url("../img/remove.gif") 0 0 no-repeat;
+    }
+    .widget-control-widget .remove a:hover{
+      background:url("../img/remove.gif") 0 -21px no-repeat;
+      }

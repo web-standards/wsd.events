@@ -1,0 +1,25 @@
+.message-widget{
+	display:none;
+	position:fixed;
+	top:50%;
+	left:50%;
+	margin:-24px 0 0 -250px;
+	padding:18px;
+	width:500px;
+	zoom:1;
+	box-shadow:0 0 100px 0 rgba(0,0,0,.3), 1px 1px 0 0 rgba(0,0,0,.12);
+	background: #fff url("../img/form-bg.png") 100% 0 repeat-y;
+	z-index:12000;
+
+	border-top-right-radius:5px;
+	border-bottom-right-radius:5px;
+	}
+	.message-widget p{
+		font:18px/24px 'Marmelad', Arial, "Helvetica Neue", Helvetica, sans-serif;
+		overflow:hidden;
+		}
+	.message-widget .ok{
+		float:right;
+		width:100px;
+		margin:0 0 0 10px;
+		}

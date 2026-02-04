@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html lang="ru-RU">
+<head>
+	<title>SVG + Media Queries. Растр</title>
+	<meta charset="UTF-8">
+	<style type="text/css">
+		* {
+			padding:0;
+			margin:0;
+			}
+		ARTICLE {
+			position:absolute;
+			top:50%;
+			left:50%;
+			overflow:hidden;
+			margin:-280px 0 0 -500px;
+			width:1000px;
+			height:512px;
+			text-align:center;
+			}
+			ARTICLE IMG {
+				vertical-align:bottom;
+				}
+	</style>
+</head>
+<body>
+	<article>
+		<img src="icon.svg" width="512" height="512" alt="512 × 512">
+		<img src="icon.svg" width="256" height="256" alt="256 × 256">
+		<img src="icon.svg" width="128" height="128" alt="128 × 128">
+		<img src="icon.svg" width="32"  height="32"  alt="32 × 32">
+		<img src="icon.svg" width="16"  height="16"  alt="16 × 16">
+	</article>
+</body>
+</html>

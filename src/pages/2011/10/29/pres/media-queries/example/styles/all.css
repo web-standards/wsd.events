@@ -1,0 +1,365 @@
+/* Global rules: reset */
+@import url('reset.css');
+
+/* Global rules: fonts */
+@import url('fonts.css');
+
+/* Global rules for all media types by default (including old browsers) */
+@media all {
+	/* Common settings */
+	span {
+		white-space: nowrap;
+		}
+	abbr {
+		border-bottom: dotted .1em;
+		}
+	code {
+		font-family: Consolas, monospace;
+		}
+	strong {
+		font-weight: bold;
+		}
+	em, mark {
+		font-style: italic;
+		}
+
+	/* General content styling */
+	.general {
+		line-height: 1.5em;
+		}
+	.general h1, .general h2, .general h3, .general h4 {
+		margin: 1.5em 0 .5em;
+		font-weight: bold;
+		}
+	.general h1:first-child, .general h2:first-child, .general h3:first-child, .general h4:first-child {
+		margin-top: 0;
+		}
+	.general h1 {
+		font-size: 1.6em;
+		}
+	.general h2 {
+		font-size: 1.4em;
+		}
+	.general h3 {
+		font-size: 1.2em;
+		}
+	.general h4 {
+		font-size: 1em;
+		}
+	.general p {
+		margin-bottom: 1em;
+		}
+	.general ul, .general ol {
+		margin-left: 1.5em;
+		}
+	.general ul {
+		list-style-type: disc;
+		}
+	.general ol {
+		list-style-type: decimal;
+		}
+	.general ul li, .general ol li {
+		margin-bottom: 1em;
+		}
+	.general li > ul, .general li > ol {
+		margin-top: 1em;
+		}
+	.general pre {
+		margin-bottom: 1em;
+		padding: 1em;
+		border-radius: 1em;
+		white-space: normal;
+		}
+	.general pre code {
+		display: block;
+		white-space: pre-wrap;
+		}
+	.general table {
+		margin-bottom: 1em;
+		}
+	.general th {
+		font-weight: bold;
+		}
+	.general th, .general td {
+		padding: .25em .5em;
+		text-align: left;
+		vertical-align: top;
+		}
+	.general figure {
+		margin-bottom: 1em;
+		}
+	}
+
+/* Rules for the 'screen' media type by default (including old browsers) */
+@media screen {
+	/* Common settings */
+	body {
+		color: #000;
+		background: #ccc;
+		font-family: "PT Sans", "Trebuchet MS", Arial, Helvetica, sans-serif;
+		font-size: 16px;
+		}
+	a, a:link {
+		color: #009;
+		text-decoration: underline;
+		}
+	a:visited {
+		color: #969;
+		}
+	a:hover {
+		text-decoration: none;
+		}
+	a:active {
+		color: #900;
+		}
+
+	/* Layout */
+	#page-wrapper {
+		width: 90%;
+		min-width: 880px;
+		max-width: 1400px;
+		margin: 20px auto;
+		border-radius: 20px;
+		box-shadow: rgba(0, 0, 0, .3) 0 0 2px 2px;
+		background: #fff;
+		}
+	#page-title {
+		position: relative;
+		z-index: 2;
+		padding: 40px 20px 20px;
+		border-radius: 20px 20px 0 0; 
+		box-shadow: rgba(0, 0, 0, .3) 0 5px 5px;
+		font-family: "PT Sans Narrow", "Arial Narrow", "Helvetica Narrow", "Trebuchet MS", Arial, Helvetica, sans-serif;
+		font-size: 3em;
+		font-weight: bold;
+		line-height: 1em;
+		color: #fc0;
+		text-shadow: 2px 2px 3px rgba(0, 0, 0, .7);
+		background-color: #900;
+		background-image: -moz-linear-gradient(#600, #c00);
+		background-image: -webkit-linear-gradient(#600, #c00);
+		background-image: -o-linear-gradient(#600, #c00);
+		background-image: linear-gradient(#600, #c00);
+		}
+	#menu-wrapper {
+		float: left;
+		width: 20%;
+		}
+	#menu {
+		padding: 20px;
+		line-height: 1.2em;
+		}
+	#menu li {
+		margin-bottom: 1em;
+		padding: 0 1em .5em 0;
+		border-radius: 0 0 1em 0;
+		background-image: -moz-radial-gradient(bottom right, farthest-side, #e6e6e6, #fff);
+		background-image: -webkit-radial-gradient(bottom right, farthest-side, #e6e6e6, #fff);
+		background-image: -o-linear-gradient(#fff, #e6e6e6);
+		background-image: radial-gradient(bottom right, farthest-side, #e6e6e6, #fff);
+		}
+	#menu li:before {
+		content: '\25ba\00a0';
+		color: #f60;
+		}
+	#main-wrapper {
+		float: left;
+		width: 50%;
+		}
+	#main {
+		padding: 20px;
+		}
+	#incut-wrapper {
+		float: left;
+		width: 30%;
+		}
+	#incut {
+		padding: 20px;
+		border: solid #ccc;
+		border-width: 0 0 2px 2px;
+		border-radius: 0 0 0 20px;
+		background: #f0f0f0;
+		}
+	#copyright {
+		clear: both;
+		padding: 20px;
+		border-top: solid 2px #ccc;
+		border-radius: 0 0 20px 20px;
+		font-size: .8em;
+		background-color: #f0f0f0;
+		background-image: -moz-linear-gradient(#e6e6e6, #fff);
+		background-image: -webkit-linear-gradient(#e6e6e6, #fff);
+		background-image: -o-linear-gradient(#e6e6e6, #fff);
+		background-image: linear-gradient(#e6e6e6, #fff);
+		}
+
+	/* General content styling */
+	.general h1, .general h2, .general h3, .general h4 {
+		color: #900;
+		}
+	.general code {
+		padding: 0 .3em;
+		background: #f0f0f0;
+		border-radius: .3em;
+		}
+	.general pre {
+		border: solid 2px #ccc;
+		background-image: -moz-linear-gradient(#fff 75%, #f0f0f0 100%);
+		background-image: -webkit-linear-gradient(#fff 75%, #f0f0f0 100%);
+		background-image: -o-linear-gradient(#fff 75%, #f0f0f0 100%);
+		background-image: linear-gradient(#fff 75%, #f0f0f0 100%);
+		}
+	.general pre code {
+		padding: 0;
+		background: none;
+		}
+	.general table, .general th, .general td {
+		border: solid 1px #ccc;
+		}
+	.general th {
+		background: #f0f0f0;
+		}
+	.general th code {
+		background: #ccc;
+		}
+
+	/* Some special rules */
+	#incut code {
+		background: #e1e1e1;
+		}
+	}
+
+/* Rules for the 'print' media type by default (including old browsers) */
+@media print {
+	/* Common settings */
+	body {
+		color: #000;
+		font-family: "PT Serif", Georgia, "Times New Roman", Times, serif;
+		font-size: 12pt;
+		}
+	h1, h2, h3, h4 {
+		font-family: "PT Sans", "Trebuchet MS", Arial, Helvetica, sans-serif;
+	}
+	a, a:link, a:visited {
+		color: #000;
+		text-decoration: underline;
+		}
+
+	/* Layout */
+	#page-title {
+		padding-bottom: .3em;
+		border-bottom: solid 1pt #000;
+		font-family: "PT Sans Narrow", "Arial Narrow", "Helvetica Narrow", "Trebuchet MS", Arial, Helvetica, sans-serif;
+		font-size: 3em;
+		font-weight: bold;
+		line-height: 1em;
+		}
+	#menu-wrapper {
+		display: none;
+		}
+	#main {
+		padding: 1em 0;
+		}
+	#incut {
+		padding: 1em;
+		margin-bottom: 1em;
+		border: dotted 1pt #000;
+		}
+	#copyright {
+		padding-top: 1em;
+		border-top: solid 1pt #000;
+		}
+
+	/* General content styling */
+	.general pre {
+		border: solid 1pt #000;
+		}
+	.general table, .general th, .general td {
+		border: solid 1pt #000;
+		}
+	}
+
+/* Bonus Track. Media Queries */
+
+/* Rules for extra wide screens - 1280 pixels and more */
+@media only screen and (min-width: 1280px) {
+	/* Common settings */
+	body {
+		font-size: 20px;
+		}
+	}
+
+/* Rules for 801-1024 pixels wide screens */
+@media only screen and (min-width: 801px) and (max-width: 1024px), only handheld and (min-width: 801px) and (max-width: 1024px) {
+	/* Layout */
+	#page-wrapper {
+		min-width: 0;
+		}
+	#menu-wrapper {
+		float: left;
+		width: 30%;
+		}
+	#main-wrapper {
+		float: left;
+		width: 70%;
+		}
+	#incut-wrapper {
+		float: none;
+		clear: both;
+		width: 70%;
+		margin-left: 30%;
+		}
+	#incut {
+		margin: 0 20px 20px;
+		border-width: 2px;
+		border-radius: 20px;
+		}
+	}
+
+/* Rules for narrow screens - less than 800 pixels */
+@media only screen and (max-width: 800px), only handheld and (max-width: 800px) {
+	/* Common settings */
+	body {
+		font-size: 12px;
+		}
+
+	/* Layout */
+	#page-wrapper {
+		min-width: 0;
+		border-radius: 15px; 
+		}
+	#page-title {
+		padding: 30px 15px 15px;
+		border-radius: 15px 15px 0 0; 
+		font-size: 2em;
+		}
+	#menu-wrapper, #main-wrapper, #incut-wrapper {
+		float: none;
+		width: 100%;
+		}
+	#menu {
+		padding: 15px 15px 0;
+		}
+	#menu li {
+		margin-bottom: .5em;
+		}
+	#main {
+		padding: 15px;
+		}
+	#incut {
+		margin: 0 15px 15px;
+		padding: 15px;
+		border-width: 1px;
+		border-radius: 15px;
+		}
+	#copyright {
+		padding: 15px;
+		border-top: solid 1px #ccc;
+		border-radius: 0 0 15px 15px;
+		}
+
+	/* General content styling */
+	.general pre {
+		border: solid 1px #ccc;
+		}
+	}
