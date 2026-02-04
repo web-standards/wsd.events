@@ -1,5 +1,4 @@
 # Web Standards Days
-[![](https://github.com/web-standards-ru/wsd.events/workflows/Deploy/badge.svg)](https://github.com/web-standards-ru/wsd.events/actions?query=workflow%3ADeploy)
 
 ## Установка и запуск окружения
 
