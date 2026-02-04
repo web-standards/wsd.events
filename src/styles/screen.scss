@@ -2,7 +2,15 @@
 // Screen
 // ------------------------------------------------------------------
 
-@import '../../node_modules/sass-mq/mq';
+@use 'sass:math';
+
+@use '../../node_modules/sass-mq/mq' as * with (
+	$breakpoints: (
+		palm: 480px,
+		lap: 768px,
+		desk: 1024px
+	)
+);
 
 @import
 	'defaults',

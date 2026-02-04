@@ -1,19 +1,26 @@
-const autoprefixer = require('autoprefixer');
-const csso = require('gulp-csso');
-const del = require('del');
-const gulp = require('gulp');
-const htmlmin = require('gulp-htmlmin');
-const paths = require('vinyl-paths');
-const postcss = require('gulp-postcss');
-const rename = require('gulp-rename');
-const replace = require('gulp-replace');
-const revision = require('gulp-rev-replace');
-const resize = require('gulp-responsive');
-const rev = require('gulp-rev');
-const sass = require('gulp-sass');
-const svg = require('postcss-inline-svg');
-const sync = require('browser-sync').create();
-const uglify = require('gulp-uglify');
+import autoprefixer from 'autoprefixer';
+import csso from 'gulp-csso';
+import { deleteAsync } from 'del';
+import gulp from 'gulp';
+import htmlmin from 'gulp-htmlmin';
+import vinylPaths from 'vinyl-paths';
+import postcss from 'gulp-postcss';
+import rename from 'gulp-rename';
+import replace from 'gulp-replace';
+import revision from 'gulp-rev-replace';
+import rev from 'gulp-rev';
+import gulpSass from 'gulp-sass';
+import * as sassCompiler from 'sass';
+import svg from 'postcss-inline-svg';
+import browserSync from 'browser-sync';
+import uglify from 'gulp-uglify';
+import sharp from 'sharp';
+import { promises as fs } from 'fs';
+import path from 'path';
+import { glob } from 'glob';
+
+const sass = gulpSass(sassCompiler);
+const sync = browserSync.create();
 
 // HTML
 
@@ -65,23 +72,35 @@ gulp.task('scripts', () => {
 
 // Images
 
-gulp.task('images:resize', () => {
-	return gulp.src('src/assets/speakers/*.jpeg')
-		.pipe(resize({
-			'*': [{
-				width: 256, rename: { dirname: '256' }
-			}, {
-				width: 192, rename: { dirname: '192' }
-			}, {
-				width: 128, rename: { dirname: '128' }
-			}]
-		}, {
-			quality: 70,
-			silent: true,
-			errorOnEnlargement: false
-		}))
-		.pipe(gulp.dest('dist/speakers'));
-});
+async function resizeImages() {
+	const sizes = [256, 192, 128];
+	const quality = 70;
+	const srcPattern = 'src/assets/speakers/*.jpeg';
+	const destBase = 'dist/speakers';
+
+	const files = await glob(srcPattern);
+
+	for (const size of sizes) {
+		const destDir = path.join(destBase, String(size));
+		await fs.mkdir(destDir, { recursive: true });
+	}
+
+	const promises = files.map(async (file) => {
+		const filename = path.basename(file);
+
+		for (const size of sizes) {
+			const destPath = path.join(destBase, String(size), filename);
+			await sharp(file)
+				.resize(size, null, { withoutEnlargement: true })
+				.jpeg({ quality })
+				.toFile(destPath);
+		}
+	});
+
+	await Promise.all(promises);
+}
+
+gulp.task('images:resize', resizeImages);
 
 gulp.task('images:replace', () => {
 	return gulp.src('dist/**/index.html')
@@ -110,7 +129,7 @@ gulp.task('cache:hash', () => {
 		], {
 			base: 'dist'
 		})
-		.pipe(paths(del))
+		.pipe(vinylPaths(deleteAsync))
 		.pipe(rev())
 		.pipe(gulp.dest('dist'))
 		.pipe(rev.manifest())
@@ -120,7 +139,7 @@ gulp.task('cache:hash', () => {
 gulp.task('cache:replace', () => {
 	return gulp.src('dist/**/*.html')
 		.pipe(revision({
-			manifest: gulp.src('dist/rev-manifest.json').pipe(paths(del))
+			manifest: gulp.src('dist/rev-manifest.json').pipe(vinylPaths(deleteAsync))
 		}))
 		.pipe(gulp.dest('dist'));
 });
@@ -133,7 +152,7 @@ gulp.task('cache', gulp.series(
 // Clean
 
 gulp.task('clean', () => {
-	return del('dist/**');
+	return deleteAsync('dist/**');
 });
 
 // Copy
