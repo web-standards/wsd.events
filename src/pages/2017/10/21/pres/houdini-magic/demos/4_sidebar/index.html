@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<style>
+    :root {
+        --sidebar-width: 400px;
+    }
+
+    body {
+        --border-radius: 3px;
+        margin: 0;
+        transition: --sidebar-width 1s;
+    }
+
+    body.opened {
+        --sidebar-width: 80px;
+    }
+
+    .container {
+        width: 100%;
+        display: block;
+        position: relative;
+    }
+
+    .content {
+        font-size: 0.1px;
+        box-sizing: border-box;
+        background-color: #888;
+        width: 100%;
+        min-height: 100vh;
+        padding: 20px;
+        padding-right: calc(var(--sidebar-width) + 20px);
+    }
+
+    .header {
+        display: block;
+        width: 100%;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: var(--border-radius);
+        margin-bottom: 40px;
+    }
+
+    .image {
+        display: inline-block;
+        float: left;
+        width: 300px;
+        height: 380px;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: var(--border-radius);
+        margin-bottom: 20px;
+        margin-right: 20px;
+    }
+
+    .line {
+        display: inline-block;
+        width: calc(100% - 320px);
+        height: 20px;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: var(--border-radius);
+        margin-bottom: 20px;
+    }
+
+    .line-break {
+        margin-bottom: 60px;
+    }
+
+    .line-full {
+        width: 100%;
+    }
+
+    .sidebar {
+        box-sizing: border-box;
+        background-color: #333;
+        width: var(--sidebar-width);
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: 0;
+        padding: 20px;
+    }
+
+    .circle {
+        display: block;
+        width: 40px;
+        height: 40px;
+        margin-bottom: 40px;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    .circle:hover {
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+
+    .block {
+        display: block;
+        width: 100%;
+        height: 20px;
+        background-color: rgba(255, 255, 255, 0.3);
+        margin-bottom: 20px;
+        border-radius: var(--border-radius);
+    }
+
+    .button {
+        height: 40px;
+        font-size: 20px;
+        line-height: 20px;
+        color: white;
+        cursor: pointer;
+    }
+
+</style>
+
+<div class="container">
+    <div class="content">
+        <div class="header"></div>
+        <div class="text">
+            <div class="image"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line line-break"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line line-full"></div>
+            <div class="line line-full line-break"></div>
+            <div class="line line-full"></div>
+            <div class="line line-full"></div>
+            <div class="line line-full"></div>
+            <div class="line line-full line-break"></div>
+            <div class="line line-full"></div>
+            <div class="line line-full"></div>
+            <div class="line line-full"></div>
+            <div class="line line-full"></div>
+            <div class="line line-full"></div>
+            <div class="line line-full"></div>
+        </div>
+    </div>
+    <div class="sidebar">
+        <div class="circle"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <button class="block button">R</button>
+    </div>
+</div>
+
+<script>
+    const button = document.querySelector('.button');
+    button.addEventListener('click', function buttonClick() {
+        CSS.registerProperty({
+            name: '--sidebar-width',
+            syntax: '<length>',
+            initialValue: '80px',
+            inherits: true,
+        });
+        button.removeEventListener('click', buttonClick);
+    });
+
+    let isOpened = false;
+    const setOpened = (isOpened) => {
+        if (isOpened) {
+            document.body.classList.remove('opened');
+        } else {
+            document.body.classList.add('opened')
+        }
+    };
+
+    document.querySelector('.circle').addEventListener('click', (e) => {
+        isOpened = !isOpened;
+        setOpened(isOpened);
+    });
+
+    setOpened(isOpened);
+</script>

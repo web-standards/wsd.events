@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<svg width="300" height="420" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
+ <defs>
+  <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" se_type="rightarrow" orient="auto" markerUnits="strokeWidth" id="se_marker_end_svg_1">
+   <path stroke-width="10" stroke="#1d4677" fill="#1d4677" d="m100,50l-100,40l30,-40l-30,-40z"/>
+  </marker>
+  <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" se_type="rightarrow" orient="auto" markerUnits="strokeWidth" id="se_marker_end_svg_3">
+   <path stroke-width="10" stroke="#8e6c16" fill="#8e6c16" d="m100,50l-100,40l30,-40l-30,-40z"/>
+  </marker>
+  <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" se_type="leftarrow" orient="auto" markerUnits="strokeWidth" id="se_marker_start_svg_4">
+   <path stroke-width="10" stroke="#1a5393" fill="#1a5393" d="m0,50l100,40l-30,-40l30,-40z"/>
+  </marker>
+  <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" se_type="leftarrow" orient="auto" markerUnits="strokeWidth" id="se_marker_start_svg_7">
+   <path stroke-width="10" stroke="#7a5912" fill="#7a5912" d="m0,50l100,40l-30,-40l30,-40z"/>
+  </marker>
+  <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" se_type="verticalslash" orient="auto" markerUnits="strokeWidth" id="se_marker_end_svg_15">
+   <path stroke-width="10" stroke="#a31616" fill="#a31616" d="m50,0l0,100"/>
+  </marker>
+  <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" se_type="verticalslash" orient="auto" markerUnits="strokeWidth" id="se_marker_start_svg_15">
+   <path stroke-width="10" stroke="#a31616" fill="#a31616" d="m50,0l0,100"/>
+  </marker>
+ </defs>
+ <g>
+  <title>Layer 1</title>
+  <line id="svg_5" y2="375.298143" x2="21" y1="28" x1="21" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="2" stroke="#000000" fill="none"/>
+  <line id="svg_3" stroke="#8e6c16" marker-end="url(#se_marker_end_svg_3)" y2="176.000002" x2="250.000001" y1="94" x1="22.000006" stroke-width="3" fill="none"/>
+  <line stroke="#1d4677" marker-end="url(#se_marker_end_svg_1)" id="svg_1" y2="136.000002" x2="249.000001" y1="54" x1="21.000006" stroke-width="3" fill="none"/>
+  <text transform="rotate(20.0952 142 85.5)" xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="16" id="svg_8" y="91" x="142" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" stroke="#000000" fill="#000000">GET /foo</text>
+  <line stroke="#1a5393" marker-start="url(#se_marker_start_svg_4)" id="svg_4" y2="259.999998" x2="254.999997" y1="320.000001" x1="30" stroke-width="3" fill="none"/>
+  <line id="svg_6" y2="377.649064" x2="256" y1="30.350922" x1="256" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="2" stroke="#000000" fill="none"/>
+  <line id="svg_7" stroke="#7a5912" marker-start="url(#se_marker_start_svg_7)" y2="296.999998" x2="255.499997" y1="357.000001" x1="30.5" stroke-width="3" fill="none"/>
+  <text id="svg_9" transform="rotate(20.0952 136 122.5)" xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="16" y="128" x="136" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" stroke="#000000" fill="#000000">GET /bar</text>
+  <text transform="rotate(-14.4703 137 279.5)" xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="16" id="svg_10" y="285" x="137" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" stroke="#000000" fill="#000000">200 OK</text>
+  <text style="cursor: move; " id="svg_11" transform="rotate(-14.4703 140 315.5)" xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="16" y="321" x="140" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" stroke="#000000" fill="#000000">200 OK</text>
+  <line marker-start="url(#se_marker_start_svg_15)" marker-end="url(#se_marker_end_svg_15)" id="svg_15" y2="260.055537" x2="280" y1="179" x1="280" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="4" stroke="#a31616" fill="none">200 OK</line>
+ </g>
+</svg>

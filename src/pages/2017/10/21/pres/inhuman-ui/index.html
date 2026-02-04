@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Людоедский интерфейс — Пепелсбей.net</title>
+	<meta charset="utf-8">
+	<meta name="description" content="Ак-се-си-би-ли-ти? Ха-ха, иди уже работай, заботливый ты наш.">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
+	<style>
+		/* Cell */
+
+		.cell {
+			position: absolute;
+			top: 106px;
+			right: 100px;
+			bottom: 106px;
+			left: 100px;
+		}
+
+		/* Large */
+
+		.large {
+			line-height: 1.5;
+			font-size: 50px;
+		}
+
+		/* Link */
+
+		.link {
+			line-height: 1.2;
+			font-weight: bold;
+			font-size: 3em;
+            font-family: PT Sans Narrow, sans-serif;
+		}
+
+		.link:focus {
+			outline: none;
+            border-radius: 0.1em;
+            box-shadow:
+                0 0 0 0.1em #fff,
+                0 0 0 0.2em #c2e0fe;
+        }
+
+		/* Button */
+
+		.button {
+			display: inline-block;
+            padding: 0.5em 1em 0.55em;
+            border-radius: 2em;
+            border: 0.15em solid #aaaaaa;
+            background: linear-gradient(#fefefe, #cccccc);
+            color: #585a5e;
+			line-height: 1;
+			font-weight: bold;
+			font-size: 3em;
+            font-family: PT Sans Narrow, sans-serif;
+        }
+
+		.button:focus {
+			outline: none;
+            box-shadow:
+                0 0 0 0.15em #fff,
+                0 0 0 0.3em #c2e0fe;
+        }
+
+        .button:active {
+            border-color: #4777a6;
+            background: #4e87c0;
+            color: #ffffff;
+        }
+
+        .button:disabled {
+			background: linear-gradient(#cccccc, #fefefe);
+			color: #aaaaaa;
+        }
+
+		/* Input */
+
+		.input {
+			display: inline-block;
+			margin: 0;
+            padding: 0.3em 1em 0.4em;
+			width: 5em;
+            border-radius: 0.5em;
+            border: 0.15em solid #aaaaaa;
+			color: #585a5e;
+			text-align: center;
+			line-height: 1;
+			font-weight: bold;
+			font-size: 3em;
+			font-family: PT Sans Narrow, sans-serif;
+		}
+
+		.input:focus {
+			outline: none;
+            box-shadow:
+                0 0 0 0.15em #fff,
+                0 0 0 0.3em #c2e0fe;
+		}
+
+		/* Strike */
+
+		.strike {
+			position: relative;
+			text-decoration: none;
+		}
+
+		.strike span {
+			position: absolute;
+			top: 0.7em;
+			left: -0.1em;
+			right: -0.1em;
+			height: 0.12em;
+			background: #cc0000;
+			content: '';
+			transform: rotate(-3deg);
+		}
+	</style>
+</head>
+<body class="shower list">
+
+	<header class="caption">
+		<h1>Людоедский интерфейс</h1>
+		<p>
+			<a href="https://pepelsbey.net/">Вадим Макеев</a>,
+			<a href="https://htmlacademy.ru/">HTML Academy</a>
+		</p>
+	</header>
+
+	<section class="slide clear" id="cover">
+		<h2 class="shout">
+			Людоедский интерфейс
+		</h2>
+		<img class="place top next" src="pictures/cover.jpg" alt="Обложка комикса «Inhuman».">
+		<style>
+			#cover img.next {
+				visibility: visible;
+				transition: margin-top 0.8s ease-in-out;
+			}
+
+			#cover img.next.active {
+				margin-top: -702px;
+			}
+		</style>
+	</section>
+
+	<section class="slide black" style="background: #302683">
+		<a href="https://htmlacademy.ru/">
+			<img class="place" width="700" src="pictures/html-academy.svg" alt="Логотип HTML Academy.">
+		</a>
+	</section>
+
+	<section class="slide">
+		<ul class="large place" style="font-size: 40px">
+			<li class="next" value="Д26"><strong>Все</strong> интерактивные элементы, при нажатии или фокусе с клавиатуры, имеют активное состояние.</li>
+			<li class="next" value="Д27"><strong>Все</strong> интерактивные элементы имеют текстовое описание.</li>
+		</ul>
+	</section>
+
+	<section class="slide clear">
+		<h2 class="shout shrink" style="font-size: 300px">
+			DX
+		</h2>
+	</section>
+
+	<section class="slide clear">
+		<h2 class="shout shrink" style="font-size: 300px">
+			UX
+		</h2>
+	</section>
+
+	<section class="slide clear">
+		<h2 class="shout shrink">
+			Людоедский?
+		</h2>
+		<img class="place bottom" src="pictures/lego-inhuman.svg" width="180" alt="">
+		<!--
+			Icon by Shashank Sahay
+			https://thenounproject.com/shashank25/collection/lego-emoticons/
+		-->
+	</section>
+
+	<section class="slide black clear">
+		<h2 class="shout shrink" style="color: white">
+			Недоступный
+		</h2>
+		<img class="place bottom" src="pictures/lego-bug.svg" width="180" alt="">
+		<!--
+			Icon by Shashank Sahay
+			https://thenounproject.com/shashank25/collection/lego-emoticons/
+		-->
+	</section>
+
+	<section class="slide">
+		<h2>
+			Недоступный
+		</h2>
+		<ul>
+			<li class="next">Сломана мышка, маленький экран, медленная сеть.</li>
+			<li class="next">Мелкий текст и заблокироваанный вьюпорт.</li>
+			<li class="next">Скрипты вместо ссылок.</li>
+			<li class="next">Поля блокируют вставку или автозаполнение.</li>
+			<li class="next">Яркое солнце, плохой контраст цветов.</li>
+			<li class="next">Неправильный размер или поворот экрана.</li>
+			<li class="next"><em>Физиологические сложности.</em></li>
+		</ul>
+		<!--
+			Icon by Mikicon
+			https://thenounproject.com/term/accessibility/975763/
+		-->
+		<img src="pictures/a11y.svg"
+			class="place bottom right"
+			style="width: 300px; margin: 0 100px 100px 0"
+			alt="Иконка доступности: человек расставил руки в голубом круге.">
+	</section>
+
+	<section class="slide clear">
+		<h2 class="shout">
+			<del class="strike">
+				Контроль
+				<span class="next"></span>
+			</del>
+		</h2>
+	</section>
+
+	<section class="slide clear">
+		<h2 class="shout shrink">
+			Семантика
+		</h2>
+	</section>
+
+	<section class="slide">
+        <img src="pictures/semantics.png"
+			 class="cover"
+			 alt="Парень и девушка сравнивают знание HTML-тегов: она знает много, он — только div.">
+    </section>
+
+	<section class="slide">
+        <h2>Диватоз</h2>
+    	<pre>
+			<code><mark>&lt;div</mark> class="floor floor--bigleft-aside"&gt;</code>
+			<code>    <mark>&lt;div</mark> class="floor__bigleft floor__bigleft--smaller"&gt;</code>
+			<code>        <mark>&lt;div</mark> class="project__ladel"&gt;<span class="comment">Ресторан</span>&lt;/div&gt;</code>
+			<code>        <mark>&lt;div</mark> class="project__description"&gt;<span class="comment">Запустили сайт</span></code>
+			<code>        <mark>&lt;div</mark> class="project__footer"&gt;</code>
+			<code>            <mark>&lt;div</mark> class="project__tag"&gt;<span class="comment">Вёрстка</span>&lt;/div&gt;</code>
+			<code>            <mark>&lt;div</mark> class="project__tag"&gt;<span class="comment">Разработка</span>&lt;/div&gt;</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Диватоз</h2>
+        <pre>
+        	<code>                                        </code>
+            <code>                                                        </code>
+            <code>                                    Ресторан            </code>
+            <code>                                          Запустили сайт</code>
+            <code>                                     </code>
+            <code>                                      Вёрстка            </code>
+            <code>                                      Разработка            </code>
+	    </pre>
+		<img class="cover next" src="pictures/sakura.jpg" alt="Цветущая ветка сакуры.">
+    </section>
+
+    <section class="slide">
+        <h2>Диватоз</h2>
+        <pre>
+        	<code>                                        </code>
+            <code>                                                        </code>
+            <code>                                <mark>&lt;h2&gt;</mark>Ресторан&lt;/h2&gt;       </code>
+            <code>                                       <mark>&lt;p&gt;</mark>Запустили сайт&lt;/p&gt;</code>
+            <code>                              <mark>&lt;ul&gt;</mark>   </code>
+            <code>                                  <mark>&lt;li&gt;</mark>Вёрстка&lt;/li&gt;       </code>
+            <code>                                  <mark>&lt;li&gt;</mark>Разработка&lt;/li&gt;       </code>
+	    </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Зачем списки?</h2>
+        <pre>
+			<code><mark>&lt;nav&gt;</mark></code>
+			<code>    &lt;ul&gt;</code>
+			<code>        <mark>&lt;li&gt;</mark>&lt;a href=""&gt;Главная&lt;/a&gt;&lt;/li&gt;</code>
+			<code>        <mark>&lt;li&gt;</mark>&lt;a href=""&gt;Проекты&lt;/a&gt;&lt;/li&gt;</code>
+			<code>        <mark>&lt;li&gt;</mark>&lt;a href=""&gt;Контакты&lt;/a&gt;&lt;/li&gt;</code>
+			<code>    &lt;/ul&gt;</code>
+			<code>&lt;/nav&gt;</code>
+		</pre>
+    </section>
+
+	<section class="slide">
+		<blockquote class="large place">
+			<p style="margin: 0">
+				Навигация,<br>
+				Список, первый из трёх.<br>
+				Ссылка, главная.
+			</p>
+		</blockquote>
+	</section>
+
+    <section class="slide">
+        <h2>Зачем списки?</h2>
+        <pre>
+			<code><mark>&lt;div</mark> class="menu"&gt;</code>
+			<code>    <mark>&lt;a</mark> href=""&gt;Главная&lt;/a&gt;</code>
+			<code>    <mark>&lt;a</mark> href=""&gt;Проекта&lt;/a&gt;</code>
+			<code>    <mark>&lt;a</mark> href=""&gt;Контакты&lt;/a&gt;</code>
+			<code>&lt;/div&gt;</code>
+		</pre>
+    </section>
+
+	<section class="slide">
+		<blockquote class="large place">
+			<p style="margin: 0">
+				Ссылка,<br>
+				главная.
+			</p>
+		</blockquote>
+	</section>
+
+    <section class="slide">
+        <h2>Ориентиры</h2>
+        <pre>
+			<code><mark>&lt;header&gt;</mark>Логотип&lt;/header&gt;</code>
+			<code><mark>&lt;nav&gt;</mark>Ссылки&lt;/nav&gt;</code>
+			<code><mark>&lt;main&gt;</mark></code>
+			<code>    &lt;h1&gt;Заголовок&lt;/h1&gt;</code>
+			<code>    &lt;p&gt;Полезное&lt;/p&gt;</code>
+			<code>&lt;/main&gt;</code>
+			<code><mark>&lt;footer&gt;</mark>Информация&lt;/footer&gt;</code>
+		</pre>
+		<img src="pictures/landmark.svg"
+			class="place bottom right"
+			style="width: 250px; margin-right: 120px"
+			alt="Иконка ориентира.">
+    </section>
+
+    <section class="slide">
+        <h2>Заголовки</h2>
+        <pre>
+			<code><mark>&lt;h1&gt;</mark>Название компании&lt;/h1&gt;</code>
+			<code>    &lt;section&gt;</code>
+			<code>        <mark>&lt;h2&gt;</mark>Услуги&lt;/h2&gt;</code>
+			<code>        &lt;article&gt;</code>
+			<code>            <mark>&lt;h3&gt;</mark>Дизайн&lt;/h3&gt;</code>
+			<code>        &lt;article&gt;</code>
+			<code>            <mark>&lt;h3&gt;</mark>Разработка&lt;/h3&gt;</code>
+		</pre>
+    </section>
+
+	<section class="slide">
+        <ul class="large place" style="white-space: nowrap">
+            <li>Название компании
+				<ul>
+					<li>Услуги
+						<ol>
+							<li>Дизайн</li>
+							<li>Разработка</li>
+						</ol>
+					</li>
+				</ul>
+			</li>
+        </ul>
+    </section>
+
+	<section class="slide clear">
+		<h2 class="shout shrink">
+			Интерактивные
+		</h2>
+	</section>
+
+	<section class="slide">
+        <input class="input place" type="text" value="Текст" style="font-size: 5em">
+    </section>
+
+	<section class="slide">
+        <a href="" class="link place" style="font-size: 5em">Ссылка</a>
+    </section>
+
+	<section class="slide">
+        <button class="button place" style="font-size: 5em">Кнопка</button>
+    </section>
+
+	<section class="slide">
+        <ol class="large place" style="white-space: nowrap">
+			<li class="next">Это <code>&lt;button&gt;</code></li>
+            <li class="next">Если нет, то <code>&lt;a href="…"&gt;</code></li>
+            <li class="next">Всё.</li>
+        </ol>
+    </section>
+
+	<section class="slide">
+        <video loop class="cover" onclick="this.play()">
+        	<source src="video/input.webm" type="video/webm">
+        	<source src="video/input.mp4" type="video/mp4">
+        </video>
+    </section>
+
+	<section class="slide">
+        <video loop class="cover" onclick="this.play()">
+        	<source src="video/radio.webm" type="video/webm">
+        	<source src="video/radio.mp4" type="video/mp4">
+        </video>
+    </section>
+
+	<section class="slide">
+        <video loop class="cover" onclick="this.play()">
+        	<source src="video/range.webm" type="video/webm">
+        	<source src="video/range.mp4" type="video/mp4">
+        </video>
+    </section>
+
+	<section class="slide">
+        <video loop class="cover" onclick="this.play()">
+        	<source src="video/details.webm" type="video/webm">
+        	<source src="video/details.mp4" type="video/mp4">
+        </video>
+    </section>
+
+	<section class="slide">
+        <video loop class="cover" onclick="this.play()">
+        	<source src="video/datalist.webm" type="video/webm">
+        	<source src="video/datalist.mp4" type="video/mp4">
+        </video>
+    </section>
+
+	<section class="slide clear">
+		<h2 class="shout shrink">
+			Фокус
+		</h2>
+	</section>
+
+	<section class="slide clear black">
+		<img class="cover width" src="pictures/aliexpress.jpg" alt="Главня страница AliExpress.">
+		<img class="cover width next" src="pictures/aliexpress-zoom.jpg" alt="Главная AliExpress увеличена.">
+		<img class="cover width next" src="pictures/aliexpress-focus.jpg" alt="Главная AliExpress с фокусом на интерактивных элементах.">
+	</section>
+
+	<section class="slide">
+		<pre class="large place">
+			<code><mark>:focus</mark> {</code>
+			<code>    outline: <mark>0</mark>;</code>
+			<code>}</code>
+		</pre>
+	</section>
+
+	<section class="slide clear"
+		style="background: #fff url(pictures/forward.svg) 100% 0 no-repeat">
+        <h2 class="shout">Tab</h2>
+    </section>
+
+    <section class="slide clear"
+		style="background: #fff url(pictures/backward.svg) 0 0 no-repeat">
+        <h2 class="shout">Shift Tab</h2>
+    </section>
+
+	<section class="slide">
+        <h2>Как попасть в порядок</h2>
+		<ol>
+			<li class="next"><code>tabindex</code> управляет фокусом.</li>
+			<li class="next"><code>tabindex="0"</code> добавляет в порядок.</li>
+			<li class="next"><code>tabindex="-1"</code> делает интерактивным.</li>
+			<li class="next"><code>tabindex</code> больше <code>0</code> проблемный.</li>
+		</ol>
+    </section>
+
+	<section class="slide clear">
+        <h2 class="shout">API кнопки?</h2>
+    </section>
+
+	<section class="slide clear">
+        <h2>Кнопка</h2>
+		<pre>
+			<code><mark>&lt;button</mark> class="button"&gt;Кнопка&lt;/button&gt;</code>
+			<code><mark>&lt;div</mark> class="button"&gt;Кнопка&lt;/div&gt;</code>
+			<code><mark>&lt;button</mark> class="button"&gt;Кнопка&lt;/button&gt;</code>
+			<code><mark>&lt;div</mark> class="button"&gt;Кнопка&lt;/div&gt;</code>
+		</pre>
+    </section>
+
+	<section class="slide clear">
+		<div class="cell">
+			<button class="button place top left">Кнопка</button>
+			<div class="button place top right">Кнопка</div>
+			<button class="button place bottom left">Кнопка</button>
+			<div class="button place bottom right">Кнопка</div>
+		</div>
+    </section>
+
+	<section class="slide clear">
+        <h2>:Focus</h2>
+		<pre>
+			<code>.button<mark>:focus</mark> {</code>
+			<code>    box-shadow:</code>
+			<code>        0 0 0 3px #ffffff,</code>
+			<code>        0 0 0 6px #2f7cc0;</code>
+			<code>    <mark>outline: none;</mark></code>
+			<code>}</code>
+		</pre>
+    </section>
+
+	<section class="slide clear">
+        <h2>Active</h2>
+		<pre>
+			<code>.button<mark>:active</mark> {</code>
+			<code>    border-color: #4777a6;</code>
+			<code>    background: <mark>#4e87c0</mark>;</code>
+			<code>    color: #ffffff;</code>
+			<code>}</code>
+		</pre>
+    </section>
+
+	<section class="slide clear">
+        <h2>Tabindex</h2>
+		<pre>
+			<code>&lt;button class="button"&gt;Кнопка&lt;/button&gt;</code>
+			<code>&lt;div <mark>tabindex="0"</mark> class="button"&gt;Кнопка&lt;/div&gt;</code>
+			<code>&lt;button class="button"&gt;Кнопка&lt;/button&gt;</code>
+			<code>&lt;div <mark>tabindex="0"</mark> class="button"&gt;Кнопка&lt;/div&gt;</code>
+		</pre>
+    </section>
+
+	<section class="slide clear">
+		<div class="cell">
+			<button class="button place top left">Кнопка</button>
+			<div tabindex="0" class="button place top right">Кнопка</div>
+			<button class="button place bottom left">Кнопка</button>
+			<div tabindex="0" class="button place bottom right">Кнопка</div>
+		</div>
+    </section>
+
+	<section class="slide clear">
+        <h2>Скрипт</h2>
+		<pre>
+			<code>var <mark>buttons</mark> = document.querySelectorAll('<mark>.button</mark>');</code>
+			<code> </code>
+			<code>for(var i = 0; i &lt; buttons.length; i++) {</code>
+			<code>    buttons[i].addEventListener('<mark>click</mark>', function() {</code>
+			<code>        this.<mark>disabled</mark> = true;</code>
+			<code>    });</code>
+			<code>}</code>
+		</pre>
+    </section>
+
+	<section class="slide clear">
+		<div class="cell" id="buttons">
+			<button class="button place top left">Кнопка</button>
+			<div tabindex="0" class="button place top right">Кнопка</div>
+			<button class="button place bottom left">Кнопка</button>
+			<div tabindex="0" class="button place bottom right">Кнопка</div>
+		</div>
+		<script>
+			var buttons = document.querySelectorAll('#buttons .button');
+			 
+			for(var i = 0; i < buttons.length; i++) {
+				buttons[i].addEventListener('click', function(event) {
+					this.disabled = true;
+				});
+			}
+		</script>
+    </section>
+
+	<section class="slide clear">
+		<img class="cover" src="pictures/wat.jpg" alt="Огромная надувная уточка.">
+	</section>
+
+	<section class="slide clear">
+        <h2>Disabled</h2>
+		<pre>
+			<code>.button<mark>:disabled</mark> {</code>
+			<code>    background: linear-gradient(</code>
+			<code>        #cccccc,</code>
+			<code>        #fefefe</code>
+			<code>    );</code>
+			<code>    color: <mark>#aaaaaa</mark>;</code>
+			<code>}</code>
+		</pre>
+    </section>
+
+	<section class="slide clear">
+		<h2 class="shout shrink">
+			Лейблы
+		</h2>
+	</section>
+
+	<section class="slide clear">
+		<h2>Лейблы</h2>
+		<ul>
+			<li class="next">Содержимое элемента: <code>&lt;a href&gt;Главная&lt;/a&gt;</code></li>
+			<li class="next">Заголовок группы: <code>&lt;legend&gt;Адрес&lt;/legend&gt;</code></li>
+			<li class="next">Связанный элемент: <code>&lt;label for="input"&gt;Имя&lt;/label&gt;</code></li>
+			<li class="next">Спрятанный лейбл: <code>&lt;span class="visually-hidden"&gt;</code></li>
+			<li class="next">Добавленный лейбл: <code>&lt;nav aria-label="Содержимое"&gt;</code></li>
+		</ul>
+		<p class="next">
+			<code>►</code> звучит как <em>чёрный треугольник, направленный вправо</em>,<br>
+			<code>×</code> звучит как <em>умножить</em>, <code>х</code> как <em>ха</em>, <code> </code> как <em>хлопок одной ладонью</em>.
+		</p>
+	</section>
+
+	<section class="slide clear">
+		<h2>Legend</h2>
+		<pre>
+			<code>&lt;input type="radio" name="color" id="white" <mark>checked</mark>&gt;</code>
+			<code>&lt;label for="white"&gt;<mark>Чёрный</mark>&lt;/label&gt;</code>
+			<code>&lt;input type="radio" name="color" id="black"&gt;</code>
+			<code>&lt;label for="black"&gt;<mark>Белый</mark>&lt;/label&gt;</code>
+		</pre>
+		<blockquote>
+			<p>
+				Чёрный, выбран.<br>
+				Радиокнопка.<br>
+				Первая из двух.
+			</p>
+		</blockquote>
+	</section>
+
+	<section class="slide clear">
+		<h2>Legend</h2>
+		<pre>
+			<code><mark>&lt;fieldset&gt;</mark></code>
+			<code>    &lt;legend&gt;<mark>Цвет холодильника</mark>&lt;/legend&gt;</code>
+			<code>    &lt;input type="radio" name="color" id="white" <mark>checked</mark>&gt;</code>
+			<code>    &lt;label for="white"&gt;<mark>Чёрный</mark>&lt;/label&gt;</code>
+			<code>    &lt;input type="radio" name="color" id="black"&gt;</code>
+			<code>    &lt;label for="black"&gt;<mark>Белый</mark>&lt;/label&gt;</code>
+			<code>&lt;/fieldset&gt;</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<blockquote class="large place">
+			<p style="margin: 0">
+				Цвет холодильника<br>
+				<strong>чёрный</strong>, выбран.<br>
+				Радиокнопка.<br>
+				Первая из двух.
+			</p>
+		</blockquote>
+	</section>
+
+	<section class="slide">
+		<blockquote class="large place">
+			<p style="margin: 0">
+				Цвет холодильника<br>
+				<strong>белый</strong>, выбран.<br>
+				Радиокнопка.<br>
+				Вторая из двух.
+			</p>
+		</blockquote>
+	</section>
+
+	<section class="slide clear">
+		<h2>Иконки</h2>
+		<pre>
+			<code>&lt;button&gt;</code>
+			<code>    &lt;svg <mark>aria-label="Лайк!"</mark>&gt;</code>
+			<code>        &lt;use xlink:href="#like"&gt;&lt;/use&gt;</code>
+			<code>    &lt;/svg&gt;</code>
+			<code>&lt;/button&gt;</code>
+		</pre>
+	</section>
+
+	<section class="slide clear">
+		<h2>Юникод</h2>
+		<pre>
+			<code>&lt;button <mark>aria-label="Меню"</mark>&gt;</code>
+			<code>    ☰ Меню</code>
+			<code>&lt;/button&gt;</code>
+			<code>&lt;button&gt;</code>
+			<code>    &lt;span <mark>aria-hidden="true"</mark>&gt;☰&lt;/span&gt;</code>
+			<code>    <mark>Меню</mark></code>
+			<code>&lt;/button&gt;</code>
+		</pre>
+	</section>
+
+	<section class="slide clear">
+		<h2>А что если… <span class="next">нет заголовка?</span></h2>
+		<pre class="next">
+			<code>&lt;main&gt;</code>
+			<code>    <mark>&lt;h1 class="visually-hidden"&gt;</mark></code>
+			<code>        Заголовок</code>
+			<code>    <mark>&lt;/h1&gt;</mark></code>
+			<code>    &lt;p&gt;Полезное&lt;/p&gt;</code>
+			<code>&lt;/main&gt;</code>
+		</pre>
+		<p class="next">Добавляйте и прячьте. Прятать такое <a href="https://productforums.google.com/d/msg/webmasters/YJcZUhtMIE4/XkOEzVakBAAJ">не вредит SEO</a>.</p>
+	</section>
+
+	<section class="slide clear">
+		<h2>Визуально спрятано</h2>
+		<pre>
+			<code><mark>.visually-hidden</mark> {</code>
+			<code>    position: absolute;</code>
+			<code>    width: 1px;</code>
+			<code>    height: 1px;</code>
+			<code>    overflow: hidden;</code>
+			<code>    <mark>clip: rect(0 0 0 0);</mark></code>
+			<code>}</code>
+		</pre>
+	</section>
+
+	<section class="slide clear">
+		<h2 class="shout shrink">
+			Инструменты
+		</h2>
+	</section>
+
+	<section class="slide">
+        <ol class="large place">
+            <li>VoiceOver</li>
+			<li>NVDA</li>
+            <li>JAWS</li>
+        </ol>
+    </section>
+
+	<section class="slide">
+		<img class="place"
+			src="pictures/lighthouse.png"
+			alt="Lighthouse logo.">
+    </section>
+
+	<section class="slide clear">
+		<img class="cover"
+			src="pictures/accessible.png"
+			alt="100% результат тестирования доступности.">
+    </section>
+
+	<section class="slide">
+		<pre class="large place">
+			<code><mark>:focus</mark> {</code>
+			<code>    outline: <mark>0</mark>;</code>
+			<code>}</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<pre class="large place">
+			<code><mark>alt</mark>="picture-1"</code>
+			<code><mark>alt</mark>="picture-2"</code>
+			<code><mark>alt</mark>="picture-3"</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">
+			<a href="https://github.com/dequelabs/axe-cli">axe-cli</a>
+		</h2>
+	</section>
+
+	<section class="slide">
+		<h2>Инспектор доступности</h2>
+        <ol>
+            <li>Открыть флаги <code>chrome://flags</code></li>
+            <li>Найти и включить <em>Developer Tools Experiments</em></li>
+            <li>Открыть настройки отладчика в кебаб-меню</em></li>
+            <li>Включить в экспериментах <em>Accessibility Inspection</em></li>
+            <li>Найти вкладку <em>Accessibility</em> при выбранном элементе.</li>
+        </ol>
+    </section>
+
+	<section class="slide clear">
+		<img class="cover"
+			src="pictures/inspector.png"
+			alt="Google Maps search field in accessibility inspector.">
+    </section>
+
+	<section class="slide clear">
+		<h2 class="shout shrink">
+			Это фича!
+		</h2>
+		<img class="place bottom" src="pictures/lego-feature.svg" width="180" alt="">
+		<!--
+			Icon by Shashank Sahay
+			https://thenounproject.com/shashank25/collection/lego-emoticons/
+		-->
+	</section>
+
+	<section class="slide">
+		<pre class="large place">
+			<code class="next">&lt;i <mark>onclick</mark>="site()"&gt;</code>
+			<code class="next">&lt;a <mark>href</mark>="site"&gt;</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<pre class="large place">
+			<code><mark>&lt;div</mark> class="button"&gt;</code>
+			<code><mark>&lt;button</mark> class="button"&gt;</code>
+		</pre>
+	</section>
+
+	<section class="slide black clear">
+		<h2 class="shout shrink" style="color: white">
+			Это баг.
+		</h2>
+		<img class="place bottom" src="pictures/lego-bug.svg" width="180" alt="">
+		<!--
+			Icon by Shashank Sahay
+			https://thenounproject.com/shashank25/collection/lego-emoticons/
+		-->
+	</section>
+
+	<section class="slide">
+        <ol class="large place" style="white-space: nowrap">
+            <li class="next">Кнопки и ссылки</li>
+			<li class="next">Таб и фокус</li>
+            <li class="next">Заголовки</li>
+            <li class="next">Текстовые лейблы</li>
+        </ol>
+    </section>
+
+	<section class="slide">
+		<h2>Читать дальше</h2>
+		<ul>
+			<li>
+				Шоу Роба Додсона
+				<a href="https://www.youtube.com/playlist?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g">A11ycasts</a>.
+			</li>
+			<li>
+				Блог Хейдона Пикеринга
+				<a href="https://inclusive-components.design/">Inclusive Components</a>.
+			</li>
+			<li>
+				Книга Хейдона Пикеринга
+				<a href="https://www.smashingmagazine.com/inclusive-design-patterns/">Inclusive Design Patterns</a>.
+			</li>
+			<li>
+				Документация Родни Рейма
+				<a href="https://allyjs.io/tutorials/hiding-elements.html">Hiding DOM Elements</a>.
+			</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+        <img src="pictures/arigato.jpg"
+			 class="cover"
+			 alt="Зелёный аллигатор говорит «arigato».">
+    </section>
+
+	<section class="slide">
+		<h2 class="shout">
+			<a href="https://sokr.me/ihu">sokr.me/ihu</a>
+		</h2>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">
+			<a href="https://twitter.com/pepelsbey">@pepelsbey</a>
+		</h2>
+	</section>
+
+	<section class="slide" id="shower">
+		<img class="place" src="pictures/shower.svg" alt="Логотип Shower.">
+		<h2 class="shout">
+			<a href="http://shwr.me/">Shower</a>
+		</h2>
+		<style>
+			#shower img {
+				margin: 22px 0 0 -210px;
+				width: 150px;
+			}
+
+			#shower h2 {
+				margin-left: 100px;
+			}
+		</style>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">Вопросы?</h2>
+	</section>
+
+	<footer class="badge">
+		<a href="https://github.com/shower/shower">Powered by Shower</a>
+	</footer>
+
+	<div class="progress"></div>
+
+	<script src="shower/shower.min.js"></script>
+
+	<!-- Copyright © 2010–2017 Vadim Makeev — pepelsbey.net -->
+
+	<script>(function(b,c,a){(c[a]=c[a]||[]).push(function(){try{c.yaCounter155532=new Ya.Metrika({id:155532})}catch(a){}});var e=b.getElementsByTagName('script')[0],d=b.createElement('script'),a=function(){e.parentNode.insertBefore(d,e)};d.async=!0;d.src='//mc.yandex.ru/metrika/watch.js';'[object Opera]'==c.opera?b.addEventListener('DOMContentLoaded',a):a()})(document,window,'yandex_metrika_callbacks');</script><noscript><img src="https://mc.yandex.ru/watch/155532" alt=""></noscript>
+
+</body>
+</html>

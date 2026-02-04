@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Пример Gamepad API</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <style>
+        .face {
+            width: 500px;
+            height: 500px;
+            border-radius: 500px;
+            background: radial-gradient(circle farthest-corner at 250px 250px, #fff, #CECECE);
+            position: relative;
+            margin: 100px auto;
+            }
+
+        .face .eye {
+            width: 150px;
+            height: 150px;
+            background-color: black;
+            border-radius: 150px;
+            position: absolute;
+            top: 150px;
+            overflow: hidden;
+        }
+
+        .face .eye:first-child {
+            left: 75px;
+        }
+
+        .face .eye:last-child {
+            right: 75px;
+        }
+
+        .face .eye .pupil {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 40px;
+            height: 40px;
+            border-radius: 40px;
+            background-color: #ff8e00;
+            transform: translate(-50%, -50%);
+        }
+
+        body {
+            background-color: black;
+        }
+
+    </style>
+<script src="gamepad.js"></script>
+</head>
+
+<body>
+    <div class="face">
+    <div class="eye">
+        <div class="pupil"></div>
+    </div>
+    <div class="eye">
+        <div class="pupil"></div>
+    </div>
+    </div>
+</body>
+
+</html>

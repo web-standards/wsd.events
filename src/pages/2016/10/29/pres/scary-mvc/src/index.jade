@@ -1,0 +1,987 @@
+include ./blocks/slide.jade
+include ./blocks/cover.jade
+include ./blocks/quote.jade
+include ./blocks/frame.jade
+
+- var title = "Эти страшные буквы MV*"
+
+doctype html
+html(lang='ru')
+  head
+    title !{title}
+    meta(charset='utf-8')
+    meta(http-equiv='x-ua-compatible', content='ie=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel="stylesheet", href="vendor/highlight.css")
+    link(rel='stylesheet', href='shower/themes/ribbon/styles/screen-16x10.css')
+    link(rel='stylesheet', href='theme.css')
+    link(rel='stylesheet', href='slides.css')
+  body.shower.list
+    header.caption
+      h1 !{title}
+    +slide({name: 'cover', header: title, classes:'cover'})
+      p Александра Шинкевич (
+        a(href='https://twitter.com/neesoglasnaja' target="_blank") @neesoglasnaja
+        | )
+      +cover('pictures/cover.jpg')
+    +slide({header: "MV*", classes:'cover menu-slide'}) 
+      ul
+        li MVC
+        li MVP
+        li MVVM
+      +cover('pictures/blur-cover.jpg')
+    +slide({header: "Flux", shout: true})
+    +slide({classes:'cover'}) 
+      h2.shout.smaller
+        a(href="http://bit.ly/wsd-mv" target="_blank") bit.ly/wsd-mv
+      +cover('pictures/blur-cover.jpg')  
+    // Пример
+    +slide({header: "Пример", shout: true, classes: 'cover label-header'})
+      +cover('pictures/blur-cover.jpg')
+    +slide({header: "TodoList", classes: 'label-header'})
+      br
+      img(src="pictures/todo.png", width="500")
+    +slide({header: "Никакой архитектуры", classes: 'label-header'})
+      div.relative
+        p 1. 
+          span.label HTML
+          img.screen-example(src="pictures/example-1.jpg")
+    +slide({header: "Никакой архитектуры", classes: 'label-header'})
+      div.relative
+        p 1. 
+          span.label HTML
+      .relative
+        p 2. 
+          span.label JS
+          img.next.screen-example(src="pictures/example-2.jpg")
+    +slide({header: "Никакой архитектуры", classes: 'label-header'})
+      div.relative
+        p 1. 
+          span.label HTML
+      .relative
+        p 2. 
+          span.label JS
+      .relative
+        p 3. 
+          span.label AJAX
+          img.next.screen-example(src="pictures/example-3.jpg") 
+    +slide({header: "Проблемы", classes: 'label-header'})
+      ul.no-indent 
+        li.next Данные хранятся в DOM
+        li.next Вариативность синтаксиса
+    +slide({classes:'cover menu-slide'}) 
+      h2.selected-item MV*
+      ul.transparent
+        li MVC
+        li MVP
+        li MVVM
+      +cover('pictures/blur-cover.jpg')
+    +slide({})
+      img(src="pictures/separation_of_concerns.png")
+    +slide({header: "Преимущества MV*", classes: 'label-header'})
+      ul.no-indent 
+        li Определенная структура
+        li.next Модульность
+        li.next Переносимость
+        li.next Масштабируемость
+        li.next Тестируемость
+    // MVC
+    +slide({classes:'cover menu-slide'}) 
+      h2.transparent MV*
+      ul
+        li.selected-item MVC
+        li.transparent MVP
+        li.transparent MVVM
+      +cover('pictures/blur-cover.jpg')
+    +slide({header: "MVC", classes: 'label-header'})
+      +cover('pictures/components/mvc.jpg')
+    +slide({header: "MVC", classes: 'label-header'})
+      +cover('pictures/components/mvc-model.jpg')  
+    +slide({header: "MVC", classes: 'label-header'})
+      +cover('pictures/components/mvc-view.jpg')
+    +slide({header: "MVC", classes: 'label-header'})
+      +cover('pictures/components/mvc-controller.jpg')
+    +slide({header: "MVC", classes: 'label-header'})
+      +cover('pictures/schemas/mvc1.jpg')
+    +slide({header: "MVC", classes: 'label-header'})
+      +cover('pictures/schemas/mvc2.jpg')
+    +slide({header: "MVC", classes: 'label-header'})
+      +cover('pictures/schemas/mvc3.jpg')
+    +slide({header: "MVC", classes: 'label-header'})
+      +cover('pictures/schemas/mvc4.jpg')
+    +slide({header: "MVC", classes: 'label-header'})
+      +cover('pictures/schemas/mvc5.jpg')
+    +slide({header: "MVC", classes: 'label-header'})
+      +cover('pictures/schemas/mvc6.jpg')
+    +slide({header: "MVC", classes: 'label-header'})
+      +cover('pictures/schemas/mvc7.jpg')
+    +slide({header: "MVC", classes: 'label-header'})
+      +cover('pictures/schemas/mvc-server.jpg')
+    
+    // Реализация MVC
+    +slide({header: "Пример MVC", shout: true, classes: 'cover label-header'})
+      +cover('pictures/blur-cover.jpg')
+      // all
+    +slide({header: "MVC: HTML", classes: "smaller label-header"})
+      pre.html
+        code
+          span.comment &lt;!-- ... --&gt;
+        code     &lt;
+          span.tag body
+          | &gt;
+        code        &lt;
+          span.tag script 
+          span.attr src
+          | ="
+          span.important js/utils.js
+          | "&gt;&lt;/
+          span.tag script
+          | &gt;
+        code        &lt;
+          span.tag script 
+          span.attr src
+          | ="
+          span.important js/models.js
+          | "&gt;&lt;/
+          span.tag script
+          | &gt;
+        code        &lt;
+          span.tag script 
+          span.attr src
+          | ="
+          span.important js/views.js
+          | "&gt;&lt;/
+          span.tag script
+          | &gt;
+        code        &lt;
+          span.tag script 
+          span.attr src
+          | ="
+          span.important js/controllers.js
+          | "&gt;&lt;/
+          span.tag script
+          | &gt;
+        code        &lt;
+          span.tag script 
+          span.attr src
+          | ="
+          span.important js/app.js
+          | "&gt;&lt;/
+          span.tag script
+          | &gt;
+        code     &lt;/
+          span.tag body
+          | &gt;
+        code &lt;/
+          span.tag html
+          | &gt;
+      // app
+    +slide({header: "MVC: HTML", classes: "smaller label-header"})
+      pre.html
+        code
+          span.comment &lt;!-- ... --&gt;
+        code     &lt;
+          span.tag body
+          | &gt;
+        code        &lt;
+          span.tag script 
+          span.attr src
+          | ="
+          span.important js/utils.js
+          | "&gt;&lt;/
+          span.tag script
+          | &gt;
+        code        &lt;
+          span.tag script 
+          span.attr src
+          | ="
+          span.important js/models.js
+          | "&gt;&lt;/
+          span.tag script
+          | &gt;
+        code        &lt;
+          span.tag script 
+          span.attr src
+          | ="
+          span.important js/views.js
+          | "&gt;&lt;/
+          span.tag script
+          | &gt;
+        code        &lt;
+          span.tag script 
+          span.attr src
+          | ="
+          span.important js/controllers.js
+          | "&gt;&lt;/
+          span.tag script
+          | &gt;
+        code        &lt;
+          span.tag script 
+          span.attr src
+          | ="
+          span.alert js/app.js
+          | "&gt;&lt;/
+          span.tag script
+          | &gt;
+        code     &lt;/
+          span.tag body
+          | &gt;
+        code &lt;/
+          span.tag html
+          | &gt;
+    +slide({header: "MVC: app.js", classes: "label-header"})
+      pre
+        code var list = 
+          span.important new ListController()
+          | ;
+        code.opacity-0
+    +slide({header: "MVC: HTML", classes: "smaller label-header"})
+      pre.html
+        code
+          span.comment &lt;!-- ... --&gt;
+        code     &lt;
+          span.tag body
+          | &gt;
+        code        &lt;
+          span.tag script 
+          span.attr src
+          | ="
+          span.important js/utils.js
+          | "&gt;&lt;/
+          span.tag script
+          | &gt;
+        code        &lt;
+          span.tag script 
+          span.attr src
+          | ="
+          span.important js/models.js
+          | "&gt;&lt;/
+          span.tag script
+          | &gt;
+        code        &lt;
+          span.tag script 
+          span.attr src
+          | ="
+          span.important js/views.js
+          | "&gt;&lt;/
+          span.tag script
+          | &gt;
+        code        &lt;
+          span.tag script 
+          span.attr src
+          | ="
+          span.alert js/controllers.js
+          | "&gt;&lt;/
+          span.tag script
+          | &gt;
+        code        &lt;
+          span.tag script 
+          span.attr src
+          | ="
+          span.important js/app.js
+          | "&gt;&lt;/
+          span.tag script
+          | &gt;
+        code     &lt;/
+          span.tag body
+          | &gt;
+        code &lt;/
+          span.tag html
+          | &gt;
+    +slide({header: "MVC: controllers.js", classes: "smaller label-header"})
+      pre.javascript
+        code function ListController() {
+        code     var model = 
+          span.important new TasksModel()
+          | ;
+        code     var view = 
+          span.important new ListView(
+            span.alert model
+            | );
+        code.fade-opacity     view.addCreateTaskHandler(function(taskTitle) { ... });
+        code.fade-opacity     view.addCheckedHandler(function(id) { ... });
+        code }
+    +slide({header: "MVC: controllers.js", classes: "smaller label-header"})
+      pre.javascript
+        code function ListController() {
+        code.fade-opacity     var model = new TasksModel();
+        code.fade-opacity     var view = new ListView(model);
+        code     view.
+          span.important addCreateTaskHandler
+          | (function(taskTitle) { ... });
+        code     view.
+          span.important addCheckedHandler
+          | (function(id) { ... });
+        code }
+      // views
+    +slide({header: "MVC: HTML", classes: "smaller label-header"})
+      pre.html
+        code
+          span.comment &lt;!-- ... --&gt;
+        code     &lt;
+          span.tag body
+          | &gt;
+        code        &lt;
+          span.tag script 
+          span.attr src
+          | ="
+          span.important js/utils.js
+          | "&gt;&lt;/
+          span.tag script
+          | &gt;
+        code        &lt;
+          span.tag script 
+          span.attr src
+          | ="
+          span.important js/models.js
+          | "&gt;&lt;/
+          span.tag script
+          | &gt;
+        code        &lt;
+          span.tag script 
+          span.attr src
+          | ="
+          span.alert js/views.js
+          | "&gt;&lt;/
+          span.tag script
+          | &gt;
+        code        &lt;
+          span.tag script 
+          span.attr src
+          | ="
+          span.important js/controllers.js
+          | "&gt;&lt;/
+          span.tag script
+          | &gt;
+        code        &lt;
+          span.tag script 
+          span.attr src
+          | ="
+          span.important js/app.js
+          | "&gt;&lt;/
+          span.tag script
+          | &gt;
+        code     &lt;/
+          span.tag body
+          | &gt;
+        code &lt;/
+          span.tag html
+          | &gt;
+    +slide({header: "MVC: views.js", classes: "smaller label-header"})
+      pre.javascript
+        code function ListView(model) {
+        code     var 
+          span.important html
+          |  = $( ... );
+        code.fade-opacity     customEvents.registerEvent('UpdateList');
+        code.fade-opacity     customEvents.addEventListener('UpdateList', function() { ... });
+        code.fade-opacity     return {
+        code.fade-opacity         addCreateTaskHandler: function(handler) { ... },
+        code.fade-opacity         addCheckedHandler: function(handler) { ... }
+        code.fade-opacity     };
+        code }
+    +slide({header: "MVC: views.js", classes: "smaller label-header"})
+      pre.javascript
+        code function ListView(model) {
+        code.fade-opacity     var html = $( ... );
+        code     customEvents.
+          span.important registerEvent
+          | ('UpdateList');
+        code     customEvents.
+          span.important addEventListener
+          | ('UpdateList', function() { ... });
+        code.fade-opacity     return {
+        code.fade-opacity         addCreateTaskHandler: function(handler) { ... },
+        code.fade-opacity         addCheckedHandler: function(handler) { ... }
+        code.fade-opacity     };
+        code }
+    +slide({header: "MVC: views.js", classes: "smaller label-header"})
+      pre.javascript
+        code function ListView(model) {
+        code.fade-opacity     var html = $( ... );
+        code.fade-opacity     customEvents.registerEvent('UpdateList');
+        code.fade-opacity     customEvents.addEventListener('UpdateList', function() { ... });
+        code     return {
+        code         
+          span.important addCreateTaskHandler
+          | : function(handler) { ... },
+        code         
+          span.important addCheckedHandler
+          | : function(handler) { ... }
+        code     };
+        code }
+      // models
+    +slide({header: "MVC: HTML", classes: "smaller label-header"})
+      pre.html
+        code 
+          span.comment &lt;!-- ... --&gt;
+        code     &lt;
+          span.tag body
+          | &gt;
+        code        &lt;
+          span.tag script 
+          span.attr src
+          | ="
+          span.important js/utils.js
+          | "&gt;&lt;/
+          span.tag script
+          | &gt;
+        code        &lt;
+          span.tag script 
+          span.attr src
+          | ="
+          span.alert js/models.js
+          | "&gt;&lt;/
+          span.tag script
+          | &gt;
+        code        &lt;
+          span.tag script 
+          span.attr src
+          | ="
+          span.important js/views.js
+          | "&gt;&lt;/
+          span.tag script
+          | &gt;
+        code        &lt;
+          span.tag script 
+          span.attr src
+          | ="
+          span.important js/controllers.js
+          | "&gt;&lt;/
+          span.tag script
+          | &gt;
+        code        &lt;
+          span.tag script 
+          span.attr src
+          | ="
+          span.important js/app.js
+          | "&gt;&lt;/
+          span.tag script
+          | &gt;
+        code     &lt;/
+          span.tag body
+          | &gt;
+        code &lt;/
+          span.tag html
+          | &gt;
+    +slide({header: "MVC: models.js", classes: "smaller label-header"})
+      pre.javascript
+        code function TasksModel() {
+        code     return {
+        code         
+          span.important data
+          | : {},
+        code         
+          span.important getAll
+          | : function() { 
+          span.comment ...
+          |  },
+        code         
+          span.important addItem
+          | : function(name) { 
+          span.comment ...
+          |  },
+        code         
+          span.important deleteItem
+          | : function(id) { 
+          span.comment ...
+          |  },
+        code     };
+        code };
+    +slide({header: "MVC: models.js", classes: "label-header"})
+      pre.javascript
+        code addItem: function(name) {
+        code.fade-opacity     this.data[(new Date()).getTime()] = name;
+        code     customEvents.
+          span.important dispatchEvent
+          | ('UpdateList');
+        code }
+    // Живой пример
+    +slide({header: "MVC: Приложение", classes: "label-header"})
+      +frame("examples/mvc/index.html")
+    // MVP
+    +slide({classes:'cover menu-slide'}) 
+      h2.transparent MV*
+      ul
+        li.transparent MVC
+        li.selected-item MVP
+        li.transparent MVVM
+      +cover('pictures/blur-cover.jpg')
+    +slide({header: "MVP", classes: "label-header"})
+      +cover('pictures/components/mvp-presenter.jpg')
+    +slide({header: "MVP", classes: "label-header"})
+      +cover('pictures/schemas/mvp1.jpg')
+    +slide({header: "MVP", classes: "label-header"})
+      +cover('pictures/schemas/mvp2.jpg')
+    +slide({header: "MVP", classes: "label-header"})
+      +cover('pictures/schemas/mvp3.jpg')
+    +slide({header: "MVP", classes: "label-header"})
+      +cover('pictures/schemas/mvp4.jpg')
+    +slide({header: "MVP", classes: "label-header"})
+      +cover('pictures/schemas/mvp5.jpg')
+    +slide({header: "MVP", classes: "label-header"})
+      +cover('pictures/schemas/mvp6.jpg')
+    +slide({header: "MVP", classes: "label-header"})
+      +cover('pictures/schemas/mvp7.jpg')
+    +slide({header: "MVP", classes: "label-header"})
+      +cover('pictures/schemas/mvp8.jpg') 
+    +slide({header: "MVP", classes: "label-header"})
+      +cover('pictures/schemas/mvp-server.jpg') 
+    // Реализация MVP  
+    +slide({header: "Пример MVP", shout: true, classes: 'cover label-header'})
+      +cover('pictures/blur-cover.jpg')
+      // all
+    +slide({header: "MVP: HTML", classes: "smaller label-header"})
+      pre.html
+        code 
+          span.comment &lt;!-- ... --&gt;
+        code    &lt;
+          span.tag body
+          | &gt;
+        code       &lt;
+          span.tag script 
+          span.attr src
+          | ="
+          span.important js/utils.js
+          | "&gt;&lt;/
+          span.tag script
+          | &gt;
+        code       &lt;
+          span.tag script 
+          span.attr src
+          | ="
+          span.important js/models.js
+          | "&gt;&lt;/
+          span.tag script
+          | &gt;
+        code        &lt;
+          span.tag script 
+          span.attr src
+          | ="
+          span.important js/views.js
+          | "&gt;&lt;/
+          span.tag script
+          | &gt;
+        code        &lt;
+          span.tag script 
+          span.attr src
+          | ="
+          span.hightlight js/presenters.js
+          | "&gt;&lt;/
+          span.tag script
+          | &gt;
+        code       &lt;
+          span.tag script 
+          span.attr src
+          | ="
+          span.important js/app.js
+          | "&gt;&lt;/
+          span.tag script
+          | &gt;
+        code     &lt;/
+          span.tag body
+          | &gt;
+        code &lt;/
+          span.tag html
+          | &gt;
+      // app
+    +slide({header: "MVP: HTML", classes: "smaller label-header"})
+      pre.html
+        code 
+          span.comment &lt;!-- ... --&gt;
+        code    &lt;
+          span.tag body
+          | &gt;
+        code       &lt;
+          span.tag script 
+          span.attr src
+          | ="
+          span.important js/utils.js
+          | "&gt;&lt;/
+          span.tag script
+          | &gt;
+        code       &lt;
+          span.tag script 
+          span.attr src
+          | ="
+          span.important js/models.js
+          | "&gt;&lt;/
+          span.tag script
+          | &gt;
+        code        &lt;
+          span.tag script 
+          span.attr src
+          | ="
+          span.important js/views.js
+          | "&gt;&lt;/
+          span.tag script
+          | &gt;
+        code        &lt;
+          span.tag script 
+          span.attr src
+          | ="
+          span.important js/presenters.js
+          | "&gt;&lt;/
+          span.tag script
+          | &gt;
+        code       &lt;
+          span.tag script 
+          span.attr src
+          | ="
+          span.alert js/app.js
+          | "&gt;&lt;/
+          span.tag script
+          | &gt;
+        code     &lt;/
+          span.tag body
+          | &gt;
+        code &lt;/
+          span.tag html
+          | &gt;
+    +slide({header: "MVP: app.js", classes: "label-header"})
+      pre
+        code var list = new 
+          span.hightlight ListPresenter()
+          | ;
+        code.opacity-0
+      // presenters
+    +slide({header: "MVP: HTML", classes: "smaller label-header"})
+      pre.html
+        code 
+          span.comment &lt;!-- ... --&gt;
+        code    &lt;
+          span.tag body
+          | &gt;
+        code       &lt;
+          span.tag script 
+          span.attr src
+          | ="
+          span.important js/utils.js
+          | "&gt;&lt;/
+          span.tag script
+          | &gt;
+        code       &lt;
+          span.tag script 
+          span.attr src
+          | ="
+          span.important js/models.js
+          | "&gt;&lt;/
+          span.tag script
+          | &gt;
+        code        &lt;
+          span.tag script 
+          span.attr src
+          | ="
+          span.important js/views.js
+          | "&gt;&lt;/
+          span.tag script
+          | &gt;
+        code        &lt;
+          span.tag script 
+          span.attr src
+          | ="
+          span.alert js/presenters.js
+          | "&gt;&lt;/
+          span.tag script
+          | &gt;
+        code       &lt;
+          span.tag script 
+          span.attr src
+          | ="
+          span.important js/app.js
+          | "&gt;&lt;/
+          span.tag script
+          | &gt;
+        code     &lt;/
+          span.tag body
+          | &gt;
+        code &lt;/
+          span.tag html
+          | &gt;
+    +slide({header: "MVP: presenters.js", classes: "smaller label-header"})
+      pre.javascript
+        code function ListPresenter() {
+        code.fade-opacity     var model = new TasksModel();
+        code     var view = new ListView(
+          span.hightlight model.getAll()
+          | );
+        
+        code.fade-opacity     view.addCreateTaskHandler(function(taskTitle) { ... });
+        code.fade-opacity     view.addCheckedHandler(function(id) { ... });
+        code     customEvents.
+          span.important registerEvent
+          | ('UpdateList');
+        code     customEvents.
+          span.important addEventListener
+          | ('UpdateList', function() { ... });
+        code }
+      // views
+    +slide({header: "MVP: HTML", classes: "smaller label-header"})
+      pre.html
+        code 
+          span.comment &lt;!-- ... --&gt;
+        code    &lt;
+          span.tag body
+          | &gt;
+        code       &lt;
+          span.tag script 
+          span.attr src
+          | ="
+          span.important js/utils.js
+          | "&gt;&lt;/
+          span.tag script
+          | &gt;
+        code       &lt;
+          span.tag script 
+          span.attr src
+          | ="
+          span.important js/models.js
+          | "&gt;&lt;/
+          span.tag script
+          | &gt;
+        code        &lt;
+          span.tag script 
+          span.attr src
+          | ="
+          span.alert js/views.js
+          | "&gt;&lt;/
+          span.tag script
+          | &gt;
+        code        &lt;
+          span.tag script 
+          span.attr src
+          | ="
+          span.important js/presenters.js
+          | "&gt;&lt;/
+          span.tag script
+          | &gt;
+        code       &lt;
+          span.tag script 
+          span.attr src
+          | ="
+          span.important js/app.js
+          | "&gt;&lt;/
+          span.tag script
+          | &gt;
+        code     &lt;/
+          span.tag body
+          | &gt;
+        code &lt;/
+          span.tag html
+          | &gt;
+    +slide({header: "MVP: views.js", classes: "smaller label-header"})
+      pre.javascript
+        code function ListView(data) {
+        code.fade-opacity     var html = $( ... );
+        code     return {
+        code.fade-opacity         addCreateTaskHandler: function(handler) { ... },
+        code.fade-opacity         addCheckedHandler: function(handler) { ... },
+        code         
+          span.important updateView
+          | : function(data) { ... }
+        code     };
+        code }
+    // Живой пример
+    +slide({header: "MVP: Приложение", classes: "label-header"})
+      +frame("examples/mvp/index.html")
+    // MVVM
+    +slide({classes:'cover menu-slide'}) 
+      h2.transparent MV*
+      ul
+        li.transparent MVC
+        li.transparent MVP
+        li.selected-item MVVM
+      +cover('pictures/blur-cover.jpg')
+    
+    +slide({header: "MVVM", classes: "label-header"})
+      +cover('pictures/components/mvvm-viewmodel.jpg')
+    +slide({header: "Связывание данных", classes: "label-header"})
+      p Это такой механизм, при котором изменение значения модели с любой стороны (View или Model) моментально вступает в силу на другой.
+    +slide({header: "MVVM", classes: "label-header"})
+      +cover('pictures/schemas/mvvm.jpg')
+    // Реализация MVVM
+    +slide({header: "Пример MVVM", shout: true, classes: 'cover label-header'})
+      +cover('pictures/blur-cover.jpg')
+    +slide({header: "Knockout.js", classes: 'label-header'})
+      p Open-source фреймворк, реализующий Model-View-ViewModel на Javascript и data binding.
+      img(src="pictures/knockoutjs.jpg" width=600)
+    +slide({header: "MVVM: HTML", classes: "label-header"})
+      pre.html
+        code     &lt;
+          span.tag body
+          | &gt;
+        code.comment        &lt;!-- Разметка html --&gt;
+        code        &lt;
+          span.tag script 
+          span.attr src
+          | ="
+          span.important js/knockout-3.4.0.min.js
+          | "&gt;&lt;/
+          span.tag script
+          | &gt;
+        code        &lt;
+          span.tag script 
+          span.attr src
+          | ="
+          span.important js/viewmodel.js
+          | "&gt;&lt;/
+          span.tag script
+          | &gt;
+        code     &lt;/
+          span.tag body
+          | &gt;
+        code &lt;/
+          span.tag html
+          | &gt;
+    +slide({header: "MVVM: HTML", classes: "smaller label-header"})
+      pre.html
+        code &lt;form 
+          span.hightlight data-bind="
+            span.important submit: addItem
+            | "
+          | &gt;
+        code     &lt;ul 
+          span.hightlight data-bind="
+            span.important foreach: items
+            | "
+          | &gt;
+        code         &lt;li&gt;
+        code             &lt;label 
+          span.hightlight data-bind="
+            span.important click: $parent.removeItem
+            | "
+          | &gt;
+        code                 &lt;input type="checkbox"&gt;
+        code                 &lt;span 
+          span.hightlight data-bind="
+            span.important text: $data
+            | "
+          | &gt;&lt;/span&gt;
+        code             &lt;/label&gt;
+        code         &lt;/li&gt;
+        code.comment &lt;!--      ...      --&gt;
+    +slide({header: "MVVM: HTML", classes: "label-header"})
+      pre.html
+        code     &lt;
+          span.tag body
+          | &gt;
+        code.comment        &lt;!-- Разметка html --&gt;
+        code        &lt;
+          span.tag script 
+          span.attr src
+          | ="
+          span.important js/knockout-3.4.0.min.js
+          | "&gt;&lt;/
+          span.tag script
+          | &gt;
+        code        &lt;
+          span.tag script 
+          span.attr src
+          | ="
+          span.alert js/viewmodel.js
+          | "&gt;&lt;/
+          span.tag script
+          | &gt;
+        code     &lt;/
+          span.tag body
+          | &gt;
+        code &lt;/
+          span.tag html
+          | &gt;
+    +slide({header: "MVVM: viewmodel.js", classes: "smaller label-header"})
+      pre.javascript
+        code var ListViewModel = function(items) {
+        code     return {
+        code        
+          span.important items
+          | : ko.observableArray(items),
+        code        
+          span.important itemToAdd
+          | : ko.observable(""),
+        code.fade-opacity         addItem: function() { ... },
+        code.fade-opacity         removeItem: function() { ... },
+        code     };
+        code };
+        code.fade-opacity ko.applyBindings(new ListViewModel([]));
+    +slide({header: "MVVM: viewmodel.js", classes: "smaller label-header"})
+      pre.javascript
+        code var ListViewModel = function(items) {
+        code     return {
+        code.fade-opacity        items: ko.observableArray(items),
+        code.fade-opacity        itemToAdd: ko.observable(""),
+        code         
+          span.important addItem
+          | : function() { ... },
+        code         
+          span.important removeItem
+          | : function() { ... },
+        code     };
+        code };
+        code.fade-opacity ko.applyBindings(new ListViewModel([]));
+    +slide({header: "MVVM: viewmodel.js", classes: "smaller label-header"})
+      pre.javascript
+        code.fade-opacity var ListViewModel = function(items) {
+        code.fade-opacity     return {
+        code.fade-opacity        items: ko.observableArray(items),
+        code.fade-opacity        itemToAdd: ko.observable(""),
+        code.fade-opacity         addItem: function() { ... },
+        code.fade-opacity         removeItem: function() { ... },
+        code.fade-opacity     };
+        code.fade-opacity };
+        code ko.applyBindings(new ListViewModel([]));
+    // Живой пример
+    +slide({header: "MVVM: Приложение", classes: "label-header"})
+      +frame("examples/mvvm/index.html")
+    +slide({header: "Что выбрать", classes: "label-header"})
+      ul.no-indent 
+        li.next Есть/можно использовать связывание данных
+          span.next : 
+            span.label MVVM
+        li.next Нет/нельзя использовать связывание данных
+          span.next : 
+            span.label MVP
+        li.next Нужна связь представления и данных
+          span.next : 
+            span.label MVС
+    +slide({header: "Хочу больше", classes: "label-header"})
+      ul
+        li Wiki: 
+          a(href="https://ru.wikipedia.org/wiki/Архитектура_программного_обеспечения") архитектура ПО
+          | , 
+          a(href="https://ru.wikipedia.org/wiki/Model-View-Controller") MVC
+          | , 
+          a(href="https://ru.wikipedia.org/wiki/Model-View-Presenter") MVP
+          | , 
+          a(href="https://ru.wikipedia.org/wiki/Model-View-ViewModel") MVVM
+          | , 
+          a(href="https://ru.wikipedia.org/wiki/Шаблон_проектирования") шаблоны проектирования
+        li
+          a(href="https://habrahabr.ru/post/215605/") [Хабр] Паттерны для новичков: MVC vs MVP vs MVVM
+        li
+          a(href="https://habrahabr.ru/post/119369/") [Хабр] И опять про MVC 
+        li
+          a(href="https://addyosmani.com/blog/understanding-mvc-and-mvp-for-javascript-and-backbone-developers/") Addy Osmani: Understanding MVC And MVP [en]
+        li
+          a(href="https://www.safaribooksonline.com/library/view/learning-javascript-design/9781449334840/index.html") Learning JavaScript Design Patterns by Addy Osmani (ebook) [en]
+        li
+          a(href="http://designformasters.info/posts/mvc-javascript/") MVC в JavaScript
+        li
+          a(href="http://knockoutjs.com/") Knockout.
+        li
+          a(href="http://todomvc.com/") TodoMVC
+    +slide({header: "Вместо вывода", classes: "label-header"})
+      img(src='pictures/today.jpg', width="100%")
+    +slide({name: 'theend', header: "Вопросы?", shout: true, classes: 'cover label-header'})
+      p.end-link 
+        a.bigger(href="http://bit.ly/wsd-mv" target="_blank") bit.ly/wsd-mv
+        br
+        | Александра Шинкевич (
+        a(href='https://twitter.com/neesoglasnaja' target="_blank") @neesoglasnaja
+        | )
+      +cover('pictures/blur-cover.jpg')
+    
+    .progress
+    script(src='shower/shower.min.js')
+    script(src="vendor/highlight.min.js")
+    script.
+      hljs.initHighlightingOnLoad();

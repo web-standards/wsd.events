@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Css is awesome</title>
+  <style>
+    html, body { height: 100%; margin: 0; padding: 0; }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: sans-serif;
+    }
+
+    .container {
+      height: 350px;
+      width:  350px;
+      border: 4px solid black;
+    }
+
+    .content {
+      font-weight: 600;
+      height: 100%; width: 100%;
+    }
+
+    input[type="text"] {
+      position: absolute; width: 100%;
+      top: 0; left: 0;
+      text-align: center;
+      border: none; outline: none;  box-sizing: border-box;
+    }
+
+  </style>
+</head>
+<body>
+  <input type="text" id="value" value="T" autofocus="autofocus" tabindex="0">
+  <span
+          style="
+            color: white;
+            display: block;
+            position: absolute;
+            top: 30px;
+            font-size: 12px;
+          "
+  >
+    Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch</span>
+
+  <div class="container" id ="container">
+    <svg id="svgRoot" class="content" preserveAspectRatio="xMidYMid meet" viewBox="0 0 10 19">
+      <text id="text" y="15">T</text>
+    </svg>
+  </div>
+
+  <script>
+    const rootViewBox = document.getElementById("svgRoot").viewBox.baseVal;
+
+    document
+        .getElementById("value")
+        .addEventListener("input", (ev) => {
+          if (!ev.target.value) return;
+
+          const el = document.getElementById("text");
+
+          const before = el.getBoundingClientRect();
+          el.textContent = ev.target.value;
+          const after = el.getBoundingClientRect();
+
+          rootViewBox.width = rootViewBox.width * after.width / before.width;
+        });
+  </script>
+
+  <script src="//cdn.jsdelivr.net/interact.js/1.2.6/interact.min.js"></script>
+  <script>
+    interact('.container')
+        .resizable({
+          preserveAspectRatio: false,
+          edges: { left: true, right: true, bottom: true, top: true }
+        })
+        .on('resizemove', (event) => {
+          let {style} = event.target;
+          style.width  = event.rect.width + 'px';
+          style.height = event.rect.height + 'px';
+        });
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,35 @@
+.scroll-position-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 4vh;
+    overflow: hidden;
+}
+
+.scroll-position {
+    background-color: mediumpurple;
+    width: 100vw;
+    height: 100%;
+    transition: transform 0.1s linear;
+    transform: translateX(-100%);
+}
+
+
+
+.scroll-to-top {
+    position: fixed;
+    display: block;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    line-height: 80px;
+    font-size: 30px;
+    right: 30px;
+    bottom: 30px;
+    background: mediumpurple;
+    color: white;
+    cursor: pointer;
+    transform: translateY(100px);
+    opacity: 0;
+}

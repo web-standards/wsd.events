@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Дружим с контентом пользователя</title>
+    <link rel="stylesheet" href="shower-material/styles/screen-16x10.css">
+	<style>
+		.box {
+			fill: none;
+			stroke: black;
+			stroke-width: 2px;
+		}
+		.paper {
+			fill: white;
+			stroke: black;
+			stroke-width: 1px;
+		}
+		.branch {
+			fill: none;
+			stroke: #449e48;
+			stroke-width: 2px;
+		}
+		.source-code,
+		.source-tree,
+		.transformed-tree,
+		.transformed-code {
+			font-family: Arial, sans-serif;
+			font-size: 10px;
+		}
+		.heading {
+			/*font-family: Arial, sans-serif;*/
+			font-size: 20px;
+			text-anchor: middle;
+			alignment-baseline: middle;
+		}
+	</style>
+</head>
+<body class="shower full">
+
+<header class="caption">
+    <h1>Дружим с&nbsp;контентом пользователя</h1>
+    <p>Владимир Кузнецов, Graph</p>
+</header>
+
+<section class="slide white">
+    <h2 style="margin-top: 0; text-align: center; font-size: 96px;">Дружим с&nbsp;контентом пользователя</h2>
+    <p style="text-align: center">
+        Владимир Кузнецов,
+        <a target="_blank" href="https://twitter.com/mistakster">@mistakster</a>,
+        Graph
+    </p>
+</section>
+
+<section class="slide">
+    <h2>План</h2>
+    <ol>
+        <li>WYSIWYG-редакторы.</li>
+        <li>Легковесные языки разметки.</li>
+        <li>Транформация контента.</li>
+    </ol>
+</section>
+
+<section class="slide">
+    <h2 class="shout">WYSIWYG-редакторы</h2>
+</section>
+
+<section class="slide white">
+    <img class="cover" src="assets/img/google-docs.png" alt="Google Docs preview"/>
+</section>
+
+<section class="slide white">
+    <img class="cover" src="assets/img/ckeditor-inline.png" alt="CKEditor inlined"/>
+</section>
+
+<section class="slide white">
+    <img class="cover" src="assets/img/ckeditor-window.png" alt="CKEditor widget"/>
+</section>
+
+<section class="slide">
+    <h2>Редактор за 5 минут</h2>
+    <pre><code>&lt;div <mark>contentEditable</mark>=&quot;true&quot;>
+    Привет, мир!
+&lt;/div></code></pre>
+    <p>Оформление меняется через <strong>document.<a
+            href="https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand"
+            target="_blank">execCommand</a>()</strong></p>
+</section>
+
+<section class="slide">
+    <h2 class="shout">Применяйте к редактору стили контента</h2>
+</section>
+
+<section class="slide white">
+    <img class="cover" src="assets/img/boromir.jpg" alt="Боромир. Нельзя просто взять и…">
+</section>
+
+<section class="slide">
+    <h2 class="shout">Всем больно</h2>
+</section>
+
+<section class="slide">
+    <h2>Боль разработчика</h2>
+    <ul>
+        <li class="next">вместо <code>&lt;p></code> получаем <code>&lt;br>&lt;br></code>;</li>
+        <li class="next">вместо <code>&lt;h3></code> &mdash;
+            <code>&lt;p>&lt;strong>&lt;span style=&quot;font-size: 20px&quot;></code>;</li>
+        <li class="next">пользователи игнорируют типографские знаки (тире, кавычки и т.п.);</li>
+        <li class="next">нельзя использовать классы и обёртки;</li>
+        <li class="next">нельзя вставить отзывчивые картинки.</li>
+    </ul>
+</section>
+
+<section class="slide">
+    <h2 class="shout">Легковесные языки разметки</h2>
+</section>
+
+<section class="slide">
+    <h2>Легковесные языки разметки</h2>
+    <p>Программисты придумали обычный текст конвертировать в HTML.</p>
+    <ul>
+        <li>Markdown;</li>
+        <li>BBCode;</li>
+        <li>Wiki markup;</li>
+        <li>и многие другие.</li>
+    </ul>
+</section>
+
+<section class="slide white">
+    <img src="assets/img/relief.jpg" alt="Придумали и убежали радостно в закат" class="cover">
+</section>
+
+<section class="slide">
+    <h2>Викторина</h2>
+    <p class="next">Кто пользуется Markdown?</p>
+    <p class="next">Кто знает как вставить картинку?</p>
+    <p class="next"><code>![alt text](image.jpg)</code></p>
+    <p class="next">С какого раза ваши пользователи это запомнят?</p>
+</section>
+
+<section class="slide">
+    <h2 class="shout">Трансформация контента</h2>
+</section>
+
+<section class="slide white">
+    <img src="assets/img/transformator.jpg" alt="Трансформатор" class="cover">
+</section>
+
+<section class="slide" data-diagram="true">
+    <h2>Трансформация контента</h2>
+	<svg id="transformation-diagram" viewBox="0 0 640 256" style="width: 100%;"></svg>
+</section>
+
+<section class="slide">
+	<h2>Трансформация контента</h2>
+	<ul>
+		<li>разбираем строку на дерево элементов с помощью парсера HTML;</li>
+		<li>применяем правила трансформации к дереву элементов;</li>
+		<li>сериализуем дерево обратно в строку.</li>
+	</ul>
+</section>
+
+<section class="slide">
+    <h2 class="shout">Что можно делать?</h2>
+</section>
+
+<section class="slide">
+    <h2>Что можно делать?</h2>
+    <ul>
+        <li>добавлять классы;</li>
+    </ul>
+</section>
+
+<section class="slide">
+    <pre>
+        <code>&lt;h1></code>
+        <code>  Red Hot Chili Peppers &mdash; «The Getaway»</code>
+        <code>&lt;/h1></code>
+        <code>&lt;p></code>
+        <code>  Для того, чтобы грациозно стареть, нужна немалая</code>
+        <code>  &lt;strong></code>
+        <code>    физическая подготовка</code>
+        <code>  &lt;/strong></code>
+        <code>  и железная воля.&lt;/p></code>
+    </pre>
+</section>
+
+<section class="slide">
+    <pre>
+        <code>&lt;h1 class=&quot;<mark>markup-h1</mark>&quot;></code>
+        <code>  Red Hot Chili Peppers &mdash; «The Getaway»</code>
+        <code>&lt;/h1></code>
+        <code>&lt;p class=&quot;<mark>markup-p</mark>&quot;></code>
+        <code>  Для того, чтобы грациозно стареть, нужна немалая</code>
+        <code>  &lt;strong class=&quot;<mark>markup-strong</mark>&quot;></code>
+        <code>    физическая подготовка</code>
+        <code>  &lt;/strong></code>
+        <code>  и железная воля.&lt;/p></code>
+    </pre>
+</section>
+
+<section class="slide">
+    <pre>
+        <code>&lt;h1 class=&quot;<mark>review__markup-h1 markup-h1</mark>&quot;></code>
+        <code>  Red Hot Chili Peppers &mdash; «The Getaway»</code>
+        <code>&lt;/h1></code>
+        <code>&lt;p class=&quot;<mark>review__markup-p markup-p</mark>&quot;></code>
+        <code>  Для того, чтобы грациозно стареть, нужна немалая</code>
+        <code>  &lt;strong class=&quot;<mark>review__markup-strong markup-strong</mark>&quot;></code>
+        <code>    физическая подготовка</code>
+        <code>  &lt;/strong></code>
+        <code>  и железная воля.&lt;/p></code>
+    </pre>
+</section>
+
+<section class="slide">
+    <h2>Что можно делать?</h2>
+    <ul>
+        <li>добавлять классы;</li>
+        <li class="next">удалять атрибут <strong>style</strong> и другие нежелательные атрибуты;</li>
+        <li class="next">делать обёртки для сохранения пропорций объектов;</li>
+    </ul>
+</section>
+
+<section class="slide">
+    <pre>
+        <code>&lt;iframe width=&quot;560&quot; height=&quot;315&quot;</code>
+        <code>  src=&quot;https://www.youtube.com/embed/o_1aF54DO60&quot;</code>
+        <code>  frameborder=&quot;0&quot; allowfullscreen>&lt;/iframe></code>
+    </pre>
+</section>
+
+<section class="slide">
+    <pre>
+        <code>&lt;div class=&quot;<mark>box</mark>&quot;></code>
+        <code>  &lt;iframe class=&quot;<mark>box__child</mark>&quot; src=&quot;&hellip;&quot;>&lt;/iframe></code>
+        <code>&lt;/div></code>
+    </pre>
+    <pre>
+        <code><mark class="comment">/* aspect ratio = 16:9 */</mark></code>
+        <code>.box { pos: rel; pad-b: 56.25%; }</code>
+        <code>.box__child { pos: abs; w: 100%; h: 100%; }</code>
+    </pre>
+</section>
+
+<section class="slide">
+    <h2>Что можно делать?</h2>
+    <ul>
+        <li>добавлять классы;</li>
+        <li>удалять атрибут <strong>style</strong> и другие нежелательные атрибуты;</li>
+        <li>делать обёртки для сохранения пропорций объектов;</li>
+        <li class="next">расставлять типографские знаки;</li>
+        <li class="next">отзывчивые картинки;</li>
+    </ul>
+</section>
+
+<section class="slide">
+    <h2>Отзывчивые картинки</h2>
+    <pre>
+        <code>&lt;img alt=&quot;Обложка альбома «The Getaway»&quot;</code>
+        <code>  src=&quot;photo.jpg&quot;></code>
+    </pre>
+</section>
+
+<section class="slide">
+    <h2>Отзывчивые картинки</h2>
+    <pre>
+        <code>&lt;img alt=&quot;Обложка альбома «The Getaway»&quot;</code>
+        <code>  src=&quot;<mark>photo.jpg?w=300&h=300</mark>&quot;</code>
+        <code>  srcset=&quot;<mark>photo.jpg?w=300&h=300 1x,</mark></code>
+        <code>          <mark>photo.jpg?w=600&h=600 2x</mark>&quot;></code>
+    </pre>
+</section>
+
+<section class="slide">
+    <h2>Что можно делать?</h2>
+    <ul>
+        <li>добавлять классы;</li>
+        <li>удалять атрибут <strong>style</strong> и другие нежелательные атрибуты;</li>
+        <li>делать обёртки для сохранения пропорций объектов;</li>
+        <li>расставлять типографские знаки;</li>
+        <li>отзывчивые картинки;</li>
+        <li class="next">заменять <strong>&lt;br>&lt;br></strong> на <strong>&lt;p></strong>;</li>
+    </ul>
+</section>
+
+<section class="slide">
+    <h2>Параграфы</h2>
+    <pre>
+        <code>Для того, чтобы грациозно стареть, нужна немалая</code>
+        <code>физическая подготовка и железная воля.<mark>&lt;br></mark></code>
+        <code><mark>&lt;br></mark></code>
+        <code>Теперь в составе по большей части 50-летние мужчины,</code>
+        <code>которые пережили увлечение панком, фанком и блюз-роком,</code>
+        <code>и теперь записывают красивую и сложно устроенную музыку.</code>
+    </pre>
+</section>
+
+<section class="slide">
+    <h2>Параграфы</h2>
+    <pre>
+        <code><mark>&lt;p></mark>Для того, чтобы грациозно стареть, нужна немалая</code>
+        <code>  физическая подготовка и железная воля.</code>
+        <code><mark>&lt;/p></mark></code>
+        <code><mark>&lt;p></mark>Теперь в составе по большей части 50-летние мужчины,</code>
+        <code>  которые пережили увлечение панком, фанком и блюз-роком,</code>
+        <code>  и теперь записывают красивую и сложно устроенную  музыку.</code>
+        <code><mark>&lt;/p></mark></code>
+    </pre>
+</section>
+
+<section class="slide">
+    <h2>Что можно делать?</h2>
+    <ul>
+        <li>добавлять классы;</li>
+        <li>удалять атрибут <strong>style</strong> и другие нежелательные атрибуты;</li>
+        <li>делать обёртки для сохранения пропорций объектов;</li>
+        <li>расставлять типографские знаки;</li>
+        <li>отзывчивые картинки;</li>
+        <li>заменять <strong>&lt;br>&lt;br></strong> на <strong>&lt;p></strong>;</li>
+        <li class="next">удалять пустые элементы и пробелы.</li>
+    </ul>
+</section>
+
+<section class="slide">
+    <h2>Пустые элементы и пробелы</h2>
+    <pre>
+        <code>Жанр: Rock, Funk</code>
+        <code><mark>&lt;div>&lt;/div></mark></code>
+        <code><mark>&lt;div>&amp;nbsp;&lt;div></mark></code>
+        <code>Год: 2016</code>
+    </pre>
+</section>
+
+<section class="slide">
+    <h2>Пустые элементы и пробелы</h2>
+    <pre>
+        <code>Жанр: Rock, Funk</code>
+        <code><mark>&lt;br></mark></code>
+        <code><mark>&lt;br>&lt;br></mark></code>
+        <code>Год: 2016</code>
+    </pre>
+</section>
+
+<section class="slide">
+    <h2 class="shout">Другие очень сложные вещи</h2>
+</section>
+
+<section class="slide">
+    <h2>Подписи к иллюстрациям</h2>
+    <pre>
+        <code>&lt;p></code>
+        <code>  &lt;img alt=&quot;Обложка альбома «The Getaway»&quot; src=&quot;photo.jpg&quot;></code>
+        <code>&lt;/p></code>
+        <code>&lt;p>&lt;em>Red Hot Chili Peppers записали альбом</code>
+        <code>  под названием «The Getaway»&lt;/em>&lt;/p></code>
+    </pre>
+</section>
+
+<section class="slide">
+    <h2>Подписи к иллюстрациям</h2>
+    <pre>
+        <code class="mark">&lt;figure></code>
+        <code>  &lt;img alt=&quot;Обложка альбома «The Getaway»&quot; src=&quot;photo.jpg&quot;></code>
+        <code class="mark">  &lt;figcaption>Red Hot Chili Peppers записали альбом</code>
+        <code class="mark">    под названием «The Getaway»&lt;/figcaption></code>
+        <code>&lt;/figure></code>
+    </pre>
+</section>
+
+<section class="slide">
+    <h2>Три в ряд</h2>
+    <img class="place" style="width: 940px;"
+            src="assets/img/three-in-row.png"
+            alt="Три подряд иллюстрации выстраиваются в ряд">
+</section>
+
+<section class="slide">
+    <h2 class="shout">Комбинация трансформаций</h2>
+</section>
+
+<section class="slide">
+    <pre>
+        <code>&lt;figure class=&quot;markup-figure&quot;></code>
+        <code>  &lt;img src=&quot;photo.jpg?w=300&h=300&quot;</code>
+        <code>    srcset=&quot;photo.jpg?w=300&h=300 1x,</code>
+        <code>            photo.jpg?w=600&h=600 2x&quot;</code>
+        <code>    class=&quot;markup-img&quot;</code>
+        <code>    alt=&quot;Обложка альбома «The Getaway»&quot;></code>
+        <code>  &lt;figcaption class=&quot;markup-figcaption&quot;>&hellip;&lt;/figcaption></code>
+        <code>&lt;/figure></code>
+    </pre>
+</section>
+
+<section class="slide">
+    <h2 class="shout">Одно простое действие за раз</h2>
+</section>
+
+<section class="slide white">
+    <img class="cover" src="assets/img/posthtml.svg" alt="PostHTML logo">
+</section>
+
+<section class="slide">
+    <h2>PostHTML</h2>
+    <p><a href="https://github.com/posthtml/posthtml" target="_blank">github.com/posthtml/posthtml</a></p>
+    <ul>
+        <li>работает на Node.js;</li>
+        <li>можно запускать из CLI;</li>
+        <li>легко интегрируется в webpack, Gulp и Grunt;</li>
+        <li>можно использовать внутри веб-серверов Express, Koa, Hapi;</li>
+        <li>для него уже написаны десятки плагинов.</li>
+    </ul>
+</section>
+
+<section class="slide">
+    <h2 class="shout">Напишите своё</h2>
+</section>
+
+<section class="slide">
+    <h2 class="shout">Задача для бэкендера</h2>
+</section>
+
+<section class="slide">
+    <h2 class="shout">Очень много тестовых сценариев</h2>
+</section>
+
+<section class="slide">
+    <h2 class="shout">Кэширование!</h2>
+</section>
+
+<section class="slide">
+    <h2>Заключение</h2>
+    <ol>
+        <li>Клиент счастлив.</li>
+        <li>Страница выглядит опрятно.</li>
+        <li>Повторно применяем трансформации в других проектах.</li>
+    </ol>
+</section>
+
+<section class="slide" id="contacts">
+    <h2>Владимир Кузнецов</h2>
+    <p>
+        <img src="assets/icons/twitter.svg" style="width: 24px; vertical-align: middle">
+        <a href="https://twitter.com/mistakster" target="_blank">@mistakster</a> (English)<br>
+        <img src="assets/icons/twitter.svg" style="width: 24px; vertical-align: middle">
+        <a href="https://twitter.com/mista_k" target="_blank">@mista_k</a> (больше про жизнь)
+    </p>
+    <p>
+        <img src="assets/icons/globe.svg" style="width: 24px; vertical-align: middle">
+        <a href="https://noteskeeper.ru" target="_blank">noteskeeper.ru</a>
+    </p>
+    <p>
+        Слайды презентации:
+        <a href="https://mistakster.github.io/pal-up-with-ugc/">mistakster.github.io/pal-up-with-ugc</a>
+    </p>
+</section>
+
+<div class="progress"></div>
+<script src="shower-core/shower.min.js"></script>
+<script src="assets/js/shower-steerage.js"></script>
+<script src="assets/js/snap.svg-min.js"></script>
+<script src="assets/js/diagram.js"></script>
+
+<!--
+<script src="assets/js/transform.js"></script>
+-->
+
+</body>
+</html>

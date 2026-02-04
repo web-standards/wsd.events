@@ -1,0 +1,10 @@
+mixin slide(parameters)
+	- var name= parameters.name?""+parameters.name:""
+	- var shout= parameters.shout?" "+"shout shrink":""
+	- var classes= parameters.classes? " "+parameters.classes: ""
+
+	section.slide(id=name, class=classes)
+		if parameters.header
+			h2(class=shout) !{parameters.header}
+		if block
+			block

@@ -1,0 +1,119 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "shower-ribbon@^2.1.0",
+        "scope": null,
+        "escapedName": "shower-ribbon",
+        "name": "shower-ribbon",
+        "rawSpec": "^2.1.0",
+        "spec": ">=2.1.0 <3.0.0",
+        "type": "range"
+      },
+      "/Users/deniszavgorodny/Documents/Доклады/wsd17/shower"
+    ]
+  ],
+  "_from": "shower-ribbon@>=2.1.0 <3.0.0",
+  "_id": "shower-ribbon@2.1.0",
+  "_inCache": true,
+  "_location": "/shower-ribbon",
+  "_nodeVersion": "8.2.1",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/shower-ribbon-2.1.0.tgz_1501799969366_0.1850905518513173"
+  },
+  "_npmUser": {
+    "name": "pepelsbey",
+    "email": "pepelsbey@gmail.com"
+  },
+  "_npmVersion": "5.3.0",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "shower-ribbon@^2.1.0",
+    "scope": null,
+    "escapedName": "shower-ribbon",
+    "name": "shower-ribbon",
+    "rawSpec": "^2.1.0",
+    "spec": ">=2.1.0 <3.0.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/shower-ribbon/-/shower-ribbon-2.1.0.tgz",
+  "_shasum": "4dc565e3288fb2dd9d10bed92c2afa8c29b5bff0",
+  "_shrinkwrap": null,
+  "_spec": "shower-ribbon@^2.1.0",
+  "_where": "/Users/deniszavgorodny/Documents/Доклады/wsd17/shower",
+  "author": {
+    "name": "Vadim Makeev",
+    "url": "http://pepelsbey.net/"
+  },
+  "bugs": {
+    "url": "http://github.com/shower/shower/issues"
+  },
+  "dependencies": {},
+  "description": "Ribbon theme for Shower HTML presentation engine",
+  "devDependencies": {
+    "autoprefixer": "^7.1.2",
+    "browser-sync": "^2.14.0",
+    "gulp": "^3.9.1",
+    "gulp-header": "^1.8.8",
+    "gulp-postcss": "^7.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.6.1",
+    "gulp-sass": "^3.0.0",
+    "path-exists-cli": "^1.0.0",
+    "postcss-csso": "^2.0.0",
+    "shower-core": "latest"
+  },
+  "directories": {},
+  "dist": {
+    "integrity": "sha512-InGRgTla2QaXa/0gpRRxz0rQb2MJRb3hrI42ZYk6L7S+B5/THPO+KLNMeyIHkDOADlhp8OP7+I7Dses96bu14w==",
+    "shasum": "4dc565e3288fb2dd9d10bed92c2afa8c29b5bff0",
+    "tarball": "https://registry.npmjs.org/shower-ribbon/-/shower-ribbon-2.1.0.tgz"
+  },
+  "files": [
+    "docs/**",
+    "fonts/**",
+    "images/**",
+    "pictures/**",
+    "styles/*.css",
+    "index.html",
+    "LICENSE.md",
+    "README.md"
+  ],
+  "gitHead": "690b6c9ee69880f49ea02db3254d23ea85f25e1a",
+  "homepage": "https://github.com/shower/ribbon",
+  "keywords": [
+    "shower",
+    "presentation",
+    "ribbon",
+    "theme"
+  ],
+  "license": "MIT",
+  "maintainers": [
+    {
+      "name": "pepelsbey",
+      "email": "pepelsbey@gmail.com"
+    },
+    {
+      "name": "zloylos",
+      "email": "i@zloylos.me"
+    }
+  ],
+  "name": "shower-ribbon",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/shower/ribbon.git"
+  },
+  "scripts": {
+    "dev": "gulp",
+    "prepublish": "npm run styles",
+    "styles": "gulp styles",
+    "test": "path-exists styles/screen-16x10.css && path-exists styles/screen-4x3.css"
+  },
+  "version": "2.1.0"
+}

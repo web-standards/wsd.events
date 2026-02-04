@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Css is awesome</title>
+  <style>
+    html, body { height: 100%; margin: 0; padding: 0; }
+
+    body {
+      font-family: Arial Bold, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-transform: uppercase;
+    }
+
+    .container {
+      width: 100%;
+      padding-bottom: 100%;
+
+      border: 4px solid black;
+      position: relative;
+    }
+
+    .content {
+      font-weight: 600;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      font-size: 17vw;
+    }
+    @media (min-width: 500px) {
+      .content { font-size: calc(50px + 6.9vw);}
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="content">
+    Css <br/>
+    is <br/>
+    Awesome!
+  </div>
+</div>
+</body>
+</html>

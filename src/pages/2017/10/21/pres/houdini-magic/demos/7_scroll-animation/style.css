@@ -1,0 +1,268 @@
+/* Imported Fonts */
+@import url("./font-awesome/css/font-awesome.min.css");
+
+body {
+  margin: 0;
+}
+
+/* Page Body */
+img {
+  display: block;
+}
+
+.page-wrapper{
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.header {
+  display: block;
+  background: center top url("./images/minimalizm-gradient-background.jpg");
+  margin: 0 0 40px;
+  padding: 100px 0px 75px 0px;
+}
+
+.avatar img {
+  max-width: 100px;
+  max-height: 100px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  z-index: 0;
+}
+
+.name {
+  font-size: 36px;
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  color: white;
+  margin: 0px 0px 0px 0px;
+  padding: 10px 0px 0px 0px;
+  z-index: 0;
+}
+
+.username {
+  font-size: 16px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  text-align: center;
+  color: white;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+}
+
+.post-date {
+  display: block;
+  width: 45px;
+  height: 53px;
+  background: center top url("./images/minimalizm-gradient-background.jpg");
+  margin: -13px 0px 0px 0px;
+  padding: 0px auto 20px auto;
+  position: solid;
+  float: left;
+}
+
+.date-day {
+  font-size: 22px;
+  font-family: 'Lato', sans-serif;
+  color: white;
+  text-align: center;
+  margin: 0px 0px 15px 0px;
+  padding: 8px 10px 20px 10px;
+  text-transform: uppercase;
+}
+
+.date-month {
+  font-size: 10px;
+  font-family: 'Lato', sans-serif;
+  color: white;
+  text-align: center;
+  margin: -35px 0px 0px 0px;
+  padding: 0px 10px 10px 10px;
+  text-transform: uppercase;
+}
+
+.post-heading {
+  background: #eee;
+  width: 75%;
+  max-width: 750px;
+  padding: 1px 20px 1px 20px;
+  margin: 20px auto 1px auto;
+}
+
+.post-title {
+  font-size: 16px;
+  font-family: 'Lato', sans-serif;
+  color: #999;
+  text-align: center;
+  margin: 10px auto 10px auto;
+  padding: 0px 45px 0px 0px;
+}
+
+.post-content {
+  display: block;
+  font-size: 14px;
+  font-family: 'Lato', sans-serif;
+  text-align: left;
+  color: #999;
+  background: #eee;
+  line-height: 140%;
+  width: 75%;
+  max-width: 750px;
+  padding: 5px 20px 30px 20px;
+  margin: 0px auto 40px auto;
+}
+
+.post-info {
+  font-size: 12px;
+  color: #ccc;
+  float: right;
+  padding: 10px 0px 0px 0px;
+  margin: -15px 0px 0px 0px;
+}
+
+.bio {
+  font-size: 22px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  text-align: center;
+  font-style: italic;
+  color: white;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 450px 0px 450px;
+}
+
+.site-footer {
+  display: block;
+  background: center top url("./images/minimalizm-gradient-background.jpg");
+  margin: 40px 0 0 ;
+  padding: 100px 0px 100px 0px;
+  z-index: -1;
+}
+
+.footer-text {
+  font-size: 14px;
+  font-family: 'Lato', sans-serif;
+  color: white;
+  text-align: center;
+}
+
+/* Social Icons */
+p > a:hover{
+	color: #d9d9d9;
+	text-decoration:  underline;
+}
+
+ul {
+	padding:0;
+	list-style: none;
+}
+
+.social-icon {
+	color: #fff;
+}
+
+ul.social-icons {
+	margin-top: 10px;
+
+}
+
+.social-icons li {
+	vertical-align: top;
+	display: inline;
+}
+
+.social-icons a {
+	color: #fff;
+	text-decoration: none;
+}
+
+
+.fa-facebook {
+	padding:10px 14px 7px 14px;
+	-o-transition:.5s;
+  	-ms-transition:.5s;
+  	-moz-transition:.5s;
+  	-webkit-transition:.5s;
+  	transition: .5s;
+  	background-color: transparent;
+}
+
+.fa-facebook:hover {
+	background-color: #3d5b99;
+}
+
+.fa-twitter {
+	padding:10px 10px 7px 10px;
+	-o-transition:.5s;
+  	-ms-transition:.5s;
+  	-moz-transition:.5s;
+  	-webkit-transition:.5s;
+  	transition: .5s;
+  	background-color: transparent;
+}
+
+.fa-twitter:hover {
+	background-color: #00aced;
+}
+
+.fa-rss {
+	padding:10px 12px 7px 12px;
+	-o-transition:.5s;
+  	-ms-transition:.5s;
+  	-moz-transition:.5s;
+  	-webkit-transition:.5s;
+  	transition: .5s;
+  	background-color: transparent;
+}
+
+.fa-rss:hover {
+	background-color: #eb8231;
+}
+
+.fa-youtube {
+	padding:10px 12px 7px 11px;
+	-o-transition:.5s;
+  	-ms-transition:.5s;
+  	-moz-transition:.5s;
+  	-webkit-transition:.5s;
+  	transition: .5s;
+  	background-color: transparent;
+}
+
+.fa-youtube:hover {
+	background-color: #e64a41;
+}
+
+.fa-linkedin {
+	padding:10px 11px 8px 11px;
+	-o-transition:.5s;
+  	-ms-transition:.5s;
+  	-moz-transition:.5s;
+  	-webkit-transition:.5s;
+  	transition: .5s;
+  	background-color: transparent;
+}
+
+.fa-linkedin:hover {
+	background-color: #0073a4;
+}
+
+.fa-google-plus {
+	padding:10px 10px 7px 10px;
+	-o-transition:.5s;
+  	-ms-transition:.5s;
+  	-moz-transition:.5s;
+  	-webkit-transition:.5s;
+  	transition: .5s;
+  	background-color: transparent;
+}
+
+.fa-google-plus:hover {
+	background-color: #e25714;
+}

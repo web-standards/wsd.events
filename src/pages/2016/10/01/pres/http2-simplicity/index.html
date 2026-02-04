@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Обманчивая простота HTTP/2</title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
+	<style type="text/css">
+		.slide::after {
+			visibility: hidden;
+		}
+
+		.slide {
+			padding-top: 50px;
+			font-size: 32px;
+			line-height: 1.6;
+		}
+
+		.slide img {
+			max-width: 100%;
+			max-height: 100%;
+		}
+
+		.slide li {
+			margin-bottom: 1em;
+		}
+
+		.slide li:last-child {
+			margin-bottom: 0;
+		}
+
+		#cover {
+			padding-top: 200px;
+			background-color: transparent;
+			background-image: url('pictures/cover.jpg');
+			background-repeat: no-repeat;
+			background-position: right center;
+			background-size: cover;
+		}
+
+		.slide.light-text,
+		.slide.light-text h2,
+		.slide.light-text a,
+		.slide.light-text a:visited {
+			color: #fff;
+		}
+
+		.slide ol.no-bullets li::before,
+		.slide ul.no-bullets li::before {
+			content: '' !important;
+		}
+	</style>
+</head>
+<body class="shower full">
+<header class="caption">
+	<h1>Обманчивая простота HTTP/2</h1>
+	<p>Алексей Уколов, <a href="https://twitter.com/alexey_m_ukolov" target="_blank">@alexey_m_ukolov</a></p>
+</header>
+
+<section class="slide black light-text" id="cover">
+	<h2 title="Parrot sketch not included">Обманчивая простота HTTP/2</h2>
+	<p>
+		Алексей Уколов, <a href="https://twitter.com/alexey_m_ukolov" target="_blank">@alexey_m_ukolov</a>
+		<br/>
+		<a href="http://itgro.ru" target="_blank">Айтигро</a>, Екатеринбург
+	</p>
+</section>
+
+<section class="slide black light-text">
+	<img src="pictures/spanish-inquisition.jpg" class="cover w">
+	<h2 class="shout">Доклад-покаяние</h2>
+</section>
+
+<section class="slide black light-text">
+	<img src="pictures/life-of-http.png" class="cover w">
+	<article style="display: inline-block; background-color: rgba(255, 255, 255, 0.1); padding: 10px; margin: -10px; border-radius: 10px;">
+		<p>HTTP/0.9 — 1991 г.</p>
+		<p>HTTP/1.0 — 1996 г.</p>
+		<p style="margin-bottom: 0;">HTTP/1.1 — 1999 г.</p>
+	</article>
+	<p style="margin-top: 1em;">SPDY — 2009 г.</p>
+	<p>HTTP/2 — 2015 г.</p>
+</section>
+
+<section class="slide">
+	<h2>HTTP/2&nbsp;глазами&nbsp;маркетологов</h2>
+	<img src="pictures/unicorn.jpg"/>
+</section>
+
+<section class="slide black">
+	<img src="pictures/can-i-use.png" class="cover h">
+	<p class="place right bottom" style="margin-right: 50px;font-size: 50px;line-height: 1;margin-bottom: 70px;">А на нашем проекте ≈91%</p>
+</section>
+
+<section class="slide">
+	<h2>Ура!</h2>
+	<img src="pictures/unicorn.jpg"/>
+</section>
+
+<section class="slide">
+	<blockquote>
+		Некоторые лучшие практики оптимизации скорости загрузки бесполезны или даже вредны при использовании HTTP/2.
+		<br/>
+		Это &mdash; костыли, призванные бороться с недостатками и ограничениями HTTP/1.
+	</blockquote>
+	<br/>
+	<p class="next">Но отказ от этих оптимизаций ударит по тем, кто не поддерживает новый протокол.</p>
+	<article class="next">
+		<p>Но их же у нас всего 9%&hellip;</p>
+		<img src="pictures/trollface.jpg" width="250" class="place bottom right">
+	</article>
+</section>
+
+<section class="slide black light-text">
+	<img src="pictures/depressed-unicorn.jpg" class="cover h">
+	<h2 class="place bottom">Логи&nbsp;говорят,&nbsp;что&nbsp;HTTP/2&nbsp;есть&nbsp;у&nbsp;30%&nbsp;посетителей&hellip;</h2>
+</section>
+
+<section class="slide black light-text">
+	<img src="pictures/fight.png" class="cover h">
+	<h2 class="place bottom">
+		HTTP/2&nbsp;исправил&nbsp;ошибки&nbsp;прошлого.
+		<br/>
+		Но&nbsp;само&nbsp;"прошлое"&nbsp;никуда&nbsp;не&nbsp;делось&hellip;
+	</h2>
+</section>
+
+<section class="slide black light-text">
+	<h2>
+		Почему скорость загрузки важна?
+		<br/>
+		<br/>
+		И почему это должно волновать фронтендера?
+	</h2>
+	<img src="pictures/running.gif" class="cover w">
+</section>
+
+<section class="slide black light-text">
+	<h2 class="shout" style="font-size: 100px;">Что влияет&nbsp;на скорость&nbsp;загрузки?</h2>
+</section>
+
+<section class="slide">
+	<h2>Пропускная способность канала (Bandwidth)</h2>
+	<ul>
+		<li>Имеет значение при передаче больших документов (аудио, видео).</li>
+		<li>Для хождения по сайтам значительного влияния не оказывает &mdash; там десятки небольших запросов.</li>
+		<li>Можно разгрузить канал, передавая только <em>необходимые</em>&nbsp;данные в&nbsp;<em>сжатом</em>&nbsp;виде.
+		</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>Сетевые задержки (Latency и RTT)</h2>
+	<img src="pictures/page-load-time-vs-bandwidth-and-latency.svg">
+</section>
+
+<section class="slide">
+	<h2>Сетевые задержки (Latency и RTT)</h2>
+	<p>Оказывают наибольшее влияние на скорость загрузки страниц, поэтому нужно оптимизировать в первую очередь их.</p>
+	<p>Но скорость света увеличить не получится&hellip;</p>
+	<p>Установка соединения &mdash; очень дорогая операция.</p>
+</section>
+
+<section class="slide">
+	<h2>Анатомия TCP-соединения</h2>
+	<ul style="width: 45%;">
+		<li>Тройное рукопожатие</li>
+		<li>Медленный старт</li>
+		<li>А ещё TLS, DNS и много других страшных слов</li>
+	</ul>
+	<p style="width: 45%;"><a href="https://hpbn.co/">High Performance<br/>Browser Networking</a></p>
+	<img src="pictures/Tcp-handshake.svg.png" class="place bottom right" style="width: 50%; margin-right: 20px; margin-bottom: 40px;"/>
+</section>
+
+<section class="slide">
+	<h2>В HTTP/1 с этим всё печально</h2>
+	<ul>
+		<li>Одно соединение &mdash; один ресурс</li>
+		<li>Шесть* соединений в браузере на один домен</li>
+		<li>Заголовки не сжимаются, хотя часто могут быть больше тела запроса</li>
+	</ul>
+	<p class="note">*
+		<a href="http://www.browserscope.org/?category=network">http://www.browserscope.org/?category=network</a></p>
+</section>
+
+<section class="slide black light-text">
+	<h2 class="shout">HTTP/2 решает эти проблемы</h2>
+</section>
+
+<section class="slide">
+	<h2>HTTP/2 решает эти проблемы</h2>
+	<ul>
+		<li>Бинарный протокол</li>
+		<li>Одно мультиплексное соединение</li>
+		<li>Приоритизация</li>
+		<li>Сжатие заголовков</li>
+		<li>Server Push</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>Server Push</h2>
+	<p>В конфиге Apache заголовки можно установить вот так:</p>
+	<pre style="font-size: 25px;"><code>&lt;Location /xxx.html&gt;
+    Header add Link "&lt;/xxx.css&gt;; <mark>rel=preload;</mark> as=style"
+&lt;/Location&gt;</code></pre>
+	<p>На PHP вот так:</p>
+	<pre style="font-size: 25px;"><code>header("Link: &lt;/xxx.css&gt;; rel=preload; as=style", false);</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Server Push</h2>
+	<ul>
+		<li>Не пушить бездумно всё подряд.</li>
+		<li>Браузер использует только то, что сам бы запросил.
+			<br/>
+			Для других сценариев нужно использовать <em>prefetch</em>.
+		</li>
+		<li>Нет смысла отправлять то, что уже лежит в кэше.</li>
+		<li>Но узнать, что там есть, сервер пока не может&hellip;</li>
+	</ul>
+	<p>
+		<a href="https://docs.google.com/document/d/1K0NykTXBbbbTlv60t5MyJvXjqKGsCVNYHyLEXIxYMv0/preview">Rules of Thumb for HTTP/2 Push</a>
+	</p>
+</section>
+
+<section class="slide black light-text">
+	<h2 class="shout">
+		Лучшие практики фронтенда
+		<br/>
+		<small style="font-size: 75px;">(не все)</small>
+	</h2>
+</section>
+
+<section class="slide">
+	<ul class="double">
+		<li>Конкатенация</li>
+		<li>Спрайты</li>
+		<li>Gzip, сжатие изображений</li>
+		<li>Минификация</li>
+		<li>Версионирование</li>
+		<li>Инлайнинг ресурсов</li>
+		<li>Скрипты в конце body</li>
+		<li>Ленивая загрузка</li>
+		<li>CDN</li>
+		<li>Шардинг доменов</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>Конкатенация</h2>
+	<img src="pictures/concatenation.jpg" class="">
+	<p style="font-size: 25px;">
+		<a href="http://engineering.khanacademy.org/posts/js-packaging-http2.htm">http://engineering.khanacademy.org/posts/js-packaging-http2.htm</a>
+	</p>
+</section>
+
+<section class="slide">
+	<h2>Спрайты</h2>
+	<img src="pictures/sprite.png">
+	<p style="font-size: 25px;">
+		<a href="http://blog.octo.com/en/http2-arrives-but-sprite-sets-aint-no-dead/">http://blog.octo.com/en/http2-arrives-but-sprite-sets-aint-no-dead/</a>
+	</p>
+</section>
+
+<section class="slide">
+	<h2>Спрайты</h2>
+	<img src="pictures/sprite_hover.png">
+	<p class="note">Кто-так ещё делает?</p>
+</section>
+
+<section class="slide">
+	<h2>Gzip, сжатие изображений</h2>
+	<img src="pictures/repression.jpg">
+</section>
+
+<section class="slide">
+	<h2>Минификация</h2>
+	<img src="pictures/stomp.jpg">
+</section>
+
+<section class="slide">
+	<h2>Версионирование</h2>
+	<pre><code>&lt;link href="/styles/main.<mark>v42</mark>.css"/&gt;</code></pre>
+	<pre><code>&lt;link href="/styles/main.css<mark>?v=42</mark>"/&gt;</code></pre>
+	<pre><code>&lt;link href="/styles/main.<mark>b149bad6</mark>.css"/&gt;</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Инлайнинг ресурсов</h2>
+	<pre style="font-size: 25px;"><code>.block {
+	background-image:  url(
+		data:image/gif;
+		<mark>base64</mark>,
+		PHN2ZVJlYWR5AP5JRE ... JRa2jEIzFoJHJoGa9Zn==
+	);
+}</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Скрипты в конце body</h2>
+	<pre style="font-size: 21px;"><code>&lt;html&gt;
+	&lt;head&gt;
+		&lt;link rel="stylesheet" href="/styles/main.css"/&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&hellip;
+		<mark>&lt;script src="/scripts/vendor/jquery.js"/&gt;</mark>
+		<mark>&lt;script src="/scripts/app.js"/&gt;</mark>
+	&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+	<p style="font-size: 25px;">
+		<a href="http://www.html5rocks.com/ru/tutorials/internals/howbrowserswork/">Принципы работы современных веб-браузеров</a>
+	</p>
+</section>
+
+<section class="slide">
+	<h2>Ленивая загрузка</h2>
+	<pre><code>&lt;img src="loading.gif" <mark>data-src="real.jpg"</mark> /&gt;<br/>&hellip;<br/>&lt;script&gt;
+$('img').each(function () {
+	$(this).attr('src', $(this).data('src'));
+});
+&lt;/script&gt;</code></pre>
+</section>
+
+<section class="slide">
+	<h2>Content Delivery Network</h2>
+	<img src="pictures/cdn.png"/>
+</section>
+
+<section class="slide">
+	<h2>Шардинг доменов</h2>
+	<img src="pictures/domain-sharding.png"/>
+</section>
+
+<section class="slide">
+	<h2>Лучшие практики в свете HTTP/2</h2>
+	<ul class="double no-bullets" style="font-size: 26px;">
+		<li>
+			<span style="padding: .1em .2em; border-radius: .2em; background: #ffdc00;">&nbsp;&nbsp;&quest;&nbsp;Конкатенация</span>
+		</li>
+		<li>
+			<span style="padding: .1em .2em; border-radius: .2em; background: #ffdc00;">&nbsp;&nbsp;&quest;&nbsp;Спрайты</span>
+		</li>
+		<li>
+			<span style="padding: .1em .2em; border-radius: .2em; background: rgba(28, 176, 5, 0.7);">&nbsp;<span>&check;</span>&nbsp;Gzip, сжатие изображений</span>
+		</li>
+		<li>
+			<span style="padding: .1em .2em; border-radius: .2em; background: rgba(28, 176, 5, 0.7);">&nbsp;<span>&check;</span>&nbsp;Минификация</span>
+		</li>
+		<li>
+			<span style="padding: .1em .2em; border-radius: .2em; background: rgba(28, 176, 5, 0.7);">&nbsp;<span>&check;</span>&nbsp;Версионирование</span>
+		</li>
+		<li>
+			<span style="padding: .1em .2em; border-radius: .2em; background: rgba(230, 38, 44, 0.7);">&nbsp;<span>✕</span>&nbsp;Инлайнинг ресурсов</span>
+		</li>
+		<li>
+			<span style="padding: .1em .2em; border-radius: .2em; background: rgba(28, 176, 5, 0.7);">&nbsp;<span>&check;</span>&nbsp;Скрипты в конце body</span>
+		</li>
+		<li>
+			<span style="padding: .1em .2em; border-radius: .2em; background: rgba(28, 176, 5, 0.7);">&nbsp;<span>&check;</span>&nbsp;Ленивая загрузка</span>
+		</li>
+		<li>
+			<span style="padding: .1em .2em; border-radius: .2em; background: rgba(28, 176, 5, 0.7);">&nbsp;<span>&check;</span>&nbsp;CDN</span>
+		</li>
+		<li>
+			<span style="padding: .1em .2em; border-radius: .2em; background: rgba(230, 38, 44, 0.7);">&nbsp;<span>✕</span>&nbsp;Шардинг доменов</span>
+		</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>Лучшие практики в свете HTTP/2</h2>
+	<p>Применять практики бездумно нельзя, нужно понимать, <em>почему</em> делается именно так.</p>
+	<p>Не всё устареет с приходом HTTP/2.</p>
+	<p>Что-то нужно убирать или оставлять в зависимости от конкретных условий проекта.</p>
+</section>
+
+<section class="slide black light-text">
+	<h2 class="shout">Так включать или не включать?</h2>
+</section>
+
+<section class="slide">
+	<h2>Так включать или не включать?</h2>
+	<p>Если на проекте нет оптимизаций &mdash; получите наибольший профит.</p>
+	<p>Иногда оказывается медленнее, но редко и ненамного.</p>
+	<p>Рекомендую <strong>включать</strong> – хуже не будет, но может стать сильно лучше.</p>
+</section>
+
+<section class="slide black light-text">
+	<h2 class="shout" style="font-size: 100px;">Включать можно<br/>Менять процесс &mdash; с умом</h2>
+</section>
+
+<section class="slide black light-text">
+	<h2 class="shout">Идеально – две версии фронтенда</h2>
+</section>
+
+<section class="slide black light-text">
+	<h2 class="shout" style="font-size: 120px">Лучшая «лучшая&nbsp;практика»&nbsp;&mdash; пользоваться головой</h2>
+</section>
+
+<section class="slide">
+	<h2>Bonus Round</h2>
+	<ul>
+		<li>Рендер "первого экрана"</li>
+		<li>Заголовки кеширования</li>
+		<li>Домены без кук</li>
+		<li>Минимум запросов к DNS</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>Рендер "первого экрана"</h2>
+	<img src="pictures/above-and-below-the-fold.jpg" height="400">
+</section>
+
+<section class="slide">
+	<h2>Заголовки кеширования</h2>
+	<blockquote>
+		<code>no-cache</code> doesn't mean "don't cache", it means it must check (or "revalidate" as it calls it) with the server before using the cached resource.
+		<code>no-store</code> tells the browser not to cache it at all. Also
+		<code>must-revalidate</code> doesn't mean "must revalidate", it means the local resource can be used if it's younger than the provided
+		<code>max-age</code>, otherwise it must revalidate.
+	</blockquote>
+	<p>
+		<a href="https://jakearchibald.com/2016/caching-best-practices/" target="_blank">Caching best practices & max-age gotchas</a>
+	</p>
+</section>
+
+<section class="slide">
+	<h2>Домены без кук</h2>
+	<img src="pictures/make-tea-not-love.jpg"/>
+</section>
+
+<section class="slide">
+	<h2>Минимум запросов к DNS</h2>
+	<img src="pictures/dns-resolve.png"/>
+</section>
+
+<section class="slide">
+	<h2>Лучшие практики в свете бонус-раунда</h2>
+	<ul class="double no-bullets" style="font-size: 26px;">
+		<li>
+			<span style="padding: .1em .2em; border-radius: .2em; background: #ffdc00;">&nbsp;&nbsp;&quest;&nbsp;Конкатенация</span>
+		</li>
+		<li>
+			<span style="padding: .1em .2em; border-radius: .2em; background: #ffdc00;">&nbsp;&nbsp;&quest;&nbsp;Спрайты</span>
+		</li>
+		<li>
+			<span style="padding: .1em .2em; border-radius: .2em; background: rgba(28, 176, 5, 0.7);">&nbsp;<span>&check;</span>&nbsp;Gzip, сжатие изображений</span>
+		</li>
+		<li>
+			<span style="padding: .1em .2em; border-radius: .2em; background: rgba(28, 176, 5, 0.7);">&nbsp;<span>&check;</span>&nbsp;Минификация</span>
+		</li>
+		<li>
+			<span style="padding: .1em .2em; border-radius: .2em; background: rgba(28, 176, 5, 0.7);">&nbsp;<span>&check;</span>&nbsp;Версионирование</span>
+		</li>
+		<li>
+			<span style="padding: .1em .2em; border-radius: .2em; background: rgba(230, 38, 44, 0.7);">&nbsp;<span>✕</span>&nbsp;Инлайнинг ресурсов</span>
+		</li>
+		<li>
+			<span style="padding: .1em .2em; border-radius: .2em; background: rgba(28, 176, 5, 0.7);">&nbsp;<span>&check;</span>&nbsp;Рендер "первого экрана"</span>
+		</li>
+		<li>
+			<span style="padding: .1em .2em; border-radius: .2em; background: rgba(28, 176, 5, 0.7);">&nbsp;<span>&check;</span>&nbsp;Скрипты в конце body</span>
+		</li>
+		<li>
+			<span style="padding: .1em .2em; border-radius: .2em; background: rgba(28, 176, 5, 0.7);">&nbsp;<span>&check;</span>&nbsp;Ленивая загрузка</span>
+		</li>
+		<li>
+			<span style="padding: .1em .2em; border-radius: .2em; background: rgba(28, 176, 5, 0.7);">&nbsp;<span>&check;</span>&nbsp;CDN</span>
+		</li>
+		<li>
+			<span style="padding: .1em .2em; border-radius: .2em; background: rgba(28, 176, 5, 0.7);">&nbsp;<span>&check;</span>&nbsp;Заголовки кеширования</span>
+		</li>
+		<li>
+			<span style="padding: .1em .2em; border-radius: .2em; background: rgba(230, 38, 44, 0.7);">&nbsp;<span>✕</span>&nbsp;Шардинг доменов</span>
+		</li>
+		<li>
+			<span style="padding: .1em .2em; border-radius: .2em; background: rgba(230, 38, 44, 0.7);">&nbsp;<span>✕</span>&nbsp;Домены без кук</span>
+		</li>
+		<li>
+			<span style="padding: .1em .2em; border-radius: .2em; background: rgba(28, 176, 5, 0.7);">&nbsp;<span>&check;</span>&nbsp;Минимум запросов к DNS</span>
+		</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>Интересные ссылки</h2>
+	<ul style="font-size: 25px;">
+		<li>Детали реализации протокола:
+			<a href="https://tools.ietf.org/pdf/rfc7540.pdf">RFC 7540</a>,
+			<a href="https://http2.github.io/faq/">HTTP/2 FAQ</a>,
+			<a href="https://hpbn.co/">High Performance Browser Networking</a>.
+		</li>
+		<li>Демо сравнения скорости протоколов:
+			<a href="https://http2.akamai.com/demo">Раз</a>,
+			<a href="http://www.http2demo.io/">Два</a>,
+			<a href="https://http2.golang.org/gophertiles?latency=30">Три</a>.
+		</li>
+		<li><a href="http://isthewebhttp2yet.com/">Исследование уровня проникновения HTTP/2</a></li>
+		<li><a href="https://eyeorg.net/index.html">Сравнение скорости одного ресурса на HTTP/1 и HTTP/2</a></li>
+		<li><a href="https://youtu.be/9oqj0Cr1z_A">Моделирование скорости HTTP/2 по данным статистики HTTP/1</a></li>
+		<li><a href="https://www.youtube.com/watch?v=e6DUrH56g14">Mythbusting HTTPS</a></li>
+	</ul>
+</section>
+
+<section class="slide black">
+	<img src="pictures/enjoy.gif" class="cover h">
+</section>
+
+<section class="slide">
+	<h2>Вопросы?</h2>
+	<p>
+		Алексей Уколов, <a href="https://twitter.com/alexey_m_ukolov" target="_blank">@alexey_m_ukolov</a>
+		<br/>
+		<a href="mailto:alexey-m-ukolov@gmail.com">alexey-m-ukolov@gmail.com</a>
+	</p>
+	<img src="pictures/freeman.gif" class="place bottom right">
+</section>
+
+<div class="progress"></div>
+
+<script src="shower/shower.min.js"></script>
+</body>
+</html>

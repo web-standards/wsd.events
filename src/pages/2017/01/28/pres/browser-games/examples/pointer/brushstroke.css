@@ -1,0 +1,42 @@
+.brushstroke {
+	width: 50px;
+	height: 50px;
+	border-radius: 50px;
+	background-color: #DE3A3A;
+	position: absolute;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	-webkit-animation-duration: 0.4s;
+	-webkit-animation-name: brushstroke-animation;
+	animation-duration: 0.8s;
+	animation-name: brushstroke-animation;
+	pointer-events: none;
+}
+
+@keyframes brushstroke-animation {
+	0% {
+		width: 50px;
+		height: 50px;
+		border-radius: 50px;
+	}
+    
+	100% {
+		width: 0px;
+		height: 0px;
+		border-radius: 0px;
+	}
+}
+
+@-webkit-keyframes brushstroke-animation {
+	0% {
+		width: 50px;
+		height: 50px;
+		border-radius: 50px;
+	}
+
+	100% {
+		width: 0px;
+		height: 0px;
+		border-radius: 0px;
+	}
+}

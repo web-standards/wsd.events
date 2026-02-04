@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<style>
+    html {
+        background: #222;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #example {
+        background-color: white;
+        width: 25vw;
+        font-size: 3em;
+        padding: 20px;
+        --border-top-width: 40;
+        --border-right-width: 80;
+        --border-bottom-width: 120;
+        --border-left-width: 160;
+        --border-top-color: red aquamarine;
+        --border-right-color: lightskyblue green lightskyblue green;
+        --border-bottom-color: deepskyblue cyan lightgoldenrodyellow;
+        --border-left-color: gold orange red pink;
+    }
+
+    .multi-border {
+        border: solid 0;
+        border-image: paint(border-colors);
+        border-image-slice: var(--border-top-width) var(--border-right-width) var(--border-bottom-width) var(--border-left-width);
+        border-width: calc(var(--border-top-width) * 1px) calc(var(--border-right-width) * 1px) calc(var(--border-bottom-width) * 1px) calc(var(--border-left-width) * 1px);
+    }
+
+</style>
+
+<textarea id="example"
+          class="multi-border">CSS Paint API is Awesome</textarea>
+
+<script>
+    [
+        '--border-top-color',
+        '--border-right-color',
+        '--border-bottom-color',
+        '--border-left-color',
+    ].map((name) => {
+        CSS.registerProperty({
+            name: name,
+            syntax: '<color>+',
+            inherits: false,
+            initialValue: 'currentcolor',
+        });
+    });
+
+    [
+        '--border-top-width',
+        '--border-right-width',
+        '--border-bottom-width',
+        '--border-left-width',
+    ].map((name) => {
+        CSS.registerProperty({
+            name: name,
+            syntax: '<number>',
+            inherits: false,
+            initialValue: '0',
+        });
+    });
+
+    window.CSS.paintWorklet.addModule('border-colors.js');
+</script>

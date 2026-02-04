@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Сбертехнологии фронтенда</title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
+	<style type="text/css">
+		.nowrap {
+			white-space: nowrap;
+		}
+		.items {
+			font-size: 2rem;
+		}
+		.items li {
+			margin-bottom: 2rem;
+			line-height: 1.6;
+		}
+		.important-number {
+			color: #c00
+		}
+		.arrow {
+			font-family: Arial, Helvetica, sans-serif;
+		}
+		.framework_screen {
+			width: 65%;
+		}
+		.widescreen {
+			width: 100%;
+		}
+		.centered-picture {
+			display: block;
+			margin: 0 auto;
+		}
+		.vertical-centered {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+		.small-code code {
+			font-size: 1.5rem;
+		}
+		.cover-opacity {
+			opacity: 0.9;
+		}
+		.slide .cover-title {
+			color: #fff;
+			font-size: 5rem;
+		}
+		.big-title {
+			font-size: 3rem;
+		}
+		.centered-title {
+			text-align: center;
+		}
+		.top-title {
+			margin-top: -53px;
+		}
+	</style>
+</head>
+<body class="shower list">
+	<header class="caption">
+		<h1>Сбертехнологии фронтенда</h1>
+		<p>Александра Воробьева</p>
+	</header>
+	<section class="slide white" id="splash">
+		<h2 class="centered-picture vertical-centered cover-title">Сбертехнологии<br> фронтенда</h2>
+		<img src="pictures/abstract-bg.jpg" class="cover height cover-opacity" alt="">
+		<style>
+			#splash h2 {
+				text-align: center;
+				font-size: 7rem;
+			}
+		</style>
+	</section>
+	<section class="slide white" id="cover">
+		<img src="pictures/efs.jpg" class="efs_logo" alt="Единая фронтальная система">
+		<h2>Единая фронтальная система (ЕФС)</h2>
+		<style type="text/css">
+			#cover .efs_logo {
+				width: 25%;
+				margin: 0 auto 2.5rem;
+				display: block;
+			}
+			#cover h2 {
+				text-align: center;
+				font-size: 5rem;
+				line-height: 1.2;
+			}
+		</style>
+	</section>
+	<section class="slide" id="front">
+		<h2>Фронтальные системы</h2>
+		<ol class="items">
+			<li>интернет-банк&nbsp;&mdash; Сбербанк Онлайн</li>
+			<li class="next">банкоматы и терминалы</li>
+			<li class="next">интерфейсы оператора в отделениях и <span class="nowrap">call-центрах</span></li>
+		</ol>
+	</section>
+	<section class="slide" id="purpose">
+		<h2>Задачи разработки ЕФС</h2>
+		<ul class="items">
+			<li>надежность</li>
+			<li class="next">безопасность</li>
+			<li class="next">отказоустойчивость&nbsp;&mdash; доступность <mark class="important-number">99.99%</mark> времени,<br> время отказа&nbsp;&mdash; <mark class="important-number">52&nbsp;минуты</mark> в&nbsp;год</li>
+		</ul>
+	</section>
+	<section class="slide" id="purpose2">
+		<h2>Задачи разработки ЕФС</h2>
+		<ul class="items">
+			<li>удобство для разных пользователей</li>
+			<li class="next">быстрота работы и внедрения (time-to-market)</li>
+		</ul>
+	</section>
+	<section class="slide" id="purpose3">
+		<h2>Снижение времени внедрения продукта</h2>
+		<div class="time-to-market">1 год
+			<span class="next">
+				<span class="arrow">&rarr;</span>
+				<mark class="important-number">1 месяц</mark>
+			</span>
+		</div>
+		<style type="text/css">
+			.time-to-market {
+				font-size: 5rem;
+				text-align: center;
+				margin-top: 9rem;
+			}
+		</style>
+	</section>
+	<section class="slide" id="about">
+		<h2>Платформа ЕФС</h2>
+		<div class="fact">
+			<img class="icon icon-hourglass" src="pictures/about_counter.svg" alt="" />
+			<span class="important-number">2</span> года</div>
+		<div class="fact next">
+			<img class="icon" src="pictures/about_head.svg" alt="" />
+			<span class="important-number">~1000</span> человек
+		</div>
+		<div class="fact next">
+			<img class="icon" src="pictures/about_lauch.svg" alt="" />
+			<span class="important-number">2017</span> год&nbsp;&mdash; в проме
+		</div>
+		<style type="text/css">
+			#about .icon {
+				vertical-align: middle;
+				margin-right: 1rem;
+				opacity: 0.7;
+			}
+			#about .fact {
+				margin-bottom: 2rem;
+				font-size: 3rem;
+			}
+			#about .icon-hourglass {
+				margin-left: 1rem;
+				margin-right: 2.2rem;
+			}
+		</style>
+	</section>
+	<section class="slide" id="frontend">
+		<h2>Фронтенд ЕФС</h2>
+		<div class="double">
+			<div class="column">
+				<img class="icon" src="pictures/frontend_ui_team.svg" alt="" />
+				<h3 class="important-number">Команда платформы</h3>
+				<div>библиотека UI-компонентов</div>
+			</div>
+			<div class="column">
+				<img class="icon applied" src="pictures/frontend_applied.svg" alt="" />
+				<h3 class="important-number">Прикладные проекты</h3>
+				<div>бизнес-логика</div>
+			</div>
+			<div class="next">
+				<img class="arrow" src="pictures/frontend_arrow.svg" alt="">
+			</div>
+			<div class="next">
+				<img class="check" src="pictures/frontend_check.svg" alt="">
+			</div>
+		</div>
+		<style type="text/css">
+			#frontend .icon {
+				width: 50%;
+			}
+			#frontend .double {
+				position: relative;
+			}
+			#frontend .column {
+				text-align: center;
+			}
+			#frontend .info {
+				text-align: center;
+				font-size: 2.5rem;
+				margin-bottom: 2rem;
+			}
+			#frontend h3 {
+				font-size: 2rem;
+			}
+			#frontend .applied {
+				margin-top: 4rem;
+			}
+			#frontend .arrow {
+				position: absolute;
+				left: 50%;
+				margin-left: -2rem;
+				top: 50%;
+				margin-top: -2rem;
+			}
+			#frontend .check {
+				position: absolute;
+				left: 1.5rem;
+				top: 0;
+			}
+		</style>
+	</section>
+	<section class="slide white" id="framework">
+		<h2 class="vertical-centered cover-title">Библиотека<br> <span class="nowrap">UI-компонентов</span></h2>
+		<img src="pictures/abstract-bg.jpg" class="cover height cover-opacity" alt="Technologies">
+	</section>
+	<section class="slide white" id="framework_ex">
+		<h2>Библиотеки UI</h2>
+		<ul>
+			<li><a href="http://www.material-ui.com/">Material-UI</a> от Google</li>
+			<li><a href="http://www.material-ui.com/">Electrode</a> от WalmartLabs</li>
+			<li>Лего&nbsp;&mdash; портальная библиотека  от Яндекса</li>
+			<li>Библиотеки Avito, Mail.ru, и.т.д.</li>
+		</ul>
+		<img src="pictures/lego.jpg" alt="" class="lego">
+		<style>
+			.lego {
+				position: absolute;
+				right: 2rem;
+				bottom: 2rem;
+				width: 40%;
+			}
+		</style>
+	</section>
+	<section class="slide" id="include_1">
+		<h2 class="top-title">Контроллы</h2>
+		<img src="pictures/include_controls.svg" class="cover" alt="Контроллы">
+	</section>
+	<section class="slide" id="include_2">
+		<h2>Способы вывода информации</h2>
+		<img src="pictures/include_info.svg" class="cover" alt="Способы вывода информации">
+	</section>
+	<section class="slide" id="include_3">
+		<h2>Способы вывода информации</h2>
+		<img src="pictures/include_info_2.svg" class="cover" alt="Способы вывода информации">
+	</section>
+	<section class="slide" id="include_4">
+		<h2 class="top-title">Сетка</h2>
+		<img src="pictures/include_cell.svg" class="cover" alt="Сетка">
+	</section>
+	<section class="slide" id="include_5">
+		<h2 class="top-title">Просмотр вложений</h2>
+		<img src="pictures/include_uploads.svg" class="cover" alt="Просмотр вложений">
+		<style type="text/css">
+			#include_4 h2 {
+				font-size: 2rem;
+			}
+		</style>
+	</section>
+	<section class="slide" id="include_6">
+		<h2 class="top-title">Загрузка файлов</h2>
+		<img src="pictures/include_files.svg" class="cover" alt="Загрузка файлов">
+		<style type="text/css">
+			#include_4 h2 {
+				font-size: 2rem;
+			}
+		</style>
+	</section>
+	<section class="slide" id="include_7">
+		<h2 class="top-title">Компонент динамической подгрузки приложений</h2>
+		<img src="pictures/include_lauch.svg" class="cover" alt="Компонент динамической загрузки приложений">
+		<style type="text/css">
+			#include_7 h2 {
+				font-size: 2rem;
+			}
+		</style>
+	</section>
+	<section class="slide" id="versions">
+		<h2>Поддержка браузеров</h2>
+		<div class="info next">IE8 <span class="small"> или </span> IE11</div>
+		<style type="text/css">
+			#versions .info {
+				text-align: center;
+				font-size: 8rem;
+			}
+			#versions .small {
+				font-size: 5rem;
+			}
+		</style>
+	</section>
+	<section class="slide" id="versions_cry">
+		<h2>Поддержка браузеров</h2>
+		<img src="pictures/versions_cry.png" class="cry" alt="CRY">
+		<style type="text/css">
+			#versions_cry .cry {
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				width: 48%;
+			}
+		</style>
+	</section>
+	<section class="slide" id="activex">
+		<h2>Работа с железом</h2>
+		<img src="pictures/activex.jpg" class="centered-picture framework_screen vertical-centered" alt="ActiveX">
+	</section>
+	<section class="slide">
+		<h2>New feature?</h2>
+		<img src="pictures/ie8_question.png" alt="IE8">
+	</section>
+	<section class="slide" id="ie8_debug">
+		<img src="pictures/ie8_debug.png" class="centered-picture" alt="IE8">
+		<style>
+			#ie8_debug img {
+				width: 70%;
+			}
+		</style>
+	</section>
+	<section class="slide white" id="technologies">
+		<h2 class="vertical-centered cover-title">Технологии</h2>
+		<img src="pictures/abstract-bg.jpg" class="cover height cover-opacity" alt="Technologies">
+	</section>
+	<section class="slide" id="framework-choice">
+		<img src="pictures/framework_react.png" class="framework_screen centered-picture" alt="React">
+		<style type="text/css">
+			#framework-choice .framework_screen {
+				width: 50%;
+			}
+		</style>
+	</section>
+	<section class="slide" id="react-choice">
+		<h2>React</h2>
+		<ul class="items">
+			<li>компонентный подход для построения удобного API</li>
+			<li class="next">читабельность кода, его дальнейшее переиспользование</li>
+			<li class="next">поддержка IE8</li>
+			<li class="next"><mark class="important-number">+ бонус</mark>&nbsp;&mdash; разработка мобильного приложения на&nbsp;React&nbsp;Native</li>
+		</ul>
+	</section>
+	<section class="slide" id="react-ie8">
+		<h2>React + IE8?</h2>
+		<ul>
+			<li class="next">React 0.14.0</li>
+			<li class="next"><a href="https://www.npmjs.com/package/es3ify-webpack-plugin">es3ify</a></li>
+		</ul>
+		<img src="pictures/challenge.png" class="challenge" alt="Challenge">
+		<style>
+			#react-ie8 .challenge {
+				position: absolute;
+				bottom: 0;
+				right: 2rem;
+				width: 50%;
+			}
+		</style>
+	</section>
+	<section class="slide" id="type-choice">
+		<img src="pictures/typescript_choice.png" class="framework_screen centered-picture" alt="Typecript">
+		<style type="text/css">
+			#type-choice .framework_screen {
+				width: 50%;
+			}
+		</style>
+	</section>
+	<section class="slide" id="typescript-choice">
+		<h2>TypeScript</h2>
+		<ul class="items">
+			<li>строгая типизация (тип <code>any</code> почти не используем)</li>
+			<li class="next">избегаем &laquo;глупых&raquo; ошибок при разработке</li>
+			<li class="next">читабельность кода</li>
+		</ul>
+	</section>
+	<section class="slide" id="component">
+		<h2>Компонент библиотеки</h2>
+		<img src="pictures/comp-structure.png" class="component-img" alt="Component">
+		<div class="next items">
+			<span class="important-number">~ 70</span> компонентов
+		</div>
+		<style>
+			#component .component-img {
+				width: 22rem;
+			}
+			#component .items {
+				font-size: 4rem;
+			}
+		</style>
+	</section>
+	<section class="slide white" id="product-problems">
+		<h2 class="vertical-centered cover-title">Проблемы производительности</h2>
+		<img src="pictures/abstract-bg.jpg" class="cover height cover-opacity" alt="Technologies">
+	</section>
+	<section class="slide" id="dev-problems">
+		<h2>Как решали</h2>
+		<ul class="items next">
+			<li>сделали компоненты &laquo;глупыми&raquo;</li>
+		</ul>
+	</section>
+	<section class="slide" id="dev-problems-2">
+		<div class="small-code">
+			<pre>
+				<code>export interface State {</code>
+				<code class="mark next">	value: string</code>
+				<code>}</code>
+				<code>export class <mark class="important">Input</mark> extends React.Component&lt;{}, State&gt; {</code>
+				<code>	onChange = value => this.setState({ value })</code>
+				<code>	render() {</code>
+				<code class="mark next">		&lt;input value={this.state.value}
+			onChange={this.onChange} /&gt;</code>
+				<code>	}</code>
+				<code>}</code>
+			</pre>
+		</div>
+	</section>
+	<section class="slide" id="dev-problems-3">
+		<div class="small-code">
+			<pre>
+				<code>export interface State {</code>
+				<code>	value: string</code>
+				<code>}</code>
+				<code>export class <mark class="important">Input</mark> extends React.Component&lt;{}, State&gt; {</code>
+				<code class="mark">	onChange = value => this.setState({ value })</code>
+				<code>	render() {</code>
+					<code>		&lt;input value={this.state.value}
+			onChange={this.onChange} /&gt;</code>
+				<code>	}</code>
+				<code>}</code>
+			</pre>
+		</div>
+	</section>
+	<section class="slide" id="dev-problems-4">
+		<div class="small-code">
+			<pre>
+				<code class="mark next">export interface FormState {</code>
+				<code>	value: string</code>
+				<code>}</code>
+				<code>export class <mark class="important">Form</mark> extends React.Component&lt;{}, FormState&gt; {</code>
+						<code>	changeInput = value => this.setState({ value })</code>
+
+						<code>	render() {</code>
+						<code class="mark next">		&lt;Input value={this.state.value}
+			onChange={this.changeInput} /&gt;</code>
+					<code>	}</code>
+				<code>}</code>
+			</pre>
+		</div>
+	</section>
+	<section class="slide" id="dev-problems-5">
+		<div class="small-code">
+			<pre>
+				<code>export class <mark class="important">Input</mark> extends React.Component&lt;Props, {}&gt; {</code>
+					<code>	render() {</code>
+					<code>		&lt;input value={this.props.value }
+			onChange={this.props.onChange } /&gt;</code>
+					<code>	}</code>
+				<code>}</code>
+			</pre>
+		</div>
+	</section>
+	<section class="slide" id="dev-problems-6">
+		<h2>Как решали</h2>
+		<ul class="items">
+			<li>добавили <code>shouldComponentUpdate</code></li>
+		</ul>
+	</section>
+	<section class="slide" id="dev-problems-7">
+		<pre>
+			<code>shouldComponentUpdate(nextProps, nextState) {</code>
+			<code>	<span class="comment">// делаем поверхностную проверку свойств</span></code>
+			<code>	if (nextProps.value !== this.props.value) {</code>
+
+			<code>	}</code>
+			<code>}</code>
+		</pre>
+		<div class="next">
+			Для свойств-объектов: паттерн <mark class="important-number">«immutable»</mark>&nbsp;&mdash; передаем другой объект
+		</div>
+	</section>
+	<section class="slide" id="dev-problems-8">
+		<h2>Как решали</h2>
+		<ul class="items">
+			<li>избавились от утечек памяти в колбеках</li>
+		</ul>
+	</section>
+	<section class="slide" id="dev-problems-9">
+		<pre>
+			<code>export class <mark class="important">Button</mark> extends React.Component&lt;{}, {}&gt; {</code>
+			<code> 	render() {</code>
+			<code class="mark next">		&lt;button onClick={(e) => console.log(e);}&gt;</code>
+			<code>			Text</code>
+			<code>		&lt;/button&gt;</code>
+			<code>	}</code>
+			<code>}</code>
+		</pre>
+	</section>
+	<section class="slide" id="dev-problems-11">
+		<pre>
+			<code>export class <mark class="important">Button</mark> extends React.Component&lt;{}, {}&gt; {</code>
+			<code>	<mark>onClick</mark> = e => console.log(e);</code>
+			<code>	render() {</code>
+			<code>		&lt;button onClick={<mark>this.onClick</mark>}&gt;</code>
+			<code>			Text</code>
+			<code>		&lt;/button&gt;</code>
+			<code>	}</code>
+			<code>}</code>
+		</pre>
+	</section>
+	<section class="slide" id="app1">
+		<img src="pictures/redux.png" class="centered-picture vertical-centered" alt="REDUX">
+		<style>
+			#app1 .centered-picture {
+				width: 80%;
+			}
+		</style>
+	</section>
+	<section class="slide white">
+		<img src="pictures/rm.png" class="cover height width" alt="RM">
+	</section>
+	<section class="slide white">
+		<h2 class="centered-picture vertical-centered cover-title">CSS</h2>
+		<img src="pictures/orange-bg.jpg" class="cover width" alt="">
+	</section>
+	<section class="slide" id="css">
+		<h2>CSS</h2>
+		<img class="postcss" src="pictures/postcss.svg" alt="PostCss">
+		<span class="plus"> + </span>
+		<img class="cssmodules" src="pictures/css-modules.png" alt="CssModules">
+		<style type="text/css">
+			#css .cssmodules,
+			#css .postcss {
+				width: 40%;
+				vertical-align: middle;
+			}
+			#css .plus {
+				font-size: 5rem;
+				padding: 0 2rem 0 2.5rem;
+				vertical-align: middle;
+			}
+		</style>
+	</section>
+	<section class="slide" id="postcss">
+		<h2>PostCSS</h2>
+		<ul class="items">
+			<li>скорость сборки</li>
+			<li class="next">быстро развивается и поддерживается community</li>
+			<li class="next">хотелось попробовать что-то новое</li>
+		</ul>
+	</section>
+	<section class="slide" id="cssmodules2">
+		<h2>Плагины для PostCSS</h2>
+		<ol class="items">
+			<li><a href="https://github.com/postcss/postcss-nested">nested</a></li>
+			<li><a href="https://github.com/postcss/autoprefixer">autoprefixer</a></li>
+			<li><a href="https://github.com/postcss/postcss-import">import</a></li>
+			<li><a href="https://github.com/postcss/postcss-simple-vars">simple-vars</a></li>
+		</ol>
+		<img src="pictures/cssmodules-dragon.png" alt="CSS Modules">
+		<style>
+			#cssmodules2 img {
+				position: absolute;
+				right: 4rem;
+				bottom: 4.5rem;
+			}
+		</style>
+	</section>
+	<section class="slide" id="cssmodules">
+		<h2>CSS Modules</h2>
+		<ul class="items">
+			<li>стили разных компонентов начали перекрывать друг друга</li>
+			<li class="next">2 разных приложения в рамках одной страницы</li>
+		</ul>
+	</section>
+	<section class="slide" id="css-example">
+		<h2>button.css</h2>
+		<pre>
+			<code><mark>.button</mark> {</code>
+			<code>	color: #FFF;</code>
+			<code>	background: #F00</code>
+			<code>}</code>
+		</pre>
+	</section>
+	<section class="slide" id="css-example2">
+		<div class="column">
+			<h2>button.tsx</h2>
+			<pre>
+				<code>import * as styles from './button.css';</code>
+				<code>&lt;button className={styles.<mark>button</mark>}&gt;</code>
+				<code>	Кнопка</code>
+				<code>&lt;/button&gt;</code>
+			</pre>
+		</div>
+	</section>
+	<section class="slide" id="css-dts">
+		<h2 class="vertical-centered">
+			TS &rarr; CSS Modules &rarr; d.ts
+		</h2>
+		<style>
+			#css-dts h2 {
+				font-size: 5rem;
+				text-align: center;
+				white-space: nowrap;
+			}
+		</style>
+	</section>
+	<section class="slide white">
+		<h2 class="centered-picture vertical-centered cover-title">Сборка</h2>
+		<img src="pictures/orange-bg.jpg" class="cover width" alt="">
+	</section>
+	<section class="slide" id="webpack">
+		<h2>Сборка проекта</h2>
+		<img src="pictures/gulp.svg" class="gulp" alt="gulp">
+		<span class="plus">+</span>
+		<img src="pictures/webpack.svg" class="webpack" alt="webpack">
+		<style>
+			.gulp{
+				width: 10rem;
+				vertical-align: middle;
+			}
+			.webpack {
+				width: 18rem;
+				vertical-align: middle;
+				position: relative;
+				top: 4rem;
+			}
+			#webpack .plus {
+				font-size: 5rem;
+				padding: 0 3rem 0 4rem;
+				vertical-align: middle;
+				position: relative;
+				top: 2rem
+			}
+		</style>
+	</section>
+	<section class="slide">
+		<h2>Gulp</h2>
+		<ul class="items">
+			<li>генерация документации и примеров</li>
+			<li class="next">генерация d.ts файлов для CSS</li>
+			<li class="next">запуск unit-тестов</li>
+		</ul>
+	</section>
+	<section class="slide" id="webpack_screen">
+		<h2>Сборка Webpack</h2>
+		index.tsx
+		<img src="pictures/webpack_file.png" class="widescreen" alt="Webpack">
+		<style>
+			.widescreen {
+				width: 90%;
+			}
+		</style>
+	</section>
+	<section class="slide" id="folder">
+		<h2>Сборка</h2>
+		<div>
+			<img src="pictures/folder_webkit.png" alt="">
+		</div>
+		<style>
+			#folder img {
+				width: 50%;
+			}
+		</style>
+	</section>
+	<section class="slide" id="docs">
+		<h2>Props API</h2>
+		<pre>
+			<code>export interface Props {</code>
+			<code>	<span class="comment">/* значение, задаваемое в поле */</span></code>
+			<code>	value?: string;</code>
+			<br/>
+			<code>	<span class="comment">/* коллбек вызывается каждый раз при изменении поля*/</span></code>
+			<code>	onChange?: (value: string) => void;</code>
+			<code>}</code>
+		</pre>
+
+	</section>
+
+	<section class="slide" id="docs-seq">
+		<h2>Документация</h2>
+		<div class="step">
+			<div class="step-pic"><img src="pictures/components.svg" alt=""></div>
+			<div>Components</div>
+		</div>
+		<div class="step next">
+			<div class="step-pic"><img class="typedoc" src="pictures/gulp-typedoc.png" alt=""></div>
+			<div>typedoc</div>
+		</div>
+		<div class="step next">
+			<div class="step-pic"><img src="pictures/json.svg" alt=""></div>
+			<div>.json</div>
+		</div>
+		<div class="step next">
+			<div class="step-pic"><img src="pictures/structure.svg" alt=""></div>
+			<div>Props structure</div>
+		</div>
+		<style>
+			#docs-seq .step {
+				display: inline-block;
+				vertical-align: middle;
+				margin-right: 7rem;
+				position: relative;
+				margin-bottom: 3rem;
+			}
+			#docs-seq .step:last-of-type {
+				margin-right: 0;
+			}
+			#docs-seq .step:last-of-type:after {
+				display: none;
+			}
+			#docs-seq .typedoc {
+				width: 15rem;
+			}
+			#docs-seq .step:after {
+				position: absolute;
+				right: -5rem;
+				top: 50%;
+				background: url("pictures/arrow.svg") 100% 0 no-repeat;
+				margin-top: -2rem;
+				content: " ";
+				width: 3rem;
+				height: 3rem;
+			}
+			#docs-seq .step-pic,
+			#docs-seq .step-pic img{
+				height: 6rem;
+			}
+		</style>
+	</section>
+	<section class="slide" id="docs_result">
+		<h2>Документация</h2>
+		<div class="items">
+			<div>
+				<pre>
+					<code>&lt;PropsDoc target={<mark>Button</mark>} /&gt;</code>
+				</pre>
+			</div>
+		</div>
+		<table>
+			<tbody>
+			<tr>
+				<th scope="col" style="width: 300px">Свойство</th>
+				<th style="width: 300px">Тип</th>
+				<th>Описание</th>
+			</tr>
+			<tr>
+				<td>width</td>
+				<td>string | number</td>
+				<td class="table-text">Ширина таблицы. По&nbsp;умолчанию&nbsp;&mdash; 100%. Можно указывать в&nbsp;процентах или в&nbsp;пикселях. Число без единиц измерения задает ширину в&nbsp;пикселях.</td>
+			</tr>
+			</tbody>
+		</table>
+		<style>
+			#docs_result .table-text {
+				line-height: 1.3;
+				font-size: 1.4rem;
+			}
+		</style>
+	</section>
+	<section class="slide white">
+		<h2 class="centered-picture vertical-centered cover-title">Тесты</h2>
+		<img src="pictures/orange-bg.jpg" class="cover width" alt="">
+	</section>
+	<section class="slide" id="testing">
+		<h2>Unit-тестирование</h2>
+		<div>
+			<img src="pictures/karma-logo.svg" alt="Karma">
+			<img src="pictures/jasmine.svg" alt="Karma">
+			<div class="test-title">React Test Utils</div>
+		</div>
+		<style>
+			#testing img {
+				width: 40%;
+				margin-right: 3rem;
+			}
+			#testing .test-title {
+				font-size: 5rem;
+				color: #28456d;
+			}
+		</style>
+	</section>
+	<section class="slide" id="coverage">
+		<h2>Покрытие тестами</h2>
+		<div class="coverage">remap-istanbul</div>
+		<style>
+			#coverage .coverage {
+				font-size: 3rem;
+			}
+		</style>
+	</section>
+	<section class="slide" id="gemini">
+		<h2>CSS-тестирование</h2>
+		<div class="big-title">Gemini от Яндекса</div>
+		<ul>
+			<li class="next">регрессионное тестирование</li>
+			<li class="next">поддержка IE8</li>
+			<li class="next">простая прикрутка</li>
+		</ul>
+	</section>
+	<section class="slide" id="gemini2">
+		<img src="pictures/gemini.png" class="cover" alt="Gemini">
+		<style>
+			#gemini2 .css-result {
+				width: 70%;
+			}
+		</style>
+	</section>
+	<section class="slide" id="jenkins">
+		<h2>Непрерывная интеграция</h2>
+		<div class="jenkins">
+			<img src="pictures/jenkins_logo.png" class="jenkins" alt="Jenkins">
+			<div>Jenkins</div>
+		</div>
+		<style>
+			#jenkins .jenkins {
+				width: 15rem;
+				text-align: center;
+			}
+		</style>
+	</section>
+	<section class="slide white">
+		<h2 class="centered-picture vertical-centered cover-title">Деплой</h2>
+		<img src="pictures/orange-bg.jpg" class="cover width" alt="">
+	</section>
+	<section class="slide" id="deploy">
+		<h2>Деплой</h2>
+		<ul class="items">
+			<li>библиотека поставляется в виде npm-пакета</li>
+			<li class="next">4 версии библиотеки</li>
+			<li class="next">сервер локальных npm-пакетов&nbsp;&mdash; Sonatype&nbsp;Nexus</li>
+		</ul>
+	</section>
+	<section class="slide white">
+		<h2 class="centered-picture vertical-centered cover-title">Команда</h2>
+		<img src="pictures/abstract-bg.jpg" class="cover height" alt="">
+	</section>
+	<section class="slide" id="team">
+		<h2>Команда</h2>
+		<div><img src="pictures/developers.svg" class="team centered-picture" alt="Team"></div>
+		<div class="centered-title big-title"><mark class="important-number">8 человек</mark></div>
+		<style>
+			#team .team {
+				width: 25rem;
+				margin-bottom: 2rem;
+			}
+		</style>
+	</section>
+	<section class="slide" id="laws">
+		<h2>Команда</h2>
+		<div class="items">
+			<div class="item_steps">
+				<img class="laws_icon" src="pictures/scrum.svg" alt="Scrum">
+				<span>Scrum</span>
+			</div>
+			<div class="next item_steps">
+				<img class="laws_icon" src="pictures/code_review.svg" alt="Code review">
+				<span>Code review</span>
+			</div>
+			<div class="next item_steps">
+				<img class="laws_icon" src="pictures/code_style.svg" alt="Code style">
+				<span>Code style</span>
+			</div>
+		</div>
+		<style>
+			#laws .laws_icon {
+				width: 5rem;
+				vertical-align: middle;
+				margin-right: 1rem;
+			}
+			#laws .item_steps {
+				margin-bottom: 2rem;
+			}
+			#laws .items {
+				font-size: 3rem;
+			}
+		</style>
+	</section>
+	<section class="slide" id="team3">
+		<h2>Инструментарий</h2>
+		<div class="centered-title">
+			<img class="instr" src="pictures/jira.png" alt="Jira">
+			<img class="instr" src="pictures/stash.png" alt="Confluence">
+			<img class="instr2" src="pictures/confluence.png" alt="Stash">
+		</div>
+		<style>
+			#team3 .instr {
+				vertical-align: middle;
+				width: 20rem;
+				margin-right: 3rem;
+				margin-bottom: 5rem;
+			}
+			#team3 .instr2 {
+				width: 30rem;
+			}
+		</style>
+	</section>
+	<section class="slide" id="team4">
+		<h2>Требования к кандидату</h2>
+		<ul class="items">
+			<li>знание JavaScript и CSS</li>
+		</ul>
+		<img src="pictures/hugh.gif" class="hugh" alt="Hugh">
+		<style>
+			#team4 .hugh {
+				position: absolute;
+				right: 3rem;
+				bottom: 3rem;
+				width: 50%;
+			}
+		</style>
+	</section>
+	<section class="slide white">
+		<h2 class="centered-picture vertical-centered cover-title">Что дальше?</h2>
+		<img src="pictures/abstract-bg.jpg" class="cover height" alt="">
+	</section>
+	<section class="slide" id="team5">
+		<h2>Планы на будущее</h2>
+		<ul class="items">
+			<li>интеграция с мобильной платформой</li>
+			<li class="next">Open Source?</li>
+			<li class="next">отказ от IE8</li>
+		</ul>
+	</section>
+	<section class="slide">
+		<h2>Александра Воробьева</h2>
+		<div class="items">
+			<div><a href="https://twitter.com/shura_sparrow">@shura_sparrow</a></div>
+			<div><a href="mailto:shura.sparrow@gmail.com">shura.sparrow@gmail.com</a></div>
+		</div>
+	</section>
+	<div class="progress"></div>
+	<script src="shower/shower.min.js"></script>
+	<!-- Copyright © 2015 Yours Truly, Famous Inc. -->
+	<!-- Photos by John Carey, fiftyfootshadows.net -->
+</body>
+</html>

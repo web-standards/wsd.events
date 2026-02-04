@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+	     viewBox="0 0 800 100"
+	     style="display: none;">
+		<style>
+			.nd-render-block {
+				fill-opacity: null;
+				stroke-opacity: null;
+				stroke: #000;
+			}
+
+			.nd-render-text {
+				stroke-width: 0;
+			}
+
+			.nd-render-path {
+				fill: #fff;
+				stroke-width: 2;
+			}
+
+		</style>
+		<path d="M-1-1h802v102H-1z"
+		      fill="#fff" />
+		<g class="nd-render-block">
+			<path d="M47.8 13.9h107.2l35.8 35.8-35.8 35.8H47.8L83.6 49.8 47.8 13.9z"
+			      class="nd-render-path" />
+			<text class="nd-render-text"
+			      x="100.1"
+			      y="55.6"
+			      font-size="17">Parser</text>
+		</g>
+		<g class="nd-render-block">
+			<path d="M161.8 13.9h107.3l35.8 35.8-35.7 35.8H161.8l35.8-35.8-35.7-35.8z"
+			      class="nd-render-path" />
+			<text class="nd-render-text"
+			      x="213"
+			      y="45.6"
+			      font-size="17">DOM &#x2F;</text>
+			<text class="nd-render-text"
+			      x="204.1"
+			      y="66.6"
+			      font-size="17">CSSOM</text>
+		</g>
+		<g class="nd-render-block">
+			<path d="M274.9 13.9h107.2l35.8 35.8-35.8 35.8H274.9l35.8-35.8-35.7-35.8z"
+			      class="nd-render-path" />
+			<text class="nd-render-text"
+			      x="319.3"
+			      y="55.6"
+			      font-size="17">Cascade</text>
+		</g>
+		<g class="nd-render-block">
+			<path d="M387.9 13.9h107.2l35.8 35.8-35.8 35.8H387.9l35.8-35.8-35.7-35.8z"
+			      class="nd-render-path" />
+			<text class="nd-render-text"
+			      x="440.3"
+			      y="55.6"
+			      font-size="17">Layout</text>
+		</g>
+		<g class="nd-render-block">
+			<path d="M501 13.9H608.2l35.8 35.8-35.8 35.8H501l35.8-35.8-35.7-35.8z"
+			      class="nd-render-path" />
+			<text class="nd-render-text"
+			      x="556.4"
+			      y="55.6"
+			      font-size="17">Paint</text>
+		</g>
+		<g class="nd-render-block">
+			<path d="M614 13.9h107.2l35.8 35.8-35.8 35.8H614l35.8-35.8-35.7-35.8z"
+			      class="nd-render-path" />
+			<text class="nd-render-text"
+			      x="656.4"
+			      y="55.6"
+			      font-size="17">Composite</text>
+		</g>
+	</svg>

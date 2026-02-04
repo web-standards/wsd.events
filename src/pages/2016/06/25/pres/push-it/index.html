@@ -1,0 +1,464 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+	<title>Жми сюда! — Пепелсбей.net</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
+	<style>
+		.button {
+			padding: 50px 100px 60px;
+			border-radius: 200px;
+			border: 0.1em solid #afafaf;
+			background: linear-gradient(#f7f7f7, #e3e3e3);
+			color: #585a5e;
+			font: inherit;
+			}
+		.pseudo {
+			background:none !important;
+			border-bottom:0.11em dotted #4e87c0;
+			}
+		.quote {
+			line-height:1.5;
+			font-size:60px;
+			}
+			.quote p {
+				margin:0;
+				}
+	</style>
+</head>
+<body class="shower list">
+
+	<header class="caption">
+		<h1>Жми сюда!</h1>
+		<p><a href="https://pepelsbey.net/">Вадим Макеев</a>, <a href="http://opera.com">Opera Software</a></p>
+	</header>
+
+	<section class="slide white" id="cover">
+		<h2 class="shout">Жми сюда!</h2>
+		<figure>
+			<img class="cover width" src="pictures/cover.jpg" alt="Большая красная кнопка">
+			<figcaption class="white"><a href="https://www.flickr.com/photos/wlodi/3085157011/">włodi</a></figcaption>
+		</figure>
+		<style>
+			#cover h2 {
+				margin: 35px 0 0 -40px;
+				color: white;
+				}
+		</style>
+	</section>
+
+	<section class="slide black">
+		<img class="cover" src="pictures/coding-dept.jpg" alt="Незваный гость">
+	</section>
+
+	<section class="slide">
+		<h2 class="shout"><a>Ссылки</a></h2>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout"><button class="button">Кнопки</button></h2>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout"><a class="pseudo">Псевдоссылки</a></h2>
+	</section>
+
+	<section class="slide">
+		<img class="cover" src="pictures/captain.jpg" alt="Капитан Америка">
+	</section>
+
+	<section class="slide" id="link">
+		<h2 class="shout"><a>Ссылка</a></h2>
+	</section>
+	<section class="slide" id="link-focus">
+		<h2 class="shout"><a>Ссылка</a></h2>
+		<style>
+			#link-focus a {
+				border-radius: 0.1em;
+				box-shadow:
+					0 0 0 0.1em #fff,
+					0 0 0 0.2em #c2e0fe;
+				}
+		</style>
+	</section>
+	<section class="slide" id="link-active">
+		<h2 class="shout"><a>Ссылка</a></h2>
+		<style>
+			#link-active a {
+				color: #c00;
+				}
+		</style>
+	</section>
+	<section class="slide" id="link-visited">
+		<h2 class="shout"><a>Ссылка</a></h2>
+		<style>
+			#link-visited a {
+				color: #7957bc;
+				}
+		</style>
+	</section>
+	<section class="slide">
+		<h2>Ссылка на страницу</h2>
+		<ul>
+			<li class="next">Основа гипертекста, лучший друг поисковика.</li>
+			<li class="next">Переход между документами самым явным образом.</li>
+			<li class="next">Привычная и удобная, как ничто другое.</li>
+			<li class="next">Главное — адрес.</li>
+		</ul>
+		<pre class="next">
+			<code>&lt;a href="<mark>http://example.com/</mark>"&gt;</code>
+			<code>	Ссылка</code>
+			<code>&lt;/a&gt;</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<h2>Ссылка на фрагмент</h2>
+		<pre>
+			<span class="next">
+				<code>&lt;a href="<mark>#section-3</mark>"&gt;</code>
+				<code>	Раздел №3</code>
+				<code>&lt;/a&gt;</code>
+			</span>
+			<span class="next">
+				<code>&lt;section id="<mark>section-3</mark>"&gt;</code>
+				<code>	&lt;h2&gt;Раздел №3&lt;/h2&gt;</code>
+				<code>&lt;/section&gt;</code>
+			</span>
+			<code class="next">&lt;a <mark>name="section-3</mark>"&gt;&lt;/a&gt; <span class="comment next">&lt;!-- ПЛОХО! --&gt;</span></code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Логическая ссылка</h2>
+		<pre>
+			<code>&lt;ul&gt;</code>
+			<code>	&lt;li&gt;&lt;a href="/"&gt;Главная&lt;/a&gt;&lt;/li&gt;</code>
+			<code>	&lt;li&gt;<mark>&lt;a&gt;</mark>Каталог<mark>&lt;/a&gt;</mark>&lt;/li&gt;</code>
+			<code>	&lt;li&gt;&lt;a href="/about/"&gt;О компании&lt;/a&gt;&lt;/li&gt;</code>
+			<code>&lt;/ul&gt;</code>
+		</pre>
+		<p>Чисто логическая ссылка, <strong>без адреса</strong>.</p>
+	</section>
+
+	<section class="slide">
+		<h2>Состояния ссылок</h2>
+		<pre>
+			<code><mark>a:hover</mark> { color: blue }</code>
+			<code><mark>a:focus</mark> { outline: 1px solid blue }</code>
+			<code><mark>a:active</mark> { color: red }</code>
+			<code><mark>a:visited</mark> { color: violet }</code>
+		</pre>
+		<p>Полагаться только на <code>:hover</code> уже давно нельзя.</p>
+	</section>
+
+	<section class="slide" id="button">
+		<h2 class="shout">
+			<button class="button">Кнопка</button>
+		</h2>
+	</section>
+
+	<section class="slide" id="button-focus">
+		<h2 class="shout">
+			<button class="button">Кнопка</button>
+		</h2>
+		<style>
+			#button-focus button {
+				box-shadow:
+					0 0 0 0.1em #fff,
+					0 0 0 0.2em #c2e0fe;
+				}
+		</style>
+	</section>
+
+	<section class="slide" id="button-active">
+		<h2 class="shout">
+			<button class="button">Кнопка</button>
+		</h2>
+		<style>
+			#button-active button {
+				border-color: #4777a6;
+				background: #4e87c0;
+				color: #fff;
+				}
+		</style>
+	</section>
+
+	<section class="slide">
+		<h2>Кнопки 90-х</h2>
+		<pre>
+			<code>&lt;form&gt;</code>
+			<code>	<mark>&lt;input</mark> type="<mark>submit</mark>" value="Кнопка"&gt;</code>
+			<code>	<mark>&lt;input</mark> type="<mark>button</mark>" value="Кнопка"&gt;</code>
+			<code>	<mark>&lt;input</mark> type="<mark>image</mark>" src="button.png"&gt;</code>
+			<code>&lt;/form&gt;</code>
+		</pre>
+		<p class="next"><code>&lt;input type="image"&gt;</code> передаёт координаты клика гетом.</p>
+	</section>
+
+	<section class="slide black">
+		<img class="cover w" src="pictures/backstreet.jpg" alt="Backstreet Boys">
+	</section>
+
+	<section class="slide">
+		<blockquote class="place m quote">
+			<p>
+				The <b>button</b> element<br>
+				represents <b>a button</b>.<br>
+				The element is <b>a button</b>.
+			</p>
+		</blockquote>
+	</section>
+
+	<section class="slide">
+		<h2>Кнопка «кнопка»</h2>
+		<pre>
+			<code><mark>&lt;button</mark> type="<mark>button</mark>"&gt;Кнопка&lt;/button&gt;</code>
+			<code><mark>&lt;button</mark> type="<mark>submit</mark>"&gt;Кнопка&lt;/button&gt;</code>
+			<code><mark>&lt;button</mark> type="<mark>reset</mark>"&gt;Кнопка&lt;/button&gt;</code>
+		</pre>
+		<p>Универсальный элемент для использования вне форм.</p>
+		<p class="next">Просто <code>&lt;button&gt;</code> даёт тип <code>submit</code>.</p>
+	</section>
+
+	<section class="slide">
+		<h2>Состояния кнопок</h2>
+		<pre>
+			<code><mark>button:hover</mark> { background: darker }</code>
+			<code><mark>button:focus</mark> { outline: 1px solid blue }</code>
+			<code><mark>button:active</mark> { background: inverted }</code>
+		</pre>
+		<p>Состояние <code>:focus</code> показывает текущее положение.</p>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout"><a class="pseudo">Псевдоссылка</a></h2>
+	</section>
+
+	<section class="slide black">
+		<img class="cover width" src="pictures/spoon.gif" alt="Нео гнёт ложку усилием воли">
+	</section>
+
+	<section class="slide white">
+		<img class="place left next" height="100%" src="pictures/ios-one.png" alt="Настройки iOS, главный список">
+		<img class="place right next" height="100%" src="pictures/ios-two.png" alt="Настройки iOS, внутренний вид">
+	</section>
+
+	<section class="slide white">
+		<img class="cover" src="pictures/ios-link.png" alt="Настройки в современной iOS">
+		<img class="cover next" src="pictures/ios-button.png" alt="Настройки в старой iOS">
+	</section>
+
+	<section class="slide">
+		<a href="https://pwa.rocks/" target="_blank">
+			<img class="cover" src="pictures/pwa.png" alt="Навигация на PWA.rocks">
+		</a>
+	</section>
+
+	<section class="slide">
+		<h2>Кнопки и немного JS</h2>
+		<pre>
+			<code><mark>&lt;nav</mark> class="nav"&gt;</code>
+			<code>	<mark>&lt;button</mark> type="button" class="nav__button"&gt;<mark>demo</mark>&lt;/button&gt;</code>
+			<code>	<mark>&lt;button</mark> type="button" class="nav__button"&gt;<mark>event</mark>&lt;/button&gt;</code>
+			<code>	<mark>&lt;button</mark> type="button" class="nav__button"&gt;<mark>game</mark>&lt;/button&gt;</code>
+			<code>	<mark>&lt;button</mark> type="button" class="nav__button"&gt;<mark>news</mark>&lt;/button&gt;</code>
+			<code>	<mark>&lt;button</mark> type="button" class="nav__button"&gt;<mark>tool</mark>&lt;/button&gt;</code>
+			<code><mark>&lt;/nav&gt;</mark></code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<img class="cover" src="pictures/mighty.jpg" alt="Супермен разбивает машину">
+	</section>
+
+	<section class="slide">
+		<blockquote class="place m quote">
+			<p>
+				Сделай-ка мне,<br>
+				чтобы по ссылке<br>
+				так <b>дыщ!</b><br>
+				и выплывало…<br>
+			</p>
+		</blockquote>
+	</section>
+
+	<section class="slide">
+		<img class="cover" src="pictures/bam.jpg" alt="Удар в лицо с размаху">
+	</section>
+
+	<section class="slide">
+		<h2>Безумные ссылки</h2>
+		<pre>
+			<code class="next">&lt;a onclick="<mark>fire()</mark>"&gt;Тых!&lt;/a&gt;</code>
+			<code class="next">&lt;a href="<mark>#</mark>" onclick="<mark>fire()</mark>"&gt;Бах!&lt;/a&gt;</code>
+			<code class="next">&lt;a href="<mark>javascript:fire()</mark>"&gt;Хрясь!&lt;/a&gt;</code>
+			<code class="next">&lt;a href="<mark>javascript:void(0)</mark>" onclick="<mark>fire()</mark>"&gt;Ды-дыщ!&lt;/a&gt;</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">Но ссылки нет!</h2>
+	</section>
+
+	<section class="slide black">
+		<h2 class="shout" style="color: #fff">Совсем!</h2>
+	</section>
+
+	<section class="slide">
+		<img class="cover" src="pictures/head-shot.jpg" alt="Мужчина с пистолетом у виска">
+	</section>
+
+	<section class="slide">
+		<img class="cover" src="pictures/serenity.jpg" alt="Зелёные луга и голубое небо">
+	</section>
+
+	<section class="slide">
+		<img class="cover" src="pictures/serious.png" alt="Бэтмен в лаборатории">
+	</section>
+
+	<section class="slide">
+		<h2 class="shout"><a>Ещё</a></h2>
+	</section>
+
+	<section class="slide white">
+		<img class="cover" src="pictures/yandex-main-more.png" alt="Выпадающее меню Яндекса">
+	</section>
+
+	<section class="slide">
+		<h2>Яндекс</h2>
+		<pre>
+			<code><mark>&lt;a</mark> class="link i-bem link_blue_yes home-tabs__link …</code>
+			<code>	<mark>aria</mark>-expanded="true" <mark>aria</mark>-haspopup="true"</code>
+			<code>	<mark>href</mark>="https://yandex.ru/<mark class="important">all</mark>"&gt;</code>
+			<code>	&lt;span class="link__inner"&gt;</code>
+			<code>		ещё</code>
+			<code>	&lt;/span&gt;</code>
+			<code><mark>&lt;/a&gt;</mark></code>
+		</pre>
+	</section>
+
+	<section class="slide white">
+		<img class="cover" src="pictures/yandex-mail-more.png" alt="Выпадающее меню Яндекс.Почты">
+	</section>
+
+	<section class="slide">
+		<h2>Яндекс.Почта</h2>
+		<pre>
+			<code><mark>&lt;a</mark> class="mail-ui-Link mail-ui-GhostLink js-more-services"&gt;</code>
+			<code>	&lt;span class="js-more-services-target"&gt;</code>
+			<code>		<mark class="important">Ещё</mark></code>
+			<code>	&lt;/span&gt;</code>
+			<code><mark>&lt;/a&gt;</mark></code>
+		</pre>
+	</section>
+
+	<section class="slide white">
+		<img class="cover" src="pictures/google-more.png" alt="Выпадающее меню Google">
+	</section>
+
+	<section class="slide">
+		<h2>Google</h2>
+		<pre>
+			<code><mark>&lt;a</mark> href="https://www.google.com/intl/en/options/"</code>
+			<code>	class="gb_b gb_Rb" title="<mark>Google apps</mark>"</code>
+			<code>	<mark>aria</mark>-expanded="true" tabindex="0"</code>
+			<code>	data-ved="0EL0nCBI"&gt;</code>
+			<code class="mark next"> </code>
+			<code><mark>&lt;/a&gt;</mark></code>
+		</pre>
+	</section>
+
+	<section class="slide white">
+		<img class="cover" src="pictures/mailru-more.png" alt="Выпадающее меню Mail.Ru">
+	</section>
+
+	<section class="slide">
+		<h2>Mail.Ru</h2>
+		<pre>
+			<code><mark>&lt;table</mark> class="w-x-ph" cellspacing="0"&gt;</code>
+			<code>	&lt;a class="x-ph__link" href="<mark class="important">url</mark>" style="<mark>display: none</mark>"&gt;</code>
+			<code>		<mark>Все проекты</mark>&lt;/a&gt;</code>
+			<code>	&lt;a class="x-ph__menu__button" <mark>href="#"</mark>&gt;</code>
+			<code>		&lt;i class="x-ph__menu__button__text"&gt;<mark>Все проекты</mark>&lt;/i&gt;</code>
+			<code>	&lt;/a&gt;</code>
+			<code><mark>&lt;/table&gt;</mark></code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout"><button class="button">Отправить</button></h2>
+	</section>
+
+	<section class="slide white">
+		<img class="cover" src="pictures/all-send.png" alt="Кнопки отправки">
+	</section>
+
+	<section class="slide white">
+		<img class="cover" src="pictures/no-way.jpg" alt="Испуганные лица">
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">Выбиратор</h2>
+	</section>
+
+	<section class="slide white">
+		<img class="cover" src="pictures/scheme.png" alt="Блок-схема">
+	</section>
+
+	<section class="slide" id="chooser">
+		<ol class="place">
+			<li class="next">Это <code>&lt;button&gt;</code></li>
+			<li class="next">Если нет, то <code>&lt;a href="…"&gt;</code></li>
+			<li class="next">Всё.</li>
+		</ol>
+		<style>
+			#chooser ol {
+				white-space: nowrap;
+				font-size: 50px;
+				}
+		</style>
+	</section>
+
+	<section class="slide white">
+		<img class="cover" src="pictures/right.jpg" alt="Дела вместо слов">
+	</section>
+
+	<section class="slide">
+		<h2 class="shout"><a href="http://sokr.me/pit">sokr.me/pit</a></h2>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout"><a href="http://twitter.com/pepelsbey">@pepelsbey</a></h2>
+	</section>
+
+	<section class="slide" id="shower">
+		<img class="place" src="pictures/shower.svg" alt="Логотип Шовера">
+		<h2 class="shout"><a href="http://shwr.me/">Shower</a></h2>
+		<style>
+			#shower img {
+				margin: 22px 0 0 -210px;
+				width: 150px;
+				}
+			#shower h2 {
+				margin-left: 100px;
+				}
+		</style>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">Вопросы?</h2>
+	</section>
+
+	<footer class="badge">
+		<a href="https://github.com/shower/shower">Powered by Shower</a>
+	</footer>
+
+	<div class="progress"></div>
+
+	<script src="shower/shower.min.js"></script>
+	<!-- Copyright © 2010–2016 Vadim Makeev — pepelsbey.net -->
+	<script>(function(b,c,a){(c[a]=c[a]||[]).push(function(){try{c.yaCounter155532=new Ya.Metrika({id:155532})}catch(a){}});var e=b.getElementsByTagName('script')[0],d=b.createElement('script'),a=function(){e.parentNode.insertBefore(d,e)};d.async=!0;d.src='//mc.yandex.ru/metrika/watch.js';'[object Opera]'==c.opera?b.addEventListener('DOMContentLoaded',a):a()})(document,window,'yandex_metrika_callbacks');</script><noscript><img src="https://mc.yandex.ru/watch/155532" alt=""></noscript>
+
+</body>
+</html>

@@ -1,0 +1,664 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>Осторожно, закэшировано!</title>
+
+	<meta name="description" content="Про кэширование приложений на языке JavaScript">
+	<meta name="author" content="Сергей Жигалов">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/white.css">
+    <link rel="stylesheet" href="css/user.css">
+
+	<!-- Code syntax highlighting -->
+	<link rel="stylesheet" href="plugin/highlight/tomorrow.css">
+
+	<!--[if lt IE 9]>
+	<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+	<!-- Any section element inside of this container is displayed as a slide -->
+<div class="slides">
+
+<section>
+    <h2>Осторожно, закэшировано!</h2>
+</section>
+
+<section>
+    <section class="vertical">
+        <p class="middle idea size-XL">
+            Сделать мое приложение на порядок быстрее
+            потратив на это пару часов.
+        </p>
+    </section>
+
+    <section class="vertical">
+        <p class="middle idea size-XL">
+            Пережить нагрузку в <br />«черную пятницу».
+        </p>
+    </section>
+</section>
+
+<section>
+    <h3>Что кэшировать</h3>
+
+    <p class="pos left fragment size-L">Статика (HTTP запросы)</p>
+    <p class="pos left fragment size-L">Получение данных</p>
+    <p class="pos left fragment size-L">Результаты вычислений</p>
+    <p class="pos left fragment size-L">Шаблоны</p>
+</section>
+
+<section>
+    <section class="image" data-background="images/coffee.jpg" >
+        <h4>Показать список сортов кофе</h4>
+    </section>
+</section>
+
+<section>
+    <section data-transition="slide-in fade-out">
+<pre><code class="js size-S">var app = express();
+
+</code></pre>
+<pre class="fragment" data-fragment-index="2"><code class="js size-S">app.get('/', (req, res) => {</code></pre>
+<pre class="fragment" data-fragment-index="3"><code class="js size-S">    fetch()
+
+
+</code></pre>
+<pre class="fragment" data-fragment-index="2"><code class="js size-S">});
+
+
+</code></pre>
+    </section>
+
+    <section data-transition="fade">
+        <table>
+            <thead>
+                <tr>
+                    <td>
+                        <code>fetch()</code>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <pre><code class='size-XXS' style="width: 100%">
+[
+    {
+        name: 'Timor',
+        region: 'Indonesia'
+    },
+    {
+        name: 'Mocha',
+        region: 'Yemen'
+    },
+    {
+        name: 'Java',
+        region: 'Indonesia'
+    }
+]
+                        </code></pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section data-transition="fade">
+<pre><code class="js size-S">var app = express();
+
+</code></pre>
+<pre><code class="js size-S">app.get('/', (req, res) => {</code></pre>
+<pre><code class="js size-S">    fetch()</code></pre>
+<pre class="fragment" data-fragment-index="4"><code class="js size-S">        .then(calculate)
+
+</code></pre>
+<pre><code class="js size-S">});
+
+
+</code></pre>
+    </section>
+
+    <section data-transition="fade">
+        <table>
+            <thead>
+                <tr>
+                    <td><code>fetch()</code></td>
+                    <td><code>calculate()</code></td>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+                <tr>
+                    <td>
+                        <pre><code class='size-XXS' style="width: 100%">
+[
+    {
+        name: 'Timor',
+        region: 'Indonesia'
+    },
+    {
+        name: 'Mocha',
+        region: 'Yemen'
+    },
+    {
+        name: 'Java',
+        region: 'Indonesia'
+    }
+]
+                        </code></pre>
+                    </td>
+                    <td>
+                        <pre><code class='size-XXS' style="width: 100%">
+{
+    Indonesia: [
+        'Timor',
+        'Java'
+    ],
+    Mocha: [
+        'Yemen'
+    ]
+}
+                        </code></pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section data-transition="fade-in slide-out">
+<pre><code class="js size-S">var app = express();
+
+</code></pre>
+<pre><code class="js size-S">app.get('/', (req, res) => {</code></pre>
+<pre><code class="js size-S">    fetch()</code></pre>
+<pre><code class="js size-S">        .then(calculate)</code></pre>
+<pre class="fragment" data-fragment-index="5"><code class="js size-S">        .then(data => res.json(data));</code></pre>
+<pre><code class="js size-S">});
+
+</code></pre>
+<pre class="fragment" data-fragment-index="6"><code class="js size-S">app.listen(3000);</code></pre>
+    </section>
+
+    <section class="image">
+        <img src="images/without_cache.svg" alt="without cache" height="100%" />
+    </section>
+
+    <section data-background="images/00_no-cache.jpg" class="image">
+    </section>
+
+    <section class="image" data-transition="fade-in">
+        <img src="images/long_calc_1.svg" alt="without cache" height="100%" />
+    </section>
+
+    <section class="image" data-transition="none">
+        <img src="images/long_calc_2.svg" alt="without cache" height="100%" />
+    </section>
+
+    <section class="image" data-transition="fade-out">
+        <img src="images/long_calc_3.svg" alt="without cache" height="100%" />
+    </section>
+</section>
+
+<section>
+    <section>
+        <h3>Кэширование данных</h3>
+    </section>
+
+    <section>
+<pre><code class="js size-S">var cache;
+
+</code></pre>
+<pre class="fragment" data-fragment-index="2"><code class="js size-S">app.get('/', (req, res) => {</code></pre>
+<pre class="fragment" data-fragment-index="3"><code class="js size-S">    if (cache) { return res.json(cache); }
+
+</code></pre>
+<pre class="fragment" data-fragment-index="4"><code class="js size-S">    fetch()</code></pre>
+<pre class="fragment" data-fragment-index="5"><code class="js size-S">        .then(calculate)</code></pre>
+<pre class="fragment" data-fragment-index="6"><code class="js size-S">        .then(data => cache = data)</code></pre>
+<pre class="fragment" data-fragment-index="7"><code class="js size-S">        .then(data => res.json(data));</code></pre>
+<pre class="fragment" data-fragment-index="2"><code class="js size-S">});</code></pre>
+    </section>
+
+    <section class="image">
+        <img src="images/cache.svg" alt="Simple cache" height="100%"/>
+    </section>
+
+    <section data-background="images/01_in-memory.jpg" class="image">
+    </section>
+
+    <section>
+        <p class="pos left size-L">Уменьшили время ответа</p>
+    </section>
+</section>
+
+<section>
+    <section class="image">
+        <img src="images/without_batching.svg" alt="Cache without batching" height="100%"/>
+    </section>
+
+    <section>
+        <h3>Объединение запросов</h3>
+    </section>
+
+    <section>
+<pre><code class="js size-S">var cache;
+
+</code></pre>
+<pre class="fragment" data-fragment-index="2"><code class="js size-S">app.get('/', (req, res) => {</code></pre>
+<pre class="fragment" data-fragment-index="3"><code class="js size-S">    cache = cache ||
+            fetch().then(calculate);
+</code></pre>
+<pre class="fragment" data-fragment-index="4"><code class="js size-S">    cache</code></pre>
+<pre class="fragment" data-fragment-index="5"><code class="js size-S">        .then(data => res.json(data))</code></pre>
+<pre class="fragment" data-fragment-index="6"><code class="js size-S">        .catch(() => cache = null);</code></pre>
+<pre class="fragment" data-fragment-index="2"><code class="js size-S">});</code></pre>
+    </section>
+
+    <section class="image">
+        <img src="images/batching.svg" alt="Cache with batching" height="100%"/>
+    </section>
+
+    <section>
+        <p class="pos left size-L">Уменьшили время ответа</p>
+        <p class="pos left size-L">Уменьшили нагрузку</p>
+    </section>
+</section>
+
+<section>
+    <section>
+        <h2>lru-cache</h2>
+    </section>
+
+    <section>
+        <pre><code class="hljs javascript size-S" data-trim>
+var LRU = require('lru-cache');
+var cache = LRU({ maxAge: 3000 });
+        </code></pre>
+    </section>
+
+    <section>
+        <pre class="fragment" data-fragment-index="2"><code class="js size-S">app.get('/', (req, res) => {</code></pre>
+        <pre class="fragment" data-fragment-index="3"><code class="js size-S">    if (!cache.has('coffee')) {</code></pre>
+        <pre class="fragment" data-fragment-index="3"><code class="js size-S">        var data = fetch().then(calculate);</code></pre>
+        <pre class="fragment" data-fragment-index="3"><code class="js size-S">        cache.set('coffee', data);</code></pre>
+        <pre class="fragment" data-fragment-index="3"><code class="js size-S">    }
+        </code></pre>
+        <pre class="fragment" data-fragment-index="4"><code class="js size-S">    cache.get('coffee')</code></pre>
+        <pre class="fragment" data-fragment-index="5"><code class="js size-S">        .then(data => res.json(data))</code></pre>
+        <pre class="fragment" data-fragment-index="6"><code class="js size-S">        .catch(() => cache.del('coffee'));</code></pre>
+        <pre class="fragment" data-fragment-index="2"><code class="js size-S">});</code></pre>
+    </section>
+
+    <section data-background="images/02_lru-cache.jpg" class="image">
+        <h3>lru-cache</h3>
+    </section>
+
+    <section>
+        <p class="pos left size-L">Уменьшили время ответа</p>
+        <p class="pos left size-L">Уменьшили нагрузку</p>
+        <p class="pos left size-L">Контролируем время жизни</p>
+    </section>
+</section>
+
+<section>
+    <section class="image">
+        <img src="images/single_frontend.svg" alt="Single cache" width="100%" />
+    </section>
+
+    <section class="image">
+        <img src="images/multi_frontend.svg" alt="Multiple cache" width="100%"/>
+    </section>
+
+    <section class="image">
+        <img src="images/union_cache.svg" alt="Union cache" width="100%"/>
+    </section>
+
+    <section>
+        <h2>Распределенный кэш</h2>
+    </section>
+
+    <section>
+        <img src="images/redisio.png" alt="redisio" />
+    </section>
+
+    <section>
+        <pre><code class="hljs javascript size-S" data-trim>
+var Redis = require('ioredis');
+var cache = new Redis();
+        </code></pre>
+    </section>
+
+    <section>
+        <pre><code class="js size-XS">cache.get('coffee')</code></pre>
+        <pre class="fragment" data-fragment-index="4"><code class="js size-XS">    .then(data => {</code></pre>
+        <pre class="fragment" data-fragment-index="5"><code class="js size-XS">        if (data) { return data; }
+        </code></pre>
+        <pre class="fragment" data-fragment-index="6"><code class="js size-XS">        return fetch().then(calculate)</code></pre>
+        <pre class="fragment" data-fragment-index="7"><code class="js size-XS">            .then(data => {</code></pre>
+        <pre class="fragment" data-fragment-index="7"><code class="js size-XS">                cache.set('coffee', data, 'EX', 3);</code></pre>
+        <pre class="fragment" data-fragment-index="7"><code class="js size-XS">                return data;</code></pre>
+        <pre class="fragment" data-fragment-index="7"><code class="js size-XS">            });</code></pre>
+        <pre class="fragment" data-fragment-index="4"><code class="js size-XS">    })</code></pre>
+        <pre class="fragment" data-fragment-index="9"><code class="js size-XS">    .then(data => res.json(data));</code></pre>
+    </section>
+
+    <section>
+        <p class="pos left size-L">Уменьшили время ответа</p>
+        <p class="pos left size-L">Уменьшили нагрузку</p>
+        <p class="pos left size-L">Контролируем время жизни</p>
+        <p class="pos left size-L">Общий кэш для всех инстансов</p>
+    </section>
+</section>
+
+<section>
+    <section>
+        <h2>Кэширование шаблонов</h2>
+    </section>
+
+    <section>
+        <p class="left size-XL">1. Прочитать шаблон</p>
+        <p class="left size-XL fragment">2. Скомпилировать</p>
+        <p class="left size-XL fragment">3. Применить</p>
+    </section>
+
+    <section>
+        <pre><code class="size-XS" data-trim>
+var _ = require('lodash');
+var str = '<%= date %>: "<%= error.message %>"';
+
+module.exports = _.template(str);
+        </code></pre>
+    </section>
+
+    <section>
+        <pre><code class="js size-XS">var template = require('./template');</code></pre>
+        <pre class="fragment" data-fragment-index="1"><code class="js size-XS">&nbsp;</code></pre>
+        <pre class="fragment" data-fragment-index="1"><code class="js size-XS">app.get('/', (req, res) => {</code></pre>
+        <pre class="fragment" data-fragment-index="2"><code class="js size-XS">    var myError = Error(':-(');</code></pre>
+        <pre class="fragment" data-fragment-index="3"><code class="js size-XS">&nbsp;</code></pre>
+        <pre class="fragment" data-fragment-index="3"><code class="js size-XS">    console.log(template({</code></pre>
+        <pre class="fragment" data-fragment-index="3"><code class="js size-XS">        date: new Date(),</code></pre>
+        <pre class="fragment" data-fragment-index="3"><code class="js size-XS">        error: myError</code></pre>
+        <pre class="fragment" data-fragment-index="3"><code class="js size-XS">    }));</code></pre>
+        <pre class="fragment" data-fragment-index="1"><code class="js size-XS">});</code></pre>
+        <pre class="fragment" data-fragment-index="4"><code class="size-XS js" id="logTemplate">
+// Tue Jun 21 2016 13:48:02 GMT+0500 (YEKT): ":-("</code></pre>
+    </section>
+
+    <section class="image">
+        <img src="images/templates_partial.svg" alt="Single cache" width="100%" />
+    </section>
+
+    <section>
+        <pre><code class="size-S">
+{{# cache 'menu'}}
+    &lt;h1&gt;Coffee&lt;/h1&gt;
+    &lt;ul&gt;
+        {{#each items}}
+        &lt;li&gt;{{name}}&lt;/li&gt;
+        {{/each}}
+    &lt;/ul&gt;
+{{/cache}}
+        </code></pre>
+    </section>
+
+    <section>
+        <pre><code class="size-XS js">
+Handlebars.registerHelper('cache', (key, options) => {
+    if (!cache.has(key)) {
+        cache.set(key, options.fn(options.data.root));
+    }
+
+    return cache.get(key);
+});
+        </code></pre>
+    </section>
+
+    <section class="image">
+        <img src="images/templates_all.svg" alt="Single cache" width="100%" />
+    </section>
+</section>
+
+<section>
+    <section>
+        <h3>Эффективность кэша</h3>
+
+        <blockquote class="fragment">
+            «... кажется, эти данные нам нужны всегда и обновляются они редко ...»
+        </blockquote>
+    </section>
+
+    <section>
+        <h3>Эффективность кэша</h3>
+
+        <pre><code class="size-S">HitRate = 'из кэша' / 'число запросов'</code></pre>
+    </section>
+
+    <section>
+        <table>
+            <thead>
+                <tr>
+                    <td>Запрос</td>
+                    <td>Кэш</td>
+                    <td>Эффективность</td>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr class="fragment">
+                    <td><code>/</code></td>
+                    <td><code class="size-XS">'coffee'</code></td>
+                    <td><code>~99%</code></td>
+                </tr>
+                <tr class="fragment">
+                    <td><code>/:region</code></td>
+                    <td><code class="size-XS">'Indonesia', 'Africa', ...</code></td>
+                    <td><code>~98%</code></td>
+                </tr>
+                <tr class="fragment">
+                    <td><code>/:uid</code></td>
+                    <td><code class="size-XS">'user1', 'user2', ..., 'user100500'</code></td>
+                    <td><code>~1%</code></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <p class="pos left size-L">Кэшировать популярные данные</p>
+        <p class="neg left size-L">Не кэшировать песональные данные</p>
+        <p class="neg left size-L">Не кэшировать сложные комбинации</p>
+    </section>
+</section>
+
+<section>
+    <section>
+        <h3>Разогрев кэша</h3>
+    </section>
+
+    <section>
+        <h3>Горячий старт</h3>
+        <pre><code class="hljs javascript size-S fragment" data-trim>
+// ...
+app.listen(3000);
+
+var data = fetch().then(calculate);
+cache.set('coffee', data);
+        </code></pre>
+    </section>
+
+    <section>
+        <h3>SPA</h3>
+    </section>
+
+    <section class="image">
+        <img src="images/SPA.svg" alt="without cache" height="100%" />
+    </section>
+
+    <section>
+        <pre><code class="size-M">
+&lt;script&gt;
+    var data = {
+        '/coffee': { ... },
+        '/favorite': { ... },
+        '/userData': { ... }
+    };
+&lt;/script&gt;
+        </code></pre>
+    </section>
+
+    <section>
+<pre><code class="js size-M">function request(url) {</code></pre>
+<pre class="fragment" data-fragment-index="2"><code class="js size-M">    return data[url]</code></pre>
+<pre class="fragment" data-fragment-index="3"><code class="js size-M">      ? Promise.resolve(data[url])</code></pre>
+<pre class="fragment" data-fragment-index="4"><code class="js size-M">      : $.get(url);</code></pre>
+<pre><code class="js size-M">}</code></pre>
+    </section>
+
+    <section class="image">
+        <img src="images/SPA_inline_cache.svg" alt="without cache" height="100%" />
+    </section>
+</section>
+
+<section>
+    <section>
+        <h3>Кэш - вспомогательная компонента</h3>
+    </section>
+
+    <section>
+        <pre data-fragment-index="1"><code class='size-XS'>function memoize(key, maxAge, fn) {</code></pre>
+        <pre class="fragment" data-fragment-index="2"><code class='size-XS'>    if (cache.has(key)) {</code></pre>
+        <pre class="fragment" data-fragment-index="2"><code class='size-XS'>        return Promise.resolve(cache.get(key));</code></pre>
+        <pre class="fragment" data-fragment-index="2"><code class='size-XS'>    }</code></pre>
+        <pre class="fragment" data-fragment-index="2"><code class='size-XS'>&nbsp;</code></pre>
+        <pre class="fragment" data-fragment-index="4"><code class='size-XS'>    return Promise.resolve()</code></pre>
+        <pre class="fragment" data-fragment-index="4"><code class='size-XS'>        .then(fn)</code></pre>
+        <pre class="fragment" data-fragment-index="5"><code class='size-XS'>        .then(results => {</code></pre>
+        <pre class="fragment" data-fragment-index="5"><code class='size-XS'>            cache.set(key, result, maxAge);</code></pre>
+        <pre class="fragment" data-fragment-index="5"><code class='size-XS'>            return result;</code></pre>
+        <pre class="fragment" data-fragment-index="5"><code class='size-XS'>        });</code></pre>
+        <pre data-fragment-index="1"><code class='size-XS'>}</code></pre>
+    </section>
+
+    <section class="image">
+        <img src="images/abstraction.svg" alt="Models abstraction" height="100%" />
+    </section>
+
+    <section>
+        <p class="pos left size-L">Легко менять реализацию кэша</p>
+        <p class="pos left size-L">Настрока кэширования моделей</p>
+    </section>
+</section>
+
+<section>
+    <section>
+        <h3>Кэширование на клиенте</h3>
+
+        <p class="left size-L fragment">cookie</p>
+        <p class="left size-L fragment">sessionStorage</p>
+        <p class="left size-L fragment">localStorage</p>
+    </section>
+
+    <section>
+        <pre><code class="size-S">
+function setItem(key, maxAge, value) {
+    var data = JSON.stringify({
+        expire: Date.now() + maxAge,
+        value: value
+    });
+
+    localStorage.setItem(key, data);
+}
+        </code></pre>
+    </section>
+
+    <section>
+        <pre><code class="size-S">
+function getItem(key, maxAge, value) {
+    var store = localStorage.getItem(key);
+    var data = JSON.parse(store);
+
+    if(data.expire > Date.now()) {
+        return data.value;
+    }
+}
+        </code></pre>
+    </section>
+</section>
+
+<section>
+    <pre><code class="size-S" data-trim>cache.set('speaker', {
+    name: 'Жигалов Сергей',
+    twitter: '@sergey_zhigalov',
+    email: 'zhigalov@yandex-team.ru'
+});</code></pre>
+    <pre class="fragment"><code class="size-S" data-trim>cache.set('assistant', {
+    name: 'Мокеев Евгений'
+});</code></pre>
+    <h2 class="fragment">Спасибо!</h2>
+</section>
+</div>
+
+</div>
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+    <script type="text/javascript">
+        function tick() {
+            var text = '// ' + new Date() + ': ":-("'
+
+            document
+                .getElementById('logTemplate')
+                .innerHTML = text;
+        }
+
+        setInterval(tick, 100);
+    </script>
+
+	<script>
+
+		// Full list of configuration options available at:
+		// https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			controls: false,
+			progress: true,
+            slideNumber: true,
+			center: true,
+			transition: 'slide',
+            history: true,
+            dependencies: [
+				{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{
+                    src: './plugin/highlight/highlight.min.js',
+                    async: true,
+                    condition: function () {
+                        return Boolean(document.querySelector('pre code'));
+                    },
+                    callback: function () {
+                        hljs.initHighlightingOnLoad();
+                    }
+                },
+				{ src: 'plugin/zoom-js/zoom.js', async: true },
+				{ src: 'plugin/notes/notes.js', async: true }
+			]
+		});
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>«head» — всему голова</title>
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
+	<link rel="import" href="import.html">
+	<style>
+		.slide pre mark {
+			z-index: 0;
+		}
+
+		.slide.active .cover + .cover {
+			opacity: 0;
+			animation-duration: 2s;
+  		animation-name: coverFade;
+  		animation-iteration-count: 1;
+  		animation-fill-mode: forwards;
+		}
+
+		@keyframes coverFade {
+			from {
+				opacity: 0;
+			}
+			to {
+				opacity: 1;
+			}
+		}
+	</style>
+</head>
+<body class="shower list">
+	<header class="caption">
+		<h1>&lt;head&gt; — всему голова</h1>
+		<p>Роман Ганин, <a href="//twitter.com/realetive">@realetive</a></p>
+	</header>
+	<section class="slide black" id="intro">
+		<footer class="footer">
+			<p>В 1978 году в подмосковье произошел просто фантастический случай. В ускорителе протонов случились какие-то неполадки. <a href="https://ru.wikipedia.org/wiki/Бугорский,_Анатолий_Петрович">Анатолий Бугорский</a> решил их устранить. Однако по какой-то причине не сработала блокировка аппаратуры, и голову физика «прошил» пучок протонов мощностью в 70 миллиардов электровольт.</p>
+			<p>Заряд облучения, который принял на себя исследователь, оценивается в 280 тысяч рентген!</p>
+			<p>По всем врачебным канонам мозг просто обязан был быть выжженным, а человек должен был погибнуть. Однако Анатолий Бугорский живет, работает, даже катается на велосипеде и играет в футбол.</p>
+		</footer>
+		<style>#intro h2, #intro p { color: #eee; }</style>
+		<h2>&lt;head&gt; — всему голова</h2>
+		<p>пару слов о том, что <i>у нас</i> в «голове»…</p>
+	</section>
+	<section class="slide">
+		<footer class="footer">
+		  Всем привет, меня зовут Роман, я разрабатываю интерфейсы в FBS. Прежде чем погрузиться в пучину веб-разработки, я 4 года постигал медицину. Потом понял, что ковыряться в коде у меня получается лучше и нравится больше, чем… ну вы сами понимаете.
+		</footer>
+		<h2>&lt;head&gt; — всему голова</h2>
+		<p>пару слов о том, что <i>у меня</i> в «голове»…</p>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<p class="note">Twitter, GitHub, почта, VKontakte, Facebook и т. д.: <a href="https://twitter.com/realetive">@realetive</a></p>
+		<img src="pictures/slide_1.jpg" alt="Роман Ганин" class="cover">
+	</section>
+
+	<section class="slide">
+		<footer class="footer">
+			Любая страница содержит head; первый экзамен, сдаваемый на 1 семестре на курсе анатомии — череп. Ну что, попробуем экстерном изучить его содержимое за следующие 30 минут?
+		</footer>
+		<h2>&lt;head&gt; — всему голова</h2>
+		<p>пару слов о том, что <i>у всех</i> в «голове»…</p>
+		<img src="pictures/slide_1.jpg" alt="Роман Ганин" class="cover">
+		<img src="pictures/slide_2.jpg" alt="Скелет человека" class="cover">
+	</section>
+	<section class="slide">
+		<footer class="footer">
+			Начнём с ма´лого — ответим на вопрос: «сколько минимум тегов нужно», чтобы создать „гомункула“ — примитивную страницу, обдёлённую разумом?
+		</footer>
+		<h2>Шаблон минимальной страницы</h2>
+		<pre>
+			<code style="visibility: hidden">&lt;!DOCTYPE html&gt;</code>
+			<code style="visibility: hidden">&lt;html lang="ru"&gt;</code>
+			<code style="visibility: hidden">  &lt;title&gt;head – всему голова&lt;/title&gt;</code>
+			<code style="visibility: hidden">  &lt;body&gt;</code>
+			<code style="visibility: hidden">    Привет! Я <del>живой</del> валиден!</code>
+			<code style="visibility: hidden">  &lt;/body&gt;</code>
+			<code style="visibility: hidden">&lt;/html&gt;</code>
+		</pre>
+		<img src="pictures/slide_2.jpg" alt="Скелет человека" class="cover">
+		<img src="pictures/slide_3.jpg" alt="Череп" class="cover">
+	</section>
+	<section class="slide">
+		<footer class="footer">
+			Мы делаем документ по современной спецификации, поэтому договоримся, что Doctype нам известен заранее.
+		</footer>
+		<h2>Шаблон минимальной страницы</h2>
+		<pre>
+			<code class="mark">&lt;!DOCTYPE html&gt;</code>
+			<code style="visibility: hidden">&lt;html lang="ru"&gt;</code>
+			<code style="visibility: hidden">  &lt;title&gt;head – всему голова&lt;/title&gt;</code>
+			<code style="visibility: hidden">  &lt;body&gt;</code>
+			<code style="visibility: hidden">    Привет! Я <del>живой</del> валиден!</code>
+			<code style="visibility: hidden">  &lt;/body&gt;</code>
+			<code style="visibility: hidden">&lt;/html&gt;</code>
+		</pre>
+		<img src="pictures/slide_3.jpg" alt="Череп" class="cover">
+		<img src="pictures/slide_4.jpg" alt="Череп" class="cover">
+	</section>
+	<section class="slide">
+		<footer class="footer">
+			Естественно, какой документ, еслу у нас не определен корневой элемент разметки?
+		</footer>
+		<h2>Шаблон минимальной страницы</h2>
+		<pre>
+			<code>&lt;!DOCTYPE html&gt;</code>
+			<code class="mark">&lt;html lang="ru"&gt;</code>
+			<code style="visibility: hidden">  &lt;title&gt;head – всему голова&lt;/title&gt;</code>
+			<code style="visibility: hidden">  &lt;body&gt;</code>
+			<code style="visibility: hidden">    Привет! Я <del>живой</del> валиден!</code>
+			<code style="visibility: hidden">  &lt;/body&gt;</code>
+			<code class="mark">&lt;/html&gt;</code>
+		</pre>
+		<img src="pictures/slide_4.jpg" alt="Череп" class="cover">
+		<img src="pictures/slide_5.jpg" alt="Череп" class="cover">
+	</section>
+	<section class="slide">
+		<footer class="footer">
+			 Обязательный title, сообщающий браузеру заголовок для окна или вкладки.
+		</footer>
+		<h2>Шаблон минимальной страницы</h2>
+		<pre>
+			<code>&lt;!DOCTYPE html&gt;</code>
+			<code>&lt;html lang="ru"&gt;</code>
+			<code class="mark">  &lt;title&gt;head – всему голова&lt;/title&gt;</code>
+			<code style="visibility: hidden">  &lt;body&gt;</code>
+			<code style="visibility: hidden">    Привет! Я <del>живой</del> валиден!</code>
+			<code style="visibility: hidden">  &lt;/body&gt;</code>
+			<code>&lt;/html&gt;</code>
+		</pre>
+		<img src="pictures/slide_5.jpg" alt="Череп" class="cover">
+		<img src="pictures/slide_6.jpg" alt="Череп" class="cover">
+	</section>
+	<section class="slide">
+		<footer class="footer">
+			И, конечно, само содержимое, отображаемое в браузере, в теге body. Заметьте, тега head нет — согласно спецификации он необязательный, т. к. браузер в данном случае сопоставит наличие title и самостоятельно «обернёт» его в head.
+		</footer>
+		<h2>Шаблон минимальной страницы</h2>
+		<pre>
+			<code>&lt;!DOCTYPE html&gt;</code>
+			<code>&lt;html lang="ru"&gt;</code>
+			<code>  &lt;title&gt;head – всему голова&lt;/title&gt;</code>
+			<code class="mark">  &lt;body&gt;</code>
+			<code>    Привет! Я <del>живой</del> валиден!</code>
+			<code class="mark">  &lt;/body&gt;</code>
+			<code>&lt;/html&gt;</code>
+		</pre>
+		<p>Документ успешно проходит валидацию на <a href="https://validator.w3.org/nu/#textarea" target="_blank">w3c</a>.</p>
+		<img src="pictures/slide_6.jpg" alt="Череп" class="cover">
+		<img src="pictures/slide_7.jpg" alt="Череп" class="cover">
+	</section>
+	<section class="slide">
+		<footer class="footer">
+			Нам хватило трёх тегов. Три — минимальное количество отверстий, требуемых для трепанации черепа, чтобы поместить туда недостающие структуры…
+		</footer>
+		<h2>Шаблон минимальной страницы</h2>
+		<p>Три тега…</p>
+		<img src="pictures/slide_7.jpg" alt="Череп" class="cover">
+		<img src="pictures/slide_8.jpg" alt="Череп" class="cover">
+	</section>
+	<section class="slide">
+		<footer class="footer">
+			Сама ткань мозга воспринимается имунной системой как чужеродная. Чтобы «защититься», между кровеносной и центральной нервной системами есть физиологический барьер — ГЭБ. Тэг head скрыт от взора неискушённого разработчика, но мы ведь не такие, да?
+		</footer>
+		<pre>
+			<code>&lt;head lang="ru"&gt;</code>
+			<code>  &lt;title&gt;head – всему голова&lt;/title&gt;</code>
+			<code>  &lt;style&gt;</code>
+			<code>    #thisSlide pre {</code>
+			<code>      color: #000;</code>
+			<code>      background-color: transparent;</code>
+			<code>    }</code>
+			<code>  &lt;/style&gt;</code>
+			<code>&lt;/head&gt;</code>
+		</pre>
+		<img src="pictures/slide_8.jpg" alt="Череп" class="cover">
+		<img src="pictures/slide_9.jpg" alt="Череп" class="cover">
+	</section>
+	<section class="slide">
+		<footer class="footer">
+		  Чтобы отобразить скрытые теги, сделаем их блочными…
+		</footer>
+		<pre>
+			<code>&lt;head <mark>style="display: block"</mark> lang="ru"&gt;</code>
+			<code>  &lt;title <mark>style="display: block"</mark>&gt;head – всему голова&lt;/title&gt;</code>
+			<code>  &lt;style <mark>style="display: block"</mark>&gt;</code>
+			<code>    #thisSlide pre {</code>
+			<code>      color: #000;</code>
+			<code>      background-color: transparent;</code>
+			<code>    }</code>
+			<code>  &lt;/style&gt;</code>
+			<code>&lt;/head&gt;</code>
+		</pre>
+		<img src="pictures/slide_9.jpg" alt="Череп" class="cover">
+	</section>
+	<section class="slide" id="thisSlide">
+		<footer class="footer">
+			<p>И добавим возможность инлайн-редактирования с помощью атрибута contenteditable…</p>
+			<p>Бум! Реактивный WYSIWIG-редактор стилей с hot-reloading без единой строчки JS!</p>
+		</footer>
+		<style>
+			#thisSlide pre style {
+				display: block;
+				margin-left: -100px;
+				padding: 0 0 0 100px;
+				width: calc(100% + 100px + 100px);
+				border-radius: 0;
+				background: 0 0;
+				line-height: 2;
+				white-space: pre;
+				-moz-tab-size: 4;
+				-o-tab-size: 4;
+				tab-size: 4;
+				font-family: PT Mono, monospace;
+			}
+
+			#thisSlide .slide pre code:not(:only-child)::before,
+			#thisSlide .slide pre style::before {
+				position: absolute;
+				margin-left: -2em;
+				color: #979a9e;
+				counter-increment: code;
+				content: counter(code, decimal-leading-zero) "."
+			}
+
+		</style>
+		<pre>
+			<code>&lt;head <mark>style="display: block"</mark> lang="ru"&gt;</code>
+			<code>  &lt;title <mark>style="display: block" contenteditable</mark>&gt;head – всему голова&lt;/title&gt;</code>
+			<code>  &lt;style <mark>style="display: block" contenteditable</mark>&gt;</code>
+			<style contenteditable>    #thisSlide pre {
+      color: #000;
+      background-color: transparent;
+    }</style>
+			<code>  &lt;/style&gt;</code>
+			<code>&lt;/head&gt;</code>
+		</pre>
+		<img src="pictures/slide_9.jpg" alt="Череп" class="cover">
+		<img src="pictures/slide_10.jpg" alt="Череп" class="cover">
+	</section>
+	<section class="slide">
+		<footer class="footer">
+			Наш мозг принимает участие в обработке информации, поступающей от всей совокупности рецепторов, управляет движениями человеческого тела, а также осуществляет высшую функцию человеческого организма – мышление. Каждый отдел головного мозга отвечает за выполнение определённых функций.
+		</footer>
+		<img src="pictures/brain.jpg" alt="" class="cover">
+	</section>
+	<section class="slide">
+		<h2>&lt;title&gt;</h2>
+		<p>Мозг отвечает за сознание человека, т. е. за определение понятия «Я»:</p>
+		<pre>
+			<code>&lt;title&gt;Я – документ!&lt;/title&gt;</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<footer class="footer">
+			Первым на пути от спинного мозга начинается продолговатый мозг, являясь его фактическим продолжением.
+		</footer>
+		<img src="pictures/brain_back.jpg" alt="Задний мозг" class="cover">
+		<img src="pictures/brain_back_1.jpg" alt="Задний мозг" class="cover">
+	</section>
+	<section class="slide">
+		<footer class="footer">
+			Подобно проводящим каналам обеих мозгов (головного и спинного) теги link[rel="stylesheet"], style и script сообщают «телу» будущее оформление и поведение.
+		</footer>
+		<pre>
+			<code><span class="important">&lt;!-- CSS-стили во внешнем файле --&gt;</span></code>
+			<code class="mark">&lt;link rel="stylesheet" href="styles.css"&gt;</code>
+			<code>&nbsp;</code>
+			<code><span class="important">&lt;!-- CSS-стили прямо в документе --&gt;</span></code>
+			<code class="mark">&lt;style&gt; <span class="important">/* ... */</span> &lt;/style&gt;</code>
+			<code>&nbsp;</code>
+			<code><span class="important">&lt;!-- JavaScript --&gt;</span></code>
+			<code class="mark">&lt;script src="script.js"&gt;&lt;/script&gt;</code>
+			<code class="mark">&lt;script&gt; <span class="important">// Привет</span> &lt;script&gt;</code>
+			<code class="mark">&lt;noscript&gt;<span class="important">&lt;!--no JS alternative--&gt;</span>&lt;/noscript&gt;</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<footer class="footer">
+			<p>Продолговатый мозг содержит в себе нервные центры, обеспечивающие нормальную работу защитных рефлексов – чихание, кашель, моргание, рвота. Также он «рулит» дыхательным и глотательным рефлексами, слюновыделением и выделением желудочного сока.</p>
+			<p>http-equiv преобразует содержимое content в (эквивалент) http-заголовка.</p>
+			<p>meta name="viewport" — хак, придуманный Apple и успешно скопированный другими браузерами для указания начального размера области просмотра равным области страницы.</p>
+		</footer>
+		<pre>
+			<code class="mark">&lt;meta charset="utf-8"&gt;</code>
+			<code>&nbsp;</code>
+			<code class="mark">&lt;meta http-equiv="x-ua-compatible" content="ie=edge"&gt;</code>
+			<code>&lt;!-- <a href="https://habrahabr.ru/post/201358/">habr.ru/p/201358</a> --&gt;</code>
+			<code>&nbsp;</code>
+			<code class="mark">&lt;meta name="viewport" content="width=device-width,</code>
+			<code class="mark">      initial-scale=1, shrink-to-fit=no"&gt;</code>
+		</pre>
+		<p>Эти три тега настоятельно рекомендуется указать в самом начале</p>
+	</section>
+	<section class="slide">
+		<footer class="footer">
+			Мозжечок осуществляет контроль над согласованностью и координацией движения.
+		</footer>
+		<img src="pictures/brain_back_1.jpg" alt="Задний мозг" class="cover">
+		<img src="pictures/brain_back_2.jpg" alt="Задний мозг" class="cover">
+	</section>
+	<section class="slide">
+		<h2>Контролируем поставку статических ресурсов</h2>
+		<pre>
+			<code>&lt;!-- Указываем полный базовый адрес текущего</code>
+			<code>     документа и задаём целевое окно для всех</code>
+			<code>     ссылок на текущей странице --&gt;</code>
+			<code class="mark">&lt;base href="//wsd.events/assets/"</code>
+			<code class="mark">      target="_blank"&gt;</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<footer class="footer">
+			Варолиев мост отвечает за нормальное движение глазных яблок и координацию работы мимических мышц.
+		</footer>
+		<img src="pictures/brain_back_2.jpg" alt="Задний мозг" class="cover">
+		<img src="pictures/brain_back_3.jpg" alt="Задний мозг" class="cover">
+	</section>
+	<section class="slide">
+		<h2>Управляем «видимостью»</h2>
+		<pre>
+			<code>&lt;!-- Отключаем автоматическое определение</code>
+			<code>    и форматирование телефонных номеров --&gt;</code>
+			<code class="mark">&lt;meta name="format-detection" content="telephone=no"&gt;</code>
+		</pre>
+		<p class="next">… и браузер их больше «не видит»</p>
+	</section>
+	<section class="slide">
+		<h2>Скрываем поле поиска…</h2>
+		<pre>
+			<code>&lt;!-- …в результатах поисковой выдачи --&gt;</code>
+			<code class="mark">&lt;meta name="google" content="nositelinkssearchbox"&gt;</code>
+		</pre>
+		<blockquote class="next">
+			Мы встроили поиск к себе в поиск, чтобы ты мог искать, пока ищешь…
+		</blockquote>
+	</section>
+	<section class="slide">
+		<h2>Отключаем переводчик…</h2>
+		<pre>
+			<code>&lt;!-- …если Google Chrome неправильно определяет</code>
+			<code>      основной язык… --&gt;</code>
+			<code class="mark">&lt;meta name="google" content="notranslate"&gt;</code>
+		</pre>
+		<p>
+			…или у вас есть локализованная страница для этого пользователя.
+		</p>
+	</section>
+	<section class="slide">
+		<footer class="footer">
+			Гипоталамус – этот маленький участок выполняет важнейшую задачу контроля сердечного ритма, терморегуляции тела, кровяного давления. Также он «заведует» механизмами эмоционального регулирования – влияет на эндокринную систему с целью выработки необходимых для преодоления стрессовых ситуаций гормонов. Гипоталамус регулирует чувство голода, жажды и насыщения. Это центр удовольствия и сексуальности.
+		</footer>
+		<img src="pictures/brain_back_3.jpg" alt="Задний мозг" class="cover">
+		<img src="pictures/brain_back_4.jpg" alt="Задний мозг" class="cover">
+	</section>
+	<section class="slide">
+		<h2>Контроль сердечного ритма?</h2>
+		<pre class="next">
+			<code>&lt;!-- Переиндексировать страницу раз в 2 недели --&gt;</code>
+			<code class="mark">&lt;meta name="revisit" content="14"&gt;</code>
+		</pre>
+		<p class="next">Яндекс и Гугл игнорирует содержимое этого тега…</p>
+	</section>
+	<section class="slide">
+		<h2>Эмоциональное регулирование?</h2>
+		<p class="next">Да легко!</p>
+		<pre class="next">
+			<code>&lt;!-- Указываем возрастные ограничения --&gt;</code>
+			<code class="mark">&lt;meta name="rating" content="safe for kids"&gt;</code>
+		</pre>
+		<p class="next">…ибо &#9632;&#9632;&#9632;&#9632;&#9632;!</p>
+	</section>
+	<section class="slide">
+		<h2>Центр сексуальности?</h2>
+		<pre class="next">
+			<code>&lt;!-- Описание документа --&gt;</code>
+			<code class="mark">&lt;meta name="description"</code>
+			<code class="mark">      content="Я — сексуальная верстальщица…"&gt;</code>
+		</pre>
+		<p class="next">В определённых ситуациях содержание этого тега используется в результатах поиска.</p>
+	</section>
+	<section class="slide">
+		<footer class="footer">
+			Таламус – своеобразный «коммутатор», который обрабатывает и формирует ощущения из информации от температурных, болевых, вибрационных, мышечных, вкусовых, тактильных, слуховых, обонятельных рецепторов, один из подкорковых зрительных центров. Также данный участок отвечает за смену состояний сна и бодрствования в организме.
+		</footer>
+		<img src="pictures/brain_back_4.jpg" alt="Задний мозг" class="cover">
+		<img src="pictures/brain_back_5.jpg" alt="Задний мозг" class="cover">
+	</section>
+	<section class="slide">
+		<h2>«Посылаем» поисковики…</h2>
+		<pre>
+			<code>&lt;!-- Отменяем индексацию «зеркала» --&gt;</code>
+			<code class="mark">&lt;meta http-equiv="url" content="https://всд.рф/"&gt;</code>
+		</pre>
+		<p>Тег прекращает индексацию страницы поисковой системой, и&nbsp;перенаправляет робота поисковой машины по указанной ссылке.</p>
+	</section>
+	<section class="slide">
+		<h2>Контролируем внешние источники</h2>
+		<pre>
+			<code>&lt;!-- Позволяет контролировать источники</code>
+			<code>     загрузки для контента --&gt;</code>
+			<code class="mark">&lt;meta http-equiv="Content-Security-Policy"</code>
+			<code class="mark">      content="default-src 'self'"&gt;</code>
+		</pre>
+		<p>Желательно расположить этот тег как можно выше, т. к. он применяется только к контенту, перечисленному после него.</p>
+		<p>Подробнее: <a href="http://bit.ly/mdn-csp">bit.ly/mdn-csp</a></p>
+	</section>
+	<section class="slide">
+		<footer class="footer">
+			Гипофиз – этот мозговой придаток вырабатывает гормоны роста полового созревания, развития и функционирования. В последствии наш неокрепший организм открывает социальные сети и …
+		</footer>
+		<img src="pictures/brain_back_4.jpg" alt="Задний мозг" class="cover">
+	</section>
+	<section class="slide">
+		<h2>«Социальные» теги <small class="next">Facebook&thinsp;/&thinsp;Open Graph</small></h2>
+		<pre class="next">
+			<code class="mark">&lt;meta property="fb:app_id" content="123456789"&gt;</code>
+			<code class="mark">&lt;meta property="og:url" content="//wsd.events/p.html"&gt;</code>
+			<code class="mark">&lt;meta property="og:type" content="website"&gt;</code>
+			<code class="mark">&lt;meta property="og:title" content="Content Title"&gt;</code>
+			<code class="mark">&lt;meta property="og:image" content="//wsd.events/i.jpg"&gt;</code>
+			<code>…</code>
+		</pre>
+		<ul class="next">
+			<li>Facebook об OG: <a href="http://bit.ly/fb-ogp">bit.ly/fb-ogp</a></li>
+			<li>Open Graph: <a href="http://ogp.me/">ogp.me</a></li>
+		</ul>
+	</section>
+	<section class="slide">
+		<h2>Facebook&thinsp;/&thinsp;Instant Articles</h2>
+		<pre class="next">
+			<code class="mark">&lt;meta property="op:markup_version" content="v1.0"&gt;</code>
+			<code>&lt;!-- URL веб-версии статьи --&gt;</code>
+			<code class="mark">&lt;link rel="canonical" href="//wsd.events/a.html"&gt;</code>
+			<code>&lt;!-- Стили, применяемые к ресурсу --&gt;</code>
+			<code class="mark">&lt;meta property="fb:article_style" content="myarticlestyle"&gt;</code>
+			<code>…</code>
+		</pre>
+		<ul class="next">
+			<li>Создание моментальных статей <a href="http://bit.ly/fb-ia-create">bit.ly/fb-ia-create</a></li>
+			<li>Примеры кода моментальных статей <a href="http://bit.ly/fb-ia-examples">bit.ly/fb-ia-examples</a></li>
+		</ul>
+	</section>
+	<section class="slide">
+		<h2 class="shout shrink">Да <i>«тысячи»</i> их!..<br>
+			<span style="font-size: .4em;">Twitter, Google+, Schema.org, Open&nbsp;Search…</span>
+		</h2>
+	</section>
+	<section class="slide">
+		<footer class="footer">
+			В височной области располагается энторинальная часть мозга, отвечающая за ориентацию в пространстве и определение направления.
+		</footer>
+		<img src="pictures/brain_back_4.jpg" alt="Задний мозг" class="cover">
+	</section>
+	<section class="slide">
+		<h2>Местоположение</h2>
+		<pre>
+			<code class="mark">&lt;meta name="ICBM" content="широта, долгота"&gt;</code>
+			<code class="mark">&lt;meta name="geo.position" content="широта;долгота"&gt;</code>
+			<code class="mark">&lt;meta name="geo.region" content="код страны, регион"&gt;</code>
+			<code class="mark">&lt;meta name="geo.placename" content="город"&gt;</code>
+		</pre>
+		<ul>
+			<li>ICBM на Википедии: <a href="http://bit.ly/wiki-icbm">bit.ly/wiki-icbm</a></li>
+			<li>Geotagging на Википедии: <a href="http://bit.ly/wiki-geotagging">bit.ly/wiki-geotagging</a></li>
+		</ul>
+	</section>
+	<section class="slide">
+		<h2>Что дальше?</h2>
+		<ul>
+			<li>мета-теги для Гугла: <a href="http://bit.ly/google-meta-tags">bit.ly/google-meta-tags</a>;</li>
+			<li>мета-теги для Яндекса: <a href="http://bit.ly/yandex-meta-tags">bit.ly/yandex-meta-tags</a>;</li>
+			<li>весь «зоопарк» на <abbr title="Web Hypertext Application Technology Working Group">WHATWG</abbr>: <a href="http://bit.ly/all-meta-tags">bit.ly/all-meta-tags</a>.</li>
+		</ul>
+	</section>
+	<section class="slide">
+		<footer class="footer">
+			Каждое из полушарий головного мозга делятся на 4 доли:
+		</footer>
+		<img src="pictures/brain_front.jpg" alt="Передний мозг" class="cover">
+	</section>
+	<section class="slide">
+		<footer class="footer">
+			<p>Лобные доли – их можно сравнить со штурманской рубкой корабля. Они обеспечивают поддержание вертикального положения тела человека. Также этот участок ответственен за то, насколько человек активен и любознателен, инициативен и самостоятелен в принятии решений.</p>
+			<p>В лобных долях происходят процессы критической самооценки. Любые нарушения в лобных долях приводят к проявлению неадекватности в поведении, бессмысленности поступков, апатии и резким сменам настроения. Также «рубка» осуществляет управление поведением человека и контроль над ним – предотвращение девиаций, социально неприемлемых поступков.</p>
+		</footer>
+		<img src="pictures/brain_front.jpg" alt="Передний мозг" class="cover">
+		<img src="pictures/brain_front_1.jpg" alt="Передний мозг" class="cover">
+	</section>
+	<section class="slide">
+		<h2>Улучшаем рейтинг одинакового содержания</h2>
+		<pre>
+			<code>&lt;!-- Указываем целевую страницу</code>
+			<code>     //wsd.events/2016/10/01/?page=2 --&gt;</code>
+			<code class="mark">&lt;link rel="canonical"</code>
+			<code class="mark">      href="//wsd.events/2016/10/01/"&gt;</code>
+		</pre>
+		<p>Гугл о канонических URL: <a href="http://bit.ly/google-canonical">bit.ly/google-canonical</a></p>
+	</section>
+	<section class="slide">
+		<footer class="footer">
+			Двигательная кора. Возбуждение одиночного нейрона моторной коры обычно вызывает специфическое движение, а не сокращение определенной мышцы. Для этого нейрон возбуждает систему мышц, каждая из которых вносит собственный вклад в направление и силу мышечного движения.
+		</footer>
+		<img src="pictures/brain_front_1.jpg" alt="Передний мозг" class="cover">
+		<img src="pictures/brain_front_2.jpg" alt="Передний мозг" class="cover">
+	</section>
+	<section class="slide">
+		<h2>Сторонние сервисы управления</h2>
+		<p>Например, оффлайн-редакторы для блогов на WordPress…</p>
+		<pre>
+			<code class="mark">&lt;link rel="EditURI" href="//wsd.events/xmlrpc.php?rsd"</code>
+			<code class="mark">      type="application/rsd+xml" title="RSD"&gt;</code>
+		</pre>
+	</section>
+	<section class="slide" id="import">
+		<h2>Нативные «веб-компоненты»!</h2>
+	  <pre>
+	    <code>&lt;!-- Загружаем внешний HTML-файл в этот --&gt;</code>
+	    <code class="mark">&lt;link rel="import" href="component.html"&gt;</code>
+	  </pre>
+	  <p>Подробнее: <a href="https://habrahabr.ru/post/230751/">habr.ru/p/230751</a>.</p>
+	  <p>А здесь будет демо (если получится):</p>
+		<script>
+			var linkImport = document.querySelector( 'link[ rel=import ]' );
+	    var newContent = linkImport.import.getElementById( 'export' );
+			console.log( newContent );
+	    document.getElementById('import').appendChild( newContent.cloneNode( true ) );
+		</script>
+	</section>
+	<section class="slide">
+		<h2>«Прогреваем» сеть…</h2>
+		<pre>
+			<code>&lt;!-- Определяем сторонние подключения --&gt;</code>
+			<code class="mark">&lt;link rel="dns-prefetch" href="//www.google-analytics.com/"&gt;</code>
+			<code class="mark">&lt;link rel="dns-prefetch" href="//bit.ly/"&gt;</code>
+			<code>&lt;!-- Предзапрос --&gt;</code>
+			<code class="mark">&lt;link rel="prefetch" href="https://web-standards.ru/"&gt;</code>
+			<code>&lt;!-- Предподключение --&gt;</code>
+			<code class="mark">&lt;link rel="preconnect" href="https://web-standards.ru/"&gt;</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<h2>Асинхронная загрузка</h2>
+		<pre>
+			<code class="mark">&lt;link rel="preload" href="cat.jpg" as="image"&gt;</code>
+			<code class="mark">&lt;link rel="preload" href="cat.mp4" as="video"&gt;</code>
+			<code class="mark">&lt;link rel="preload" href="ComicSans.woff" as="font"&gt;</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<h2>Пререндер</h2>
+		<pre>
+			<code class="mark">&lt;link rel="prerender" href="//bit.ly/lecture-head"&gt;</code>
+		</pre>
+		<p>…когда мы точно знаем, что пользователь туда перейдёт.</p>
+	</section>
+	<section class="slide">
+		<footer class="footer">
+			Сенсорные зоны - это функциональные зоны коры головного мозга, которые через восходящие нервные пути получают сенсорную информацию от большинства рецепторов тела.
+		</footer>
+		<img src="pictures/brain_front_2.jpg" alt="Передний мозг" class="cover">
+		<img src="pictures/brain_front_3.jpg" alt="Передний мозг" class="cover">
+	</section>
+	<section class="slide">
+		<h2>«Обратная связь»</h2>
+		<pre>
+			<code>&lt;!-- Автоматически оповещаем сайты, ссылающиеся на него --&gt;</code>
+			<code class="mark">&lt;link rel="pingback" href="//wsd.events/xmlrpc.php"&gt;</code>
+			<code>&lt;!-- Уведомляет URL, когда вы ссылаетесь на него</code>
+			<code>     на вашем сайте --&gt;</code>
+			<code class="mark">&lt;link rel="webmention" href="//wsd.events/webmention"&gt;</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<footer class="footer">
+			Теменные доли – участвуют в восприятии болевых ощущений, чувства холода, тепла. Функции правой и левой долей отличаются.
+			Левая (доминантная) доля обеспечивает процессы синтезирования информационных фрагментов, объединение их в единую систему, позволяет человеку читать и считать. Эта доля отвечает за усвоение определённого алгоритма движений, приводящих к конкретному результату, ощущение отдельных частей собственного тела и чувства его целостности, определения правой и левой сторон.
+			Правая (недоминантная) доля осуществляет преобразование всей совокупности информации, поступающей из затылочных долей, формируя трёхмерную картину мира, обеспечивает ориентацию в пространстве, определение расстояния между объектами и до них.
+		</footer>
+		<img src="pictures/brain_front_3.jpg" alt="Передний мозг" class="cover">
+		<img src="pictures/brain_front_4.jpg" alt="Передний мозг" class="cover">
+	</section>
+	<section class="slide">
+		<h2>Не только в браузере!</h2>
+		<pre>
+			<code>&lt;!-- РСС и Атом-ленты --&gt;</code>
+			<code class="mark">&lt;link rel="alternate" href="//wsd.events/rss.xml"</code>
+			<code class="mark">      type="application/rss+xml" title="RSS"&gt;</code>
+			<code>&nbsp;</code>
+			<code class="mark">&lt;link rel="alternate" href="//wsd.events/feed.atom"</code>
+			<code class="mark">      type="application/atom+xml" title="Atom 0.3"&gt;</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<h2>Accelerated Mobile Pages (AMP)</h2>
+		<pre>
+			<code>&lt;!-- Ссылка на AMP-вресию текущего документа --&gt;</code>
+			<code class="mark">&lt;link rel="amphtml"</code>
+			<code class="mark">      href="//wsd.events/2016/10/01/amp-version.html"&gt;</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<h2>Связи…</h2>
+		<pre>
+			<code>&lt;!-- Документ, содержащий архивную ссылку</code>
+			<code>     на текущую страницу --&gt;</code>
+			<code class="mark">&lt;link rel="archives" href="//wsd.events/2016/10/"</code>
+			<code class="mark">      title="Конференции октября 2016"&gt;</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<h2>Связи…</h2>
+		<pre>
+			<code>&lt;!-- Документ, располагающийся «выше»</code>
+			<code>     по иерархии структуры сайта --&gt;</code>
+			<code>&lt;!-- Статья «Путь наставника» --&gt;</code>
+			<code>&lt;!-- web-standards.ru/articles/path-of-tutor/ --&gt;</code>
+			<code class="mark">&lt;link rel="index"</code>
+			<code class="mark">      href="http://web-standards.ru/category/articles/"</code>
+			<code class="mark">      title="Статьи"&gt;</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<h2>Стартовая точка</h2>
+		<pre>
+			<code class="mark">&lt;link rel="start"</code>
+			<code class="mark">      href="//wsd.events/2009/11/28/"</code>
+			<code class="mark">      title="Самый первый WSD Минске"&gt;</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<h2>Прошлая публикация</h2>
+		<pre>
+			<code class="mark">&lt;link rel="prev"</code>
+			<code class="mark">      href="//wsd.events/2016/06/25/"</code>
+			<code class="mark">      title="WSD в Екатеринбурге"&gt;</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<h2>Навигация</h2>
+		<pre>
+			<code>&lt;!-- Первый, следующий, предыдущий и последний</code>
+			<code>    документ в серии --&gt;</code>
+			<code class="mark">&lt;link rel="first" href="https://example.com/feed"&gt;</code>
+			<code class="mark">&lt;link rel="next" href="https://example.com/feed?page=4"&gt;</code>
+			<code class="mark">&lt;link rel="previous" href="https://example.com/feed?page=2"&gt;</code>
+			<code class="mark">&lt;link rel="last" href="https://example.com/feed?page=147"&gt;</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<footer class="footer">
+			Затылочные доли – занимаются обработкой зрительной информации. Наши глаза воспринимают объекты окружающего мира как совокупность раздражителей, по-разному отражающих свет на сетчатку. Затылочные доли преобразуют световые сигналы в информацию о цвете, движении и форме объектов, понятные теменным долям, которые и формируют трёхмерные образы в нашем сознании.
+		</footer>
+		<img src="pictures/brain_front_4.jpg" alt="Передний мозг" class="cover">
+		<img src="pictures/brain_front_5.jpg" alt="Передний мозг" class="cover">
+	</section>
+	<section class="slide">
+		<h2>Фавиконки</h2>
+		<pre>
+			<code>&lt;!-- IE 11, Chrome, Firefox, Safari, Opera --&gt;</code>
+			<code class="mark">&lt;link rel="icon" href="img/to/favicon-16.png" sizes="16x16"&gt;</code>
+			<code class="mark">&lt;link rel="icon" href="img/to/favicon-32.png" sizes="32x32"&gt;</code>
+			<code class="mark">&lt;link rel="icon" href="img/to/favicon-48.png" sizes="48x48"&gt;</code>
+			<code class="mark">&lt;link rel="icon" href="img/to/favicon-62.png" sizes="62x62"&gt;</code>
+			<code class="mark">&lt;link rel="icon" href="img/to/favicon-192.png" sizes="192x192"&gt;</code>
+		</pre>
+		<p>+ <code>type="image/png"</code></p>
+	</section>
+	<section class="slide black">
+		<img src="pictures/favicons.png" alt="Фавиконки" class="cover">
+	</section>
+	<section class="slide">
+		<h2>Манифест</h2>
+		<pre>
+			<code>&lt;!-- JSON-файл со спецификацией вашего приложения --&gt;</code>
+			<code class="mark">&lt;link rel="manifest" href="manifest.json"&gt;</code>
+		</pre>
+		<p class="next">Автоматизация:</p>
+		<pre class="next">
+			<code># Автоматическая генерация фавиконок и манифеста</code>
+			<code class="mark">npm install favicons -D</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<footer class="footer">
+			Височные доли – это хранилище долговременной памяти человека. Левая (доминантная) доля хранит информацию о конкретных названиях предметов, связями между ними. Правая доля отвечает за зрительную память и образы.
+			Немаловажной их функцией является также распознавание речи. Левая доля расшифровывает для сознания смысловую нагрузку сказанных слов, а правая обеспечивает понимание их интонационной окраски и мимического рисунка лица, разъясняя настроение говорящего и степень его доброжелательности к нам.
+			Височные доли также обеспечивают восприятие обонятельной информации.
+		</footer>
+		<img src="pictures/brain_front_5.jpg" alt="Передний мозг" class="cover">
+		<img src="pictures/brain_front_6.jpg" alt="Передний мозг" class="cover">
+	</section>
+	<section class="slide">
+		<h2>На разных языках!</h2>
+		<pre>
+			<code class="mark">&lt;link rel="alternate" title="English"</code>
+			<code class="mark">      hreflang="en"</code>
+			<code class="mark">      href="https://en.wsd.events/2016/10/01/"&gt;</code>
+			<code>&nbsp;</code>
+			<code class="mark">&lt;link rel="alternate" title="Русскоговорящие англичане"</code>
+			<code class="mark">      hreflang="ru-en"</code>
+			<code class="mark">      href="https://ru-en.wsd.events/2016/10/01/"&gt;</code>
+		</pre>
+		<p>Гугл о мультиязычности: <a href="http://bit.ly/google-langs">bit.ly/google-langs</a></p>
+	</section>
+	<section class="slide">
+		<h2>Титры…</h2>
+		<pre>
+			<code>&lt;!-- Участники проекта, благодарности, технологии --&gt;</code>
+			<code class="mark">&lt;rel="author" href="<a href="humans.txt">humans.txt</a>"&gt;</code>
+		</pre>
+		<p>Как <b>robots.txt</b>, только <i>человечный</i> и для <i>людей</i> – <a href="http://humanstxt.org/RU">humanstxt.org</a>.</p>
+	</section>
+	<section class="slide">
+		<h2>Авторство</h2>
+		<pre>
+			<code class="mark">&lt;link rel="me" href="//romanganin.ru" type="text/html"&gt;</code>
+			<code class="mark">&lt;link rel="me" href="mailto:hi@romanganin.ru"&gt;</code>
+			<code class="mark">&lt;link rel="me" href="sms:+79216556291"&gt;</code>
+		</pre>
+		<p>По правилам использования авторских мета-тегов личная страница автора обязательно должна располагаться на том же домене, что и авторский текст: <a href="https://habrahabr.ru/post/121097/">habr.ru/p/121097</a></p>
+	</section>
+	<section class="slide">
+		<h2>Авторские права</h2>
+		<pre>
+			<code>&lt;!-- Ссылка на документ, описывающий авторские права --&gt;</code>
+			<code class="mark">&lt;link rel="copyright" href="copyright.html"&gt;</code>
+		</pre>
+	</section>
+	<section class="slide black">
+		<h2 class="shout shrink" style="color: #000; text-shadow: 3px 3px #eee;">Вопросы?</h2>
+		<img src="pictures/questions.jpg" alt="Хирургические инструменты" class="cover">
+	</section>
+	<section class="slide">
+		<h2>Будьте здоровы!</h2>
+		<div class="double">
+			<p>Twitter, GitHub, почта, VKontakte, Facebook и т. д.: <a href="https://twitter.com/realetive">@realetive</a></p>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<p style="text-align: center; background-color: #fff; padding: .1em">
+				<img src="pictures/qr-code.gif" alt="QR код">
+				<a href="//bit.ly/lecture-head">bit.ly/lecture-head</a>
+			</p>
+		</div>
+		<img src="pictures/slide_2.jpg" alt="Скелет человека" class="cover">
+		<img src="pictures/slide_1.jpg" alt="Роман Ганин" class="cover">
+	</section>
+	<footer class="badge">
+		<a href="https://github.com/Realetive/lecture-head/issues/new">Вопросы?</a>
+	</footer>
+	<div class="progress"></div>
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-85013137-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+	<script src="shower/shower.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Пример Panning</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <style>
+        html,
+        body {
+            height: 100%;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .container {
+            display: flex;
+            width: 60%;
+            height: 100%;
+            margin: 0px auto;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .button {
+            width: 150px;
+            height: 150px;
+            border-radius: 150px;
+            background-color: #8a2be2;
+            transition: transform 0.1s;
+            cursor: pointer;
+        }
+        
+        .button:hover {
+            transform: scale(1.2);
+        }
+    </style>
+    <script src="panning.js"></script>
+</head>
+
+<body>
+    <input type=file id=file_select />
+    <div class="container">
+        <div class="button" id="button1" data-value="-1"></div>
+        <div class="button" id="button2" data-value="0"></div>
+        <div class="button" id="button3" data-value="1"></div>
+    </div>
+</body>
+
+</html>

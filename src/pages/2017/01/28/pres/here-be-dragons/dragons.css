@@ -1,0 +1,252 @@
+.shower {
+	font-family: PT Sans, sans-serif;
+}
+.shower h2, th {
+	font-family: PT Sans Caption, sans-serif;
+}
+.slide {
+	padding-top: 52px;
+	line-height: 1.61;
+}
+.slide,
+.shower.full {
+    width: 1024px;
+    height: 576px;
+}
+@media screen {
+    .shower.list .slide {
+        margin: 0 -768px -410px 24px;
+    }
+}
+
+@media screen and (min-width:1168px) {
+    .shower.list .slide {
+        margin: 0 -512px -245px 48px;
+    }
+}
+.slide a {
+	color: hsl(240, 80%, 50%);
+}
+
+.slide ol li::before,
+.slide ul li::before {
+	color: #808080;
+}
+.slide pre code:not(:only-child)::before {
+	color: #999;
+}
+
+.shower.full {
+	margin-top: -288px;
+}
+.caption,
+.slide .shout::after {
+	background: #ae8d4c linear-gradient(135deg,#ae8d4c 50%,#9d7f43 50%) no-repeat;
+}
+.caption h1,
+.slide h2.shout,
+.dom-title h2 {
+	font-family: PT Serif, sans-serif;
+}
+.caption p {
+	color: #e7dfca;
+}
+.slide pre code {
+	font: 24px/36px PT Mono, monospace;
+}
+.slide code, .slide kbd, .slide samp {
+	font-family: PT Mono, monospace;
+}
+
+#cover h2 {
+	position: absolute;
+	top: 180px;
+	left: 0;
+	right: 0;
+	color:#630;
+	text-align:center;
+	font:bold 90px/1 PT Serif, serif;
+	text-shadow: hsl(50,80%,80%) 0 0 25px;
+}
+#cover h2::selection {
+	background: #9d7f43;
+	color: white;
+	text-shadow: none;
+}
+blockquote p {
+	line-height: 38px;
+}
+.logo {
+	margin-right: 50px;
+	vertical-align: middle;
+}
+table.table_default {
+	margin: 0;
+	width: 100%;
+	border-collapse: separate;
+	border-spacing: 20px;
+	border: dashed #999;
+}
+table.table_default thead,
+table.table_default tbody {
+	vertical-align: middle;
+}
+table.table_default tr {
+	vertical-align: inherit;
+}
+.slide table.table_default td,
+.slide table.table_default th {
+	padding: 0;
+	border: dashed #999;
+	vertical-align: inherit;
+}
+table.table_default th {
+	font-weight: bolder;
+	text-align: center;
+}
+.slide table.fixed {
+	table-layout: fixed;
+}
+table.table_popup {
+	margin: 0;
+	width: 100%;
+}
+.slide table.table_popup td {
+	padding: 40px 0;
+	width: 50%;
+	border: solid black;
+	text-align: center;
+}
+table.table_default.table_popup td {
+	border: dashed #999;
+}
+.popup {
+	display: inline-block;
+	border-radius: 8px;
+	padding: 20px 40px;
+	font-size: 36px;
+	box-shadow: 0 10px 50px rgba(0, 0, 0, .5);
+}
+.popup_noshadow {
+	box-shadow: none;
+	outline: 1px dashed #808080;
+}
+.ie-logo {
+	position: absolute;
+	top: 250px;
+	left: 400px;
+	width: 234.5px;
+	height: 225px;
+}
+.dom-title h2 {
+	position: absolute;
+	top: 50%;
+	margin-top: -56px;
+	font-size: 112px;
+	font-weight: 700;
+}
+.dom-title img {
+	position: absolute;
+	right: 70px;
+	bottom: 90px;
+	width: 500px;
+}
+.expectation-reality {
+	columns: 2
+}
+.slide_css-is-awesome {
+	display: flex;
+	justify-content: center;
+	padding-top: 150px;
+}
+.css-is-awesome {
+	width: 237px;
+	height: 237px;
+	border: solid 6px black;
+	font-size: 48pt;
+	padding: 10px 17px;
+	font-family: Arial, sans-serif;
+	line-height: 105%;
+	box-sizing: border-box;
+	text-transform: uppercase;
+}
+.overflow-description {
+	position: absolute;
+	border: dashed;
+	color: #808080;
+	width: 750px;
+}
+.overflow-description,
+.overflow-example {
+	font-size: 36px;
+	white-space: nowrap;
+}
+.overflow-example {
+	position: relative;
+	border: solid black;
+	width: 450px;
+	overflow: hidden;
+	background: white;
+	text-overflow: ellipsis;
+}
+.clientwidth {
+	position: absolute;
+	margin: 0 2px;
+	padding-top: 20px;
+	border: solid black;
+	width: 446px;
+	border-width: 0 2px 2px;
+	text-align: center;
+	font-family: PT Mono, monospace;
+}
+.scrollwidth {
+	position: absolute;
+	margin: 0 2px;
+	padding-top: 80px;
+	border: solid black;
+	width: 746px;
+	border-width: 0 2px 2px;
+	text-align: center;
+	font-family: PT Mono, monospace;
+}
+.ops {
+	line-height: 28px;
+}
+.results tbody th,
+.jsperf tbody th {
+	font-weight: normal;
+	font-family: PT Mono, monospace;
+}
+.results code {
+	padding: 0;
+	background-color: transparent;
+}
+.domquote blockquote {
+	font-style: normal;
+}
+.padleft {
+	padding-left: 20px;
+}
+.ops,
+.tolerance,
+.diff {
+	display: block;
+}
+.tolerance,
+.diff {
+	font-size: 20px;
+	line-height: 24px;
+}
+.diff {
+	padding-bottom: 10px;
+}
+.final {
+	columns: 2;
+}
+.hanging {
+	position: absolute;
+	margin-left: -150px;
+	padding-right: 20px;
+	width: 150px;
+	text-align: right;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Fullscreen</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <style>
+    
+
+        #example .image {
+            width: 80px;
+            height: 80px;
+            background-image: url('./img/space_invader.png');
+            cursor: pointer;
+            margin: 300px auto;
+        }
+
+        #example:-webkit-full-screen {
+            background: none;
+        }
+
+        #example:-webkit-full-screen .image {
+            background-image: url('./img/base.jpg');
+            width: 616px;
+            height: 417px;
+        }
+
+        #example:-moz-full-screen .image {
+            background-image: url('./img/base.jpg');
+            width: 616px;
+            height: 417px;
+        }
+
+        #example:fullscreen .image {
+            background-image: url('./img/base.jpg');
+            width: 616px;
+            height: 417px;
+        }
+    </style>
+<script src="fullscreen.js"></script>
+</head>
+
+<body>
+    <div id="example">
+        <div class=image></div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Css is awesome</title>
+  <style>
+    html, body { height: 100%; margin: 0; padding: 0; }
+
+    body {
+      font-family: Arial Bold, sans-serif;
+      min-width: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .container {
+      width: 100%;
+      padding-bottom: 100%;
+
+      border: 4px solid black;
+
+      font-family: sans-serif;
+      text-transform: uppercase;
+      position: relative;
+    }
+
+    .content {
+      font-weight: 600;
+
+      position: absolute;
+      height: 100%;
+      width: 100%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @media (min-width: 900px)  { .container {font-size: 164px;} }
+    @media (min-width: 800px) and (max-width:  900px) { .container {font-size: 146px;} }
+    @media (min-width: 700px) and (max-width:  800px) { .container {font-size: 127px;} }
+    @media (min-width: 600px) and (max-width:  700px) { .container {font-size: 109px;} }
+    @media (min-width: 500px) and (max-width:  600px) { .container {font-size:  91px;} }
+    @media (min-width: 400px) and (max-width:  500px) { .container {font-size:  73px;} }
+    @media (min-width: 300px) and (max-width:  400px) { .container {font-size:  54px;} }
+    @media (min-width: 200px) and (max-width:  300px) { .container {font-size:  35px;} }
+    @media (min-width: 100px) and (max-width:  200px) { .container {font-size:  18px;} }
+    @media (min-width:   0px) and (max-width:  100px) { .container {font-size:  18px;} }
+
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="content">
+    Css <br/>
+    is <br/>
+    Awesome!
+  </div>
+</div>
+</body>
+</html>

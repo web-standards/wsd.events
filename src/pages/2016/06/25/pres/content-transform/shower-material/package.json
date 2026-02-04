@@ -1,0 +1,101 @@
+{
+  "_args": [
+    [
+      "shower-material",
+      "/Users/mista_k/Documents/Presentations/pal-up-with-ugc"
+    ]
+  ],
+  "_from": "shower-material@latest",
+  "_id": "shower-material@1.0.2",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/shower-material",
+  "_nodeVersion": "5.6.0",
+  "_npmOperationalInternal": {
+    "host": "packages-5-east.internal.npmjs.com",
+    "tmp": "tmp/shower-material-1.0.2.tgz_1456570317719_0.24708159477449954"
+  },
+  "_npmUser": {
+    "email": "pepelsbey@gmail.com",
+    "name": "pepelsbey"
+  },
+  "_npmVersion": "3.6.0",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "shower-material",
+    "raw": "shower-material",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/shower"
+  ],
+  "_resolved": "https://registry.npmjs.org/shower-material/-/shower-material-1.0.2.tgz",
+  "_shasum": "8e49e562203b4c083ba64fb46a752fdf1e39c2a5",
+  "_shrinkwrap": null,
+  "_spec": "shower-material",
+  "_where": "/Users/mista_k/Documents/Presentations/pal-up-with-ugc",
+  "author": {
+    "name": "Vadim Makeev",
+    "url": "http://pepelsbey.net/"
+  },
+  "bugs": {
+    "url": "http://github.com/shower/material/issues"
+  },
+  "dependencies": {},
+  "description": "Material theme for Shower HTML presentation engine",
+  "devDependencies": {
+    "browser-sync": "^2.11.1",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-cleancss": "^0.2.2",
+    "gulp-header": "^1.7.1",
+    "gulp-sass": "^2.2.0"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "8e49e562203b4c083ba64fb46a752fdf1e39c2a5",
+    "tarball": "http://registry.npmjs.org/shower-material/-/shower-material-1.0.2.tgz"
+  },
+  "files": [
+    "LICENSE.md",
+    "README.md",
+    "docs/**",
+    "fonts/**",
+    "images/**",
+    "index.html",
+    "pictures/**",
+    "styles/*.css"
+  ],
+  "gitHead": "6593572560c3637e9fe7c2d84686c3d6e010649d",
+  "homepage": "https://github.com/shower/material",
+  "keywords": [
+    "material",
+    "presentation",
+    "shower",
+    "theme"
+  ],
+  "license": "MIT",
+  "maintainers": [
+    {
+      "name": "pepelsbey",
+      "email": "pepelsbey@gmail.com"
+    }
+  ],
+  "name": "shower-material",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/shower/material.git"
+  },
+  "scripts": {
+    "dev": "gulp",
+    "prepublish": "npm run styles",
+    "styles": "gulp styles"
+  },
+  "version": "1.0.2"
+}

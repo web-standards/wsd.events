@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Webpack Module Bundler</title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
+</head>
+<body class="shower list">
+	<header class="caption">
+		<h1>Webpack Module Bundler</h1>
+	</header>
+	<section class="slide" id="cover">
+		<img src="pictures/webpack_logo.png" alt="" class="cover">
+		<h2>Собираем frontend с webpack</h2>
+		<style>
+			#cover h2 {
+				text-align: right;
+				font-size: 50px;
+				position: absolute;
+				bottom: 15%;
+				right: 10%;
+				}
+		</style>
+	</section>
+	<section class="slide">
+		<h2>Обо мне</h2>
+		<img src="pictures/avatar.jpg" alt="" class="cover photo">
+		<p>
+			Привет. Меня зовут Павел Голован.<br>
+			JavaScript и Node.js разработчик в компании Intetics.
+		</p>
+		<style>
+			.slide .photo {
+				width: 400px;
+			}
+			
+			.slide .photo+p {
+				text-align: center;
+				position: absolute;
+				bottom: 3%;
+				left: 50%;
+				transform: translate(-50%);
+				width: 100%;
+			}
+		</style>
+	</section>
+	<section class="slide">
+		<img src="pictures/anonymous.jpg" alt="" class="cover photo">
+		<p>Тобиас <a href="https://github.com/sokra">@sokra</a> Копперс</p>
+		<style>
+			.slide .photo {
+				width: 400px;
+			}
+			
+			.slide .photo+p {
+				text-align: center;
+				position: absolute;
+				bottom: 3%;
+				left: 50%;
+				transform: translate(-50%);
+				width: 100%;
+			}
+		</style>
+	</section>
+	<section class="slide">
+		<img src="pictures/tobias_koppers.jpg" alt="" class="cover width">
+	</section>
+	<section class="slide">
+		<h2>О проекте</h2>
+		<ul>
+			<li>Cordova mobile SPA</li>
+			<li>~325 JS файлов</li>
+			<li>~48k строк кода</li>
+		</ul>
+	</section>
+	<section class="slide">
+		<h2>Проблемы</h2>
+		<ul>
+			<li>Монолитное приложение</li>
+			<li>Связь между файлами неочевидна</li>
+			<li>Порядок загрузки имеет значение</li>
+			<li>Конфликты в глобальной области видимости</li>
+			<li>Собственный инструмент для сборки, поддержка и развитие которого становились трудозатратными</li>
+		</ul>
+	</section>
+	<section class="slide">
+		<h2>Почему Webpack?</h2>
+		<h4>По данным <a href="https://www.npmjs.com/package/webpack">https://www.npmjs.com/package/webpack</a></h4>
+		<ul>
+			<li><strong>117 930</strong> загрузок в день</li>
+			<li><strong>686 388</strong> загрузок в неделю</li>
+			<li><strong>2 692 853</strong> загрузок в месяц (против 1 994 700 у browserify)</li>
+			<li><strong>19 835</strong> &#9733; <a href="https://github.com/webpack/webpack">https://github.com/webpack/webpack</a></li>
+			<li><strong>10 360</strong> &#9733; <a href="https://github.com/substack/node-browserify">https://github.com/substack/node-browserify</a></li>
+		</ul>
+	</section>
+	<section class="slide">
+		<h2>Почему не Browserify?</h2>
+		<ul>
+			<li>Browserify отличный и простой инструмент для сборки приложений</li>
+			<li>Есть довольно обширная система расширений (хотя и не такая большая как у webpack)</li>
+			<li>В большинстве случаев необходим Gulp/Grunt для автоматизации процесса сборки</li>
+		</ul>
+	</section>
+	<section class="slide">
+		<h2>Почему Webpack?</h2>
+		<ul>
+			<li>Webpack предоставляет огромные возможности для сборки приложений прямо из коробки</li>
+			<li>Больше нет необходимости в Gulp/Grunt</li>
+			<li>Webpack берет весь процесс сборки на себя</li>
+		</ul>
+	</section>
+	<section class="slide">
+		<img src="pictures/baby-with-ipad.jpg" alt="" class="cover width">	
+	</section>
+	<section class="slide">
+		<h2>Что такое Webpack?</h2>
+		<ol>
+			<li>Конфигурационный файл - webpack.config.js</li>
+			<li>Сборщик</li>
+			<li>Клиентский скрипт</li>
+			<li>Загрузчики</li>
+			<li>Система расширений</li>
+			<li>Сервер разработки - webpack dev server</li>
+		</ol>
+	</section>
+	<section class="slide">
+		<img src="pictures/how-it-works.png" alt="" class="cover">
+		<style>
+			.slide .cover {
+				width: 80%;
+			}
+		</style>
+	</section>
+	<section class="slide">
+		<h2>wepback.config.js - это Node-модуль</h2>
+		<pre>
+			<code>module.exports = {</code>
+			<code>	context: `${__dirname}/entries`, <span class="comment">// || process.cwd()</span></code>
+			<code>	entry: {</code>
+			<code>		lib: 'lib.js',</code>
+			<code>		app: 'app.js'</code>
+			<code>	},</code>
+			<code>	output: {</code>
+			<code>		path: `${__dirname}/build`,</code>
+			<code>		filename: '[name].js'</code>
+			<code>	}</code>
+			<code>}</code>
+		</pre>
+		<style type="text/css">
+			.slide pre code {
+				font-size: 0.8em;
+			}
+		</style>
+	</section>
+	<section class="slide">
+		<h2>Сборщик</h2>
+		<ol>
+			<li>Загружает входные файлы и их зависимости</li>
+			<li>Разбивает код на фрагменты (chunks)</li>
+			<li>Оптимизирует</li>
+			<li>Хэширует</li>
+			<li>Добавляет модуль к сборке</li>
+		</ol>
+	</section>
+	<section class="slide">
+		<h2>require</h2>
+		<pre>
+			<code>require('path-to-whatever');</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<h2>Задача: добавлять файл(ы) в сборку динамически</h2>
+		<p>
+			На этапе компиляции доступна переменная <strong>logo</strong> - 
+			имя файла с логотипом. В сборку должен войти только требуемый файл.
+		</p>
+	</section>
+	<section class="slide">
+		<h2>Динамический require</h2>
+		<pre>
+			<code><span class="comment">//Directory: './img'</span></code>
+			<code><span class="comment">//Regular expression: /^.*\.svg$/</span></code>
+			<code>require('./img/' + <mark>logo</mark> + '.svg')</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<h2>require.context</h2>
+		<pre>
+			<code>let imgContext = require.context('img', true, /\.svg$/);</code>
+			<code>imgContext.keys().forEach((key) => {</code>
+			<code>    if (key === <mark>logo</mark>) {</code>
+			<code>		  imgContext(key);</code>
+			<code>    }</code>
+			<code>});</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<h2>Aliases</h2>
+		<pre>
+			<code>resolve: {</code>
+		    <code>    root: path.resolve(__dirname),</code>
+		    <code>    extensions: ['', '.js', '.json'],</code>
+	        <code>	alias: {</code>
+		    <code>        <mark>'%config%': `config${ isDebug ?</mark></code>
+		    <code>	<mark>'-debug' : '' }.json`</mark>,</code>
+		    <code>    }</code>
+		    <code>}</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<h2>Aliases</h2>
+		<pre>
+			<code>require(<mark>'%config%'</mark>);</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<h2>Aliases</h2>
+		<pre>
+			<code><span class="comment">// Bad</span></code>
+			<code>require('<mark>app/components/record/</mark>record-edit.js');</code>
+			<code>require('<mark>app/components/record/</mark>record-detail.js');</code>
+			<code><span class="comment">// Good</span></code>
+			<code>require(<mark>'%record%</mark>/record-edit.js');</code>
+			<code>require(<mark>'%record%</mark>/record-detail.js');</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<h2>Условные выражения</h2>
+		<pre>
+			<code><span class="comment">// platform - это переменная на этапе компиляции</span></code>
+			<code>if (<mark>platform === 'native'</mark>) {</code>
+			<code>    require('native-lib.js');</code>			
+			<code>}</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<h2>Условные выражения</h2>
+		<pre>
+			<code><span class="comment">// Код на клиенте</span></code>
+			<code>if (<mark>true</mark>) {</code>
+			<code>    require('native-lib.js');</code>			
+			<code>}</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<h2>DefinePlugin</h2>
+		<p>DefinePlugin позволяет создавать глобальные константы, значение которых может быть сконфигурировано во время <strong>компиляции</strong>.</p>
+	</section>
+	<section class="slide">
+		<h2>DefinePlugin</h2>
+		<pre>
+			<code><span class="comment">// webpack.config.js</span></code>
+			<code>plugins: [</code>
+			<code>    new webpack.DefinePlugin({</code>
+			<code>        <mark>platform: JSON.stringify(platform)</mark></code>	
+			<code>    })</code>  
+			<code>]</code>			
+		</pre>
+	</section>
+	<section class="slide">
+		<img src="pictures/code-spliting.png" alt="" class="cover">
+	</section>
+	<section class="slide">
+		<h2>Smart Chunks</h2>
+		<p>Chunks - это <strong>фрагменты кода</strong>, которые загружаются и исполняются по требованию,
+		что позволяет уменьшить размер исходного загружаемого файла и загружать код по по мере необходимости.</p>
+	</section>
+	<section class="slide">
+		<h2>Smart Chunks</h2>
+		<ul>
+			<li>
+				CommonJs - <code>require.ensure(dependencies, callback)</code><br />
+				Загружает, но не исполняет модули.
+			</li>
+			<li>
+				AMD - <code>require(dependencies, callback)</code><br />
+				Загружает и исполняет модули.
+			</li>
+		</ul>
+	</section>
+	<section class="slide">
+		<h2>Кэширование</h2>
+		<pre>
+			<code><span class="comment">// Вместо изменения версии вручную</span></code>
+			<code>app_v<mark>1_3</mark>.js</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<h2>Кэширование</h2>
+		<pre>
+			<code><span class="comment">// Добавляем хэш файла к имени во время сборки</span></code>
+			<code>output: {</code>
+			<code>    filename: '[name]-<mark>[hash]</mark>.js'</code>
+			<code>}</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<h2>Loaders</h2>
+		<img src="pictures/babel-loader.png" class="cover">
+	</section>
+	<section class="slide">
+		<h2>Loaders</h2>
+		<ul>
+			<li>Трансформируют содержимое файлов</li>
+			<li>Расширяют базовые возможности webpack</li>
+			<li>Обрабатывают файлы во время require()</li>
+		</ul>
+	</section>
+	<section class="slide">
+		<h2>Loaders</h2>
+		<p><a href="https://webpack.github.io/docs/list-of-loaders.html">https://webpack.github.io/docs/list-of-loaders.html</a> - 214 loaders!</p>
+	</section>
+	<section class="slide">
+		<h2>Global loaders</h2>
+		<pre>
+			<code><span class="comment">// webpack.config.js</span></code>
+			<code>loaders: {</code>
+			<code>  [{ test: /\.less$/, loader: 'style!css!less?noIeCompat' }]</code>	
+			<code>}</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<h2>Global loaders</h2>
+		<pre>
+			<code>loaders: {</code>
+			<code>  [{</code>
+			<code>		test: /\.js$/,</code>
+			<code>		loader: 'babel-loader',</code>		
+			<code>		query: {</code>
+			<code>			presets: ['es2015'],</code>
+			<code>			cacheDirectory: true</code>
+			<code>		}</code>	
+			}]</code>	
+			<code>}</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<h2>Exports</h2>
+		<pre>
+			<code><span class="comment">//Добавляет в конце модуля</span></code>
+			<code><span class="comment">//module.exports = Handlebars;</span></code>
+			<code>let Handlebars = require('exports?Handlebars!handlebars.js');</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<h2>Imports</h2>
+		<pre>
+			<code><span class="comment">//Добавляет в начале модуля</span></code>
+			<code><span class="comment">//this.App = window.App;</span></code>
+			<code>require('imports?this.App=>window.App!app.js');</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<h2>Script loader</h2>
+		<pre>
+			<code><span class="comment">// Загружает модуль 1 раз игнорируя его зависимости</span></code>
+			<code>require('script!awesome-lib.js');</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<h2>Plugins</h2>
+		<ul>
+			<li>Трансформируют содержимое файлов</li>
+			<li>Расширяют базовые возможности webpack</li>
+			<li><strong>Работают для всей сборки</strong></li>
+			<li><strong>code->loaders->plugins->output</strong></li>
+		</ul>
+	</section>
+	<section class="slide">
+		<h2>CommonsChunkPlugin</h2>
+		<pre>
+			<code><span class="comment">//webpack.config.js</span></code>
+			<code>webpackConfig.entry.vendor = ['lodash', 'moment', 'etc'];</code>
+			<code>webpackConfig.plugins = [</code>
+			<code>  new webpack.optimize.CommonsChunkPlugin(</code>
+			<code>	'vendor',</code>
+			<code>	'vendor.js'</code>
+			<code>	)</code>
+			<code>];</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<h2>ProvidePlugin</h2>
+		<pre>
+			<code><span class="comment">//webpack.config.js</span></code>
+			<code>webpackConfig.plugins = [</code>
+			<code>  new webpack.ProvidePlugin({</code>
+			<code>		Promise: 'bluebird'</code>
+			<code>	})</code>
+			<code>];</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<h2>BannerPlugin</h2>
+		<pre>
+			<code><span class="comment">//webpack.config.js</span></code>
+			<code>webpackConfig.plugins = [</code>
+			<code>  new webpack.BannerPlugin(</code>
+			<code>		'**Bundle License Code**'</code>
+			<code>	)</code>
+			<code>];</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<img src="pictures/future_dashboard.jpg" alt="Future Dashboard" class="cover width">
+	</section>
+	<section class="slide">
+		<img src="pictures/there-is-a-plugin.jpg" alt="Real Dashboard" class="cover">
+	</section>
+	<section class="slide">
+		<img src="pictures/webpack_dashboard.png" alt="Webpack Dashboard" class="cover">
+	</section>
+	<section class="slide">
+		<h2>Webpack Dashboard Plugin</h2>
+			<strong>Install</strong>
+			<br>
+			<code>npm install webpack-dashboard --save-dev</code>
+			<br>
+			<strong>Use</strong>
+			<br>
+			<code>webpackConfig.plugins = [ new DashboardPlugin() ];</code>
+			<br>
+			<strong>Run</strong>
+			<br>
+			<code>webpack-dashboard -- webpack-dev-server --config ./webpack.config.js</code>	
+	</section>
+	<section class="slide">
+		<h2>Оптимизация</h2>
+		<ul>
+			<li>Минимизация - <code>new webpack.optimize.UglifyJsPlugin()</code></li>
+			<li class="next">Дедубликация - <code>new webpack.optimize.DedupePlugin()</code></li>
+			<li class="next">Ограничение максимального количества фрагментов кода - <code>new webpack.optimize.LimitChunkCountPlugin({maxChunks: 15})</code></li>
+			<li class="next">Ограничение максимального размера фрагмента кода - <code>new webpack.optimize.MinChunkSizePlugin({minChunkSize: 10000})</code></li>
+		</ul>
+	</section>
+	<section class="slide">
+		<h2>Webpack Dev Server</h2>
+		<ul>
+			<li>Node.js Express сервер</li>
+			<li>Клиентский код, который соединяется с сервером с помощью Sock.js</li>
+			<li>Сервер отправляет информацию о процессе компиляции на клиент</li>
+		</ul>
+	</section>
+	<section class="slide">
+		<img src="pictures/wds-scheme.png" alt="" class="cover width">
+	</section>
+	<section class="slide">
+		<h2>Webpack Dev Server configuration</h2>
+		<pre>
+		  <code>output: {</code>
+	      <code>  path: path.resolve(__dirname, "build"),</code>
+		  <code>  <mark>publicPath: "/assets/"</mark>,</code>
+		  <code>  filename: "bundle.js"</code>
+		  <code>}</code>
+	    </pre>
+	</section>
+	<section class="slide">
+		<h2>Webpack Dev Server launch</h2>
+			<code>$ webpack-dev-server --inline --content-base build/</code>
+		<ul>
+			<li>--content-base - директория собранного проекта</li>
+			<li>--inline добавляет скрипт, который обновляет страницу при изменениях</li>
+		</ul>
+	</section>
+	<section class="slide">
+		<h2>Hot Module Replacement</h2>
+		<p>Обновляет клиентский скрипт без перезагрузки страницы</p>
+		<code>$ webpack-dev-server <mark>--hot</mark> --inline --content-base build/</code>
+	</section>
+	<section class="slide">
+		<h2>Webpack Dev Server launch</h2>
+		<p>Открываем приложение в браузере</p>
+		<code>http://localhost:8080/assets</code>
+	</section>
+	<section class="slide">
+		<h2>What's next? Webpack 2</h2>
+		<ul>
+			<li>ES6 модули - <strong>import</strong> и <strong>export</strong> без преобразования к CommonJS/AMD</li>
+			<li><strong>System.import</strong> - новый способ разделения кода. <strong>System.import</strong> возвращает Promise и дает возможность отловить ошибки при загрузке модуля.</li>
+			<li><strong>Tree-shaking</strong>. Cтатический анализ ES6 модулей во многих случаях позволяет определить на этапе компиляции неиспользуемые модули и не включать их в сборку.</li>
+		</ul>
+	</section>
+	<section class="slide">
+		<img src="pictures/happy-webpack-bundling.jpg" alt="" class="cover width">
+	</section>
+	<p class="badge">
+		<a href="https://github.com/shower/shower">Fork me on GitHub</a>
+	</p>
+	<!--
+		To hide progress bar from entire presentation
+		just remove “progress” element.
+		-->
+	<div class="progress"></div>
+	<script src="shower/shower.min.js"></script>
+</body>
+</html>

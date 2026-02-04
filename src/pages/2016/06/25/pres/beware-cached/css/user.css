@@ -1,0 +1,268 @@
+.reveal {
+    font-size: 40px;
+}
+
+.reveal h1, .reveal h2 {
+    text-transform: none;
+}
+
+.reveal section img {
+    border: none;
+}
+
+.reveal {
+    font-family: textbook-light, Arial;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+    font-family: textbook-light, Arial;
+    text-transform: none;
+}
+
+@font-face {
+    font-family: textbook;
+    font-weight: 400;
+    src: local(textbook);
+    src: url('../fonts/textbook-regular.woff'),
+    url('../fonts/textbook-regular.ttf');
+}
+
+@font-face {
+    font-family: textbook-light;
+    font-weight: 200;
+    src: local(textbook-light);
+    src: url('../fonts/textbook-light.woff'),
+    url('../fonts/textbook-light.ttf');
+}
+
+@font-face {
+    font-family: textbook-bold;
+    font-weight: 700;
+    src: local(textbook-bold);
+    src: url('../fonts/textbook-bold.woff'),
+    url('../fonts/textbook-bold.ttf');
+}
+
+@font-face {
+    font-family: sourcecodepro-light;
+    font-weight: 600;
+    src: local(textbook-bold);
+    src: url('../fonts/SourceCodePro-Light.ttf');
+}
+
+section.size-XL,
+section .size-XL,
+pre.size-XL {
+    font-size: 65px;
+    line-height: 100px;
+}
+
+
+section.size-L,
+section .size-L,
+pre.size-L {
+    font-size: 55px;
+    line-height: 80px;
+}
+
+section.size-M,
+section .size-M,
+pre.size-M,
+.yandex section {
+    font-size: 50px;
+    line-height: 75px;
+}
+
+section.size-S,
+section .size-S,
+pre.size-S {
+    font-size: 40px;
+    line-height: 60px;
+}
+
+section.size-XS,
+section .size-XS,
+pre.size-XS {
+    font-size: 33px;
+    line-height: 47px;
+}
+
+section.size-XXS,
+section .size-XXS,
+pre.size-XXS {
+    font-size: 26px;
+    line-height: 37px;
+}
+
+.reveal .slides > section > section {
+    padding: 0;
+}
+
+.reveal .slides > section+section  {
+    height: 100%;
+}
+
+.reveal .image {
+    height: 100%;
+}
+
+.reveal .image h1,
+.reveal .image h2,
+.reveal .image h3,
+.reveal .image h4,
+.reveal .image h5 {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    padding: 18px;
+    background-color: rgba(255,255,255,0.6);
+    color: #252525;
+    text-shadow: none;
+}
+
+.red {
+    color: #ab4642 !important;
+}
+
+.green {
+    color: #a1b56c !important;
+}
+
+.magenta {
+    color: #a0a0f0 !important;
+}
+
+.grey {
+    color: #777 !important;
+}
+
+img {
+    background: none !important;
+    max-width: 100%;
+    max-height: 100%;
+    border: 0 !important;
+}
+
+.pos,
+.neg,
+.question,
+.neitral {
+    padding-left: 50px !important;
+}
+
+
+.pos:before,
+.neg:before,
+.question:before,
+.neitral:before {
+    position: absolute;
+    left: 0;
+}
+
+.pos:before {
+    content: '✓';
+    color: #a1b56c !important;
+}
+
+.neg:before {
+    content: '✗';
+    color: #992200 !important;
+}
+
+.question:before {
+    content: '?';
+    color: #546BD2 !important;
+}
+
+.neitral:before {
+    content: '•';
+    color: #FFA500 !important;
+}
+
+.reveal .slide-number {
+    font-family: 'sourcecodepro-light', textbook-light, Arial;
+    font-size: .7em;
+    background-color: rgba(255, 255, 255, 0.75);;
+    color: black;
+    padding: 7px;
+}
+
+.reveal pre
+{
+    box-shadow: none;
+    font-family: 'sourcecodepro-light', textbook-light, Arial;
+    width: 100%;
+    margin: 0;
+}
+
+.reveal pre.code
+{
+    display: block;
+    padding: 5px;
+    overflow: auto;
+    word-wrap: normal;
+    color: #dcdcdc;
+    background: #333333;
+}
+
+.reveal pre code {
+    max-height: 650px;
+    background: white;
+    width: 1024px;
+}
+
+.reveal code {
+    font-family: 'sourcecodepro-light', textbook, Arial;
+}
+
+.join {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.join code {
+    padding: 18px 25px !important;
+    border: 0 !important;
+}
+
+.left {
+    text-align: left;
+}
+
+.reveal mark, .reveal mark *
+{
+    color: black !important;
+}
+
+.textbook {
+    font-family: 'textbook-light';
+}
+
+.reveal section img {
+    box-shadow: none;
+}
+
+section.vertical {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reveal .middle {
+    display: flex;
+    flex-grow: 2;
+    align-items: center;
+}
+
+.reveal .idea {
+    font-style: italic;
+}
+
+.reveal blockquote {
+    box-shadow: none;
+}

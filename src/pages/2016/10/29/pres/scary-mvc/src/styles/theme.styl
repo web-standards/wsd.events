@@ -1,0 +1,133 @@
+main-color = #b5a061
+important-color = #403c32
+
+.slide::after
+	background main-color
+	height 75px
+	border-radius 0 0 10px 10px
+.slide
+	h2
+		color main-color
+
+.html
+	color #666
+
+.hightlight
+.important
+.alert
+	border-radius 0.2em
+	padding 0.1em 0.3em
+.hightlight
+	background #fafaa2
+.hightlight *
+	color #000 !important
+.important
+	background important-color
+	color #fff
+.important *
+	color #fff !important
+.alert
+	background #D10A0A
+	color #fff
+.alert *
+	color #fff !important
+.comment
+	color #999999
+	
+.progress
+	border-color main-color rgba(0, 0, 0, 0) main-color main-color
+	
+
+.tag
+	color #AD1531
+.attr
+	color #4F7302
+
+.slide
+	.shout.smaller
+		font-size 90px
+		a
+			color #fff
+	&.menu-slide
+		h2
+			font-size 120px
+			margin-bottom 0
+			padding 0 30px
+		ul
+			color #FFF
+			& > li
+				font-size 120px
+				line-height 1
+				font-weight bold
+				padding 0 30px
+				&:before
+					opacity 0
+			
+		.selected-item
+			background-color main-color
+			display inline-block
+			
+		.transparent
+			opacity 0.25
+	&.label-header
+		h2
+			display inline-block
+			padding 10px 30px
+			background-color main-color
+			color #fff
+			&.shout
+				width auto
+				margin-left 100px
+				padding-top 20px
+				padding-bottom 20px
+				font-size 120px
+
+.label
+	background-color main-color
+	color #fff
+	padding 0 10px
+	display inline-block
+
+.screen-example
+	vertical-align top
+	float right
+	border 1px solid #efefef
+	padding-top 10px
+	width 700px
+	
+.relative
+	position relative
+
+	
+.slide ol.no-indent li, .slide ul.no-indent li
+	text-indent 0
+	margin-bottom 5px
+	
+.frame
+	box-shadow 0 0 5px 5px #eee
+	line-height 0
+	border-radius 15px 15px 0 0
+	.title
+		background-color #efefef
+		height 30px
+		border-radius 15px 15px 0 0
+		border 1px solid #aaa
+		border-bottom-width 0
+		line-height 24px
+		padding-left 15px
+	.btn
+		height 13px
+		width 13px
+		display inline-block
+		border-radius 50%
+		&.close
+			background-color red
+		&.hide
+			background-color yellow
+		&.expand
+			background-color green
+	
+.fade-opacity
+	opacity 0.25
+.opacity-0
+	opacity 0

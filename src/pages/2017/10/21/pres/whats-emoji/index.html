@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Что не так с эмоджи - Алексей Авдеев</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
+</head>
+
+<body class="shower list">
+  <header class="caption">
+    <h1>Что не так с эмоджи</h1>
+    <p><a href="https://alexey-avdeev.com/">Алексей Авдеев</a>, Neuron.Digital</p>
+  </header>
+
+  <section class="slide" id="cover">
+    <h2>Что не так с эмоджи</h2>
+    <p>Решаем проблему, попутно разбираясь в спецификациях Emoji и Unicode.</p>
+    <figure>
+      <img class="cover" src="pictures/Emojione_1F914.svg" alt="Emoji">
+    </figure>
+    <style>
+      #cover h2 {
+        margin: 375px 0 0;
+        color: #000;
+        text-align: center;
+        font-size: 70px;
+        text-shadow: 1px 1px 0px #000;
+      }
+      #cover p {
+        margin: 10px 0 0;
+        text-align: center;
+        color: #000;
+        font-style: italic;
+        font-size: 20px;
+      }
+    </style>
+  </section>
+
+  <section class="slide">
+    <h2>👨‍💻 О себе</h2>
+    <ol>
+      <li>👨 Алексей Авдеев</li>
+      <li class="next">🏙️ Из Нижнего Новгорода, работаю в Москве</li>
+      <li class="next">🌐 Neuron.Digital</li>
+      <li class="next">👔 Руковожу командой из 10 фронтенд-разработчиков</li>
+      <li class="next">👴 Программирую с 2002 года</li>
+      <li class="next">🤹 Сейчас активно использую React/Redux</li>
+    </ol>
+  </section>
+
+  <!-- несколько слайдов с нашими проектами с emoji -->
+
+  <section class="slide">
+    <img class="cover" src="pictures/bloggy-1.png" alt="">
+  </section>
+
+  <section class="slide">
+    <img class="cover" src="pictures/bloggy-mobile-good.png" alt="">
+  </section>
+
+  <!-- теория -->
+
+  <section class="slide">
+    <h2 class="shout">Эмоджи vs эмотикон ❓</h2>
+  </section>
+
+  <section class="slide">
+    <h2>Эмотиконы</h2>
+
+    <div style="text-align: center; font-size: 90px;">=)</div>
+
+    <div style="text-align: center; font-size: 90px;">:)</div>
+  </section>
+
+  <section class="slide">
+    <h2>Эмотиконы (каомодзи)</h2>
+
+    <div style="text-align: center; font-size: 40px; line-height: 4.4;">(╮°-°)╮┳━━┳ ( ╯°□°)╯ ┻━━┻</div>
+
+    <div style="text-align: center; font-size: 90px;">¯\_(ツ)_/¯</div>
+  </section>
+
+  <section class="slide">
+    <h2>Язык идеограм и смайликов</h2>
+
+    <div style="text-align: center; font-size: 100px;">👶🚿</div>
+
+    <div style="text-align: center; font-size: 100px;">😡📊</div>
+  </section>
+
+  <section class="slide">
+    <h2>Язык идеограм и смайликов</h2>
+
+    <div style="text-align: center; font-size: 100px;">🎣🔛🐑</div>
+
+    <div style="text-align: center; font-size: 100px;">👉👌</div>
+  </section>
+
+  <section class="slide">
+    <h2 class="shout">Эмоджи vs<br>эмодзи❓</h2>
+  </section>
+
+  <section class="slide">
+    <h2>Родина эмоджи</h2>
+
+    <div style="text-align: center; font-size: 100px;">🙇😷💮🍜🍡</div>
+
+    <div style="text-align: center; font-size: 100px;">🍙🍛🍣🌸👹</div>
+  </section>
+
+  <section class="slide">
+    <h2 class="shout">❓Первые эмоджи</h2>
+  </section>
+
+  <section class="slide">
+    <img class="cover" src="pictures/first_emoji.jpg" alt="Первые эмоджи">
+  </section>
+
+  <section class="slide">
+    <h2>Клавиатуры emoji ⌨️</h2>
+    <ol>
+      <li class="next">📱 Android 4.3</li>
+      <li class="next">🖥️  Windows 8.1</li>
+      <li class="next">📱 iOS 5</li>
+      <li class="next">🖥️  OS X 10.7 Lion</li>
+      <li class="next">🤔 Не очень трудно самому написать такую клавиатуру</li>
+    </ol>
+  </section>
+
+  <section class="slide">
+    <img class="cover" src="pictures/ios-11.1-new-emojis-emojipedia-ipad-keyboard.jpg" alt="keyboard_ios">
+  </section>
+
+  <section class="slide">
+    <img class="cover" src="pictures/keyboard_galaxy.png" alt="keyboard_galaxy">
+  </section>
+
+  <section class="slide">
+    <img class="cover" src="pictures/keyboard_windows.png" alt="keyboard_windows">
+  </section>
+
+  <section class="slide">
+    <h2>⬆️ Unicode version history</h2>
+    <table>
+      <tr>
+        <th scope="col">Unicode version</th>
+        <th>Single emoji count</th>
+        <th>delta</th>
+      </tr>
+      <tr>
+        <th scope="row">1.0.0</th>
+        <td>78</td>
+        <td>(+78)</td>
+      </tr>
+      <tr>
+        <th scope="row">...</th>
+        <td>...</td>
+        <td>...</td>
+      </tr>
+      <tr>
+        <th scope="row">5.2</th>
+        <td>80</td>
+        <td>(+2)</td>
+      </tr>
+      <tr>
+        <th scope="row">6.0</th>
+        <td>858</td>
+        <td>(+716)</td>
+      </tr>
+      <tr>
+        <th scope="row">...</th>
+        <td>...</td>
+        <td>...</td>
+      </tr>
+      <tr>
+        <th scope="row">10.0</th>
+        <td>1,144</td>
+        <td>(+56)</td>
+      </tr>
+    </table>
+  </section>
+
+  <section class="slide">
+    <h2 class="shout">Unicode® Technical Standard #51</h2>
+  </section>
+
+  <section class="slide">
+    <h2>Unicode® Technical Standard #51</h2>
+
+    <figure style="display: inline-block;">
+      <img style="width: 350px;" src="pictures/Mark Davis.webp" alt="Mark Davis">
+      <figcaption>Mark Davis (Google)</figcaption>
+    </figure>
+
+    <figure style="display: inline-block;">
+      <img style="width: 350px;" src="pictures/peteredberg.jpg" alt="Peter Edberg">
+      <figcaption>Peter Edberg (Apple)</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide">
+    <h2>Мод Фитцпатрика 🏻 🏼 🏽 🏾 🏿</h2>
+    <table>
+      <tr>
+        <tr>
+          <th scope="col">Code point</th>
+          <th>default</th>
+          <th>FITZ-1-2</th>
+          <th>FITZ-3</th>
+          <th>FITZ-4</th>
+          <th>FITZ-5</th>
+          <th>FITZ-6</th>
+        </tr>
+        <tr>
+          <th scope="row">U+1F466: BOY</th>
+          <td style="font-size: 45px;">👦</td>
+          <td style="font-size: 45px;">👦🏻</td>
+          <td style="font-size: 45px;">👦🏼</td>
+          <td style="font-size: 45px;">👦🏽</td>
+          <td style="font-size: 45px;">👦🏾</td>
+          <td style="font-size: 45px;">👦🏿</td>
+        </tr>
+        <tr>
+          <th scope="row">U+1F467: GIRL</th>
+          <td style="font-size: 45px;">👧</td>
+          <td style="font-size: 45px;">👧🏻</td>
+          <td style="font-size: 45px;">👧🏼</td>
+          <td style="font-size: 45px;">👧🏽</td>
+          <td style="font-size: 45px;">👧🏾</td>
+          <td style="font-size: 45px;">👧🏿</td>
+        </tr>
+        <tr>
+          <th scope="row">U+1F468: MAN</th>
+          <td style="font-size: 45px;">👨</td>
+          <td style="font-size: 45px;">👨🏻</td>
+          <td style="font-size: 45px;">👨🏼</td>
+          <td style="font-size: 45px;">👨🏽</td>
+          <td style="font-size: 45px;">👨🏾</td>
+          <td style="font-size: 45px;">👨🏿</td>
+        </tr>
+        <tr>
+          <th scope="row">U+1F469: WOMAN</th>
+          <td style="font-size: 45px;">👩</td>
+          <td style="font-size: 45px;">👩🏻</td>
+          <td style="font-size: 45px;">👩🏼</td>
+          <td style="font-size: 45px;">👩🏽</td>
+          <td style="font-size: 45px;">👩🏾</td>
+          <td style="font-size: 45px;">👩🏿</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="slide">
+    <h2>🏳️ Флаги</h2>
+    <div style="text-align: center; font-size: 80px;">🇧 + 🇾 = 🇧🇾</div>
+    <div style="text-align: center; font-size: 80px;">🇷 + 🇺 = 🇷🇺</div>
+  </section>
+
+
+  <section class="slide">
+    <h2>Multi-Person Groupings</h2>
+
+    <pre>U+200D ZERO WIDTH JOINER (HTML &#x26;#8205; &#x26;zwj;)</pre>
+
+    <table>
+      <tr>
+        <tr>
+          <th scope="col">Code point</th>
+          <th>default</th>
+          <th style="font-size: 45px;">⚕️</th>
+          <th style="font-size: 45px;">🏫</th>
+          <th style="font-size: 45px;">🔧</th>
+          <th style="font-size: 45px;">🏭</th>
+          <th style="font-size: 45px;">💼</th>
+          <th style="font-size: 45px;">💻</th>
+        </tr>
+        <tr>
+          <th scope="row">U+1F468: MAN</th>
+          <td style="font-size: 45px;">👨</td>
+          <td style="font-size: 45px;">👨&zwj;⚕️</td>
+          <td style="font-size: 45px;">👨&zwj;🏫</td>
+          <td style="font-size: 45px;">👨&zwj;🔧</td>
+          <td style="font-size: 45px;">👨&zwj;🏭</td>
+          <td style="font-size: 45px;">👨&zwj;💼</td>
+          <td style="font-size: 45px;">👨&zwj;💻</td>
+        </tr>
+        <tr>
+          <th scope="row">U+1F469: WOMAN</th>
+          <td style="font-size: 45px;">👩</td>
+          <td style="font-size: 45px;">👩&zwj;⚕️</td>
+          <td style="font-size: 45px;">👩&zwj;🏫</td>
+          <td style="font-size: 45px;">👩&zwj;🔧</td>
+          <td style="font-size: 45px;">👩&zwj;🏭</td>
+          <td style="font-size: 45px;">👩&zwj;💼</td>
+          <td style="font-size: 45px;">👨&zwj;💻</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="note"><a href="http://unicode.org/emoji/charts/emoji-zwj-sequences.html" target="_blank">http://unicode.org/emoji/charts/emoji-zwj-sequences.html</a></p>
+  </section>
+
+  <section class="slide">
+    <h2>Multi-Person Groupings</h2>
+    <div style="text-align: center; font-size: 80px;">👩 + ❤️ + 💋 + 👨 = 👩&zwj;❤️&zwj;💋&zwj;👨</div>
+    <div style="text-align: center; font-size: 80px;">👩 + ❤️ + 💋 + 👩 = 👩&zwj;❤️&zwj;💋&zwj;👩</div>
+  </section>
+
+  <section class="slide">
+    <h2>Multi-Person Groupings</h2>
+    <div style="text-align: center; font-size: 80px;">👨 + 👩 + 👧 = 👨&zwj;👩&zwj;👧</div>
+    <div style="text-align: center; font-size: 80px;">👩 + 👩 + 👧 + 👧 = 👩&zwj;👩&zwj;👧&zwj;👧</div>
+  </section>
+
+  <section class="slide">
+    <h2>Multi-Person Groupings</h2>
+    <div style="text-align: center; font-size: 120px;">🏳 + 🌈 = 🏳&zwj;🌈</div>
+  </section>
+
+  <!-- слом, с эмоджи что-то не так -->
+  <!-- несколько слайдов с багами эмоджи -->
+
+  <section class="slide">
+    <img class="cover" src="pictures/ticket.jpg" alt="">
+  </section>
+
+  <section class="slide">
+    <img class="cover" src="pictures/0a2b3802-dcc6-4ba1-a2d9-fa1f18c28e67.jpg" alt="">
+  </section>
+
+  <section class="slide">
+    <img class="cover" src="pictures/46608b36-f5c3-4f0c-aa7a-305812361017.jpg" alt="">
+  </section>
+
+  <section class="slide">
+    <img class="cover" src="pictures/26d59464-1df7-4e44-b33a-5a0955cf408d.jpg" alt="">
+  </section>
+
+  <section class="slide">
+    <div style="text-align: center; font-size: 160px;">👨‍🎨🤦‍♂️</div>
+  </section>
+
+  <!-- показать как делают в вебе -->
+
+  <section class="slide">
+    <img class="cover" src="pictures/vk-emoji.png" alt="">
+  </section>
+
+  <section class="slide">
+    <img class="cover" src="pictures/twiiter-emoji.png" alt="">
+  </section>
+
+    <section class="slide">
+    <img class="cover" src="pictures/facebook-emoji.png" alt="">
+  </section>
+
+  <section class="slide">
+    <div style="text-align: center; font-size: 160px;">🌐🤩🤦‍♂️</div>
+  </section>
+
+  <!-- объясняем проблемы -->
+
+  <section class="slide">
+    <h2 class="shout">😐 Множество реализаций</h2>
+  </section>
+
+  <section class="slide">
+    <h2>🔣 Шрифты</h2>
+    <pre>
+      <code>font-family:</code>
+      <code class="next">  "Apple Color Emoji", <span class="comment">/* iOS, macOS - 34.3 МБ */</span></code>
+      <code class="next">  "NotoColorEmoji", <span class="comment">/* Google (Android, Linux) - 6.92 МБ */</span></code>
+      <code class="next">  "Segoe UI Emoji", <span class="comment">/* Windows - 660.45 КБ */</span></code>
+      <code class="next">  "Segoe UI Symbol", <span class="comment">/* Windows */</span></code>
+      <code class="next">  "EmojiSymbols"; <span class="comment">/* Open Source - 231 КБ */</span></code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h2>🖼️ Или наборы картинок</h2>
+    <ol style="font-size: 35px;">
+      <li>Facebook</li>
+      <li>Twemoji (Twitter Emoji for Everyone)</li>
+      <li>ВК</li>
+      <li>emojidex (emojidex emoji-as-a-service)</li>
+      <li>можно разобрать шрифт по символам</li>
+    </ol>
+  </section>
+
+  <section class="slide">
+    <img class="cover" src="pictures/implementations_1.png" alt="">
+  </section>
+
+  <section class="slide">
+    <img class="cover" src="pictures/implementations_2.png" alt="">
+  </section>
+
+  <section class="slide">
+    <img class="cover" src="pictures/implementations_3.png" alt="">
+  </section>
+
+  <section class="slide">
+    <img class="cover" src="pictures/implementations_4.png" alt="">
+  </section>
+
+  <section class="slide">
+    <h2 class="shout">⛑️ Плохая поддержка</h2>
+  </section>
+
+  <section class="slide">
+    <h2>🤬 🤬 🤬</h2>
+
+    <div style="text-align: center; font-size: 100px;">🤬 🤬 🤬</div>
+
+    <div style="text-align: center;">
+      <img src="pictures/notdef.gif" alt="">
+    </div>
+  </section>
+
+  <section class="slide">
+    <h2 class="shout">🤷 Проблемы совместимости</h2>
+  </section>
+
+  <section class="slide">
+    <h2>🤷 Проблемы совместимости</h2>
+    <div style="font-size: 100px; text-align: center;">
+      <span style="font-family: Impact, Charcoal, sans-serif">А</span>
+      <span style="font-family: 'Comic Sans MS', cursive, sans-serif">А</span>
+      <span style="font-family: 'Courier New', Courier, monospace">А</span>
+      <span style="font-family: Tahoma, Geneva, sans-serif">А</span>
+      <span style="font-family: Arial, Helvetica, sans-serif">А</span>
+    </div>
+
+    <div style="font-size: 100px; text-align: center;">
+      <span><img src="pictures/angry-face_1f620.png" alt=""></span>
+      <span><img src="pictures/angry-face_1f620 (1).png" alt=""></span>
+      <span><img src="pictures/angry-face_1f620 (2).png" alt=""></span>
+      <span><img src="pictures/angry-face_1f620 (3).png" alt=""></span>
+      <span><img src="pictures/angry-face_1f620 (4).png" alt=""></span>
+    </div>
+  </section>
+
+  <section class="slide">
+    <ol>
+      <li>Angry <img src="pictures/e_angry.png" alt="">
+      </li>
+      <li class="next">Heart Eyes <img src="pictures/e_heart_eyes.png" alt="">
+      </li>
+      <li class="next">Grimacing <img src="pictures/e_grimacing.png" alt="">
+      </li>
+      <li class="next">Scream <img src="pictures/e_scream.png" alt="">
+      </li>
+    </ol>
+  </section>
+
+  <!-- обращаемся к спецификации -->
+  <section class="slide">
+    <h2>🥅 Spec Goals</h2>
+
+    <figure>
+      <blockquote>
+        <p>design guidelines for improving interoperability across platforms and implementations</p>
+      </blockquote>
+      <figcaption>UNICODE EMOJI 5.0</figcaption>
+    </figure>
+
+    <p class="note"><a href="http://unicode.org/reports/tr51/" target="_blank">http://unicode.org/reports/tr51/</a></p>
+  </section>
+
+  <section class="slide">
+    <h2>📝 Design Guidelines</h2>
+
+    <figure>
+      <blockquote>
+        <p>While the shape of the character can vary significantly, designers should maintain the same “core” shape, based on the shapes used mostly commonly in industry practice. For example, a U+1F36F HONEY POT encodes for a pictorial representation of a pot of honey, not for some semantic like "sweet". It would be unexpected to represent U+1F36F HONEY POT as a sugar cube, for example. Deviating too far from that core shape can cause interoperability problems: see accidentally-sending-friends-a-hairy-heart-emojiexternal link.</p>
+      </blockquote>
+      <figcaption>UNICODE EMOJI 5.0</figcaption>
+    </figure>
+  </section>
+
+  <section class="slide">
+    <img class="cover" src="pictures/accidentally-sending-friends-a-hairy-heart-emojiexternal.png" alt="">
+  </section>
+
+  <section class="slide">
+    <h2>👌 Решение</h2>
+
+    <pre>
+      <code>Hello, world! &#x1F44B;, &#x1F30E;!</code>
+    </pre>
+
+    <pre class="next">
+      <code>Hello, world!</code>
+      <code>&#x3C;img alt=&#x22;&#x1F44B;&#x22; src=&#x22;/apple40/<mark>1f44b</mark>.png&#x22;&#x3E;,</code>
+      <code>&#x3C;img alt=&#x22;&#x1F30E;&#x22; src=&#x22;/apple40/<mark>1f30e</mark>.png&#x22;&#x3E;!</code>
+    </pre>
+
+    <p class="note"><a href="https://github.com/Julia-Lavrova/emoji-js" target="_blank">https://github.com/Julia-Lavrova/emoji-js</a></p>
+  </section>
+
+  <section class="slide">
+    <h2>👌 Решение</h2>
+
+    <pre>
+      <code>parseEmoji('😍🍕👉👿💖');</code>
+    </pre>
+
+    <pre class="next">
+      <code>&lt;img alt=&quot;&#x1F60D;&quot; src=&quot;/apple40/<mark>1f60d</mark>.png&quot; /&gt;</code>
+      <code>&lt;img alt=&quot;&#x1F355;&quot; src=&quot;/apple40/<mark>1f355</mark>.png&quot; /&gt;</code>
+      <code>&lt;img alt=&quot;&#x1F449;&quot; src=&quot;/apple40/<mark>1f449</mark>.png&quot; /&gt;</code>
+      <code>&lt;img alt=&quot;&#x1F47F;&quot; src=&quot;/apple40/<mark>1f47f</mark>.png&quot; /&gt;</code>
+      <code>&lt;img alt=&quot;&#x1F496;&quot; src=&quot;/apple40/<mark>1f496</mark>.png&quot; /&gt;</code>
+    </pre>
+
+    <p class="note"><a href="https://github.com/Julia-Lavrova/emoji-js" target="_blank">https://github.com/Julia-Lavrova/emoji-js</a></p>
+  </section>
+
+  <section class="slide">
+    <h2>1️⃣ Для одиночных эмоджи</h2>
+
+    <pre>
+      <code>'🤙'.charCodeAt(0).toString(16); <span class="comment">// d83e</span></code>
+    </pre>
+
+    <pre>
+      <code>'🤙'.charCodeAt(0).toString(16); <span class="comment">// d83e</span></code>
+    </pre>
+
+    <pre>
+      <code>'🤙'.charCodeAt(0).toString(16); <span class="comment">// d83e</span></code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h2>*️⃣ Универсальное</h2>
+
+    <pre>
+      <code>'👩🏿'</code>
+      <code><mark>.split('')</mark></code>
+      <code>.reduce((result, currentChar) => {</code>
+      <code>  const code = <mark>currentChar.charCodeAt(0).toString(16)</mark>;</code>
+      <code>  const code4 = <mark>`000${code}`.substr(-4)</mark>;</code>
+      <code>  return `${result}<mark>\\u${code4}</mark>;`</code>
+      <code>}, ''); // <span class="comment">\ud83d\udc69\ud83c\udfff</span></code>
+    </pre>
+  </section>
+
+  <!-- вывод, своё видение -->
+
+  <section class="slide">
+    <h2 class="shout">Что делать❓</h2>
+  </section>
+
+  <section class="slide">
+    <img class="cover" src="pictures/927_v4.png" alt="15 стандартов">
+  </section>
+
+  <section class="slide">
+    <h2>👨‍💻 Разработчикам</h2>
+    <ol style="font-size: 40px;">
+      <li>Поддерживает ли Ваш проект эмоджи</li>
+      <li class="next">Системные шрифты или свой набор</li>
+      <li class="next">Какую версию эмоджи поддерживать</li>
+    </ol>
+  </section>
+
+  <section class="slide">
+    <h2>👨‍🎨 Дизайнерам</h2>
+    <ol style="font-size: 40px;">
+      <li>Не придумывать свою реализацию эмоджи</li>
+      <li class="next">Развивать существующие реализации</li>
+      <li class="next">Следить за совместимостью</li>
+    </ol>
+  </section>
+
+  <!-- материалы и ссылки -->
+
+  <section class="slide">
+    <h2>Материалы</h2>
+
+    <ol style="font-size: 40px;">
+      <li><a href="http://unicode.org/reports/tr51/" target="_blank">http://unicode.org/reports/tr51/</a></li>
+      <li><a href="https://emojipedia.org" target="_blank">https://emojipedia.org</a></li>
+      <li><a href="https://github.com/Julia-Lavrova/emoji-js" target="_blank">https://github.com/Julia-Lavrova/emoji-js</a></li>
+    </ol>
+  </section>
+
+  <section class="slide">
+    <h2 class="shout">Вопросы❓</h2>
+  </section>
+
+  <div class="progress"></div>
+  <script src="shower/shower.min.js"></script>
+  <!-- Copyright © 2017 Yours Truly, Famous Inc. -->
+</body>
+
+</html>

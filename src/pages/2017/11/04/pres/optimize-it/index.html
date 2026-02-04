@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Shower Presentation Engine</title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="shower-ribbon/styles/screen-16x10.css">
+	<style media="screen">
+		img {
+			display: block;
+		}
+		.simple-photo {
+			width: 100%;
+			display: block;
+		}
+		.simple-table th,
+		.simple-table td {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+		.slide .shout {
+			font-size: 140px;
+		}
+
+		td.optimal {
+			background-color: #deffe6 !important;
+		}
+		td.critical {
+			background-color: #ffdede !important;
+		}
+		td.normal {
+			background-color: #fffadc !important;
+		}
+
+		.shout.middle {
+			font-size: 90px;
+		}
+		.middle-list {
+			font-size: 35px;
+			margin-top: 70px;
+		}
+		.middle-list li {
+			margin: 0 0 30px;
+		}
+		.slide--full-screen {
+			padding-top: 50px;
+		}
+		.small {
+			font-size: 20px;
+		}
+		.slide big {
+			font-size: 37px;
+		}
+		.slide h2.long {
+			font-size: 100px;
+		}
+		.cover.bottom {
+			top: auto;
+			bottom: 0;
+			-webkit-transform: translate(-50%,0);
+					transform: translate(-50%,0);
+		}
+		.slide.whide {
+			padding: 70px 100px 0;
+		}
+		.cover.right {
+			left: auto;
+			right: 10%;
+			-webkit-transform: translate(0,-50%);
+					transform: translate(0,-50%);
+		}
+		h3.subtitle {
+			color: #585a5e;
+    		font: 700 40px/1 PT Sans Narrow,sans-serif;
+			padding-bottom: 20px;
+		}
+	</style>
+</head>
+<body class="shower list">
+
+
+	<header class="caption">
+		<h1>Оптимизируй это</h1>
+	</header>
+
+	<section class="slide clear">
+		<div class="hello-container">
+			<figure>
+				<img src="pictures/wsd.svg" alt="WSD #2017 Kiyv">
+			</figure>
+			<h2>Привет, WSD!</h2>
+		</div>
+		<style>
+			.hello-container {
+				text-align: center;
+			}
+			.hello-container figure {
+				display: inline-block;
+			}
+			.hello-container h2 {
+				font-size: 100px;
+			}
+			.hello-container  img {
+				width: 300px;
+			}
+		</style>
+	</section>
+
+	<section class="slide clear" id="chernivtsi">
+		<div class="chernivtsi-layer">
+			<img src="pictures/chernivtsi3.png" width="600" alt="ChernivtsiJS">
+			<div class="chernivtsi-link"><a href="http://chernivtsi.js.org">chernivtsi.js.org</a></div>
+		</div>
+		<figure>
+			<img class="cover" src="pictures/chernivtsi2.jpg" alt="ChernivtsiJS">
+		</figure>
+		<style>
+			#chernivtsi {
+				text-align: center;
+			}
+			#chernivtsi h2 {
+				margin:40% 0 0;
+				color:#FFF;
+				text-align:center;
+				font-size:70px;
+				text-shadow: 0 0 30px #000000;
+				text-transform: uppercase;
+				background: RGBA(0,0,0,0.3);
+				display: inline-block;
+				padding: 0.5% 2%;
+				box-shadow: 0 0 40px 30px RGBA(0,0,0,0.3);
+				border-radius: 20px;
+			}
+			.chernivtsi-layer {
+				text-align: center;
+				margin: 30px 0 0 0;
+			}
+			.chernivtsi-layer img {
+				display: inline-block;
+			}
+			.chernivtsi-link {
+				margin: 50px 0 0 0;
+			}
+			.chernivtsi-link a {
+				color: #fff;
+				font-size: 50px;
+				text-decoration: none;
+
+				text-shadow: 0 0 30px #000000;
+				background: RGBA(0,0,0,0.3);
+				display: inline-block;
+				padding: 0.5% 2%;
+				box-shadow: 0 0 40px 30px RGBA(0,0,0,0.3);
+				border-radius: 20px;
+			}
+		</style>
+	</section>
+
+	<section class="slide clear" id="cover">
+		<h2>Оптимизируй это</h2>
+		<figure>
+			<img class="cover" src="pictures/cover-me.jpg" alt="Постер к фильму Анализируй это">
+		</figure>
+		<style>
+		    #cover {
+		    	text-align: center;
+		    }
+			#cover h2 {
+				margin:40% 0 0;
+				color:#FFF;
+				text-align:center;
+				font-size:70px;
+				text-shadow: 0 0 30px #000000;
+				text-transform: uppercase;
+				background: RGBA(0,0,0,0.3);
+				display: inline-block;
+				padding: 0.5% 2%;
+				box-shadow: 0 0 40px 30px RGBA(0,0,0,0.3);
+				border-radius: 20px;
+			}
+		</style>
+	</section>
+	<section class="slide clear">
+			<figure>
+				<img class="cover" src="pictures/alien.jpg" alt="кадр из фильма Чужой Завет">
+			</figure>
+		</section>
+
+	<section class="slide clear" id="ring-slide">
+		<h2 class="shout">Первый звоночек</h2>
+		<figure>
+			<img class="cover" src="pictures/ring.jpg" alt="Колокол Херсонеса">
+		</figure>
+		<style media="screen">
+			#ring-slide h2 {
+				color:#FFF;
+				text-align:center;
+				font-size:70px;
+				text-shadow: 0 0 30px #000000;
+				text-transform: uppercase;
+
+			}
+		</style>
+	</section>
+
+	<section class="slide">
+		<h2>Первый звоночек</h2>
+		<ul>
+			<li>18 CSS-файлов</li>
+			<li>23 файла JS-библиотек</li>
+			<li>12 js файлов</li>
+			<li>&gt;200 фото товаров на странице</li>
+		</ul>
+	</section>
+
+	<section class="slide clear">
+		<figure>
+			<img class="cover" class="simple-photo" src="pictures/project-1.jpg" alt="chrome dev tools">
+		</figure>
+	</section>
+
+	<section class="slide clear">
+		<figure>
+			<img class="cover" class="simple-photo" src="pictures/project-2.jpg" alt="chrome dev tools">
+		</figure>
+	</section>
+
+	<section class="slide clear">
+		<figure>
+			<img class="cover" class="simple-photo" src="pictures/project-3.jpg" alt="chrome dev tools">
+		</figure>
+	</section>
+
+	<section class="slide clear">
+		<figure>
+			<img class="cover" class="simple-photo" src="pictures/project-4.jpg" alt="chrome dev tools">
+		</figure>
+	</section>
+
+	<section class="slide">
+		<h2>Что не так?</h2>
+		<ul>
+			<li>много одновременно загружаемых ресурсов</li>
+			<li>ресурсы загружаются с высоким приоритетом</li>
+			<li>ресурсы загружаются с одного домена</li>
+			<li>блокирующая загрузка</li>
+			<li>DOMContentLoaded <big>6 секунд</big></li>
+			<li>неконтролируемая загрузка фото товаров</li>
+		</ul>
+	</section>
+
+
+	<section class="slide clear" id="timer-slide">
+		<h2 class="shout">Пользователь начнет взаимодействовать с&nbsp;сайтом минимум через&nbsp;6&nbsp;секунд</h2>
+		<figure>
+			<img class="cover" src="pictures/timer.jpg" alt="Изображение секундомера">
+		</figure>
+		<style media="screen">
+			#timer-slide h2 {
+				color:#FFF;
+				text-align:left;
+				font-size:40px;
+				line-height: 1.4;
+				width: 40%;
+				text-shadow: 0 0 30px #000000;
+				text-transform: uppercase;
+				left: auto;
+				right: 0;
+				background: RGBA(0,0,0,0.3);
+				display: inline-block;
+				padding: 0.5% 2%;
+				box-shadow: 0 0 40px 30px RGBA(0,0,0,0.3);
+				border-radius: 20px;
+			}
+		</style>
+	</section>
+
+	<section class="slide clear" id="mem-slide">
+		<h2 class="shout">Да ладно</h2>
+		<figure>
+			<img class="cover" src="pictures/mem-spider.jpg" alt="Мем Питер Паркер">
+		</figure>
+		<style media="screen">
+			#mem-slide .cover {
+				left: 30%;
+			}
+			#mem-slide h2 {
+				color:#000000;
+				text-align:left;
+				font-size:70px;
+				line-height: 1.4;
+				width: 40%;
+				text-shadow: 0 0 30px #ffffff;
+				text-transform: uppercase;
+				left: auto;
+				right: 0;
+				background: RGBA(255,255,255,0.3);
+				display: inline-block;
+				padding: 0.5% 2%;
+				box-shadow: 0 0 40px 30px RGBA(255,255,255,0.3);
+				border-radius: 20px;
+			}
+		</style>
+	</section>
+
+
+	<section class="slide whide">
+		<h2>leBoutique</h2>
+		<figure>
+			<img class="cover width bottom" src="pictures/project-5.jpg" alt="chrome devtools">
+		</figure>
+	</section>
+
+	<!-- TODO: показать на скрине загрузку  -->
+	<section class="slide whide">
+		<h2>otto.ua</h2>
+		<figure>
+			<img class="cover width bottom" src="pictures/project-6.jpg" alt="chrome devtools">
+		</figure>
+	</section>
+
+	<section class="slide">
+		<h2>В сравнении</h2>
+		<table class="simple-table">
+			<tr>
+				<th>&nbsp;</th>
+				<th>Сайт друга</th>
+				<th>leBoutique</th>
+				<th>otto.ua</th>
+				<th>modnakasta.ua</th>
+			</tr>
+			<tr>
+				<td>Transferred, Mb</td>
+				<td class="critical">5,7</td>
+				<td>4,9</td>
+				<td class="optimal">1,6</td>
+				<td>4,0</td>
+			</tr>
+			<tr>
+				<td>TTFB, ms</td>
+				<td class="critical">&gt;2000</td>
+				<td class="optimal">62</td>
+				<td>1020</td>
+				<td>115</td>
+			</tr>
+			<tr>
+				<td>DOMContentLoaded, sec<br />(DCL)</td>
+				<td class="critical">6,34</td>
+				<td>3,72</td>
+				<td>3,92</td>
+				<td class="optimal">0,8</td>
+			</tr>
+			<tr>
+				<td>High priority request</td>
+				<td class="critical">19+</td>
+				<td>6</td>
+				<td>12</td>
+				<td class="optimal">1</td>
+			</tr>
+		</table>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">DCL vs TTFI</h2>
+	</section>
+
+	<section class="slide">
+		<div class="right-text">
+			<p>+ <big>1</big> сек = – <big>7</big>% конверсии, по версии <i>Айри.рф</i></p>
+			<p><big>100</big> мс задержки приводят к снижению продаж на <big>1</big>%, по&nbsp;версии <i>Amazon</i></p>
+		</div>
+
+		<figure>
+			<img class="cover" src="pictures/sales.jpg" alt="Мем Питер Паркер">
+		</figure>
+
+		<style>
+			.right-text {
+				width: 40%;
+				margin: 0 0 0 60%;
+			}
+			.right-text p {
+				font-size: 30px;
+				line-height: 1.3;
+				margin-bottom: 70px;
+			}
+			.right-text i {
+				display: block;
+				text-align: right;
+			}
+		</style>
+	</section>
+
+	<section class="slide">
+		<h2>Подходы к оптимизации</h2>
+		<ul class="middle-list">
+			<li>оптимизация скорости сайта при первой загрузке</li>
+			<li>оптимизация скорости сайта при повторной загрузке</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">Оптимизация для первой загрузки</h2>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout middle">1. Доставка</h2>
+	</section>
+
+	<section class="slide">
+		<h2>На скорость доставки контента влияет</h2>
+		<ul>
+			<li>вес контента</li>
+			<li>канал пользователя</li>
+			<li>возможности сервера</li>
+			<li>ограничение браузера</li>
+		</ul>
+	</section>
+	<section class="slide">
+		<h2 class="shout middle">Мы начали с ограничений</h2>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout middle">DOMContentLoaded</h2>
+	</section>
+
+	<section class="slide">
+		<h2>Как было</h2>
+		<pre class="small">
+			<code><mark>&lt;head&gt;</mark></code>
+			<code>    &lt;link rel="stylesheet" href="main.css"&gt;</code>
+			<code>    &lt;script src="small.js"&gt;&lt;/script&gt;</code>
+			<code>    &lt;script src="main.js"&gt;&lt;/script&gt;</code>
+			<code>    &lt;script src="second-1.js"&gt;&lt;/script&gt;</code>
+			<code>    &lt;script src="second-2.js"&gt;&lt;/script&gt;</code>
+			<code>    &lt;script src="second-7.js"&gt;&lt;/script&gt;</code>
+			<code><mark>&lt;/head&gt;</mark></code>
+		</pre>
+	</section>
+
+	<section class="slide clear">
+		<figure>
+			<img class="cover width" src="pictures/inspector0.jpg" alt="inspector">
+		</figure>
+	</section>
+
+	<section class="slide clear">
+		<figure>
+			<img class="cover width" src="pictures/inspector0-1.jpg" alt="inspector">
+		</figure>
+	</section>
+
+	<section class="slide">
+		<h2>Популярный совет</h2>
+		<pre class="small">
+			<code><mark>&lt;head&gt;</mark></code>
+			<code>    &lt;link rel="stylesheet" href="main.css"&gt;</code>
+			<code>    &lt;script src="small.js"&gt;&lt;/script&gt;</code>
+			<code>    &lt;script src="main.js"&gt;&lt;/script&gt;</code>
+			<code><mark>&lt;/head&gt;</mark></code>
+			<code>    &lt;script src="second-1.js"&gt;&lt;/script&gt;</code>
+			<code>    &lt;script src="second-2.js"&gt;&lt;/script&gt;</code>
+			<code>    &lt;script src="second-7.js"&gt;&lt;/script&gt;</code>
+			<code><mark>&lt;/body&gt;</mark></code>
+		</pre>
+	</section>
+
+	<section class="slide clear">
+		<figure>
+			<img class="cover width" src="pictures/inspector2.jpg" alt="inspector">
+		</figure>
+	</section>
+
+	<section class="slide">
+		<h2>Добавляем асинхронности</h2>
+		<pre class="small">
+			<code><mark>&lt;head&gt;</mark></code>
+			<code>    &lt;link rel="stylesheet" href="main.css"&gt;</code>
+			<code>    &lt;script src="small.js"&gt;&lt;/script&gt;</code>
+			<code>    &lt;script src="main.js"&gt;&lt;/script&gt;</code>
+			<code><mark>&lt;/head&gt;</mark></code>
+			<code>    &lt;script src="second-1.js" <span style="color: red;">defer</span>&gt;&lt;/script&gt;</code>
+			<code>    &lt;script src="second-2.js" <span style="color: red;">defer</span>&gt;&lt;/script&gt;</code>
+			<code>    &lt;script src="second-7.js" <span style="color: red;">defer</span>&gt;&lt;/script&gt;</code>
+			<code><mark>&lt;/body&gt;</mark></code>
+		</pre>
+	</section>
+
+	<section class="slide clear">
+		<figure>
+			<img class="cover width" src="pictures/inspector3.jpg" alt="inspector">
+		</figure>
+	</section>
+
+	<section class="slide">
+		<h2>Нужно больше асинхронности</h2>
+		<pre class="small">
+			<code><mark>&lt;head&gt;</mark></code>
+			<code>    &lt;link rel="stylesheet" href="main.css"&gt;</code>
+			<code>    &lt;script src="small.js"&gt;&lt;/script&gt;</code>
+			<code>    &lt;script src="main.js"&gt;&lt;/script&gt;</code>
+			<code><mark>&lt;/head&gt;</mark></code>
+			<code>    &lt;script src="second-1.js" <span style="color: red;">async</span>&gt;&lt;/script&gt;</code>
+			<code>    &lt;script src="second-2.js" <span style="color: red;">async</span>&gt;&lt;/script&gt;</code>
+			<code>    &lt;script src="second-7.js" <span style="color: red;">async</span>&gt;&lt;/script&gt;</code>
+			<code><mark>&lt;/body&gt;</mark></code>
+		</pre>
+	</section>
+
+	<section class="slide clear">
+		<figure>
+			<img class="cover width" src="pictures/inspector4.jpg" alt="inspector">
+		</figure>
+	</section>
+
+	<section class="slide">
+		<h2>Что мы сделали</h2>
+		<ul>
+			<li>уменьшили число блокирующих скриптов, оставили только ядро</li>
+			<li>основной пакет JS загружаем с <code>async</code></li>
+			<li>оставили один файл CSS в <code>HEAD</code></li>
+			<li>все счетчики, метрики и сторонние скрипты грузим отложенно на JS</li>
+		</ul>
+	</section>
+
+	<section class="slide" style="background: #000;">
+		<h2>25 кадр</h2>
+		<figure>
+			<img class="cover" src="pictures/chrome.jpg" alt="google chrome logo">
+		</figure>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout middle">2. Приоритет загрузки</h2>
+	</section>
+
+	<section class="slide">
+		<h2>Приоритеты загрузки</h2>
+		<ul>
+			<li>Наивысший (документ, CSS, шрифты)</li>
+			<li>Высокий (JS, XHR)</li>
+			<li>Средний (JS после изоборажений, изображения)</li>
+			<li>Низкий (JS <code>async</code>, <code>defer</code>, изображения, JS-модули)</li>
+			<li>Очень низкий (<code href="http://navigator.sendBeacon">navigator.sendBeacon</code>, изображения, <code>prefetch</code>)</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout middle">Помогаем браузеру</h2>
+	</section>
+
+	<section class="slide">
+		<pre class="small">
+			<code>&lt;link rel="<mark>prefetch</mark>" href="/source/"&gt;</code>
+			<code>&lt;link rel="<mark>dns-prefetch</mark>" href="https://youdomain.com"&gt;</code>
+			<code>&lt;link rel="<mark>prerender</mark>" href="/next-page/"&gt;</code>
+			<code>&nbsp;</code>
+			<code>&lt;link rel="<mark>preload</mark>" href="some.js" as="<mark>script</mark>"&gt;</code>
+			<code>&lt;link rel="<mark>preload</mark>" href="some.css" as="<mark>style</mark>"&gt;</code>
+			<code>&lt;link rel="<mark>preload</mark>" href="picture.jpg" as="<mark>image</mark>"&gt;</code>
+			<code>&lt;link rel="<mark>preload</mark>" href="some.woff" as="<mark>font</mark>"&gt;</code>
+			<code>...</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Как посмотреть?</h2>
+		<p><code>chrome://net-internals/#prerender</code></p>
+		<p><code>opera://net-internals/#prerender</code></p>
+	</section>
+
+
+	<section class="slide">
+		<table>
+			<tr>
+				<td align="center" width="40%"><h2>prefetch</h2></td>
+				<td align="center">vs</td>
+				<td align="center" width="40%"><h2>preload</h2></td>
+			</tr>
+			<tr>
+				<td align="center">Очень низкий приоритет</td>
+				<td></td>
+				<td align="center">приоритет по <code>"as"</code></td>
+			</tr>
+			<tr>
+				<td align="center"><code>dns-prefetch</code>, <code>prerender</code>, <code>prefetch</code>, <code>preconnect</code></td>
+				<td></td>
+				<td align="center">любой ресурс</td>
+			</tr>
+			<tr>
+				<td align="center" valign="top">can i use<br /> <img width="200" src="pictures/browsers-2.jpg" alt=""></td>
+				<td></td>
+				<td align="center" valign="top" style="padding-bottom: 3px;">can i use<br /> <img width="170" src="pictures/browsers-3.jpg" alt=""></td>
+			</tr>
+			<tr>
+				<td align="center">отображается в браузере<br /> <img width="200" src="pictures/browsers-3.jpg" alt=""></td>
+				<td></td>
+				<td align="center">отображается в браузере<br /> <img width="170" src="pictures/browsers-4.jpg" alt=""></td>
+			</tr>
+		</table>
+	</section>
+
+	<section class="slide">
+		<h2>Что мы сделали</h2>
+		<ul>
+			<li>вынесли всю статику на отдельные домены CDN</li>
+			<li><code>dns-prefetch</code> для всех доменов CDN</li>
+			<li><code>prerender</code> для каталога с главной страницы</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout middle">3. Ленивая загрузка</h2>
+	</section>
+
+	<section class="slide">
+		<h2>Ленивая загрузка изображений</h2>
+		<pre class="small">
+			<code>&lt;img src="blank.gif" <mark>data-src</mark>="cool.jpg"&gt;</code>
+			<code><span class="comment">/* или */</span>&nbsp;</code>
+			<code>&lt;img src="cool-patch.svg" <mark>data-src</mark>="cool.jpg"&gt;</code>
+
+			<code>...</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Ленивая загрузка изображений</h2>
+		<p>С 2015 года в обсуждении<br />
+		    6 октября появился Intent to Implement: image async attribute</p>
+			<code>&lt;image src="photo.jpg" <mark>async=on</mark>&gt;</code>
+		<ul>
+			<li>велосипедим</li>
+			<li>используем готовые JS-библиотеки</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout middle">4. Critical CSS</h2>
+	</section>
+
+	<section class="slide">
+		<table>
+			<tr>
+				<td valign="top" width="40%" style="vertical-align: top;">
+					<img width="70%" src="pictures/addy_osmani.png" alt="Addy Osmani photo">
+					<img width="70%" src="pictures/qrcode-critical.jpeg" alt="Addy Osmani critical css plugin">
+				</td>
+				<td valign="top" style="vertical-align: top;">
+					<h2>Critical CSS</h2>
+					<h3>Addy Osmani</h3>
+					<ol>
+						<li>собираем css для видимой части страницы</li>
+						<li>инйлайним полученный css</li>
+						<li>остальной css подключаем ниже с понижением приоритета</li>
+					</ol>
+				</td>
+			</tr>
+		</table>
+	</section>
+
+	<section class="slide">
+		<h2>Critical CSS</h2>
+		<ul>
+			<li>отлично подходит для верстки одной страницы</li>
+			<li>в реальности нужно делать отдельно для каждой типовой страницы
+				<ol>
+					<li>главная</li>
+					<li>каталог</li>
+					<li>товар</li>
+					<li>корзина</li>
+					<li>...</li>
+				</ol>
+			</li>
+		</ul>
+	</section>
+	<section class="slide">
+		<h2>Critical CSS</h2>
+		<ul>
+			<li>сложно поддерживать</li>
+			<li>некоторые блоки мелькают</li>
+			<li>пока отказались</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout middle">5. Оптимизация графики</h2>
+	</section>
+
+	<section class="slide">
+		<h2>Работаем с форматами</h2>
+		<table>
+			<tr>
+				<td style="vertical-align: middle;">JPEG, PNG, GIF</td>
+				<td style="vertical-align: middle;"><img width="200" src="pictures/browsers.jpg" alt=""></td>
+			</tr>
+			<tr>
+				<td>WebP</td>
+				<td style="vertical-align: middle;"><img width="85" src="pictures/browsers-webkit.jpg" alt=""></td>
+			</tr>
+			<tr>
+				<td>JPEG-XR</td>
+				<td style="vertical-align: middle;"><img width="37" src="pictures/browsers-ie.jpg" alt=""></td>
+			</tr>
+			<tr>
+				<td>JPEG-2000</td>
+				<td style="vertical-align: middle;"><img width="40" src="pictures/browsers-safari.jpg" alt=""></td>
+			</tr>
+		</table>
+	</section>
+
+	<section class="slide">
+		<h2 class="">WebP</h2>
+		<table>
+			<tr>
+				<td width="50%">
+					<img width="100%" src="pictures/cat.jpg" alt="">
+					<h3 class="next">JPEG</h3>
+				</td>
+				<td width="50%">
+					<img width="100%" src="pictures/cat.jpg" alt="">
+					<h3 class="next">JPEG</h3>
+				</td>
+			</tr>
+		</table>
+	</section>
+	<section class="slide">
+		<h2 class="">WebP</h2>
+		<ul>
+			<li>открытый формат</li>
+			<li>экономия до <big>10 раз</big></li>
+			<li>без заметной потери качества</li>
+			<li>относительно хорошая поддержка</li>
+			<li><big>41%</big> посетителей проекта</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2 class="">Отдавайте графику под клиент</h2>
+		<pre class="small">
+			<code>&lt;picture&gt;</code>
+			<code>    &lt;source srcset="photo.jxr" <mark>type="image/vnd.ms-photo"</mark>&gt;</code>
+			<code>    &lt;source srcset="photo.jp2" <mark>type="image/jp2"</mark>&gt;</code>
+			<code>    &lt;source srcset="photo.webp" <mark>type="image/webp"</mark>&gt;</code>
+			<code>    &lt;img src="default.jpg" alt="image description"&gt;</code>
+			<code>&lt;/picture&gt;</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2 class="">Отдавайте графику под клиент</h2>
+		<pre class="small">
+			<code>&lt;picture&gt;</code>
+			<code>    &lt;source srcset="photo.webp, photo-2x.webp <mark>2x</mark>" <mark>type="image/webp"</mark>&gt;</code>
+			<code>    &lt;source srcset="photo-2x.jpg <mark>2x</mark>" <mark>type="image/jpeg"</mark>&gt;</code>
+			<code>    &lt;img src="default.jpg" alt="image description"&gt;</code>
+			<code>&lt;/picture&gt;</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout middle">Инструментарий</h2>
+	</section>
+
+	<section class="slide">
+		<h2 class="">Инструментарий</h2>
+		<ul>
+			<li>графические редакторы</li>
+			<li>онлайн-сервисы</li>
+			<li>командная строка (пакетная обработка)</li>
+			<li>обработка в процессе выполнения</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2 class="">Инструментарий</h2>
+		<ul>
+			<li><del>графические редакторы</del></li>
+			<li><del>онлайн-сервисы</del></li>
+			<li>командная строка (пакетная обработка)</li>
+			<li>обработка в процессе выполнения</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>Командная строка, runtime</h2>
+		<ul>
+			<li>libGD (Node.js, PHP и т.д.)</li>
+			<li>ImageMagick (командная строка, Node.js, PHP и т.д.)</li>
+			<li>Gulp, Grunt плагины в сборках</li>
+		</ul>
+	</section>
+
+	<section class="slide" id="bike">
+		<h2>Что выбрать?</h2>
+		<figure>
+			<img class="cover" src="pictures/bike.jpg" alt="bike in winter">
+		</figure>
+		<style>
+			#bike h2 {
+				margin:40% 0 0;
+				color:#FFF;
+				text-align:center;
+				font-size:70px;
+				text-shadow: 0 0 30px #000000;
+				text-transform: uppercase;
+				background: RGBA(0,0,0,0.5);
+				display: block;
+				text-align: right;
+				padding: 0.5% 2%;
+				box-shadow: 0 0 40px 30px RGBA(0,0,0,0.5);
+				border-radius: 20px;
+			}
+		</style>
+	</section>
+
+	<section class="slide">
+		<h2>Что выбрать?</h2>
+		<ul>
+			<li>конвертировать во время загрузки страницы – дорого</li>
+			<li>конвертировать пакетно в фоне – долго</li>
+			<li>...</li>
+		</ul>
+	</section>
+
+	<section class="slide" style="background: #21201f;">
+		<figure>
+			<img class="cover" src="pictures/nginx.png" alt="react, angular and vue.js logo">
+		</figure>
+	</section>
+
+	<section class="slide">
+		<figure>
+			<img class="cover" src="pictures/frameworks.png" alt="react, angular and vue.js logo">
+		</figure>
+	</section>
+
+	<section class="slide">
+		<h2 class="">NGINX + PageSpeed, с ноября 2010</h2>
+		<ul>
+			<li>сжатие и обработка CSS</li>
+			<li>сжатие и обработка JS</li>
+			<li>спрайты</li>
+			<li>оптимизация изображений</li>
+			<li>ресайз изображений</li>
+			<li>конвертация в WebP</li>
+			<li>инлайновый Base64</li>
+		</ul>
+	</section>
+	<section class="slide">
+		<h2 class="">Что мы сделали</h2>
+		<ul>
+			<li><code>RewriteLevel OptimizeForBandwidth</code>
+				<ol>
+					<li><code>rewrite_css</code></li>
+					<li><code>rewrite_javascript</code></li>
+					<li>отпимизация изображения</li>
+					<li>конвертация в WebP</li>
+				</ol>
+			</li>
+			<li><code>EnableFilters extend_cache</code></li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2 class="">Не думайте о том, что умеет клиент</h2>
+		<pre class="small">
+			<code><del>&lt;picture&gt;</del></code>
+			<code>    <del>&lt;source srcset="photo.webp" type="image/webp"&gt;</del></code>
+			<code>    &lt;img src="photo.jpg" alt="image description"&gt;</code>
+			<code><del>&lt;/picture&gt;</del></code>
+		</pre>
+		<code>Accept: image/webp</code></p>
+
+	</section>
+
+	<section class="slide">
+		<h2 class="">Важно</h2>
+		<p><code>rewrite_css</code>, <code>rewrite_javascript</code></p>
+		<ul>
+			<li>потенциально опасные</li>
+			<li>нужно иметь валидный CSS и JS</li>
+			<li>использовать линтеры кода</li>
+		</ul>
+		<picture>
+			<img class="cover right" src="pictures/exclamation.jpg" alt="Внимание! Опасно!">
+
+		</picture>
+	</section>
+
+
+	<section class="slide">
+		<h2 class="shout long">Оптимизация для повторной загрузки</h2>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout" >Кэширование</h2>
+	</section>
+
+	<section class="slide">
+		<h2>Кэширование</h2>
+		<ul>
+			<li>статические / динамические ресурсы на клиенте</li>
+			<li>статические / динамические ресурсы на сервере</li>
+			<li>результаты SSL Handshake</li>
+			<li>...</li>
+		</ul>
+	</section>
+
+	<section class="slide" id="max-age">
+			<h2 id="max-age">
+				Ты можешь быть бесконечно прав,<br />
+				но какой в этом толк,<br />
+				если у тебя <span>Cache-Control: max-age=0</span>
+			</h2>
+		<figure>
+			<img class="cover" src="pictures/max-age.jpg" alt="Фото девушки под дождем">
+		</figure>
+		<style media="screen">
+			#max-age h2 {
+				color: #FFF;
+				text-align: left;
+				font-size: 30px;
+				line-height: 1.7;
+				width: 55%;
+				text-shadow: 0 0 30px #000000;
+				text-transform: uppercase;
+				left: auto;
+				left: 50px;
+				bottom: 70px;
+				background: RGBA(0,0,0,0.3);
+				display: inline-block;
+				padding: 0.5% 2%;
+				box-shadow: 0 0 40px 30px RGBA(0,0,0,0.3);
+				border-radius: 20px;
+				position: absolute;
+			}
+			#max-age h2 span {
+				font-size: 33px;
+				white-space: nowrap;
+				color: #c0c0c0;
+			}
+		</style>
+	</section>
+
+	<section class="slide">
+		<h2>HTTP 1.1</h2>
+		<h3 class="subtitle">Cache-Control</h3>
+		<ul>
+			<li>max-age=ХХ (время в сек)</li>
+		</ul>
+
+		<h3 class="subtitle">ETag</h3>
+		<ul>
+			<li><code>ETag: "59a49fa0-b9ac"</code></li>
+			<li>требуется запрос на сервер</li>
+			<li>более тонкая работа с кэшем</li>
+		</ul>
+
+	</section>
+
+	<section class="slide">
+		<h2>HTTP 1.0</h2>
+		<h3 class="subtitle">Expires</h3>
+		<ul>
+			<li><code>Expires: Wed, 16 Nov 2017 07:28:00 GMT</code></li>
+			<li>устаревший аналог <big>max-age</big></li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>Кэширование</h2>
+		<ul>
+			<li>использовали возможности браузера</li>
+			<li>закешировали статику на пол года</li>
+			<li>для ревалидации кеша – версионность файлов по дате модификации<br />
+				<code>main.css?149744812618322</code>
+
+			</li>
+			<li><code>max-age</code> вместо <code>ETag</code></li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>Где смотреть метрики</h2>
+		<ul>
+			<li>Google PageSpeed Insights</li>
+			<li>Pingdom</li>
+			<li>Chrome DevTools</li>
+			<li>Chrome Lighthouse</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>Результат</h2>
+		<table class="simple-table">
+			<tr>
+				<th>&nbsp;</th>
+				<th>Было</th>
+				<th>Стало</th>
+			</tr>
+			<tr>
+				<td>Transferred, Mb</td>
+				<td class="critical">5,7</td>
+				<td class="normal">3,2</td>
+			</tr>
+			<tr>
+				<td>TTFB, ms</td>
+				<td class="critical">&gt;2000</td>
+				<td class="optimal">442</td>
+			</tr>
+			<tr>
+				<td>DOMContentLoaded, sec</td>
+				<td class="critical">6,34</td>
+				<td class="normal">2,09</td>
+			</tr>
+			<tr>
+				<td>High priority request</td>
+				<td class="critical">19+</td>
+				<td class="optimal">1</td>
+			</tr>
+		</table>
+	</section>
+
+	<section class="slide">
+		<div class="jooh-text">
+			<p>Вжух<br />и у нас быстрый сайт</p>
+		</div>
+
+		<figure>
+			<img class="cover" src="pictures/vjuh.jpg" alt="Мем">
+		</figure>
+
+		<style>
+			.jooh-text {
+				width: 60%;
+				margin: 250px 0 0 40%;
+			}
+			.jooh-text p {
+				font-size: 50px;
+			}
+			.jooh-text i {
+				display: block;
+				text-align: right;
+			}
+		</style>
+	</section>
+
+	<section class="slide">
+		<h2>Спасибо!</h2>
+		<table class="simple-table">
+			<tr>
+				<td>
+					<p>
+						<big>Denis Zavgorodny</big><br />
+						web technologist, founder of @ChernivtsiJS,<br />co-founder @NodeSchool Chernivtsi
+					</p>
+					<p><a href="https://twitter.com/DenisZavgorodny">@DenisZavgorodny</a></p>
+					<p><a href="mailto:denis.zavgorodny@gmail.com">denis.zavgorodny@gmail.com</a></p>
+				</td>
+			</tr>
+		</table>
+	</section>
+
+
+	<blockquote style="display: none;">
+		https://www.google.com.ua/search?q=%D0%B2%D0%BB%D0%B8%D1%8F%D0%BD%D0%B8%D0%B5+%D1%81%D0%BA%D0%BE%D1%80%D0%BE%D1%81%D1%82%D0%B8+%D1%81%D0%B0%D0%B9%D1%82%D0%B0+%D0%BD%D0%B0+%D0%BA%D0%BE%D0%BD%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D1%8E&oq=%D0%B2%D0%BB%D0%B8%D1%8F%D0%BD%D0%B8%D0%B5+%D1%81%D0%BA%D0%BE%D1%80%D0%BE%D1%81%D1%82%D0%B8+%D1%81%D0%B0%D0%B9%D1%82%D0%B0+%D0%BD%D0%B0+%D0%BA%D0%BE%D0%BD%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D1%8E&aqs=chrome..69i57.6606j0j7&sourceid=chrome&ie=UTF-8
+		https://xn--80aqc2a.xn--p1ai/blog/%D0%BA%D0%B0%D0%BA-%D1%81%D0%BA%D0%BE%D1%80%D0%BE%D1%81%D1%82%D1%8C-%D1%81%D0%B0%D0%B9%D1%82%D0%B0-%D0%B2%D0%BB%D0%B8%D1%8F%D0%B5%D1%82-%D0%BD%D0%B0-%D0%B4%D0%BE%D1%85%D0%BE%D0%B4/
+		https://habrahabr.ru/company/netologyru/blog/337842/
+		https://www.google.com.ua/search?q=%D1%83%D0%B2%D0%B5%D0%BB%D0%B8%D1%87%D0%B5%D0%BD%D0%B8%D0%B5+%D1%81%D0%BA%D0%BE%D1%80%D0%BE%D1%81%D1%82%D0%B8+%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B8+%D1%81%D0%B0%D0%B9%D1%82%D0%B0+%D1%81%D0%BD%D0%B8%D0%B6%D0%B0%D0%B5%D1%82&oq=%D1%83%D0%B2%D0%B5%D0%BB%D0%B8%D1%87%D0%B5%D0%BD%D0%B8%D0%B5+%D1%81%D0%BA%D0%BE%D1%80%D0%BE%D1%81%D1%82%D0%B8+%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B8+%D1%81%D0%B0%D0%B9%D1%82%D0%B0+%D1%81%D0%BD%D0%B8%D0%B6%D0%B0%D0%B5%D1%82&aqs=chrome..69i57.10147j0j7&sourceid=chrome&ie=UTF-8
+		http://denis-zavgorodny.github.io/2016/12/25/Image-Optimization/
+		http://denis-zavgorodny.github.io/
+		https://moz.com/blog/optimizing-page-speed-actionable-tips-for-seos-and-web-developers
+		https://www.keycdn.com/blog/website-performance-optimization/
+
+		https://medium.com/web-standards/webp-worth-it-fc08e230f46e
+		https://www.zachleat.com/web/webp/
+
+		https://w3c.github.io/preload/#x2.link-type-preload
+		https://html.spec.whatwg.org/multipage/links.html#
+		https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content
+		https://developer.mozilla.org/ru/docs/Web/HTTP/Headers/Cache-Control
+	</blockquote>
+
+	<div class="progress"></div>
+
+	<script src="shower-core/shower.min.js"></script>
+	<!-- Copyright © 2017 Yours Truly, Famous Inc. -->
+
+</body>
+</html>

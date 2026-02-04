@@ -1,0 +1,599 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+	<title>Я и ИоТ — Пепелсбей.net</title>
+	<meta charset="utf-8">
+	<meta name="description" content="Веб шагнул с виртуальных экранов во вполне осязаемую реальность: блютус, биконы, мигающие лампочки и летающие роботы! Шагнул, но хвосты по-прежнему ведут в браузеры к новым API. Хватит гонять пиксели по экрану, айда играть с железками в интернете вещей.">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
+	<style>
+		@font-face {
+			font-family: PT Serif;
+			font-style: normal;
+			font-weight: 400;
+			src:
+				local('PT Serif'), local('PTSerif-Regular'),
+				url(fonts/pt-serif-regular.woff) format('woff');
+			}
+		.gallery img {
+			height: 100%;
+			box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
+			}
+		.button {
+			padding: 50px 0 60px;
+			width: 700px;
+			border-radius: 200px;
+			border: 0.1em solid #afafaf;
+			background: linear-gradient(#f7f7f7, #e3e3e3);
+			color: #585a5e;
+			font: inherit;
+			transition: box-shadow 0.4s linear;
+			}
+			.button.short {
+				width: 290px;
+				}
+			.button.on {
+				border-color: #4e87c0;
+				box-shadow: 0 0 100px 20px #0082fc;
+				}
+			.button:focus {
+				outline: none;
+				border-color: #4e87c0;
+				}
+			.button:active {
+				position: relative;
+				top: 0.05em;
+				}
+		.input {
+			margin: 0;
+			padding: 28px 80px 38px;
+			width: 700px;
+			border-radius: 40px;
+			border: 0.1em solid #afafaf;
+			color: #585a5e;
+			box-shadow: 0 0 100px 20px #FFF;
+			text-align: center;
+			font: inherit;
+			transition: box-shadow 0.4s linear;
+			}
+			.input:focus {
+				outline: none;
+				border-color: #4e87c0;
+				}
+	</style>
+</head>
+<body class="shower list">
+
+	<header class="caption">
+		<h1>Я и ИоТ</h1>
+		<p><a href="https://pepelsbey.net/">Вадим Макеев</a>, <a href="http://opera.com/">Opera Software</a></p>
+	</header>
+
+	<section class="slide white" id="cover">
+		<img class="cover width" src="pictures/cover.svg" alt="">
+		<h2 class="shout">Я и ИоТ</h2>
+		<style>
+			#cover h2 {
+				margin-top: 160px;
+				color: #000;
+				font-weight: normal;
+				font-family: PT Serif, serif;
+				}
+		</style>
+	</section>
+
+	<section class="slide">
+		<img class="place" width="450" src="pictures/opera.svg" alt="Лого Opera">
+	</section>
+
+	<section class="slide">
+		<img class="place" width="420" src="pictures/wst.svg" alt="Лого Веб-стандартов">
+	</section>
+
+	<section class="slide">
+		<img class="place" width="300" src="pictures/bluetooth.svg" alt="Лого Bluetooth">
+		<img class="place left next" width="150" src="pictures/rune-hagall.svg" alt="Руна хаглаз" style="margin-left: 100px">
+		<img class="place right next" width="150" src="pictures/rune-berkana.svg" alt="Руна беркана" style="margin-right: 100px">
+	</section>
+
+	<section class="slide" id="harald">
+		<img class="cover width" src="pictures/ragnar.jpg" alt="Бородатый викинг">
+		<h2 class="place left">
+			Гаральд<br>
+			Синезубый
+		</h2>
+		<style>
+			#harald h2 {
+				margin-left: 80px;
+				color: #FFF;
+				font-size: 80px;
+				}
+		</style>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">Bluetooth</h2>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">Блютус</h2>
+	</section>
+
+	<section class="slide" id="wave">
+		<h2 class="shout">2,4 ГГц</h2>
+		<img class="cover" src="pictures/wave.png" alt="Волна">
+		<style>
+			#wave h2 {
+				color: #FFF;
+				}
+			#wave img {
+				transform: translate(-50%,-50%) scale(1);
+				animation: wave linear 4s infinite alternate;
+				}
+			@keyframes wave {
+				to { transform: translate(-50%,-50%) scale(1.5) }
+				}
+		</style>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">Bluetooth EDR</h2>
+	</section>
+
+	<section class="slide" id="edr">
+		<h2>Bluetooth EDR</h2>
+		<ul>
+			<li>Приняли 2.0 в 2004</li>
+			<li>Ускорили с EDR (Enhanced Data Rate)</li>
+			<li>Постоянное соединение</li>
+			<li>Короткие дистанции до 10 м</li>
+			<li>Большинство устройств</li>
+		</ul>
+		<img class="place right next" src="pictures/device-headphones.jpg" alt="Беспроводные наушники">
+		<style>
+			#edr img.next {
+				z-index: -1;
+				visibility: visible;
+				margin-right: -50%;
+				width: 650px;
+				}
+			#edr img.next.active {
+				margin-right: -20px;
+				transition: margin-right 1s ease-out;
+				}
+		</style>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">Bluetooth LE</h2>
+	</section>
+
+	<section class="slide" id="ble">
+		<h2>Bluetooth LE</h2>
+		<ul>
+			<li>Приняли 4.0 в 2010</li>
+			<li>Профиль LE (Low Energy)</li>
+			<li>Короткие включения</li>
+			<li>Длинные дистанции до 100 м</li>
+			<li>Медленная скорость</li>
+		</ul>
+		<img class="place right next" src="pictures/device-beacon.jpg" alt="Бикон">
+		<style>
+			#ble img.next {
+				z-index: -1;
+				visibility: visible;
+				margin-right: -50%;
+				width: 400px;
+				}
+			#ble img.next.active {
+				margin-right: 100px;
+				transition: margin-right 1s ease-out;
+				}
+		</style>
+	</section>
+
+	<section class="slide">
+		<img class="place" width="750" src="pictures/bluetooth-smart.svg" alt="Лого Bluetooth Smart">
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">GATT</h2>
+	</section>
+
+	<section class="slide white gallery">
+		<h2 class="shout">nRF Connect</h2>
+		<img class="place left next" src="pictures/scanner-1.png" alt="Устройства в зале">
+		<img class="place next" src="pictures/scanner-2.png" alt="Устройство MI Band">
+		<img class="place right next" src="pictures/scanner-3.png" alt="Подробности устройства">
+	</section>
+
+	<section class="slide">
+		<h2>Сервисы</h2>
+		<ul>
+			<li>UUID <code>9a66ff08-0800-9191-11e4-012d1540cb8e</code> или <code>0xFF08</code></li>
+			<li>Стандартные сервисы:
+				<ul>
+					<li><code>battery_service</code> или <code>0x180F</code></li>
+					<li><code>blood_pressure</code> или <code>0x1810</code></li>
+					<li><code>weight_scale</code> или <code>0x181D</code></li>
+				</ul>
+			</li>
+		</ul>
+		<p>Чаще всего <strong>Unknown Service</strong>, хотя есть <a href="https://www.bluetooth.com/specifications/gatt/services">35 стандартных</a>.</p>
+	</section>
+
+	<section class="slide">
+		<h2>Характеристики</h2>
+		<ul>
+			<li>Такие же UUID</li>
+			<li>Стандартные характеристики:
+				<ul>
+					<li><code>battery_level</code> или <code>0x2A19</code></li>
+					<li><code>waist_circumference</code> или <code>0x2A97</code></li>
+					<li><code>sport_type_for_aerobic_and_anaerobic_thresholds</code></li>
+				</ul>
+			</li>
+		</ul>
+		<p>Чаще всего <strong>Unknown Characteristic</strong>, хотя есть <a href="https://www.bluetooth.com/specifications/gatt/characteristics">179 стандартных</a>.</p>
+	</section>
+
+	<section class="slide" id="chars">
+		<h2>Характеристики</h2>
+		<img class="place left next" src="pictures/characteristic-get.svg" alt="Чтение">
+		<img class="place next" src="pictures/characteristic-set.svg" alt="Запись">
+		<img class="place right next" src="pictures/characteristic-notify.svg" alt="">
+		<style>
+			#chars img {
+				margin-top: 50px;
+				width: 300px;
+				}
+			#chars img:nth-of-type(1) {
+				margin-left: 40px;
+				}
+			#chars img:nth-of-type(3) {
+				margin-right: 40px;
+				}
+		</style>
+	</section>
+
+	<section class="slide" id="web-bluetooth">
+		<h2 class="shout">
+			<a href="https://webbluetoothcg.github.io/web-bluetooth/">Web Bluetooth</a>
+		</h2>
+		<style>
+			#web-bluetooth {
+				background: #0082fc;
+				}
+			#web-bluetooth h2 a {
+				color: #fff;
+				}
+		</style>
+	</section>
+
+	<section class="slide" id="lamp">
+		<img class="place right next" src="pictures/bulb-white.jpg" alt="Лампа Playbulb Sphere">
+		<h2 class="shout">Лампа!</h2>
+		<style>
+			#lamp img.next {
+				z-index: -1;
+				visibility: visible;
+				margin-right: -50%;
+				width: 600px;
+				}
+			#lamp img.next.active {
+				margin-right: 0;
+				transition: margin-right 1s ease-out;
+				}
+		</style>
+	</section>
+
+	<section class="slide white gallery">
+		<h2 class="shout">Приложение</h2>
+		<img class="place left next" src="pictures/playbulb-1.png" alt="Приложение Playbulb">
+		<img class="place next" src="pictures/playbulb-2.png" alt="Приложение Playbulb">
+		<img class="place right next" src="pictures/playbulb-3.png" alt="Приложение Playbulb">
+	</section>
+
+	<section class="slide white gallery" id="nrf">
+		<h2 class="shout">nRF Connect</h2>
+		<img class="place left next" src="pictures/nrf-1.png" alt="">
+		<img class="place left next" src="pictures/nrf-2.png" alt="">
+		<img class="place right next" src="pictures/nrf-3.png" alt="">
+		<img class="place right next" src="pictures/nrf-4.png" alt="">
+		<style>
+			#nrf img:nth-of-type(2) {
+				margin-left: 20%;
+				}
+			#nrf img:nth-of-type(3) {
+				margin-right: 20%;
+				}
+		</style>
+	</section>
+
+	<script src="scripts/lamp.js"></script>
+	<script>
+		const bulb = lamp();
+	</script>
+
+	<section class="slide">
+		<h2 class="shout">
+			<button class="button" id="bulb-connect">Подкл</button>
+		</h2>
+		<script>
+			document.querySelector('#bulb-connect').addEventListener('click', (event) => {
+				bulb.connect().then(() => {
+					event.target.classList.add('on');
+				});
+			});
+		</script>
+	</section>
+
+	<section class="slide">
+		<h2>Лампа</h2>
+		<pre>
+			<code class="next"><mark>navigator.bluetooth</mark>.requestDevice({</code>
+			<code class="next">	filters: [{ name: <mark class="important">'Bulb'</mark> }],</code>
+			<code class="next">	optionalServices: <mark>[0xFF08]</mark></code>
+			<code class="next">}).then(<mark>device</mark> => {</code>
+			<code class="next">	return device.gatt.connect();</code>
+			<code class="next">}).then(<mark>server</mark>)</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Лампа</h2>
+		<pre>
+			<code class="next">.then(<mark>server</mark> => {</code>
+			<code class="next">	return server.getPrimaryService(<mark class="important">0xFF08</mark>);</code>
+			<code class="next">}).then(<mark>service</mark> => {</code>
+			<code class="next">	return service.getCharacteristic(<mark class="important">0xFFFC</mark>);</code>
+			<code class="next">}).then(<mark>characteristic</mark>)</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">
+			<input class="input" id="bulb-color" type="text" value="#FFF" required pattern="^#(?:[0-9a-fA-F]{3}){1,2}$">
+		</h2>
+		<script>
+			document.querySelector('#bulb-color').addEventListener('keyup', (event) => {
+				let input = event.target;
+				let valid = input.checkValidity();
+				let color = input.value;
+				let shadow = getComputedStyle(input).getPropertyValue('box-shadow');
+
+				if (valid) {
+					bulb.paint(color).then(() => {
+						event.target.style.boxShadow = shadow.replace(/rgb\(.*\)/, color);
+					});
+				}
+			});
+		</script>
+	</section>
+
+	<section class="slide">
+		<h2>Проверка цвета</h2>
+		<pre>
+			<code>&lt;input type="text"</code>
+			<code>	pattern="<mark>^#(?:[0-9a-fA-F]{3}){1,2}$</mark>"</code>
+			<code>	<mark>required</mark> value="#FFF"&gt;</code>
+			<code>&lt;script&gt;</code>
+			<code>	if (event.target.<mark>checkValidity()</mark>) {</code>
+			<code>		<span class="comment">// …</span></code>
+			<code>&lt;/script&gt;</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Лампа</h2>
+		<pre>
+			<code class="next">.then(<mark>characteristic</mark> => {</code>
+			<code class="next">	return characteristic.writeValue(</code>
+			<code class="next">		new Uint8Array([0, <mark class="important">255, 0, 0</mark>])</code>
+			<code class="next">	);</code>
+			<code class="next">});</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">
+			<button class="button" id="bulb-effect">Радуга</button>
+		</h2>
+		<script>
+			document.querySelector('#bulb-effect').addEventListener('click', (event) => {
+				bulb.effect().then(() => {
+					event.target.classList.add('on');
+				});
+			});
+		</script>
+	</section>
+
+	<section class="slide">
+		<h2>Радуга</h2>
+		<pre>
+			<code>const LAMP_EFFECT = [ 0x00, <span class="comment">// ?</span></code>
+			<code>                      <mark>0xFF</mark>, <span class="comment">// Red</span></code>
+			<code>                      <mark>0xFF</mark>, <span class="comment">// Green</span></code>
+			<code>                      <mark>0xFF</mark>, <span class="comment">// Blue</span></code>
+			<code>                      <mark class="important">0x03</mark>, <span class="comment">// Type</span></code>
+			<code>                      0x00, <span class="comment">// ?</span></code>
+			<code>                      0x06, 0x06 <span class="comment">// Speed</span> ];</code>
+		</pre>
+	</section>
+
+	<section class="slide" id="drone">
+		<h2 class="shout">Дрон!</h2>
+		<img class="place next" src="pictures/drone.png" alt="Дрон Parrot Mars">
+		<style>
+			#drone img {
+				width: 800px;
+				}
+			#drone img.next {
+				margin-top: 100%;
+				visibility: visible;
+				}
+			#drone img.next.active {
+				margin-top: 0;
+				transition: margin-top 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+				}
+		</style>
+	</section>
+
+	<script src="scripts/drone.js"></script>
+	<script>
+		const mars = drone();
+	</script>
+
+	<section class="slide">
+		<h2 class="shout">
+			<button class="button" id="mars-connect">Подкл</button>
+		</h2>
+		<script>
+			document.querySelector('#mars-connect').addEventListener('click', (event) => {
+				mars.connect().then(() => {
+					event.target.classList.add('on');
+				})
+			});
+		</script>
+	</section>
+
+	<section class="slide" id="flight">
+		<h2 class="shout">
+			<button class="button short" id="mars-takeoff">
+				<img src="pictures/icon-takeoff.svg" alt="Взлёт">
+			</button>
+			<button class="button short" id="mars-land">
+				<img src="pictures/icon-land.svg" alt="Посадка">
+			</button>
+		</h2>
+		<script>
+			document.querySelector('#mars-takeoff').addEventListener('click', mars.takeOff);
+			document.querySelector('#mars-land').addEventListener('click', mars.land);
+		</script>
+		<style>
+			#flight button img {
+				width: 128px;
+				}
+		</style>
+	</section>
+
+	<section class="slide">
+		<img class="cover width" src="pictures/drone-result.jpg" alt="Дрон со штурмовиком">
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">
+			<a href="https://webdr.one/">webdr.one</a>
+		</h2>
+	</section>
+
+	<section class="slide white" id="caniuse">
+		<img class="place top next" src="pictures/caniuse.svg" alt="Web Bluetooth на Can I Use">
+		<img class="place bottom next" src="pictures/caniuse-no.svg" alt="Web Bluetooth: NO">
+		<style>
+			#caniuse {
+				background: #f2e8d5;
+				}
+			#caniuse img {
+				margin: 60px 0;
+				width: 950px;
+				}
+		</style>
+	</section>
+
+	<section class="slide white" id="browsers">
+		<img class="place left next" src="pictures/browser-chrome.png" alt="Лого Chrome">
+		<img class="place next" src="pictures/browser-opera.png" alt="Лого Opera">
+		<img class="place right next" src="pictures/browser-yandex.png" alt="Лого Yandex">
+		<style>
+			#browsers img {
+				width: 320px;
+				}
+			#browsers .left {
+				margin-left: 120px;
+				}
+			#browsers .right {
+				margin-right: 120px;
+				}
+		</style>
+	</section>
+
+	<section class="slide" id="dummy">
+		<h2 class="shout">Испытания</h2>
+		<img class="place" src="pictures/dummy.png" alt="Манекен для испытаний">
+		<style>
+			#dummy img {
+				margin-top: -100%;
+				margin-left: -160px;
+				width: 300px;
+				transform: rotate(0.5turn);
+				animation: dummy ease-out 5s infinite;
+				}
+			@keyframes dummy {
+				to {
+					margin-top: 100%;
+					transform: rotate(0.25turn);
+					}
+				}
+		</style>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout" style="font-size: 80px">
+			<a href="https://bit.ly/WebBluetoothOriginTrial">bit.ly/WebBluetoothOriginTrial</a>
+		</h2>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">Bluetooth 5.0</h2>
+	</section>
+
+	<section class="slide">
+		<h2>Ещё? Ещё!</h2>
+		<ul>
+			<li>Приложение nRF Connect: <a href="https://play.google.com/store/apps/details?id=no.nordicsemi.android.mcp">Android</a> и <a href="https://itunes.apple.com/ru/app/nrf-connect/id1054362403">iOS</a></li>
+			<li><a href="http://www.playbulb.com/en/playbulb-sphere.html">Лампа Playbulb Sphere</a></li>
+			<li><a href="https://www.parrot.com/us/minidrones/parrot-airborne-cargo-mars">Дрон Parrot Airborne Cargo Mars</a></li>
+			<li><a href="https://medium.com/@urish">Статьи Ури Шакида на Медиуме</a></li>
+			<li><a href="https://googlechrome.github.io/samples/web-bluetooth/">Google Web Bluetooth Samples</a></li>
+			<li><a href="https://www.w3.org/community/web-bluetooth/">Web Bluetooth Community Group</a> и <a href="https://github.com/WebBluetoothCG/web-bluetooth">их демки</a></li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout"><a href="http://sokr.me/iot">sokr.me/iot</a></h2>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout"><a href="http://twitter.com/pepelsbey">@pepelsbey</a></h2>
+	</section>
+
+	<section class="slide" id="shower">
+		<img class="place" src="pictures/shower.svg" alt="Логотип Шовера">
+		<h2 class="shout"><a href="http://shwr.me/">Shower</a></h2>
+		<style>
+			#shower img {
+				margin: 22px 0 0 -210px;
+				width: 150px;
+				}
+			#shower h2 {
+				margin-left: 100px;
+				}
+		</style>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">Вопросы?</h2>
+	</section>
+
+	<footer class="badge">
+		<a href="https://github.com/shower/shower">Powered by Shower</a>
+	</footer>
+
+	<div class="progress"></div>
+
+	<script src="shower/shower.min.js"></script>
+	<!-- Copyright © 2010–2016 Vadim Makeev — pepelsbey.net -->
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Css is awesome</title>
+  <script src="node_modules/d3/build/d3.min.js"></script>
+  <style>
+    html, body { height: 100%; margin: 0; padding: 0; }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: sans-serif;
+    }
+
+    .container {
+      height: 350px;
+      width:  350px;
+      border: 4px solid black;
+    }
+
+    .content {
+      overflow: visible;
+      font-weight: 600;
+      height: 100%; width: 100%;
+    }
+
+    textarea,
+    input[type="text"] {
+      position: absolute; width: 100%;
+      top: 0; left: 0;
+      text-align: center;
+      border: none; outline: none;  box-sizing: border-box;
+    }
+
+  </style>
+</head>
+<body>
+  <textarea type="text" id="value" autofocus="autofocus" tabindex="0">CSS IS AWESOME!</textarea>
+  <span
+          style="
+            color: white;
+            display: block;
+            position: absolute;
+            top: 30px;
+            font-size: 12px;
+          "
+  >
+    Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch</span>
+
+  <div class="container" id ="container">
+    <svg id="svgRoot" class="content" preserveAspectRatio="xMidYMid meet" viewBox="0 0 147 19">
+      <g id="text">
+        <text  y="15">CSS IS AWESOME!</text>
+      </g>
+
+    </svg>
+  </div>
+
+  <script>
+    const rootViewBox = document.getElementById("svgRoot").viewBox.baseVal;
+
+    const getBoundingClientRect = () => ({
+        height: document.querySelector("#text").getBoundingClientRect().height,
+        width : Math.max(
+          ...[...document.querySelectorAll("#text text")]
+          .map(el => el.getBoundingClientRect())
+          .map(({width}) => width)
+        )
+    })
+
+    document
+      .getElementById("value")
+      .addEventListener("input", (ev) => {
+        if (!ev.target.value) return;
+
+        const before =getBoundingClientRect();
+
+        const texts = d3
+          .select("#text")
+          .selectAll("text")
+          .data(ev.target.value.split("\n"))
+          .text(d => d)
+
+        texts
+          .enter()
+          .append("text")
+          .text(d => d)
+          .attr("y", (d, i)=> 15* (i+1) )
+
+        texts.exit().remove()
+
+        const after = getBoundingClientRect();
+
+        rootViewBox.width = rootViewBox.width * after.width / before.width;
+        rootViewBox.height = rootViewBox.height * after.height / before.height;
+      });
+  </script>
+
+  <script src="//cdn.jsdelivr.net/interact.js/1.2.6/interact.min.js"></script>
+  <script>
+    interact('.container')
+        .resizable({
+          preserveAspectRatio: false,
+          edges: { left: true, right: true, bottom: true, top: true }
+        })
+        .on('resizemove', (event) => {
+          let {style} = event.target;
+          style.width  = event.rect.width + 'px';
+          style.height = event.rect.height + 'px';
+        });
+  </script>
+</body>
+</html>
+

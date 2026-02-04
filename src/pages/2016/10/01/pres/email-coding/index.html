@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Shower Presentation Engine</title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
+</head>
+<body class="shower list">
+	<header class="caption">
+		<h1>Shower Presentation Engine</h1>
+		<p>Yours Truly, Famous Inc.</p>
+	</header>
+	<section class="slide" id="cover">
+		<h2 style="text-align:right;">Вёрстка писем<br/>Развенчиваем мифы</h2>
+		<p style="text-align:right;"><a href="http://facebook.com/dudeonthehorse">Arthur Koch</a></p>
+		<img src="pictures/cover.jpg" alt="" class="cover">
+		<!--
+			To apply styles to the certain slides
+			set slide ID to get needed elements
+			-->
+		<style>
+			#cover h2 {
+				margin:30px 0 0;
+				color:#FFF;
+				text-align:center;
+				font-size:70px;
+				}
+			#cover p {
+				margin:10px 0 0;
+				text-align:center;
+				color:#FFF;
+				font-style:italic;
+				font-size:20px;
+				}
+				#cover p a {
+					color:#FFF;
+					}
+		</style>
+	</section>
+    <section class="slide">
+		<h2 style="color:#fff;">&lt;table&gt;</h2>
+		<img src="pictures/murlock.jpg" alt="" class="cover">
+	</section>
+    <section class="slide">
+		<h2 style="color:#fff;">Outlook</h2>
+		<img src="pictures/throne.jpg" alt="" class="cover">
+	</section>
+    <section class="slide">
+		<h2 style="color:#fff;">Адаптивности не существует</h2>
+		<img src="pictures/chen.jpg" alt="" class="cover">
+	</section>
+	<section class="slide">
+		<h2>Подходы к верстке</h2>
+        <ol>
+			<li>Олд скул</li>
+			<li>Традиция</li>
+			<li>Нью Скул</li>
+			<li>Spongy</li>
+            <li>Medium</li>
+		</ol>
+	</section>
+    <section class="slide">
+		<h2>Типы рассылок</h2>
+		<ol>
+			<li>Маркетинговый bullshit или promo</li>
+			<li>Дайджест/колонка</li>
+			<li>Транзакции</li>
+			<li>Цепочки и триггеры</li>
+			<li>E-commerce</li>
+		</ol>
+	</section>
+	<section class="slide">
+		<h2>Зачем нужна семантика</h2>
+        <ol>
+			<li>Любовь и понимание</li>
+			<li>Внешняя интеграция</li>
+			<li>Шаблонизация и автоматизация</li>
+		</ol>
+	</section>
+    <section class="slide">
+		<h2>Автоматизация</h2>
+        <ol>
+			<li>Менеджер пакетов</li>
+			<li>Система сборки</li>
+			<li>Конкатенация и минификация</li>
+            <li>Препроцессоры</li>
+            <li>Инлайнинг</li>
+            <li>Шаблонизация</li>
+		</ol>
+	</section>
+    <section class="slide">
+		<h2>Полезные ссылки</h2>
+        <ol>
+			<li>https://medium.com/@dudeonthehorse</li>
+			<li>https://habrahabr.ru/users/dudeonthehorse/</li>
+			<li>https://github.com/dudeonthehorse/kilogram</li>
+            <li>https://www.facebook.com/dudeonthehorse</li>
+            <li>https://www.facebook.com/groups/emailrussia/</li>
+		</ol>
+	</section>
+	<section class="slide" id="see-more">
+		<h2 class="shout">
+			<img src="pictures/logo.svg" alt="Shower logo">
+			<a href="https://github.com/shower/shower">See more on GitHub</a>
+		</h2>
+		<style>
+			#see-more h2 {
+				font-size:100px
+				}
+			#see-more img {
+				width:0.72em;
+				height:0.72em;
+				}
+		</style>
+	</section>
+	<p class="badge">
+		<a href="https://github.com/shower/shower">Fork me on GitHub</a>
+	</p>
+	<!--
+		To hide progress bar from entire presentation
+		just remove “progress” element.
+		-->
+	<div class="progress"></div>
+	<script src="shower/shower.min.js"></script>
+	<!-- Copyright © 2015 Yours Truly, Famous Inc. -->
+	<!-- Photos by John Carey, fiftyfootshadows.net -->
+</body>
+</html>

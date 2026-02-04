@@ -1,0 +1,76 @@
+:root {
+    --color-inactive: #ccc;
+    --color-active: orange;
+    --color-checked: lightblue;
+
+    --nd-render-parse-color: #fff;
+    --nd-render-dom-color: #fff;
+    --nd-render-cascade-color: #fff;
+    --nd-render-layout-color: #fff;
+    --nd-render-paint-color: #fff;
+    --nd-render-composite-color: #fff;
+}
+
+.center {
+    text-align: center;
+}
+
+.slide .list-header {
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.slide.slide-centered {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    text-align: center;
+}
+
+.slide .header-note {
+    opacity: 0.5;
+    font-size: small;
+}
+
+.slide .not-active-item {
+    color: #999;
+}
+
+.slide footer {
+    line-height: 1.5;
+}
+
+.slide .shout-mini {
+    font-size: 80px;
+}
+
+.nd-pipeline ol {
+    font-size: 20px;
+}
+
+.slide pre {
+    background-color: transparent;
+    padding: 0;
+}
+
+.slide pre code[class*="language-"] {
+    line-height: 1.5;
+    font-size: 22px;
+    width: 100%;
+}
+
+.slide pre.line-numbers > code {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.slide.slide-codepen {
+    padding: 30px;
+}
+
+.slide.slide-codepen .codepen,
+.slide.slide-codepen .cp_embed_wrapper {
+    height: 100%;
+}

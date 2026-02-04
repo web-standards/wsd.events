@@ -1,0 +1,113 @@
+{
+  "_args": [
+    [
+      "shower-core@^2.0.4",
+      "/Users/mista_k/Documents/Presentations/pal-up-with-ugc/node_modules/shower"
+    ]
+  ],
+  "_from": "shower-core@>=2.0.4 <3.0.0",
+  "_id": "shower-core@2.0.4",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/shower-core",
+  "_nodeVersion": "5.6.0",
+  "_npmOperationalInternal": {
+    "host": "packages-9-west.internal.npmjs.com",
+    "tmp": "tmp/shower-core-2.0.4.tgz_1456580573780_0.7158444644883275"
+  },
+  "_npmUser": {
+    "email": "pepelsbey@gmail.com",
+    "name": "pepelsbey"
+  },
+  "_npmVersion": "3.6.0",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "shower-core",
+    "raw": "shower-core@^2.0.4",
+    "rawSpec": "^2.0.4",
+    "scope": null,
+    "spec": ">=2.0.4 <3.0.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "/shower"
+  ],
+  "_resolved": "https://registry.npmjs.org/shower-core/-/shower-core-2.0.4.tgz",
+  "_shasum": "783b6dc3c5587ea582ea771a0814d95ff22cfc70",
+  "_shrinkwrap": null,
+  "_spec": "shower-core@^2.0.4",
+  "_where": "/Users/mista_k/Documents/Presentations/pal-up-with-ugc/node_modules/shower",
+  "author": {
+    "name": "Vadim Makeev",
+    "url": "http://pepelsbey.net/"
+  },
+  "bugs": {
+    "url": "http://github.com/shower/shower/issues"
+  },
+  "dependencies": {},
+  "description": "Core for Shower HTML presentation engine",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "git-hooks": "^1.0.2",
+    "grunt": "^0.4.5",
+    "grunt-bump": "^0.7.0",
+    "grunt-casperjs": "^2.1.0",
+    "grunt-contrib-concat": "^1.0.0",
+    "grunt-contrib-connect": "^0.11.2",
+    "grunt-contrib-uglify": "^0.11.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-jscs": "^2.7.0",
+    "grunt-mocha": "^0.4.15",
+    "jscs": "^2.10.1",
+    "jshint": "^2.9.1",
+    "load-grunt-tasks": "^3.4.0",
+    "mocha": "^2.4.5",
+    "shower-next": "0.0.6",
+    "shower-progress": "0.0.9",
+    "shower-timer": "0.0.12",
+    "shower-touch": "0.0.11",
+    "ym": "^0.1.2"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "783b6dc3c5587ea582ea771a0814d95ff22cfc70",
+    "tarball": "http://registry.npmjs.org/shower-core/-/shower-core-2.0.4.tgz"
+  },
+  "files": [
+    "LICENSE.md",
+    "README.md",
+    "shower.min.js"
+  ],
+  "gitHead": "79611e8ab7bbda287ea355762543d29b431806ed",
+  "homepage": "https://github.com/shower/core",
+  "keywords": [
+    "core",
+    "presentation",
+    "shower"
+  ],
+  "license": "MIT",
+  "maintainers": [
+    {
+      "name": "pepelsbey",
+      "email": "pepelsbey@gmail.com"
+    },
+    {
+      "name": "zloylos",
+      "email": "i@zloylos.me"
+    }
+  ],
+  "name": "shower-core",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/shower/core.git"
+  },
+  "scripts": {
+    "build": "node -e \"require('grunt').tasks(['default'])\"",
+    "prepublish": "npm run build",
+    "test": "node -e \"require('grunt').tasks(['test'])\"",
+    "validate": "jshint . && jscs ."
+  },
+  "version": "2.0.4"
+}

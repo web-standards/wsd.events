@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<title>Здесь водятся драконы</title>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="shower-material/screen-16x10.css">
+<link rel="stylesheet" href="fonts/PT.css">
+<link rel="stylesheet" href="dragons.css">
+
+<body class="shower list">
+
+<header class="caption">
+	<h1>Здесь водятся драконы</h1>
+	<p>Лев Солнцев</p>
+</header>
+
+<section class="slide black" id="cover">
+	<h2>Здесь водятся драконы</h2>
+	<img src="pictures/herebedragons.jpg" alt="Здесь водятся драконы" class="cover">
+	<!-- Картинка из https://professortaboo.com/2013/03/09/here-be-dragons/ -->
+</section>
+
+<section class="slide">
+	<h2>Об авторе</h2>
+	<p style="margin: 0">10 лет профессиональной веб-разработки.</p>
+	<div>
+		<img src="pictures/badoo.svg" alt="Badoo" class="logo">
+		<img src="pictures/yandex.svg" alt="Яндекс" class="logo">
+		<img src="pictures/logoNCT-ru-RGB.svg" width="250" alt="Новые облачные технологии" class="logo">
+	</div>
+	<ul>
+		<li>Программирую с детства.</li>
+		<li>Дотошен, изобретателен, перфекционист, люблю когда красиво.</li>
+		<li>Мейнтейнер <a href="https://github.com/svg/svgo">SVGO</a> в свободное время (которого нет).</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>Веб-технологии</h2>
+	<p style="text-align: justify;">
+		<img src="pictures/HTML5_Badge.svg" width="240" alt="HTML5">
+		<img src="pictures/html5_css3_styling.svg" width="240" alt="CSS" style="margin-left: -15px">
+		<img src="pictures/js.svg" width="240" alt="Javascript">
+		<span style="display: inline-block; width: 100%;"></span>
+	</p>
+</section>
+
+<section class="slide">
+	<h2>Зачем нужно знание технологий</h2>
+	<ol>
+		<li>Фундамент для разработки.</li>
+		<li class="next">Ориентирование в предметной области.</li>
+		<li class="next">«Вечные ценности», которые никогда не устареют.</li>
+	</ol>
+</section>
+
+<section class="slide">
+	<h2 class="shout shrink">Таблицы</h2>
+</section>
+
+<section class="slide">
+	<h2>Таблицы</h2>
+	<ol>
+		<li>Мейнстрим 90-х.</li>
+		<li class="next">Дурной тон в 2000-х.</li>
+	</ol>
+</section>
+
+<section class="slide">
+	<h2>Таблицы: страхи</h2>
+	<ol>
+		<li>Непредсказуемы.</li>
+		<li class="next">Баг с тенью внутри в IE9.</li>
+	</ol>
+</section>
+
+<section class="slide">
+	<h2>Таблица: внешний вид</h2>
+	<table class="table_default">
+		<thead>
+			<tr>
+				<th></th>
+				<th>Заголовок</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Ячейка</td>
+				<td>Ячейка с большим количеством текста показывает как браузер распределяет место в пользу длинной простыни текста.</td>
+			</tr>
+		</tbody>
+	</table>
+
+</section>
+
+<section class="slide">
+	<h2>Таблица: переполнение</h2>
+	<table class="table_default">
+		<tbody>
+			<tr>
+				<td>Комментарии</td>
+				<td>
+					<a href="https://web-standards.ru/articles/check-it-before-you-wreck-it/#comment" style="white-space: nowrap;">
+						https://web-standards.ru/articles/check-it-before-you-wreck-it/#comment
+					</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</section>
+
+<section class="slide">
+	<h2>Свойство <code>table-layout: fixed</code></h2>
+	<h3>CSS 2, раздел 17.5.2 «Table width algorithms: the <a href="https://www.w3.org/TR/CSS22/tables.html#width-layout">'table-layout'</a> property».</p>
+	<ul>
+		<li>Говорит не учитывать содержимое ячеек. (Учитывается только первый ряд.)</li>
+		<li>Заданные размеры жёстко соблюдаются.</li>
+		<li>При заданной ширине таблицы, ячейки распределяются равномерно.</li>
+		<li>Работает свойство <code>overflow</code></li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>Таблица: <code>table-layout: fixed</code></h2>
+	<table class="table_default fixed">
+		<thead>
+			<tr>
+				<th></th>
+				<th>Заголовок</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Ячейка</td>
+				<td>Ячейка с большим количеством текста показывает как браузер распределяет место в пользу длинной простыни текста.
+					<a href="https://web-standards.ru/articles/check-it-before-you-wreck-it/#comment" style="white-space: nowrap;">
+						https://web-standards.ru/articles/check-it-before-you-wreck-it/#comment
+					</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</section>
+
+<section class="slide slide_css-is-awesome">
+	<div class="css-is-awesome">CSS is awesome</div>
+</section>
+
+<section class="slide">
+	<h2>Бой с тенью</h2>
+	<table class="table_popup">
+		<tr>
+			<td>
+				<span class="popup">
+					Попапчик
+				</span>
+			</td>
+			<td></td>
+		</tr>
+	</table>
+</section>
+
+<section class="slide">
+	<h2>Internet Explorer 9</h2>
+	<table class="table_popup">
+		<tr>
+			<td>
+				<span class="popup popup_noshadow">
+					Попапчик
+				</span>
+			</td>
+			<td></td>
+		</tr>
+	</table>
+	<img src="pictures/IE_icon.svg" alt="Internet Explorer logo" class="ie-logo">
+</section>
+
+<section class="slide">
+	<h2>IE9: чистая таблица</h2>
+	<table class="table_default table_popup">
+		<tr>
+			<td>
+				<span class="popup">
+					Попапчик
+				</span>
+			</td>
+			<td></td>
+		</tr>
+	</table>
+	<img src="pictures/Internet_Trollface.png" alt="Internet Explorer trollface" class="ie-logo">
+</section>
+
+<section class="slide">
+	<h2><code>border-collapse: collapse</code></h2>
+	<h3>CSS 2, раздел 17.6 «Borders».</h3>
+	<ul>
+		<li>Объединяет границы ячеек.</li>
+		<li class="next">Убирает зазор между ячейками подобно <code>border-spacing: 0</code> (IE8+) и <code>&lt;table cellspacing=0&gt;</code>.</li>
+		<li class="next">Поддерживается даже в IE6.</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>Таблицы: выводы</h2>
+	<ol>
+		<li><code>table-layout: fixed</code> делает таблицы предсказуемыми.
+ 			<ul>
+ 				<li>Как вариант может помочь <code>max-width</code>.</li>
+ 			</ul>
+		<li>По возможности избегайте <code>border-collapse: collapse</code> (IE9−).</li>
+	</ol>
+</section>
+
+<section class="slide">
+	<h2>Основные способы вёрстки</h2>
+	<ol>
+		<li>
+			<a href="https://web-standards.ru/articles/css-techniques-p1-tables/">Таблица</a>
+		</li>
+		<li>
+			<a href="https://web-standards.ru/articles/css-techniques-p2-alternate/">Бестабличная вёрстка</a>
+		</li>
+	</ol>
+</section>
+
+<section class="slide">
+	<h2>Общие выводы</h2>
+	<ol>
+		<li>Знайте спецификации.</li>
+		<li>Пересматривайте устоявшиеся подходы.</li>
+		<li>Проверяйте гипотезы.</li>
+	</ol>
+</section>
+
+<section class="slide">
+	<h2 class="shout shrink">ECMAScript 5</h2>
+</section>
+
+<section class="slide">
+	<h2>Индекс строки</h2>
+	<pre>
+		<code>'кот'[0]  // => 'к'</code>
+	</pre>
+</section>
+
+<section class="slide">
+	<h2>Инициалы</h2>
+	<pre>
+		<code>firstName[0] + lastName[0]</code>
+	</pre>
+</section>
+
+<section class="slide">
+	<h2>Если индекса нет</h2>
+	<pre>
+		<code>''[0]  // -> undefined</code>
+	</pre>
+</section>
+
+<section class="slide">
+	<h2>Итог</h2>
+	<pre>
+		<code>(firstName[0] || '') + (lastName[0] || '')</code>
+	</pre>
+</section>
+
+<section class="slide">
+	<h2>ECMAScript 3</h2>
+	<pre>
+		<code><i>str</i>.charAt(<i>index</i>)</code>
+	</pre>
+</section>
+
+<section class="slide">
+	<h2>ECMAScript 3</h2>
+	<pre>
+		<code>firstName.charAt(0) + lastName.charAt(0)</code>
+	</pre>
+</section>
+
+<section class="slide black">
+	<a href="https://www.youtube.com/watch?v=QHs55-5FzgA" target="_blank"><img src="pictures/Zen-of-javascript.jpg" class="cover" alt=""></a>
+	<!-- <a href="https://www.youtube.com/watch?v=QHs55-5FzgA">https://youtu.be/QHs55-5FzgA</a> -->
+	<!-- (Дмитрий Барановский на JSConf EU 2015) -->
+</section>
+
+<section class="slide">
+	<h2>Как оценить новую технологию</h2>
+	<ol>
+		<li>Какая проблема решается?</li>
+		<li>В чём новизна?</li>
+		<li>Какие преимущества и недостатки?</li>
+	</ol>
+</section>
+
+<section class="slide black">
+	<img src="pictures/missionary.jpg" class="cover" alt="Миссионеры">
+	<!-- Источник: https://www.youtube.com/watch?v=ckLqfX62u_I -->
+</section>
+
+<section class="slide black">
+	<img src="pictures/react-logo.png" class="cover" alt="React.js logo">
+</section>
+
+<section class="slide expectation-reality">
+	<article>
+		<h2>Ожидание</h2>
+		<img src="pictures/sapsan.jpg" width="375" height="250" alt="Поезд «Сапсан»">
+	</article>
+	<article class="next">
+		<h2>Реальность</h2>
+		<img src="pictures/vl10.jpg" width="375" height="250" alt="Старый поезд">
+	</article>
+</section>
+
+<section class="slide">
+	<h2>shouldComponentUpdate</h2>
+	<figure>
+		<blockquote>
+ 			<p>…В некоторых случаях ваш компонент может ускорить этот процесс через переопределение функции <code>shouldComponentUpdate</code>, которая вызывается перед началом процесса нового рендеринга…</p>
+		</blockquote>
+		<figcaption>Оптимизация быстродействия</figcaption>
+	</figure>
+</section>
+
+<section class="slide">
+	<h2>Пример: компонент таблицы</h2>
+	<pre>
+<code>class Table extends Component {</code>
+<code>  render() {</code>
+<code>    return (</code>
+<code>      &lt;div&gt;</code>
+<code>        {this.props.items.map(i =></code>
+<code>          &lt;Cell data={i}</code>
+<code>                options={this.props.options || []} /&gt;</code>
+<code>        )}</code>
+<code>      &lt;/div&gt;</code>
+	</pre>
+</section>
+
+<section class="slide">
+	<h2>Пустой массив в константу</h2>
+	<pre>
+<code><mark>const default = [];</mark></code>
+<code>class Table extends Component {</code>
+<code>  render() {</code>
+<code>    return (</code>
+<code>      &lt;div&gt;</code>
+<code>        {this.props.items.map(i =></code>
+<code>          &lt;Cell data={i}</code>
+<code>                options={this.props.options || <mark>default</mark>} /&gt;</code>
+<code>         )}</code>
+<code>      &lt;/div&gt;</code>
+	</pre>
+</section>
+
+<section class="slide">
+	<h2>Стрелочная функция</h2>
+	<pre>
+<code>class TextField extends Component {</code>
+<code>  render() {</code>
+<code>    return (</code>
+<code>      &lt;Input</code>
+<code>        onChange={e => this.props.update(e.target.value)}/&gt;;</code>
+<code>    )</code>
+<code>  }</code>
+<code>}</code>
+	</pre>
+</section>
+
+<section class="slide">
+	<h2>Связывание функции</h2>
+	<pre>
+<code>class TextField extends Component {</code>
+<code>  update(e) {</code>
+<code>    this.props.update(e.target.value);</code>
+<code>  }</code>
+<code>  render() {</code>
+<code>    return (</code>
+<code>      &lt;Input onChange={this.update.bind(this)}/&gt;;</code>
+<code>    )</code>
+<code>  }</code>
+	</pre>
+</section>
+
+<section class="slide">
+	<h2>Предварительное связывание</h2>
+	<pre>
+<code>class TextField extends Component {</code>
+<code>  constructor(props) {</code>
+<code>    super(props);</code>
+<code>    this.update = this.update.bind(this);</code>
+<code>  }</code>
+<code>  render() {</code>
+<code>    return &lt;Input onChange={this.update}/&gt;;</code>
+<code>  }</code>
+	</pre>
+</section>
+
+<section class="slide">
+	<h2>Источник</h2>
+	<p><a href="https://medium.com/@esamatti/react-js-pure-render-performance-anti-pattern-fb88c101332f">React.js pure render performance anti-pattern</a></p>
+</section>
+
+<section class="slide">
+	<h2>Выводы</h2>
+	<ol>
+		<li>Фреймворк — только инструмент.</li>
+		<li class="next">Полезно знать как работает фреймворк.</li>
+		<li class="next">Оптимизируйте код в «горячих» местах.</li>
+	</ol>
+</section>
+
+<section class="slide white dom-title">
+	<img src="pictures/67_classic-outlined.jpg" alt="Дом на колёсах">
+	<h2>DOM</h2>
+</section>
+
+<section class="slide black">
+	<img src="pictures/DOM-walking.jpg" class="cover" alt="Обход DOMа">
+</section>
+
+<section class="slide">
+	<h2>Размерности блочной модели</h2>
+	<div class="overflow-description">Констатинопольский Константин Константинов</div>
+	<div class="overflow-example">Констатинопольский Константин Константинов</div>
+	<div class="scrollwidth">Element.scrollWidth</div>
+	<div class="clientwidth">Element.clientWidth</div>
+</section>
+
+<section class="slide">
+	<h2>Установка title</h2>
+	<pre>
+<code>for (var tr = tbody.firstChild; tr = tr.nextSibling;)
+    for (var td = tr.firstChild; td = td.nextSibling;)
+        if (td.scrollWidth > td.clientWidth)
+            td.title = td.textContent;
+</code>
+	</pre>
+</section>
+
+<section class="slide">
+	<h2>Выносим из цикла</h2>
+	<pre>
+<code>var cells = [];
+for (var tr = tbody.firstChild; tr = tr.nextSibling;)
+    for (var td = tr.firstChild; td = td.nextSibling;)
+        if (td.scrollWidth > td.clientWidth)
+            cells.push(td);
+
+for (var i = cells.length; i--;)
+    cells[i].title = cells[i].textContent;
+</code>
+	</pre>
+	<p class="next">Ускорение в ~5 раз.</p>
+</section>
+
+<section class="slide">
+	<h2>Выводы</h2>
+	<ol>
+		<li>Используйте эффективные алгоритмы.</li>
+		<li>Знайте, как работают браузеры.</li>
+	</ol>
+</section>
+
+<section class="slide">
+	<h2 class="shout grow">jsperf.com</h2>
+</section>
+
+<section class="slide">
+	<h2>Что быстрее?</h2>
+	<pre>
+<code>var elem = document.getElementsByClassName('class')[0];</code>
+<code>var elem = document.querySelector('.class');</code>
+	</pre>
+</section>
+
+<section class="slide">
+	<table class="jsperf">
+		<col width=65%><col width=35%>
+		<thead>
+			<tr>
+				<th>Test</th>
+				<th class="padleft">Ops/sec</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th>getElementsByClassName('class')[0]</th>
+				<!-- <td>node = document.getElementsByClassName('classname')[0];</td> -->
+				<td class="padleft" style="background-color: #9cee82"><span class="ops">5,519,101</span> <span class="tolerance">±0.56%</span> <span class="diff">fastest</span></td>
+			</tr>
+			<tr>
+				<th>querySelector('.class')</th>
+				<!-- <td>node = document.querySelector('classname')[0];</td> -->
+				<td class="padleft" style="background-color: pink"><span class="ops">55,479</span> <span class="tolerance">±1.23%</span> <span class="diff">99% slower</span></td>
+			</tr>
+			<tr>
+				<th>jQuery $('.class')</th>
+				<!-- <td>node = $(".classname");</td> -->
+				<td class="padleft"><span class="ops">62,742</span> <span class="tolerance">±1.18%</span> <span class="diff">99% slower</span></td>
+			</tr>
+		</tbody>
+	</table>
+</section>
+
+<section class="slide results">
+	<h2>Непосредственное измерение</h2>
+	<table>
+		<col width="55%"><col width="20%"><col width="25%">
+		<thead>
+			<tr>
+				<th scope="col">Метод</th>
+				<th>1-й, мкс</th>
+				<th>2-й, мкс</th>
+			</tr>
+		</thead>
+		<tr>
+			<th scope="row"><code>querySelector</code></th>
+			<td>40</td>
+			<td>40</td>
+		</tr>
+		<tr>
+			<th scope="row"><code>getElementsByClassName</code></th>
+			<td>45</td>
+			<td>15</td>
+		</tr>
+		<tr>
+			<th scope="row"><code>jQuery</code></th>
+			<td>300</td>
+			<td>40</td>
+		</tr>
+	</table>
+</section>
+
+<section class="slide domquote">
+	<h2>DOM 2</h2>
+	<figure>
+		<blockquote>
+			<p><b>Примечание:</b> Коллекции в DOM для HTML являются <i>живыми</i> в том смысле, что они автоматически обновляются при изменениях соответствующего им документа.</p>
+		</blockquote>
+	</figure>
+</section>
+
+<section class="slide">
+	<h2>Выводы</h2>
+	<ol>
+		<li>jsPerf(DOM) = <img src="pictures/poo.png" alt="Pile of poo" width="32" style="vertical-align: -5px;"></li>
+		<li class="next">Не занимайтесь микрооптимизациями.</li>
+		<li class="next">Знание основных принципов помогает сделать верные выводы.</li>
+	</ol>
+</section>
+
+<section class="slide">
+	<h2>Ссылки</h2>
+	<ol>
+		<li><a href="https://html.spec.whatwg.org/multipage/">HTML Living Standard</a></li>
+		<li><a href="https://www.w3.org/Style/CSS/current-work.en.html">CSS current work</a></li>
+		<li><a href="https://github.com/getify/You-Dont-Know-JS">You Don't Know JS (book series)</a></li>
+		<li><a href="https://learn.javascript.ru">learn.javascript.ru</a></li>
+		<li>Mozilla Developer Network</li>
+		<li><a href="http://taligarsiel.com/Projects/howbrowserswork1.htm">How browsers work</a></li>
+	</ol>
+</section>
+
+<section class="slide final">
+	<img src="pictures/photo.jpg" width="250" alt="" style="border-radius: 50%;">
+	<h2>Спасибо!</h2>
+	<p><span class="hanging">Email:</span> <a href="mailto:grelimail@gmail.com">grelimail@gmail.com</a></p>
+	<p><span class="hanging">Twitter:</span> <a href="https://twitter.com/ruGreLI">@ruGreLI</a></p>
+</section>
+<script src="shower-core/shower.min.js"></script>

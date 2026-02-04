@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Shower Presentation Engine</title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
+	<link rel="stylesheet" href="styles/styles.css">
+</head>
+<!-- is-black for black theme-->
+<body class="shower list">
+	<header class="caption">
+		<h1>Shower Presentation Engine</h1>
+		<p>Yours Truly, Famous Inc.</p>
+	</header>
+	<!-- start slide -->
+	<section class="slide" id="cover">
+		<h2>Консоль в массы__</h2>
+		<p class="slide_author">Виталий Рыбка</p>
+		<img src="pictures/console/terminal1-new.jpg" alt="" class="cover">
+	</section>
+	<!-- Любимый браузер -->
+	<section class="slide">
+		<h2>Любимый браузер</h2>
+		<figure class="figure console2">
+			<img src="./pictures/prostredi-ie6.gif" alt="Любимый браузер">
+		</figure>
+	</section>
+	<!-- Консоль для пользователя -->
+	<section class="slide">
+		<h2>Консоль для пользователя</h2>
+		<figure class="figure console2">
+			<img src="./pictures/2000px-StartingMsdos2-1300x731.jpg" alt="Консоль для пользователя">
+		</figure>
+	</section>
+	<!-- devtools terminal -->
+	<section class="slide">
+		<h2>devtools terminal</h2>
+		<figure class="figure console2">
+			<img src="./pictures/console/devtools-terminal.gif" alt="devtools terminal">
+		</figure>
+	</section>
+	<!-- план -->
+	<section class="slide">
+		<h2>План <em class="mark mark_cross">побега</em></h2>
+		<ol class="slide_plan">
+			<li>Менеджеры терминалов</li>
+			<li>Скрипты на bash</li>
+			<li>Автоматизация рутинных задач</li>
+		</ol>
+	</section>
+	<!-- ссылка на репо -->
+	<section class="slide">
+		<h2>Репозиторий</h2>
+		<div class="slide_repo-links">
+			<a href="https://goo.gl/ldvSjh">goo.gl/ldvSjh</a>
+			<figure>
+				<img src="./pictures/console/qr-repo.png" alt="link to repo">
+			</figure>
+		</div>
+	</section>
+	<!-- ссылка на слайды -->
+	<section class="slide">
+		<h2>Слайды</h2>
+		<div class="slide_repo-links">
+			<a href="https://goo.gl/PqnRx4">goo.gl/PqnRx4</a>
+			<figure>
+				<img src="./pictures/console/qr-slides.png" alt="link to slides">
+			</figure>
+		</div>
+	</section>
+	<!-- Где это все работает -->
+	<section class="slide">
+		<h2>Где это все работает</h2>
+		<ul class="slide_works-on">
+			<li>
+				<a href="https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/">Microsoft ♥ Linux (Win10 stable)</a>
+				<ul>
+					<li><a href="https://blogs.msdn.microsoft.com/commandline/2016/04/06/bash-on-ubuntu-on-windows-download-now-3/">Bash on Ubuntu on Windows</a></li>
+					<li><a href="https://blogs.msdn.microsoft.com/wsl/2016/10/19/windows-and-ubuntu-interoperability/">Windows and Ubuntu Interoperability</a></li>
+				</ul>
+			</li>
+			<li>Mac OS X</li>
+			<li><a href="https://www.ubuntu.com/download/desktop">Ubuntu</a></li>
+			<li><a href="http://www.conemu.ru">ConEmu</a></li>
+		</ul>
+	</section>
+	<!-- Менеджеры терминалов -->
+	<section class="slide">
+		<h2>Менеджеры терминалов</h2>
+		<ol class="slide_plan">
+			<li>
+				screen
+			</li>
+			<li>
+				tmux
+			</li>
+			<li>
+				screen vs tmux
+			</li>
+		</ol>
+	</section>
+	<!-- Менеджеры терминалов. Screen -->
+	<section class="slide">
+		<h2>Менеджеры терминалов. Screen</h2>
+		<b>
+			Установка:
+		</b>
+		<pre class="slide_pre-formated">
+			<code>sudo apt-get install screen</code>
+			<code>screen</code>
+		</pre>
+	</section>
+	<!-- Менеджеры терминалов. Screen Hot keys-->
+	<section class="slide">
+		<h2>Менеджеры терминалов. Screen</h2>
+		<b>
+			Базовые сочетания клавиш:
+		</b>
+		<div class="slide_repo-links">
+			<a href="https://goo.gl/RyRfO5">goo.gl/RyRfO5</a>
+			<figure>
+				<img src="./pictures/console/qr-screen-hot-keys.png" alt="link to screen hot keys">
+			</figure>
+		</div>
+	</section>
+	<!-- Менеджеры терминалов. Screen Config-->
+	<section class="slide">
+		<h2>Менеджеры терминалов. Screen</h2>
+		<b>
+			Пример файла конфигураций (<code>.screenrc</code>):
+		</b>
+		<pre>
+			<code># Default is ‘on’, as you probably noticed.</code>
+			<code>startup_message off</code>
+			<code># Window list at the bottom.</code>
+			<code>hardstatus alwayslastline</code>
+			<code>hardstatus string "%-w%{= BW}%50>%n %t%{-}%+w%<"</code>
+		</pre>
+		<div class="slide-comment">
+			Что означают непонятные символы в этой строке <code>hardstatus string "%-w%{= BW}%50>%n %t%{-}%+w%<"</code> можно почитать <a href="http://www.kilobitspersecond.com/2014/02/10/understanding-gnu-screens-hardstatus-strings/" target="_blank">тут</a>.
+		</div>
+	</section>
+	<!-- Менеджеры терминалов. Screen Example-->
+	<section class="slide">
+		<h2>Менеджеры терминалов. Screen</h2>
+		<figure class="figure console2">
+			<img src="./pictures/console/screen-example.jpg" alt="screen example">
+		</figure>
+	</section>
+	<!-- Менеджеры терминалов. Tmux Установка -->
+	<section class="slide">
+		<h2>Менеджеры терминалов. Tmux</h2>
+		<div><em>
+			“Это тот-же screen, только на стероидах”
+		</em></div>
+		<b>
+			Установка:
+		</b>
+		<pre class="slide_pre-formated">
+			<code>sudo apt-get install tmux</code>
+			<code>tmux</code>
+		</pre>
+	</section>
+	<!-- Менеджеры терминалов. Tmux Hot keys-->
+	<section class="slide">
+		<h2>Менеджеры терминалов. Tmux</h2>
+		<b>
+			Базовые сочетания клавиш:
+		</b>
+		<div class="slide_repo-links">
+			<a href="https://goo.gl/zSLFIJ">goo.gl/zSLFIJ</a>
+			<figure>
+				<img src="./pictures/console/qr-tmux-hot-keys.png" alt="link to screen hot keys">
+			</figure>
+		</div>
+	</section>
+	<!-- Менеджеры терминалов. Tmux Example-->
+	<section class="slide">
+		<h2>Менеджеры терминалов. Tmux</h2>
+		<figure class="figure console2">
+			<img src="./pictures/console/tmux-example.jpg" alt="tmux example">
+		</figure>
+	</section>
+	<!-- Менеджеры терминалов. Screen vs Tmux -->
+	<section class="slide">
+		<h2>Менеджеры терминалов. screen vs tmux</h2>
+		<table class="slide_table__c">
+			<thead>
+				<tr>
+					<td align="center"><b>screen</b></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td valign="top">
+						<code>-</code> Не умеет создавать layout для каждой вкладки<br/>
+						<code>-</code> Не умеет сохранять layout, если оборвалась связь или еще что-то там<br/>
+						<code>-</code> До версии 4.1 не умел делать разбивку по вертикали<br/>
+						<code>-</code> Когда вы создаете новый регион, то в нем отдельно нужно создавать новое окно <code>(Ctrl+a c)</code>, выполнить переход в нужную директорию и т.д.<br/>
+						<code>-</code> Чтобы удалить регион тоже нужно помучатся <code>Ctrl+a :remove</code>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+	<!-- Менеджеры терминалов. Screen vs Tmux -->
+	<section class="slide">
+		<h2>Менеджеры терминалов. screen vs tmux</h2>
+			<table class="slide_table__c">
+			<thead>
+				<tr>
+					<td align="center"><b>tmux</b></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<code>+</code> Что называется “с коробки” настроен довольно качественно<br/>
+						<code>+</code> Не нужно настраивать положение панели с вкладками и как их подсвечивать, как это было с <code>screen</code><br/>
+						<code>+</code> Умеет делить экран на так называемые регионы, как по вертикали, так и по горизонтали<br/>
+						<code>+</code> Чтобы закрыть регион, достаточно написать <code>exit</code><br/>
+						<code>+</code> Умеет держать удаленное соединение <code>*</code>
+						<p>
+							<code>*</code> <i>нужна дополнительная магия</i>
+						</p>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+	<!-- Скрипты на bash start -->
+	<section class="slide">
+		<figure class="figure console2 bash">
+			<img src="./pictures/keep-calm-and-bin-bash.png" alt="keep calm and bin bash">
+		</figure>
+	</section>
+	<!-- Скрипты на bash -->
+	<section class="slide">
+		<h2>bash</h2>
+		<ol class="slide_plan">
+			<li>
+				Основы
+			</li>
+			<li>
+				Ветвления
+			</li>
+			<li>
+				Циклы
+			</li>
+		</ol>
+	</section>
+	<!-- Скрипты на bash. Основы -->
+	<section class="slide">
+		<h2>bash. Основы</h2>
+		<ol class="slide_plan">
+			<li>
+				Переменные
+			</li>
+			<li>
+				Передача аргументов скрипту
+			</li>
+			<li>
+				Обработка внутри скрипта
+			</li>
+		</ol>
+	</section>
+	<!-- Скрипты на bash. Основы. "Hello, world!" -->
+	<section class="slide">
+		<h2>bash. Основы. "Hello, world!"</h2>
+		<pre>
+			<code>#!/bin/bash</code>
+			<code>echo "Hello, world!"</code>
+		</pre>
+		<div>
+			<code>./hw.sh # вызов</code>
+		</div>
+	</section>
+	<!-- Скрипты на bash. Основы. Перменные -->
+	<section class="slide">
+		<h2>Скрипты на bash. Основы. Перменные</h2>
+		<b>
+			Перменные:
+		</b>
+		<ul>
+			<li>
+				имя - буквы, цифры, <code>_</code>.
+			</li>
+			<li>
+				значение - числа, строки (если есть пробелы, то в кавычках), отдельные символы.
+			</li>
+		</ul>
+		<b>Создание (перезапись) переменной:</b>
+		<div><code>path="~/Docs"</code></div>
+		<b>Чтение переменной:</b>
+		<div><code>$path</code></div>
+	</section>
+	<!-- Скрипты на bash. Основы. Аргументы -->
+	<section class="slide">
+		<h2>Скрипты на bash. Основы. Аргументы</h2>
+		<b>
+			Передача аргументов скрипту:
+		</b>
+		<div><code>./script.sh arg1 arg2 arg3 … argN</code></div>
+		<b>Обработка внутри скрипта:</b>
+		<div><code>$1</code> - первый аргумент</div>
+		<div><code>$2</code> - второй аргумент</div>
+		<div><code>$0</code> - имя скрипта</div>
+		<div><code>$#</code> - количество аргументов</div>
+	</section>
+	<!-- Скрипты на bash. Основы. Примеры -->
+	<section class="slide">
+		<h2>Скрипты на bash. Основы. Примеры</h2>
+		<b>
+			Еще один пример, поработаем с переменными
+		</b>
+		<pre>
+			<code>#!/bin/bash</code>
+			<code>var1=$1</code>
+			<code>var2=$2</code>
+			<code>echo "Arguments are \$1=$var1 \$2=$var2"</code>
+		</pre>
+		<div>
+			<code>./variables.sh var1 var2 # вызов</code>
+		</div>
+	</section>
+	<!-- Скрипты на bash. Основы. Ветвление -->
+	<section class="slide">
+		<h2>bash. Основы. Ветвление</h2>
+		<ol>
+			<li>
+				<code>if</code>
+			</li>
+			<li>
+				<code>if/else</code>
+			</li>
+			<li>
+				<code>if/elif/else</code>
+			</li>
+			<li>
+				<code>case/in/esac</code>
+			</li>
+		</ol>
+	</section>
+	<!-- Скрипты на bash. Основы. Ветвление. if -->
+	<section class="slide">
+		<h2>Скрипты на bash. Основы. Ветвление</h2>
+		<b>
+			if
+		</b>
+		<pre class="slide_pre-formated">
+			<code>git diff origin/master origin/%branch% > %path%</code>
+		</pre>
+		<div>
+			<code>fast_diff.sh</code>
+		</div>
+	</section>
+	<!-- Скрипты на bash. Основы. Ветвление. Условия (строки) -->
+	<section class="slide">
+		<h2>Скрипты на bash. Основы. Ветвление</h2>
+		<b>
+			Условия (строки):
+		</b>
+		<div>
+			<code>-z &lt;string&gt; # string is empty</code>
+		</div>
+		<div>
+			<code>-n &lt;string&gt; # string is not empty</code>
+		</div>
+		<div>
+			<code>&lt;str1&gt; == &lt;str2&gt; # strings are equal</code>
+		</div>
+		<div>
+			<code>&lt;str1&gt; != &lt;str2&gt; # strings are not equal</code>
+		</div>
+	</section>
+	<!-- Скрипты на bash. Основы. Ветвление. Условия (числа/строки) -->
+	<section class="slide">
+		<h2>Скрипты на bash. Основы. Ветвление</h2>
+		<b>
+			Условия (числа/строки):
+		</b>
+		<div>
+			<code>-eq, (==) # equal</code>
+		</div>
+		<div>
+			<code>-ne, (!=) # not equal</code>
+		</div>
+		<div>
+			<code>-lt, (&lt;) # less than</code>
+		</div>
+		<div>
+			<code>-le # less than or equal</code>
+		</div>
+		<div>
+			<code>-gt, (&gt;) # more than</code>
+		</div>
+		<div>
+			<code>-ge # more than or equal</code>
+		</div>
+	</section>
+	<!-- Скрипты на bash. Основы. Ветвление. Условия (файлы) -->
+	<section class="slide">
+		<h2>Скрипты на bash. Основы. Ветвление</h2>
+		<b>
+			Условия (файлы):
+		</b>
+		<div>
+			<code>-e &lt;path&gt; # path is exist</code>
+		</div>
+		<div>
+			<code>-f &lt;path&gt; # is file</code>
+		</div>
+		<div>
+			<code>-d &lt;path&gt; # is directory</code>
+		</div>
+		<div>
+			<code>-s &lt;path&gt; # file size more than 0</code>
+		</div>
+		<div>
+			<code>-x &lt;path&gt; # file is executable</code>
+		</div>
+	</section>
+	<!-- Скрипты на bash. Основы. Ветвление. Условия (логические) -->
+	<section class="slide">
+		<h2>Скрипты на bash. Основы. Ветвление</h2>
+		<b>
+			Условия (логические):
+		</b>
+		<div>
+			<code>! # denial of boolean expression</code>
+		</div>
+		<div>
+			<code>&& # boolean “and”</code>
+		</div>
+		<div>
+			<code>|| # boolean “or”</code>
+		</div>
+	</section>
+	<!-- Скрипты на bash. Основы. Циклы -->
+	<section class="slide">
+		<h2>bash. Основы. Циклы</h2>
+		<ol>
+			<li>
+				<code>for/in</code>
+			</li>
+			<li>
+				<code>while</code>
+			</li>
+		</ol>
+	</section>
+	<!-- Скрипты на bash. Основы. Циклы for/in-->
+	<section class="slide">
+		<h2>bash. Основы. Циклы</h2>
+		<b>
+			for/in:
+		</b>
+		<pre>
+			<code>for i in array</code>
+			<code>do</code>
+			<code>  # действие, переменная i каждый раз принимает</code>
+			<code>  # следующее значение из array</code>
+			<code>done</code>
+		</pre>
+	</section>
+	<!-- Скрипты на bash. Полезные ссылки -->
+	<section class="slide">
+		<h2>Полезные ссылки</h2>
+		<ul>
+			<li><a href="https://www.codecademy.com/learn/learn-the-command-line" target="_blank">Learn the Command Line</a></li>
+			<li><a href="http://cli.learncodethehardway.org/" target="_blank">The Command Line Crash Course</a></li>
+			<li><a href="http://www.linuxguide.it/command_line/linux_commands_ru.html" target="_blank">Linux Command Line in Русский</a></li>
+			<li><a href="https://www.youtube.com/watch?v=3DA1grSp4mU" target="_blank">Basic Unix commands</a></li>
+			<li><a href="https://habrahabr.ru/company/mailru/blog/311762/" target="_blank">Подводные камни Bash</a></li>
+		</ul>
+	</section>
+	<!-- Автоматизация рутинных задач -->
+	<section class="slide">
+		<h2>Автоматизация рутинных задач</h2>
+		<ul class="slide_plan">
+			<li>
+				Up большого числа репозиториев
+			</li>
+			<li>
+				Полезные алиасы
+			</li>
+		</ul>
+	</section>
+	<!-- Автоматизация рутинных задач. ап репозиториев -->
+	<section class="slide">
+		<h2>Up большого числа репозиториев</h2>
+		<ul class="tree-view">
+			<li class="tree-view_item is-directory">vendors
+				<ul class="tree-view">
+					<li class="tree-view_item is-directory">vendor1</li>
+					<li class="tree-view_item is-directory">vendor2</li>
+					<li class="tree-view_item is-directory">vendor3
+						<ul class="tree-view">
+							<li class="tree-view_item is-directory">vendor3-1</li>
+							<li class="tree-view_item is-directory">vendor3-2</li>
+						</ul>
+					</li>
+					<li class="tree-view_item is-directory">vendor4</li>
+					<li class="tree-view_item is-directory">vendor5</li>
+				</ul>
+			</li>
+		</ul>
+	</section>
+	<!-- Автоматизация рутинных задач. ап репозиториев -->
+	<section class="slide">
+		<h2>Up большого числа репозиториев</h2>
+		<b>Решение:</b>
+		<ul>
+			<li class="next">cd %path_to_vendor_repo%</li>
+			<li class="next">check branch</li>
+			<li class="next">git pull</li>
+		</ul>
+		<b class="next">
+			Автоматизируем
+		</b>
+		<ul>
+			<li class="next"><code>upRepo</code> - финальный вид команды</li>
+			<li class="next">Показать код</li>
+		</ul>
+	</section>
+	<!-- Автоматизация рутинных задач. ап репозиториев. После -->
+	<section class="slide slide__video">
+		<h2>Up большого числа репозиториев. После</h2>
+		<video id="videoAfter">
+			<source src="./videos/2016-11-17-2347-08-1.mp4" type="video/mp4">
+			Your browser does not support the video tag.
+		</video>
+	</section>
+	<!-- Автоматизация рутинных задач. Полезные алиасы -->
+	<section class="slide">
+		<h2>Полезные алиасы</h2>
+		<ul>
+			<li class="next">
+				<code>git branch</code> - <b>как часто вам приходиться набирать эту команду ?</b>
+			</li>
+			<li class="next">
+				<code>git status</code> - <b>а эту команду ?</b>
+			</li>
+			<li class="next">
+				<code>git push origin %branch-name%</code> - <b>а эту команду ?</b>
+			</li>
+			<li class="next">
+				<code>git commit -m 'some comments'</code> - <b>а эту команду ?</b>
+			</li>
+			<li class="next">
+				<code>...</code>
+			</li>
+		</ul>
+	</section>
+	<!-- Автоматизация рутинных задач. Полезные алиасы -->
+	<section class="slide">
+		<h2>Полезные алиасы</h2>
+		<figure class="figure alias">
+			<img src="./pictures/console/maxresdefault6-1.jpg" alt="">
+		</figure>
+	</section>
+	<!-- Автоматизация рутинных задач. Полезные алиасы -->
+	<section class="slide">
+		<h2>Полезные алиасы</h2>
+		<b><code>.bashrc, .gitconfig</code></b>
+		<pre>
+			<code>alias gst='git status'</code>
+			<code>alias gf='git fetch'</code>
+			<code>alias ghide='git stash'</code>
+			<code>alias gshow='git stash pop'</code>
+			<code>alias gmom='git merge origin/master' # !!!</code>
+			<code>alias gad='git add'</code>
+			<code>alias grm='git rm'</code>
+			<code>alias showaliases='cat $HOME/.bashrc | grep alias'</code>
+		</pre>
+	</section>
+	<!-- Автоматизация рутинных задач. Полезные алиасы -->
+	<section class="slide">
+		<h2>Полезные ссылки</h2>
+		<ul>
+			<li><a href="https://stepik.org/course/%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B2-Linux-73">Введение в Linux</a></li>
+			<li><a href="https://ru.hexlet.io/courses/bash">Bash: Основы командной строки</a></li>
+			<li><a href="https://github.com/mathiasbynens/dotfiles">dotfiles</a></li>
+		</ul>
+	</section>
+	<!-- About -->
+	<section class="slide">
+		<h2>About me</h2>
+		<ul class="al-list slide_plan">
+			<li class="al-list_item">
+				<a href="https://twitter.com/var_bincom" class="al-link al-link__twitter">var_bincom</a>
+			</li>
+			<li class="al-list_item">
+				<a href="https://github.com/var-bin" class="al-link al-link__github">var-bin</a>
+			</li>
+			<li class="al-list_item">
+				<a href="https://shwr.me/" class="al-link al-link__shower">shower</a>
+			</li>
+		</ul>
+	</section>
+	<!-- Автоматизация рутинных задач. Конец -->
+	<section class="slide">
+		<h2>Это последний слайд</h2>
+		<em>
+			Все, кина на будет...
+		</em>
+	</section>
+	<p class="badge">
+		<a href="https://github.com/shower/shower">Fork me on GitHub</a>
+	</p>
+	<!--
+		To hide progress bar from entire presentation
+		just remove “progress” element.
+		-->
+	<div class="progress"></div>
+	<script src="shower/shower.min.js"></script>
+	<!-- Copyright © 2015 Yours Truly, Famous Inc. -->
+	<!-- Photos by John Carey, fiftyfootshadows.net -->
+	<script>
+	var videoAfter = document.getElementById("videoAfter");
+
+	function playPause(videoId) {
+		if (videoId.paused) {
+			videoId.play();
+		} else {
+			videoId.pause();
+		}
+	}
+
+	function playVideoAfter() {
+		playPause(videoAfter);
+	}
+
+	videoAfter.addEventListener("click", playVideoAfter);
+	</script>
+</body>
+</html>

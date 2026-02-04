@@ -1,0 +1,129 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "shower-core@^2.1.0",
+        "scope": null,
+        "escapedName": "shower-core",
+        "name": "shower-core",
+        "rawSpec": "^2.1.0",
+        "spec": ">=2.1.0 <3.0.0",
+        "type": "range"
+      },
+      "/Users/deniszavgorodny/Documents/Доклады/wsd17/shower"
+    ]
+  ],
+  "_from": "shower-core@>=2.1.0 <3.0.0",
+  "_id": "shower-core@2.1.0",
+  "_inCache": true,
+  "_location": "/shower-core",
+  "_nodeVersion": "7.4.0",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/shower-core-2.1.0.tgz_1485938925601_0.5642167632468045"
+  },
+  "_npmUser": {
+    "name": "pepelsbey",
+    "email": "pepelsbey@gmail.com"
+  },
+  "_npmVersion": "4.1.1",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "shower-core@^2.1.0",
+    "scope": null,
+    "escapedName": "shower-core",
+    "name": "shower-core",
+    "rawSpec": "^2.1.0",
+    "spec": ">=2.1.0 <3.0.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/shower-core/-/shower-core-2.1.0.tgz",
+  "_shasum": "7327ae3a847a0b0b9612f4ad4c648ff3639ce416",
+  "_shrinkwrap": null,
+  "_spec": "shower-core@^2.1.0",
+  "_where": "/Users/deniszavgorodny/Documents/Доклады/wsd17/shower",
+  "author": {
+    "name": "Vadim Makeev",
+    "url": "http://pepelsbey.net/"
+  },
+  "bugs": {
+    "url": "http://github.com/shower/shower/issues"
+  },
+  "dependencies": {},
+  "description": "Core for Shower HTML presentation engine",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-dom": "^1.4.3",
+    "git-hooks": "^1.1.1",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-insert": "^0.5.0",
+    "gulp-jscs": "^4.0.0",
+    "gulp-mocha-phantomjs": "^0.12.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.0.0",
+    "gulp-webdriver": "^2.0.3",
+    "jscs": "^3.0.7",
+    "jscs-preset-loris": "^1.2.0",
+    "jshint": "^2.9.3",
+    "mocha": "^3.0.2",
+    "selenium-standalone": "^5.6.3",
+    "shower-next": "0.0.6",
+    "shower-progress": "0.0.9",
+    "shower-timer": "0.0.12",
+    "shower-touch": "0.0.11",
+    "wdio-allure-reporter": "^0.1.2",
+    "wdio-dot-reporter": "0.0.6",
+    "wdio-mocha-framework": "^0.5.7",
+    "webdriverio": "^4.2.15",
+    "ym": "^0.1.2"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "7327ae3a847a0b0b9612f4ad4c648ff3639ce416",
+    "tarball": "https://registry.npmjs.org/shower-core/-/shower-core-2.1.0.tgz"
+  },
+  "files": [
+    "shower.min.js",
+    "LICENSE.md",
+    "README.md"
+  ],
+  "gitHead": "af8485718e99b7d2f9a00faa9c093b021ec7e150",
+  "homepage": "https://github.com/shower/core",
+  "keywords": [
+    "shower",
+    "presentation",
+    "core"
+  ],
+  "license": "MIT",
+  "main": "shower.min.js",
+  "maintainers": [
+    {
+      "name": "pepelsbey",
+      "email": "pepelsbey@gmail.com"
+    },
+    {
+      "name": "zloylos",
+      "email": "i@zloylos.me"
+    }
+  ],
+  "name": "shower-core",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/shower/core.git"
+  },
+  "scripts": {
+    "build": "gulp build",
+    "prebuild": "selenium-standalone install",
+    "prepublish": "npm run build",
+    "report": "allure report generate -o allure-report allure-results && allure report open -o allure-report",
+    "test": "gulp test",
+    "validate": "jshint . && gulp lint"
+  },
+  "version": "2.1.0"
+}

@@ -1,0 +1,1596 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Shower Presentation Engine</title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
+	<style>
+		.slide h2 {
+			color: #000; /*перенести в тему*/
+			}
+		.black h2, .black p, .black li {
+			color: #fff;
+		}
+		.black a {
+			color: #fff;
+		}
+		.slide.black footer {
+			background: #000 !important; /*не работает на слайде с ситником*/
+		}
+		.col-l, .col-r {
+			width: 49%;
+			display: inline-block;
+			vertical-align: top;
+			}
+	</style>
+</head>
+<body class="shower list">
+	<header class="caption">
+		<h1>Пользовательские свойства как основа архитектуры CSS</h1>
+		<p>Павел Ловцевич, LOVATA</p>
+	</header>
+	<section class="slide white" id="cover">
+		<h2>Пользовательские свойства<br> как основа архитектуры CSS</h2>
+		<p><a href="https://twitter.com/zigzag_mcquack" target="_blank">Павел Ловцевич</a>, <a href="http://lovata.com" target="_blank">LOVATA</a></p>
+		<img src="pictures/cover.jpg" alt="" class="cover height">
+		<style>
+			#cover h2 {
+				margin: 350px 0 20px;
+				font-size: 60px;
+				color: #fff;
+				}
+			#cover p {
+				font-size: 30px;
+				color: #fff;
+				}
+			#cover a {
+				color: #fff;
+			}
+		</style>
+	</section>
+
+	<section class="slide black">
+		<img src="pictures/avatar.jpg" class="cover" alt="Павел Ловцевич">
+		<h2>Павел Ловцевич</h2>
+		<p>
+			CTO @ <a href="http://lovata.com" target="_blank">LOVATA</a><br>
+			<a href="https://twitter.com/zigzag_mcquack" target="_blank">@zigzag_mcquack</a><br>
+			<a href="mailto:p.lovtsevich@lovata.com">p.lovtsevich@lovata.com</a>
+		</p>
+		<footer class="footer">
+			<ul>
+				<li>Родился и вырос в Минске.</li>
+				<li>В отрасли с 2002 года.</li>
+				<li>Старожил сообщества "Веб-стандарты".</li>
+				<li>Крестный отец и локальный организатор конференции "Web Standards Days".</li>
+				<li>В 2008 с партнерами основал компанию LOVATA.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<img src="pictures/lovata.png" class="cover" alt="LOVATA">
+		<footer class="footer">
+			<ul>
+				<li>2008 год — веб-студия.</li>
+				<li>2014 год — поставщик программных решений.</li>
+				<li>Рынки — РБ, РФ, Казахстан, США, Канада, Великобритания, Израиль, Швеция.</li>
+				<li>Специализация — E-commerce, MedTech, Sharing economy.</li>
+				<li>Стек — PHP (Laravel), Node.js.</li>
+				<li>Актуальные сферы интересов — PWA и IoT.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide black">
+		<h2 class="shout">Препроцессоры</h2>
+		<img src="pictures/bulb-replacement.jpg" class="cover" alt="">
+		<footer class="footer">
+			<ul>
+				<li>Привлекательность веб-бразработки — отсутствие компиляции.</li>
+				<li>10 лет назад — блокнот и браузер.</li>
+				<li>Сегодня — адская машина.</li>
+				<li>Код не работает в браузерах — компиляция…</li>
+				<li>Препроцессоры — чуждо вебу, временная вещь.</li>
+				<li>Вопрос в зал. Кто использует? Кто не использует?</li>
+				<li>Большинство использует считанные фичи.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<img src="pictures/stats.png" class="cover" alt="Результаты опроса использования возможностей CSS-препроцессоров">
+		<footer class="footer">
+			<ul>
+				<li>Опрос в Twitter — 700 респондентов.</li>
+				<li>Самая популярная фича — переменные.</li>
+				<li>Первый гвоздь в крышку гроба препроцессоров.</li>
+				<li>Мета-языки задают вектор развития и умирают.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2>Преимущества переменных</h2>
+		<figure>
+			<blockquote>
+				<p>Переменные — основа современного правильно сконструированного проекта.</p>
+			</blockquote>
+			<figcaption>
+				<cite>Карен Менезес</cite>, <a href="https://www.smashingmagazine.com/2016/01/variables-in-css-architecture" target="_blank">Variables: The Backbone Of CSS Architecture</a>
+			</figcaption>
+		</figure>
+		<ul class="next">
+			<li>Модульность.</li>
+			<li>Уменьшение повторяемости.</li>
+			<li>Сокращение объема.</li>
+			<li>Повышение читаемости.</li>
+			<li>Стайлгайд.</li>
+		</ul>
+		<footer class="footer">
+			<ul>
+				<li>Переменные основа любого CSS-фреймворка.</li>
+				<li>Учебники по препроцессорам начинаются с переменных.</li>
+				<li>Преимущества:
+					<ul>
+						<li>упорядочивание структуры;</li>
+						<li>сокращение объема — хранение повторяющихся сущностей в единственном экземпляре;</li>
+						<li>повышение читаемости — создание понятных псевдонимов.</li>
+					</ul>
+				</li>
+				<li>Грамотно определенные переменные — стайлгайд проекта.</li>
+				<li>Хочешь узнать архитектуру CSS-фреймворка? Открой файл с переменными!</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2>Переменные. Когда и какие?</h2>
+		<p><strong>Условие</strong></p>
+		<ul>
+			<li>Значение встречается в коде два и более раз.</li>
+			<li>Значение в будущем может изменяться.</li>
+		</ul>
+		<div class="next">
+			<p><strong>Тип</strong></p>
+			<ul class="double">
+				<li>Измерения (размеры, отступы, радиусы скругления и т.п.).</li>
+				<li>Цветовые схемы.</li>
+				<li>Типографика.</li>
+				<li>Наборы иконок.</li>
+				<li>Брейкпойнты.</li>
+			</ul>
+		</div>
+		<footer class="footer">
+			<ul>
+				<li>Значение появляется не один раз? Вероятно, двумя появлениями дело не ограничится.</li>
+				<li>Есть шанс, что значение (цвет, длина, размер и т.д.) будет обновляться.</li>
+				<li>Одно из условий удовлетворено? Пора задуматься о заведении переменной.</li>
+				<li>Значение подпадает под один из следующих типов? Смело заводите переменную!</li>
+				<li>Сохраняйте здравый смысл, разумный баланс количества абстракций.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide black">
+		<h2 class="shout">18 лет!</h2>
+		<img src="pictures/waiting.jpg" class="cover" alt="">
+		<footer class="footer">
+			<ul>
+				<li>1998 — первый запрос на фичу в W3C.</li>
+				<li>Родились и умерли в Safari, потом в Chrome.</li>
+				<li>2016 — массовое внедрение.</li>
+				<li>Родились и умерли в Chrome.</li>
+				<li>Автор спеки — Таб Аткинс.</li>
+				<li>Уточнение концепции — механизм управления значениями свойств CSS.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide black">
+		<h2 class="shout">
+			<span class="next">Runtime</span><br>
+			<span class="next">DOM</span><br>
+			<span class="next">Cascading</span>
+		</h2>
+		<footer class="footer">
+			<ul>
+				<li>Переменные препроцессоров — исчезают при сборке.</li>
+				<li>CSS-переменные:
+					<ul>
+						<li>работают в runtime, доступны для чтения/изменения;</li>
+						<li>живут в DOM'е, ограничены скоупом узла, наследуются до последнего потомка;</li>
+						<li>учитывают каскад!</li>
+					</ul>
+				</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2>Синтаксис</h2>
+		<p><strong>Свойство</strong></p>
+		<pre>
+			<code>--variable: value;</code>
+		</pre>
+		<div class="next">
+			<p><strong>Функция</strong></p>
+			<pre>
+				<code>var(--variable);</code>
+			</pre>
+		</div>
+		<footer class="footer">
+			<ul>
+				<li>Существуют одновременно в двух сущностях.</li>
+				<li>Особая разновидность свойств CSS с префиксом, объявляющим имя переменной, и заданным значением.</li>
+				<li>Не применяет оформления непосредственно.</li>
+				<li>А также функция CSS, связывающая идентификатор и его значение.</li>
+				<li>Регистрозависимы!</li>
+				<li>Значение — допустимая лексема CSS.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<style>
+			.dance {
+				animation: poop-dance .8s 2s infinite alternate ease-in-out;
+				/*animation-duration: 0.8s;
+				animation-timing-function: ease-in-out;
+				animation-delay: 2s;
+				animation-direction: alternate;
+				animation-fill-mode: none;
+				animation-iteration-count: infinite;
+				animation-play-state: running;
+				animation-name: poop-dance;*/
+			}
+			@keyframes poop-dance {
+			from, 49% { transform-origin: -50% 100%; }
+			50%, 75%, to { transform-origin: 150% 100%; }
+			25% { transform: rotate(-10deg); }
+			50% { transform: rotate(0deg); }
+			75% { transform: rotate(10deg); }
+		}
+		/*https://leaverou.github.io/css-variables/#slide28*/
+		</style>
+		<h2>Синтаксис</h2>
+		<p><strong>Свойство</strong></p>
+		<pre>
+			<code>--variable: <span class="dance">💩💩💩</span>;</code>
+		</pre>
+		<div>
+			<p><strong>Функция</strong></p>
+			<pre>
+				<code>var(--variable);</code>
+			</pre>
+		</div>
+		<footer class="footer">
+			<ul>
+				<li>Ну т.е. совсем любая допустимая лексема.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2>Синтаксис</h2>
+		<p><strong>Свойство</strong></p>
+		<pre>
+			<code>--variable: <mark>@#$%&!</mark>;</code>
+		</pre>
+		<p><strong>Функция</strong></p>
+		<pre>
+			<code>background: var(--variable);</code>
+		</pre>
+		<footer class="footer">
+			<ul>
+				<li>При недопустимом значении переменной или…</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2>Синтаксис</h2>
+		<p><strong>Свойство</strong></p>
+		<pre>
+			<code>--variable: <mark>10px</mark>;</code>
+		</pre>
+		<p><strong>Функция</strong></p>
+		<pre>
+			<code><mark>background</mark>: var(--variable);</code>
+		</pre>
+		<footer class="footer">
+			<ul>
+				<li>…его неприменимости к выбранному свойству CSS — ошибка.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2>Синтаксис</h2>
+		<p><strong>Свойство</strong></p>
+		<pre>
+			<code>--variable: 10px;</code>
+		</pre>
+		<p><strong>Функция</strong></p>
+		<pre>
+			<code>background: <mark>trasparent</mark>;</code>
+		</pre>
+		<footer class="footer">
+			<ul>
+				<li>Ошибка — применение значения по умолчанию.</li>
+				<li>Например, со свойством content использовать переменные нельзя.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<img src="pictures/browsers.png" class="cover" alt="CSS Custom Properties Browser Support">
+		<footer class="footer">
+			<ul>
+				<li>Можно полноценно использовать, если аудитория не IE/Edge.</li>
+				<li>Ограниченное использование с помощью fallback'а.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide black" id="postcss">
+		<style>
+			#postcss {
+				padding: 100px 50px 50px 500px;
+			}
+		</style>
+		<img src="pictures/postcss.jpg" class="cover" alt="">
+		<div class="next">
+			<h2><a href="https://github.com/MadLittleMods/postcss-css-variables" target="_blank">PostCSS CSS Variables</a></h2>
+			<ul>
+				<li>Source + Fallback </li>
+				<li>@media</li>
+				<li>Object()</li>
+			</ul>
+		</div>
+		<footer class="footer">
+			<ul>
+				<li>Плагин для PostCSS!</li>
+				<li>Cтатический код в качестве fallback, оригинальный исходник. (Опционально)</li>
+				<li>Работает там, где препроцессоры стоят неуверенно или вовсе сдаются.</li>
+				<li>JS-объект со списком переменных. (Опционально)</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2>PostCSS CSS Variables</h2>
+		<pre>
+			<code>:root {</code>
+			<code>	--variable: value;</code>
+			<code>}</code>
+			<code>selector {</code>
+			<code class="next">	property: value; <span class="comment">/* fallback */</span></code>
+			<code class="next">	property: var(--variable); <span class="comment">/* runtime */</span></code>
+			<code></code>
+			<code>}</code>
+		</pre>
+		<footer class="footer">
+			<ul>
+				<li>Fallback — статическое значение перед вызовом переменной.</li>
+				<li>Баги. Воспринимает глобальное значение либо локальное в том же селекторе. В середине каскада игнорирует.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<img src="pictures/edge-status.png" class="cover" alt="The status of CSS Variables in Microsoft Edge">
+		<footer class="footer">
+			<ul>
+				<li>Команда Edge взяла фичу в разработку.</li>
+				<li>99%-я вероятность в ближайшем релизе.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide black">
+		<h2 class="shout">Scope</h2>
+		<footer class="footer">
+			<ul>
+				<li>Упоминал ранее, переменные ограничены областью видимости узла DOM.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2>Scope</h2>
+		<div class="col-l">
+			<pre>
+				<code>:root {</code>
+				<code>	--variable: value;</code>
+				<code>}</code>
+			</pre>
+			<div class="next">
+				<p><strong>Аналогично</strong></p>
+				<pre>
+					<code>document.documentElement</code>
+				</pre>
+			</div>
+		</div>
+		<div class="col-r next">
+			<pre>
+				<code><s>html {</s></code>
+				<code><s>	--variable: value;</s></code>
+				<code><s>}</s></code>
+			</pre>
+		</div>
+		<footer class="footer">
+			<ul>
+				<li>Переменная не существует вне селектора.</li>
+				<li>Объявление переменной — назначение области видимости.</li>
+				<li>Глобальная область видимости — селектор корневого псевдокласса ":root".</li>
+				<li>:root ищет корневной элемент гипертекстового документа. Для HTML это &lt;html&gt;, для SVG — &lt;svg&gt; и т.д.</li>
+				<li>Объявление переменной в селекторе "html" ограничит ее применение к разным видам документов с разными корневыми элементами.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2>Scope</h2>
+		<pre>
+			<code>selector {</code>
+			<code>	--variable: value;</code>
+			<code>}</code>
+		</pre>
+		<div class="col-l next">
+			<p><strong>Псевдокласс:</strong></p>
+			<pre>
+				<code>selector:pseudo-class {</code>
+				<code>	--variable: value;</code>
+				<code>}</code>
+			</pre>
+		</div>
+		<div class="col-r next">
+			<p><strong>Медиа-запрос:</strong></p>
+			<pre>
+				<code>@media selector {</code>
+				<code>	--variable: value;</code>
+				<code>}</code>
+			</pre>
+		</div>
+		<footer class="footer">
+			<ul>
+				<li>Ограничение области видимости аналогично препроцессорам — по селектору.</li>
+				<li>Кроме того, в CSS еще по псевдоклассу и медиа-запросу.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2>Scope</h2>
+		<div class="col-l">
+			<p><strong>Shadow DOM v1</strong></p>
+			<pre>
+				<code>:host {</code>
+				<code>	--variable: value;</code>
+				<code>}</code>
+			</pre>
+		</div>
+		<div class="col-r next">
+			<p><strong>Shadow DOM v0</strong></p>
+			<pre>
+				<code><s>body /deep/ selector {</s></code>
+				<code><s>	property: value;</s></code>
+				<code><s>}</s></code>
+			</pre>
+		</div>
+		<footer class="footer">
+			<ul>
+				<li>Особый вид ограничения области видимости на уровне узла веб-компонента.</li>
+				<li>Своеобразный :root для веб-компонента.</li>
+				<li>Быстрое внедрение переменных вызвано изменениями в ShadowDOM.</li>
+				<li>Для проброса стилей внутрь закрытого веб-компонентов убран комбинатор <code>/deep/</code> из-за плохих практик.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide black">
+		<h2 class="shout"><strike>$foo</strike></h2>
+		<footer class="footer">
+			<ul>
+				<li>Большая разница в синтаксисе между переменными препроцессоров и пользовательскими свойствами CSS.</li>
+				<li>Сообщество ждало нотацию "$foo". Итоговый вариант в CSS вызвал отрицание и возмущение.</li>
+				<li>Вы хотите услышать ответ на вопрос, почему на "$foo"?</li>
+
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide black" id="not-variable">
+		<style>
+			#not-variable h2 {
+				width: 50%;
+				font-size: 120px;
+				text-align: center;
+			}
+		</style>
+		<h2 class="place r">Custom Property<br> ≠<br> Variable</h2>
+		<img src="pictures/not-variables.jpg" class="cover" alt="">
+		<footer class="footer">
+			<ul>
+				<li>Кратко — это не переменные. :-P</li>
+				<li>Это наследуемые свойства, определяемые пользователем.</li>
+				<li>Что и является их прямым функциональным назначением языке в CSS.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2><strike>$foo</strike></h2>
+		<ul>
+			<li>Допустимая лексема CSS.</li>
+			<li><code>--variable:&nbsp;<mark>value</mark></code>.</li>
+			<li>Fallback.</li>
+		</ul>
+		<footer class="footer">
+			<ul>
+				<li>Слово авторам спеки Табу Аткинсу и Дэвиду Глазману.</li>
+				<li>$foo — неправильные аналогии с переменными ЯП и макросами препроцессоров, а это не то, чем являются пользовательские свойства:
+					<ul>
+						<li>Значение — набор допустимых лексем CSS, не предполагают частичную замену строк.</li>
+						<li>Использование только на правой стороне декларации — неуместное ограничение для переменных или макросов.</li>
+						<li>Необходим опциональный аргумент для механизма fallback'а.</li>
+					</ul>
+				</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2><strike>$foo</strike></h2>
+		<figure>
+			<blockquote>
+				<p>Если бы мы использовали символ "$" для переменных, то не смогли бы его использовать для будущих новых более мощных сущностей, подобных на переменные.</p>
+			</blockquote>
+			<figcaption>
+				<cite>Таб Аткинс</cite>, <a href="http://www.xanthir.com/blog/b4KT0" target="_blank">Let's Talk about CSS Variables</a>
+			</figcaption>
+		</figure>
+		<footer class="footer">
+			<ul>
+				<li>Авторы согласны с простотой и удобством нотации "$foo".</li>
+				<li>Сами любят использовать ее в скриптах.</li>
+				<li>Но нотация решено оставить на будущее для "настоящих" переменных.</li>
+				<li>Обратная совместимость с синтаксисом препроцессоров.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2><strike>$foo</strike></h2>
+		<div class="col-l">
+			<p><strong>--property</strong></p>
+			<pre class="next">
+				<code>-webkit-property</code>
+				<code>-moz-property</code>
+				<code>-ms-property</code>
+				<code>-o-property</code>
+			</pre>
+		</div>
+		<div class="col-r">
+			<p><strong>var()</strong></p>
+			<pre class="col-r next">
+				<code>url()</code>
+				<code>rgb()</code>
+				<code>calc()</code>
+				<code>attr()</code>
+			</pre>
+		</div>
+		<footer class="footer">
+			<ul>
+				<li>Нативные грамматика и пунктуация CSS.</li>
+				<li>Объявление — аналогия с вендорным префиксом.</li>
+				<li>Вызов — аналогия с другими функциями, например url(), которая замещает значение подстановкой изображениея.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide black">
+		<h2 class="shout">@media</h2>
+		<footer class="footer">
+			<ul>
+				<li>Ещё одна наглядная демонстрация преимуществ работы пользовательских свойств в рантайме.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2>@media</h2>
+		<img src="pictures/gutter.png" class="cover" alt="Gutter">
+		<footer class="footer">
+			<ul>
+				<li>Задача. Размер внешних отступов блоков зависит от размера окна.</li>
+				<li>На средних и маленьких должна быть компактность.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2>@media</h2>
+		<img src="pictures/gutter-double.png" class="cover" alt="Gutter">
+		<footer class="footer">
+			<ul>
+				<li>На больших — больше "воздуха".</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2>@media</h2>
+			<pre>
+				<code>:root {</code>
+				<code>	--gutter: <mark>1rem</mark>;</code>
+				<code>}</code>
+				<code>.сontainer {</code>
+				<code>	margin: var(--gutter);</code>
+				<code>}</code>
+				<div class="next">
+					<code>@media (min-width: 1200px) {</code>
+					<code>	:root { --gutter: <mark>2rem</mark>; }</code>
+					<code>}</code>
+				</div>
+			</pre>
+		<footer class="footer">
+			<ul>
+				<li>Выносим значение в переменную — база для средних и маленьких разрешений.</li>
+				<li>Добавляем условие для увеличения на больших разрешениях.</li>
+				<li>Профит!</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2>@media (SASS)</h2>
+		<pre>
+			<code>$gutter: 1rem;</code>
+			<code>	</code>
+			<code>.сontainer {</code>
+			<code>	margin: $gutter;</code>
+			<code>}</code>
+			<code>	</code>
+			<code>@media (min-width: 1200px) {</code>
+			<code>	$gutter: 2rem;</code>
+			<code>}</code>
+
+		</pre>
+		<footer class="footer">
+			<ul>
+				<li>Аналогичный пример в ситаксисе SASS не сработает.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2>@media (SASS)</h2>
+		<pre>
+			<code>$gutter: 1rem;</code>
+			<code>	</code>
+			<code>.сontainer {</code>
+			<code>	margin: $gutter;</code>
+			<code>}</code>
+			<code>	</code>
+			<code><mark class="important"><s>@media (min-width: 1200px) {</s></mark></code>
+			<code>	<mark class="important"><s>$gutter: 2rem;</s></mark></code>
+			<code><mark class="important"><s>}</s></mark></code>
+
+		</pre>
+		<footer class="footer">
+			<ul>
+				<li>При сборке парсер отбросит медиа-выражение.</li>
+				<li>Преопределение значения внутри медиа-выражения не произойдёт.</li>
+				<li>Причина — SASS не умеет работать с переменными в чистом виде внутри медиавыражения.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2>@media (SASS)</h2>
+		<ul>
+			<li><code>@mixin</code> + <code>$map: ();</code></li>
+			<li><code>%foo</code> + <code>#{}</code></li>
+			<li>TL;DR</li>
+		</ul>
+		<footer class="footer">
+			<ul>
+				<li>Нетривиальное решение в SASS.</li>
+				<li>С помощью миксинов и карт переменных.</li>
+				<li>Селекторов плейсхолдеров и интерполяций.</li>
+				<li>Заводить уникальное пользовательское свойство на каждое медиа-выражение и писать код для каждого варианта отдельно.</li>
+				<li>Перечисление всех возможных вариантов — рост объёма кода по экспоненте.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<img src="pictures/atmedia.gif" width="100%" height="100%" class="cover" alt="">
+		<footer class="footer">
+			<ul>
+				<li>В любом случае, кода писать придется больше.</li>
+				<li>В последнем случае, особенно много.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide black">
+		<h2 class="shout">Inheritance</h2>
+		<footer class="footer">
+			<ul>
+				<li>Поговорим о ситуациях, когда состояние блока должно изменяться в зависимости от внешних условий.</li>
+				<li>Таким условием может быть месторасположение блока в DOM'е.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2>Inheritance</h2>
+		<img src="pictures/button.png" class="cover" alt="Button">
+		<footer class="footer">
+			<ul>
+				<li>Задача. Контрастные цвета кнопки и фона блока.</li>
+
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2>Inheritance</h2>
+		<img src="pictures/button-white.png" class="cover" alt="Button">
+		<footer class="footer">
+			<ul>
+				<li>Черный фон — белая кнопка.</li>
+				<li>Воспользуемся каскадом.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2>Inheritance</h2>
+		<pre>
+			<code>:root {</code>
+			<code>	--color: black;</code>
+			<code>}</code>
+			<code>button {</code>
+			<code>	background: var(--color);</code>
+			<code>}</code>
+			<div class="next">
+				<code>.black-box {</code>
+				<code>	--color: white;</code>
+				<code>}</code>
+			</div>
+		</pre>
+		</div>
+		<footer class="footer">
+			<ul>
+				<li>Вынесем значение цвета в переменную.</li>
+				<li>Изменим значение свойства на уровне узла блока с черным фоном.</li>
+				<li>Т.к. работает каскад, применится ближайшее унаследованное значение, при этом на глобальном уровне будет все тот же черный цвет!</li>
+				<li>В SASS это не сработает, т.к. переменные в нем на каскадируются в силу незнания DOM-окружения кнопки.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2><s>Inheritance</s></h2>
+			<pre>
+				<code>:root {</code>
+				<code>	--color: black;</code>
+				<code>}</code>
+				<code>selector {</code>
+				<code>	background: var(--color);</code>
+				<code>}</code>
+				<div class="next">					
+					<code>selector > selector {</code>
+					<code>	--color: initial;</code>
+					<code>}</code>
+				</div>
+			</pre>
+		<footer class="footer">
+			<ul>
+				<li>Отмену наследования переменной можно сделать с помощью значения initial.</li>
+				<li>Т.о. образом потомки не будут пинимать значение переменной.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2><s>Inheritance</s></h2>
+			<pre>
+				<code>* {</code>
+				<code>	--color: initial;</code>
+				<code>}</code>
+			</pre>
+			<pre class="next">
+				<code><s>:root {</s></code>
+				<code><s>	--color: black;</s></code>
+				<code><s>}</s></code>
+			</pre>
+			<pre class="next">
+				<code>selector {</code>
+				<code>	--color: black;</code>
+				<code>}</code>
+			</pre>
+		<footer class="footer">
+			<ul>
+				<li>Будьте осторожны со сбросом через универсальный селектор.</li>
+				<li>Несмотря на нулевую специфичность он имее преимущественное применение.</li>
+				<li>Поэтому сбросит вообще все, в т.ч. глобальные переменные.</li>
+				<li>Все что вам останется — локальные ненаследуемые переменные.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide black">
+		<h2 class="shout">Каскад?<br> Это шутка?</h2>
+		<footer class="footer">
+			<ul>
+				<li>Многие возмутяться. Каскад? Что он несет? Каскад это же смертный грех!</li>
+				<li>Несмотря на всеобщую БЭМизацию, жаркие споры и не утихают потому, что иногда от такой возможности сложно отказаться.</li>
+				<li>CSS'у при всех существующих методологиях и подходах все еще не хватает выразительности.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2>SOLID O</h2>
+		<figure>
+			<blockquote>
+				<p>Программные сущности (классы, модули, функции и т.д.) должны быть открыты для расширения, но закрыты для изменения.</p>
+			</blockquote>
+			<figcaption>
+				<cite>Бертран Мейер</cite></a>
+			</figcaption>
+		</figure>
+		<p></p>
+		<footer class="footer">
+			<ul>
+				<li>Один из основных принципов ООП (принцип открытости/закрытости) провозглашает возможность изменения поведения программной сущности без изменения исходного кода.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2>SOLID O</h2>
+		<div class="col-l">
+			<p><strong>Плохо</strong></p>
+			<pre>
+				<code>.button {</code>
+				<code>	background: black;</code>
+				<code>}</code>
+				<code>	</code>
+				<code>.black-box .button {</code>
+				<code>	background: white;</code>
+				<code>}</code>
+			</pre>
+		</div>
+		<div class="col-r">
+			<p><strong>Хорошо</strong></p>
+			<pre>
+				<code>.button {</code>
+				<code>	background: var(--color,</code>
+				<code>	black);</code>
+				<code>}</code>
+				<code>.black-box {</code>
+				<code>	--color: white;</code>
+				<code>}</code>
+			</pre>
+		</div>
+		<footer class="footer">
+			<ul>
+				<li>Слева — типичный подход к оформлению по контексту в CSS (селектор потомка).</li>
+				<li>Такой подход нарушает принцип SOLID O: при нем изменяются детали реализации закрытого компонента.</li>
+				<li>В примере справа тот же самый компонент, переписан в соответствии с принципом SOLID O.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2>SOLID O</h2>
+		<div class="col-l">
+			<p><strong>Плохо</strong></p>
+			<pre>
+				<code>.button {</code>
+				<code>	background: black;</code>
+				<code>}</code>
+				<code>	</code>
+				<code><mark>.black-box .button</mark> {</code>
+				<code><mark>	background: white;</mark></code>
+				<code><mark>}</mark></code>
+			</pre>
+		</div>
+		<div class="col-r">
+			<p><strong>Хорошо</strong></p>
+			<pre>
+				<code>.button {</code>
+				<code>	background: var(--color,</code>
+				<code>	black);</code>
+				<code>}</code>
+				<code>.black-box {</code>
+				<code>	--color: white;</code>
+				<code>}</code>
+			</pre>
+		</div>
+		<footer class="footer">
+			<ul>
+				<li>Отличие в примерах тонкое, но важное.</li>
+				<li>Cелектор потомка объявляет — кнопки в «шапке» будут выглядеть вот так.</li>
+				<li>Это "жесткое" объявление трудно отменить в каком-то исключительном случае для кнопки в "шапке".</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2>SOLID O</h2>
+		<div class="col-l">
+			<p><strong>Плохо</strong></p>
+			<pre>
+				<code>.button {</code>
+				<code>	background: black;</code>
+				<code>}</code>
+				<code>	</code>
+				<code>.black-box .button {</code>
+				<code>	background: white;</code>
+				<code>}</code>
+			</pre>
+		</div>
+		<div class="col-r">
+			<p><strong>Хорошо</strong></p>
+			<pre>
+				<code><mark>.button</mark> {</code>
+				<code>	background: var(--color,</code>
+				<code>	black);</code>
+				<code>}</code>
+				<code>.black-box {</code>
+				<code>	--color: white;</code>
+				<code>}</code>
+			</pre>
+		</div>
+		<footer class="footer">
+			<ul>
+				<li>С переменной компонент кнопки по-прежнему ничего не знает о контексте и никак не сцеплен с компонентом "шапки".</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2>SOLID O</h2>
+		<div class="col-l">
+			<p><strong>Плохо</strong></p>
+			<pre>
+				<code>.button {</code>
+				<code>	background: black;</code>
+				<code>}</code>
+				<code>	</code>
+				<code>.black-box .button {</code>
+				<code>	background: white;</code>
+				<code>}</code>
+			</pre>
+		</div>
+		<div class="col-r">
+			<p><strong>Хорошо</strong></p>
+			<pre>
+				<code>.button {</code>
+				<code>	background: var(<mark>--color</mark>,</code>
+				<code>	black);</code>
+				<code>}</code>
+				<code>.black-box {</code>
+				<code>	--color: white;</code>
+				<code>}</code>
+			</pre>
+		</div>
+		<footer class="footer">
+			<ul>
+				<li>Он объявляет: "Я буду применять к себе стили на основе этих пользовательских свойств, какими бы они ни были здесь и сейчас".</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2>SOLID O</h2>
+		<div class="col-l">
+			<p><strong>Плохо</strong></p>
+			<pre>
+				<code>.button {</code>
+				<code>	background: black;</code>
+				<code>}</code>
+				<code>	</code>
+				<code>.black-box .button {</code>
+				<code>	background: white;</code>
+				<code>}</code>
+			</pre>
+		</div>
+		<div class="col-r">
+			<p><strong>Хорошо</strong></p>
+			<pre>
+				<code>.button {</code>
+				<code>	background: var(--color,</code>
+				<code>	black);</code>
+				<code>}</code>
+				<code>.black-box {</code>
+				<code>	<mark>--color: white</mark>;</code>
+				<code>}</code>
+			</pre>
+		</div>
+		<footer class="footer">
+			<ul>
+				<li>А компонент "шапки" говорит: "Я собираюсь задать такие значения свойств; мои потомки сами решат, как их использовать и использовать ли вообще".</li>
+				<li>Главное отличие в том, что компонент кнопки сам решает, надо ли его расширять, и это легко отменить для какого-нибудь исключения.</li>
+				<li>Похоже на принцип props в React, когда родительские компоненты передают данные дочерним, а дочерние уже определяют, какие props они готовы принять и что собираются с ними делать.</li>
+				<li>Архитектурная модель — однонаправленный поток данных.</li>
+				<li>Успех модели React доказывает, что можно строить сложные системы на базе наследования свойств. Более того, переменные с видимостью на уровне DOM — полезный паттерн разработки.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide black">
+		<img src="pictures/crown.png" class="cover" alt="">
+		<footer class="footer">
+			<ul>
+				<li>Каскад — основополагающая концепция CSS.</li>
+				<li>Переменные снова делают каскад крутым!</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2>SOLID O</h2>
+		<div class="col-l">
+			<p><strong>Плохо</strong></p>
+			<pre>
+				<code>.button {</code>
+				<code>	background: black;</code>
+				<code>}</code>
+				<code>	</code>
+				<code>.black-box .button {</code>
+				<code>	background: white;</code>
+				<code>}</code>
+			</pre>
+		</div>
+		<div class="col-r">
+			<p><strong>Хорошо</strong></p>
+			<pre>
+				<code>.button {</code>
+				<code>	<mark>background: var(--color,</mark></code>
+				<code>	<mark>black);</mark></code>
+				<code>}</code>
+				<code>.black-box {</code>
+				<code>	--color: white;</code>
+				<code>}</code>
+			</pre>
+		</div>
+		<footer class="footer">
+			<ul>
+				<li>Механизм fallback'а — значение по умолчанию, если пользовательское свойство не определено.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide black">
+		<h2 class="shout">Fallback</h2>
+		<footer class="footer">
+			<ul>
+				<li>Рассмотрим fallback'и подробнее.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2>Fallback</h2>
+		<pre>
+			<code>:root {</code>
+			<code>	--color:;</code>
+			<code>}</code>
+			<code>	</code>
+			<code>.button {</code>
+			<code>	background: var(--color, <mark>black</mark>);</code>
+			<code>}</code>
+		</pre>
+		<footer class="footer">
+			<ul>
+				<li>Fallback — 2-й аргумент функции var().</li>
+				<li>Усложним пример.</li>
+				<li>Есть фреймворк, есть тему по умолчанию, кастомизация через пользовательские свойства.</li>
+				<li>Настройки по умолчанию удобно хранить централизованно, а не локально в каждом компоненте.</li>
+				<li>Перепишем пример.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2>Fallback</h2>
+			<pre>
+				<code>:root {</code>
+				<code>	--color:;</code>
+				<code>	<mark>--color-default: black;</mark></code>
+				<code>}</code>
+				<code>	</code>
+				<code>.button {</code>
+				<code>	background: var(--color, <mark>var(--color-default)</mark>);</code>
+				<code>}</code>
+			</pre>
+		<footer class="footer">
+			<ul>
+				<li>В fallback'е ссылка на пользовательское свойство со значением по умолчанию.</li>
+				<li>Да, можно обращаться к пользовательским свойствам внутри других!</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2>Fallback</h2>
+			<pre>
+				<code>:root {</code>
+				<code>	--color<mark>:;</mark></code>
+				<code>	--color-default: black;</code>
+				<code>	</code>
+				<code>}</code>
+				<code>.button {</code>
+				<code>	background: var(--color, var(--color-default));</code>
+				<code>}</code>
+			</pre>
+		<footer class="footer">
+			<ul>
+				<li>Отсутствие значения пользовательского свойства согласно спеке записывается буквально.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2>Fallback</h2>
+			<pre>
+				<code>:root {</code>
+				<code>	--color:<mark> </mark>;</code>
+				<code>	--color-default: black;</code>
+				<code>	</code>
+				<code>}</code>
+				<code>.button {</code>
+				<code>	background: var(--color, var(--color-default));</code>
+				<code>}</code>
+			</pre>
+		<footer class="footer">
+			<ul>
+				<li>Если записать с пробелом. Он будет воспринят, как значение.</li>
+				<li>Однако, ни у одного стандартного свойства CSS нет такого значения, поэтому при применении произойдет ошибка.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2>Fallback</h2>
+			<pre>
+				<code>:root {</code>
+				<code>	--color: <mark>initial</mark>;</code>
+				<code>	--color-default: black;</code>
+				<code>	</code>
+				<code>}</code>
+				<code>.button {</code>
+				<code>	background: var(--color, var(--color-default));</code>
+				<code>}</code>
+			</pre>
+		<footer class="footer">
+			<ul>
+				<li>Свойство all не сбрасывает значения переменных.</li>
+				<li>А вот применение значения initial непосредственно к переменной сбросит ее значение. Хотя это не оговорено спекой.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2>Fallback</h2>
+			<pre>
+				<code>:root {</code>
+				<code>	--color: <mark>var(--color-custom, black)</mark>;</code>
+				<code>	--color-custom: initial;</code>
+				<code>	</code>
+				<code>}</code>
+				<code>.button {</code>
+				<code>	background: var(--color);</code>
+				<code>}</code>
+			</pre>
+		<footer class="footer">
+			<ul>
+				<li>Поменяв логику переменных можно тот же сценарий реализовать вот так.</li>
+				<li>Да, переменные могут ссылаться друг на друга.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide black">
+		<h2 class="shout">I18n</h2>
+		<footer class="footer">
+			<ul>
+				<li>Пользовательские свойства можно использовать для интернационализации.</li>
+				<li>Например… типографики.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide black">
+		<h2 class="shout">“en”<br> «ru»</h2>
+		<footer class="footer">
+			<ul>
+				<li>Задача. Отображать разные виды кавычек в зависимости от языка интерфейса.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2>I18n</h2>
+		<pre>
+			<code>&lt;html lang="ru"&gt;</code>
+			<code>	…</code>
+			<code>	&lt;body&gt;</code>
+			<code>		&lt;q&gt;Чебурашка&lt;/q&gt;</code>
+			<code>	&lt;/body&gt;</code>
+			<code>&lt;/html&gt;</code>
+		</pre>
+		<footer class="footer">
+			<ul>
+				<li>Базовая разметка.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2>I18n</h2>
+		<pre>
+			<code>&lt;html <mark>lang="ru"</mark>&gt;</code>
+			<code>	…</code>
+			<code>	&lt;body&gt;</code>
+			<code>		&lt;q&gt;Чебурашка&lt;/q&gt;</code>
+			<code>	&lt;/body&gt;</code>
+			<code>&lt;/html&gt;</code>
+		</pre>
+		<footer class="footer">
+			<ul>
+				<li>В качестве триггера атрибут "lang".</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2>I18n</h2>
+		<pre>
+			<code>:root:lang(en) {</code>
+			<code>  --quotes-l: "“"; --quotes-r: "”";</code>
+			<code>}</code>
+			<code>q {</code>
+			<code>	quotes: var(--quotes-l, "<mark>«</mark>")</code>
+			<code>			var(--quotes-r, "<mark>»</mark>");</code>
+			<code>}</code>
+		</pre>
+		<footer class="footer">
+			<ul>
+				<li>Интерфейс по-умолчанию русскоязычный. Поэтому при отсутствуещем значении "lang" или указанном, как "ru". Кавычки будут французские.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2>I18n</h2>
+		<pre>
+			<code>:root:lang(en) {</code>
+			<code>  --quotes-l: "<mark>“</mark>"; --quotes-r: "<mark>”</mark>";</code>
+			<code>}</code>
+			<code>q {</code>
+			<code>	quotes: var(--quotes-l, "«")</code>
+			<code>			var(--quotes-r, "»");</code>
+			<code>}</code>
+		</pre>
+		<footer class="footer">
+			<ul>
+				<li>При en — двойные английские.</li>
+				<li>Можно держать значения направлений в пользовательских свойствах и переключать их для RTL-интерфейсов.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide black">
+		<h2 class="shout">calc()</h2>
+		<footer class="footer">
+			<ul>
+				<li>Функции переменных можно использовать с другими CSS-функциями.</li>
+				<li>Особенную мощь предоставляет комбинация с calc().</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide black">
+		<img src="pictures/calc.png" class="cover" alt="">
+		<footer class="footer">
+			<ul>
+				<li>Задача. Расстояние между абзацами должно быть удвоенным размером интерлиньяжа в "px".</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide black">
+		<img src="pictures/calc-new.png" class="cover" alt="">
+		<footer class="footer">
+			<ul>
+				<li>Изменяется интерлиньяж, изменяется расстояние между абзацами.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2>calc()</h2>
+		<pre>
+			<code>:root {</code>
+			<code>	<mark>--line-height: 1.5;</mark></code>
+			<code>	--paragraph-margin: calc(var(--line-height) * 2);</code>
+			<code>}</code>
+			<code>	</code>
+			<code>p {</code>
+			<code>	margin-bottom: calc(var(--paragraph-margin, 0) * 1px);</code>
+			<code>}</code>
+		</pre>
+		<footer class="footer">
+			<ul>
+				<li>Заводим переменную для хранения значения интерлиньяжа.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2>calc()</h2>
+		<pre>
+			<code>:root {</code>
+			<code>	--line-height: 1.5;</code>
+			<code>	<mark>--paragraph-margin: calc(var(--line-height) * 2);</mark></code>
+			<code>}</code>
+			<code>	</code>
+			<code>p {</code>
+			<code>	margin-bottom: calc(var(--paragraph-margin, 0) * 1px);</code>
+			<code>}</code>
+		</pre>
+		<footer class="footer">
+			<ul>
+				<li>Заводим переменную для расчёта значения отступа между абзацами.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2>calc()</h2>
+		<pre>
+			<code>:root {</code>
+			<code>	--line-height: 1.5;</code>
+			<code>	--paragraph-margin: calc(var(--line-height) * 2);</code>
+			<code>}</code>
+			<code>	</code>
+			<code>p {</code>
+			<code>	margin-bottom: <mark>calc(var(--paragraph-margin, 0) * 1px);</mark></code>
+			<code>}</code>
+		</pre>
+		<footer class="footer">
+			<ul>
+				<li>Присваиваем вычисленному значению единицу измерения.</li>
+				<li>Нельзя к функции var() дописать в конце единицу. Только через calc().</li>
+				<li>Можно было бы вычисление и присвоение единицы измерения объединить в одну функцию. Но это было бы менее наглядно и читабельно.</li>
+				<li>Кроме того, вычисления лучше делать однократно и подставлять результат в нужные места.</li>
+				<li>И удобнее манипулировать с числовыми данными, чем с конкретными значениями. Потому что с числом вы можете делать, что угодно.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide black">
+		<h2 class="shout">&lt;SVG&gt;</h2>
+		<footer class="footer">
+			<ul>
+				<li>То, что препроцессорам недоступно вовсе.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2>&lt;SVG&gt;</h2>
+		<pre>
+			<code>&lt;svg height="100" width="100"&gt;</code>
+			<code>	&lt;style&gt;</code>
+			<code>		:root {</code>
+			<code>			<mark>--color: black;</mark></code>
+			<code>		}</code>
+			<code>	&lt;/style&gt;</code>
+			<code>	&lt;circle cx="50" cy="50" r="50" fill="<mark>var(--color)</mark>" /&gt;</code>
+			<code>&lt;/svg&gt;</code>
+		</pre>
+		<footer class="footer">
+			<ul>
+				<li>Если иконки интерфейса должны зависеть от цветовой схемы то с пользовательскими свойствами это не проблема.</li>
+				<li>Они могут работать с пользовательскими свойствами как определенными внутри SVG…</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2>&lt;SVG&gt;</h2>
+		<p><strong>CSS</strong></p>
+		<pre>
+			<code>:root {</code>
+			<code>	<mark>--color: black;</mark></code>
+			<code>}</code>
+		</pre>
+		<p><strong>SVG</strong></p>
+		<pre>
+			<code>&lt;svg height="100" width="100"&gt;</code>
+			<code>	&lt;circle cx="50" cy="50" r="50" fill="<mark>var(--color)</mark>" /&gt;</code>
+			<code>&lt;/svg&gt;</code>
+		</pre>
+		<footer class="footer">
+			<ul>
+				<li>…так и снаружи.</li>
+				<li>Обратите внимание. :root для первого примера вернет html, для второго — svg. Вот в этом и разница.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide black">
+		<h2 class="shout">JavaScript</h2>
+		<footer class="footer">
+			<ul>
+				<li>Работа с переменными препроцессоров в JS похожа на жесткий BDSM.</li>
+				<li>С пользовательскими свойствами это легко и приятно.</li>
+				<li>В одной из версий черновика стандарта было разработано API CSSVariablesMap, но впоследствии удалено из стандарта в поисках лучшего решения.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2>API CSSStyleDeclaration</h2>
+		<p><strong>Получаем</strong></p>
+		<pre>
+			<code>getComputedStyle(document.documentElement)</code>
+			<code>.<mark>getPropertyValue</mark>('--variable');</code>
+		</pre>
+		<p><strong>Назначаем</strong></p>
+		<pre>
+			<code>element.style.<mark>setProperty</mark>('--variable', 'value');</code>
+		</pre>
+		<p><strong>Удаляем</strong></p>
+		<pre>
+			<code>element.style.<mark>removeProperty</mark>('--variable');</code>
+		</pre>
+		<footer class="footer">
+			<ul>
+				<li>Т.к. пользовательские свойства обладают всеми особенностями классических свойств CSS, они доступны через API CSSStyleDeclaration.</li>
+				<li>Можно получать значение, задавать его и удалять.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2>API CSSStyleDeclaration</h2>
+		<p data-height="468" data-theme-id="dark" data-slug-hash="rxqPOM" data-default-tab="css,result" data-user="danield770" data-embed-version="2" data-preview="true" class="codepen">See the Pen <a href="http://codepen.io/danield770/pen/rxqPOM/">css variables</a> by Daniel David (<a href="http://codepen.io/danield770">@danield770</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+		<script async src="http://assets.codepen.io/assets/embed/ei.js"></script>
+		<footer class="footer">
+			<ul>
+				<li></li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide black">
+		<h2 class="shout">@supports</h2>
+		<footer class="footer">
+			<ul>
+				<li>Чтобы разделять код для браузеров с поддержкой пользовательских свойств и без нее, отлично подходит свойство.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2>@supports</h2>
+		<pre>
+			<code><mark>@supports (--a: 0) {</mark></code>
+			<code>	<span class="comment">/* Progressive Enhancement */</span></code>
+			<code><mark>}</mark></code>
+		</pre>
+		<footer class="footer">
+			<ul>
+				<li>Выбираем, какие правила экранируем, а какие делаем основными.</li>
+				<li>В данном случае экранируем стили с поддержкой пользовательских свойств.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2>@supports</h2>
+		<pre>
+			<code><mark>@supports not (--a: 0) {</mark></code>
+			<code>	<span class="comment">/* Graceful Degradation */</span></code>
+			<code><mark>}</mark></code>
+		</pre>
+		<footer class="footer">
+			<ul>
+				<li>И без поддержки.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide black">
+		<h2 class="shout">CSS.supports</h2>
+		<footer class="footer">
+			<ul>
+				<li>Если скрипты также опираются на пользовательские свойства CSS…</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2>CSS.supports</h2>
+		<pre>
+			<code>if (window.CSS && window.CSS.supports && </code>
+			<code>window.CSS.supports('--a', 0)) {</code>
+			<code>	<span class="comment">// сценарии с поддержкой переменных</span></code>
+			<code>} else {</code>
+			<code>	<span class="comment">// сценарии без поддержки переменных</span></code>
+			<code>}</code>
+		</pre>
+		<footer class="footer">
+			<ul>
+				<li>…то используйте проверку методом CSS.supports.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide white">
+		<h2>Рекомендации</h2>
+		<ul>
+			<li class="next"><code>:root</code></li>
+			<li class="next"><code>var(--property, fallback)</code></li>
+			<li class="next"><code>@supports</code></li>
+			<li class="next"><code>--property-calc</code></li>
+			<li class="next"><code>initial</code></li>
+		</ul>
+	</section>
+
+	<section class="slide black">
+		<h2 class="shout">И еще…</h2>
+		<footer class="footer">
+			<ul>
+				<li></li>
+			</ul>
+		</footer>
+	</section>
+	<section class="slide black">
+		<h2 class="shout place b">Thx Tab!</h2>
+		<img src="pictures/atkins.jpg" class="cover" alt="Tab Atkins">
+		<footer class="footer">
+			<ul>
+				<li>Герой нашего времени и автор специ Таб Аткинс младший.</li>
+			</ul>
+		</footer>
+	</section>
+
+	<section class="slide black" id="questions">
+		<style>
+			#questions h2 {
+				width: 50%;
+				font-size: 80px;
+				text-align: center;
+			}
+		</style>
+		<h2 class="place r">Спасибо за внимание!<br><br> Вопросы?</h2>
+		<img src="pictures/end.jpg" class="cover" alt="">
+	</section>
+
+	<p class="badge">
+		<a href="https://github.com/shower/shower">Fork me on GitHub</a>
+	</p>
+	<!--
+		To hide progress bar from entire presentation
+		just remove “progress” element.
+		-->
+	<div class="progress"></div>
+	<script src="shower/shower.min.js"></script>
+	<!-- Copyright © 2015 Yours Truly, Famous Inc. -->
+	<!-- Photos by John Carey, fiftyfootshadows.net -->
+</body>
+</html>

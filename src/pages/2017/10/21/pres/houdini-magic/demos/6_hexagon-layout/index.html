@@ -1,0 +1,107 @@
+<!doctype html>
+
+<div class="grid">
+    <div class="grid-item"></div>
+    <div class="grid-item"></div>
+    <div class="grid-item"></div>
+    <div class="grid-item"></div>
+    <div class="grid-item-2"></div>
+    <div class="grid-item-2"></div>
+    <div class="grid-item-2">I</div>
+    <div class="grid-item-2"></div>
+    <div class="grid-item-2"></div>
+    <div class="grid-item">L</div>
+    <div class="grid-item">I</div>
+    <div class="grid-item">K</div>
+    <div class="grid-item">E</div>
+    <div class="grid-item-2">H</div>
+    <div class="grid-item-2">O</div>
+    <div class="grid-item-2">N</div>
+    <div class="grid-item-2">E</div>
+    <div class="grid-item-2">Y</div>
+    <div class="grid-item"></div>
+    <div class="grid-item"></div>
+    <div class="grid-item"></div>
+    <div class="grid-item">&#x1f41d;</div>
+</div>
+
+<style>
+    :root {
+        --cell-size: 15vw;
+    }
+    body {
+        margin: 0;
+        background: #f6e000;
+    }
+
+    .grid {
+        margin: 0 auto;
+        width: calc(var(--cell-size) * 5);
+        display: grid;
+        grid-gap: 0;
+        grid-template-columns: repeat(10, calc(var(--cell-size) / 2));
+    }
+
+    .grid-item,
+    .grid-item-2 {
+        margin-top: calc(-1 * var(--cell-size) / 4);
+        box-sizing: border-box;
+        border: 2px solid #985B10;
+        display: block;
+        --background-color: #f6e000;
+        --border-color: #985B10;
+        border-image-source: paint(hexagon);
+        border-image-width: 50%;
+        border-image-slice: 50%;
+        border-top: calc(var(--cell-size) / 4) solid transparent;
+        border-bottom: calc(var(--cell-size) / 4) solid transparent;
+        width: var(--cell-size);
+        height: var(--cell-size);
+        grid-column: span 2;
+
+        text-align: center;
+        font-size: calc(var(--cell-size) / 2);
+        line-height: calc(var(--cell-size) / 2);
+    }
+
+    .grid-item:nth-child(9n+1) {
+        grid-column-start: 2;
+    }
+
+    .grid-item:nth-child(9n+2) {
+        grid-column-start: 4;
+    }
+
+    .grid-item:nth-child(9n+3) {
+        grid-column-start: 6;
+    }
+
+    .grid-item:nth-child(9n+4) {
+        grid-column-start: 8;
+    }
+
+    .grid-item-2:nth-child(9n+5) {
+        grid-column-start: 1;
+    }
+
+    .grid-item-2:nth-child(9n+6) {
+        grid-column-start: 3;
+    }
+
+    .grid-item-2:nth-child(9n+7) {
+        grid-column-start: 5;
+    }
+
+    .grid-item-2:nth-child(9n+8) {
+        grid-column-start: 7;
+    }
+
+    .grid-item-2:nth-child(9n+9) {
+        grid-column-start: 9;
+    }
+
+</style>
+
+<script>
+    window.CSS.paintWorklet.addModule('hexagon.js');
+</script>

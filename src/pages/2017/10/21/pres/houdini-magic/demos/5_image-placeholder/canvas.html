@@ -1,0 +1,56 @@
+<!doctype html>
+
+<style>
+    :root {
+        --bg-color: #8c2021;
+        --color: #a3852b;
+    }
+
+    html {
+        background: #222;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .link {
+        display: inline-block;
+        color: #ddd;
+        opacity: 0.3;
+        transition: opacity 0.3s;
+        margin-bottom: 20px;
+    }
+
+    .link:hover {
+        opacity: 1;
+    }
+
+    .link a {
+        color: deepskyblue;
+    }
+
+    .canvas {
+        display: block;
+        width: 80vw;
+        height: 80vh;
+        margin-bottom: 20px;
+    }
+
+</style>
+
+<span class="link">Inspired By:
+    <a href="https://www.youtube.com/watch?v=xN_KOacUDhU">#17 ALL YOUR HTML, Perlin Noise, 1d, 2d, 3d</a>
+</span>
+
+<canvas class="canvas"></canvas>
+
+<input type="color"
+       id="bg-color"
+       value="#8c2021" />
+<input type="color"
+       id="color"
+       value="#a3852b" />
+
+<script type="module" src="canvas.js"></script>

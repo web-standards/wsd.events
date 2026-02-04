@@ -1,0 +1,148 @@
+.slide::after {
+  background: #b5a061;
+  height: 75px;
+  border-radius: 0 0 10px 10px;
+}
+.slide h2 {
+  color: #b5a061;
+}
+.html {
+  color: #666;
+}
+.hightlight,
+.important,
+.alert {
+  border-radius: 0.2em;
+  padding: 0.1em 0.3em;
+}
+.hightlight {
+  background: #fafaa2;
+}
+.hightlight * {
+  color: #000 !important;
+}
+.important {
+  background: #403c32;
+  color: #fff;
+}
+.important * {
+  color: #fff !important;
+}
+.alert {
+  background: #d10a0a;
+  color: #fff;
+}
+.alert * {
+  color: #fff !important;
+}
+.comment {
+  color: #999;
+}
+.progress {
+  border-color: #b5a061 rgba(0,0,0,0) #b5a061 #b5a061;
+}
+.tag {
+  color: #ad1531;
+}
+.attr {
+  color: #4f7302;
+}
+.slide .shout.smaller {
+  font-size: 90px;
+}
+.slide .shout.smaller a {
+  color: #fff;
+}
+.slide.menu-slide h2 {
+  font-size: 120px;
+  margin-bottom: 0;
+  padding: 0 30px;
+}
+.slide.menu-slide ul {
+  color: #fff;
+}
+.slide.menu-slide ul > li {
+  font-size: 120px;
+  line-height: 1;
+  font-weight: bold;
+  padding: 0 30px;
+}
+.slide.menu-slide ul > li:before {
+  opacity: 0;
+}
+.slide.menu-slide .selected-item {
+  background-color: #b5a061;
+  display: inline-block;
+}
+.slide.menu-slide .transparent {
+  opacity: 0.25;
+}
+.slide.label-header h2 {
+  display: inline-block;
+  padding: 10px 30px;
+  background-color: #b5a061;
+  color: #fff;
+}
+.slide.label-header h2.shout {
+  width: auto;
+  margin-left: 100px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 120px;
+}
+.label {
+  background-color: #b5a061;
+  color: #fff;
+  padding: 0 10px;
+  display: inline-block;
+}
+.screen-example {
+  vertical-align: top;
+  float: right;
+  border: 1px solid #efefef;
+  padding-top: 10px;
+  width: 700px;
+}
+.relative {
+  position: relative;
+}
+.slide ol.no-indent li,
+.slide ul.no-indent li {
+  text-indent: 0;
+  margin-bottom: 5px;
+}
+.frame {
+  box-shadow: 0 0 5px 5px #eee;
+  line-height: 0;
+  border-radius: 15px 15px 0 0;
+}
+.frame .title {
+  background-color: #efefef;
+  height: 30px;
+  border-radius: 15px 15px 0 0;
+  border: 1px solid #aaa;
+  border-bottom-width: 0;
+  line-height: 24px;
+  padding-left: 15px;
+}
+.frame .btn {
+  height: 13px;
+  width: 13px;
+  display: inline-block;
+  border-radius: 50%;
+}
+.frame .btn.close {
+  background-color: #f00;
+}
+.frame .btn.hide {
+  background-color: #ff0;
+}
+.frame .btn.expand {
+  background-color: #008000;
+}
+.fade-opacity {
+  opacity: 0.25;
+}
+.opacity-0 {
+  opacity: 0;
+}

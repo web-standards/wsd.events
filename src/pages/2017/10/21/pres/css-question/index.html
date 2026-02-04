@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Shower Presentation Engine</title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
+	<script src="//cdn.jsdelivr.net/interact.js/1.2.6/interact.min.js"></script>
+	<style>
+		.resized {
+			pointer-events: none;
+		}
+		iframe.cover {
+			width: 100vw; height: 100vh
+		}
+		iframe.cover.small{
+			width: 30vw;
+			border-right: 10px solid white;
+		}
+	</style>
+</head>
+<body class="shower list">
+
+	<header class="caption">
+		<h1>Ответ на главный вопрос в CSS</h1>
+		<p>
+			Как сделать жизнь прекрасной, волосы шелковистыми, а верстку неотразимой, <br>
+			или почему я ненавижу дизайнеров.
+		</p>
+	</header>
+
+	<section class="slide" id="cover">
+		<h2>Ответ на главный вопрос в CSS</h2>
+		<p>
+			Как сделать жизнь прекрасной, волосы шелковистыми, а верстку неотразимой
+			<br>или
+			<br>Почему я ненавижу дизайнеров
+		</p>
+		<style>
+			#cover h2 {
+				margin:30px 0 0;
+				text-align:center;
+				font-size:70px;
+			}
+			#cover p {
+				margin:10px 0 0;
+				text-align:center;
+				font-style:italic;
+				font-size:20px;
+			}
+			#cover p a {
+				color:#FFF;
+			}
+		</style>
+	</section>
+
+	<section class="slide">
+		<h2>Как сделать жизнь прекрасной, волосы шелковистыми, а верстку неотразимой.</h2>
+	</section>
+
+	<section class="slide" id="no">
+		<h2>Никак</h2>
+		<style>
+			#no h2 {
+				margin:30px 0 0;
+				text-align:center;
+				font-size:70px;
+			}
+		</style>
+	</section>
+
+	<section class="slide">
+		<h2>Почему я ненавижу дизайнеров.</h2>
+	</section>
+
+	<section class="slide">
+		<figure>
+			<img class="cover" src="pictures/Rome.png" alt="Hands on the orange typewriter in a park">
+			<figcaption class="white">
+			</figcaption>
+		</figure>
+	</section>
+
+	<section class="slide">
+		<figure>
+			<img class="cover" src="pictures/Provence_wide.png">
+		</figure>
+	</section>
+
+	<section class="slide black">
+		<video loop="true" class="cover" height="100%" width="100%" autoplay="true" src="https://media.giphy.com/media/pSBiwdd99Cak0/giphy.mp4"/>
+	</section>
+
+	<section class="slide">
+		<figure>
+			<img class="cover" src="pictures/Provence_small.png">
+		</figure>
+	</section>
+
+	<section class="slide">
+		<figure>
+			<img class="cover" src="pictures/Screen1.png">
+		</figure>
+	</section>
+
+	<section class="slide">
+		<h2>Llanfairpwllgwyngy <br/>llgogerychwyrndro<br/>bwllllantysiliogogogoch (58 letters)</h2>
+	</section>
+
+	<section class="slide">
+		<iframe class="cover" src="demos/1.html" frameborder="0"></iframe>
+	</section>
+
+	<section class="slide">
+		<iframe class="cover" src="https://css-tricks.com/css-is-awesome/" frameborder="0"></iframe>
+	</section>
+
+	<section class="slide black">
+		<figure>
+			<img class="cover" src="pictures/capone/1200px-Al_Capone_in_1930.jpg">
+		</figure>
+	</section>
+
+	<section class="slide">
+		<figure>
+			<img class="cover" src="pictures/Chicago.png"/>
+		</figure>
+	</section>
+
+	<section class="slide">
+		<pre>
+			<code>@media (width > <mark class="important">800px</mark>) and (width <=  <mark class="important">900px</mark>) </code>
+			<code>	.container {font-size: <mark class="important">146px;</mark>}</code>
+			<code>&nbsp;</code>
+			<code>@media (width > 700px) and (width <= 800px) </code>
+			<code>	.container {font-size: 127px;}</code>
+			<code>&nbsp;</code>
+			<code>@media (width > 600px) and (width <= 700px) </code>
+			<code>	.container {font-size: 109px;}</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<pre style="font-size: 17px">
+			<code>@media (min-width: 900px) and (max-width: 1000px) { .container {font-size: 164px;} }</code>
+			<code>@media (min-width: 800px) and (max-width:  900px) { .container {font-size: 146px;} }</code>
+			<code>@media (min-width: 700px) and (max-width:  800px) { .container {font-size: 127px;} }</code>
+			<code>@media (min-width: 600px) and (max-width:  700px) { .container {font-size: 109px;} }</code>
+			<code>@media (min-width: 500px) and (max-width:  600px) { .container {font-size:  91px;} }</code>
+			<code>@media (min-width: 400px) and (max-width:  500px) { .container {font-size:  73px;} }</code>
+			<code>@media (min-width: 300px) and (max-width:  400px) { .container {font-size:  54px;} }</code>
+			<code>@media (min-width: 200px) and (max-width:  300px) { .container {font-size:  35px;} }</code>
+			<code>@media (min-width: 100px) and (max-width:  200px) { .container {font-size:  18px;} }</code>
+			<code>@media (min-width:   0px) and (max-width:  100px) { .container {font-size:  18px;} }</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<iframe id="first-demo" class="cover small" src="demos/2.html" frameborder="0"></iframe>
+
+		<script>
+			interact('#first-demo')
+				.resizable({
+					preserveAspectRatio: false,
+					edges: { left: true, right: true, bottom: false, top: false}
+				})
+				.on('resizestart', (event) => event.target.classList.add("resized"))
+				.on('resizeend', (event) => event.target.classList.remove("resized"))
+				.on('resizemove', (event) => {
+					let {style} = event.target;
+					style.width  = event.rect.width + 'px';
+					style.height = event.rect.height + 'px';
+				});
+		</script>
+	</section>
+
+	<section class="slide  black">
+		<figure>
+			<img class="cover" src="pictures/capone/_5.jpg">
+		</figure>
+	</section>
+
+	<section class="slide">
+		<pre>
+			<code>.container {</code>
+			<code>	font-size: 18vw;</code>
+			<code>}</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<iframe id="second-demo" class="cover small" src="demos/3.html" frameborder="0"></iframe>
+		<script>
+			interact('#second-demo')
+				.resizable({
+					preserveAspectRatio: false,
+					edges: { left: true, right: true, bottom: false, top: false}
+				})
+				.on('resizestart', (event) => event.target.classList.add("resized"))
+				.on('resizeend', (event) => event.target.classList.remove("resized"))
+				.on('resizemove', (event) => {
+					let {style} = event.target;
+					style.width  = event.rect.width + 'px';
+					style.height = event.rect.height + 'px';
+				});
+		</script>
+	</section>
+
+	<section class="slide">
+		<pre>
+			<code>.container {</code>
+			<code>	font-size: 18vw;</code>
+			<code>}</code>
+
+			<code>@media (min-width: 500px) {</code>
+			<code>  .container { font-size: 85px;} </code>
+			<code>}</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<iframe id="third-demo" class="cover small" src="demos/3.1.html" frameborder="0"></iframe>
+		<script>
+			interact('#third-demo')
+				.resizable({
+					preserveAspectRatio: false,
+					edges: { left: true, right: true, bottom: false, top: false}
+				})
+			.on('resizestart', (event) => event.target.classList.add("resized"))
+			.on('resizeend', (event) => event.target.classList.remove("resized"))
+			.on('resizemove', (event) => {
+				let {style} = event.target;
+			style.width  = event.rect.width + 'px';
+			style.height = event.rect.height + 'px';
+			});
+		</script>
+	</section>
+
+	<section class="slide">
+		<pre>
+			<code>.container {</code>
+			<code>	font-size: 18vw;</code>
+			<code>}</code>
+
+			<code>@media (min-width: 500px) {</code>
+			<code>  .container { font-size: <mark class="important">calc</mark>(50px + 6.9vw);} </code>
+			<code>}</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<pre>
+			<code>.container {</code>
+			<code>	font-size: min(18vw, calc(50px + 6.9vw));</code>
+			<code>}</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<figure>
+			<img class="cover" src="pictures/First_chart.png">
+		</figure>
+	</section>
+
+	<section class="slide">
+		<figure>
+			<img class="cover" src="pictures/Second_chart.png">
+		</figure>
+	</section>
+
+	<section class="slide">
+		<iframe id="fourth-demo" class="cover small" src="demos/3.2.html" frameborder="0"></iframe>
+		<script>
+			interact('#fourth-demo')
+				.resizable({
+					preserveAspectRatio: false,
+					edges: { left: true, right: true, bottom: false, top: false}
+				})
+				.on('resizestart', (event) => event.target.classList.add("resized"))
+			.on('resizeend', (event) => event.target.classList.remove("resized"))
+			.on('resizemove', (event) => {
+				let {style} = event.target;
+				style.width  = event.rect.width + 'px';
+				style.height = event.rect.height + 'px';
+			});
+		</script>
+	</section>
+
+	<section class="slide  black">
+		<figure>
+			<img class="cover" src="pictures/capone/al-capone-9237536-1-402.jpg">
+		</figure>
+	</section>
+
+	<section class="slide">
+		<iframe id="fifth-demo" class="cover small" src="demos/3.3.html" frameborder="0"></iframe>
+		<script>
+			interact('#fifth-demo')
+				.resizable({
+					preserveAspectRatio: false,
+					edges: { left: true, right: true, bottom: false, top: false}
+				})
+				.on('resizestart', (event) => event.target.classList.add("resized"))
+			.on('resizeend', (event) => event.target.classList.remove("resized"))
+			.on('resizemove', (event) => {
+				let {style} = event.target;
+				style.width  = event.rect.width + 'px';
+				style.height = event.rect.height + 'px';
+			});
+		</script>
+	</section>
+
+	<section class="slide">
+		<figure>
+			<img class="cover" src="pictures/forest.gif" style="width: 100%">
+		</figure>
+	</section>
+
+	<section class="slide">
+		<figure>
+			<img class="cover" src="pictures/sunset.jpg" style="width: 100%">
+		</figure>
+	</section>
+
+	<section class="slide">
+		<div class="place" >
+			<h2 style=" font-size: 80px">
+				Если не вернешься, <br/>я перепишу сайт <br>с&nbsp;<a href="/">React</a> на <a href="/">jQuery</a>!
+			</h2>
+			<p style="line-height: 35px; padding-top: 15px;">
+				<strong >
+					Целую, <br>
+					Аль Капоне.
+				</strong>
+			</p>
+
+		</div>
+
+	</section>
+
+	<section class="slide">
+		<pre>
+			<code>&lt;svg</code>
+			<code>    <mark class="important">viewBox="0 0 10 19"</mark></code>
+			<code>    preserveAspectRatio="xMidYMid meet"&gt;</code>
+			<code>  &lt;text&gt; </code>
+			<code>    &lt;tspan x="0" y="15" &gt;css&lt;/tspan&gt; </code>
+			<code>    &lt;tspan x="0" y="34" &gt;is&lt;/tspan&gt; </code>
+			<code>    &lt;tspan x="0" y="53" &gt;awesome!&lt;/tspan&gt; </code>
+			<code>  &lt;/text&gt; </code>
+			<code>&lt;/svg&gt; </code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<iframe class="cover" src="demos/4.html" frameborder="0"></iframe>
+	</section>
+
+	<section class="slide">
+		<pre>
+			<code>const rootViewBox = svgRoot.<mark class="important">viewBox</mark>.baseVal</code>
+			<code>input</code>
+			<code>	.addEventListener("input", (event) => {</code>
+			<code>		const before = el.getBoundingClientRect();</code>
+			<code>		tspan.textContent = event.target.value;</code>
+			<code>		const after = el.getBoundingClientRect();</code>
+			<code>		rootViewBox.width *= after.width / before.width;</code>
+			<code>});</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<iframe class="cover" src="demos/5.html" frameborder="0"></iframe>
+	</section>
+
+	<section class="slide">
+		<figure>
+			<img class="cover" src="pictures/capone/capone.jpg">
+		</figure>
+	</section>
+
+	<section class="slide">
+		<pre>
+			<code>&lt;svg</code>
+			<code>    viewBox="0 0 10 19"</code>
+			<code>    preserveAspectRatio="xMidYMid meet"&gt;</code>
+			<code>  &lt;text&gt; </code>
+			<code>    &lt;tspan x="0" <mark class="important">y="15"</mark> &gt;css&lt;/tspan&gt; </code>
+			<code>    &lt;tspan x="0" <mark class="important">y="34"</mark> &gt;is&lt;/tspan&gt; </code>
+			<code>    &lt;tspan x="0" <mark class="important">y="53"</mark> &gt;awesome!&lt;/tspan&gt; </code>
+			<code>  &lt;/text&gt; </code>
+			<code>&lt;/svg&gt; </code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<iframe class="cover" src="demos/5.1.html" frameborder="0"></iframe>
+	</section>
+
+	<section class="slide">
+		<figure>
+			<img class="cover" src="pictures/NewCSS_IS_AWESOME.jpg">
+		</figure>
+	</section>
+
+
+	<section class="slide">
+		<h2>Вопросы?</h2>
+		<p>Михаил Иванкив</p>
+		<p>neformal.lviv@gmail.com</p>
+		<p>https://github.com/neformal13</p>
+	</section>
+
+	<script src="shower/shower.min.js"></script>
+
+</body>
+</html>

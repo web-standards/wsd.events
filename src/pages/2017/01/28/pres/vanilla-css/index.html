@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Мой ванильный CSS — Пепелсбей.net</title>
+	<meta charset="utf-8">
+	<meta name="description" content="Пуризм, луддизм и общая усталость от хрупкой сахарной системы инструментов.">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
+</head>
+<body class="shower list">
+
+	<header class="caption">
+		<h1>Мой ванильный CSS</h1>
+		<p><a href="https://pepelsbey.net/">Вадим Макеев</a>, HTML Академия</p>
+	</header>
+
+	<section class="slide" id="cover">
+		<h2 class="shout">
+			Мой ванильный CSS
+		</h2>
+		<figure>
+			<img class="cover width" src="pictures/vanilla.jpg" alt="Ноги в шерстяных носках и кружка у камина">
+			<figcaption class="white"><a href="https://www.shutterstock.com/image-photo/feet-woollen-socks-by-christmas-fireplace-223147579">© Alex Master</a></figcaption>
+		</figure>
+		<style>
+			#cover h2 {
+				text-shadow:
+					0 10px 5px rgba(39, 17, 11, 0.4),
+					20px 10px 20px rgba(39, 17, 11, 0.5);
+				color: #fff;
+				}
+		</style>
+	</section>
+
+	<section class="slide black" style="background: #302683">
+		<a href="https://htmlacademy.ru/">
+			<img class="place" width="700" src="pictures/html-academy.svg" alt="Лого HTML Академии">
+		</a>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">История</h2>
+	</section>
+
+	<section class="slide">
+		<ol class="place" style="font-size: 50px">
+			<li class="next"><b>1996</b> CSS</li>
+			<li class="next"><b>2006</b> Sass</li>
+			<li class="next"><b>2009</b> Less</li>
+			<li class="next"><b>2010</b> Stylus</li>
+			<li class="next"><b>2013</b> PostCSS</li>
+		</ol>
+	</section>
+
+	<section class="slide">
+		<h2>Синтаксис</h2>
+		<pre>
+			<code><mark>@include</mark> mq($from:lap, $until:desk) {</code>
+			<code>	<mark>@include</mark> layout($layout:6) {</code>
+			<code class="mark next">		&__logo {</code>
+			<code>			<mark>@include</mark> span(2 at 1);</code>
+			<code>			}</code>
+			<code class="mark next">		&__menu {</code>
+			<code>			<mark>@include</mark> span(4 at 3);</code>
+		</pre>
+		<img class="place right bottom" width="230" style="margin: 0 80px 90px 0" src="pictures/sass.svg" alt="Лого Sass">
+	</section>
+
+	<section class="slide">
+		<h2>Синтаксис</h2>
+		<pre>
+			<code><mark>.ui-Link</mark></code>
+			<code>  &-Content</code>
+			<code>    <mark>@supports</mark> (background-position: 0 calc(50% + 0.75em))</code>
+			<code class="mark next">      ^[0][href] &</code>
+			<code>        background-image: linear-gradient($Colors.Link…)</code>
+			<code class="mark next">      ^[0][href]:hover &</code>
+			<code>        background-image: linear-gradient($Colors.Link…)</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>CoffeeScript</h2>
+		<pre>
+			<code>isEqual: (other) <mark>-></mark></code>
+			<code>  if <mark>@scopes</mark>.length isnt other.scopes.length</code>
+			<code>    return false</code>
+			<code>  for scope, i in @scopes</code>
+			<code>    if scope <mark>isnt</mark> other.scopes[i]</code>
+			<code>      return false</code>
+			<code>  <mark>true</mark></code>
+		</pre>
+		<img class="place right bottom" width="220" style="margin: 0 100px 90px 0" src="pictures/coffeescript.svg" alt="Лого CoffeeScript">
+	</section>
+
+	<section class="slide">
+		<img class="cover" src="pictures/error.png" alt="Ошибка">
+	</section>
+
+	<section class="slide">
+		<ol class="place" style="font-size: 80px">
+			<li class="next">Переменные</li>
+			<li class="next">Миксины</li>
+			<li class="next">Вложенность</li>
+		</ol>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout" style="font-size: 110px">
+			You might not need<br>
+			a CSS preprocessor
+		</h2>
+		<p class="note place bottom">(да)</p>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">Уже всё есть!</h2>
+		<p class="note place bottom">(нет)</p>
+	</section>
+
+	<section class="slide">
+		<a href="http://postcss.org/">
+			<img class="place" height="60%" src="pictures/postcss.svg" alt="Лого PostCSS">
+		</a>
+	</section>
+
+	<section class="slide">
+		<a href="http://cssnext.io/">
+			<img class="place" width="70%" src="pictures/cssnext.svg" alt="Лого cssnext">
+		</a>
+	</section>
+
+	<section class="slide">
+		<h2>Мечталки</h2>
+		<pre>
+			<code>a { </code>
+			<code>    <mark>--red:</mark> #d33;</code>
+			<code>    <mark>&:hover</mark> {</code>
+			<code>        color: <mark>color</mark>(var(--red) <mark>a</mark>(54%));</code>
+			<code>        }</code>
+			<code>    }</code>
+		</pre>
+		<p>Черновик <a href="https://drafts.csswg.org/css-color/#modifying-colors">CSS Color L4</a> и салфетка <a href="http://tabatkins.github.io/specs/css-nesting/">CSS Nesting</a>.</p>
+	</section>
+
+	<section class="slide">
+		<h2>Упрощалки</h2>
+		<pre>
+			<code><mark>@svg-load</mark> nav url(img/nav.svg) {</code>
+			<code>    fill: #cfc;</code>
+			<code>    }</code>
+			<code>.nav {</code>
+			<code>    background: <mark>svg-inline</mark>(nav);</code>
+			<code>    }</code>
+		</pre>
+		<p>Плагин <a href="https://github.com/TrySound/postcss-inline-svg">postcss-inline-svg</a>.</p>
+	</section>
+
+	<section class="slide">
+		<h2>Ленивки</h2>
+		<pre>
+			<code>.foo {</code>
+			<code>    position: <mark>absolute</mark> 10px 0;</code>
+			<code>    }</code>
+			<code>.foo {</code>
+			<code>    position: <mark>absolute</mark>;</code>
+			<code class="mark">    top: 10px; right: 0; bottom: 10px; left: 0;</code>
+			<code>    }</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Сладости</h2>
+		<pre>
+			<code>a</code>
+			<code>    color: blue</code>
+			<code>.multiline,</code>
+			<code>.selector</code>
+			<code>    box-shadow:</code>
+			<code>        1px 0 9px rgba(0, 0, 0, .4)</code>
+			<code>        1px 0 3px rgba(0, 0, 0, .6)</code>
+		</pre>
+		<a href="https://github.com/postcss/sugarss">
+			<img class="place right bottom" width="230" style="margin: 0 85px 90px 0" src="pictures/sugarss.svg" alt="Лого SugarSS">
+		</a>
+	</section>
+
+	<section class="slide white" style="background: #2ccc9f">
+		<img class="place" width="820" src="pictures/sugarss.svg" alt="Лого SugarSS">
+		<img class="place left" width="280" src="pictures/sugarss.svg" alt="Лого SugarSS">
+		<img class="place right" width="280" src="pictures/sugarss.svg" alt="Лого SugarSS">
+		<div class="snow"></div>
+		<style>
+			.snow {
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				background: url(pictures/snow.gif) center / cover;
+				image-rendering: pixelated;
+				}
+		</style>
+	</section>
+
+	<section class="slide black">
+		<figure>
+			<img class="cover" src="pictures/bsod.png" alt="Экран ошибки Windows">
+			<figcaption class="white"><a href="https://en.wikipedia.org/wiki/Blue_Screen_of_Death">© Microsoft</a></figcaption>
+		</figure>
+	</section>
+
+
+	<section class="slide black" style="background: #00f">
+		<h2 class="shout" style="color: #fff">Это не CSS</h2>
+	</section>
+
+	<section class="slide black" id="fss">
+		<h2 class="shout">Это — FSS</h2>
+		<p class="place next">Fantasy Style Sheets</p>
+		<style>
+			#fss {
+				background: #ff0080;
+				}
+			#fss h2 {
+				color: #fff;
+				}
+			#fss p {
+				margin-top: 130px;
+				color: #fff;
+				white-space: nowrap;
+				font-size: 61px;
+				}
+		</style>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">С умом?</h2>
+	</section>
+
+	<section class="slide">
+		<ol class="place" style="font-size: 80px">
+			<li class="next">Переменные</li>
+			<li class="next"><span style="color: #979a9e">Миксины</span></li>
+			<li class="next"><span style="color: #979a9e">Вложенность</span></li>
+		</ol>
+	</section>
+
+	<section class="slide">
+		<h2>With?</h2>
+		<pre>
+			<code><mark>with</mark> (element.style) {</code>
+			<code>    position = 'relative';</code>
+			<code>    top = left = '5px';</code>
+			<code>}</code>
+			<code><span class="comment">// element.style.position</span></code>
+			<code><span class="comment">// element.style.top</span></code>
+		</pre>
+		<p>Пожалуйста, не надо.</p>
+	</section>
+
+	<section class="slide">
+		<h2>Переменные</h2>
+		<pre>
+			<code><mark>:root</mark> {</code>
+			<code>	--shower-ratio: 1.6;</code>
+			<code>	--shower-width: 1024px;</code>
+			<code>	--shower-height: <mark>calc(</mark></code>
+			<code>		var(--shower-width) /</code>
+			<code>		var(--shower-ratio));</code>
+			<code>	}</code>
+		</pre>
+	</section>
+	
+	<section class="slide">
+		<h2>Шлюзы</h2>
+		<pre>
+			<code>@media (min-width: 320px) {</code>
+			<code>    <mark>.page__body</mark> {</code>
+			<code>        font-size: calc(</code>
+			<code>            1rem + <mark>((2 - 1) * 16)</mark></code>
+			<code>            * (100vw - 320px) / (848 - 320));</code>
+			<code>        <mark>}</mark></code>
+			<code>    }</code>
+		</pre>
+	</section>
+	
+	<section class="slide">
+		<h2 class="shout">Улучшать</h2>
+	</section>
+
+	<section class="slide white">
+		<img class="place next" width="216" style="margin-left: -300px" src="pictures/grunt.svg" alt="Логотип Grunt">
+		<img class="place next" width="256" style="margin-left: -12px" src="pictures/gulp.svg" alt="Логотип Gulp">
+		<img class="place next" width="300" style="margin-left: 300px" src="pictures/webpack.svg" alt="Логотип Gulp">
+	</section>
+
+	<section class="slide">
+		<img class="cover" src="pictures/error.png" alt="Ошибка">
+	</section>
+
+	<section class="slide">
+		<figure>
+			<img class="cover" src="pictures/bicycle-1.jpg" alt="Разобранный велосипед">
+			<figcaption><a href="https://www.flickr.com/photos/superprecise/4069907689/">© Joshua</a></figcaption>
+		</figure>
+	</section>
+
+	<section class="slide">
+		<figure>
+			<img class="cover" src="pictures/bicycle-2.jpg" alt="Собранный велосипед">
+			<figcaption class="white"><a href="https://www.flickr.com/photos/superprecise/4410291313/">© Joshua</a></figcaption>
+		</figure>
+	</section>
+
+	<section class="slide">
+		<h2>index.html</h2>
+		<pre>
+			<code>&lt;!DOCTYPE html&gt;</code>
+			<code>&lt;head&gt;</code>
+			<code>    &lt;link href="<mark>/screen.css</mark>" rel="stylesheet"&gt;</code>
+			<code>&lt;/head&gt;</code>
+			<code>&lt;header <mark>block</mark>="header"&gt;</code>
+			<code>    &lt;h1 <mark>elem</mark>="logo" <mark>mod</mark>="index"&gt;</code>
+			<code>        &lt;span <mark>elem</mark>="type"&gt;Dev.Opera&lt;/span&gt;</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>index.html</h2>
+		<pre>
+			<code>&lt;!DOCTYPE html&gt;</code>
+			<code>&lt;head&gt;</code>
+			<code>    &lt;link href="<mark>screen.css</mark>" rel="stylesheet"&gt;</code>
+			<code>&lt;/head&gt;</code>
+			<code>&lt;header <mark>class</mark>="header"&gt;</code>
+			<code>    &lt;h1 <mark>class</mark>="header__logo header__logo--index"&gt;</code>
+			<code>        &lt;span <mark>class</mark>="type"&gt;HTML Academy&lt;/span&gt;</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>style.css</h2>
+		<pre>
+			<code><mark>@import</mark> 'styles/fonts.css';</code>
+			<code><mark>@import</mark> 'styles/page.css';</code>
+			<code><mark>@import</mark> 'styles/title.css';</code>
+			<code><mark>@import</mark> 'styles/banner.css';</code>
+			<code><mark>@import</mark> 'styles/content.css';</code>
+			<code><mark>@import</mark> 'styles/form.css';</code>
+			<code><mark>@import</mark> 'styles/footer.css';</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<img class="cover" src="pictures/code-1.png" alt="Несжатый код">
+		<div class="next">
+			<img class="cover" src="pictures/code-2.png" alt="Сжатый код">
+			<h2 class="shout" style="color: #00f">жжжать</h2>
+		</div>
+	</section>
+
+	<section class="slide">
+		<h2>HTML</h2>
+		<pre>
+			<code>return gulp.src('<mark>index.html</mark>')</code>
+			<code>	.pipe(<mark>posthtml</mark>([</code>
+			<code>		require('posthtml-minifier')({</code>
+			<code>			collapseWhitespace: true</code>
+			<code>		})</code>
+			<code>	]))</code>
+		</pre>
+		<p>И другие полезные плагины для <a href="https://github.com/posthtml/posthtml">PostHTML</a>.</p>
+	</section>
+
+	<section class="slide">
+		<h2>CSS</h2>
+		<pre>
+			<code>return gulp.src('<mark>screen.css</mark>')</code>
+			<code>	.pipe(<mark>postcss</mark>([</code>
+			<code>		require('postcss-import')(),</code>
+			<code>		require('postcss-url')(), <span class="comment">// Правит пути</span></code>
+			<code>		require('autoprefixer')(),</code>
+			<code>		require('postcss-csso')()</code>
+			<code>	]))</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<ol class="place" style="font-size: 80px">
+			<li class="next">Работает сразу</li>
+			<li class="next">Хороший потом</li>
+		</ol>
+	</section>
+
+	<section class="slide" id="caravan">
+		<h2>Караван идёт</h2>
+		<img class="cover" src="pictures/caravan.jpg" alt="Караван верблюдов идёт по пустыне">
+		<ul>
+			<li class="next">HTML</li>
+			<li class="next">CSS</li>
+			<li class="next">JS</li>
+		</ul>
+		<style>
+			#caravan h2 {
+				color: #fff;
+				}
+			#caravan li {
+				position: absolute;
+				bottom: 250px;
+				color: #fff;
+				font-weight: bold;
+				font-size: 70px;
+				}
+			#caravan li::before {
+				content: '';
+				}
+			#caravan li:nth-child(1) {
+				right: 130px;
+				}
+			#caravan li:nth-child(2) {
+				right: 445px;
+				}
+			#caravan li:nth-child(3) {
+				right: 720px;
+				}
+		</style>
+	</section>
+
+	<section class="slide">
+		<figure>
+			<video class="cover width" autoplay loop>
+				<source src="pictures/bolt.webm" type="video/webm">
+				<source src="pictures/bolt.mp4" type="video/mp4">
+			</video>
+			<figcaption class="white"><a href="https://en.wikipedia.org/wiki/Bolt_(2008_film)">© The Walt Disney Company</a></figcaption>
+		</figure>
+	</section>
+
+	<section class="slide">
+		<h2>Ещё? Ещё!</h2>
+		<ul>
+			<li><a href="https://blog.hospodarets.com/you-might-not-need-a-css-preprocessor/">You might not need a css preprocessor</a>, Сергей Господарец</li>
+			<li><a href="https://meiert.com/en/blog/20161214/no-css-preprocessors/">Why i don’t use css preprocessors</a>, Йенс Мейерт</li>
+			<li><a href="http://www.456bereastreet.com/archive/201603/why_i_dont_use_css_preprocessors/">Why I don’t use CSS preprocessors</a>, Роберт Йохансен</li>
+			<li><a href="https://www.w3.org/People/Bos/CSS-variables">Why “variables” in CSS are harmful</a>, Берт Бос</li>
+			<li><a href="https://habrahabr.ru/post/120364/">Оператор <code>with</code> и почему его не стоит использовать</a>, Михаил Давыдов</li>
+			<li><a href="https://events.yandex.ru/lib/talks/4265/">Гибкая настройка внешнего вида выдачи</a>, Руслан Муфтиев</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout"><a href="https://sokr.me/vss">sokr.me/vss</a></h2>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout"><a href="https://twitter.com/pepelsbey">@pepelsbey</a></h2>
+	</section>
+
+	<section class="slide" id="shower">
+		<img class="place" src="pictures/shower.svg" alt="Логотип Шовера">
+		<h2 class="shout"><a href="http://shwr.me/">Shower</a></h2>
+		<style>
+			#shower img {
+				margin: 22px 0 0 -210px;
+				width: 150px;
+				}
+			#shower h2 {
+				margin-left: 100px;
+				}
+		</style>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">Вопросы?</h2>
+	</section>
+
+	<footer class="badge">
+		<a href="https://github.com/shower/shower">Powered by Shower</a>
+	</footer>
+
+	<div class="progress"></div>
+
+	<script src="shower/shower.min.js"></script>
+
+	<!-- Copyright © 2010–2016 Vadim Makeev — pepelsbey.net -->
+
+	<script>(function(b,c,a){(c[a]=c[a]||[]).push(function(){try{c.yaCounter155532=new Ya.Metrika({id:155532})}catch(a){}});var e=b.getElementsByTagName('script')[0],d=b.createElement('script'),a=function(){e.parentNode.insertBefore(d,e)};d.async=!0;d.src='//mc.yandex.ru/metrika/watch.js';'[object Opera]'==c.opera?b.addEventListener('DOMContentLoaded',a):a()})(document,window,'yandex_metrika_callbacks');</script><noscript><img src="https://mc.yandex.ru/watch/155532" alt=""></noscript>
+
+</body>
+</html>

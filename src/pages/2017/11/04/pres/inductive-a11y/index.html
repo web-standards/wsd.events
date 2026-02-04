@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Индукционная доступность</title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
+	<style>
+		.visibility-hidden {
+			visibility: hidden;
+			position: absolute;
+			height: 0;
+			width: 0;
+		}
+		.ico {
+			padding-right: 10px;
+		}
+		a.clean {
+			background: none;
+		}
+		span.note {
+			color: #a1a1a1;
+		}
+		.left {
+			float: left;
+		}
+		.right {
+			float: right;
+		}
+		.center {
+			text-align: center;
+		}
+		.small-code code {
+			font-size: 22px;
+		}
+		.xl-text {
+			font-size: 2em;
+			line-height: 1.5;
+		}
+		.xxl-text {
+			font-size: 3em;
+			line-height: 1.3;
+		}
+		pre.xl-text {
+			font-size: 1.4em;
+		}
+		.qr {
+			width: 200px;
+			height: 200px;
+		}
+		.ide-background {
+			background-color: #272823;
+		}
+		.light {
+			color: #ffffff;
+			text-shadow: 0 0 9px #121212;
+		}
+	</style>
+</head>
+<body class="shower list">
+
+	<header class="caption">
+		<h1>Индукционная доступность</h1>
+		<p>Антон Есауленко, <a href="https://sber-tech.com/" title="Домашняя страница компании">Сбербанк-Технологии</a></p>
+	</header>
+
+	<section class="slide" id="initial2">
+		<h2 class="shout" style="z-index: 100"><span class="light">Индукционная доступность</span></h2>
+		<figure class="dinamicBlur">
+			<img src="./pictures/splash.jpg" alt="" class="cover height">
+		</figure>
+		<style>
+			@keyframes dinamicDefinition {
+				0% { filter: blur(0px) }
+				25% { filter: blur(4px)}
+				50% { filter: blur(2px) }
+				75% { filter: blur(3px) }
+				100% { filter: blur(0px) }
+			}
+			.dinamicBlur {
+				animation: dinamicDefinition 5s linear infinite;
+			}
+		</style>	
+	</section>
+
+	<section class="slide">
+		<a href="https://sber-tech.com">
+			<img class="cover" src="./pictures/logo_sbt.png" alt="Логотип компании Сбербанк-Технологии">
+		</a>
+	</section>
+
+	<section class="slide">
+		<h2 class="visibility-hidden">Мотивация</h2>
+		<blockquote id="responsobility" cite="http://www.quotecounterquote.com/2012/07/with-great-power-comes-great.html">
+			<h2>С большой силой приходит большая ответственность.</h2>
+			<cite>Бенджамин «Бен» Паркер</cite>
+		</blockquote>
+		<img class="place bottom right" src="./pictures/spider-man-logo.png" alt="Логотип Человека-Паука в мультяшной интерпретации">
+	</section>
+
+	<section class="slide">
+		<h2>Индукция</h2>
+		<blockquote>
+			<p class="xl-text">Философский и вообще научный метод движения знания от отдельного, особенного к всеобщему, закономерному</p>
+			<cite>Философский энциклопедический словарь. 2010</cite>
+		</blockquote>
+	</section>
+
+	<section class="slide">
+		<h2>Экспозиция</h2>
+		<ul class="xl-text">
+			<li class="next">ReactJS + Redux и вот это вот всё</li>
+			<li class="next"><b>60+</b> разработчиков в <b>30+</b> проектах</li>
+			<li class="next">9+ лет энтерпрайз-разработки</li>
+		</ul>
+	</section>
+
+	<section class="slide" id="castle">
+		<img src="./pictures/castle-inner.jpg" alt="" class="cover width">
+		<img src="./pictures/light.png" alt="" class="place bottom left next" height="450" style="padding: 0 0 20px 120px">
+		<img src="./pictures/chair.png" alt="" class="place bottom right next" height="300">
+		<img src="./pictures/shelf.png" alt="" class="place bottom center next" height="300" style="padding: 80px 0 0 130px">
+	</section>
+
+	<section class="slide">
+		<h2 class="visibility-hidden">Особое положение</h2>
+		<figure>
+			<img id="app" class="cover height" src="./pictures/our-app.jpg" alt="Браузер со схематичным представлением Сбербанк Онлайн">
+			<div class="place center border next"></div>
+		</figure>
+		<script>
+			var img = document.getElementById('app')
+			var zoom = function (e) {
+				e.target.classList = "place center top zoom"
+				img.removeEventListener('click', zoom)
+			}
+			img.addEventListener('click', zoom)
+		</script>
+		<style>
+			#app {
+				transition: width 3s ease;
+			}
+			#app + .border {
+				width: 400px;
+				height: 480px;
+				top: 46%;
+				border: 4px solid orange;
+				border-radius: 8px;
+				background: transparent;
+			}
+			#app.zoom {
+				width: 600px;
+				top: -100px;
+			}
+			#app.zoom + .border {
+				display: none;
+			}
+		</style>
+	</section>
+
+	<section class="slide">
+		<h2 class="visibility-hidden">axe-core</h2>
+		<figure class="center">
+			<img src="./pictures/axe-logo.png" alt="Логотип библиотеки axe-core">
+			<figcaption><a href="https://github.com/dequelabs/axe-core">Серебрянный топор доступности</a></figcaption>
+		</figure>
+		<img src="./pictures/qr/axe-core.svg" alt="QR код с ссылкой ведущей на проект axe-core" class="place top left qr" />
+	</section>
+
+	<section class="slide" id="reports">
+		<h2 class="visibility-hidden">Отчет aXe</h2>
+		<img src="./pictures/axe-reports-categories.png" alt="" class="cover">
+		<a href="http://localhost:4270/private/pension#/" class="place bottom" target="_blank">Фолбэк</a>
+	</section>
+
+	<section class="slide">
+		<h2><span class="xxl-text light">Сложности</span></h2>
+		<img src="./pictures/problems.png" alt="" class="cover height">
+	</section>
+
+	<section class="slide">
+		<h2 id="axe-interface">
+			<pre class="center">
+				<code class="xxl-text light" >axe &lt;url&gt;</code>
+			</pre>
+		</h2>
+		<!-- Делать СПА доступными несколько сложнее, потому что принципы а11у вырабатывались давным давно. Потому что у вас нет нормального перехода между страницами, потому что нет урла по которому можно просто перейти и попасть куда вы хотите -->
+		<img src ="./pictures/tinkoff-main-cli-report.png" alt="Скриншот результата работы axe-cli с большим количеством ошибок" class="cover width">
+		<style>
+			#axe-interface code {
+				text-shadow: 0 0 9px #000000;
+			}
+		</style>
+	</section>
+
+	<section class="slide" id="gigants">
+		<figure id="tools">
+			<img src="./pictures/qr/wai-tools.svg" alt="QR код на страницу с инструментами для проверки доступности" class="qr place top left">
+			<figcaption class="place center next"><a href="https://www.w3.org/WAI/ER/tools/" class=""><span class="xl-text">Инструменты для улучшения доступности</span> </a></figcaption>
+		</figure>
+		<figure>
+			<img src="./pictures/sonar-logo.png" alt="Логотип Sonar" class="place left center next logo" width="400">
+			<img src="./pictures/lighthouse-logo.png" alt="Логотип Lighthouse" class="place right center next logo" width="400">
+			<p class="place center next xxl-text">=</p>
+		</figure>
+		<style>
+			#gigants .xxl-text {
+				font-size: 10em;
+			}
+			#tools .next {
+				visibility: visible;
+				transition: top 1s ease-out 0.5s;
+				width: 100%;
+			}
+			#tools .next.active .xl-text {
+				transition: font-size 1s ease-out .5s;
+				font-size: 1em;
+			}
+			#tools .next.active {
+				top: 90%;
+			}
+		</style>
+	</section>
+
+	<section class="slide">
+		<h2>Стратегия нанесения добра</h2>
+		<figure>
+			<img src="./pictures/rick_finger_up.jpg" alt="Запутанный путь с маркерами" class="place left" height="300" style="transform: rotate(90deg)">
+			<figcaption class="center xl-text" style="margin-left: 40px">
+				<ol>
+					<li>Инструменты разработчика</li>
+					<li>Юнит-тестирование</li>
+					<li>Автотестирование</li>
+					<li>Соглашения</li>
+				</ol>
+			</figcaption>
+		</figure>
+	</section>
+
+	<section class="slide">
+		<h2 id="jsx-a11y" class="shout"><a href="https://github.com/evcohen/eslint-plugin-jsx-a11y">eslint-plugin-jsx-a11y</a></h2>
+		<img class="qr place top left" src="./pictures/qr/jsx-a11y.svg" alt="QR код - ссылка на плагин">
+		<style>
+			#jsx-a11y.shout {
+				font-size: 5em;
+			}
+		</style>
+	</section>
+
+	<section class="slide">
+		<pre>
+			<code>{</code>
+			<code>	"plugins": ["jsx-a11y"]</code>
+			<code>	"rules": {</code>
+			<code>		"jsx-a11y/mouse-events-have-key-events": "error",</code>
+			<code>		"jsx-a11y/alt-text": ["warn', {</code>
+			<code>			"elements": ["img"],</code>
+			<code>			"img": ["Icon"]</code>
+			<code>		}]</code>
+			<code>	}</code>
+			<code>}</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<pre class="xl-text">
+			<code>&lt;modal&gt;</code>
+			<code>	&lt;Icon name="close-cross" </code>
+			<code>		<mark class="hint"><span class="next">alt="Закрыть модальное окно"</span></mark> /&gt;</code>
+			<code>	&lt;main&gt;</code>
+			<code>		Контент</code>
+			<code>	&lt;/main&gt;</code>
+			<code>&lt;/modal&gt;</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout"><a href="https://github.com/dequelabs/react-axe">react-axe</a></h2>
+		<img src="./pictures/qr/react-axe.svg" alt="QR код с ссылкой на проект react-axe" class="qr place top left">
+	</section>
+
+	<section class="slide" id="fake">
+		<h2>Юнит-тестирование</h2>
+		<figure>
+			<img class="image" height="436px" src="./pictures/Rick.png" alt="Портрет Рика Санчеза из мультфильма Rick and Morty">
+			<figcaption class="title">
+				 <p>Учёные долго скрывали это. Для того чтобы писать юнит-тесты для проверки доступности необходимо всего лишь...</p>
+				 <p><a href="#unit-test">Узнать больше</a></p>
+			</figcaption>
+		</figure>
+		<style>
+			.image, .title {
+				float: left;
+			}
+			.title {
+				width: 400px;
+				margin-left: 40px;
+			}
+		</style>
+	</section>
+
+	<section class="slide">
+		<pre id="text-case" class="xl-text">
+			<code>it ('a11y check', <mark class="next">async</mark> function() {</code>
+			<code>	const wrapper = (&lt;Super Component /&gt;)</code>
+			<code>	const result = await <mark class="next">a11yCheck</mark> (wrapper)</code>
+			<code>	<mark class="next">expect(result.violations.length)</mark></code>
+			<code>								<mark class="next">.toBe(0)</mark></code>
+			<code>}</code>
+		</pre>
+		<style>
+			#text-case .next {
+				visibility: visible;
+			}
+			#text-case .next.active {
+				background-color: #72ff72;
+			}
+		</style>
+	</section>
+
+	<section class="slide">
+		<h2 class="visibility-hidden">Мои велосипеды</h2>
+		<pre id="a11y-check" class="xl-text">
+			<code>import axe from <mark class="next">'axe-core'</mark></code>
+			<code>function a11yCheck (ReactComponent) {</code>
+			<code>	const wrapper = <mark class="next">mount</mark> (ReactCompontn)</code>
+			<code>	result <mark class="next">axe.run</mark> (wrapper.getDOMNode())</code>
+			<code>  		.then(resolve, reject)</code>
+			<code>}</code>
+		</pre>
+		<style>
+			#a11y-check .next {
+				visibility: visible;
+			}
+			#a11y-check .next.active {
+				background-color: #72ff72;
+			}
+		</style>
+	</section>
+
+	<section class="slide">
+		<h2 class="visibility-hidden">Автотестирование</h2>
+		<img src="./pictures/autobot.gif" alt="" class="cover height" width="100%">
+		<figure id="dialog">
+			<p class="place right top xl-text light next">— Каково моё предназначение?</p>
+			<p class="place left bottom xl-text light next">— Тестировать бизнес процессы</p>
+		</figure>
+		<style>
+			#dialog p {
+				font-weight: bold;
+				top: 100px;
+			}
+			#dialog p + p {
+				bottom: 100px;
+				top: auto;
+			}
+		</style>
+	</section>
+
+	<section class="slide ide-background">
+		<h2><span class="xxl-text light">Соглашения</span></h2>
+		<img src="./pictures/rick-hug.png" alt="" class="cover">
+	</section>
+
+	<section class="slide" id="tabs">
+		<h2 class="visibility-hidden">Зачем?</h2>
+		<div class="tabs">
+			<div role="tablist" aria-label="Entertainment">
+				<button role="tab" aria-selected="true" aria-controls="nils-tab" id="nils">
+					Nils Frahm
+				</button>
+				<button role="tab" aria-selected="false" aria-controls="agnes-tab" id="agnes" tabindex="-1">
+					Agnes Obel
+				</button>
+				<button role="tab" aria-selected="false" aria-controls="complexcomplex" id="complex" tabindex="-1" data-deletable="">
+					Joke
+				</button>
+			</div>
+			<div tabindex="0" role="tabpanel" id="nils-tab" aria-labelledby="nils">
+				<p>
+					Nils Frahm is a German musician, composer and record producer based in Berlin. He is known for combining classical and electronic
+					music and for an unconventional approach to the piano in which he mixes a grand piano, upright piano, Roland Juno-60,
+					Rhodes piano, drum machine, and Moog Taurus.
+				</p>
+			</div>
+			<div tabindex="0" role="tabpanel" id="agnes-tab" aria-labelledby="agnes" hidden="">
+				<p>
+					Agnes Caroline Thaarup Obel is a Danish singer/songwriter. Her first album, Philharmonics, was released by PIAS Recordings
+					on 4 October 2010 in Europe. Philharmonics was certified gold in June 2011 by the Belgian Entertainment Association (BEA)
+					for sales of 10,000 Copies.
+				</p>
+			</div>
+			<div tabindex="0" role="tabpanel" id="complexcomplex" aria-labelledby="complex" hidden="">
+				<p>
+					Fear of complicated buildings:
+				</p>
+				<p>
+					A complex complex complex.
+				</p>
+			</div>
+		</div>
+		<style>
+			#tabs .tabs {
+				width: 20em;
+				font-family: "lucida grande", sans-serif;
+			}
+		
+			#tabs [role="tablist"] {
+				margin: 0 0 -.1em;
+				overflow: visible;
+			}
+		
+			#tabs [role="tab"] {
+				position: relative;
+				margin: 0;
+				padding: .3em .5em .4em;
+				border: 1px solid hsl(219, 1%, 72%);
+				border-radius: .2em .2em 0 0;
+				box-shadow: 0 0 .2em hsl(219, 1%, 72%);
+				overflow: visible;
+				font-family: inherit;
+				font-size: inherit;
+				background: hsl(220, 20%, 94%);
+			}
+		
+			#tabs [role="tab"]:hover::before,
+			#tabs [role="tab"]:focus::before,
+			#tabs [role="tab"][aria-selected="true"]::before {
+				position: absolute;
+				bottom: 100%;
+				right: -1px;
+				left: -1px;
+				border-radius: 0.2em 0.2em 0 0;
+				border-top: 3px solid hsl(20, 96%, 48%);
+				content: '';
+			}
+		
+			#tabs [role="tab"][aria-selected="true"] {
+				border-radius: 0;
+				background: hsl(220, 43%, 99%);
+				outline: 0;
+			}
+		
+			#tabs [role="tab"][aria-selected="true"]:not(:focus):not(:hover)::before {
+				border-top: 5px solid hsl(218, 96%, 48%);
+			}
+		
+			#tabs [role="tab"][aria-selected="true"]::after {
+				position: absolute;
+				z-index: 3;
+				bottom: -1px;
+				right: 0;
+				left: 0;
+				height: .3em;
+				background: hsl(220, 43%, 99%);
+				box-shadow: none;
+				content: '';
+			}
+		
+			#tabs [role="tab"]:hover,
+			#tabs [role="tab"]:focus,
+			#tabs [role="tab"]:active {
+				outline: 0;
+				border-radius: 0;
+				color: inherit;
+			}
+		
+			#tabs [role="tab"]:hover::before,
+			#tabs [role="tab"]:focus::before {
+				border-color: hsl(20, 96%, 48%);
+			}
+		
+			#tabs [role="tabpanel"] {
+				position: relative;
+				z-index: 2;
+				padding: .5em .5em .7em;
+				border: 1px solid hsl(219, 1%, 72%);
+				border-radius: 0 .2em .2em .2em;
+				box-shadow: 0 0 .2em hsl(219, 1%, 72%);
+				background: hsl(220, 43%, 99%);
+		
+			}
+		
+			#tabs [role="tabpanel"]:focus {
+				border-color: hsl(20, 96%, 48%);
+				box-shadow: 0 0 .2em hsl(20, 96%, 48%);
+				outline: 0;
+			}
+		
+			#tabs [role="tabpanel"]:focus::after {
+				position: absolute;
+				bottom: 0;
+				right: -1px;
+				left: -1px;
+				border-bottom: 3px solid hsl(20, 96%, 48%);
+				border-radius: 0 0 0.2em 0.2em;
+				content: '';
+			}
+		
+			#tabs [role="tabpanel"] p {
+				margin: 0;
+			}
+		
+			#tabs [role="tabpanel"] *+p {
+				margin-top: 1em;
+			}
+		</style>
+		<script>(function () {
+				var tablist = document.querySelectorAll('[role="tablist"]')[0];
+				var tabs;
+				var panels;
+
+				generateArrays();
+
+				function generateArrays() {
+					tabs = document.querySelectorAll('[role="tab"]');
+					panels = document.querySelectorAll('[role="tabpanel"]');
+				};
+
+				// For easy reference
+				var keys = {
+					end: 35,
+					home: 36,
+					left: 37,
+					up: 38,
+					right: 39,
+					down: 40,
+					delete: 46,
+					enter: 13,
+					space: 32
+				};
+
+				// Add or substract depenign on key pressed
+				var direction = {
+					37: -1,
+					38: -1,
+					39: 1,
+					40: 1
+				};
+
+				// Bind listeners
+				for (i = 0; i < tabs.length; ++i) {
+					addListeners(i);
+				};
+
+				function addListeners(index) {
+					tabs[index].addEventListener('click', clickEventListener);
+					tabs[index].addEventListener('keydown', keydownEventListener);
+					tabs[index].addEventListener('keyup', keyupEventListener);
+
+					// Build an array with all tabs (<button>s) in it
+					tabs[index].index = index;
+				};
+
+				// When a tab is clicked, activateTab is fired to activate it
+				function clickEventListener(event) {
+					var tab = event.target;
+					activateTab(tab, false);
+				};
+
+				// Handle keydown on tabs
+				function keydownEventListener(event) {
+					var key = event.keyCode;
+
+					switch (key) {
+						case keys.end:
+							event.preventDefault();
+							// Activate last tab
+							focusLastTab();
+							break;
+						case keys.home:
+							event.preventDefault();
+							// Activate first tab
+							focusFirstTab();
+							break;
+
+						// Up and down are in keydown
+						// because we need to prevent page scroll >:)
+						case keys.up:
+						case keys.down:
+							determineOrientation(event);
+							break;
+					};
+				};
+
+				// Handle keyup on tabs
+				function keyupEventListener(event) {
+					var key = event.keyCode;
+
+					switch (key) {
+						case keys.left:
+						case keys.right:
+							determineOrientation(event);
+							break;
+						case keys.delete:
+							determineDeletable(event);
+							break;
+						case keys.enter:
+						case keys.space:
+							activateTab(event.target);
+							break;
+					};
+				};
+
+				// When a tablistвЂ™s aria-orientation is set to vertical,
+				// only up and down arrow should function.
+				// In all other cases only left and right arrow function.
+				function determineOrientation(event) {
+					var key = event.keyCode;
+					var vertical = tablist.getAttribute('aria-orientation') == 'vertical';
+					var proceed = false;
+
+					if (vertical) {
+						if (key === keys.up || key === keys.down) {
+							event.preventDefault();
+							proceed = true;
+						};
+					}
+					else {
+						if (key === keys.left || key === keys.right) {
+							proceed = true;
+						};
+					};
+
+					if (proceed) {
+						switchTabOnArrowPress(event);
+					};
+				};
+
+				// Either focus the next, previous, first, or last tab
+				// depening on key pressed
+				function switchTabOnArrowPress(event) {
+					var pressed = event.keyCode;
+
+					if (direction[pressed]) {
+						var target = event.target;
+						if (target.index !== undefined) {
+							if (tabs[target.index + direction[pressed]]) {
+								tabs[target.index + direction[pressed]].focus();
+							}
+							else if (pressed === keys.left || pressed === keys.up) {
+								focusLastTab();
+							}
+							else if (pressed === keys.right || pressed == keys.down) {
+								focusFirstTab();
+							};
+						};
+					};
+				};
+
+				// Activates any given tab panel
+				function activateTab(tab, setFocus) {
+					setFocus = setFocus || true;
+					// Deactivate all other tabs
+					deactivateTabs();
+
+					// Remove tabindex attribute
+					tab.removeAttribute('tabindex');
+
+					// Set the tab as selected
+					tab.setAttribute('aria-selected', 'true');
+
+					// Get the value of aria-controls (which is an ID)
+					var controls = tab.getAttribute('aria-controls');
+
+					// Remove hidden attribute from tab panel to make it visible
+					document.getElementById(controls).removeAttribute('hidden');
+
+					// Set focus when required
+					if (setFocus) {
+						tab.focus();
+					};
+				};
+
+				// Deactivate all tabs and tab panels
+				function deactivateTabs() {
+					for (t = 0; t < tabs.length; t++) {
+						tabs[t].setAttribute('tabindex', '-1');
+						tabs[t].setAttribute('aria-selected', 'false');
+					};
+
+					for (p = 0; p < panels.length; p++) {
+						panels[p].setAttribute('hidden', 'hidden');
+					};
+				};
+
+				// Make a guess
+				function focusFirstTab() {
+					tabs[0].focus();
+				};
+
+				// Make a guess
+				function focusLastTab() {
+					tabs[tabs.length - 1].focus();
+				};
+
+				// Detect if a tab is deletable
+				function determineDeletable(event) {
+					target = event.target;
+
+					if (target.getAttribute('data-deletable') !== null) {
+						// Delete target tab
+						deleteTab(event, target);
+
+						// Update arrays related to tabs widget
+						generateArrays();
+
+						// Activate the closest tab to the one that was just deleted
+						if (target.index - 1 < 0) {
+							activateTab(tabs[0]);
+						}
+						else {
+							activateTab(tabs[target.index - 1]);
+						};
+					};
+				};
+
+				// Deletes a tab and its panel
+				function deleteTab(event) {
+					var target = event.target;
+					var panel = document.getElementById(target.getAttribute('aria-controls'));
+
+					target.parentElement.removeChild(target);
+					panel.parentElement.removeChild(panel);
+				};
+
+				// Determine whether there should be a delay
+				// when user navigates with the arrow keys
+				function determineDelay() {
+					var hasDelay = tablist.hasAttribute('data-delay');
+					var delay = 0;
+
+					if (hasDelay) {
+						var delayValue = tablist.getAttribute('data-delay');
+						if (delayValue) {
+							delay = delayValue;
+						}
+						else {
+							// If no value is specified, default to 300ms
+							delay = 300;
+						};
+					};
+
+					return delay;
+				};
+			})();
+		</script>
+	</section>
+	
+		<section class="slide">
+		<h2>a11y propTypes</h2>
+		<pre class="xl-text">
+			<code>type Props = {</code>
+			<code>	a11y: {</code>
+			<code>		prefix: string</code>
+			<code>	}</code>
+			<code>}</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<figure>
+			<img src="./pictures/rick_finger_up.jpg" alt="Запутанный путь с маркерами" class="place right" height="300" style="transform: rotate(280deg)">
+			<figcaption class="xl-text" id="stages">
+				<ol>
+					<li>
+						<span class="next">eslint-plugin, react-axe</span>
+						<span>Инструменты разработчика</span>
+					</li>
+					<li>
+						<span class="next">axe-core</span>
+						<span>Юнит-тестирование</span>
+					</li>
+					<li>
+						<span class="next">Тест кейсы с клавиатуры</span>
+						<span>Автотестирование</span>
+					</li>
+					<li>
+						<span class="next">a11y props</span>
+						<span>Соглашения</span>
+					</li>
+				</ol>
+			</figcaption>
+		</figure>
+		<style>
+			#stages .next {
+				display: none;
+			}
+			#stages .next.active {
+				display: inline;
+				text-decoration: underline;
+			}
+			#stages .next.active + span {
+				display: none;
+			}
+		</style>
+	</section>
+
+	<section class="slide">
+		<figure>
+			<h2><span class="light xl-text">Библиотека компонентов</span></h2>
+			<img src="./pictures/rick-library.png" alt="" class="cover height">
+		</figure>
+	</section>
+
+	<section class="slide">
+		<h2>Чем проще - тем лучше</h2>
+		<figure class="center" id="datepicker">
+			<img src="./pictures/datepicker.png" alt="Скриншот поля выбора даты" height="400" />
+			<img src="./pictures/cancel.svg" alt="" aria-hidden="true" class="cancel place bottom center next" height="300">
+			<code class="place center xl-text next" style="background: lightgrey; opacity: 1">aria-hidden="true"</code>
+		</figure>
+		<style>
+			#datepicker .cancel {
+				bottom: 96px;
+			}
+		</style>
+	</section>
+
+	<section class="slide">
+		<h2>Ссылки</h2>
+		<ul class="xxl-text">
+			<li><a href="https://readymag.com/u58956878/856014/">Какие были варианты</a></li>
+			<li><a href="http://localhost:6060/#buttonlink">Как стало</a></li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2 class="visibility-hidden">Поиск баланса</h2>
+		<figure>
+			<blockquote>
+				<img src="./pictures/bart_meditando.gif" class="place bottom center" height="300" alt="Персонаж Абрадольф Линклер">
+				<p class="xl-text">Совершенство достигнуто не тогда, когда нечего добавить, а когда нечего убрать.</p>
+			</blockquote>
+			<figcaption>Антуан де Сент-Экзюпери</figcaption>
+		</figure>
+	</section>
+
+	<section class="slide">
+		<h2><span class="light">Подводя итог</span></h2>
+		<img src="./pictures/end.jpg" alt="" class="cover height">
+	</section>
+
+	<section class="slide" id="end">
+		<h2>Индукционная доступность</h2>
+		<div id="contacts">
+			<p>Антон Есауленко</p>
+			<ul>
+				<li><img class="ico" width="24px" src="./pictures/mail.svg" alt="" aria-hidden="true"><a href="mailto:avesaulenko.sbt@sberbank.ru">avesaulenko.sbt@sberbank.ru</a></li>
+				<li><img class="ico" src="./pictures/twitter.svg" alt="" width="26px" aria-hidden="true"><a href="https://twitter.com/NaN_undefined_" target="_blank" rel="nofollow noopener" tittle="Твиттер Антона Есауленко">@NaN_undefined_</a></li>
+			</ul>
+		</div>
+		<figure id="mrHolmes">
+			<img height="300px" src="./pictures/holmes-silhouette.svg" alt="Профиль детектива Шерлока Холмса">
+		</figure>
+		<style>
+			#contacts {
+				float: left;
+			}
+			#contacts p {
+				line-height: 14px; 
+			}
+			#contacts li:before {
+				content: '';
+			}
+			#mrHolmes {
+				float: right;
+			}
+		</style>
+	</section>
+
+	<div class="progress"></div>
+
+	<script src="shower/shower.min.js"></script>
+	<!-- Copyright © 2017 Yours Truly, Famous Inc. -->
+
+</body>
+</html>

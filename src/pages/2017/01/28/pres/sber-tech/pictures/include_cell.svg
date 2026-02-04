@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1279px" height="1055px" viewBox="0 0 1279 1055" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>Desktop</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="1220" height="779.083431" rx="10"></rect>
+    </defs>
+    <g id="Page-7" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop">
+            <g id="Group-2" transform="translate(15.000000, 167.000000)">
+                <g id="Рабочая-область" transform="translate(0.000000, 3.917744)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Rectangle-1" fill="#CCCCD6" xlink:href="#path-1"></use>
+                </g>
+                <g id="Сетка" transform="translate(0.000000, 4.916569)" fill="#21C4D5">
+                    <g id="Вертикальная" transform="translate(10.000000, 0.000000)">
+                        <rect id="Rectangle-19" x="0" y="0" width="1" height="779.083431"></rect>
+                        <rect id="Rectangle-19-Copy-5" x="500" y="0" width="1" height="779.083431"></rect>
+                        <rect id="Rectangle-19-Copy" x="100" y="0" width="1" height="779.083431"></rect>
+                        <rect id="Rectangle-19-Copy-6" x="600" y="0" width="1" height="779.083431"></rect>
+                        <rect id="Rectangle-19-Copy-2" x="200" y="0" width="1" height="779.083431"></rect>
+                        <rect id="Rectangle-19-Copy-7" x="700" y="0" width="1" height="779.083431"></rect>
+                        <rect id="Rectangle-19-Copy-3" x="300" y="0" width="1" height="779.083431"></rect>
+                        <rect id="Rectangle-19-Copy-8" x="800" y="0" width="1" height="779.083431"></rect>
+                        <rect id="Rectangle-19-Copy-4" x="400" y="0" width="1" height="779.083431"></rect>
+                        <rect id="Rectangle-19-Copy-9" x="900" y="0" width="1" height="779.083431"></rect>
+                        <rect id="Rectangle-19-Copy-10" x="1000" y="0" width="1" height="779.083431"></rect>
+                        <rect id="Rectangle-19-Copy-11" x="1100" y="0" width="1" height="779.083431"></rect>
+                        <rect id="Rectangle-19-Copy-11" x="1200" y="0" width="1" height="779.083431"></rect>
+                    </g>
+                    <g id="Вертикальные-отступы" opacity="0.1">
+                        <rect id="Rectangle-19" x="100" y="0" width="21" height="779.083431"></rect>
+                        <rect id="Rectangle-19" x="0" y="0" width="21" height="779.083431"></rect>
+                        <rect id="Rectangle-19-Copy-5" x="600" y="0" width="21" height="779.083431"></rect>
+                        <rect id="Rectangle-19-Copy" x="200" y="0" width="21" height="779.083431"></rect>
+                        <rect id="Rectangle-19-Copy-6" x="700" y="0" width="21" height="779.083431"></rect>
+                        <rect id="Rectangle-19-Copy-2" x="300" y="0" width="21" height="779.083431"></rect>
+                        <rect id="Rectangle-19-Copy-7" x="800" y="0" width="21" height="779.083431"></rect>
+                        <rect id="Rectangle-19-Copy-3" x="400" y="0" width="21" height="779.083431"></rect>
+                        <rect id="Rectangle-19-Copy-8" x="900" y="0" width="21" height="779.083431"></rect>
+                        <rect id="Rectangle-19-Copy-4" x="500" y="0" width="21" height="779.083431"></rect>
+                        <rect id="Rectangle-19-Copy-9" x="1000" y="0" width="21" height="779.083431"></rect>
+                        <rect id="Rectangle-19-Copy-10" x="1100" y="0" width="21" height="779.083431"></rect>
+                        <rect id="Rectangle-19-Copy-11" x="1199" y="0" width="21" height="779.083431"></rect>
+                    </g>
+                </g>
+                <g id="Отступы">
+                    <path d="M0.5,25.3924794 L1245.5,25.3924794" id="Line" stroke="#FF0000" stroke-linecap="square"></path>
+                    <text id="20" font-family="PTSans-Regular, PT Sans" font-size="12" font-weight="normal" line-spacing="18" fill="#FF0000">
+                        <tspan x="1237" y="11.9177438">20</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

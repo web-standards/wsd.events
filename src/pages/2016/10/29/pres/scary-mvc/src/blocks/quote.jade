@@ -1,0 +1,10 @@
+mixin quote(parameters)
+	- var text= parameters.text?parameters.text:[]
+	- var author= parameters.author?parameters.author:""
+
+	figure
+		blockquote
+			each paragraph in text
+				p !{paragraph}
+		if author
+			figcaption !{author}

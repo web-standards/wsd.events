@@ -1,0 +1,1979 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>Houdini — великий разоблачитель</title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible"
+	      content="ie=edge">
+	<meta name="viewport"
+	      content="width=device-width, initial-scale=1">
+	<link rel="stylesheet"
+	      href="shower/themes/ribbon/styles/screen-16x10.css">
+	<link rel="stylesheet"
+	      href="prism/prism.min.css">
+	<link rel="stylesheet"
+	      href="styles/style.css">
+</head>
+
+<body class="shower list">
+
+	<header class="caption">
+		<h1>Houdini — великий разоблачитель</h1>
+		<p>
+			<a href="https://twitter.com/dark_mefody">Никита Дубко</a>, Capital Decision.
+		</p>
+	</header>
+
+
+	<section class="slide clear"
+	         id="cover">
+		<h2>Houdini — великий разоблачитель</h2>
+		<hr>
+		<p>
+			<a href="https://twitter.com/dark_mefody">Никита Дубко</a>, Capital Decision
+		</p>
+		<figure>
+			<img class="cover"
+			     src="pictures/cover.jpg"
+			     alt="Hands on the orange typewriter in a park">
+			<figcaption class="white">
+				<a href="https://pixabay.com/en/vienna-rabbit-hat-magic-witchcraft-358565/">pixabay.com</a>
+			</figcaption>
+		</figure>
+
+		<style>
+			#cover h2 {
+				margin: 30px 0 20px;
+				font-size: 70px;
+				color: white;
+				text-shadow: 0 0 2px rgb(39, 17, 11), 5px 3px 10px rgba(39, 17, 11, 0.7);
+			}
+
+			#cover hr {
+				border-color: white;
+				margin-left: 0;
+				width: 300px;
+				opacity: 0.7;
+			}
+
+			#cover p {
+				margin: 0;
+				font-size: 24px;
+				color: black;
+			}
+
+		</style>
+	</section>
+
+
+	<section class="slide">
+		<h2>Конвейер рендеринга в браузере</h2>
+		<svg class="render-block">
+			<use xlink:href="#nd-render-picture">
+		</svg>
+		<footer>
+			<p>Упрощенно процесс рендеринга страницы в браузере можно разделить на 6 этапов: Parser, DOM/CSSOM, Cascade, Layout, Paint
+				и Composite.</p>
+		</footer>
+
+		<style>
+			.render-block {
+				width: 100%;
+			}
+
+		</style>
+	</section>
+
+
+	<section class="slide nd-pipeline nd-pipeline-parser">
+		<h2>Конвейер рендеринга в браузере</h2>
+		<svg class="render-block">
+			<use xlink:href="#nd-render-picture">
+		</svg>
+		<ol>
+			<li>Скачивание и парсинг HTML, CSS и JavaScript</li>
+		</ol>
+		<footer>
+			<p>На первом этапе браузер скачивает файлы HTML, CSS и JavaScript. Исходные тексты разбираются и приводятся в исправленный
+				и понятный браузеру вид.</p>
+		</footer>
+
+		<style>
+			.nd-pipeline-parser {
+				--nd-render-parse-color: var(--color-active);
+			}
+
+		</style>
+	</section>
+
+
+	<section class="slide nd-pipeline nd-pipeline-dom">
+		<h2>Конвейер рендеринга в браузере</h2>
+		<svg class="render-block">
+			<use xlink:href="#nd-render-picture">
+		</svg>
+		<ol>
+			<li class="not-active-item">Скачивание и парсинг HTML, CSS и JavaScript</li>
+			<li>Построение Document Object Model и CSS Object Model</li>
+		</ol>
+		<footer>
+			<p>На втором этапе на основе полученного исходного текста формируется два дерева, DOM и CSSOM, причем каждому листу DOM ставится
+				в соответствие свой узел CSSOM.</p>
+		</footer>
+
+		<style>
+			.nd-pipeline-dom {
+				--nd-render-parse-color: var(--color-inactive);
+				--nd-render-dom-color: var(--color-active);
+			}
+
+		</style>
+	</section>
+
+
+	<section class="slide nd-pipeline nd-pipeline-cascade">
+		<h2>Конвейер рендеринга в браузере</h2>
+		<svg class="render-block">
+			<use xlink:href="#nd-render-picture">
+		</svg>
+		<ol>
+			<li class="not-active-item">Скачивание и парсинг HTML, CSS и JavaScript</li>
+			<li class="not-active-item">Построение Document Object Model и CSS Object Model</li>
+			<li>Формирование дерева рендеринга</li>
+		</ol>
+		<footer>
+			<p>К полученным DOM и CSSOM применяются правила каскада, внутренние правила браузера, и на основании этого формируется render
+				tree.
+			</p>
+		</footer>
+
+		<style>
+			.nd-pipeline-cascade {
+				--nd-render-parse-color: var(--color-inactive);
+				--nd-render-dom-color: var(--color-inactive);
+				--nd-render-cascade-color: var(--color-active);
+			}
+
+		</style>
+	</section>
+
+
+	<section class="slide nd-pipeline nd-pipeline-layout">
+		<h2>Конвейер рендеринга в браузере</h2>
+		<svg class="render-block">
+			<use xlink:href="#nd-render-picture">
+		</svg>
+		<ol>
+			<li class="not-active-item">Скачивание и парсинг HTML, CSS и JavaScript</li>
+			<li class="not-active-item">Построение Document Object Model и CSS Object Model</li>
+			<li class="not-active-item">Формирование дерева рендеринга</li>
+			<li>Расчет положения на странице каждого элемента дерева рендеринга</li>
+		</ol>
+		<footer>
+			<p>Для каждого элемента render tree рассчитывается его положение на странице в текущий момент времени. При необходимости
+				элементы разбиваются на разные слои.</p>
+		</footer>
+
+		<style>
+			.nd-pipeline-layout {
+				--nd-render-parse-color: var(--color-inactive);
+				--nd-render-dom-color: var(--color-inactive);
+				--nd-render-cascade-color: var(--color-inactive);
+				--nd-render-layout-color: var(--color-active);
+			}
+
+		</style>
+	</section>
+
+
+	<section class="slide nd-pipeline nd-pipeline-paint">
+		<h2>Конвейер рендеринга в браузере</h2>
+		<svg class="render-block">
+			<use xlink:href="#nd-render-picture">
+		</svg>
+		<ol>
+			<li class="not-active-item">Скачивание и парсинг HTML, CSS и JavaScript</li>
+			<li class="not-active-item">Построение Document Object Model и CSS Object Model</li>
+			<li class="not-active-item">Формирование дерева рендеринга</li>
+			<li class="not-active-item">Расчет положения на странице каждого элемента дерева рендеринга</li>
+			<li>Отрисовка пикселей каждого слоя</li>
+		</ol>
+		<footer>
+			<p>На этапе отрисовки каждый слой формирует готовый для отображения в браузере массив пикселей.</p>
+		</footer>
+
+		<style>
+			.nd-pipeline-paint {
+				--nd-render-parse-color: var(--color-inactive);
+				--nd-render-dom-color: var(--color-inactive);
+				--nd-render-cascade-color: var(--color-inactive);
+				--nd-render-layout-color: var(--color-inactive);
+				--nd-render-paint-color: var(--color-active);
+			}
+
+		</style>
+	</section>
+
+
+	<section class="slide nd-pipeline nd-pipeline-composite">
+		<h2>Конвейер рендеринга в браузере</h2>
+		<svg class="render-block">
+			<use xlink:href="#nd-render-picture">
+		</svg>
+		<ol>
+			<li class="not-active-item">Скачивание и парсинг HTML, CSS и JavaScript</li>
+			<li class="not-active-item">Построение Document Object Model и CSS Object Model</li>
+			<li class="not-active-item">Формирование дерева рендеринга</li>
+			<li class="not-active-item">Расчет положения на странице каждого элемента дерева рендеринга</li>
+			<li class="not-active-item">Отрисовка пикселей каждого слоя</li>
+			<li>Компоновка слоев и отображение в видимой области браузера</li>
+		</ol>
+		<footer>
+			<p>Отрисованные на каждом слое пиксели компонуются в один общий слой и отображаются на экране.</p>
+		</footer>
+
+		<style>
+			.nd-pipeline-composite {
+				--nd-render-parse-color: var(--color-inactive);
+				--nd-render-dom-color: var(--color-inactive);
+				--nd-render-cascade-color: var(--color-inactive);
+				--nd-render-layout-color: var(--color-inactive);
+				--nd-render-paint-color: var(--color-inactive);
+				--nd-render-composite-color: var(--color-active);
+			}
+
+		</style>
+	</section>
+
+
+	<section class="slide nd-pipeline nd-pipeline-total">
+		<h2>Конвейер рендеринга в браузере</h2>
+		<svg class="render-block">
+			<use xlink:href="#nd-render-picture">
+		</svg>
+		<ol>
+			<li class="not-active-item">Магия</li>
+			<li>Можем влиять на процесс из JavaScript</li>
+			<li class="not-active-item">Магия</li>
+			<li class="not-active-item">Магия</li>
+			<li class="not-active-item">Магия</li>
+			<li class="not-active-item">Магия</li>
+		</ol>
+		<footer>
+			<p>Из всех шести этапов веб-разработчики могут явно влиять всего на один: построение DOM/CSSOM. По сути, движок рендеринга —
+				это «черный ящик», и почти все, что в нем происходит — некая браузерная «магия», основанная на спецификациях W3C.</p>
+		</footer>
+
+		<style>
+			.nd-pipeline-total {
+				--nd-render-parse-color: var(--color-inactive);
+				--nd-render-dom-color: lightgreen;
+				--nd-render-cascade-color: var(--color-inactive);
+				--nd-render-layout-color: var(--color-inactive);
+				--nd-render-paint-color: var(--color-inactive);
+				--nd-render-composite-color: var(--color-inactive);
+			}
+
+		</style>
+	</section>
+
+
+	<section class="slide clear black">
+		<img class="cover height"
+		     src="./pictures/sad.gif">
+		<footer>
+			<p>Неужели все так плохо?</p>
+		</footer>
+	</section>
+
+
+	<section class="slide">
+		<h2 class="shout shout-mini">
+			<a href="https://extensiblewebmanifesto.org">The Extensible Web Manifesto</a>
+		</h2>
+		<footer>
+			<p>10 июня 2013 года авторы веб-спецификаций и разработчики из ведущих IT-компаний подписали веб-манифест, который должен
+				призвать разработчиков браузеров к более открытому и простому процессу интеграции новых возможностей в производство.</p>
+		</footer>
+	</section>
+
+
+	<section class="slide nd-manifesto-rus">
+		<h2>The Extensible Web Manifesto
+			<small class="header-note">10.06.2013</small>
+		</h2>
+		<blockquote>
+			<p>Сосредоточиться на добавлении новых безопасных и эффективных низкоуровневых возможностей веб-платформы.</p>
+		</blockquote>
+		<blockquote>
+			<p>Раскрывать низкоуровневые возможности, что объяснит существующие функции, такие как HTML и CSS, позволяя авторам понимать
+				и воспроизводить их.</p>
+		</blockquote>
+		<blockquote>
+			<p>Упростить и оптимизировать долгосрочный процесс стандартизации новых API, которые будут иметь применение и значительное
+				использование в реальных условиях.</p>
+		</blockquote>
+		<footer>
+			<p>Некоторые пункты манифеста связаны с невозможностью явно контролировать конвейер рендеринга в браузерах.</p>
+			<p>Авторы манифеста призывают разработчиков браузеров предоставить доступ к low-level API, чтобы, даже не обладая сложными
+				и специфическими знаниями, веб-разработчики могли внедрять новые возможности еще до того, как их начнет нативно поддерживать
+				браузер.
+			</p>
+		</footer>
+
+		<style>
+			.nd-manifesto-rus blockquote {
+				font-size: 22px;
+			}
+
+		</style>
+	</section>
+
+
+	<section class="slide">
+		<h2 class="shout">JavaScript</h2>
+		<footer>
+			<p>Как обстоят дела у JavaScript-разработчиков? Окунемся в историю.</p>
+		</footer>
+	</section>
+
+
+	<section class="slide">
+		<img src="./pictures/introducing-html5.jpg"
+		     class="cover">
+		<footer>
+			<p>Термин
+				<mark>polyfill</mark>
+				<a href="https://remysharp.com/2010/10/08/what-is-a-polyfill"></a>появился</a> еще в 2010 году в книге
+				<b>Introducing HTML5</b> Брюса Лоусона и Реми Шарпа.</p>
+		</footer>
+	</section>
+
+
+	<section class="slide">
+		<img src="./pictures/introducing-html5-polyfill-chapter.jpg"
+		     class="cover">
+		<footer>
+			<p>В книге этому термину посвящена целая глава.</p>
+		</footer>
+	</section>
+
+
+	<section class="slide nd-polyfill-definition">
+		<p>
+			<b>Полифил</b> — это код, реализующий какую-либо функциональность, которая не поддерживается в некоторых версиях веб-браузеров
+			по умолчанию.
+		</p>
+		<style>
+			.nd-polyfill-definition {
+				font-size: 30px;
+			}
+
+			.nd-polyfill-definition p {
+				margin-top: 100px;
+			}
+
+		</style>
+	</section>
+
+
+	<section class="slide">
+		<h2>Полифил</h2>
+		<pre><code class="language-js">(function(self) {
+	'use strict';
+	if (self.es2020feature) {
+		return;
+	}
+	self.es2020feature = function() {
+		// Do some magic
+	};
+	self.es2020feature.polyfill = true;
+})(this);</code></pre>
+		<footer>
+			<p>
+				Чтобы написать свой polyfill, достаточно применить
+				<mark>monkey-patching</mark> к объекту, функциональность которого необходимо расширить. Как правило, разработчики полифилов
+				берут на себя определение наличия нативной реализации функциональности и ее использование.
+			</p>
+		</footer>
+	</section>
+
+
+	<section class="slide">
+		<h2>Понифил 🦄</h2>
+		<p>
+			<a href="ponyfill.com">ponyfill.com</a>
+		</p>
+		<pre><code class="language-js">// is-nan-ponyfill.js
+module.exports = function (value) {
+	return value !== value;
+};
+
+// app.js
+var isNanPonyfill = require('is-nan-ponyfill');
+isNanPonyfill(5);</code></pre>
+		<footer>
+			<p>
+				Сторонники чистых функций и противники side-эффектов используют другой подход —
+				<mark>ponyfill</mark>. Суть его в том, что вместо применения патчей к существующим объектам и классам модуль возвращает чистую
+				функцию, которую можно использовать для замещения недостающей функциональности.
+			</p>
+		</footer>
+	</section>
+
+
+	<section class="slide">
+		<h2>Транспайлер</h2>
+		<pre><code class="language-js">// ES6
+let point = { x: 0, y: 0 };
+const {x, y} = point;
+const arrowFunction = (a) => a ** 2;
+
+// ES5
+"use strict";
+var point = { x: 0, y: 0 };
+var x = point.x,
+    y = point.y;
+var arrowFunction = function arrowFunction(a) {
+  return Math.pow(a, 2);
+};</code></pre>
+		<footer>
+			<p>
+				Когда полифилов недостаточно, на помощь приходит
+				<mark>transpiling</mark> — перевод синтаксиса одного языка в другой. Так новые возможности EcmaScript 6 можно использовать
+				даже в очень старых браузерах, прогнав JavaScript-исходники через специальную программу-транспиллер.
+			</p>
+		</footer>
+	</section>
+
+
+	<section class="slide">
+		<img src="./pictures/6to5.png"
+		     class="cover"
+		     alt="Логотип 6to5">
+		<footer>
+			<p>
+				<a href="https://babeljs.io/blog/2016/12/07/the-state-of-babel">28 сентября 2014 года</a> на Github появился проект
+				<mark>6to5</mark>.
+			</p>
+		</footer>
+	</section>
+
+
+	<section class="slide">
+		<img src="./pictures/babel.png"
+		     height="290"
+		     alt="Логотип Babel"
+		     class="cover">
+		<footer>
+			<p>
+				<a href="https://babeljs.io/blog/2015/02/15/not-born-to-die">15 февраля 2015 года</a> разработчики объявили о переименовании
+				<mark>6to5</mark> в
+				<mark>Babel</mark>. Объединив усилия с разработчиками из Mozilla, The jQuery Foundation, ESLint и др., команда направила силы
+				на создание спецификации
+				<b>ESTree</b>, которая должна была стать основой для существующих парсеров и инструментов транспиллинга.
+			</p>
+		</footer>
+	</section>
+
+
+	<section class="slide">
+		<img src="./pictures/polymer.png"
+		     alt="Polymer logo"
+		     class="cover">
+		<footer>
+			<p>
+				Разработчики браузеров тоже не дремлют и активно используют полифилы, чтобы пропагандировать использование функциональности,
+				которой на самом деле в браузере еще нет, но попробовать хочется. Например, в 2012 году разработчики из Google взяли
+				веб-компоненты, полифилы и подарили миру
+				<a href="https://www.polymer-project.org">Polymer</a>. К слову, поддержка Shadow DOM и Custom Elements в браузерах до сих пор плачевная.
+			</p>
+		</footer>
+	</section>
+
+
+	<section class="slide">
+		<h2 class="shout">CSS</h2>
+		<footer>
+			<p>А как обстоят дела у верстальщиков? Бывают ли полифилы для CSS?</p>
+		</footer>
+	</section>
+
+
+	<section class="slide">
+		<h2>
+			<a href="https://wiki.csswg.org/ideas/mistakes">Ошибки в проектировании CSS</a>
+		</h2>
+		<ul>
+			<li>
+				<mark>box-sizing</mark> должен быть
+				<mark>border-box</mark> по умолчанию.
+			</li>
+			<li>
+				<mark>z-index</mark> следовало назвать
+				<mark>z-order</mark> или
+				<mark>depth</mark> и он должен Просто Работать для всех элементов (как для flex-элементов).
+			</li>
+			<li>
+				<mark>margin-top</mark> и
+				<mark>margin-bottom</mark> никогда не должны схлопываться автоматически, так как это
+				<b>корень всего margin-collapse зла</b>. </li>
+			<li>
+				<mark>border-radius</mark> должен был называться
+				<mark>corner-radius</mark>.
+			</li>
+			<li>
+				<mark>size</mark> должен был быть сокращением для
+				<mark>width</mark> и
+				<mark>height</mark>, а не отдельным свойством
+				<mark>@page</mark> для обозначения размера листа.
+			</li>
+		</ul>
+
+		<footer>
+			<p>
+				Сами авторы спецификаций признают, что при проектировании CSS не все получилось хорошо. Например, некоторые свойства явно
+				стоило назвать по-другому. Но браузеры, к сожалению, слишком спешат реализовывать спецификации-черновики, а веб-разработчики
+				сразу же начинают их использовать, поэтому к моменту осознания неудачного решения изменять спецификации, как правило,
+				уже поздно.
+			</p>
+		</footer>
+	</section>
+
+
+	<section class="slide nd-preprocessors">
+		<div class="cover">
+			<img src="./pictures/less.png"
+			     alt="LESS"
+			     class="less">
+			<img src="./pictures/sass.svg"
+			     alt="SASS">
+			<img src="./pictures/stylus.svg"
+			     alt="Stylus">
+			<img src="./pictures/postcss.svg"
+			     alt="PostCSS">
+		</div>
+		<footer>
+			<p>
+				В мире CSS давно и прочно укрепились препроцессоры и постпроцессоры:
+				<mark>Less</mark>,
+				<mark>Sass</mark>,
+				<mark>Stylus</mark>,
+				<mark>PostCSS</mark> и другие. Их задача — ускорить разработку, добавить «синтаксический сахар» и/или автоматизировать некоторые
+				необходимые действия для расширения целевой аудитории приложения (например, добавление вендорных префиксов или right-to-left
+				раскладки).
+			</p>
+		</footer>
+
+		<style>
+			.nd-preprocessors .cover {
+				text-align: center;
+			}
+
+			.nd-preprocessors img {
+				height: 140px;
+				margin: 10px;
+			}
+
+			.nd-preprocessors img.less {
+				height: 110px;
+			}
+
+		</style>
+	</section>
+
+
+	<section class="slide">
+		<h2>
+			<a href="https://philipwalton.github.io/polyfill/">Polyfill.js</a> 🎉</h2>
+		<pre><code class="language-js">Polyfill({
+		declarations:["position:sticky"]
+	})
+	.doMatched(function(rules) {
+		/* add styles */
+	 })
+	.undoUnmatched(function(rules) {
+		/* reset styles */
+	});</code></pre>
+		<p class="note next">
+			<a href="https://www.youtube.com/watch?v=VrsLTZGGy10">Василий Ванчук — Отполифиль свой CSS</a> на MinskCSS Meetup #2
+		</p>
+		<footer>
+			<p>
+				Но что делать с теми возможностями, которые не реализовать только при помощи CSS? Решение есть — полифилы для CSS. Филипп
+				Уолтон написал
+				<a href="https://philipwalton.github.io/polyfill/">целую библиотеку</a>, которая берет на себя отслеживание изменений DOM, специфичности селекторов, примененение @-rules,
+				наличие (о, ужас!) !important в коде. Вы пишете обычный JavaScript. Вам остается только корректно реализовать спецификацию.
+			</p>
+			<p>
+				Более подробно о том, как работают полифилы для CSS, можно посмотреть в докладе Василия Ванчука на MinskCSS Meetup #2
+				<a href="https://www.youtube.com/watch?v=VrsLTZGGy10">Отполифиль свой CSS</a>.
+			</p>
+		</footer>
+	</section>
+
+
+	<section class="slide">
+		<img src="./pictures/polyfill-update.jpg"
+		     alt="Polyfill.js author's message"
+		     class="cover">
+		<footer>
+			<p>22 декабря 2016 года Филипп Уолтон на сайте библиотеки polyfill.js опубликовал сообщение о том, что он больше не поддерживает
+				ее разработку. Разработчики должны принимать во внимание ограничения и трудности написания CSS-полифилов, используя эту
+				библиотеку.
+			</p>
+		</footer>
+	</section>
+
+
+	<section class="slide nd-pipeline nd-pipeline-total">
+		<svg class="render-block cover">
+			<use xlink:href="#nd-render-picture">
+		</svg>
+		<footer>
+			<p>Однако все это не меняет того факта, что разработчики по-прежнему могут влиять только на один этап конвейра рендеринга
+				в браузере, то есть не могут эффективно решать проблемы с производительностью, реализовывая грандиозные идеи дизайнеров.</p>
+			<p>Задумайтесь, а ведь пользователь видит на экране именно HTML и CSS, обработанные браузером. Да, сейчас чаще всего они
+				генерируются JavaScript-ом, но все-таки это именно HTML и CSS, на внутренние механизмы обработки которых разработчики
+				явно влиять не могут.
+			</p>
+		</footer>
+	</section>
+
+
+	<section class="slide clear black">
+		<img class="cover height"
+		     src="./pictures/travolta.gif">
+		<footer>
+			<p>И что делать? Куда идти дальше?</p>
+		</footer>
+	</section>
+
+
+	<section class="slide">
+		<h2 class="shout shout-mini">CSS-TAG Houdini Task Force 🎉</h2>
+		<footer>
+			<p>Решением проблемы занимается рабочая группа проекта CSS Houdini.</p>
+		</footer>
+	</section>
+
+
+	<section class="slide">
+		<img class="cover"
+		     src="./pictures/tag.jpg"
+		     alt="CSS-TAG Houdini Task Force">
+		<footer>
+			<p>С 6 по 8 февраля 2015 года в офисе Google в Сиднее (Австралия)
+				<a href="https://log.csswg.org/irc.w3.org/houdini/2015-02-06/">состоялась</a> первая встреча рабочей группы CSS Houdini, на которой было принято много важных решений и планов дальнейших
+				действий.
+			</p>
+		</footer>
+	</section>
+
+
+	<section class="slide black clear">
+		<img src="./pictures/houdini.jpg"
+		     alt="Гарри Гудини"
+		     class="cover height">
+		<footer>
+			<p>Может возникнуть вопрос, почему проект назвали Houdini?</p>
+			<p>Гарри Гудини — знаменитый иллюзионист начала 20 века, который прославился не только сложными трюками с наручниками и побегами,
+				но и разоблачением популярной «магии» того времени — спиритизма.</p>
+			<p>У проекта CSS Houdini, собственно, те же цели: раскрыть механизмы «магии» CSS и показать, какие процессы стоят за видимым
+				результатом.
+			</p>
+		</footer>
+	</section>
+
+
+	<section class="slide nd-houdini-api">
+		<figure class="cover">
+			<img src="./pictures/houdini-api.png"
+			     alt="Новые спецификации Houdini">
+			<figcaption>Новые спецификации Houdini для работы с конвейером рендеринга </figcaption>
+		</figure>
+		<footer>
+			<p>
+				Проект Houdini — это набор спецификаций, каждая из которых устанавливает правила, по которым разработчик может вмешиваться
+				в каждый этап конвейера рендеринга.
+			</p>
+		</footer>
+
+		<style>
+			.nd-houdini-api figcaption {
+				text-align: center;
+				font-size: 20px;
+				font-style: italic;
+			}
+
+		</style>
+	</section>
+
+
+	<section class="slide nd-houdini-api-list">
+		<img src="./pictures/css-tag-houdini-specs.jpg"
+		     alt="CSS Houdini specifications"
+		     class="cover width">
+		<p class="image-caption">
+			<a href="https://github.com/w3c/css-houdini-drafts">Репозиторий проекта на Github</a>
+		</p>
+		<footer>
+			<p>Все спецификации вынесены в отдельный
+				<a href="https://github.com/w3c/css-houdini-drafts">репозиторий</a> на Github.</p>
+		</footer>
+
+		<style>
+			.nd-houdini-api-list .image-caption {
+				text-align: center;
+				font-size: 20px;
+				font-style: italic;
+				position: absolute;
+				left: 50%;
+				bottom: 0;
+				transform: translateX(-50%);
+			}
+
+		</style>
+	</section>
+
+
+	<section class="slide">
+		<h2 class="shout shout-mini">CSS Custom Properties</h2>
+		<footer>
+			<p>
+				Говоря про проект Houdini, важно упомянуть другую спецификацию:
+				<mark>CSS Custom Properties</mark> (еще их называют CSS-переменными). Как вы увидите позже, в различных API эта возможность
+				современного CSS используется очень активно.
+			</p>
+		</footer>
+	</section>
+
+
+	<section class="slide">
+		<pre><code class="language-css">/* CSS */
+:root {
+	--r: 255;
+	--g: 20;
+	--b: 147;
+	--deeppink-color: rgb(var(--r), var(--g), var(--b));
+}
+
+.pink-element {
+	--element-width: 200px;
+	--element-border-width: 20px;
+	background-color: var(--deeppink-color);
+	width: calc(var(--element-width) + var(--element-border-width));
+}</code></pre>
+		<footer>
+			<p>
+				Напомню синтаксис
+				<mark>CSS Custom Properties</mark>.
+			</p>
+			<p>
+				Используя CSS-функции
+				<code>var()</code> и
+				<code>calc()</code>, можно перенести различные вычисления из препроцессоров или JavaScript прямо в движок CSS.
+			</p>
+			<p>Для установки значений, общих для всей страницы, можно использовать селектор
+				<code>:root</code>.
+			</p>
+		</footer>
+	</section>
+
+
+	<section class="slide">
+		<pre><code class="language-js">// JavaScript
+const isSupported = CSS.supports('--custom', 'property');
+
+// Получить значение custom property
+const pinkElement = document.querySelector('.pink-element');
+const elementWidth = window
+   .getComputedStyle(pinkElement)
+   .getPropertyValue('--element-width');
+
+// Изменить custom property для узла
+pinkElement.style.setProperty('--element-width', '300px');
+
+// Изменить custom property в :root
+document.documentElement.style.setProperty('--r', 190);</code></pre>
+		<footer>
+			<p>
+				В JavaScript работа с
+				<mark>CSS Custom Properties</mark> ничем не отличается от работы с другими свойствами CSS, к ним применимы те же методы.
+			</p>
+		</footer>
+	</section>
+
+
+	<section class="slide">
+		<img src="./pictures/caniuse-custom-properties.jpg"
+		     class="cover height"
+		     alt="Custom Properties — caniuse.com">
+		<footer>
+			<p>Если вам не нужно поддерживать IE и Opera Mini, использовать
+				<mark>CSS Custom Properties</mark> можно уже сейчас — браузерная поддержка радует.</p>
+		</footer>
+	</section>
+
+
+	<section class="slide slide-codepen clear black">
+		<p data-height="100%"
+		   data-theme-id="default"
+		   data-class="codepen"
+		   data-slug-hash="OxgObM"
+		   data-default-tab="css,result"
+		   data-user="dark_mefody"
+		   data-embed-version="2"
+		   data-pen-title="#DailyCssImages - Day 17. Zombie"
+		   class="codepen cover">See the Pen
+			<a href="https://codepen.io/dark_mefody/pen/OxgObM/">#DailyCssImages - Day 17. Zombie</a> by Nikita Dubko (
+			<a href="https://codepen.io/dark_mefody">@dark_mefody</a>) on
+			<a href="https://codepen.io">CodePen</a>.</p>
+		<script async
+		        src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+		<footer>
+			<p>
+				Комбинируя возможности препроцессоров и CSS-переменных, можно делать интересные интерактивные анимации.
+			</p>
+		</footer>
+	</section>
+
+
+	<section class="slide">
+		<h2 class="shout shout-mini">CSS Parser API</h2>
+		<footer>
+			<p>
+				Перейдем к рассмотрению непосредственно спецификаций CSS Houdini.
+			</p>
+		</footer>
+	</section>
+
+
+	<section class="slide">
+		<h2>CSS Parser API</h2>
+		<pre><code class="language-js">var background = window.cssParse.rule("background: green");
+console.log(background.styleMap.get("background").value) // "green"
+
+var styles = window.cssParse
+	.ruleSet(".foo { background: green; margin: 5px; }");
+console.log(styles.length) // 5
+console.log(styles[0].styleMap.get("margin-top").value) // 5
+console.log(styles[0].styleMap.get("margin-top").type) // "px"
+
+const style = fetch("style.css")
+	.then(response => CSS.parseStylesheet(response.body));
+style.then(console.log);
+</code></pre>
+		<footer>
+			<p>Эта спецификация пока еще представлена в виде набора идей и перенесена в
+				<a href="https://github.com/WICG/CSS-Parser-API">репозиторий</a>
+				<b>WICG</b> — W3C's Web Platform Incubator Community Group.</p>
+			<p>Суть ее в том, что браузер позволит самостоятельно обрабатывать текст CSS и изменять результат парсинга. Так можно добавить
+				свои собственные функции, селекторы или свойства и объяснить браузеру, как эти свойства нужно воспринимать.</p>
+			<p>Получится эдакий высокопроизводительный
+				<mark>PostCSS</mark> в браузере.</p>
+			<p>
+				<i>Реализации пока нет</i> даже за флагами.
+			</p>
+		</footer>
+	</section>
+
+
+	<section class="slide nd-pipeline nd-parse-api-total">
+		<svg class="render-block cover">
+			<use xlink:href="#nd-render-picture">
+		</svg>
+		<footer>
+			<p>CSS Parse API позволяет управлять этапом Parser конвейера рендеринга браузера. Ставим галочку.</p>
+		</footer>
+
+		<style>
+			.nd-parse-api-total {
+				--nd-render-parse-color: var(--color-checked);
+				--nd-render-dom-color: lightgreen;
+				--nd-render-cascade-color: var(--color-inactive);
+				--nd-render-layout-color: var(--color-inactive);
+				--nd-render-paint-color: var(--color-inactive);
+				--nd-render-composite-color: var(--color-inactive);
+			}
+
+		</style>
+	</section>
+
+
+	<section class="slide">
+		<h2 class="shout shout-mini">CSS Typed OM</h2>
+	</section>
+
+
+	<section class="slide">
+		<h2>Проблема</h2>
+		<pre><code class="language-js">const example = document.querySelector('.slide');
+const elementFontSize = parseFloat(
+	window.getComputedStyle(example).getPropertyValue('font-size')
+);
+console.log(elementFontSize); // 25
+
+example.style.setProperty(
+	'transform',
+	'translate(50px, calc(1em + 5px))'
+);</code></pre>
+		<footer>
+			<p>
+				Как мы обычно задаем стили через JavaScript? Числа превращаем в строки, затем подставляем полученные строки в стили, там
+				они снова превращаются в числа. Таким образом мы значительно теряем производительность на операциях, которых, в принципе,
+				могло бы и не быть.
+			</p>
+			<p>Еще одна проблема: метод
+				<code>setProperty()</code> не выдаст никаких исключений, если вы попытаетесь задать некорректное значение свойства.
+			</p>
+		</footer>
+	</section>
+
+
+	<section class="slide">
+		<h2>Решение</h2>
+		<pre><code class="language-js">const exampleStyleMap = document.querySelector('.slide').styleMap;
+const fontSizeValue = exampleStyleMap.get('font-size').value;
+console.log( exampleStyleMap.get('font-size') );
+// CSSUnitValue {value: 25, unit: "px", type: "length"}
+
+const calcValue = new CSSMathSum(CSS.em(1), CSS.px(5));
+const transformValue = new CSSTransformValue([
+	new CSSTranslation(
+		new CSSUnitValue(50, 'px'),
+		calcValue
+	)]);
+exampleStyleMap.set('transform', transformValue);</code></pre>
+		<footer>
+			<p>
+				Спецификация
+				<mark>CSS Typed OM</mark> определяет классы и интерфейсы API, благодаря которым можно почти полностью избежать лишних переводов
+				строк в значения CSS-свойств.
+			</p>
+			<p>
+				<i>Частично реализована</i> в Chrome (за флагом). Вместо
+				<code>element.computedStyleMap()</code> необходимо использовать
+				<code>window.getComputedStyleMap(element)</code>. Некоторые типы, вроде
+				<code>CSSMathSum</code>, пока не доступны в глобальном пространстве имен.
+			</p>
+		</footer>
+	</section>
+
+
+	<section class="slide nd-css-style-value">
+		<h2>Иерархия возможных значений свойств</h2>
+		<ul>
+			<li>
+				<b>CSSStyleValue</b>
+				<ul>
+					<li>CSSUnparsedValue
+						<i class="note">--my-custom-property: some custom value list</i>
+					</li>
+					<li>CSSKeywordValue
+						<i class="note">border-image: initial</i>
+					</li>
+					<li>CSSNumericValue
+						<ul>
+							<li>CSSUnitValue
+								<i class="note">height: 2px</i>
+							</li>
+							<li>CSSMathValue
+								<i class="note">width: calc(1em + 5px)</i>
+							</li>
+						</ul>
+					</li>
+					<li>CSSPositionValue
+						<i class="note">object-position: top 50%</i>
+					</li>
+					<li>CSSTransformValue
+						<i class="note">transform: translate(5px, 10em)</i>
+					</li>
+					<li>CSSResourceValue
+						<i class="note">background-image: url(picture.jpg)</i>
+						<ul>
+							<li>CSSImageValue
+								<i class="note">list-style-image: linear-gradient(red 0, blue 100%)</i>
+							</li>
+							<li>CSSFontFaceValue
+								<i class="note">@font-face { ... }</i>
+							</li>
+						</ul>
+					</li>
+
+				</ul>
+			</li>
+		</ul>
+		<footer>
+			<p>
+				<mark>CSS Typed OM</mark> определяет иерархию классов возможных значений CSS-свойств.
+			</p>
+		</footer>
+
+		<style>
+			.nd-css-style-value ul {
+				font-size: 19px;
+			}
+
+			.nd-css-style-value i.note {
+				margin-left: 20px;
+				color: #999;
+			}
+
+		</style>
+	</section>
+
+
+	<section class="slide">
+		<h2 class="shout shout-mini">
+			<a href="https://github.com/css-typed-om/typed-om">typed-om</a>
+		</h2>
+		<footer>
+			<p>
+				Если очень хочется попробовать API CSS Typed OM в деле, есть
+				<a href="https://github.com/css-typed-om/typed-om">полифил</a>. Не рекомендуется использовать в production, так как полифил дает только API, но производительность, разумеется,
+				не увеличивает.
+			</p>
+		</footer>
+	</section>
+
+
+	<section class="slide">
+		<h2 class="center">
+			<img src="./pictures/chrome-canary.svg"
+			     height="30"> chrome://flags
+		</h2>
+		<img src="./pictures/experimental-flag.jpg"
+		     class="cover width"
+		     alt="Experimental flag">
+		<footer>
+			<p>
+				Чтобы попробовать нативную реализацию API, небходимо включить флаг
+				<mark>Experimental Web Platform Features</mark> в Chrome Canary. Флаг доступен по адресу
+				<code>chrome://flags</code>.
+			</p>
+		</footer>
+	</section>
+
+
+	<section class="slide">
+		<h2 class="shout shout-mini">CSS Properties and Values API</h2>
+	</section>
+
+
+	<section class="slide">
+		<pre><code class="language-js">// JavaScript
+CSS.registerProperty({
+	name: '--sidebar-width',
+	syntax: '&lt;length&gt;',
+	inherits: true,
+	initialValue: '80px'
+});</code></pre>
+		<pre class="next"><code class="language-css">/* CSS */
+@property --sidebar-width {
+	syntax: "&lt;length&gt;",
+	inherits: true,
+	initialValue: "80px"
+}</code></pre>
+		<footer>
+			<p>
+				Как анимировать CSS Custom Property (например, ширину sidebar)? CSS-переменные — это строки. Движок браузера не знает, как
+				их анимировать, потому что сложно вычислить разницу в 20% между строками "A" и "B".
+				<mark>CSS Properties and Values API</mark> — решение проблемы. На самом деле API имеет всего один метод, который позволяет
+				назначить тип для переменной, задать ее начальное значение и наследуемость.
+			</p>
+		</footer>
+	</section>
+
+
+	<section class="slide">
+		<h2>Синтаксис</h2>
+		<p class="double">
+			<code>&lt;length&gt;</code>
+			<br>
+			<code>&lt;number&gt;</code>
+			<br>
+			<code>&lt;percentage&gt;</code>
+			<br>
+			<code>&lt;length-percentage&gt;</code>
+			<br>
+			<code>&lt;color&gt;</code>
+			<br>
+			<code>&lt;image&gt;</code>
+			<br>
+			<code>&lt;url&gt;</code>
+			<br>
+			<code>&lt;integer&gt;</code>
+			<br>
+			<code>&lt;angle&gt;</code>
+			<br>
+			<code>&lt;time&gt;</code>
+			<br>
+			<code>&lt;resolution&gt;</code>
+			<br>
+			<code>&lt;transform-function&gt;</code>
+			<br>
+			<br>
+			<code>&lt;length | number&gt;</code>
+			<br>
+			<code>&lt;length+&gt;</code>
+			<br>
+			<code>small | smaller</code>
+		</p>
+		<footer>
+			<p>
+				Параметр
+				<code>syntax</code> может иметь одно из представленных на слайде значений.
+			</p>
+		</footer>
+	</section>
+
+
+	<section class="slide">
+		<h2 class="shout shout-mini">Демо
+			<a href="./demos/4_sidebar/index.html">sidebar</a>
+		</h2>
+	</section>
+
+
+	<section class="slide nd-pipeline nd-typed-api-total">
+		<svg class="render-block cover">
+			<use xlink:href="#nd-render-picture">
+		</svg>
+		<footer>
+			<p>CSS Properties and Values API частично позволяет управлять этапом Cascade конвейера рендеринга браузера. Ставим галочку.</p>
+		</footer>
+
+		<style>
+			.nd-typed-api-total {
+				--nd-render-parse-color: var(--color-checked);
+				--nd-render-dom-color: lightgreen;
+				--nd-render-cascade-color: var(--color-checked);
+				--nd-render-layout-color: var(--color-inactive);
+				--nd-render-paint-color: var(--color-inactive);
+				--nd-render-composite-color: var(--color-inactive);
+			}
+
+		</style>
+	</section>
+
+
+	<section class="slide">
+		<h2 class="shout shout-mini">Worklets</h2>
+		<footer>
+			<p>
+				<mark>Worklet</mark> — урезанный Worker с ограниченными правами и работающий параллельно основному потоку. У него нет доступа
+				к DOM, поэтому работать он может только с теми объектами, к которым он непосредственно привязан, и только во время вызова
+				определенного события в своем
+				<i>event loop</i>.
+			</p>
+		</footer>
+	</section>
+
+
+	<section class="slide">
+		<pre><code class="language-js">// app.js — псевдокод
+window.someWorklet
+	.addModule('some-worklet.js')
+	.then(_ => {
+		console.log('some-worklet — loaded');
+	});
+
+// some-worklet.js — псевдокод
+registerSomeWorklet('some-worklet-name', class {
+	process(arg) {
+		// делаем магию
+	}
+});</code></pre>
+		<footer>
+			<p>Общая схема создания ворклета выглядит следующим образом.</p>
+			<p>
+				Метод
+				<code>registerSomeWorklet</code> вторым аргументом принимает
+				<code>class</code>. Сделано это для того, чтобы можно было полноценно применять возможности ООП.
+			</p>
+		</footer>
+	</section>
+
+
+	<section class="slide">
+		<h2 class="shout shout-mini">CSS Painting API 🎨</h2>
+		<footer>
+			<p>
+				Если внутри вас сидит художник, или дизайнер на проекте «так видит», а заказчик это видение одобряет, то
+				<mark>CSS Painting API</mark> может решить часть ваших проблем.
+			</p>
+		</footer>
+	</section>
+
+
+	<section class="slide">
+		<h2>CSS Painting API</h2>
+		<p>Можно применять для отрисовки свойств:</p>
+		<ul>
+			<li>
+				<code>background-image</code>
+			</li>
+			<li>
+				<code>border-image</code>
+			</li>
+			<li>
+				<code>list-style-image</code>
+			</li>
+			<li>
+				<code>content</code>
+			</li>
+			<li style="text-decoration: line-through;">
+				<code>cursor</code>
+			</li>
+		</ul>
+		<footer>
+			<p>
+				<mark>CSS Painting API</mark> дает возможность определять, как должен отрисовываться элемент, который является изображением:
+				<i>background-image</i>,
+				<i>border-image</i>,
+				<i>list-style-image</i>,
+				<i>content</i>.
+			</p>
+		</footer>
+	</section>
+
+
+	<section class="slide">
+		<pre><code class="language-js">// my-paint.js
+registerPaint('my-paint', class MyPaint {
+	static get inputProperties() { return ['--foo']; }
+	static get inputArguments() { return ['&lt;color&gt;']; }
+	static get contextOptions() { return { alpha: true }; }
+
+	paint(ctx, geom, properties, args) {
+		// ctx - контекст для рисования, как в canvas
+		// geom - размеры доступной для рисования области
+		// properties - свойства, на которые реагирует paintWorklet
+		// args - переданные в paintWorklet аргументы
+		// Можно рисовать почти как на обычном canvas
+	}
+});</code></pre>
+		<footer>
+			<p>
+				По сути холст для рисования — облегченный canvas.
+			</p>
+			<p>
+				Для оптимизации производительности repaint вызывается только тогда, когда произошли изменения в
+				<code>inputProperties</code> или
+				<code>inputArguments</code>.
+			</p>
+		</footer>
+	</section>
+
+	<section class="slide">
+		<pre><code class="language-css">/* style.css */
+.my-element {
+	--foo: deeppink;
+	background-image: paint(my-paint);
+}</code></pre>
+		<pre><code class="language-js">// app.js
+CSS.registerProperty({
+	name: '--foo',
+	syntax: '&lt;color&gt;',
+	inherits: true,
+	initialValue: 'black',
+});
+CSS.paintWorklet.addModule('my-paint.js');</code></pre>
+		<footer>
+			<p>
+				За вызов ворклета при отрисовки элемента отвечает функция CSS
+				<code>paint()</code>. Первым аргументом в нее необходимо передать имя ворклета, дальше через запятую можно передать аргументы, соответствующие
+				типам, описанным в ворклете.
+			</p>
+		</footer>
+	</section>
+
+
+	<section class="slide">
+		<h2 class="shout shout-mini">Демо
+			<a href="./demos/1_ripple/index.html">ripple</a>
+		</h2>
+	</section>
+
+
+	<section class="slide">
+		<h2 class="shout shout-mini">Демо
+			<a href="./demos/2_border-colors/index.html">border-colors</a>
+		</h2>
+	</section>
+
+
+	<section class="slide">
+		<h2 class="shout shout-mini">Демо
+			<a href="./demos/3_border-slicer/index.html">border-slicer</a>
+		</h2>
+	</section>
+
+
+	<section class="slide">
+		<h2 class="shout shout-mini">Демо
+			<a href="./demos/5_image-placeholder/index.html">image-placeholder</a>
+		</h2>
+	</section>
+
+
+	<section class="slide nd-pipeline nd-paint-api-total">
+		<svg class="render-block cover">
+			<use xlink:href="#nd-render-picture">
+		</svg>
+		<footer>
+			<p>CSS Painting API позволяет управлять этапом Paint конвейера рендеринга браузера. Ставим галочку.</p>
+		</footer>
+
+		<style>
+			.nd-paint-api-total {
+				--nd-render-parse-color: var(--color-checked);
+				--nd-render-dom-color: lightgreen;
+				--nd-render-cascade-color: var(--color-checked);
+				--nd-render-layout-color: var(--color-inactive);
+				--nd-render-paint-color: var(--color-checked);
+				--nd-render-composite-color: var(--color-inactive);
+			}
+
+		</style>
+	</section>
+
+
+	<section class="slide nd-box-api">
+		<h2>Box Tree API</h2>
+		<pre><code class="language-html">
+
+&lt;style&gt;
+p::first-line { color: green; }
+p::first-letter { color: red; }
+&lt;/style&gt;
+
+&lt;p&gt;foo &lt;i&gt;bar baz&lt;/i&gt;&lt;/p&gt;</code></pre>
+		<div class="example place right">
+			<p>foo
+				<i>bar baz</i>
+			</p>
+			<div class="firstline-box next"></div>
+			<div class="secondline-box next"></div>
+			<div class="firstletter-box next"></div>
+			<div class="oo-box next"></div>
+			<div class="bar-box next"></div>
+			<div class="baz-box next"></div>
+		</div>
+
+		<footer>
+			<p>
+				Как вы думаете, сколько контейнеров генерирует браузер после обработки такого кода?
+				<ol>
+					<li>контейнер первой строки;</li>
+					<li>контейнер второй строки;</li>
+					<li>контейнер для первого символа;</li>
+					<li>контейнер для оставшихся символов
+						<code>oo</code>;</li>
+					<li>контейнер для
+						<code>bar</code>;</li>
+					<li>контейнер для
+						<code>baz</code>.</li>
+				</ol>
+			</p>
+			<p>
+				Суть Box Tree API в том, чтобы дать разработчикам возможность получать размеры и положение этих фрагментов.
+			</p>
+		</footer>
+
+		<style>
+			.nd-box-api .example {
+				margin-top: 80px;
+				margin-right: 100px;
+				font-size: 100px;
+				width: 300px;
+				line-height: 1;
+				position: absolute;
+			}
+
+			.nd-box-api .example .next {
+				position: absolute;
+				display: block;
+				border: 4px solid green;
+			}
+
+			.nd-box-api .example .firstline-box {
+				width: 313px;
+				height: 100px;
+				top: 0;
+				left: 0;
+			}
+
+			.nd-box-api .example .secondline-box {
+				width: 313px;
+				height: 100px;
+				top: 100px;
+				left: 0;
+				border-color: blue;
+			}
+
+			.nd-box-api .example .firstletter-box {
+				width: 34px;
+				height: 92px;
+				top: 4px;
+				left: 4px;
+				border-color: magenta;
+			}
+
+			.nd-box-api .example .oo-box {
+				width: 126px;
+				height: 92px;
+				top: 4px;
+				left: 38px;
+				border-color: cyan;
+			}
+
+			.nd-box-api .example .bar-box {
+				width: 145px;
+				height: 92px;
+				top: 4px;
+				left: 164px;
+				border-color: orange;
+			}
+
+			.nd-box-api .example .baz-box {
+				width: 150px;
+				height: 92px;
+				top: 104px;
+				left: 4px;
+				border-color: red;
+			}
+
+			.nd-box-api .example p::first-line {
+				color: green;
+			}
+
+			.nd-box-api .example p::first-letter {
+				color: red;
+			}
+
+		</style>
+	</section>
+
+
+	<section class="slide">
+		<h2 class="shout shout-mini">CSS Layout API 🚀</h2>
+		<footer>
+			<p>
+				<mark>CSS Layout API</mark> — самое сложное, и при этом самое мощное нововведение CSS Houdini. Оно позволит вмешиваться прямо
+				в этап расположения элементов на странице. Раскладку вроде grid и flexbox можно будет установить как npm-пакет, подключить
+				к странице и управлять ею собственными параметрами.
+			</p>
+			<p>
+				Если разработанная раскладка будет полезна многим (например, masonry), вендоры могут реализовать ее на языке, на котором
+				написан движок браузера, чтобы сделать его более производительным.
+			</p>
+		</footer>
+	</section>
+
+
+	<section class="slide nd-layout-example">
+		<pre><code class="language-js">registerLayout('my-layout', class myLayout {
+	static get inputProperties() { return ['--foo']; }
+
+	static get childrenInputProperties() { return ['--bar']; }
+
+	static get childDisplay() { return 'normal'; } // normal | block
+
+	*intrinsicSizes(children, styleMap) {
+		// Вычислить внутрение размеры элемента
+	}
+
+	*layout(space, children, styleMap, edges, breakToken) {
+		// Разместить всех children внутри space, учитывая edges
+	}
+});</code></pre>
+
+		<footer>
+			<p>
+				На первый взгляд, реализация layout worklet выглядит просто, но в спецификации до сих пор много нерешенных моментов. Layout
+				API сильно зависит от Box Tree API, и обе спецификации пока носят статус набора идей. Однако на конференции Full Stack
+				Fest 2017 Сэм Ричардс поделился внутренней информацией о том, что к концу года в Chrome Canary за флагом может появиться
+				более-менее работоспособное API.
+			</p>
+		</footer>
+	</section>
+
+
+	<section class="slide">
+		<pre><code class="language-css">/* CSS */
+.layout-example {
+	--foo: 5;
+	display: layout(my-layout);
+}
+
+.layout-example .child {
+	--bar: 200px;
+}</code></pre>
+		<pre><code class="language-js">// JavaScript
+window.layoutWorklet.addModule('my-layout.js');</code></pre>
+		<footer>
+			<p>
+				Если написание собственной раскладки все-таки немного Rocket Science, то ее использование такое же простое, как и использование
+				других ворклетов.
+			</p>
+		</footer>
+	</section>
+
+
+	<section class="slide">
+		<h2 class="shout shout-mini">Демо
+			<a href="./demos/6_hexagon-layout/index.html">layout(hexagon)</a>
+		</h2>
+	</section>
+
+
+	<section class="slide nd-pipeline nd-paint-api-total">
+		<svg class="render-block cover">
+			<use xlink:href="#nd-render-picture">
+		</svg>
+		<footer>
+			<p>CSS Layout API позволяет управлять этапом Layout конвейера рендеринга браузера. Ставим галочку.</p>
+		</footer>
+
+		<style>
+			.nd-paint-api-total {
+				--nd-render-parse-color: var(--color-checked);
+				--nd-render-dom-color: lightgreen;
+				--nd-render-cascade-color: var(--color-checked);
+				--nd-render-layout-color: var(--color-checked);
+				--nd-render-paint-color: var(--color-checked);
+				--nd-render-composite-color: var(--color-inactive);
+			}
+
+		</style>
+	</section>
+
+
+	<section class="slide">
+		<h2 class="shout shout-mini">
+			CSS Animation Worklet API
+		</h2>
+	</section>
+
+
+	<section class="slide">
+		<h2>Web Animations</h2>
+		<pre><code class="language-js">// JavaScript
+const element = document.querySelector('.my-element');
+element.animate([
+	{'--some-color': 'red',  'opacity': 0 },
+	{'--some-color': 'blue', 'opacity': 1},
+], {
+	direction: 'alternate',
+	duration: 5000,
+	iterations: 10, // Infinity
+});</code></pre>
+		<p class="next">
+			<a href="https://github.com/web-animations/web-animations-js">Polyfill</a>
+		</p>
+		<footer>
+			<p>
+				<mark>CSS Animation Worklet API</mark> тесно связана со спецификацией
+				<mark>Web Animations</mark>, которая позволяет через JavaScript нативно и эффективно анимировать CSS-свойства. Так как браузерная
+				поддержка пока скудная, пробовать API на вкус лучше с помощью
+				<a href="https://github.com/web-animations/web-animations-js">полифила</a>.
+			</p>
+		</footer>
+	</section>
+
+
+	<section class="slide">
+		<pre><code class="language-js">// worklet.js
+registerAnimator(
+	'scroll-position-animator',
+	class {
+		constructor(options) {
+			this.options = options;
+		}
+
+		animate(currentTime, effect) {
+			effect.children.forEach((child) => {
+				child.localTime = currentTime;
+			});
+		}
+	});
+</code></pre>
+		<footer>
+			<p>
+				Анимации, привязанные к scroll — большая дыра в производительности. 60FPS во всех браузерах пока что тяжело достичь. Но если
+				переложить эту задачу на
+				<mark>CSS Animation Worklet API</mark>, то производительность вырастет в разы.
+			</p>
+			<p>
+				Для обработки анимаций в отдельном потоке нужно зарегистрировать свой Animator.
+			</p>
+		</footer>
+	</section>
+
+
+	<section class="slide">
+		<pre><code class="language-js">// app.js
+
+const frames = [
+	new KeyframeEffect(
+		document.querySelector('.scroll-to-top'),
+		[
+			{ 'transform': 'translateY(100px)', 'opacity': '0' },
+			{ 'transform': 'translateY(0)', 'opacity': '1' }
+		],
+		{ duration: 1, iterations: 1, fill: 'both' }
+	)
+];
+</code></pre>
+		<footer>
+			<p>
+				<mark>KeyframeEffect</mark> позволяет вам задать анимации как в CSS, только при помощи JavaScript.
+			</p>
+		</footer>
+	</section>
+
+
+	<section class="slide">
+		<pre><code class="language-js">// app.js
+
+const timeline = new ScrollTimeline({
+	scrollSource: document.querySelector('.page-wrapper'),
+	orientation: 'vertical',
+	startScrollOffset: '200px',
+	endScrollOffset: '300px',
+});</code></pre>
+		<footer>
+			<p>
+				<mark>ScrollTimeline</mark> устанавливает параметра захвата scroll: направление, начальная и конечная точки анимации.
+			</p>
+		</footer>
+	</section>
+
+
+	<section class="slide">
+		<pre><code class="language-js">// app.js
+
+animationWorklet.addModule('worklet.js').then(() => {
+	const animation = new WorkletAnimation(
+		'scroll-position-animator',
+		frames,
+		timeline
+	);
+	animation.play();
+});</code></pre>
+		<footer>
+			<p>
+				Как вы можете заметить, здесь используется целая куча API:
+				<i>KeyframeEffect</i>,
+				<i>ScrollTimeline</i>,
+				<i>WorkletAnimation</i>. Все вместе они позволяют добиться высокой производительности даже с очень сложными анимациями.
+				А если совместить все это с
+				<mark>Intersection Observer API</mark>, то можно еще больше повысить плавность графики.
+			</p>
+		</footer>
+	</section>
+
+
+	<section class="slide">
+		<h2 class="shout shout-mini">
+			<a href="https://github.com/GoogleChromeLabs/houdini-samples/blob/master/animation-worklet/anim-worklet.js">anim-worklet</a>
+		</h2>
+		<footer>
+			<p>
+				Так как сейчас все эти API почти не реализованы в браузере, для работы необходим полифил, который можно скачать в
+				<a href="https://github.com/GoogleChromeLabs/houdini-samples/blob/master/animation-worklet/anim-worklet.js">репозитории</a> Google. Он жестко добавляет на страницу свои скрипты из сторонних источников, поэтому пользуйтесь им
+				на свой страх и риск.
+			</p>
+		</footer>
+	</section>
+
+
+	<section class="slide">
+		<h2 class="shout shout-mini">Демо
+			<a href="./demos/7_scroll-animation/index.html">scroll-animation</a>
+		</h2>
+	</section>
+
+
+	<section class="slide">
+		<h2 class="shout shout-mini">
+			Демо
+			<a href="http://googlechromelabs.github.io/houdini-samples/">от Google</a>
+		</h2>
+	</section>
+
+
+	<section class="slide nd-pipeline nd-paint-api-total">
+		<svg class="render-block cover">
+			<use xlink:href="#nd-render-picture">
+		</svg>
+		<footer>
+			<p>Этап Composite конвейера рендеринга браузера тоже открыт. Ставим галочку.</p>
+		</footer>
+
+		<style>
+			.nd-paint-api-total {
+				--nd-render-parse-color: var(--color-checked);
+				--nd-render-dom-color: lightgreen;
+				--nd-render-cascade-color: var(--color-checked);
+				--nd-render-layout-color: var(--color-checked);
+				--nd-render-paint-color: var(--color-checked);
+				--nd-render-composite-color: var(--color-checked);
+			}
+
+		</style>
+	</section>
+
+
+	<section class="slide clear black">
+		<img src="./pictures/success.gif"
+		     alt="Friends"
+		     class="cover height">
+		<footer>
+			<p>Получается, что CSS Houdini дает нам контроль над всеми этапами рендеринга страницы?</p>
+			<p>
+				<b>Да!</b> И это восхитительно!</p>
+		</footer>
+	</section>
+
+
+	<section class="slide">
+		<h2 class="shout shout-mini">Font Metrics API</h2>
+	</section>
+
+
+	<section class="slide">
+		<img src="./pictures/glyph_metrics.png"
+		     alt="Метрики шрифтов"
+		     class="cover width">
+		<footer>
+			<p>
+				<mark>Font Metrics API</mark> позволит вычислять различные метрики шрифтов, к которым на данный момент доступа нет. Как посчитать
+				точную ширину символа? Чему равна разница в высоте между буквами
+				<b>x</b> и
+				<b>j</b>? Разработчики шрифтов работают с большим количеством метрик, но веб-разработчикам они пока недоступны явно.
+			</p>
+		</footer>
+	</section>
+
+
+	<section class="slide clear black">
+		<img src="./pictures/barnie.gif"
+		     class="cover width"
+		     alt="Барни Стинсон">
+		<footer>
+			<p>
+				Пока мозг еще удерживает полученную информацию, коротко сформулируем, что же нового нам несет CSS Houdini.
+			</p>
+		</footer>
+	</section>
+
+
+	<section class="slide">
+		<h2>Почему Houdini хорош?</h2>
+		<ol>
+			<li class="next">Производительность;</li>
+			<li class="next">Удобство использования;</li>
+			<li class="next">Возможность написания полифилов для CSS;</li>
+			<li class="next">Меньше различий между браузерами;</li>
+			<li class="next">Полный контроль.</li>
+		</ol>
+	</section>
+
+
+	<section class="slide">
+		<h2>Недостатки Houdini</h2>
+		<ol>
+			<li class="next">Еще несколько спецификаций, которых нужно долго ждать;</li>
+			<li class="next">Не решает проблему поддержки старых браузеров;</li>
+			<li class="next">Для эффективной разработки нужно еще больше знаний;</li>
+			<li class="next">Асинхронная природа Worklets — моргание стилей.</li>
+		</ol>
+	</section>
+
+
+	<section class="slide">
+		<img src="./pictures/is-houdini-ready.jpg"
+		     alt="http://ishoudinireadyyet.com"
+		     class="cover height">
+		<footer>
+			<p>
+				Как обстоят дела с другими браузерами?
+			</p>
+			<p>
+				Не только команда Chrome занимается внедрением спецификаций в ночные сборки браузера. Даже Safari изъявили желание поучаствовать
+				в разработке и реализации спецификации.
+			</p>
+		</footer>
+	</section>
+
+
+	<section class="slide">
+		<h2 class="shout shout-mini">
+			<a href="http://ishoudinireadyyet.com">Is Houdini ready yet‽</a>
+		</h2>
+		<footer>
+			<p>
+				Александр Сурма из Google поддерживает в актуальном состоянии сведения о доступности Houdini API в различных браузерах по
+				ссылке
+				<a href="http://ishoudinireadyyet.com">ishoudinireadyyet.com</a>.
+			</p>
+		</footer>
+	</section>
+
+
+	<section class="slide nd-materials">
+		<h2>Материалы по теме</h2>
+		<p class="list-header">Статьи</p>
+		<ol>
+			<li>
+				<a href="https://www.smashingmagazine.com/2016/03/houdini-maybe-the-most-exciting-development-in-css-youve-never-heard-of/">Houdini: Maybe The Most Exciting Development In CSS You’ve Never Heard Of</a>, Филип Уолтон
+			</li>
+			<li>
+				<a href="https://developers.google.com/web/updates/2016/05/houdini">Houdini: Demystifying CSS</a>, Алекс Сурма
+			</li>
+		</ol>
+		<p class="list-header">Видео</p>
+		<ol>
+			<li>
+				<a href="https://www.youtube.com/watch?v=sE3ttkP15f8">Houdini: Demystifying the Future of CSS</a>
+				— Google I/O 2016
+			</li>
+			<li>
+				<a href="https://vimeo.com/232982766">Philip Walton | Polyfills & Houdini | Browser API Special</a>
+				— CSS Day 2017
+			</li>
+			<li>
+				<a href="https://www.youtube.com/watch?v=66E0_QFnmlA">Serg Hospodarets: CSS Houdini - from CSS variables to JavaScript and back</a>
+				— Frontend United 2017
+			</li>
+			<li>
+				<a href="https://www.youtube.com/watch?v=RNkwDR1o4u0">Magic Tricks with CSS Houdini (Sam Richard)</a>
+				— Full Stack Fest 2017
+			</li>
+		</ol>
+
+		<style>
+			.nd-materials ol {
+				font-size: 19px;
+			}
+
+		</style>
+	</section>
+
+
+	<section class="slide">
+		<h2>Спасибо за внимание!</h2>
+		<p>
+			<a href="https://mefody.github.io/talks/houdini-magic/">mefody.github.io/talks/houdini-magic/</a>
+			<br>
+			<a href="https://twitter.com/dark_mefody">@dark_mefody</a>
+			<br>
+			<a href="mailto:n.a.dubko@gmail.com">n.a.dubko@gmail.com</a>
+		</p>
+		<img src="./pictures/qr-code.gif"
+		     width="250"
+		     alt="QR code — ссылка на презентацию"
+		     class="place bottom right">
+	</section>
+
+
+	<svg xmlns="http://www.w3.org/2000/svg"
+	     style="display: none;">
+		<symbol id="nd-render-picture"
+		        viewbox="0 0 800 100">
+			<style>
+				.nd-render-block {
+					fill-opacity: null;
+					stroke-opacity: null;
+					stroke: #000;
+				}
+
+				.nd-render-text {
+					stroke-width: 0;
+				}
+
+				.nd-render-path {
+					fill: #fff;
+					stroke-width: 2;
+				}
+
+			</style>
+			<g class="nd-render-block">
+				<path style="fill: var(--nd-render-parse-color)"
+				      d="M47.8 13.9h107.2l35.8 35.8-35.8 35.8H47.8L83.6 49.8 47.8 13.9z"
+				      class="nd-render-path" />
+				<text class="nd-render-text"
+				      x="100.1"
+				      y="55.6"
+				      font-size="17">Parser</text>
+			</g>
+			<g class="nd-render-block">
+				<path style="fill: var(--nd-render-dom-color)"
+				      d="M161.8 13.9h107.3l35.8 35.8-35.7 35.8H161.8l35.8-35.8-35.7-35.8z"
+				      class="nd-render-path" />
+				<text class="nd-render-text"
+				      x="213"
+				      y="45.6"
+				      font-size="17">DOM &#x2F;</text>
+				<text class="nd-render-text"
+				      x="204.1"
+				      y="66.6"
+				      font-size="17">CSSOM</text>
+			</g>
+			<g class="nd-render-block">
+				<path style="fill: var(--nd-render-cascade-color)"
+				      d="M274.9 13.9h107.2l35.8 35.8-35.8 35.8H274.9l35.8-35.8-35.7-35.8z"
+				      class="nd-render-path" />
+				<text class="nd-render-text"
+				      x="319.3"
+				      y="55.6"
+				      font-size="17">Cascade</text>
+			</g>
+			<g class="nd-render-block">
+				<path style="fill: var(--nd-render-layout-color)"
+				      d="M387.9 13.9h107.2l35.8 35.8-35.8 35.8H387.9l35.8-35.8-35.7-35.8z"
+				      class="nd-render-path" />
+				<text class="nd-render-text"
+				      x="440.3"
+				      y="55.6"
+				      font-size="17">Layout</text>
+			</g>
+			<g class="nd-render-block">
+				<path style="fill: var(--nd-render-paint-color)"
+				      d="M501 13.9H608.2l35.8 35.8-35.8 35.8H501l35.8-35.8-35.7-35.8z"
+				      class="nd-render-path" />
+				<text class="nd-render-text"
+				      x="556.4"
+				      y="55.6"
+				      font-size="17">Paint</text>
+			</g>
+			<g class="nd-render-block">
+				<path style="fill: var(--nd-render-composite-color)"
+				      d="M614 13.9h107.2l35.8 35.8-35.8 35.8H614l35.8-35.8-35.7-35.8z"
+				      class="nd-render-path" />
+				<text class="nd-render-text"
+				      x="656.4"
+				      y="55.6"
+				      font-size="17">Composite</text>
+			</g>
+		</symbol>
+	</svg>
+
+
+
+	<footer class="badge">
+		<a href="https://github.com/shower/shower">Powered by Shower</a>
+	</footer>
+
+	<div class="progress"></div>
+
+	<script src="shower/shower.min.js"></script>
+	<script src="prism/prism.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Shower Presentation Engine</title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
+	<style type="text/css">
+		@keyframes -shmel-hover {
+			0% {
+				transform: translate3d(0, 0, 0);
+				animation-timing-function:  ease-out;
+			}
+			50% {
+				transform: translate3d(0, -15px, 0);
+				animation-timing-function:  ease-in;
+			}
+			100% {
+				transform: translate3d(0, 0, 0);
+				animation-timing-function:  ease-out;
+			}
+		}
+
+		.intro:after {
+			display: none;
+		}
+
+		.shmel {
+			animation: -shmel-hover 1.5s infinite;
+			margin-top: -30px;
+			margin-bottom: 30px;
+		}
+	</style>
+</head>
+<body class="shower list">
+
+	<header class="caption">
+		<h1>WTF is AMP и почему шмель летает?</h1>
+		<p>Андрей Абрамов, Команда ВКонтакте</p>
+	</header>
+
+	<section class="slide intro">
+		<div>
+            <img class="shmel" src="pictures/shmel.png" width="256" height="256">
+            <h2>WTF is AMP и почему шмель летает?</h2>
+            <p>
+                Андрей Абрамов, <a href="https://vk.com/team" target="_blank">Команда ВКонтакте</a>
+                <br> Web Standards Days, Ноябрь 2017
+            </p>
+        </div>		
+	</section>
+
+	<section class="slide">
+		<h2>О чем поговорим</h2>
+		<ol>
+			<li class="next">Что не так с мобильным вебом?</li>
+			<li class="next">AMP &mdash; мгновенная отрисовка страниц</li>
+			<li class="next">Система AMP-компонентов</li>
+			<li class="next">Опыт разработки AMP экстеншена</li>
+			<li class="next">AMP: практики оптимизации</li>
+			<li class="next">Что ждёт технологию?</li>
+		</ol>
+	</section>
+
+	<section class="slide">
+		<h2>Вопросы в зал</h2>
+		<ul>
+			<li class="next">У кого есть мобильная версия?</li>
+			<li class="next">Кто любит мобильный веб?</li>
+			<li class="next">Кому нравится UX мобильных сайтов?</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<img class="cover" src="pictures/mobile-first.jpg" alt="Mobile">
+	</section>
+
+	<section class="slide">
+		<h2>Пользователи эволюционировали</h2>
+		<ul>
+			<li>Мобильного трафика сегодня больше чем десктопного</li>
+			<li>В 2016 году Google объявил о планах <a href="https://webmasters.googleblog.com/2016/11/mobile-first-indexing.html">mobile-first индексации</a></li>
+		</ul>
+		<img width="500" style="margin-bottom: 40px; margin-right: 70px;" class="place bottom right" src="pictures/evol.jpg">
+	</section>
+
+	<section class="slide">
+		<h2>Ну и мы не отстаем</h2>
+		<ul>
+			<li class="next">UX-рекомендации</li>
+			<li class="next">Mobile-first CSS, флексбокс</li>
+			<li class="next">Изображения для разных размеров экранов</li>
+			<li class="next">Тап вместо клика</li>
+			<li class="next">SVG</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">Все классно!</h2>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout" style="margin-top: 150px;" >Не-а!</h2>
+		<img class="cover"src="pictures/loading.jpg" alt="Mobile">
+	</section>
+
+	<section class="slide">
+		<img class="cover" src="pictures/mobile_user.jpg" alt="Mobile">
+	</section>
+
+	<section class="slide">
+		<h2>Мобильный веб не дотягивает по UX</h2>
+		<ul>
+			<li>Среднее время загрузки ~ 17 секунд</li>
+			<li>Количество посещенных страниц меньше</li>
+			<li>Bounce rate выше</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">У нас <br>переходный <br>возраст!</h2>
+	</section>
+
+	<section class="slide">
+		<h2 style="color: white; text-align: center;">Причём тут шмель?</h2>
+		<!-- <p style="color: white;">В XX веке на заре самолетостроения долго не понимали, почему шмель не подчиняется известным законам аэродинамики.</p> -->
+		<img class="cover" src="pictures/bombus3.jpg" alt="Bombus">
+	</section>
+
+	<section class="slide">
+		<h2>Всё дело в оптимизации</h2>
+		<video style="margin-top: 20px;" src="pictures/fly.mp4" autoplay="autoplay" loop width="500"></video>
+		<p><a href="https://www.researchgate.net/publication/12350611_Two_Dimensional_Mechanism_for_Insect_Hovering">Two Dimensional Mechanism for Insect Hovering</a></p>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">Усокряемся</h2>
+	</section>
+
+	<section class="slide">
+		<img width="250" style="margin-bottom: 40px;" src="pictures/logo-blue.svg" alt="Hero">
+
+		<p>AMP &mdash; Accelerated Mobile Pages.</p>
+		<ul>
+			<li class="next">Кто слышал про AMP?</li>
+			<li class="next">Кто внедрял AMP?</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<img class="cover" src="pictures/google_amp.png" alt="AMP">
+	</section>
+
+	<section class="slide">
+		<h2>У кого уже есть?</h2>
+		<img class="cover" src="pictures/logos.jpg" alt="Logos">
+	</section>
+
+	<section class="slide">
+		<video class="cover" muted src="pictures/search.mp4" onclick="this.play()" loop></video>
+	</section>
+
+	<section class="slide">
+		<h2>Кому нужны быстрые сайты?</h2>
+		<ul>
+			<li class="next">Новостные платформы</li>
+			<li class="next">eCommerce</li>
+			<li class="next">Всем!</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>Какие были попытки?</h2>
+		<ul>
+			<li><a href="https://developer.apple.com/news-publisher/">Apple News</a></li>
+			<li><a href="https://instantarticles.fb.com/">Facebook Instant Articles</a></li>
+			<li><a href="https://instantview.telegram.org/">Telegram Instant View</a></li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">Окей, еще один стандарт?</h2>
+	</section>
+
+	<section class="slide">
+		<img class="cover" src="pictures/meeseeks.png" alt="AMP">
+	</section>
+
+	<section class="slide">
+		<h2>Что надо знать?</h2>
+		<ul>
+			<li>HTML и CSS, никакого JavaScript</li>
+			<li>Читаем документацию <a href="https://www.ampproject.org/docs/getting-started/">https://www.ampproject.org/</a></li>
+			<li>Берём готовые компоненты <a href="https://ampbyexample.com/">https://ampbyexample.com/</a></li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>AMP страница</h2>
+		<pre>                
+			<code>&lt;html <mark class="important">amp</mark> lang="en"&gt;</code>
+			<code>&lt;head&gt;</code>
+			<code>  ...</code>
+			<code>  &lt;link <mark>rel=&quot;canonical&quot;</mark> href=&quot;https://regular.com/version&quot;&gt;</code>
+			
+			<code>  &lt;style amp-custom&gt; .logo {color: green;} &lt;/style&gt;</code>
+			<code>  ...</code>
+			<code>  &lt;script async src=<mark>&quot;https://cdn.ampproject.org/v0.js&quot;</mark>&gt;</code>
+	    </pre>
+	</section>
+
+	<section class="slide">
+		<h2>AMP страница</h2>
+		<pre>                
+			<code>...</code>
+			<code>&lt;body&gt;</code>
+			<code>  &lt;h1&gt;Наш контент&lt;/h1&gt;</code>
+			<code>  <mark>&lt;amp-img</mark> src=&quot;images/picture.jpg&quot; layout=&quot;responsive&quot;&gt;</code>
+  			<code>    width=&quot;900&quot;</code>
+  			<code>    height=&quot;508&quot;</code>
+  			<code>  &lt;/amp-img&gt;</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Система AMP компонентов</h2>
+
+		<a href="https://ampbyexample.com/">https://ampbyexample.com/</a>
+		<img src="pictures/ampcomps.png" class="place bottom" width="100%">
+	</section>
+
+	<section class="slide">
+		<h2>Расширение AMP-VK</h2>
+
+		<p>У ВКонтакте теперь есть embed-виджет <br><mark>&lt;amp-vk&gt;</mark>для <a href="https://vk.com/dev/widget_post">постов</a> и <a href="https://vk.com/dev/widget_poll">опросов</a></p>
+
+		<pre>                
+			<code>&lt;amp-vk</mark> ...&gt;</code>
+  			<code>    data-embedtype=&quot;post&quot;</code>
+  			<code>    data-owner-id=&quot;1&quot;</code>
+  			<code>    data-post-id=&quot;45616&quot;</code>
+  			<code>    data-hash=&quot;Yc8_Z9pnpg8...&quot;</code>
+		</pre>
+
+		<img width="350" style="margin-right: 40px;" class="place right" src="pictures/vk-amp.png">
+	</section>
+
+	<section class="slide">
+		<h2>Опыт разработки расширения</h2>
+		<ul>
+			<li>AMP &mdash; открытое сообщество <a href="https://github.com/ampproject">https://github.com/ampproject</a></li>
+			<li>Можно написать в <a href="https://amphtml.slack.com/">Slack</a></li>
+			<li>Еженедельные встречи с контрибьюторами</li>
+		</ul>
+		<img src="pictures/google.jpg" alt="Google" width="400" class="">
+	</section>
+
+	<section class="slide">
+		<h2>Инструменты для разработки</h2>
+		<ul>
+			<li>PostCSS <a href="https://github.com/tinovyatkin/postcss-amp">AMP plugin</a></li>
+			<li><a href="https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc?hl=en">AMP Validator</a> - расширение для хрома</li>
+			<li>А если у меня WordPress? <a href="https://wordpress.org/plugins/amp/">Есть плагин</a></li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">Почему <span style="white-space: nowrap;">AMP-шмель</span> летает?</h2>
+	</section>
+
+	<section class="slide">
+		<h2>Критический путь отрисовки</h2>
+		<img src="pictures/render.png">
+	</section>
+
+	<section class="slide">
+		<h2>Оптимизация отрисовки</h2>
+		<ul>
+			<li>Inline CSS</li>
+			<li>JS компоненты через &lt;script <mark>async</mark> ...&gt;</li>
+			<li>Ленивая загрузка ресурсов</li>
+			<li>Кэширование</li>
+			<li>Prerendering при поиске в Google</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">Всё классно!</h2>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">Не-а!</h2>
+	</section>
+
+	<section class="slide">
+		<blockquote class="large place">
+			<p style="font-size: 50px; line-height: 1.5;">
+				kill Google AMP<br> before it kills the web
+			</p>
+		</blockquote>
+	</section>
+
+	<section class="slide">
+		<img class="cover" src="pictures/plum.jpg">
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">Mobile performance</h2>
+	</section>
+
+	<section class="slide">
+		<h2>Отдай страницу</h2>
+		<ul>
+			<li class="next">На мобильных сетях задержка 100-200 мс</li>
+			<li class="next">Нужно отдать страницу с сервера как можно быстрее &lt; 100 мс</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>Critical CSS</h2>
+		<ul>
+			<li >Инлайном отдаются стили для первого экрана</li>
+			<li >Асинронно догружаем стили для оставшейся страницы</li>
+		</ul>
+		<img width="200" style="margin-top: 20px; margin-left: -30px" src="pictures/critical.jpg">
+	</section>
+
+	<section class="slide">
+		<h2>Поменьше шрифтов</h2>
+		<ul>
+			<li>Браузер начинает подгружать шрифты прямо перед рендерингом</li>
+			<li>Chrome ждёт загрузку шрифтов 3 секунды, Safari ждёт вечность</li>
+			<li>Может можно без сторонних шрифтов? <br> <a href="https://www.smashingmagazine.com/2015/11/using-system-ui-fonts-practical-guide/">Using UI System Fonts In Web Design</a></li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">Ленись!</h2>
+	</section>
+
+	<section class="slide">
+		<h2>Что мы получили?</h2>
+		<ul>
+			<li>&laquo;Починили&raquo; мобильный веб</li>
+			<li>Временный костыль для переходного возраста</li>
+			<li>Лучшие практики оптимизации</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">Спасибо за внимание!</h2>
+		<img width="200" src="pictures/bee2.jpg" class="place top left">
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">Вопросы?</h2>
+	</section>
+
+	<!-- <section class="slide">
+		<h2>Что ждет AMP</h2>
+		<p>Свободное размышление</p>
+		<ul>
+			<li>Можно и desktop сайты делать</li>
+			<li>Уже есть eCommerce checkout</li>
+		</ul>
+	</section> -->
+
+	<footer class="badge">
+		<a href="https://github.com/shower/shower">Fork me on GitHub</a>
+	</footer>
+
+	<div class="progress"></div>
+
+	<script src="shower/shower.min.js"></script>
+	<!-- Copyright © 2017 Yours Truly, Famous Inc. -->
+
+</body>
+</html>

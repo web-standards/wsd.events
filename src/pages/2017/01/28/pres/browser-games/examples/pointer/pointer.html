@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<script src="brushstroke.js"></script>
+	<link rel="stylesheet" href="global.css" />
+	<link rel="stylesheet" href="brushstroke.css" />
+	<script type="text/javascript">
+		window.onload = function () {
+			var elem = document.getElementById('elem');
+
+			elem.addEventListener('pointerdown', function (event) {
+				if (!isInPointers(event)) {
+					addToPointerList(event);
+				}
+			});
+
+			elem.addEventListener('pointermove', function (event) {
+				if (isInPointers(event)) {
+					updatePointer(event);
+				}
+			});
+
+			elem.addEventListener('pointerup', onPointerOut);
+			elem.addEventListener('pointerout', onPointerOut);
+
+			function onPointerOut(event) {
+				if (isInPointers(event)) {
+					removeFromPointerList(event);
+				}
+			}
+
+			var pointers = {};
+			function isInPointers(event) {
+				return pointers.hasOwnProperty(event.pointerId);
+			}
+
+			function addToPointerList(event) {
+				pointers[event.pointerId] = event;
+			}
+
+			function updatePointer(event) {
+				pointers[event.pointerId] = event;
+			}
+
+			function removeFromPointerList(event) {
+				delete pointers[event.pointerId];
+			}
+
+			function tick() {
+				if (pointers) {
+					for (var key in pointers) {
+						var pointer = pointers[key];
+						createBrushstroke(pointer.pageX, pointer.pageY, '#DE3A3A');
+					}
+				}
+				requestAnimationFrame(tick);
+			}
+			tick();
+		};
+	</script>
+<style>
+    
+        body {
+            touch-action: none;
+        }
+    
+        #elem {
+            width: 100%;
+            height: 100%;
+            background-color: #D2E9F7;
+            box-sizing: border-box;
+            border-right: 2px solid black;
+        }
+        
+    </style>
+</head>
+
+<body>
+	<div id=elem></div>
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+<!doctype html>
+
+<style>
+    :root {
+        --tick: 0;
+        --bg-color: #405872;
+        --color: #47b1bb;
+    }
+
+    html {
+        background: #222;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .link {
+        display: inline-block;
+        color: #ddd;
+        opacity: 0.3;
+        transition: opacity 0.3s;
+        margin-bottom: 20px;
+    }
+    .link:hover {
+        opacity: 1;
+    }
+    .link a {
+        color: deepskyblue;
+    }
+
+    .image {
+        display: block;
+        font-size: 70px;
+        --image: url('really-big-picture.jpg');
+        background-color: var(--bg-color);
+        color: var(--color);
+        background-image: paint(image-with-placeholder, 5);
+
+        width: 400px;
+        height: 400px;
+        margin-bottom: 20px;
+    }
+
+</style>
+
+<span class="link">Inspired By: <a href="https://www.youtube.com/watch?v=xN_KOacUDhU">#17 ALL YOUR HTML, Perlin Noise, 1d, 2d, 3d</a></span>
+
+<textarea class="image"></textarea>
+
+<input type="color" id="bg-color" value="#405872"/>
+<input type="color" id="color" value="#47b1bb"/>
+
+<script>
+    CSS.registerProperty({
+        name: '--image',
+        syntax: '<image> | none',
+        initialValue: 'none',
+    });
+    CSS.registerProperty({
+        name: '--tick',
+        syntax: '<number>',
+        initialValue: 0,
+        inherits: true,
+    });
+    CSS.registerProperty({
+        name: '--color',
+        syntax: '<color>',
+        initialValue: '#000000',
+        inherits: true,
+    });
+    CSS.registerProperty({
+        name: '--bg-color',
+        syntax: '<color>',
+        initialValue: '#ffffff',
+        inherits: true,
+    });
+    CSS.paintWorklet.addModule('image-placeholder.js');
+
+    let tick = 0;
+    requestAnimationFrame(function frame() {
+        tick++;
+        document.documentElement.style.setProperty('--tick', tick);
+        requestAnimationFrame(frame);
+    });
+
+    const bgColorInput = document.querySelector('#bg-color');
+    const colorInput = document.querySelector('#color');
+    bgColorInput.addEventListener('input', (e) => {
+        document.documentElement.style.setProperty('--bg-color', e.currentTarget.value);
+    });
+    colorInput.addEventListener('input', (e) => {
+        document.documentElement.style.setProperty('--color', e.currentTarget.value);
+    });
+</script>

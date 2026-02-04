@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Css is awesome</title>
+  <style>
+    html, body { height: 100%; margin: 0;  padding: 0; }
+
+    body {
+      font-family: Arial Bold, sans-serif;
+
+      min-width: 100px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      text-transform: uppercase;
+    }
+
+    .container {
+      height: 300px;
+      width: 300px;
+      border: 4px solid black;
+    }
+
+    .content {
+      height: 100%;
+      width: 100%;
+    }
+    tspan {
+      font-weight: 600;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container" id ="container">
+    <svg class = "content" preserveAspectRatio="xMidYMid meet" viewBox="0 0 89 57">
+      <text>
+        <tspan x="0" y="15" >css</tspan>
+        <tspan x="0" y="34" >is</tspan>
+        <tspan x="0" y="53" >awesome!</tspan>
+      </text>
+    </svg>
+  </div>
+
+  <script src="//cdn.jsdelivr.net/interact.js/1.2.6/interact.min.js"></script>
+  <script>
+    interact('.container')
+        .resizable({
+          preserveAspectRatio: false,
+          edges: { left: true, right: true, bottom: true, top: true }
+        })
+        .on('resizemove', (event) => {
+          let {style} = event.target;
+          style.width  = event.rect.width + 'px';
+          style.height = event.rect.height + 'px';
+        });
+  </script>
+
+</body>
+</html>

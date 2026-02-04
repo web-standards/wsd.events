@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<style>
+    html {
+        background: #333;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .slicer {
+        background-color: orangered;
+        background-clip: padding-box;
+        border-bottom: 40px solid;
+        border-image-source: linear-gradient(to bottom right, orangered 50%, transparent 50%);
+        border-image-slice: 0 0 100% 0;
+    }
+
+    .slicer-houdini {
+        background-color: orangered;
+        background-clip: padding-box;
+        border-bottom: 40px solid;
+        border-image-source: paint(border-slicer);
+        border-image-slice: 0 0 100% 0;
+    }
+
+    .round {
+        background-color: deepskyblue;
+        background-clip: padding-box;
+        border-bottom: 40px solid;
+        border-image-source: radial-gradient(closest-corner at 50% -100%, deepskyblue 100%, transparent);
+        border-image-slice: 0 0 100% 0;
+    }
+
+    .round-houdini {
+        background-color: deepskyblue;
+        background-clip: padding-box;
+        border-bottom: 40px solid;
+        border-image-source: paint(border-round);
+        border-image-slice: 0 0 100% 0;
+    }
+
+    .block {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        font: 3em sans-serif;
+        color: #222;
+        height: 150px;
+        width: 300px;
+        margin: 50px 15px;
+    }
+
+    hr {
+        border-color: #555;
+    }
+
+    .src-link {
+        color: white;
+        margin-top: 20px;
+    }
+
+    .src-link a {
+        color: deepskyblue;
+    }
+
+</style>
+
+<div class="src-link">Source:
+    <a href="http://jsbin.com/nopihep/edit?css,output">http://jsbin.com/nopihep/edit?css,output</a>
+</div>
+<div class="container">
+    <div class="block slicer">BORDER</div>
+    <div class="block round">IMAGE</div>
+</div>
+
+<hr>
+
+<div class="container">
+    <div class="block slicer-houdini">PAINT</div>
+    <div class="block round-houdini">API</div>
+</div>
+
+<script>
+    [
+        '--border-top-color',
+        '--border-right-color',
+        '--border-bottom-color',
+        '--border-left-color',
+    ].map((name) => {
+        CSS.registerProperty({
+            name: name,
+            syntax: '<color>+',
+            inherits: false,
+            initialValue: 'currentcolor',
+        });
+    });
+
+    [
+        '--border-top-width',
+        '--border-right-width',
+        '--border-bottom-width',
+        '--border-left-width',
+    ].map((name) => {
+        CSS.registerProperty({
+            name: name,
+            syntax: '<number>',
+            inherits: false,
+            initialValue: '0',
+        });
+    });
+
+    window.CSS.paintWorklet.addModule('border-slicer.js').then(_ => console.log('"border-slicer" paint worklet has been loaded.'));
+    window.CSS.paintWorklet.addModule('border-round.js').then(_ => console.log('"border-round" paint worklet has been loaded.'));
+</script>
