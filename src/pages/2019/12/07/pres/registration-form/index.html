@@ -7,8 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Как я верстал форму регистрации</title>
     <link rel="stylesheet" href="style/style.css">
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML'
-            async></script>
 </head>
 <body class="black-theme">
 <section id="1">
@@ -261,7 +259,7 @@ $/
 </section>
 
 <section id="14">
-    <img src="https://neformal13.github.io/parsers-presentation/img/drawing-automata-1.jpg" alt="">
+    <img src="img/drawing-automata-1.jpg" alt="">
 </section>
 
 <section id="15">
@@ -514,28 +512,26 @@ while (input[i]) {
 
 <section id="45" style="font-size: 1.5rem">
     <p>
-        Контекстно-свободная грамматика \(G\) это четверка \((N,T,P,S)\):
+        Контекстно-свободная грамматика <math><mi>G</mi></math> это четверка <math><mo>(</mo><mi>N</mi><mo>,</mo><mi>T</mi><mo>,</mo><mi>P</mi><mo>,</mo><mi>S</mi><mo>)</mo></math>:
     <ul>
-        <li>\(S\in N\)</li>
-        <li>\( N\) и \( T\) конечные множества, которые не пересекаются</li>
-        <li>\(P\) конечное подмножество \( N\times (N\cup T)^{*} \)</li>
+        <li><math><mi>S</mi><mo>∈</mo><mi>N</mi></math></li>
+        <li><math><mi>N</mi></math> и <math><mi>T</mi></math> конечные множества, которые не пересекаются</li>
+        <li><math><mi>P</mi></math> конечное подмножество <math><mi>N</mi><mo>×</mo><msup><mrow><mo>(</mo><mi>N</mi><mo>∪</mo><mi>T</mi><mo>)</mo></mrow><mo>*</mo></msup></math></li>
     </ul>
 
 
     При этом, используют такие названия: <br>
-    \(N\) — множество нетерминальных символов, <br>
-    \(T\) — множество терминальных символов, <br>
-    \(P\) — множество правил вывода <br>
-    \(S\) начальный символ. <br>
-    Правила \( (\alpha ,\beta )\in P \) записывают как
-    \(\alpha \rightarrow \beta \).
+    <math><mi>N</mi></math> — множество нетерминальных символов, <br>
+    <math><mi>T</mi></math> — множина терминальных символов, <br>
+    <math><mi>P</mi></math> — множество правил вывода <br>
+    <math><mi>S</mi></math> начальный символ. <br>
+    Правила <math><mo>(</mo><mi>α</mi><mo>,</mo><mi>β</mi><mo>)</mo><mo>∈</mo><mi>P</mi></math> записывают как
+    <math><mi>α</mi><mo>→</mo><mi>β</mi></math>.
     <br>
 
-    В левой части правила вывода должен находиться одна переменная (нетерминальный символ). <br> Формально, должен выполняться \(
-    \alpha \in N,\beta \in (N\cup T)^{*}, де |\beta |\geq 1\).<br/>
+    В левой части правила вывода должен находиться одна переменная (нетерминальный символ). <br> Формально, должен выполняться <math><mi>α</mi><mo>∈</mo><mi>N</mi><mo>,</mo><mi>β</mi><mo>∈</mo><msup><mrow><mo>(</mo><mi>N</mi><mo>∪</mo><mi>T</mi><mo>)</mo></mrow><mo>*</mo></msup></math>, де <math><mo>|</mo><mi>β</mi><mo>|</mo><mo>≥</mo><mn>1</mn></math>.<br/>
 
-    Расширением КС-грамматик является стохастические КВ грамматики. Правилам вывода сопоставляют вероятность использования: \(
-    \rho :P\rightarrow \mathbb {R} \) де \( \sum _{p_{r}\in P_{r}}\rho (p_{r})=1 \)
+    Расширением КС-грамматик является стохастические КВ грамматики. Правилам вывода сопоставляют вероятность использования: <math><mi>ρ</mi><mo>:</mo><mi>P</mi><mo>→</mo><mi>ℝ</mi></math> де <math><munder><mo>∑</mo><mrow><msub><mi>p</mi><mi>r</mi></msub><mo>∈</mo><msub><mi>P</mi><mi>r</mi></msub></mrow></munder><mi>ρ</mi><mo>(</mo><msub><mi>p</mi><mi>r</mi></msub><mo>)</mo><mo>=</mo><mn>1</mn></math>
     </p>
 </section>
 
