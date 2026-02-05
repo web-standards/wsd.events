@@ -15,11 +15,11 @@
 					var picture = speaker.querySelector('.speakers__picture');
 
 					if (picture.dataset.src) {
-						picture.src =  picture.dataset.src;
+						picture.src = picture.dataset.src;
 					}
 
 					if (picture.dataset.srcset) {
-						picture.srcset =  picture.dataset.srcset;
+						picture.srcset = picture.dataset.srcset;
 					}
 
 					speaker.classList.remove('speakers__speaker--hidden');
@@ -173,7 +173,7 @@ function googleMap() {
 
 		iframe.setAttribute('frameborder', '0');
 		iframe.setAttribute('allowfullscreen', '');
-		iframe.setAttribute('src',  generateIframeUrl(videoId));
+		iframe.setAttribute('src', generateIframeUrl(videoId));
 		iframe.classList.add('video__media');
 
 		return iframe;
