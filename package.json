@@ -3,7 +3,7 @@
 	"type": "module",
 	"scripts": {
 		"build": "node build.js",
-		"deploy": "cd dist && rsync --archive --compress --delete . wst@web-standards.ru:/var/www/wsd.events/html/"
+		"deploy": "rsync --archive --verbose --compress --delete --delete-excluded --exclude '.DS_Store' --copy-links ./dist/ deploy@wsd.events:/opt/sites/wsd.events/public/"
 	},
 	"engines": {
 		"node": "24"
