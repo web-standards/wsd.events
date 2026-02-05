@@ -459,7 +459,7 @@
 @font-face {
   font-family: KairosSans;
   font-display: swap;
-  src: url(https://yoksel.github.io/variable-fonts/assets/fonts/KairosSans/KairosSans_Variable.ttf) format("truetype"); }
+  src: url(_external/fonts/KairosSans_Variable.ttf) format("truetype"); }
 
 .demo {
   position: relative;

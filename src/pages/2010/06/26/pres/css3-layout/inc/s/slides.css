@@ -95,11 +95,11 @@
 		border:0;
 		}
 	#cover .miripiruni{
-		background:url(http://miripiruni.org/favicon.ico) 0 center no-repeat;
+		background:url(_external/images/favicon.ico) 0 center no-repeat;
 		color:#000;
 		}
 	#cover .wsd{
-		background:url(http://webstandardsdays.ru/favicon.ico) 0 center no-repeat;
+		background:url(_external/images/favicon.ico) 0 center no-repeat;
 		color:#000;
 		}
 	#cover .miripiruni,
