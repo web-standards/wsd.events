@@ -1,0 +1,19 @@
+/* Localized Google Fonts - Signika Negative */
+@font-face {
+  font-family: 'Signika Negative';
+  font-style: normal;
+  font-weight: 300;
+  src: url(./signika-300.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Signika Negative';
+  font-style: normal;
+  font-weight: 400;
+  src: url(./signika-400.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Signika Negative';
+  font-style: normal;
+  font-weight: 700;
+  src: url(./signika-700.ttf) format('truetype');
+}
