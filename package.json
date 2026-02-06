@@ -3,10 +3,11 @@
 	"type": "module",
 	"scripts": {
 		"build": "node build.js",
-		"deploy": "rsync --archive --verbose --compress --delete --delete-excluded --exclude '.DS_Store' --copy-links ./dist/ deploy@wsd.events:/opt/sites/wsd.events/public/"
+		"deploy": "rsync --archive --verbose --compress --delete --delete-excluded --exclude '.DS_Store' --copy-links ./dist/ deploy@wsd.events:/opt/sites/wsd.events/public/",
+		"caddy": "scp Caddyfile root@wsd.events:/opt/sites/wsd.events/ && ssh root@wsd.events setup reload"
 	},
 	"engines": {
-		"node": "24"
+		"node": ">=24"
 	},
 	"dependencies": {
 		"autoprefixer": "^10.4.24",
